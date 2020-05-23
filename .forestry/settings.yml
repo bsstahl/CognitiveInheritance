@@ -5,6 +5,13 @@ admin_path:
 webhook_url: 
 sections:
 - type: directory
+  path: Data
+  label: Data Files
+  create: documents
+  match: "**/*"
+  templates:
+  - sitesettings
+- type: directory
   path: Pages
   label: Pages
   create: all
