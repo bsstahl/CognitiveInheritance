@@ -1,4 +1,47 @@
 ---
 label: SiteSettings
 hide_body: true
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+  description: The title of the website
+- name: description
+  type: text
+  config:
+    required: false
+  label: description
+  description: The description of the website
+- name: postsperpage
+  type: number
+  label: PostsPerPage
+  description: ''
+  default: 0
+  required: true
+  config:
+    min: 0
+    max: 32767
+    step: 
+- name: postsperfeed
+  type: number
+  label: PostsPerFeed
+  description: ''
+  default: 0
+  required: true
+  config:
+    min: 0
+    max: 32767
+    step: 
+- name: theme
+  type: text
+  config:
+    required: false
+  label: Theme
+  default: Default
+- name: copyright
+  type: text
+  config:
+    required: false
+  label: Copyright
