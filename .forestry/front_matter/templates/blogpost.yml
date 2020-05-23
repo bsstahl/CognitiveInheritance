@@ -6,6 +6,8 @@ fields:
   type: text
   config:
     required: false
+    min: 36
+    max: 36
   label: Id
   description: Guid used as the PK of the ContentItem
 - name: author
@@ -76,6 +78,8 @@ fields:
     type: text
     config:
       required: false
+      min: 36
+      max: 36
     label: CategoryId
     description: Guid
   config:
