@@ -1,0 +1,79 @@
+
+
+.h2, h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.h3, h3 {
+    font-size: 1.25rem;
+}
+
+.h4, h4 {
+    font-size: 1.00rem;
+}
+
+.h5, h5 {
+    font-size: 0.90rem;
+}
+
+a, a:visited {
+    color: #909090;
+}
+
+.widget {
+    z-index: 1;
+    min-width: 1px;
+}
+
+    .widget h4 {
+        font-size: 18px;
+        margin: 20px 0px 10px 0px;
+        font-weight: normal;
+    }
+
+    .widget .content {
+        margin: 0px 0px 20px 0px;
+        padding: 0px;
+    }
+
+    .widget .delete {
+        margin-left: 10px;
+        float: right;
+        font-family: Arial,Sans-Serif;
+        font-size: 11px;
+    }
+
+    .widget .edit {
+        float: right;
+    }
+
+.tagcloud li {
+    display: inline;
+    margin-right: 5px;
+}
+
+.tagcloud ul {
+    padding: 0px;
+}
+
+.tagcloud a.biggest {
+    font-size: 20px;
+}
+
+.tagcloud a.big {
+    font-size: 17px;
+}
+
+.tagcloud a.medium {
+    font-size: 13px;
+}
+
+.tagcloud a.small {
+    font-size: 12px;
+}
+
+.tagcloud a.smallest {
+    font-size: 10px;
+}
+
