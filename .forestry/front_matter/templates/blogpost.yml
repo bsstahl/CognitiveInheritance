@@ -29,15 +29,6 @@ fields:
     schema:
       format: markdown
   label: Description
-- name: content
-  type: textarea
-  default: ''
-  config:
-    required: false
-    wysiwyg: false
-    schema:
-      format: markdown
-  label: Content
 - name: ispublished
   type: boolean
   label: IsPublished
