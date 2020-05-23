@@ -4,9 +4,13 @@ auto_deploy: false
 admin_path: 
 webhook_url: 
 sections:
-- type: document
-  path: SiteSettings.md
-  label: SiteSettings
+- type: directory
+  path: Data/**/*
+  label: Data
+  create: documents
+  match: "**/*"
+  templates:
+  - sitesettings
 - type: directory
   path: Pages
   label: Pages
