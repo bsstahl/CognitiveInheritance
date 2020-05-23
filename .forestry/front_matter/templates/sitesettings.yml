@@ -45,5 +45,3 @@ fields:
   config:
     required: false
   label: Copyright
-pages:
-- Data/cognitive-inheritance.md
