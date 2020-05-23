@@ -11,8 +11,8 @@ title: Exception Handling Block
 description: ''
 ispublished: true
 showinlist: false
-publicationdate: 2006-05-08T19:57:00.000+00:00
-lastmodificationdate: 0001-01-02T09:30:00.000+00:00
+publicationdate: 2006-05-08T12:57:00.000+00:00
+lastmodificationdate: 0001-01-02T02:03:00.000+00:00
 slug: Exception-Handling-Block
 categoryids:
 - categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
