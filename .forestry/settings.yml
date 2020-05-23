@@ -16,11 +16,15 @@ sections:
   label: Pages
   create: all
   match: "**/*"
+  templates:
+  - contentitem
 - type: directory
   path: Posts
   label: Posts
   create: documents
   match: "**/*"
+  templates:
+  - contentitem
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
