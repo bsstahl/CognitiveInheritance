@@ -5,9 +5,8 @@ admin_path:
 webhook_url: 
 sections:
 - type: document
-  path: ''
+  path: SiteSettings.md
   label: SiteSettings
-  match: "**/*"
 - type: directory
   path: Pages
   label: Pages
