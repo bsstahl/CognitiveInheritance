@@ -22,51 +22,35 @@ byline: Posted by bsstahl
 ---
 Rob Bagby continued his outstanding presentations with not just an overview of the Exception Handling Block, but a full-blown strategy for handling exceptions. Rob had 5 goals for the session which I have paraphrased below:
 
-1\. Understand when and why to catch an exception 
+* Understand when and why to catch an exception
 
-	1. To Recover from the error (or attempt to)
+    To Recover from the error (or attempt to)
+    To Add Context
+    To Clean up (close connections, etc)
+    To Log or Notify
+    To hide the details of an exception
 
-	1. To Add Context
+* Understand the categories of exceptions
 
-	1. To Clean up (close connections, etc)
+    Business
+    Technical
+    Security
 
-	1. To Log or Notify
+* Understand what is truly an exception
 
-	1. To hide the details of an exception
+    Don't use exceptions for flow-control
 
-1\. Understand the categories of exceptions
+* Understand Exception Propagation Options
 
-	1. Business
+    Automatic Propogation (bubbling)
+    Catch & Rethrow (Clean, Resolve, Log)
+    Catch, Wrap & Throw Wrapped
 
-	1. Technical
+* Understand Custom Exceptions and When to Use Them
 
-	1. Security
-
-1\. Understand what is truly an exception 
-
-	1. Don't use exceptions for flow-control
-
-1\. Understand Exception Propogation Options 
-
-	1. Automatic Propogation (bubbling)
-
-	1. Catch & Rethrow 
-
-		1. Clean
-
-		1. Resolve
-
-		1. Log
-
-	1. Catch, Wrap & Throw Wrapped
-
-1\. Understand Custom Exceptions and When to Use Them
-
-	1. When an appropriate exception doesn't already exist
-
-	1. To add discreet handling
-
-	1. To add a specific behavior or information 
+    When an appropriate exception doesn't already exist
+    To add discreet handling
+    To add a specific behavior or information 
 
 Rob went into quite a few specifics on exactly how this information could be utilized which is in the slide decks that I will link to asap.
 
