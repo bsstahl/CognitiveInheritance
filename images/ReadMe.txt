@@ -1,1 +1,0 @@
-This folder was added to allow pics for blog entries that were transferred from other systems to be stored without having to change the path to them in the entries.  This folder should probably not be used in the future.
