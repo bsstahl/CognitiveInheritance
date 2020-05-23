@@ -1,4 +1,100 @@
 ---
-label: BlogPost
+label: ContentItem
 hide_body: false
-fields: []
+fields:
+- name: id
+  type: text
+  config:
+    required: false
+  label: Id
+  description: Guid used as the PK of the ContentItem
+- name: author
+  type: text
+  config:
+    required: false
+  label: Author
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+- name: description
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Description
+- name: content
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Content
+- name: ispublished
+  type: boolean
+  label: IsPublished
+- name: showinlist
+  type: boolean
+  label: ShowInList
+- name: publicationdate
+  type: datetime
+  label: PublicationDate
+  description: ''
+  config:
+    required: false
+    date_format: 
+    time_format: 
+    display_utc: false
+- name: lastmodificationdate
+  type: datetime
+  label: LastModificationDate
+  description: ''
+  config:
+    required: false
+    date_format: 
+    time_format: 
+    display_utc: false
+- name: slug
+  type: text
+  config:
+    required: false
+  label: Slug
+- name: tags
+  type: tag_list
+  default: []
+  label: Tags
+- name: categoryids
+  type: field_group_list
+  fields:
+  - name: categoryid
+    type: text
+    config:
+      required: false
+    label: CategoryId
+    description: Guid
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: CategoryIds
+- name: menuorder
+  type: number
+  label: MenuOrder
+  description: ''
+  default: 0
+  required: true
+  config:
+    min: 
+    max: 
+    step: 
+- name: byline
+  type: text
+  config:
+    required: false
+  label: ByLine
