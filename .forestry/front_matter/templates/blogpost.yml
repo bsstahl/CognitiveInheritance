@@ -1,6 +1,7 @@
 ---
 label: ContentItem
 hide_body: false
+display_field: title
 fields:
 - name: id
   type: text
