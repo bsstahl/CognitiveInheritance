@@ -9,7 +9,6 @@ id: 3273c985-8281-4366-91fa-4143851a2b99
 author: bsstahl
 title: Exception Handling Block
 description: ''
-content: ''
 ispublished: true
 showinlist: false
 publicationdate: 2006-05-08T19:57:00Z
