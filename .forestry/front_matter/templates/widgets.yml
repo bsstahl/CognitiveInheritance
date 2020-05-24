@@ -17,4 +17,4 @@ fields:
     labelField: title
   label: Widgets
 pages:
-- Data/about-the-author.md
+- Data/Widgets.md
