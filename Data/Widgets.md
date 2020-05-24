@@ -1,5 +1,15 @@
 ---
 widgets:
+- id: 76dfb6eb-1931-47b6-bece-167a7d0a0b79
+  title: Tag Cloud
+  showtitle: true
+  widgettype: Tag_cloud
+  dictionary: []
+- id: fb38ecdd-5813-4d10-8c5f-8d901c7c731e
+  title: Search
+  showtitle: true
+  widgettype: Search
+  dictionary: []
 - title: Administration
   id: 42fcbe7c-2c9c-440a-bad9-65a94472fccc
   showtitle: true
