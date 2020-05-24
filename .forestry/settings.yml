@@ -10,6 +10,7 @@ sections:
   create: documents
   match: "**/*"
   templates:
+  - widgets
   - categories
   - sitesettings
 - type: directory
