@@ -15,3 +15,5 @@ fields:
     max: 
     labelField: 
   label: Categories
+pages:
+- Data/Categories.md
