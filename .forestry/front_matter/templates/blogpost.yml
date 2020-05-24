@@ -95,4 +95,5 @@ fields:
     required: false
   label: ByLine
 pages:
+- Pages/basic-app-privacy-policy.md
 - Posts/exception-handling-block.md
