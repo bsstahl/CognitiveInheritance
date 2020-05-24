@@ -45,3 +45,5 @@ fields:
   config:
     required: false
   label: Copyright
+pages:
+- Data/SiteSettings.md
