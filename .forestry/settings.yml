@@ -18,14 +18,14 @@ sections:
   create: all
   match: "**/*"
   templates:
-  - blogpost
+  - contentitem
 - type: directory
   path: Posts
   label: Posts
   create: documents
   match: "**/*"
   templates:
-  - blogpost
+  - contentitem
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
