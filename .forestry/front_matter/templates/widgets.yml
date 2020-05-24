@@ -8,3 +8,5 @@ fields:
   config: {}
   template: widget
   label: Widget
+pages:
+- Data/about-the-author.md
