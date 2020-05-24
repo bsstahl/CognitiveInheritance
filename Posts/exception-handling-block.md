@@ -16,7 +16,6 @@ lastmodificationdate: 0001-01-02T02:03:00.000+00:00
 slug: Exception-Handling-Block
 categoryids:
 - categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
-byline: Posted by bsstahl
 
 ---
 Rob Bagby continued his outstanding presentations with not just an overview of the Exception Handling Block, but a full-blown strategy for handling exceptions. Rob had 5 goals for the session which I have paraphrased below:
