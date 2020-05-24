@@ -6,13 +6,17 @@ fields:
 - name: id
   type: text
   config:
-    required: false
+    required: true
+    min: 36
+    max: 36
   label: Id
   description: Guid PK of the Category
 - name: name
   type: text
   config:
-    required: false
+    required: true
+    min: 1
+    max: 50
   label: Name
   description: 'The name that is displayed for this category. '
 - name: description
