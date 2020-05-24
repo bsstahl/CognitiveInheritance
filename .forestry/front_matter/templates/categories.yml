@@ -1,4 +1,17 @@
 ---
 label: Categories
 hide_body: true
-fields: []
+fields:
+- name: categories
+  type: field_group_list
+  fields:
+  - name: category
+    type: include
+    config: {}
+    template: category
+    label: Category
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Categories
