@@ -14,7 +14,6 @@ publicationdate: 2013-03-26T04:53:36Z
 lastmodificationdate: 2013-03-26T04:53:36Z
 slug: Basic-App-Privacy-Policy
 categoryids: []
-byline: ''
 
 ---
 This application does not collect any personal information.
