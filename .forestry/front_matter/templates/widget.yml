@@ -1,4 +1,53 @@
 ---
 label: Widget
 hide_body: true
-fields: []
+display_field: title
+fields:
+- name: id
+  type: text
+  config:
+    required: true
+    min: 36
+    max: 36
+  label: Id
+  description: Guid PK of the widget
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+- name: showtitle
+  type: boolean
+  label: ShowTitle
+  description: Indicates whether or not the Title is rendered on the widget
+  default: false
+- name: widgettype
+  type: text
+  config:
+    required: false
+    min: 6
+    max: 15
+  label: WidgetType
+- name: dictionary
+  type: field_group_list
+  fields:
+  - name: key
+    type: text
+    config:
+      required: true
+      min: 2
+      max: 25
+    label: Key
+  - name: value
+    type: text
+    config:
+      required: false
+      min: 
+    label: Value
+  config:
+    min: 0
+    max: 
+    labelField: key
+  label: Dictionary
+  description: A collection of dictionary entries that provide configuration data
+    for the widget
