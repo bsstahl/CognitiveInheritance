@@ -1,4 +1,10 @@
 ---
 label: Widgets
 hide_body: true
-fields: []
+display_field: title
+fields:
+- name: widget
+  type: include
+  config: {}
+  template: widget
+  label: Widget
