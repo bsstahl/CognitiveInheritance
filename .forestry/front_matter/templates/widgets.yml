@@ -3,10 +3,18 @@ label: Widgets
 hide_body: true
 display_field: title
 fields:
-- name: widget
-  type: include
-  config: {}
-  template: widget
-  label: Widget
+- name: widgets
+  type: field_group_list
+  fields:
+  - name: widget
+    type: include
+    config: {}
+    template: widget
+    label: Widget
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Widgets
 pages:
 - Data/about-the-author.md
