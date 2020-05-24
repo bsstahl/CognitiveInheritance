@@ -1,4 +1,22 @@
 ---
 label: Category
 hide_body: true
-fields: []
+fields:
+- name: id
+  type: text
+  config:
+    required: false
+  label: Id
+  description: Guid PK of the Category
+- name: name
+  type: text
+  config:
+    required: false
+  label: Name
+  description: 'The name that is displayed for this category. '
+- name: description
+  type: text
+  config:
+    required: false
+  label: Description
+  description: The helper text for this category
