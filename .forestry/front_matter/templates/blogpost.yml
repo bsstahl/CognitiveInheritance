@@ -89,11 +89,6 @@ fields:
     min: 
     max: 
     step: 
-- name: byline
-  type: text
-  config:
-    required: false
-  label: ByLine
 pages:
 - Pages/basic-app-privacy-policy.md
 - Posts/exception-handling-block.md
