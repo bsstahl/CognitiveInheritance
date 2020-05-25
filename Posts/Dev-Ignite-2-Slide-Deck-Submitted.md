@@ -3,7 +3,7 @@ tags: []
 menuorder: 0
 id: 3cc08607-5998-4b6d-a7e0-0876d4cc4f7d
 author: bsstahl
-title: Dev Ignite 2 Slide Deck Submitted
+title: Dev Ignite #2 Slide Deck Submitted
 description: 
 ispublished: true
 showinlist: false
@@ -11,7 +11,7 @@ publicationdate: 2009-11-09T12:07:59
 lastmodificationdate: 0001-01-01T18:00:00
 slug: Dev-Ignite-2-Slide-Deck-Submitted
 categoryids:
-- 527f404c-3f34-4377-91c9-443f2eedf0b9
+- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
 
 ---
 

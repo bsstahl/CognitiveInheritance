@@ -12,7 +12,7 @@ publicationdate: 2006-05-07T16:00:00
 lastmodificationdate: 2010-10-22T18:11:03
 slug: Arrival
 categoryids:
-- 527f404c-3f34-4377-91c9-443f2eedf0b9
+- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
 
 ---
 Nice. On arrival, we were given Free copies of "Writing Secure Code" from Microsoft Press, along with schedules and a few other things. This looks to be more organized than I thought it would be and should turn out to be very interesting.  

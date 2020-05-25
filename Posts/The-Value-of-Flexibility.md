@@ -23,7 +23,7 @@ publicationdate: 2019-02-14T16:31:05
 lastmodificationdate: 2019-02-14T16:31:05
 slug: The-Value-of-Flexibility
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 

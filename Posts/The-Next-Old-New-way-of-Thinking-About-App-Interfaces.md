@@ -18,7 +18,7 @@ publicationdate: 2014-04-04T12:26:00
 lastmodificationdate: 2014-06-14T13:00:35
 slug: The-Next-Old-New-way-of-Thinking-About-App-Interfaces
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 

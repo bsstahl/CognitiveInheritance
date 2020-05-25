@@ -11,7 +11,7 @@ publicationdate: 2011-07-29T17:25:59
 lastmodificationdate: 2011-07-29T17:25:59
 slug: Microsoft-Developers-and-HTML5
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 

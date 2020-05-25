@@ -20,7 +20,7 @@ publicationdate: 2018-12-13T21:39:17
 lastmodificationdate: 2018-12-13T21:40:33
 slug: Developer-on-Fire
 categoryids:
-- 19770e74-9ec9-4cde-b2ab-e5051aaaf348
+- categoryid: 19770e74-9ec9-4cde-b2ab-e5051aaaf348
 
 ---
 

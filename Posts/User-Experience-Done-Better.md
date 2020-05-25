@@ -12,7 +12,7 @@ publicationdate: 2012-02-02T09:44:47
 lastmodificationdate: 2012-02-02T09:44:47
 slug: User-Experience-Done-Better
 categoryids:
-- 19770e74-9ec9-4cde-b2ab-e5051aaaf348
+- categoryid: 19770e74-9ec9-4cde-b2ab-e5051aaaf348
 
 ---
 

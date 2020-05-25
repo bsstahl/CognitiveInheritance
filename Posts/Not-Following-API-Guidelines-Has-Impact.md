@@ -17,7 +17,7 @@ publicationdate: 2016-01-25T17:07:21
 lastmodificationdate: 2016-01-25T17:07:21
 slug: Not-Following-API-Guidelines-Has-Impact
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 

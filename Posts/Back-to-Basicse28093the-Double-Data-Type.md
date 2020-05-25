@@ -20,7 +20,7 @@ publicationdate: 2019-02-12T02:55:23
 lastmodificationdate: 2019-02-12T02:55:23
 slug: Back-to-Basicse28093the-Double-Data-Type
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 

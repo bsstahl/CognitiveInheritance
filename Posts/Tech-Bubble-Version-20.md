@@ -11,7 +11,7 @@ publicationdate: 2011-01-31T12:30:52
 lastmodificationdate: 2011-01-31T12:30:52
 slug: Tech-Bubble-Version-20
 categoryids:
-- 19770e74-9ec9-4cde-b2ab-e5051aaaf348
+- categoryid: 19770e74-9ec9-4cde-b2ab-e5051aaaf348
 
 ---
 

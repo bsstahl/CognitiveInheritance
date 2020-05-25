@@ -14,7 +14,7 @@ publicationdate: 2006-05-21T04:24:00
 lastmodificationdate: 2010-10-22T18:11:35
 slug: XSL-vs-Regular-Expressions
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 

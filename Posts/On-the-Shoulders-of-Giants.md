@@ -15,7 +15,7 @@ publicationdate: 2018-03-11T03:07:10
 lastmodificationdate: 2018-03-20T17:58:44
 slug: On-the-Shoulders-of-Giants
 categoryids:
-- 19770e74-9ec9-4cde-b2ab-e5051aaaf348
+- categoryid: 19770e74-9ec9-4cde-b2ab-e5051aaaf348
 
 ---
 

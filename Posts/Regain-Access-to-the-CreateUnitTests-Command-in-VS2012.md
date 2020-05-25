@@ -11,7 +11,7 @@ publicationdate: 2012-12-27T15:16:00
 lastmodificationdate: 2012-12-27T15:16:00
 slug: Regain-Access-to-the-CreateUnitTests-Command-in-VS2012
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 

@@ -17,7 +17,7 @@ publicationdate: 2011-02-03T18:38:00
 lastmodificationdate: 2011-03-08T07:26:12
 slug: Using-Entity-Framework-databases-foreign-key-relationships-do-not-link-to-primary-key
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 

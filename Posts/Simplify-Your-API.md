@@ -22,7 +22,7 @@ publicationdate: 2015-10-12T13:15:00
 lastmodificationdate: 2015-10-12T16:17:48
 slug: Simplify-Your-API
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 

@@ -15,8 +15,8 @@ publicationdate: 2006-05-09T07:57:00
 lastmodificationdate: 2011-03-08T07:26:19
 slug: Holding-the-Web-on-Your-Shoulders-With-Atlas
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
-- 527f404c-3f34-4377-91c9-443f2eedf0b9
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
 
 ---
 Despite the title (smirk), this session was actually interesting and valuable. Tim Heuer, who gave us many ways to contact him, is a Microsoft guy who definately likes the capability of AJAX using the Atlas framework. There was simply too much information to try and summarize it here, but suffice it to say that, when used in the proper way, Atlas appears to be a strong model for UI development that is consistant with the way we currently do development. It may even help to extend the boundaries of where and why it is appropriate to use client-side JavaScript.   

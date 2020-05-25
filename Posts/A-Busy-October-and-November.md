@@ -18,7 +18,7 @@ publicationdate: 2016-10-05T21:20:00
 lastmodificationdate: 0001-01-02T02:00:00
 slug: A-Busy-October-and-November
 categoryids:
-- 527f404c-3f34-4377-91c9-443f2eedf0b9
+- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
 
 ---
 

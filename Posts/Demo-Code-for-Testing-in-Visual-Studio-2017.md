@@ -29,7 +29,7 @@ publicationdate: 2017-03-16T04:54:01
 lastmodificationdate: 2017-03-16T04:54:01
 slug: Demo-Code-for-Testing-in-Visual-Studio-2017
 categoryids:
-- 527f404c-3f34-4377-91c9-443f2eedf0b9
+- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
 
 ---
 

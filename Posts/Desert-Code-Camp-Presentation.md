@@ -24,8 +24,8 @@ publicationdate: 2011-04-02T14:45:48
 lastmodificationdate: 2011-04-02T14:45:48
 slug: Desert-Code-Camp-Presentation
 categoryids:
-- 527f404c-3f34-4377-91c9-443f2eedf0b9
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 

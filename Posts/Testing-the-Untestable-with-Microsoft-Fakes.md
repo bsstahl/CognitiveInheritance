@@ -24,7 +24,7 @@ publicationdate: 2017-03-20T22:41:41
 lastmodificationdate: 2017-03-20T22:43:09
 slug: Testing-the-Untestable-with-Microsoft-Fakes
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 

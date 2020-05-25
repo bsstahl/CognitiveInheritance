@@ -18,7 +18,7 @@ publicationdate: 2011-06-07T08:46:42
 lastmodificationdate: 2011-06-07T08:46:42
 slug: Code-Analysis-Rules
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 

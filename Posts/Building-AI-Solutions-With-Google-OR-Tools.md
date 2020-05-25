@@ -21,7 +21,7 @@ publicationdate: 2017-09-28T20:53:44
 lastmodificationdate: 2017-09-28T20:53:44
 slug: Building-AI-Solutions-with-Google-OR-Tools
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 

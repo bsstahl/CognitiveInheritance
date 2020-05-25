@@ -18,8 +18,8 @@ publicationdate: 2009-07-13T02:51:00
 lastmodificationdate: 2010-10-22T18:11:35
 slug: Developer-Ignite-in-Chandler
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
-- 527f404c-3f34-4377-91c9-443f2eedf0b9
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
 
 ---
 

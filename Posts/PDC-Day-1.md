@@ -19,7 +19,7 @@ publicationdate: 2003-10-29T18:53:00
 lastmodificationdate: 2009-03-02T14:26:36
 slug: PDC-Day-1
 categoryids:
-- 527f404c-3f34-4377-91c9-443f2eedf0b9
+- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
 
 ---
 

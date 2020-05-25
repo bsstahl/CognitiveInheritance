@@ -28,7 +28,7 @@ publicationdate: 2012-02-13T13:25:00
 lastmodificationdate: 2012-02-13T17:16:08
 slug: Code-Sample-for-My-TDD-Kickstart-Sessions
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 

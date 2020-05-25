@@ -16,7 +16,7 @@ publicationdate: 2015-10-05T21:24:10
 lastmodificationdate: 2015-10-05T21:25:00
 slug: Use-One-Email-Alias-per-Account
 categoryids:
-- 6c832ded-5954-45fb-94a6-5538339ac204
+- categoryid: 6c832ded-5954-45fb-94a6-5538339ac204
 
 ---
 

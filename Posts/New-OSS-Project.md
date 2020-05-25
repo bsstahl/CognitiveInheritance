@@ -25,7 +25,7 @@ publicationdate: 2014-07-11T11:53:39
 lastmodificationdate: 2014-07-11T11:53:39
 slug: New-OSS-Project
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 

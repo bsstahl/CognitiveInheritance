@@ -15,7 +15,7 @@ publicationdate: 2007-06-26T18:18:00
 lastmodificationdate: 0001-01-01T08:00:00
 slug: Testing-Properties-with-Inconsistent-Accessibility
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 

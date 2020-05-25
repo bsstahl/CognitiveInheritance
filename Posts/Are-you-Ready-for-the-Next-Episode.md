@@ -27,7 +27,7 @@ publicationdate: 2015-06-29T19:45:05
 lastmodificationdate: 2015-06-29T19:45:05
 slug: Are-you-Ready-for-the-Next-Episode
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 

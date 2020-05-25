@@ -11,7 +11,7 @@ publicationdate: 2011-06-20T09:03:23
 lastmodificationdate: 2011-06-20T09:03:23
 slug: Programming-Jargon-Dictionary
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 

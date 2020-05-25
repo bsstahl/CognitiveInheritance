@@ -11,7 +11,7 @@ publicationdate: 2009-07-31T22:17:52
 lastmodificationdate: 2010-10-22T18:11:26
 slug: Development-Posters
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 

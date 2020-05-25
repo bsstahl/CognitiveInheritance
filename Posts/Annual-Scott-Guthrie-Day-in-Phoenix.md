@@ -15,7 +15,7 @@ publicationdate: 2011-04-06T08:21:35
 lastmodificationdate: 2011-04-06T08:34:37
 slug: Annual-Scott-Guthrie-Day-in-Phoenix
 categoryids:
-- 527f404c-3f34-4377-91c9-443f2eedf0b9
+- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
 
 ---
 I am very excited to once again be attending the annual Day of ScottGu in Arizona. If you haven't been to this event before, you need to sign up right now (below). Those who have been to previous events are probably already signed-up. For more information, see the text below the signup form or the [AZGroups](http://azgroups.org/2011scottguevent.aspx) website.       

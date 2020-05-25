@@ -25,7 +25,7 @@ publicationdate: 2019-02-26T04:57:21
 lastmodificationdate: 2019-02-26T04:57:21
 slug: Three-Awesome-Months
 categoryids:
-- 527f404c-3f34-4377-91c9-443f2eedf0b9
+- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
 
 ---
 

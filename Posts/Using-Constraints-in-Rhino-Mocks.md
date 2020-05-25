@@ -11,7 +11,7 @@ publicationdate: 2009-04-17T13:57:52
 lastmodificationdate: 2011-03-14T17:32:27
 slug: Using-Constraints-in-Rhino-Mocks
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 

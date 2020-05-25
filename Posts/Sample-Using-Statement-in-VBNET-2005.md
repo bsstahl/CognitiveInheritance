@@ -14,7 +14,7 @@ publicationdate: 2006-04-28T20:33:00
 lastmodificationdate: 2010-10-22T18:11:36
 slug: Sample-Using-Statement-in-VBNET-2005
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 Using wsBlogService As New BlogService.Blog  

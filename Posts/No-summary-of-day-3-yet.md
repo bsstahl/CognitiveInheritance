@@ -12,7 +12,7 @@ publicationdate: 2003-11-01T04:08:00
 lastmodificationdate: 2010-10-22T18:11:36
 slug: No-summary-of-day-3-yet
 categoryids:
-- 527f404c-3f34-4377-91c9-443f2eedf0b9
+- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
 
 ---
 Thanks to Microsoft's hosting of a party for all conference attendees at Universal Studios, I haven't yet put together a summary of conference day 3. I hope to summarize days 3 and 4 together and post them by late Friday morning.  

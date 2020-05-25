@@ -14,7 +14,7 @@ publicationdate: 2015-04-08T13:58:00
 lastmodificationdate: 2015-10-07T18:21:39
 slug: OneNote-Notebooks-remain-e2809cNot-Connectede2809d
 categoryids:
-- 6c832ded-5954-45fb-94a6-5538339ac204
+- categoryid: 6c832ded-5954-45fb-94a6-5538339ac204
 
 ---
 

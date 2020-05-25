@@ -16,7 +16,7 @@ publicationdate: 2008-10-29T15:29:00
 lastmodificationdate: 2011-03-08T07:26:23
 slug: PDC-2008-Day-1
 categoryids:
-- 527f404c-3f34-4377-91c9-443f2eedf0b9
+- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
 
 ---
 

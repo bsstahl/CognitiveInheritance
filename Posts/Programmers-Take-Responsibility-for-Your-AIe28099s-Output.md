@@ -10,7 +10,7 @@ tags:
 menuorder: 0
 id: 686f1de9-562f-4ef5-a3ac-4a75da9373f8
 author: bsstahl
-title: Programmers -- Take Responsibility for Your AI’s Output
+title: Programmers: Take Responsibility for Your AI’s Output
 description: 
 ispublished: true
 showinlist: false
@@ -18,7 +18,7 @@ publicationdate: 2018-03-16T03:22:42
 lastmodificationdate: 2018-03-16T03:22:42
 slug: Programmers-Take-Responsibility-for-Your-AIe28099s-Output
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 

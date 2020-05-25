@@ -19,7 +19,7 @@ publicationdate: 2018-10-31T03:10:44
 lastmodificationdate: 2018-10-31T05:17:49
 slug: Save-the-Date-for-AZGiveCamp-IX
 categoryids:
-- 527f404c-3f34-4377-91c9-443f2eedf0b9
+- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
 
 ---
 

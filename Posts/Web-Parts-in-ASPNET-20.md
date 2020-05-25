@@ -13,7 +13,7 @@ publicationdate: 2006-05-08T08:52:00
 lastmodificationdate: 2010-10-22T18:11:36
 slug: Web-Parts-in-ASPNET-20
 categoryids:
-- 527f404c-3f34-4377-91c9-443f2eedf0b9
+- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
 
 ---
 Again, not too much new material here but still a good session. Chris Rolon gave us an high-speed overview of the Web Part framework in .NET 2.0 including many of the key features and his suggestions for using them. Again, I will post links to the slide decks as I get them.  

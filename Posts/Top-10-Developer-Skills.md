@@ -13,7 +13,7 @@ publicationdate: 2009-04-18T13:05:00
 lastmodificationdate: 2009-04-18T11:07:28
 slug: Top-10-Developer-Skills
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 

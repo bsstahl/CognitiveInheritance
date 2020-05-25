@@ -12,7 +12,7 @@ publicationdate: 2009-10-27T17:41:10
 lastmodificationdate: 0001-01-01T00:00:00
 slug: Will-Augmented-Reality-Finally-Make-My-Lifes-Dream-Come-True
 categoryids:
-- 19770e74-9ec9-4cde-b2ab-e5051aaaf348
+- categoryid: 19770e74-9ec9-4cde-b2ab-e5051aaaf348
 
 ---
 

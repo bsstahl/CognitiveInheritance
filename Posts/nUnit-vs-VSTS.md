@@ -15,7 +15,7 @@ publicationdate: 2006-10-07T05:42:00
 lastmodificationdate: 0001-01-03T00:00:00
 slug: nUnit-vs-VSTS
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 

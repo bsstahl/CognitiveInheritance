@@ -27,7 +27,7 @@ publicationdate: 2017-01-09T19:32:03
 lastmodificationdate: 2017-01-09T19:32:03
 slug: Testing-a-NET-Core-Library-in-VS2015
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 

@@ -20,7 +20,7 @@ publicationdate: 2015-09-30T16:43:08
 lastmodificationdate: 2015-09-30T16:45:25
 slug: Office-Lense28093Magic-in-a-Free-App
 categoryids:
-- 6c832ded-5954-45fb-94a6-5538339ac204
+- categoryid: 6c832ded-5954-45fb-94a6-5538339ac204
 
 ---
 

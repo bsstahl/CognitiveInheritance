@@ -13,7 +13,7 @@ publicationdate: 2011-06-28T09:47:52
 lastmodificationdate: 2011-06-28T09:47:52
 slug: Wiffle-Ball-for-Charity
 categoryids:
-- 527f404c-3f34-4377-91c9-443f2eedf0b9
+- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
 
 ---
 

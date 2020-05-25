@@ -14,7 +14,7 @@ publicationdate: 2006-10-02T20:48:00
 lastmodificationdate: 2011-03-14T17:32:26
 slug: SQL-ERD-for-Membership-and-Other-ASPNET-20-Services
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 ![Entity-Relationship Diagram for the Microsoft ASP.NET Membership Provider](/images/MembershipERD_500x424.png)

@@ -24,7 +24,7 @@ publicationdate: 2017-10-16T01:37:58
 lastmodificationdate: 2017-10-16T01:37:58
 slug: Desert-Code-Campe28093October-2017
 categoryids:
-- 527f404c-3f34-4377-91c9-443f2eedf0b9
+- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
 
 ---
 

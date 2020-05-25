@@ -17,7 +17,7 @@ publicationdate: 2010-11-12T20:45:00
 lastmodificationdate: 2010-11-12T20:52:08
 slug: Two-Things-I-Learned-on-Pex4Funcom-Today
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 

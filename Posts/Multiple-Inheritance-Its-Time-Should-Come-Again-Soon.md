@@ -15,7 +15,7 @@ publicationdate: 2008-06-16T15:17:00
 lastmodificationdate: 2010-10-22T18:11:02
 slug: Multiple-Inheritance-Its-Time-Should-Come-Again-Soon
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 

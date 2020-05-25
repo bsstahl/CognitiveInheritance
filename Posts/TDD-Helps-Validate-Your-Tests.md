@@ -17,7 +17,7 @@ publicationdate: 2016-03-05T12:55:28
 lastmodificationdate: 2016-03-05T12:55:28
 slug: TDD-Helps-Validate-Your-Tests
 categoryids:
-- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 
