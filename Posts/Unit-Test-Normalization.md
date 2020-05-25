@@ -13,7 +13,8 @@ showinlist: false
 publicationdate: 2007-07-07T08:03:00.000+00:00
 lastmodificationdate: 2010-10-22T18:11:36.000+00:00
 slug: Unit-Test-Normalization
-categoryids: []
+categoryids:
+- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
 
 ---
 In a recent conversation about Unit Tests, I was asked about how many asserts I would put into a single test, since some feel that there should only be one Assert per test. My answer was, that I look at it like database normalization with the test name serving as the primary key; that is, the asserts in the test should relate directly and only to that key. This analogy is also appropriate because DB normalization is a good thing within reason, but can definately be overdone. Unit test "normalization" can also be overdone if we try to break-out each assert into its own test.
