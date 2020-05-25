@@ -1,0 +1,31 @@
+---
+tags:
+- soa
+- services
+- presentation
+- slides
+- code camp
+menuorder: 0
+id: ca95fc20-b4f5-4e5b-90f0-59548c5f5709
+author: bsstahl
+title: SOA–Beyond the Buzzwords
+description: 
+ispublished: true
+showinlist: false
+publicationdate: 2014-06-28T16:08:20
+lastmodificationdate: 2014-06-28T16:08:21
+slug: SOAe28093Beyond-the-Buzzwords
+categoryids:
+- 527f404c-3f34-4377-91c9-443f2eedf0b9
+- da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+
+---
+
+For those who saw my code camp presentation, “SOA – Beyond the Buzzwords”, you can find the slide deck [here](https://onedrive.live.com/redir?resid=5D45DDF99C1E1BCC%21219769).
+
+
+> There is much more to building a Service Oriented Architecture than just creating services. SOA services can be much more difficult to build, requiring more analysis and design work up-front than a non-service-enabled system or a system that relies on CRUD-style data services. In this session, we will look at real-world examples of SOAs, examining what a good SOA might look like, what conditions present a good opportunity to use a Service Oriented Architecture, and how we can make the process more agile. We will also look at some practical tips to help make your services more extensible and maintainable.
+
+
+For those who haven’t yet seen this presentation, I will be giving this session at several other code camps and user groups around the US between now and the end of the year.  Keep an eye on my [Speaking Engagements page](/page/Speaking-Engagements.aspx) or have your user group leader request me as a speaker via [Ineta](http://ineta.org/Speakers/SearchCommunitySpeakers.aspx?SpeakerId=4fdf7fc7-5cac-4842-acec-960815523108).
+
