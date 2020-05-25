@@ -9,7 +9,7 @@ tags:
 menuorder: 0
 id: 9b50d169-d967-4ee1-ba25-e97713bed19b
 author: bsstahl
-title: Conflict of Interest: YAGNI vs. Standardization
+title: Conflict of Interest-YAGNI vs. Standardization
 description: 
 ispublished: true
 showinlist: false

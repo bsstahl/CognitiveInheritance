@@ -14,7 +14,7 @@ tags:
 menuorder: 0
 id: a9d7154a-2798-4a77-851b-0783b45bc1b4
 author: bsstahl
-title: Meta-Abstraction: You Ain't Gonna Need It!
+title: Meta-Abstraction -- You Ain't Gonna Need It!
 description: 
 ispublished: true
 showinlist: false

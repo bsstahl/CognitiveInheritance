@@ -8,7 +8,7 @@ tags:
 menuorder: 0
 id: 20380740-06e6-4b0a-82ea-2d7ae4f368bc
 author: bsstahl
-title: Programmers: Take Responsibility for Your Program’s Output
+title: Programmers -- Take Responsibility for Your Program’s Output
 description: 
 ispublished: true
 showinlist: false
