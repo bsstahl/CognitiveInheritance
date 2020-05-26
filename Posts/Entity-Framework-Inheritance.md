@@ -12,8 +12,8 @@ showinlist: false
 publicationdate: 2011-01-20T14:32:00
 lastmodificationdate: 2011-01-20T14:36:58
 slug: Entity-Framework-Inheritance
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+categories:
+- Development
 
 ---
 

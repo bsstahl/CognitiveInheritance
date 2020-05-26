@@ -14,8 +14,8 @@ showinlist: false
 publicationdate: 2006-10-07T18:00:00
 lastmodificationdate: 0001-01-03T04:00:00
 slug: Profile-Provider-Exception
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+categories:
+- Development
 
 ---
 

@@ -23,8 +23,8 @@ showinlist: false
 publicationdate: 2016-08-11T04:26:53
 lastmodificationdate: 2016-08-11T04:28:51
 slug: AZGiveCamp-is-Breaking-the-Mold
-categoryids:
-- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
+categories:
+- Event
 
 ---
 

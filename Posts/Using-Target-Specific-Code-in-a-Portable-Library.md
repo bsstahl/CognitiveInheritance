@@ -19,8 +19,8 @@ showinlist: false
 publicationdate: 2013-06-27T16:05:00
 lastmodificationdate: 2013-06-27T16:51:31
 slug: Using-Target-Specific-Code-in-a-Portable-Library
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+categories:
+- Development
 
 ---
 

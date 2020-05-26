@@ -63,22 +63,10 @@ fields:
   type: tag_list
   default: []
   label: Tags
-- name: categoryids
-  type: field_group_list
-  fields:
-  - name: categoryid
-    type: text
-    config:
-      required: false
-      min: 36
-      max: 36
-    label: CategoryId
-    description: Guid
-  config:
-    min: 
-    max: 
-    labelField: 
-  label: CategoryIds
+- name: categories
+  type: tag_list
+  default: []
+  label: Category Names
 - name: menuorder
   type: number
   label: MenuOrder

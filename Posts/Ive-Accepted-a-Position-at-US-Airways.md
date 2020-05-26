@@ -12,8 +12,8 @@ showinlist: false
 publicationdate: 2008-06-13T05:59:00
 lastmodificationdate: 2010-10-22T18:10:23
 slug: Ive-Accepted-a-Position-at-US-Airways
-categoryids:
-- categoryid: 19770e74-9ec9-4cde-b2ab-e5051aaaf348
+categories:
+- General
 
 ---
 

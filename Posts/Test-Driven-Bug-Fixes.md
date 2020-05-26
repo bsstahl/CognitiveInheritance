@@ -16,8 +16,8 @@ showinlist: false
 publicationdate: 2016-02-27T10:44:33
 lastmodificationdate: 2016-02-27T10:45:42
 slug: Test-Driven-Bug-Fixes
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+categories:
+- Development
 
 ---
 

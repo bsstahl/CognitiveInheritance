@@ -10,7 +10,7 @@ showinlist: false
 publicationdate: 0001-01-01T00:00:00
 lastmodificationdate: 0001-01-01T00:00:00
 slug: Resources-from-my-Desert-Code-Camp-Presentation-Apr-2013
-categoryids: []
+categories: []
 
 ---
 **Desert Code Camp 2013.1 Presentation**[Presentation Slides](http://sdrv.ms/17zLGSG)[Demo Code](http://sdrv.ms/12beJss)**OData**[Open Data Protocol](http://www.odata.org/)[StackOverflow OData Root](http://data.stackexchange.com/stackoverflow/atom)[Introduction to OData](http://pluralsight.com/training/courses/TableOfContents?courseName=odata-introduction&amp;highlight=matt-milner_odata-introduction*9,10,0,1,3,5,11,2,4,6,7,8!matt-milner_odata-writing-services*0,5,7,3,6!matt-milner_odata-consuming-services*0,8,10,9#odata-introduction) (Pluralsight course)  

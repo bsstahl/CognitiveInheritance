@@ -16,8 +16,8 @@ showinlist: false
 publicationdate: 2015-09-28T18:01:02
 lastmodificationdate: 2015-09-29T08:33:20
 slug: Remove-Any-Code-Your-Users-Dont-Care-About
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+categories:
+- Development
 
 ---
 

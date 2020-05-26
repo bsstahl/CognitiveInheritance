@@ -15,8 +15,8 @@ showinlist: false
 publicationdate: 2003-10-30T20:30:00
 lastmodificationdate: 0001-01-01T18:00:00
 slug: Afternoon-Day-2
-categoryids:
-- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
+categories:
+- Event
 
 ---
 With the exception of the previously mentioned security problems the remainder of day 2 went quite well. I attended sessions on Web design using ASP.NET Whidbey, the new features in Visual Basic.NET under Whidbey, as well as a talk on using Whidbey to program mobile devices such as Pocket PCs and Smartphones. Some of the most interesting topics from these sessions included the concept of Master Pages, which is similar to a frameset without actually using frames, the new navigation controls provided with Whidbey such as the breadcrumb, sitemap, and menu controls, and the use of SQL Server Cache invalidation to improve the application performance by caching objects without having to worry about those objects becoming stale.   

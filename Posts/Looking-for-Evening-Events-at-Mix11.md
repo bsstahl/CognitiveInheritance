@@ -13,8 +13,8 @@ showinlist: false
 publicationdate: 2011-01-30T15:50:00
 lastmodificationdate: 2011-03-14T17:32:24
 slug: Looking-for-Evening-Events-at-Mix11
-categoryids:
-- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
+categories:
+- Event
 
 ---
 

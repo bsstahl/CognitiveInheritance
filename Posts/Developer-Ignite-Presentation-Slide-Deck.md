@@ -10,8 +10,8 @@ showinlist: false
 publicationdate: 2009-07-23T08:18:00
 lastmodificationdate: 2009-07-23T04:22:39
 slug: Developer-Ignite-Presentation-Slide-Deck
-categoryids:
-- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
+categories:
+- Event
 
 ---
 

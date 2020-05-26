@@ -13,8 +13,8 @@ showinlist: false
 publicationdate: 2014-06-14T12:57:49
 lastmodificationdate: 2014-06-14T12:57:49
 slug: My-Comments-to-the-FCC-on-Net-Neutrality
-categoryids:
-- categoryid: 19770e74-9ec9-4cde-b2ab-e5051aaaf348
+categories:
+- General
 
 ---
 

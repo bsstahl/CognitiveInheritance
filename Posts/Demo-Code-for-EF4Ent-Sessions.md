@@ -28,8 +28,8 @@ showinlist: false
 publicationdate: 2011-06-26T13:10:33
 lastmodificationdate: 2011-06-26T13:10:33
 slug: Demo-Code-for-EF4Ent-Sessions
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+categories:
+- Development
 
 ---
 

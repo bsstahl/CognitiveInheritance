@@ -19,8 +19,8 @@ showinlist: false
 publicationdate: 2015-10-21T17:19:00
 lastmodificationdate: 2015-10-21T17:53:27
 slug: Dynamic-Optimization-Presentation
-categoryids:
-- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
+categories:
+- Event
 
 ---
 

@@ -12,8 +12,8 @@ showinlist: false
 publicationdate: 2011-02-13T07:14:16
 lastmodificationdate: 2011-02-13T07:14:16
 slug: South-Florida-Code-Camp-2011
-categoryids:
-- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
+categories:
+- Event
 
 ---
 

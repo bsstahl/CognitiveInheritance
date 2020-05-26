@@ -10,7 +10,7 @@ showinlist: false
 publicationdate: 0001-01-01T00:00:00
 lastmodificationdate: 0001-01-01T00:00:00
 slug: Resources-from-my-Twin-Cities-Code-Camp-Presentation-April-2013
-categoryids: []
+categories: []
 
 ---
 **TCCC13 Presentation**[Presentation Slides](http://sdrv.ms/17lioWQ)Demo Code (coming soon)**.NET Portable Libraries**[Cross-Platform Development with the .NET Framework](http://msdn.microsoft.com/en-us/library/gg597391.aspx)[API Differences in Portable Class Library](http://msdn.microsoft.com/en-us/library/gg597392.aspx)  

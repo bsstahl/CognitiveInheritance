@@ -16,8 +16,8 @@ showinlist: false
 publicationdate: 2008-06-04T01:59:00
 lastmodificationdate: 0001-01-03T02:00:00
 slug: Desert-Code-Camp-IV-Another-Great-Day
-categoryids:
-- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
+categories:
+- Event
 
 ---
 

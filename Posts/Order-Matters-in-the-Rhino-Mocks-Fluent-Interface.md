@@ -14,8 +14,8 @@ showinlist: false
 publicationdate: 2012-01-16T15:35:00
 lastmodificationdate: 2012-01-26T20:15:51
 slug: Order-Matters-in-the-Rhino-Mocks-Fluent-Interface
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+categories:
+- Development
 
 ---
 

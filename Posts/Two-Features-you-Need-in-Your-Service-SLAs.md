@@ -16,8 +16,8 @@ showinlist: false
 publicationdate: 2014-09-22T18:04:56
 lastmodificationdate: 2014-09-22T18:04:56
 slug: Two-Features-you-Need-in-Your-Service-SLAs
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+categories:
+- Development
 
 ---
 

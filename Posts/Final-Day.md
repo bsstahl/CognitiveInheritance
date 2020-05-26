@@ -12,8 +12,8 @@ showinlist: false
 publicationdate: 2003-06-03T21:22:00
 lastmodificationdate: 2010-10-22T18:11:36
 slug: Final-Day
-categoryids:
-- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
+categories:
+- Event
 
 ---
 

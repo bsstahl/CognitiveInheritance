@@ -10,8 +10,8 @@ showinlist: false
 publicationdate: 2009-06-26T20:59:15
 lastmodificationdate: 0001-01-03T10:00:00
 slug: Presentation-Proposal-Developer-Ignite-Phoenix
-categoryids:
-- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
+categories:
+- Event
 
 ---
 

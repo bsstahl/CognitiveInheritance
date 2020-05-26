@@ -27,8 +27,8 @@ showinlist: false
 publicationdate: 2018-09-26T18:12:49
 lastmodificationdate: 2018-09-26T18:26:38
 slug: Intro-to-WebAssembly-Using-Blazor
-categoryids:
-- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
+categories:
+- Event
 
 ---
 

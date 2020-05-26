@@ -21,9 +21,9 @@ showinlist: false
 publicationdate: 2003-11-02T16:48:00
 lastmodificationdate: 2010-10-22T18:11:36
 slug: Dictionary-of-PDC-e2809803-Terms
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
-- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
+categories:
+- Development
+- Event
 
 ---
 Instead of posting a summary of the last 2 days of the PDC, I decided to summarize the entire PDC as best I can by creating a glossary of terms. These terms came out of the PDC as either new, having a modified meaning, or greater importance than before.   

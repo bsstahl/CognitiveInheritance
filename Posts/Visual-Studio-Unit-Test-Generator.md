@@ -14,8 +14,8 @@ showinlist: false
 publicationdate: 2013-08-05T09:04:17
 lastmodificationdate: 2013-08-05T09:04:17
 slug: Visual-Studio-Unit-Test-Generator
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+categories:
+- Development
 
 ---
 

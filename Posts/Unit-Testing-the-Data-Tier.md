@@ -13,8 +13,8 @@ showinlist: false
 publicationdate: 2007-08-23T12:33:00
 lastmodificationdate: 2010-10-22T18:11:27
 slug: Unit-Testing-the-Data-Tier
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+categories:
+- Development
 
 ---
 

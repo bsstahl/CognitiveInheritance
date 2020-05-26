@@ -17,8 +17,8 @@ showinlist: false
 publicationdate: 2009-03-07T12:32:00
 lastmodificationdate: 2011-03-14T17:32:27
 slug: Oracle-String-SQL-Query-using-a-DateTime-from-C
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+categories:
+- Development
 
 ---
 

@@ -20,8 +20,8 @@ showinlist: false
 publicationdate: 2017-05-24T15:21:09
 lastmodificationdate: 2017-05-24T15:21:09
 slug: A-Requirement-for-AI-Systems
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+categories:
+- Development
 
 ---
 

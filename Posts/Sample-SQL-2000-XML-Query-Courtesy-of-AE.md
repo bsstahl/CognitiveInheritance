@@ -13,8 +13,8 @@ showinlist: false
 publicationdate: 2006-05-25T18:53:00
 lastmodificationdate: 2010-10-22T18:10:06
 slug: Sample-SQL-2000-XML-Query-Courtesy-of-AE
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+categories:
+- Development
 
 ---
 

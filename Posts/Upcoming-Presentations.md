@@ -10,8 +10,8 @@ showinlist: false
 publicationdate: 2013-02-06T10:48:09
 lastmodificationdate: 2013-02-06T10:48:09
 slug: Upcoming-Presentations
-categoryids:
-- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
+categories:
+- Event
 
 ---
 

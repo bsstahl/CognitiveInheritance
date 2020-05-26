@@ -15,9 +15,9 @@ showinlist: false
 publicationdate: 2014-06-28T16:08:20
 lastmodificationdate: 2014-06-28T16:08:21
 slug: SOAe28093Beyond-the-Buzzwords
-categoryids:
-- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+categories:
+- Event
+- Development
 
 ---
 

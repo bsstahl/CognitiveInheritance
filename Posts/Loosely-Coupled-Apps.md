@@ -11,8 +11,8 @@ showinlist: false
 publicationdate: 2006-05-09T13:20:00
 lastmodificationdate: 2010-10-22T18:11:27
 slug: Loosely-Coupled-Apps
-categoryids:
-- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
+categories:
+- Event
 
 ---
 I was expecting more of a "Best Practices for Data-Store Independance" type of session. This turned out to be more of a "Creating Web-Sites that Work Similarly Across Scripting Engines" thing.  

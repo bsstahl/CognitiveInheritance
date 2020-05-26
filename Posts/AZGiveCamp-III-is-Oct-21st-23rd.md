@@ -15,8 +15,8 @@ showinlist: false
 publicationdate: 2011-10-12T15:29:55
 lastmodificationdate: 2011-10-12T15:29:55
 slug: AZGiveCamp-III-is-Oct-21st-23rd
-categoryids:
-- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
+categories:
+- Event
 
 ---
 

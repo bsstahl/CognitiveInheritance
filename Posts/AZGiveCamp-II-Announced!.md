@@ -14,8 +14,8 @@ showinlist: false
 publicationdate: 2010-10-21T21:42:17
 lastmodificationdate: 2010-10-21T21:42:17
 slug: AZGiveCamp-II-Announced!
-categoryids:
-- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
+categories:
+- Event
 
 ---
 

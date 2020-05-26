@@ -15,8 +15,8 @@ showinlist: false
 publicationdate: 2015-09-30T17:23:00
 lastmodificationdate: 2015-09-30T19:16:18
 slug: Speaking-Engagements-for-October-2015
-categoryids:
-- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
+categories:
+- Event
 
 ---
 

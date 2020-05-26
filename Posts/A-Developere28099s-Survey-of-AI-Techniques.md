@@ -20,8 +20,8 @@ showinlist: false
 publicationdate: 2017-06-22T23:10:19
 lastmodificationdate: 2017-06-22T23:11:09
 slug: A-Developere28099s-Survey-of-AI-Techniques
-categoryids:
-- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
+categories:
+- Event
 
 ---
 

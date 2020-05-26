@@ -11,8 +11,8 @@ showinlist: false
 publicationdate: 2011-02-23T15:34:42
 lastmodificationdate: 2011-02-23T15:34:42
 slug: AZGiveCamp-III-Organization-Starts-33
-categoryids:
-- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
+categories:
+- Event
 
 ---
 

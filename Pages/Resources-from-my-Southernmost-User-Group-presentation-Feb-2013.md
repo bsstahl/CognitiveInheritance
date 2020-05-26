@@ -10,7 +10,7 @@ showinlist: false
 publicationdate: 0001-01-01T00:00:00
 lastmodificationdate: 0001-01-01T00:00:00
 slug: Resources-from-my-Southernmost-User-Group-presentation-Feb-2013
-categoryids: []
+categories: []
 
 ---
 **SMUG 2013 Presentation**[Presentation Slides](http://sdrv.ms/VBLTBN)Demo Code (coming soon)**.NET Portable Libraries**[Cross-Platform Development with the .NET Framework](http://msdn.microsoft.com/en-us/library/gg597391.aspx)[API Differences in Portable Class Library](http://msdn.microsoft.com/en-us/library/gg597392.aspx)  

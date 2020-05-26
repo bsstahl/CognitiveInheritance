@@ -18,8 +18,8 @@ showinlist: false
 publicationdate: 2017-05-06T18:40:03
 lastmodificationdate: 2017-05-06T18:40:03
 slug: Microservices-Presentation
-categoryids:
-- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
+categories:
+- Event
 
 ---
 

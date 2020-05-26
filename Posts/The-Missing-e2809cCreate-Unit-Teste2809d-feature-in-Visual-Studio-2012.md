@@ -10,8 +10,8 @@ showinlist: false
 publicationdate: 2012-09-16T17:14:01
 lastmodificationdate: 2012-09-16T17:14:01
 slug: The-Missing-e2809cCreate-Unit-Teste2809d-feature-in-Visual-Studio-2012
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+categories:
+- Development
 
 ---
 

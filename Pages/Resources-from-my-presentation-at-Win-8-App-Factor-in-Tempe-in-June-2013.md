@@ -10,7 +10,7 @@ showinlist: false
 publicationdate: 0001-01-01T00:00:00
 lastmodificationdate: 0001-01-01T00:00:00
 slug: Resources-from-my-presentation-at-Win-8-App-Factor-in-Tempe-in-June-2013
-categoryids: []
+categories: []
 
 ---
 **Win 8 App Factor Presentation**[Presentation Slides](http://sdrv.ms/14LaLGW)[Demo Code](http://docs.cognitiveinheritance.com/AliasManagement.zip)**.NET Portable Libraries**[Using Target-Specific Code in a Portable Library](http://www.cognitiveinheritance.com/post/Using-Target-Specific-Code-in-a-Portable-Library.aspx)[Cross-Platform Development with the .NET Framework](http://msdn.microsoft.com/en-us/library/gg597391.aspx)[API Differences in Portable Class Library](http://msdn.microsoft.com/en-us/library/gg597392.aspx)  

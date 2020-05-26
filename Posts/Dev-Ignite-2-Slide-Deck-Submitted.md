@@ -10,8 +10,8 @@ showinlist: false
 publicationdate: 2009-11-09T12:07:59
 lastmodificationdate: 0001-01-01T18:00:00
 slug: Dev-Ignite-2-Slide-Deck-Submitted
-categoryids:
-- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
+categories:
+- Event
 
 ---
 

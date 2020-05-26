@@ -12,8 +12,8 @@ showinlist: false
 publicationdate: 2003-05-30T05:02:00
 lastmodificationdate: 0001-01-02T04:00:00
 slug: Day-1
-categoryids:
-- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
+categories:
+- Event
 
 ---
 

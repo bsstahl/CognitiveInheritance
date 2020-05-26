@@ -17,8 +17,8 @@ showinlist: false
 publicationdate: 2016-07-01T13:49:56
 lastmodificationdate: 2016-07-01T13:49:56
 slug: A-Software-Developers-View-of-Dynamic-Programming
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+categories:
+- Development
 
 ---
 

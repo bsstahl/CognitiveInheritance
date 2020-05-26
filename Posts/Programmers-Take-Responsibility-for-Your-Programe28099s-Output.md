@@ -8,15 +8,15 @@ tags:
 menuorder: 0
 id: 20380740-06e6-4b0a-82ea-2d7ae4f368bc
 author: bsstahl
-title: Programmers: Take Responsibility for Your Program’s Output
+title: Programmers -- Take Responsibility for Your Program’s Output
 description: 
 ispublished: true
 showinlist: false
 publicationdate: 2013-03-03T10:19:18
 lastmodificationdate: 2013-03-03T10:19:18
 slug: Programmers-Take-Responsibility-for-Your-Programe28099s-Output
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+categories:
+- Development
 
 ---
 

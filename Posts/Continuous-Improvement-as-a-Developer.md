@@ -14,8 +14,8 @@ showinlist: false
 publicationdate: 2011-04-29T12:19:29
 lastmodificationdate: 2011-04-29T12:19:29
 slug: Continuous-Improvement-as-a-Developer
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+categories:
+- Development
 
 ---
 

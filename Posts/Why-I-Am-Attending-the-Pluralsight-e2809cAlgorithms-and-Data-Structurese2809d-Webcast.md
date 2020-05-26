@@ -16,9 +16,9 @@ showinlist: false
 publicationdate: 2011-08-24T21:14:00
 lastmodificationdate: 2011-08-25T08:41:48
 slug: Why-I-Am-Attending-the-Pluralsight-e2809cAlgorithms-and-Data-Structurese2809d-Webcast
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
-- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
+categories:
+- Development
+- Event
 
 ---
 

@@ -19,8 +19,8 @@ showinlist: false
 publicationdate: 2011-03-08T18:31:40
 lastmodificationdate: 2011-03-16T13:24:54
 slug: Decorating-Partial-Class-Members-in-C
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+categories:
+- Development
 
 ---
 

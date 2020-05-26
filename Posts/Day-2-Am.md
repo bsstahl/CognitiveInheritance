@@ -16,8 +16,8 @@ showinlist: false
 publicationdate: 2003-10-30T22:24:00
 lastmodificationdate: 2009-03-02T15:54:15
 slug: Day-2-AM
-categoryids:
-- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
+categories:
+- Event
 
 ---
 The morning sessions of Day 2 were highlighted by drill-downs into Yukon and WinFS. The most impressive demo of the conference so far was done during the WinFS drill-down by Gord Mangione and Tom Rizzo. They used the Information Agents of WinFS to configure their voicemail application so that when a call came in from a client matching specified custom criteria, and the calendar showed that the user was busy, it would respond to the caller with the time the user's calendar next showed him free.   

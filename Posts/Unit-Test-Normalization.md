@@ -13,8 +13,8 @@ showinlist: false
 publicationdate: 2007-07-07T08:03:00
 lastmodificationdate: 2010-10-22T18:11:36
 slug: Unit-Test-Normalization
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+categories:
+- Development
 
 ---
 

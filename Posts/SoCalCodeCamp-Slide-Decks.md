@@ -23,8 +23,8 @@ showinlist: false
 publicationdate: 2018-11-10T19:39:46
 lastmodificationdate: 2018-11-10T19:39:46
 slug: SoCalCodeCamp-Slide-Decks
-categoryids:
-- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
+categories:
+- Event
 
 ---
 

@@ -21,8 +21,8 @@ showinlist: false
 publicationdate: 2015-10-27T06:43:22
 lastmodificationdate: 2015-10-27T06:43:22
 slug: No-More-Collection-Objects
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+categories:
+- Development
 
 ---
 

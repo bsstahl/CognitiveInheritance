@@ -23,8 +23,8 @@ showinlist: false
 publicationdate: 2013-02-28T09:34:00
 lastmodificationdate: 2013-04-14T13:28:27
 slug: Windows-8-Store-Development-for-Enterprise-Devs
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+categories:
+- Development
 
 ---
 

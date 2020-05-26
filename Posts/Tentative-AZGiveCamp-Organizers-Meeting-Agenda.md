@@ -13,8 +13,8 @@ showinlist: false
 publicationdate: 2009-10-14T01:36:00
 lastmodificationdate: 2009-10-13T23:40:51
 slug: Tentative-AZGiveCamp-Organizers-Meeting-Agenda
-categoryids:
-- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
+categories:
+- Event
 
 ---
 

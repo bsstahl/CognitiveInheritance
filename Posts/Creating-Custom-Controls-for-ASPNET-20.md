@@ -15,9 +15,9 @@ showinlist: false
 publicationdate: 2006-05-08T18:59:00
 lastmodificationdate: 2010-10-22T18:11:36
 slug: Creating-Custom-Controls-for-ASPNET-20
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
-- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
+categories:
+- Development
+- Event
 
 ---
 A number of new facts came out of the final talk I attended on the day, Mickey Williams' discussion of ASP.NET 2.0 custom controls. These key facts for me were:   

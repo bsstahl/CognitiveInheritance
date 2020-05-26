@@ -16,9 +16,9 @@ showinlist: false
 publicationdate: 2008-12-14T02:48:00
 lastmodificationdate: 2010-10-22T18:11:27
 slug: Best-of-PDC-Phoenix-in-Tweets
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
-- categoryid: 527f404c-3f34-4377-91c9-443f2eedf0b9
+categories:
+- Development
+- Event
 
 ---
 

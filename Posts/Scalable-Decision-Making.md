@@ -14,8 +14,8 @@ showinlist: false
 publicationdate: 2017-06-01T22:27:16
 lastmodificationdate: 2017-06-01T22:27:16
 slug: Scalable-Decision-Making
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+categories:
+- Development
 
 ---
 

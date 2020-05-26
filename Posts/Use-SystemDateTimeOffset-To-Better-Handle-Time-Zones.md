@@ -14,8 +14,8 @@ showinlist: false
 publicationdate: 2008-12-25T10:55:00
 lastmodificationdate: 2009-03-03T19:50:22
 slug: Use-SystemDateTimeOffset-To-Better-Handle-Time-Zones
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+categories:
+- Development
 
 ---
 

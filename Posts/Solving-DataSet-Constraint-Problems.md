@@ -16,8 +16,8 @@ showinlist: false
 publicationdate: 2006-08-31T17:35:00
 lastmodificationdate: 2010-10-22T18:11:27
 slug: Solving-DataSet-Constraint-Problems
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+categories:
+- Development
 
 ---
 

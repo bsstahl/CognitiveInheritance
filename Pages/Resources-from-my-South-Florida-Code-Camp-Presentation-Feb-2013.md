@@ -10,7 +10,7 @@ showinlist: false
 publicationdate: 0001-01-01T00:00:00
 lastmodificationdate: 0001-01-01T00:00:00
 slug: Resources-from-my-South-Florida-Code-Camp-Presentation-Feb-2013
-categoryids: []
+categories: []
 
 ---
 **South Florida Code Camp 2013 Presentation**[Presentation Slides](http://sdrv.ms/WUWy8E)Demo Code (coming soon)**OData**[Open Data Protocol](http://www.odata.org/)[Netflix OData Api](http://developer.netflix.com/docs/oData_Catalog)[Introduction to OData](http://pluralsight.com/training/courses/TableOfContents?courseName=odata-introduction&amp;highlight=matt-milner_odata-introduction*9,10,0,1,3,5,11,2,4,6,7,8!matt-milner_odata-writing-services*0,5,7,3,6!matt-milner_odata-consuming-services*0,8,10,9#odata-introduction) (Pluralsight course)  

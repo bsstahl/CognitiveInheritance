@@ -23,8 +23,8 @@ showinlist: false
 publicationdate: 2017-10-13T04:13:13
 lastmodificationdate: 2017-10-13T04:18:10
 slug: An-Example-of-a-Hybrid-AI-Implementation
-categoryids:
-- categoryid: da73f25e-343d-4a0e-9b28-1d76e8fd99bf
+categories:
+- Development
 
 ---
 
