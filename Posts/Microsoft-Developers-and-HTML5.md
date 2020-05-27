@@ -1,5 +1,8 @@
 ---
-tags: []
+tags:
+- development
+- speculation
+- html5
 menuorder: 0
 id: c1475e88-70c3-4c8f-b122-633cb78e77f0
 author: bsstahl

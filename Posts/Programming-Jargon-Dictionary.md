@@ -1,5 +1,6 @@
 ---
-tags: []
+tags:
+- funny
 menuorder: 0
 id: c8aadf7b-b60b-4b46-9efd-3f28f51b3c89
 author: bsstahl

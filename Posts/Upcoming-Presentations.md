@@ -1,5 +1,6 @@
 ---
-tags: []
+tags:
+- events
 menuorder: 0
 id: d464359a-64f2-40ee-9642-b507447180d0
 author: bsstahl

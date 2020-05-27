@@ -1,6 +1,7 @@
 ---
 tags:
-- 
+- ar
+- coding
 menuorder: 0
 id: 0e48d7c1-74ef-45f1-8502-ec3577714ede
 author: bsstahl
@@ -23,9 +24,7 @@ From Read/Write Web - [http://www.readwriteweb.com/archives/cool\_augmented\_rea
 Be sure to see the 2 videos linked in the above article from the International AR Symposium.  Aside from the cute factor of the Eye Pet and the WOW factor of the AR Sketch demo, there is the very real possibility that my dream of being able to write code anywhere, via a Heads-Up-Display in my sunglasses, is coming close.
 
 
-
-![](http://www.readwriteweb.com/images/wrap310.jpg)
-
+ 
 
 
 

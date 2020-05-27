@@ -1,5 +1,7 @@
 ---
-tags: []
+tags:
+- event
+- ignite
 menuorder: 0
 id: 3cc08607-5998-4b6d-a7e0-0876d4cc4f7d
 author: bsstahl

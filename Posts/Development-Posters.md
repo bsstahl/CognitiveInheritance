@@ -1,5 +1,7 @@
 ---
-tags: []
+tags:
+- development
+- resources
 menuorder: 0
 id: c451dcdf-72fa-4d5d-b1b0-6f04ba1f2dc8
 author: bsstahl
