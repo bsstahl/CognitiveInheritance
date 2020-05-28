@@ -16,5 +16,3 @@ fields:
     max: 
     labelField: title
   label: Widgets
-pages:
-- Data/Widgets.md
