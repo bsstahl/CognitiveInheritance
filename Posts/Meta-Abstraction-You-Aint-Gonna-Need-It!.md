@@ -18,8 +18,8 @@ title: Meta-Abstraction -- You Ain't Gonna Need It!
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2020-05-18T15:35:16Z
-lastmodificationdate: 2020-05-18T15:35:16Z
+publicationdate: 2020-05-18T15:35:16.000+00:00
+lastmodificationdate: 2020-05-18T15:35:16.000+00:00
 slug: Meta-Abstraction-You-Aint-Gonna-Need-It!
 categories:
 - Development
@@ -60,13 +60,13 @@ We could extend this class with a method that specifically loads meetings by sta
     }
     
     public class MeetingReadRepository : IMeetingReadRepository
-    {      
+    {
     	IEnumerable<Meeting> GetMeetings(DateTime start, DateTime end) 
-                => Get(m => m.Start >= start && m.Start < end)
+    		=> Get(m => m.Start >= start && m.Start < end)
     
-        // TODO: Implement
-        IEnumerable<Meeting> Get(Func<Meeting, bool> predicate)
-                => throw new NotImplementedException();
+    	// TODO: Implement
+    	IEnumerable<Meeting> Get(Func<Meeting, bool> predicate)
+    		=> throw new NotImplementedException();
     }
 
 Is this worth the added complexity? It seems to me that as application developers we should be concerned about describing and building our applications in the simplest, most maintainable and extensible way possible. To do so, we need seams in our applications in the form of abstractions. However, we generally do not need to build frameworks on which we build those abstractions. Framework creation is an entirely other topic with an entirely different set of concerns.
