@@ -42,7 +42,7 @@ fields:
     min: 6
     max: 15
   label: WidgetType
-  description: Textbox, Tag_cloud, TagList
+  description: TextBox, Tag_cloud, TagList
 pages:
 - Widgets/about-the-author.md
 - Widgets/social-media.md
