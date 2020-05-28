@@ -45,23 +45,5 @@ fields:
   config:
     required: false
   label: Copyright
-- name: extendedsettings
-  type: field_group_list
-  fields:
-  - name: settingname
-    type: text
-    config:
-      required: false
-    label: SettingName
-  - name: settingvalue
-    type: text
-    config:
-      required: false
-    label: SettingValue
-  config:
-    min: 
-    max: 
-    labelField: 
-  label: ExtendedSettings
 pages:
 - Data/SiteSettings.md
