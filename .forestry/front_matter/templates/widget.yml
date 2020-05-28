@@ -30,3 +30,4 @@ fields:
   label: WidgetType
 pages:
 - Widgets/about-the-author.md
+- Widgets/tag-cloud.md
