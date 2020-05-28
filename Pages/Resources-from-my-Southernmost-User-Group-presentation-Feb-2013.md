@@ -7,7 +7,7 @@ title: SMUG 2013 Resources
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 0001-01-01T00:00:00
+publicationdate: 2013-03-01T00:00:00
 lastmodificationdate: 0001-01-01T00:00:00
 slug: Resources-from-my-Southernmost-User-Group-presentation-Feb-2013
 categories: []

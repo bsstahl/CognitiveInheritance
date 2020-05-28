@@ -7,7 +7,7 @@ title: Basic App Privacy Policy
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 0001-01-01T00:00:00
+publicationdate: 2003-01-01T00:00:00
 lastmodificationdate: 0001-01-01T00:00:00
 slug: Basic-App-Privacy-Policy
 categories: []

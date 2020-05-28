@@ -7,7 +7,7 @@ title: Resources from my Twin Cities Code Camp Presentation April 2013
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 0001-01-01T00:00:00
+publicationdate: 2013-05-01T00:00:00
 lastmodificationdate: 0001-01-01T00:00:00
 slug: Resources-from-my-Twin-Cities-Code-Camp-Presentation-April-2013
 categories: []

@@ -7,8 +7,8 @@ title: Win 8 App Factor - Tempe
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 0001-01-01T00:00:00
-lastmodificationdate: 0001-01-01T00:00:00
+publicationdate: 2013-07-01T00:00:00
+lastmodificationdate: 2013-07-01T00:00:00
 slug: Resources-from-my-presentation-at-Win-8-App-Factor-in-Tempe-in-June-2013
 categories: []
 
