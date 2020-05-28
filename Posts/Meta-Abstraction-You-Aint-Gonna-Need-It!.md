@@ -18,7 +18,7 @@ title: Meta-Abstraction -- You Ain't Gonna Need It!
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2020-05-18T15:35:16.000+00:00
+publicationdate: 2020-05-18T15:35:16Z
 lastmodificationdate: 2020-05-18T15:35:16Z
 slug: Meta-Abstraction-You-Aint-Gonna-Need-It!
 categories:
