@@ -19,17 +19,17 @@ Upcoming Talks:
 
 ***
 
-I have the following talks on topics of interest to Enterprise Developers that         I can deliver at your user group or conference. You can submit a request for me to         speak by [contacting me](../Contact.html).
+I have the following talks on topics of interest to Enterprise Developers that I can deliver at your user group or conference. You can submit a request for me to speak by [contacting me](../Contact.html).
 
 #### Artificial Intelligence and Algorithms
 
 * Amazing Algorithms for Solving Problems in Software \- Sure neural networks are cool but have you ever used a Firefly Algorithm to find the solution to a problem? How about an Ant Colony algorithm or one of  the many other algorithms inspired by nature?  In this talk we will see examples of a number of awesome bio-inspired algorithms that can be used to solve problems in software. We'll see how each one works, analyze its strengths and weaknesses, and determine when it is best used. You'll leave with the knowledge you need to solve problems using these algorithms in your language of choice.
-  [Latest Slide Deck](https://amazingalgorithms.azurewebsites.net)
+[Latest Slide Deck](https://amazingalgorithms.azurewebsites.net)
 
 ***
 
 * Pushing AI to the Client with WebAssembly and Blazor (also available as a half-day workshop) - Want to run your .NET Standard code directly in the browser on the client-side without the need for transpilers or browser plug-ins? Well, now you can with WebAssembly and Blazor. WebAssembly (WASM) is the W3C specification that will be used to provide the next generation of development tools for the web and beyond. Blazor is Microsoft's experiment that allows ASP.Net developers to create web pages that do much of the scripting work in C# using WASM. Come join us as we explore the basics of WebAssembly and how WASM can be used to run existing C# code client side in the browser. You will walk away with an understanding of what WebAssembly and Blazor can do for you and how to immediately get started running your own .NET code in the browser.
-  [Latest Slide Deck](https://pushingaitotheclient.azurewebsites.net) | [Video: J on the Beach - Marbella Spain - May 2019](https://www.youtube.com/watch?v=JtqOSfmw1CY&list=FLq-iLd7rfmqSIFiujBGIRSw&index=3)
+[Latest Slide Deck](https://pushingaitotheclient.azurewebsites.net) | [Video: J on the Beach - Marbella Spain - May 2019](https://www.youtube.com/watch?v=JtqOSfmw1CY&list=FLq-iLd7rfmqSIFiujBGIRSw&index=3)
 
 ***
 
