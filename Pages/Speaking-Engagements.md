@@ -19,7 +19,7 @@ Upcoming Talks:
 
 ***
 
-I have the following talks on topics of interest to Enterprise Developers that         I can deliver at your user group or conference. You can submit a request for me to         speak by [contacting me](http://www.cognitiveinheritance.com/contact.aspx).
+I have the following talks on topics of interest to Enterprise Developers that         I can deliver at your user group or conference. You can submit a request for me to         speak by [contacting me](contact.html).
 
 #### Artificial Intelligence and Algorithms
 
