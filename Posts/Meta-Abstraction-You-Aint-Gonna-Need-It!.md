@@ -19,7 +19,7 @@ description:
 ispublished: true
 showinlist: false
 publicationdate: 2020-05-18T15:35:16.000+00:00
-lastmodificationdate: 2020-05-18T15:35:16.000+00:00
+lastmodificationdate: 2020-05-18T15:35:16Z
 slug: Meta-Abstraction-You-Aint-Gonna-Need-It!
 categories:
 - Development
