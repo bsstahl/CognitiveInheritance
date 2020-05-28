@@ -3,7 +3,7 @@ id: b5ed7ace-3b86-455a-acad-a66f654f4867
 title: Social Media
 showtitle: true
 showinsidebar: true
-widgettype: Textbox
+widgettype: TextBox
 orderindex: 10
 
 ---
