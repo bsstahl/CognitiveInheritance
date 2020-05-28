@@ -24,6 +24,17 @@ fields:
 - name: showinsidebar
   type: boolean
   label: ShowInSidebar
+- name: orderindex
+  type: number
+  label: OrderIndex
+  description: A sortable order field that indicates which Widget will be shown first
+    in the sidebar. Lower numbers come earlier on the page.
+  default: 0
+  required: true
+  config:
+    min: 0
+    max: 255
+    step: 
 - name: widgettype
   type: text
   config:
