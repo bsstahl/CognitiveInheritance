@@ -21,6 +21,9 @@ fields:
   label: ShowTitle
   description: Indicates whether or not the Title is rendered on the widget
   default: false
+- name: showinsidebar
+  type: boolean
+  label: ShowInSidebar
 - name: widgettype
   type: text
   config:
