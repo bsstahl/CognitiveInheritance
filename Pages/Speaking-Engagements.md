@@ -15,7 +15,7 @@ categories: []
 ---
 Upcoming Talks:
 
-** Due to the Covid-19 crisis I will not be doing any public, in-person speaking for the remainder of 2020. Hopefully we will all be able to return to a new normal prior to the start of 2021. **
+**Due to the Covid-19 crisis I will not be doing any public, in-person speaking for the remainder of 2020. Hopefully we will all be able to return to a new normal prior to the start of 2021.**
 
 (My Previous Talks)
 
