@@ -67,7 +67,7 @@ We could extend this class with a method that specifically loads meetings by sta
         // TODO: Implement
         IEnumerable<Meeting> Get(Func<Meeting, bool> predicate)
                 => throw new NotImplementedException();
-    }`
+    }
 
 Is this worth the added complexity? It seems to me that as application developers we should be concerned about describing and building our applications in the simplest, most maintainable and extensible way possible. To do so, we need seams in our applications in the form of abstractions. However, we generally do not need to build frameworks on which we build those abstractions. Framework creation is an entirely other topic with an entirely different set of concerns.
 
