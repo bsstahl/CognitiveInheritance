@@ -4,5 +4,6 @@ title: Tag Cloud
 showtitle: true
 widgettype: Tag_cloud
 showinsidebar: true
+orderindex: 15
 
 ---
