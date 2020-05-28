@@ -34,4 +34,5 @@ fields:
   description: Textbox, Tag_cloud, TagList
 pages:
 - Widgets/about-the-author.md
+- Widgets/social-media.md
 - Widgets/tag-cloud.md
