@@ -4,6 +4,7 @@ title: Social Media
 showtitle: true
 showinsidebar: true
 widgettype: Textbox
+orderindex: 10
 
 ---
 <p>Twitter&#58; <a href="[http://twitter.com/bsstahl](http://twitter.com/bsstahl "http://twitter.com/bsstahl")">@BSStahl</a></p>
