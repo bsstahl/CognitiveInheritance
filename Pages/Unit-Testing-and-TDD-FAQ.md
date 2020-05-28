@@ -14,7 +14,7 @@ categories: []
 
 ---
 
-The following are some questions that have been commonly asked of me regarding unit testing and TDD. Please submit questions or comments on this FAQ via [Twitter](https://twitter.com/intent/tweet?screen_name=bsstahl) or using the [Contact](/Contact.aspx) page.
+The following are some questions that have been commonly asked of me regarding unit testing and TDD. Please submit questions or comments on this FAQ via [Twitter](https://twitter.com/intent/tweet?screen_name=bsstahl) or using the [Contact](../contact.html) page.
 
 #### Q: What is the primary goal/benefit of unit testing?
 
@@ -37,7 +37,7 @@ A: I can think of five main advantages to doing test-driven development over “
 
 #### Q: What part of my application do I NOT need to test?
 
-A: This answer is quite simple: you don't need to test the parts of the application that your users DON'T care about.  Of course, since we [remove all code that our users don't care about](/post/Remove-Any-Code-Your-Users-Dont-Care-About.aspx) from our applications,  what we are really saying here is that we should be testing all of our application, and therefore approach 100% code coverage in our apps (although we should never be using code coverage as a metric, just as an indicator). On a fun note, the rule that you don't need to test the parts of your appliations that your user's don't care about was eponymously named "The Stahl Standard" by my friend, [Jeremy Clark](http://jeremybytes.blogspot.com/2015/02/unit-test-coverage-what-parts-of-your.html)
+A: This answer is quite simple: you don't need to test the parts of the application that your users DON'T care about.  Of course, since we [remove all code that our users don't care about](../Posts/Remove-Any-Code-Your-Users-Dont-Care-About.html) from our applications,  what we are really saying here is that we should be testing all of our application, and therefore approach 100% code coverage in our apps (although we should never be using code coverage as a metric, just as an indicator). On a fun note, the rule that you don't need to test the parts of your appliations that your user's don't care about was eponymously named "The Stahl Standard" by my friend, [Jeremy Clark](http://jeremybytes.blogspot.com/2015/02/unit-test-coverage-what-parts-of-your.html)
 
 * * *
 
@@ -56,13 +56,13 @@ A: Some of the pitfalls I have discovered over the years are listed below along 
 
 #### Q: Should unit-tests touch the database or anything out-of-process?
 
-A: In my opinion, yes. I realize that there are many who disagree with me on this point, but the fact remains that you cannot test an object which has a primary function of loading data from (or saving data to) a database without checking if it in fact, loads (or saves) said data correctly. The most important boundary not to cross in our unit tests is the one between application layers. Don't test the database logic with the business logic; each of these layers should be tested in isolation. For a more detailed explanation, see [Unit Testing the Data Tier](/post/Unit-Testing-the-Data-Tier.aspx) that I wrote more than 4 years ago. While some of the technologies described have changed since that article, the fundamental idea has not.
+A: In my opinion, yes. I realize that there are many who disagree with me on this point, but the fact remains that you cannot test an object which has a primary function of loading data from (or saving data to) a database without checking if it in fact, loads (or saves) said data correctly. The most important boundary not to cross in our unit tests is the one between application layers. Don't test the database logic with the business logic; each of these layers should be tested in isolation. For a more detailed explanation, see [Unit Testing the Data Tier](../Posts/Unit-Testing-the-Data-Tier.html) that I wrote years ago. While some of the technologies described have changed since that article, the fundamental idea has not.
 
 * * *
 
 #### Q: Should there be specific tests for logging in my application?
 
-A: That depends on your business requirements. If there are specific, measurable business requirements for logging in your application, then yes, it should be tested. If not, as in the case of most applications, logging should probably be used simply for what it is, a diagnostic tool. I use logging to help me build my tests by redirecting my logging to the Test Context using a TestContext Logging Provider that I wrote, and which can be seen in the sample code for my [.NET TDD Kickstart](http://www.cognitiveinheritance.com/post/Code-Sample-for-My-TDD-Kickstart-Sessions.aspx) session. This allows me to use my logging to help develop the system, gives me insight into how the logging will look when I actually use the system, and doesn't require me to make-up any fake "requirements" for logging. By the way, if anyone knows of any specific, testable requirements for logging other than, "...the system must log something…", please let me know.
+A: That depends on your business requirements. If there are specific, measurable business requirements for logging in your application, then yes, it should be tested. If not, as in the case of most applications, logging should probably be used simply for what it is, a diagnostic tool. I use logging to help me build my tests by redirecting my logging to the Test Context using a TestContext Logging Provider that I wrote, and which can be seen in the sample code for my [.NET TDD Kickstart](../Posts/Code-Sample-for-My-TDD-Kickstart-Sessions.html) session. This allows me to use my logging to help develop the system, gives me insight into how the logging will look when I actually use the system, and doesn't require me to make-up any fake "requirements" for logging. By the way, if anyone knows of any specific, testable requirements for logging other than, "...the system must log something…", please let me know.
 
 * * *
 
