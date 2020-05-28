@@ -1,20 +1,5 @@
 ---
 widgets:
-- id: 76dfb6eb-1931-47b6-bece-167a7d0a0b79
-  title: Tag Cloud
-  showtitle: true
-  widgettype: Tag_cloud
-  dictionary: []
-- id: fb38ecdd-5813-4d10-8c5f-8d901c7c731e
-  title: Search
-  showtitle: true
-  widgettype: Search
-  dictionary: []
-- title: Administration
-  id: 42fcbe7c-2c9c-440a-bad9-65a94472fccc
-  showtitle: true
-  widgettype: Administration
-  dictionary: []
 - id: 1ef27b78-0218-420c-bfda-038163510def
   title: About the Author
   showtitle: true
@@ -32,6 +17,21 @@ widgets:
       Tempe AZ and his nights thinking about the next <a href="http://azgivecamp.org">AZGiveCamp</a>,
       an annual event where software developers come together to build websites and
       apps for some great non-profit organizations.</p>'
+- id: 76dfb6eb-1931-47b6-bece-167a7d0a0b79
+  title: Tag Cloud
+  showtitle: true
+  widgettype: Tag_cloud
+  dictionary: []
+- id: fb38ecdd-5813-4d10-8c5f-8d901c7c731e
+  title: Search
+  showtitle: true
+  widgettype: Search
+  dictionary: []
+- title: Administration
+  id: 42fcbe7c-2c9c-440a-bad9-65a94472fccc
+  showtitle: true
+  widgettype: Administration
+  dictionary: []
 - id: b5ed7ace-3b86-455a-acad-a66f654f4867
   title: Social Media
   showtitle: true
