@@ -28,26 +28,3 @@ fields:
     min: 6
     max: 15
   label: WidgetType
-- name: dictionary
-  type: field_group_list
-  fields:
-  - name: key
-    type: text
-    config:
-      required: true
-      min: 2
-      max: 25
-    label: Key
-  - name: value
-    type: text
-    config:
-      required: false
-      min: 
-    label: Value
-  config:
-    min: 0
-    max: 
-    labelField: key
-  label: Dictionary
-  description: A collection of dictionary entries that provide configuration data
-    for the widget
