@@ -1,6 +1,6 @@
 ---
 tags:
-- events
+- event
 menuorder: 0
 id: d464359a-64f2-40ee-9642-b507447180d0
 author: bsstahl
@@ -8,14 +8,13 @@ title: Upcoming Presentations
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2013-02-06T10:48:09
-lastmodificationdate: 2013-02-06T10:48:09
+publicationdate: 2013-02-06T10:48:09.000+00:00
+lastmodificationdate: 2013-02-06T10:48:09.000+00:00
 slug: Upcoming-Presentations
 categories:
 - Event
 
 ---
-
 Here is an update on where and when I’ll be delivering presentations about software development in .NET over the next few months.  I still have some availability left for the H1 2013 and H2 is effectively wide open. You can request me as a speaker through [INETA](http://ineta.org/Speakers/SearchCommunitySpeakers.aspx?SpeakerId=4fdf7fc7-5cac-4842-acec-960815523108).
 
 
@@ -35,4 +34,3 @@ Here is an update on where and when I’ll be delivering presentations about sof
 
 
 I hope to see you at one or more of these events.
-
