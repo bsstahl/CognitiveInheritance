@@ -55,55 +55,6 @@
             <div class="col-md-8">
                 <h1>Tag: coding practices</h1>
                 <div>
-    <h3>Meta-Abstraction -- You Ain't Gonna Need It!</h3>
-    <h5>Posted by bsstahl on 2020-05-18 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
-    <blockquote>
-<p>When we look at the abstractions in our applications, we should see a description of the capabilities of our applications, not the capabilities of the abstraction</p>
-</blockquote>
-<p>Let’s start this discussion by looking at an example of a simple repository.</p>
-<pre><code>public interface IMeetingReadRepository 
-{ 
-	IEnumerable&lt;Meeting&gt; GetMeetings(DateTime start, DateTime end); 
-}
-</code></pre>
-<p>It is easy to see the capability being described by this abstraction – any implementation of this interface will have the ability to load a collection of Meeting objects that occur within a given timeframe. There are still some unknown details of the implementation, but the capabilities are described reasonably well.</p>
-<p>Now let’s look at a different implementation of the Repository pattern.</p>
-<pre><code>public interface IReadRepository&lt;T&gt; 
-{ 
-	IEnumerable&lt;T&gt; Get(Func&lt;T, bool&gt; predicate); 
-}
-</code></pre>
-<p>We can still see that something is going to be loaded using this abstraction, we just don’t know what, and we don’t know what criteria will be used.</p>
-<p>This 2nd implementation is a more flexible interface. That is, we can use this interface to describe many different repositories that do many different things. All we have described in this interface is that we have the ability to create something that will load an entity. In other words, we have described our abstraction but said very little about the capabilities of the application itself. In this case, we have to look at a specific implementation to see what it loads, but we still have no idea what criteria can be used to load it.</p>
-<pre><code>public class MeetingReadRepository : IReadRepository&lt;Meeting&gt; 
-{ 
-	IEnumerable&lt;Meeting&gt; Get(Func&lt;Meeting, bool&gt; predicate); 
-}
-</code></pre>
-<p>We could extend this class with a method that specifically loads meetings by start and end date, but then that method is not on the abstraction so it cannot be used without leaking the details of the implementation to the application.  The only way to implement this pattern in a way that uses the generic interface, but still fully describes the capabilities of the application is to use both methods described above. That is, we implement the specific repository, using the generic repository – layering abstraction on top of abstraction, as shown below.</p>
-<pre><code>public interface IMeetingReadRepository : IReadRepository&lt;Meeting&gt; 
-{ 
-	IEnumerable&lt;Meeting&gt; GetMeetings(DateTime start, DateTime end); 
-}
-
-public class MeetingReadRepository : IMeetingReadRepository
-{      
-	IEnumerable&lt;Meeting&gt; GetMeetings(DateTime start, DateTime end) 
-            =&gt; Get(m =&gt; m.Start &gt;= start &amp;&amp; m.Start &lt; end)
-
-    // TODO: Implement
-    IEnumerable&lt;Meeting&gt; Get(Func&lt;Meeting, bool&gt; predicate)
-            =&gt; throw new NotImplementedException();
-}
-</code></pre>
-<p>Is this worth the added complexity? It seems to me that as application developers we should be concerned about describing and building our applications in the simplest, most maintainable and extensible way possible. To do so, we need seams in our applications in the form of abstractions. However, we generally do not need to build frameworks on which we build those abstractions. Framework creation is an entirely other topic with an entirely different set of concerns.</p>
-<p>I think it is easy to see how quickly things can get overly-complex when we start building abstractions on top of our own abstractions in our applications. Using Microsoft or 3rd party frameworks is fine when appropriate, but there is generally no need to build your own frameworks, especially within your applications. In the vast majority of cases, <a href="/?tag=/yagni">YAGNI</a>.</p>
-<p>Did I miss something here? Do you have a situation where you feel it is worth it to build a framework, or even part of a framework, within your applications. Please let me know about it on <a href="https://twitter.com/bsstahl">Twitter</a>.</p>
-
-    <h5>Tags: <a title="Tag: abstraction" class="small" href="../Search/abstraction.html">abstraction</a>&nbsp;<a title="Tag: apps" class="small" href="../Search/apps.html">apps</a>&nbsp;<a title="Tag: coding practices" class="small" href="../Search/coding-practices.html">coding practices</a>&nbsp;<a title="Tag: development" class="small" href="../Search/development.html">development</a>&nbsp;<a title="Tag: entity" class="small" href="../Search/entity.html">entity</a>&nbsp;<a title="Tag: flexibility" class="small" href="../Search/flexibility.html">flexibility</a>&nbsp;<a title="Tag: framework" class="small" href="../Search/framework.html">framework</a>&nbsp;<a title="Tag: generics" class="small" href="../Search/generics.html">generics</a>&nbsp;<a title="Tag: inteface" class="small" href="../Search/inteface.html">inteface</a>&nbsp;<a title="Tag: principle" class="small" href="../Search/principle.html">principle</a>&nbsp;<a title="Tag: yagni" class="small" href="../Search/yagni.html">yagni</a>&nbsp;</h5>
-    <div class="share"><a href="../Permalinks/a9d7154a-2798-4a77-851b-0783b45bc1b4.html" rel="bookmark">Permalink</a></div>
-</div>
-<hr/><div>
     <h3>The Value of Flexibility</h3>
     <h5>Posted by bsstahl on 2019-02-14 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
     <p>Have you ever experienced that feeling you get when you need to extend an existing system and there is an extension point that is exactly what you need to build on?</p>
@@ -295,6 +246,19 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 
     <h5>Tags: <a title="Tag: code analysis" class="small" href="../Search/code-analysis.html">code analysis</a>&nbsp;<a title="Tag: code coverage" class="small" href="../Search/code-coverage.html">code coverage</a>&nbsp;<a title="Tag: coding practices" class="small" href="../Search/coding-practices.html">coding practices</a>&nbsp;<a title="Tag: tdd" class="small" href="../Search/tdd.html">tdd</a>&nbsp;<a title="Tag: testing" class="small" href="../Search/testing.html">testing</a>&nbsp;<a title="Tag: unit testing" class="small" href="../Search/unit-testing.html">unit testing</a>&nbsp;</h5>
     <div class="share"><a href="../Permalinks/7de3f401-e11b-4170-b1fe-d3b3f71c303d.html" rel="bookmark">Permalink</a></div>
+</div>
+<hr/><div>
+    <h3>Test-Driven Bug Fixes</h3>
+    <h5>Posted by bsstahl on 2016-02-27 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <p>I had an experience this past week that reminded me of both the importance of continuing the Test Driven Development process beyond the initial development phases of a application's life-cycle, and that not all developers have yet fully grasped the concepts behind Test Driven Development.</p>
+<p>One of the development teams I work with had a bug come-up in a bit of complex logic that I designed. I was asked to pair-up with one of the developers to help figure out the bug since he had already spent several hours looking at it. When I asked him to show me the tests that were failing, there weren't any. The bug was for a situation that we hadn't anticipated during initial development (a common occurrence) and he had not yet setup any tests that exposed the bug.</p>
+<p>We immediately set out to rectify the situation by creating tests that failed as a result of the bug. Once these tests were created, it was a fairly simple process to use those tests as a debug platform to step through the code, find the problem and correct the bug. As is sometimes the case, fixing that bug caused another test to fail, a situation that was easily remedied since we knew about it due to the failing test.</p>
+<p>After the code was complete and checked-in for build, the developer I was working with remarked on how he now &quot;got it&quot;. He had heard the words before, &quot;…write a test to expose the bug, then fix the bug.&quot; but they were empty words until he actually experienced using a test to do the debugging, and then saw existing tests prevent a regression failure in other code due to our bug fix. It is an experience all TDD practitioners have at some point and it is easy to forget that others may not yet have grokked the concepts behind the process.</p>
+<p>Coincidentally, that very night, I got a ping from my friend Jeremy Clark (<a href="http://jeremybytes.blogspot.com">blog</a>, <a href="http://twitter.com/jeremybytes">twitter</a>) asking for comments on his latest <a href="https://youtu.be/l4xhTq4qmC0">YouTube video on TDD</a>. After watching it, I really couldn't offer any constructive criticism for him because there was absolutely nothing to criticize. As an introduction to the basics of TDD, I don't think it could have been done any better. If you are just getting started with TDD, or want to get started with TDD, or want a refresher on the basics of TDD, you need to watch this video.</p>
+<p>Jeremy has indicated he will be doing more in this series in the future, delving deeper into the topic of TDD. Perhaps he will include an example of fixing a bug in existing code in a future video.</p>
+
+    <h5>Tags: <a title="Tag: agile" class="small" href="../Search/agile.html">agile</a>&nbsp;<a title="Tag: coding practices" class="small" href="../Search/coding-practices.html">coding practices</a>&nbsp;<a title="Tag: professional development" class="small" href="../Search/professional-development.html">professional development</a>&nbsp;<a title="Tag: tdd" class="small" href="../Search/tdd.html">tdd</a>&nbsp;<a title="Tag: testing" class="small" href="../Search/testing.html">testing</a>&nbsp;<a title="Tag: unit testing" class="small" href="../Search/unit-testing.html">unit testing</a>&nbsp;</h5>
+    <div class="share"><a href="../Permalinks/dade0093-4e08-4576-9ea3-b9fc326d6a81.html" rel="bookmark">Permalink</a></div>
 </div>
 
             </div>

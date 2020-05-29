@@ -83,13 +83,13 @@
 }
 
 public class MeetingReadRepository : IMeetingReadRepository
-{      
+{
 	IEnumerable&lt;Meeting&gt; GetMeetings(DateTime start, DateTime end) 
-            =&gt; Get(m =&gt; m.Start &gt;= start &amp;&amp; m.Start &lt; end)
+		=&gt; Get(m =&gt; m.Start &gt;= start &amp;&amp; m.Start &lt; end)
 
-    // TODO: Implement
-    IEnumerable&lt;Meeting&gt; Get(Func&lt;Meeting, bool&gt; predicate)
-            =&gt; throw new NotImplementedException();
+	// TODO: Implement
+	IEnumerable&lt;Meeting&gt; Get(Func&lt;Meeting, bool&gt; predicate)
+		=&gt; throw new NotImplementedException();
 }
 </code></pre>
 <p>Is this worth the added complexity? It seems to me that as application developers we should be concerned about describing and building our applications in the simplest, most maintainable and extensible way possible. To do so, we need seams in our applications in the form of abstractions. However, we generally do not need to build frameworks on which we build those abstractions. Framework creation is an entirely other topic with an entirely different set of concerns.</p>
