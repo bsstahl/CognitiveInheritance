@@ -20,9 +20,9 @@ title: Desert Code Camp – October 2017
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2017-10-16T01:37:58.000+00:00
-lastmodificationdate: 2017-10-16T01:37:58.000+00:00
-slug: Desert-Code-Campe28093October-2017
+publicationdate: 2017-10-16T01:37:58Z
+lastmodificationdate: 2017-10-16T01:37:58Z
+slug: Desert-Code-Camp-October-2017
 categories:
 - Event
 
