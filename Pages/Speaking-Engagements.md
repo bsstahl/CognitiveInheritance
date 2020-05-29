@@ -91,7 +91,7 @@ Past engagements:
 * **THAT Conference 2019** - 8/5 - 8/8/2019 - "Design Patterns for Loosely Coupled Applications"
 * **J on the Beach Malaga 2019** - 5/15 - 5/17/2019 - "Pushing AI to the Client with WebAssembly and Blazor"
 * **Craft Conference Budapest 2019** - 5/7 - 5/10/2019 - "Design Patterns for Loosely Coupled Applications"
-* **Visual Studio 2019 Arizona Launch** - 4/16/2019 - Organizer and Speaker. Keynote "Community" and "Building Awesome Web Apps with Razor and Blazor".
+* **Visual Studio 2019 Arizona Launch** - 4/16/2019 - Organizer and Speaker. Keynote "Community" ([video](https://youtu.be/P1rT_3dHFGw)) and "Building Awesome Web Apps with Razor and Blazor".
 * **Twin Cities Code Camp 2019** - 4/13/2019 - "Design Patterns for Loosely Coupled Applications"
 * **Data Science Phoenix** - 3/19/2019 - "Genetic Algorithms" (Lightning Talk)
 * **ConFoo Montreal 2019** - 3/13 - 3/15/2019 - "A Developer's Introduction to Artificial Intelligence" & "One AI Algorithm that All Developers Should Know" & "Intro to WebAssembly using Blazor" (last-minute fill-in)
