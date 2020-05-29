@@ -307,6 +307,152 @@ Then, we can verify in our test that our custom exception is thrown.  The full 
     <h5>Tags: <a title="Tag: visual studio" class="small" href="../Search/visual-studio.html">visual studio</a>&nbsp;<a title="Tag: unit testing" class="small" href="../Search/unit-testing.html">unit testing</a>&nbsp;<a title="Tag: testing" class="small" href="../Search/testing.html">testing</a>&nbsp;<a title="Tag: tdd" class="small" href="../Search/tdd.html">tdd</a>&nbsp;</h5>
     <div class="share"><a href="../Permalinks/eb66140c-73cf-4690-9b36-d42c924851a6.html" rel="bookmark">Permalink</a></div>
 </div>
+<hr/><div>
+    <h3>Regain Access to the CreateUnitTests Command in VS2012</h3>
+    <h5>Posted by bsstahl on 2012-12-27 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <p>I previously expressed my annoyance <a href="http://www.cognitiveinheritance.com/post/The-Missing-e2809cCreate-Unit-Teste2809d-feature-in-Visual-Studio-2012.aspx">here</a> and <a href="http://channel9.msdn.com/Events/Build/2012/3-017">here (starting at 01:02:06)</a> about the lack of the Create Unit Tests feature in Visual Studio 2012, similar to the one in Visual Studio 2010.  It is interesting that none of the Microsoft people I’ve spoken to on the issue were able to provide me with a reasonable work-around, but apparently, <a href="http://stackoverflow.com/users/1741116/intrueder">intrueder</a>, a commenter at <a href="http://stackoverflow.com/questions/9547055/where-is-the-create-unit-tests-selection">Stack Overflow</a>, has.  It turns out that the functionality was not removed from the Visual Studio product, just from the context menu. Therefore, we can give ourselves access to the command again by assigning a keyboard shortcut to it.  The steps to do so are as follows:</p>
+<ol>
+<li>In Visual Studio 2012, select <strong>Options</strong> from the <strong>Tools</strong> menu on the top menu bar.</li>
+<li>In the <strong>Environment</strong> section of the dialog, select <strong>Keyboard</strong>.  This will show you a list of commands and their keyboard shortcuts if they have one.</li>
+<li>In the <strong>Show commands containing</strong> box, type <strong>CreateUnitTests</strong>.  You should see the command window filter down to the <strong>EditorContextmenus.CodeWindow.CreateUnitTests</strong> command, which will be highlighted.</li>
+<li>If there is anything shown in the <strong>Shortcuts for selected command</strong> drop-down, you are already done.  You can use whatever key sequence is listed to access the command as described below.</li>
+<li>If there is nothing shown, you’ll need to assign a keyboard shortcut.  Press the key sequence you’d like to use while in the <strong>Press shortcut keys</strong> text box.  If that shortcut is already assigned, the <strong>Shortcut currently used by</strong> drop-down will change to show how the key sequence is currently used.  You may have to try several key combinations before you find one that you are comfortable using, especially if you use a product like Resharper which maps a bunch of additional shortcuts on top of the Visual Studio default key mappings.</li>
+<li>Once you decide on a key sequence and those keys (or key) appear in the <strong>Press shortcut keys</strong> text box, press the <strong>Assign</strong> button to map the sequence to the command.  You can now use that key sequence to access the CreateUnitTests command as described below.</li>
+</ol>
+<p>Now that a shortcut is setup, all you have to do is place the cursor within the scope that you want to create unit tests for (a namespace, class or method) and invoke the key sequence.  The command should be activated as it was in Visual Studio 2010.  I have been using this for a little while and it is working quite well for me, but I don’t make use of nearly all of the features of this command.  I’ll be interested to hear if you have any troubles using this tool in this way.  You can contact me on twitter at <a href="https://twitter.com/bsstahl">@bsstahl</a> if you have any comments.</p>
+
+    <h5>Tags: <a title="Tag: visual studio" class="small" href="../Search/visual-studio.html">visual studio</a>&nbsp;<a title="Tag: unit testing" class="small" href="../Search/unit-testing.html">unit testing</a>&nbsp;<a title="Tag: tdd" class="small" href="../Search/tdd.html">tdd</a>&nbsp;</h5>
+    <div class="share"><a href="../Permalinks/c34168ee-706f-4c7d-9665-ffd986b6f1b6.html" rel="bookmark">Permalink</a></div>
+</div>
+<hr/><div>
+    <h3>The Missing “Create Unit Test” feature in Visual Studio 2012</h3>
+    <h5>Posted by bsstahl on 2012-09-16 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <p>I am loving many of the improvements made in Visual Studio 2012.  The performance and overall user experience of the test runner has improved tremendously from Visual Studio 2010 and the IDE is generally a joy to use.  <em><strong>Unfortunately, I can’t use it</strong></em>. It is missing one of the key features I use in my development workflow, that is, the “Create Unit Test” option.  This function, in VS2010, generates the stub of unit tests based on the interfaces of the selected methods.  It is hard for me to imagine why this feature was left out of Visual Studio 2012, but it needs to be put back in immediately.</p>
+<p>Please let Microsoft know how you feel about the absence of this feature in VS2012 by voting the feature request up on <a href="http://tinyurl.com/CreateUnitTest">UserVoice</a>.</p>
+
+    <h5>Tags: <a title="Tag: visual studio" class="small" href="../Search/visual-studio.html">visual studio</a>&nbsp;<a title="Tag: unit testing" class="small" href="../Search/unit-testing.html">unit testing</a>&nbsp;<a title="Tag: tdd" class="small" href="../Search/tdd.html">tdd</a>&nbsp;</h5>
+    <div class="share"><a href="../Permalinks/40678866-7f86-441f-a1e4-3bb7215c8d5d.html" rel="bookmark">Permalink</a></div>
+</div>
+<hr/><div>
+    <h3>Code Sample for My TDD Kickstart Sessions</h3>
+    <h5>Posted by bsstahl on 2012-02-13 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <p>The complete, working application for my <a href="/post/NET-TDD-Kickstart.aspx">.NET TDD Kickstart</a> sessions can be found <a href="http://docs.cognitiveinheritance.com/tddkickstart.zip">here</a>.</p>
+<p>Unzip the files into a solution folder and open the <strong>Demo.sln</strong> solution in a version of Visual Studio 2010 that has Unit Testing capability (Professional, Premium or Ultimate).  Immediately, you should be able to compile the whole solution, and successfully execute the tests in the <strong>Bss.QueueMonitor.Test</strong> and <strong>Bss.Timing.Test</strong> libraries.</p>
+<p>To get the tests in the other two test libraries (<strong>Bss.QueueMonitor.Data.EF.Test</strong> &amp; <strong>Bss.QueueMonitor.IntegrationTest</strong>) to pass, you will need to create the database used to store the monitored data in the data-tier and integration tests, and enable MSMQ on your system so that a queue to be monitored can be created for the Integration test.</p>
+<p>The solution is configured to use a SQLExpress database called <strong>TDDDemo</strong>.  You can use any name or SQL implementation you like, you’ll just need to update the configuration of all of the test libraries to use the new connection.  The script to execute in the new database to create the table needed to run the tests can be found in the Bss.QueueMonitor.Data.EF library and is called <strong>QueueDepthModel.edmx.sql</strong>.</p>
+<p>You can install Message Queuing on computers running Windows 7 by using <strong>Programs and Features</strong> in the <strong>Control Panel</strong>.  You do not need to create any specific queue because the integration test creates a queue for each test individually, then deletes the queue when the test is complete.</p>
+<p>If you have any questions or comments about this sample, please start a conversation on <a href="http://twitter.com/bsstahl">Twitter</a> or <a href="/Contact.aspx">Contact Me</a>.</p>
+
+    <h5>Tags: <a title="Tag: abstraction" class="small" href="../Search/abstraction.html">abstraction</a>&nbsp;<a title="Tag: agile" class="small" href="../Search/agile.html">agile</a>&nbsp;<a title="Tag: assert" class="small" href="../Search/assert.html">assert</a>&nbsp;<a title="Tag: code camp" class="small" href="../Search/code-camp.html">code camp</a>&nbsp;<a title="Tag: coding practices" class="small" href="../Search/coding-practices.html">coding practices</a>&nbsp;<a title="Tag: community" class="small" href="../Search/community.html">community</a>&nbsp;<a title="Tag: conference" class="small" href="../Search/conference.html">conference</a>&nbsp;<a title="Tag: csharp" class="small" href="../Search/csharp.html">csharp</a>&nbsp;<a title="Tag: development" class="small" href="../Search/development.html">development</a>&nbsp;<a title="Tag: di" class="small" href="../Search/di.html">di</a>&nbsp;<a title="Tag: event" class="small" href="../Search/event.html">event</a>&nbsp;<a title="Tag: framework" class="small" href="../Search/framework.html">framework</a>&nbsp;<a title="Tag: ioc" class="small" href="../Search/ioc.html">ioc</a>&nbsp;<a title="Tag: tdd" class="small" href="../Search/tdd.html">tdd</a>&nbsp;<a title="Tag: testing" class="small" href="../Search/testing.html">testing</a>&nbsp;<a title="Tag: unit testing" class="small" href="../Search/unit-testing.html">unit testing</a>&nbsp;<a title="Tag: visual studio" class="small" href="../Search/visual-studio.html">visual studio</a>&nbsp;</h5>
+    <div class="share"><a href="../Permalinks/36949ad5-1066-4686-81b2-ce7e5c4d8bcc.html" rel="bookmark">Permalink</a></div>
+</div>
+<hr/><div>
+    <h3>.NET TDD Kickstart</h3>
+    <h5>Posted by bsstahl on 2012-01-26 and Filed Under: <a title="Category: Event" class="small" href="../Search/Event.html">Event</a>&nbsp;<a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <p>I head out to Fullerton tomorrow for the start of my .NET TDD Kickstart world tour <img src="http://www.cognitiveinheritance.com/image.axd?picture=wlEmoticon-smile.png" alt="Smile" /></p>
+<blockquote>
+<p>In this session, the speaker and the audience will &quot;pair up&quot; for a coding session which will serve as an introduction to Test Driven Development in an Agile environment. We will use C#, Visual Studio and Rhino Mocks to unit test code to be built both with and without dependencies. We will also highlight some of the common issues encountered during TDD and discuss strategies for overcoming them.</p>
+</blockquote>
+<p>I will be presenting this session at numerous venues around the country this year, including, so far:</p>
+<ul>
+<li><a href="http://www.socalcodecamp.com/">Southern California Code Camp</a> – Fullerton in January</li>
+<li><a href="http://www.fladotnet.com/codecamp/">South Florida Code Camp</a> – Ft. Lauderdale in February</li>
+<li><a href="http://nmug.net/">New Mexico .NET User’s Group</a> – Albuquerque in March</li>
+<li><a href="http://twincitiescodecamp.com/TCCC/Default.aspx">Twin Cities Code Camp</a> – Minneapolis in April</li>
+</ul>
+<p>If you are interested in having me present this or another session at your event, please contact me.</p>
+<p>There is much more than an hour’s worth of material to be presented, so instead of trying to rush through everything I want to talk about during this time, I’ve instead taken some questions from this presentation and posted them below.  Please contact me if you have any additional questions, need clarification, or if you have an suggestions or additions to these lists.</p>
+<p>Update: I have moved the FAQ list <a href="http://www.cognitiveinheritance.com/page/Unit-Testing-and-TDD-FAQ.aspx">here</a> to allow it to be maintained separately from this post.</p>
+
+    <h5>Tags: <a title="Tag: abstraction" class="small" href="../Search/abstraction.html">abstraction</a>&nbsp;<a title="Tag: agile" class="small" href="../Search/agile.html">agile</a>&nbsp;<a title="Tag: assert" class="small" href="../Search/assert.html">assert</a>&nbsp;<a title="Tag: code camp" class="small" href="../Search/code-camp.html">code camp</a>&nbsp;<a title="Tag: coding practices" class="small" href="../Search/coding-practices.html">coding practices</a>&nbsp;<a title="Tag: community" class="small" href="../Search/community.html">community</a>&nbsp;<a title="Tag: conference" class="small" href="../Search/conference.html">conference</a>&nbsp;<a title="Tag: csharp" class="small" href="../Search/csharp.html">csharp</a>&nbsp;<a title="Tag: development" class="small" href="../Search/development.html">development</a>&nbsp;<a title="Tag: di" class="small" href="../Search/di.html">di</a>&nbsp;<a title="Tag: event" class="small" href="../Search/event.html">event</a>&nbsp;<a title="Tag: framework" class="small" href="../Search/framework.html">framework</a>&nbsp;<a title="Tag: ioc" class="small" href="../Search/ioc.html">ioc</a>&nbsp;<a title="Tag: tdd" class="small" href="../Search/tdd.html">tdd</a>&nbsp;<a title="Tag: testing" class="small" href="../Search/testing.html">testing</a>&nbsp;<a title="Tag: unit testing" class="small" href="../Search/unit-testing.html">unit testing</a>&nbsp;<a title="Tag: visual studio" class="small" href="../Search/visual-studio.html">visual studio</a>&nbsp;</h5>
+    <div class="share"><a href="../Permalinks/aaa35320-c03d-41ef-95bc-8b79614344fb.html" rel="bookmark">Permalink</a></div>
+</div>
+<hr/><div>
+    <h3>Order Matters in the Rhino Mocks Fluent Interface</h3>
+    <h5>Posted by bsstahl on 2012-01-16 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <p>I noticed something interesting with Rhino Mocks today while testing some demo code:
+<code>Rhino.Mocks.Expect.Call(myDependency.MyMethod(param1)).Return(result).Repeat.Times(5);</code>
+behaves as I anticipated; it expects the call to <strong>MyMethod</strong> to be repeated 5 times and returns the value of <strong>result</strong> all 5 times. Meanwhile:
+<code>Rhino.Mocks.Expect.Call(myDependency.MyMethod(param1)).Repeat.Times(5).Return(result);</code>
+also has the expectation of 5 executions, but it returns the value of <strong>result</strong> only once. The other 4 executions return <strong>0</strong>.</p>
+<p>When I think about it now, it makes sense, but it wasn't the behavior I originally expected.</p>
+
+    <h5>Tags: <a title="Tag: abstraction" class="small" href="../Search/abstraction.html">abstraction</a>&nbsp;<a title="Tag: tdd" class="small" href="../Search/tdd.html">tdd</a>&nbsp;<a title="Tag: testing" class="small" href="../Search/testing.html">testing</a>&nbsp;<a title="Tag: mocks" class="small" href="../Search/mocks.html">mocks</a>&nbsp;</h5>
+    <div class="share"><a href="../Permalinks/127542b6-45e7-4ca9-a338-5ebce5385184.html" rel="bookmark">Permalink</a></div>
+</div>
+<hr/><div>
+    <h3>Developer Ignite in Chandler</h3>
+    <h5>Posted by bsstahl on 2009-07-13 and Filed Under: <a title="Category: Event" class="small" href="../Search/Event.html">Event</a>&nbsp;<a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <p>I will be speaking at the <a href="http://software.intel.com/en-us/articles/developer-ignite/">Developer Ignite</a> event in Chandler on July 22nd.  The topic of my talk will be &quot;Simplicity Through Abstraction&quot; during which I will be giving a very high-level overview of using Dependency Injection as an Inversion-of-Control methodology to create simplicity in software architecture.</p>
+<p>While putting my presentation together I have found a number of items that I wanted to include in my presentation, but simply can't due to the obvious constraints of a 5-minute presentation.  Some of these items won't even get a mention, others will be mentioned only in passing.  I include them here as a list of topics for me to discuss in future posts to this blog.  Hopefully this will occur, at least in part, prior to the ignite event so that there will be a set of resources available to those at the event who were previously unfamiliar with these techniques and wish to explore them further.</p>
+<p>These topics include:</p>
+<ul>
+<li>IoC Containers</li>
+<li>Dealing with Provider-Specific requirements</li>
+<li>Configuration as a dependency</li>
+<li>Local providers for external dependencies</li>
+<li>Providers as application tiers</li>
+<li>Testing at the provider level</li>
+<li>Top Down Design [Added: 7/12/2009]</li>
+</ul>
+<p>If you have a topic that you are particularly interested in, or have any questions about IoC, Dependency Injection, or Providers that you would like me to answer, please use the comments or contact me via twitter: <a href="http://twitter.com/bsstahl">@bsstahl</a>.</p>
+
+    <h5>Tags: <a title="Tag: ignite" class="small" href="../Search/ignite.html">ignite</a>&nbsp;<a title="Tag: di" class="small" href="../Search/di.html">di</a>&nbsp;<a title="Tag: ioc" class="small" href="../Search/ioc.html">ioc</a>&nbsp;<a title="Tag: abstraction" class="small" href="../Search/abstraction.html">abstraction</a>&nbsp;<a title="Tag: indirection" class="small" href="../Search/indirection.html">indirection</a>&nbsp;<a title="Tag: interface" class="small" href="../Search/interface.html">interface</a>&nbsp;<a title="Tag: tdd" class="small" href="../Search/tdd.html">tdd</a>&nbsp;</h5>
+    <div class="share"><a href="../Permalinks/6ba711ad-9052-4ab0-bf94-a66b962d8725.html" rel="bookmark">Permalink</a></div>
+</div>
+<hr/><div>
+    <h3>Using Constraints in Rhino Mocks</h3>
+    <h5>Posted by bsstahl on 2009-04-17 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <p>In <a href="http://codebetter.com/blogs/karlseguin/archive/2009/04/01/don-t-be-afraid-of-complex-constraints.aspx">Don't be afraid of complex constraints</a>, Karl Seguin gives a nice overview of using constraints in Rhino Mocks to test complex unit interactions:</p>
+<blockquote>
+<p>...complex constraints can be handled one of three different ways: using a partial mock and externalizing the parameter creation, using inline custom constraints or using full blown constraint objects.</p>
+</blockquote>
+
+    <h5>Tags: <a title="Tag: unit testing" class="small" href="../Search/unit-testing.html">unit testing</a>&nbsp;<a title="Tag: tdd" class="small" href="../Search/tdd.html">tdd</a>&nbsp;<a title="Tag: mocks" class="small" href="../Search/mocks.html">mocks</a>&nbsp;</h5>
+    <div class="share"><a href="../Permalinks/cc363ae8-3e14-4947-adfc-7bcd098eee4a.html" rel="bookmark">Permalink</a></div>
+</div>
+<hr/><div>
+    <h3>Unit Test "Normalization"</h3>
+    <h5>Posted by bsstahl on 2007-07-07 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <p>In a recent conversation about Unit Tests, I was asked about how many asserts I would put into a single test, since some feel that there should only be one Assert per test. My answer was, that I look at it like database normalization with the test name serving as the primary key; that is, the asserts in the test should relate directly and only to that key. This analogy is also appropriate because DB normalization is a good thing within reason, but can definately be overdone. Unit test &quot;normalization&quot; can also be overdone if we try to break-out each assert into its own test.</p>
+<p>An example of where multiple asserts might be put into one test is a test of the Add method of a collection object which inherits from System.Collection.CollectionBase. When an item is added, it is appropriate to test for the proper index of that item to be returned from the method, as well as to test that the collection is holding the correct number of items after the Add is done. Both tests relate directly to the Add method. An argument could be made that the count of items relates to the Count property of the collection and therefore that assert doesn't relate only to the Add method, but since we are usually not coding the count property (because it was coded for us in CollectionBase), we don't need to test the Count property on its own, and it should be tested as part of the Add test.</p>
+
+    <h5>Tags: <a title="Tag: tdd" class="small" href="../Search/tdd.html">tdd</a>&nbsp;<a title="Tag: testing" class="small" href="../Search/testing.html">testing</a>&nbsp;<a title="Tag: assert" class="small" href="../Search/assert.html">assert</a>&nbsp;</h5>
+    <div class="share"><a href="../Permalinks/e203ddde-e61f-4d1d-bf55-9749f9e8c3c6.html" rel="bookmark">Permalink</a></div>
+</div>
+<hr/><div>
+    <h3>Testing Properties with Inconsistent Accessibility</h3>
+    <h5>Posted by bsstahl on 2007-06-26 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <p>I ran into an interesting problem today while attempting to test a property member which had a <strong>public</strong> getter, but an <strong>internal</strong> setter (a .NET 2.0 construction in C#).</p>
+<p>Consider the following class:
+<img src="/images/TestClass.png" alt="Class Definition" />
+This class features an internal constructor, along with a private field (_id) which is exposed by a property (ID) that is read-only on the public interface, but read-write internally to the assembly. This class looks as shown below in Reflector. Notice that the ID property is recognized as having a <strong>public</strong> getter, but the setter is marked as <strong>internal</strong>.
+<img src="/images/TestClass%20In%20Reflector.png" alt="Class in Reflector" /><br />
+<img src="/images/TestClass%20ID%20Property%20in%20Reflector.png" alt="Class in Reflector" />
+Using the Visual Studio 2005 test generator (right-click on the class and select Create Unit Test), I get the following:
+<a href="/images/IDTest_AsGenerated.png">![Test Method - As Generated (click for full-size image)](/images/IDTest_AsGenerated.png)</a>
+The problem is, this test will not work (notice the blue squiggly). The error is:</p>
+<blockquote>
+<p>Property or indexer 'TestClass.ID' cannot be assigned to -- it is read only</p>
+</blockquote>
+<p>It appears that the code-generator only looks at the primary property scope delaration, that it is <strong>public</strong>, and ignores the <strong>internal</strong> qualifier on the setter. As a result, the code-generated accessor for the object does not contain an accessor for the ID property, and the generated test will not compile since the property is, in fact, settable only internal to the assembly.</p>
+<p>The work-around here is actually quite simple, that is to do within the test what the code-generated accessor object normally does for us:
+<a href="/images/IDTest_Workaround.png">![Test Method - Workaround (click for full-size image)](/images/IDTest_Workaround.png)</a>
+I figure that Microsoft knows about this problem by now, but I couldn't find anything about it on the net. I may not have been searching using the appropriate terminology. I'll send Scott Guthrie a note just in case. If you are aware of another way around this problem, or if you know of a way to get the code-generator to act properly under these conditions, I would be very interested to hear about it.</p>
+
+    <h5>Tags: <a title="Tag: tdd" class="small" href="../Search/tdd.html">tdd</a>&nbsp;<a title="Tag: unit testing" class="small" href="../Search/unit-testing.html">unit testing</a>&nbsp;<a title="Tag: properties" class="small" href="../Search/properties.html">properties</a>&nbsp;<a title="Tag: csharp" class="small" href="../Search/csharp.html">csharp</a>&nbsp;</h5>
+    <div class="share"><a href="../Permalinks/ece1a3f3-8f27-40fe-9a89-a13892032e23.html" rel="bookmark">Permalink</a></div>
+</div>
+<hr/><div>
+    <h3>nUnit vs. VSTS</h3>
+    <h5>Posted by bsstahl on 2006-10-07 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <p>Mark Michaelis posted a hitlist of things to do to convert from nUnit to VSTS tests in his article <a href="http://mark.michaelis.net/Blog/ConvertingAClassLibraryToAVSTSTestProject.aspx">Converting a class library to a VSTS Test Project</a>. A big part of this process is understanding the attribute translation:</p>
+<p>| nUnit | VSTS |
+|</p>
+
+    <h5>Tags: <a title="Tag: tdd" class="small" href="../Search/tdd.html">tdd</a>&nbsp;<a title="Tag: testing" class="small" href="../Search/testing.html">testing</a>&nbsp;<a title="Tag: nunit" class="small" href="../Search/nunit.html">nunit</a>&nbsp;<a title="Tag: mstest" class="small" href="../Search/mstest.html">mstest</a>&nbsp;</h5>
+    <div class="share"><a href="../Permalinks/9e81f613-52ca-4108-acb4-f0f2ad3d36dc.html" rel="bookmark">Permalink</a></div>
+</div>
 
             </div>
             <div class="col-md-4">

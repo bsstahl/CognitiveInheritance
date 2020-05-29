@@ -264,6 +264,49 @@ a query that is much simpler, easier to understand, easier to create and easier 
     <h5>Tags: <a title="Tag: api" class="small" href="../Search/api.html">api</a>&nbsp;<a title="Tag: coding practices" class="small" href="../Search/coding-practices.html">coding practices</a>&nbsp;<a title="Tag: code sample" class="small" href="../Search/code-sample.html">code sample</a>&nbsp;<a title="Tag: development" class="small" href="../Search/development.html">development</a>&nbsp;<a title="Tag: generics" class="small" href="../Search/generics.html">generics</a>&nbsp;<a title="Tag: presentation" class="small" href="../Search/presentation.html">presentation</a>&nbsp;<a title="Tag: services" class="small" href="../Search/services.html">services</a>&nbsp;<a title="Tag: skill" class="small" href="../Search/skill.html">skill</a>&nbsp;<a title="Tag: SOA" class="small" href="../Search/SOA.html">SOA</a>&nbsp;<a title="Tag: speaking" class="small" href="../Search/speaking.html">speaking</a>&nbsp;<a title="Tag: visual studio" class="small" href="../Search/visual-studio.html">visual studio</a>&nbsp;</h5>
     <div class="share"><a href="../Permalinks/09a68c70-e4bc-494b-852b-e067b55c00e1.html" rel="bookmark">Permalink</a></div>
 </div>
+<hr/><div>
+    <h3>Demo Code for EF4Ent Sessions</h3>
+    <h5>Posted by bsstahl on 2011-06-26 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <p>I previously posted the slides for my <strong>Building Enterprise Apps using Entity Framework 4</strong> talk <a href="http://www.cognitiveinheritance.com/post/Desert-Code-Camp-Presentation.aspx">here</a>.  I can now post the source code for the completed demo application.  That code, created for use in Visual Studio 2010 Ultimate, is available in zip format below.  This is the same code that was demonstrated at Desert Code Camp 2011.1 and SoCalCodeCamp 2011 as well as the New Mexico .NET User’s Group (NMUG).</p>
+<p><a href="https://docs.google.com/uc?id=0B6PPrBnxN6VtMGRhNzZhOGUtNGY5NC00M2IyLTgxYzMtOTVlNDU0MDQyNjc1&amp;export=download&amp;hl=en_US" title="https://docs.google.com/uc?id=0B6PPrBnxN6VtMGRhNzZhOGUtNGY5NC00M2IyLTgxYzMtOTVlNDU0MDQyNjc1&amp;export=download&amp;hl=en_US">EF4EnterpriseDemoCode.zip</a></p>
+
+    <h5>Tags: <a title="Tag: abstraction" class="small" href="../Search/abstraction.html">abstraction</a>&nbsp;<a title="Tag: agile" class="small" href="../Search/agile.html">agile</a>&nbsp;<a title="Tag: assembly" class="small" href="../Search/assembly.html">assembly</a>&nbsp;<a title="Tag: code analysis" class="small" href="../Search/code-analysis.html">code analysis</a>&nbsp;<a title="Tag: code camp" class="small" href="../Search/code-camp.html">code camp</a>&nbsp;<a title="Tag: code contracts" class="small" href="../Search/code-contracts.html">code contracts</a>&nbsp;<a title="Tag: code sample" class="small" href="../Search/code-sample.html">code sample</a>&nbsp;<a title="Tag: coding practices" class="small" href="../Search/coding-practices.html">coding practices</a>&nbsp;<a title="Tag: conference" class="small" href="../Search/conference.html">conference</a>&nbsp;<a title="Tag: csharp" class="small" href="../Search/csharp.html">csharp</a>&nbsp;<a title="Tag: enterprise library" class="small" href="../Search/enterprise-library.html">enterprise library</a>&nbsp;<a title="Tag: entity" class="small" href="../Search/entity.html">entity</a>&nbsp;<a title="Tag: entity framework" class="small" href="../Search/entity-framework.html">entity framework</a>&nbsp;<a title="Tag: fxcop" class="small" href="../Search/fxcop.html">fxcop</a>&nbsp;<a title="Tag: interface" class="small" href="../Search/interface.html">interface</a>&nbsp;<a title="Tag: testing" class="small" href="../Search/testing.html">testing</a>&nbsp;<a title="Tag: unit testing" class="small" href="../Search/unit-testing.html">unit testing</a>&nbsp;<a title="Tag: visual studio" class="small" href="../Search/visual-studio.html">visual studio</a>&nbsp;</h5>
+    <div class="share"><a href="../Permalinks/8d5a0399-f8d1-4631-bd28-1cdddb0a64ac.html" rel="bookmark">Permalink</a></div>
+</div>
+<hr/><div>
+    <h3>Sample SQL 2000 XML Query Courtesy of AE</h3>
+    <h5>Posted by bsstahl on 2006-05-25 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <p>DECLARE @sxml varchar(8000)<br />
+SET @sxml = '&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br />
+&lt;Change xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; Version=&quot;1.0&quot;&gt;<br />
+&lt;SourceApplication&gt;&lt;Name&gt;Intranet&lt;/Name&gt;&lt;/SourceApplication&gt;<br />
+&lt;DestinationApplication&gt;&lt;Name&gt;FundsDB&lt;/Name&gt;&lt;/DestinationApplication&gt;<br />
+&lt;UserName&gt;JDoe&lt;/UserName&gt;&lt;IPAddress&gt;192.168.101.2&lt;/IPAddress&gt;<br />
+&lt;BusinessEntity&gt;&lt;Name&gt;Fund&lt;/Name&gt;&lt;/BusinessEntity&gt;&lt;ChangeItems&gt;<br />
+&lt;ChangeItem&gt;&lt;OriginalData&gt;ABC Fund&lt;/OriginalData&gt;&lt;NewData&gt;123 Fund&lt;/NewData&gt;<br />
+&lt;DataID&gt;5&lt;/DataID&gt;&lt;Field&gt;&lt;Name&gt;Name&lt;/Name&gt;&lt;/Field&gt;&lt;/ChangeItem&gt;<br />
+&lt;ChangeItem&gt;&lt;OriginalData&gt;Type A&lt;/OriginalData&gt;&lt;NewData&gt;Type B&lt;/NewData&gt;<br />
+&lt;DataID&gt;5&lt;/DataID&gt;&lt;Field&gt;&lt;Name&gt;Type&lt;/Name&gt;&lt;/Field&gt;&lt;/ChangeItem&gt;<br />
+&lt;/ChangeItems&gt;&lt;ChangeDate&gt;2004-10-12T12:57:00-07:00&lt;/ChangeDate&gt;<br />
+&lt;CommandText&gt;s_SaveFund&lt;/CommandText&gt;&lt;/Change&gt;'</p>
+
+    <h5>Tags: <a title="Tag: xml" class="small" href="../Search/xml.html">xml</a>&nbsp;<a title="Tag: sql" class="small" href="../Search/sql.html">sql</a>&nbsp;<a title="Tag: code sample" class="small" href="../Search/code-sample.html">code sample</a>&nbsp;</h5>
+    <div class="share"><a href="../Permalinks/ebfc5816-e855-47dd-898b-8163932d85ef.html" rel="bookmark">Permalink</a></div>
+</div>
+<hr/><div>
+    <h3>Sample Using Statement in VB.NET 2005</h3>
+    <h5>Posted by bsstahl on 2006-04-28 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <p>Using wsBlogService As New BlogService.Blog<br />
+     Try<br />
+          Me.Text = wsBlogService.DisplayBlog(&quot;BlogName&quot;, 0)<br />
+     Catch objException As System.Exception<br />
+          Me.Text = String.Format(&quot;&quot;, objException.Message, wsBlogService.url)<br />
+     End Try<br />
+End Using</p>
+
+    <h5>Tags: <a title="Tag: vb.net" class="small" href="../Search/vbdotnet.html">vb.net</a>&nbsp;<a title="Tag: code sample" class="small" href="../Search/code-sample.html">code sample</a>&nbsp;<a title="Tag: using" class="small" href="../Search/using.html">using</a>&nbsp;</h5>
+    <div class="share"><a href="../Permalinks/12361edd-560a-4532-bec9-53b11dc3767e.html" rel="bookmark">Permalink</a></div>
+</div>
 
             </div>
             <div class="col-md-4">
