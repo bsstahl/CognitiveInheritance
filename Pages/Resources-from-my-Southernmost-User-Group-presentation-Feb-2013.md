@@ -1,16 +1,18 @@
 ---
-tags: []
+tags:
+- events
 menuorder: 0
 id: f303dcb8-f977-4099-934b-7c922c7ddf1f
-author: 
+author: bsstahl
 title: SMUG 2013 Resources
-description: 
+description: ''
 ispublished: true
 showinlist: false
 publicationdate: 2013-03-01T00:00:00.000+00:00
 lastmodificationdate: 0001-01-01T00:00:00.000+00:00
 slug: Resources-from-my-Southernmost-User-Group-presentation-Feb-2013
-categories: []
+categories:
+- Event
 
 ---
 **SMUG 2013 Presentation**
