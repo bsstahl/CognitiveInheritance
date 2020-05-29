@@ -8,8 +8,8 @@ title: Upcoming Presentations
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2013-02-06T10:48:09.000+00:00
-lastmodificationdate: 2013-02-06T10:48:09.000+00:00
+publicationdate: 2013-02-06T10:49:09Z
+lastmodificationdate: 2013-02-06T10:49:09Z
 slug: Upcoming-Presentations
 categories:
 - Event
