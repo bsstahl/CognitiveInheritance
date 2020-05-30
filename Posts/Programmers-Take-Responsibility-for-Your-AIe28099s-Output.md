@@ -14,16 +14,14 @@ title: Programmers -- Take Responsibility for Your AI’s Output
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2018-03-16T03:22:42
-lastmodificationdate: 2018-03-16T03:22:42
+publicationdate: 2018-03-16T03:22:42.000+00:00
+lastmodificationdate: 2018-03-16T03:22:42.000+00:00
 slug: Programmers-Take-Responsibility-for-Your-AIe28099s-Output
 categories:
 - Development
 
 ---
-
-
-> **plus ça change, plus c'est la même chose** – **The more that things change, the more they stay the same**. – Rush (and others ![Winking smile](http://www.cognitiveinheritance.com/image.axd?picture=wlEmoticon-winkingsmile.png) )
+> **plus ça change, plus c'est la même chose** – **The more that things change, the more they stay the same**. – Rush (and others ![Winking smile]({PathToRoot}/Images/wlEmoticon-winkingsmile.png) )
 
 
 In 2013 I [wrote](http://www.cognitiveinheritance.com/post/Programmers-Take-Responsibility-for-Your-Programe28099s-Output.aspx) that programmers needed to take responsibility for the output of their computer programs.  In that article, I advised developers that the output of their system, no matter how “random” or “computer generated”, was still their responsibility. I suggested that we cannot cop out by claiming  that the output of our programs is not our fault simply because we didn’t directly instruct the computer to issue that specific result.
@@ -73,4 +71,3 @@ If we are unable to come up with an algorithm that is free from bias, perhaps th
 ## The Burden is Ours
 
 As the creators of automated decision making systems, we have the responsibility to make sure that the decisions they make do not violate our standards or ethics.  We cannot depend on our AIs to make fair and reasonable decisions unless we program them to do so, and programming them to avoid inherent biases requires an awareness and openness that has not always been present.  By taking the steps outlined here to be aware of the dangers and to mitigate it wherever possible, we have a chance of making decisions that we can all be proud of, and have confidence in.
-
