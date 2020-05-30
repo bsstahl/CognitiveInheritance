@@ -146,7 +146,7 @@ public class MeetingReadRepository : IMeetingReadRepository
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/dotnet/api/system.double?view=netcore-2.2&quot;&gt;Double Struct&lt;/a&gt; in the .NET API Browser&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/dotnet/api/system.convert.toint64?view=netcore-2.2#System_Convert_ToInt64_System_Double_&quot;&gt;Convert.ToInt64 method&lt;/a&gt; in the .NET API Browser&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/double&quot;&gt;double data type&lt;/a&gt; in the C# Language Reference&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types&quot;&gt;double data type&lt;/a&gt; in the C# Language Reference&lt;/li&gt;
 &lt;li&gt;John Skeet on &lt;a href=&quot;http://csharpindepth.com/Articles/General/FloatingPoint.aspx?printable=true&quot;&gt;Binary floating point numbers in .NET&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;John Skeet’s &lt;a href=&quot;http://jonskeet.uk/csharp/DoubleConverter.cs&quot;&gt;code to convert doubles to the string representation of their exact decimal value&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
