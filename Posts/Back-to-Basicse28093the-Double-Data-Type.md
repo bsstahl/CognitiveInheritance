@@ -16,21 +16,21 @@ title: Back to Basics–the Double Data Type
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2019-02-12T02:55:23
-lastmodificationdate: 2019-02-12T02:55:23
+publicationdate: 2019-02-12T02:55:23.000+00:00
+lastmodificationdate: 2019-02-12T02:55:23.000+00:00
 slug: Back-to-Basicse28093the-Double-Data-Type
 categories:
 - Development
 
 ---
-
 What is the result of converting a value that is close to, but not at, the maximum value of an Int64 from a double to a long (Int64)?  That is, what would be the result of an expression like:
+
  `(long)((double)(Int64.MaxValue – 1))`
-1. 9223372036854775806 (263-2, the correct value numerically)
+ 
+1. 9223372036854775806 (2<sup>63</sup>-2, the correct value numerically)
 2. -9223372036854775808 or another obviously incorrect value
 3. OverflowException
 4. Any of the above
-
 
 Based on the framing of the question it is probably clear that the correct answer is "D". It is possible, depending on the hardware details and current state of your system, for any of the 3 possible outcomes.  Why is this and what can we do to be sure that the results of our floating-point operations are what we expect them to be?
 
@@ -43,7 +43,9 @@ The Double data type on the other hand is far more complex. It requires storage 
 It is this difference in fidelity; 63 bits for Int64 and roughly 52 bits for Doubles, that can cause us problems when converting between the two types.  As long as the integer value can be stored in less than 52 bits (value &lt; 4503599627370495) values can be converted back and forth between Int64 and Double without any data loss. However, as soon as the values cannot be represented completely in 52 bits, data loss is likely to occur.
 
 To store such a value in a Double data type, the exponent is adjusted higher and the best available value for the mantissa is found.  When converted back to Int64, this value will be rounded automatically by the framework into the closest integer value. This resulting value may, or may not, be exactly the same as the original value.  To see an example of this, execute the following code in your favorite C# environment:
+
  `Console.WriteLine((long)9223372036854773765.0);`
+
 If your system is like mine, you’ll get an answer that is not the same as the original value. On my system, I get the result **9223372036854773760**. It is said that this integer does not “round-trip” since it cannot be converted into a Double and then back to an integer.
 
 To make matters worse, the rounding that is required for this conversion can be unsafe under certain conditions. On my machine, if the values get within 512 of Int64.MaxValue, even though they don’t exceed it, attempting the conversion may result in an invalid result, or an **OverflowException**. Even performing the operation without overflow checking using the **unchecked** keyword or compiler switch doesn't improve things since, if done unchecked, any overflow in the operation will result in an incorrect value rather than an exception. I prefer the exception in this kind of situation so I generally keep overflow checking on.
@@ -56,16 +58,8 @@ I’ve attached a number of resources below that I used in my research to produc
  
 ## Resources
  
-    [Double Struct](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=netcore-2.2) in the .NET API Browser
-    [Convert.ToInt64 method](https://docs.microsoft.com/en-us/dotnet/api/system.convert.toint64?view=netcore-2.2#System_Convert_ToInt64_System_Double_) in the .NET API Browser
-    [double data type](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/double) in the C# Language Reference
-    John Skeet on [Binary floating point numbers in .NET](http://csharpindepth.com/Articles/General/FloatingPoint.aspx?printable=true)
-
-
-John Skeet’s[code to convert doubles to the string representation of their exact decimal value](http://jonskeet.uk/csharp/DoubleConverter.cs)
-
-
-
-
-   
-
+* [Double Struct](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=netcore-2.2) in the .NET API Browser
+* [Convert.ToInt64 method](https://docs.microsoft.com/en-us/dotnet/api/system.convert.toint64?view=netcore-2.2#System_Convert_ToInt64_System_Double_) in the .NET API Browser
+* [double data type](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/double) in the C# Language Reference
+* John Skeet on [Binary floating point numbers in .NET](http://csharpindepth.com/Articles/General/FloatingPoint.aspx?printable=true)
+* John Skeet’s [code to convert doubles to the string representation of their exact decimal value](http://jonskeet.uk/csharp/DoubleConverter.cs)
