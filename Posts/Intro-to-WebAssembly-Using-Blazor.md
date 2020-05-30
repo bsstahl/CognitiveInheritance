@@ -3,7 +3,6 @@ tags:
 - apps
 - community
 - csharp
-- event
 - framework
 - html5
 - introduction
@@ -11,7 +10,6 @@ tags:
 - presentation
 - phoenix
 - speaking
-- speech
 - user group
 - ux
 - wasm
@@ -24,14 +22,13 @@ title: Intro to WebAssembly Using Blazor
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2018-09-26T18:12:49
-lastmodificationdate: 2018-09-26T18:26:38
+publicationdate: 2018-09-26T18:12:49.000+00:00
+lastmodificationdate: 2018-09-26T18:26:38.000+00:00
 slug: Intro-to-WebAssembly-Using-Blazor
 categories:
 - Event
 
 ---
-
 I will be speaking tonight, 9/26/2018 at the [Northwest Valley .NET User Group](https://www.meetup.com/NWVDNUG/events/254835128/) and tomorrow, 9/27/2018 at the [Southeast Valley .NET User Group](https://www.meetup.com/sevdnug/events/254838096/). I will be speaking on the subject of WebAssembly. The talk will go into what WebAssembly programs look and act like, and how they run, then explore how we as .NET developers can write WebAssembly programs with Microsoft’s experimental platform, Blazor.
 
 
@@ -43,4 +40,3 @@ I will be speaking tonight, 9/26/2018 at the [Northwest Valley .NET User Group](
 
 
 The slide deck for these presentations can be found here [IntroToWasmAndBlazor-201809.pdf](https://1drv.ms/b/s!AMwbHpz53UVdm45C).
- 
