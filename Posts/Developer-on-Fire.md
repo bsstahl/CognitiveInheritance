@@ -27,7 +27,7 @@ I was recently interviewed by Dave Rael ([@raelyard](https://twitter.com/raelyar
 
 I also took the opportunity to talk about a few things that have been on my mind:
 
-* The upcoming [AZGiveCamp](http://meetup.com/azigivecamp) Event scheduled for March 2019
+* The upcoming [AZGiveCamp](http://meetup.com/azgivecamp) Event scheduled for March 2019
 * Some of [the giants on whose shoulders we stand](https://twitter.com/bsstahl/status/878043411923599360)
 * A few of the technologies that are making me happy right now:
   * [WebAssembly](https://webassembly.org/) and [Blazor](https://blazor.net/)
@@ -38,4 +38,4 @@ I also took the opportunity to talk about a few things that have been on my mind
 
 I hope you enjoy this interview and find something of value in it. If so, please let me know about it on [Twitter](http://twitter.com/bsstahl).
 
-[![Developer On Fire](\{PathToRoot\}/Images/DeveloperOnFire_1.png "DeveloperOnFire Podcast")](https://developeronfire.com/podcast/episode-399-barry-stahl-optimizing-impact)
+[![Developer On Fire]({PathToRoot}/Images/DeveloperOnFire_1.png "DeveloperOnFire Podcast")](https://developeronfire.com/podcast/episode-399-barry-stahl-optimizing-impact)
