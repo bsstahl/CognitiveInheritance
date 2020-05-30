@@ -11,7 +11,7 @@ tags:
 menuorder: 0
 id: c6b4c9e8-b82c-4fd2-b73d-c230671d66ec
 author: bsstahl
-title: Save the Date for AZGiveCamp IX
+title: Save the Date of AZGiveCamp IX
 description: 
 ispublished: true
 showinlist: false
@@ -22,7 +22,7 @@ categories:
 - Event
 
 ---
-### Save the Dates -- March 8th–10th 2019
+### March 8th–10th 2019
 
 ![Code Monkey 3 Duckin it (1)](http://www.cognitiveinheritance.com/image.axd?picture=Code%20Monkey%203%20Duckin%20it%20(1)_1.png "Code Monkey 3 Duckin it (1)")
 
