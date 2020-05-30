@@ -1,14 +1,13 @@
 ---
 tags:
-- .net
 - abstraction
-- di
-- portable
 - pcl
 - device
 - phone
 - win8
 - wp8
+- dotnet
+- dependency injection
 menuorder: 0
 id: bd40aaeb-c0af-43e4-badb-6b95327f8e9e
 author: bsstahl
@@ -16,14 +15,13 @@ title: Using Target-Specific Code in a Portable Library
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2013-06-27T16:05:00
-lastmodificationdate: 2013-06-27T16:51:31
+publicationdate: 2013-06-27T16:05:00.000+00:00
+lastmodificationdate: 2013-06-27T16:51:31.000+00:00
 slug: Using-Target-Specific-Code-in-a-Portable-Library
 categories:
 - Development
 
 ---
-
 On at least 2 occasions recently, I have heard speakers tell their audience that you cannot reference a target-specific .NET library (such as a .NET Framework 4.5 library) from a Portable Class Library.  While this is technically true, it doesn't tell nearly the whole story.  Even though we can't reference target-specific libraries, we can still USE these libraries. We can call their methods and access their properties under the right circumstances. We can gain access to these libraries via an abstraction.  My preferred method of doing this is known as Dependency Injection.
 
 I'm going to give some quick background on PCLs and DI before getting into the details of how they can be used in this context. If you are familiar with Dependency Injection and .NET Portable Class Libraries you can skip these sections.
@@ -43,4 +41,3 @@ Let's suppose we have a .NET Portable Class Library that implements the business
 A sample app that is available in the 3 targets previously described may look something like [this](https://skydrive.live.com/redir?resid=5D45DDF99C1E1BCC!144541&amp;authkey=!AHGsbXjaNpcRdvc).  The business-logic and domain layers (interfaces, exceptions, entities, etc) are both PCLs and exist for use in all 3 targets.  The UI layer and Infrastructure layers (in this case, storage) are target-specific and require a separate implementation for each target platform.  A system designed in this way can maximize the use of common, shared code while still making platform specific features available in a type-safe way.
 
 If you are interested in seeing this implementation done live, you can come to one of my Code Camp talks on the subject, or request me as a speaker for your User Group via [Ineta](http://ineta.org/Speakers/SearchCommunitySpeakers.aspx?SpeakerId=4fdf7fc7-5cac-4842-acec-960815523108).
-
