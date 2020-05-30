@@ -4,8 +4,8 @@ tags:
 - code contracts
 - moles
 - unit testing
-- .net
 - csharp
+- dotnet
 menuorder: 0
 id: b4d0b40f-8268-4cdd-a102-fec4317f463c
 author: bsstahl
@@ -13,14 +13,13 @@ title: Two Things I Learned on Pex4Fun.com Today
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2010-11-12T20:45:00
-lastmodificationdate: 2010-11-12T20:52:08
+publicationdate: 2010-11-12T20:45:00.000+00:00
+lastmodificationdate: 2010-11-12T20:52:08.000+00:00
 slug: Two-Things-I-Learned-on-Pex4Funcom-Today
 categories:
 - Development
 
 ---
-
 Since I’m a fan of puzzles, I’ve been spending a bit of time on [http://PexForFun.com](http://PexForFun.com) lately.  This site was put together by the Pex team (part of Microsoft Research) to show off the capabilities of some of the research group’s  latest creations; Pex, Moles, and Code Contracts.  I’ve been enjoying this site because it gives me the opportunity to solve some coding puzzles, while at the same time discovering things about these new tools.  Today alone, I discovered the following:
 
 ## The order of Contract.Requires() in Code Contracts matters.
@@ -38,4 +37,3 @@ I have posted this as a question on the [Pex and Moles PowerTool](http://social.
 I highly recommend checking out [http://PexForFun.com](http://PexForFun.com).  Try a few code duels and perhaps create a few of your own.  I have created several code duels which you are welcome to try and solve:
 
 [FabulousMrFib](http://pexforfun.com/Default.aspx?resume=LADsvQdgHEmWJSYvbcp7f0r1StfgdKEIgGATJNiQQBDswYjN5pLsHWlHIymrKoHKZVZlXWYWQMztnbz33nvvvffee__997o7nU4n99%2f%2fP1xmZAFs9s5K2smeIYCqyB8%2ffnwfPyLOpzvTh9MH9_49PJ%2fle%2fn9fGdn5%2f7Bwfl_%2fmA%2fn_1P7u49vLd98On_9sG9nf8nAAD%2f%2fw%3d%3d) | [ChallengeEarnies](http://pexforfun.com/Default.aspx?resume=LADsvQdgHEmWJSYvbcp7f0r1StfgdKEIgGATJNiQQBDswYjN5pLsHWlHIymrKoHKZVZlXWYWQMztnbz33nvvvffee__997o7nU4n99%2f%2fP1xmZAFs9s5K2smeIYCqyB8%2ffnwfPyLOpzvTh9MH9_49PJ%2fle%2fn9fGdn5%2f7Bwfl_%2fmA%2fn_1P7t67d3%2f74NOD7U8f3v9%2fAgAA%2f%2f8%3d) | [ChallengeAuction](http://pexforfun.com/Default.aspx?resume=LADsvQdgHEmWJSYvbcp7f0r1StfgdKEIgGATJNiQQBDswYjN5pLsHWlHIymrKoHKZVZlXWYWQMztnbz33nvvvffee__997o7nU4n99%2f%2fP1xmZAFs9s5K2smeIYCqyB8%2ffnwfPyLOpzvTh9MH9_49PJ%2fle%2fn9fGdn5%2f7Bwfl_%2fmA%2fn_1P7t67d7C9v7u7ffDgwf8TAAD%2f%2fw%3d%3d) | [ChallengeContractSubstring](http://pexforfun.com/Default.aspx?resume=LADsvQdgHEmWJSYvbcp7f0r1StfgdKEIgGATJNiQQBDswYjN5pLsHWlHIymrKoHKZVZlXWYWQMztnbz33nvvvffee__997o7nU4n99%2f%2fP1xmZAFs9s5K2smeIYCqyB8%2ffnwfPyLOpzvTh9MH9_49PJ%2fle%2fn9fGdn5%2f7Bwfl_%2fmA%2fn_1P7j7Y39u_f39v_9P9e%2f9PAAAA%2f%2f8%3d)
-
