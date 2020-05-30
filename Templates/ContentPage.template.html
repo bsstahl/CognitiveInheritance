@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+---
+
+---
+<!DOCTYPE html>
 <html lang=en>
     <head>
         <meta charset="utf-8">
@@ -53,8 +56,11 @@
 
         <div class="row">
             <div class="col-md-8">
-                <h1>{Title}</h1>
-                {Content}
+              <h3>{Title}</h3>
+              <h5>Posted {ByLine} on {PublicationDate} and Filed Under: {Categories}</h5>
+              {Content}
+              <h5>Tags: {Tags}</h5>
+              <div class="share">{Permalink}</div>
             </div>
             <div class="col-md-4">
                 {Sidebar}
