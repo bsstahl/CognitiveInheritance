@@ -9,7 +9,7 @@ tags:
 - principle
 - flexibility
 - yagni
-- eventing
+- event driven
 menuorder: 0
 id: 578752d7-225b-4510-8de2-2c35ded2eb84
 author: bsstahl
