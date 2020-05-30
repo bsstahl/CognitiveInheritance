@@ -7,12 +7,8 @@ widgettype: TextBox
 orderindex: 10
 
 ---
-<p>Twitter: <a href="[http://twitter.com/bsstahl](http://twitter.com/bsstahl "http://twitter.com/bsstahl")">@BSStahl</a></p>
-
-<p>Facebook: <a href="[http://www.facebook.com/barrystahl](http://www.facebook.com/barrystahl "http://www.facebook.com/barrystahl")">BarryStahl</a></p>
-
-<p>LinkedIn: <a href="[http://www.linkedin.com/in/bstahl](http://www.linkedin.com/in/bstahl "http://www.linkedin.com/in/bstahl")">BStahl</a></p>
-
-<p>Flickr: <a href="[http://flickr.com/bsstahl](http://flickr.com/bsstahl "http://flickr.com/bsstahl")">BSStahl</a></p>
-
+* Twitter: [@bsstahl](http://twitter.com/bsstahl)
+* Facebook: [Barry Stahl](http://www.facebook.com/barrystahl)
+* LinkedIn: [BStahl](http://www.linkedin.com/in/bstahl)
+* Flickr: [BSStahl](http://flickr.com/bsstahl)
 * Community Speaker: [Barry S. Stahl]({PathToRoot}/Pages/Speaking-Engagements.html)
