@@ -73,10 +73,10 @@ public class MeetingReadRepository : IMeetingReadRepository
   <title>Three Awesome Months</title>
   <description>&lt;p&gt;The next few months are going to be absolutely amazing. We&apos;ve got some great events coming up in March and April right here in the Valley of the Sun. In addition, I currently have 4 conferences scheduled in 4 different countries on 2 continents.&lt;/p&gt;
 &lt;h2&gt;AZGiveCamp IX - Presented by Quicken Loans - March 8th-10th&lt;/h2&gt;
-&lt;h3&gt;Signup: &lt;a href=&quot;https://www.meetup.com/AZGiveCamp/events/258743318/&quot;&gt;https://www.meetup.com/AZGiveCamp/events/258743318/&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;The most important occasion coming up is the 9th AZGiveCamp Hackathon of Help. This year, we&apos;re very fortunate to have Quicken Loans presenting our event and hosting it at their new facility in downtown Phoenix. At AZGiveCamp, Arizona&apos;s finest technologists will put their skills to work creating software for some great local charity organizations. We help them help our community by using our skills to create tools that help them further their mission.&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;https://www.meetup.com/AZGiveCamp/events/258743318/&quot;&gt;Signup&lt;/a&gt;&lt;/h3&gt;
+&lt;h3&gt;The most important occasion coming up is the 9th AZGiveCamp Hackathon of Help. This year, we&apos;re very fortunate to have Quicken Loans presenting our event and hosting it at their new facility in downtown Phoenix. At AZGiveCamp, Arizona&apos;s finest technologists will put their skills to work creating software for some great local charity organizations. We help them help our community by using our skills to create tools that help them further their mission.&lt;/h3&gt;
 &lt;h2&gt;Visual Studio 2019 Arizona Launch - April 16th&lt;/h2&gt;
-&lt;h3&gt;Signup: &lt;a href=&quot;https://www.meetup.com/NWVDNUG/events/259269140/&quot;&gt;https://www.meetup.com/NWVDNUG/events/259269140/&lt;/a&gt;&lt;/h3&gt;
+&lt;h3&gt;&lt;a href=&quot;https://www.meetup.com/NWVDNUG/events/259269140/&quot;&gt;Signup&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Another fun event for developers in the valley is the Visual Studio 2019 Arizona Launch event being hosted at Galvanize. We&apos;ll have some great speakers talking about how Visual Studio 2019 is a more productive, modern, and innovative environment for building software.&lt;/p&gt;
 &lt;h2&gt;Around the World&lt;/h2&gt;
 &lt;p&gt;In March, I&apos;ll be visiting opposite ends of the east coast of North America.&lt;/p&gt;
@@ -89,7 +89,7 @@ public class MeetingReadRepository : IMeetingReadRepository
   <link>Posts/Three-Awesome-Months.html</link>
   <author>bsstahl</author>
   <guid><a href="Permalinks/7d652a10-6e7d-43d9-adb0-fbfce01e46db.html" rel="bookmark">Permalink</a></guid>
-  <pubDate>2019-02-26T00:00:00.0000000</pubDate>
+  <pubDate>2019-02-26T00:00:00.0000000+00:00</pubDate>
 </item>
 <item>
   <title>The Value of Flexibility</title>
