@@ -21,25 +21,24 @@ title: Three Awesome Months
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2019-02-26T04:57:21
-lastmodificationdate: 2019-02-26T04:57:21
+publicationdate: 2019-02-26T04:57:21.000+00:00
+lastmodificationdate: 2019-02-26T04:57:21.000+00:00
 slug: Three-Awesome-Months
 categories:
 - Event
 
 ---
-
 The next few months are going to be absolutely amazing. We've got some great events coming up in March and April right here in the Valley of the Sun. In addition, I currently have 4 conferences scheduled in 4 different countries on 2 continents.
 
 ## AZGiveCamp IX - Presented by Quicken Loans - March 8th-10th
 
-### Signup: [https://www.meetup.com/AZGiveCamp/events/258743318/](https://www.meetup.com/AZGiveCamp/events/258743318/)
+### [Signup](https://www.meetup.com/AZGiveCamp/events/258743318/)
 
-The most important occasion coming up is the 9th AZGiveCamp Hackathon of Help. This year, we're very fortunate to have Quicken Loans presenting our event and hosting it at their new facility in downtown Phoenix. At AZGiveCamp, Arizona's finest technologists will put their skills to work creating software for some great local charity organizations. We help them help our community by using our skills to create tools that help them further their mission.
+### The most important occasion coming up is the 9th AZGiveCamp Hackathon of Help. This year, we're very fortunate to have Quicken Loans presenting our event and hosting it at their new facility in downtown Phoenix. At AZGiveCamp, Arizona's finest technologists will put their skills to work creating software for some great local charity organizations. We help them help our community by using our skills to create tools that help them further their mission.
 
 ## Visual Studio 2019 Arizona Launch - April 16th
 
-### Signup: [https://www.meetup.com/NWVDNUG/events/259269140/](https://www.meetup.com/NWVDNUG/events/259269140/)
+### [Signup](https://www.meetup.com/NWVDNUG/events/259269140/)
 
 Another fun event for developers in the valley is the Visual Studio 2019 Arizona Launch event being hosted at Galvanize. We'll have some great speakers talking about how Visual Studio 2019 is a more productive, modern, and innovative environment for building software.
 
@@ -56,4 +55,3 @@ In May I get to do a short tour of Europe, spending 2 weeks at conferences in Bu
 ## Keep up With Me
 
 I maintain a list of my presentations, both past and upcoming, on the [Community Speaker](http://www.cognitiveinheritance.com/page/Speaking-Engagements.aspx) page of this blog. I also try to document my conference experiences on [Twitter](https://twitter.com/bsstahl). If you are going to be attending any of these events, please be sure to ping me on Twitter and let me know.
-
