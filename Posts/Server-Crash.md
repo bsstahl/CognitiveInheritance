@@ -1,6 +1,5 @@
 ---
-tags:
-- server
+tags: []
 menuorder: 0
 id: c71cbe7d-a235-4aa8-85da-4cd67d761c29
 author: bsstahl

@@ -5,7 +5,7 @@ tags:
 - microsoft
 - phone
 menuorder: 0
-id: '0836bb99-7766-4450-9ded-fe981f771e67'
+id: 0836bb99-7766-4450-9ded-fe981f771e67
 author: bsstahl
 title: Office Lens–Magic in a Free App
 description: 
