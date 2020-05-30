@@ -2,7 +2,6 @@
 tags:
 - code camp
 - ajax
-- atlas
 - javascript
 menuorder: 0
 id: fa64c95d-3b3d-4192-8c35-86d1a64d4cda
@@ -11,8 +10,8 @@ title: Holding the Web on Your Shoulders With Atlas
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2006-05-09T07:57:00
-lastmodificationdate: 2011-03-08T07:26:19
+publicationdate: 2006-05-09T07:57:00.000+00:00
+lastmodificationdate: 2011-03-08T07:26:19.000+00:00
 slug: Holding-the-Web-on-Your-Shoulders-With-Atlas
 categories:
 - Development
