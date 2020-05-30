@@ -1,6 +1,5 @@
 ---
 tags:
-- .net
 - assembly
 - csharp
 - development
@@ -13,6 +12,7 @@ tags:
 - xaml
 - html5
 - runtime components
+- dotnet
 menuorder: 0
 id: 1ad203b0-f604-43c0-8293-aad482376f98
 author: bsstahl
@@ -20,14 +20,13 @@ title: Windows 8 Store Development for Enterprise Devs
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2013-02-28T09:34:00
-lastmodificationdate: 2013-04-14T13:28:27
+publicationdate: 2013-02-28T09:34:00.000+00:00
+lastmodificationdate: 2013-04-14T13:28:27.000+00:00
 slug: Windows-8-Store-Development-for-Enterprise-Devs
 categories:
 - Development
 
 ---
-
 ### or, How I found my Passion for Windows 8 Store App Development
 
 Update: My first Windows Store app was published on March 27, 2013 and can be found [here](http://t.co/AcyA1LbQbN).
@@ -51,4 +50,3 @@ With the primary business functionality done in C#, it becomes a relatively triv
 
 
 I’m interested to hear if there are other enterprise developers with similar stories, whose comfort zones of HTML and C# or VB have kept them from building apps as they’d like. Please contact me on Twitter at [@bsstahl](http://www.twitter.com/bsstahl).
-
