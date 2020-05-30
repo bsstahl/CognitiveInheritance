@@ -3,15 +3,13 @@ tags:
 - abstraction
 - agile
 - coding practices
-- event
-- key
 - microservices
 - optimization
 - pattern
 - principle
-- value
 - flexibility
 - yagni
+- eventing
 menuorder: 0
 id: 578752d7-225b-4510-8de2-2c35ded2eb84
 author: bsstahl
@@ -19,14 +17,13 @@ title: The Value of Flexibility
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2019-02-14T16:31:05
-lastmodificationdate: 2019-02-14T16:31:05
+publicationdate: 2019-02-14T16:31:05.000+00:00
+lastmodificationdate: 2019-02-14T16:31:05.000+00:00
 slug: The-Value-of-Flexibility
 categories:
 - Development
 
 ---
-
 Have you ever experienced that feeling you get when you need to extend an existing system and there is an extension point that is exactly what you need to build on?
 
 For example, suppose I get a request to extend a system so that an additional action is taken whenever a new user signs-up.  The system already has an event message that is published whenever a new user signs-up that contains all of the information I need for the new functionality.  All I have to do is subscribe a new microservice to this event message, and have that service take the new action whenever it receives a message. Boom! Done.
@@ -59,4 +56,3 @@ For me, it means that I allow seams in my applications that I may not have a fun
 There are, of course, dangers here as well. It can be easy to fire events whenever we would generally issue a logging message.  Events should be limited to those in the problem domain (Domain Events), not application events. We can also reach a level of absurdity with the weight of each message. As with all things, a balance needs to be struck. In determining that balance, I value Flexibility over Optimization whenever it is reasonable and possible to do so.
 
 Do you feel differently? If so, let me know on [Twitter](http://www.twitter.com/bsstahl).
-
