@@ -11,7 +11,7 @@ tags:
 menuorder: 0
 id: c6b4c9e8-b82c-4fd2-b73d-c230671d66ec
 author: bsstahl
-title: Save the Date of AZGiveCamp IX
+title: AZGiveCamp IX-Save the Date
 description: 
 ispublished: true
 showinlist: false
