@@ -14,23 +14,22 @@ title: Code Analysis Rules
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2011-06-07T08:46:42
-lastmodificationdate: 2011-06-07T08:46:42
+publicationdate: 2011-06-07T08:46:42.000+00:00
+lastmodificationdate: 2011-06-07T08:46:42.000+00:00
 slug: Code-Analysis-Rules
 categories:
 - Development
 
 ---
-
 FxCop, the built-in code-analysis tool in Visual Studio, is the first thing I check when doing a code review.  If Code Analysis is enabled for a project, setup properly, and its rules have not been overridden, this tool will help maintain consistency in the code, even if that code is worked on by multiple developers.  FxCop also does a good job of identifying if some common mistakes have been made, such as not disposing of an IDisposable object, and can identify things that will help the compiler do its job better, such as ensuring that assemblies which expose public objects identify whether or not they are intended to be CLS compliant.
 
 In order to get these benefits, code analysis must be enabled for each project and a rule set must be selected.  Because adding code-analysis to existing assemblies can be a bit painful, it is recommended that you enable this analysis as soon as a project is created in Visual Studio.  To enable code analysis for an assembly, select the project properties, go to the Code Analysis tab, and check the “Enable Code Analysis on Build (defines CODE\_ANALYSIS constant)” box.
 
-[!\[image\](http://www.cognitiveinheritance.com/image.axd?picture=image_thumb_2.png "image")](http://www.cognitiveinheritance.com/image.axd?picture=image_2.png)
+![Visual Studio Dialog]({PathToRoot}/Images/image_2.png)
 
 The default rule set that will be run during code analysis is called “Microsoft Minimum Recommended Rules”.  This is a very small set of rules that is a good one to enable if you are starting to do code analysis on a previously coded assembly.  If however, you are starting clean, I highly recommend starting with either the “Microsoft All Rules” rule set, or your own version of that set, since this rule set will provide the most benefit in all areas of analysis.  To create your own rule sets, select the set you wish to modify and press the “Open” button next to the rule set drop-down.  Once opened, you can make any changes you wish, and use the File –&gt; Save-as menu item to save the rule set with a different file name.  New rule sets will automatically appear in the drop-down menu. You can use the properties tab to update the Name and Description of the set, and the rules editor to enable or disable individual rules.  You can also define, for each rule, whether failures are ignored, result in a warning, or generate a compilation error.  I highly recommend setting all rules that you want to enforce to cause errors since they can always be overridden if necessary but will likely be missed if they only result in warnings.
 
-[!\[image\](http://www.cognitiveinheritance.com/image.axd?picture=image_thumb_3.png "image")](http://www.cognitiveinheritance.com/image.axd?picture=image_3.png)
+![Rules List]({PathToRoot}/Images/image_3.png)
 
 For my projects, I use one of several rule sets that I have set up, all of which are slight modifications to the “Microsoft All Rules” rule set.  I will detail the rule set changes I make and overrides that I allow in each set of circumstances below.  I encourage you to experiment with these rule sets to determine the optimum configuration for your projects.
 
@@ -68,4 +67,3 @@ For my projects, I use one of several rule sets that I have set up, all of which
 
 
 I have found using Code Analysis to be a good way to improve the maintainability of my applications, especially when the app is being worked on by multiple members of a project team.  The FxCop tool, built into Visual Studio’s Ultimate and Premium editions, is one of a number of tools and techniques I use to keep my code as maintainable and extensible as possible, resulting in the lowest possible total cost of ownership (TCO).  In future articles, I will explore additional tools and techniques I use for this purpose.
-
