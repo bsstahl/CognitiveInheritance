@@ -6,7 +6,6 @@ tags:
 - code sample
 - community
 - conference
-- event
 - optimization
 - presentation
 - professional development
@@ -20,8 +19,8 @@ title: Desert Code Camp – October 2017
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2017-10-16T01:37:58Z
-lastmodificationdate: 2017-10-16T01:37:58Z
+publicationdate: 2017-10-16T01:37:58.000+00:00
+lastmodificationdate: 2017-10-16T01:37:58.000+00:00
 slug: Desert-Code-Camp-October-2017
 categories:
 - Event
