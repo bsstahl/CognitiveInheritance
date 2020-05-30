@@ -1,6 +1,10 @@
+---
+
+---
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Template: Post Page -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -52,8 +56,9 @@
 
         <div class="row">
             <div class="col-md-8">
-                <h1>Remove Any Code Your Users Don't Care About</h1>
-                <p>Code Coverage has been the topic of a number of conversations lately, most recently after the last <a href="http://www.meetup.com/sevdnug/events/223863304/">Southeast Valley .NET User Group</a> meeting where <a href="http://www.twitter.com/jeremybytes">Jeremy Clark</a> presented his great talk, <a href="http://jeremybytes.com/Demos.aspx#UTMMF">Unit Testing Makes Me Faster</a>.  During this presentation, Jeremy eponymized, on my behalf, something I've been saying for a while, that <a href="http://jeremybytes.blogspot.com/2015/02/unit-test-coverage-what-parts-of-your.html">the part of an application that you don't need to test is the part that your users don't care about</a>.  That is, if your users care about something in your application, you should be writing tests that ensure that the users' needs are fulfilled by your code. This has never really been a controversial statement, just one that sometimes gets lost in the myriad of information about unit testing and test driven development.</p>
+              <h3>Remove Any Code Your Users Don't Care About</h3>
+              <h5>Posted by bsstahl on 2015-09-28 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+              <p>Code Coverage has been the topic of a number of conversations lately, most recently after the last <a href="http://www.meetup.com/sevdnug/events/223863304/">Southeast Valley .NET User Group</a> meeting where <a href="http://www.twitter.com/jeremybytes">Jeremy Clark</a> presented his great talk, <a href="http://jeremybytes.com/Demos.aspx#UTMMF">Unit Testing Makes Me Faster</a>.  During this presentation, Jeremy eponymized, on my behalf, something I've been saying for a while, that <a href="http://jeremybytes.blogspot.com/2015/02/unit-test-coverage-what-parts-of-your.html">the part of an application that you don't need to test is the part that your users don't care about</a>.  That is, if your users care about something in your application, you should be writing tests that ensure that the users' needs are fulfilled by your code. This has never really been a controversial statement, just one that sometimes gets lost in the myriad of information about unit testing and test driven development.</p>
 <p>Where the conversation got really interesting was when we started discussing what should happen if you decide that a piece of code really isn't important to your users.  It is my assertion that code which is deemed unimportant enough to the user that it might not be tested, should be removed from the project, even if is part of a standard implementation.  I will attempt to justify this assertion by using the example of a property implementation that supports the <em>INotifyPropertyChanged</em> interface.</p>
 <p><a href="http://www.cognitiveinheritance.com/image.axd?picture=CodeCoverageDemoProperty_2.png">![CodeCoverageDemoProperty](http://www.cognitiveinheritance.com/image.axd?picture=CodeCoverageDemoProperty_thumb_2.png &quot;CodeCoverageDemoProperty&quot;)</a><br />
 <strong>A visualization of the results of Code Coverage analysis on a typical property implementation. The blue highlights represent code that is covered by tests, the red highlights represent code that is NOT covered by tests.</strong></p>
@@ -79,7 +84,8 @@
 <p><strong>Continue the Conversation</strong></p>
 <p>How do you feel about this logic? Did I miss something critical in this analysis? Have you found something different in your experience? Let's keep this conversation going on Twitter. Tweet me <a href="http://www.twitter.com/bsstahl">@bsstahl</a> with your comments, or post on your blog and tweet me the link.</p>
 
-                <div class="share"><a href="../Permalinks/496f2d62-3c89-46fc-b04d-5cf5f81fa82d.html" rel="bookmark">Permalink</a></div>
+              <h5>Tags: <a title="Tag: code coverage" class="small" href="../Search/code-coverage.html">code coverage</a>&nbsp;<a title="Tag: testing" class="small" href="../Search/testing.html">testing</a>&nbsp;<a title="Tag: tdd" class="small" href="../Search/tdd.html">tdd</a>&nbsp;<a title="Tag: unit testing" class="small" href="../Search/unit-testing.html">unit testing</a>&nbsp;<a title="Tag: yagni" class="small" href="../Search/yagni.html">yagni</a>&nbsp;<a title="Tag: agile" class="small" href="../Search/agile.html">agile</a>&nbsp;</h5>
+              <div class="share"><a href="../Permalinks/496f2d62-3c89-46fc-b04d-5cf5f81fa82d.html" rel="bookmark">Permalink</a></div>
             </div>
             <div class="col-md-4">
                 <div class="widgetzone"><div class="widget textbox"><h4>About the Author</h4><div class="content"><p><img style="float: left; padding: 0px 3px 0px 0px;" src="../Pics/bsstahl_left.gif" alt="Barry S. Stahl" width="95" /> <strong>Barry S. Stahl</strong> (him/his) - Barry is a .NET Software Engineer who has been creating business solutions for enterprise customers for more than 30 years. Barry is also an Election Integrity Activist, baseball and hockey fan, husband of one genius and father of another, and a 30+ year resident of Phoenix Arizona USA. When Barry is not traveling around the world to speak at Conferences, Code Camps and User Groups or to participate in GiveCamp events, he spends his days as a Solution Architect for Carvana in Tempe AZ and his nights thinking about the next <a href="http://azgivecamp.org">AZGiveCamp</a> event where software creators come together to build websites and apps for some great non-profit organizations.</p>

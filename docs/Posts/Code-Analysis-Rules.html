@@ -1,6 +1,10 @@
+---
+
+---
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Template: Post Page -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -52,8 +56,9 @@
 
         <div class="row">
             <div class="col-md-8">
-                <h1>Code Analysis Rules</h1>
-                <p>FxCop, the built-in code-analysis tool in Visual Studio, is the first thing I check when doing a code review.  If Code Analysis is enabled for a project, setup properly, and its rules have not been overridden, this tool will help maintain consistency in the code, even if that code is worked on by multiple developers.  FxCop also does a good job of identifying if some common mistakes have been made, such as not disposing of an IDisposable object, and can identify things that will help the compiler do its job better, such as ensuring that assemblies which expose public objects identify whether or not they are intended to be CLS compliant.</p>
+              <h3>Code Analysis Rules</h3>
+              <h5>Posted by bsstahl on 2011-06-07 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+              <p>FxCop, the built-in code-analysis tool in Visual Studio, is the first thing I check when doing a code review.  If Code Analysis is enabled for a project, setup properly, and its rules have not been overridden, this tool will help maintain consistency in the code, even if that code is worked on by multiple developers.  FxCop also does a good job of identifying if some common mistakes have been made, such as not disposing of an IDisposable object, and can identify things that will help the compiler do its job better, such as ensuring that assemblies which expose public objects identify whether or not they are intended to be CLS compliant.</p>
 <p>In order to get these benefits, code analysis must be enabled for each project and a rule set must be selected.  Because adding code-analysis to existing assemblies can be a bit painful, it is recommended that you enable this analysis as soon as a project is created in Visual Studio.  To enable code analysis for an assembly, select the project properties, go to the Code Analysis tab, and check the “Enable Code Analysis on Build (defines CODE_ANALYSIS constant)” box.</p>
 <p><a href="http://www.cognitiveinheritance.com/image.axd?picture=image_2.png">![image](http://www.cognitiveinheritance.com/image.axd?picture=image_thumb_2.png &quot;image&quot;)</a></p>
 <p>The default rule set that will be run during code analysis is called “Microsoft Minimum Recommended Rules”.  This is a very small set of rules that is a good one to enable if you are starting to do code analysis on a previously coded assembly.  If however, you are starting clean, I highly recommend starting with either the “Microsoft All Rules” rule set, or your own version of that set, since this rule set will provide the most benefit in all areas of analysis.  To create your own rule sets, select the set you wish to modify and press the “Open” button next to the rule set drop-down.  Once opened, you can make any changes you wish, and use the File –&gt; Save-as menu item to save the rule set with a different file name.  New rule sets will automatically appear in the drop-down menu. You can use the properties tab to update the Name and Description of the set, and the rules editor to enable or disable individual rules.  You can also define, for each rule, whether failures are ignored, result in a warning, or generate a compilation error.  I highly recommend setting all rules that you want to enforce to cause errors since they can always be overridden if necessary but will likely be missed if they only result in warnings.</p>
@@ -87,7 +92,8 @@
 </ul>
 <p>I have found using Code Analysis to be a good way to improve the maintainability of my applications, especially when the app is being worked on by multiple members of a project team.  The FxCop tool, built into Visual Studio’s Ultimate and Premium editions, is one of a number of tools and techniques I use to keep my code as maintainable and extensible as possible, resulting in the lowest possible total cost of ownership (TCO).  In future articles, I will explore additional tools and techniques I use for this purpose.</p>
 
-                <div class="share"><a href="../Permalinks/dde02ea3-ba8e-4066-8dc6-9cb9dbadc450.html" rel="bookmark">Permalink</a></div>
+              <h5>Tags: <a title="Tag: code analysis" class="small" href="../Search/code-analysis.html">code analysis</a>&nbsp;<a title="Tag: assembly" class="small" href="../Search/assembly.html">assembly</a>&nbsp;<a title="Tag: entity framework" class="small" href="../Search/entity-framework.html">entity framework</a>&nbsp;<a title="Tag: fxcop" class="small" href="../Search/fxcop.html">fxcop</a>&nbsp;<a title="Tag: logging" class="small" href="../Search/logging.html">logging</a>&nbsp;<a title="Tag: strong name" class="small" href="../Search/strong-name.html">strong name</a>&nbsp;<a title="Tag: visual studio" class="small" href="../Search/visual-studio.html">visual studio</a>&nbsp;</h5>
+              <div class="share"><a href="../Permalinks/dde02ea3-ba8e-4066-8dc6-9cb9dbadc450.html" rel="bookmark">Permalink</a></div>
             </div>
             <div class="col-md-4">
                 <div class="widgetzone"><div class="widget textbox"><h4>About the Author</h4><div class="content"><p><img style="float: left; padding: 0px 3px 0px 0px;" src="../Pics/bsstahl_left.gif" alt="Barry S. Stahl" width="95" /> <strong>Barry S. Stahl</strong> (him/his) - Barry is a .NET Software Engineer who has been creating business solutions for enterprise customers for more than 30 years. Barry is also an Election Integrity Activist, baseball and hockey fan, husband of one genius and father of another, and a 30+ year resident of Phoenix Arizona USA. When Barry is not traveling around the world to speak at Conferences, Code Camps and User Groups or to participate in GiveCamp events, he spends his days as a Solution Architect for Carvana in Tempe AZ and his nights thinking about the next <a href="http://azgivecamp.org">AZGiveCamp</a> event where software creators come together to build websites and apps for some great non-profit organizations.</p>
