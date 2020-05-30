@@ -20,14 +20,13 @@ title: An Example of a Hybrid AI Implementation
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2017-10-13T04:13:13
-lastmodificationdate: 2017-10-13T04:18:10
+publicationdate: 2017-10-13T04:13:13.000+00:00
+lastmodificationdate: 2017-10-13T04:18:10.000+00:00
 slug: An-Example-of-a-Hybrid-AI-Implementation
 categories:
 - Development
 
 ---
-
 I [previously](http://www.cognitiveinheritance.com/post/AI-That-Can-Explain-Why.aspx) wrote about a Hybrid AI system that combined logical and optimization methods of problem solving to identify the best solution to an employee shift assignment problem. This implementation was notable in that a hybrid approach was used so that the optimal solution could be found, but the system could still indicate to the users why a particular assignment was, or wasn’t, included in the results.
 
 I recently published to [GitHub](http://www.github.com/bsstahl/AIDemos) a demo of a similar system. I use this demo in my presentation, [Building AI Solutions that can Reason Why](http://www.cognitiveinheritance.com/page/Speaking-Engagements.aspx). The code demonstrates the hybridization of multiple AI techniques by creating a solution that iteratively applies a combinatorial optimization engine. Different results are obtained by varying the methods of applying the constraints in that model. In the final (4th) demo  method, an iterative process is used to identify what the shortcomings of the final product are, and why they are necessary.
@@ -56,9 +55,7 @@ The final demo, and the only method in **AddConstraintsDemo.cs**, builds on the 
 
 The process of iteratively executing the optimization, adding constraints one at a time, is show in the diagram below.  It is important to remember that the order in which these constraints are added here is critical since constraining the solution in one way may limit the feasibility of the solution for future constraints.  Great care must be taken in selecting the order that constraints are added in order to obtain the best possible solution.
 
-
-
-[!\[Hybrid Conference Optimization Process\](http://www.cognitiveinheritance.com/image.axd?picture=Hybrid%20Conference%20Optimization%20Process_thumb.png "Hybrid Conference Optimization Process")](http://www.cognitiveinheritance.com/image.axd?picture=Hybrid%20Conference%20Optimization%20Process.png)
+![Hybrid Conference Optimization Process]({PathToRoot}/Images/Hybrid%20Conference%20Optimization%20Process_thumb.png "Hybrid Conference Optimization Process")
 
 The steps are as follows:
 
@@ -78,4 +75,3 @@ The steps are as follows:
 *Note*: The sample data in these demos is **very** loosely based on SoCalCodeCamp San Diego from the summer of 2017. While some of the presenters names and presentations come roughly from the publicly available schedule, pretty much everything else has been fictionalized to make for a compelling demo, including the appearances by some Microsoft rock stars, and the "requests" of the various presenters.
 
 If you have any questions about this code, or about how Hybrid AIs can be used to provide more information about the solutions to problems than strictly optimization or probabilistic models, please contact me on [Twitter](http://twitter.com/bsstahl).
-
