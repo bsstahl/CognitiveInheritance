@@ -1,6 +1,5 @@
 ---
 tags:
-- .net
 - abstraction
 - agile
 - assert
@@ -11,6 +10,7 @@ tags:
 - ioc
 - testing
 - unit testing
+- dotnet
 menuorder: 0
 id: 68269657-e0c9-430d-acd4-9b4cc211fcc7
 author: bsstahl
@@ -18,14 +18,13 @@ title: Code Coverage Teaches and Protects
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2016-10-14T18:56:54
-lastmodificationdate: 2016-10-15T12:18:08
+publicationdate: 2016-10-14T18:56:54.000+00:00
+lastmodificationdate: 2016-10-15T12:18:08.000+00:00
 slug: Code-Coverage-Teaches-and-Protects
 categories:
 - Development
 
 ---
-
 I often hail code coverage as a great tool to help improve your code base.  Today, my use of Code Coverage taught me something about the new .NET Core tooling, and helped protect me from having to support useless code for the lifespan of my project.
 
 In the code below, I used a common dependency injection pattern. That is, an IServiceProvider object holding my dependencies is passed-in to my object and stored as a member variable.  When a dependency is needed, I retrieve that dependency from the service provider, and then take action on it.  Since there is no guarantee that the dependency I need will have been placed in the container, I use some common guard logic to protect my code.
@@ -45,4 +44,3 @@ Based on this new knowledge of the behavior of the IServiceProvider, I had a few
 I'm sure you've guessed by now that I selected option 4.  I removed the guard code and the test from my solution.  In doing so, I removed dead code that served no purpose, but would have to be supported through the life of the project.       
       
 For those who might be thinking something similar to, "It's nice that the coverage tooling helped you learn about your code, but using Code Coverage as a metric is actually a bad idea so I won't use Code Coverage at all", I'd like to remind you that any tool, such as a hammer or a car, can be abused. That doesn't mean we don't continue to use them, we just make certain that we use them properly.  Code Coverage is a horrible way to measure a development team or effort, but it is an outstanding tool and should be used by the development team whenever possible to discover things about the code base.
-
