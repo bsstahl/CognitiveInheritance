@@ -11,13 +11,11 @@ title: AZGiveCamp II Announced!
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2010-10-21T21:42:17
-lastmodificationdate: 2010-10-21T21:42:17
+publicationdate: 2010-10-21T21:42:17.000+00:00
+lastmodificationdate: 2010-10-21T21:42:17.000+00:00
 slug: AZGiveCamp-II-Announced!
 categories:
 - Event
 
 ---
-
-The next AZGiveCamp will be held starting January 14th 2011 at the Phoenix campus of Devry University!  Please see [AZGiveCamp.org](http://AZgivecamp.org) for more details.
-
+The next AZGiveCamp will be held starting January 14th 2011 at the Phoenix campus of Devry University!  Please see [AZGiveCamp.org](http://www.azgivecamp.org) for more details.
