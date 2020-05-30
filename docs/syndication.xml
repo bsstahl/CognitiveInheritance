@@ -224,7 +224,7 @@ public class MeetingReadRepository : IMeetingReadRepository
   <link>Posts/Intro-to-WebAssembly-Using-Blazor.html</link>
   <author>bsstahl</author>
   <guid><a href="Permalinks/357b8c8b-e115-4aad-9534-6f1f80a17fa2.html" rel="bookmark">Permalink</a></guid>
-  <pubDate>2018-09-26T00:00:00.0000000</pubDate>
+  <pubDate>2018-09-26T00:00:00.0000000+00:00</pubDate>
 </item>
 <item>
   <title>Programmers -- Take Responsibility for Your AI’s Output</title>
