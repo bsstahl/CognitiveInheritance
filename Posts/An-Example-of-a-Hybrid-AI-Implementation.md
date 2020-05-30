@@ -6,13 +6,9 @@ tags:
 - code sample
 - coding practices
 - conference
-- decision
 - open source
 - optimization
 - presentation
-- schedule
-- solution
-- speaking
 menuorder: 0
 id: 0b7c5603-2835-4539-93ea-ecb309eab0fb
 author: bsstahl
