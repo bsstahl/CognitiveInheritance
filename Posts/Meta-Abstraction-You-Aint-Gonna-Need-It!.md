@@ -8,9 +8,9 @@ tags:
 - flexibility
 - framework
 - generics
-- inteface
 - principle
 - yagni
+- interface
 menuorder: 0
 id: a9d7154a-2798-4a77-851b-0783b45bc1b4
 author: bsstahl
