@@ -2,7 +2,6 @@
 tags:
 - community
 - conference
-- event
 - optimization
 - phoenix
 - professional development
@@ -14,14 +13,13 @@ title: A Busy October and November
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2016-10-05T21:20:00
-lastmodificationdate: 0001-01-02T02:00:00
+publicationdate: 2016-10-05T21:20:00.000+00:00
+lastmodificationdate: 0001-01-02T02:00:00.000+00:00
 slug: A-Busy-October-and-November
 categories:
 - Event
 
 ---
-
 The next two months are packed with tons of great technical events that I am really looking forward to.  Below are some of the events that I am involved with and will be attending between now and the end of November. I hope to run into you at these events.  If you see me, please don’t hesitate to say “hi”. I do love to talk tech.
 
 #### [Desert Code Camp](http://oct2016.desertcodecamp.com/session/1329) – Phoenix AZ – October 8th 2016
@@ -47,4 +45,3 @@ I have attended many instances of the Southern California Code camp, but this wi
 #### [NWVDNUG](http://www.meetup.com/nwvdnug/) & [SEVDNUG](http://www.meetup.com/sevdnug/) – Phoenix AZ – Nov 16th and 17th
 
 Our good friend Jeremy Clark ([blog](http://jeremybytes.blogspot.com/), [twitter](http://twitter.com/jeremybytes)) makes his annual tour of the Valley’s .NET User Groups to talk to us, once again, about many of the things you need to know about .NET and Software Engineering to make your development better. Jeremy will give a different talk each night so be sure to sign-up at the meetup sites and come to both meetings.
-
