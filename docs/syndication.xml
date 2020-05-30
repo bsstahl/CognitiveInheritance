@@ -200,14 +200,14 @@ public class MeetingReadRepository : IMeetingReadRepository
 </item>
 <item>
   <title>Save the Date for AZGiveCamp IX</title>
-  <description>&lt;p&gt;&lt;img src=&quot;http://www.cognitiveinheritance.com/image.axd?picture=Code%20Monkey%203%20Duckin%20it%20(1)_1.png&quot; alt=&quot;Code Monkey 3 Duckin it (1)&quot; title=&quot;Code Monkey 3 Duckin it (1)&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;March 8th – 10th 2019&lt;/p&gt;
+  <description>&lt;h3&gt;Save the Dates -- March 8th–10th 2019&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.cognitiveinheritance.com/image.axd?picture=Code%20Monkey%203%20Duckin%20it%20(1)_1.png&quot; alt=&quot;Code Monkey 3 Duckin it (1)&quot; title=&quot;Code Monkey 3 Duckin it (1)&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;Mark your calendars to block-out the weekend of March 8th 2019 for the next AZGiveCamp Hackathon-of-Help. More details will be coming very soon so keep an eye on &lt;a href=&quot;http://azgivecamp.org/&quot;&gt;AZGiveCamp.org&lt;/a&gt; and &lt;a href=&quot;http://meetup.com/azgivecamp&quot;&gt;Meetup&lt;/a&gt; for all the particulars as soon as they are available.  I’m looking forward to seeing you all at our 9th event, helping those who help our community.&lt;/p&gt;
 </description>
   <link>Posts/Save-the-Date-for-AZGiveCamp-IX.html</link>
   <author>bsstahl</author>
   <guid><a href="Permalinks/c6b4c9e8-b82c-4fd2-b73d-c230671d66ec.html" rel="bookmark">Permalink</a></guid>
-  <pubDate>2018-10-31T00:00:00.0000000</pubDate>
+  <pubDate>2018-10-31T00:00:00.0000000+00:00</pubDate>
 </item>
 <item>
   <title>Intro to WebAssembly Using Blazor</title>
