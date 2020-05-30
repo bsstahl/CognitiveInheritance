@@ -7,8 +7,6 @@ tags:
 - csharp
 - clr
 - data structures
-- checked
-- unchecked
 menuorder: 0
 id: c2b6a683-a9cf-4fce-96c1-5401648c056e
 author: bsstahl
