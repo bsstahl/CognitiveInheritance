@@ -23,4 +23,4 @@ A typical AZGiveCamp Hackathon-of-Help event lasts a full weekend, starting on F
 
 If you'd like to find out more about AZGiveCamp, please see our [website](http://azgivecamp.org) or sign-up on our [Meetup page](http://meetup.com/azgivecamp).
 
-![Volunteers at AZGiveCamp](../Files/AZGiveCamp_600Wide.jpg)
+![Volunteers at AZGiveCamp]({PathToRoot}/Images/AZGiveCamp_600Wide.jpg)
