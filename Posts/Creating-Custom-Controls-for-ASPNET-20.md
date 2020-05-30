@@ -2,9 +2,7 @@
 tags:
 - controls
 - asp.net
-- controlstate
 - viewstate
-- reflector
 menuorder: 0
 id: 77c8094b-6a05-483c-8381-787e218075bb
 author: bsstahl
@@ -12,8 +10,8 @@ title: Creating Custom Controls for ASP.NET 2.0
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2006-05-08T18:59:00
-lastmodificationdate: 2010-10-22T18:11:36
+publicationdate: 2006-05-08T18:59:00.000+00:00
+lastmodificationdate: 2010-10-22T18:11:36.000+00:00
 slug: Creating-Custom-Controls-for-ASPNET-20
 categories:
 - Development
@@ -31,4 +29,3 @@ A number of new facts came out of the final talk I attended on the day, Mickey W
 
 
 I'm sure the slide-decks and samples will be posted soon.
-
