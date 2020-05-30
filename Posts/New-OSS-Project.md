@@ -9,7 +9,6 @@ tags:
 - mstest
 - nunit
 - open source
-- oss
 - professional development
 - tdd
 - testing
@@ -21,14 +20,13 @@ title: New OSS Project
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2014-07-11T11:53:39
-lastmodificationdate: 2014-07-11T11:53:39
+publicationdate: 2014-07-11T11:53:39.000+00:00
+lastmodificationdate: 2014-07-11T11:53:39.000+00:00
 slug: New-OSS-Project
 categories:
 - Development
 
 ---
-
 I recently started working on a set of open-source projects for Code Camps and other community conferences with my friend Rob Richardson [(@rob\_rich](https://twitter.com/rob_rich)). In addition to doing some good for the community, I expect these projects, which I will describe in more detail in upcoming posts, to allow me to experiment with several elements of software development that I have been looking forward to trying out. These include:
 
 - Using Git as a source control repository
@@ -46,4 +44,3 @@ The only possible downside I can see so far is the risk presented by the fact th
 As to the other two items on my list, I have already learned a lot from both working with Rob and in working toward implementing the optimization solution. Even though we've only been working on this for a few days, and have had only 1 pairing session to this point, I feel quite confident that both the community and I will get great benefit from these projects.
 
 In my next post, I'll discuss what these projects are, and how we plan on implementing them.
-
