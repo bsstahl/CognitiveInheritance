@@ -3,7 +3,6 @@ tags:
 - azgivecamp
 - charity
 - community
-- event
 - givecamp
 - nonprofit
 - phoenix
