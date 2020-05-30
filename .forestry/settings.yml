@@ -39,7 +39,7 @@ sections:
   match: "**/*"
   templates:
   - contentitem
-upload_dir: images
+upload_dir: Images
 public_path: "/images"
 front_matter_path: ''
 use_front_matter_path: false
