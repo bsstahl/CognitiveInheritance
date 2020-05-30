@@ -60,7 +60,7 @@
                 <h1>Tag: testing</h1>
                 <div>
     <h3>Programmers -- Take Responsibility for Your AI’s Output</h3>
-    <h5>Posted by bsstahl on 2018-03-16 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2018-03-16 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <blockquote>
 <p><strong>plus ça change, plus c'est la même chose</strong> – <strong>The more that things change, the more they stay the same</strong>. – Rush (and others <img src="..//Images/wlEmoticon-winkingsmile.png" alt="Winking smile" /> )</p>
 </blockquote>
@@ -95,7 +95,7 @@
 </div>
 <hr/><div>
     <h3>A Requirement for AI Systems</h3>
-    <h5>Posted by bsstahl on 2017-05-24 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2017-05-24 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>I've written and spoken before about the importance of using the Strategy Pattern to create maintainable and testable systems. Strategies are even more important, almost to the level of necessity, when building AI systems.</p>
 <blockquote>
 <p>The Strategy Pattern is to algorithms what the Repository Pattern is to data stores, a useful and well-known abstraction for loose-coupling.
@@ -111,7 +111,7 @@
 </div>
 <hr/><div>
     <h3>Testing the Untestable with Microsoft Fakes</h3>
-    <h5>Posted by bsstahl on 2017-03-20 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2017-03-20 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>It is fairly easy these days to test code in isolation if its dependencies are abstracted by a reusable interface. But what do we do if the dependency cannot easily be referenced via such an interface?  Enter <strong>Shims</strong>, from the <strong>Microsoft Fakes Framework</strong>(formerly Moles).  Shims allow us to isolate our testing from any dependent methods, including methods in assemblies we do not control, even if those methods are not exposed through a reusable interface. To see how easy it is, follow along with me through this example.</p>
 <p>In this <a href="https://github.com/bsstahl/VS2017Launch">sample code on GitHub</a>, we are building a repository for an application that currently gets its data from a file exported from a system that tracks scheduled meetings.  It is very likely that the system will, in the future, expose a more modern interface for that data so we have isolated the data storage using a simple Repository interface that has one method.  This method, called <strong>GetMeetings</strong> returns a collection of Meeting entities that start during the specified date range.  The method will return an empty collection if no data is found matching the specified criteria, and could throw either of 2 custom errors, a <strong>PermissionsException</strong>when the user does not have the proper permissions to access the information, and a <strong>DataUnavailableException</strong> for when the data source is unavailable for any other reason, such as a network outage or if the data file cannot be located.</p>
 <p>It is important to point out why a custom exception should be thrown when the data file is not found, rather than allowing the <strong>FileNotFoundException</strong> to bubble-up.  If we allow the implementation-specific exception to bubble, we have exposed an implementation detail to the caller. That is, the calling code is now aware of the fact that this is a file system implementation.  If code is written in a client that traps for <strong>FileNotFoundException</strong>, then the repository implementation is swapped-out for a SQL server implementation, the client code will have to change to handle the new types of errors that could be thrown by that implementation.  This violates the Dependency Inversion principle, the “D” from the <strong>SOLID</strong>principles.  By exposing only a custom exception, we are hiding those implementation details from the caller.</p>
@@ -153,7 +153,7 @@ Then, we can verify in our test that our custom exception is thrown.  The full 
 </div>
 <hr/><div>
     <h3>Demo Code for Testing in Visual Studio 2017</h3>
-    <h5>Posted by bsstahl on 2017-03-16 and Filed Under: <a title="Category: Event" class="small" href="../Search/Event.html">Event</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2017-03-16 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;</h5>
     <p>The demo code for my presentation on Testing in Visual Studio 2017 at the VS2017 Launch event can be found on <a href="https://github.com/bsstahl/VS2017Launch">GitHub</a>.  There are 2 branches to this repository, the <strong>Main</strong> branch which holds the completed demo, and the <strong>DemoStart</strong> branch which holds the starting point of the demonstration in case you would like to implement the sample yourself.</p>
 <p>The demo shows how Microsoft Fakes (formerly Moles) can be used to create tests against code that does not implement a reusable interface. This can be done  without having to resort to integration style tests or writing extra wrapper code just to implement an interface.  During my launch presentation, I also use this code to demonstrate the use of Intellitest (formerly Pex) to generate exploratory tests.</p>
 
@@ -162,7 +162,7 @@ Then, we can verify in our test that our custom exception is thrown.  The full 
 </div>
 <hr/><div>
     <h3>Testing a .NET Core Library in VS2015</h3>
-    <h5>Posted by bsstahl on 2017-01-09 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2017-01-09 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>I really enjoy working with .NET Core.  I like the fact that my code is portable to many platforms and that the footprint is so much smaller than with traditional .NET applications.  Unfortunately, the tooling has not quite reached the level that we expect from a Microsoft finished product (which it isn’t – yet). As a result, there are some additional actions we need to take when setting up our solutions in Visual Studio 2015 to allow us to unit test our code properly.  The following are the steps that I currently take to setup and test a .NET Core library using XUnit and Moq.  I know that a number of these steps will be done for us, or at least made much easier, by the tooling in the coming months, either by Visual Studio 2017, or by enhancements to the Visual Studio 2015 environments.</p>
 <ol>
 <li>Create the library to be tested in Visual Studio 2015
@@ -235,7 +235,7 @@ Then, we can verify in our test that our custom exception is thrown.  The full 
 </div>
 <hr/><div>
     <h3>Code Coverage Teaches and Protects</h3>
-    <h5>Posted by bsstahl on 2016-10-14 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2016-10-14 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>I often hail code coverage as a great tool to help improve your code base.  Today, my use of Code Coverage taught me something about the new .NET Core tooling, and helped protect me from having to support useless code for the lifespan of my project.</p>
 <p>In the code below, I used a common dependency injection pattern. That is, an IServiceProvider object holding my dependencies is passed-in to my object and stored as a member variable.  When a dependency is needed, I retrieve that dependency from the service provider, and then take action on it.  Since there is no guarantee that the dependency I need will have been placed in the container, I use some common guard logic to protect my code.
 <code>templates = _serviceProvider.GetService&lt;IEnumerable&lt;Template&gt;&gt;();    if ((templates==null) || (!templates.Any(s =&gt; s.TemplateType==ContactPage)))         throw new TemplateNotFoundException(TemplateType.ContactPage, string.Empty);</code>
@@ -257,7 +257,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>TDD Helps Validate Your Tests</h3>
-    <h5>Posted by bsstahl on 2016-03-05 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2016-03-05 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>One of the reasons to use TDD over test-later approaches is that you get a better validation of your tests.</p>
 <p>When the first thing you do with a test or series of tests is to run them against code that does nothing but throw a <em>NotImplementedException</em>, you know exactly what to expect. That is, all tests should fail because the code under test threw a <em>NotImplementedException</em>. After that, you can take iterative steps to implement the code. Along the way, you should always see your tests fail in appropriate ways.  Eventually, all of your tests should pass when the code is complete.</p>
 <p>If tests start passing before they should, continue to fail when they shouldn’t, or fail for reasons that are different than what you’d expect at that point in the development process, you have a good indication that the test may not be doing what you want it to be doing.  This additional information about the tests can be very helpful in making sure your unit tests are properly testing your code.</p>
@@ -275,7 +275,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>Test-Driven Bug Fixes</h3>
-    <h5>Posted by bsstahl on 2016-02-27 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2016-02-27 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>I had an experience this past week that reminded me of both the importance of continuing the Test Driven Development process beyond the initial development phases of a application's life-cycle, and that not all developers have yet fully grasped the concepts behind Test Driven Development.</p>
 <p>One of the development teams I work with had a bug come-up in a bit of complex logic that I designed. I was asked to pair-up with one of the developers to help figure out the bug since he had already spent several hours looking at it. When I asked him to show me the tests that were failing, there weren't any. The bug was for a situation that we hadn't anticipated during initial development (a common occurrence) and he had not yet setup any tests that exposed the bug.</p>
 <p>We immediately set out to rectify the situation by creating tests that failed as a result of the bug. Once these tests were created, it was a fairly simple process to use those tests as a debug platform to step through the code, find the problem and correct the bug. As is sometimes the case, fixing that bug caused another test to fail, a situation that was easily remedied since we knew about it due to the failing test.</p>
@@ -288,7 +288,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>Remove Any Code Your Users Don't Care About</h3>
-    <h5>Posted by bsstahl on 2015-09-28 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2015-09-28 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>Code Coverage has been the topic of a number of conversations lately, most recently after the last <a href="http://www.meetup.com/sevdnug/events/223863304/">Southeast Valley .NET User Group</a> meeting where <a href="http://www.twitter.com/jeremybytes">Jeremy Clark</a> presented his great talk, <a href="http://jeremybytes.com/Demos.aspx#UTMMF">Unit Testing Makes Me Faster</a>.  During this presentation, Jeremy eponymized, on my behalf, something I've been saying for a while, that <a href="http://jeremybytes.blogspot.com/2015/02/unit-test-coverage-what-parts-of-your.html">the part of an application that you don't need to test is the part that your users don't care about</a>.  That is, if your users care about something in your application, you should be writing tests that ensure that the users' needs are fulfilled by your code. This has never really been a controversial statement, just one that sometimes gets lost in the myriad of information about unit testing and test driven development.</p>
 <p>Where the conversation got really interesting was when we started discussing what should happen if you decide that a piece of code really isn't important to your users.  It is my assertion that code which is deemed unimportant enough to the user that it might not be tested, should be removed from the project, even if is part of a standard implementation.  I will attempt to justify this assertion by using the example of a property implementation that supports the <em>INotifyPropertyChanged</em> interface.</p>
 <p><a href="http://www.cognitiveinheritance.com/image.axd?picture=CodeCoverageDemoProperty_2.png">![CodeCoverageDemoProperty](http://www.cognitiveinheritance.com/image.axd?picture=CodeCoverageDemoProperty_thumb_2.png &quot;CodeCoverageDemoProperty&quot;)</a><br />
@@ -320,7 +320,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>Introducing TestHelperExtensions</h3>
-    <h5>Posted by bsstahl on 2015-08-26 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2015-08-26 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <h2>TL;DR Version</h2>
 <p>I've released a new Open-Source library of extension methods that can be used to create more effective unit and integration tests. This library is called TestHelperExtensions. The source code is available on <a href="http://github.com/bsstahl/testhelperextensions">GitHub</a> (pull requests welcome), a .NET 4 package is available via <a href="http://www.nuget.org/packages/TestHelperExtensions/">NuGet</a>, and the documentation is available <a href="http://testhelperextensions.cognitiveinheritance.com">here</a>. The goal is to allow anyone to have access to the same set of test helpers I have been using, and building up, for many years.</p>
 <h2>The Story</h2>
@@ -333,7 +333,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>New OSS Project</h3>
-    <h5>Posted by bsstahl on 2014-07-11 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2014-07-11 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>I recently started working on a set of open-source projects for Code Camps and other community conferences with my friend Rob Richardson <a href="https://twitter.com/rob_rich">(@rob_rich</a>). In addition to doing some good for the community, I expect these projects, which I will describe in more detail in upcoming posts, to allow me to experiment with several elements of software development that I have been looking forward to trying out. These include:</p>
 <ul>
 <li>Using Git as a source control repository</li>
@@ -352,7 +352,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>Visual Studio Unit Test Generator</h3>
-    <h5>Posted by bsstahl on 2013-08-05 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2013-08-05 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>As a follow-up to my posts <a href="http://www.cognitiveinheritance.com/post/The-Missing-e2809cCreate-Unit-Teste2809d-feature-in-Visual-Studio-2012.aspx">here</a> and <a href="http://www.cognitiveinheritance.com/post/Regain-Access-to-the-CreateUnitTests-Command-in-VS2012.aspx">here</a> on the missing “Create Unit Test” feature in VS2012, I point you to <a href="http://blogs.msdn.com/b/visualstudioalm/archive/2013/08/03/visual-studio-unit-test-generator-is-feature-complete-v1-release-candidate-lands.aspx">this post</a> from the Visual Studio ALM &amp; TFS blog announcing the Release Candidate of their new Unit Test Generator for Visual Studio.  According to the post, this extension</p>
 <blockquote>
 <p>“…adds the “create unit test” feature back, with a focus on automating project creation, adding references and generating stubs, extensibility, and targeting of multiple test frameworks.”</p>
@@ -364,7 +364,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>Programmers -- Take Responsibility for Your Program’s Output</h3>
-    <h5>Posted by bsstahl on 2013-03-03 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2013-03-03 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>You have probably seen the discussion of the “Keep Calm and Rape On” T-Shirts that were made available, for a time, by an Amazon reseller.  These shirts were one of several thousand computer-generated designs offered for sale on Amazon, to be printed and shipped if anyone cared to buy one.  At first blush, and as some have pointed-out, it seems like a simple error. A verb list that contained the word “rape” was not properly vetted and therefore the offensive shirt promoting violent crime was offered for sale by mistake. No offense was intended, so, as long as the company takes the proper action of <a href="http://www.solidgoldbomb.com/pages/our-apology">apologizing and removing the offending item</a>, all is well.  This sentiment seems to be summed-up by the <a href="http://iam.peteashton.com/keep-calm-rape-tshirt-amazon/">well-read post by Pete Ashton</a> on the subject:</p>
 <blockquote>
 <p>Because these algorithms generally mimic decisions that used to be made directly by people we have a tendency to humanise the results and can easily be horrified by what we see. But some basic understanding of how these systems work can go a long way to alleviating this dissonance.</p>
@@ -379,7 +379,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>Code Sample for My TDD Kickstart Sessions</h3>
-    <h5>Posted by bsstahl on 2012-02-13 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2012-02-13 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>The complete, working application for my <a href="/post/NET-TDD-Kickstart.aspx">.NET TDD Kickstart</a> sessions can be found <a href="http://docs.cognitiveinheritance.com/tddkickstart.zip">here</a>.</p>
 <p>Unzip the files into a solution folder and open the <strong>Demo.sln</strong> solution in a version of Visual Studio 2010 that has Unit Testing capability (Professional, Premium or Ultimate).  Immediately, you should be able to compile the whole solution, and successfully execute the tests in the <strong>Bss.QueueMonitor.Test</strong> and <strong>Bss.Timing.Test</strong> libraries.</p>
 <p>To get the tests in the other two test libraries (<strong>Bss.QueueMonitor.Data.EF.Test</strong> &amp; <strong>Bss.QueueMonitor.IntegrationTest</strong>) to pass, you will need to create the database used to store the monitored data in the data-tier and integration tests, and enable MSMQ on your system so that a queue to be monitored can be created for the Integration test.</p>
@@ -392,7 +392,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>".NET TDD Kickstart"</h3>
-    <h5>Posted by bsstahl on 2012-01-26 and Filed Under: <a title="Category: Event" class="small" href="../Search/Event.html">Event</a>&nbsp;<a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2012-01-26 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;<a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>I head out to Fullerton tomorrow for the start of my .NET TDD Kickstart world tour <img src="..//Images/wlEmoticon-smile.png" alt="Smile" /></p>
 <blockquote>
 <p>In this session, the speaker and the audience will &quot;pair up&quot; for a coding session which will serve as an introduction to Test Driven Development in an Agile environment. We will use C#, Visual Studio and Rhino Mocks to unit test code to be built both with and without dependencies. We will also highlight some of the common issues encountered during TDD and discuss strategies for overcoming them.</p>
@@ -413,7 +413,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>Order Matters in the Rhino Mocks Fluent Interface</h3>
-    <h5>Posted by bsstahl on 2012-01-16 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2012-01-16 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>I noticed something interesting with Rhino Mocks today while testing some demo code:
 <code>Rhino.Mocks.Expect.Call(myDependency.MyMethod(param1)).Return(result).Repeat.Times(5);</code>
 behaves as I anticipated; it expects the call to <strong>MyMethod</strong> to be repeated 5 times and returns the value of <strong>result</strong> all 5 times. Meanwhile:
@@ -426,7 +426,7 @@ also has the expectation of 5 executions, but it returns the value of <strong>re
 </div>
 <hr/><div>
     <h3>Demo Code for EF4Ent Sessions</h3>
-    <h5>Posted by bsstahl on 2011-06-26 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2011-06-26 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>I previously posted the slides for my <strong>Building Enterprise Apps using Entity Framework 4</strong> talk <a href="http://www.cognitiveinheritance.com/post/Desert-Code-Camp-Presentation.aspx">here</a>.  I can now post the source code for the completed demo application.  That code, created for use in Visual Studio 2010 Ultimate, is available in zip format below.  This is the same code that was demonstrated at Desert Code Camp 2011.1 and SoCalCodeCamp 2011 as well as the New Mexico .NET User’s Group (NMUG).</p>
 <p><a href="https://docs.google.com/uc?id=0B6PPrBnxN6VtMGRhNzZhOGUtNGY5NC00M2IyLTgxYzMtOTVlNDU0MDQyNjc1&amp;export=download&amp;hl=en_US" title="https://docs.google.com/uc?id=0B6PPrBnxN6VtMGRhNzZhOGUtNGY5NC00M2IyLTgxYzMtOTVlNDU0MDQyNjc1&amp;export=download&amp;hl=en_US">EF4EnterpriseDemoCode.zip</a></p>
 
@@ -435,7 +435,7 @@ also has the expectation of 5 executions, but it returns the value of <strong>re
 </div>
 <hr/><div>
     <h3>Unit Testing the Data Tier</h3>
-    <h5>Posted by bsstahl on 2007-08-23 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2007-08-23 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>Recently, both <a href="http://codebetter.com/blogs/jeffrey.palermo/archive/2007/06/28/levels-of-automated-testing-within-a-single-application.aspx">Jeffrey Polermo</a> and <a href="http://codebetter.com/blogs/scott.bellware/archive/2007/06/26/164754.aspx">Scott Bellware</a> have written posts on <a href="http://www.codebetter.com/">codebetter.com</a> positing that testing the Database should be avoided when doing unit testing. Specifically, Polermo points out that</p>
 <blockquote>
 <p>Unit testing, by common definition, excludes external dependencies. It's not a unit test if we reach out and touch things.</p>
@@ -452,7 +452,7 @@ The drawing illustrates many of the systems we create today in .NET. Of course, 
 </div>
 <hr/><div>
     <h3>Unit Test "Normalization"</h3>
-    <h5>Posted by bsstahl on 2007-07-07 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2007-07-07 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>In a recent conversation about Unit Tests, I was asked about how many asserts I would put into a single test, since some feel that there should only be one Assert per test. My answer was, that I look at it like database normalization with the test name serving as the primary key; that is, the asserts in the test should relate directly and only to that key. This analogy is also appropriate because DB normalization is a good thing within reason, but can definately be overdone. Unit test &quot;normalization&quot; can also be overdone if we try to break-out each assert into its own test.</p>
 <p>An example of where multiple asserts might be put into one test is a test of the Add method of a collection object which inherits from System.Collection.CollectionBase. When an item is added, it is appropriate to test for the proper index of that item to be returned from the method, as well as to test that the collection is holding the correct number of items after the Add is done. Both tests relate directly to the Add method. An argument could be made that the count of items relates to the Count property of the collection and therefore that assert doesn't relate only to the Add method, but since we are usually not coding the count property (because it was coded for us in CollectionBase), we don't need to test the Count property on its own, and it should be tested as part of the Add test.</p>
 
@@ -461,7 +461,7 @@ The drawing illustrates many of the systems we create today in .NET. Of course, 
 </div>
 <hr/><div>
     <h3>nUnit vs. VSTS</h3>
-    <h5>Posted by bsstahl on 2006-10-07 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2006-10-07 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>Mark Michaelis posted a hitlist of things to do to convert from nUnit to VSTS tests in his article <a href="http://mark.michaelis.net/Blog/ConvertingAClassLibraryToAVSTSTestProject.aspx">Converting a class library to a VSTS Test Project</a>. A big part of this process is understanding the attribute translation:</p>
 <p>| nUnit | VSTS |
 |</p>

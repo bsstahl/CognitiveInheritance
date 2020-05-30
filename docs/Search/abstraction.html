@@ -60,7 +60,7 @@
                 <h1>Tag: abstraction</h1>
                 <div>
     <h3>Meta-Abstraction -- You Ain't Gonna Need It!</h3>
-    <h5>Posted by bsstahl on 2020-05-18 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2020-05-18 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <blockquote>
 <p>When we look at the abstractions in our applications, we should see a description of the capabilities of our applications, not the capabilities of the abstraction</p>
 </blockquote>
@@ -109,7 +109,7 @@ public class MeetingReadRepository : IMeetingReadRepository
 </div>
 <hr/><div>
     <h3>The Value of Flexibility</h3>
-    <h5>Posted by bsstahl on 2019-02-14 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2019-02-14 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>Have you ever experienced that feeling you get when you need to extend an existing system and there is an extension point that is exactly what you need to build on?</p>
 <p>For example, suppose I get a request to extend a system so that an additional action is taken whenever a new user signs-up.  The system already has an event message that is published whenever a new user signs-up that contains all of the information I need for the new functionality.  All I have to do is subscribe a new microservice to this event message, and have that service take the new action whenever it receives a message. Boom! Done.</p>
 <p>Now think about the converse. The many situations we’ve all experienced where there is no extension point. Or maybe there is an extension mechanism in place but it isn’t quite right; perhaps an event that doesn’t fire on exactly the situation you need, or doesn’t contain the data you require for your use case and you have to build an entirely new data support mechanism to get access to the bits you need.</p>
@@ -137,7 +137,7 @@ public class MeetingReadRepository : IMeetingReadRepository
 </div>
 <hr/><div>
     <h3>A Requirement for AI Systems</h3>
-    <h5>Posted by bsstahl on 2017-05-24 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2017-05-24 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>I've written and spoken before about the importance of using the Strategy Pattern to create maintainable and testable systems. Strategies are even more important, almost to the level of necessity, when building AI systems.</p>
 <blockquote>
 <p>The Strategy Pattern is to algorithms what the Repository Pattern is to data stores, a useful and well-known abstraction for loose-coupling.
@@ -153,7 +153,7 @@ public class MeetingReadRepository : IMeetingReadRepository
 </div>
 <hr/><div>
     <h3>Testing the Untestable with Microsoft Fakes</h3>
-    <h5>Posted by bsstahl on 2017-03-20 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2017-03-20 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>It is fairly easy these days to test code in isolation if its dependencies are abstracted by a reusable interface. But what do we do if the dependency cannot easily be referenced via such an interface?  Enter <strong>Shims</strong>, from the <strong>Microsoft Fakes Framework</strong>(formerly Moles).  Shims allow us to isolate our testing from any dependent methods, including methods in assemblies we do not control, even if those methods are not exposed through a reusable interface. To see how easy it is, follow along with me through this example.</p>
 <p>In this <a href="https://github.com/bsstahl/VS2017Launch">sample code on GitHub</a>, we are building a repository for an application that currently gets its data from a file exported from a system that tracks scheduled meetings.  It is very likely that the system will, in the future, expose a more modern interface for that data so we have isolated the data storage using a simple Repository interface that has one method.  This method, called <strong>GetMeetings</strong> returns a collection of Meeting entities that start during the specified date range.  The method will return an empty collection if no data is found matching the specified criteria, and could throw either of 2 custom errors, a <strong>PermissionsException</strong>when the user does not have the proper permissions to access the information, and a <strong>DataUnavailableException</strong> for when the data source is unavailable for any other reason, such as a network outage or if the data file cannot be located.</p>
 <p>It is important to point out why a custom exception should be thrown when the data file is not found, rather than allowing the <strong>FileNotFoundException</strong> to bubble-up.  If we allow the implementation-specific exception to bubble, we have exposed an implementation detail to the caller. That is, the calling code is now aware of the fact that this is a file system implementation.  If code is written in a client that traps for <strong>FileNotFoundException</strong>, then the repository implementation is swapped-out for a SQL server implementation, the client code will have to change to handle the new types of errors that could be thrown by that implementation.  This violates the Dependency Inversion principle, the “D” from the <strong>SOLID</strong>principles.  By exposing only a custom exception, we are hiding those implementation details from the caller.</p>
@@ -195,7 +195,7 @@ Then, we can verify in our test that our custom exception is thrown.  The full 
 </div>
 <hr/><div>
     <h3>Demo Code for Testing in Visual Studio 2017</h3>
-    <h5>Posted by bsstahl on 2017-03-16 and Filed Under: <a title="Category: Event" class="small" href="../Search/Event.html">Event</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2017-03-16 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;</h5>
     <p>The demo code for my presentation on Testing in Visual Studio 2017 at the VS2017 Launch event can be found on <a href="https://github.com/bsstahl/VS2017Launch">GitHub</a>.  There are 2 branches to this repository, the <strong>Main</strong> branch which holds the completed demo, and the <strong>DemoStart</strong> branch which holds the starting point of the demonstration in case you would like to implement the sample yourself.</p>
 <p>The demo shows how Microsoft Fakes (formerly Moles) can be used to create tests against code that does not implement a reusable interface. This can be done  without having to resort to integration style tests or writing extra wrapper code just to implement an interface.  During my launch presentation, I also use this code to demonstrate the use of Intellitest (formerly Pex) to generate exploratory tests.</p>
 
@@ -204,7 +204,7 @@ Then, we can verify in our test that our custom exception is thrown.  The full 
 </div>
 <hr/><div>
     <h3>Code Coverage Teaches and Protects</h3>
-    <h5>Posted by bsstahl on 2016-10-14 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2016-10-14 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>I often hail code coverage as a great tool to help improve your code base.  Today, my use of Code Coverage taught me something about the new .NET Core tooling, and helped protect me from having to support useless code for the lifespan of my project.</p>
 <p>In the code below, I used a common dependency injection pattern. That is, an IServiceProvider object holding my dependencies is passed-in to my object and stored as a member variable.  When a dependency is needed, I retrieve that dependency from the service provider, and then take action on it.  Since there is no guarantee that the dependency I need will have been placed in the container, I use some common guard logic to protect my code.
 <code>templates = _serviceProvider.GetService&lt;IEnumerable&lt;Template&gt;&gt;();    if ((templates==null) || (!templates.Any(s =&gt; s.TemplateType==ContactPage)))         throw new TemplateNotFoundException(TemplateType.ContactPage, string.Empty);</code>
@@ -226,7 +226,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>Using Target-Specific Code in a Portable Library</h3>
-    <h5>Posted by bsstahl on 2013-06-27 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2013-06-27 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>On at least 2 occasions recently, I have heard speakers tell their audience that you cannot reference a target-specific .NET library (such as a .NET Framework 4.5 library) from a Portable Class Library.  While this is technically true, it doesn't tell nearly the whole story.  Even though we can't reference target-specific libraries, we can still USE these libraries. We can call their methods and access their properties under the right circumstances. We can gain access to these libraries via an abstraction.  My preferred method of doing this is known as Dependency Injection.</p>
 <p>I'm going to give some quick background on PCLs and DI before getting into the details of how they can be used in this context. If you are familiar with Dependency Injection and .NET Portable Class Libraries you can skip these sections.</p>
 <h3>.NET Portable Class Libraries (PCLs)</h3>
@@ -243,7 +243,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>Code Sample for My TDD Kickstart Sessions</h3>
-    <h5>Posted by bsstahl on 2012-02-13 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2012-02-13 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>The complete, working application for my <a href="/post/NET-TDD-Kickstart.aspx">.NET TDD Kickstart</a> sessions can be found <a href="http://docs.cognitiveinheritance.com/tddkickstart.zip">here</a>.</p>
 <p>Unzip the files into a solution folder and open the <strong>Demo.sln</strong> solution in a version of Visual Studio 2010 that has Unit Testing capability (Professional, Premium or Ultimate).  Immediately, you should be able to compile the whole solution, and successfully execute the tests in the <strong>Bss.QueueMonitor.Test</strong> and <strong>Bss.Timing.Test</strong> libraries.</p>
 <p>To get the tests in the other two test libraries (<strong>Bss.QueueMonitor.Data.EF.Test</strong> &amp; <strong>Bss.QueueMonitor.IntegrationTest</strong>) to pass, you will need to create the database used to store the monitored data in the data-tier and integration tests, and enable MSMQ on your system so that a queue to be monitored can be created for the Integration test.</p>
@@ -256,7 +256,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>".NET TDD Kickstart"</h3>
-    <h5>Posted by bsstahl on 2012-01-26 and Filed Under: <a title="Category: Event" class="small" href="../Search/Event.html">Event</a>&nbsp;<a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2012-01-26 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;<a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>I head out to Fullerton tomorrow for the start of my .NET TDD Kickstart world tour <img src="..//Images/wlEmoticon-smile.png" alt="Smile" /></p>
 <blockquote>
 <p>In this session, the speaker and the audience will &quot;pair up&quot; for a coding session which will serve as an introduction to Test Driven Development in an Agile environment. We will use C#, Visual Studio and Rhino Mocks to unit test code to be built both with and without dependencies. We will also highlight some of the common issues encountered during TDD and discuss strategies for overcoming them.</p>
@@ -277,7 +277,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>Order Matters in the Rhino Mocks Fluent Interface</h3>
-    <h5>Posted by bsstahl on 2012-01-16 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2012-01-16 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>I noticed something interesting with Rhino Mocks today while testing some demo code:
 <code>Rhino.Mocks.Expect.Call(myDependency.MyMethod(param1)).Return(result).Repeat.Times(5);</code>
 behaves as I anticipated; it expects the call to <strong>MyMethod</strong> to be repeated 5 times and returns the value of <strong>result</strong> all 5 times. Meanwhile:
@@ -290,7 +290,7 @@ also has the expectation of 5 executions, but it returns the value of <strong>re
 </div>
 <hr/><div>
     <h3>Demo Code for EF4Ent Sessions</h3>
-    <h5>Posted by bsstahl on 2011-06-26 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2011-06-26 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>I previously posted the slides for my <strong>Building Enterprise Apps using Entity Framework 4</strong> talk <a href="http://www.cognitiveinheritance.com/post/Desert-Code-Camp-Presentation.aspx">here</a>.  I can now post the source code for the completed demo application.  That code, created for use in Visual Studio 2010 Ultimate, is available in zip format below.  This is the same code that was demonstrated at Desert Code Camp 2011.1 and SoCalCodeCamp 2011 as well as the New Mexico .NET User’s Group (NMUG).</p>
 <p><a href="https://docs.google.com/uc?id=0B6PPrBnxN6VtMGRhNzZhOGUtNGY5NC00M2IyLTgxYzMtOTVlNDU0MDQyNjc1&amp;export=download&amp;hl=en_US" title="https://docs.google.com/uc?id=0B6PPrBnxN6VtMGRhNzZhOGUtNGY5NC00M2IyLTgxYzMtOTVlNDU0MDQyNjc1&amp;export=download&amp;hl=en_US">EF4EnterpriseDemoCode.zip</a></p>
 
@@ -299,7 +299,7 @@ also has the expectation of 5 executions, but it returns the value of <strong>re
 </div>
 <hr/><div>
     <h3>Desert Code Camp Presentation</h3>
-    <h5>Posted by bsstahl on 2011-04-02 and Filed Under: <a title="Category: Event" class="small" href="../Search/Event.html">Event</a>&nbsp;<a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2011-04-02 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;<a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>Thanks to all of the organizers, speakers, sponsors and attendees of <a href="http://apr2011.desertcodecamp.com/">Desert Code Camp 2011.1</a>.  This is the first time that I’ve presented at a Code Camp and it was a fantastic experience for me.  My session, <strong>Building Enterprise Apps using Entity Framework 4</strong>, was very well attended with 35 people cramming, standing-room-only, into a room with a capacity of 28 (please don’t tell the Fire Marshall).  The demos went very well (everything worked as it was supposed to) and the feedback I’ve gotten so far was entirely positive.</p>
 <p>I will be posting some additional information from the session shortly, including the sample code and the changes I make to the <strong>Microsoft All Rules</strong>code analysis ruleset, but I wanted to get the session slides up as quickly as possible.</p>
 <p>If you have any additional feedback on the session, please feel free to contact me here, or by email or twitter (as shown in the slide deck).</p>
@@ -310,7 +310,7 @@ also has the expectation of 5 executions, but it returns the value of <strong>re
 </div>
 <hr/><div>
     <h3>Developer Ignite in Chandler</h3>
-    <h5>Posted by bsstahl on 2009-07-13 and Filed Under: <a title="Category: Event" class="small" href="../Search/Event.html">Event</a>&nbsp;<a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2009-07-13 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;<a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>I will be speaking at the <a href="http://software.intel.com/en-us/articles/developer-ignite/">Developer Ignite</a> event in Chandler on July 22nd.  The topic of my talk will be &quot;Simplicity Through Abstraction&quot; during which I will be giving a very high-level overview of using Dependency Injection as an Inversion-of-Control methodology to create simplicity in software architecture.</p>
 <p>While putting my presentation together I have found a number of items that I wanted to include in my presentation, but simply can't due to the obvious constraints of a 5-minute presentation.  Some of these items won't even get a mention, others will be mentioned only in passing.  I include them here as a list of topics for me to discuss in future posts to this blog.  Hopefully this will occur, at least in part, prior to the ignite event so that there will be a set of resources available to those at the event who were previously unfamiliar with these techniques and wish to explore them further.</p>
 <p>These topics include:</p>
@@ -330,7 +330,7 @@ also has the expectation of 5 executions, but it returns the value of <strong>re
 </div>
 <hr/><div>
     <h3>Presentation Proposal - Developer Ignite Phoenix</h3>
-    <h5>Posted by bsstahl on 2009-06-26 and Filed Under: <a title="Category: Event" class="small" href="../Search/Event.html">Event</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2009-06-26 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;</h5>
     <p>I just submitted the following proposal for a talk at <a href="http://software.intel.com/en-us/articles/developer-ignite/">Developer Ignite Phoenix</a> which will be held July 22, 2009 at Gangplank in Chandler.</p>
 <blockquote>
 <h2>Simplicity Through Abstraction</h2>

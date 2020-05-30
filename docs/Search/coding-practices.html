@@ -60,7 +60,7 @@
                 <h1>Tag: coding practices</h1>
                 <div>
     <h3>Meta-Abstraction -- You Ain't Gonna Need It!</h3>
-    <h5>Posted by bsstahl on 2020-05-18 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2020-05-18 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <blockquote>
 <p>When we look at the abstractions in our applications, we should see a description of the capabilities of our applications, not the capabilities of the abstraction</p>
 </blockquote>
@@ -109,7 +109,7 @@ public class MeetingReadRepository : IMeetingReadRepository
 </div>
 <hr/><div>
     <h3>The Value of Flexibility</h3>
-    <h5>Posted by bsstahl on 2019-02-14 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2019-02-14 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>Have you ever experienced that feeling you get when you need to extend an existing system and there is an extension point that is exactly what you need to build on?</p>
 <p>For example, suppose I get a request to extend a system so that an additional action is taken whenever a new user signs-up.  The system already has an event message that is published whenever a new user signs-up that contains all of the information I need for the new functionality.  All I have to do is subscribe a new microservice to this event message, and have that service take the new action whenever it receives a message. Boom! Done.</p>
 <p>Now think about the converse. The many situations we’ve all experienced where there is no extension point. Or maybe there is an extension mechanism in place but it isn’t quite right; perhaps an event that doesn’t fire on exactly the situation you need, or doesn’t contain the data you require for your use case and you have to build an entirely new data support mechanism to get access to the bits you need.</p>
@@ -137,7 +137,7 @@ public class MeetingReadRepository : IMeetingReadRepository
 </div>
 <hr/><div>
     <h3>Programmers -- Take Responsibility for Your AI’s Output</h3>
-    <h5>Posted by bsstahl on 2018-03-16 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2018-03-16 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <blockquote>
 <p><strong>plus ça change, plus c'est la même chose</strong> – <strong>The more that things change, the more they stay the same</strong>. – Rush (and others <img src="..//Images/wlEmoticon-winkingsmile.png" alt="Winking smile" /> )</p>
 </blockquote>
@@ -172,7 +172,7 @@ public class MeetingReadRepository : IMeetingReadRepository
 </div>
 <hr/><div>
     <h3>An Example of a Hybrid AI Implementation</h3>
-    <h5>Posted by bsstahl on 2017-10-13 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2017-10-13 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>I <a href="http://www.cognitiveinheritance.com/post/AI-That-Can-Explain-Why.aspx">previously</a> wrote about a Hybrid AI system that combined logical and optimization methods of problem solving to identify the best solution to an employee shift assignment problem. This implementation was notable in that a hybrid approach was used so that the optimal solution could be found, but the system could still indicate to the users why a particular assignment was, or wasn’t, included in the results.</p>
 <p>I recently published to <a href="http://www.github.com/bsstahl/AIDemos">GitHub</a> a demo of a similar system. I use this demo in my presentation, <a href="http://www.cognitiveinheritance.com/page/Speaking-Engagements.aspx">Building AI Solutions that can Reason Why</a>. The code demonstrates the hybridization of multiple AI techniques by creating a solution that iteratively applies a combinatorial optimization engine. Different results are obtained by varying the methods of applying the constraints in that model. In the final (4th) demo  method, an iterative process is used to identify what the shortcomings of the final product are, and why they are necessary.</p>
 <p>These demos use the <a href="https://github.com/bsstahl/ConferenceScheduler">Conference Scheduler</a> AI project to build a valid schedule.</p>
@@ -216,7 +216,7 @@ public class MeetingReadRepository : IMeetingReadRepository
 </div>
 <hr/><div>
     <h3>A Requirement for AI Systems</h3>
-    <h5>Posted by bsstahl on 2017-05-24 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2017-05-24 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>I've written and spoken before about the importance of using the Strategy Pattern to create maintainable and testable systems. Strategies are even more important, almost to the level of necessity, when building AI systems.</p>
 <blockquote>
 <p>The Strategy Pattern is to algorithms what the Repository Pattern is to data stores, a useful and well-known abstraction for loose-coupling.
@@ -232,7 +232,7 @@ public class MeetingReadRepository : IMeetingReadRepository
 </div>
 <hr/><div>
     <h3>Microservices Presentation</h3>
-    <h5>Posted by bsstahl on 2017-05-06 and Filed Under: <a title="Category: Event" class="small" href="../Search/Event.html">Event</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2017-05-06 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;</h5>
     <p>The slide deck for my presentation “Examples of Microservice Architectures” can be found <a href="https://1drv.ms/p/s!AswbHpz53UVdmb54V_pOCZHH6haGrg">here</a>.</p>
 <blockquote>
 <p>There isn't one clear answer to the question &quot;what does a micro-service architecture look like?&quot; so it can be very enlightening to see some existing implementations. In this presentation, we will look at 2 different applications that would not traditionally be thought of as candidates for a service-oriented approach. We'll look at how they were implemented and what benefits the micro-services architecture brought to the table for each application.</p>
@@ -243,7 +243,7 @@ public class MeetingReadRepository : IMeetingReadRepository
 </div>
 <hr/><div>
     <h3>Demo Code for Testing in Visual Studio 2017</h3>
-    <h5>Posted by bsstahl on 2017-03-16 and Filed Under: <a title="Category: Event" class="small" href="../Search/Event.html">Event</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2017-03-16 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;</h5>
     <p>The demo code for my presentation on Testing in Visual Studio 2017 at the VS2017 Launch event can be found on <a href="https://github.com/bsstahl/VS2017Launch">GitHub</a>.  There are 2 branches to this repository, the <strong>Main</strong> branch which holds the completed demo, and the <strong>DemoStart</strong> branch which holds the starting point of the demonstration in case you would like to implement the sample yourself.</p>
 <p>The demo shows how Microsoft Fakes (formerly Moles) can be used to create tests against code that does not implement a reusable interface. This can be done  without having to resort to integration style tests or writing extra wrapper code just to implement an interface.  During my launch presentation, I also use this code to demonstrate the use of Intellitest (formerly Pex) to generate exploratory tests.</p>
 
@@ -252,7 +252,7 @@ public class MeetingReadRepository : IMeetingReadRepository
 </div>
 <hr/><div>
     <h3>Is a Type an Implementation of an Interface?</h3>
-    <h5>Posted by bsstahl on 2016-11-17 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2016-11-17 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>One of the techniques I recommend highly in my <a href="http://www.cognitiveinheritance.com/post/Simplify-Your-API.aspx">Simplify Your API</a> talk is the use of extension methods to hide the complexity of lower-level API functionality.  A good example of a place to use this methodology came-up last night in a great Reflection talk by Jeremy Clark (<a href="https://twitter.com/jeremybytes">Twitter</a>, <a href="https://jeremybytes.blogspot.com/">Blog</a>) at the <a href="http://www.nwvdnug.org">NorthWest Valley .NET User Group</a>.</p>
 <p><img src="..//Images/Jeremy_2.jpg" alt="Jeremy" /></p>
 <p>Jeremy was demonstrating a method that would spin-through an assembly and load all classes within that assembly that implemented a particular interface.  The syntax to do the checks on each type were just a bit more obtuse than Jeremy would have liked them to be.  As we left that talk, I only half-jokingly told Jeremy that I was going to write him an extension method to make that activity simpler.  Being a man of my word, I present the code below to do just that.</p>
@@ -262,7 +262,7 @@ public class MeetingReadRepository : IMeetingReadRepository
 </div>
 <hr/><div>
     <h3>Code Coverage Teaches and Protects</h3>
-    <h5>Posted by bsstahl on 2016-10-14 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2016-10-14 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>I often hail code coverage as a great tool to help improve your code base.  Today, my use of Code Coverage taught me something about the new .NET Core tooling, and helped protect me from having to support useless code for the lifespan of my project.</p>
 <p>In the code below, I used a common dependency injection pattern. That is, an IServiceProvider object holding my dependencies is passed-in to my object and stored as a member variable.  When a dependency is needed, I retrieve that dependency from the service provider, and then take action on it.  Since there is no guarantee that the dependency I need will have been placed in the container, I use some common guard logic to protect my code.
 <code>templates = _serviceProvider.GetService&lt;IEnumerable&lt;Template&gt;&gt;();    if ((templates==null) || (!templates.Any(s =&gt; s.TemplateType==ContactPage)))         throw new TemplateNotFoundException(TemplateType.ContactPage, string.Empty);</code>
@@ -284,7 +284,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>TDD Helps Validate Your Tests</h3>
-    <h5>Posted by bsstahl on 2016-03-05 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2016-03-05 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>One of the reasons to use TDD over test-later approaches is that you get a better validation of your tests.</p>
 <p>When the first thing you do with a test or series of tests is to run them against code that does nothing but throw a <em>NotImplementedException</em>, you know exactly what to expect. That is, all tests should fail because the code under test threw a <em>NotImplementedException</em>. After that, you can take iterative steps to implement the code. Along the way, you should always see your tests fail in appropriate ways.  Eventually, all of your tests should pass when the code is complete.</p>
 <p>If tests start passing before they should, continue to fail when they shouldn’t, or fail for reasons that are different than what you’d expect at that point in the development process, you have a good indication that the test may not be doing what you want it to be doing.  This additional information about the tests can be very helpful in making sure your unit tests are properly testing your code.</p>
@@ -302,7 +302,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>Test-Driven Bug Fixes</h3>
-    <h5>Posted by bsstahl on 2016-02-27 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2016-02-27 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>I had an experience this past week that reminded me of both the importance of continuing the Test Driven Development process beyond the initial development phases of a application's life-cycle, and that not all developers have yet fully grasped the concepts behind Test Driven Development.</p>
 <p>One of the development teams I work with had a bug come-up in a bit of complex logic that I designed. I was asked to pair-up with one of the developers to help figure out the bug since he had already spent several hours looking at it. When I asked him to show me the tests that were failing, there weren't any. The bug was for a situation that we hadn't anticipated during initial development (a common occurrence) and he had not yet setup any tests that exposed the bug.</p>
 <p>We immediately set out to rectify the situation by creating tests that failed as a result of the bug. Once these tests were created, it was a fairly simple process to use those tests as a debug platform to step through the code, find the problem and correct the bug. As is sometimes the case, fixing that bug caused another test to fail, a situation that was easily remedied since we knew about it due to the failing test.</p>
@@ -315,7 +315,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>Not Following API Guidelines Has Impact</h3>
-    <h5>Posted by bsstahl on 2016-01-25 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2016-01-25 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>Good API design requires the developer to return responses that provide useful and understandable information to the consumers of the API.  To effectively communicate with the consumers, these responses must utilize standards that are known to the developers who will be using them.  For .NET APIs, these standards include:</p>
 <ul>
 <li>Implementing <em>IDisposable</em> on all objects that need disposal.</li>
@@ -341,7 +341,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>No More Collection Objects</h3>
-    <h5>Posted by bsstahl on 2015-10-27 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2015-10-27 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>I don't create collection objects anymore.</p>
 <p>I know, I know. I was they guy always preaching that every entity that was being collected had to have its own collection object. It was the right thing at the time; if you needed to take an action on an enumeration or list of objects, those actions needed to be done within a strongly-typed collection object to maintain encapsulation. Even if all that was happening was that an inherited List&lt;T&gt; function was being called, that functionality needed to be called on the TCollection object because, if it wasn't, it was likely that the next time logic needed to be performed on the collection, there wouldn't be a place to put it. Collection logic would end up being spread-out around your code rather than encapsulated in the collection. It was also possible that the implementation might change and need to be updated everywhere, instead of in one place.</p>
 <p>Today however, that has all changed. Extension methods now allow us, at any time, to add functionality to ICollection&lt;T&gt;, IList&lt;T&gt;, IEnumerable&lt;T&gt; or any other interface or class. We can attach our list or enumeration based actions directly to the list or enumeration class, and do so at any time, since the methods appear the same to the developer as methods directly on the collection type. Thus, the &quot;no place to put it&quot; fear no longer exists. I've even started using this technique for my factory methods to make it clear that what I am creating is, in fact, an IEnumerable&lt;T&gt;, as shown below.
@@ -355,7 +355,7 @@ In this example, both the <strong>Create</strong> and <strong>GetNearby</strong>
 </div>
 <hr/><div>
     <h3>Simplify Your API</h3>
-    <h5>Posted by bsstahl on 2015-10-12 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2015-10-12 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>If you are building an API for other Developers to use, you will find out two things very quickly:</p>
 <ol>
 <li>Developers don't read documentation (you probably already know this).</li>
@@ -395,7 +395,7 @@ a query that is much simpler, easier to understand, easier to create and easier 
 </div>
 <hr/><div>
     <h3>“One Reason to Change” Means the Code</h3>
-    <h5>Posted by bsstahl on 2015-07-06 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2015-07-06 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>There was some confusion last week at the SoCalCodeCamp about what the phrase “One Reason to Change” actually means.  As you probably know, the Single Responsibility Principle states that every class should have one and only one responsibility within the system. A common check for adherence to this principal is that the object has only one reason to change. However, it is important to realize that this is referring to the code (the class), not the state of the object (the instance).  The state of the object may have many reasons to change, however, we as developers should have only 1 reason to change the code for our objects.  For example, if the object is in the business-rules layer, we should only have to change the code if the business rules change.  Likewise, if the object is in the data tier, it should only need code changes if the structure of the data changes.</p>
 
     <h5>Tags: <a title="Tag: class" class="small" href="../Search/class.html">class</a>&nbsp;<a title="Tag: coding practices" class="small" href="../Search/coding-practices.html">coding practices</a>&nbsp;<a title="Tag: development" class="small" href="../Search/development.html">development</a>&nbsp;<a title="Tag: solid" class="small" href="../Search/solid.html">solid</a>&nbsp;<a title="Tag: oop" class="small" href="../Search/oop.html">oop</a>&nbsp;</h5>
@@ -403,7 +403,7 @@ a query that is much simpler, easier to understand, easier to create and easier 
 </div>
 <hr/><div>
     <h3>Conflict of Interest -- YAGNI vs. Standardization</h3>
-    <h5>Posted by bsstahl on 2014-07-28 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2014-07-28 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>While working on the OSS project mentioned in my <a href="http://www.cognitiveinheritance.com/post/New-OSS-Project.aspx">previous post</a>, I have run across a dilemma where two of the principals I try to work by are in conflict. The two principals in question are:</p>
 <ol>
 <li><strong>YAGNI</strong> - <em>You aint gonna need it</em>, which prescribes not coding anything unless the need already exists. This principal is a core of Test Driven Development of which I am a practitioner and a strong proponent.</li>
@@ -425,7 +425,7 @@ a query that is much simpler, easier to understand, easier to create and easier 
 </div>
 <hr/><div>
     <h3>Programmers -- Take Responsibility for Your Program’s Output</h3>
-    <h5>Posted by bsstahl on 2013-03-03 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2013-03-03 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>You have probably seen the discussion of the “Keep Calm and Rape On” T-Shirts that were made available, for a time, by an Amazon reseller.  These shirts were one of several thousand computer-generated designs offered for sale on Amazon, to be printed and shipped if anyone cared to buy one.  At first blush, and as some have pointed-out, it seems like a simple error. A verb list that contained the word “rape” was not properly vetted and therefore the offensive shirt promoting violent crime was offered for sale by mistake. No offense was intended, so, as long as the company takes the proper action of <a href="http://www.solidgoldbomb.com/pages/our-apology">apologizing and removing the offending item</a>, all is well.  This sentiment seems to be summed-up by the <a href="http://iam.peteashton.com/keep-calm-rape-tshirt-amazon/">well-read post by Pete Ashton</a> on the subject:</p>
 <blockquote>
 <p>Because these algorithms generally mimic decisions that used to be made directly by people we have a tendency to humanise the results and can easily be horrified by what we see. But some basic understanding of how these systems work can go a long way to alleviating this dissonance.</p>
@@ -440,7 +440,7 @@ a query that is much simpler, easier to understand, easier to create and easier 
 </div>
 <hr/><div>
     <h3>Code Sample for My TDD Kickstart Sessions</h3>
-    <h5>Posted by bsstahl on 2012-02-13 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2012-02-13 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>The complete, working application for my <a href="/post/NET-TDD-Kickstart.aspx">.NET TDD Kickstart</a> sessions can be found <a href="http://docs.cognitiveinheritance.com/tddkickstart.zip">here</a>.</p>
 <p>Unzip the files into a solution folder and open the <strong>Demo.sln</strong> solution in a version of Visual Studio 2010 that has Unit Testing capability (Professional, Premium or Ultimate).  Immediately, you should be able to compile the whole solution, and successfully execute the tests in the <strong>Bss.QueueMonitor.Test</strong> and <strong>Bss.Timing.Test</strong> libraries.</p>
 <p>To get the tests in the other two test libraries (<strong>Bss.QueueMonitor.Data.EF.Test</strong> &amp; <strong>Bss.QueueMonitor.IntegrationTest</strong>) to pass, you will need to create the database used to store the monitored data in the data-tier and integration tests, and enable MSMQ on your system so that a queue to be monitored can be created for the Integration test.</p>
@@ -453,7 +453,7 @@ a query that is much simpler, easier to understand, easier to create and easier 
 </div>
 <hr/><div>
     <h3>".NET TDD Kickstart"</h3>
-    <h5>Posted by bsstahl on 2012-01-26 and Filed Under: <a title="Category: Event" class="small" href="../Search/Event.html">Event</a>&nbsp;<a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2012-01-26 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;<a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>I head out to Fullerton tomorrow for the start of my .NET TDD Kickstart world tour <img src="..//Images/wlEmoticon-smile.png" alt="Smile" /></p>
 <blockquote>
 <p>In this session, the speaker and the audience will &quot;pair up&quot; for a coding session which will serve as an introduction to Test Driven Development in an Agile environment. We will use C#, Visual Studio and Rhino Mocks to unit test code to be built both with and without dependencies. We will also highlight some of the common issues encountered during TDD and discuss strategies for overcoming them.</p>
@@ -474,7 +474,7 @@ a query that is much simpler, easier to understand, easier to create and easier 
 </div>
 <hr/><div>
     <h3>Demo Code for EF4Ent Sessions</h3>
-    <h5>Posted by bsstahl on 2011-06-26 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2011-06-26 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>I previously posted the slides for my <strong>Building Enterprise Apps using Entity Framework 4</strong> talk <a href="http://www.cognitiveinheritance.com/post/Desert-Code-Camp-Presentation.aspx">here</a>.  I can now post the source code for the completed demo application.  That code, created for use in Visual Studio 2010 Ultimate, is available in zip format below.  This is the same code that was demonstrated at Desert Code Camp 2011.1 and SoCalCodeCamp 2011 as well as the New Mexico .NET User’s Group (NMUG).</p>
 <p><a href="https://docs.google.com/uc?id=0B6PPrBnxN6VtMGRhNzZhOGUtNGY5NC00M2IyLTgxYzMtOTVlNDU0MDQyNjc1&amp;export=download&amp;hl=en_US" title="https://docs.google.com/uc?id=0B6PPrBnxN6VtMGRhNzZhOGUtNGY5NC00M2IyLTgxYzMtOTVlNDU0MDQyNjc1&amp;export=download&amp;hl=en_US">EF4EnterpriseDemoCode.zip</a></p>
 
@@ -483,7 +483,7 @@ a query that is much simpler, easier to understand, easier to create and easier 
 </div>
 <hr/><div>
     <h3>Continuous Improvement as a Developer</h3>
-    <h5>Posted by bsstahl on 2011-04-29 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2011-04-29 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>In a <a href="http://www.youtube.com/watch?v=BI23U7U2aUY&amp;feature=relmfu">video interview about storytelling</a> for <a href="http://current.com/">currentTV</a>, Ira Glass, the host of “This American Life”, details the lengthy process that he, and all creative people go through to close the quality gap between the work they are trying to produce, and what they are actually producing.</p>
 <blockquote>
 <p>All of us who do creative work, we get into it, and we get into it because we have good taste… So you’ve got really good taste and you get into this thing that I don’t even know how to describe but it’s like there’s a gap. That for the first couple of years that you’re making stuff, what you’re making isn’t so good, ok, it’s not that great, it’s really not that great.  It’s trying to be good, it has ambition to be good, but it’s not quite that good. But your taste, the thing that got you into the game, your taste is still killer.  Your taste is still good enough that you can tell that what you’re making is kind of a disappointment to you…you can tell that it’s still sort-of crappy.  A lot of people never get past that phase, a lot of people, at that point, they quit. And the thing that I would say to you with all my heart is that most everybody I know who does interesting, creative work, they went through a phase of years where they had really good taste, they could tell that what they were making wasn’t as good as what they wanted it to be, they knew it fell short.  Some of us can admit that to ourselves and some of us are a little less able to admit that to ourselves.  But we knew it didn’t have this special thing we wanted it to have. And the thing I’d say to you is, everybody goes through that, and for you to go through it, if you’re going through it right now, if you’re just getting out of that phase, or if you’re just starting off and you’re entering into that phase, you gotta know, it’s totally normal and the most important possible thing you could do is do a lot of work.  Do a huge volume of work…</p>
@@ -501,7 +501,7 @@ a query that is much simpler, easier to understand, easier to create and easier 
 </div>
 <hr/><div>
     <h3>Desert Code Camp Presentation</h3>
-    <h5>Posted by bsstahl on 2011-04-02 and Filed Under: <a title="Category: Event" class="small" href="../Search/Event.html">Event</a>&nbsp;<a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2011-04-02 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;<a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>Thanks to all of the organizers, speakers, sponsors and attendees of <a href="http://apr2011.desertcodecamp.com/">Desert Code Camp 2011.1</a>.  This is the first time that I’ve presented at a Code Camp and it was a fantastic experience for me.  My session, <strong>Building Enterprise Apps using Entity Framework 4</strong>, was very well attended with 35 people cramming, standing-room-only, into a room with a capacity of 28 (please don’t tell the Fire Marshall).  The demos went very well (everything worked as it was supposed to) and the feedback I’ve gotten so far was entirely positive.</p>
 <p>I will be posting some additional information from the session shortly, including the sample code and the changes I make to the <strong>Microsoft All Rules</strong>code analysis ruleset, but I wanted to get the session slides up as quickly as possible.</p>
 <p>If you have any additional feedback on the session, please feel free to contact me here, or by email or twitter (as shown in the slide deck).</p>
@@ -512,7 +512,7 @@ a query that is much simpler, easier to understand, easier to create and easier 
 </div>
 <hr/><div>
     <h3>Decorating Partial Class Members in C#</h3>
-    <h5>Posted by bsstahl on 2011-03-08 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2011-03-08 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>Anyone who uses code generation more than trivially in their .NET solutions knows how difficult it is to add metadata to a member of a generated class, even if that class is marked as partial.  Partial classes are terrific for adding members to generated classes, and even allow you to change metadata and other information about the class itself, such as by adding an interface that it implements.  You cannot however, modify an existing member of the class by marking it to not be serialized, or to make it a part of a WCF data contract. I believe, as more and more code is generated by .NET developers using Entity Framework, wsdl.exe and other proxy generation tools, or even T4 directly; we will see a greatly increased need for a workable solution to this problem.</p>
 <p>The most common work-around for this problem today is the use of “buddy classes” where a separate class is created to hold the metadata.  A good example of this type of solution can be found in <a href="http://www.asp.net/dynamicdata">ASP.NET Dynamic Data</a>.  However, as you might imagine, this type of implementation has some fairly severe drawbacks.  For one, it requires some sort of mechanism for unifying the functionality of the two classes. An example of this is the case where we have a property on an Entity Framework POCO that should not be serialized when we serialize the rest of the class.  We cannot serialize the POCO correctly unless we use a custom serializer that is aware of the metadata in the buddy class.  We have similar problems if we are trying to use a generated base class as the output of a WCF service.  If the [DataContract] attribute is not already on the generated code (which requires a reference to the System.Runtime.Serialization library) we will have to create a separate object that implements the DataContract to be exposed by the service.  In most cases, this object will be an almost exact duplicate of the state features of the original object, forcing the replication of some code, even if that code is just the properties of the object.</p>
 <p>There is a feature that has been proposed in the C# language for some time now that would allow this type of behavior within a single class.  This feature would use the keyword <em><strong>existing</strong></em> to allow the duplication of the definition of partial class members into non-code-generated files so that those members can be decorated with additional metadata without risk of being overwritten when the automatic code is regenerated, and without duplicating the functionality in the member.  Unfortunately, it appears that this feature is not going to make it into the next version of C# and is at risk of not being in the following version as well.  In an email exchange, Mads Torgersen, C# Program Manager at Microsoft, stated that</p>
@@ -535,7 +535,7 @@ a query that is much simpler, easier to understand, easier to create and easier 
 </div>
 <hr/><div>
     <h3>Owning Code is Evil</h3>
-    <h5>Posted by bsstahl on 2007-06-14 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2007-06-14 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>Commenting on a <a href="http://www.skrenta.com/2007/05/code_is_our_enemy.html">Rich Skrenta</a> post, the point of which is that we should write as little code as possible, <a href="http://www.codinghorror.com/blog/archives/000878.html">Jeff Atwood</a> writes:</p>
 <blockquote>
 <p>I couldn't agree more. I've given similar advice when I exhorted developers to Code Smaller. And I'm not talking about a <a href="http://en.wikipedia.org/wiki/Reductio_ad_absurdum">reductio ad absurdum</a> contest where we use up all the clever tricks in our books to make the code fit into less physical space. I'm talking about practical, sensible strategies to reduce the volume of code an individual programmer has to read to understand how a program works. Here's a trivial little example of what I'm talking about:</p>

@@ -60,7 +60,7 @@
                 <h1>Tag: code coverage</h1>
                 <div>
     <h3>Testing a .NET Core Library in VS2015</h3>
-    <h5>Posted by bsstahl on 2017-01-09 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2017-01-09 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>I really enjoy working with .NET Core.  I like the fact that my code is portable to many platforms and that the footprint is so much smaller than with traditional .NET applications.  Unfortunately, the tooling has not quite reached the level that we expect from a Microsoft finished product (which it isn’t – yet). As a result, there are some additional actions we need to take when setting up our solutions in Visual Studio 2015 to allow us to unit test our code properly.  The following are the steps that I currently take to setup and test a .NET Core library using XUnit and Moq.  I know that a number of these steps will be done for us, or at least made much easier, by the tooling in the coming months, either by Visual Studio 2017, or by enhancements to the Visual Studio 2015 environments.</p>
 <ol>
 <li>Create the library to be tested in Visual Studio 2015
@@ -133,7 +133,7 @@
 </div>
 <hr/><div>
     <h3>Code Coverage Teaches and Protects</h3>
-    <h5>Posted by bsstahl on 2016-10-14 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2016-10-14 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>I often hail code coverage as a great tool to help improve your code base.  Today, my use of Code Coverage taught me something about the new .NET Core tooling, and helped protect me from having to support useless code for the lifespan of my project.</p>
 <p>In the code below, I used a common dependency injection pattern. That is, an IServiceProvider object holding my dependencies is passed-in to my object and stored as a member variable.  When a dependency is needed, I retrieve that dependency from the service provider, and then take action on it.  Since there is no guarantee that the dependency I need will have been placed in the container, I use some common guard logic to protect my code.
 <code>templates = _serviceProvider.GetService&lt;IEnumerable&lt;Template&gt;&gt;();    if ((templates==null) || (!templates.Any(s =&gt; s.TemplateType==ContactPage)))         throw new TemplateNotFoundException(TemplateType.ContactPage, string.Empty);</code>
@@ -155,7 +155,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>TDD Helps Validate Your Tests</h3>
-    <h5>Posted by bsstahl on 2016-03-05 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2016-03-05 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>One of the reasons to use TDD over test-later approaches is that you get a better validation of your tests.</p>
 <p>When the first thing you do with a test or series of tests is to run them against code that does nothing but throw a <em>NotImplementedException</em>, you know exactly what to expect. That is, all tests should fail because the code under test threw a <em>NotImplementedException</em>. After that, you can take iterative steps to implement the code. Along the way, you should always see your tests fail in appropriate ways.  Eventually, all of your tests should pass when the code is complete.</p>
 <p>If tests start passing before they should, continue to fail when they shouldn’t, or fail for reasons that are different than what you’d expect at that point in the development process, you have a good indication that the test may not be doing what you want it to be doing.  This additional information about the tests can be very helpful in making sure your unit tests are properly testing your code.</p>
@@ -173,7 +173,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>Remove Any Code Your Users Don't Care About</h3>
-    <h5>Posted by bsstahl on 2015-09-28 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2015-09-28 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>Code Coverage has been the topic of a number of conversations lately, most recently after the last <a href="http://www.meetup.com/sevdnug/events/223863304/">Southeast Valley .NET User Group</a> meeting where <a href="http://www.twitter.com/jeremybytes">Jeremy Clark</a> presented his great talk, <a href="http://jeremybytes.com/Demos.aspx#UTMMF">Unit Testing Makes Me Faster</a>.  During this presentation, Jeremy eponymized, on my behalf, something I've been saying for a while, that <a href="http://jeremybytes.blogspot.com/2015/02/unit-test-coverage-what-parts-of-your.html">the part of an application that you don't need to test is the part that your users don't care about</a>.  That is, if your users care about something in your application, you should be writing tests that ensure that the users' needs are fulfilled by your code. This has never really been a controversial statement, just one that sometimes gets lost in the myriad of information about unit testing and test driven development.</p>
 <p>Where the conversation got really interesting was when we started discussing what should happen if you decide that a piece of code really isn't important to your users.  It is my assertion that code which is deemed unimportant enough to the user that it might not be tested, should be removed from the project, even if is part of a standard implementation.  I will attempt to justify this assertion by using the example of a property implementation that supports the <em>INotifyPropertyChanged</em> interface.</p>
 <p><a href="http://www.cognitiveinheritance.com/image.axd?picture=CodeCoverageDemoProperty_2.png">![CodeCoverageDemoProperty](http://www.cognitiveinheritance.com/image.axd?picture=CodeCoverageDemoProperty_thumb_2.png &quot;CodeCoverageDemoProperty&quot;)</a><br />

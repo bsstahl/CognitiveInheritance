@@ -57,7 +57,7 @@
         <div class="row">
             <div class="col-md-8">
               <h1>Solving DataSet Constraint Problems</h1>
-              <h5>Posted by bsstahl on 2006-08-31 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+              <h5>Posted by bsstahl on 2006-08-31 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
               <p>Roy Osherove, and one of his commenters on his <a href="http://weblogs.asp.net/rosherove/default.aspx">ISerializable</a> blog, explains how to find out the source of a constraint problem in a DataSet. To do so, simply set the <strong>DataSet.EnforceConstraints</strong> property to false, then load your data. Once everything is loaded, set the <strong>EnforceConstraints</strong> property back to True, while trapping for the error. Once the error occurs, you can iterate through the Tables, testing the <strong>HasErrors</strong> property. For each table with errors, iterate through its rows testing the same property. Rows that have errors will have a property called <strong>RowError</strong> that describes the specific problem with that row.</p>
 <p>Roy's original article is: <a href="http://weblogs.asp.net/rosherove/archive/2004/10/03/237260.aspx">DataSet hell - &quot;Failed to enable constraints. One or more rows contain values....&quot;</a>.</p>
 

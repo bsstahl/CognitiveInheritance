@@ -60,7 +60,7 @@
                 <h1>Tag: data structures</h1>
                 <div>
     <h3>Back to Basics–the Double Data Type</h3>
-    <h5>Posted by bsstahl on 2019-02-12 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2019-02-12 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>What is the result of converting a value that is close to, but not at, the maximum value of an Int64 from a double to a long (Int64)?  That is, what would be the result of an expression like:</p>
 <p><code>(long)((double)(Int64.MaxValue – 1))</code></p>
 <ol>
@@ -95,7 +95,7 @@
 </div>
 <hr/><div>
     <h3>Why I Am Attending the Pluralsight “Algorithms and Data Structures” Webcast</h3>
-    <h5>Posted by bsstahl on 2011-08-24 and Filed Under: <a title="Category: Event" class="small" href="../Search/Event.html">Event</a>&nbsp;<a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2011-08-24 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;<a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p><a href="http://www.pluralsight-training.net/microsoft/webcasts/index?utm_campaign=Newsletter&amp;utm_medium=email&amp;utm_source=VR" title="http://www.pluralsight-training.net/microsoft/webcasts/index?utm_campaign=Newsletter&amp;utm_medium=email&amp;utm_source=VR">http://www.pluralsight-training.net/microsoft/webcasts/index?utm_campaign=Newsletter&amp;utm_medium=email&amp;utm_source=VR</a></p>
 <p>When I started at Arizona State University (ASU) about twenty-six years ago, I’d already been programming for five or six years, and building applications for a year or two.  I’d done things like create hacking tools and <a href="http://en.wikipedia.org/wiki/War_dialing">WarGames dialers</a> for my own use, and I’d built a few applications for businesses where I was doing lookups and filing information that was specific to that business, but all of that was very heavy on code and light on technique and reusability.  I knew how to use variables and arrays, I knew how to make the computer do what I wanted it to do, but I didn’t know how to write good code.  At ASU, there were two classes that I had take freshman year that were part of the Engineering &amp; Applied Sciences core, that really woke me up to the world of Computer Science and the things that we, as engineers, can do with our code.  Those classes were “Data Structures in Pascal” and “Discreet Mathematics”.  These two classes are really the only classes where I have specific memories of the things I learned so long ago.</p>
 <p>I remember, very clearly, in the data structures class, learning about linked-lists.  I remember the realm of possibilities that I saw when introduced to this data structure.  This really very simple data structure showed me tremendous power as a flexible, reusable foundational element, that dwarfed arrays and the other tools I knew at the time.  Linked lists showed me how I could hold the same values as I held in an array with addition metadata that gave me the tools to access the values in a different way, in a way that made more sense for the use-case.  I saw in these structures a tool I could use to build reusable frameworks that could operate on data in a way that was much more use-case specific.  For example, I could use linked-lists to create a queue structure.  Then, if the use-case dictated, I could extend that structure to hold a priority and make the queue priority based.  These things, while possible just using flat arrays, were much more difficult and harder to reuse.  Other structures like binary-trees had impact on me as well, but nothing like the fundamental power of the linked-list.</p>
@@ -108,7 +108,7 @@
 </div>
 <hr/><div>
     <h3>Entity Framework Associations on Non-Key Fields</h3>
-    <h5>Posted by bsstahl on 2011-02-03 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2011-02-03 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>Since I have now, for the second time, run into a problem working with Associations on non-key fields in Entity Framework, it is time for me to take a serious look at the issue.</p>
 <p>Consider the model below.  There are two entities, a Flight and an Airport.  In this scenario, there are two associations between the entities, Flight.DepartFromAirportId –&gt; Airport.Id and Flight.ArriveAtAirportId –&gt; Airport.Id.  These associations represent the Departure and Arrival airport of the flight.  This model works quite well in Entity Framework 4, making a collection of the arriving and departing flights for each airport available through the navigation properties on the Airport object, and providing a shortcut to the departure and arrival Airport objects for each flight via the navigation properties on the Flight object.</p>
 <p><a href="http://www.cognitiveinheritance.com/image.axd?picture=Flight%20Airport%20Ok%20ERD.png">![Flight Airport Ok ERD](http://www.cognitiveinheritance.com/image.axd?picture=Flight%20Airport%20Ok%20ERD_thumb.png &quot;Flight Airport Ok ERD&quot;)</a></p>
@@ -129,7 +129,7 @@
 </div>
 <hr/><div>
     <h3>Solving DataSet Constraint Problems</h3>
-    <h5>Posted by bsstahl on 2006-08-31 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2006-08-31 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>Roy Osherove, and one of his commenters on his <a href="http://weblogs.asp.net/rosherove/default.aspx">ISerializable</a> blog, explains how to find out the source of a constraint problem in a DataSet. To do so, simply set the <strong>DataSet.EnforceConstraints</strong> property to false, then load your data. Once everything is loaded, set the <strong>EnforceConstraints</strong> property back to True, while trapping for the error. Once the error occurs, you can iterate through the Tables, testing the <strong>HasErrors</strong> property. For each table with errors, iterate through its rows testing the same property. Rows that have errors will have a property called <strong>RowError</strong> that describes the specific problem with that row.</p>
 <p>Roy's original article is: <a href="http://weblogs.asp.net/rosherove/archive/2004/10/03/237260.aspx">DataSet hell - &quot;Failed to enable constraints. One or more rows contain values....&quot;</a>.</p>
 

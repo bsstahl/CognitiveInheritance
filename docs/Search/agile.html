@@ -60,7 +60,7 @@
                 <h1>Tag: agile</h1>
                 <div>
     <h3>The Value of Flexibility</h3>
-    <h5>Posted by bsstahl on 2019-02-14 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2019-02-14 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>Have you ever experienced that feeling you get when you need to extend an existing system and there is an extension point that is exactly what you need to build on?</p>
 <p>For example, suppose I get a request to extend a system so that an additional action is taken whenever a new user signs-up.  The system already has an event message that is published whenever a new user signs-up that contains all of the information I need for the new functionality.  All I have to do is subscribe a new microservice to this event message, and have that service take the new action whenever it receives a message. Boom! Done.</p>
 <p>Now think about the converse. The many situations we’ve all experienced where there is no extension point. Or maybe there is an extension mechanism in place but it isn’t quite right; perhaps an event that doesn’t fire on exactly the situation you need, or doesn’t contain the data you require for your use case and you have to build an entirely new data support mechanism to get access to the bits you need.</p>
@@ -88,7 +88,7 @@
 </div>
 <hr/><div>
     <h3>Code Coverage Teaches and Protects</h3>
-    <h5>Posted by bsstahl on 2016-10-14 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2016-10-14 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>I often hail code coverage as a great tool to help improve your code base.  Today, my use of Code Coverage taught me something about the new .NET Core tooling, and helped protect me from having to support useless code for the lifespan of my project.</p>
 <p>In the code below, I used a common dependency injection pattern. That is, an IServiceProvider object holding my dependencies is passed-in to my object and stored as a member variable.  When a dependency is needed, I retrieve that dependency from the service provider, and then take action on it.  Since there is no guarantee that the dependency I need will have been placed in the container, I use some common guard logic to protect my code.
 <code>templates = _serviceProvider.GetService&lt;IEnumerable&lt;Template&gt;&gt;();    if ((templates==null) || (!templates.Any(s =&gt; s.TemplateType==ContactPage)))         throw new TemplateNotFoundException(TemplateType.ContactPage, string.Empty);</code>
@@ -110,7 +110,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>Test-Driven Bug Fixes</h3>
-    <h5>Posted by bsstahl on 2016-02-27 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2016-02-27 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>I had an experience this past week that reminded me of both the importance of continuing the Test Driven Development process beyond the initial development phases of a application's life-cycle, and that not all developers have yet fully grasped the concepts behind Test Driven Development.</p>
 <p>One of the development teams I work with had a bug come-up in a bit of complex logic that I designed. I was asked to pair-up with one of the developers to help figure out the bug since he had already spent several hours looking at it. When I asked him to show me the tests that were failing, there weren't any. The bug was for a situation that we hadn't anticipated during initial development (a common occurrence) and he had not yet setup any tests that exposed the bug.</p>
 <p>We immediately set out to rectify the situation by creating tests that failed as a result of the bug. Once these tests were created, it was a fairly simple process to use those tests as a debug platform to step through the code, find the problem and correct the bug. As is sometimes the case, fixing that bug caused another test to fail, a situation that was easily remedied since we knew about it due to the failing test.</p>
@@ -123,7 +123,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>Remove Any Code Your Users Don't Care About</h3>
-    <h5>Posted by bsstahl on 2015-09-28 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2015-09-28 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>Code Coverage has been the topic of a number of conversations lately, most recently after the last <a href="http://www.meetup.com/sevdnug/events/223863304/">Southeast Valley .NET User Group</a> meeting where <a href="http://www.twitter.com/jeremybytes">Jeremy Clark</a> presented his great talk, <a href="http://jeremybytes.com/Demos.aspx#UTMMF">Unit Testing Makes Me Faster</a>.  During this presentation, Jeremy eponymized, on my behalf, something I've been saying for a while, that <a href="http://jeremybytes.blogspot.com/2015/02/unit-test-coverage-what-parts-of-your.html">the part of an application that you don't need to test is the part that your users don't care about</a>.  That is, if your users care about something in your application, you should be writing tests that ensure that the users' needs are fulfilled by your code. This has never really been a controversial statement, just one that sometimes gets lost in the myriad of information about unit testing and test driven development.</p>
 <p>Where the conversation got really interesting was when we started discussing what should happen if you decide that a piece of code really isn't important to your users.  It is my assertion that code which is deemed unimportant enough to the user that it might not be tested, should be removed from the project, even if is part of a standard implementation.  I will attempt to justify this assertion by using the example of a property implementation that supports the <em>INotifyPropertyChanged</em> interface.</p>
 <p><a href="http://www.cognitiveinheritance.com/image.axd?picture=CodeCoverageDemoProperty_2.png">![CodeCoverageDemoProperty](http://www.cognitiveinheritance.com/image.axd?picture=CodeCoverageDemoProperty_thumb_2.png &quot;CodeCoverageDemoProperty&quot;)</a><br />
@@ -155,7 +155,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>Introducing TestHelperExtensions</h3>
-    <h5>Posted by bsstahl on 2015-08-26 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2015-08-26 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <h2>TL;DR Version</h2>
 <p>I've released a new Open-Source library of extension methods that can be used to create more effective unit and integration tests. This library is called TestHelperExtensions. The source code is available on <a href="http://github.com/bsstahl/testhelperextensions">GitHub</a> (pull requests welcome), a .NET 4 package is available via <a href="http://www.nuget.org/packages/TestHelperExtensions/">NuGet</a>, and the documentation is available <a href="http://testhelperextensions.cognitiveinheritance.com">here</a>. The goal is to allow anyone to have access to the same set of test helpers I have been using, and building up, for many years.</p>
 <h2>The Story</h2>
@@ -168,7 +168,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>Two Features you Need in Your Service SLAs</h3>
-    <h5>Posted by bsstahl on 2014-09-22 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2014-09-22 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>To allow ourselves to create the best possible services for our clients, it is important to make those services as flexible and maintainable as possible.  Building services in an agile way helps us to create better services, however it makes it more likely that our service interface will, at some point, have to change.  Changing a service interface after publication is, and should be, a well gated, well thought-out process. By changing the interface, you are changing the contract your service has with all of your clients, and you are probably requiring every one of the service consumers to change.  This should not be done lightly. However, there are a few things that can be done to minimize the impacts of these changes. Several of these things require agreements with the clients up front.  As a result, these items should be included in the Service Level Agreement (SLA) between the service providers and the consumers.</p>
 <p><em><strong>Caveat</strong>: I am a solution architect, not an expert in creating service level agreements.  Typically, my only involvement with SLAs is to object when I can’t get what I need in one from a service provider. My intent here is to call-out a few things that all service providers should include in their SLAs to maintain the flexibility of their APIs. There are many other things that should be included in any good SLA that I will not be discussing here.</em></p>
 <p>The two items that I believe should be included in all service SLAs are the requirements that the clients support both Lax Versioning and Forward Compatible Contracts.  Each of these items is discussed in some detail below.</p>
@@ -188,7 +188,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>Code Sample for My TDD Kickstart Sessions</h3>
-    <h5>Posted by bsstahl on 2012-02-13 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2012-02-13 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>The complete, working application for my <a href="/post/NET-TDD-Kickstart.aspx">.NET TDD Kickstart</a> sessions can be found <a href="http://docs.cognitiveinheritance.com/tddkickstart.zip">here</a>.</p>
 <p>Unzip the files into a solution folder and open the <strong>Demo.sln</strong> solution in a version of Visual Studio 2010 that has Unit Testing capability (Professional, Premium or Ultimate).  Immediately, you should be able to compile the whole solution, and successfully execute the tests in the <strong>Bss.QueueMonitor.Test</strong> and <strong>Bss.Timing.Test</strong> libraries.</p>
 <p>To get the tests in the other two test libraries (<strong>Bss.QueueMonitor.Data.EF.Test</strong> &amp; <strong>Bss.QueueMonitor.IntegrationTest</strong>) to pass, you will need to create the database used to store the monitored data in the data-tier and integration tests, and enable MSMQ on your system so that a queue to be monitored can be created for the Integration test.</p>
@@ -201,7 +201,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>".NET TDD Kickstart"</h3>
-    <h5>Posted by bsstahl on 2012-01-26 and Filed Under: <a title="Category: Event" class="small" href="../Search/Event.html">Event</a>&nbsp;<a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2012-01-26 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;<a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>I head out to Fullerton tomorrow for the start of my .NET TDD Kickstart world tour <img src="..//Images/wlEmoticon-smile.png" alt="Smile" /></p>
 <blockquote>
 <p>In this session, the speaker and the audience will &quot;pair up&quot; for a coding session which will serve as an introduction to Test Driven Development in an Agile environment. We will use C#, Visual Studio and Rhino Mocks to unit test code to be built both with and without dependencies. We will also highlight some of the common issues encountered during TDD and discuss strategies for overcoming them.</p>
@@ -222,7 +222,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>Demo Code for EF4Ent Sessions</h3>
-    <h5>Posted by bsstahl on 2011-06-26 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2011-06-26 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>I previously posted the slides for my <strong>Building Enterprise Apps using Entity Framework 4</strong> talk <a href="http://www.cognitiveinheritance.com/post/Desert-Code-Camp-Presentation.aspx">here</a>.  I can now post the source code for the completed demo application.  That code, created for use in Visual Studio 2010 Ultimate, is available in zip format below.  This is the same code that was demonstrated at Desert Code Camp 2011.1 and SoCalCodeCamp 2011 as well as the New Mexico .NET User’s Group (NMUG).</p>
 <p><a href="https://docs.google.com/uc?id=0B6PPrBnxN6VtMGRhNzZhOGUtNGY5NC00M2IyLTgxYzMtOTVlNDU0MDQyNjc1&amp;export=download&amp;hl=en_US" title="https://docs.google.com/uc?id=0B6PPrBnxN6VtMGRhNzZhOGUtNGY5NC00M2IyLTgxYzMtOTVlNDU0MDQyNjc1&amp;export=download&amp;hl=en_US">EF4EnterpriseDemoCode.zip</a></p>
 
@@ -231,7 +231,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>Continuous Improvement as a Developer</h3>
-    <h5>Posted by bsstahl on 2011-04-29 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2011-04-29 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>In a <a href="http://www.youtube.com/watch?v=BI23U7U2aUY&amp;feature=relmfu">video interview about storytelling</a> for <a href="http://current.com/">currentTV</a>, Ira Glass, the host of “This American Life”, details the lengthy process that he, and all creative people go through to close the quality gap between the work they are trying to produce, and what they are actually producing.</p>
 <blockquote>
 <p>All of us who do creative work, we get into it, and we get into it because we have good taste… So you’ve got really good taste and you get into this thing that I don’t even know how to describe but it’s like there’s a gap. That for the first couple of years that you’re making stuff, what you’re making isn’t so good, ok, it’s not that great, it’s really not that great.  It’s trying to be good, it has ambition to be good, but it’s not quite that good. But your taste, the thing that got you into the game, your taste is still killer.  Your taste is still good enough that you can tell that what you’re making is kind of a disappointment to you…you can tell that it’s still sort-of crappy.  A lot of people never get past that phase, a lot of people, at that point, they quit. And the thing that I would say to you with all my heart is that most everybody I know who does interesting, creative work, they went through a phase of years where they had really good taste, they could tell that what they were making wasn’t as good as what they wanted it to be, they knew it fell short.  Some of us can admit that to ourselves and some of us are a little less able to admit that to ourselves.  But we knew it didn’t have this special thing we wanted it to have. And the thing I’d say to you is, everybody goes through that, and for you to go through it, if you’re going through it right now, if you’re just getting out of that phase, or if you’re just starting off and you’re entering into that phase, you gotta know, it’s totally normal and the most important possible thing you could do is do a lot of work.  Do a huge volume of work…</p>
@@ -249,7 +249,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>Desert Code Camp Presentation</h3>
-    <h5>Posted by bsstahl on 2011-04-02 and Filed Under: <a title="Category: Event" class="small" href="../Search/Event.html">Event</a>&nbsp;<a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2011-04-02 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;<a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>Thanks to all of the organizers, speakers, sponsors and attendees of <a href="http://apr2011.desertcodecamp.com/">Desert Code Camp 2011.1</a>.  This is the first time that I’ve presented at a Code Camp and it was a fantastic experience for me.  My session, <strong>Building Enterprise Apps using Entity Framework 4</strong>, was very well attended with 35 people cramming, standing-room-only, into a room with a capacity of 28 (please don’t tell the Fire Marshall).  The demos went very well (everything worked as it was supposed to) and the feedback I’ve gotten so far was entirely positive.</p>
 <p>I will be posting some additional information from the session shortly, including the sample code and the changes I make to the <strong>Microsoft All Rules</strong>code analysis ruleset, but I wanted to get the session slides up as quickly as possible.</p>
 <p>If you have any additional feedback on the session, please feel free to contact me here, or by email or twitter (as shown in the slide deck).</p>
@@ -260,7 +260,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>Desert Code Camp IV - Another Great Day</h3>
-    <h5>Posted by bsstahl on 2008-06-04 and Filed Under: <a title="Category: Event" class="small" href="../Search/Event.html">Event</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2008-06-04 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;</h5>
     <p>I would once again like to thank the organizers, presenters and sponsors of <a href="http://www.desertcodecamp.com/">Desert Code Camp</a> for giving of their time, effort and funding to support such an outstanding community resource.  Desert Code Camp IV, held yesterday, May 31st at the <a href="http://www.uat.edu/">University of Advancing Technology</a> in Tempe, AZ featured well over 40 sessions on topics such as Agile &amp; TDD, ASP.NET, Flash, Silverlight, iPhone SDK, XAML, Apache, Ruby and much more.  I was fortunate enough to attend 4 of these sessions, all of which were well worth my time in attending.</p>
 <p>The first session I attended was &quot;Scrum 101&quot; presented by Dan Weinmann (who I think works for Desert Code Camp sponsor <a href="http://www.neudesic.com/Main.aspx">Neudesic</a> but I am not sure because it is not listed in Dan's <a href="http://www.desertcodecamp.com/speakers.aspx#usr2155">extremely minimalist bio</a> on the Code Camp website).  Dan spent the first part of the session explaining general Agile concepts which is appropriate for a &quot;101&quot; class, and his explanation was quite solid.  What I was looking for however came in the remainder of the discussion where Dan gave specific examples of how his organization has utilized Scrum as an effective project management methodology.  I found especially interesting the parts where Dan explained how they use Scrum &quot;under the covers&quot; when working with a client who, for whatever reason, will not use Scrum.  I found this similar in a number of ways to how my team currently functions and came-away with several ideas of how we might be able to improve on our current processes.</p>
 <p>The next session I attended was &quot;Silverlight Zero to Hero&quot; given by Simon Allardice of <a href="http://www.interfacett.com/">Interface Technical Training</a> and gets my vote for the mythical &quot;session of the day&quot; award. This session gets my vote not for the abundant humor, which had the room in stitches and led me to refer to Simon on Twitter as &quot;..the Eddie Izzard of the tech world, without the dress...&quot;.  No, this was the best session I attended because of the unique perspective he gave to the topic.  That is, he didn't waste our time by giving us the same overview of Silverlight that we could get in any 10k foot video from the Mix conference.  Instead, we were taken step-by-step through Simon's unique metaphors detailing how we can use the generalized feature-set of Silverlight as well as how it could be used to create Rich Internet Applications that are truly effective in communicating  with the user.  The next time I am looking to take a class, I hope Simon is teaching it. In addition, if anyone is looking to become an instructor, I hope they sit-in on some of Simon's sessions which couldn't help but improve anyone's teaching technique.</p>
@@ -273,7 +273,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div>
 <hr/><div>
     <h3>Introduction to Agile/Extreme Programming</h3>
-    <h5>Posted by bsstahl on 2006-05-08 and Filed Under: <a title="Category: Event" class="small" href="../Search/Event.html">Event</a>&nbsp;<a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2006-05-08 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;<a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>This session was given by Josh Knowles who gave a good overview of Agile methodologies. There wasn't much new for me here, but Josh did give some good selling-points for these types of methods, and did solidify a few concepts for me. Primarily, the keys to Agile development are as Josh described them:</p>
 <ul>
 <li>Individuals &amp; Interactions over Process and Tools</li>
