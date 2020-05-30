@@ -23,7 +23,7 @@ categories:
 - General
 
 ---
-I was recently interviewed by Dave Rael ([@raelyard](https://twitter.com/raelyard)) for his [Developer on Fire Podcast](https://t.co/jhLI82mfia).  I had a great time talking with Dave about a lot of different things, both professional and personal, and got to name-drop just a few of the many people who have been a part of my journey over the years.
+I was recently interviewed by Dave Rael ([@raelyard](https://twitter.com/raelyard)) for his [Developer on Fire Podcast](https://developeronfire.com/podcast/episode-399-barry-stahl-optimizing-impact).  I had a great time talking with Dave about a lot of different things, both professional and personal, and got to name-drop just a few of the many people who have been a part of my journey over the years.
 
 I also took the opportunity to talk about a few things that have been on my mind:
 
