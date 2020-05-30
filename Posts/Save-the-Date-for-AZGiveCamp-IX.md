@@ -6,7 +6,6 @@ tags:
 - event
 - givecamp
 - nonprofit
-- open source
 - phoenix
 menuorder: 0
 id: c6b4c9e8-b82c-4fd2-b73d-c230671d66ec
