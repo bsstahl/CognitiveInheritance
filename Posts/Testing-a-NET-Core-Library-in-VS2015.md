@@ -1,7 +1,5 @@
 ---
 tags:
-- .net framework
-- core
 - library
 - testing
 - code coverage
@@ -16,6 +14,8 @@ tags:
 - tdd
 - unit testing
 - visual studio
+- dotnetcore
+- dotnet
 menuorder: 0
 id: 8d08d120-ece8-47d2-b6be-0bd5416d5c90
 author: bsstahl
@@ -23,14 +23,13 @@ title: Testing a .NET Core Library in VS2015
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2017-01-09T19:32:03
-lastmodificationdate: 2017-01-09T19:32:03
+publicationdate: 2017-01-09T19:32:03.000+00:00
+lastmodificationdate: 2017-01-09T19:32:03.000+00:00
 slug: Testing-a-NET-Core-Library-in-VS2015
 categories:
 - Development
 
 ---
-
 I really enjoy working with .NET Core.  I like the fact that my code is portable to many platforms and that the footprint is so much smaller than with traditional .NET applications.  Unfortunately, the tooling has not quite reached the level that we expect from a Microsoft finished product (which it isn’t – yet). As a result, there are some additional actions we need to take when setting up our solutions in Visual Studio 2015 to allow us to unit test our code properly.  The following are the steps that I currently take to setup and test a .NET Core library using XUnit and Moq.  I know that a number of these steps will be done for us, or at least made much easier, by the tooling in the coming months, either by Visual Studio 2017, or by enhancements to the Visual Studio 2015 environments.
 
 1. Create the library to be tested in Visual Studio 2015
@@ -69,4 +68,3 @@ Some other optional steps include:
 
 
 There will likely be better ways to do many of these things shortly, but if you know a better way now, please let me know via [Twitter](http://www.twitter.com/bsstahl).
-
