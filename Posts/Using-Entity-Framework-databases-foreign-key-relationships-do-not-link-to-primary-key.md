@@ -23,11 +23,11 @@ Since I have now, for the second time, run into a problem working with Associati
 
 Consider the model below.  There are two entities, a Flight and an Airport.  In this scenario, there are two associations between the entities, Flight.DepartFromAirportId –&gt; Airport.Id and Flight.ArriveAtAirportId –&gt; Airport.Id.  These associations represent the Departure and Arrival airport of the flight.  This model works quite well in Entity Framework 4, making a collection of the arriving and departing flights for each airport available through the navigation properties on the Airport object, and providing a shortcut to the departure and arrival Airport objects for each flight via the navigation properties on the Flight object.
 
-[!\[Flight Airport Ok ERD\](http://www.cognitiveinheritance.com/image.axd?picture=Flight%20Airport%20Ok%20ERD_thumb.png "Flight Airport Ok ERD")](http://www.cognitiveinheritance.com/image.axd?picture=Flight%20Airport%20Ok%20ERD.png)
+![Flight Airport Ok ERD]({PathToRoot}/Images/Flight%20Airport%20Ok%20ERD.png)
 
 The problems I’ve seen occur when the database was designed a bit differently, as is sometimes the case with legacy systems.  Let’s take a look at the second model, below.
 
-[!\[Flight Airport Fail ERD\](http://www.cognitiveinheritance.com/image.axd?picture=Flight%20Airport%20Fail%20ERD_thumb.png "Flight Airport Fail ERD")](http://www.cognitiveinheritance.com/image.axd?picture=Flight%20Airport%20Fail%20ERD.png)
+![Flight Airport Fail ERD]({PathToRoot}/Images/Flight%20Airport%20Fail%20ERD.png)
 
 Here, we have the same basic model, but instead of the DepartFromAirportId and ArriveAtAirportId foreign-keys on the Flight object, we have DepartFrom and ArriveAt fields which link to the IataCode\* property of the Airport.
 
@@ -35,14 +35,18 @@ The Airport entity still has the same key property, but the Flight doesn’t use
 
 Fortunately for me, very few of the legacy databases and none of the recently created systems that I work with use this method to create relationships.  However, on the rare occasions that this occurs, it can make life much more complicated. Consider the scenario where I need to get a list of flights that are departing from an airport north of 45 degrees in latitude. In the first model, this is easy using LINQ to Entities.
 
-`var flights = context.Flights.Where(f => f.DepartureAirport.Latitude > 45);`
+```
+var flights = context.Flights.Where(f => f.DepartureAirport.Latitude > 45);`
+```
 
 However, with the second model, since there is no association between the entities, there are no navigation properties that can be followed.  Thus the join has to be done in the LINQ to Entities query, making the syntax much more complex.
 
-`var flights = context.Flights.Where(
+```
+var flights = context.Flights.Where(
    f => context.Airports.Where(a => a.Latitude > 45) 
    .Contains(context.Airports.Where(a => a.IataCode == f.DepartFrom)
    .FirstOrDefault()));`
+```
 
 This query finds the flights where the collection of airports with latitude &gt; 45 degrees contains the one airport that has the IataCode matching the flight’s DepartFrom field.  As you can see, this query is much more difficult to create and maintain then the one which simply uses the Entity Framework provided navigation property.
 
