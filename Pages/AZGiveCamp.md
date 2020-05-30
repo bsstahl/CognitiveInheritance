@@ -21,6 +21,6 @@ AZGiveCamp is an organization that puts software creators come together with som
 
 A typical AZGiveCamp Hackathon-of-Help event lasts a full weekend, starting on Friday afternoon and running through Sunday afternoon. As our friend and colleague [Rob Richardson](http://twitter.com/rob_rich) likes to say, "**Sleep is optional, caffeine is provided**".
 
-If you'd like to find out more about AZGiveCamp, please see our [website](http://azgivecamp.org) or sign-up on our [Meetup page](http://meetup.com/azgivecamp).
+If you'd like to find out more about AZGiveCamp, please see our [website](http://www.azgivecamp.org) or sign-up on our [Meetup page](http://meetup.com/azgivecamp).
 
 ![Volunteers at AZGiveCamp]({PathToRoot}/Images/AZGiveCamp_600Wide.jpg)
