@@ -41,7 +41,7 @@ I head out to Fullerton tomorrow for the start of my .NET TDD Kickstart world to
 I will be presenting this session at numerous venues around the country this year, including, so far:
 
 - [Southern California Code Camp](http://www.socalcodecamp.com/) – Fullerton in January
-- [South Florida Code Camp](http://www.fladotnet.com/codecamp/) – Ft. Lauderdale in February
+- [South Florida Code Camp](https://sfsdc.itpand.net/) – Ft. Lauderdale in February
 - [New Mexico .NET User’s Group](http://nmug.net/) – Albuquerque in March
 - [Twin Cities Code Camp](http://twincitiescodecamp.com/TCCC/Default.aspx) – Minneapolis in April
 
