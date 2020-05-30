@@ -1,7 +1,5 @@
 ---
 tags:
-- double
-- int64
 - type
 - csharp
 - clr
