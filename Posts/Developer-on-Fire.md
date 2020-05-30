@@ -31,7 +31,7 @@ I also took the opportunity to talk about a few things that have been on my mind
 * Some of [the giants on whose shoulders we stand](https://twitter.com/bsstahl/status/878043411923599360)
 * A few of the technologies that are making me happy right now:
   * [WebAssembly](https://webassembly.org/) and [Blazor](https://blazor.net/)
-  * [AI, Combinatorial Optimization and Genetic Algorithms](http://www.cognitiveinheritance.com/?tag=/ai)
+  * [AI, Combinatorial Optimization and Genetic Algorithms]({PathToRoot}Search/ai.html)
 * A couple of resources I learn from:
   * [brilliant.org](https://brilliant.org)
   * The works of [David McRaney](http://davidmcraney.com/)
