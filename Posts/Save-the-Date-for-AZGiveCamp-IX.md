@@ -22,6 +22,6 @@ categories:
 ---
 > March 8th–10th 2019
 
-![Code Monkey 3 Duckin it (1)](http://www.cognitiveinheritance.com/image.axd?picture=Code%20Monkey%203%20Duckin%20it%20(1)_1.png "Code Monkey 3 Duckin it (1)")
+![Code Monkey Duckin-It]({PathToRoot}/Images/Code%20Monkey%203%20Duckin%20it%20(1)_1.png)
 
 Mark your calendars to block-out the weekend of March 8th 2019 for the next AZGiveCamp Hackathon-of-Help. More details will be coming very soon so keep an eye on [AZGiveCamp.org](http://azgivecamp.org/) and [Meetup](http://meetup.com/azgivecamp) for all the particulars as soon as they are available.  I’m looking forward to seeing you all at our 9th event, helping those who help our community.
