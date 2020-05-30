@@ -200,7 +200,9 @@ public class MeetingReadRepository : IMeetingReadRepository
 </item>
 <item>
   <title>AZGiveCamp IX-Save the Date</title>
-  <description>&lt;h3&gt;March 8th–10th 2019&lt;/h3&gt;
+  <description>&lt;blockquote&gt;
+&lt;p&gt;March 8th–10th 2019&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;http://www.cognitiveinheritance.com/image.axd?picture=Code%20Monkey%203%20Duckin%20it%20(1)_1.png&quot; alt=&quot;Code Monkey 3 Duckin it (1)&quot; title=&quot;Code Monkey 3 Duckin it (1)&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;Mark your calendars to block-out the weekend of March 8th 2019 for the next AZGiveCamp Hackathon-of-Help. More details will be coming very soon so keep an eye on &lt;a href=&quot;http://azgivecamp.org/&quot;&gt;AZGiveCamp.org&lt;/a&gt; and &lt;a href=&quot;http://meetup.com/azgivecamp&quot;&gt;Meetup&lt;/a&gt; for all the particulars as soon as they are available.  I’m looking forward to seeing you all at our 9th event, helping those who help our community.&lt;/p&gt;
 </description>
