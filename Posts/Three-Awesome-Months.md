@@ -4,7 +4,6 @@ tags:
 - charity
 - code camp
 - conference
-- event
 - givecamp
 - microsoft
 - nonprofit
