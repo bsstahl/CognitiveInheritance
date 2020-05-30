@@ -64,4 +64,4 @@ Code Coverage sometimes gets a bad reputation because it can be easy to game. Th
 
 **Continue the Conversation**
 
-How do you feel about this logic? Did I miss something critical in this analysis? Have you found something different in your experience? Let's keep this conversation going on Twitter. Tweet me [@bsstahl](http://www.twitter.com/bsstahl) with your comments, or post on your blog and tweet me the link.
+How do you feel about this logic? Did I miss something critical in this analysis? Have you found something different in your experience? Let's keep this conversation going on Twitter. Tweet me [@bsstahl](https://twitter.com/bsstahl) with your comments, or post on your blog and tweet me the link.
