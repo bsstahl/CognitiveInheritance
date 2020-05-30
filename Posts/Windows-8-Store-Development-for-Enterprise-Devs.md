@@ -49,4 +49,4 @@ With the primary business functionality done in C#, it becomes a relatively triv
 4. The only logic in the JavaScript code should be that which is required to bind the RT Component to your controls. If you are doing more than setting event handlers and other control properties in your JavaScript, you might want to think about moving that functionality into a lower layer. This has the added benefit of making that logic potentially reusable across applications.
 
 
-I’m interested to hear if there are other enterprise developers with similar stories, whose comfort zones of HTML and C# or VB have kept them from building apps as they’d like. Please contact me on Twitter at [@bsstahl](http://www.twitter.com/bsstahl).
+I’m interested to hear if there are other enterprise developers with similar stories, whose comfort zones of HTML and C# or VB have kept them from building apps as they’d like. Please contact me on Twitter at [@bsstahl](https://twitter.com/bsstahl).
