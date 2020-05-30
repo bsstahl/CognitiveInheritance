@@ -177,7 +177,7 @@ public class MeetingReadRepository : IMeetingReadRepository
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;I hope you enjoy this interview and find something of value in it. If so, please let me know about it on &lt;a href=&quot;http://twitter.com/bsstahl&quot;&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://developeronfire.com/podcast/episode-399-barry-stahl-optimizing-impact&quot;&gt;![Developer On Fire](./Images/DeveloperOnFire_1.png &amp;quot;DeveloperOnFire Podcast&amp;quot;)&lt;/a&gt;(&lt;a href=&quot;https://developeronfire.com/podcast/episode-399-barry-stahl-optimizing-impact&quot; title=&quot;https://developeronfire.com/podcast/episode-399-barry-stahl-optimizing-impact&quot;&gt;https://developeronfire.com/podcast/episode-399-barry-stahl-optimizing-impact&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://developeronfire.com/podcast/episode-399-barry-stahl-optimizing-impact&quot;&gt;&lt;img src=&quot;%7BPathToRoot%7D/Images/DeveloperOnFire_1.png&quot; alt=&quot;Developer On Fire&quot; title=&quot;DeveloperOnFire Podcast&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 </description>
   <link>Posts/Developer-on-Fire.html</link>
   <author>bsstahl</author>
