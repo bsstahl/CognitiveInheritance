@@ -13,19 +13,19 @@ title: Remove Any Code Your Users Don't Care About
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2015-09-28T18:01:02
-lastmodificationdate: 2015-09-29T08:33:20
+publicationdate: 2015-09-28T18:01:02.000+00:00
+lastmodificationdate: 2015-09-29T08:33:20.000+00:00
 slug: Remove-Any-Code-Your-Users-Dont-Care-About
 categories:
 - Development
 
 ---
-
-Code Coverage has been the topic of a number of conversations lately, most recently after the last [Southeast Valley .NET User Group](http://www.meetup.com/sevdnug/events/223863304/) meeting where [Jeremy Clark](http://www.twitter.com/jeremybytes) presented his great talk, [Unit Testing Makes Me Faster](http://jeremybytes.com/Demos.aspx#UTMMF).  During this presentation, Jeremy eponymized, on my behalf, something I've been saying for a while, that [the part of an application that you don't need to test is the part that your users don't care about](http://jeremybytes.blogspot.com/2015/02/unit-test-coverage-what-parts-of-your.html).  That is, if your users care about something in your application, you should be writing tests that ensure that the users' needs are fulfilled by your code. This has never really been a controversial statement, just one that sometimes gets lost in the myriad of information about unit testing and test driven development.
+Code Coverage has been the topic of a number of conversations lately, most recently after the last [Southeast Valley .NET User Group](http://www.meetup.com/sevdnug/events/223863304/) meeting where [Jeremy Clark](http://www.twitter.com/jeremybytes) presented his great talk, [Unit Testing Makes Me Faster](http://jeremybytes.com/Demos.aspx#UTMMF).  During this presentation, Jeremy eponymized, on my behalf, something I've been saying for a while, that [the part of an application that you don't need to test is the part that your users don't care about](http://jeremybytes.blogspot.com/2015/02/unit-test-coverage-what-parts-of-your.html). That is, if your users care about something in your application, you should be writing tests that ensure that the users' needs are fulfilled by your code. This has never really been a controversial statement, just one that sometimes gets lost in the myriad of information about unit testing and test driven development.
 
 Where the conversation got really interesting was when we started discussing what should happen if you decide that a piece of code really isn't important to your users.  It is my assertion that code which is deemed unimportant enough to the user that it might not be tested, should be removed from the project, even if is part of a standard implementation.  I will attempt to justify this assertion by using the example of a property implementation that supports the *INotifyPropertyChanged* interface.
  
-[!\[CodeCoverageDemoProperty\](http://www.cognitiveinheritance.com/image.axd?picture=CodeCoverageDemoProperty_thumb_2.png "CodeCoverageDemoProperty")](http://www.cognitiveinheritance.com/image.axd?picture=CodeCoverageDemoProperty_2.png)  
+![Code Coverage Results -- Standard Property Implementation]({PathToRoot}/Images/CodeCoverageDemoProperty_2.png)
+
 **A visualization of the results of Code Coverage analysis on a typical property implementation. The blue highlights represent code that is covered by tests, the red highlights represent code that is NOT covered by tests.**
 
 In this example, we have a property getter and setter. The getter simply returns the value stored in the internal member. However the setter holds some actual logic.  In this case, the new value being set is compared to the current value of the property.  If the property value is changing, the update is made and a method called that fires a notification event indicating that the value of the property has changed.  This is a fairly common implementation, especially for View-Model layer code.
@@ -50,7 +50,7 @@ So, if the features are important to the users, we test them, if they are unimpo
 
 Suppose we decide that the users are likely to request this feature in the future.  Wouldn't it be easier just to implement the feature now, when we are already in the code and familiar with it?  My answer to this is to fall back on **YAGNI**. *You Ain't Gonna Need It*, has proven itself a valuable principal for preventing scope-creep. Even if you think it is pretty likely that you'll need something later, the reality is that you probably won’t. Based on this principal, we should not be putting features into our projects that are not needed right now.
 
-But what about the situation where code is important to someone other than the users, for example, the developers?  In this case, we have to decide if the code really is important, or is it just another case where the YAGNI principal should be applied.  Technical requirements can be legitimate, but any requirement that is not directly in support of the user's needs is a smell that should be investigated.  In the case of our property setter, saying that standardization is important and using that logic to make standardization a requirement sounds a lot like saying "I think this feature may be important someday" and it probably falls to YAGNI to keep it out of our code.  That being said, if there is a technical requirement that is truly needed, it should be tested like any other important requirement. For a little more information on this, see my earlier analysis [Conflict of Interest: Yagni vs. Standardization](http://www.cognitiveinheritance.com/post/Conflict-of-Interest-YAGNI-vs-Standardization.aspx).
+But what about the situation where code is important to someone other than the users, for example, the developers?  In this case, we have to decide if the code really is important, or is it just another case where the YAGNI principal should be applied.  Technical requirements can be legitimate, but any requirement that is not directly in support of the user's needs is a smell that should be investigated.  In the case of our property setter, saying that standardization is important and using that logic to make standardization a requirement sounds a lot like saying "I think this feature may be important someday" and it probably falls to YAGNI to keep it out of our code.  That being said, if there is a technical requirement that is truly needed, it should be tested like any other important requirement. For a little more information on this, see my earlier analysis [Conflict of Interest: Yagni vs. Standardization]({PathToRoot}/Posts/Conflict-of-Interest-YAGNI-vs-Standardization.html).
 
 **How About we Leave It and Just Don't Test It?**
 
@@ -65,4 +65,3 @@ Code Coverage sometimes gets a bad reputation because it can be easy to game. Th
 **Continue the Conversation**
 
 How do you feel about this logic? Did I miss something critical in this analysis? Have you found something different in your experience? Let's keep this conversation going on Twitter. Tweet me [@bsstahl](http://www.twitter.com/bsstahl) with your comments, or post on your blog and tweet me the link.
-
