@@ -38,4 +38,4 @@ The transcript and video of this presentation can be found below.
 >
 > I hope I have given you a few insights into my worldview through the lens of those I idolize.  I like to think that my list shows the value I place on education, especially STEM. It also shows that I recognize the value of collaboration and understand how much of what we do depends on those who came before us.  Isaac Newton famously stated, "If I have seen farther \[than others\] it is by standing on the shoulders of giants."  My list of the giants on whose shoulders I stand can be found on Twitter [@bsstahl](https://twitter.com/socalgurl70). To me that list represents just a few of the many without whom our work and our world would not be possible.
 
-<iframe src="https://www.youtube.com/embed/JtupjEILXuU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+Video: [On the Shoulders Of Giants](https://youtu.be/JtupjEILXuU)
