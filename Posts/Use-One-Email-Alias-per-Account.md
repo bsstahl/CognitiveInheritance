@@ -1,10 +1,7 @@
 ---
 tags:
 - email
-- alias
-- online
 - security
-- protection
 menuorder: 0
 id: 1b5f1ddb-ad42-446e-b484-783712195c61
 author: bsstahl
@@ -12,14 +9,13 @@ title: Use One Email Alias per Account
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2015-10-05T21:24:10
-lastmodificationdate: 2015-10-05T21:25:00
+publicationdate: 2015-10-05T21:24:10.000+00:00
+lastmodificationdate: 2015-10-05T21:25:00.000+00:00
 slug: Use-One-Email-Alias-per-Account
 categories:
 - Tools
 
 ---
-
 One of the things I do to take better control of my online presence is to use a different email address for every online service that I use. I do this for 3 main reasons:
 
 #### 1. To Reduce Spam
@@ -49,4 +45,3 @@ I recommend using [Outlook.com](http://outlook.com) to create email aliases sinc
 A good pattern is to use GUIDs as the email addresses. That is, an address like B99C3900-157A-45F7-AD20-67EF83ED6776@outlook.com or B99C3900157A45F7AD2067EF83ED6776@outlook.com will almost always be available and is impossible to guess. If you create a number of such aliases and keep them with you, perhaps in a OneNote notebook, you will have functional email addresses to give whenever you are asked for a new one. Then you just need to associate that alias with the service in your notebook so you know not to use it again, and so you know where each alias was used.
 
 Do you have a recommendation of an email service or alias pattern that has worked well for you? Sound off on Twitter using the hashtag **#OneAliasPerAccount**.
-
