@@ -55,6 +55,55 @@
             <div class="col-md-8">
                 <br/>
                 <div>
+    <h3>Meta-Abstraction -- You Ain't Gonna Need It!</h3>
+    <h5>Posted by bsstahl on 2020-05-18 and Filed Under: <a title="Category: Development" class="small" href="Search/Development.html">Development</a>&nbsp;</h5>
+    <blockquote>
+<p>When we look at the abstractions in our applications, we should see a description of the capabilities of our applications, not the capabilities of the abstraction</p>
+</blockquote>
+<p>Let’s start this discussion by looking at an example of a simple repository.</p>
+<pre><code>public interface IMeetingReadRepository 
+{ 
+	IEnumerable&lt;Meeting&gt; GetMeetings(DateTime start, DateTime end); 
+}
+</code></pre>
+<p>It is easy to see the capability being described by this abstraction – any implementation of this interface will have the ability to load a collection of Meeting objects that occur within a given timeframe. There are still some unknown details of the implementation, but the capabilities are described reasonably well.</p>
+<p>Now let’s look at a different implementation of the Repository pattern.</p>
+<pre><code>public interface IReadRepository&lt;T&gt; 
+{ 
+	IEnumerable&lt;T&gt; Get(Func&lt;T, bool&gt; predicate); 
+}
+</code></pre>
+<p>We can still see that something is going to be loaded using this abstraction, we just don’t know what, and we don’t know what criteria will be used.</p>
+<p>This 2nd implementation is a more flexible interface. That is, we can use this interface to describe many different repositories that do many different things. All we have described in this interface is that we have the ability to create something that will load an entity. In other words, we have described our abstraction but said very little about the capabilities of the application itself. In this case, we have to look at a specific implementation to see what it loads, but we still have no idea what criteria can be used to load it.</p>
+<pre><code>public class MeetingReadRepository : IReadRepository&lt;Meeting&gt; 
+{ 
+	IEnumerable&lt;Meeting&gt; Get(Func&lt;Meeting, bool&gt; predicate); 
+}
+</code></pre>
+<p>We could extend this class with a method that specifically loads meetings by start and end date, but then that method is not on the abstraction so it cannot be used without leaking the details of the implementation to the application.  The only way to implement this pattern in a way that uses the generic interface, but still fully describes the capabilities of the application is to use both methods described above. That is, we implement the specific repository, using the generic repository – layering abstraction on top of abstraction, as shown below.</p>
+<pre><code>public interface IMeetingReadRepository : IReadRepository&lt;Meeting&gt; 
+{ 
+	IEnumerable&lt;Meeting&gt; GetMeetings(DateTime start, DateTime end); 
+}
+
+public class MeetingReadRepository : IMeetingReadRepository
+{
+	IEnumerable&lt;Meeting&gt; GetMeetings(DateTime start, DateTime end) 
+		=&gt; Get(m =&gt; m.Start &gt;= start &amp;&amp; m.Start &lt; end)
+
+	// TODO: Implement
+	IEnumerable&lt;Meeting&gt; Get(Func&lt;Meeting, bool&gt; predicate)
+		=&gt; throw new NotImplementedException();
+}
+</code></pre>
+<p>Is this worth the added complexity? It seems to me that as application developers we should be concerned about describing and building our applications in the simplest, most maintainable and extensible way possible. To do so, we need seams in our applications in the form of abstractions. However, we generally do not need to build frameworks on which we build those abstractions. Framework creation is an entirely other topic with an entirely different set of concerns.</p>
+<p>I think it is easy to see how quickly things can get overly-complex when we start building abstractions on top of our own abstractions in our applications. Using Microsoft or 3rd party frameworks is fine when appropriate, but there is generally no need to build your own frameworks, especially within your applications. In the vast majority of cases, <a href="/?tag=/yagni">YAGNI</a>.</p>
+<p>Did I miss something here? Do you have a situation where you feel it is worth it to build a framework, or even part of a framework, within your applications. Please let me know about it on <a href="https://twitter.com/bsstahl">Twitter</a>.</p>
+
+    <h5>Tags: <a title="Tag: abstraction" class="small" href="Search/abstraction.html">abstraction</a>&nbsp;<a title="Tag: apps" class="small" href="Search/apps.html">apps</a>&nbsp;<a title="Tag: coding practices" class="small" href="Search/coding-practices.html">coding practices</a>&nbsp;<a title="Tag: development" class="small" href="Search/development.html">development</a>&nbsp;<a title="Tag: entity" class="small" href="Search/entity.html">entity</a>&nbsp;<a title="Tag: flexibility" class="small" href="Search/flexibility.html">flexibility</a>&nbsp;<a title="Tag: framework" class="small" href="Search/framework.html">framework</a>&nbsp;<a title="Tag: generics" class="small" href="Search/generics.html">generics</a>&nbsp;<a title="Tag: inteface" class="small" href="Search/inteface.html">inteface</a>&nbsp;<a title="Tag: principle" class="small" href="Search/principle.html">principle</a>&nbsp;<a title="Tag: yagni" class="small" href="Search/yagni.html">yagni</a>&nbsp;</h5>
+    <div class="share"><a href="Permalinks/a9d7154a-2798-4a77-851b-0783b45bc1b4.html" rel="bookmark">Permalink</a></div>
+</div>
+<hr/><div>
     <h3>South Florida Code Camp 2019</h3>
     <h5>Posted by bsstahl on 2019-03-03 and Filed Under: <a title="Category: Event" class="small" href="Search/Event.html">Event</a>&nbsp;</h5>
     <p>Thanks again to all the organizers, speakers and attendees of the 2019 South Florida Code Camp. As always, it was an amazing and fun experience.</p>
@@ -244,25 +293,6 @@ John Skeet on [Binary floating point numbers in .NET](http://csharpindepth.com/A
 
     <h5>Tags: <a title="Tag: coding practices" class="small" href="Search/coding-practices.html">coding practices</a>&nbsp;<a title="Tag: development" class="small" href="Search/development.html">development</a>&nbsp;<a title="Tag: enterprise" class="small" href="Search/enterprise.html">enterprise</a>&nbsp;<a title="Tag: responsibility" class="small" href="Search/responsibility.html">responsibility</a>&nbsp;<a title="Tag: testing" class="small" href="Search/testing.html">testing</a>&nbsp;<a title="Tag: ai" class="small" href="Search/ai.html">ai</a>&nbsp;<a title="Tag: algorithms" class="small" href="Search/algorithms.html">algorithms</a>&nbsp;</h5>
     <div class="share"><a href="Permalinks/686f1de9-562f-4ef5-a3ac-4a75da9373f8.html" rel="bookmark">Permalink</a></div>
-</div>
-<hr/><div>
-    <h3>On the Shoulders of Giants</h3>
-    <h5>Posted by bsstahl on 2018-03-11 and Filed Under: <a title="Category: General" class="small" href="Search/General.html">General</a>&nbsp;</h5>
-    <p>I recently gave my very first Toastmasters speech. I’m rather proud of it. It certainly didn’t go perfectly but was a good introduction to Toastmasters for me, and a good introduction of me to my Toastmasters club.</p>
-<p>For those who aren’t familiar with the process, everyone’s 1st Toastmaster speech is called an Icebreaker and is a way to introduce a new Toastmaster to the other members of the club. In my Icebreaker, I chose to introduce myself to my club by talking about just a few of the people who I feel made important historical contributions that paved my path to today.</p>
-<p>The transcript and video of this presentation can be found below.</p>
-<blockquote>
-<p>I like to describe myself as the kind of person who has a list of his favorite physicists and favorite mathematicians. The thought being that just knowing I have such a list tells you everything you really need to know about me. Today I'd like to tell you a little bit more about me, to go a little bit deeper, and tell you about me by telling you about just a few of the people on my list and why I find them so fascinating and so important.</p>
-<p>We start in ancient Greece in the 4th century BCE. Democritus of Abdura develops a theory of the composition of matter in the universe that is based on what he calls &quot;atoms&quot;. These atoms are physically indivisible, always in motion, and have a lot of empty space in between. He is the first person to develop a theory like this, of the creation of the universe and the existence of the universe in a way that is explainable, that is predictable, that we can understand. As such, may people consider him to be the first scientist. It is this reasoning, that the universe is knowable, that has made all technological advancement that we've had since, possible.</p>
-<p>One such advancement came in 1842 so let's jump forward from the first scientist to the first computer programmer. Charles Babbage has created his Analytical Engine, and Ada, Countess of Lovelace, translates an article on using that machine to calculate the Bernoulli numbers which was a well known mathematical sequence. She created notes on this article that describes the inputs and instructions and the states of all the registers of the machine at each point in the process. This, deservingly so, is considered to be the first ever computer program. But more than even creating the first program, Ada Lovelace recognized the capabilities of these machines. She recognized that they could be more than just machines that analyze numbers, they could analyze anything that could be represented by numbers. She predicted that they could be used to compose music, create graphics, and even be usable in scientific experiments. This recognition of the computer as a general purpose tool, rather than just as a fancy calculator, is what made all of society's advancements that were based on computers and computer processing, possible.</p>
-<p>There are many other people on my list that I'd like to talk about: Nicola Tesla and Alan Turing; Grace Hopper and Albert Einstein.</p>
-<p>But there are really two modern physicists that played a greater role than any in my path to today.  The first of those is Carl Sagan.  Dr. Sagan had the ability to communicate in a very accessible way his almost childlike awe and wonder of the cosmos.  He combined the resources and knowledge of a respected scientist with the eloquence of a teacher and a poet, and made science and scientific education available to an entire generation as it never had been before.</p>
-<p>Perhaps the most significant reason though that Carl Sagan has become important to me, especially in the last few years, is that he reminds me, quite powerfully, of number one on my list, my favorite physicist of all, my father Hal Stahl, who passed away on this very day, two years ago. Dad's specialty was optics, he loved to play with light and its properties. He also loved math and its power to explain the concepts in physics.  Like my father I love how math, especially calculus, make the calculations of practical things feasible. So much so, that had I recognized the power of physics combined with calculus, before I learned to make computers do my bidding, my career might have taken a slightly different path.</p>
-<p>I hope I have given you a few insights into my worldview through the lens of those I idolize.  I like to think that my list shows the value I place on education, especially STEM. It also shows that I recognize the value of collaboration and understand how much of what we do depends on those who came before us.  Isaac Newton famously stated, &quot;If I have seen farther [than others] it is by standing on the shoulders of giants.&quot;  My list of the giants on whose shoulders I stand can be found on Twitter <a href="https://twitter.com/socalgurl70">@bsstahl</a>. To me that list represents just a few of the many without whom our work and our world would not be possible.</p>
-</blockquote>
-
-    <h5>Tags: <a title="Tag: toastmasters" class="small" href="Search/toastmasters.html">toastmasters</a>&nbsp;<a title="Tag: introduction" class="small" href="Search/introduction.html">introduction</a>&nbsp;<a title="Tag: speech" class="small" href="Search/speech.html">speech</a>&nbsp;<a title="Tag: speaking" class="small" href="Search/speaking.html">speaking</a>&nbsp;</h5>
-    <div class="share"><a href="Permalinks/431c5164-6654-4850-beef-7212168faf95.html" rel="bookmark">Permalink</a></div>
 </div>
 
             </div>

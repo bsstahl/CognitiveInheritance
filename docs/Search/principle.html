@@ -55,36 +55,8 @@
             <div class="col-md-8">
                 <h1>Tag: principle</h1>
                 <div>
-    <h3>The Value of Flexibility</h3>
-    <h5>Posted by bsstahl on 2019-02-14 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
-    <p>Have you ever experienced that feeling you get when you need to extend an existing system and there is an extension point that is exactly what you need to build on?</p>
-<p>For example, suppose I get a request to extend a system so that an additional action is taken whenever a new user signs-up.  The system already has an event message that is published whenever a new user signs-up that contains all of the information I need for the new functionality.  All I have to do is subscribe a new microservice to this event message, and have that service take the new action whenever it receives a message. Boom! Done.</p>
-<p>Now think about the converse. The many situations we’ve all experienced where there is no extension point. Or maybe there is an extension mechanism in place but it isn’t quite right; perhaps an event that doesn’t fire on exactly the situation you need, or doesn’t contain the data you require for your use case and you have to build an entirely new data support mechanism to get access to the bits you need.</p>
-<blockquote>
-<p>The cost to “go live” is only a small percentage of the lifetime total cost of ownership. – Andy Kyte for Gartner Research, 30 March 2010</p>
-</blockquote>
-<p>There are some conflicting principles at work here, but for me, these situations expose the critical importance of flexibility and extensibility in our application architectures.  After all, maintenance and extension are the two greatest costs in a typical application’s life-cycle. I don’t want to build things that I don’t yet need because the likelihood is that I will never need them (see <a href="http://www.cognitiveinheritance.com/?tag=/yagni">YAGNI</a>). However, I don’t want to preclude myself from building things in the future by making decisions that cripple flexibility. I certainly don’t want to have to do a full system redesign ever time I get a new requirement.</p>
-<p>For me, this leads to a principle that I like to follow:</p>
-<blockquote>
-<p>I value <strong>Flexibility</strong> over <strong>Optimization</strong></p>
-</blockquote>
-<p>As with the principles described in the Agile Manifesto that this is modeled after, this does not eliminate the item on the right in favor of the item on the left, it merely states that the item on the left is valued more highly.  This makes a ton of sense to me in this case because it is much easier to scale an application by adding instances, especially in these heady days of cloud computing, than it is to modify and extend it. I cannot add a feature by adding another instance of a service, but I can certainly overcome a minor or even moderate inefficiency by doing so. Of course, there is a cost to that as well, but typically that cost is far lower, especially in the short term, than the cost of maintenance and extension.</p>
-<p>So, how does this manifest (see what I did there?) in practical terms?</p>
-<p>For me, it means that I allow seams in my applications that I may not have a functional use for just yet. I may not build anything on those seams, but they exist and are available for use as needed. These include:</p>
-<ul>
-<li>Separating the tiers of my applications for loose-coupling using the Strategy and Repository patterns</li>
-<li>Publishing events in event-driven systems whenever it makes sense, regardless of the number of subscriptions to that event when it is created</li>
-<li>Including all significant data in event messages rather than just keys</li>
-</ul>
-<p>There are, of course, dangers here as well. It can be easy to fire events whenever we would generally issue a logging message.  Events should be limited to those in the problem domain (Domain Events), not application events. We can also reach a level of absurdity with the weight of each message. As with all things, a balance needs to be struck. In determining that balance, I value Flexibility over Optimization whenever it is reasonable and possible to do so.</p>
-<p>Do you feel differently? If so, let me know on <a href="http://www.twitter.com/bsstahl">Twitter</a>.</p>
-
-    <h5>Tags: <a title="Tag: abstraction" class="small" href="../Search/abstraction.html">abstraction</a>&nbsp;<a title="Tag: agile" class="small" href="../Search/agile.html">agile</a>&nbsp;<a title="Tag: coding practices" class="small" href="../Search/coding-practices.html">coding practices</a>&nbsp;<a title="Tag: event" class="small" href="../Search/event.html">event</a>&nbsp;<a title="Tag: key" class="small" href="../Search/key.html">key</a>&nbsp;<a title="Tag: microservices" class="small" href="../Search/microservices.html">microservices</a>&nbsp;<a title="Tag: optimization" class="small" href="../Search/optimization.html">optimization</a>&nbsp;<a title="Tag: pattern" class="small" href="../Search/pattern.html">pattern</a>&nbsp;<a title="Tag: principle" class="small" href="../Search/principle.html">principle</a>&nbsp;<a title="Tag: value" class="small" href="../Search/value.html">value</a>&nbsp;<a title="Tag: flexibility" class="small" href="../Search/flexibility.html">flexibility</a>&nbsp;<a title="Tag: yagni" class="small" href="../Search/yagni.html">yagni</a>&nbsp;</h5>
-    <div class="share"><a href="../Permalinks/578752d7-225b-4510-8de2-2c35ded2eb84.html" rel="bookmark">Permalink</a></div>
-</div>
-<hr/><div>
     <h3>Meta-Abstraction -- You Ain't Gonna Need It!</h3>
-    <h5>Posted by bsstahl on 0001-01-01 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2020-05-18 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
     <blockquote>
 <p>When we look at the abstractions in our applications, we should see a description of the capabilities of our applications, not the capabilities of the abstraction</p>
 </blockquote>
@@ -130,6 +102,34 @@ public class MeetingReadRepository : IMeetingReadRepository
 
     <h5>Tags: <a title="Tag: abstraction" class="small" href="../Search/abstraction.html">abstraction</a>&nbsp;<a title="Tag: apps" class="small" href="../Search/apps.html">apps</a>&nbsp;<a title="Tag: coding practices" class="small" href="../Search/coding-practices.html">coding practices</a>&nbsp;<a title="Tag: development" class="small" href="../Search/development.html">development</a>&nbsp;<a title="Tag: entity" class="small" href="../Search/entity.html">entity</a>&nbsp;<a title="Tag: flexibility" class="small" href="../Search/flexibility.html">flexibility</a>&nbsp;<a title="Tag: framework" class="small" href="../Search/framework.html">framework</a>&nbsp;<a title="Tag: generics" class="small" href="../Search/generics.html">generics</a>&nbsp;<a title="Tag: inteface" class="small" href="../Search/inteface.html">inteface</a>&nbsp;<a title="Tag: principle" class="small" href="../Search/principle.html">principle</a>&nbsp;<a title="Tag: yagni" class="small" href="../Search/yagni.html">yagni</a>&nbsp;</h5>
     <div class="share"><a href="../Permalinks/a9d7154a-2798-4a77-851b-0783b45bc1b4.html" rel="bookmark">Permalink</a></div>
+</div>
+<hr/><div>
+    <h3>The Value of Flexibility</h3>
+    <h5>Posted by bsstahl on 2019-02-14 and Filed Under: <a title="Category: Development" class="small" href="../Search/Development.html">Development</a>&nbsp;</h5>
+    <p>Have you ever experienced that feeling you get when you need to extend an existing system and there is an extension point that is exactly what you need to build on?</p>
+<p>For example, suppose I get a request to extend a system so that an additional action is taken whenever a new user signs-up.  The system already has an event message that is published whenever a new user signs-up that contains all of the information I need for the new functionality.  All I have to do is subscribe a new microservice to this event message, and have that service take the new action whenever it receives a message. Boom! Done.</p>
+<p>Now think about the converse. The many situations we’ve all experienced where there is no extension point. Or maybe there is an extension mechanism in place but it isn’t quite right; perhaps an event that doesn’t fire on exactly the situation you need, or doesn’t contain the data you require for your use case and you have to build an entirely new data support mechanism to get access to the bits you need.</p>
+<blockquote>
+<p>The cost to “go live” is only a small percentage of the lifetime total cost of ownership. – Andy Kyte for Gartner Research, 30 March 2010</p>
+</blockquote>
+<p>There are some conflicting principles at work here, but for me, these situations expose the critical importance of flexibility and extensibility in our application architectures.  After all, maintenance and extension are the two greatest costs in a typical application’s life-cycle. I don’t want to build things that I don’t yet need because the likelihood is that I will never need them (see <a href="http://www.cognitiveinheritance.com/?tag=/yagni">YAGNI</a>). However, I don’t want to preclude myself from building things in the future by making decisions that cripple flexibility. I certainly don’t want to have to do a full system redesign ever time I get a new requirement.</p>
+<p>For me, this leads to a principle that I like to follow:</p>
+<blockquote>
+<p>I value <strong>Flexibility</strong> over <strong>Optimization</strong></p>
+</blockquote>
+<p>As with the principles described in the Agile Manifesto that this is modeled after, this does not eliminate the item on the right in favor of the item on the left, it merely states that the item on the left is valued more highly.  This makes a ton of sense to me in this case because it is much easier to scale an application by adding instances, especially in these heady days of cloud computing, than it is to modify and extend it. I cannot add a feature by adding another instance of a service, but I can certainly overcome a minor or even moderate inefficiency by doing so. Of course, there is a cost to that as well, but typically that cost is far lower, especially in the short term, than the cost of maintenance and extension.</p>
+<p>So, how does this manifest (see what I did there?) in practical terms?</p>
+<p>For me, it means that I allow seams in my applications that I may not have a functional use for just yet. I may not build anything on those seams, but they exist and are available for use as needed. These include:</p>
+<ul>
+<li>Separating the tiers of my applications for loose-coupling using the Strategy and Repository patterns</li>
+<li>Publishing events in event-driven systems whenever it makes sense, regardless of the number of subscriptions to that event when it is created</li>
+<li>Including all significant data in event messages rather than just keys</li>
+</ul>
+<p>There are, of course, dangers here as well. It can be easy to fire events whenever we would generally issue a logging message.  Events should be limited to those in the problem domain (Domain Events), not application events. We can also reach a level of absurdity with the weight of each message. As with all things, a balance needs to be struck. In determining that balance, I value Flexibility over Optimization whenever it is reasonable and possible to do so.</p>
+<p>Do you feel differently? If so, let me know on <a href="http://www.twitter.com/bsstahl">Twitter</a>.</p>
+
+    <h5>Tags: <a title="Tag: abstraction" class="small" href="../Search/abstraction.html">abstraction</a>&nbsp;<a title="Tag: agile" class="small" href="../Search/agile.html">agile</a>&nbsp;<a title="Tag: coding practices" class="small" href="../Search/coding-practices.html">coding practices</a>&nbsp;<a title="Tag: event" class="small" href="../Search/event.html">event</a>&nbsp;<a title="Tag: key" class="small" href="../Search/key.html">key</a>&nbsp;<a title="Tag: microservices" class="small" href="../Search/microservices.html">microservices</a>&nbsp;<a title="Tag: optimization" class="small" href="../Search/optimization.html">optimization</a>&nbsp;<a title="Tag: pattern" class="small" href="../Search/pattern.html">pattern</a>&nbsp;<a title="Tag: principle" class="small" href="../Search/principle.html">principle</a>&nbsp;<a title="Tag: value" class="small" href="../Search/value.html">value</a>&nbsp;<a title="Tag: flexibility" class="small" href="../Search/flexibility.html">flexibility</a>&nbsp;<a title="Tag: yagni" class="small" href="../Search/yagni.html">yagni</a>&nbsp;</h5>
+    <div class="share"><a href="../Permalinks/578752d7-225b-4510-8de2-2c35ded2eb84.html" rel="bookmark">Permalink</a></div>
 </div>
 
             </div>
