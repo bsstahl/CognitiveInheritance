@@ -229,7 +229,7 @@ public class MeetingReadRepository : IMeetingReadRepository
 <item>
   <title>Programmers -- Take Responsibility for Your AI’s Output</title>
   <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;plus ça change, plus c&apos;est la même chose&lt;/strong&gt; – &lt;strong&gt;The more that things change, the more they stay the same&lt;/strong&gt;. – Rush (and others &lt;img src=&quot;http://www.cognitiveinheritance.com/image.axd?picture=wlEmoticon-winkingsmile.png&quot; alt=&quot;Winking smile&quot; /&gt; )&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;plus ça change, plus c&apos;est la même chose&lt;/strong&gt; – &lt;strong&gt;The more that things change, the more they stay the same&lt;/strong&gt;. – Rush (and others &lt;img src=&quot;./Images/wlEmoticon-winkingsmile.png&quot; alt=&quot;Winking smile&quot; /&gt; )&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;In 2013 I &lt;a href=&quot;http://www.cognitiveinheritance.com/post/Programmers-Take-Responsibility-for-Your-Programe28099s-Output.aspx&quot;&gt;wrote&lt;/a&gt; that programmers needed to take responsibility for the output of their computer programs.  In that article, I advised developers that the output of their system, no matter how &quot;random&quot; or &quot;computer generated&quot;, was still their responsibility. I suggested that we cannot cop out by claiming  that the output of our programs is not our fault simply because we didn’t directly instruct the computer to issue that specific result.&lt;/p&gt;
 &lt;p&gt;Today, we have a similar problem, only the stakes are much, much, higher.&lt;/p&gt;
@@ -260,7 +260,7 @@ public class MeetingReadRepository : IMeetingReadRepository
   <link>Posts/Programmers-Take-Responsibility-for-Your-AIe28099s-Output.html</link>
   <author>bsstahl</author>
   <guid><a href="Permalinks/686f1de9-562f-4ef5-a3ac-4a75da9373f8.html" rel="bookmark">Permalink</a></guid>
-  <pubDate>2018-03-16T00:00:00.0000000</pubDate>
+  <pubDate>2018-03-16T00:00:00.0000000+00:00</pubDate>
 </item>
 
 </channel>
