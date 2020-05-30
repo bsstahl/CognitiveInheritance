@@ -38,4 +38,4 @@ I also took the opportunity to talk about a few things that have been on my mind
 
 I hope you enjoy this interview and find something of value in it. If so, please let me know about it on [Twitter](http://twitter.com/bsstahl).
 
-[!\[Developer On Fire\]({PathToRoot}DeveloperOnFire_1.png "DeveloperOnFire Podcast")](https://developeronfire.com/podcast/episode-399-barry-stahl-optimizing-impact)
+[!\[Developer On Fire\]({PathToRoot}/Images/DeveloperOnFire_1.png "DeveloperOnFire Podcast")](https://developeronfire.com/podcast/episode-399-barry-stahl-optimizing-impact)
