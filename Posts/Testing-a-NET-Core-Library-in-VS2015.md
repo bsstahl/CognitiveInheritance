@@ -14,7 +14,6 @@ tags:
 - tdd
 - unit testing
 - visual studio
-- dotnetcore
 - dotnet
 menuorder: 0
 id: 8d08d120-ece8-47d2-b6be-0bd5416d5c90
