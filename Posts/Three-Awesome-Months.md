@@ -45,7 +45,7 @@ Another fun event for developers in the valley is the Visual Studio 2019 Arizona
 
 In March, I'll be visiting opposite ends of the east coast of North America.
 
-First, on March 2nd, I'll be attending the always amazing [South Florida Code Camp](https://www.fladotnet.com/codecamp/Home.aspx) in Fort Lauderdale.  This event is right up there with the biggest community conferences in the country and is always worth attending. This will be the 7th year I've presented at SoFlaCC. If you're in the area I hope you'll attend.
+First, on March 2nd, I'll be attending the always amazing [South Florida Code Camp](https://sfsdc.itpand.net/) in Fort Lauderdale.  This event is right up there with the biggest community conferences in the country and is always worth attending. This will be the 7th year I've presented at SoFlaCC. If you're in the area I hope you'll attend.
 
 Later in March, I cross the border into Canada to attend [ConFoo Montreal](https://confoo.ca/en/speaker/barry-stahl). This will be my first trip ever to Montreal so I hope the March weather is kind to this 35 year Phoenix resident.  The event runs from March 13th - 15th and there will be 2 Canadiens games during the time I am there so I should be able to get to at least one of them.
 
