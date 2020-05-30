@@ -118,7 +118,7 @@ public class MeetingReadRepository : IMeetingReadRepository
   <link>Posts/The-Value-of-Flexibility.html</link>
   <author>bsstahl</author>
   <guid><a href="Permalinks/578752d7-225b-4510-8de2-2c35ded2eb84.html" rel="bookmark">Permalink</a></guid>
-  <pubDate>2019-02-14T00:00:00.0000000</pubDate>
+  <pubDate>2019-02-14T00:00:00.0000000+00:00</pubDate>
 </item>
 <item>
   <title>Back to Basics–the Double Data Type</title>
