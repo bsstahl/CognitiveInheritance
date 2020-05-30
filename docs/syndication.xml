@@ -166,7 +166,7 @@ public class MeetingReadRepository : IMeetingReadRepository
 &lt;li&gt;A few of the technologies that are making me happy right now:
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://webassembly.org/&quot;&gt;WebAssembly&lt;/a&gt; and &lt;a href=&quot;https://blazor.net/&quot;&gt;Blazor&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.cognitiveinheritance.com/?tag=/ai&quot;&gt;AI, Combinatorial Optimization and Genetic Algorithms&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;.Search/ai.html&quot;&gt;AI, Combinatorial Optimization and Genetic Algorithms&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;A couple of resources I learn from:
