@@ -89,7 +89,7 @@ blockquote {
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fff;
+    background-color: #6c757d47;
     background-clip: border-box;
     border: 2px solid rgba(0, 0, 0, 0.125);
     border-radius: 1.0rem;
