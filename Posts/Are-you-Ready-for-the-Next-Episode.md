@@ -4,7 +4,6 @@ tags:
 - cordova
 - development
 - device
-- drdre
 - framework
 - html5
 - ionic
@@ -23,14 +22,13 @@ title: Are you Ready for the Next Episode?
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2015-06-29T19:45:05
-lastmodificationdate: 2015-06-29T19:45:05
+publicationdate: 2015-06-29T19:45:05.000+00:00
+lastmodificationdate: 2015-06-29T19:45:05.000+00:00
 slug: Are-you-Ready-for-the-Next-Episode
 categories:
 - Development
 
 ---
-
 In the last episode of “[Refactoring my App Development Mojo](http://www.cognitiveinheritance.com/post.aspx?id=1ad203b0-f604-43c0-8293-aad482376f98)”, I explained how I had discovered my passion for building Windows Store applications by using a hybrid solution of HTML5 with very minimal JavaScript, bound to a view-model written in C# running as a Windows Runtime Component, communicating with services written in C# using WCF.  The goal was to do as much of the coding as possible in the technologies I was very comfortable with, C# and HTML, and minimize the use of those technologies which I had never gotten comfortable with, namely JavaScript and XAML.
 
 While this was an interesting and somewhat novel approach, it turned out to have a few fairly significant drawbacks:
@@ -49,4 +47,3 @@ So, it seems that it is time for me to move to a more standard front-end develop
 I believe I have found this front-end platform in [Apache Cordova](https://cordova.apache.org/). Cordova takes HTML5/JavaScript/CSS3 apps that can already work on the web, and builds them into hybrid apps that can run on virtually any platform including iPhones and iPads, Android phones and tablets, and Windows PCs, phones and tablets. Cordova has built-in support in Visual Studio 2015, which I have been playing with for a little while and seems to have real promise.  There is also the popular [Ionic Framework](http://ionicframework.com/) for building Cordova apps which I plan to learn more about over the next few weeks.
 
 I’ll keep you informed of my progress and let you know if this does indeed turn out to be the best way for me to build apps. Stay tuned.
-
