@@ -8,8 +8,8 @@ title: Upcoming Presentations
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2013-02-06T10:49:09Z
-lastmodificationdate: 2013-02-06T10:49:09Z
+publicationdate: 2013-02-06T10:49:09.000+00:00
+lastmodificationdate: 2013-02-06T10:49:09.000+00:00
 slug: Upcoming-Presentations
 categories:
 - Event
@@ -21,7 +21,7 @@ Here is an update on where and when I’ll be delivering presentations about sof
 
 [Sothern Most User Group](http://www.smugdevs.net/) in Key West FL on February 7th - “Code Portability in .NET”
 
-[South Florida Code Camp](http://www.fladotnet.com/codecamp/) in Ft. Lauderdale FL on February 9th - “Building a DSL Using an OData Source”
+[South Florida Code Camp](https://sfsdc.itpand.net/) in Ft. Lauderdale FL on February 9th - “Building a DSL Using an OData Source”
 
 [Desert Code Camp](http://apr2013.desertcodecamp.com/) on April 20th in Gilbert AZ – “Building a DSL Using an OData Source”
 
