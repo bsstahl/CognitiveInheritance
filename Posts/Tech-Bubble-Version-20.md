@@ -1,6 +1,5 @@
 ---
 tags:
-- process
 - enterprise
 - startup
 menuorder: 0
