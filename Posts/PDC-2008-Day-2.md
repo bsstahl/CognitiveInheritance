@@ -12,20 +12,19 @@ title: PDC 2008 - Day 2
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2008-11-01T10:20:00
-lastmodificationdate: 2010-10-22T18:11:27
+publicationdate: 2008-11-01T10:20:00.000+00:00
+lastmodificationdate: 2010-10-22T18:11:27.000+00:00
 slug: PDC-2008-Day-2
 categories:
 - Development
 - Event
 
 ---
-
 Day 2 was a more focused day for me at PDC 2008. After attending the morning keynotes, which included the first peeks at Windows 7 features as well as a terrific (as always) code-only presentation on programming against the cloud by Don Box and Chris Anderson, I headed over to the hands-on-labs where I spent the rest of the day working with Azure and creating applications that run in the cloud. I also received my Azure key and began the process of setting up a virtual machine to house the Azure tools.
 
 ### Real-Time Updates on Twitter
 
-Just a reminder that much of what is happening here at the PDC is being posted in real-time (or close to it) on Twitter.  My Twitter updates can be found at [http://twitter.com/bsstahl](http://twitter.com/bsstahl) and you can follow all of the PDC action using this Summize (Twitter Search) query [http://search.twitter.com/search?q=pdc+OR+pdc08+OR+pdc2008](http://search.twitter.com/search?q=pdc+OR+pdc08+OR+pdc2008 "Twitter Search")
+Just a reminder that much of what is happening here at the PDC is being posted in real-time (or close to it) on Twitter. My Twitter updates can be found on Twitter [@bsstahl](https://twitter.com/bsstahl).
 
 ### Keynotes
 
@@ -42,4 +41,3 @@ The remainder of my day, after lunch, was spent in the hands-on labs working thr
 ### Day 3 Preview
 
 Day 3 looks to be futures day, with the keynote focusing on Microsoft Research properties and technologies. Watch Twitter for all the action as it occurs.
-
