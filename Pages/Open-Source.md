@@ -19,7 +19,7 @@ categories: []
 * **Conference Scheduler** ([Github](https://github.com/bsstahl/conferencescheduler)) ([NuGet](https://www.nuget.org/packages/ConferenceScheduleOptimizer/)) - A NetStandard2.0 compliant schedule optimizer for small conferences and code camps.
 * **IntentBot** ([Github](https://github.com/bsstahl/IntentBot)) - A microservices framework for creating conversational bots.
 * **LiquidNun** ([Github](https://github.com/bsstahl/LiquidNun/)) - A library of abstractions and their concrete implementations that assist in the creation of loosely-coupled applications.
-* **LiquidVictor** ([Github](http://github.com/bsstahl/liquidvictor)) - _\[Experimental\]_ A media tracking and aggregation system that can be used to build presentations.
+* **LiquidVictor** ([Github](https://github.com/bsstahl/liquidvictor)) - _\[Experimental\]_ A media tracking and aggregation system that can be used to build presentations.
 * **Prehensile Pony-Tail** ([Github](https://github.com/bsstahl/pptail/)) - A blogging platform that produces plain HTML5/CSS output for ultimate scalability.
 * **TestHelperExtensions** ([Github](https://github.com/bsstahl/testhelperextensions/)) ([NuGet](https://www.nuget.org/packages/TestHelperExtensions/)) ([Documentation](http://testhelperextensions.cognitiveinheritance.com/)) - A set of extension methods helpful when building unit tests. Functionality includes creating random data of various types, converting data types, comparing date data, searching within string arrays, etc.
 * **Toastmasters Agenda** ([Github](https://github.com/bsstahl/ToastmastersAgenda)) ([Website](http://agendaweb.cfapps.io/)) - A c# library and website for generating agenda's for Toastmasters meetings.
