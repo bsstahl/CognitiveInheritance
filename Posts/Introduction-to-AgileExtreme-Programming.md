@@ -1,7 +1,6 @@
 ---
 tags:
 - agile
-- xp
 - ci_cd
 menuorder: 0
 id: 06bd7503-d4f6-46fb-9a0b-5ab002531568
