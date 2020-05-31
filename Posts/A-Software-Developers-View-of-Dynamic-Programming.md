@@ -21,7 +21,7 @@ categories:
 - Development
 
 ---
-Dynamic Programming (DP) is a mathematical tool that can be used to efficiently solve certain types of problems and is a must-have in any software developer's toolbox. A lot has been written about this process from a mathematician's perspective but there are very few resources out there to help software developers who want to implement this technique in code. In this article and the companion conference talk "[Dynamic Optimization - One Algorithm All Programmers Should Know](http://www.cognitiveinheritance.com/post/Dynamic-Optimization-Presentation.aspx)", I attempt to demystify this simple tool so that developer's can implement it for their customers.
+Dynamic Programming (DP) is a mathematical tool that can be used to efficiently solve certain types of problems and is a must-have in any software developer's toolbox. A lot has been written about this process from a mathematician's perspective but there are very few resources out there to help software developers who want to implement this technique in code. In this article and the companion conference talk "[Dynamic Optimization - One Algorithm All Programmers Should Know]({PathToRoot}/Posts/Dynamic-Optimization-Presentation.html)", I attempt to demystify this simple tool so that developer's can implement it for their customers.
 
 ### What is Combinatorial Optimization?
 
@@ -93,7 +93,7 @@ You can probably see that if both axes of this table, the capacity of the knapsa
 
 ### Continue the Conversation
 
-I am happy to answer questions or discuss this further. Ping me on Twitter {TwitterLink} with your comments or questions. I'd love to hear from you.  I am also available to deliver a talk to your conference or user group on [this or other topics](http://www.cognitiveinheritance.com/page/Speaking-Engagements.aspx). You can [contact me via my blog, Cognitive Inheritance](http://www.cognitiveinheritance.com/contact.aspx).
+I am happy to answer questions or discuss this further. Ping me on Twitter {TwitterLink} with your comments or questions. I'd love to hear from you.  I am also available to deliver a talk to your conference or user group on [this or other topics](http://www.cognitiveinheritance.com/page/Speaking-Engagements.html). You can [contact me here]({PathToRoot}/contact.html).
 
 1 In mathematical terms, DP is useful for solving problems that exhibit the characteristics of Overlapping Subproblems and Optimal Substructure.  If a problem is able to be described recursively, it will usually exhibit these traits, but the use of the recursion concept here is a generalization to put the problem in software developer's terms.
 
