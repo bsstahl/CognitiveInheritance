@@ -15,9 +15,7 @@ categories:
 - Event
 
 ---
-Here is an update on where and when I’ll be delivering presentations about software development in .NET over the next few months.  I still have some availability left for the H1 2013 and H2 is effectively wide open. You can request me as a speaker through [INETA](http://ineta.org/Speakers/SearchCommunitySpeakers.aspx?SpeakerId=4fdf7fc7-5cac-4842-acec-960815523108).
-
-
+Here is an update on where and when I’ll be delivering presentations about software development in .NET over the next few months.  I still have some availability left for the H1 2013 and H2 is effectively wide open. You can request me as a speaker by [Contacting Me]({PathToRoot}/contact.html).
 
 [Sothern Most User Group](http://www.smugdevs.net/) in Key West FL on February 7th - “Code Portability in .NET”
 
@@ -30,7 +28,6 @@ Here is an update on where and when I’ll be delivering presentations about sof
 [SELA Dev Conference](http://seladeveloperpractice.com/) in Tel-Aviv Israel on May 5-9 – a full day seminar version of “.NET TDD Kickstart” as well as “Code Portability in .NET”
 
 [CodeStock](http://www.codestock.org/) in Knoxville TN on July 12-13 “Code Portability in .NET” (assuming the attendees vote for my session)
-
 
 
 I hope to see you at one or more of these events.
