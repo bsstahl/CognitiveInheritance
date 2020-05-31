@@ -161,7 +161,7 @@ public class MeetingReadRepository : IMeetingReadRepository
   <description>&lt;p&gt;I was recently interviewed by Dave Rael (&lt;a href=&quot;https://twitter.com/raelyard&quot;&gt;@raelyard&lt;/a&gt;) for his &lt;a href=&quot;https://developeronfire.com/podcast/episode-399-barry-stahl-optimizing-impact&quot;&gt;Developer on Fire Podcast&lt;/a&gt;.  I had a great time talking with Dave about a lot of different things, both professional and personal, and got to name-drop just a few of the many people who have been a part of my journey over the years.&lt;/p&gt;
 &lt;p&gt;I also took the opportunity to talk about a few things that have been on my mind:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;The upcoming &lt;a href=&quot;https://meetup.com/azgivecamp&quot;&gt;AZGiveCamp&lt;/a&gt; Event scheduled for March 2019&lt;/li&gt;
+&lt;li&gt;The upcoming &lt;a href=&quot;https://www.meetup.com/azgivecamp&quot;&gt;AZGiveCamp&lt;/a&gt; Event scheduled for March 2019&lt;/li&gt;
 &lt;li&gt;Some of &lt;a href=&quot;https://twitter.com/bsstahl/status/878043411923599360&quot;&gt;the giants on whose shoulders we stand&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;A few of the technologies that are making me happy right now:
 &lt;ul&gt;
@@ -204,7 +204,7 @@ public class MeetingReadRepository : IMeetingReadRepository
 &lt;p&gt;March 8th–10th 2019&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;./Images/Code%20Monkey%203%20Duckin%20it%20(1)_1.png&quot; alt=&quot;Code Monkey Duckin-It&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;Mark your calendars to block-out the weekend of March 8th 2019 for the next AZGiveCamp Hackathon-of-Help. More details will be coming very soon so keep an eye on &lt;a href=&quot;https://www.azgivecamp.org/&quot;&gt;AZGiveCamp.org&lt;/a&gt; and &lt;a href=&quot;https://meetup.com/azgivecamp&quot;&gt;Meetup&lt;/a&gt; for all the particulars as soon as they are available.  I’m looking forward to seeing you all at our 9th event, helping those who help our community.&lt;/p&gt;
+&lt;p&gt;Mark your calendars to block-out the weekend of March 8th 2019 for the next AZGiveCamp Hackathon-of-Help. More details will be coming very soon so keep an eye on &lt;a href=&quot;https://www.azgivecamp.org/&quot;&gt;AZGiveCamp.org&lt;/a&gt; and &lt;a href=&quot;https://www.meetup.com/azgivecamp&quot;&gt;Meetup&lt;/a&gt; for all the particulars as soon as they are available.  I’m looking forward to seeing you all at our 9th event, helping those who help our community.&lt;/p&gt;
 </description>
   <link>Posts/Save-the-Date-for-AZGiveCamp-IX.html</link>
   <author>bsstahl</author>
