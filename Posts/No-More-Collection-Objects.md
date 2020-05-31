@@ -32,8 +32,8 @@ I know, I know. I was they guy always preaching that every entity that was being
 Today however, that has all changed. Extension methods now allow us, at any time, to add functionality to `ICollection<T>`, `IList<T>`, `IEnumerable<T>` or any other interface or class. We can attach our list or enumeration based actions directly to the list or enumeration class, and do so at any time, since the methods appear the same to the developer as methods directly on the collection type. Thus, the "no place to put it" fear no longer exists. I've even started using this technique for my factory methods to make it clear that what I am creating is, in fact, an `IEnumerable<T>`, as in this example. 
 
 ```
-var stations = (null as IEnumerable<Station>).Create();     
-var localStations = stations.GetNearby(currentLocation);
+  var stations = (null as IEnumerable<Station>).Create();     
+  var localStations = stations.GetNearby(currentLocation);
 ```
 
 In this example, both the **Create** and **GetNearby** methods are extension methods found in a static class called **StationExtensions**.
