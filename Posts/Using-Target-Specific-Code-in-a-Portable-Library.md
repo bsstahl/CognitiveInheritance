@@ -4,10 +4,10 @@ tags:
 - pcl
 - device
 - phone
-- win8
-- wp8
 - dotnet
 - dependency injection
+- windows
+- windows phone
 menuorder: 0
 id: bd40aaeb-c0af-43e4-badb-6b95327f8e9e
 author: bsstahl
