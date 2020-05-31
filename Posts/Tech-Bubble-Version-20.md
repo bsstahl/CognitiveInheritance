@@ -1,7 +1,7 @@
 ---
 tags:
-- enterprise
-- startup
+- startup culture
+- corporate culture
 menuorder: 0
 id: f6b7e83b-8a06-4502-9f5c-234899710422
 author: bsstahl
