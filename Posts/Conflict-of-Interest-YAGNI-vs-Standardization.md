@@ -13,14 +13,13 @@ title: Conflict of Interest -- YAGNI vs. Standardization
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2014-07-28T13:42:10
-lastmodificationdate: 2014-07-28T13:42:10
+publicationdate: 2014-07-28T13:42:10.000+00:00
+lastmodificationdate: 2014-07-28T13:42:10.000+00:00
 slug: Conflict-of-Interest-YAGNI-vs-Standardization
 categories:
 - Development
 
 ---
-
 While working on the OSS project mentioned in my [previous post](http://www.cognitiveinheritance.com/post/New-OSS-Project.aspx), I have run across a dilemma where two of the principals I try to work by are in conflict. The two principals in question are:
 
 1. **YAGNI** - *You aint gonna need it*, which prescribes not coding anything unless the need already exists. This principal is a core of Test Driven Development of which I am a practitioner and a strong proponent.
@@ -38,5 +37,4 @@ I have run across this type of decision many times before and have noted the fol
 
 Taking all of this into account, the simplest solution (which is usually the best) is to override the FxCop rules in the code, and continue without implementing the unneeded, albeit standard features.
 
-Do you disagree with my decision? Tell me why on Twitter [@bsstahl](http://twitter.com/bsstahl).
-
+Do you disagree with my decision? Tell me why on Twitter [@bsstahl](https://twitter.com/bsstahl).
