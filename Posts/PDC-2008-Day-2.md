@@ -24,7 +24,7 @@ Day 2 was a more focused day for me at PDC 2008. After attending the morning key
 
 ### Real-Time Updates on Twitter
 
-Just a reminder that much of what is happening here at the PDC is being posted in real-time (or close to it) on Twitter. My Twitter updates can be found on Twitter {TwitterLink}.
+Just a reminder that much of what is happening here at the PDC is being posted in real-time (or close to it) on Twitter. My Twitter updates can be found {TwitterLink}.
 
 ### Keynotes
 
