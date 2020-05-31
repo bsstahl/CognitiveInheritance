@@ -9,6 +9,6 @@ extendedsettings: []
 contactemail: aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com
 sitevariables:
 - variablename: TwitterLink
-  variablevalue: "[@bsstahl](https://twitter.com/bsstahl)"
+  variablevalue: "<a href="https://twitter.com/bsstahl)">@bsstahl</a>"
 
 ---
