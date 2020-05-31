@@ -24,14 +24,13 @@ title: Code Sample for My TDD Kickstart Sessions
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2012-02-13T13:25:00
-lastmodificationdate: 2012-02-13T17:16:08
+publicationdate: 2012-02-13T13:25:00.000+00:00
+lastmodificationdate: 2012-02-13T17:16:08.000+00:00
 slug: Code-Sample-for-My-TDD-Kickstart-Sessions
 categories:
 - Development
 
 ---
-
 The complete, working application for my [.NET TDD Kickstart](/post/NET-TDD-Kickstart.aspx) sessions can be found [here](http://docs.cognitiveinheritance.com/tddkickstart.zip).
 
 Unzip the files into a solution folder and open the **Demo.sln** solution in a version of Visual Studio 2010 that has Unit Testing capability (Professional, Premium or Ultimate).  Immediately, you should be able to compile the whole solution, and successfully execute the tests in the **Bss.QueueMonitor.Test** and **Bss.Timing.Test** libraries.
@@ -42,5 +41,4 @@ The solution is configured to use a SQLExpress database called **TDDDemo**.  Yo
 
 You can install Message Queuing on computers running Windows 7 by using **Programs and Features** in the **Control Panel**.  You do not need to create any specific queue because the integration test creates a queue for each test individually, then deletes the queue when the test is complete.
 
-If you have any questions or comments about this sample, please start a conversation on [Twitter](http://twitter.com/bsstahl) or [Contact Me](/Contact.aspx).
-
+If you have any questions or comments about this sample, please start a conversation on Twitter [@bsstahl](https://twitter.com/bsstahl) or [Contact Me]({PathToRoot}/contact.html).
