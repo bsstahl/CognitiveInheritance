@@ -71,4 +71,4 @@ For the purposes of our test to verify that we throw a PermissionsException when
 `System.IO.Fakes.ShimFile.ReadAllTextString =       p => throw new System.Security.SecurityException("Test Exception");`
 Then, we can verify in our test that our custom exception is thrown.  The full working example can be seen by grabbing the **Master** branch of the [GitHub repo](https://github.com/bsstahl/VS2017Launch).
 
-What can you test with these Shim objects that you were unable to test before?  Tell me about it on Twitter [@bsstahl](http://twitter.com/bsstahl).
+What can you test with these Shim objects that you were unable to test before?  Tell me about it on Twitter [@bsstahl](https://twitter.com/bsstahl).
