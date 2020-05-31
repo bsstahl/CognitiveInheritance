@@ -1,7 +1,6 @@
 ---
 tags:
 - onenote
-- sync
 - user error
 menuorder: 0
 id: 9cdcc051-3acd-4300-9ad8-86786ec7e647
