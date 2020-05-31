@@ -28,11 +28,9 @@ categories:
 - Development
 
 ---
-In the last episode of “[Refactoring my App Development Mojo](http://www.cognitiveinheritance.com/post.aspx?id=1ad203b0-f604-43c0-8293-aad482376f98)”, I explained how I had discovered my passion for building Windows Store applications by using a hybrid solution of HTML5 with very minimal JavaScript, bound to a view-model written in C# running as a Windows Runtime Component, communicating with services written in C# using WCF.  The goal was to do as much of the coding as possible in the technologies I was very comfortable with, C# and HTML, and minimize the use of those technologies which I had never gotten comfortable with, namely JavaScript and XAML.
+In the last episode of “[Refactoring my App Development Mojo]({PathToRoot}/Posts/Windows-8-Store-Development-for-Enterprise-Devs.html)”, I explained how I had discovered my passion for building Windows Store applications by using a hybrid solution of HTML5 with very minimal JavaScript, bound to a view-model written in C# running as a Windows Runtime Component, communicating with services written in C# using WCF.  The goal was to do as much of the coding as possible in the technologies I was very comfortable with, C# and HTML, and minimize the use of those technologies which I had never gotten comfortable with, namely JavaScript and XAML.
 
 While this was an interesting and somewhat novel approach, it turned out to have a few fairly significant drawbacks:
-
-
 
 1. Using this hybrid approach meant there were two runtimes that had to be initialized and operating during execution, a costly drain on system resources, especially for mobile devices.
 2. Applications built using this methodology would run well on Windows 8 and 8.1 machines, as well as Windows Phone devices, but not  on the web, or on Android or iDevices.
