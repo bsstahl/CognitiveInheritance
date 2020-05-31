@@ -31,7 +31,7 @@ categories:
 - Development
 
 ---
-The complete, working application for my [.NET TDD Kickstart](/post/NET-TDD-Kickstart.aspx) sessions can be found [here](http://docs.cognitiveinheritance.com/tddkickstart.zip).
+The complete, working application for my [.NET TDD Kickstart]({PathToRoot}/Posts/NET-TDD-Kickstart.html) sessions can be found [here]({PathToRoot}/Files/TDDKickstart.zip).
 
 Unzip the files into a solution folder and open the **Demo.sln** solution in a version of Visual Studio 2010 that has Unit Testing capability (Professional, Premium or Ultimate).  Immediately, you should be able to compile the whole solution, and successfully execute the tests in the **Bss.QueueMonitor.Test** and **Bss.Timing.Test** libraries.
 
