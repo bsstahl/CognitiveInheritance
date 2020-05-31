@@ -9,7 +9,7 @@ orderindex: 10
 ---
 * Twitter: [@bsstahl](https://twitter.com/bsstahl)
 * Facebook: [Barry Stahl](https://www.facebook.com/barrystahl)
-* LinkedIn: [BStahl](http://www.linkedin.com/in/bstahl)
+* LinkedIn: [BStahl](https://www.linkedin.com/in/bstahl)
 * Flickr: [BSStahl](https://www.flickr.com/photos/bsstahl)
 * GitHub: [bsstahl](https://github.com/bsstahl)
 * Community Speaker: [Barry S. Stahl]({PathToRoot}/Pages/Speaking-Engagements.html)
