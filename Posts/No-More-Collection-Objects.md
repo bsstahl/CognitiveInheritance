@@ -33,7 +33,7 @@ Today however, that has all changed. Extension methods now allow us, at any time
 
 ```
 var stations = (null as IEnumerable<Station>).Create();     
-var localStations = stations.GetNearby(currentLocation);`
+var localStations = stations.GetNearby(currentLocation);
 ```
 
 In this example, both the **Create** and **GetNearby** methods are extension methods found in a static class called **StationExtensions**.
