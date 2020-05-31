@@ -83,7 +83,7 @@ In my conference sessions, Simplify Your API: Creating Maintainable and Discover
 and convert it, one step at a time, to this:
 `var questions = new FluentStack().Questions.WithAcceptedAnswer().
    Where(Asked.InLast(30.Days)).TaggedWith("odata");`
-a query that is much simpler, easier to understand, easier to create and easier to maintain. The sample code on GitHub, referenced above, and available at [http://github.com/bsstahl/SimpleAPI](http://github.com/bsstahl/SimpleAPI), contains the FluentStack.sln example which shows how to simplify an API created with an OData source. It also contains the EnumerableStack.sln project which walks through the same process on a purely enumerable data source, that is, an implementation that will work with any collection.
+a query that is much simpler, easier to understand, easier to create and easier to maintain. The sample code on GitHub, referenced above, and available at [https://github.com/bsstahl/SimpleAPI](https://github.com/bsstahl/SimpleAPI), contains the FluentStack.sln example which shows how to simplify an API created with an OData source. It also contains the EnumerableStack.sln project which walks through the same process on a purely enumerable data source, that is, an implementation that will work with any collection.
 
 #### Sound Off
 
