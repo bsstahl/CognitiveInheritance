@@ -12,20 +12,19 @@ tags:
 - speaking
 - visual studio
 menuorder: 0
-id: 09a68c70-e4bc-494b-852b-e067b55c00e1
+id: '09a68c70-e4bc-494b-852b-e067b55c00e1'
 author: bsstahl
 title: Simplify Your API
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2015-10-12T13:15:00
-lastmodificationdate: 2015-10-12T16:17:48
+publicationdate: 2015-10-12T13:15:00.000+00:00
+lastmodificationdate: 2015-10-12T16:17:48.000+00:00
 slug: Simplify-Your-API
 categories:
 - Development
 
 ---
-
 If you are building an API for other Developers to use, you will find out two things very quickly:
 
 1. Developers don't read documentation (you probably already know this).
@@ -88,5 +87,4 @@ a query that is much simpler, easier to understand, easier to create and easier 
 
 #### Sound Off
 
-Have you used these tools to simplify an API for downstream programmers? Do you have other techniques that you use to do the same, similar, or additional things to make your APIs better? If so, Tweet it to me [@bsstahl](http://twitter.com/bsstahl) and let's keep the conversation going.
-
+Have you used these tools to simplify an API for downstream programmers? Do you have other techniques that you use to do the same, similar, or additional things to make your APIs better? If so, Tweet it to me [@bsstahl](https://twitter.com/bsstahl) and let's keep the conversation going.
