@@ -2,7 +2,6 @@
 tags:
 - controls
 - asp.net
-- viewstate
 menuorder: 0
 id: 77c8094b-6a05-483c-8381-787e218075bb
 author: bsstahl
