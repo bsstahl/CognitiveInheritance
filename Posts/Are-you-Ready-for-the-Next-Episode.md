@@ -12,9 +12,9 @@ tags:
 - phone
 - standardization
 - visual studio
-- win8
-- wp8
 - xaml
+- windows
+- windows phone
 menuorder: 0
 id: ceb59f2f-55d7-447b-8470-a19d93fb29e7
 author: bsstahl
