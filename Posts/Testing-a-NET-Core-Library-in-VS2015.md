@@ -1,6 +1,5 @@
 ---
 tags:
-- library
 - testing
 - code coverage
 - development
