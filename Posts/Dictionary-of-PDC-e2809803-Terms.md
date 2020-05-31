@@ -1,14 +1,6 @@
 ---
 tags:
 - pdc
-- winfx
-- longhorn
-- indigo
-- winfs
-- avalon
-- yukon
-- whidbey
-- orpheus
 - services
 - sql
 menuorder: 0
@@ -18,8 +10,8 @@ title: Dictionary of PDC ‘03 Terms
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2003-11-02T16:48:00
-lastmodificationdate: 2010-10-22T18:11:36
+publicationdate: 2003-11-02T16:48:00.000+00:00
+lastmodificationdate: 2010-10-22T18:11:36.000+00:00
 slug: Dictionary-of-PDC-e2809803-Terms
 categories:
 - Development
@@ -47,4 +39,4 @@ Orpheus – The code-name for the next generation of Visual Studio.NET after Whi
   
 Services Model – The design philosophy in which application tiers are divided into services by functionality. Often, these tiers are divided into Presentation Services, Business Services (Business Logic) and Data Services. [Indigo](http://74.125.95.132/search?q=cache:8hANgX_2q08J:www.cognitiveinheritance.com/%3Ftag%3D/pdc+site:cognitiveinheritance.com&amp;hl=en&amp;ct=clnk&amp;cd=38&amp;gl=us#Indigo) is designed to support the creation and interaction of these services.   
   
-SQL Cache Invalidation – The interaction between SQL Server and ASP.NET that allows the database to invalidate HTML stored in the IIS cache when the data that the page is based on becomes stale. This ability exists, using new utilities from Microsoft at a table level from SQL Server versions 7 and 2000 and is available to the row level in SQL Server [Yukon](http://74.125.95.132/search?q=cache:8hANgX_2q08J:www.cognitiveinheritance.com/%3Ftag%3D/pdc+site:cognitiveinheritance.com&amp;hl=en&amp;ct=clnk&amp;cd=38&amp;gl=us#Yukon).  
+SQL Cache Invalidation – The interaction between SQL Server and ASP.NET that allows the database to invalidate HTML stored in the IIS cache when the data that the page is based on becomes stale. This ability exists, using new utilities from Microsoft at a table level from SQL Server versions 7 and 2000 and is available to the row level in SQL Server [Yukon](http://74.125.95.132/search?q=cache:8hANgX_2q08J:www.cognitiveinheritance.com/%3Ftag%3D/pdc+site:cognitiveinheritance.com&amp;hl=en&amp;ct=clnk&amp;cd=38&amp;gl=us#Yukon).
