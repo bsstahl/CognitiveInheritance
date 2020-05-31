@@ -10,7 +10,7 @@ title: ".NET 2.0 Concerns"
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2006-04-29T04:47:00.000+00:00
+publicationdate: 2006-04-29T01:47:00Z
 lastmodificationdate: 0001-01-02T10:00:00.000+00:00
 slug: NET-20-Concerns
 categories:
