@@ -1,6 +1,5 @@
 ---
 tags:
-- mix
 - conference
 - dotnet
 menuorder: 0
