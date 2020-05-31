@@ -11,14 +11,13 @@ title: Scalable Decision Making
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2017-06-01T22:27:16
-lastmodificationdate: 2017-06-01T22:27:16
+publicationdate: 2017-06-01T22:27:16.000+00:00
+lastmodificationdate: 2017-06-01T22:27:16.000+00:00
 slug: Scalable-Decision-Making
 categories:
 - Development
 
 ---
-
 I recently had a developer colleague return from an AI conference and tell me something along the lines of "…all they really showed were algorithms, nothing that really learned." Unfortunately, there is this common misconception, even among people in the software community, that to have an AI, you need Machine Learning. Now don't get me wrong, Machine Learning is an amazing technique and it has been used to create many real breakthroughs in Software Engineering. But, to have AI you don't need Machine Learning, you simply need a system that makes decisions that otherwise would need to be made by humans. That is, you need a machine to act rationally. There are many ways to accomplish this goal. I have explored [a few methods](http://www.cognitiveinheritance.com/?tag=/ai) in this forum in the past, and will explore more in the future. Today however, I want to discuss the real value proposition of AI. That is, the ability to make decisions at scale.
 
 
@@ -62,5 +61,4 @@ The volume of a problem describes the way we usually think of scale in software 
 
 These 4 factors describing the scale of a problem are important to consider when attempting to determine if an automated Artificial Intelligence solution is a good candidate to be a part of a solution. Once it has been decided that an AI is appropriate for a problem, we can then look at the options for implementing the solution. Machine Learning is one possible candidate for many problems, but certainly not all. Much more on that in future articles.
 
-Do you agree that the value in AI comes not from how the decisions are made, but from the ability to scale those decisions? Did I miss any scale factors that should be considered when determining if an AI solution might be appropriate? Sound off on [Twitter](http://twitter.com/bsstahl).
-
+Do you agree that the value in AI comes not from how the decisions are made, but from the ability to scale those decisions? Did I miss any scale factors that should be considered when determining if an AI solution might be appropriate? Sound off on Twitter [@bsstahl](https://twitter.com/bsstahl).
