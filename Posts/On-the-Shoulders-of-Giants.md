@@ -2,7 +2,6 @@
 tags:
 - toastmasters
 - introduction
-- speech
 - speaking
 menuorder: 0
 id: 431c5164-6654-4850-beef-7212168faf95
