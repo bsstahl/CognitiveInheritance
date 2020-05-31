@@ -4,7 +4,6 @@ tags:
 - asp.net
 - whidbey
 - master pages
-- operators
 menuorder: 0
 id: 2f823b30-355a-49e1-8ecf-121cff1b3547
 author: bsstahl
