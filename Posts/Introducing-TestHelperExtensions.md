@@ -26,7 +26,7 @@ categories:
 ---
 ## TL;DR Version
 
-I've released a new Open-Source library of extension methods that can be used to create more effective unit and integration tests. This library is called TestHelperExtensions. The source code is available on [GitHub](http://github.com/bsstahl/testhelperextensions) (pull requests welcome), a .NET 4 package is available via [NuGet](http://www.nuget.org/packages/TestHelperExtensions/), and the documentation is available [here](http://testhelperextensions.cognitiveinheritance.com). The goal is to allow anyone to have access to the same set of test helpers I have been using, and building up, for many years.
+I've released a new Open-Source library of extension methods that can be used to create more effective unit and integration tests. This library is called TestHelperExtensions. The source code is available on [GitHub](https://github.com/bsstahl/testhelperextensions) (pull requests welcome), a .NET 4 package is available via [NuGet](http://www.nuget.org/packages/TestHelperExtensions/), and the documentation is available [here](http://testhelperextensions.cognitiveinheritance.com). The goal is to allow anyone to have access to the same set of test helpers I have been using, and building up, for many years.
 
 ## The Story
 
