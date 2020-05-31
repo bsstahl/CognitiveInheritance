@@ -7,7 +7,6 @@ tags:
 - community
 - conference
 - open source
-- pcf
 - presentation
 - slides
 - speaking
@@ -20,14 +19,13 @@ title: SoCalCodeCamp Slide Decks
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2018-11-10T19:39:46
-lastmodificationdate: 2018-11-10T19:39:46
+publicationdate: 2018-11-10T19:39:46.000+00:00
+lastmodificationdate: 2018-11-10T19:39:46.000+00:00
 slug: SoCalCodeCamp-Slide-Decks
 categories:
 - Event
 
 ---
-
 The slide decks for my two talks at SoCalCodeCamp USC from November 10, 2018 are below.
 
 - [Intro to WebAssembly Using Blazor](https://1drv.ms/b/s!AMwbHpz53UVdm45C) – SGM-124 at 1:30 pm
@@ -35,4 +33,3 @@ The slide decks for my two talks at SoCalCodeCamp USC from November 10, 2018 are
 
 
 Thanks to all of the organizers and attendees of this always amazing event.
-
