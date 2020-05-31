@@ -65,4 +65,4 @@ Some other optional steps include:
 - Set ‘Run tests after build’ in Visual Studio so tests run automatically
 
 
-There will likely be better ways to do many of these things shortly, but if you know a better way now, please let me know via Twitter [@bsstahl](https://twitter.com/bsstahl).
+There will likely be better ways to do many of these things shortly, but if you know a better way now, please let me know via Twitter {TwitterLink}.
