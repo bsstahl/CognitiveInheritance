@@ -2,16 +2,15 @@
 tags:
 - azgivecamp
 - asp.net
-- apache
 - charity
 - community
-- cordova
 - givecamp
 - ionic
 - nonprofit
 - open source
 - phoenix
 - visual studio
+- apache cordova
 menuorder: 0
 id: 8f4f1c21-d85d-4cb2-9454-56cb80aadaf7
 author: bsstahl
