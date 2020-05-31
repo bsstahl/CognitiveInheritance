@@ -1349,30 +1349,36 @@ AutomanuallyUsed to refer to a batch job or application that should be scheduled
     <p>It has often been said that each new language feature gives programmers more rope with which to hang themselves. Unfortunately, what it really seems like is that each feature gives other programmers more rope with which to hang me, or you, or whomever the next poor schmuck is who has to deal with their code. Back in the relatively early days of .NET 2.0, I wrote about <a href="../Posts/Generics-Concerns.html">some concerns I had with Generics</a>. It has turned out that Generics are everything I could have hoped for in a language feature, and everything I feared.</p>
 <p>Generics are an outstanding way of dealing with a number of issues in a very elegant, but also type-safe way. Among many things, this includes collections. I see no reason why there should be any new collections created that are not based on Generics and it is my understanding that System.Collections.CollectionBase (the non-Generic base collection class) is to be deprecated sometime in the near future. However, as I feared over a year ago, there are many that miss the point somewhat and expose List&lt;t&gt; on their interfaces. The Generic List object is a very powerful and easy to use collection, but it is not extensible. If you write code that exposes List&lt;t&gt;, you are effectively passing a strongly-typed array-list. Doing this breaks encapsulation because any code we write against that list, has to be repeated everywhere we want to perform that operation.</p>
 <p>For example, suppose we have a calendar object that exposes a list of events that we want to reserve. We often see this code:</p>
-<p>List&lt;CalendarEvent&gt; calendarEvents = Calendar.Events;<br />
-for each (CalendarEvent evt in calendarEvents)<br />
-    evt.Reserve();</p>
+<pre><code>  List&lt;CalendarEvent&gt; calendarEvents = Calendar.Events;  
+  for each (CalendarEvent evt in calendarEvents)  
+      evt.Reserve();
+</code></pre>
 <p>rather than the far preferable:</p>
-<p>CalendarEventsCollection calendarEvents = Calendar.Events;<br />
-calendarEvents.Reserve();</p>
+<pre><code>  CalendarEventsCollection calendarEvents = Calendar.Events;  
+  calendarEvents.Reserve();
+</code></pre>
 <p>where the CalendarEventsCollection object contains:</p>
-<p>public void Reserve()<br />
-{<br />
-    for each (CalendarEvent evt in this)<br />
-        evt.Reserve();<br />
-}</p>
+<pre><code>  public void Reserve()  
+   {  
+       for each (CalendarEvent evt in this)  
+           evt.Reserve();   
+   }
+</code></pre>
 <p>or even better:</p>
-<p>Calendar.ReserveEvents();</p>
+<pre><code>  Calendar.ReserveEvents();
+</code></pre>
 <p>where the Calendar object contains:</p>
-<p>private CalendarEventsCollection _calendarEvents;<br />
-public CalendarEventsCollection Events<br />
-{ return _calendarEvents; }</p>
-<p>public void ReserveEvents()<br />
-{<br />
-    this.Events.Reserve();<br />
-}</p>
-<p>The latter being preferable because all of the functionality we want to expose is completely encapsulated in the appropriate object and doesn't have to be repeated wherever it is needed. Of course, we can't do this if we are lobbing around List&lt;t&gt; instead of collection objects that derive from System.Collections.ObjectModel.Collection.</p>
-<p>While the improper use of List&lt;t&gt; may not be exactly the &quot;House of Sticks&quot; that I feared in early 2006, it is an item where proper use is not necessarily obvious and which has been misunderstood by many very good programmers.  Please, encourage all developers to practice proper encapsulation by deriving collection classes from one of the Generic collection implementations.</p>
+<pre><code>  private CalendarEventsCollection _calendarEvents;  
+  public CalendarEventsCollection Events  
+    { return _calendarEvents; }  
+  
+   public void ReserveEvents()  
+   {  
+       this.Events.Reserve();  
+   }
+</code></pre>
+<p>The latter being preferable because all of the functionality we want to expose is completely encapsulated in the appropriate object and doesn't have to be repeated wherever it is needed. Of course, we can't do this if we are lobbing around <code>List&lt;T&gt;</code> instead of collection objects that derive from <code>System.Collections.ObjectModel.Collection</code>.</p>
+<p>While the improper use of <code>List&lt;T&gt;</code> may not be exactly the &quot;House of Sticks&quot; that I feared in early 2006, it is an item where proper use is not necessarily obvious and which has been misunderstood by many very good programmers.  Please, encourage all developers to practice proper encapsulation by deriving collection classes from one of the Generic collection implementations.</p>
 
     <h5>Tags: <a title="Tag: encapsulation" class="small" href="../Search/encapsulation.html">encapsulation</a>&nbsp;<a title="Tag: generics" class="small" href="../Search/generics.html">generics</a>&nbsp;<a title="Tag: list" class="small" href="../Search/list.html">list</a>&nbsp;</h5>
     <div class="share"><a href="../Permalinks/2eb911d4-b484-48f6-9986-5534a1f5581f.html" rel="bookmark">Permalink</a></div>
