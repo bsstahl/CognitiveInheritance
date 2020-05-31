@@ -87,4 +87,4 @@ a query that is much simpler, easier to understand, easier to create and easier 
 
 #### Sound Off
 
-Have you used these tools to simplify an API for downstream programmers? Do you have other techniques that you use to do the same, similar, or additional things to make your APIs better? If so, Tweet it to me [@bsstahl](https://twitter.com/bsstahl) and let's keep the conversation going.
+Have you used these tools to simplify an API for downstream programmers? Do you have other techniques that you use to do the same, similar, or additional things to make your APIs better? If so, Tweet it to me {TwitterLink} and let's keep the conversation going.
