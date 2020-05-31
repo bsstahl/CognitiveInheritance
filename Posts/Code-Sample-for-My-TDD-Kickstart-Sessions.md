@@ -41,4 +41,4 @@ The solution is configured to use a SQLExpress database called **TDDDemo**.  Yo
 
 You can install Message Queuing on computers running Windows 7 by using **Programs and Features** in the **Control Panel**.  You do not need to create any specific queue because the integration test creates a queue for each test individually, then deletes the queue when the test is complete.
 
-If you have any questions or comments about this sample, please start a conversation on Twitter [@bsstahl](https://twitter.com/bsstahl) or [Contact Me]({PathToRoot}/contact.html).
+If you have any questions or comments about this sample, please start a conversation on Twitter {TwitterLink} or [Contact Me]({PathToRoot}/contact.html).
