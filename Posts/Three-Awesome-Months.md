@@ -53,4 +53,4 @@ In May I get to do a short tour of Europe, spending 2 weeks at conferences in Bu
 
 ## Keep up With Me
 
-I maintain a list of my presentations, both past and upcoming, on the [Community Speaker](http://www.cognitiveinheritance.com/page/Speaking-Engagements.aspx) page of this blog. I also try to document my conference experiences on [Twitter](https://twitter.com/bsstahl). If you are going to be attending any of these events, please be sure to ping me on Twitter and let me know.
+I maintain a list of my presentations, both past and upcoming, on the [Community Speaker]({PathToRoot}/Pages/Speaking-Engagements.aspx) page of this blog. I also try to document my conference experiences on Twitter [@bsstahl](https://twitter.com/bsstahl). If you are going to be attending any of these events, please be sure to ping me on Twitter and let me know.
