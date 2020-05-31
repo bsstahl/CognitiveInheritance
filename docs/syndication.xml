@@ -84,7 +84,7 @@ public class MeetingReadRepository : IMeetingReadRepository
 &lt;p&gt;Later in March, I cross the border into Canada to attend &lt;a href=&quot;https://confoo.ca/en/speaker/barry-stahl&quot;&gt;ConFoo Montreal&lt;/a&gt;. This will be my first trip ever to Montreal so I hope the March weather is kind to this 35 year Phoenix resident.  The event runs from March 13th - 15th and there will be 2 Canadiens games during the time I am there so I should be able to get to at least one of them.&lt;/p&gt;
 &lt;p&gt;In May I get to do a short tour of Europe, spending 2 weeks at conferences in Budapest, Hungary (&lt;a href=&quot;https://craft-conf.com/speaker/BarryStahl&quot;&gt;Craft Conference&lt;/a&gt;), and Marbella, Spain (&lt;a href=&quot;https://jonthebeach.com/speakers/97/Barry+S.+Stahl&quot;&gt;J on the Beach&lt;/a&gt;).  While I have done some traveling in Europe before, I have never been to Spain or Hungary so I am really looking forward to experiencing the history and culture that these two cities have to offer.&lt;/p&gt;
 &lt;h2&gt;Keep up With Me&lt;/h2&gt;
-&lt;p&gt;I maintain a list of my presentations, both past and upcoming, on the &lt;a href=&quot;./Pages/Speaking-Engagements.html&quot;&gt;Community Speaker&lt;/a&gt; page of this blog. I also try to document my conference experiences on Twitter &lt;a href=&quot;https://twitter.com/bsstahl&quot;&gt;@bsstahl&lt;/a&gt;. If you are going to be attending any of these events, please be sure to ping me on Twitter and let me know.&lt;/p&gt;
+&lt;p&gt;I maintain a list of my presentations, both past and upcoming, on the &lt;a href=&quot;./Pages/Speaking-Engagements.html&quot;&gt;Community Speaker&lt;/a&gt; page of this blog. I also try to document my conference experiences on Twitter [@bsstahl](https://twitter.com/bsstahl). If you are going to be attending any of these events, please be sure to ping me on Twitter and let me know.&lt;/p&gt;
 </description>
   <link>Posts/Three-Awesome-Months.html</link>
   <author>bsstahl</author>
@@ -113,7 +113,7 @@ public class MeetingReadRepository : IMeetingReadRepository
 &lt;li&gt;Including all significant data in event messages rather than just keys&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;There are, of course, dangers here as well. It can be easy to fire events whenever we would generally issue a logging message.  Events should be limited to those in the problem domain (Domain Events), not application events. We can also reach a level of absurdity with the weight of each message. As with all things, a balance needs to be struck. In determining that balance, I value Flexibility over Optimization whenever it is reasonable and possible to do so.&lt;/p&gt;
-&lt;p&gt;Do you feel differently? If so, let me know on Twitter &lt;a href=&quot;https://twitter.com/bsstahl&quot;&gt;@bsstahl&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Do you feel differently? If so, let me know on Twitter [@bsstahl](https://twitter.com/bsstahl).&lt;/p&gt;
 </description>
   <link>Posts/The-Value-of-Flexibility.html</link>
   <author>bsstahl</author>
