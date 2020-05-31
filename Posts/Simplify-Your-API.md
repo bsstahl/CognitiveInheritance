@@ -8,9 +8,9 @@ tags:
 - presentation
 - services
 - skill
-- SOA
 - speaking
 - visual studio
+- soa
 menuorder: 0
 id: '09a68c70-e4bc-494b-852b-e067b55c00e1'
 author: bsstahl
