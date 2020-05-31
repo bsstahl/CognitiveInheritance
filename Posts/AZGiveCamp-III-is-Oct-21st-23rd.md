@@ -27,6 +27,6 @@ Those who participated in the last 2 events already know that AZGiveCamp is the 
 
 We had a fantastic time at the last 2 events and, in Arizona alone, have helped more than 20 non-profits with their development needs. As someone who has now participated in GiveCamps as both a participant and as an organizer, I can honestly say the experience is very, very, worthwhile.
 
-You can find out more about AZGiveCamp at [http://www.azgivecamp.org](http://www.azgivecamp.org) and about the national organization at [http://givecamp.org](http://givecamp.org).
+You can find out more about AZGiveCamp at [https://www.azgivecamp.org](https://www.azgivecamp.org) and about the national organization at [http://givecamp.org](http://givecamp.org).
 
 I am very excited about this event and look forward to working with all of you at AZGiveCamp III.
