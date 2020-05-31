@@ -18,4 +18,4 @@ categories:
 - Event
 
 ---
-The next AZGiveCamp will be held starting January 14th 2011 at the Phoenix campus of Devry University!  Please see [AZGiveCamp.org](http://www.azgivecamp.org) for more details.
+The next AZGiveCamp will be held starting January 14th 2011 at the Phoenix campus of Devry University!  Please see [AZGiveCamp.org](https://www.azgivecamp.org) for more details.
