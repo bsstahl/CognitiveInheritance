@@ -1,13 +1,7 @@
 ---
 tags:
 - pdc
-- longhorn
-- indigo
-- winfs
-- avalon
-- whidbey
 - visual studio
-- yukon
 menuorder: 0
 id: b103a065-2760-4f21-ab0e-c30a7fc01950
 author: bsstahl
