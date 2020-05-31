@@ -14,14 +14,13 @@ title: A Software Developer's View of Dynamic Programming
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2016-07-01T13:49:56
-lastmodificationdate: 2016-07-01T13:49:56
+publicationdate: 2016-07-01T13:49:56.000+00:00
+lastmodificationdate: 2016-07-01T13:49:56.000+00:00
 slug: A-Software-Developers-View-of-Dynamic-Programming
 categories:
 - Development
 
 ---
-
 Dynamic Programming (DP) is a mathematical tool that can be used to efficiently solve certain types of problems and is a must-have in any software developer's toolbox. A lot has been written about this process from a mathematician's perspective but there are very few resources out there to help software developers who want to implement this technique in code. In this article and the companion conference talk "[Dynamic Optimization - One Algorithm All Programmers Should Know](http://www.cognitiveinheritance.com/post/Dynamic-Optimization-Presentation.aspx)", I attempt to demystify this simple tool so that developer's can implement it for their customers.
 
 ### What is Combinatorial Optimization?
@@ -94,7 +93,7 @@ You can probably see that if both axes of this table, the capacity of the knapsa
 
 ### Continue the Conversation
 
-I am happy to answer questions or discuss this further. Ping me on [Twitter](http://twitter.com/bsstahl) with your comments or questions. I'd love to hear from you.  I am also available to deliver a talk to your conference or user group on [this or other topics](http://www.cognitiveinheritance.com/page/Speaking-Engagements.aspx). You can [contact me via my blog, Cognitive Inheritance](http://www.cognitiveinheritance.com/contact.aspx).
+I am happy to answer questions or discuss this further. Ping me on Twitter [@bsstahl](https://twitter.com/bsstahl) with your comments or questions. I'd love to hear from you.  I am also available to deliver a talk to your conference or user group on [this or other topics](http://www.cognitiveinheritance.com/page/Speaking-Engagements.aspx). You can [contact me via my blog, Cognitive Inheritance](http://www.cognitiveinheritance.com/contact.aspx).
 
 
 
@@ -103,4 +102,3 @@ I am happy to answer questions or discuss this further. Ping me on [Twitter](htt
 2 The process of storing a value for later use is known in mathematics as memoization, an operation which, for all intents and purposes, is equivalent to caching.
 
 3 Variants of certain DP algorithms exist where the process can be cut-off under certain conditions prior to fully populating the cache.  These variants are not discussed here.
-
