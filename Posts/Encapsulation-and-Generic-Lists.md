@@ -23,38 +23,47 @@ Generics are an outstanding way of dealing with a number of issues in a very el
 
 For example, suppose we have a calendar object that exposes a list of events that we want to reserve. We often see this code:
 
-List&lt;CalendarEvent&gt; calendarEvents = Calendar.Events;  
- for each (CalendarEvent evt in calendarEvents)  
-     evt.Reserve();
+```
+  List<CalendarEvent> calendarEvents = Calendar.Events;  
+  for each (CalendarEvent evt in calendarEvents)  
+      evt.Reserve();
+```
 
 rather than the far preferable:
 
-CalendarEventsCollection calendarEvents = Calendar.Events;  
- calendarEvents.Reserve();
+```
+  CalendarEventsCollection calendarEvents = Calendar.Events;  
+  calendarEvents.Reserve();
+```
 
 where the CalendarEventsCollection object contains:
 
-public void Reserve()  
- {  
-     for each (CalendarEvent evt in this)  
-         evt.Reserve();   
- }
-
+```
+  public void Reserve()  
+   {  
+       for each (CalendarEvent evt in this)  
+           evt.Reserve();   
+   }
+```
 or even better:
 
-Calendar.ReserveEvents();
+```
+  Calendar.ReserveEvents();
+```
 
 where the Calendar object contains:
 
-private CalendarEventsCollection \_calendarEvents;  
- public CalendarEventsCollection Events  
- { return \_calendarEvents; }  
+```
+  private CalendarEventsCollection _calendarEvents;  
+  public CalendarEventsCollection Events  
+    { return _calendarEvents; }  
   
- public void ReserveEvents()  
- {  
-     this.Events.Reserve();  
- }
+   public void ReserveEvents()  
+   {  
+       this.Events.Reserve();  
+   }
+```
 
-The latter being preferable because all of the functionality we want to expose is completely encapsulated in the appropriate object and doesn't have to be repeated wherever it is needed. Of course, we can't do this if we are lobbing around List&lt;t&gt; instead of collection objects that derive from System.Collections.ObjectModel.Collection.
+The latter being preferable because all of the functionality we want to expose is completely encapsulated in the appropriate object and doesn't have to be repeated wherever it is needed. Of course, we can't do this if we are lobbing around `List<T>` instead of collection objects that derive from `System.Collections.ObjectModel.Collection`.
 
-While the improper use of List&lt;t&gt; may not be exactly the "House of Sticks" that I feared in early 2006, it is an item where proper use is not necessarily obvious and which has been misunderstood by many very good programmers.  Please, encourage all developers to practice proper encapsulation by deriving collection classes from one of the Generic collection implementations.
+While the improper use of `List<T>` may not be exactly the "House of Sticks" that I feared in early 2006, it is an item where proper use is not necessarily obvious and which has been misunderstood by many very good programmers.  Please, encourage all developers to practice proper encapsulation by deriving collection classes from one of the Generic collection implementations.
