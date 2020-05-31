@@ -1,10 +1,10 @@
 ---
 tags:
 - pdc
-- windows 7
 - azure
 - cloud
 - twitter
+- windows
 menuorder: 0
 id: 39a71c38-6692-49c9-94fe-a70aa9035078
 author: bsstahl
