@@ -52,7 +52,7 @@ public class MeetingReadRepository : IMeetingReadRepository
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Is this worth the added complexity? It seems to me that as application developers we should be concerned about describing and building our applications in the simplest, most maintainable and extensible way possible. To do so, we need seams in our applications in the form of abstractions. However, we generally do not need to build frameworks on which we build those abstractions. Framework creation is an entirely other topic with an entirely different set of concerns.&lt;/p&gt;
 &lt;p&gt;I think it is easy to see how quickly things can get overly-complex when we start building abstractions on top of our own abstractions in our applications. Using Microsoft or 3rd party frameworks is fine when appropriate, but there is generally no need to build your own frameworks, especially within your applications. In the vast majority of cases, &lt;a href=&quot;./Search/yagni.html&quot;&gt;YAGNI&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Did I miss something here? Do you have a situation where you feel it is worth it to build a framework, or even part of a framework, within your applications. Please let me know about it on &lt;a href=&quot;https://twitter.com/bsstahl&quot;&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Did I miss something here? Do you have a situation where you feel it is worth it to build a framework, or even part of a framework, within your applications. Please let me know about it on Twitter [@bsstahl](https://twitter.com/bsstahl).&lt;/p&gt;
 </description>
   <link>Posts/Meta-Abstraction-You-Aint-Gonna-Need-It!.html</link>
   <author>bsstahl</author>
