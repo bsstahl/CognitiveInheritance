@@ -68,7 +68,12 @@ Methods on shim objects are referenced through properties of the fake object.  
 In the gist shown above, the variable **_p_** represents the input parameter and will hold the path specified in the test (in this case “April2017.abc”).  The return value for our delegate method comes from the constant string **_dataFile_**.  We can put anything we want here.  We can replace the delegate with a call to an anonymous method, or with a call to an existing method.  We can return a value gleaned from an external source, or, as is needed for our permissions test, throw an exception.
 
 For the purposes of our test to verify that we throw a PermissionsException when a SecurityException is thrown, we can replace the value of the ReadAllTextString property with our delegate which throws the exception we need to test for,  as seen here:
-`System.IO.Fakes.ShimFile.ReadAllTextString =       p => throw new System.Security.SecurityException("Test Exception");`
+
+```
+System.IO.Fakes.ShimFile.ReadAllTextString =       
+     p => throw new System.Security.SecurityException("Test Exception");
+```
+
 Then, we can verify in our test that our custom exception is thrown.  The full working example can be seen by grabbing the **Master** branch of the [GitHub repo](https://github.com/bsstahl/VS2017Launch).
 
 What can you test with these Shim objects that you were unable to test before?  Tell me about it on Twitter {TwitterLink}.
