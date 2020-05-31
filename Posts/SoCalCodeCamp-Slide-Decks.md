@@ -11,7 +11,7 @@ tags:
 - slides
 - speaking
 - wasm
-- web assembly
+- webassembly
 menuorder: 0
 id: 135fbe81-8ec5-42ad-8ac7-6fac74cdf4f4
 author: bsstahl
