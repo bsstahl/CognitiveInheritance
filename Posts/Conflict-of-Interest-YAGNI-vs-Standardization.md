@@ -20,7 +20,7 @@ categories:
 - Development
 
 ---
-While working on the OSS project mentioned in my [previous post](http://www.cognitiveinheritance.com/post/New-OSS-Project.aspx), I have run across a dilemma where two of the principals I try to work by are in conflict. The two principals in question are:
+While working on the OSS project mentioned in my [previous post]({PathToRoot}\Posts\New-OSS-Project.html), I have run across a dilemma where two of the principals I try to work by are in conflict. The two principals in question are:
 
 1. **YAGNI** - *You aint gonna need it*, which prescribes not coding anything unless the need already exists. This principal is a core of Test Driven Development of which I am a practitioner and a strong proponent.
 2. **Standardization** - Where components, especially those built for use by other developers, are implemented in a common way in order to shorten the learning curve of future developers who will use the component and to reduce implementation bugs.
