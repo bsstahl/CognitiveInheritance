@@ -12,14 +12,13 @@ title: Speaking Engagements for October 2015
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2015-09-30T17:23:00
-lastmodificationdate: 2015-09-30T19:16:18
+publicationdate: 2015-09-30T17:23:00.000+00:00
+lastmodificationdate: 2015-09-30T19:16:18.000+00:00
 slug: Speaking-Engagements-for-October-2015
 categories:
 - Event
 
 ---
-
 I am really looking forward to October because I have 3 awesome events that I’ll be speaking, and learning, at:
 
 - The first event for the month  is **Code Camp NYC** in Manhattan on October 10th.  I have attending this event once before and loved it. I’m really looking forward to being there again.
@@ -27,5 +26,4 @@ I am really looking forward to October because I have 3 awesome events that I’
 - Finally, I’ll be speaking at **.NET Group – Southern Nevada’s .NET User Group** in Las Vegas on October 29th.  I’ve spoken in Las Vegas at the Code Camp there before, but have never had the privilege of attending their user group.
 
 
-I have several other event possibilities in the works for November and beyond. I’ll announce them here periodically, but you can always see my schedule, as well as past events and the talks I am currently giving, using the “[Speaking Engagements](http://www.cognitiveinheritance.com/page/Speaking-Engagements.aspx)” link above.
-
+I have several other event possibilities in the works for November and beyond. I’ll announce them here periodically, but you can always see my schedule, as well as past events and the talks I am currently giving, using the “[Speaking Engagements]({PathToRoot}/Pages/Speaking-Engagements.html)” link above.
