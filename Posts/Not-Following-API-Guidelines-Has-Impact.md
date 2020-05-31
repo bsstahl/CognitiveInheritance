@@ -5,7 +5,6 @@ tags:
 - framework
 - interface
 - standardization
-- using
 menuorder: 0
 id: e3217f4e-426d-4a6e-99f0-9f00b92c7f00
 author: bsstahl
@@ -13,14 +12,13 @@ title: Not Following API Guidelines Has Impact
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2016-01-25T17:07:21
-lastmodificationdate: 2016-01-25T17:07:21
+publicationdate: 2016-01-25T17:07:21.000+00:00
+lastmodificationdate: 2016-01-25T17:07:21.000+00:00
 slug: Not-Following-API-Guidelines-Has-Impact
 categories:
 - Development
 
 ---
-
 Good API design requires the developer to return responses that provide useful and understandable information to the consumers of the API.  To effectively communicate with the consumers, these responses must utilize standards that are known to the developers who will be using them.  For .NET APIs, these standards include:
 
 - Implementing *IDisposable* on all objects that need disposal.
@@ -40,4 +38,3 @@ I have spent the last few weeks working with a new vendor API.  In general, the
 
 
 Please follow all API guidelines for the language or framework you are targeting whenever it is reasonable and possible to do so.
-
