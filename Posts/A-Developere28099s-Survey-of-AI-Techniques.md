@@ -17,21 +17,15 @@ title: A Developer’s Survey of AI Techniques
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2017-06-22T23:10:19
-lastmodificationdate: 2017-06-22T23:11:09
+publicationdate: 2017-06-22T23:10:19.000+00:00
+lastmodificationdate: 2017-06-22T23:11:09.000+00:00
 slug: A-Developere28099s-Survey-of-AI-Techniques
 categories:
 - Event
 
 ---
-
-The slide deck for my talk “A Developer’s Survey of AI Techniques” can be found below, while the demo code can be found on [GitHub](https://github.com/bsstahl/AIDemos).
-
-
- 
-
+The slide deck for my talk “A Developer’s Survey of AI Techniques” can be found [here](https://onedrive.live.com/view.aspx?resid=5D45DDF99C1E1BCC!418085&cid=5d45ddf99c1e1bcc), while the demo code can be found on [GitHub](https://github.com/bsstahl/AIDemos).
 
 The talk explores some of the different techniques used to create Artificial Intelligences using the example of a Chutes & Ladders game.  Various AIs are developed using different strategies for playing a variant of the game, using different techniques for deciding where on the game board to move.
 
-If you would like me to deliver this talk, or [any of my talks](http://www.cognitiveinheritance.com/page/Speaking-Engagements.aspx), at your User Group or Conference, please [contact me](http://www.cognitiveinheritance.com/contact.aspx).
-
+If you would like me to deliver this talk, or [any of my talks]({PathToRoot}/Pages/Speaking-Engagements.html), at your User Group or Conference, please [contact me]({PathToRoot}/contact.html).
