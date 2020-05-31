@@ -24,7 +24,7 @@ categories:
 > **plus ça change, plus c'est la même chose** – **The more that things change, the more they stay the same**. – Rush (and others ![Winking smile]({PathToRoot}/Images/wlEmoticon-winkingsmile.png) )
 
 
-In 2013 I [wrote](http://www.cognitiveinheritance.com/post/Programmers-Take-Responsibility-for-Your-Programe28099s-Output.aspx) that programmers needed to take responsibility for the output of their computer programs.  In that article, I advised developers that the output of their system, no matter how “random” or “computer generated”, was still their responsibility. I suggested that we cannot cop out by claiming  that the output of our programs is not our fault simply because we didn’t directly instruct the computer to issue that specific result.
+In 2013 I {PageLink:Programmers-Take-Responsibility-for-Your-Programe28099s-Output|wrote} that programmers needed to take responsibility for the output of their computer programs.  In that article, I advised developers that the output of their system, no matter how “random” or “computer generated”, was still their responsibility. I suggested that we cannot cop out by claiming  that the output of our programs is not our fault simply because we didn’t directly instruct the computer to issue that specific result.
 
 Today, we have a similar problem, only the stakes are much, much, higher.
 
