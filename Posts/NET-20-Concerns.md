@@ -6,7 +6,7 @@ tags:
 menuorder: 0
 id: ab6940e3-5422-4be6-8722-028636eeac46
 author: bsstahl
-title: ".NET 2.0 Concerns"
+title: .NET 2.0 Concerns
 description: 
 ispublished: true
 showinlist: false
