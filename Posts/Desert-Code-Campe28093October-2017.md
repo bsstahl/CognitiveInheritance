@@ -39,4 +39,4 @@ I was privileged to be able to deliver two talks during this event:
 * Code Samples: [https://github.com/bsstahl/AIDemos/tree/master/HybridConferenceSchedulerDemo](https://github.com/bsstahl/AIDemos/tree/master/HybridConferenceSchedulerDemo "https://github.com/bsstahl/AIDemos/tree/master/HybridConferenceSchedulerDemo")
 * Slide Deck: (coming soon)
 
-Please feel free to contact me on Twitter {TwitterLink} with any questions or comments on these or any of [my presentations]({PathToRoot}/Pages/Speaking-Engagements.aspx).
+Please feel free to contact me on Twitter {TwitterLink} with any questions or comments on these or any of [my presentations]({PathToRoot}/Pages/Speaking-Engagements.html).
