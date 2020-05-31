@@ -50,5 +50,23 @@ fields:
   config:
     required: false
   label: Copyright
+- name: sitevariables
+  type: field_group_list
+  fields:
+  - name: variablename
+    type: text
+    config:
+      required: true
+    label: VariableName
+  - name: variablevalue
+    type: text
+    config:
+      required: true
+    label: VariableValue
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: SiteVariables
 pages:
 - Data/SiteSettings.md
