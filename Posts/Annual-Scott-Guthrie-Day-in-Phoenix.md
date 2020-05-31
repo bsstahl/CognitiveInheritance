@@ -3,7 +3,6 @@ tags:
 - microsoft
 - event
 - professional development
-- scottgu
 menuorder: 0
 id: e20b651b-c0d5-40c0-a94c-29bccce46b8a
 author: bsstahl
@@ -11,8 +10,8 @@ title: Annual Scott Guthrie Day in the Valley
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2011-04-06T08:21:35
-lastmodificationdate: 2011-04-06T08:34:37
+publicationdate: 2011-04-06T08:21:35.000+00:00
+lastmodificationdate: 2011-04-06T08:34:37.000+00:00
 slug: Annual-Scott-Guthrie-Day-in-Phoenix
 categories:
 - Event
@@ -29,5 +28,3 @@ I am very excited to once again be attending the annual Day of ScottGu in Arizon
 > So What Will ScottGu be demo'ing? Answer: I don't know. Scott says it will be magical like always, but at this moment, I'm not sure what he's going to be talking about.
 > 
 > But maybe that's even a better schedule to have. In years past, I have literally had to rush Mr. Scott Guthrie off the stage, which seems silly. Silly in that we wait all year for him to show up, and then don't give him the time he wants. So this year we're having less sponsored stage time, and more Scott Guthrie Time. (insert hoops and hollars here).
-
-
