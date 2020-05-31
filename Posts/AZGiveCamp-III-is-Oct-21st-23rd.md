@@ -5,6 +5,7 @@ tags:
 - event
 - givecamp
 - nonprofit
+- azgivecamp
 menuorder: 0
 id: 29651b20-4695-4d5e-82c7-5ac564f6a5b7
 author: bsstahl
