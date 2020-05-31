@@ -196,7 +196,7 @@ public class MeetingReadRepository : IMeetingReadRepository
   <link>Posts/SoCalCodeCamp-Slide-Decks.html</link>
   <author>bsstahl</author>
   <guid><a href="Permalinks/135fbe81-8ec5-42ad-8ac7-6fac74cdf4f4.html" rel="bookmark">Permalink</a></guid>
-  <pubDate>2018-11-10T00:00:00.0000000</pubDate>
+  <pubDate>2018-11-10T00:00:00.0000000+00:00</pubDate>
 </item>
 <item>
   <title>AZGiveCamp IX-Save the Date</title>
