@@ -11,7 +11,6 @@ tags:
 - win8
 - xaml
 - html5
-- runtime components
 - dotnet
 menuorder: 0
 id: 1ad203b0-f604-43c0-8293-aad482376f98
