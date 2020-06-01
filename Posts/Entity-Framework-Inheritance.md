@@ -17,7 +17,6 @@ categories:
 
 ---
 
-[AlexJ](http://blogs.msdn.com/members/AlexJ/) posted a great little primer on Entity Framework inheritance strategies and when to use each.
+*Alex D. James* posted a great little primer on Entity Framework inheritance strategies and when to use each.
 
-His post can be found [here](http://blogs.msdn.com/b/alexj/archive/2009/04/15/tip-12-choosing-an-inheritance-strategy.aspx?CommentPosted=true).
-
+His post can be found [here](https://web.archive.org/web/20110917021606/http://blogs.msdn.com/b/alexj/archive/2009/04/15/tip-12-choosing-an-inheritance-strategy.aspx?CommentPosted=true).
