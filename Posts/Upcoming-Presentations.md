@@ -23,7 +23,7 @@ Here is an update on where and when I’ll be delivering presentations about sof
 
 [Desert Code Camp](http://apr2013.desertcodecamp.com/) on April 20th in Gilbert AZ – “Building a DSL Using an OData Source”
 
-[Twin Cities Code Camp](http://twincitiescodecamp.com/TCCC/Default.aspx) in Minneapolis MN on April 27th – “Code Portability in .NET”
+[Twin Cities Code Camp](https://twincitiescodecamp.com) in Minneapolis MN on April 27th – “Code Portability in .NET”
 
 [SELA Dev Conference](http://seladeveloperpractice.com/) in Tel-Aviv Israel on May 5-9 – a full day seminar version of “.NET TDD Kickstart” as well as “Code Portability in .NET”
 
