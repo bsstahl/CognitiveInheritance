@@ -29,19 +29,15 @@ categories:
 ---
 The next few months are going to be absolutely amazing. We've got some great events coming up in March and April right here in the Valley of the Sun. In addition, I currently have 4 conferences scheduled in 4 different countries on 2 continents.
 
-## AZGiveCamp IX - Presented by Quicken Loans - March 8th-10th
-
-### [Signup](https://www.meetup.com/AZGiveCamp/events/258743318/)
+#### AZGiveCamp IX - Presented by Quicken Loans - March 8th-10th
 
 The most important occasion coming up is the 9th AZGiveCamp Hackathon of Help. This year, we're very fortunate to have Quicken Loans presenting our event and hosting it at their new facility in downtown Phoenix. At AZGiveCamp, Arizona's finest technologists will put their skills to work creating software for some great local charity organizations. We help them help our community by using our skills to create tools that help them further their mission.
 
-## Visual Studio 2019 Arizona Launch - April 16th
-
-### [Signup](https://www.meetup.com/NWVDNUG/events/259269140/)
+#### Visual Studio 2019 Arizona Launch - April 16th
 
 Another fun event for developers in the valley is the Visual Studio 2019 Arizona Launch event being hosted at Galvanize. We'll have some great speakers talking about how Visual Studio 2019 is a more productive, modern, and innovative environment for building software.
 
-## Around the World
+#### Around the World
 
 In March, I'll be visiting opposite ends of the east coast of North America.
 
@@ -51,6 +47,6 @@ Later in March, I cross the border into Canada to attend [ConFoo Montreal](https
 
 In May I get to do a short tour of Europe, spending 2 weeks at conferences in Budapest, Hungary ([Craft Conference](https://craft-conf.com)), and Marbella, Spain ([J on the Beach](https://jonthebeach.com/)).  While I have done some traveling in Europe before, I have never been to Spain or Hungary so I am really looking forward to experiencing the history and culture that these two cities have to offer.
 
-## Keep up With Me
+#### Keep up With Me
 
 I maintain a list of my presentations, both past and upcoming, on the [Community Speaker]({PathToRoot}/Pages/Speaking-Engagements.html) page of this blog. I also try to document my conference experiences on Twitter {TwitterLink}. If you are going to be attending any of these events, please be sure to ping me on Twitter and let me know.
