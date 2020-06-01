@@ -49,7 +49,7 @@ First, on March 2nd, I'll be attending the always amazing [South Florida Code Ca
 
 Later in March, I cross the border into Canada to attend [ConFoo Montreal](https://confoo.ca/en/speaker/barry-stahl). This will be my first trip ever to Montreal so I hope the March weather is kind to this 35 year Phoenix resident.  The event runs from March 13th - 15th and there will be 2 Canadiens games during the time I am there so I should be able to get to at least one of them.
 
-In May I get to do a short tour of Europe, spending 2 weeks at conferences in Budapest, Hungary ([Craft Conference](https://craft-conf.com/speaker/BarryStahl)), and Marbella, Spain ([J on the Beach](https://jonthebeach.com/speakers/97/Barry+S.+Stahl)).  While I have done some traveling in Europe before, I have never been to Spain or Hungary so I am really looking forward to experiencing the history and culture that these two cities have to offer.
+In May I get to do a short tour of Europe, spending 2 weeks at conferences in Budapest, Hungary ([Craft Conference](https://craft-conf.com)), and Marbella, Spain ([J on the Beach](https://jonthebeach.com/)).  While I have done some traveling in Europe before, I have never been to Spain or Hungary so I am really looking forward to experiencing the history and culture that these two cities have to offer.
 
 ## Keep up With Me
 
