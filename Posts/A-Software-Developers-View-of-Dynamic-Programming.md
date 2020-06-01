@@ -47,7 +47,7 @@ Let's look at one of the canonical types of problems that can be solved using Dy
 
 We can solve this type of problem using Dynamic Programming by filling-out a table that holds possible capacities, from 0 to the capacity of our known knapsack, and each of the possible items to use to fill that space, as shown below.
 
-![](https://un4khq.dm2302.livefilestore.com/y3mROB0cehasuwD0_-YiJ63vdV9cDhc3khrISqokUxXnQFwBhNCUt5h6nZXrEE6gLVqqxD1HNcYIdimLTNJ21zCajxavcTuzPPq_6ilYtt4kbZ0f_VcQmSKx9dJR2ODXEWJc7jN0QZmgxt6MjGiubxl5RVl6_Bd8-JXUd3xFgplPxE?width=647&amp;height=428&amp;cropmode=none)
+![A Table for Solving this Knapsack Problem]({PathToRoot}/Images/Knapsack.png)
 
 In this example, there are 3 items with weights of 4, 5 and 2.  These items have values of 5, 6 and 3 respectively and can be placed in a knapsack with capacity of 9. The leftmost column of the table represents the capacities of knapsacks from 0, up to and including the capacity of our knapsack.  The next column represents the best value we would get in the knapsack if we had the option of putting 0 items in our knapsack. The next, the best value if we had the option of taking the 1st item, the next column, the option to take the 2nd item on top of any previous items, and so forth until we complete the table.  As you can see, the most value we can get in our knapsack with the option of picking from these 3 items is 11, as found in the last row of the last column. That is, the cell that represents a knapsack with our known capacity, with the option to chose from all of the items.
 
@@ -68,18 +68,15 @@ For the cell in column "2" with a knapsack capacity of 9, we take the greater of
 - 5, which is the value of the knapsack with capacity 9 from column "1" indicating that we didn't take the 2nd item
 - 11, which is the value of the current item added to the best value of the knapsack with capacity 4 (subtract the weight of our current item from the capacity of the current knapsack) with the option of taking only the previous items.
 
-
 Each cell in the table can be filled out by doing these simple calculations, 1 addition and 1 comparison, using the values previously calculated as shown in the annotated table below.
 
-![](https://zn5mag.dm2302.livefilestore.com/y3mzrVh46K0UlKSXzL4RSgJk9whEmMe4pkn7mc7jyIJvcbTF_W0jlKuV4-dhiaZEFC588IzT-BYQUQAIWMYgPmUyGBh5PDSomuxXwGYEi17Rq7vq6bbVlIJ-QscUgV7vPtcbWfp4US_qRT-uaZQv7CWFYwN1tkSbe9_JRTtfEh6mvY?width=647&amp;height=428&amp;cropmode=none)
+![Filling-out the Table to Solve the Knapsack Problem]({PathToRoot}/Images/Kapsack-CalculateValue.png)
 
 So we've filled out the table and know, from the cell in the bottom right that the maximum value we can get from this knapsack with these items is 11. Great, but that only answers the question of maximum value, it doesn't tell us which items are chosen to achieve this value.  To determine that, we need to work backward from the known best value.
 
 Starting at the known best value in the bottom-right cell, we can look one cell to the left to see that the value there is the same.  Since we know that taking an item would increase the value of the knapsack, we can know that we must not have chosen to take the item in the last column.  We can then repeat the process from there.  From the bottom cell in the column labeled "2", we can look left and see that the value in the previous column did change, so we know we need to take the item in column "2" to get our maximum value.  Since we know that item 2 had a weight of 5, we can subtract that from the capacity of our knapsack, and continue the process from that point, knowing that we now only have 4 more units of capacity to work with.  Comparing the item in the column labeled "1" and a knapsack capacity of 4 with the value of the equivalent knapsack in column "0", we can see that we need to include item 1 in our knapsack to get the optimum result.
 
-![](https://mwqlxw.dm2302.livefilestore.com/y3m3QoicCAywiPdFoTMROzkclhZe7Kng-gC8JZbslY8oJgk6NbFr_IykYoKPwpAR3KaDcAyAH8ToERqjsvS1DKcjk-P4mDg3QxJrbWrO_KqmSSqDOcJTnQBMSWtlPKNtcT4jkK6dJhQ8t6kMrVWqWDfNF5Zh1tWwymgXsQ8Nq0r2us?width=647&amp;height=428&amp;cropmode=none)
-
-
+![Calculating the Results of the Knapsack Problem]({PathToRoot}/Images/Kapsack-DetermineResults.png)
 
 ### What did we actually do here?
 
