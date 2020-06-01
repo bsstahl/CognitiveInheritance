@@ -43,7 +43,7 @@ I will be presenting this session at numerous venues around the country this yea
 - [Southern California Code Camp](http://www.socalcodecamp.com/) – Fullerton in January
 - [South Florida Code Camp](https://sfsdc.itpand.net/) – Ft. Lauderdale in February
 - [New Mexico .NET User’s Group](http://nmug.net/) – Albuquerque in March
-- [Twin Cities Code Camp](http://twincitiescodecamp.com) – Minneapolis in April
+- [Twin Cities Code Camp](https://twincitiescodecamp.com) – Minneapolis in April
 
 
 If you are interested in having me present this or another session at your event, please contact me.
