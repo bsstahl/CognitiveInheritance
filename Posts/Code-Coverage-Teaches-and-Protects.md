@@ -30,7 +30,7 @@ I often hail code coverage as a great tool to help improve your code base.  Tod
 In the code below, I used a common dependency injection pattern. That is, an IServiceProvider object holding my dependencies is passed-in to my object and stored as a member variable.  When a dependency is needed, I retrieve that dependency from the service provider, and then take action on it.  Since there is no guarantee that the dependency I need will have been placed in the container, I use some common guard logic to protect my code.
 
 ```
-templates = _serviceProvider.GetService<IEnumerable<Template>>(); 
+templates = _serviceProvider.GetService<IEnumerable<Template>>();
 if ((templates==null) || (!templates.Any(s => s.TemplateType==ContactPage)))
      throw new TemplateNotFoundException(TemplateType.ContactPage, string.Empty);
 ```
