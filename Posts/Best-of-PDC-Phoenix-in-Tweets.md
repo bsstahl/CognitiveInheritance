@@ -21,7 +21,7 @@ categories:
 - Event
 
 ---
-Joe Guadagno has posted [his summary of The Best of PDC in PHX](http://weblogs.asp.net/jguadagno/archive/2008/12/11/the-best-of-pdc-in-phx.aspx). This was a great event and I want to make sure those who put it together, spoke, and sponsored it know we are tremendously appreciative of their efforts.  This includes: [Joseph Guadagno](http://www.josephguadagno.net/), [Scott Cate](http://www.scottcate.com/) and [Rob Bagby](http://blogs.msdn.com/bags/) as well as [Microsoft](http://www.microsoft.com/), [Robert Half Technology](http://www.rht.com/), [TekSystems](http://www.teksystems.com/) and [GoDaddy](http://www.godaddy.com/).
+Joe Guadagno has posted [his summary of The Best of PDC in PHX](https://web.archive.org/web/*/http://weblogs.asp.net/jguadagno/archive/2008/12/11/the-best-of-pdc-in-phx.aspx). This was a great event and I want to make sure those who put it together, spoke, and sponsored it know we are tremendously appreciative of their efforts.  This includes: [Joseph Guadagno](https://www.josephguadagno.net/), [Scott Cate](https://www.scottcate.com/) and [Rob Bagby](https://docs.microsoft.com/en-us/archive/blogs/bags/) as well as [Microsoft](https://www.microsoft.com/), [Robert Half Technology](https://www.rht.com/), [TekSystems](https://www.teksystems.com/) and [GoDaddy](https://www.godaddy.com/).
 
 I think that the best summary I can give of my experience at this event is through the tweets I sent in real-time while there.  Below, are what I think are my tweets most representative of the experience.
 

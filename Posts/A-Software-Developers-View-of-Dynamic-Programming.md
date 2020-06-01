@@ -93,7 +93,7 @@ You can probably see that if both axes of this table, the capacity of the knapsa
 
 ### Continue the Conversation
 
-I am happy to answer questions or discuss this further. Ping me on Twitter {TwitterLink} with your comments or questions. I'd love to hear from you.  I am also available to deliver a talk to your conference or user group on [this or other topics](http://www.cognitiveinheritance.com/page/Speaking-Engagements.html). You can [contact me here]({PathToRoot}/contact.html).
+I am happy to answer questions or discuss this further. Ping me on Twitter {TwitterLink} with your comments or questions. I'd love to hear from you.  I am also available to deliver a talk to your conference or user group on [this or other topics]({PathToRoot}/Pages/Speaking-Engagements.html). You can [contact me here]({PathToRoot}/contact.html).
 
 1 In mathematical terms, DP is useful for solving problems that exhibit the characteristics of Overlapping Subproblems and Optimal Substructure.  If a problem is able to be described recursively, it will usually exhibit these traits, but the use of the recursion concept here is a generalization to put the problem in software developer's terms.
 

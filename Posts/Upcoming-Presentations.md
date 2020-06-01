@@ -21,7 +21,7 @@ Here is an update on where and when I’ll be delivering presentations about sof
 
 [South Florida Code Camp](https://sfsdc.itpand.net/) in Ft. Lauderdale FL on February 9th - “Building a DSL Using an OData Source”
 
-[Desert Code Camp](http://apr2013.desertcodecamp.com/) on April 20th in Gilbert AZ – “Building a DSL Using an OData Source”
+[Desert Code Camp](https://apr2013.desertcodecamp.com/) on April 20th in Gilbert AZ – “Building a DSL Using an OData Source”
 
 [Twin Cities Code Camp](https://twincitiescodecamp.com) in Minneapolis MN on April 27th – “Code Portability in .NET”
 

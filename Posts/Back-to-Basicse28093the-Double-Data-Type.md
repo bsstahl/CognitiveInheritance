@@ -56,5 +56,5 @@ I’ve attached a number of resources below that I used in my research to produc
 * [Double Struct](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=netcore-2.2) in the .NET API Browser
 * [Convert.ToInt64 method](https://docs.microsoft.com/en-us/dotnet/api/system.convert.toint64?view=netcore-2.2#System_Convert_ToInt64_System_Double_) in the .NET API Browser
 * [double data type](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types) in the C# Language Reference
-* John Skeet on [Binary floating point numbers in .NET](http://csharpindepth.com/Articles/General/FloatingPoint.aspx?printable=true)
-* John Skeet’s [code to convert doubles to the string representation of their exact decimal value](http://jonskeet.uk/csharp/DoubleConverter.cs)
+* John Skeet on [Binary floating point numbers in .NET](https://csharpindepth.com/Articles/General/FloatingPoint.aspx?printable=true)
+* John Skeet’s [code to convert doubles to the string representation of their exact decimal value](https://jonskeet.uk/csharp/DoubleConverter.cs)

@@ -28,7 +28,7 @@ categories:
 - Development
 
 ---
-Thanks to all of the organizers, speakers, sponsors and attendees of [Desert Code Camp 2011.1](http://apr2011.desertcodecamp.com/).  This is the first time that I’ve presented at a Code Camp and it was a fantastic experience for me.  My session, **Building Enterprise Apps using Entity Framework 4**, was very well attended with 35 people cramming, standing-room-only, into a room with a capacity of 28 (please don’t tell the Fire Marshall).  The demos went very well (everything worked as it was supposed to) and the feedback I’ve gotten so far was entirely positive.
+Thanks to all of the organizers, speakers, sponsors and attendees of [Desert Code Camp 2011.1](https://apr2011.desertcodecamp.com/).  This is the first time that I’ve presented at a Code Camp and it was a fantastic experience for me.  My session, **Building Enterprise Apps using Entity Framework 4**, was very well attended with 35 people cramming, standing-room-only, into a room with a capacity of 28 (please don’t tell the Fire Marshall).  The demos went very well (everything worked as it was supposed to) and the feedback I’ve gotten so far was entirely positive.
 
 I will be posting some additional information from the session shortly, including the sample code and the changes I make to the **Microsoft All Rules** code analysis ruleset, but I wanted to get the session slides up as quickly as possible.
 
