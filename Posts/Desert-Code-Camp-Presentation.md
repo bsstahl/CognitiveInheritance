@@ -32,6 +32,6 @@ Thanks to all of the organizers, speakers, sponsors and attendees of [Desert Cod
 
 I will be posting some additional information from the session shortly, including the sample code and the changes I make to the **Microsoft All Rules** code analysis ruleset, but I wanted to get the session slides up as quickly as possible.
 
-If you have any additional feedback on the session, please feel free to [contact me here]({PathToRoot}\contact.html), by Twitter {TwitterLink} or by email as shown in the slide deck.
+If you have any additional feedback on the session, please feel free to [contact me here]({PathToRoot}/contact.html), by Twitter {TwitterLink} or by email as shown in the slide deck.
 
 [DCC 2011.1 -- Building Enterprise Apps using Entity Framework 4](https://docs.google.com/leaf?id=0B6PPrBnxN6VtZmM1NzA0MGEtZDU4Mi00NDUzLThiMTgtYmJlMmI5MmYyNWU3&sort=name&layout=list&num=50)
