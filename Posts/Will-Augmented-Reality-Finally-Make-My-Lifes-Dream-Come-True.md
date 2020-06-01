@@ -16,16 +16,9 @@ categories:
 - General
 
 ---
-From Read/Write Web - [http://www.readwriteweb.com/archives/cool\_augmented\_reality\_videos.php](http://www.readwriteweb.com/archives/cool_augmented_reality_videos.php "http://www.readwriteweb.com/archives/cool_augmented_reality_videos.php")
-
-
+[Your Augmented Future: The 3 Hottest Videos From International AR Symposium](https://web.archive.org/web/20140404124144/http://readwrite.com/2009/10/26/cool_augmented_reality_videos)
 
 Be sure to see the 2 videos linked in the above article from the International AR Symposium.  Aside from the cute factor of the Eye Pet and the WOW factor of the AR Sketch demo, there is the very real possibility that my dream of being able to write code anywhere, via a Heads-Up-Display in my sunglasses, is coming close.
-
-
- 
-
-
 
 > These exciting examples of Augmented Reality have little to do with mobile location awareness, a nice reminder that there's a whole lot more to the field. Mobile AR browsers are the best known commercial services so far, but academic research on other forms of AR has been going on for years.
 > 
