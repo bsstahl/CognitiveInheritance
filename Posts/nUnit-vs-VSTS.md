@@ -18,7 +18,7 @@ categories:
 - Development
 
 ---
-Mark Michaelis posted a hit list of things to do to convert from nUnit to VSTS tests in his article [Converting a class library to a VSTS Test Project](http://mark.michaelis.net/Blog/ConvertingAClassLibraryToAVSTSTestProject.aspx). A big part of this process is understanding the attribute translation:
+Mark Michaelis posted a hit list of things to do to convert from nUnit to VSTS tests in his article [Converting a class library to a VSTS Test Project](https://web.archive.org/web/20080708110723/http://mark.michaelis.net:80/Blog/ConvertingAClassLibraryToAVSTSTestProject.aspx). A big part of this process is understanding the attribute translation:
 
 | nUnit | VSTS |
 | --- | --- |
