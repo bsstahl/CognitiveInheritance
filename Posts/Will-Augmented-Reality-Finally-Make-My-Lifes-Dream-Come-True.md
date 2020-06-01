@@ -22,4 +22,4 @@ Be sure to see the 2 videos linked in the above article from the International A
 
 > These exciting examples of Augmented Reality have little to do with mobile location awareness, a nice reminder that there's a whole lot more to the field. Mobile AR browsers are the best known commercial services so far, but academic research on other forms of AR has been going on for years.
 > 
-> Ready to browse and interact with data on top of the physical world, through webcams, mobile phones and increasingly [svelte AR glasses](http://www.vuzix.com/iwear/products_wrap310.html)? A future when such experiences are mainstream may be fast approaching.
+> Ready to browse and interact with data on top of the physical world, through webcams, mobile phones and increasingly [svelte AR glasses](https://web.archive.org/web/20160711091747/https://www.vuzix.com/Products/iWear-Video-Headphones)? A future when such experiences are mainstream may be fast approaching.
