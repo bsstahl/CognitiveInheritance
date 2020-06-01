@@ -12,14 +12,13 @@ title: PDC 2008 Day 1
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2008-10-29T15:29:00
-lastmodificationdate: 2011-03-08T07:26:23
+publicationdate: 2008-10-29T15:29:00.000+00:00
+lastmodificationdate: 2011-03-08T07:26:23.000+00:00
 slug: PDC-2008-Day-1
 categories:
 - Event
 
 ---
-
 ### Windows Azure
 
 As you've probably already heard, the big announcement coming out of PDC 2008 Day 1 was "Windows Azure", Microsoft's Cloud Computing Operating System. This is a very interesting story since it has implications, in theory at least, for developers working in any size organization, who need to provide public services that could potentially scale globally or massively. I won't spend time on the specifics right now since there are many who are more knowledgeable than me who have already written about it.  I do however, have a few open questions on the topic, which I hope to have answered either in sessions today, or in the hands-on-labs.  These include the pricing model (i.e. whether it will really be affordable for the "garage developer"), as well as what actually constitutes an Azure "web role". If, as I suspect, a web role can be a SOAP service or an ASP.NET web page, then the model makes a lot of sense to me and I will definitely be spending some time becoming familiar with the features and capabilities of this tool.  I have sketched-out a simple application model that I hope to implement, either in the hands-on-labs or in the online community preview, sometime today.  Since I have not yet been granted access to the public CTP, I suspect this will have to occur in the hands-on-labs.
@@ -34,7 +33,6 @@ Another feature of future versions of C# include the concept of the compiler as 
 
 ### Sessions Available Online
 
-We are being told that videos of every session will be available online via [http://www.microsoft.com/pdc](http://www.microsoft.com/pdc) 24-hours after the session. From day 1, I definitely recommend checking out the keynote as an interesting, although far from complete, overview of Azure.  I also recommend Anders' talk on C#.  There was one session that looked interesting that I couldn't get into called "C# IDE Tips and Tricks" that seemed interesting which I will be checking-out online within the next week or so.
+We are being told that videos of every session will be available online via [http://www.microsoft.com/pdc](https://web.archive.org/web/20190429110716/https://msdn.microsoft.com/events/pdc) 24-hours after the session. From day 1, I definitely recommend checking out the keynote as an interesting, although far from complete, overview of Azure.  I also recommend Anders' talk on C#.  There was one session that looked interesting that I couldn't get into called "C# IDE Tips and Tricks" that seemed interesting which I will be checking-out online within the next week or so.
 
 Day 2 begins...now.
-
