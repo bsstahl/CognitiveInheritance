@@ -17,7 +17,7 @@ categories:
 
 ---
 
-Justin James at TechRepublic posts his [top-10 list](http://blogs.techrepublic.com.com/10things/?p=643) of skills developers will need over the next 5 years.
+Justin James at TechRepublic posts his [top-10 list](https://web.archive.org/web/20090426193831/http://blogs.techrepublic.com.com/10things/?p=643) of skills developers will need over the next 5 years.
 
 His list:
 

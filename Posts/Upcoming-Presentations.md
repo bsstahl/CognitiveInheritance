@@ -17,7 +17,7 @@ categories:
 ---
 Here is an update on where and when I’ll be delivering presentations about software development in .NET over the next few months.  I still have some availability left for the H1 2013 and H2 is effectively wide open. You can request me as a speaker by [Contacting Me]({PathToRoot}/contact.html).
 
-[Sothern Most User Group](http://www.smugdevs.net/) in Key West FL on February 7th - “Code Portability in .NET”
+`Southern Most User Group` in Key West FL on February 7th - “Code Portability in .NET”
 
 [South Florida Code Camp](https://sfsdc.itpand.net/) in Ft. Lauderdale FL on February 9th - “Building a DSL Using an OData Source”
 
@@ -27,7 +27,6 @@ Here is an update on where and when I’ll be delivering presentations about sof
 
 [SELA Dev Conference](http://seladeveloperpractice.com/) in Tel-Aviv Israel on May 5-9 – a full day seminar version of “.NET TDD Kickstart” as well as “Code Portability in .NET”
 
-[CodeStock](http://www.codestock.org/) in Knoxville TN on July 12-13 “Code Portability in .NET” (assuming the attendees vote for my session)
-
+[CodeStock](https://www.codestock.org/) in Knoxville TN on July 12-13 “Code Portability in .NET” (assuming the attendees vote for my session)
 
 I hope to see you at one or more of these events.

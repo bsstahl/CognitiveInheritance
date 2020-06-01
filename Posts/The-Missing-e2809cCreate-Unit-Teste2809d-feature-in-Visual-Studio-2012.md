@@ -20,5 +20,4 @@ categories:
 
 I am loving many of the improvements made in Visual Studio 2012.  The performance and overall user experience of the test runner has improved tremendously from Visual Studio 2010 and the IDE is generally a joy to use.  ***Unfortunately, I can’t use it***. It is missing one of the key features I use in my development workflow, that is, the “Create Unit Test” option.  This function, in VS2010, generates the stub of unit tests based on the interfaces of the selected methods.  It is hard for me to imagine why this feature was left out of Visual Studio 2012, but it needs to be put back in immediately.
 
-Please let Microsoft know how you feel about the absence of this feature in VS2012 by voting the feature request up on [UserVoice](http://tinyurl.com/CreateUnitTest).
-
+Please let Microsoft know how you feel about the absence of this feature in VS2012 by voting the feature request up on [UserVoice](https://web.archive.org/web/20130311134957/http://visualstudio.uservoice.com/forums/121579-visual-studio/suggestions/2748862-add-create-unit-tests-menu-option-back-).

@@ -17,7 +17,7 @@ categories:
 - Development
 
 ---
-Recently, both [Jeffrey Polermo](https://web.archive.org/web/20130906034419/http://codebetter.com/jefferypalermo/2007/06/29/levels-of-automated-testing-within-a-single-application/) and [Scott Bellware](https://web.archive.org/web/20130906034419/http://codebetter.com/jefferypalermo/2007/06/29/levels-of-automated-testing-within-a-single-application/) have written posts on [codebetter.com](http://www.codebetter.com/) positing that testing the Database should be avoided when doing unit testing. Specifically, Polermo points out that
+Recently, both [Jeffrey Polermo](https://web.archive.org/web/20130906034419/http://codebetter.com/jefferypalermo/2007/06/29/levels-of-automated-testing-within-a-single-application/) and [Scott Bellware](https://web.archive.org/web/20130906034419/http://codebetter.com/jefferypalermo/2007/06/29/levels-of-automated-testing-within-a-single-application/) have written posts on *codebetter.com* positing that testing the Database should be avoided when doing unit testing. Specifically, Polermo points out that
 
 > Unit testing, by common definition, excludes external dependencies. It's not a unit test if we reach out and touch things.
 

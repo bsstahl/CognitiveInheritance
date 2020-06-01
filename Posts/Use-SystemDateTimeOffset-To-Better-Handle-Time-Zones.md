@@ -17,12 +17,10 @@ categories:
 - Development
 
 ---
-In his post, [The Death of System.DateTime?](http://weblogs.asp.net/okloeten/archive/2008/12/18/6795009.aspx)  Omer van Kloeten evaluates the use of the System.DateTimeOffset object in place of System.DateTime to improve handling of Time Zone sensitive times.
-
+In his post, [The Death of System.DateTime?](https://web.archive.org/web/20151024033950/https://weblogs.asp.net/okloeten/6795009) Omer van Kloeten evaluates the use of the System.DateTimeOffset object in place of System.DateTime to improve handling of Time Zone sensitive times.
 
 > When representing a date/time, especially in an internationally-faced system, you have to include a time-zone. DateTime did a very poor job handling time-zones, like being insensitive to changes. DateTimeOffset is the exact same thing as DateTime, only it takes heed of time-zones. For instance, comparing two DateTimeOffsets with the same UTC time in different time-zones will result in equality.
 > 
 > Moreover, DateTime also had only three modes: Local, UTC and Unspecified, whereas DateTimeOffset has an Offset property, allowing you to create dates in any time-zone you like.
-
 
 I have not yet experimented with the System.DateTimeOffset type but what Omer says makes a lot of sense to me.  Has anyone else played with this object?

@@ -18,9 +18,6 @@ categories:
 
 ---
 
-In [Don't be afraid of complex constraints](http://codebetter.com/blogs/karlseguin/archive/2009/04/01/don-t-be-afraid-of-complex-constraints.aspx), Karl Seguin gives a nice overview of using constraints in Rhino Mocks to test complex unit interactions:
-
+In [Don't be afraid of complex constraints](https://web.archive.org/web/20090404034137/http://codebetter.com/blogs/karlseguin/archive/2009/04/01/don-t-be-afraid-of-complex-constraints.aspx), Karl Seguin gives a nice overview of using constraints in Rhino Mocks to test complex unit interactions:
 
 > ...complex constraints can be handled one of three different ways: using a partial mock and externalizing the parameter creation, using inline custom constraints or using full blown constraint objects.
-
-
