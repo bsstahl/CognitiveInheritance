@@ -99,7 +99,7 @@ public class MeetingReadRepository : IMeetingReadRepository
 &lt;blockquote&gt;
 &lt;p&gt;The cost to &quot;go live&quot; is only a small percentage of the lifetime total cost of ownership. – Andy Kyte for Gartner Research, 30 March 2010&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;There are some conflicting principles at work here, but for me, these situations expose the critical importance of flexibility and extensibility in our application architectures.  After all, maintenance and extension are the two greatest costs in a typical application’s life-cycle. I don’t want to build things that I don’t yet need because the likelihood is that I will never need them (see &lt;a href=&quot;http://www.cognitiveinheritance.com/?tag=/yagni&quot;&gt;YAGNI&lt;/a&gt;). However, I don’t want to preclude myself from building things in the future by making decisions that cripple flexibility. I certainly don’t want to have to do a full system redesign ever time I get a new requirement.&lt;/p&gt;
+&lt;p&gt;There are some conflicting principles at work here, but for me, these situations expose the critical importance of flexibility and extensibility in our application architectures.  After all, maintenance and extension are the two greatest costs in a typical application’s life-cycle. I don’t want to build things that I don’t yet need because the likelihood is that I will never need them (see &lt;a href=&quot;./Search/yagni.html&quot;&gt;YAGNI&lt;/a&gt;). However, I don’t want to preclude myself from building things in the future by making decisions that cripple flexibility. I certainly don’t want to have to do a full system redesign ever time I get a new requirement.&lt;/p&gt;
 &lt;p&gt;For me, this leads to a principle that I like to follow:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;I value &lt;strong&gt;Flexibility&lt;/strong&gt; over &lt;strong&gt;Optimization&lt;/strong&gt;&lt;/p&gt;
@@ -147,8 +147,8 @@ public class MeetingReadRepository : IMeetingReadRepository
 &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/dotnet/api/system.double?view=netcore-2.2&quot;&gt;Double Struct&lt;/a&gt; in the .NET API Browser&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/dotnet/api/system.convert.toint64?view=netcore-2.2#System_Convert_ToInt64_System_Double_&quot;&gt;Convert.ToInt64 method&lt;/a&gt; in the .NET API Browser&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types&quot;&gt;double data type&lt;/a&gt; in the C# Language Reference&lt;/li&gt;
-&lt;li&gt;John Skeet on &lt;a href=&quot;http://csharpindepth.com/Articles/General/FloatingPoint.aspx?printable=true&quot;&gt;Binary floating point numbers in .NET&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;John Skeet’s &lt;a href=&quot;http://jonskeet.uk/csharp/DoubleConverter.cs&quot;&gt;code to convert doubles to the string representation of their exact decimal value&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;John Skeet on &lt;a href=&quot;https://csharpindepth.com/Articles/General/FloatingPoint.aspx?printable=true&quot;&gt;Binary floating point numbers in .NET&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;John Skeet’s &lt;a href=&quot;https://jonskeet.uk/csharp/DoubleConverter.cs&quot;&gt;code to convert doubles to the string representation of their exact decimal value&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
   <link>Posts/Back-to-Basicse28093the-Double-Data-Type.html</link>
