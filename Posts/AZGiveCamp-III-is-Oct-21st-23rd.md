@@ -20,7 +20,7 @@ categories:
 - Event
 
 ---
-It's AZGiveCamp time again! Our third event is coming up in under 2 weeks, Oct 21st-23rd 2011 at the Park Central Mall (Central Ave. between Thomas and Osborn) in midtown Phoenix. Please sign-up to volunteer as a developer, designer, or analyst on our [Meetup Page](https://meetup.com/AZGiveCamp) or see [AZGiveCamp.org](https://www.azgivecamp.org) for more details.
+It's AZGiveCamp time again! Our third event is coming up in under 2 weeks, Oct 21st-23rd 2011 at the Park Central Mall (Central Ave. between Thomas and Osborn) in midtown Phoenix. Please sign-up to volunteer as a developer, designer, or analyst on our [Meetup Page](https://www.meetup.com/AZGiveCamp) or see [AZGiveCamp.org](https://www.azgivecamp.org) for more details.
 
 Special appeal: we need graphic designers! If you’re a pro or amateur, it doesn’t matter. Designers are always the most popular people at any GiveCamp!
 
