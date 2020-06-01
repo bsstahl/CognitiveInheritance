@@ -70,13 +70,13 @@ For the cell in column "2" with a knapsack capacity of 9, we take the greater of
 
 Each cell in the table can be filled out by doing these simple calculations, 1 addition and 1 comparison, using the values previously calculated as shown in the annotated table below.
 
-![Filling-out the Table to Solve the Knapsack Problem]({PathToRoot}/Images/Kapsack-CalculateValue.png)
+![Filling-out the Table to Solve the Knapsack Problem]({PathToRoot}/Images/Knapsack-CalculateValue.png)
 
 So we've filled out the table and know, from the cell in the bottom right that the maximum value we can get from this knapsack with these items is 11. Great, but that only answers the question of maximum value, it doesn't tell us which items are chosen to achieve this value.  To determine that, we need to work backward from the known best value.
 
 Starting at the known best value in the bottom-right cell, we can look one cell to the left to see that the value there is the same.  Since we know that taking an item would increase the value of the knapsack, we can know that we must not have chosen to take the item in the last column.  We can then repeat the process from there.  From the bottom cell in the column labeled "2", we can look left and see that the value in the previous column did change, so we know we need to take the item in column "2" to get our maximum value.  Since we know that item 2 had a weight of 5, we can subtract that from the capacity of our knapsack, and continue the process from that point, knowing that we now only have 4 more units of capacity to work with.  Comparing the item in the column labeled "1" and a knapsack capacity of 4 with the value of the equivalent knapsack in column "0", we can see that we need to include item 1 in our knapsack to get the optimum result.
 
-![Calculating the Results of the Knapsack Problem]({PathToRoot}/Images/Kapsack-DetermineResults.png)
+![Calculating the Results of the Knapsack Problem]({PathToRoot}/Images/Knapsack-DetermineResults.png)
 
 ### What did we actually do here?
 
