@@ -10,15 +10,14 @@ title: Presentation Proposal - Developer Ignite Phoenix
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2009-06-26T20:59:15
-lastmodificationdate: 0001-01-03T10:00:00
+publicationdate: 2009-06-26T20:59:15.000+00:00
+lastmodificationdate: 0001-01-03T10:00:00.000+00:00
 slug: Presentation-Proposal-Developer-Ignite-Phoenix
 categories:
 - Event
 
 ---
-
-I just submitted the following proposal for a talk at [Developer Ignite Phoenix](http://software.intel.com/en-us/articles/developer-ignite/) which will be held July 22, 2009 at Gangplank in Chandler.
+I just submitted the following proposal for a talk at [Developer Ignite Phoenix](https://web.archive.org/web/20090718201343/http://software.intel.com:80/en-us/articles/developer-ignite/) which will be held July 22, 2009 at Gangplank in Chandler.
 
 
 > ## Simplicity Through Abstraction
@@ -29,4 +28,3 @@ I just submitted the following proposal for a talk at [Developer Ignite Phoenix]
 
 
 I look forward to seeing you there.
-
