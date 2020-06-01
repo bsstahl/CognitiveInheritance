@@ -72,7 +72,7 @@
 <hr/><div>
     <h3>Use System.DateTimeOffset To Better Handle Time Zones</h3>
     <h5>Posted by bsstahl on 2008-12-25 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <p>In his post, <a href="http://weblogs.asp.net/okloeten/archive/2008/12/18/6795009.aspx">The Death of System.DateTime?</a>  Omer van Kloeten evaluates the use of the System.DateTimeOffset object in place of System.DateTime to improve handling of Time Zone sensitive times.</p>
+    <p>In his post, <a href="https://web.archive.org/web/20151024033950/https://weblogs.asp.net/okloeten/6795009">The Death of System.DateTime?</a> Omer van Kloeten evaluates the use of the System.DateTimeOffset object in place of System.DateTime to improve handling of Time Zone sensitive times.</p>
 <blockquote>
 <p>When representing a date/time, especially in an internationally-faced system, you have to include a time-zone. DateTime did a very poor job handling time-zones, like being insensitive to changes. DateTimeOffset is the exact same thing as DateTime, only it takes heed of time-zones. For instance, comparing two DateTimeOffsets with the same UTC time in different time-zones will result in equality.</p>
 <p>Moreover, DateTime also had only three modes: Local, UTC and Unspecified, whereas DateTimeOffset has an Offset property, allowing you to create dates in any time-zone you like.</p>
