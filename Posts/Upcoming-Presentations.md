@@ -17,7 +17,7 @@ categories:
 ---
 Here is an update on where and when I’ll be delivering presentations about software development in .NET over the next few months.  I still have some availability left for the H1 2013 and H2 is effectively wide open. You can request me as a speaker by [Contacting Me]({PathToRoot}/contact.html).
 
-`Southern Most User Group` in Key West FL on February 7th - “Code Portability in .NET”
+*Southern Most User Group* in Key West FL on February 7th - “Code Portability in .NET”
 
 [South Florida Code Camp](https://sfsdc.itpand.net/) in Ft. Lauderdale FL on February 9th - “Building a DSL Using an OData Source”
 

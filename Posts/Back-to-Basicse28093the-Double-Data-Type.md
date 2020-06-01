@@ -21,7 +21,7 @@ categories:
 What is the result of converting a value that is close to, but not at, the maximum value of an Int64 from a double to a long (Int64)?  That is, what would be the result of an expression like:
 
  `(long)((double)(Int64.MaxValue – 1))`
- 
+
 1. 9223372036854775806 (2<sup>63</sup>-2, the correct value numerically)
 2. -9223372036854775808 or another obviously incorrect value
 3. OverflowException

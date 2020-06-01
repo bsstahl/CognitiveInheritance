@@ -56,19 +56,27 @@ A predicate is a function that accepts an entity as a parameter, and returns a b
 `var results = new EnumerableStack().Posts.Where(p => p.Parent == null);`
 
 the function expression p =&gt; p.Parent == null is a predicate that returns true if the Parent property of the entity is null. For each entity passed to the function, the value of that property is tested, and if null, the entity is included in the results of the query. Here we are using a Lambda Expression to provide a delegate to our function. One of the coolest things about Linq is that we can now represent this expression in a variable of type Expression&lt;Func&lt;Entity, bool&gt;&gt;, that is, a Lambda expression of a function that takes an Entity and returns a boolean. This is pretty awesome because if we can store it in a variable, we can pass it around and enable extension methods like this one, as found in the Asked class of the Bss.EnumerableStack.Data library:
- `public static Expression<Func<Post, bool>> InLast(TimeSpan span)
+
+```
+public static Expression<Func<Post, bool>> InLast(TimeSpan span)
    {
    return p => p.CreationDate > DateTime.UtcNow.Subtract(span);
-   }`
+   }
+```
+
 This method accepts a TimeSpan object and returns the Lambda Expression type useable as a predicate. The input TimeSpan is subtracted from the current DateTime UTC value, and compared to the CreationDate property of a Post entity. If the creation date of the Post is later than 30-days prior to the current date, the function returns true. Since this InLast method is static on a class called Asked, we can use it like this:
 
 `var results = new EnumerableStack().Questions.Where(Asked.InLast(TimeSpan.FromDays(30));`
 
 Which will return questions that were asked in the last 30 days. This becomes even simpler to understand if we add a method extending Int called Days that returns a Timespan, like this:
-`public static TimeSpan Days(this int value)
+
+```
+public static TimeSpan Days(this int value)
    {
    return TimeSpan.FromDays(value);
-   }`
+   }
+```
+
 allowing our expression to become:
 
 `var results = new EnumerableStack().Questions.Where(Asked.InLast(30.Days());`
@@ -76,13 +84,21 @@ allowing our expression to become:
 #### Walking through the Process
 
 In my conference sessions, Simplify Your API: Creating Maintainable and Discoverable Code, I walk through this process on the FluentStack demo code. We take a query created against the StackOverflow OData API that starts off looking like this:
-`var questions = new StackOverflowService.Entities(new Uri(_serviceRoot))
+
+```
+var questions = new StackOverflowService.Entities(new Uri(_serviceRoot))
    .Posts.Where(p => p.Parent == null && p.AcceptedAnswerId != null
    && p.CreationDate > DateTime.UtcNow.Subtract(TimeSpan.FromDays(30))
-   && p.Tags.Contains("<odata>"));`
+   && p.Tags.Contains("<odata>"));
+```
+
 and convert it, one step at a time, to this:
-`var questions = new FluentStack().Questions.WithAcceptedAnswer().
-   Where(Asked.InLast(30.Days)).TaggedWith("odata");`
+
+```
+var questions = new FluentStack().Questions.WithAcceptedAnswer()
+    .Where(Asked.InLast(30.Days)).TaggedWith("odata");
+```
+
 a query that is much simpler, easier to understand, easier to create and easier to maintain. The sample code on GitHub, referenced above, and available at [https://github.com/bsstahl/SimpleAPI](https://github.com/bsstahl/SimpleAPI), contains the FluentStack.sln example which shows how to simplify an API created with an OData source. It also contains the EnumerableStack.sln project which walks through the same process on a purely enumerable data source, that is, an implementation that will work with any collection.
 
 #### Sound Off

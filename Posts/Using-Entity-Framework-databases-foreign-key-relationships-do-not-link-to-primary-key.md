@@ -36,7 +36,7 @@ The Airport entity still has the same key property, but the Flight doesn’t use
 Fortunately for me, very few of the legacy databases and none of the recently created systems that I work with use this method to create relationships.  However, on the rare occasions that this occurs, it can make life much more complicated. Consider the scenario where I need to get a list of flights that are departing from an airport north of 45 degrees in latitude. In the first model, this is easy using LINQ to Entities.
 
 ```
-var flights = context.Flights.Where(f => f.DepartureAirport.Latitude > 45);`
+var flights = context.Flights.Where(f => f.DepartureAirport.Latitude > 45);
 ```
 
 However, with the second model, since there is no association between the entities, there are no navigation properties that can be followed.  Thus the join has to be done in the LINQ to Entities query, making the syntax much more complex.
@@ -45,7 +45,7 @@ However, with the second model, since there is no association between the entiti
 var flights = context.Flights.Where(
    f => context.Airports.Where(a => a.Latitude > 45) 
    .Contains(context.Airports.Where(a => a.IataCode == f.DepartFrom)
-   .FirstOrDefault()));`
+   .FirstOrDefault()));
 ```
 
 This query finds the flights where the collection of airports with latitude &gt; 45 degrees contains the one airport that has the IataCode matching the flight’s DepartFrom field.  As you can see, this query is much more difficult to create and maintain then the one which simply uses the Entity Framework provided navigation property.

@@ -49,4 +49,4 @@ If you are interested in having me present this or another session at your event
 
 There is much more than an hour’s worth of material to be presented, so instead of trying to rush through everything I want to talk about during this time, I’ve instead taken some questions from this presentation and posted them below.  Please contact me if you have any additional questions, need clarification, or if you have an suggestions or additions to these lists.
 
-`Update`: I have moved the FAQ list [here]({PathToRoot}/Pages/Unit-Testing-and-TDD-FAQ.html) to allow it to be maintained separately from this post.
+*Update*: I have moved the FAQ list [here]({PathToRoot}/Pages/Unit-Testing-and-TDD-FAQ.html) to allow it to be maintained separately from this post.
