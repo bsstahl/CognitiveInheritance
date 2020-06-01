@@ -20,7 +20,7 @@ categories:
 ---
 Mark Michaelis posted a hit list of things to do to convert from nUnit to VSTS tests in his article [Converting a class library to a VSTS Test Project](https://web.archive.org/web/20080708110723/http://mark.michaelis.net:80/Blog/ConvertingAClassLibraryToAVSTSTestProject.aspx). A big part of this process is understanding the attribute translation:
 
-<table>
+<table border=1>
 <tr><th>nUnit</th><th>VSTest</th></tr>
 <tr><td>TestFixture</td><td>TestClass</td></tr>
 <tr><td>TestFixtureSetUp</td><td>ClassInitialize</td></tr>
