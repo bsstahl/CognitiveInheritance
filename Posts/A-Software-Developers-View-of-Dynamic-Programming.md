@@ -31,7 +31,7 @@ We want to make sure that we do not conflate combinatorial optimization with cod
 
 #### What is Dynamic Programming?
 
-Ultimately, DP is just a process, a methodology for solving optimization problems that can be defined recursively <sub>1<sub>.  It is really about a way of attacking a problem that, if it were addressed naïvely, might not produce the best possible answer, or might not even converge to a solution in an acceptable amount of time.  Dynamic Programming provides a logical approach to these types of problems through a 2-step process that has the effect of breaking the problem into smaller sub-problems and solving each sub-problem only once, caching the results for later use <sub>2</sub>.
+Ultimately, DP is just a process, a methodology for solving optimization problems that can be defined recursively <sub>1</sub>.  It is really about a way of attacking a problem that, if it were addressed naïvely, might not produce the best possible answer, or might not even converge to a solution in an acceptable amount of time.  Dynamic Programming provides a logical approach to these types of problems through a 2-step process that has the effect of breaking the problem into smaller sub-problems and solving each sub-problem only once, caching the results for later use <sub>2</sub>.
 
 The steps in the process are as follows:
 
