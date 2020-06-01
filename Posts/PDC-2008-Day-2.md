@@ -30,7 +30,7 @@ Just a reminder that much of what is happening here at the PDC is being posted i
 
 Day 2 keynotes focused on the client side of Windows development. Not surprisingly, this included Windows 7 and WPF development improvements as well as Silverlight and ASP.NET development. Some things that caught my attention in the keynotes included features of Windows 7 like its ability to "live" on a domain, but still participate in a "Home Group" when your work laptop is brought home.  Multi-monitor support also looks to be vastly improved including the ability to work multi-monitor in a remote desktop session. Scott Guthrie also introduced a number of new controls and tools for developing applications in WPF and Silverlight including a Ribbon control that appears intended to make your WPF apps look like Windows Forms apps.
 
-![Chris Anderson and Don Box Keynoting PDC2008](http://farm4.static.flickr.com/3141/2984522640_4474ab254e.jpg)
+![Chris Anderson and Don Box Keynoting PDC2008](https://farm4.static.flickr.com/3141/2984522640_4474ab254e.jpg)
 
 The 2nd Keynote of the day was Don Box and Chris Anderson's fantastic presentation on developing applications that bring cloud computing into the enterprise. Clearly the most engaging of all of the Microsoft speakers, this duo put together, over the course of the 1.5 hour session, a series of services that ran both in the cloud and within the firewall, and linked the two securely, but in real-time.  You would not be wasting your time if you were to view the video of this keynote online.
 
