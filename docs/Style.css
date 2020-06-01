@@ -97,3 +97,11 @@ blockquote {
     font-weight: bold;
     font-family: cursive;
 }
+
+code {
+    font-family: monospace;
+    background-color: #f7f7f7;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+}

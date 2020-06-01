@@ -205,7 +205,7 @@
     <h5>Posted by bsstahl on 2016-10-14 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>I often hail code coverage as a great tool to help improve your code base.  Today, my use of Code Coverage taught me something about the new .NET Core tooling, and helped protect me from having to support useless code for the lifespan of my project.</p>
 <p>In the code below, I used a common dependency injection pattern. That is, an IServiceProvider object holding my dependencies is passed-in to my object and stored as a member variable.  When a dependency is needed, I retrieve that dependency from the service provider, and then take action on it.  Since there is no guarantee that the dependency I need will have been placed in the container, I use some common guard logic to protect my code.</p>
-<pre><code>templates = _serviceProvider.GetService&lt;IEnumerable&lt;Template&gt;&gt;(); 
+<pre><code>templates = _serviceProvider.GetService&lt;IEnumerable&lt;Template&gt;&gt;();
 if ((templates==null) || (!templates.Any(s =&gt; s.TemplateType==ContactPage)))
      throw new TemplateNotFoundException(TemplateType.ContactPage, string.Empty);
 </code></pre>
