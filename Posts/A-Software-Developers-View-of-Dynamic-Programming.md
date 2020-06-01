@@ -23,25 +23,24 @@ categories:
 ---
 Dynamic Programming (DP) is a mathematical tool that can be used to efficiently solve certain types of problems and is a must-have in any software developer's toolbox. A lot has been written about this process from a mathematician's perspective but there are very few resources out there to help software developers who want to implement this technique in code. In this article and the companion conference talk "[Dynamic Optimization - One Algorithm All Programmers Should Know]({PathToRoot}/Posts/Dynamic-Optimization-Presentation.html)", I attempt to demystify this simple tool so that developer's can implement it for their customers.
 
-### What is Combinatorial Optimization?
+#### What is Combinatorial Optimization?
 
 Mathematical or Combinatorial Optimization is the process of finding the best available solution to a problem by minimizing or eliminating undesirable factors and maximizing desirable ones.  For example, we might want to find the best path through a graph that represents the roads and intersections of our city.  In this case, we might want to minimize the distance travelled, or the estimated amount of time it will take to travel that distance.  Other examples of optimization problems include determining the best utilization of a machine or device, optimal assignment of scarce resources, and a spell-checker determining the most likely word being misspelled.
 
 We want to make sure that we do not conflate combinatorial optimization with code optimization.  It is certainly important to have efficient code when running an optimization algorithm, however there are very different techniques for optimizing code than for optimizing the solution to a problem. Code optimization has to do with the efficiency of the implementation whereas combinatorial optimization deals with the efficiency of the algorithm itself.  Efficiency in both areas will be critical for solving problems in large domains.
 
-### What is Dynamic Programming?
+#### What is Dynamic Programming?
 
-Ultimately, DP is just a process, a methodology for solving optimization problems that can be defined recursively1.  It is really about a way of attacking a problem that, if it were addressed naïvely, might not produce the best possible answer, or might not even converge to a solution in an acceptable amount of time.  Dynamic Programming provides a logical approach to these types of problems through a 2-step process that has the effect of breaking the problem into smaller sub-problems and solving each sub-problem only once, caching the results for later use2.
+Ultimately, DP is just a process, a methodology for solving optimization problems that can be defined recursively <sub>1<sub>.  It is really about a way of attacking a problem that, if it were addressed naïvely, might not produce the best possible answer, or might not even converge to a solution in an acceptable amount of time.  Dynamic Programming provides a logical approach to these types of problems through a 2-step process that has the effect of breaking the problem into smaller sub-problems and solving each sub-problem only once, caching the results for later use <sub>2</sub>.
 
 The steps in the process are as follows:
 
 1. Fill out the cache by determining the value of each sub-problem, building each answer based on the value of the previous answers
 2. Use the values in the cache to answer questions about the problem
 
+Since we fill-out the entire cache for each problem <sub>3</sub>, we can be 100% certain that we know what the best possible answers to the questions are because we have explored all possibilities.
 
-Since we fill-out the entire cache for each problem3, we can be 100% certain that we know what the best possible answers to the questions are because we have explored all possibilities.
-
-### Dynamic Programming in Action
+#### Dynamic Programming in Action
 
 Let's look at one of the canonical types of problems that can be solved using Dynamic Programming, the knapsack problem.  A knapsack problem occurs in any situation where you have a limited capacity that can be consumed by a number of different possible options.  We need to look for the best fit and optimize for the maximum based on the definition of value in our problem.  This class of problem gets its name from the story of the archeologist in the collapsing ruin.  She has a knapsack that can hold a known weight without tearing and she needs to use it to rescue artifacts from the ruin before it collapses entirely.   She wants to maximize the value of artifacts she can save, without exceeding the capacity of her knapsack, because it would then tear and she wouldn't be able to carry anything.
 
@@ -78,7 +77,7 @@ Starting at the known best value in the bottom-right cell, we can look one cell 
 
 ![Calculating the Results of the Knapsack Problem]({PathToRoot}/Images/Knapsack-DetermineResults.png)
 
-### What did we actually do here?
+#### What did we actually do here?
 
 There is no magic here. All we did was take a problem that we could describe in a recursive way, and implement a process that used easy calculations that built upon the results of previous calculations, to fill-out a data cache that allowed us to answer the two primary questions of this problem:
 
@@ -88,12 +87,14 @@ There is no magic here. All we did was take a problem that we could describe in 
 
 You can probably see that if both axes of this table, the capacity of the knapsack, and the number of items we can chose from, are extremely large, we may run into memory or processing-time constraints when implementing this solutions.  As a result, this may not be the best methodology for solving problems where both the capacity of the knapsack and the number of items is extremely high.  However, if either is a reasonable number, Dynamic Programming can produce a result that is guaranteed to be the optimum solution, in a reasonable amount of time.
 
-### Continue the Conversation
+#### Continue the Conversation
 
 I am happy to answer questions or discuss this further. Ping me on Twitter {TwitterLink} with your comments or questions. I'd love to hear from you.  I am also available to deliver a talk to your conference or user group on [this or other topics]({PathToRoot}/Pages/Speaking-Engagements.html). You can [contact me here]({PathToRoot}/contact.html).
 
-1 In mathematical terms, DP is useful for solving problems that exhibit the characteristics of Overlapping Subproblems and Optimal Substructure.  If a problem is able to be described recursively, it will usually exhibit these traits, but the use of the recursion concept here is a generalization to put the problem in software developer's terms.
+##### Footnotes
 
-2 The process of storing a value for later use is known in mathematics as memoization, an operation which, for all intents and purposes, is equivalent to caching.
+1. In mathematical terms, DP is useful for solving problems that exhibit the characteristics of Overlapping Subproblems and Optimal Substructure.  If a problem is able to be described recursively, it will usually exhibit these traits, but the use of the recursion concept here is a generalization to put the problem in software developer's terms.
 
-3 Variants of certain DP algorithms exist where the process can be cut-off under certain conditions prior to fully populating the cache.  These variants are not discussed here.
+2. The process of storing a value for later use is known in mathematics as memoization, an operation which, for all intents and purposes, is equivalent to caching.
+
+3. Variants of certain DP algorithms exist where the process can be cut-off under certain conditions prior to fully populating the cache.  These variants are not discussed here.
