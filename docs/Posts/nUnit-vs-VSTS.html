@@ -59,8 +59,15 @@
               <h1>nUnit vs. VSTS</h1>
               <h5>Posted by bsstahl on 2006-10-07 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
               <p>Mark Michaelis posted a hit list of things to do to convert from nUnit to VSTS tests in his article <a href="https://web.archive.org/web/20080708110723/http://mark.michaelis.net:80/Blog/ConvertingAClassLibraryToAVSTSTestProject.aspx">Converting a class library to a VSTS Test Project</a>. A big part of this process is understanding the attribute translation:</p>
-<p>| nUnit | VSTS |
-|</p>
+<table>
+<th><td>nUnit</td><td>VSTest</td></th>
+<tr><td>TestFixture</td><td>TestClass</td></tr>
+<tr><td>TestFixtureSetUp</td><td>ClassInitialize</td></tr>
+<tr><td>TestFixtureTearDown</td><td>ClassCleanup</td></tr>
+<tr><td>SetUp</td><td>TestInitialize</td></tr>
+<tr><td>TearDown</td><td>TestCleanup</td></tr>
+<tr><td>Test</td><td>TestMethod</td></tr>
+</table>
 
               <h5>Tags: <a title="Tag: tdd" class="small" href="../Search/tdd.html">tdd</a>&nbsp;<a title="Tag: testing" class="small" href="../Search/testing.html">testing</a>&nbsp;<a title="Tag: nunit" class="small" href="../Search/nunit.html">nunit</a>&nbsp;<a title="Tag: mstest" class="small" href="../Search/mstest.html">mstest</a>&nbsp;</h5>
               <div class="share"><a href="../Permalinks/9e81f613-52ca-4108-acb4-f0f2ad3d36dc.html" rel="bookmark">Permalink</a></div>
