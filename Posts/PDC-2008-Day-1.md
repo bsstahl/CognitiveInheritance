@@ -27,7 +27,7 @@ As you've probably already heard, the big announcement coming out of PDC 2008 Da
 
 The other major topic of the sessions I attended during day 1 was the future of development on the .NET platform.  Specifics here included details of Visual Studio 2010 as well as a fantastic language futures talk given by Anders Hejilsberg, the father of C#.  According to Anders, "The major theme of C# 4.0 is Dynamic Programming" which will allow C# applications to interact with dynamic languages such as JavaScript and Ruby, as well as providing dynamic typing features within C# itself.  While, in most cases, I wouldn't (and I think Anders wouldn't) recommend using dynamic typing mechanisms, there are times where it is the most appropriate way (sometimes the only way) of performing the task at hand.
 
-![Anders Hejilsberg, the Father of C# at PDC 2008](http://farm4.static.flickr.com/3185/2980079795_9966620683.jpg)
+![Anders Hejilsberg, the Father of C# at PDC 2008](https://farm4.static.flickr.com/3185/2980079795_9966620683.jpg)
 
 Another feature of future versions of C# include the concept of the compiler as a service. That is, the C# compiler, sometime down the road, is expected to be made available within the application model, useable by applications. We have had other methods of dynamically generating code in the past, but no model nearly as compelling as utilizing the same compiler Visual Studio uses, as a component of the .NET framework.
 
