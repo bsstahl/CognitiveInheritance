@@ -11,27 +11,20 @@ title: nUnit vs. VSTS
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2006-10-07T05:42:00
-lastmodificationdate: 0001-01-03T00:00:00
+publicationdate: 2006-10-07T05:42:00.000+00:00
+lastmodificationdate: 0001-01-03T00:00:00.000+00:00
 slug: nUnit-vs-VSTS
 categories:
 - Development
 
 ---
-
-Mark Michaelis posted a hitlist of things to do to convert from nUnit to VSTS tests in his article [Converting a class library to a VSTS Test Project](http://mark.michaelis.net/Blog/ConvertingAClassLibraryToAVSTSTestProject.aspx). A big part of this process is understanding the attribute translation:
-  
-
-
-
+Mark Michaelis posted a hit list of things to do to convert from nUnit to VSTS tests in his article [Converting a class library to a VSTS Test Project](http://mark.michaelis.net/Blog/ConvertingAClassLibraryToAVSTSTestProject.aspx). A big part of this process is understanding the attribute translation:
 
 | nUnit | VSTS |
 | --- | --- |
-| [TestFixture] | [TestClass] |
-| [TestFixtureSetUp] | [ClassInitialize] |
-| [TestFixtureTearDown] | [ClassCleanup] |
-| [SetUp] | [TestInitialize] |
-| [TearDown] | [TestCleanup] |
-| [Test] | [TestMethod] |
-
-
+| TestFixture | TestClass |
+| TestFixtureSetUp | ClassInitialize |
+| TestFixtureTearDown | ClassCleanup |
+| SetUp | TestInitialize |
+| TearDown | TestCleanup |
+| Test | TestMethod |
