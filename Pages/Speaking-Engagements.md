@@ -85,6 +85,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 Past engagements:
 
 * **Codestock 2020** - (Cancelled for April 2020 due to Covid-19) - "Amazing Algorithms for Solving Problems in Software" & "Pushing AI to the Client with WebAssembly and  Blazor"
+* **Twin Cities Code Camp** - (Cancelled for April 2020 due to Covid-19) - "Pushing AI to the Client with WebAssembly and  Blazor"
 * **South Florida Software Dev Con 2020** - 2/29/2020 - "Amazing Algorithms for Solving Problems in Software"
 * **AgileAZ 2019** - 11/22/2019 - "Things Your Dev Team Hopes You Know"
 * **Desert Code Camp 2019** - 10/12/2019 - "Amazing Algorithms for Solving Problems in Software"
