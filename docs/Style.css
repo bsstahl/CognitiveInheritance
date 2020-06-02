@@ -110,3 +110,7 @@ code {
     display:block;
     border:solid 1px #909090
 }
+
+table tr .pubdate {
+    width: 33%;
+}
