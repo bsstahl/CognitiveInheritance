@@ -36,7 +36,7 @@ It is important to point out why a custom exception should be thrown when the da
 Downstream clients can easily test code that uses this repository without having to actually access the repository implementation because we have exposed the **IMeetingSourceRepository** interface. However, it is a bit more difficult to actually test the repository implementation itself.  We have a few options here:
 
 * Create data files that hold known data samples and load those files during unit testing.
-* Create a wrapper around the System.IO namespace that exposes an interface, such as in the [System.IO.Abstractions](https://github.com/tathamoddie/System.IO.Abstractions) project.
+* Create a wrapper around the System.IO namespace that exposes an interface, such as in the [System.IO.Abstractions](https://github.com/System-IO-Abstractions/System.IO.Abstractions) project.
 * Don’t test any code that requires reaching-out to the file system.
 
 Since [I am of the opinion that 100% code coverage is both reasonable, and desirable]({PathToRoot}/Posts/Remove-Any-Code-Your-Users-Dont-Care-About.html) (although not a measurable goal), I will summarily dispose of option 3 for the purpose of this analysis. I have used option 2 many times in my life, and while employing wrapper code is a valid and reasonable solution, it adds additional code to my production deployments that is very limited in terms of what it adds to the loose-coupling of my solution since I already am loosely-coupled to this implementation via the **IMeetingSourceRepository** interface.
