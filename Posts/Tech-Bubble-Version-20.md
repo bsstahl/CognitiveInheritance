@@ -16,7 +16,7 @@ categories:
 - General
 
 ---
-In [Lived Fast, Died Young, Left a Tired Corpse](http://www.codinghorror.com/blog/2011/01/lived-fast-died-young-left-a-tired-corpse.html), Jeff Atwood speaks of both the successes and failures of the original .Com Bubble and posits that we are entering another bubble at this very moment.  As someone who participated in bubble 1.0 (2 startups, only gained experience to show for it), I plan to watch both of the documentary films that Jeff mentioned with the goal of being able to identify when I see the same things occurring again.  However, the part of the post that struck closest to home for me was the very end, where Jeff states:
+In [Lived Fast, Died Young, Left a Tired Corpse](https://web.archive.org/web/20200524222539/https://blog.codinghorror.com/lived-fast-died-young-left-a-tired-corpse/), Jeff Atwood speaks of both the successes and failures of the original .Com Bubble and posits that we are entering another bubble at this very moment.  As someone who participated in bubble 1.0 (2 startups, only gained experience to show for it), I plan to watch both of the documentary films that Jeff mentioned with the goal of being able to identify when I see the same things occurring again.  However, the part of the post that struck closest to home for me was the very end, where Jeff states:
 
 
 > Yes, you will have incredibly lucrative job offers in this bubble. That's the easy part. As Startup.com and Code Rush illustrate, the hard part is figuring out *why* you are working all those long hours. Consider carefully, lest the arc of your career mirror that of so many failed tech bubble companies: **lived fast, died young, left a tired corpse.**
