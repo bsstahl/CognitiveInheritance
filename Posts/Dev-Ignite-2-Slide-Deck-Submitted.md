@@ -17,4 +17,4 @@ categories:
 - Event
 
 ---
-I just submitted my [slide deck](http://docs.google.com/present/embed?id=dfdtn4td_64wbdtzpgd) for my [Developer Ignite #2](http://software.intel.com/en-us/articles/developer-ignite-2/) presentation on [AZGiveCamp](https://www.azgivecamp.org/). I welcome any comments or suggestions.
+I just submitted my [slide deck](http://docs.google.com/present/embed?id=dfdtn4td_64wbdtzpgd) for my [Developer Ignite #2](https://web.archive.org/web/20120301111118/http://software.intel.com/en-us/articles/developer-ignite-2/) presentation on [AZGiveCamp](https://www.azgivecamp.org/). I welcome any comments or suggestions.
