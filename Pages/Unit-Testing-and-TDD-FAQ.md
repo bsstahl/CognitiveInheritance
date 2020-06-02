@@ -4,7 +4,7 @@ menuorder: 0
 id: f4d1c45a-7853-461e-a3a7-1c4405a647fc
 author: 
 title: FAQ
-description: 
+description: Frequently asked questions about unit testing and Test-Driven Development (TDD).
 ispublished: true
 showinlist: true
 publicationdate: 2010-01-01T00:00:00
