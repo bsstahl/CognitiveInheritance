@@ -4,21 +4,20 @@ tags:
 - charity
 - nonprofit
 menuorder: 0
-id: 06189847-eb2f-4498-87e0-99c0efe69233
+id: '06189847-eb2f-4498-87e0-99c0efe69233'
 author: bsstahl
 title: Tentative AZGiveCamp Organizers Meeting Agenda
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2009-10-14T01:36:00
-lastmodificationdate: 2009-10-13T23:40:51
+publicationdate: 2009-10-14T01:36:00.000+00:00
+lastmodificationdate: 2009-10-13T23:40:51.000+00:00
 slug: Tentative-AZGiveCamp-Organizers-Meeting-Agenda
 categories:
 - Event
 
 ---
-
-The 1st AZGiveCamp organizers meeting will be held on Thursday, October 15th from 6-8pm MST at the Microsoft Phoenix Offices (2929 N. Central Ave. #1400 Phoenix AZ 85012).  If you are interested in helping to organize this event, please [sign-up on EventBrite](http://azgivecamp2009orgmeeting.eventbrite.com/).  To learn more about Give Camp, you can visit [http://www.givecamp.org](http://www.givecamp.org) and follow us on Twitter [@AZGiveCamp](http://www.twitter.com/azgivecamp). You can even call us at 623.252.GIVE if you have questions.
+The 1st AZGiveCamp organizers meeting will be held on Thursday, October 15th from 6-8pm MST at the Microsoft Phoenix Offices (2929 N. Central Ave. #1400 Phoenix AZ 85012). <del>If you are interested in helping to organize this event, please [sign-up on EventBrite](https://www.eventbrite.com/)</del>.  To learn more about Give Camp, you can visit [https://givecamp.org](https://givecamp.org) and follow us on Twitter [@AZGiveCamp](http://www.twitter.com/azgivecamp). You can even call us at [623.252.GIVE](tel:6232524483) if you have questions.
 
 The preliminary agenda for our first meeting is as follows. If you have any comments or suggestions on this agenda, please make them by commenting on this post, via Twitter, or by phone above.
 
@@ -45,5 +44,3 @@ The preliminary agenda for our first meeting is as follows. If you have any comm
 | **Gather new issues** | Solicit new issues.  |
 | **Assign issues to team leads** | Assign the issues we can to the team leads. |
 | **Set next Organizers’ meeting** | Set date/time for next Organizers’ meeting. Encourage team leads to set their own meetings and keep the Organizers Team updated. |
-
-
