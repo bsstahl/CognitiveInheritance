@@ -4,7 +4,7 @@ menuorder: 0
 id: 012b76d2-f081-4890-b35b-841841ab16f7
 author: 
 title: Community Speaker
-description: Technical presentations that have been or can be given by Barry S. Stahl.
+description: Technical presentations given by Barry S. Stahl.
 ispublished: true
 showinlist: true
 publicationdate: 2009-08-01T00:00:00.000+00:00
