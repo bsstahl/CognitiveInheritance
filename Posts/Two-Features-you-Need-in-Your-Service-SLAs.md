@@ -38,7 +38,7 @@ Forward Compatible Contracts, also known as the Round-Tripping of Unknown Data, 
 
 For example, suppose we were version a contract such that we added an additional address type to an employee entity  (V1 only has home address, V2 has home and work addresses).  If we change the service to return the V2 employee prior to changing the client, the client will accept the additional (optional) address type because we have already required Lax Versioning, but it will not know what to do with the information.  If a V1 client without round-tripping support sends that employee back to the server, the additional address type will not be included.  If however, the V1 client supports this round-tripping behavior, it will still be unable to use the data in the additional address field, but will return it to the server if the entity is sent back in a subsequent call.  These behaviors with a V1 client and a V2 service are shown in the diagram below.
 
-![Forward Compatible Contracts]({PathToRoot}image_4.png)
+![Forward Compatible Contracts]({PathToRoot}/Images/image_4.png)
 
 If the same practice is used on the server side, then we can decouple the client and server from many implementation changes.  Clients would be free to implement the new versions of contracts as soon as they are ready, without having to wait for the service to roll-out.  Likewise, many changes at the service side could be made knowing that data sent down to the clients will not be lost when it is returned to the server.
 
