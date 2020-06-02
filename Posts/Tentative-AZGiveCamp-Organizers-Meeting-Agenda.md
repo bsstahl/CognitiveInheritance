@@ -18,7 +18,7 @@ categories:
 - Event
 
 ---
-The 1st AZGiveCamp organizers meeting will be held on Thursday, October 15th from 6-8pm MST at the Microsoft Phoenix Offices (2929 N. Central Ave. #1400 Phoenix AZ 85012). <del>If you are interested in helping to organize this event, please [sign-up on EventBrite](https://www.eventbrite.com/)</del>.  To learn more about Give Camp, you can visit [https://givecamp.org](https://givecamp.org) and follow us on Twitter [@AZGiveCamp](http://www.twitter.com/azgivecamp). You can even call us at [623.252.GIVE](tel:6232524483) if you have questions.
+The 1st AZGiveCamp organizers meeting will be held on Thursday, October 15th from 6-8pm MST at the Microsoft Phoenix Offices (2929 N. Central Ave. #1400 Phoenix AZ 85012). <del>If you are interested in helping to organize this event, please sign-up on EventBrite</del>.  To learn more about Give Camp, you can visit [https://givecamp.org](https://givecamp.org) and follow us on Twitter [@AZGiveCamp](http://www.twitter.com/azgivecamp). You can even call us at [623.252.GIVE](tel:6232524483) if you have questions.
 
 The preliminary agenda for our first meeting is as follows. If you have any comments or suggestions on this agenda, please make them by commenting on this post, via Twitter, or by phone above.
 
