@@ -4,8 +4,7 @@ menuorder: 0
 id: 54dd055e-fe94-4ed7-aaec-97816f3e270c
 author: bsstahl
 title: Open Source
-description: The open source (OSS) projects hosted or significantly contributed to
-  by Barry S. Stahl.
+description: The open source projects of Barry S. Stahl.
 ispublished: true
 showinlist: true
 publicationdate: 2019-01-01T00:00:00.000+00:00
