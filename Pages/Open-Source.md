@@ -4,8 +4,8 @@ menuorder: 0
 id: 54dd055e-fe94-4ed7-aaec-97816f3e270c
 author: 
 title: Open Source
-description: The open source (OSS) projects that I host or significantly contribute
-  to.
+description: The open source (OSS) projects hosted by, or significantly contributed
+  to by, Barry S. Stahl.
 ispublished: true
 showinlist: true
 publicationdate: 2019-01-01T00:00:00.000+00:00
