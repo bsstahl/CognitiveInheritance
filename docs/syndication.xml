@@ -51,12 +51,12 @@ public class MeetingReadRepository : IMeetingReadRepository
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Is this worth the added complexity? It seems to me that as application developers we should be concerned about describing and building our applications in the simplest, most maintainable and extensible way possible. To do so, we need seams in our applications in the form of abstractions. However, we generally do not need to build frameworks on which we build those abstractions. Framework creation is an entirely other topic with an entirely different set of concerns.&lt;/p&gt;
-&lt;p&gt;I think it is easy to see how quickly things can get overly-complex when we start building abstractions on top of our own abstractions in our applications. Using Microsoft or 3rd party frameworks is fine when appropriate, but there is generally no need to build your own frameworks, especially within your applications. In the vast majority of cases, &lt;a href=&quot;./Search/yagni.html&quot;&gt;YAGNI&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Did I miss something here? Do you have a situation where you feel it is worth it to build a framework, or even part of a framework, within your applications. Please let me know about it on Twitter <a href="https://twitter.com/bsstahl">@bsstahl</a>.&lt;/p&gt;
+&lt;p&gt;I think it is easy to see how quickly things can get overly-complex when we start building abstractions on top of our own abstractions in our applications. Using Microsoft or 3rd party frameworks is fine when appropriate, but there is generally no need to build your own frameworks, especially within your applications. In the vast majority of cases, &lt;a href=&quot;https://www.cognitiveinheritance.com/Search/yagni.html&quot;&gt;YAGNI&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Did I miss something here? Do you have a situation where you feel it is worth it to build a framework, or even part of a framework, within your applications. Please let me know about it on Twitter &lt;a href=&quot;https://twitter.com/bsstahl&quot;&gt;@bsstahl&lt;/a&gt;.&lt;/p&gt;
 </description>
-  <link>Posts/Meta-Abstraction-You-Aint-Gonna-Need-It!.html</link>
+  <link>https://www.cognitiveinheritance.com/Posts/Meta-Abstraction-You-Aint-Gonna-Need-It!.html</link>
   <author>bsstahl</author>
-  <guid><a href="Permalinks/a9d7154a-2798-4a77-851b-0783b45bc1b4.html" rel="bookmark">Permalink</a></guid>
+  <guid><a href="https://www.cognitiveinheritance.com/Permalinks/a9d7154a-2798-4a77-851b-0783b45bc1b4.html" rel="bookmark">Permalink</a></guid>
   <pubDate>2020-05-18T00:00:00.0000000Z</pubDate>
 </item>
 <item>
@@ -64,9 +64,9 @@ public class MeetingReadRepository : IMeetingReadRepository
   <description>&lt;p&gt;Thanks again to all the organizers, speakers and attendees of the 2019 South Florida Code Camp. As always, it was an amazing and fun experience.&lt;/p&gt;
 &lt;p&gt;The slides for my presentation are online &lt;a href=&quot;http://introwasmblazor-201903.azurewebsites.net&quot;&gt;Intro to WebAssembly and Blazor&lt;/a&gt; and the Blazor Chutes &amp;amp; Ladders Simulation sample code can be found in my &lt;a href=&quot;https://github.com/bsstahl/AIDemos&quot;&gt;AIDemos GitHub Repo&lt;/a&gt;.&lt;/p&gt;
 </description>
-  <link>Posts/South-Florida-Code-Camp-2019.html</link>
+  <link>https://www.cognitiveinheritance.com/Posts/South-Florida-Code-Camp-2019.html</link>
   <author>bsstahl</author>
-  <guid><a href="Permalinks/ba2507c7-41d6-4e4e-8e65-10c22451edd7.html" rel="bookmark">Permalink</a></guid>
+  <guid><a href="https://www.cognitiveinheritance.com/Permalinks/ba2507c7-41d6-4e4e-8e65-10c22451edd7.html" rel="bookmark">Permalink</a></guid>
   <pubDate>2019-03-03T00:00:00.0000000Z</pubDate>
 </item>
 <item>
@@ -82,11 +82,11 @@ public class MeetingReadRepository : IMeetingReadRepository
 &lt;p&gt;Later in March, I cross the border into Canada to attend &lt;a href=&quot;https://confoo.ca/en/speaker/barry-stahl&quot;&gt;ConFoo Montreal&lt;/a&gt;. This will be my first trip ever to Montreal so I hope the March weather is kind to this 35 year Phoenix resident.  The event runs from March 13th - 15th and there will be 2 Canadiens games during the time I am there so I should be able to get to at least one of them.&lt;/p&gt;
 &lt;p&gt;In May I get to do a short tour of Europe, spending 2 weeks at conferences in Budapest, Hungary (&lt;a href=&quot;https://craft-conf.com&quot;&gt;Craft Conference&lt;/a&gt;), and Marbella, Spain (&lt;a href=&quot;https://jonthebeach.com/&quot;&gt;J on the Beach&lt;/a&gt;).  While I have done some traveling in Europe before, I have never been to Spain or Hungary so I am really looking forward to experiencing the history and culture that these two cities have to offer.&lt;/p&gt;
 &lt;h4&gt;Keep up With Me&lt;/h4&gt;
-&lt;p&gt;I maintain a list of my presentations, both past and upcoming, on the &lt;a href=&quot;./Pages/Speaking-Engagements.html&quot;&gt;Community Speaker&lt;/a&gt; page of this blog. I also try to document my conference experiences on Twitter <a href="https://twitter.com/bsstahl">@bsstahl</a>. If you are going to be attending any of these events, please be sure to ping me on Twitter and let me know.&lt;/p&gt;
+&lt;p&gt;I maintain a list of my presentations, both past and upcoming, on the &lt;a href=&quot;https://www.cognitiveinheritance.com/Pages/Speaking-Engagements.html&quot;&gt;Community Speaker&lt;/a&gt; page of this blog. I also try to document my conference experiences on Twitter &lt;a href=&quot;https://twitter.com/bsstahl&quot;&gt;@bsstahl&lt;/a&gt;. If you are going to be attending any of these events, please be sure to ping me on Twitter and let me know.&lt;/p&gt;
 </description>
-  <link>Posts/Three-Awesome-Months.html</link>
+  <link>https://www.cognitiveinheritance.com/Posts/Three-Awesome-Months.html</link>
   <author>bsstahl</author>
-  <guid><a href="Permalinks/7d652a10-6e7d-43d9-adb0-fbfce01e46db.html" rel="bookmark">Permalink</a></guid>
+  <guid><a href="https://www.cognitiveinheritance.com/Permalinks/7d652a10-6e7d-43d9-adb0-fbfce01e46db.html" rel="bookmark">Permalink</a></guid>
   <pubDate>2019-02-26T00:00:00.0000000Z</pubDate>
 </item>
 <item>
@@ -97,7 +97,7 @@ public class MeetingReadRepository : IMeetingReadRepository
 &lt;blockquote&gt;
 &lt;p&gt;The cost to &quot;go live&quot; is only a small percentage of the lifetime total cost of ownership. – Andy Kyte for Gartner Research, 30 March 2010&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;There are some conflicting principles at work here, but for me, these situations expose the critical importance of flexibility and extensibility in our application architectures.  After all, maintenance and extension are the two greatest costs in a typical application’s life-cycle. I don’t want to build things that I don’t yet need because the likelihood is that I will never need them (see &lt;a href=&quot;./Search/yagni.html&quot;&gt;YAGNI&lt;/a&gt;). However, I don’t want to preclude myself from building things in the future by making decisions that cripple flexibility. I certainly don’t want to have to do a full system redesign ever time I get a new requirement.&lt;/p&gt;
+&lt;p&gt;There are some conflicting principles at work here, but for me, these situations expose the critical importance of flexibility and extensibility in our application architectures.  After all, maintenance and extension are the two greatest costs in a typical application’s life-cycle. I don’t want to build things that I don’t yet need because the likelihood is that I will never need them (see &lt;a href=&quot;https://www.cognitiveinheritance.com//Search/yagni.html&quot;&gt;YAGNI&lt;/a&gt;). However, I don’t want to preclude myself from building things in the future by making decisions that cripple flexibility. I certainly don’t want to have to do a full system redesign ever time I get a new requirement.&lt;/p&gt;
 &lt;p&gt;For me, this leads to a principle that I like to follow:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;I value &lt;strong&gt;Flexibility&lt;/strong&gt; over &lt;strong&gt;Optimization&lt;/strong&gt;&lt;/p&gt;
@@ -111,11 +111,11 @@ public class MeetingReadRepository : IMeetingReadRepository
 &lt;li&gt;Including all significant data in event messages rather than just keys&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;There are, of course, dangers here as well. It can be easy to fire events whenever we would generally issue a logging message.  Events should be limited to those in the problem domain (Domain Events), not application events. We can also reach a level of absurdity with the weight of each message. As with all things, a balance needs to be struck. In determining that balance, I value Flexibility over Optimization whenever it is reasonable and possible to do so.&lt;/p&gt;
-&lt;p&gt;Do you feel differently? If so, let me know on Twitter <a href="https://twitter.com/bsstahl">@bsstahl</a>.&lt;/p&gt;
+&lt;p&gt;Do you feel differently? If so, let me know on Twitter &lt;a href=&quot;https://twitter.com/bsstahl&quot;&gt;@bsstahl&lt;/a&gt;.&lt;/p&gt;
 </description>
-  <link>Posts/The-Value-of-Flexibility.html</link>
+  <link>https://www.cognitiveinheritance.com/Posts/The-Value-of-Flexibility.html</link>
   <author>bsstahl</author>
-  <guid><a href="Permalinks/578752d7-225b-4510-8de2-2c35ded2eb84.html" rel="bookmark">Permalink</a></guid>
+  <guid><a href="https://www.cognitiveinheritance.com/Permalinks/578752d7-225b-4510-8de2-2c35ded2eb84.html" rel="bookmark">Permalink</a></guid>
   <pubDate>2019-02-14T00:00:00.0000000Z</pubDate>
 </item>
 <item>
@@ -139,7 +139,7 @@ public class MeetingReadRepository : IMeetingReadRepository
 &lt;p&gt;To make matters worse, the rounding that is required for this conversion can be unsafe under certain conditions. On my machine, if the values get within 512 of Int64.MaxValue, even though they don’t exceed it, attempting the conversion may result in an invalid result, or an &lt;strong&gt;OverflowException&lt;/strong&gt;. Even performing the operation without overflow checking using the &lt;strong&gt;unchecked&lt;/strong&gt; keyword or compiler switch doesn&apos;t improve things since, if done unchecked, any overflow in the operation will result in an incorrect value rather than an exception. I prefer the exception in this kind of situation so I generally keep overflow checking on.&lt;/p&gt;
 &lt;p&gt;The key takeaway for me is that just checking to make certain that a Double value is less than Int64.MaxValue is not enough to guarantee it will convert without error, and certainly does not guarantee the accuracy of any such conversion. Only integer values below 52 bits can be accurately converted into Int64 values.&lt;/p&gt;
 &lt;p&gt;It is always best to avoid type conversions if possible, but if you are in a situation where it is necessary to convert from large Double values into Integers, I recommend trying some experiments in your production environment to see what range of values will convert accurately. I also highly recommend including very large integers, approaching or at Int64.MaxValue as test data against any method that accepts Int64 values.  Values that are very large in the negative direction (nearing Int64.MinValue) are also good candidates to be used as test data in these methods.&lt;/p&gt;
-&lt;p&gt;I’ve attached a number of resources below that I used in my research to produce this article, and to fix the bug I caused doing this kind of conversion.  If you have run into this situation and come up with an interesting way of handling it, or if the results of your conversions are different than mine, please let me know about it on Twitter <a href="https://twitter.com/bsstahl">@bsstahl</a>.&lt;/p&gt;
+&lt;p&gt;I’ve attached a number of resources below that I used in my research to produce this article, and to fix the bug I caused doing this kind of conversion.  If you have run into this situation and come up with an interesting way of handling it, or if the results of your conversions are different than mine, please let me know about it on Twitter &lt;a href=&quot;https://twitter.com/bsstahl&quot;&gt;@bsstahl&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Resources&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/dotnet/api/system.double?view=netcore-2.2&quot;&gt;Double Struct&lt;/a&gt; in the .NET API Browser&lt;/li&gt;
@@ -149,9 +149,9 @@ public class MeetingReadRepository : IMeetingReadRepository
 &lt;li&gt;John Skeet’s &lt;a href=&quot;https://jonskeet.uk/csharp/DoubleConverter.cs&quot;&gt;code to convert doubles to the string representation of their exact decimal value&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-  <link>Posts/Back-to-Basicse28093the-Double-Data-Type.html</link>
+  <link>https://www.cognitiveinheritance.com/Posts/Back-to-Basicse28093the-Double-Data-Type.html</link>
   <author>bsstahl</author>
-  <guid><a href="Permalinks/c2b6a683-a9cf-4fce-96c1-5401648c056e.html" rel="bookmark">Permalink</a></guid>
+  <guid><a href="https://www.cognitiveinheritance.com/Permalinks/c2b6a683-a9cf-4fce-96c1-5401648c056e.html" rel="bookmark">Permalink</a></guid>
   <pubDate>2019-02-12T00:00:00.0000000Z</pubDate>
 </item>
 <item>
@@ -164,7 +164,7 @@ public class MeetingReadRepository : IMeetingReadRepository
 &lt;li&gt;A few of the technologies that are making me happy right now:
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://webassembly.org/&quot;&gt;WebAssembly&lt;/a&gt; and &lt;a href=&quot;https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor&quot;&gt;Blazor&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;./Search/ai.html&quot;&gt;AI, Combinatorial Optimization and Genetic Algorithms&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.cognitiveinheritance.com//Search/ai.html&quot;&gt;AI, Combinatorial Optimization and Genetic Algorithms&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;A couple of resources I learn from:
@@ -174,12 +174,12 @@ public class MeetingReadRepository : IMeetingReadRepository
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;I hope you enjoy this interview and find something of value in it. If so, please let me know about it on Twitter <a href="https://twitter.com/bsstahl">@bsstahl</a>.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://developeronfire.com/podcast/episode-399-barry-stahl-optimizing-impact&quot;&gt;&lt;img src=&quot;./Images/DeveloperOnFire_1.png&quot; alt=&quot;Developer On Fire&quot; title=&quot;DeveloperOnFire Podcast&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I hope you enjoy this interview and find something of value in it. If so, please let me know about it on Twitter &lt;a href=&quot;https://twitter.com/bsstahl&quot;&gt;@bsstahl&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://developeronfire.com/podcast/episode-399-barry-stahl-optimizing-impact&quot;&gt;&lt;img src=&quot;https://www.cognitiveinheritance.com//Images/DeveloperOnFire_1.png&quot; alt=&quot;Developer On Fire&quot; title=&quot;DeveloperOnFire Podcast&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 </description>
-  <link>Posts/Developer-on-Fire.html</link>
+  <link>https://www.cognitiveinheritance.com/Posts/Developer-on-Fire.html</link>
   <author>bsstahl</author>
-  <guid><a href="Permalinks/88996646-da47-4325-a45e-3c2e2446ba9e.html" rel="bookmark">Permalink</a></guid>
+  <guid><a href="https://www.cognitiveinheritance.com/Permalinks/88996646-da47-4325-a45e-3c2e2446ba9e.html" rel="bookmark">Permalink</a></guid>
   <pubDate>2018-12-13T00:00:00.0000000Z</pubDate>
 </item>
 <item>
@@ -191,9 +191,9 @@ public class MeetingReadRepository : IMeetingReadRepository
 &lt;/ul&gt;
 &lt;p&gt;Thanks to all of the organizers and attendees of this always amazing event.&lt;/p&gt;
 </description>
-  <link>Posts/SoCalCodeCamp-Slide-Decks.html</link>
+  <link>https://www.cognitiveinheritance.com/Posts/SoCalCodeCamp-Slide-Decks.html</link>
   <author>bsstahl</author>
-  <guid><a href="Permalinks/135fbe81-8ec5-42ad-8ac7-6fac74cdf4f4.html" rel="bookmark">Permalink</a></guid>
+  <guid><a href="https://www.cognitiveinheritance.com/Permalinks/135fbe81-8ec5-42ad-8ac7-6fac74cdf4f4.html" rel="bookmark">Permalink</a></guid>
   <pubDate>2018-11-10T00:00:00.0000000Z</pubDate>
 </item>
 <item>
@@ -201,12 +201,12 @@ public class MeetingReadRepository : IMeetingReadRepository
   <description>&lt;blockquote&gt;
 &lt;p&gt;March 8th–10th 2019&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;./Images/Code%20Monkey%203%20Duckin%20it%20(1)_1.png&quot; alt=&quot;Code Monkey Duckin-It&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.cognitiveinheritance.com//Images/Code%20Monkey%203%20Duckin%20it%20(1)_1.png&quot; alt=&quot;Code Monkey Duckin-It&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;Mark your calendars to block-out the weekend of March 8th 2019 for the next AZGiveCamp Hackathon-of-Help. More details will be coming very soon so keep an eye on &lt;a href=&quot;https://www.azgivecamp.org/&quot;&gt;AZGiveCamp.org&lt;/a&gt; and &lt;a href=&quot;https://www.meetup.com/azgivecamp&quot;&gt;Meetup&lt;/a&gt; for all the particulars as soon as they are available.  I’m looking forward to seeing you all at our 9th event, helping those who help our community.&lt;/p&gt;
 </description>
-  <link>Posts/Save-the-Date-for-AZGiveCamp-IX.html</link>
+  <link>https://www.cognitiveinheritance.com/Posts/Save-the-Date-for-AZGiveCamp-IX.html</link>
   <author>bsstahl</author>
-  <guid><a href="Permalinks/c6b4c9e8-b82c-4fd2-b73d-c230671d66ec.html" rel="bookmark">Permalink</a></guid>
+  <guid><a href="https://www.cognitiveinheritance.com/Permalinks/c6b4c9e8-b82c-4fd2-b73d-c230671d66ec.html" rel="bookmark">Permalink</a></guid>
   <pubDate>2018-10-31T00:00:00.0000000Z</pubDate>
 </item>
 <item>
@@ -219,17 +219,17 @@ public class MeetingReadRepository : IMeetingReadRepository
 &lt;/blockquote&gt;
 &lt;p&gt;The slide deck for these presentations can be found here &lt;a href=&quot;https://1drv.ms/b/s!AMwbHpz53UVdm45C&quot;&gt;IntroToWasmAndBlazor-201809.pdf&lt;/a&gt;.&lt;/p&gt;
 </description>
-  <link>Posts/Intro-to-WebAssembly-Using-Blazor.html</link>
+  <link>https://www.cognitiveinheritance.com/Posts/Intro-to-WebAssembly-Using-Blazor.html</link>
   <author>bsstahl</author>
-  <guid><a href="Permalinks/357b8c8b-e115-4aad-9534-6f1f80a17fa2.html" rel="bookmark">Permalink</a></guid>
+  <guid><a href="https://www.cognitiveinheritance.com/Permalinks/357b8c8b-e115-4aad-9534-6f1f80a17fa2.html" rel="bookmark">Permalink</a></guid>
   <pubDate>2018-09-26T00:00:00.0000000Z</pubDate>
 </item>
 <item>
   <title>Programmers -- Take Responsibility for Your AI’s Output</title>
   <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;plus ça change, plus c&apos;est la même chose&lt;/strong&gt; – &lt;strong&gt;The more that things change, the more they stay the same&lt;/strong&gt;. – Rush (and others &lt;img src=&quot;./Images/wlEmoticon-winkingsmile.png&quot; alt=&quot;Winking smile&quot; /&gt; )&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;plus ça change, plus c&apos;est la même chose&lt;/strong&gt; – &lt;strong&gt;The more that things change, the more they stay the same&lt;/strong&gt;. – Rush (and others &lt;img src=&quot;https://www.cognitiveinheritance.com//Images/wlEmoticon-winkingsmile.png&quot; alt=&quot;Winking smile&quot; /&gt; )&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;In 2013 I <a href="Posts/Programmers-Take-Responsibility-for-Your-Programe28099s-Output.html">wrote</a> that programmers needed to take responsibility for the output of their computer programs.  In that article, I advised developers that the output of their system, no matter how &quot;random&quot; or &quot;computer generated&quot;, was still their responsibility. I suggested that we cannot cop out by claiming  that the output of our programs is not our fault simply because we didn’t directly instruct the computer to issue that specific result.&lt;/p&gt;
+&lt;p&gt;In 2013 I &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/Programmers-Take-Responsibility-for-Your-Programe28099s-Output.html&quot;&gt;wrote&lt;/a&gt; that programmers needed to take responsibility for the output of their computer programs.  In that article, I advised developers that the output of their system, no matter how &quot;random&quot; or &quot;computer generated&quot;, was still their responsibility. I suggested that we cannot cop out by claiming  that the output of our programs is not our fault simply because we didn’t directly instruct the computer to issue that specific result.&lt;/p&gt;
 &lt;p&gt;Today, we have a similar problem, only the stakes are much, much, higher.&lt;/p&gt;
 &lt;p&gt;In the world of 2018, our algorithms are being used in police work and inside other government agencies to know where and when to deploy resources, and to decide who is and isn’t worthy of an opportunity. Our programs are being used in the private sector to make decisions from trading stocks to hiring, sometimes at a scale and speed that puts us all at risk of economic events. These tools are being deployed by information brokers such as Facebook and Google to make predictions about how best to steal the most precious resource we have, our time.  Perhaps scariest of all, these algorithms may be being used to make decisions that have permanent and irreversible results, such as with drone strikes.  We  simply have no way of knowing the full breadth of decisions that AIs are making on our behalf today.  If those algorithms are biased in any way, the decisions made by these programs will be biased, potentially in very serious ways and with serious results.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -247,7 +247,7 @@ public class MeetingReadRepository : IMeetingReadRepository
 &lt;p&gt;The more people understand how you’ve examined your data, and the assumptions you’ve made, the more confident they can be that anomalies in the output are not a result of systemic bias. This is the most critical when these decisions have significant consequences to peoples’ lives.  A good example is in prison sentencing. It is unconscionable to me that we allow black-box algorithms to make sentencing decisions on our behalf.  These models should be completely transparent and subject to our analysis and correction.  That they aren’t, but are still being used by our governments, represent a huge breakdown of the system, since these decisions MUST be made with the trust and at the will of the populace.&lt;/p&gt;
 &lt;h5&gt;Build AIs that Provide Insight Into Results (when possible)&lt;/h5&gt;
 &lt;p&gt;Many types of AI models are completely opaque when it comes to how decisions are reached.  This doesn’t mean however that all of our AIs must be complete black-boxes.  It is true that  most of the common machine learning methods such as Deep-Neural-Networks (DNNs) are extremely difficult to analyze.  However, there are other types of models that are much more transparent when it comes to decision making.  Some model types will not be useable on all problems, but when the options exist, transparency should be a strong consideration.&lt;/p&gt;
-&lt;p&gt;There are also techniques that can be used to make even opaque models more transparent.  For example, a hybrid technique (<a href="Posts/AI-That-Can-Explain-Why.html">AI That Can Explain Why</a> &amp;amp; {PageLink:An-Example-of-a-Hybrid-AI-Implementation|An Example of a Hybrid AI Implementation}) can be used to run opaque models iteratively.  This can allow the developer to log key details at specific points in the process, making the decisions much more transparent.  There are also techniques to manipulate the data after a decision is made, to gain insight into the reasons for the decision.&lt;/p&gt;
+&lt;p&gt;There are also techniques that can be used to make even opaque models more transparent.  For example, a hybrid technique (&lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/AI-That-Can-Explain-Why.html&quot;&gt;AI That Can Explain Why&lt;/a&gt; &amp;amp; <a href="https://www.cognitiveinheritance.com/Posts/An-Example-of-a-Hybrid-AI-Implementation.html">An Example of a Hybrid AI Implementation</a>) can be used to run opaque models iteratively.  This can allow the developer to log key details at specific points in the process, making the decisions much more transparent.  There are also techniques to manipulate the data after a decision is made, to gain insight into the reasons for the decision.&lt;/p&gt;
 &lt;h5&gt;Don’t Give the AI the Codes to the Nukes&lt;/h5&gt;
 &lt;p&gt;Computers should never be allowed to make automated decisions that cannot be reversed by a human if necessary. Decisions like when to attack a target, execute a criminal, vent radioactive waste, or ditch an aircraft are all decisions that require human verification since they cannot be undone if the model has an error or is faced with  a completely unforeseen set of conditions. There are no circumstances where machines should be making such decisions for us without the opportunity for human intervention, and it is up to us, the programmers, to make sure that we don’t give them that capability.&lt;/p&gt;
 &lt;h5&gt;Don’t Build it if it Can’t be Done Ethically&lt;/h5&gt;
@@ -255,9 +255,9 @@ public class MeetingReadRepository : IMeetingReadRepository
 &lt;h4&gt;The Burden is Ours&lt;/h4&gt;
 &lt;p&gt;As the creators of automated decision making systems, we have the responsibility to make sure that the decisions they make do not violate our standards or ethics.  We cannot depend on our AIs to make fair and reasonable decisions unless we program them to do so, and programming them to avoid inherent biases requires an awareness and openness that has not always been present.  By taking the steps outlined here to be aware of the dangers and to mitigate it wherever possible, we have a chance of making decisions that we can all be proud of, and have confidence in.&lt;/p&gt;
 </description>
-  <link>Posts/Programmers-Take-Responsibility-for-Your-AIe28099s-Output.html</link>
+  <link>https://www.cognitiveinheritance.com/Posts/Programmers-Take-Responsibility-for-Your-AIe28099s-Output.html</link>
   <author>bsstahl</author>
-  <guid><a href="Permalinks/686f1de9-562f-4ef5-a3ac-4a75da9373f8.html" rel="bookmark">Permalink</a></guid>
+  <guid><a href="https://www.cognitiveinheritance.com/Permalinks/686f1de9-562f-4ef5-a3ac-4a75da9373f8.html" rel="bookmark">Permalink</a></guid>
   <pubDate>2018-03-16T00:00:00.0000000Z</pubDate>
 </item>
 
