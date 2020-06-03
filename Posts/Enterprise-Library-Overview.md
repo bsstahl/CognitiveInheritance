@@ -13,8 +13,8 @@ title: Enterprise Library Overview
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2006-05-08T21:55:00
-lastmodificationdate: 2010-10-22T18:11:27
+publicationdate: 2006-05-08T21:55:00.000+00:00
+lastmodificationdate: 2010-10-22T18:11:27.000+00:00
 slug: Enterprise-Library-Overview
 categories:
 - Development

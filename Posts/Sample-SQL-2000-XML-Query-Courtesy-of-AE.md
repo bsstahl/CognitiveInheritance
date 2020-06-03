@@ -10,8 +10,8 @@ title: Sample SQL 2000 XML Query Courtesy of AE
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2006-05-25T18:53:00
-lastmodificationdate: 2010-10-22T18:10:06
+publicationdate: 2006-05-25T18:53:00.000+00:00
+lastmodificationdate: 2010-10-22T18:10:06.000+00:00
 slug: Sample-SQL-2000-XML-Query-Courtesy-of-AE
 categories:
 - Development

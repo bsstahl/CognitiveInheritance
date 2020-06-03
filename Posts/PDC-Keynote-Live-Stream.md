@@ -9,8 +9,8 @@ title: PDC Keynote Live Stream
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2008-10-28T21:47:00
-lastmodificationdate: 2010-10-22T18:11:27
+publicationdate: 2008-10-28T21:47:00.000+00:00
+lastmodificationdate: 2010-10-22T18:11:27.000+00:00
 slug: PDC-Keynote-Live-Stream
 categories:
 - Event

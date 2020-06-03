@@ -15,8 +15,8 @@ title: Microservices Presentation
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2017-05-06T18:40:03
-lastmodificationdate: 2017-05-06T18:40:03
+publicationdate: 2017-05-06T18:40:03.000+00:00
+lastmodificationdate: 2017-05-06T18:40:03.000+00:00
 slug: Microservices-Presentation
 categories:
 - Event

@@ -17,8 +17,8 @@ title: Building AI Solutions with Google OR-Tools
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2017-09-28T20:53:44
-lastmodificationdate: 2017-09-28T20:53:44
+publicationdate: 2017-09-28T20:53:44.000+00:00
+lastmodificationdate: 2017-09-28T20:53:44.000+00:00
 slug: Building-AI-Solutions-with-Google-OR-Tools
 categories:
 - Development

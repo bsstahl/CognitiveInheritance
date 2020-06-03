@@ -9,8 +9,8 @@ title: Final Day
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2003-06-03T21:22:00
-lastmodificationdate: 2010-10-22T18:11:36
+publicationdate: 2003-06-03T21:22:00.000+00:00
+lastmodificationdate: 2010-10-22T18:11:36.000+00:00
 slug: Final-Day
 categories:
 - Event

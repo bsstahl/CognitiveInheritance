@@ -11,8 +11,8 @@ title: Profile Provider Exception
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2006-10-07T18:00:00
-lastmodificationdate: 0001-01-03T04:00:00
+publicationdate: 2006-10-07T18:00:00.000+00:00
+lastmodificationdate: 0001-01-03T04:00:00.000+00:00
 slug: Profile-Provider-Exception
 categories:
 - Development

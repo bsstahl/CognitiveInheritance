@@ -13,8 +13,8 @@ title: Why I Am Attending the Pluralsight “Algorithms and Data Structures” W
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2011-08-24T21:14:00
-lastmodificationdate: 2011-08-25T08:41:48
+publicationdate: 2011-08-24T21:14:00.000+00:00
+lastmodificationdate: 2011-08-25T08:41:48.000+00:00
 slug: Why-I-Am-Attending-the-Pluralsight-e2809cAlgorithms-and-Data-Structurese2809d-Webcast
 categories:
 - Development

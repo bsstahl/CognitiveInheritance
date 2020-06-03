@@ -9,8 +9,8 @@ title: Stay Tuned
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2003-05-28T19:38:00
-lastmodificationdate: 2010-10-22T18:11:36
+publicationdate: 2003-05-28T19:38:00.000+00:00
+lastmodificationdate: 2010-10-22T18:11:36.000+00:00
 slug: Stay-Tuned
 categories:
 - Event

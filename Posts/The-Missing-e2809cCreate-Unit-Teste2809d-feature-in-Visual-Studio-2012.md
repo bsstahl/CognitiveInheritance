@@ -10,8 +10,8 @@ title: The Missing “Create Unit Test” feature in Visual Studio 2012
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2012-09-16T17:14:01
-lastmodificationdate: 2012-09-16T17:14:01
+publicationdate: 2012-09-16T17:14:01.000+00:00
+lastmodificationdate: 2012-09-16T17:14:01.000+00:00
 slug: The-Missing-e2809cCreate-Unit-Teste2809d-feature-in-Visual-Studio-2012
 categories:
 - Development

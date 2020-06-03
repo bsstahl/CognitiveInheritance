@@ -8,8 +8,8 @@ title: VB.NET 2.0 Language Changes Give You More
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2006-05-08T05:15:00
-lastmodificationdate: 2010-10-22T18:11:36
+publicationdate: 2006-05-08T05:15:00.000+00:00
+lastmodificationdate: 2010-10-22T18:11:36.000+00:00
 slug: VBNET-20-Language-Changes-Give-You-More
 categories:
 - Event

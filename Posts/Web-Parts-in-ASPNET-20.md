@@ -9,8 +9,8 @@ title: Web Parts in ASP.NET 2.0
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2006-05-08T08:52:00
-lastmodificationdate: 2010-10-22T18:11:36
+publicationdate: 2006-05-08T08:52:00.000+00:00
+lastmodificationdate: 2010-10-22T18:11:36.000+00:00
 slug: Web-Parts-in-ASPNET-20
 categories:
 - Event
