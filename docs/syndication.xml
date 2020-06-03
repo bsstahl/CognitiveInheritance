@@ -57,7 +57,7 @@ public class MeetingReadRepository : IMeetingReadRepository
   <link>Posts/Meta-Abstraction-You-Aint-Gonna-Need-It!.html</link>
   <author>bsstahl</author>
   <guid><a href="Permalinks/a9d7154a-2798-4a77-851b-0783b45bc1b4.html" rel="bookmark">Permalink</a></guid>
-  <pubDate>2020-05-18T00:00:00.0000000+00:00</pubDate>
+  <pubDate>2020-05-18T00:00:00.0000000Z</pubDate>
 </item>
 <item>
   <title>South Florida Code Camp 2019</title>
@@ -67,7 +67,7 @@ public class MeetingReadRepository : IMeetingReadRepository
   <link>Posts/South-Florida-Code-Camp-2019.html</link>
   <author>bsstahl</author>
   <guid><a href="Permalinks/ba2507c7-41d6-4e4e-8e65-10c22451edd7.html" rel="bookmark">Permalink</a></guid>
-  <pubDate>2019-03-03T00:00:00.0000000</pubDate>
+  <pubDate>2019-03-03T00:00:00.0000000Z</pubDate>
 </item>
 <item>
   <title>Three Awesome Months</title>
@@ -87,7 +87,7 @@ public class MeetingReadRepository : IMeetingReadRepository
   <link>Posts/Three-Awesome-Months.html</link>
   <author>bsstahl</author>
   <guid><a href="Permalinks/7d652a10-6e7d-43d9-adb0-fbfce01e46db.html" rel="bookmark">Permalink</a></guid>
-  <pubDate>2019-02-26T00:00:00.0000000+00:00</pubDate>
+  <pubDate>2019-02-26T00:00:00.0000000Z</pubDate>
 </item>
 <item>
   <title>The Value of Flexibility</title>
@@ -116,7 +116,7 @@ public class MeetingReadRepository : IMeetingReadRepository
   <link>Posts/The-Value-of-Flexibility.html</link>
   <author>bsstahl</author>
   <guid><a href="Permalinks/578752d7-225b-4510-8de2-2c35ded2eb84.html" rel="bookmark">Permalink</a></guid>
-  <pubDate>2019-02-14T00:00:00.0000000+00:00</pubDate>
+  <pubDate>2019-02-14T00:00:00.0000000Z</pubDate>
 </item>
 <item>
   <title>Back to Basics–the Double Data Type</title>
@@ -152,7 +152,7 @@ public class MeetingReadRepository : IMeetingReadRepository
   <link>Posts/Back-to-Basicse28093the-Double-Data-Type.html</link>
   <author>bsstahl</author>
   <guid><a href="Permalinks/c2b6a683-a9cf-4fce-96c1-5401648c056e.html" rel="bookmark">Permalink</a></guid>
-  <pubDate>2019-02-12T00:00:00.0000000+00:00</pubDate>
+  <pubDate>2019-02-12T00:00:00.0000000Z</pubDate>
 </item>
 <item>
   <title>Developer on Fire</title>
@@ -180,7 +180,7 @@ public class MeetingReadRepository : IMeetingReadRepository
   <link>Posts/Developer-on-Fire.html</link>
   <author>bsstahl</author>
   <guid><a href="Permalinks/88996646-da47-4325-a45e-3c2e2446ba9e.html" rel="bookmark">Permalink</a></guid>
-  <pubDate>2018-12-13T00:00:00.0000000+00:00</pubDate>
+  <pubDate>2018-12-13T00:00:00.0000000Z</pubDate>
 </item>
 <item>
   <title>SoCalCodeCamp Slide Decks</title>
@@ -194,7 +194,7 @@ public class MeetingReadRepository : IMeetingReadRepository
   <link>Posts/SoCalCodeCamp-Slide-Decks.html</link>
   <author>bsstahl</author>
   <guid><a href="Permalinks/135fbe81-8ec5-42ad-8ac7-6fac74cdf4f4.html" rel="bookmark">Permalink</a></guid>
-  <pubDate>2018-11-10T00:00:00.0000000+00:00</pubDate>
+  <pubDate>2018-11-10T00:00:00.0000000Z</pubDate>
 </item>
 <item>
   <title>AZGiveCamp IX-Save the Date</title>
@@ -207,7 +207,7 @@ public class MeetingReadRepository : IMeetingReadRepository
   <link>Posts/Save-the-Date-for-AZGiveCamp-IX.html</link>
   <author>bsstahl</author>
   <guid><a href="Permalinks/c6b4c9e8-b82c-4fd2-b73d-c230671d66ec.html" rel="bookmark">Permalink</a></guid>
-  <pubDate>2018-10-31T00:00:00.0000000+00:00</pubDate>
+  <pubDate>2018-10-31T00:00:00.0000000Z</pubDate>
 </item>
 <item>
   <title>Intro to WebAssembly Using Blazor</title>
@@ -222,7 +222,7 @@ public class MeetingReadRepository : IMeetingReadRepository
   <link>Posts/Intro-to-WebAssembly-Using-Blazor.html</link>
   <author>bsstahl</author>
   <guid><a href="Permalinks/357b8c8b-e115-4aad-9534-6f1f80a17fa2.html" rel="bookmark">Permalink</a></guid>
-  <pubDate>2018-09-26T00:00:00.0000000+00:00</pubDate>
+  <pubDate>2018-09-26T00:00:00.0000000Z</pubDate>
 </item>
 <item>
   <title>Programmers -- Take Responsibility for Your AI’s Output</title>
@@ -258,7 +258,7 @@ public class MeetingReadRepository : IMeetingReadRepository
   <link>Posts/Programmers-Take-Responsibility-for-Your-AIe28099s-Output.html</link>
   <author>bsstahl</author>
   <guid><a href="Permalinks/686f1de9-562f-4ef5-a3ac-4a75da9373f8.html" rel="bookmark">Permalink</a></guid>
-  <pubDate>2018-03-16T00:00:00.0000000+00:00</pubDate>
+  <pubDate>2018-03-16T00:00:00.0000000Z</pubDate>
 </item>
 
 </channel>
