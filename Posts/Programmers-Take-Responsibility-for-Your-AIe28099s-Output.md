@@ -23,7 +23,7 @@ categories:
 ---
 > **plus ça change, plus c'est la même chose** – **The more that things change, the more they stay the same**. – Rush (and others ![Winking smile]({PathToRoot}/Images/wlEmoticon-winkingsmile.png) )
 
-In 2013 I {PageLink:Programmers-Take-Responsibility-for-Your-Programe28099s-Output|wrote} that programmers needed to take responsibility for the output of their computer programs.  In that article, I advised developers that the output of their system, no matter how “random” or “computer generated”, was still their responsibility. I suggested that we cannot cop out by claiming  that the output of our programs is not our fault simply because we didn’t directly instruct the computer to issue that specific result.
+In 2013 I {PostLink:Programmers-Take-Responsibility-for-Your-Programe28099s-Output|wrote} that programmers needed to take responsibility for the output of their computer programs.  In that article, I advised developers that the output of their system, no matter how “random” or “computer generated”, was still their responsibility. I suggested that we cannot cop out by claiming  that the output of our programs is not our fault simply because we didn’t directly instruct the computer to issue that specific result.
 
 Today, we have a similar problem, only the stakes are much, much, higher.
 
@@ -55,7 +55,7 @@ The more people understand how you’ve examined your data, and the assumptions 
 
 Many types of AI models are completely opaque when it comes to how decisions are reached.  This doesn’t mean however that all of our AIs must be complete black-boxes.  It is true that  most of the common machine learning methods such as Deep-Neural-Networks (DNNs) are extremely difficult to analyze.  However, there are other types of models that are much more transparent when it comes to decision making.  Some model types will not be useable on all problems, but when the options exist, transparency should be a strong consideration.
 
-There are also techniques that can be used to make even opaque models more transparent.  For example, a hybrid technique ({PageLink:AI-That-Can-Explain-Why|AI That Can Explain Why} & {PageLink:An-Example-of-a-Hybrid-AI-Implementation|An Example of a Hybrid AI Implementation}) can be used to run opaque models iteratively.  This can allow the developer to log key details at specific points in the process, making the decisions much more transparent.  There are also techniques to manipulate the data after a decision is made, to gain insight into the reasons for the decision.
+There are also techniques that can be used to make even opaque models more transparent.  For example, a hybrid technique ({PostLink:AI-That-Can-Explain-Why|AI That Can Explain Why} & {PostLink:An-Example-of-a-Hybrid-AI-Implementation|An Example of a Hybrid AI Implementation}) can be used to run opaque models iteratively.  This can allow the developer to log key details at specific points in the process, making the decisions much more transparent.  There are also techniques to manipulate the data after a decision is made, to gain insight into the reasons for the decision.
 
 ##### Don’t Give the AI the Codes to the Nukes
 

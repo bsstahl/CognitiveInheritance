@@ -18,7 +18,7 @@ categories:
 - Tools
 
 ---
-While I was working on my {PageLink:Remove-Any-Code-Your-Users-Dont-Care-About|last post}, I experimented with some visualizations that I thought might help make my point a bit more clearly.  I didn’t end up using them, but the whiteboard exercise that I went through in developing them helped me organize my thoughts, and, I believe, resulted in a better article.
+While I was working on my {PostLink:Remove-Any-Code-Your-Users-Dont-Care-About|last post}, I experimented with some visualizations that I thought might help make my point a bit more clearly.  I didn’t end up using them, but the whiteboard exercise that I went through in developing them helped me organize my thoughts, and, I believe, resulted in a better article.
 
 ![After Office Lens Processing]({PathToRoot}/Images/Office%20Lens_20150928_155346_processed_thumb.jpg)
 

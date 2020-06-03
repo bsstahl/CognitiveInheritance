@@ -30,7 +30,7 @@ categories:
 - Development
 
 ---
-One of the techniques I recommend highly in my {PageLink:Simplify-Your-API|Simplify Your API} talk is the use of extension methods to hide the complexity of lower-level API functionality.  A good example of a place to use this methodology came-up last night in a great Reflection talk by Jeremy Clark ([Twitter](https://twitter.com/jeremybytes), [Blog](https://jeremybytes.blogspot.com/)) at the [NorthWest Valley .NET User Group](http://www.nwvdnug.org).
+One of the techniques I recommend highly in my {PostLink:Simplify-Your-API|Simplify Your API} talk is the use of extension methods to hide the complexity of lower-level API functionality.  A good example of a place to use this methodology came-up last night in a great Reflection talk by Jeremy Clark ([Twitter](https://twitter.com/jeremybytes), [Blog](https://jeremybytes.blogspot.com/)) at the [NorthWest Valley .NET User Group](http://www.nwvdnug.org).
 
 ![Jeremy]({PathToRoot}/Images/Jeremy_2.jpg)
 
