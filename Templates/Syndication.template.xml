@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>{SiteTitle}</title>
     <description>{SiteDescription}</description>
@@ -7,8 +7,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Prehensile Pony Tail 1.0</generator>
     <language>en-US</language>
-    <geo:lat>33.4716724</geo:lat>
-    <geo:long>-112.0891115</geo:long>
-	{Content}
+    <atom:link href="https://cognitiveinheritance.com/syndication.xml" rel="self" type="application/rss+xml" />	
+    {Content}
 </channel>
 </rss>
