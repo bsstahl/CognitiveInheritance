@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cognitive Inheritance</title>
     <description>The Application Development Experiences of an Enterprise Developer</description>
@@ -7,9 +7,8 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Prehensile Pony Tail 1.0</generator>
     <language>en-US</language>
-    <geo:lat>33.4716724</geo:lat>
-    <geo:long>-112.0891115</geo:long>
-	<item>
+    <atom:link href="https://cognitiveinheritance.com/syndication.xml" rel="self" type="application/rss+xml" />	
+    <item>
   <title>Meta-Abstraction -- You Ain't Gonna Need It!</title>
   <description>&amp;lt;blockquote&amp;gt;
 &amp;lt;p&amp;gt;When we look at the abstractions in our applications, we should see a description of the capabilities of our applications, not the capabilities of the abstraction&amp;lt;/p&amp;gt;
@@ -55,9 +54,9 @@ public class MeetingReadRepository : IMeetingReadRepository
 &amp;lt;p&amp;gt;Did I miss something here? Do you have a situation where you feel it is worth it to build a framework, or even part of a framework, within your applications. Please let me know about it on Twitter &amp;lt;a href=&amp;quot;https://twitter.com/bsstahl&amp;quot;&amp;gt;@bsstahl&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/Meta-Abstraction-You-Aint-Gonna-Need-It!.html</link>
-  <author>bsstahl</author>
-  <guid><a href="https://www.cognitiveinheritance.com/Permalinks/a9d7154a-2798-4a77-851b-0783b45bc1b4.html" rel="bookmark">Permalink</a></guid>
-  <pubDate>2020-05-18T00:00:00.0000000Z</pubDate>
+  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
+  <guid>https://www.cognitiveinheritance.com/Permalinks/a9d7154a-2798-4a77-851b-0783b45bc1b4.html</guid>
+  <pubDate>Mon, 18 May 2020 15:35:16 GMT</pubDate>
 </item>
 <item>
   <title>South Florida Code Camp 2019</title>
@@ -65,9 +64,9 @@ public class MeetingReadRepository : IMeetingReadRepository
 &amp;lt;p&amp;gt;The slides for my presentation are online &amp;lt;a href=&amp;quot;http://introwasmblazor-201903.azurewebsites.net&amp;quot;&amp;gt;Intro to WebAssembly and Blazor&amp;lt;/a&amp;gt; and the Blazor Chutes &amp;amp; Ladders Simulation sample code can be found in my &amp;lt;a href=&amp;quot;https://github.com/bsstahl/AIDemos&amp;quot;&amp;gt;AIDemos GitHub Repo&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/South-Florida-Code-Camp-2019.html</link>
-  <author>bsstahl</author>
-  <guid><a href="https://www.cognitiveinheritance.com/Permalinks/ba2507c7-41d6-4e4e-8e65-10c22451edd7.html" rel="bookmark">Permalink</a></guid>
-  <pubDate>2019-03-03T00:00:00.0000000Z</pubDate>
+  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
+  <guid>https://www.cognitiveinheritance.com/Permalinks/ba2507c7-41d6-4e4e-8e65-10c22451edd7.html</guid>
+  <pubDate>Sun, 03 Mar 2019 16:47:53 GMT</pubDate>
 </item>
 <item>
   <title>Three Awesome Months</title>
@@ -85,9 +84,9 @@ public class MeetingReadRepository : IMeetingReadRepository
 &amp;lt;p&amp;gt;I maintain a list of my presentations, both past and upcoming, on the &amp;lt;a href=&amp;quot;https://www.cognitiveinheritance.com/Pages/Speaking-Engagements.html&amp;quot;&amp;gt;Community Speaker&amp;lt;/a&amp;gt; page of this blog. I also try to document my conference experiences on Twitter &amp;lt;a href=&amp;quot;https://twitter.com/bsstahl&amp;quot;&amp;gt;@bsstahl&amp;lt;/a&amp;gt;. If you are going to be attending any of these events, please be sure to ping me on Twitter and let me know.&amp;lt;/p&amp;gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/Three-Awesome-Months.html</link>
-  <author>bsstahl</author>
-  <guid><a href="https://www.cognitiveinheritance.com/Permalinks/7d652a10-6e7d-43d9-adb0-fbfce01e46db.html" rel="bookmark">Permalink</a></guid>
-  <pubDate>2019-02-26T00:00:00.0000000Z</pubDate>
+  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
+  <guid>https://www.cognitiveinheritance.com/Permalinks/7d652a10-6e7d-43d9-adb0-fbfce01e46db.html</guid>
+  <pubDate>Tue, 26 Feb 2019 04:57:21 GMT</pubDate>
 </item>
 <item>
   <title>The Value of Flexibility</title>
@@ -114,9 +113,9 @@ public class MeetingReadRepository : IMeetingReadRepository
 &amp;lt;p&amp;gt;Do you feel differently? If so, let me know on Twitter &amp;lt;a href=&amp;quot;https://twitter.com/bsstahl&amp;quot;&amp;gt;@bsstahl&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/The-Value-of-Flexibility.html</link>
-  <author>bsstahl</author>
-  <guid><a href="https://www.cognitiveinheritance.com/Permalinks/578752d7-225b-4510-8de2-2c35ded2eb84.html" rel="bookmark">Permalink</a></guid>
-  <pubDate>2019-02-14T00:00:00.0000000Z</pubDate>
+  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
+  <guid>https://www.cognitiveinheritance.com/Permalinks/578752d7-225b-4510-8de2-2c35ded2eb84.html</guid>
+  <pubDate>Thu, 14 Feb 2019 16:31:05 GMT</pubDate>
 </item>
 <item>
   <title>Back to Basics–the Double Data Type</title>
@@ -150,9 +149,9 @@ public class MeetingReadRepository : IMeetingReadRepository
 &amp;lt;/ul&amp;gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/Back-to-Basicse28093the-Double-Data-Type.html</link>
-  <author>bsstahl</author>
-  <guid><a href="https://www.cognitiveinheritance.com/Permalinks/c2b6a683-a9cf-4fce-96c1-5401648c056e.html" rel="bookmark">Permalink</a></guid>
-  <pubDate>2019-02-12T00:00:00.0000000Z</pubDate>
+  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
+  <guid>https://www.cognitiveinheritance.com/Permalinks/c2b6a683-a9cf-4fce-96c1-5401648c056e.html</guid>
+  <pubDate>Tue, 12 Feb 2019 02:55:23 GMT</pubDate>
 </item>
 <item>
   <title>Developer on Fire</title>
@@ -178,9 +177,9 @@ public class MeetingReadRepository : IMeetingReadRepository
 &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://developeronfire.com/podcast/episode-399-barry-stahl-optimizing-impact&amp;quot;&amp;gt;&amp;lt;img src=&amp;quot;https://www.cognitiveinheritance.com//Images/DeveloperOnFire_1.png&amp;quot; alt=&amp;quot;Developer On Fire&amp;quot; title=&amp;quot;DeveloperOnFire Podcast&amp;quot; /&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/Developer-on-Fire.html</link>
-  <author>bsstahl</author>
-  <guid><a href="https://www.cognitiveinheritance.com/Permalinks/88996646-da47-4325-a45e-3c2e2446ba9e.html" rel="bookmark">Permalink</a></guid>
-  <pubDate>2018-12-13T00:00:00.0000000Z</pubDate>
+  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
+  <guid>https://www.cognitiveinheritance.com/Permalinks/88996646-da47-4325-a45e-3c2e2446ba9e.html</guid>
+  <pubDate>Thu, 13 Dec 2018 21:39:17 GMT</pubDate>
 </item>
 <item>
   <title>SoCalCodeCamp Slide Decks</title>
@@ -192,9 +191,9 @@ public class MeetingReadRepository : IMeetingReadRepository
 &amp;lt;p&amp;gt;Thanks to all of the organizers and attendees of this always amazing event.&amp;lt;/p&amp;gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/SoCalCodeCamp-Slide-Decks.html</link>
-  <author>bsstahl</author>
-  <guid><a href="https://www.cognitiveinheritance.com/Permalinks/135fbe81-8ec5-42ad-8ac7-6fac74cdf4f4.html" rel="bookmark">Permalink</a></guid>
-  <pubDate>2018-11-10T00:00:00.0000000Z</pubDate>
+  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
+  <guid>https://www.cognitiveinheritance.com/Permalinks/135fbe81-8ec5-42ad-8ac7-6fac74cdf4f4.html</guid>
+  <pubDate>Sat, 10 Nov 2018 19:39:46 GMT</pubDate>
 </item>
 <item>
   <title>AZGiveCamp IX-Save the Date</title>
@@ -205,9 +204,9 @@ public class MeetingReadRepository : IMeetingReadRepository
 &amp;lt;p&amp;gt;Mark your calendars to block-out the weekend of March 8th 2019 for the next AZGiveCamp Hackathon-of-Help. More details will be coming very soon so keep an eye on &amp;lt;a href=&amp;quot;https://www.azgivecamp.org/&amp;quot;&amp;gt;AZGiveCamp.org&amp;lt;/a&amp;gt; and &amp;lt;a href=&amp;quot;https://www.meetup.com/azgivecamp&amp;quot;&amp;gt;Meetup&amp;lt;/a&amp;gt; for all the particulars as soon as they are available.  I’m looking forward to seeing you all at our 9th event, helping those who help our community.&amp;lt;/p&amp;gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/Save-the-Date-for-AZGiveCamp-IX.html</link>
-  <author>bsstahl</author>
-  <guid><a href="https://www.cognitiveinheritance.com/Permalinks/c6b4c9e8-b82c-4fd2-b73d-c230671d66ec.html" rel="bookmark">Permalink</a></guid>
-  <pubDate>2018-10-31T00:00:00.0000000Z</pubDate>
+  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
+  <guid>https://www.cognitiveinheritance.com/Permalinks/c6b4c9e8-b82c-4fd2-b73d-c230671d66ec.html</guid>
+  <pubDate>Wed, 31 Oct 2018 03:10:44 GMT</pubDate>
 </item>
 <item>
   <title>Intro to WebAssembly Using Blazor</title>
@@ -220,9 +219,9 @@ public class MeetingReadRepository : IMeetingReadRepository
 &amp;lt;p&amp;gt;The slide deck for these presentations can be found here &amp;lt;a href=&amp;quot;https://1drv.ms/b/s!AMwbHpz53UVdm45C&amp;quot;&amp;gt;IntroToWasmAndBlazor-201809.pdf&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/Intro-to-WebAssembly-Using-Blazor.html</link>
-  <author>bsstahl</author>
-  <guid><a href="https://www.cognitiveinheritance.com/Permalinks/357b8c8b-e115-4aad-9534-6f1f80a17fa2.html" rel="bookmark">Permalink</a></guid>
-  <pubDate>2018-09-26T00:00:00.0000000Z</pubDate>
+  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
+  <guid>https://www.cognitiveinheritance.com/Permalinks/357b8c8b-e115-4aad-9534-6f1f80a17fa2.html</guid>
+  <pubDate>Wed, 26 Sep 2018 18:12:49 GMT</pubDate>
 </item>
 <item>
   <title>Programmers -- Take Responsibility for Your AI’s Output</title>
@@ -256,9 +255,9 @@ public class MeetingReadRepository : IMeetingReadRepository
 &amp;lt;p&amp;gt;As the creators of automated decision making systems, we have the responsibility to make sure that the decisions they make do not violate our standards or ethics.  We cannot depend on our AIs to make fair and reasonable decisions unless we program them to do so, and programming them to avoid inherent biases requires an awareness and openness that has not always been present.  By taking the steps outlined here to be aware of the dangers and to mitigate it wherever possible, we have a chance of making decisions that we can all be proud of, and have confidence in.&amp;lt;/p&amp;gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/Programmers-Take-Responsibility-for-Your-AIe28099s-Output.html</link>
-  <author>bsstahl</author>
-  <guid><a href="https://www.cognitiveinheritance.com/Permalinks/686f1de9-562f-4ef5-a3ac-4a75da9373f8.html" rel="bookmark">Permalink</a></guid>
-  <pubDate>2018-03-16T00:00:00.0000000Z</pubDate>
+  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
+  <guid>https://www.cognitiveinheritance.com/Permalinks/686f1de9-562f-4ef5-a3ac-4a75da9373f8.html</guid>
+  <pubDate>Fri, 16 Mar 2018 03:22:42 GMT</pubDate>
 </item>
 
 </channel>
