@@ -1,4 +1,11 @@
 ---
 label: Favorites
 hide_body: true
-fields: []
+fields:
+- name: name
+  type: list
+  config:
+    use_select: false
+    min: 
+    max: 
+  label: Name
