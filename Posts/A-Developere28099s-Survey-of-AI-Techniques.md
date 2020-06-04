@@ -28,4 +28,4 @@ The slide deck for my talk “A Developer’s Survey of AI Techniques” can be 
 
 The talk explores some of the different techniques used to create Artificial Intelligences using the example of a Chutes & Ladders game.  Various AIs are developed using different strategies for playing a variant of the game, using different techniques for deciding where on the game board to move.
 
-If you would like me to deliver this talk, or [any of my talks]({PathToRoot}/Pages/Speaking-Engagements.html), at your User Group or Conference, please [contact me]({PathToRoot}/contact.html).
+If you would like me to deliver this talk, or {PageLink:Speaking-Engagements|any of my talks}, at your User Group or Conference, please {ContactPageLink:contact me}.

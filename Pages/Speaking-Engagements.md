@@ -19,7 +19,7 @@ Upcoming Talks:
 
 ***
 
-I have the following talks on topics of interest to Enterprise Developers that I can deliver at your user group or conference. You can submit a request for me to speak by [contacting me]({PathToRoot}/contact.html).
+I have the following talks on topics of interest to Enterprise Developers that I can deliver at your user group or conference. You can submit a request for me to speak by {ContactPageLink:contacting me}.
 
 #### Artificial Intelligence and Algorithms
 

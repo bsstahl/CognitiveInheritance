@@ -21,7 +21,7 @@ categories:
 - Development
 
 ---
-Dynamic Programming (DP) is a mathematical tool that can be used to efficiently solve certain types of problems and is a must-have in any software developer's toolbox. A lot has been written about this process from a mathematician's perspective but there are very few resources out there to help software developers who want to implement this technique in code. In this article and the companion conference talk "[Dynamic Optimization - One Algorithm All Programmers Should Know]({PathToRoot}/Posts/Dynamic-Optimization-Presentation.html)", I attempt to demystify this simple tool so that developer's can implement it for their customers.
+Dynamic Programming (DP) is a mathematical tool that can be used to efficiently solve certain types of problems and is a must-have in any software developer's toolbox. A lot has been written about this process from a mathematician's perspective but there are very few resources out there to help software developers who want to implement this technique in code. In this article and the companion conference talk "{PostLink:Dynamic-Optimization-Presentation|Dynamic Optimization - One Algorithm All Programmers Should Know}", I attempt to demystify this simple tool so that developer's can implement it for their customers.
 
 #### What is Combinatorial Optimization?
 
@@ -46,7 +46,7 @@ Let's look at one of the canonical types of problems that can be solved using Dy
 
 We can solve this type of problem using Dynamic Programming by filling-out a table that holds possible capacities, from 0 to the capacity of our known knapsack, and each of the possible items to use to fill that space, as shown below.
 
-![A Table for Solving this Knapsack Problem]({PathToRoot}/Images/Knapsack.png)
+{ImageLink:Knapsack.png|A Table for Solving this Knapsack Problem}
 
 In this example, there are 3 items with weights of 4, 5 and 2.  These items have values of 5, 6 and 3 respectively and can be placed in a knapsack with capacity of 9. The leftmost column of the table represents the capacities of knapsacks from 0, up to and including the capacity of our knapsack.  The next column represents the best value we would get in the knapsack if we had the option of putting 0 items in our knapsack. The next, the best value if we had the option of taking the 1st item, the next column, the option to take the 2nd item on top of any previous items, and so forth until we complete the table.  As you can see, the most value we can get in our knapsack with the option of picking from these 3 items is 11, as found in the last row of the last column. That is, the cell that represents a knapsack with our known capacity, with the option to chose from all of the items.
 
@@ -69,13 +69,13 @@ For the cell in column "2" with a knapsack capacity of 9, we take the greater of
 
 Each cell in the table can be filled out by doing these simple calculations, 1 addition and 1 comparison, using the values previously calculated as shown in the annotated table below.
 
-![Filling-out the Table to Solve the Knapsack Problem]({PathToRoot}/Images/Knapsack-CalculateValue.png)
+{ImageLink:Knapsack-CalculateValue.png|Filling-out the Table to Solve the Knapsack Problem}
 
 So we've filled out the table and know, from the cell in the bottom right that the maximum value we can get from this knapsack with these items is 11. Great, but that only answers the question of maximum value, it doesn't tell us which items are chosen to achieve this value.  To determine that, we need to work backward from the known best value.
 
 Starting at the known best value in the bottom-right cell, we can look one cell to the left to see that the value there is the same.  Since we know that taking an item would increase the value of the knapsack, we can know that we must not have chosen to take the item in the last column.  We can then repeat the process from there.  From the bottom cell in the column labeled "2", we can look left and see that the value in the previous column did change, so we know we need to take the item in column "2" to get our maximum value.  Since we know that item 2 had a weight of 5, we can subtract that from the capacity of our knapsack, and continue the process from that point, knowing that we now only have 4 more units of capacity to work with.  Comparing the item in the column labeled "1" and a knapsack capacity of 4 with the value of the equivalent knapsack in column "0", we can see that we need to include item 1 in our knapsack to get the optimum result.
 
-![Calculating the Results of the Knapsack Problem]({PathToRoot}/Images/Knapsack-DetermineResults.png)
+{ImageLink:Knapsack-DetermineResults.png|Calculating the Results of the Knapsack Problem}
 
 #### What did we actually do here?
 
@@ -89,7 +89,7 @@ You can probably see that if both axes of this table, the capacity of the knapsa
 
 #### Continue the Conversation
 
-I am happy to answer questions or discuss this further. Ping me on Twitter {TwitterLink} with your comments or questions. I'd love to hear from you.  I am also available to deliver a talk to your conference or user group on [this or other topics]({PathToRoot}/Pages/Speaking-Engagements.html). You can [contact me here]({PathToRoot}/contact.html).
+I am happy to answer questions or discuss this further. Ping me on Twitter {TwitterLink} with your comments or questions. I'd love to hear from you.  I am also available to deliver a talk to your conference or user group on {PageLink:Speaking-Engagements|this or other topics}. You can {ContactPageLink:contact me here}.
 
 ##### Footnotes
 
