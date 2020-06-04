@@ -30,7 +30,7 @@ Another great Desert Code Camp is in the books. A huge shout-out to all of the o
 
 I was privileged to be able to deliver two talks during this event:
 
-* **A Developer’s Survey of AI Techniques**: Artificial Intelligence is far more than just machine learning. There are a variety of tools and techniques that systems use to make rational decisions on our behalf. In this survey designed specifically for software developers, we explore a variety of these methods using demo code written in c#. You will leave with an understanding of the breadth of AI methodologies as well as when and how they might be used. You will also have a library of sample code available for reference.
+**A Developer’s Survey of AI Techniques**: Artificial Intelligence is far more than just machine learning. There are a variety of tools and techniques that systems use to make rational decisions on our behalf. In this survey designed specifically for software developers, we explore a variety of these methods using demo code written in c#. You will leave with an understanding of the breadth of AI methodologies as well as when and how they might be used. You will also have a library of sample code available for reference.
   * Code Samples: [GitHub Repo](https://github.com/bsstahl/AIDemos/tree/master/ChutesAndLaddersDemo/Simulation "GitHub Repo for Chutes & Ladders Demo")
   * Slide Deck: {FileLink:Devs Survey of AI - Desert Code Camp October 2017.pdf|PDF}
 
