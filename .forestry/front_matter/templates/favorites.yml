@@ -16,4 +16,5 @@ fields:
     max: 
   label: Name
 pages:
+- Data/Favorite-Mathematicians.md
 - Data/Favorite-Physicists.md
