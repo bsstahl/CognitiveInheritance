@@ -39,4 +39,4 @@ I was privileged to be able to deliver two talks during this event:
 * Code Samples: [GitHub Repo](https://github.com/bsstahl/AIDemos/tree/master/HybridConferenceSchedulerDemo "GitHub Repo for Conference Scheduler Demo")
 * Slide Deck: {FileLink:Building AI Solutions That Can Reason Why - Desert Code Camp Oct 2017.pdf|PDF}
 
-Please feel free to contact me on Twitter {TwitterLink} with any questions or comments on these or any of [my presentations]({PathToRoot}/Pages/Speaking-Engagements.html).
+Please feel free to contact me on Twitter {TwitterLink} with any questions or comments on these or any of {PageLink:Speaking-Engagements|my presentations}.
