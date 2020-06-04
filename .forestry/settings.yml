@@ -22,6 +22,7 @@ sections:
   create: documents
   match: "**/*"
   templates:
+  - favorites
   - widgets
   - categories
   - sitesettings
