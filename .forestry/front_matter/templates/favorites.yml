@@ -15,3 +15,5 @@ fields:
     min: 
     max: 
   label: Name
+pages:
+- Data/Favorite-Physicists.md
