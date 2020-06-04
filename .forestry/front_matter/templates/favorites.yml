@@ -1,7 +1,13 @@
 ---
 label: Favorites
 hide_body: true
+display_field: listname
 fields:
+- name: listname
+  type: text
+  config:
+    required: false
+  label: List Name
 - name: name
   type: list
   config:
