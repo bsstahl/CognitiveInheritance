@@ -15,11 +15,9 @@ slug: Favorites
 ---
 Place the descriptive content about the lists here.
 
-
-
 #### Favorite Physicists
 ---
-1. Harold "Hal" Stahl
+1. Harold &quot;Hal&quot; Stahl
 1. Carl Sagan
 1. Nikola Tesla
 1. Marie Curie
