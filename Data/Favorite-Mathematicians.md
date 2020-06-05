@@ -14,5 +14,6 @@ name:
 - Marvin Minsky
 - Daphne Koller
 - Benoit Mandelbrot
+lastmodificationdate: 2020-06-03T22:05:00Z
 
 ---
