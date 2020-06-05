@@ -8,6 +8,15 @@ fields:
   config:
     required: false
   label: List Name
+- name: lastmodificationdate
+  type: datetime
+  label: LastModificationDate
+  description: ''
+  config:
+    required: false
+    date_format: 
+    time_format: 
+    display_utc: false
 - name: name
   type: list
   config:
