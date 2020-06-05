@@ -28,7 +28,9 @@ I like to describe myself as the kind of person who has a list of his favorite p
 1. Niels Bohr
 1. Galileo Galilei
 1. Michael Faraday
-Other notables: Stephen Hawking, Edwin Hubble
+
+* Other notables: Stephen Hawking, Edwin Hubble
+
 ---
 
 #### Favorite Mathematicians
@@ -43,5 +45,7 @@ Other notables: Stephen Hawking, Edwin Hubble
 1. Blaise Pascal
 1. Johann Gauss
 1. Grace Hopper
-Other notables: Marvin Minsky, Daphne Koller, Benoit Mandelbrot
+
+* Other notables: Marvin Minsky, Daphne Koller, Benoit Mandelbrot
+
 ---
