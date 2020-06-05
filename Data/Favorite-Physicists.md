@@ -12,5 +12,6 @@ name:
 - Galileo Galilei
 - Michael Faraday
 - Stephen Hawking
+- Edwin Hubble
 
 ---
