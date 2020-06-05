@@ -13,11 +13,11 @@ lastmodificationdate: 2020-06-04T07:00:00Z
 slug: Favorites
 
 ---
-Place the descriptive content about the lists here.
+I like to describe myself as the kind of person who has a list of his favorite physicists and favorite mathematicians. The thought being that just knowing I have such a list tells you everything you really need to know about me.
 
 #### Favorite Physicists
 ---
-1. Harold &quot;Hal&quot; Stahl
+1. Harold "Hal" Stahl
 1. Carl Sagan
 1. Nikola Tesla
 1. Marie Curie
