@@ -16,8 +16,8 @@ title: South Florida Code Camp 2019
 description: 
 ispublished: true
 showinlist: false
-publicationdate: 2019-03-03T16:47:53
-lastmodificationdate: 2019-03-03T16:47:53
+publicationdate: 2019-03-03T16:47:53.000+00:00
+lastmodificationdate: 2019-03-03T16:47:53.000+00:00
 slug: South-Florida-Code-Camp-2019
 categories:
 - Event
