@@ -83,19 +83,55 @@
 <hr/><div>
     <h3>Sample SQL 2000 XML Query Courtesy of AE</h3>
     <h5>Posted by bsstahl on 2006-05-25 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <p>DECLARE @sxml varchar(8000)<br />
-SET @sxml = '&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br />
-&lt;Change xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; Version=&quot;1.0&quot;&gt;<br />
-&lt;SourceApplication&gt;&lt;Name&gt;Intranet&lt;/Name&gt;&lt;/SourceApplication&gt;<br />
-&lt;DestinationApplication&gt;&lt;Name&gt;FundsDB&lt;/Name&gt;&lt;/DestinationApplication&gt;<br />
-&lt;UserName&gt;JDoe&lt;/UserName&gt;&lt;IPAddress&gt;192.168.101.2&lt;/IPAddress&gt;<br />
-&lt;BusinessEntity&gt;&lt;Name&gt;Fund&lt;/Name&gt;&lt;/BusinessEntity&gt;&lt;ChangeItems&gt;<br />
-&lt;ChangeItem&gt;&lt;OriginalData&gt;ABC Fund&lt;/OriginalData&gt;&lt;NewData&gt;123 Fund&lt;/NewData&gt;<br />
-&lt;DataID&gt;5&lt;/DataID&gt;&lt;Field&gt;&lt;Name&gt;Name&lt;/Name&gt;&lt;/Field&gt;&lt;/ChangeItem&gt;<br />
-&lt;ChangeItem&gt;&lt;OriginalData&gt;Type A&lt;/OriginalData&gt;&lt;NewData&gt;Type B&lt;/NewData&gt;<br />
-&lt;DataID&gt;5&lt;/DataID&gt;&lt;Field&gt;&lt;Name&gt;Type&lt;/Name&gt;&lt;/Field&gt;&lt;/ChangeItem&gt;<br />
-&lt;/ChangeItems&gt;&lt;ChangeDate&gt;2004-10-12T12:57:00-07:00&lt;/ChangeDate&gt;<br />
-&lt;CommandText&gt;s_SaveFund&lt;/CommandText&gt;&lt;/Change&gt;'</p>
+    <h2>DECLARE @sxml varchar(8000)
+SET @sxml = '&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;Change xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; Version=&quot;1.0&quot;&gt;
+&lt;SourceApplication&gt;&lt;Name&gt;Intranet&lt;/Name&gt;&lt;/SourceApplication&gt;
+&lt;DestinationApplication&gt;&lt;Name&gt;FundsDB&lt;/Name&gt;&lt;/DestinationApplication&gt;
+&lt;UserName&gt;JDoe&lt;/UserName&gt;&lt;IPAddress&gt;192.168.101.2&lt;/IPAddress&gt;
+&lt;BusinessEntity&gt;&lt;Name&gt;Fund&lt;/Name&gt;&lt;/BusinessEntity&gt;&lt;ChangeItems&gt;
+&lt;ChangeItem&gt;&lt;OriginalData&gt;ABC Fund&lt;/OriginalData&gt;&lt;NewData&gt;123 Fund&lt;/NewData&gt;
+&lt;DataID&gt;5&lt;/DataID&gt;&lt;Field&gt;&lt;Name&gt;Name&lt;/Name&gt;&lt;/Field&gt;&lt;/ChangeItem&gt;
+&lt;ChangeItem&gt;&lt;OriginalData&gt;Type A&lt;/OriginalData&gt;&lt;NewData&gt;Type B&lt;/NewData&gt;
+&lt;DataID&gt;5&lt;/DataID&gt;&lt;Field&gt;&lt;Name&gt;Type&lt;/Name&gt;&lt;/Field&gt;&lt;/ChangeItem&gt;
+&lt;/ChangeItems&gt;&lt;ChangeDate&gt;2004-10-12T12:57:00-07:00&lt;/ChangeDate&gt;
+&lt;CommandText&gt;s_SaveFund&lt;/CommandText&gt;&lt;/Change&gt;'</h2>
+<hr />
+<h2>--</h2>
+<p>--</p>
+<h2>DECLARE @ixml int</h2>
+<hr />
+<h2>--</h2>
+<p>--</p>
+<h2>EXEC dbo.sp_xml_preparedocument @ixml OUTPUT, @sxml</h2>
+<hr />
+<h2>--</h2>
+<p>--</p>
+<h2>SELECT x.*
+FROM OPENXML( @ixml, '/Change', 1)
+WITH ( SourceApplication varchar(64) 'SourceApplication/Name',
+DestinationApplication varchar(64) 'DestinationApplication/Name',
+UserName varchar(64) 'UserName',
+IPAddress varchar(23) 'IPAddress',
+BusinessEntity varchar(64) 'BusinessEntity/Name',
+ChangeDate varchar(16) 'ChangeDate',
+CommandText varchar(128) 'CommandText' ) x</h2>
+<hr />
+<h2>--</h2>
+<p>--</p>
+<h2>SELECT x.*
+FROM OPENXML( @ixml, '/Change/ChangeItems/ChangeItem', 1)
+WITH ( OriginalData varchar(2000) 'OriginalData',
+NewData varchar(2000) 'NewData',
+DataID varchar(32) 'DataID',
+Field sysname 'Field/Name' ) x</h2>
+<hr />
+<h2>--</h2>
+<p>--</p>
+<h2>EXEC dbo.sp_xml_removedocument @ixml</h2>
+<hr />
+<h2>--</h2>
+<p>--</p>
 
     <h5>Tags: <a title="Tag: xml" class="small" href="../Search/xml.html">xml</a>&nbsp;<a title="Tag: sql" class="small" href="../Search/sql.html">sql</a>&nbsp;<a title="Tag: code sample" class="small" href="../Search/code-sample.html">code sample</a>&nbsp;</h5>
     <div class="share"><a href="../Permalinks/ebfc5816-e855-47dd-898b-8163932d85ef.html" rel="bookmark">Permalink</a></div>
