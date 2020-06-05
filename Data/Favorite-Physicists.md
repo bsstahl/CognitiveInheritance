@@ -1,7 +1,7 @@
 ---
 listname: Favorite Physicists
 name:
-- Harold &quot;Hal&quot; Stahl
+- Harold "Hal" Stahl
 - Carl Sagan
 - Nikola Tesla
 - Marie Curie
