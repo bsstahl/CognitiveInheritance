@@ -8,15 +8,16 @@ title: My Favorite Physicists and Mathematicians
 description: My lists of my favorite physicists and favorite mathematicians
 ispublished: true
 showinlist: false
-publicationdate: 2017-06-22T07:00:00Z
-lastmodificationdate: 2020-06-04T07:00:00Z
+publicationdate: 2017-06-22T07:00:00.000+00:00
+lastmodificationdate: 2020-06-04T07:00:00.000+00:00
 slug: Favorites
 
 ---
 I like to describe myself as the kind of person who has a list of his favorite physicists and favorite mathematicians. The thought being that just knowing I have such a list tells you everything you really need to know about me.
 
+
 #### Favorite Physicists
----
+
 1. Harold "Hal" Stahl
 1. Carl Sagan
 1. Nikola Tesla
@@ -30,8 +31,10 @@ I like to describe myself as the kind of person who has a list of his favorite p
 
 Other notables: Stephen Hawking, Edwin Hubble
 
-#### Favorite Mathematicians
 ---
+
+#### Favorite Mathematicians
+
 1. Ada Lovelace
 1. Alan Turing
 1. Johannes Kepler
@@ -44,3 +47,7 @@ Other notables: Stephen Hawking, Edwin Hubble
 1. Grace Hopper
 
 Other notables: Marvin Minsky, Daphne Koller, Benoit Mandelbrot
+
+---
+
+
