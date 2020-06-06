@@ -1,5 +1,5 @@
 ---
-menuorder: 0
+menuorder: 25
 id: 4b4e8146-e495-4e6f-b9a2-d2296eef31c7
 author: bsstahl
 title: Favorites
