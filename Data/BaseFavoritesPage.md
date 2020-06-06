@@ -7,7 +7,7 @@ author: bsstahl
 title: My Favorite Physicists and Mathematicians
 description: My lists of my favorite physicists and favorite mathematicians
 ispublished: true
-showinlist: false
+showinlist: true
 publicationdate: 2017-06-22T07:00:00Z
 lastmodificationdate: 2020-06-04T07:00:00Z
 slug: Favorites
