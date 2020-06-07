@@ -786,6 +786,14 @@
           }
         }
       },
+      "YamlDotNet/8.1.2": {
+        "runtime": {
+          "lib/netstandard1.3/YamlDotNet.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.1.2.0"
+          }
+        }
+      },
       "PPTail.Common/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "2.1.1"
@@ -817,7 +825,8 @@
           "Markdig": "0.20.0",
           "Microsoft.Extensions.DependencyInjection": "2.1.1",
           "PPTail.Common": "1.0.0",
-          "ReverseMarkdown": "3.11.0"
+          "ReverseMarkdown": "3.11.0",
+          "YamlDotNet": "8.1.2"
         },
         "runtime": {
           "PPTail.Data.Forestry.dll": {}
@@ -1653,6 +1662,13 @@
       "sha512": "sha512-A/uxsWi/Ifzkmd4ArTLISMbfFs6XpRPsXZonrIqyTY70xi8t+mDtvSM5Os0RqyRDobjMBwIDHDL4NOIbkDwf7A==",
       "path": "system.xml.xpath.xmldocument/4.3.0",
       "hashPath": "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512"
+    },
+    "YamlDotNet/8.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GlPKbb4l+91dyYVKV7UnJlr2CWooNNM1ayZWC90QAmlFPgbwSkfhgId7dGjTAHqkB84BZqjMSy5PlAYf1iejVA==",
+      "path": "yamldotnet/8.1.2",
+      "hashPath": "yamldotnet.8.1.2.nupkg.sha512"
     },
     "PPTail.Common/1.0.0": {
       "type": "project",
