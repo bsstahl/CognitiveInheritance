@@ -163,7 +163,7 @@ public class MeetingReadRepository : IMeetingReadRepository
 &lt;li&gt;A few of the technologies that are making me happy right now:
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://webassembly.org/&quot;&gt;WebAssembly&lt;/a&gt; and &lt;a href=&quot;https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor&quot;&gt;Blazor&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.cognitiveinheritance.com//Search/ai.html&quot;&gt;AI, Combinatorial Optimization and Genetic Algorithms&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.cognitiveinheritance.com/Search/ai.html&quot;&gt;AI, Combinatorial Optimization and Genetic Algorithms&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;A couple of resources I learn from:
@@ -174,7 +174,7 @@ public class MeetingReadRepository : IMeetingReadRepository
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;I hope you enjoy this interview and find something of value in it. If so, please let me know about it on Twitter &lt;a href=&quot;https://twitter.com/bsstahl&quot;&gt;@bsstahl&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://developeronfire.com/podcast/episode-399-barry-stahl-optimizing-impact&quot;&gt;&lt;img src=&quot;https://www.cognitiveinheritance.com//Images/DeveloperOnFire_1.png&quot; alt=&quot;Developer On Fire&quot; title=&quot;DeveloperOnFire Podcast&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://developeronfire.com/podcast/episode-399-barry-stahl-optimizing-impact&quot;&gt;{ImageLink:DeveloperOnFire_1.png|Developer On Fire)&lt;/a&gt;&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/Developer-on-Fire.html</link>
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
