@@ -72,41 +72,49 @@ Community
 <p>When we look at the abstractions in our applications, we should see a description of the capabilities of our applications, not the capabilities of the abstraction</p>
 </blockquote>
 <p>Let’s start this discussion by looking at an example of a simple repository.</p>
-<pre><code>public interface IMeetingReadRepository 
-{ 
-	IEnumerable&lt;Meeting&gt; GetMeetings(DateTime start, DateTime end); 
+<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">public</span> <span style="color:Blue;">interface</span> IMeetingReadRepository
+{
+    IEnumerable&lt;Meeting&gt; GetMeetings(DateTime start, DateTime end);
 }
-</code></pre>
+</pre></div>
+</div>
 <p>It is easy to see the capability being described by this abstraction – any implementation of this interface will have the ability to load a collection of Meeting objects that occur within a given timeframe. There are still some unknown details of the implementation, but the capabilities are described reasonably well.</p>
 <p>Now let’s look at a different implementation of the Repository pattern.</p>
-<pre><code>public interface IReadRepository&lt;T&gt; 
-{ 
-	IEnumerable&lt;T&gt; Get(Func&lt;T, bool&gt; predicate); 
+<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">public</span> <span style="color:Blue;">interface</span> IReadRepository&lt;T&gt;
+{
+    IEnumerable&lt;T&gt; Get(Func&lt;T, <span style="color:Blue;">bool</span>&gt; predicate);
 }
-</code></pre>
+</pre></div>
+</div>
 <p>We can still see that something is going to be loaded using this abstraction, we just don’t know what, and we don’t know what criteria will be used.</p>
 <p>This 2nd implementation is a more flexible interface. That is, we can use this interface to describe many different repositories that do many different things. All we have described in this interface is that we have the ability to create something that will load an entity. In other words, we have described our abstraction but said very little about the capabilities of the application itself. In this case, we have to look at a specific implementation to see what it loads, but we still have no idea what criteria can be used to load it.</p>
-<pre><code>public class MeetingReadRepository : IReadRepository&lt;Meeting&gt; 
-{ 
-	IEnumerable&lt;Meeting&gt; Get(Func&lt;Meeting, bool&gt; predicate); 
-}
-</code></pre>
-<p>We could extend this class with a method that specifically loads meetings by start and end date, but then that method is not on the abstraction so it cannot be used without leaking the details of the implementation to the application.  The only way to implement this pattern in a way that uses the generic interface, but still fully describes the capabilities of the application is to use both methods described above. That is, we implement the specific repository, using the generic repository – layering abstraction on top of abstraction, as shown below.</p>
-<pre><code>public interface IMeetingReadRepository : IReadRepository&lt;Meeting&gt; 
-{ 
-	IEnumerable&lt;Meeting&gt; GetMeetings(DateTime start, DateTime end); 
-}
-
-public class MeetingReadRepository : IMeetingReadRepository
+<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">public</span> <span style="color:Blue;">class</span> MeetingReadRepository : IReadRepository&lt;Meeting&gt;
 {
-	IEnumerable&lt;Meeting&gt; GetMeetings(DateTime start, DateTime end) 
-		=&gt; Get(m =&gt; m.Start &gt;= start &amp;&amp; m.Start &lt; end)
-
-	// TODO: Implement
-	IEnumerable&lt;Meeting&gt; Get(Func&lt;Meeting, bool&gt; predicate)
-		=&gt; throw new NotImplementedException();
+    IEnumerable&lt;Meeting&gt; Get(Func&lt;Meeting, <span style="color:Blue;">bool</span>&gt; predicate);
 }
-</code></pre>
+</pre></div>
+</div>
+<p>We could extend this class with a method that specifically loads meetings by start and end date, but then that method is not on the abstraction so it cannot be used without leaking the details of the implementation to the application.  The only way to implement this pattern in a way that uses the generic interface, but still fully describes the capabilities of the application is to use both methods described above. That is, we implement the specific repository, using the generic repository – layering abstraction on top of abstraction, as shown below.</p>
+<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">public</span> <span style="color:Blue;">interface</span> IMeetingReadRepository : IReadRepository&lt;Meeting&gt;
+{
+    IEnumerable&lt;Meeting&gt; GetMeetings(DateTime start, DateTime end);
+}
+
+<span style="color:Blue;">public</span> <span style="color:Blue;">class</span> MeetingReadRepository : IMeetingReadRepository
+{
+    IEnumerable&lt;Meeting&gt; GetMeetings(DateTime start, DateTime end)
+        =&gt; Get(m =&gt; m.Start &gt;= start &amp;&amp; m.Start &lt; end)
+
+    <span style="color:Green;">// TODO: Implement</span>
+    IEnumerable&lt;Meeting&gt; Get(Func&lt;Meeting, <span style="color:Blue;">bool</span>&gt; predicate)
+        =&gt; <span style="color:Blue;">throw</span> <span style="color:Blue;">new</span> NotImplementedException();
+}
+</pre></div>
+</div>
 <p>Is this worth the added complexity? It seems to me that as application developers we should be concerned about describing and building our applications in the simplest, most maintainable and extensible way possible. To do so, we need seams in our applications in the form of abstractions. However, we generally do not need to build frameworks on which we build those abstractions. Framework creation is an entirely other topic with an entirely different set of concerns.</p>
 <p>I think it is easy to see how quickly things can get overly-complex when we start building abstractions on top of our own abstractions in our applications. Using Microsoft or 3rd party frameworks is fine when appropriate, but there is generally no need to build your own frameworks, especially within your applications. In the vast majority of cases, <a href="../Search/yagni.html">YAGNI</a>.</p>
 <p>Did I miss something here? Do you have a situation where you feel it is worth it to build a framework, or even part of a framework, within your applications. Please let me know about it on Twitter <a href="https://twitter.com/bsstahl">@bsstahl</a>.</p>
@@ -120,9 +128,11 @@ public class MeetingReadRepository : IMeetingReadRepository
     <p>I don't create collection objects anymore.</p>
 <p>I know, I know. I was they guy always preaching that every entity that was being collected had to have its own collection object. It was the right thing at the time; if you needed to take an action on an enumeration or list of objects, those actions needed to be done within a strongly-typed collection object to maintain encapsulation. Even if all that was happening was that an inherited <em>List&lt;T&gt;</em> function was being called, that functionality needed to be called on the <em>TCollection</em> object because, if it wasn't, it was likely that the next time logic needed to be performed on the collection, there wouldn't be a place to put it. Collection logic would end up being spread-out around your code rather than encapsulated in the collection. It was also possible that the implementation might change and need to be updated everywhere, instead of in one place.</p>
 <p>Today however, that has all changed. Extension methods now allow us, at any time, to add functionality to <em>ICollection&lt;T&gt;</em>, <em>IList&lt;T&gt;</em>, <em>IEnumerable&lt;T&gt;</em> or any other interface or class. We can attach our list or enumeration based actions directly to the list or enumeration class, and do so at any time, since the methods appear the same to the developer as methods directly on the collection type. Thus, the &quot;no place to put it&quot; fear no longer exists. I've even started using this technique for my factory methods to make it clear that what I am creating is, in fact, an <em>IEnumerable&lt;T&gt;</em>, as in this example.</p>
-<pre><code class="language-csharp">  var stations = (null as IEnumerable&lt;Station&gt;).Create();
-  var localStations = stations.GetNearby(currentLocation);
-</code></pre>
+<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
+  <span style="color:Blue;">var</span> stations = (<span style="color:Blue;">null</span> <span style="color:Blue;">as</span> IEnumerable&lt;Station&gt;).Create();
+  <span style="color:Blue;">var</span> localStations = stations.GetNearby(currentLocation);
+</pre></div>
+</div>
 <p>In this example, both the <strong>Create</strong> and <strong>GetNearby</strong> methods are extension methods found in a static class called <strong>StationExtensions</strong>.</p>
 <p>So, the big advantage here is that these methods can be added anytime, meaning we don't need to create an object that we MAY need in the future. This is better adherence to the <a href="../Search/yagni.html">YAGNI</a> principle so it is a better pattern to follow. But what about disadvantages? Does it hurt us in any way to perform our collection actions this way? I'm not comfortable answering that question with an absolute &quot;no&quot; yet because I don't think I've been using this technique long enough to have covered enough ground with it, but I can certainly say that I haven't found any disadvantages yet. It seems like these extension methods are basically perfect for this type of activity. These methods do everything that the methods of a collection object do, can (and should) be put in a separate module to keep the code together, can be navigated to by Visual Studio in the same way as other methods, and have the same access (<em>private</em>, <em>internal</em>, <em>public</em>) restrictions that collection objects have. About the only thing I can say that is not 100% positive about using these techniques is that the <em>(null as IEnumerable&lt;T&gt;)</em> syntax to create a local variable instance to call the class factory from is not quite as elegant as I'd like it to be.</p>
 <p>So you tell me, do you still create collection objects? Have you found any reason why using extension methods in this way is not as good as putting those methods into a strongly-typed collection? Sound off on Twitter <a href="https://twitter.com/bsstahl">@bsstahl</a> and let's talk about it.</p>
