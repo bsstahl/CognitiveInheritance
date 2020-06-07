@@ -31,7 +31,7 @@ categories:
 - Development
 
 ---
-The complete, working application for my {PostLink:NET-TDD-Kickstart) sessions can be found {FileLink:TDDKickstart.zip|here}.
+The complete, working application for my {PostLink:NET-TDD-Kickstart} sessions can be found {FileLink:TDDKickstart.zip|here}.
 
 Unzip the files into a solution folder and open the **Demo.sln** solution in a version of Visual Studio 2010 that has Unit Testing capability (Professional, Premium or Ultimate).  Immediately, you should be able to compile the whole solution, and successfully execute the tests in the **Bss.QueueMonitor.Test** and **Bss.Timing.Test** libraries.
 
