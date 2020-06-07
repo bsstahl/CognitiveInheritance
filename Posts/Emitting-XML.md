@@ -15,4 +15,4 @@ categories:
 - Development
 
 ---
-In [Five Ways to Emit Test Results as XML]({PathToRoot}/Files/MSDNMag-TestRun-200606.pdf), James McCaffrey provides a number of methods for producing XML data from your applications. His analysis is primarily centered around using the XML output for testing purposes but the information applies to any .NET application that uses XML.  
+In {FileLink:MSDNMag-TestRun-200606.pdf|Five Ways to Emit Test Results as XML}, James McCaffrey provides a number of methods for producing XML data from your applications. His analysis is primarily centered around using the XML output for testing purposes but the information applies to any .NET application that uses XML.  

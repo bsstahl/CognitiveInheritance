@@ -32,11 +32,9 @@ categories:
 - Event
 
 ---
-I head out to Fullerton tomorrow for the start of my .NET TDD Kickstart world tour ![Smile]({PathToRoot}/Images/wlEmoticon-smile.png)
-
+I head out to Fullerton tomorrow for the start of my .NET TDD Kickstart world tour. {ImageLink:wlEmoticon-smile.png|Smile}
 
 > In this session, the speaker and the audience will "pair up" for a coding session which will serve as an introduction to Test Driven Development in an Agile environment. We will use C#, Visual Studio and Rhino Mocks to unit test code to be built both with and without dependencies. We will also highlight some of the common issues encountered during TDD and discuss strategies for overcoming them.
-
 
 I will be presenting this session at numerous venues around the country this year, including, so far:
 
@@ -45,8 +43,8 @@ I will be presenting this session at numerous venues around the country this yea
 - [New Mexico .NET User’s Group](https://www.meetup.com/NMUGMeetup/) – Albuquerque in March
 - [Twin Cities Code Camp](https://twincitiescodecamp.com) – Minneapolis in April
 
-If you are interested in having me present this or another session at your event, please [contact me]({PathToRoot}/contact.html).
+If you are interested in having me present this or another session at your event, please {ContactPageLink:contact me].
 
 There is much more than an hour’s worth of material to be presented, so instead of trying to rush through everything I want to talk about during this time, I’ve instead taken some questions from this presentation and posted them below.  Please contact me if you have any additional questions, need clarification, or if you have an suggestions or additions to these lists.
 
-*Update*: I have moved the FAQ list [here]({PathToRoot}/Pages/Unit-Testing-and-TDD-FAQ.html) to allow it to be maintained separately from this post.
+*Update*: I have moved the FAQ list {PageLink:Unit-Testing-and-TDD-FAQ|here} to allow it to be maintained separately from this post.
