@@ -25,11 +25,11 @@ FxCop, the built-in code-analysis tool in Visual Studio, is the first thing I ch
 
 In order to get these benefits, code analysis must be enabled for each project and a rule set must be selected.  Because adding code-analysis to existing assemblies can be a bit painful, it is recommended that you enable this analysis as soon as a project is created in Visual Studio.  To enable code analysis for an assembly, select the project properties, go to the Code Analysis tab, and check the “Enable Code Analysis on Build (defines CODE\_ANALYSIS constant)” box.
 
-![Visual Studio Dialog]({PathToRoot}/Images/image_2.png)
+{ImageLink:image_2.png|Visual Studio Dialog}
 
 The default rule set that will be run during code analysis is called “Microsoft Minimum Recommended Rules”.  This is a very small set of rules that is a good one to enable if you are starting to do code analysis on a previously coded assembly.  If however, you are starting clean, I highly recommend starting with either the “Microsoft All Rules” rule set, or your own version of that set, since this rule set will provide the most benefit in all areas of analysis.  To create your own rule sets, select the set you wish to modify and press the “Open” button next to the rule set drop-down.  Once opened, you can make any changes you wish, and use the File –&gt; Save-as menu item to save the rule set with a different file name.  New rule sets will automatically appear in the drop-down menu. You can use the properties tab to update the Name and Description of the set, and the rules editor to enable or disable individual rules.  You can also define, for each rule, whether failures are ignored, result in a warning, or generate a compilation error.  I highly recommend setting all rules that you want to enforce to cause errors since they can always be overridden if necessary but will likely be missed if they only result in warnings.
 
-![Rules List]({PathToRoot}/Images/image_3.png)
+{ImageLink:image_3.png|Rules List}
 
 For my projects, I use one of several rule sets that I have set up, all of which are slight modifications to the “Microsoft All Rules” rule set.  I will detail the rule set changes I make and overrides that I allow in each set of circumstances below.  I encourage you to experiment with these rule sets to determine the optimum configuration for your projects.
 

@@ -32,6 +32,6 @@ categories:
 - Development
 
 ---
-I previously posted the slides for my **Building Enterprise Apps using Entity Framework 4** talk [here]({PathToRoot}/Posts/Desert-Code-Camp-Presentation.html). I can now post the source code for the completed demo application.  That code, created for use in Visual Studio 2010 Ultimate, is available in zip format below.  This is the same code that was demonstrated at Desert Code Camp 2011.1 and SoCalCodeCamp 2011 as well as the New Mexico .NET User’s Group (NMUG).
+I previously posted the slides for my **Building Enterprise Apps using Entity Framework 4** talk {PostLink:Desert-Code-Camp-Presentation|here}. I can now post the source code for the completed demo application.  That code, created for use in Visual Studio 2010 Ultimate, is available in zip format below.  This is the same code that was demonstrated at Desert Code Camp 2011.1 and SoCalCodeCamp 2011 as well as the New Mexico .NET User’s Group (NMUG).
 
 [EF4EnterpriseDemoCode.zip](https://docs.google.com/uc?id=0B6PPrBnxN6VtMGRhNzZhOGUtNGY5NC00M2IyLTgxYzMtOTVlNDU0MDQyNjc1&amp;export=download&amp;hl=en_US)

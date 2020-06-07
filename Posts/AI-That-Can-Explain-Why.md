@@ -31,7 +31,7 @@ While not exactly the type of system Grady was describing, it reminded me of a s
 
 The problem looked something like this:
 
-![Ideal Solution Space]({PathToRoot}/Images/Ideal%20Solution%20Space_thumb.png "Ideal Solution Space")
+{ImageLink:Ideal%20Solution%20Space_thumb.png|Ideal Solution Space}
 
 There are many possible ways to allocate work assignments among employees.  Some of those allocations would not be legal, perhaps because the employee is not qualified for that assignment, or because of time limits on how much he or she can work.  Other options may be legal, but are not ideal.  The assignment may be sub-optimal for the employee who may have a schedule conflict or other preference against that particular assignment, or for the company which may not be able to easily fill the assignment with anyone else.
 
@@ -41,7 +41,7 @@ The resulting hybrid approach started by eliminating illegal options, and then l
 
 A very simplified diagram of the process is shown below.
 
-![Hybrid Decision Making]({PathToRoot}/Images/Hybrid%20Decision%20Making_thumb.png "Hybrid Decision Making")
+{ImageLink:Hybrid%20Decision%20Making_thumb.png|Hybrid Decision Making}
 
 Each time the green diamond testing “Is the solution still feasible?” is hit, the optimization model is run to verify that a solution can be found.  It is this hybrid process, the iterative execution of a combinatorial solution engine, that gives this tool its ability to both answer the question of *how to do things*, while also being able to answer the question of *why it needs to be done this way*.
 

@@ -31,11 +31,11 @@ I also took the opportunity to talk about a few things that have been on my mind
 * Some of [the giants on whose shoulders we stand](https://twitter.com/bsstahl/status/878043411923599360)
 * A few of the technologies that are making me happy right now:
   * [WebAssembly](https://webassembly.org/) and [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)
-  * [AI, Combinatorial Optimization and Genetic Algorithms]({PathToRoot}/Search/ai.html)
+  * {SearchLink:ai|AI, Combinatorial Optimization and Genetic Algorithms}
 * A couple of resources I learn from:
   * [brilliant.org](https://brilliant.org)
   * The works of [David McRaney](http://davidmcraney.com/)
 
 I hope you enjoy this interview and find something of value in it. If so, please let me know about it on Twitter {TwitterLink}.
 
-[![Developer On Fire]({PathToRoot}/Images/DeveloperOnFire_1.png "DeveloperOnFire Podcast")](https://developeronfire.com/podcast/episode-399-barry-stahl-optimizing-impact)
+[{ImageLink:DeveloperOnFire_1.png|Developer On Fire)](https://developeronfire.com/podcast/episode-399-barry-stahl-optimizing-impact)

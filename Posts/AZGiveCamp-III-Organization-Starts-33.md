@@ -25,7 +25,6 @@ To get to the US Airways Rio West offices, take the Priest Dr. exit off the 202 
 
 If you have any trouble finding the meeting location, please call me and I will do my best to guide you in.
 
+{ImageLink:image.png|Map to meeting}
 
-![Map to meeting]({PathToRoot}/Images/image.png)
-
-![Satellite View of Buildings]({PathToRoot}/Images/image_1.png)
+{ImageLink:image_1.png|Satellite View of Buildings}

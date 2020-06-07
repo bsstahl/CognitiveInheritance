@@ -23,9 +23,9 @@ categories:
 - Development
 
 ---
-I [previously]({PathToRoot}/Posts/AI-That-Can-Explain-Why.html) wrote about a Hybrid AI system that combined logical and optimization methods of problem solving to identify the best solution to an employee shift assignment problem. This implementation was notable in that a hybrid approach was used so that the optimal solution could be found, but the system could still indicate to the users why a particular assignment was, or wasn’t, included in the results.
+I {PostLink:AI-That-Can-Explain-Why|previously} wrote about a Hybrid AI system that combined logical and optimization methods of problem solving to identify the best solution to an employee shift assignment problem. This implementation was notable in that a hybrid approach was used so that the optimal solution could be found, but the system could still indicate to the users why a particular assignment was, or wasn’t, included in the results.
 
-I recently published to [GitHub](https://github.com/bsstahl/AIDemos) a demo of a similar system. I use this demo in my presentation, [Building AI Solutions that can Reason Why]({PathToRoot}/Pages/Speaking-Engagements.html). The code demonstrates the hybridization of multiple AI techniques by creating a solution that iteratively applies a combinatorial optimization engine. Different results are obtained by varying the methods of applying the constraints in that model. In the final (4th) demo  method, an iterative process is used to identify what the shortcomings of the final product are, and why they are necessary.
+I recently published to [GitHub](https://github.com/bsstahl/AIDemos) a demo of a similar system. I use this demo in my presentation {PageLink:Speaking-Engagements.html|Building AI Solutions that can Reason Why}. The code demonstrates the hybridization of multiple AI techniques by creating a solution that iteratively applies a combinatorial optimization engine. Different results are obtained by varying the methods of applying the constraints in that model. In the final (4th) demo  method, an iterative process is used to identify what the shortcomings of the final product are, and why they are necessary.
 
 These demos use the [Conference Scheduler](https://github.com/bsstahl/ConferenceScheduler) AI project to build a valid schedule.
 
@@ -51,7 +51,7 @@ The final demo, and the only method in **AddConstraintsDemo.cs**, builds on the 
 
 The process of iteratively executing the optimization, adding constraints one at a time, is show in the diagram below.  It is important to remember that the order in which these constraints are added here is critical since constraining the solution in one way may limit the feasibility of the solution for future constraints.  Great care must be taken in selecting the order that constraints are added in order to obtain the best possible solution.
 
-![Hybrid Conference Optimization Process]({PathToRoot}/Images/Hybrid%20Conference%20Optimization%20Process_thumb.png "Hybrid Conference Optimization Process")
+{ImageLink:Hybrid%20Conference%20Optimization%20Process_thumb.png|Hybrid Conference Optimization Process}
 
 The steps are as follows:
 

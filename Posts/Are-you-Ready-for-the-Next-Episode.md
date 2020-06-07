@@ -28,7 +28,7 @@ categories:
 - Development
 
 ---
-In the last episode of “[Refactoring my App Development Mojo]({PathToRoot}/Posts/Windows-8-Store-Development-for-Enterprise-Devs.html)”, I explained how I had discovered my passion for building Windows Store applications by using a hybrid solution of HTML5 with very minimal JavaScript, bound to a view-model written in C# running as a Windows Runtime Component, communicating with services written in C# using WCF.  The goal was to do as much of the coding as possible in the technologies I was very comfortable with, C# and HTML, and minimize the use of those technologies which I had never gotten comfortable with, namely JavaScript and XAML.
+In the last episode of “{PostLink:Windows-8-Store-Development-for-Enterprise-Devs|Refactoring my App Development Mojo}”, I explained how I had discovered my passion for building Windows Store applications by using a hybrid solution of HTML5 with very minimal JavaScript, bound to a view-model written in C# running as a Windows Runtime Component, communicating with services written in C# using WCF.  The goal was to do as much of the coding as possible in the technologies I was very comfortable with, C# and HTML, and minimize the use of those technologies which I had never gotten comfortable with, namely JavaScript and XAML.
 
 While this was an interesting and somewhat novel approach, it turned out to have a few fairly significant drawbacks:
 

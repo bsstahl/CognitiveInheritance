@@ -31,7 +31,7 @@ categories:
 - Development
 
 ---
-The complete, working application for my [.NET TDD Kickstart]({PathToRoot}/Posts/NET-TDD-Kickstart.html) sessions can be found [here]({PathToRoot}/Files/TDDKickstart.zip).
+The complete, working application for my {PostLink:NET-TDD-Kickstart) sessions can be found {FileLink:TDDKickstart.zip|here}.
 
 Unzip the files into a solution folder and open the **Demo.sln** solution in a version of Visual Studio 2010 that has Unit Testing capability (Professional, Premium or Ultimate).  Immediately, you should be able to compile the whole solution, and successfully execute the tests in the **Bss.QueueMonitor.Test** and **Bss.Timing.Test** libraries.
 
@@ -41,4 +41,4 @@ The solution is configured to use a SQLExpress database called **TDDDemo**.  Yo
 
 You can install Message Queuing on computers running Windows 7 by using **Programs and Features** in the **Control Panel**.  You do not need to create any specific queue because the integration test creates a queue for each test individually, then deletes the queue when the test is complete.
 
-If you have any questions or comments about this sample, please start a conversation on Twitter {TwitterLink} or [Contact Me]({PathToRoot}/contact.html).
+If you have any questions or comments about this sample, please start a conversation on Twitter {TwitterLink} or {ContactPageLink}.
