@@ -1,0 +1,1 @@
+dotnet ".\PPTail\PPTail.dll" "Provider=PPTail.Data.Forestry.Repository;Filepath=." "Provider=PPTail.Output.FileSystem.Repository;FilePath=.\docs" .\Templates\
