@@ -43,7 +43,7 @@ I will be presenting this session at numerous venues around the country this yea
 - [New Mexico .NET User’s Group](https://www.meetup.com/NMUGMeetup/) – Albuquerque in March
 - [Twin Cities Code Camp](https://twincitiescodecamp.com) – Minneapolis in April
 
-If you are interested in having me present this or another session at your event, please {ContactPageLink:contact me].
+If you are interested in having me present this or another session at your event, please {ContactPageLink:contact me}.
 
 There is much more than an hour’s worth of material to be presented, so instead of trying to rush through everything I want to talk about during this time, I’ve instead taken some questions from this presentation and posted them below.  Please contact me if you have any additional questions, need clarification, or if you have an suggestions or additions to these lists.
 
