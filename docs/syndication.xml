@@ -65,8 +65,7 @@
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/a9d7154a-2798-4a77-851b-0783b45bc1b4.html</guid>
   <pubDate>Mon, 18 May 2020 15:35:16 GMT</pubDate>
-</item>
-<item>
+</item><item>
   <title>South Florida Code Camp 2019</title>
   <description>&lt;p&gt;Thanks again to all the organizers, speakers and attendees of the 2019 South Florida Code Camp. As always, it was an amazing and fun experience.&lt;/p&gt;
 &lt;p&gt;The slides for my presentation are online &lt;a href=&quot;http://introwasmblazor-201903.azurewebsites.net&quot;&gt;Intro to WebAssembly and Blazor&lt;/a&gt; and the Blazor Chutes &amp;amp; Ladders Simulation sample code can be found in my &lt;a href=&quot;https://github.com/bsstahl/AIDemos&quot;&gt;AIDemos GitHub Repo&lt;/a&gt;.&lt;/p&gt;
@@ -75,8 +74,7 @@
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/ba2507c7-41d6-4e4e-8e65-10c22451edd7.html</guid>
   <pubDate>Sun, 03 Mar 2019 16:47:53 GMT</pubDate>
-</item>
-<item>
+</item><item>
   <title>Three Awesome Months</title>
   <description>&lt;p&gt;The next few months are going to be absolutely amazing. We&apos;ve got some great events coming up in March and April right here in the Valley of the Sun. In addition, I currently have 4 conferences scheduled in 4 different countries on 2 continents.&lt;/p&gt;
 &lt;h4&gt;AZGiveCamp IX - Presented by Quicken Loans - March 8th-10th&lt;/h4&gt;
@@ -95,8 +93,7 @@
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/7d652a10-6e7d-43d9-adb0-fbfce01e46db.html</guid>
   <pubDate>Tue, 26 Feb 2019 04:57:21 GMT</pubDate>
-</item>
-<item>
+</item><item>
   <title>The Value of Flexibility</title>
   <description>&lt;p&gt;Have you ever experienced that feeling you get when you need to extend an existing system and there is an extension point that is exactly what you need to build on?&lt;/p&gt;
 &lt;p&gt;For example, suppose I get a request to extend a system so that an additional action is taken whenever a new user signs-up.  The system already has an event message that is published whenever a new user signs-up that contains all of the information I need for the new functionality.  All I have to do is subscribe a new microservice to this event message, and have that service take the new action whenever it receives a message. Boom! Done.&lt;/p&gt;
@@ -124,8 +121,7 @@
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/578752d7-225b-4510-8de2-2c35ded2eb84.html</guid>
   <pubDate>Thu, 14 Feb 2019 16:31:05 GMT</pubDate>
-</item>
-<item>
+</item><item>
   <title>Back to Basics–the Double Data Type</title>
   <description>&lt;p&gt;What is the result of converting a value that is close to, but not at, the maximum value of an Int64 from a double to a long (Int64)?  That is, what would be the result of an expression like:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;(long)((double)(Int64.MaxValue – 1))&lt;/code&gt;&lt;/p&gt;
@@ -160,8 +156,7 @@
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/c2b6a683-a9cf-4fce-96c1-5401648c056e.html</guid>
   <pubDate>Tue, 12 Feb 2019 02:55:23 GMT</pubDate>
-</item>
-<item>
+</item><item>
   <title>Developer on Fire</title>
   <description>&lt;p&gt;I was recently interviewed by Dave Rael (&lt;a href=&quot;https://twitter.com/raelyard&quot;&gt;@raelyard&lt;/a&gt;) for his &lt;a href=&quot;https://developeronfire.com/podcast/episode-399-barry-stahl-optimizing-impact&quot;&gt;Developer on Fire Podcast&lt;/a&gt;.  I had a great time talking with Dave about a lot of different things, both professional and personal, and got to name-drop just a few of the many people who have been a part of my journey over the years.&lt;/p&gt;
 &lt;p&gt;I also took the opportunity to talk about a few things that have been on my mind:&lt;/p&gt;
@@ -188,8 +183,7 @@
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/88996646-da47-4325-a45e-3c2e2446ba9e.html</guid>
   <pubDate>Thu, 13 Dec 2018 21:39:17 GMT</pubDate>
-</item>
-<item>
+</item><item>
   <title>SoCalCodeCamp Slide Decks</title>
   <description>&lt;p&gt;The slide decks for my two talks at SoCalCodeCamp USC from November 10, 2018 are below.&lt;/p&gt;
 &lt;ul&gt;
@@ -202,8 +196,7 @@
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/135fbe81-8ec5-42ad-8ac7-6fac74cdf4f4.html</guid>
   <pubDate>Sat, 10 Nov 2018 19:39:46 GMT</pubDate>
-</item>
-<item>
+</item><item>
   <title>AZGiveCamp IX-Save the Date</title>
   <description>&lt;blockquote&gt;
 &lt;p&gt;March 8th–10th 2019&lt;/p&gt;
@@ -215,8 +208,7 @@
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/c6b4c9e8-b82c-4fd2-b73d-c230671d66ec.html</guid>
   <pubDate>Wed, 31 Oct 2018 03:10:44 GMT</pubDate>
-</item>
-<item>
+</item><item>
   <title>Intro to WebAssembly Using Blazor</title>
   <description>&lt;p&gt;I will be speaking tonight, 9/26/2018 at the &lt;a href=&quot;https://www.meetup.com/NWVDNUG/events/254835128/&quot;&gt;Northwest Valley .NET User Group&lt;/a&gt; and tomorrow, 9/27/2018 at the &lt;a href=&quot;https://www.meetup.com/sevdnug/events/254838096/&quot;&gt;Southeast Valley .NET User Group&lt;/a&gt;. I will be speaking on the subject of WebAssembly. The talk will go into what WebAssembly programs look and act like, and how they run, then explore how we as .NET developers can write WebAssembly programs with Microsoft’s experimental platform, Blazor.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -230,8 +222,7 @@
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/357b8c8b-e115-4aad-9534-6f1f80a17fa2.html</guid>
   <pubDate>Wed, 26 Sep 2018 18:12:49 GMT</pubDate>
-</item>
-<item>
+</item><item>
   <title>Programmers -- Take Responsibility for Your AI’s Output</title>
   <description>&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;plus ça change, plus c&apos;est la même chose&lt;/strong&gt; – &lt;strong&gt;The more that things change, the more they stay the same&lt;/strong&gt;. – Rush (and others &lt;img src=&quot;https://www.cognitiveinheritance.com//Images/wlEmoticon-winkingsmile.png&quot; alt=&quot;Winking smile&quot; /&gt; )&lt;/p&gt;
@@ -267,6 +258,5 @@
   <guid>https://www.cognitiveinheritance.com/Permalinks/686f1de9-562f-4ef5-a3ac-4a75da9373f8.html</guid>
   <pubDate>Fri, 16 Mar 2018 03:22:42 GMT</pubDate>
 </item>
-
 </channel>
 </rss>
