@@ -35,7 +35,9 @@
           "PPTail.Generator.Template": "1.0.0",
           "PPTail.Io": "1.0.0",
           "PPTail.Output.FileSystem": "1.0.0",
-          "PPTail.SiteGenerator": "1.0.0"
+          "PPTail.SiteGenerator": "1.0.0",
+          "PPTail.Templates.FileSystem": "1.0.0",
+          "PPTail.Templates.Yaml": "1.0.0"
         },
         "runtime": {
           "PPTail.dll": {}
@@ -257,11 +259,11 @@
       },
       "Microsoft.NetCore.Analyzers/2.9.8": {},
       "Microsoft.NetFramework.Analyzers/2.9.8": {},
-      "Newtonsoft.Json/12.0.1": {
+      "Newtonsoft.Json/12.0.3": {
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "12.0.0.0",
-            "fileVersion": "12.0.1.22727"
+            "fileVersion": "12.0.3.23909"
           }
         }
       },
@@ -855,7 +857,7 @@
       },
       "PPTail.Data.MediaBlog/1.0.0": {
         "dependencies": {
-          "Newtonsoft.Json": "12.0.1",
+          "Newtonsoft.Json": "12.0.3",
           "PPTail.Common": "1.0.0"
         },
         "runtime": {
@@ -864,7 +866,7 @@
       },
       "PPTail.Data.NativeJson/1.0.0": {
         "dependencies": {
-          "Newtonsoft.Json": "12.0.1",
+          "Newtonsoft.Json": "12.0.3",
           "PPTail.Common": "1.0.0"
         },
         "runtime": {
@@ -873,7 +875,7 @@
       },
       "PPTail.Data.PhotoBlog/1.0.0": {
         "dependencies": {
-          "Newtonsoft.Json": "12.0.1",
+          "Newtonsoft.Json": "12.0.3",
           "PPTail.Common": "1.0.0"
         },
         "runtime": {
@@ -882,7 +884,7 @@
       },
       "PPTail.Data.WordpressFiles/1.0.0": {
         "dependencies": {
-          "Newtonsoft.Json": "12.0.1",
+          "Newtonsoft.Json": "12.0.3",
           "PPTail.Common": "1.0.0"
         },
         "runtime": {
@@ -1030,6 +1032,23 @@
         },
         "runtime": {
           "PPTail.SiteGenerator.dll": {}
+        }
+      },
+      "PPTail.Templates.FileSystem/1.0.0": {
+        "dependencies": {
+          "PPTail.Common": "1.0.0"
+        },
+        "runtime": {
+          "PPTail.Templates.FileSystem.dll": {}
+        }
+      },
+      "PPTail.Templates.Yaml/1.0.0": {
+        "dependencies": {
+          "PPTail.Common": "1.0.0",
+          "PPTail.Templates.FileSystem": "1.0.0"
+        },
+        "runtime": {
+          "PPTail.Templates.Yaml.dll": {}
         }
       }
     }
@@ -1208,12 +1227,12 @@
       "path": "microsoft.netframework.analyzers/2.9.8",
       "hashPath": "microsoft.netframework.analyzers.2.9.8.nupkg.sha512"
     },
-    "Newtonsoft.Json/12.0.1": {
+    "Newtonsoft.Json/12.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-pBR3wCgYWZGiaZDYP+HHYnalVnPJlpP1q55qvVb+adrDHmFMDc1NAKio61xTwftK3Pw5h7TZJPJEEVMd6ty8rg==",
-      "path": "newtonsoft.json/12.0.1",
-      "hashPath": "newtonsoft.json.12.0.1.nupkg.sha512"
+      "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "path": "newtonsoft.json/12.0.3",
+      "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
     },
     "Remotion.Linq/2.2.0": {
       "type": "package",
@@ -1821,6 +1840,16 @@
       "sha512": ""
     },
     "PPTail.SiteGenerator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PPTail.Templates.FileSystem/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PPTail.Templates.Yaml/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
