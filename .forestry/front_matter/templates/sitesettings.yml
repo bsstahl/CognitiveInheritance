@@ -50,6 +50,11 @@ fields:
   config:
     required: false
   label: Copyright
+- name: additionalfilepaths
+  type: tag_list
+  default: []
+  label: AdditionalFilePaths
+  description: The relative paths of additional files to be copied to the output
 - name: sitevariables
   type: field_group_list
   fields:
