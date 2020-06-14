@@ -1,5 +1,5 @@
 ---
-postsperpage: 10
+postsperpage: 15
 postsperfeed: 10
 theme: Default
 title: Cognitive Inheritance
@@ -13,5 +13,12 @@ additionalfilepaths:
 - Images
 - Pics
 - Files
+dateformatspecifier: yyyy-MM-dd
+datetimeformatspecifier: yyyy-MM-dd H:mm UTC
+itemseparator: "<hr/>"
+outputfileextension: html
+displaytitleinnavbar: true
+useadditionalpagesdropdown: false
+additionalpagesdropdownlabel: Community
 
 ---
