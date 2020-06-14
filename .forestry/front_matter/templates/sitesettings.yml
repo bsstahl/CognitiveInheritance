@@ -19,6 +19,18 @@ fields:
   config:
     required: false
   label: ContactEmail
+- name: dateformatspecifier
+  type: text
+  config:
+    required: false
+  label: DateFormatSpecifier
+  description: The c# format specifier for how Date values should be displayed.
+- name: datetimeformatspecifier
+  type: text
+  config:
+    required: false
+  label: DateTimeFormatSpecifier
+  description: The c# Format specifier for how DateTime values should be displayed
 - name: postsperpage
   type: number
   label: PostsPerPage
@@ -50,6 +62,35 @@ fields:
   config:
     required: false
   label: Copyright
+- name: itemseparator
+  type: text
+  config:
+    required: false
+  label: ItemSeparator
+  description: The separator used between each item on item list pages
+- name: outputfileextension
+  type: text
+  config:
+    required: false
+  label: OutputFileExtension
+  description: The extension placed on generated output files. Defaults to "html".
+- name: displaytitleinnavbar
+  type: boolean
+  label: DisplayTitleInNavbar
+  description: Should the site title be displayed in the NavBar in place of the "Home"
+    link?
+- name: useadditionalpagesdropdown
+  type: boolean
+  label: UseAdditionalPagesDropdown
+  description: Should pages that are not the primary root pages (Home, Archive, Contact)
+    be shown in a dropdown menu?
+- name: additionalpagesdropdownlabel
+  type: text
+  config:
+    required: false
+  label: AdditionalPagesDropdownLabel
+  description: If UseAdditionalPagesDropdown is enabled, this label will be used as
+    the name of that dropdown menu.
 - name: additionalfilepaths
   type: tag_list
   default: []
