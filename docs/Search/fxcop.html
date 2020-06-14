@@ -21,31 +21,36 @@
             <div class="row">
                 <div class="col-md-12">
                     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-<a class="navbar-brand" href="../index.html">Cognitive Inheritance</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
 </button>
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 <ul class="navbar-nav mr-auto">
-<li class="nav-item ">
+<li class="nav-item">
+<a class="nav-link" href="../index.html">Home</a>
+</li>
+<li class="nav-item">
 <a class="nav-link" href="../archive.html">Archive</a>
 </li>
-<li class="nav-item ">
+<li class="nav-item">
 <a class="nav-link" href="../contact.html">Contact</a>
 </li>
-<li class="nav-item dropdown">
-<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-Community
-</a>
-<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-<a class="dropdown-item" href="../Pages/AZGiveCamp.html">AZGiveCamp</a>
-<a class="dropdown-item" href="../Pages/Speaking-Engagements.html">Community Speaker</a>
-<a class="dropdown-item" href="../Pages/Unit-Testing-and-TDD-FAQ.html">FAQ</a>
-<a class="dropdown-item" href="../Pages/Open-Source.html">Open Source</a>
-<a class="dropdown-item" href="../Pages/Favorites.html">Favorites</a>
-</div>
+<li class="nav-item">
+<a class="nav-link" href="../Pages/AZGiveCamp.html">AZGiveCamp</a>
 </li>
-<li class="nav-item ">
+<li class="nav-item">
+<a class="nav-link" href="../Pages/Speaking-Engagements.html">Community Speaker</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../Pages/Unit-Testing-and-TDD-FAQ.html">FAQ</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../Pages/Open-Source.html">Open Source</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../Pages/Favorites.html">Favorites</a>
+</li>
+<li class="nav-item">
 <a class="nav-link" href="../syndication.xml"><img align="absbottom" id="rssIcon" src="../Pics/rssButton.gif" /></a>
 </li>
 </ul>
@@ -67,7 +72,7 @@ Community
 
     <h5>Tags: <a title="Tag: abstraction" class="small" href="../Search/abstraction.html">abstraction</a>&nbsp;<a title="Tag: agile" class="small" href="../Search/agile.html">agile</a>&nbsp;<a title="Tag: assembly" class="small" href="../Search/assembly.html">assembly</a>&nbsp;<a title="Tag: code analysis" class="small" href="../Search/code-analysis.html">code analysis</a>&nbsp;<a title="Tag: code camp" class="small" href="../Search/code-camp.html">code camp</a>&nbsp;<a title="Tag: code contracts" class="small" href="../Search/code-contracts.html">code contracts</a>&nbsp;<a title="Tag: code sample" class="small" href="../Search/code-sample.html">code sample</a>&nbsp;<a title="Tag: coding practices" class="small" href="../Search/coding-practices.html">coding practices</a>&nbsp;<a title="Tag: conference" class="small" href="../Search/conference.html">conference</a>&nbsp;<a title="Tag: csharp" class="small" href="../Search/csharp.html">csharp</a>&nbsp;<a title="Tag: enterprise library" class="small" href="../Search/enterprise-library.html">enterprise library</a>&nbsp;<a title="Tag: entity" class="small" href="../Search/entity.html">entity</a>&nbsp;<a title="Tag: entity framework" class="small" href="../Search/entity-framework.html">entity framework</a>&nbsp;<a title="Tag: fxcop" class="small" href="../Search/fxcop.html">fxcop</a>&nbsp;<a title="Tag: interface" class="small" href="../Search/interface.html">interface</a>&nbsp;<a title="Tag: testing" class="small" href="../Search/testing.html">testing</a>&nbsp;<a title="Tag: unit testing" class="small" href="../Search/unit-testing.html">unit testing</a>&nbsp;<a title="Tag: visual studio" class="small" href="../Search/visual-studio.html">visual studio</a>&nbsp;</h5>
     <div class="share"><a href="../Permalinks/8d5a0399-f8d1-4631-bd28-1cdddb0a64ac.html" rel="bookmark">Permalink</a></div>
-</div><hr/><div>
+</div><div>
     <h3>Code Analysis Rules</h3>
     <h5>Posted by bsstahl on 2011-06-07 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>FxCop, the built-in code-analysis tool in Visual Studio, is the first thing I check when doing a code review.  If Code Analysis is enabled for a project, setup properly, and its rules have not been overridden, this tool will help maintain consistency in the code, even if that code is worked on by multiple developers.  FxCop also does a good job of identifying if some common mistakes have been made, such as not disposing of an IDisposable object, and can identify things that will help the compiler do its job better, such as ensuring that assemblies which expose public objects identify whether or not they are intended to be CLS compliant.</p>
