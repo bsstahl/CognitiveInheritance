@@ -73,15 +73,16 @@
 </ul>
 <p>You'll need to take the following steps to configure the interactions between your source control provider and your pipeline:</p>
 <ol>
-<li><p>Configure the <strong>Get sources</strong> section of the pipeline by selecting your source control provider from the list of options and then choosing the repository from the list within that provider. For most providers, you will need to supply credentials with access to the repository, although the pipeline may already have the basic access it needs to read from an Azure DevOps Repo.</p>
-</li>
-<li><p>[optional] Configure an <strong>Agent Job</strong> to perform any cleanup of the repo necessary. When building a static website, I first delete all files from the target directory (the old static website files) so that only the files that are still needed are included in the final deployment.</p>
-</li>
+<li>Configure the <strong>Get sources</strong> section of the pipeline by selecting your source control provider from the list of options and then choosing the repository from the list within that provider. For most providers, you will need to supply credentials with access to the repository, although the pipeline may already have the basic access it needs to read from an Azure DevOps Repo.</li>
+</ol>
+<p><img src="/images/azure_devops_sources.PNG" alt="Azure DevOps Sources" /></p>
+<ol start="2">
+<li>[optional] Configure an <strong>Agent Job</strong> to perform any cleanup of the repo necessary. When building a static website, I first delete all files from the target directory (the old static website files) so that only the files that are still needed are included in the final deployment.</li>
 </ol>
 <blockquote>
 <p>Note: for all Agent Job steps that involve scripting, I use the <strong>Command Line</strong> task which allows me to execute my scripts in one of the native OS shells (Bash on Linux and macOS and cmd.exe on Windows). You could just as easily use the <strong>Powershell</strong> task, which is cross-platform or any number of other options.</p>
 </blockquote>
-<ol>
+<ol start="3">
 <li><p>Execute your build process. This is the step that generates the new files that will eventually be committed back into the source repository. Each static website generator has their own method for creating the site, see the documentation for your tooling for specifics. You can also execute custom tools or scripts here that modify files in the repository any way you'd like.</p>
 </li>
 <li><p>Execute the commit back to the source repo. This is the money step, where everything that has been done to this point is saved in the repository. As with previous steps, I use the <strong>Command Line</strong> task to execute the needed commands. My script is shown below. It is written for the Windows <strong>cmd.exe</strong> shell so commands that start with <em>ECHO</em> are log entries that will be included in the pipeline's execution log to help with troubleshooting and maintenance. This script uses a number of <strong>pipeline variables</strong> which take the form <em>$(variableName)</em> to make configuration easier. The <em>git.email</em> and <em>git.user</em> variables were defined by me in the <em>Variables</em> section of the pipeline, you will need to either configure those variables yourself, or substitute their values in the script. The <em>Build.SourceVersion</em> and <em>Build.SourceVersionMessage</em> variables are supplied by the pipeline and no action was required on my part to create or enable them.</p>
@@ -103,7 +104,7 @@ git push origin HEAD:master
 
 ECHO ** Ending Update remote git repo script
 </div>
-<ol>
+<ol start="5">
 <li><p>Finally, we need to give the pipeline user permission to write to the repository. This is where things can get a bit tricky and hard to find. The key configuration area within Azure DevOps can be found by going to the <em>Project Settings</em>.</p>
 </li>
 <li><p>For Azure DevOps repositories, select the <em>Repositories</em> tab and click on the <em>[Projectname] Build Service User</em> in the <em>Users</em> section. This will show a list of permissions that the build service user has. There are 4 that are of interest here: <em>Contribute</em>, <em>Create branch</em>, <em>Create tag</em> and <em>Read</em>. Some of those will probably already be enabled for you. I suspect only the <em>Contribute</em> needs to be added at this time, but I usually make sure all 4 are allowed.</p>
