@@ -16,6 +16,7 @@ fields:
   config:
     required: false
   label: Author
+  default: bsstahl
 - name: title
   type: text
   config:
@@ -30,12 +31,16 @@ fields:
     schema:
       format: markdown
   label: Description
+  description: A human-readable description of the item. Generally not used in the
+    actual site.
 - name: ispublished
   type: boolean
   label: IsPublished
 - name: showinlist
   type: boolean
   label: ShowInList
+  description: Indicates whether the <strong>Page</strong> is shown in the menu bar.
+    Unused for <strong>Posts</strong>.
 - name: publicationdate
   type: datetime
   label: PublicationDate
@@ -71,7 +76,8 @@ fields:
 - name: menuorder
   type: number
   label: MenuOrder
-  description: ''
+  description: The sort order that <strong>Pages</strong> appear in the menu bar if
+    selected to do so. Ignored for <strong>Posts</strong>.
   default: 0
   required: true
   config:
