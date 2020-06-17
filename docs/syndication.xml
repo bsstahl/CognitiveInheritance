@@ -34,21 +34,21 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;An interesting thing to note about this script is the &lt;em&gt;git push&lt;/em&gt; command. The full command &lt;code&gt;git push origin HEAD:master&lt;/code&gt; is required in this case, rather than just a simple &lt;code&gt;git push&lt;/code&gt; because, once the files are downloaded into the pipeline repo, the local repository is disconnected from the remote by the pipeline, possibly as a safety measure. We have to tell the local repo to push back to the remote HEAD, or else the push will fail. I suspect there is a way to tell the pipeline not to disconnect the head, but doing things this way, to my knowledge, has no ill-effects and is simple enough that it isn&apos;t really worth the effort for me to find out.&lt;/p&gt;
-&lt;div class=&quot;lang-dos editor-colors&quot;&gt;ECHO ** Starting &quot;Git config for user: $(git.user)&quot;
-git config --global user.email &quot;$(git.email)&quot;
-git config --global user.name &quot;$(git.user)&quot;
+&lt;pre&gt;&lt;code&gt;ECHO ** Starting &amp;quot;Git config for user: $(git.user)&amp;quot;
+git config --global user.email &amp;quot;$(git.email)&amp;quot;
+git config --global user.name &amp;quot;$(git.user)&amp;quot;
 
-ECHO ** Starting &quot;Git add...&quot;
+ECHO ** Starting &amp;quot;Git add...&amp;quot;
 git add .
 
-ECHO ** Starting &quot;Git commit...&quot;
-git commit -m &quot;Static site rebuild due to commit $(Build.SourceVersion) &apos;$(Build.SourceVersionMessage)&apos;&quot;
+ECHO ** Starting &amp;quot;Git commit...&amp;quot;
+git commit -m &amp;quot;Static site rebuild due to commit $(Build.SourceVersion) &apos;$(Build.SourceVersionMessage)&apos;&amp;quot;
 
-ECHO ** Starting &quot;Git push...&quot;
+ECHO ** Starting &amp;quot;Git push...&amp;quot;
 git push origin HEAD:master
 
 ECHO ** Ending Update remote git repo script
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;ol start=&quot;5&quot;&gt;
 &lt;li&gt;&lt;p&gt;Finally, we need to give the pipeline user permission to write to the repository. This is where things can get a bit tricky and hard to find. The key configuration area within Azure DevOps can be found by going to the &lt;em&gt;Project Settings&lt;/em&gt;.&lt;/p&gt;
 &lt;/li&gt;

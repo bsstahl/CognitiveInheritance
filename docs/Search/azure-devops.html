@@ -89,21 +89,21 @@
 </li>
 </ol>
 <p>An interesting thing to note about this script is the <em>git push</em> command. The full command <code>git push origin HEAD:master</code> is required in this case, rather than just a simple <code>git push</code> because, once the files are downloaded into the pipeline repo, the local repository is disconnected from the remote by the pipeline, possibly as a safety measure. We have to tell the local repo to push back to the remote HEAD, or else the push will fail. I suspect there is a way to tell the pipeline not to disconnect the head, but doing things this way, to my knowledge, has no ill-effects and is simple enough that it isn't really worth the effort for me to find out.</p>
-<div class="lang-dos editor-colors">ECHO ** Starting "Git config for user: $(git.user)"
-git config --global user.email "$(git.email)"
-git config --global user.name "$(git.user)"
+<pre><code>ECHO ** Starting &quot;Git config for user: $(git.user)&quot;
+git config --global user.email &quot;$(git.email)&quot;
+git config --global user.name &quot;$(git.user)&quot;
 
-ECHO ** Starting "Git add..."
+ECHO ** Starting &quot;Git add...&quot;
 git add .
 
-ECHO ** Starting "Git commit..."
-git commit -m "Static site rebuild due to commit $(Build.SourceVersion) '$(Build.SourceVersionMessage)'"
+ECHO ** Starting &quot;Git commit...&quot;
+git commit -m &quot;Static site rebuild due to commit $(Build.SourceVersion) '$(Build.SourceVersionMessage)'&quot;
 
-ECHO ** Starting "Git push..."
+ECHO ** Starting &quot;Git push...&quot;
 git push origin HEAD:master
 
 ECHO ** Ending Update remote git repo script
-</div>
+</code></pre>
 <ol start="5">
 <li><p>Finally, we need to give the pipeline user permission to write to the repository. This is where things can get a bit tricky and hard to find. The key configuration area within Azure DevOps can be found by going to the <em>Project Settings</em>.</p>
 </li>
