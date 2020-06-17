@@ -30,7 +30,7 @@ You'll need to take the following steps to configure the interactions between yo
 
 1. Configure the **Get sources** section of the pipeline by selecting your source control provider from the list of options and then choosing the repository from the list within that provider. For most providers, you will need to supply credentials with access to the repository, although the pipeline may already have the basic access it needs to read from an Azure DevOps Repo.
 
-![Azure DevOps Sources](/images/azure_devops_sources.PNG)
+![Azure DevOps Sources](/Images/azure_devops_sources.PNG)
 
 2. \[optional\] Configure an **Agent Job** to perform any cleanup of the repo necessary. When building a static website, I first delete all files from the target directory (the old static website files) so that only the files that are still needed are included in the final deployment.
 
