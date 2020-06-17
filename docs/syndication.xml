@@ -20,7 +20,7 @@
 &lt;ol&gt;
 &lt;li&gt;Configure the &lt;strong&gt;Get sources&lt;/strong&gt; section of the pipeline by selecting your source control provider from the list of options and then choosing the repository from the list within that provider. For most providers, you will need to supply credentials with access to the repository, although the pipeline may already have the basic access it needs to read from an Azure DevOps Repo.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&quot;/images/azure_devops_sources.PNG&quot; alt=&quot;Azure DevOps Sources&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/Images/azure_devops_sources.PNG&quot; alt=&quot;Azure DevOps Sources&quot; /&gt;&lt;/p&gt;
 &lt;ol start=&quot;2&quot;&gt;
 &lt;li&gt;[optional] Configure an &lt;strong&gt;Agent Job&lt;/strong&gt; to perform any cleanup of the repo necessary. When building a static website, I first delete all files from the target directory (the old static website files) so that only the files that are still needed are included in the final deployment.&lt;/li&gt;
 &lt;/ol&gt;
