@@ -52,5 +52,5 @@ build:
   preview_docker_image: node:10
   mount_path: "/srv"
   working_dir: "/srv"
-  instant_preview_command: PPTail\PPTail.exe Provider=PPTail.Data.Forestry.Repository;Filepath=.\
-    Provider=PPTail.Output.FileSystem.Repository;FilePath=.\docs Provider=PPTail.Templates.Yaml.ReadRepository;FilePath=.\Templates\
+  instant_preview_command: ".\\PPTail\\PPTail.exe Provider=PPTail.Data.Forestry.Repository;Filepath=.\\
+    Provider=PPTail.Output.FileSystem.Repository;FilePath=.\\docs Provider=PPTail.Templates.Yaml.ReadRepository;FilePath=.\\Templates\\"
