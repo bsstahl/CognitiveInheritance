@@ -47,8 +47,10 @@ front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
 build:
+  preview_output_directory: ".\\docs"
   install_dependencies_command: npm install
   preview_docker_image: node:10
   mount_path: "/srv"
   working_dir: "/srv"
-  instant_preview_command: npm run forestry:preview
+  instant_preview_command: PPTail\PPTail.exe Provider=PPTail.Data.Forestry.Repository;Filepath=.\
+    Provider=PPTail.Output.FileSystem.Repository;FilePath=.\docs Provider=PPTail.Templates.Yaml.ReadRepository;FilePath=.\Templates\
