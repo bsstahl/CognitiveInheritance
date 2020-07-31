@@ -20,9 +20,9 @@ I like to describe myself as the kind of person who has a list of his favorite p
 
 1. Harold "Hal" Stahl
 1. Carl Sagan
-1. Nikola Tesla
-1. Marie Curie
 1. Richard Feynman
+1. Marie Curie
+1. Nikola Tesla
 1. Albert Einstein
 1. Neil Degrasse Tyson
 1. Niels Bohr
