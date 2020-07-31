@@ -46,7 +46,7 @@ I like to describe myself as the kind of person who has a list of his favorite p
 1. Johann Gauss
 1. Grace Hopper
 
-* Other notables: Marvin Minsky, Daphne Koller, Benoit Mandelbrot
+* Other notables: Daphne Koller, Benoit Mandelbrot
 
 ---
 
