@@ -11,9 +11,8 @@ name:
 - Blaise Pascal
 - Johann Gauss
 - Grace Hopper
-- Marvin Minsky
 - Daphne Koller
 - Benoit Mandelbrot
-lastmodificationdate: 2020-06-03T22:05:00Z
+lastmodificationdate: 2020-06-03T22:05:00.000+00:00
 
 ---
