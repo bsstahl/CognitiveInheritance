@@ -3,9 +3,9 @@ listname: Favorite Physicists
 name:
 - Harold "Hal" Stahl
 - Carl Sagan
-- Nikola Tesla
-- Marie Curie
 - Richard Feynman
+- Marie Curie
+- Nikola Tesla
 - Albert Einstein
 - Neil Degrasse Tyson
 - Niels Bohr
@@ -13,6 +13,6 @@ name:
 - Michael Faraday
 - Stephen Hawking
 - Edwin Hubble
-lastmodificationdate: 2020-06-04T21:06:00Z
+lastmodificationdate: 2020-06-04T21:06:00.000+00:00
 
 ---
