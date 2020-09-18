@@ -70,9 +70,9 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ***
 
-* Things Your Dev Team Hopes You Know - Managing a development team or project can be one of the most challenging jobs in any industry. Balancing the needs of the developers, the organization and the users to maximize value for the customers while minimizing costs can be a daunting prospect for even the most experienced executive.  How can we produce quality software in a timely and cost-effective manner when the needs of the development team are so different from the needs of the customers, the organization and its managers?
+* **Things Your Dev Team Hopes You Know** - Managing a development team or project can be one of the most challenging jobs in any industry. Balancing the needs of the developers, the organization and the users to maximize value for the customers while minimizing costs can be a daunting prospect for even the most experienced executive.  How can we produce quality software in a timely and cost-effective manner when the needs of the development team are so different from the needs of the customers, the organization and its managers? 
 
-  > In this talk Barry leverages his more than 30 years of experience as a Developer and Solution Architect to remind us that how we leverage Agile ceremonies, how we use our tooling, and how we utilize metrics can have both positive and negative impacts on our teams.  He reviews many of the elements of our Agile processes and identifies their impacts, particularly on the developers and their managers. This talk challenges us to create environments for our development teams that enable them to exceed the expectations of both our users and our organizations.
+  In this talk Barry leverages his more than 30 years of experience as a Developer and Solution Architect to remind us that how we leverage Agile ceremonies, how we use our tooling, and how we utilize metrics can have both positive and negative impacts on our teams.  He reviews many of the elements of our Agile processes and identifies their impacts, particularly on the developers and their managers. This talk challenges us to create environments for our development teams that enable them to exceed the expectations of both our users and our organizations.
 
 ***
 
