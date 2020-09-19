@@ -70,6 +70,12 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ***
 
+* **Test Driven Development for Managers** - It is generally accepted that having good unit tests is an important factor in agile development. Unit testing is so important that many development teams have chosen to take a test-driven approach to building software. But what does it really mean to be "test-driven" and why is it so important?
+
+In this session, Barry walks through the process of developing a simple application using TDD methodologies. He teaches the same concepts he has been teaching developers for nearly 9 years, but does so for an audience of managers and coaches so that you can understand how using Test-Driven-Development makes your teams more agile and more productive. You will walk away with an understanding of some of the key concepts of unit testing and TDD, how they are implemented using Test-Driven Development practices, and how using these techniques before writing production code saves time and money by ensuring that the code that is written is maintainable and extensible.
+
+***
+
 * **Things Your Dev Team Hopes You Know** - Managing a development team or project can be one of the most challenging jobs in any industry. Balancing the needs of the developers, the organization and the users to maximize value for the customers while minimizing costs can be a daunting prospect for even the most experienced executive.  How can we produce quality software in a timely and cost-effective manner when the needs of the development team are so different from the needs of the customers, the organization and its managers? 
 
   In this talk Barry leverages his more than 30 years of experience as a Developer and Solution Architect to remind us that how we leverage Agile ceremonies, how we use our tooling, and how we utilize metrics can have both positive and negative impacts on our teams.  He reviews many of the elements of our Agile processes and identifies their impacts, particularly on the developers and their managers. This talk challenges us to create environments for our development teams that enable them to exceed the expectations of both our users and our organizations.
