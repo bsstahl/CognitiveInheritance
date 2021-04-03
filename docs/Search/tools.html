@@ -77,11 +77,12 @@
 <p><img src="https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/b73f673ab81247a529e419e56e1441b6b3cc099b/ProblemMachine_ModelBuilder_Scenario.png" alt="Scenarios - Failing Machine" /></p>
 <p>Everything seems to be different. The headline text, the options that can be chosen, and the graphics (or lack thereof). My first reaction when I saw this was to double-check that both machines are actually using the same version of the Model Builder tool.</p>
 <h2>Verifying the Version of the Tool</h2>
-<p>Spoiler alert: <strong>Both machines are using the same version of the tool</strong>.</p>
+<p>Spoiler alert: <strong>To the best I am able to verify, both machines are using the same version of the tool</strong>.</p>
 <h3>From the machine that is able to train the model</h3>
 <p><img src="https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/28226dc3fccf0155815f323a484146b7fc662305/FunctionalMachine_ModelBuilder_Version.png" alt="ModelBuilder Tool Version - Functional Machine" /></p>
 <h3>From the machine having the failure</h3>
 <p><img src="https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/28226dc3fccf0155815f323a484146b7fc662305/ProblemMachine_ModelBuilder_Version.png" alt="ModelBuilder Tool Version - Failing Machine" /></p>
+<p>My next thought is that I'm not looking at the right thing. Perhaps, <strong>ML.NET Model Builder (Preview)</strong> is not the correct Extension, or maybe the UI for this Extension is loaded separately from the Extension. I can't be sure, but I can't find anything that suggests this is really the case. Perhaps the dev team can give me some insight here.</p>
 <h2>Verifying the Region Settings of the Machine</h2>
 <p>While these versions are clearly the same, it is obvious from the graphics that the machines have different default date formats. Even though there are no dates in this data file, and both machines were using <em>US English</em>, I changed the Region settings of the problem machine to match that of the functional machine. Predictably, this didn't solve the problem.</p>
 <h3>From the machine that is able to train the model</h3>

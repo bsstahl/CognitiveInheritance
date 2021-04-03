@@ -22,11 +22,12 @@
 &lt;p&gt;&lt;img src=&quot;https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/b73f673ab81247a529e419e56e1441b6b3cc099b/ProblemMachine_ModelBuilder_Scenario.png&quot; alt=&quot;Scenarios - Failing Machine&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;Everything seems to be different. The headline text, the options that can be chosen, and the graphics (or lack thereof). My first reaction when I saw this was to double-check that both machines are actually using the same version of the Model Builder tool.&lt;/p&gt;
 &lt;h2&gt;Verifying the Version of the Tool&lt;/h2&gt;
-&lt;p&gt;Spoiler alert: &lt;strong&gt;Both machines are using the same version of the tool&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Spoiler alert: &lt;strong&gt;To the best I am able to verify, both machines are using the same version of the tool&lt;/strong&gt;.&lt;/p&gt;
 &lt;h3&gt;From the machine that is able to train the model&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&quot;https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/28226dc3fccf0155815f323a484146b7fc662305/FunctionalMachine_ModelBuilder_Version.png&quot; alt=&quot;ModelBuilder Tool Version - Functional Machine&quot; /&gt;&lt;/p&gt;
 &lt;h3&gt;From the machine having the failure&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&quot;https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/28226dc3fccf0155815f323a484146b7fc662305/ProblemMachine_ModelBuilder_Version.png&quot; alt=&quot;ModelBuilder Tool Version - Failing Machine&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;My next thought is that I&apos;m not looking at the right thing. Perhaps, &lt;strong&gt;ML.NET Model Builder (Preview)&lt;/strong&gt; is not the correct Extension, or maybe the UI for this Extension is loaded separately from the Extension. I can&apos;t be sure, but I can&apos;t find anything that suggests this is really the case. Perhaps the dev team can give me some insight here.&lt;/p&gt;
 &lt;h2&gt;Verifying the Region Settings of the Machine&lt;/h2&gt;
 &lt;p&gt;While these versions are clearly the same, it is obvious from the graphics that the machines have different default date formats. Even though there are no dates in this data file, and both machines were using &lt;em&gt;US English&lt;/em&gt;, I changed the Region settings of the problem machine to match that of the functional machine. Predictably, this didn&apos;t solve the problem.&lt;/p&gt;
 &lt;h3&gt;From the machine that is able to train the model&lt;/h3&gt;
