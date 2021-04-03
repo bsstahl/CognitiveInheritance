@@ -64,7 +64,7 @@
               <h5>Posted by bsstahl on 2021-04-30 and Filed Under: <a title="Category: tools" class="small" href="../Search/tools.html">tools</a>&nbsp;</h5>
               <p>There appears to be a problem with the <em>Preview</em> version of the ModelBuilder tool for Visual Studio. This issue has been logged on <a href="https://github.com/dotnet/machinelearning-modelbuilder/issues/1027">GitHub</a> and I am documenting my findings here in the hope that they will provide some insight into the problem. I will update this post when a solution or workaround is found.</p>
 <p>I want to be clear that this problem is in a <strong>preview version</strong>, where problems like this are expected. I don't want the team working on this tooling to think that I am being reproachful of their work in any way. In fact, I want to compliment them and thank them for what is generally an extremely valuable tool.</p>
-<p>To reproduce this problem, use this <a href="https://gist.githubusercontent.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/7466eb3f60fe881300de004954b240950069675d/SourceData_Mocked.csv">Data File</a> to train an <code>Issue Classification</code> model in the ModelBuilder tool by using the <code>Key</code> column to predict the <code>Value</code> column. The keys have intelligence built into them that are valid predictors of the Value (I didn't design this stuff).</p>
+<p>To reproduce this problem, use this <a href="https://gist.githubusercontent.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/7466eb3f60fe881300de004954b240950069675d/SourceData_Mocked.csv">Data File</a> to train an <strong>Issue Classification</strong> or <strong>Text Classification</strong> model in the ModelBuilder tool by using the <em>Key</em> column to predict the <em>Value</em> column. The keys have intelligence built into them that are valid predictors of the Value (I didn't design this stuff).</p>
 <p>Machines that are unable to complete this task get a error stating <code>Specified label column 'Value' was not found.</code> with a stack trace similar to <a href="https://gist.githubusercontent.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/52e01628cb6f449fd95091eaa033559a6c4b386e/StackTrace.txt">this</a>.</p>
 <p>This process seems to work fine on some machines and not on others. I have a machine that it works on, and one that it fails on, so I will attempt to document the differences here.</p>
 <p>The first thing I noticed is that the experience within the tool is <em>VERY DIFFERENT</em> even though it is using the exact same version of the Model Builder.</p>
@@ -72,14 +72,15 @@
 <p><img src="https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/b73f673ab81247a529e419e56e1441b6b3cc099b/FunctionalMachine_ModelBuilder_Scenario.png" alt="Scenarios - Functional Machine" /></p>
 <h3>From the machine having the failure</h3>
 <p><img src="https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/b73f673ab81247a529e419e56e1441b6b3cc099b/ProblemMachine_ModelBuilder_Scenario.png" alt="Scenarios - Failing Machine" /></p>
-<p>Everything seems to be different. The headline text, the options that can be chosen, and the graphics (or lack thereof). My first reaction when I saw this was to double-check that both machines are actually using the same version of the Model Builder tool. Spoiler alert: They are.</p>
+<p>Everything seems to be different. The headline text, the options that can be chosen, and the graphics (or lack thereof). My first reaction when I saw this was to double-check that both machines are actually using the same version of the Model Builder tool.</p>
 <h2>Verifying the Version of the Tool</h2>
+<p>Spoiler alert: <strong>Both machines are using the same version of the tool</strong>.</p>
 <h3>From the machine that is able to train the model</h3>
 <p><img src="https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/28226dc3fccf0155815f323a484146b7fc662305/FunctionalMachine_ModelBuilder_Version.png" alt="ModelBuilder Tool Version - Functional Machine" /></p>
 <h3>From the machine having the failure</h3>
 <p><img src="https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/28226dc3fccf0155815f323a484146b7fc662305/ProblemMachine_ModelBuilder_Version.png" alt="ModelBuilder Tool Version - Failing Machine" /></p>
 <h2>Verifying the Region Settings of the Machine</h2>
-<p>While these versions are clearly the same, it is obvious from the graphics that the machines have different default date formats. Even though there are no dates in this data file, and both machines were using <code>US English</code>, I changed the Region settings of the problem machine to match that of the functional machine. Predictably, this didn't solve the problem.</p>
+<p>While these versions are clearly the same, it is obvious from the graphics that the machines have different default date formats. Even though there are no dates in this data file, and both machines were using <em>US English</em>, I changed the Region settings of the problem machine to match that of the functional machine. Predictably, this didn't solve the problem.</p>
 <h3>From the machine that is able to train the model</h3>
 <p><img src="https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/28226dc3fccf0155815f323a484146b7fc662305/FunctionalMachine_Region.png" alt="Region Settings - Functional Machine" /></p>
 <h3>From the machine having the failure - Original Settings</h3>
@@ -92,13 +93,13 @@
 <p><img src="https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/7466eb3f60fe881300de004954b240950069675d/FunctionalMachine_VisualStudio.png" alt="Visual Studio Version - Functional Machine" /></p>
 <h3>From the machine having the failure</h3>
 <p><img src="https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/7466eb3f60fe881300de004954b240950069675d/ProblemMachine_VisualStudio.png" alt="Visual Studio Version - Problem Machine" /></p>
-<p>There are also differences in the installed payloads within Visual Studio between the 2 machines. Files containing information about the installations on each of the machines can be found below. These are the files produced when you click the [Copy Info] button from the Visual Studio <code>About</code> dialog.</p>
+<p>There are also differences in the installed payloads within Visual Studio between the 2 machines. Files containing information about the installations on each of the machines can be found below. These are the files produced when you click the <em>Copy Info</em> button from the Visual Studio <em>About</em> dialog.</p>
 <h3>From the machine that is able to train the model</h3>
 <p><a href="https://gist.githubusercontent.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/7466eb3f60fe881300de004954b240950069675d/VisualStudioPayloads_FunctionalMachine.txt">Visual Studio Payloads - Functional Machine</a></p>
 <h3>From the machine having the failure</h3>
 <p><a href="https://gist.githubusercontent.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/7466eb3f60fe881300de004954b240950069675d/VisualStudioPayloads_ProblemMachine.txt">Visual Studio Payloads - Problem Machine</a></p>
 <h2>Windows Version</h2>
-<p>Another set of differences involve the machines themselves and the versions of Windows they are running. Both machines are running Windows 10, but the working machine runs a <code>Pro</code> sku, while the problem machine uses an <code>Enterprise</code> sku. Additionally, the machines have different specs, though they are consistent in that they are both underpowered for what I do. I'm going to have to remedy that.</p>
+<p>Another set of differences involve the machines themselves and the versions of Windows they are running. Both machines are running Windows 10, but the working machine runs a <strong>Pro</strong> sku, while the problem machine uses an <strong>Enterprise</strong> sku. Additionally, the machines have different specs, though they are consistent in that they are both underpowered for what I do. I'm going to have to remedy that.</p>
 <p>I've included some of the key information about the machines and their OS installations in the files below. None of it seems particularly probative to me.</p>
 <h3>From the machine that is able to train the model</h3>
 <p><a href="https://gist.githubusercontent.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/c5148816444cca781a0ea428d5ed5a58bc6fc434/Windows_FunctionalMachine.txt">System and OS - Functional Machine</a></p>
