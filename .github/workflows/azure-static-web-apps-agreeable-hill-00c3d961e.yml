@@ -25,6 +25,7 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_AGREEABLE_HILL_00C3D961E }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
           action: "upload"
+          app_build_command: "/FaveGen/FavGen.exe ./ ./Pages/Favorites.md; PPTail.exe Provider=PPTail.Data.Forestry.Repository;Filepath=./ Provider=PPTail.Output.FileSystem.Repository;FilePath=./docs"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "/docs" # App source code path
