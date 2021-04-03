@@ -41,7 +41,7 @@ Everything seems to be different. The headline text, the options that can be cho
 
 ## Verifying the Version of the Tool
 
-Spoiler alert: **Both machines are using the same version of the tool**.
+Spoiler alert: **To the best I am able to verify, both machines are using the same version of the tool**.
 
 ### From the machine that is able to train the model
 
@@ -50,6 +50,8 @@ Spoiler alert: **Both machines are using the same version of the tool**.
 ### From the machine having the failure
 
 ![ModelBuilder Tool Version - Failing Machine](https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/28226dc3fccf0155815f323a484146b7fc662305/ProblemMachine_ModelBuilder_Version.png)
+
+My next thought is that I'm not looking at the right thing. Perhaps, **ML.NET Model Builder (Preview)** is not the correct Extension, or maybe the UI for this Extension is loaded separately from the Extension. I can't be sure, but I can't find anything that suggests this is really the case. Perhaps the dev team can give me some insight here.
 
 ## Verifying the Region Settings of the Machine
 
