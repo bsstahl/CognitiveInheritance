@@ -9,6 +9,57 @@
     <language>en-US</language>
     <atom:link href="https://cognitiveinheritance.com/syndication.xml" rel="self" type="application/rss+xml" />	
     <item>
+  <title>Troubleshooting Information for Machinelearning-ModelBuilder Issue #1027</title>
+  <description>&lt;p&gt;There appears to be a problem with the &lt;em&gt;Preview&lt;/em&gt; version of the ModelBuilder tool for Visual Studio. This issue has been logged on &lt;a href=&quot;https://github.com/dotnet/machinelearning-modelbuilder/issues/1027&quot;&gt;GitHub&lt;/a&gt; and I am documenting my findings here in the hope that they will provide some insight into the problem. I will update this post when a solution or workaround is found.&lt;/p&gt;
+&lt;p&gt;I want to be clear that this problem is in a &lt;strong&gt;preview version&lt;/strong&gt;, where problems like this are expected. I don&apos;t want the team working on this tooling to think that I am being reproachful of their work in any way. In fact, I want to compliment them and thank them for what is generally an extremely valuable tool.&lt;/p&gt;
+&lt;p&gt;To reproduce this problem, use this &lt;a href=&quot;https://gist.githubusercontent.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/7466eb3f60fe881300de004954b240950069675d/SourceData_Mocked.csv&quot;&gt;Data File&lt;/a&gt; to train an &lt;code&gt;Issue Classification&lt;/code&gt; model in the ModelBuilder tool by using the &lt;code&gt;Key&lt;/code&gt; column to predict the &lt;code&gt;Value&lt;/code&gt; column. The keys have intelligence built into them that are valid predictors of the Value (I didn&apos;t design this stuff).&lt;/p&gt;
+&lt;p&gt;Machines that are unable to complete this task get a error stating &lt;code&gt;Specified label column &apos;Value&apos; was not found.&lt;/code&gt; with a stack trace similar to &lt;a href=&quot;https://gist.githubusercontent.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/52e01628cb6f449fd95091eaa033559a6c4b386e/StackTrace.txt&quot;&gt;this&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This process seems to work fine on some machines and not on others. I have a machine that it works on, and one that it fails on, so I will attempt to document the differences here.&lt;/p&gt;
+&lt;p&gt;The first thing I noticed is that the experience within the tool is &lt;em&gt;VERY DIFFERENT&lt;/em&gt; even though it is using the exact same version of the Model Builder.&lt;/p&gt;
+&lt;h3&gt;From the machine that is able to train the model&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/b73f673ab81247a529e419e56e1441b6b3cc099b/FunctionalMachine_ModelBuilder_Scenario.png&quot; alt=&quot;Scenarios - Functional Machine&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;From the machine having the failure&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/b73f673ab81247a529e419e56e1441b6b3cc099b/ProblemMachine_ModelBuilder_Scenario.png&quot; alt=&quot;Scenarios - Failing Machine&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Everything seems to be different. The headline text, the options that can be chosen, and the graphics (or lack thereof). My first reaction when I saw this was to double-check that both machines are actually using the same version of the Model Builder tool. Spoiler alert: They are.&lt;/p&gt;
+&lt;h2&gt;Verifying the Version of the Tool&lt;/h2&gt;
+&lt;h3&gt;From the machine that is able to train the model&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/28226dc3fccf0155815f323a484146b7fc662305/FunctionalMachine_ModelBuilder_Version.png&quot; alt=&quot;ModelBuilder Tool Version - Functional Machine&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;From the machine having the failure&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/28226dc3fccf0155815f323a484146b7fc662305/ProblemMachine_ModelBuilder_Version.png&quot; alt=&quot;ModelBuilder Tool Version - Failing Machine&quot; /&gt;&lt;/p&gt;
+&lt;h2&gt;Verifying the Region Settings of the Machine&lt;/h2&gt;
+&lt;p&gt;While these versions are clearly the same, it is obvious from the graphics that the machines have different default date formats. Even though there are no dates in this data file, and both machines were using &lt;code&gt;US English&lt;/code&gt;, I changed the Region settings of the problem machine to match that of the functional machine. Predictably, this didn&apos;t solve the problem.&lt;/p&gt;
+&lt;h3&gt;From the machine that is able to train the model&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/28226dc3fccf0155815f323a484146b7fc662305/FunctionalMachine_Region.png&quot; alt=&quot;Region Settings - Functional Machine&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;From the machine having the failure - Original Settings&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/28226dc3fccf0155815f323a484146b7fc662305/ProblemMachine_Region.png&quot; alt=&quot;Region Settings - Problem Machine&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;From the machine having the failure - Updated Settings&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/28226dc3fccf0155815f323a484146b7fc662305/ProblemMachine_Region_Updated.png&quot; alt=&quot;Updated Region Settings - Problem Machine&quot; /&gt;&lt;/p&gt;
+&lt;h2&gt;Checking the Versions of Visual Studio&lt;/h2&gt;
+&lt;p&gt;The biggest difference between the two machines that I can think of, now that the region settings match, is the exact version &amp;amp; configuration of Visual Studio. Both machines have &lt;strong&gt;Visual Studio Enterprise 2019 Preview&lt;/strong&gt; versions, but the working machine has version &lt;em&gt;16.9.0 Preview 1.0&lt;/em&gt; while the failing machine uses version &lt;em&gt;16.10.0 Preview 1.0&lt;/em&gt;. You&apos;ll have to forgive me for not wanting to &amp;quot;upgrade&amp;quot; my working machine to the latest preview of Visual Studio, just in case that actually is the problem, though I suspect that is not the issue.&lt;/p&gt;
+&lt;h3&gt;From the machine that is able to train the model&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/7466eb3f60fe881300de004954b240950069675d/FunctionalMachine_VisualStudio.png&quot; alt=&quot;Visual Studio Version - Functional Machine&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;From the machine having the failure&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/7466eb3f60fe881300de004954b240950069675d/ProblemMachine_VisualStudio.png&quot; alt=&quot;Visual Studio Version - Problem Machine&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;There are also differences in the installed payloads within Visual Studio between the 2 machines. Files containing information about the installations on each of the machines can be found below. These are the files produced when you click the [Copy Info] button from the Visual Studio &lt;code&gt;About&lt;/code&gt; dialog.&lt;/p&gt;
+&lt;h3&gt;From the machine that is able to train the model&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://gist.githubusercontent.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/7466eb3f60fe881300de004954b240950069675d/VisualStudioPayloads_FunctionalMachine.txt&quot;&gt;Visual Studio Payloads - Functional Machine&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;From the machine having the failure&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://gist.githubusercontent.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/7466eb3f60fe881300de004954b240950069675d/VisualStudioPayloads_ProblemMachine.txt&quot;&gt;Visual Studio Payloads - Problem Machine&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Windows Version&lt;/h2&gt;
+&lt;p&gt;Another set of differences involve the machines themselves and the versions of Windows they are running. Both machines are running Windows 10, but the working machine runs a &lt;code&gt;Pro&lt;/code&gt; sku, while the problem machine uses an &lt;code&gt;Enterprise&lt;/code&gt; sku. Additionally, the machines have different specs, though they are consistent in that they are both underpowered for what I do. I&apos;m going to have to remedy that.&lt;/p&gt;
+&lt;p&gt;I&apos;ve included some of the key information about the machines and their OS installations in the files below. None of it seems particularly probative to me.&lt;/p&gt;
+&lt;h3&gt;From the machine that is able to train the model&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://gist.githubusercontent.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/c5148816444cca781a0ea428d5ed5a58bc6fc434/Windows_FunctionalMachine.txt&quot;&gt;System and OS - Functional Machine&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;From the machine having the failure&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://gist.githubusercontent.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/c5148816444cca781a0ea428d5ed5a58bc6fc434/Windows_ProblemMachine.txt&quot;&gt;System and OS - Problem Machine&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Other Things to Check&lt;/h2&gt;
+&lt;p&gt;There are probably quite a number of additional differences I could look at between the 2 machines. Do you have any ideas about what else I could check to give the dev team the tools they need to solve this problem?&lt;/p&gt;
+</description>
+  <link>https://www.cognitiveinheritance.com/Posts/Troubleshooting-Machine-Learning-ModelBuilder-Issue-1027.html</link>
+  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
+  <guid>https://www.cognitiveinheritance.com/Permalinks/f7d71577-57c3-4676-a5fa-2745a2bb8cf7.html</guid>
+  <pubDate>Fri, 30 Apr 2021 18:00:00 GMT</pubDate>
+</item><item>
   <title>Committing to Git from an Azure DevOps Pipeline</title>
   <description>&lt;p&gt;There are occasions, such as when working with static website generators, that you&apos;ll want to push some changes made in an Azure DevOps pipeline, back into the source Git repository. This process is simple enough, but since I have struggled to get it configured twice now, I am documenting the process here for your use, and my future use.&lt;/p&gt;
 &lt;p&gt;Azure DevOps pipelines typically contain two parts, although other configurations are possible. The two standards are:&lt;/p&gt;
@@ -266,20 +317,6 @@ ECHO ** Ending Update remote git repo script
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/c6b4c9e8-b82c-4fd2-b73d-c230671d66ec.html</guid>
   <pubDate>Wed, 31 Oct 2018 03:10:44 GMT</pubDate>
-</item><item>
-  <title>Intro to WebAssembly Using Blazor</title>
-  <description>&lt;p&gt;I will be speaking tonight, 9/26/2018 at the &lt;a href=&quot;https://www.meetup.com/NWVDNUG/events/254835128/&quot;&gt;Northwest Valley .NET User Group&lt;/a&gt; and tomorrow, 9/27/2018 at the &lt;a href=&quot;https://www.meetup.com/sevdnug/events/254838096/&quot;&gt;Southeast Valley .NET User Group&lt;/a&gt;. I will be speaking on the subject of WebAssembly. The talk will go into what WebAssembly programs look and act like, and how they run, then explore how we as .NET developers can write WebAssembly programs with Microsoft’s experimental platform, Blazor.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Want to run your .NET Standard code directly in the browser on the client-side without the need for transpilers or browser plug-ins? Well, now you can with WebAssembly and Blazor.&lt;/p&gt;
-&lt;p&gt;WebAssembly (WASM) is the W3C specification that will be used to provide the next generation of development tools for the web and beyond. Blazor is Microsoft&apos;s experiment that allows ASP.Net developers to create web pages that do much of the scripting work in C# using WASM.&lt;/p&gt;
-&lt;p&gt;Come join us as we explore the basics of WebAssembly and how WASM can be used to run existing C# code client side in the browser. You will walk away with an understanding of what WebAssembly and Blazor can do for you and how to immediately get started running your own .NET code in the browser.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;The slide deck for these presentations can be found here &lt;a href=&quot;https://1drv.ms/b/s!AMwbHpz53UVdm45C&quot;&gt;IntroToWasmAndBlazor-201809.pdf&lt;/a&gt;.&lt;/p&gt;
-</description>
-  <link>https://www.cognitiveinheritance.com/Posts/Intro-to-WebAssembly-Using-Blazor.html</link>
-  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
-  <guid>https://www.cognitiveinheritance.com/Permalinks/357b8c8b-e115-4aad-9534-6f1f80a17fa2.html</guid>
-  <pubDate>Wed, 26 Sep 2018 18:12:49 GMT</pubDate>
 </item>
 </channel>
 </rss>
