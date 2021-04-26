@@ -10,7 +10,10 @@
     <atom:link href="https://cognitiveinheritance.com/syndication.xml" rel="self" type="application/rss+xml" />	
     <item>
   <title>Troubleshooting Information for Machinelearning-ModelBuilder Issue #1027</title>
-  <description>&lt;p&gt;There appears to be a problem with the &lt;em&gt;Preview&lt;/em&gt; version of the ModelBuilder tool for Visual Studio. This issue has been logged on &lt;a href=&quot;https://github.com/dotnet/machinelearning-modelbuilder/issues/1027&quot;&gt;GitHub&lt;/a&gt; and I am documenting my findings here in the hope that they will provide some insight into the problem. I will update this post when a solution or workaround is found.&lt;/p&gt;
+  <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: The issue has been resolved. There was an old version of the Extension installed on failing systems that was causing problems with Visual Studio Extensions. Even though the version of the Extension showed as the correct one, an old version was being used. A reinstall of Visual Studio was needed to fix the problem.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;There appears to be a problem with the &lt;em&gt;Preview&lt;/em&gt; version of the ModelBuilder tool for Visual Studio. This issue has been logged on &lt;a href=&quot;https://github.com/dotnet/machinelearning-modelbuilder/issues/1027&quot;&gt;GitHub&lt;/a&gt; and I am documenting my findings here in the hope that they will provide some insight into the problem. I will update this post when a solution or workaround is found.&lt;/p&gt;
 &lt;p&gt;I want to be clear that this problem is in a &lt;strong&gt;preview version&lt;/strong&gt;, where problems like this are expected. I don&apos;t want the team working on this tooling to think that I am being reproachful of their work in any way. In fact, I want to compliment them and thank them for what is generally an extremely valuable tool.&lt;/p&gt;
 &lt;p&gt;To reproduce this problem, use this &lt;a href=&quot;https://gist.githubusercontent.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/7466eb3f60fe881300de004954b240950069675d/SourceData_Mocked.csv&quot;&gt;Data File&lt;/a&gt; to train an &lt;strong&gt;Issue Classification&lt;/strong&gt; or &lt;strong&gt;Text Classification&lt;/strong&gt; model in the ModelBuilder tool by using the &lt;em&gt;Key&lt;/em&gt; column to predict the &lt;em&gt;Value&lt;/em&gt; column. The keys have intelligence built into them that are valid predictors of the Value (I didn&apos;t design this stuff).&lt;/p&gt;
 &lt;p&gt;Machines that are unable to complete this task get a error stating &lt;code&gt;Specified label column &apos;Value&apos; was not found.&lt;/code&gt; with a stack trace similar to &lt;a href=&quot;https://gist.githubusercontent.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/52e01628cb6f449fd95091eaa033559a6c4b386e/StackTrace.txt&quot;&gt;this&lt;/a&gt;.&lt;/p&gt;
@@ -60,7 +63,7 @@
   <link>https://www.cognitiveinheritance.com/Posts/Troubleshooting-Machine-Learning-ModelBuilder-Issue-1027.html</link>
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/f7d71577-57c3-4676-a5fa-2745a2bb8cf7.html</guid>
-  <pubDate>Fri, 30 Apr 2021 18:00:00 GMT</pubDate>
+  <pubDate>Sat, 03 Apr 2021 18:00:00 GMT</pubDate>
 </item><item>
   <title>Committing to Git from an Azure DevOps Pipeline</title>
   <description>&lt;p&gt;There are occasions, such as when working with static website generators, that you&apos;ll want to push some changes made in an Azure DevOps pipeline, back into the source Git repository. This process is simple enough, but since I have struggled to get it configured twice now, I am documenting the process here for your use, and my future use.&lt;/p&gt;
