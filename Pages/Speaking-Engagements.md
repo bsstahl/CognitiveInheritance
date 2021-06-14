@@ -15,7 +15,7 @@ categories: []
 ---
 Upcoming Talks:
 
-**Due to the Covid-19 crisis I will not be doing any in-person speaking for the remainder of 2020. Hopefully we will all be able to get to a new normal prior to the start of 2021.**
+**I am considering restarting speaking in-person again. If you are interested in having me speak at your event, please contact me.**
 
 ***
 
@@ -56,7 +56,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 #### Development Patterns & Practices
 
-* **Simplify Your API: Creating Maintainable and Discoverable Code in .NET Core** - Developers don't read documentation, this is a fact. It is also a fact that an API that  depends on its documentation to get developers to understand and discover its features is at a huge disadvantage in the marketplace. Fortunately, there are some simple, easy-to-use mechanisms for wrapping complex APIs and making their functionality both easy to use, and highly discoverable. Imagine being able to use tools like IntelliSense that the Visual Studio IDE already provides as a way to expose the functionality of your service or library. In this session we will build a fluent Domain Specific Language interface over an existing API to create an interface that is easy to use and discoverable through IntelliSense.
+* **Simplify Your API: Creating Maintainable and Discoverable Code in .NET** - Developers don't read documentation, this is a fact. It is also a fact that an API that  depends on its documentation to get developers to understand and discover its features is at a huge disadvantage in the marketplace. Fortunately, there are some simple, easy-to-use mechanisms for wrapping complex APIs and making their functionality both easy to use, and highly discoverable. Imagine being able to use tools like IntelliSense that the Visual Studio IDE already provides as a way to expose the functionality of your service or library. In this session we will build a fluent Domain Specific Language interface over an existing API to create an interface that is easy to use and discoverable through IntelliSense.
 
 ***
 
@@ -66,17 +66,21 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ***
 
-* **Test Driven Development in .NET Core** - In this talk, the speaker and the audience will "pair up" for a coding session which will serve as an introduction to using a Test Driven Development process to build a .NET Core application. We will use C#, Visual Studio, XUnit and MOQ to unit test code to be built both with and without dependencies. We will also highlight some of the common issues encountered during TDD and discuss strategies for overcoming them.
+* **Eliminating the Hidden Danger to Your Application: Avoiding the Dual-Writes Anti-Pattern** - There is a danger lurking in every system that hasn't taken explicit steps to eliminate it. This under-recognized data killer can cause intermittent inconsistencies in your data which can be as difficult to find as they are to correct. Fortunately, recognizing this monster is easy, and there are a number of great techniques you can use to keep it away for good. In this talk, we will learn about the Dual-Writes anti-pattern: how to spot it, and what to do to avoid it. In doing so, we'll discuss the 4 primary patterns for keeping data consistent in modern software systems, so you can spend less time supporting your applications. We'll see examples in C# of each pattern, including demonstrations using SQL Server, Cosmos DB and Kafka.
 
 ***
 
-* **Test Driven Development for Managers** - It is generally accepted that having good unit tests is an important factor in agile development. Unit testing is so important that many development teams have chosen to take a test-driven approach to building software. But what does it really mean to be "test-driven" and why is it so important? 
+* **Test Driven Development in .NET** - In this talk, the speaker and the audience will "pair up" for a coding session which will serve as an introduction to using a Test Driven Development process to build a .NET Core application. We will use C#, Visual Studio, XUnit and MOQ to unit test code to be built both with and without dependencies. We will also highlight some of the common issues encountered during TDD and discuss strategies for overcoming them.
+
+***
+
+* **Test Driven Development for Managers** - It is generally accepted that having good unit tests is an important factor in agile development. Unit testing is so important that many development teams have chosen to take a test-driven approach to building software. But what does it really mean to be "test-driven" and why is it so important?
 
   In this session, Barry walks through the process of developing a simple application using TDD methodologies. He teaches the same concepts he has been teaching developers for many years, but does so for an audience of managers and coaches so that you can understand how using Test-Driven-Development makes your teams more agile and more productive. You will walk away with an understanding of some of the key concepts of unit testing and TDD, how they are implemented using Test-Driven Development practices, and how using these techniques before writing production code saves time and money by ensuring that the code that is written is maintainable and extensible.
 
 ***
 
-* **Things Your Dev Team Hopes You Know** - Managing a development team or project can be one of the most challenging jobs in any industry. Balancing the needs of the developers, the organization and the users to maximize value for the customers while minimizing costs can be a daunting prospect for even the most experienced executive.  How can we produce quality software in a timely and cost-effective manner when the needs of the development team are so different from the needs of the customers, the organization and its managers? 
+* **Things Your Dev Team Hopes You Know** - Managing a development team or project can be one of the most challenging jobs in any industry. Balancing the needs of the developers, the organization and the users to maximize value for the customers while minimizing costs can be a daunting prospect for even the most experienced executive.  How can we produce quality software in a timely and cost-effective manner when the needs of the development team are so different from the needs of the customers, the organization and its managers?
 
   In this talk Barry leverages his more than 30 years of experience as a Developer and Solution Architect to remind us that how we leverage Agile ceremonies, how we use our tooling, and how we utilize metrics can have both positive and negative impacts on our teams.  He reviews many of the elements of our Agile processes and identifies their impacts, particularly on the developers and their managers. This talk challenges us to create environments for our development teams that enable them to exceed the expectations of both our users and our organizations.
 
