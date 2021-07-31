@@ -8,14 +8,14 @@ description: Technical presentations given by Barry S. Stahl.
 ispublished: true
 showinlist: true
 publicationdate: 2009-08-01T00:00:00.000+00:00
-lastmodificationdate: 2020-01-01T00:00:00.000+00:00
+lastmodificationdate: 2021-07-31T17:51:00.000+00:00
 slug: Speaking-Engagements
 categories: []
 
 ---
 Upcoming Talks:
 
-**I am considering restarting speaking in-person again. If you are interested in having me speak at your event, please contact me.**
+**I have restarted speaking in-person on a limited basis. If you are interested in having me speak at your event, please contact me.**
 
 ***
 
@@ -86,16 +86,13 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ***
 
-#### Cloud Development
-
-* **Building .NET Applications for any Cloud with Cloud Foundry** - Cloud Foundry is an open-source Platform as a Service (PaaS) available on virtually any cloud (Azure, IBM, Amazon, Google, and others) that manages containers and applications with many of the same capabilities of Docker and Kubernetes, without the complexity or vendor lock-in. In this session, we will build a .NET core based Microservices application and deploy it into production on Cloud Foundry to demonstrate the features and ease of use of the Cloud Foundry platform. Warning: once you experience Cloud Foundry you'll never want to deploy your applications without it again.
-
-***
-
 Past engagements:
 
-* **Codestock 2020** - (Cancelled for April 2020 due to Covid-19) - "Amazing Algorithms for Solving Problems in Software" & "Pushing AI to the Client with WebAssembly and  Blazor"
-* **Twin Cities Code Camp** - (Cancelled for April 2020 due to Covid-19) - "Pushing AI to the Client with WebAssembly and  Blazor"
+* **THATConference 2021** - 7/26 - 7/29/2021 - "Amazing Algorithms for Solving Problems in Software"
+* **The Valley of the Sun .NET User Groups** - 7/22/2021 - "Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems" ([video](https://youtu.be/g6tnRWN9vy0))
+* **The Valley of the Sun .NET User Groups** - 12/16/2020 - "Event Storming (lightning talk)" ([video](https://youtu.be/6DgGhQQbfDE))
+* **Codestock 2020** - (Cancelled for April 2020 due to Covid-19) - "Amazing Algorithms for Solving Problems in Software" & "Pushing AI to the Client with WebAssembly and Blazor"
+* **Twin Cities Code Camp** - (Cancelled for April 2020 due to Covid-19) - "Pushing AI to the Client with WebAssembly and Blazor"
 * **South Florida Software Dev Con 2020** - 2/29/2020 - "Amazing Algorithms for Solving Problems in Software"
 * **AgileAZ 2019** - 11/22/2019 - "Things Your Dev Team Hopes You Know"
 * **Desert Code Camp 2019** - 10/12/2019 - "Amazing Algorithms for Solving Problems in Software"
