@@ -15,6 +15,8 @@ categories: []
 ---
 Upcoming Talks:
 
+* **NDC Oslo** - 11/29 to 12/3/2021 - "Amazing Algorithms for Solving Problems in Software", "Eliminating Hidden Dangers to your Applications: Patterns for Reliable Systems" & "Genetic Algorithms" (Lightning Talk)
+
 **I have restarted speaking in-person on a limited basis. If you are interested in having me speak at your event, please contact me.**
 
 ***
