@@ -8,16 +8,18 @@ description: Technical presentations given by Barry S. Stahl.
 ispublished: true
 showinlist: true
 publicationdate: 2009-08-01T00:00:00.000+00:00
-lastmodificationdate: 2021-07-31T17:51:00.000+00:00
+lastmodificationdate: 2021-10-19T01:05:00.000+00:00
 slug: Speaking-Engagements
 categories: []
 
 ---
 Upcoming Talks:
 
-* **NDC Oslo** - 11/29 to 12/3/2021 - "Amazing Algorithms for Solving Problems in Software", "Eliminating Hidden Dangers to your Applications: Patterns for Reliable Systems" & "Genetic Algorithms" (Lightning Talk)
+* **AgileAZ 2021** - 11/11 to 11/12/2021 - "Defining the Business Domain using Event Storming"
 
-**I have restarted speaking in-person on a limited basis. If you are interested in having me speak at your event, please contact me.**
+* **NDC Oslo 2021** - 11/29 to 12/3/2021 - "Amazing Algorithms for Solving Problems in Software", "Eliminating Hidden Dangers to your Applications: Patterns for Reliable Systems" & "Genetic Algorithms" (Lightning Talk)
+
+* **CodeMash 2022** - 1/11 to 1/14/2022 - "Design Patterns for Loosely Coupled Applications"
 
 ***
 
@@ -76,6 +78,20 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ***
 
+* **Defining the Business Domain using Event Storming** - Event storming is a process for modeling a business domain from the perspective of the business experts. It has been used by many with great success. Event Storming can help your team:
+
+  * Build an understanding of a domain
+  * Define the scopes and interactions of the components of a system
+  * Rapidly discover unknown-unknowns
+  * Expose the intricacies of the business domain
+  * Identify the areas of greatest risk
+
+The artifacts produced in this process are useful to both the business experts, to help document their domain, and the engineers building systems for that domain.
+
+In this session, we will explore the process of Event Storming. We will define the goals and expected outputs of the process, and walk through a simple example so that you are ready to bring this important practice into your organization.
+
+***
+
 * **Test Driven Development for Managers** - It is generally accepted that having good unit tests is an important factor in agile development. Unit testing is so important that many development teams have chosen to take a test-driven approach to building software. But what does it really mean to be "test-driven" and why is it so important?
 
   In this session, Barry walks through the process of developing a simple application using TDD methodologies. He teaches the same concepts he has been teaching developers for many years, but does so for an audience of managers and coaches so that you can understand how using Test-Driven-Development makes your teams more agile and more productive. You will walk away with an understanding of some of the key concepts of unit testing and TDD, how they are implemented using Test-Driven Development practices, and how using these techniques before writing production code saves time and money by ensuring that the code that is written is maintainable and extensible.
@@ -90,6 +106,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 Past engagements:
 
+* **Redis Monthly Live** - 10/18/2021 - "Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems"
 * **THATConference 2021** - 7/26 - 7/29/2021 - "Amazing Algorithms for Solving Problems in Software"
 * **The Valley of the Sun .NET User Groups** - 7/22/2021 - "Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems" ([video](https://youtu.be/g6tnRWN9vy0))
 * **The Valley of the Sun .NET User Groups** - 12/16/2020 - "Event Storming (lightning talk)" ([video](https://youtu.be/6DgGhQQbfDE))
