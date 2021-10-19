@@ -91,7 +91,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
   * Rapidly discover unknown-unknowns
   * Expose the intricacies of the business domain
   * Identify the areas of greatest risk
-
+  
   The artifacts produced in this process are useful to both the business experts, to help document their domain, and the engineers building systems for that domain.
 
   In this session, we will explore the process of Event Storming. We will define the goals and expected outputs of the process, and walk through a simple example so that you are ready to bring this important practice into your organization.
