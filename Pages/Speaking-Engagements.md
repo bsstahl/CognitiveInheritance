@@ -23,6 +23,52 @@ Upcoming Talks:
 
 I have the following talks on topics of interest to Enterprise Developers that I can deliver at your user group or conference. You can submit a request for me to speak by {ContactPageLink:contacting me}.
 
+#### Development Patterns & Practices
+
+* **Simplify Your API: Creating Maintainable and Discoverable Code in .NET** - Developers don't read documentation, this is a fact. It is also a fact that an API that  depends on its documentation to get developers to understand and discover its features is at a huge disadvantage in the marketplace. Fortunately, there are some simple, easy-to-use mechanisms for wrapping complex APIs and making their functionality both easy to use, and highly discoverable. Imagine being able to use tools like IntelliSense that the Visual Studio IDE already provides as a way to expose the functionality of your service or library. In this session we will build a fluent Domain Specific Language interface over an existing API to create an interface that is easy to use and discoverable through IntelliSense.
+
+***
+
+* **Design Patterns for Loosely Coupled Applications** - Building our applications so that their components are loosely coupled is a critical measure in creating solutions that are testable, maintainable and extensible. In this session we will explore several design patterns that are key to building applications that maintain loose coupling. We start by reviewing a tightly coupled application. Then, we explore several design patterns by using them to convert the application into a maintainable and extensible solution that can be validated using unit tests.
+
+  [Latest Slide Deck](https://DesignPatternsForLooseCoupling.azurewebsites.net) | [Video: Craft Conference 2019 - Budapest, Hungary - May 2019](https://www.youtube.com/watch?v=mE3zKWO6qQE&list=FLq-iLd7rfmqSIFiujBGIRSw&index=1)
+
+***
+
+* **Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems** - There is a danger lurking in every system that hasn't taken explicit steps to eliminate it. This under-recognized data killer can cause intermittent inconsistencies in your data which can be as difficult to find as they are to correct. Fortunately, recognizing this monster is easy, and there are a number of great techniques you can use to keep it away for good. In this talk, we will learn about the Dual-Writes anti-pattern: how to spot it, and what to do to avoid it. In doing so, we'll discuss the 4 primary patterns for keeping data consistent in modern software systems, so you can spend less time supporting your applications. We'll see examples in C# of each pattern, including demonstrations using SQL Server, Cosmos DB and Redis.
+
+***
+
+* **Test Driven Development in .NET** - In this talk, the speaker and the audience will "pair up" for a coding session which will serve as an introduction to using a Test Driven Development process to build a .NET Core application. We will use C#, Visual Studio, XUnit and MOQ to unit test code to be built both with and without dependencies. We will also highlight some of the common issues encountered during TDD and discuss strategies for overcoming them.
+
+***
+
+* **Test Driven Development for Managers** - It is generally accepted that having good unit tests is an important factor in agile development. Unit testing is so important that many development teams have chosen to take a test-driven approach to building software. But what does it really mean to be "test-driven" and why is it so important?
+
+  In this session, Barry walks through the process of developing a simple application using TDD methodologies. He teaches the same concepts he has been teaching developers for many years, but does so for an audience of managers and coaches so that you can understand how using Test-Driven-Development makes your teams more agile and more productive. You will walk away with an understanding of some of the key concepts of unit testing and TDD, how they are implemented using Test-Driven Development practices, and how using these techniques before writing production code saves time and money by ensuring that the code that is written is maintainable and extensible.
+
+***
+
+* **Defining the Business Domain using Event Storming** - Event storming is a process for modeling a business domain from the perspective of the business experts. It comes out of the Domain Driven Design world and has been used by many with great success. Event Storming can help your team:
+
+  * Build an understanding of a domain
+  * Define the scopes and interactions of the components of a system
+  * Rapidly discover unknown-unknowns
+  * Expose the intricacies of the business domain
+  * Identify the areas of greatest risk
+  
+  The artifacts produced in this process are useful to both the business experts, to help document their domain, and the engineers building systems for that domain, and are completely implementation agnostic.
+
+  In this session, we will explore the process of Event Storming. We will define the goals and expected outputs of the process, and walk through a simple example so that you are ready to bring this important practice into your organization.
+
+***
+
+* **Things Your Dev Team Hopes You Know** - Managing a development team or project can be one of the most challenging jobs in any industry. Balancing the needs of the developers, the organization and the users to maximize value for the customers while minimizing costs can be a daunting prospect for even the most experienced executive.  How can we produce quality software in a timely and cost-effective manner when the needs of the development team are so different from the needs of the customers, the organization and its managers?
+
+  In this talk Barry leverages his more than 30 years of experience as a Developer and Solution Architect to remind us that how we leverage Agile ceremonies, how we use our tooling, and how we utilize metrics can have both positive and negative impacts on our teams.  He reviews many of the elements of our Agile processes and identifies their impacts, particularly on the developers and their managers. This talk challenges us to create environments for our development teams that enable them to exceed the expectations of both our users and our organizations.
+
+***
+
 #### Artificial Intelligence and Algorithms
 
 * **Amazing Algorithms for Solving Problems in Software** - Sure neural networks are cool but have you ever used a Firefly Algorithm to find the solution to a problem? How about an Ant Colony algorithm or one of  the many other algorithms inspired by nature?  In this talk we will see examples of a number of awesome bio-inspired algorithms that can be used to solve problems in software. We'll see how each one works, analyze its strengths and weaknesses, and determine when it is best used. You'll leave with the knowledge you need to solve problems using these algorithms in your language of choice.
@@ -53,52 +99,6 @@ I have the following talks on topics of interest to Enterprise Developers that I
   Gurobi, Microsoft Solver Foundation and Google OR-Tools.
 
   [Video: NDC Sydney - Sydney Australia - August 2017](https://www.youtube.com/watch?v=zZAobExOMB0&list=FLq-iLd7rfmqSIFiujBGIRSw&index=2)
-
-***
-
-#### Development Patterns & Practices
-
-* **Simplify Your API: Creating Maintainable and Discoverable Code in .NET** - Developers don't read documentation, this is a fact. It is also a fact that an API that  depends on its documentation to get developers to understand and discover its features is at a huge disadvantage in the marketplace. Fortunately, there are some simple, easy-to-use mechanisms for wrapping complex APIs and making their functionality both easy to use, and highly discoverable. Imagine being able to use tools like IntelliSense that the Visual Studio IDE already provides as a way to expose the functionality of your service or library. In this session we will build a fluent Domain Specific Language interface over an existing API to create an interface that is easy to use and discoverable through IntelliSense.
-
-***
-
-* **Design Patterns for Loosely Coupled Applications** - Building loosely coupled applications is critical to creating solutions that follow good object oriented development principles. These principles help make sure our applications are testable, maintainable and extensible. In this session we will explore several design patterns that are key to building applications that maintain loose coupling. We start by reviewing a tightly coupled application. Then, we explore several critical design patterns by using them to convert the application into a maintainable and extensible solution that can be validated using unit tests.
-
-  [Latest Slide Deck](https://DesignPatternsForLooseCoupling.azurewebsites.net) |      [Video: Craft Conference 2019 - Budapest, Hungary - May 2019](https://www.youtube.com/watch?v=mE3zKWO6qQE&list=FLq-iLd7rfmqSIFiujBGIRSw&index=1)
-
-***
-
-* **Eliminating the Hidden Danger to Your Application: Patterns for Reliable Systems** - There is a danger lurking in every system that hasn't taken explicit steps to eliminate it. This under-recognized data killer can cause intermittent inconsistencies in your data which can be as difficult to find as they are to correct. Fortunately, recognizing this monster is easy, and there are a number of great techniques you can use to keep it away for good. In this talk, we will learn about the Dual-Writes anti-pattern: how to spot it, and what to do to avoid it. In doing so, we'll discuss the 4 primary patterns for keeping data consistent in modern software systems, so you can spend less time supporting your applications. We'll see examples in C# of each pattern, including demonstrations using SQL Server, Cosmos DB and Kafka.
-
-***
-
-* **Test Driven Development in .NET** - In this talk, the speaker and the audience will "pair up" for a coding session which will serve as an introduction to using a Test Driven Development process to build a .NET Core application. We will use C#, Visual Studio, XUnit and MOQ to unit test code to be built both with and without dependencies. We will also highlight some of the common issues encountered during TDD and discuss strategies for overcoming them.
-
-***
-
-* **Test Driven Development for Managers** - It is generally accepted that having good unit tests is an important factor in agile development. Unit testing is so important that many development teams have chosen to take a test-driven approach to building software. But what does it really mean to be "test-driven" and why is it so important?
-
-  In this session, Barry walks through the process of developing a simple application using TDD methodologies. He teaches the same concepts he has been teaching developers for many years, but does so for an audience of managers and coaches so that you can understand how using Test-Driven-Development makes your teams more agile and more productive. You will walk away with an understanding of some of the key concepts of unit testing and TDD, how they are implemented using Test-Driven Development practices, and how using these techniques before writing production code saves time and money by ensuring that the code that is written is maintainable and extensible.
-
-***
-
-* **Defining the Business Domain using Event Storming** - Event storming is a process for modeling a business domain from the perspective of the business experts. It has been used by many with great success. Event Storming can help your team:
-
-  * Build an understanding of a domain
-  * Define the scopes and interactions of the components of a system
-  * Rapidly discover unknown-unknowns
-  * Expose the intricacies of the business domain
-  * Identify the areas of greatest risk
-  
-  The artifacts produced in this process are useful to both the business experts, to help document their domain, and the engineers building systems for that domain.
-
-  In this session, we will explore the process of Event Storming. We will define the goals and expected outputs of the process, and walk through a simple example so that you are ready to bring this important practice into your organization.
-
-***
-
-* **Things Your Dev Team Hopes You Know** - Managing a development team or project can be one of the most challenging jobs in any industry. Balancing the needs of the developers, the organization and the users to maximize value for the customers while minimizing costs can be a daunting prospect for even the most experienced executive.  How can we produce quality software in a timely and cost-effective manner when the needs of the development team are so different from the needs of the customers, the organization and its managers?
-
-  In this talk Barry leverages his more than 30 years of experience as a Developer and Solution Architect to remind us that how we leverage Agile ceremonies, how we use our tooling, and how we utilize metrics can have both positive and negative impacts on our teams.  He reviews many of the elements of our Agile processes and identifies their impacts, particularly on the developers and their managers. This talk challenges us to create environments for our development teams that enable them to exceed the expectations of both our users and our organizations.
 
 ***
 
