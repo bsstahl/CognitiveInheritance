@@ -8,14 +8,12 @@ description: Technical presentations given by Barry S. Stahl.
 ispublished: true
 showinlist: true
 publicationdate: 2009-08-01T00:00:00.000+00:00
-lastmodificationdate: 2021-11-12T20:50:00.000+00:00
+lastmodificationdate: 2021-12-18T00:31:00.000+00:00
 slug: Speaking-Engagements
 categories: []
 
 ---
 Upcoming Talks:
-
-* **NDC Oslo 2021** - 11/29 to 12/3/2021 - "Amazing Algorithms for Solving Problems in Software", "Eliminating Hidden Dangers to your Applications: Patterns for Reliable Systems" & "Genetic Algorithms" (Lightning Talk)
 
 * **CodeMash 2022** - 1/11 to 1/14/2022 - "Design Patterns for Loosely Coupled Applications"
 
@@ -104,6 +102,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 Past engagements:
 
+* **NDC Oslo 2021** - 11/29 to 12/3/2021 - "Amazing Algorithms for Solving Problems in Software", "Eliminating Hidden Dangers to your Applications: Patterns for Reliable Systems" & "Genetic Algorithms" (Lightning Talk)
 * **AgileAZ 2021** - 11/11 to 11/12/2021 - "Defining the Business Domain using Event Storming"
 * **Redis Monthly Live** - 10/18/2021 - "Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems"
 * **THATConference 2021** - 7/26 - 7/29/2021 - "Amazing Algorithms for Solving Problems in Software"
