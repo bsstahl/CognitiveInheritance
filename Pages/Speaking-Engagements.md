@@ -16,6 +16,7 @@ categories: []
 Upcoming Talks:
 
 * **CodeMash 2022** - 1/11 to 1/14/2022 - "Design Patterns for Loosely Coupled Applications"
+* **CodeStock 2022** - 4/7 to 4/8/2022 - "Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems" & "Defining the Business Domain using Event Storming"
 
 ***
 
