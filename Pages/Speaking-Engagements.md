@@ -13,9 +13,9 @@ slug: Speaking-Engagements
 categories: []
 
 ---
-Upcoming Talks:
+<!-- Upcoming Talks: -->
 
-> I have started delivering in-person talks again now that community transmission of Covid-19 is reduced, but will still entertain opportunities to speak online. Please {ContactPageLink:contacting me} if you would like me to deliver one of my talks at your event. Refer to the talk list below for available options.
+> I have started delivering in-person talks again now that community transmission of Covid-19 is down, but will still entertain opportunities to speak online. Please {ContactPageLink:contact me} if you would like me to deliver one of my talks at your event. Refer to the talk list below for available options.
 
 ***
 
