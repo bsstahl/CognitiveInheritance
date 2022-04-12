@@ -15,7 +15,7 @@ categories: []
 ---
 Upcoming Talks:
 
-* **CodeStock 2022** - 4/7 to 4/8/2022 - "Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems" & "Defining the Business Domain using Event Storming"
+> I have started delivering in-person talks again now that community transmission of Covid-19 is reduced, but will still entertain opportunities to speak online. Please {ContactPageLink:contacting me} if you would like me to deliver one of my talks at your event. Refer to the talk list below for available options.
 
 ***
 
@@ -102,6 +102,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 Past engagements:
 
+* **CodeStock 2022** - 4/7 to 4/8/2022 - "Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems" & "Defining the Business Domain using Event Storming"
 * **CodeMash 2022** - 1/11 to 1/14/2022 - "Design Patterns for Loosely Coupled Applications"
 * **NDC Oslo 2021** - 11/29 to 12/3/2021 - "Amazing Algorithms for Solving Problems in Software", "Eliminating Hidden Dangers to your Applications: Patterns for Reliable Systems" & "Genetic Algorithms" (Lightning Talk)
 * **AgileAZ 2021** - 11/11 to 11/12/2021 - "Defining the Business Domain using Event Storming"
