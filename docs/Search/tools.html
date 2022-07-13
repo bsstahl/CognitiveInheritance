@@ -169,10 +169,11 @@ ECHO ** Ending Update remote git repo script
 </ul>
 </li>
 </ul>
+<blockquote>
+<p>Update 2022-07-13: There is an additional option that needs to be selected in the pipeline's <em>Agent Job</em>. <code>Allow scripts to access the OAuth token</code> must be checked so that the script can acquire the permissions to update the repository.</p>
+</blockquote>
 <p>There are other ways to do all of this of course. One idea that intrigues me that I haven't tried yet is to have the build service submit a pull-request to the remote git repo. This would require an additional approval step before the changes are merged into the repo. For static websites where merging into master is the equivalent of publishing the site, this might give me the opportunity to review the built site before it is actually deployed.</p>
 <p>Have you tried this pull-request method, or used this kind of technique with an non-Azure DevOps repo? If so, please let me know about it on Twitter <a href="https://twitter.com/bsstahl">@bsstahl</a>.</p>
-<h3>Update 2022-07-13</h3>
-<p>There is an additional option that needs to be selected in the pipeline's <em>Agent Job</em>. The <code>Allow scripts to access the OAuth token</code> option must be checked so that the script can acquire the right permissions to update the repository.</p>
 
     <h5>Tags: <a title="Tag: ci_cd" class="small" href="../Search/ci_cd.html">ci_cd</a>&nbsp;<a title="Tag: git" class="small" href="../Search/git.html">git</a>&nbsp;<a title="Tag: azure" class="small" href="../Search/azure.html">azure</a>&nbsp;<a title="Tag: devops" class="small" href="../Search/devops.html">devops</a>&nbsp;<a title="Tag: azure devops" class="small" href="../Search/azure-devops.html">azure devops</a>&nbsp;</h5>
     <div class="share"><a href="../Permalinks/ee2bd796-a0f2-4536-af7d-3c1499c093b6.html" rel="bookmark">Permalink</a></div>
