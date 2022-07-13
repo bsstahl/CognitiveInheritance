@@ -63,7 +63,9 @@ An interesting thing to note about this script is the _git push_ command. The fu
   
   * For other repositories, things are even more complicated. Accounts need to be configured on the external source control service so that the Build Service User account has the permissions it needs to push to that repository. This may require an SSH configuration, an Auth token, or any number of other mechanisms depending on the source control provider. See that provider's documentation for the specifics.
 
-> Update 2022-07-13: There is an additional option that needs to be selected in the pipeline's _Agent Job_. `Allow scripts to access the OAuth token` must be checked so that the script can acquire the permissions to update the repository.
+> Update 2022-07-13: There is an additional option that needs to be enabled in the pipeline's _Agent Job_.
+> `☑ Allow scripts to access the OAuth token`
+> This option must be checked so that the script can acquire the permissions to update the repository.
 
 There are other ways to do all of this of course. One idea that intrigues me that I haven't tried yet is to have the build service submit a pull-request to the remote git repo. This would require an additional approval step before the changes are merged into the repo. For static websites where merging into master is the equivalent of publishing the site, this might give me the opportunity to review the built site before it is actually deployed.
 
