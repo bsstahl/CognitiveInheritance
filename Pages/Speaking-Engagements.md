@@ -148,7 +148,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 * **Southeast Valley .NET User Group** - 6/22/2017 - "A Developer's Survey of AI Methodologies"
 * **Codestock (Knoxville TN)** - 5/6/2017 - "Examples of Micro-Service Architectures"
 * **Phoenix Visual Studio 2017 Launch** - 3/16/2017 - "Testing in Visual Studio 2017"
-* **MVPMix Dallas** - 3/9/2017 & 3/10/2017 - "Creating Maintainable and Discoverable APIs in .NET Core & "Design Patterns for Loosely Coupled Applications in C#"
+* **MVPMix Dallas** - 3/9/2017 & 3/10/2017 - "Creating Maintainable and Discoverable APIs in .NET Core" & "Design Patterns for Loosely Coupled Applications in C#"
 * **NDC London** - 1/20/2017 - "Test Driven Development in .NET Core" & "What Makes a Good Unit Test?" (lightning talk)
 * **Southern California Code Camp** (SoCalCodeCamp - Los Angeles 2016) - 11/12-11/13/2016 - "A Developer's Guide to Finding Optimal Solutions"
 * **Atlanta Code Camp 2016** - 10/15/2016 - "A Developer's Guide to Finding Optimal Solutions"
@@ -180,9 +180,9 @@ I have the following talks on topics of interest to Enterprise Developers that I
   Discoverable Code"
 * **Win 8 App Factor Tempe** 6/13/2013 - "Code Portability in .NET"
 * **SELA Dev Conference**  5/5/2013-5/9/2013 in Tel Aviv Israel – a full day
-  seminar version of “.NET TDD Kickstart” as well as “Code Portability in .NET”
-* **Twin Cities Code Camp** 4/27/2013 – “Code Portability in .NET”
-* **Desert Code Camp** 4/20/2013 – “Creating a DSL Using an OData Source”
+  seminar version of ".NET TDD Kickstart" as well as "Code Portability in .NET"
+* **Twin Cities Code Camp** 4/27/2013 – "Code Portability in .NET"
+* **Desert Code Camp** 4/20/2013 – "Creating a DSL Using an OData Source"
 * **South Florida Code Camp** 2013 - 2/9/2013 - "Creating a DSL using an OData Source"
 * **Southernmost User Group** - 2/7/2013 - "Code Portability in .NET"
 * **NYC Code Camp** - 9/15/2012 - ".NET TDD Kickstart"

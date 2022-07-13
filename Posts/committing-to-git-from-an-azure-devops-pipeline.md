@@ -15,7 +15,7 @@ description: ''
 ispublished: true
 showinlist: false
 publicationdate: 2020-06-17T16:55:00.000+00:00
-lastmodificationdate: 2020-06-17T16:55:00.000+00:00
+lastmodificationdate: 2022-07-13T14:22:00.000+00:00
 slug: Committing-to-Git-from-Azure-DevOps-Pipeline
 
 ---
@@ -61,8 +61,12 @@ An interesting thing to note about this script is the _git push_ command. The fu
 
   * For Azure DevOps repositories, select the _Repositories_ tab and click on the _\[Projectname\] Build Service User_ in the _Users_ section. This will show a list of permissions that the build service user has. There are 4 that are of interest here: _Contribute_, _Create branch_, _Create tag_ and _Read_. Some of those will probably already be enabled for you. I suspect only the _Contribute_ needs to be added at this time, but I usually make sure all 4 are allowed.
   
-   * For other repositories, things are even more complicated. Accounts need to be configured on the external source control service so that the Build Service User account has the permissions it needs to push to that repository. This may require an SSH configuration, an Auth token, or any number of other mechanisms depending on the source control provider. See that provider's documentation for the specifics.
+  * For other repositories, things are even more complicated. Accounts need to be configured on the external source control service so that the Build Service User account has the permissions it needs to push to that repository. This may require an SSH configuration, an Auth token, or any number of other mechanisms depending on the source control provider. See that provider's documentation for the specifics.
 
 There are other ways to do all of this of course. One idea that intrigues me that I haven't tried yet is to have the build service submit a pull-request to the remote git repo. This would require an additional approval step before the changes are merged into the repo. For static websites where merging into master is the equivalent of publishing the site, this might give me the opportunity to review the built site before it is actually deployed.
 
 Have you tried this pull-request method, or used this kind of technique with an non-Azure DevOps repo? If so, please let me know about it on Twitter {TwitterLink}.
+
+### Update 2022-07-13
+
+There is an additional option that needs to be selected in the pipeline's _Agent Job_. The `Allow scripts to access the OAuth token` option must be checked so that the script can acquire the right permissions to update the repository.
