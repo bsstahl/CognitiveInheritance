@@ -117,6 +117,8 @@ ECHO ** Ending Update remote git repo script
 &lt;/ul&gt;
 &lt;p&gt;There are other ways to do all of this of course. One idea that intrigues me that I haven&apos;t tried yet is to have the build service submit a pull-request to the remote git repo. This would require an additional approval step before the changes are merged into the repo. For static websites where merging into master is the equivalent of publishing the site, this might give me the opportunity to review the built site before it is actually deployed.&lt;/p&gt;
 &lt;p&gt;Have you tried this pull-request method, or used this kind of technique with an non-Azure DevOps repo? If so, please let me know about it on Twitter &lt;a href=&quot;https://twitter.com/bsstahl&quot;&gt;@bsstahl&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Update 2022-07-13&lt;/h3&gt;
+&lt;p&gt;There is an additional option that needs to be selected in the pipeline&apos;s &lt;em&gt;Agent Job&lt;/em&gt;. The &lt;code&gt;Allow scripts to access the OAuth token&lt;/code&gt; option must be checked so that the script can acquire the right permissions to update the repository.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/Committing-to-Git-from-Azure-DevOps-Pipeline.html</link>
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
