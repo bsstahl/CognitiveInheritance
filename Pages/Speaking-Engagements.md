@@ -108,7 +108,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ### Past engagements
 
-* **Code on the Beach 2022** | Atlantic Beach, FL, USA | 7/25/2022 - 7/27/2022 | "Amazing Algorithms for Solving Problems in Software"
+* **Code on the Beach 2022** - 7/25 to 7/27/2022 - "Amazing Algorithms for Solving Problems in Software"
 * **CodeStock 2022** - 4/7 to 4/8/2022 - "Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems" & "Defining the Business Domain using Event Storming"
 * **CodeMash 2022** - 1/11 to 1/14/2022 - "Design Patterns for Loosely Coupled Applications"
 * **NDC Oslo 2021** - 11/29 to 12/3/2021 - "Amazing Algorithms for Solving Problems in Software", "Eliminating Hidden Dangers to your Applications: Patterns for Reliable Systems" & "Genetic Algorithms" (Lightning Talk)
