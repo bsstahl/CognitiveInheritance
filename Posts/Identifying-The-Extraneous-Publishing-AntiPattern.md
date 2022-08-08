@@ -39,7 +39,7 @@ Note: In the worst of these cases, the data from one or more of these sources is
 
 The most common choice is for the problem domain to publish all data that it is system of record for, as well as passing-through data needed by the downstream dependencies from the other sources. Since we know that a dependency needs the data, we simply provide it as part of the output of the problem domain system.
 
-![Coupled Data Feed](.\\Images\\Reducing Stamp Coupling - Coupled Data Feed - 800x314.png)
+![Coupled Data Feed](.\Images\Reducing Stamp Coupling - Coupled Data Feed - 800x314.png)
 
 ### Option 1 Advantages
 
@@ -59,7 +59,7 @@ The relationship between two components created by a shared data contract is kno
 
 This option requires each downstream system to take a dependency on every system of record whose data it needs, regardless of what upstream data systems may already be utilizing that data source.
 
-![Direct Dependencies](.\\Images\\Reducing Stamp Coupling - Direct Dependencies - 800x544.png)
+![Direct Dependencies](.\Images\Reducing Stamp Coupling - Direct Dependencies - 800x544.png)
 
 ### Option 2 Advantages
 
@@ -76,7 +76,7 @@ Fortunately, there is a third option that may not be immediately apparent. We ca
 
 In this option, each system publishes only the data for which it is system of record, as in option 1 above. However, instead of every system having to take a direct dependency on all of the upstream systems, a separate component is used to create a shared feed that represents the aggregation of the data from all of the sources.
 
-![Aggregated Data Feed](.\\Images\\Reducing Stamp Coupling - Aggregated Data Feed - 800x276.png)
+![Aggregated Data Feed](.\Images\Reducing Stamp Coupling - Aggregated Data Feed - 800x276.png)
 
 ### Option 3 Advantages
 
@@ -91,7 +91,7 @@ In this option, each system publishes only the data for which it is system of re
 
 It should be noted that in any case, regardless of implementation, a mechanism for correlating data across the feeds will be required. That is, the entity being described will need either a common identifier, or a way to translate the identifiers from one system to the others so that the system can match the data for the same entities appropriately.
 
-You'll notice that the aggregation system described in this option suffers from some of the same disadvantages as the other two options. The biggest difference however is that the sole purpose of this tool is to provide this aggregation. As a result, we handle all of these drawbacks in a domain that is entirely built for this purpose. Our business services remain focused on our business problems, and we create a special domain for the purpose of this data aggregation, with development processes that serve that purpose. In other words, we avoid expanding the definition of our problem domain to include the data aggregation as well. By maintaining each component's single responsibility in this way,  we have the best chance of remaining agile, and not losing velocity due to extraneous concerns like unnecessary data dependencies.
+You'll notice that the aggregation system described in this option suffers from some of the same disadvantages as the other two options. The biggest difference however is that the sole purpose of this tool is to provide this aggregation. As a result, we handle all of these drawbacks in a domain that is entirely built for this purpose. Our business services remain focused on our business problems, and we create a special domain for the purpose of this data aggregation, with development processes that serve that purpose. In other words, we avoid expanding the definition of our problem domain to include the data aggregation as well. By maintaining each component's single responsibility in this way, we have the best chance of remaining agile, and not losing velocity due to extraneous concerns like unnecessary data dependencies.
 
 ## Implementation
 
