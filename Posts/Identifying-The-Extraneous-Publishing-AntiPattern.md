@@ -95,4 +95,4 @@ You'll notice that the aggregation system described in this option suffers from 
 
 ## Implementation
 
-There are a number of ways we can perform the aggregation described in option 3.  Certain databases, such as MongoDb, provide a mechanism for aggregating multiple data elements using _Master Data Management_ tooling. There are also some streaming data implementations which include tools for joining multiple streams such as Apache Kafka's _kSQL_. In future articles, I hope to explore some of these methods for minimizing stamp coupling and avoiding the the Extraneous Publishing AntiPattern.
+There are a number of ways we can perform the aggregation described in option 3.  Certain databases, such as MongoDb, provide a mechanism for aggregating multiple data elements using _Master Data Management_ tooling. There are also some streaming data implementations which include tools for joining multiple streams such as Apache Kafka's _kSQL_. In future articles, I hope to explore some of these methods for minimizing stamp coupling and avoiding the Extraneous Publishing AntiPattern.
