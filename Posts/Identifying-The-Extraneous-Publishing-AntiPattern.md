@@ -26,20 +26,20 @@ categories:
 ---
 What do you do when a dependency of one of your components needs data, ostensibly from your component, that your component doesn't actually need itself?
 
-The problem domain in this drawings below (the big black box) uses some data from 3 different data sources (labeled A, B & C in the drawings). There is also a downstream dependency that needs data from the problem domain, as well as from sources B & C. Some of the data required by the downstream dependency are not needed by, or owned by, the problem domain.
+The problem domain (the big black box in the drawings below) uses some data from 3 different data sources (labeled Source A, B & C in the drawings). There is also a downstream dependency that needs data from the problem domain, as well as from sources B & C. Some of the data required by the downstream dependency are not needed by, or owned by, the problem domain.
 
 There are 2 common implementations discussed now, and 1 slightly less obvious one discussed later in this article. We could:
 
 1. Pass-through the needed values on the output from our problem domain. This is the default option in many environments.
-1. Force the downstream to take additional dependencies on sources B & C
+2. Force the downstream to take additional dependencies on sources B & C
 
 Note: In the worst of these cases, the data from one or more of these sources is not needed at all in the problem domain.
 
 ## Option 1 - Increase Stamp Coupling
 
-The most common choice is for the problem domain to publish all data that it is system of record for, as well as passing-through data needed by the downstream dependencies from the other sources. Since we know that a dependency needs the data we simply provide it as part of the output of the problem domain system.
+The most common choice is for the problem domain to publish all data that it is system of record for, as well as passing-through data needed by the downstream dependencies from the other sources. Since we know that a dependency needs the data, we simply provide it as part of the output of the problem domain system.
 
-![Coupled Data Feed](.\Images\Reducing Stamp Coupling - Coupled Data Feed - 800x314.png)
+![Coupled Data Feed](.\\Images\\Reducing Stamp Coupling - Coupled Data Feed - 800x314.png)
 
 ### Option 1 Advantages
 
@@ -59,7 +59,7 @@ The relationship between two components created by a shared data contract is kno
 
 This option requires each downstream system to take a dependency on every system of record whose data it needs, regardless of what upstream data systems may already be utilizing that data source.
 
-![Direct Dependencies](.\Images\Reducing Stamp Coupling - Direct Dependencies - 800x544.png)
+![Direct Dependencies](.\\Images\\Reducing Stamp Coupling - Direct Dependencies - 800x544.png)
 
 ### Option 2 Advantages
 
@@ -76,7 +76,7 @@ Fortunately, there is a third option that may not be immediately apparent. We ca
 
 In this option, each system publishes only the data for which it is system of record, as in option 1 above. However, instead of every system having to take a direct dependency on all of the upstream systems, a separate component is used to create a shared feed that represents the aggregation of the data from all of the sources.
 
-![Aggregated Data Feed](.\Images\Reducing Stamp Coupling - Aggregated Data Feed - 800x276.png)
+![Aggregated Data Feed](.\\Images\\Reducing Stamp Coupling - Aggregated Data Feed - 800x276.png)
 
 ### Option 3 Advantages
 
@@ -95,4 +95,4 @@ You'll notice that the aggregation system described in this option suffers from 
 
 ## Implementation
 
-There are a number of ways we can perform the aggregation described in option 3.  Certain databases, such as MongoDb, provide a mechanism for aggregating multiple data elements using *Master Data Management* tooling. There are also some streaming data implementations which include tools for joining multiple streams such as Apache Kafka's *kSQL*. In future articles, I hope to explore some of these methods for minimizing stamp coupling and avoiding the the Extraneous Publishing AntiPattern.
+There are a number of ways we can perform the aggregation described in option 3.  Certain databases, such as MongoDb, provide a mechanism for aggregating multiple data elements using _Master Data Management_ tooling. There are also some streaming data implementations which include tools for joining multiple streams such as Apache Kafka's _kSQL_. In future articles, I hope to explore some of these methods for minimizing stamp coupling and avoiding the the Extraneous Publishing AntiPattern.
