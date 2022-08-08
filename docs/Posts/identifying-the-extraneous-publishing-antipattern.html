@@ -72,7 +72,7 @@
 <p>Note: In the worst of these cases, the data from one or more of these sources is not needed at all in the problem domain.</p>
 <h2>Option 1 - Increase Stamp Coupling</h2>
 <p>The most common choice is for the problem domain to publish all data that it is system of record for, as well as passing-through data needed by the downstream dependencies from the other sources. Since we know that a dependency needs the data, we simply provide it as part of the output of the problem domain system.</p>
-<img alt="Coupled Data Feed" src=".\\Images\\Reducing Stamp Coupling - Coupled Data Feed - 800x314.png" />
+<p><img src="../Images/Reducing Stamp Coupling - Coupled Data Feed - 800x314.png" alt="Coupled Data Feed" /></p>
 <h3>Option 1 Advantages</h3>
 <ul>
 <li>The downstream systems only needs to take a dependency on a single data source.</li>
@@ -87,7 +87,7 @@
 <p>The relationship between two components created by a shared data contract is known as <strong>stamp coupling</strong>. Like any form of coupling, we should attempt to minimize it as much as possible between components so that we don't create hard dependencies that reduce our agility.</p>
 <h2>Option 2 - Multiplicative Dependencies</h2>
 <p>This option requires each downstream system to take a dependency on every system of record whose data it needs, regardless of what upstream data systems may already be utilizing that data source.</p>
-<img alt="Direct Dependencies" src=".\\Images\\Reducing Stamp Coupling - Direct Dependencies - 800x544.png" />
+<p><img src="../Images/Reducing Stamp Coupling - Direct Dependencies - 800x544.png" alt="Direct Dependencies" /></p>
 <h3>Option 2 Advantages</h3>
 <ul>
 <li>Each system publishes only that information for which it is system of record, along with any necessary identifiers.</li>
@@ -100,7 +100,7 @@
 <h2>Option 3 - Shared Aggregation Feed</h2>
 <p>Fortunately, there is a third option that may not be immediately apparent. We can get the best of both worlds, and limit the impact of the disadvantages described above, by moving the aggregation of the data to a separate system. In fact, depending on the technologies used, this aggregation may be able to be done using an infrastructure component that is a low-code solution less likely to have reliability concerns.</p>
 <p>In this option, each system publishes only the data for which it is system of record, as in option 1 above. However, instead of every system having to take a direct dependency on all of the upstream systems, a separate component is used to create a shared feed that represents the aggregation of the data from all of the sources.</p>
-<img alt="Aggregated Data Feed" src=".\\Images\\Reducing Stamp Coupling - Aggregated Data Feed - 800x276.png" />
+<p><img src="../Images/Reducing Stamp Coupling - Aggregated Data Feed - 800x276.png" alt="Aggregated Data Feed" /></p>
 <h3>Option 3 Advantages</h3>
 <ul>
 <li>Each system publishes only that information for which it is system of record, along with any necessary identifiers.</li>
