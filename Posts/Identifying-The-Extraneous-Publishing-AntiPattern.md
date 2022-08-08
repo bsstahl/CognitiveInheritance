@@ -26,7 +26,7 @@ categories:
 ---
 What do you do when a dependency of one of your components needs data, ostensibly from your component, that your component doesn't actually need itself?
 
-The problem domain (the big black box in the drawings below) uses some data from 3 different data sources (labeled Source A, B & C in the drawings). There is also a downstream dependency that needs data from the problem domain, as well as from sources B & C. Some of the data required by the downstream dependency are not needed by, or owned by, the problem domain.
+Let's think about an example. Suppose our problem domain (the big black box in the drawings below) uses some data from 3 different data sources (labeled Source A, B & C in the drawings). There is also a downstream dependency that needs data from the problem domain, as well as from sources B & C. Some of the data required by the downstream dependency are not needed by, or owned by, the problem domain.
 
 There are 2 common implementations discussed now, and 1 slightly less obvious one discussed later in this article. We could:
 
@@ -39,7 +39,7 @@ Note: In the worst of these cases, the data from one or more of these sources is
 
 The most common choice is for the problem domain to publish all data that it is system of record for, as well as passing-through data needed by the downstream dependencies from the other sources. Since we know that a dependency needs the data, we simply provide it as part of the output of the problem domain system.
 
-<img alt="Coupled Data Feed" src=".\Images\Reducing Stamp Coupling - Coupled Data Feed - 800x314.png" />
+<img alt="Coupled Data Feed" src=".\\Images\\Reducing Stamp Coupling - Coupled Data Feed - 800x314.png" />
 
 ### Option 1 Advantages
 
@@ -59,7 +59,7 @@ The relationship between two components created by a shared data contract is kno
 
 This option requires each downstream system to take a dependency on every system of record whose data it needs, regardless of what upstream data systems may already be utilizing that data source.
 
-<img alt="Direct Dependencies" src=".\Images\Reducing Stamp Coupling - Direct Dependencies - 800x544.png" />
+<img alt="Direct Dependencies" src=".\\Images\\Reducing Stamp Coupling - Direct Dependencies - 800x544.png" />
 
 ### Option 2 Advantages
 
@@ -76,7 +76,7 @@ Fortunately, there is a third option that may not be immediately apparent. We ca
 
 In this option, each system publishes only the data for which it is system of record, as in option 1 above. However, instead of every system having to take a direct dependency on all of the upstream systems, a separate component is used to create a shared feed that represents the aggregation of the data from all of the sources.
 
-<img alt="Aggregated Data Feed" src=".\Images\Reducing Stamp Coupling - Aggregated Data Feed - 800x276.png" />
+<img alt="Aggregated Data Feed" src=".\\Images\\Reducing Stamp Coupling - Aggregated Data Feed - 800x276.png" />
 
 ### Option 3 Advantages
 
