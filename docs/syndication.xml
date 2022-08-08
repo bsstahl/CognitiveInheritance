@@ -11,7 +11,7 @@
     <item>
   <title>Identifying the Extraneous Publishing AntiPattern</title>
   <description>&lt;p&gt;What do you do when a dependency of one of your components needs data, ostensibly from your component, that your component doesn&apos;t actually need itself?&lt;/p&gt;
-&lt;p&gt;The problem domain in this drawings below (the big black box) uses some data from 3 different data sources (labeled A, B &amp;amp; C in the drawings). There is also a downstream dependency that needs data from the problem domain, as well as from sources B &amp;amp; C. Some of the data required by the downstream dependency are not needed by, or owned by, the problem domain.&lt;/p&gt;
+&lt;p&gt;The problem domain (the big black box in the drawings below) uses some data from 3 different data sources (labeled Source A, B &amp;amp; C in the drawings). There is also a downstream dependency that needs data from the problem domain, as well as from sources B &amp;amp; C. Some of the data required by the downstream dependency are not needed by, or owned by, the problem domain.&lt;/p&gt;
 &lt;p&gt;There are 2 common implementations discussed now, and 1 slightly less obvious one discussed later in this article. We could:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Pass-through the needed values on the output from our problem domain. This is the default option in many environments.&lt;/li&gt;
@@ -19,7 +19,7 @@
 &lt;/ol&gt;
 &lt;p&gt;Note: In the worst of these cases, the data from one or more of these sources is not needed at all in the problem domain.&lt;/p&gt;
 &lt;h2&gt;Option 1 - Increase Stamp Coupling&lt;/h2&gt;
-&lt;p&gt;The most common choice is for the problem domain to publish all data that it is system of record for, as well as passing-through data needed by the downstream dependencies from the other sources. Since we know that a dependency needs the data we simply provide it as part of the output of the problem domain system.&lt;/p&gt;
+&lt;p&gt;The most common choice is for the problem domain to publish all data that it is system of record for, as well as passing-through data needed by the downstream dependencies from the other sources. Since we know that a dependency needs the data, we simply provide it as part of the output of the problem domain system.&lt;/p&gt;
 &lt;p&gt;![Coupled Data Feed](.\Images\Reducing Stamp Coupling - Coupled Data Feed - 800x314.png)&lt;/p&gt;
 &lt;h3&gt;Option 1 Advantages&lt;/h3&gt;
 &lt;ul&gt;
