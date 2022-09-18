@@ -15,9 +15,7 @@ categories: []
 ---
 ### Upcoming Talks
 
-* **Code PaLOUsa 2022** | Louisville, KY, USA | 8/17/2022 - 8/19/2022 | "Design Patterns for Loosely Coupled Applications" & "Event Storming Workshop"
-
-* **NDC Oslo 2022** | Oslo, Norway | 9/26/2022 - 9/30/2022 | "Amazing Algorithms for Solving Problems in Software"
+* **NDC Oslo 2022** | Oslo, Norway | 9/26/2022 - 9/30/2022 | "Amazing Algorithms for Solving Problems in Software" & "Event Storming Workshop"
 
 > I have started delivering in-person talks again now that community transmission of Covid-19 is down, but will still entertain opportunities to speak online. Please {ContactPageLink:contact me} if you would like me to deliver one of my talks at your event. Refer to the talk list below for available options.
 
@@ -106,6 +104,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ### Past engagements
 
+* **Code PaLOUsa 2022** - 8/17/2022 - 8/19/2022 - "Design Patterns for Loosely Coupled Applications" & "Event Storming Workshop"
 * **Kansas City Developer's Conference 2022 (KCDC)** - 8/8/2022 - 8/10/2022 - "Design Patterns for Loosely Coupled Applications" & "Event Storming Workshop"
 * **Code on the Beach 2022** - 7/25 to 7/27/2022 - "Amazing Algorithms for Solving Problems in Software"
 * **CodeStock 2022** - 4/7 to 4/8/2022 - "Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems" & "Defining the Business Domain using Event Storming"
