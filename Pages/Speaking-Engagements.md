@@ -15,9 +15,9 @@ categories: []
 ---
 ### Upcoming Talks
 
-* **NDC Oslo 2022** | Oslo, Norway | 9/26/2022 - 9/30/2022 | "Amazing Algorithms for Solving Problems in Software" & "Event Storming Workshop"
+* **CodeMash 2023** | Sandusky Ohio, USA | 1/10/2023 - 1/13/2023 | "Event Storming Workshop"
 
-> I have started delivering in-person talks again now that community transmission of Covid-19 is down, but will still entertain opportunities to speak online. Please {ContactPageLink:contact me} if you would like me to deliver one of my talks at your event. Refer to the talk list below for available options.
+> I have started delivering in-person talks again now that numerous mechanisms for protecting our communities from Covid-19 are available. I will, of course, still entertain opportunities to speak online. Please {ContactPageLink:contact me} if you would like me to deliver one of my talks at your event, either online or in-person. Refer to the talk list below for available options.
 
 ***
 
@@ -104,6 +104,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ### Past engagements
 
+* **NDC Oslo 2022** - 9/26/2022 - 9/30/2022 - "Amazing Algorithms for Solving Problems in Software" & "Event Storming Workshop"
 * **Code PaLOUsa 2022** - 8/17/2022 - 8/19/2022 - "Design Patterns for Loosely Coupled Applications" & "Event Storming Workshop"
 * **Kansas City Developer's Conference 2022 (KCDC)** - 8/8/2022 - 8/10/2022 - "Design Patterns for Loosely Coupled Applications" & "Event Storming Workshop"
 * **Code on the Beach 2022** - 7/25 to 7/27/2022 - "Amazing Algorithms for Solving Problems in Software"
