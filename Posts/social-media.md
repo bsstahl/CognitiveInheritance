@@ -2,8 +2,8 @@
 author: bsstahl
 tags:
 - social-media
-- " twitter"
-- " mastodon"
+- twitter
+- mastodon
 - fediverse
 categories:
 - General
@@ -13,8 +13,8 @@ title: Social Media
 description: My analysis of my social media usage
 ispublished: true
 showinlist: false
-publicationdate: 2022-11-11T17:00:00Z
-lastmodificationdate: 2022-11-11T17:00:00Z
+publicationdate: 2022-11-11T7:00:00Z
+lastmodificationdate: 2022-11-11T7:00:00Z
 slug: social-media
 
 ---
@@ -42,8 +42,8 @@ My platforms:
     * Promoting my or other speakers/writers posts or talks, especially when I attend a talk at a conference
     * Publishing links to the code and slide-decks for my conference talks
     * Publicly whining about problems with commercial products or services
-    * Making the occasional bad joke or snarky remark, usually at the expense of some celebrity, athelete or business
-    * Posting indivual photos of people I know or places I go
+    * Making the occasional bad joke or snarky remark, usually at the expense of some celebrity, athlete or business
+    * Posting individual photos of people I know or places I go
   * Future Plans: With the move to the Fediverse, I may try to focus more completely on technology on this platform. Perhaps sports-related stuff should go elsewhere, maybe a photo-blog site like [PixelFed](https://pixelfed.org/)
 * Facebook:
   * How I use it:
@@ -60,7 +60,7 @@ My platforms:
     * Hosting of photos for my photoblog sites including [GiveEmHellDevils.com](http://GiveEmHellDevils.com)
   * Future Plans: Most of this will remain though I may syphon-off specific elements to other, more federated communities. For example, the restricted photostream could move to a [PixelFed](https://pixelfed.org/) server.
 * LinkedIn:
-  * How I use it: A professional network of people I actually know in the technology space. I don't accept requests from people I have never met, including (expecially?) recruiters. If I ever need to find a job again, it will be through referrals from people I know.
+  * How I use it: A professional network of people I actually know in the technology space. I don't accept requests from people I have never met, including (especially?) recruiters. If I ever need to find a job again, it will be through referrals from people I know.
   * Future Plans: I'd like to do a better job of posting my appropriate content here, perhaps as links from my blog. Of course, that would require more posts on my blog (see above). Other than that, I don't expect any changes here.
 * YouTube:
   * How I use it:
@@ -69,7 +69,7 @@ My platforms:
   * Future Plans: Continue to share videos of technical content
 * Instagram
   * How I use it: To publish photos from my [GiveEmHellDevils.com](http://GiveEmHellDevils.com) photoblog.
-  * Future Plans: I would prefer to move this to a Fediverse service like [PixelFed](https://pixelfed.org/) that is not a walled-garden. I may start by adding a second stream using the Fediverse, and see what happens. If things go in the right direction, I may be able to elminate Instagram.
+  * Future Plans: I would prefer to move this to a Fediverse service like [PixelFed](https://pixelfed.org/) that is not a walled-garden. I may start by adding a second stream using the Fediverse, and see what happens. If things go in the right direction, I may be able to eliminate Instagram.
 * GitHub:
   * How I use it:
     * A public repository of my Open-Source (FOSS) projects and code samples.
@@ -80,7 +80,7 @@ My platforms:
   * How I use it:
     * A private repository of my private code projects
     * A private repository of the source material for my presentation slides
-    * A private repository of my many random experiements with code
+    * A private repository of my many random experiments with code
   * Future Plans: No changes expected
 * Azure Websites
   * How I use it:
