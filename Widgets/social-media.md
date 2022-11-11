@@ -7,7 +7,7 @@ widgettype: TextBox
 orderindex: 10
 
 ---
-* Twitter: [@bsstahl](https://twitter.com/bsstahl)
+* Mastodon: {TwitterLink}
 * Facebook: [Barry Stahl](https://www.facebook.com/barrystahl)
 * LinkedIn: [BStahl](https://www.linkedin.com/in/bstahl)
 * Flickr: [BSStahl](https://www.flickr.com/photos/bsstahl)
