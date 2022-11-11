@@ -138,7 +138,7 @@
   <link>https://www.cognitiveinheritance.com/Posts/social-media.html</link>
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/ba2df0f8-3f22-4ec2-97a8-3c3adc715ba4.html</guid>
-  <pubDate>Sat, 12 Nov 2022 00:00:00 GMT</pubDate>
+  <pubDate>Fri, 11 Nov 2022 17:00:00 GMT</pubDate>
 </item><item>
   <title>Identifying the Extraneous Publishing AntiPattern</title>
   <description>&lt;p&gt;What do you do when a dependency of one of your components needs data, ostensibly from your component, that your component doesn&apos;t actually need itself?&lt;/p&gt;
