@@ -49,7 +49,7 @@ The key takeaway for me is that just checking to make certain that a Double valu
 
 It is always best to avoid type conversions if possible, but if you are in a situation where it is necessary to convert from large Double values into Integers, I recommend trying some experiments in your production environment to see what range of values will convert accurately. I also highly recommend including very large integers, approaching or at Int64.MaxValue as test data against any method that accepts Int64 values.  Values that are very large in the negative direction (nearing Int64.MinValue) are also good candidates to be used as test data in these methods.
 
-I’ve attached a number of resources below that I used in my research to produce this article, and to fix the bug I caused doing this kind of conversion.  If you have run into this situation and come up with an interesting way of handling it, or if the results of your conversions are different than mine, please let me know about it on Twitter {TwitterLink}.
+I’ve attached a number of resources below that I used in my research to produce this article, and to fix the bug I caused doing this kind of conversion.  If you have run into this situation and come up with an interesting way of handling it, or if the results of your conversions are different than mine, please let me know about it {TwitterLink}.
  
 ## Resources
  

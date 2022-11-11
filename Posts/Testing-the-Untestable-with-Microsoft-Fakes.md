@@ -76,4 +76,4 @@ System.IO.Fakes.ShimFile.ReadAllTextString =      
 
 Then, we can verify in our test that our custom exception is thrown.  The full working example can be seen by grabbing the **Master** branch of the [GitHub repo](https://github.com/bsstahl/VS2017Launch).
 
-What can you test with these Shim objects that you were unable to test before?  Tell me about it on Twitter {TwitterLink}.
+What can you test with these Shim objects that you were unable to test before?  Tell me about it {TwitterLink}.

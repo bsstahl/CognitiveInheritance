@@ -89,7 +89,7 @@ You can probably see that if both axes of this table, the capacity of the knapsa
 
 #### Continue the Conversation
 
-I am happy to answer questions or discuss this further. Ping me on Twitter {TwitterLink} with your comments or questions. I'd love to hear from you.  I am also available to deliver a talk to your conference or user group on {PageLink:Speaking-Engagements|this or other topics}. You can {ContactPageLink:contact me here}.
+I am happy to answer questions or discuss this further. Ping me {TwitterLink} with your comments or questions. I'd love to hear from you.  I am also available to deliver a talk to your conference or user group on {PageLink:Speaking-Engagements|this or other topics}. You can {ContactPageLink:contact me here}.
 
 ##### Footnotes
 

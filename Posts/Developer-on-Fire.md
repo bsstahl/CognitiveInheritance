@@ -36,6 +36,6 @@ I also took the opportunity to talk about a few things that have been on my mind
   * [brilliant.org](https://brilliant.org)
   * The works of [David McRaney](http://davidmcraney.com/)
 
-I hope you enjoy this interview and find something of value in it. If so, please let me know about it on Twitter {TwitterLink}.
+I hope you enjoy this interview and find something of value in it. If so, please let me know about it {TwitterLink}.
 
 [{ImageLink:DeveloperOnFire_1.png|Developer On Fire}](https://developeronfire.com/podcast/episode-399-barry-stahl-optimizing-impact)

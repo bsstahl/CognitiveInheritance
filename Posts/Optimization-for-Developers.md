@@ -21,4 +21,4 @@ categories:
 - Development
 
 ---
-The slide deck for my presentation on Optimization for Developers (A Developer’s Guide to Finding Optimal Solutions) can be found [here](https://1drv.ms/p/s!AswbHpz53UVdmJsSyst53CwsuihidQ).  I hope that if you attended one of my code camp sessions on the topic, you enjoyed it and found it valuable.  I am happy to accept any feedback via Twitter {TwitterLink}.
+The slide deck for my presentation on Optimization for Developers (A Developer’s Guide to Finding Optimal Solutions) can be found [here](https://1drv.ms/p/s!AswbHpz53UVdmJsSyst53CwsuihidQ).  I hope that if you attended one of my code camp sessions on the topic, you enjoyed it and found it valuable.  I am happy to accept any feedback via {TwitterLink}.

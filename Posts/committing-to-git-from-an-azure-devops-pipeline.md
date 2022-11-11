@@ -69,4 +69,4 @@ An interesting thing to note about this script is the _git push_ command. The fu
 
 There are other ways to do all of this of course. One idea that intrigues me that I haven't tried yet is to have the build service submit a pull-request to the remote git repo. This would require an additional approval step before the changes are merged into the repo. For static websites where merging into master is the equivalent of publishing the site, this might give me the opportunity to review the built site before it is actually deployed.
 
-Have you tried this pull-request method, or used this kind of technique with an non-Azure DevOps repo? If so, please let me know about it on Twitter {TwitterLink}.
+Have you tried this pull-request method, or used this kind of technique with an non-Azure DevOps repo? If so, please let me know about it {TwitterLink}.

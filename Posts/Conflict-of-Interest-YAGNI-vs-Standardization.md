@@ -37,4 +37,4 @@ I have run across this type of decision many times before and have noted the fol
 
 Taking all of this into account, the simplest solution (which is usually the best) is to override the FxCop rules in the code, and continue without implementing the unneeded, albeit standard features.
 
-Do you disagree with my decision? Tell me why on Twitter {TwitterLink}.
+Do you disagree with my decision? Tell me why {TwitterLink}.

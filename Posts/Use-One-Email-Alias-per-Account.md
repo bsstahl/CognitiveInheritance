@@ -44,4 +44,4 @@ I recommend using [Outlook.com](https://outlook.live.com/owa/) to create email a
 
 A good pattern is to use GUIDs as the email addresses. That is, an address like B99C3900-157A-45F7-AD20-67EF83ED6776@outlook.com or B99C3900157A45F7AD2067EF83ED6776@outlook.com will almost always be available and is impossible to guess. If you create a number of such aliases and keep them with you, perhaps in a OneNote notebook, you will have functional email addresses to give whenever you are asked for a new one. Then you just need to associate that alias with the service in your notebook so you know not to use it again, and so you know where each alias was used.
 
-Do you have a recommendation of an email service or alias pattern that has worked well for you? Sound off on Twitter using the hashtag **#OneAliasPerAccount**.
+Do you have a recommendation of an email service or alias pattern that has worked well for you? Sound off in the Fediverse using the hashtag **#OneAliasPerAccount**.

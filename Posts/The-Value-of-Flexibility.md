@@ -55,4 +55,4 @@ For me, it means that I allow seams in my applications that I may not have a fun
 
 There are, of course, dangers here as well. It can be easy to fire events whenever we would generally issue a logging message.  Events should be limited to those in the problem domain (Domain Events), not application events. We can also reach a level of absurdity with the weight of each message. As with all things, a balance needs to be struck. In determining that balance, I value Flexibility over Optimization whenever it is reasonable and possible to do so.
 
-Do you feel differently? If so, let me know on Twitter {TwitterLink}.
+Do you feel differently? If so, let me know {TwitterLink}.

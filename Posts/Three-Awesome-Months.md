@@ -49,4 +49,4 @@ In May I get to do a short tour of Europe, spending 2 weeks at conferences in Bu
 
 #### Keep up With Me
 
-I maintain a list of my presentations, both past and upcoming, on the {PageLink:Speaking-Engagements|Community Speaker} page of this blog. I also try to document my conference experiences on Twitter {TwitterLink}. If you are going to be attending any of these events, please be sure to ping me on Twitter and let me know.
+I maintain a list of my presentations, both past and upcoming, on the {PageLink:Speaking-Engagements|Community Speaker} page of this blog. I also try to document my conference experiences {TwitterLink}. If you are going to be attending any of these events, please be sure to ping me and let me know.
