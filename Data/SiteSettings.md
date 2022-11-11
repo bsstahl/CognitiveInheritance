@@ -8,7 +8,7 @@ copyright: "&copy; 2003-2020 by Barry S. Stahl"
 contactemail: aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com
 sitevariables:
 - variablename: TwitterLink
-  variablevalue: <a href="https://twitter.com/bsstahl">@bsstahl</a>
+  variablevalue: <a rel="me" href="https://fosstodon.org/@Bsstahl">the Fediverse</a>
 additionalfilepaths:
 - Images
 - Pics

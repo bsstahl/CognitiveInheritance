@@ -14,7 +14,7 @@ categories: []
 
 ---
 
-The following are some questions that have been commonly asked of me regarding unit testing and TDD. Please submit questions or comments on this FAQ via [Twitter](https://twitter.com/intent/tweet?screen_name=bsstahl) or using the [Contact](../contact.html) page.
+The following are some questions that have been commonly asked of me regarding unit testing and TDD. Please submit questions or comments on this FAQ via {TwitterLink} or using the [Contact](../contact.html) page.
 
 #### Q: What is the primary goal/benefit of unit testing?
 
