@@ -183,7 +183,7 @@ ECHO ** Ending Update remote git repo script
 This option must be checked so that the script can acquire the permissions to update the repository.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;There are other ways to do all of this of course. One idea that intrigues me that I haven&apos;t tried yet is to have the build service submit a pull-request to the remote git repo. This would require an additional approval step before the changes are merged into the repo. For static websites where merging into master is the equivalent of publishing the site, this might give me the opportunity to review the built site before it is actually deployed.&lt;/p&gt;
-&lt;p&gt;Have you tried this pull-request method, or used this kind of technique with an non-Azure DevOps repo? If so, please let me know about it on Twitter &lt;a href=&quot;https://twitter.com/bsstahl&quot;&gt;@bsstahl&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Have you tried this pull-request method, or used this kind of technique with an non-Azure DevOps repo? If so, please let me know about it on Twitter &lt;a rel=&quot;me&quot; href=&quot;https://fosstodon.org/@Bsstahl&quot;&gt;the Fediverse&lt;/a&gt;.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/Committing-to-Git-from-Azure-DevOps-Pipeline.html</link>
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
@@ -240,7 +240,7 @@ This option must be checked so that the script can acquire the permissions to up
 &lt;/div&gt;
 &lt;p&gt;Is this worth the added complexity? It seems to me that as application developers we should be concerned about describing and building our applications in the simplest, most maintainable and extensible way possible. To do so, we need seams in our applications in the form of abstractions. However, we generally do not need to build frameworks on which we build those abstractions. Framework creation is an entirely other topic with an entirely different set of concerns.&lt;/p&gt;
 &lt;p&gt;I think it is easy to see how quickly things can get overly-complex when we start building abstractions on top of our own abstractions in our applications. Using Microsoft or 3rd party frameworks is fine when appropriate, but there is generally no need to build your own frameworks, especially within your applications. In the vast majority of cases, &lt;a href=&quot;https://www.cognitiveinheritance.com/Search/yagni.html&quot;&gt;YAGNI&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Did I miss something here? Do you have a situation where you feel it is worth it to build a framework, or even part of a framework, within your applications. Please let me know about it on Twitter &lt;a href=&quot;https://twitter.com/bsstahl&quot;&gt;@bsstahl&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Did I miss something here? Do you have a situation where you feel it is worth it to build a framework, or even part of a framework, within your applications. Please let me know about it on Twitter &lt;a rel=&quot;me&quot; href=&quot;https://fosstodon.org/@Bsstahl&quot;&gt;the Fediverse&lt;/a&gt;.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/Meta-Abstraction-You-Aint-Gonna-Need-It!.html</link>
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
@@ -268,7 +268,7 @@ This option must be checked so that the script can acquire the permissions to up
 &lt;p&gt;Later in March, I cross the border into Canada to attend &lt;a href=&quot;https://confoo.ca/en/speaker/barry-stahl&quot;&gt;ConFoo Montreal&lt;/a&gt;. This will be my first trip ever to Montreal so I hope the March weather is kind to this 35 year Phoenix resident.  The event runs from March 13th - 15th and there will be 2 Canadiens games during the time I am there so I should be able to get to at least one of them.&lt;/p&gt;
 &lt;p&gt;In May I get to do a short tour of Europe, spending 2 weeks at conferences in Budapest, Hungary (&lt;a href=&quot;https://craft-conf.com&quot;&gt;Craft Conference&lt;/a&gt;), and Marbella, Spain (&lt;a href=&quot;https://jonthebeach.com/&quot;&gt;J on the Beach&lt;/a&gt;).  While I have done some traveling in Europe before, I have never been to Spain or Hungary so I am really looking forward to experiencing the history and culture that these two cities have to offer.&lt;/p&gt;
 &lt;h4&gt;Keep up With Me&lt;/h4&gt;
-&lt;p&gt;I maintain a list of my presentations, both past and upcoming, on the &lt;a href=&quot;https://www.cognitiveinheritance.com/Pages/Speaking-Engagements.html&quot;&gt;Community Speaker&lt;/a&gt; page of this blog. I also try to document my conference experiences on Twitter &lt;a href=&quot;https://twitter.com/bsstahl&quot;&gt;@bsstahl&lt;/a&gt;. If you are going to be attending any of these events, please be sure to ping me on Twitter and let me know.&lt;/p&gt;
+&lt;p&gt;I maintain a list of my presentations, both past and upcoming, on the &lt;a href=&quot;https://www.cognitiveinheritance.com/Pages/Speaking-Engagements.html&quot;&gt;Community Speaker&lt;/a&gt; page of this blog. I also try to document my conference experiences on Twitter &lt;a rel=&quot;me&quot; href=&quot;https://fosstodon.org/@Bsstahl&quot;&gt;the Fediverse&lt;/a&gt;. If you are going to be attending any of these events, please be sure to ping me on Twitter and let me know.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/Three-Awesome-Months.html</link>
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
@@ -296,7 +296,7 @@ This option must be checked so that the script can acquire the permissions to up
 &lt;li&gt;Including all significant data in event messages rather than just keys&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;There are, of course, dangers here as well. It can be easy to fire events whenever we would generally issue a logging message.  Events should be limited to those in the problem domain (Domain Events), not application events. We can also reach a level of absurdity with the weight of each message. As with all things, a balance needs to be struck. In determining that balance, I value Flexibility over Optimization whenever it is reasonable and possible to do so.&lt;/p&gt;
-&lt;p&gt;Do you feel differently? If so, let me know on Twitter &lt;a href=&quot;https://twitter.com/bsstahl&quot;&gt;@bsstahl&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Do you feel differently? If so, let me know on Twitter &lt;a rel=&quot;me&quot; href=&quot;https://fosstodon.org/@Bsstahl&quot;&gt;the Fediverse&lt;/a&gt;.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/The-Value-of-Flexibility.html</link>
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
@@ -323,7 +323,7 @@ This option must be checked so that the script can acquire the permissions to up
 &lt;p&gt;To make matters worse, the rounding that is required for this conversion can be unsafe under certain conditions. On my machine, if the values get within 512 of Int64.MaxValue, even though they don’t exceed it, attempting the conversion may result in an invalid result, or an &lt;strong&gt;OverflowException&lt;/strong&gt;. Even performing the operation without overflow checking using the &lt;strong&gt;unchecked&lt;/strong&gt; keyword or compiler switch doesn&apos;t improve things since, if done unchecked, any overflow in the operation will result in an incorrect value rather than an exception. I prefer the exception in this kind of situation so I generally keep overflow checking on.&lt;/p&gt;
 &lt;p&gt;The key takeaway for me is that just checking to make certain that a Double value is less than Int64.MaxValue is not enough to guarantee it will convert without error, and certainly does not guarantee the accuracy of any such conversion. Only integer values below 52 bits can be accurately converted into Int64 values.&lt;/p&gt;
 &lt;p&gt;It is always best to avoid type conversions if possible, but if you are in a situation where it is necessary to convert from large Double values into Integers, I recommend trying some experiments in your production environment to see what range of values will convert accurately. I also highly recommend including very large integers, approaching or at Int64.MaxValue as test data against any method that accepts Int64 values.  Values that are very large in the negative direction (nearing Int64.MinValue) are also good candidates to be used as test data in these methods.&lt;/p&gt;
-&lt;p&gt;I’ve attached a number of resources below that I used in my research to produce this article, and to fix the bug I caused doing this kind of conversion.  If you have run into this situation and come up with an interesting way of handling it, or if the results of your conversions are different than mine, please let me know about it on Twitter &lt;a href=&quot;https://twitter.com/bsstahl&quot;&gt;@bsstahl&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’ve attached a number of resources below that I used in my research to produce this article, and to fix the bug I caused doing this kind of conversion.  If you have run into this situation and come up with an interesting way of handling it, or if the results of your conversions are different than mine, please let me know about it on Twitter &lt;a rel=&quot;me&quot; href=&quot;https://fosstodon.org/@Bsstahl&quot;&gt;the Fediverse&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Resources&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/dotnet/api/system.double?view=netcore-2.2&quot;&gt;Double Struct&lt;/a&gt; in the .NET API Browser&lt;/li&gt;
@@ -357,7 +357,7 @@ This option must be checked so that the script can acquire the permissions to up
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;I hope you enjoy this interview and find something of value in it. If so, please let me know about it on Twitter &lt;a href=&quot;https://twitter.com/bsstahl&quot;&gt;@bsstahl&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I hope you enjoy this interview and find something of value in it. If so, please let me know about it on Twitter &lt;a rel=&quot;me&quot; href=&quot;https://fosstodon.org/@Bsstahl&quot;&gt;the Fediverse&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://developeronfire.com/podcast/episode-399-barry-stahl-optimizing-impact&quot;&gt;&lt;img src=&quot;https://www.cognitiveinheritance.com/Images/DeveloperOnFire_1.png&quot; alt=&quot;Developer On Fire&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/Developer-on-Fire.html</link>
