@@ -13,8 +13,8 @@ title: Social Media
 description: My analysis of my social media usage
 ispublished: true
 showinlist: false
-publicationdate: 2022-11-11T7:00:00+00:00
-lastmodificationdate: 2022-11-11T7:00:00+00:00
+publicationdate: 2022-11-11T07:00:00+00:00
+lastmodificationdate: 2022-11-11T07:00:00+00:00
 slug: social-media
 
 ---
