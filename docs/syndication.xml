@@ -9,6 +9,137 @@
     <language>en-US</language>
     <atom:link href="https://cognitiveinheritance.com/syndication.xml" rel="self" type="application/rss+xml" />	
     <item>
+  <title>Social Media</title>
+  <description>&lt;p&gt;The implosion of Twitter and my subsequent move to &lt;a href=&quot;https://fosstodon.org/@bsstahl&quot;&gt;the Fediverse&lt;/a&gt; has me reviewing all of my social media activity.&lt;/p&gt;
+&lt;p&gt;A few of the things I&apos;ve looked at, and continue to investigate, include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How and why I use each platform&lt;/li&gt;
+&lt;li&gt;How has my activity changed over time&lt;/li&gt;
+&lt;li&gt;What previous statements I&apos;ve made should be corrected, amended, or otherwise revisited&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The revisiting of previous statements will likely happen either on the platform where they originated, or via microblog commentary &lt;a rel=&quot;me&quot; href=&quot;https://fosstodon.org/@Bsstahl&quot;&gt;@bsstahl@fosstodon.org&lt;/a&gt;. The rest of the analysis can be found here for everyone&apos;s benefit and comment. Of course, all comments, as indicated below, should be directed to my microblog &lt;a rel=&quot;me&quot; href=&quot;https://fosstodon.org/@Bsstahl&quot;&gt;@bsstahl@fosstodon.org&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;My platforms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://cognitiveinheritance.com&quot;&gt;My Blog&lt;/a&gt;:
+&lt;ul&gt;
+&lt;li&gt;How I use it: Long form posts, usually technical in nature, that describe a concept or methodology.&lt;/li&gt;
+&lt;li&gt;Future Plans: I hope to continue to use this platform for a long time and would like to be more active. However, I have said that many times and never been able to keep-up a good cadence.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Microblogging &lt;a href=&quot;https://fosstodon.org/@bsstahl&quot;&gt;@bsstahl@fosstodon.org&lt;/a&gt; but previously on Twitter:
+&lt;ul&gt;
+&lt;li&gt;How I use it:
+&lt;ul&gt;
+&lt;li&gt;Real-time communication about events such as tech conferences with other attendees&lt;/li&gt;
+&lt;li&gt;Keeping in-touch with friends I met at events, usually without even having to directly interact&lt;/li&gt;
+&lt;li&gt;Asking for input on concepts or ideas on how to do/use a tool or technology&lt;/li&gt;
+&lt;li&gt;Asking for comments on my blog posts or presentations&lt;/li&gt;
+&lt;li&gt;Promoting my or other speakers/writers posts or talks, especially when I attend a talk at a conference&lt;/li&gt;
+&lt;li&gt;Publishing links to the code and slide-decks for my conference talks&lt;/li&gt;
+&lt;li&gt;Publicly whining about problems with commercial products or services&lt;/li&gt;
+&lt;li&gt;Making the occasional bad joke or snarky remark, usually at the expense of some celebrity, athelete or business&lt;/li&gt;
+&lt;li&gt;Posting indivual photos of people I know or places I go&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Future Plans: With the move to the Fediverse, I may try to focus more completely on technology on this platform. Perhaps sports-related stuff should go elsewhere, maybe a photo-blog site like &lt;a href=&quot;https://pixelfed.org/&quot;&gt;PixelFed&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Facebook:
+&lt;ul&gt;
+&lt;li&gt;How I use it:
+&lt;ul&gt;
+&lt;li&gt;Private to only family members or friends I &lt;em&gt;actually know&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Posting Photos of family and friends to a limited audience&lt;/li&gt;
+&lt;li&gt;Check-ins to places I&apos;m at for future reference, especially restaurants&lt;/li&gt;
+&lt;li&gt;Posting political commentary and social memes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Future Plans: I want a place for this that is not a walled-garden like Facebook. I feel like private communities could be run on &lt;a href=&quot;https://joinmastodon.org/&quot;&gt;Mastodon&lt;/a&gt; or other Fediverse servers like &lt;a href=&quot;https://pixelfed.org/&quot;&gt;PixelFed&lt;/a&gt;. There are a few possibilities I&apos;m exploring.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Flickr:
+&lt;ul&gt;
+&lt;li&gt;How I use it:
+&lt;ul&gt;
+&lt;li&gt;Paid &amp;quot;professional&amp;quot; account where I keep my off-site backup of every digital photo I&apos;ve ever taken, plus some scanned photos that were &amp;quot;born analog&amp;quot;, in full-size&lt;/li&gt;
+&lt;li&gt;A public photostream of my favorite photos that are not family or friends&lt;/li&gt;
+&lt;li&gt;A restricted (to family and friends) photostream of photos of family or friends&lt;/li&gt;
+&lt;li&gt;Hosting of photos for my photoblog sites including &lt;a href=&quot;http://GiveEmHellDevils.com&quot;&gt;GiveEmHellDevils.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Future Plans: Most of this will remain though I may syphon-off specific elements to other, more federated communities. For example, the restricted photostream could move to a &lt;a href=&quot;https://pixelfed.org/&quot;&gt;PixelFed&lt;/a&gt; server.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;LinkedIn:
+&lt;ul&gt;
+&lt;li&gt;How I use it: A professional network of people I actually know in the technology space. I don&apos;t accept requests from people I have never met, including (expecially?) recruiters. If I ever need to find a job again, it will be through referrals from people I know.&lt;/li&gt;
+&lt;li&gt;Future Plans: I&apos;d like to do a better job of posting my appropriate content here, perhaps as links from my blog. Of course, that would require more posts on my blog (see above). Other than that, I don&apos;t expect any changes here.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;YouTube:
+&lt;ul&gt;
+&lt;li&gt;How I use it:
+&lt;ul&gt;
+&lt;li&gt;In the past, I used it to post videos of family and friends, though now those are usually posted privately via Flickr or Facebook&lt;/li&gt;
+&lt;li&gt;Most of the time, I post videos of &lt;a href=&quot;https://www.youtube.com/playlist?list=PLCo2TFzFXPTQ5qIZTbbzFNcJL348fl6uO&quot;&gt;my technical presentations&lt;/a&gt;, or other presentations to the &lt;a href=&quot;https://www.youtube.com/playlist?list=PLCo2TFzFXPTQKUxyd61Rb9nN1d6jfEbAU&quot;&gt;local user groups&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Future Plans: Continue to share videos of technical content&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Instagram
+&lt;ul&gt;
+&lt;li&gt;How I use it: To publish photos from my &lt;a href=&quot;http://GiveEmHellDevils.com&quot;&gt;GiveEmHellDevils.com&lt;/a&gt; photoblog.&lt;/li&gt;
+&lt;li&gt;Future Plans: I would prefer to move this to a Fediverse service like &lt;a href=&quot;https://pixelfed.org/&quot;&gt;PixelFed&lt;/a&gt; that is not a walled-garden. I may start by adding a second stream using the Fediverse, and see what happens. If things go in the right direction, I may be able to elminate Instagram.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;GitHub:
+&lt;ul&gt;
+&lt;li&gt;How I use it:
+&lt;ul&gt;
+&lt;li&gt;A public repository of my Open-Source (FOSS) projects and code samples.&lt;/li&gt;
+&lt;li&gt;A public repository of those FOSS projects that I contribute to via Pull-Request (PR)&lt;/li&gt;
+&lt;li&gt;The hosting platform for my &lt;a href=&quot;https://cognitiveinheritance.com&quot;&gt;Blog Site&lt;/a&gt; and my &lt;a href=&quot;http://GiveEmHellDevils.com&quot;&gt;GiveEmHellDevils.com&lt;/a&gt; photoblog.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Future Plans: No changes expected&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Azure DevOps
+&lt;ul&gt;
+&lt;li&gt;How I use it:
+&lt;ul&gt;
+&lt;li&gt;A private repository of my private code projects&lt;/li&gt;
+&lt;li&gt;A private repository of the source material for my presentation slides&lt;/li&gt;
+&lt;li&gt;A private repository of my many random experiements with code&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Future Plans: No changes expected&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Azure Websites
+&lt;ul&gt;
+&lt;li&gt;How I use it:
+&lt;ul&gt;
+&lt;li&gt;To publish the individual slide-decks for my presentations as listed on &lt;a href=&quot;https://cognitiveinheritance.com/Pages/Speaking-Engagements.html&quot;&gt;my blog site&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Future Plans: No changes expected&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;TikTok
+&lt;ul&gt;
+&lt;li&gt;How I use it: I don&apos;t&lt;/li&gt;
+&lt;li&gt;Future Plans: None&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+  <link>https://www.cognitiveinheritance.com/Posts/social-media.html</link>
+  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
+  <guid>https://www.cognitiveinheritance.com/Permalinks/ba2df0f8-3f22-4ec2-97a8-3c3adc715ba4.html</guid>
+  <pubDate>Fri, 11 Nov 2022 17:00:00 GMT</pubDate>
+</item><item>
   <title>Identifying the Extraneous Publishing AntiPattern</title>
   <description>&lt;p&gt;What do you do when a dependency of one of your components needs data, ostensibly from your component, that your component doesn&apos;t actually need itself?&lt;/p&gt;
 &lt;p&gt;Let&apos;s think about an example. Suppose our problem domain (the big black box in the drawings below) uses some data from 3 different data sources (labeled Source A, B &amp;amp; C in the drawings). There is also a downstream dependency that needs data from the problem domain, as well as from sources B &amp;amp; C. Some of the data required by the downstream dependency are not needed by, or owned by, the problem domain.&lt;/p&gt;
@@ -183,7 +314,7 @@ ECHO ** Ending Update remote git repo script
 This option must be checked so that the script can acquire the permissions to update the repository.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;There are other ways to do all of this of course. One idea that intrigues me that I haven&apos;t tried yet is to have the build service submit a pull-request to the remote git repo. This would require an additional approval step before the changes are merged into the repo. For static websites where merging into master is the equivalent of publishing the site, this might give me the opportunity to review the built site before it is actually deployed.&lt;/p&gt;
-&lt;p&gt;Have you tried this pull-request method, or used this kind of technique with an non-Azure DevOps repo? If so, please let me know about it on Twitter &lt;a href=&quot;https://twitter.com/bsstahl&quot;&gt;@bsstahl&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Have you tried this pull-request method, or used this kind of technique with an non-Azure DevOps repo? If so, please let me know about it &lt;a rel=&quot;me&quot; href=&quot;https://fosstodon.org/@Bsstahl&quot;&gt;@bsstahl@fosstodon.org&lt;/a&gt;.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/Committing-to-Git-from-Azure-DevOps-Pipeline.html</link>
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
@@ -240,7 +371,7 @@ This option must be checked so that the script can acquire the permissions to up
 &lt;/div&gt;
 &lt;p&gt;Is this worth the added complexity? It seems to me that as application developers we should be concerned about describing and building our applications in the simplest, most maintainable and extensible way possible. To do so, we need seams in our applications in the form of abstractions. However, we generally do not need to build frameworks on which we build those abstractions. Framework creation is an entirely other topic with an entirely different set of concerns.&lt;/p&gt;
 &lt;p&gt;I think it is easy to see how quickly things can get overly-complex when we start building abstractions on top of our own abstractions in our applications. Using Microsoft or 3rd party frameworks is fine when appropriate, but there is generally no need to build your own frameworks, especially within your applications. In the vast majority of cases, &lt;a href=&quot;https://www.cognitiveinheritance.com/Search/yagni.html&quot;&gt;YAGNI&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Did I miss something here? Do you have a situation where you feel it is worth it to build a framework, or even part of a framework, within your applications. Please let me know about it on Twitter &lt;a href=&quot;https://twitter.com/bsstahl&quot;&gt;@bsstahl&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Did I miss something here? Do you have a situation where you feel it is worth it to build a framework, or even part of a framework, within your applications. Please let me know about it &lt;a rel=&quot;me&quot; href=&quot;https://fosstodon.org/@Bsstahl&quot;&gt;@bsstahl@fosstodon.org&lt;/a&gt;.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/Meta-Abstraction-You-Aint-Gonna-Need-It!.html</link>
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
@@ -268,7 +399,7 @@ This option must be checked so that the script can acquire the permissions to up
 &lt;p&gt;Later in March, I cross the border into Canada to attend &lt;a href=&quot;https://confoo.ca/en/speaker/barry-stahl&quot;&gt;ConFoo Montreal&lt;/a&gt;. This will be my first trip ever to Montreal so I hope the March weather is kind to this 35 year Phoenix resident.  The event runs from March 13th - 15th and there will be 2 Canadiens games during the time I am there so I should be able to get to at least one of them.&lt;/p&gt;
 &lt;p&gt;In May I get to do a short tour of Europe, spending 2 weeks at conferences in Budapest, Hungary (&lt;a href=&quot;https://craft-conf.com&quot;&gt;Craft Conference&lt;/a&gt;), and Marbella, Spain (&lt;a href=&quot;https://jonthebeach.com/&quot;&gt;J on the Beach&lt;/a&gt;).  While I have done some traveling in Europe before, I have never been to Spain or Hungary so I am really looking forward to experiencing the history and culture that these two cities have to offer.&lt;/p&gt;
 &lt;h4&gt;Keep up With Me&lt;/h4&gt;
-&lt;p&gt;I maintain a list of my presentations, both past and upcoming, on the &lt;a href=&quot;https://www.cognitiveinheritance.com/Pages/Speaking-Engagements.html&quot;&gt;Community Speaker&lt;/a&gt; page of this blog. I also try to document my conference experiences on Twitter &lt;a href=&quot;https://twitter.com/bsstahl&quot;&gt;@bsstahl&lt;/a&gt;. If you are going to be attending any of these events, please be sure to ping me on Twitter and let me know.&lt;/p&gt;
+&lt;p&gt;I maintain a list of my presentations, both past and upcoming, on the &lt;a href=&quot;https://www.cognitiveinheritance.com/Pages/Speaking-Engagements.html&quot;&gt;Community Speaker&lt;/a&gt; page of this blog. I also try to document my conference experiences &lt;a rel=&quot;me&quot; href=&quot;https://fosstodon.org/@Bsstahl&quot;&gt;@bsstahl@fosstodon.org&lt;/a&gt;. If you are going to be attending any of these events, please be sure to ping me and let me know.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/Three-Awesome-Months.html</link>
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
@@ -296,7 +427,7 @@ This option must be checked so that the script can acquire the permissions to up
 &lt;li&gt;Including all significant data in event messages rather than just keys&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;There are, of course, dangers here as well. It can be easy to fire events whenever we would generally issue a logging message.  Events should be limited to those in the problem domain (Domain Events), not application events. We can also reach a level of absurdity with the weight of each message. As with all things, a balance needs to be struck. In determining that balance, I value Flexibility over Optimization whenever it is reasonable and possible to do so.&lt;/p&gt;
-&lt;p&gt;Do you feel differently? If so, let me know on Twitter &lt;a href=&quot;https://twitter.com/bsstahl&quot;&gt;@bsstahl&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Do you feel differently? If so, let me know &lt;a rel=&quot;me&quot; href=&quot;https://fosstodon.org/@Bsstahl&quot;&gt;@bsstahl@fosstodon.org&lt;/a&gt;.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/The-Value-of-Flexibility.html</link>
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
@@ -323,7 +454,7 @@ This option must be checked so that the script can acquire the permissions to up
 &lt;p&gt;To make matters worse, the rounding that is required for this conversion can be unsafe under certain conditions. On my machine, if the values get within 512 of Int64.MaxValue, even though they don’t exceed it, attempting the conversion may result in an invalid result, or an &lt;strong&gt;OverflowException&lt;/strong&gt;. Even performing the operation without overflow checking using the &lt;strong&gt;unchecked&lt;/strong&gt; keyword or compiler switch doesn&apos;t improve things since, if done unchecked, any overflow in the operation will result in an incorrect value rather than an exception. I prefer the exception in this kind of situation so I generally keep overflow checking on.&lt;/p&gt;
 &lt;p&gt;The key takeaway for me is that just checking to make certain that a Double value is less than Int64.MaxValue is not enough to guarantee it will convert without error, and certainly does not guarantee the accuracy of any such conversion. Only integer values below 52 bits can be accurately converted into Int64 values.&lt;/p&gt;
 &lt;p&gt;It is always best to avoid type conversions if possible, but if you are in a situation where it is necessary to convert from large Double values into Integers, I recommend trying some experiments in your production environment to see what range of values will convert accurately. I also highly recommend including very large integers, approaching or at Int64.MaxValue as test data against any method that accepts Int64 values.  Values that are very large in the negative direction (nearing Int64.MinValue) are also good candidates to be used as test data in these methods.&lt;/p&gt;
-&lt;p&gt;I’ve attached a number of resources below that I used in my research to produce this article, and to fix the bug I caused doing this kind of conversion.  If you have run into this situation and come up with an interesting way of handling it, or if the results of your conversions are different than mine, please let me know about it on Twitter &lt;a href=&quot;https://twitter.com/bsstahl&quot;&gt;@bsstahl&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’ve attached a number of resources below that I used in my research to produce this article, and to fix the bug I caused doing this kind of conversion.  If you have run into this situation and come up with an interesting way of handling it, or if the results of your conversions are different than mine, please let me know about it &lt;a rel=&quot;me&quot; href=&quot;https://fosstodon.org/@Bsstahl&quot;&gt;@bsstahl@fosstodon.org&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Resources&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/dotnet/api/system.double?view=netcore-2.2&quot;&gt;Double Struct&lt;/a&gt; in the .NET API Browser&lt;/li&gt;
@@ -357,26 +488,13 @@ This option must be checked so that the script can acquire the permissions to up
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;I hope you enjoy this interview and find something of value in it. If so, please let me know about it on Twitter &lt;a href=&quot;https://twitter.com/bsstahl&quot;&gt;@bsstahl&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I hope you enjoy this interview and find something of value in it. If so, please let me know about it &lt;a rel=&quot;me&quot; href=&quot;https://fosstodon.org/@Bsstahl&quot;&gt;@bsstahl@fosstodon.org&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://developeronfire.com/podcast/episode-399-barry-stahl-optimizing-impact&quot;&gt;&lt;img src=&quot;https://www.cognitiveinheritance.com/Images/DeveloperOnFire_1.png&quot; alt=&quot;Developer On Fire&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/Developer-on-Fire.html</link>
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/88996646-da47-4325-a45e-3c2e2446ba9e.html</guid>
   <pubDate>Thu, 13 Dec 2018 21:39:17 GMT</pubDate>
-</item><item>
-  <title>SoCalCodeCamp Slide Decks</title>
-  <description>&lt;p&gt;The slide decks for my two talks at SoCalCodeCamp USC from November 10, 2018 are below.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://1drv.ms/b/s!AMwbHpz53UVdm45C&quot;&gt;Intro to WebAssembly Using Blazor&lt;/a&gt; – SGM-124 at 1:30 pm&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://1drv.ms/b/s!AswbHpz53UVdm48YGGXqRVK0KTiOJA&quot;&gt;Building .NET Applications for any Cloud with Cloud Foundry&lt;/a&gt; – GFS-207 at 4:00 pm&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Thanks to all of the organizers and attendees of this always amazing event.&lt;/p&gt;
-</description>
-  <link>https://www.cognitiveinheritance.com/Posts/SoCalCodeCamp-Slide-Decks.html</link>
-  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
-  <guid>https://www.cognitiveinheritance.com/Permalinks/135fbe81-8ec5-42ad-8ac7-6fac74cdf4f4.html</guid>
-  <pubDate>Sat, 10 Nov 2018 19:39:46 GMT</pubDate>
 </item>
 </channel>
 </rss>

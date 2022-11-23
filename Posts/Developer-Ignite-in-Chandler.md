@@ -37,4 +37,4 @@ These topics include:
 - Top Down Design [Added: 7/12/2009]
 
 
-If you have a topic that you are particularly interested in, or have any questions about IoC, Dependency Injection, or Providers that you would like me to answer, please use the comments or contact me via Twitter {TwitterLink}.
+If you have a topic that you are particularly interested in, or have any questions about IoC, Dependency Injection, or Providers that you would like me to answer, please use the comments or contact me {TwitterLink}.

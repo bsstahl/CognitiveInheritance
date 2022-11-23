@@ -32,4 +32,3 @@ After the code was complete and checked-in for build, the developer I was workin
 Coincidentally, that very night, I got a ping from my friend Jeremy Clark ([blog](https://jeremybytes.blogspot.com), [twitter](https://twitter.com/jeremybytes)) asking for comments on his latest [YouTube video on TDD](https://youtu.be/l4xhTq4qmC0). After watching it, I really couldn't offer any constructive criticism for him because there was absolutely nothing to criticize. As an introduction to the basics of TDD, I don't think it could have been done any better. If you are just getting started with TDD, or want to get started with TDD, or want a refresher on the basics of TDD, you need to watch this video.
 
 Jeremy has indicated he will be doing more in this series in the future, delving deeper into the topic of TDD. Perhaps he will include an example of fixing a bug in existing code in a future video.
-
