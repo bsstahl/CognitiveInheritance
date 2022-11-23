@@ -2,7 +2,7 @@
 tags: []
 menuorder: 10
 id: 9f3494e3-085e-40b2-99f0-e1fe9554706b
-author: 
+author: bsstahl
 title: Twitter Archive
 description: My history on Twitter. I'm now on Mastodon at @bsstahl@fosstodon.org.
 ispublished: true
@@ -13,7 +13,6 @@ slug: twitter-archive
 categories: []
 
 ---
-
 > I'm trying to decide if this twitter thing will be worth anything.
 
 <img src="media/tweet.ico" width="12" /> [Thu Apr 10 23:28:20 +0000 2008](https://twitter.com/bsstahl/status/786800816)
@@ -38993,4 +38992,3 @@ Replying to [@BaseballBrit](https://twitter.com/BaseballBrit/status/158455037373
 <img src="media/tweet.ico" width="12" /> [Fri Oct 28 01:31:27 +0000 2022](https://twitter.com/bsstahl/status/1585806417453146112)
 
 ---
-
