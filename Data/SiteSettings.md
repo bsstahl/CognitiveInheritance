@@ -13,6 +13,7 @@ additionalfilepaths:
 - Images
 - Pics
 - Files
+- .well-known
 dateformatspecifier: yyyy-MM-dd
 datetimeformatspecifier: yyyy-MM-dd H:mm UTC
 itemseparator: "<hr/>"
