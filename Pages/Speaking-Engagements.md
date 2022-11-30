@@ -31,9 +31,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ***
 
-* **Introduction to Microservices** - 
-
-Are you thinking about using microservices but are not sure if they're right for you? Are your services too small or too big? Do you have trouble debugging, deploying or maintaining your product? Microservice architectures are designed to solve many of the problems we faced with earlier architectural styles. Like all architectural decisions however, there are trade-offs that we should understand so we can identify when to use microservices, and what they should look like when we build them.
+* **Introduction to Microservices** - Are you thinking about using microservices but are not sure if they're right for you? Are your services too small or too big? Do you have trouble debugging, deploying or maintaining your product? Microservice architectures are designed to solve many of the problems we faced with earlier architectural styles. Like all architectural decisions however, there are trade-offs that we should understand so we can identify when to use microservices, and what they should look like when we build them.
 
 In this talk, we will identify the primary reasons to use microservices. We'll call-out some of the problems they are designed to solve, and identify the things we need to look out for when implementing them. We'll also identify some patterns and processes useful when designing and building systems using microservice architectures. You'll walk away knowing what makes a good microservice, and with the tools you need to build them.
 
