@@ -8,7 +8,7 @@ description: Technical presentations given by Barry S. Stahl.
 ispublished: true
 showinlist: true
 publicationdate: 2009-08-01T00:00:00.000+00:00
-lastmodificationdate: 2021-12-18T00:31:00.000+00:00
+lastmodificationdate: 2022-11-30T00:00:00.000+00:00
 slug: Speaking-Engagements
 categories: []
 
@@ -23,7 +23,23 @@ categories: []
 
 I have the following talks on topics of interest to Enterprise Developers that I can deliver at your user group or conference. You can submit a request for me to speak by {ContactPageLink:contacting me}.
 
-#### Development Patterns & Practices
+#### Microservices and Event-Driven Architectures
+
+* **Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems** - There is a danger lurking in every system that hasn't taken explicit steps to eliminate it. This under-recognized data killer can cause intermittent inconsistencies in your data which can be as difficult to find as they are to correct. Fortunately, recognizing this monster is easy, and there are a number of great techniques you can use to keep it away for good. In this talk, we will learn about the Dual-Writes anti-pattern: how to spot it, and what to do to avoid it. In doing so, we'll discuss the 4 primary patterns for keeping data consistent in modern software systems, so you can spend less time supporting your applications. We'll see examples in C# of each pattern, including demonstrations using SQL Server, Cosmos DB and Redis.
+
+  [Latest Slide Deck](https://avoidingdualwrites.azurewebsites.net)
+
+***
+
+* **Introduction to Microservices** - 
+
+Are you thinking about using microservices but are not sure if they're right for you? Are your services too small or too big? Do you have trouble debugging, deploying or maintaining your product? Microservice architectures are designed to solve many of the problems we faced with earlier architectural styles. Like all architectural decisions however, there are trade-offs that we should understand so we can identify when to use microservices, and what they should look like when we build them.
+
+In this talk, we will identify the primary reasons to use microservices. We'll call-out some of the problems they are designed to solve, and identify the things we need to look out for when implementing them. We'll also identify some patterns and processes useful when designing and building systems using microservice architectures. You'll walk away knowing what makes a good microservice, and with the tools you need to build them.
+
+  [Latest Slide Deck](https://introtomicroservices.azurewebsites.net)
+
+#### Software Engineering Patterns & Practices
 
 * **Simplify Your API: Creating Maintainable and Discoverable Code in .NET** - Developers don't read documentation, this is a fact. It is also a fact that an API that  depends on its documentation to get developers to understand and discover its features is at a huge disadvantage in the marketplace. Fortunately, there are some simple, easy-to-use mechanisms for wrapping complex APIs and making their functionality both easy to use, and highly discoverable. Imagine being able to use tools like IntelliSense that the Visual Studio IDE already provides as a way to expose the functionality of your service or library. In this session we will build a fluent Domain Specific Language interface over an existing API to create an interface that is easy to use and discoverable through IntelliSense.
 
@@ -32,10 +48,6 @@ I have the following talks on topics of interest to Enterprise Developers that I
 * **Design Patterns for Loosely Coupled Applications** - Building our applications so that their components are loosely coupled is a critical measure in creating solutions that are testable, maintainable and extensible. In this session we will explore several design patterns that are key to building applications that maintain loose coupling. We start by reviewing a tightly coupled application. Then, we explore several design patterns by using them to convert the application into a maintainable and extensible solution that can be validated using unit tests.
 
   [Latest Slide Deck](https://DesignPatternsForLooseCoupling.azurewebsites.net) | [Video: Craft Conference 2019 - Budapest, Hungary - May 2019](https://www.youtube.com/watch?v=mE3zKWO6qQE&list=FLq-iLd7rfmqSIFiujBGIRSw&index=1)
-
-***
-
-* **Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems** - There is a danger lurking in every system that hasn't taken explicit steps to eliminate it. This under-recognized data killer can cause intermittent inconsistencies in your data which can be as difficult to find as they are to correct. Fortunately, recognizing this monster is easy, and there are a number of great techniques you can use to keep it away for good. In this talk, we will learn about the Dual-Writes anti-pattern: how to spot it, and what to do to avoid it. In doing so, we'll discuss the 4 primary patterns for keeping data consistent in modern software systems, so you can spend less time supporting your applications. We'll see examples in C# of each pattern, including demonstrations using SQL Server, Cosmos DB and Redis.
 
 ***
 
@@ -61,11 +73,15 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
   In this session, we will explore the process of Event Storming. We will define the goals and expected outputs of the process, and walk through a simple example so that you are ready to bring this important practice into your organization.
 
+  [Latest Slide Deck](https://introtoeventstorming.azurewebsites.net)
+
 ***
 
 * **Things Your Dev Team Hopes You Know** - Managing a development team or project can be one of the most challenging jobs in any industry. Balancing the needs of the developers, the organization and the users to maximize value for the customers while minimizing costs can be a daunting prospect for even the most experienced executive.  How can we produce quality software in a timely and cost-effective manner when the needs of the development team are so different from the needs of the customers, the organization and its managers?
 
   In this talk Barry leverages his more than 30 years of experience as a Developer and Solution Architect to remind us that how we leverage Agile ceremonies, how we use our tooling, and how we utilize metrics can have both positive and negative impacts on our teams.  He reviews many of the elements of our Agile processes and identifies their impacts, particularly on the developers and their managers. This talk challenges us to create environments for our development teams that enable them to exceed the expectations of both our users and our organizations.
+
+  [Latest Slide Deck](https://devteamdreams.azurewebsites.net)
 
 ***
 
@@ -104,6 +120,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ### Past engagements
 
+* **Edmonton .NET User Group** - 11/29/2022 - "Introduction to Microservices"
 * **NDC Oslo 2022** - 9/26/2022 - 9/30/2022 - "Amazing Algorithms for Solving Problems in Software" & "Event Storming Workshop"
 * **Code PaLOUsa 2022** - 8/17/2022 - 8/19/2022 - "Design Patterns for Loosely Coupled Applications" & "Event Storming Workshop"
 * **Kansas City Developer's Conference 2022 (KCDC)** - 8/8/2022 - 8/10/2022 - "Design Patterns for Loosely Coupled Applications" & "Event Storming Workshop"
