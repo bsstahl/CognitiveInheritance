@@ -14,8 +14,6 @@ categories: []
 
 ---
 
-[Microservices and Event-Driven Architectures](#microservices-and-event-driven-architectures) | [Software Engineering Patterns and Practices](#software-engineering-patterns-and-practices) | [Artificial Intelligence and Algorithms](#artificial-intelligence-and-algorithms)
-
 ### Upcoming Talks
 
 * **CodeMash 2023** | Sandusky Ohio, USA | 1/10/2023 - 1/13/2023 | "Event Storming Workshop"
@@ -119,8 +117,6 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ***
 
-[Microservices and Event-Driven Architectures](#microservices-and-event-driven-architectures) | [Software Engineering Patterns and Practices](#software-engineering-patterns-and-practices) | [Artificial Intelligence and Algorithms](#artificial-intelligence-and-algorithms)
-
 ### Past engagements
 
 * **Edmonton .NET User Group** - 11/29/2022 - "Introduction to Microservices"
@@ -217,5 +213,3 @@ I have the following talks on topics of interest to Enterprise Developers that I
 * **Desert Code Camp 2011.1** - 4/2/2011 - "Building Enterprise Quality Apps using EF4"
 * **Developer Ignite II** - 11/11/2009 - "AZGiveCamp, Geeks Giving Back to the Community"
 * **Developer Ignite** - 7/22/2009 - "Simplicity Through Abstraction"
-
-[Microservices and Event-Driven Architectures](#microservices-and-event-driven-architectures) | [Software Engineering Patterns and Practices](#software-engineering-patterns-and-practices) | [Artificial Intelligence and Algorithms](#artificial-intelligence-and-algorithms)
