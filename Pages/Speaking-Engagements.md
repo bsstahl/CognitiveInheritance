@@ -13,6 +13,9 @@ slug: Speaking-Engagements
 categories: []
 
 ---
+
+[Microservices and Event-Driven Architectures](#microservices-and-event-driven-architectures) | [Software Engineering Patterns and Practices](#software-engineering-patterns-and-practices) | [Artificial Intelligence and Algorithms](#artificial-intelligence-and-algorithms)
+
 ### Upcoming Talks
 
 * **CodeMash 2023** | Sandusky Ohio, USA | 1/10/2023 - 1/13/2023 | "Event Storming Workshop"
@@ -33,11 +36,11 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 * **Introduction to Microservices** - Are you thinking about using microservices but are not sure if they're right for you? Are your services too small or too big? Do you have trouble debugging, deploying or maintaining your product? Microservice architectures are designed to solve many of the problems we faced with earlier architectural styles. Like all architectural decisions however, there are trade-offs that we should understand so we can identify when to use microservices, and what they should look like when we build them.
 
-In this talk, we will identify the primary reasons to use microservices. We'll call-out some of the problems they are designed to solve, and identify the things we need to look out for when implementing them. We'll also identify some patterns and processes useful when designing and building systems using microservice architectures. You'll walk away knowing what makes a good microservice, and with the tools you need to build them.
+  In this talk, we will identify the primary reasons to use microservices. We'll call-out some of the problems they are designed to solve, and identify the things we need to look out for when implementing them. We'll also identify some patterns and processes useful when designing and building systems using microservice architectures. You'll walk away knowing what makes a good microservice, and with the tools you need to build them.
 
   [Latest Slide Deck](https://introtomicroservices.azurewebsites.net)
 
-#### Software Engineering Patterns & Practices
+#### Software Engineering Patterns and Practices
 
 * **Simplify Your API: Creating Maintainable and Discoverable Code in .NET** - Developers don't read documentation, this is a fact. It is also a fact that an API that  depends on its documentation to get developers to understand and discover its features is at a huge disadvantage in the marketplace. Fortunately, there are some simple, easy-to-use mechanisms for wrapping complex APIs and making their functionality both easy to use, and highly discoverable. Imagine being able to use tools like IntelliSense that the Visual Studio IDE already provides as a way to expose the functionality of your service or library. In this session we will build a fluent Domain Specific Language interface over an existing API to create an interface that is easy to use and discoverable through IntelliSense.
 
@@ -115,6 +118,8 @@ In this talk, we will identify the primary reasons to use microservices. We'll c
   [Video: NDC Sydney - Sydney Australia - August 2017](https://www.youtube.com/watch?v=zZAobExOMB0&list=FLq-iLd7rfmqSIFiujBGIRSw&index=2)
 
 ***
+
+[Microservices and Event-Driven Architectures](#microservices-and-event-driven-architectures) | [Software Engineering Patterns and Practices](#software-engineering-patterns-and-practices) | [Artificial Intelligence and Algorithms](#artificial-intelligence-and-algorithms)
 
 ### Past engagements
 
@@ -212,3 +217,5 @@ In this talk, we will identify the primary reasons to use microservices. We'll c
 * **Desert Code Camp 2011.1** - 4/2/2011 - "Building Enterprise Quality Apps using EF4"
 * **Developer Ignite II** - 11/11/2009 - "AZGiveCamp, Geeks Giving Back to the Community"
 * **Developer Ignite** - 7/22/2009 - "Simplicity Through Abstraction"
+
+[Microservices and Event-Driven Architectures](#microservices-and-event-driven-architectures) | [Software Engineering Patterns and Practices](#software-engineering-patterns-and-practices) | [Artificial Intelligence and Algorithms](#artificial-intelligence-and-algorithms)
