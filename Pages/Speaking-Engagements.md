@@ -18,8 +18,6 @@ categories: []
 
 * **CodeMash 2023** | Sandusky Ohio, USA | 1/10/2023 - 1/13/2023 | "Event Storming Workshop"
 
-> I have started delivering in-person talks again now that numerous mechanisms for protecting our communities from Covid-19 are available. I will, of course, still entertain opportunities to speak online. Please {ContactPageLink:contact me} if you would like me to deliver one of my talks at your event, either online or in-person. Refer to the talk list below for available options.
-
 ***
 
 I have the following talks on topics of interest to Enterprise Developers that I can deliver at your user group or conference. You can submit a request for me to speak by {ContactPageLink:contacting me}.
