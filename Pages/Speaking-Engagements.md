@@ -24,7 +24,7 @@ categories: []
 
 I have the following talks on topics of interest to Enterprise Developers that I can deliver at your user group or conference. You can submit a request for me to speak by {ContactPageLink:contacting me}.
 
-#### Microservices and Event-Driven Architectures {#microservice-talks}
+#### Microservices and Event-Driven Architectures{#microservices-talks}
 
 * **Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems** - There is a danger lurking in every system that hasn't taken explicit steps to eliminate it. This under-recognized data killer can cause intermittent inconsistencies in your data which can be as difficult to find as they are to correct. Fortunately, recognizing this monster is easy, and there are a number of great techniques you can use to keep it away for good. In this talk, we will learn about the Dual-Writes anti-pattern: how to spot it, and what to do to avoid it. In doing so, we'll discuss the 4 primary patterns for keeping data consistent in modern software systems, so you can spend less time supporting your applications. We'll see examples in C# of each pattern, including demonstrations using SQL Server, Cosmos DB and Redis.
 
@@ -38,7 +38,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
   [Latest Slide Deck](https://introtomicroservices.azurewebsites.net)
 
-#### Software Engineering Patterns and Practices {#pnp-talks}
+#### Software Engineering Patterns and Practices{#pnp-talks}
 
 * **Simplify Your API: Creating Maintainable and Discoverable Code in .NET** - Developers don't read documentation, this is a fact. It is also a fact that an API that  depends on its documentation to get developers to understand and discover its features is at a huge disadvantage in the marketplace. Fortunately, there are some simple, easy-to-use mechanisms for wrapping complex APIs and making their functionality both easy to use, and highly discoverable. Imagine being able to use tools like IntelliSense that the Visual Studio IDE already provides as a way to expose the functionality of your service or library. In this session we will build a fluent Domain Specific Language interface over an existing API to create an interface that is easy to use and discoverable through IntelliSense.
 
@@ -84,7 +84,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ***
 
-#### Artificial Intelligence and Algorithms {#ai-talks}
+#### Artificial Intelligence and Algorithms{#ai-talks}
 
 * **Amazing Algorithms for Solving Problems in Software** - Sure neural networks are cool but have you ever used a Firefly Algorithm to find the solution to a problem? How about an Ant Colony algorithm or one of  the many other algorithms inspired by nature?  In this talk we will see examples of a number of awesome bio-inspired algorithms that can be used to solve problems in software. We'll see how each one works, analyze its strengths and weaknesses, and determine when it is best used. You'll leave with the knowledge you need to solve problems using these algorithms in your language of choice.
 
