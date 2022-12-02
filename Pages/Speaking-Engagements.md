@@ -84,11 +84,11 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ***
 
-<h4 id="ai-talks"> Artificial Intelligence and Algorithms</h4>
+<h4 id="ai-talks">Artificial Intelligence and Algorithms</h4>
 
 * **Amazing Algorithms for Solving Problems in Software** - Sure neural networks are cool but have you ever used a Firefly Algorithm to find the solution to a problem? How about an Ant Colony algorithm or one of  the many other algorithms inspired by nature?  In this talk we will see examples of a number of awesome bio-inspired algorithms that can be used to solve problems in software. We'll see how each one works, analyze its strengths and weaknesses, and determine when it is best used. You'll leave with the knowledge you need to solve problems using these algorithms in your language of choice.
 
-  [Latest Slide Deck](https://amazingalgorithms.azurewebsites.net)
+  [Latest Slide Deck](https://amazingalgorithms.azurewebsites.net) | [Video: Code on the Beach - Atlantic Beach FL USA - July 2022](https://youtu.be/Ge_aChdwdtE)
 
 ***
 
