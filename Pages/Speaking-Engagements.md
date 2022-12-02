@@ -14,13 +14,15 @@ categories: []
 
 ---
 
-[Microservices and Event-Driven Architectures](#microservices-talks) | [Software Engineering Patterns and Practices](#pnp-talks) | [Artificial Intelligence and Algorithms](#ai-talks)
-
 ### Upcoming Talks
 
 * **CodeMash 2023** | Sandusky Ohio, USA | 1/10/2023 - 1/13/2023 | "Event Storming Workshop"
 
 ***
+
+### Available Talks
+
+[Microservices and Event-Driven Architectures](#microservices-talks) | [Software Engineering Patterns and Practices](#pnp-talks) | [Artificial Intelligence and Algorithms](#ai-talks)
 
 I have the following talks on topics of interest to Enterprise Developers that I can deliver at your user group or conference. You can submit a request for me to speak by {ContactPageLink:contacting me}.
 
@@ -213,3 +215,5 @@ I have the following talks on topics of interest to Enterprise Developers that I
 * **Desert Code Camp 2011.1** - 4/2/2011 - "Building Enterprise Quality Apps using EF4"
 * **Developer Ignite II** - 11/11/2009 - "AZGiveCamp, Geeks Giving Back to the Community"
 * **Developer Ignite** - 7/22/2009 - "Simplicity Through Abstraction"
+
+[Microservices and Event-Driven Architectures](#microservices-talks) | [Software Engineering Patterns and Practices](#pnp-talks) | [Artificial Intelligence and Algorithms](#ai-talks)
