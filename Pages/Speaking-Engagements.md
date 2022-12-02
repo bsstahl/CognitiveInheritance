@@ -14,7 +14,7 @@ categories: []
 
 ---
 
-[Microservices and Event-Driven Architectures](#microservices-talks) | [Software Engineering Patterns and Practices](#pnp-talks) | [Artificial Intelligence and Algorithms](#ai-talks) | [End]{#the-end}
+[Microservices and Event-Driven Architectures](#microservices-talks) | [Software Engineering Patterns and Practices](#pnp-talks) | [Artificial Intelligence and Algorithms](#ai-talks)
 
 ### Upcoming Talks
 
@@ -213,5 +213,3 @@ I have the following talks on topics of interest to Enterprise Developers that I
 * **Desert Code Camp 2011.1** - 4/2/2011 - "Building Enterprise Quality Apps using EF4"
 * **Developer Ignite II** - 11/11/2009 - "AZGiveCamp, Geeks Giving Back to the Community"
 * **Developer Ignite** - 7/22/2009 - "Simplicity Through Abstraction"
-
-# End{#the-end}
