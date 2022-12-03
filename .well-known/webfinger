@@ -20,3 +20,4 @@
             "template": "https://fosstodon.org/authorize_interaction?uri={uri}"
         }
     ]
+}
