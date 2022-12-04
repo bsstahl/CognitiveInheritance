@@ -67,11 +67,19 @@ Once a message has been defined and agreed to as an integration mechanism, all s
 
 In order to keep implementations flexible, there should be an isolation layer between the internal representation (Domain Model) of any message, and the more public (Integration Model) representation. This way, the developers can change the internal representation with only limited restrictions, so long as as the message remains transformationally compatible with the integration message, and the transformation is modified as needed so that no change is seen by the integration consumers. The representations may take different forms, the important thing is that the developers can iterate quickly on the internal representation when needed. The **Eventually Consistent** example in the diagram above shows such a isolation layer since the *WorkOrders DB* holds the internal representation of the message, the *Kafka Connect* connector is the abstraction that performs the transformation as needed, and the topic that the connector produces data to is the integration path.
 
-We need to take great care to defend these internal streams. Ideally, only 1 service should ever write to our domain model, and only internal services, owned by the same small development team, should read from it. As soon as we allow other teams into our domain model, it becomes an integration model whether we want it to or not.
+We need to take great care to defend these internal streams. Ideally, only 1 service should ever write to our domain model, and only internal services, owned by the same small development team, should read from it. As soon as we allow other teams into our domain model, it becomes an integration model whether we want it to be or not.
 
 Similarly, our services should make proper use of upstream integration models. We need to understand what level of compatibility we can expect and how we will be notified of changes. We should use these data paths as much as possible to bring external data locally to our services, in exactly the form that our service needs it in, so that each of our services can own its own data for both reliability and efficiency. Of course, these local stores must be read-only. We need to publish change requests back to the *System of Record* to make any changes to data sourced by those systems.
 
 #### Chaos
+
+One of the [Fallacies of distributed computing](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing) is that the network is reliable. We should have similar expectations for the reliability of all of the infrastructure on which our services are run. Networks will segment, commodity servers and drives will fail, containers and operating systems will become unstable. In other words, our software will have errors during operation, no matter how resilient we attempt to make it. We need to embrace the fact that failures will occur in our software, and will do so at random times and often in unpredictable ways. 
+
+If we are to build systems that don't require our constant attention, especially during off-hours, we need to be able to identify what happens when failures occur, and design our systems in ways that will allow them to heal automatically once the problem is corrected.
+
+To start this process, I recommend playing "what-if" games using data-flow diagrams of the system. Walk through the components of the system, identifying each place where failure could occur, and attempt to determine what might happen as a result. This kind of "virtual" Chaos Engineering is certainly no substitute for actual experimentation and testing, 
+
+
 
 #### Competencies
 
