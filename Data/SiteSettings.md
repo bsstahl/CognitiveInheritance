@@ -14,6 +14,7 @@ additionalfilepaths:
 - Pics
 - Files
 - .well-known
+-  _config.yml
 dateformatspecifier: yyyy-MM-dd
 datetimeformatspecifier: yyyy-MM-dd H:mm UTC
 itemseparator: "<hr/>"
