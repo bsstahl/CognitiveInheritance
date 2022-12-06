@@ -86,6 +86,7 @@ fields:
     step: 
 pages:
 - Pages/basic-app-privacy-policy.md
+- Pages/unpublished-proof.md
 - Posts/committing-to-git-from-an-azure-devops-pipeline.md
 - Posts/exception-handling-block.md
 - Posts/social-media.md
