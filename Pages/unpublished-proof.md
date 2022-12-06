@@ -4,8 +4,8 @@ tags: []
 categories: []
 menuorder: 0
 id: 310f2454-fbd7-4725-960e-3b5a17fec43d
-title: Unpublished Proof
-description: Use this page to expose unpublished blog posts to be shared with editors
+title: The Critical C's of Microservices
+description: A series of conversations that development teams should have prior to building event driven or microservice architectures
 ispublished: true
 showinlist: false
 publicationdate: 2022-12-06T07:00:00Z
