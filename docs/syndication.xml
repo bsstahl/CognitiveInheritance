@@ -9,6 +9,48 @@
     <language>en-US</language>
     <atom:link href="https://cognitiveinheritance.com/syndication.xml" rel="self" type="application/rss+xml" />	
     <item>
+  <title>The Critical C's of Microservices - Context</title>
+  <description>&lt;p&gt;&amp;quot;&lt;strong&gt;The Critical C&apos;s of Microservices&lt;/strong&gt;&amp;quot; are a series of conversations that development teams should have prior to building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building the systems and processes in a reliable and supportable way.&lt;/p&gt;
+&lt;p&gt;The &amp;quot;Critical C&apos;s&amp;quot; are: &lt;strong&gt;Context&lt;/strong&gt;, &lt;strong&gt;Consistency&lt;/strong&gt;, &lt;strong&gt;Contract&lt;/strong&gt;, &lt;strong&gt;Chaos&lt;/strong&gt;, &lt;strong&gt;Competencies&lt;/strong&gt; and &lt;strong&gt;Coalescence&lt;/strong&gt;. Each of these topics will be covered in detail in this series of articles, starting with &lt;strong&gt;Context&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3&gt;Context&lt;/h3&gt;
+&lt;h4&gt;The Execution Context&lt;/h4&gt;
+&lt;p&gt;The &lt;strong&gt;execution context&lt;/strong&gt; is the unit of work of all services. It represents the life-cycle of a single request, regardless of the details of how that request was received. So, whether an HTTP web request, or an asynchronous message from &lt;em&gt;Apache Kafka&lt;/em&gt; or &lt;em&gt;Azure Service Bus&lt;/em&gt;, the context we care about here is that of a single service processing that one message. Since, for reasons that will be discussed in a future article, there is no way to reliably make more than one change to system state within a single execution context, we must defend this context from the tendency to add additional state changes in order to maintain the reliability of our services.&lt;/p&gt;
+&lt;p&gt;There are generally only two situations where it is ok to make more than one change to system state in a single execution context:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;When the first change is &lt;a href=&quot;https://en.wikipedia.org/wiki/Idempotence&quot; title=&quot;Idempotence is the ability to execute a task an arbitrary number of times (&amp;gt;1) and have the resulting state of the system be the same as if the task was executed once.&quot;&gt;idempotent&lt;/a&gt; so we can rollback the message and try again later without bad things happening due to duplication. An example of this is a database &lt;strong&gt;Upsert&lt;/strong&gt; where all of the data, including keys, is supplied. In this case, the 1st time we execute the request, we might insert the record in the DB. If a later change fails in the same context and we are resent the same message, the resulting update using the same data will leave in the same state as if the request was only executed once. Since this operation can be executed as many times as necessary, without impacting the ultimate state of the system, we can make other changes after this one and still rollback and retry the request if a subsequent operation fails, without damaging the system. Services that are Idempotent are much easier to orchestrate reliably, so much so that Idempotence is considered a highly-desireable feature of microservices.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;When the second change is understood to be less-reliable. An example of this is logging. We don&apos;t want to fail a business-process due to failures in logging, so we accept that our logging, and certain other technical processes, may be less-reliable than our business processes. It is &lt;strong&gt;rarely&lt;/strong&gt; ok for a business process to be less-reliable in this way. Implementations that make certain business features less-reliable should be identified, documented, and discussed with an eye toward repaying what is likely to be technical debt.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Avoiding Dual-Writes&lt;/h4&gt;
+&lt;p&gt;Ultimately, to maintain the reliability of our systems, we must be sure we are never trying to make more than one reliable change to system state in a single execution context. This is a very different way of thinking than most developers are used to. In fact, I would say it is the opposite of how many of us have been taught to think about these types of problems. Developers value simplicity, and rightfully so. Unfortunately, problems where we already have a service running that can host logic we need to add, make it &lt;strong&gt;seem like&lt;/strong&gt; the simplest solution is to just &amp;quot;add-on&amp;quot; the new logic to the existing code. The truth of the matter is far different. Let&apos;s look at an example:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.cognitiveinheritance.com/Images/CTP%20Pattern%20-%20Never%20Add-On.png&quot; alt=&quot;Defend the Execution Context&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;In these drawings we start with a RESTful service that updates a database and returns an appropriate response. This service makes only 1 change to system state so it can be built reliably. We then get a requirement for the system to also update a downstream dependency, say a Kafka topic. The default for many Technologists would be to just to add-on inside the service. That is, they might suggest that we should have the service update both the database and the topic. This would be an example of the Dual-Writes Anti-Pattern and will hurt both system &lt;em&gt;reliability&lt;/em&gt; and &lt;em&gt;supportability&lt;/em&gt;. Instead, the simplest solution that doesn&apos;t cause irreparable harm to our system is actually to trigger the downstream action off of the DB update. That is, we can use the &lt;strong&gt;Outbox Pattern&lt;/strong&gt; or if the database supports it, &lt;strong&gt;Change Data Capture&lt;/strong&gt; or a &lt;strong&gt;Change Feed&lt;/strong&gt; to trigger a secondary process that produces the event message. Adding a deployment unit like this might make it feel like a more complicated solution, however it actually reduces the complexity of the initial service, avoids making a change to a working service, and will avoid creating reliability problems by not performing dual-writes.&lt;/p&gt;
+&lt;p&gt;There are a few things to note here regarding atomic database transactions. An ACID-compliant update to a database represents a single change to system state. If we could make fully ACID-compliant changes across multiple data stores, or other boundaries like web services, the Dual-Writes Anti-Pattern would be much less of a problem. Unfortunately, distributed transactions cannot be used without severely impacting both scalability and performance and are not recommended. It should also be noted that, when talking about only 2 state changes, some threats to reliability may be reduced by being clever with our use of transactions. However, these tricks help us far less than one might think, and have severely diminishing returns when 3 or more state-changes are in-scope. Transactions, while good for keeping local data consistent, are not good for maintaining system reliability and are horrible for system scalability.&lt;/p&gt;
+&lt;h4&gt;Goals of the Conversation&lt;/h4&gt;
+&lt;p&gt;Development teams should have conversations around &lt;strong&gt;Context&lt;/strong&gt; that are primarily focused around the tools and techniques that they intend to use to avoid the Dual-Writes Anti-Pattern. These conversations should include answering questions like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;What database technologies will we use and how can we leverage these tools to create downstream events based on changes to the database state?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Which of our services are currently idempotent and which ones could reasonably made so? How can we leverage our idempotent services to improve system reliability?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Do we have any services right now that contain business processes implemented in a less-reliable way? If so, pulling this functionality out into their own microservices might be a good starting point for decomposition.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;What processes will we as a development team implement to track and manage the technical debt of having business processes implemented in a less-reliable way?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;What processes will we as a development team implement to be sure that any future less-reliable implementations of business functionality are made with consideration and understanding of the debt being created and a plan to pay it off.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;What processes will we as a development team implement to be sure that any existing or future less-reliable implementations of business functionality are documented, understood by, and prioritized by the business process owners.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Next Up - Consistency&lt;/h4&gt;
+&lt;p&gt;In the next article of this series we will look at &lt;strong&gt;Consistency&lt;/strong&gt;, and see how &lt;strong&gt;Eventual Consistency&lt;/strong&gt; represents the reality of the world we live in.&lt;/p&gt;
+</description>
+  <link>https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-1of6-context.html</link>
+  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
+  <guid>https://www.cognitiveinheritance.com/Permalinks/082c3f8a-ac4a-4231-9962-01536167e4a5.html</guid>
+  <pubDate>Mon, 12 Dec 2022 07:00:00 GMT</pubDate>
+</item><item>
   <title>Social Media</title>
   <description>&lt;p&gt;The implosion of Twitter and my subsequent move to &lt;a href=&quot;https://fosstodon.org/@bsstahl&quot;&gt;the Fediverse&lt;/a&gt; has me reviewing all of my social media activity.&lt;/p&gt;
 &lt;p&gt;A few of the things I&apos;ve looked at, and continue to investigate, include:&lt;/p&gt;
@@ -468,33 +510,6 @@ This option must be checked so that the script can acquire the permissions to up
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/c2b6a683-a9cf-4fce-96c1-5401648c056e.html</guid>
   <pubDate>Tue, 12 Feb 2019 02:55:23 GMT</pubDate>
-</item><item>
-  <title>Developer on Fire</title>
-  <description>&lt;p&gt;I was recently interviewed by Dave Rael (&lt;a href=&quot;https://twitter.com/raelyard&quot;&gt;@raelyard&lt;/a&gt;) for his &lt;a href=&quot;https://developeronfire.com/podcast/episode-399-barry-stahl-optimizing-impact&quot;&gt;Developer on Fire Podcast&lt;/a&gt;.  I had a great time talking with Dave about a lot of different things, both professional and personal, and got to name-drop just a few of the many people who have been a part of my journey over the years.&lt;/p&gt;
-&lt;p&gt;I also took the opportunity to talk about a few things that have been on my mind:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The upcoming &lt;a href=&quot;https://www.meetup.com/azgivecamp&quot;&gt;AZGiveCamp&lt;/a&gt; Event scheduled for March 2019&lt;/li&gt;
-&lt;li&gt;Some of &lt;a href=&quot;https://twitter.com/bsstahl/status/878043411923599360&quot;&gt;the giants on whose shoulders we stand&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;A few of the technologies that are making me happy right now:
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://webassembly.org/&quot;&gt;WebAssembly&lt;/a&gt; and &lt;a href=&quot;https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor&quot;&gt;Blazor&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.cognitiveinheritance.com/Search/ai.html&quot;&gt;AI, Combinatorial Optimization and Genetic Algorithms&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;A couple of resources I learn from:
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://brilliant.org&quot;&gt;brilliant.org&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;The works of &lt;a href=&quot;http://davidmcraney.com/&quot;&gt;David McRaney&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;I hope you enjoy this interview and find something of value in it. If so, please let me know about it &lt;a rel=&quot;me&quot; href=&quot;https://fosstodon.org/@Bsstahl&quot;&gt;@bsstahl@fosstodon.org&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://developeronfire.com/podcast/episode-399-barry-stahl-optimizing-impact&quot;&gt;&lt;img src=&quot;https://www.cognitiveinheritance.com/Images/DeveloperOnFire_1.png&quot; alt=&quot;Developer On Fire&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-</description>
-  <link>https://www.cognitiveinheritance.com/Posts/Developer-on-Fire.html</link>
-  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
-  <guid>https://www.cognitiveinheritance.com/Permalinks/88996646-da47-4325-a45e-3c2e2446ba9e.html</guid>
-  <pubDate>Thu, 13 Dec 2018 21:39:17 GMT</pubDate>
 </item>
 </channel>
 </rss>

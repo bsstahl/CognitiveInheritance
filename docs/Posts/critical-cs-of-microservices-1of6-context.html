@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang="en">
     <head>
-        <!-- Template: Content Page -->
+        <!-- Template: Post Page -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     
-        <meta name="description" content="{Description}">
+        <meta name="description" content="The Critical C's of Microservices - Context, an article on Cognitive Inheritance.">
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -16,11 +16,10 @@
         <title>Cognitive Inheritance - The Application Development Experiences of an Enterprise Developer</title>
     </head>
     <body>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 <a class="navbar-brand" href="../index.html">Cognitive Inheritance</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
@@ -55,62 +54,52 @@
 </div>
 </nav>
 
-                    <header>The Application Development Experiences of an Enterprise Developer</header>
-                </div>
+                <header>The Application Development Experiences of an Enterprise Developer</header>
             </div>
+        </div>
 
         <div class="row">
             <div class="col-md-8">
-                <h1>Tag: responsibility</h1>
-                <div>
-    <h3>Programmers -- Take Responsibility for Your AI’s Output</h3>
-    <h5>Posted by bsstahl on 2018-03-16 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <blockquote>
-<p><strong>plus ça change, plus c'est la même chose</strong> – <strong>The more that things change, the more they stay the same</strong>. – Rush (and others <img src="..//Images/wlEmoticon-winkingsmile.png" alt="Winking smile" /> )</p>
-</blockquote>
-<p>In 2013 I <a href="../Posts/Programmers-Take-Responsibility-for-Your-Programe28099s-Output.html">wrote</a> that programmers needed to take responsibility for the output of their computer programs.  In that article, I advised developers that the output of their system, no matter how “random” or “computer generated”, was still their responsibility. I suggested that we cannot cop out by claiming  that the output of our programs is not our fault simply because we didn’t directly instruct the computer to issue that specific result.</p>
-<p>Today, we have a similar problem, only the stakes are much, much, higher.</p>
-<p>In the world of 2018, our algorithms are being used in police work and inside other government agencies to know where and when to deploy resources, and to decide who is and isn’t worthy of an opportunity. Our programs are being used in the private sector to make decisions from trading stocks to hiring, sometimes at a scale and speed that puts us all at risk of economic events. These tools are being deployed by information brokers such as Facebook and Google to make predictions about how best to steal the most precious resource we have, our time.  Perhaps scariest of all, these algorithms may be being used to make decisions that have permanent and irreversible results, such as with drone strikes.  We  simply have no way of knowing the full breadth of decisions that AIs are making on our behalf today.  If those algorithms are biased in any way, the decisions made by these programs will be biased, potentially in very serious ways and with serious results.</p>
-<blockquote>
-<p>If we take all available steps to recognize and eliminate the biases in our systems, we can minimize the likelihood of our tools producing output that we did not expect or that violates our principles.</p>
-</blockquote>
-<p>All of the machines used to execute these algorithms are bias-free of course.  A computer has no prejudices and no desires of its own.  However, as we all know, decision-making  tools learn what we teach them.  We cannot completely teach these algorithms free of our own biases.  It simply cannot be done since all of our data is colored by our existing biases.  Perhaps the best known example of bias in our data is in crime data used for policing. If we send police to where there is most often crime, we will be sending them to the same places we’ve sent them in the past, since generally, crime involves having a police office in the location to make an arrest. Thus, any biases we may have had in the past about where to send police officers, will be represented in our data sets about crime.</p>
-<p>While we may never be able to eliminate biases completely, there are things that we can do to minimize the impact of the biases we are training into our algorithms.  If we take all available steps to recognize and eliminate the biases in our systems, we can minimize the likelihood of our tools producing output that we did not expect or that violates our principles.</p>
-<h5>Know that the algorithm is biased</h5>
-<p>We need to accept the fact that there is no way to create a completely bias-free algorithm.  Any dataset we provide to our tools will inherently have some bias in it.  This is the nature of our world.  We create our datasets based on history and our history, intentionally or not, is full of bias.  All of our perceptions and understandings are colored by our cognitive biases, and the same is true for the data we create as a result of our actions.  By knowing and accepting this fact, that our data is biased, and therefore our algorithms are biased, we take the first step toward neutralizing the impacts of those biases.</p>
-<h5>Predict the possible biases</h5>
-<p>We should do everything we can to predict what biases may have crept into our data and how they may impact the decisions the model is making, even if that bias is purely theoretical.  By considering what biases could potentially exist, we can watch for the results of those biases, both in an automated and manual fashion.</p>
-<h5>Train “fairness” into the model</h5>
-<p>If a bias is known to be present in the data, or even likely to be present, it can be accounted for by defining what an unbiased outcome might look like and making that a training feature of the algorithm.  If we can reasonably assume that an unbiased algorithm would distribute opportunities among male and female candidates at the same rate as they apply for the opportunity, then we can constrain the model with the expectation that the rate of  accepted male candidates should be within a statistical tolerance of  the rate of male applicants.  That is, if half of the applicants are men then men should receive roughly half of the opportunities.  Of course, it will not be nearly this simple to define fairness for most algorithms, however every effort should be made.</p>
-<h5>Be Open About What You’ve Built</h5>
-<p>The more people understand how you’ve examined your data, and the assumptions you’ve made, the more confident they can be that anomalies in the output are not a result of systemic bias. This is the most critical when these decisions have significant consequences to peoples’ lives.  A good example is in prison sentencing. It is unconscionable to me that we allow black-box algorithms to make sentencing decisions on our behalf.  These models should be completely transparent and subject to our analysis and correction.  That they aren’t, but are still being used by our governments, represent a huge breakdown of the system, since these decisions MUST be made with the trust and at the will of the populace.</p>
-<h5>Build AIs that Provide Insight Into Results (when possible)</h5>
-<p>Many types of AI models are completely opaque when it comes to how decisions are reached.  This doesn’t mean however that all of our AIs must be complete black-boxes.  It is true that  most of the common machine learning methods such as Deep-Neural-Networks (DNNs) are extremely difficult to analyze.  However, there are other types of models that are much more transparent when it comes to decision making.  Some model types will not be useable on all problems, but when the options exist, transparency should be a strong consideration.</p>
-<p>There are also techniques that can be used to make even opaque models more transparent.  For example, a hybrid technique (<a href="../Posts/AI-That-Can-Explain-Why.html">AI That Can Explain Why</a> &amp; <a href="../Posts/An-Example-of-a-Hybrid-AI-Implementation.html">An Example of a Hybrid AI Implementation</a>) can be used to run opaque models iteratively.  This can allow the developer to log key details at specific points in the process, making the decisions much more transparent.  There are also techniques to manipulate the data after a decision is made, to gain insight into the reasons for the decision.</p>
-<h5>Don’t Give the AI the Codes to the Nukes</h5>
-<p>Computers should never be allowed to make automated decisions that cannot be reversed by a human if necessary. Decisions like when to attack a target, execute a criminal, vent radioactive waste, or ditch an aircraft are all decisions that require human verification since they cannot be undone if the model has an error or is faced with  a completely unforeseen set of conditions. There are no circumstances where machines should be making such decisions for us without the opportunity for human intervention, and it is up to us, the programmers, to make sure that we don’t give them that capability.</p>
-<h5>Don’t Build it if it Can’t be Done Ethically</h5>
-<p>If we are unable to come up with an algorithm that is free from bias, perhaps the situation is not appropriate for an automated decision making process.  Not every situation will warrant an AI solution, and it is very likely that there are decisions that should always be made by a human in totality.  For those situations, a decision support system may be a better solution.</p>
-<h4>The Burden is Ours</h4>
-<p>As the creators of automated decision making systems, we have the responsibility to make sure that the decisions they make do not violate our standards or ethics.  We cannot depend on our AIs to make fair and reasonable decisions unless we program them to do so, and programming them to avoid inherent biases requires an awareness and openness that has not always been present.  By taking the steps outlined here to be aware of the dangers and to mitigate it wherever possible, we have a chance of making decisions that we can all be proud of, and have confidence in.</p>
+              <h1>The Critical C's of Microservices - Context</h1>
+              <h5>Posted by bsstahl on 2022-12-12 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+              <p>&quot;<strong>The Critical C's of Microservices</strong>&quot; are a series of conversations that development teams should have prior to building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building the systems and processes in a reliable and supportable way.</p>
+<p>The &quot;Critical C's&quot; are: <strong>Context</strong>, <strong>Consistency</strong>, <strong>Contract</strong>, <strong>Chaos</strong>, <strong>Competencies</strong> and <strong>Coalescence</strong>. Each of these topics will be covered in detail in this series of articles, starting with <strong>Context</strong>.</p>
+<h3>Context</h3>
+<h4>The Execution Context</h4>
+<p>The <strong>execution context</strong> is the unit of work of all services. It represents the life-cycle of a single request, regardless of the details of how that request was received. So, whether an HTTP web request, or an asynchronous message from <em>Apache Kafka</em> or <em>Azure Service Bus</em>, the context we care about here is that of a single service processing that one message. Since, for reasons that will be discussed in a future article, there is no way to reliably make more than one change to system state within a single execution context, we must defend this context from the tendency to add additional state changes in order to maintain the reliability of our services.</p>
+<p>There are generally only two situations where it is ok to make more than one change to system state in a single execution context:</p>
+<ol>
+<li><p>When the first change is <a href="https://en.wikipedia.org/wiki/Idempotence" title="Idempotence is the ability to execute a task an arbitrary number of times (&gt;1) and have the resulting state of the system be the same as if the task was executed once.">idempotent</a> so we can rollback the message and try again later without bad things happening due to duplication. An example of this is a database <strong>Upsert</strong> where all of the data, including keys, is supplied. In this case, the 1st time we execute the request, we might insert the record in the DB. If a later change fails in the same context and we are resent the same message, the resulting update using the same data will leave in the same state as if the request was only executed once. Since this operation can be executed as many times as necessary, without impacting the ultimate state of the system, we can make other changes after this one and still rollback and retry the request if a subsequent operation fails, without damaging the system. Services that are Idempotent are much easier to orchestrate reliably, so much so that Idempotence is considered a highly-desireable feature of microservices.</p>
+</li>
+<li><p>When the second change is understood to be less-reliable. An example of this is logging. We don't want to fail a business-process due to failures in logging, so we accept that our logging, and certain other technical processes, may be less-reliable than our business processes. It is <strong>rarely</strong> ok for a business process to be less-reliable in this way. Implementations that make certain business features less-reliable should be identified, documented, and discussed with an eye toward repaying what is likely to be technical debt.</p>
+</li>
+</ol>
+<h4>Avoiding Dual-Writes</h4>
+<p>Ultimately, to maintain the reliability of our systems, we must be sure we are never trying to make more than one reliable change to system state in a single execution context. This is a very different way of thinking than most developers are used to. In fact, I would say it is the opposite of how many of us have been taught to think about these types of problems. Developers value simplicity, and rightfully so. Unfortunately, problems where we already have a service running that can host logic we need to add, make it <strong>seem like</strong> the simplest solution is to just &quot;add-on&quot; the new logic to the existing code. The truth of the matter is far different. Let's look at an example:</p>
+<p><img src="../Images/CTP%20Pattern%20-%20Never%20Add-On.png" alt="Defend the Execution Context" /></p>
+<p>In these drawings we start with a RESTful service that updates a database and returns an appropriate response. This service makes only 1 change to system state so it can be built reliably. We then get a requirement for the system to also update a downstream dependency, say a Kafka topic. The default for many Technologists would be to just to add-on inside the service. That is, they might suggest that we should have the service update both the database and the topic. This would be an example of the Dual-Writes Anti-Pattern and will hurt both system <em>reliability</em> and <em>supportability</em>. Instead, the simplest solution that doesn't cause irreparable harm to our system is actually to trigger the downstream action off of the DB update. That is, we can use the <strong>Outbox Pattern</strong> or if the database supports it, <strong>Change Data Capture</strong> or a <strong>Change Feed</strong> to trigger a secondary process that produces the event message. Adding a deployment unit like this might make it feel like a more complicated solution, however it actually reduces the complexity of the initial service, avoids making a change to a working service, and will avoid creating reliability problems by not performing dual-writes.</p>
+<p>There are a few things to note here regarding atomic database transactions. An ACID-compliant update to a database represents a single change to system state. If we could make fully ACID-compliant changes across multiple data stores, or other boundaries like web services, the Dual-Writes Anti-Pattern would be much less of a problem. Unfortunately, distributed transactions cannot be used without severely impacting both scalability and performance and are not recommended. It should also be noted that, when talking about only 2 state changes, some threats to reliability may be reduced by being clever with our use of transactions. However, these tricks help us far less than one might think, and have severely diminishing returns when 3 or more state-changes are in-scope. Transactions, while good for keeping local data consistent, are not good for maintaining system reliability and are horrible for system scalability.</p>
+<h4>Goals of the Conversation</h4>
+<p>Development teams should have conversations around <strong>Context</strong> that are primarily focused around the tools and techniques that they intend to use to avoid the Dual-Writes Anti-Pattern. These conversations should include answering questions like:</p>
+<ul>
+<li><p>What database technologies will we use and how can we leverage these tools to create downstream events based on changes to the database state?</p>
+</li>
+<li><p>Which of our services are currently idempotent and which ones could reasonably made so? How can we leverage our idempotent services to improve system reliability?</p>
+</li>
+<li><p>Do we have any services right now that contain business processes implemented in a less-reliable way? If so, pulling this functionality out into their own microservices might be a good starting point for decomposition.</p>
+</li>
+<li><p>What processes will we as a development team implement to track and manage the technical debt of having business processes implemented in a less-reliable way?</p>
+</li>
+<li><p>What processes will we as a development team implement to be sure that any future less-reliable implementations of business functionality are made with consideration and understanding of the debt being created and a plan to pay it off.</p>
+</li>
+<li><p>What processes will we as a development team implement to be sure that any existing or future less-reliable implementations of business functionality are documented, understood by, and prioritized by the business process owners.</p>
+</li>
+</ul>
+<h4>Next Up - Consistency</h4>
+<p>In the next article of this series we will look at <strong>Consistency</strong>, and see how <strong>Eventual Consistency</strong> represents the reality of the world we live in.</p>
 
-    <h5>Tags: <a title="Tag: coding practices" class="small" href="../Search/coding-practices.html">coding practices</a>&nbsp;<a title="Tag: development" class="small" href="../Search/development.html">development</a>&nbsp;<a title="Tag: enterprise" class="small" href="../Search/enterprise.html">enterprise</a>&nbsp;<a title="Tag: responsibility" class="small" href="../Search/responsibility.html">responsibility</a>&nbsp;<a title="Tag: testing" class="small" href="../Search/testing.html">testing</a>&nbsp;<a title="Tag: ai" class="small" href="../Search/ai.html">ai</a>&nbsp;<a title="Tag: algorithms" class="small" href="../Search/algorithms.html">algorithms</a>&nbsp;</h5>
-    <div class="share"><a href="../Permalinks/686f1de9-562f-4ef5-a3ac-4a75da9373f8.html" rel="bookmark">Permalink</a></div>
-</div><hr/><div>
-    <h3>Programmers -- Take Responsibility for Your Program’s Output</h3>
-    <h5>Posted by bsstahl on 2013-03-03 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <p>You have probably seen the discussion of the “Keep Calm and Rape a Lot” T-Shirts that were made available, for a time, by an Amazon reseller.  These shirts were one of several thousand computer-generated designs offered for sale on Amazon, to be printed and shipped if anyone cared to buy one.  At first blush, and as some have pointed-out, it seems like a simple error. A verb list that contained the word “rape” was not properly vetted and therefore the offensive shirt promoting violent crime was offered for sale by mistake. No offense was intended, so, as long as the company takes the proper action of <a href="https://web.archive.org/web/20130429232420/http://www.solidgoldbomb.com/pages/our-apology">apologizing and removing the offending item</a>, all is well.  This sentiment seems to be summed-up by the <a href="https://web.archive.org/web/20130305012153/http://iam.peteashton.com/keep-calm-rape-tshirt-amazon/">well-read post by Pete Ashton</a> on the subject:</p>
-<blockquote>
-<p>Because these algorithms generally mimic decisions that used to be made directly by people we have a tendency to humanise the results and can easily be horrified by what we see. But some basic understanding of how these systems work can go a long way to alleviating this dissonance.</p>
-</blockquote>
-<p>However, I believe it is not nearly this simple.  For one thing, I wonder about how this offensive shirt was “discovered”.  Did somebody really stumble across it in the Amazon store, or, was its existence “leaked” to generate publicity.  I don’t know the answer to this question, but if it were the case that someone at the company knew it was there, and either did nothing or worse, used it for marketing purposes, that would invalidate the “…it was computer generated” defense.  However, in my mind, that defense doesn’t hold water for another reason.  That is, we know this can happen and have the responsibility to make sure it doesn’t.</p>
-<p><strong>The companies that use our software are responsible for the output of our programs</strong>.  If we are using a sequence of characters that could potentially form a word, those companies are responsible for the message that word conveys.  If our programs output a sequence of words that could potentially form a sentence, they are responsible for that message as well.  If the reasonable possibility exists that a message generated by these algorithms would be offensive, and visible to the public, failure to properly vet the message makes that company responsible for it.</p>
-<p>This fact is made even more critical when our customers are enterprise scale clients and we are building software for use by the general public. As an example, lets look at one of the common systems for creating airline reservations which has been in operation for decades.  This system presents to the consumer a six-character alphanumeric code known as the Record Locator Number. This identifier is used for the reservation by both automated and manual systems. What do you think would happen if you were making an airline reservation, and the response, either verbally, or in text, came back with the Record Locator “FATASS”?  How about “FUKOFF” or “UBITCH”?  If the programmers who created this system had just coded a random (or incrementing) set of any 6 characters, these letter combinations would have come up, probably multiple times by now because of the sheer volume of use.  However, the system creators knew this could happen and did what needed to be done to prevent sequences with meaning from being used.  As language changes and different letter combinations have different meanings, these policies need to be reviewed and amended to include additional letter combinations. Problems like this are not new and have been solved many times before, when the clients wanted them to be solved.</p>
-<p>Knowing that random combinations of words can result in meaningful, and potentially offensive sentences, we are responsible for the failure when they actually do, whether they happened “intentionally” or not.</p>
-
-    <h5>Tags: <a title="Tag: coding practices" class="small" href="../Search/coding-practices.html">coding practices</a>&nbsp;<a title="Tag: development" class="small" href="../Search/development.html">development</a>&nbsp;<a title="Tag: enterprise" class="small" href="../Search/enterprise.html">enterprise</a>&nbsp;<a title="Tag: responsibility" class="small" href="../Search/responsibility.html">responsibility</a>&nbsp;<a title="Tag: testing" class="small" href="../Search/testing.html">testing</a>&nbsp;</h5>
-    <div class="share"><a href="../Permalinks/20380740-06e6-4b0a-82ea-2d7ae4f368bc.html" rel="bookmark">Permalink</a></div>
-</div>
+              <h5>Tags: <a title="Tag: agile" class="small" href="../Search/agile.html">agile</a>&nbsp;<a title="Tag: antipattern" class="small" href="../Search/antipattern.html">antipattern</a>&nbsp;<a title="Tag: apache-kafka" class="small" href="../Search/apache-kafka.html">apache-kafka</a>&nbsp;<a title="Tag: api" class="small" href="../Search/api.html">api</a>&nbsp;<a title="Tag: apps" class="small" href="../Search/apps.html">apps</a>&nbsp;<a title="Tag: architecture" class="small" href="../Search/architecture.html">architecture</a>&nbsp;<a title="Tag: aspdotnet" class="small" href="../Search/aspdotnet.html">aspdotnet</a>&nbsp;<a title="Tag: ci_cd" class="small" href="../Search/ci_cd.html">ci_cd</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: coupling" class="small" href="../Search/coupling.html">coupling</a>&nbsp;<a title="Tag: event-driven" class="small" href="../Search/event-driven.html">event-driven</a>&nbsp;<a title="Tag: microservices" class="small" href="../Search/microservices.html">microservices</a>&nbsp;<a title="Tag: soa" class="small" href="../Search/soa.html">soa</a>&nbsp;</h5>
+              <div class="share"><a href="../Permalinks/082c3f8a-ac4a-4231-9962-01536167e4a5.html" rel="bookmark">Permalink</a></div>
             </div>
             <div class="col-md-4">
                 <div class="widgetzone"><div class="widget textbox"><h4>About the Author</h4><div class="content"><p><img style="float: left; padding: 0px 3px 0px 0px;" src="../Pics/bsstahl_left.gif" alt="Barry S. Stahl" width="95" /> <strong>Barry S. Stahl</strong> (he/him/his) - Barry is a .NET Software Engineer who has been creating business solutions for enterprise customers for more than 30 years. Barry is also an Election Integrity Activist, baseball and hockey fan, husband of one genius and father of another, and a 30+ year resident of Phoenix Arizona USA. When Barry is not traveling around the world to speak at Conferences, Code Camps and User Groups or to participate in GiveCamp events, he spends his days as a Solution Architect for <a href="https://grnh.se/ba048c6d1">Carvana</a> in Tempe AZ and his nights thinking about the next <a href="https://www.azgivecamp.org">AZGiveCamp</a> event where software creators come together to build websites and apps for some great non-profit organizations.</p>
@@ -129,11 +118,10 @@
             </div>
         </div>
     </div>
-    
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 </body>
-
 </html>
