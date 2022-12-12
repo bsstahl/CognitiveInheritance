@@ -35,7 +35,7 @@ The &quot;Critical C's&quot; are: **Context**, **Consistency**, **Contract**, **
 
 #### The Execution Context
 
-The **execution context** is the unit of work of all services. It represents the life-cycle of a single request, regardless of the details of how that request was received. So, whether an HTTP web request, or an asynchronous message from *Apache Kafka* or *Azure Service Bus*, the context we care about here is that of a single service processing that one message. Since, for reasons that will be discussed in a future article, there is no way to reliably make more than one change to system state within a single execution context, we must defend this context from the tendency to add additional state changes in order to maintain the reliability of our services.
+The **execution context** is the unit of work of all services. It represents the life-cycle of a single request, regardless of the details of how that request was received. So, whether an HTTP web request, or an asynchronous message from *Apache Kafka* or *Azure Service Bus*, the context we care about here is that of a single service processing that one message. Since, for reasons that will be discussed in a future article, there is no way to reliably make more than one change to system state within a single execution context, we must defend this context from the tendency to add additional state changes which would damage the reliability of our services.
 
 There are generally only two situations where it is ok to make more than one change to system state in a single execution context:
 
