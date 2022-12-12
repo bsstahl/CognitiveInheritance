@@ -1,7 +1,7 @@
 ---
 tags:
 - class
-- coding practices
+- coding-practices
 - development
 - solid
 - oop

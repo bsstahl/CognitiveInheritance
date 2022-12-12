@@ -4,7 +4,7 @@ tags:
 - algorithms
 - code camp
 - code sample
-- coding practices
+- coding-practices
 - conference
 - open source
 - optimization

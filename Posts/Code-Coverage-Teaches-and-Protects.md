@@ -5,7 +5,7 @@ tags:
 - assert
 - code analysis
 - code coverage
-- coding practices
+- coding-practices
 - csharp
 - ioc
 - testing

@@ -2,7 +2,7 @@
 tags:
 - csharp
 - class
-- coding practices
+- coding-practices
 - entity
 - entity framework
 - xml

@@ -1,6 +1,6 @@
 ---
 tags:
-- coding practices
+- coding-practices
 - community
 - conference
 - development

@@ -4,7 +4,7 @@ tags:
 - api
 - class
 - code sample
-- coding practices
+- coding-practices
 - community
 - csharp
 - development

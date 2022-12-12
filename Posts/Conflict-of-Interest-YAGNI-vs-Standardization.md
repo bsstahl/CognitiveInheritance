@@ -2,7 +2,7 @@
 tags:
 - yagni
 - standardization
-- coding practices
+- coding-practices
 - code analysis
 - tdd
 - unit testing

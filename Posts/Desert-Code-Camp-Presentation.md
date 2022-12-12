@@ -2,7 +2,7 @@
 tags:
 - abstraction
 - agile
-- coding practices
+- coding-practices
 - community
 - conference
 - encapsulation

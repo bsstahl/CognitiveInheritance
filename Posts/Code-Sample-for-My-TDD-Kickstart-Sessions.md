@@ -4,7 +4,7 @@ tags:
 - agile
 - assert
 - code camp
-- coding practices
+- coding-practices
 - community
 - conference
 - csharp

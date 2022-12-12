@@ -2,7 +2,7 @@
 tags:
 - abstraction
 - code sample
-- coding practices
+- coding-practices
 - community
 - conference
 - development

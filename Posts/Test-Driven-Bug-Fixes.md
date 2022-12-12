@@ -1,7 +1,7 @@
 ---
 tags:
 - agile
-- coding practices
+- coding-practices
 - professional development
 - tdd
 - testing

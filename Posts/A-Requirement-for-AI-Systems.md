@@ -4,7 +4,7 @@ tags:
 - algorithms
 - ai
 - cloud
-- coding practices
+- coding-practices
 - decision
 - interface
 - pattern

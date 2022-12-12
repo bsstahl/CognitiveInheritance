@@ -2,14 +2,14 @@
 tags:
 - abstraction
 - agile
-- coding practices
+- coding-practices
 - microservices
 - optimization
 - pattern
 - principle
 - flexibility
 - yagni
-- event driven
+- event-driven
 menuorder: 0
 id: 578752d7-225b-4510-8de2-2c35ded2eb84
 author: bsstahl

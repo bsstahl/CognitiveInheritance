@@ -1,6 +1,6 @@
 ---
 tags:
-- asp.net
+- aspdotnet
 menuorder: 0
 id: cd8c3b37-e298-4768-88b8-c2e2de937adf
 author: bsstahl

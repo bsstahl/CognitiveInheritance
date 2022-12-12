@@ -7,7 +7,7 @@ tags:
 - code camp
 - code contracts
 - code sample
-- coding practices
+- coding-practices
 - conference
 - csharp
 - enterprise library

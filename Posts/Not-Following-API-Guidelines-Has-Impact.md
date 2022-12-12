@@ -1,7 +1,7 @@
 ---
 tags:
 - api
-- coding practices
+- coding-practices
 - framework
 - interface
 - standardization

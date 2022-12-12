@@ -1,6 +1,6 @@
 ---
 tags:
-- coding practices
+- coding-practices
 menuorder: 0
 id: b1c44e28-3037-44b4-9f75-7223944d1cb0
 author: bsstahl

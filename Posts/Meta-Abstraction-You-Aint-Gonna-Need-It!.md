@@ -2,7 +2,7 @@
 tags:
 - abstraction
 - apps
-- coding practices
+- coding-practices
 - development
 - entity
 - flexibility

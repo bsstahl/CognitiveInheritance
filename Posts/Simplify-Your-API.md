@@ -1,7 +1,7 @@
 ---
 tags:
 - api
-- coding practices
+- coding-practices
 - code sample
 - development
 - generics

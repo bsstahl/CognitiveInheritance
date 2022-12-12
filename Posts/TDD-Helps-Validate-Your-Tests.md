@@ -2,7 +2,7 @@
 tags:
 - code analysis
 - code coverage
-- coding practices
+- coding-practices
 - tdd
 - testing
 - unit testing

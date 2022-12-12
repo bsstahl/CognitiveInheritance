@@ -1,6 +1,6 @@
 ---
 tags:
-- coding practices
+- coding-practices
 - development
 - enterprise
 - responsibility
