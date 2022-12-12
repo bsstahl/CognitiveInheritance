@@ -69,9 +69,9 @@ Development teams should have conversations around **Context** that are primaril
 
 * What processes will we as a development team implement to track and manage the technical debt of having business processes implemented in a less-reliable way?
 
-* What processes will we as a development team implement to be sure that any future less-reliable implementations of business functionality are made with consideration and understanding of the debt being created and a plan to pay it off.
+* What processes will we implement to be sure that any future less-reliable implementations of business functionality are made with consideration and understanding of the debt being created and a plan to pay it off.
 
-* What processes will we as a development team implement to be sure that any existing or future less-reliable implementations of business functionality are documented, understood by, and prioritized by the business process owners.
+* What processes will we implement to be sure that any existing or future less-reliable implementations of business functionality are documented, understood by, and prioritized by the business process owners.
 
 #### Next Up - Consistency
 
