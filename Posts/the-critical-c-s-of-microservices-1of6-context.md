@@ -14,12 +14,13 @@ tags:
 - event-driven
 - microservices
 - soa
-categories: []
+categories:
+- Development
 menuorder: 0
 id: 082c3f8a-ac4a-4231-9962-01536167e4a5
-title: The Critical C's of Microservices
-description: A series of conversations that development teams should have prior to building event driven or microservice architectures
-ispublished: false
+title: The Critical C's of Microservices - Context
+description: A series of conversations that development teams should have around building event driven or microservice architectures
+ispublished: true
 showinlist: false
 publicationdate: 2022-12-12T07:00:00Z
 lastmodificationdate: 2022-12-12T07:00:00Z
@@ -48,7 +49,7 @@ Ultimately, to maintain the reliability of our systems, we must be sure we are n
 
 {ImageLink:CTP%20Pattern%20-%20Never%20Add-On.png|Defend the Execution Context}
 
-We start with a RESTful service that updates a database and returns an appropriate response. This service makes only 1 change to system state so it can be built reliably. We then get a requirement for the system to also update a downstream dependency, say a Kafka topic. The default for many Technologists would be to just to add-on inside the service. That is, they might suggest that we should have the service update both the database and the topic. This would be an example of the Dual-Writes Anti-Pattern and will hurt both system *reliability* and *supportability*. Instead, the simplest solution that doesn't cause irreparable harm to our system is actually to trigger the downstream action off of the DB update. That is, we can use the **Outbox Pattern** or if the database supports it, **Change Data Capture** or a **Change Feed** to trigger a secondary process that produces the event message. Adding a deployment unit like this might make it feel like a more complicated solution, however it actually reduces the complexity of the initial service, avoids making a change to a working service, and will avoid creating reliability problems by not performing dual-writes.
+In these drawings we start with a RESTful service that updates a database and returns an appropriate response. This service makes only 1 change to system state so it can be built reliably. We then get a requirement for the system to also update a downstream dependency, say a Kafka topic. The default for many Technologists would be to just to add-on inside the service. That is, they might suggest that we should have the service update both the database and the topic. This would be an example of the Dual-Writes Anti-Pattern and will hurt both system *reliability* and *supportability*. Instead, the simplest solution that doesn't cause irreparable harm to our system is actually to trigger the downstream action off of the DB update. That is, we can use the **Outbox Pattern** or if the database supports it, **Change Data Capture** or a **Change Feed** to trigger a secondary process that produces the event message. Adding a deployment unit like this might make it feel like a more complicated solution, however it actually reduces the complexity of the initial service, avoids making a change to a working service, and will avoid creating reliability problems by not performing dual-writes.
 
 There are a few things to note here regarding atomic database transactions. An ACID-compliant update to a database represents a single change to system state. If we could make fully ACID-compliant changes across multiple data stores, or other boundaries like web services, the Dual-Writes Anti-Pattern would be much less of a problem. Unfortunately, distributed transactions cannot be used without severely impacting both scalability and performance and are not recommended. It should also be noted that, when talking about only 2 state changes, some threats to reliability may be reduced by being clever with our use of transactions. However, these tricks help us far less than one might think, and have severely diminishing returns when 3 or more state-changes are in-scope. Transactions, while good for keeping local data consistent, are not good for maintaining system reliability and are horrible for system scalability.
 
@@ -70,4 +71,4 @@ Development teams should have conversations around **Context** that are primaril
 
 #### Next Up - Consistency
 
-In the next article of this series we will look at **Eventual Consistency** and how it represents the reality of the world we live in.
+In the next article of this series we will look at **Consistency**, and see how **Eventual Consistency** represents the reality of the world we live in.

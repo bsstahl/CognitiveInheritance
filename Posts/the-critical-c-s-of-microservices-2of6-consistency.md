@@ -1,16 +1,29 @@
 ---
 author: bsstahl
-tags: []
-categories: []
+tags:
+- agile
+- antipattern
+- apache-kafka
+- api
+- apps
+- architecture
+- aspdotnet
+- ci_cd
+- coding-practices
+- coupling
+- event-driven
+- microservices
+- soa
+categories: [ ]
 menuorder: 0
-id: 310f2454-fbd7-4725-960e-3b5a17fec43d
-title: The Critical C's of Microservices
+id: 86685931-2951-4253-a923-563537481cee
+title: The Critical C's of Microservices - Consistency
 description: A series of conversations that development teams should have around building event driven or microservice architectures
-ispublished: true
+ispublished: false
 showinlist: false
-publicationdate: 2022-12-06T07:00:00Z
-lastmodificationdate: 2022-12-06T07:00:00Z
-slug: unpublished-proof
+publicationdate: 2022-12-13T07:00:00Z
+lastmodificationdate: 2022-12-13T07:00:00Z
+slug: critical-cs-of-microservices-2of6-consistency
 
 ---
 &quot;**The Critical C's of Microservices**&quot; are a series of conversations that development teams should have prior to building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building the systems and processes in a reliable and supportable way.
