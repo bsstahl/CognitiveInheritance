@@ -36,7 +36,7 @@ The world is eventually consistent. The sooner we get that through our heads and
 
 Data is consistent when it appears the same way when viewed from multiple perspectives. Our systems are said to be consistent when all of the data them is consistent. A system with strong consistency guarantees would be one where every actor, anywhere in the context of the application, would see the exact same value for any data element at any given time. A system that is *eventually consistent* is one with strong guarantees that the data will reach all intended targets, but much weaker guarantees about how long it might take to achieve data consistency.
 
-
+[TODO: ]
 
 Full consistency is impossible in a world where there is a finite speed of causation. Strong consistency is extremely difficult unless all of the data is housed in a single, ACID compliant data store, which of course, is a very bad idea when building scalable systems. Strong consistency, or anything more stringent than eventual consistency, may be appropriate when geo-replicating data stores (assuming the database server is designed for such a thing), but should not be implemented inside an application.
 
@@ -55,6 +55,12 @@ As an example, let's take a look at the 3 implementation diagrams below. In all 
 * **Implementation 3 - Eventually Consistent**: In the 3rd example, the DB is used directly by both the WorkOrder service, and as the source of changes to the topic. This scenario is reliable but only eventually consistent. That is, we know that both the DB and the topic will be updated since the WorkOrder service makes the DB update directly, and the reliable change feed from the DB instantiates a new execution context for the topic to be updated. This way, there is only a single change to system state made within an execution context, and we can know that they will happen reliably.
 
 Another example of a consistency smell might be when end-users insist that their UI should not return after they update something in an app, until the data is guaranteed to be consistent. I don't blame users for making these requests. After all, we trained them that the way to be sure that a system is reliable is to hit refresh until they see the data. In this situation, assuming we can't talk the users out of it, our best path is to make the UI wait until our polling, or a notification mechanism, identifies that the data is now consistent. I think this is a pretty rude thing to do to our users, but if they insist on it, I can only advise them against it. I will not destroy the scalability of systems I design, and add complexity to these systems that the developers will need to maintain forever, by simulating consistency deeper inside the app. The internals of the application should be considered eventually consistent at all times and we need to get used to thinking about it in this way.
+
+#### Goals of the Conversation
+
+Development teams should have conversations around **Consistency** that are primarily focused around [TODO]. These conversations should include answering questions like:
+
+* [TODO: Add questions here]
 
 #### Next Up - Contract
 

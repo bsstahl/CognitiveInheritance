@@ -44,6 +44,12 @@ Even if you're not ready to jump into using automated experimentation tools in p
 
 Regardless of how we test our systems, it is important that we do everything we can to build systems that will heal themselves without the need for us to intervene every time a failure occurs. As a result, I highly recommend using asynchronous messaging patterns whenever possible. The asynchrony of these tools allow our services to be "temporally decoupled" from their dependencies. As a result, if a container fails and is restarted by Kubernetes, any message in process is rolled-back onto the queue or topic, and the system can pick right up where it left off.
 
+#### Goals of the Conversation
+
+Development teams should have conversations around **Chaos** that are primarily focused around [TODO]. These conversations should include answering questions like:
+
+* [TODO: Add questions here]
+
 #### Next Up - Competencies
 
 In the next article of this series we will look at **Competencies** and how we should focus at least as much on what we build as how we build it.

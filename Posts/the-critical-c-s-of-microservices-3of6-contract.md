@@ -40,6 +40,12 @@ We need to take great care to defend these internal streams. Ideally, only 1 ser
 
 Similarly, our services should make proper use of upstream integration models. We need to understand what level of compatibility we can expect and how we will be notified of changes. We should use these data paths as much as possible to bring external data locally to our services, in exactly the form that our service needs it in, so that each of our services can own its own data for both reliability and efficiency. Of course, these local stores must be read-only. We need to publish change requests back to the *System of Record* to make any changes to data sourced by those systems.
 
+#### Goals of the Conversation
+
+Development teams should have conversations around **Contract** that are primarily focused around [TODO]. These conversations should include answering questions like:
+
+* [TODO: Add questions here]
+
 #### Next Up - Chaos
 
 In the next article of this series we will look at **Chaos** and how we can use thought experiments and existing tools to help improve our system's reliability.

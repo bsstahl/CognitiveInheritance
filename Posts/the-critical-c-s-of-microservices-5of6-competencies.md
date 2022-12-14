@@ -32,6 +32,12 @@ The &quot;Critical C's&quot; are: **Context**, **Consistency**, **Contract**, **
 
 #### Competencies
 
+#### Goals of the Conversation
+
+Development teams should have conversations around **Competencies** that are primarily focused around [TODO]. These conversations should include answering questions like:
+
+* [TODO: Add questions here]
+
 #### Next Up - Coalescence
 
 In the next article of this series we will look at **Coalescence** and how we should work to bring all of the data together for our operations & support engineers.

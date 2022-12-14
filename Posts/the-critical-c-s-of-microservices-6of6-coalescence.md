@@ -32,3 +32,8 @@ The &quot;Critical C's&quot; are: **Context**, **Consistency**, **Contract**, **
 
 #### Coalescence
 
+#### Goals of the Conversation
+
+Development teams should have conversations around **Coalescence** that are primarily focused around [TODO]. These conversations should include answering questions like:
+
+* [TODO: Add questions here]
