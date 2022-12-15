@@ -21,12 +21,12 @@ title: The Critical C's of Microservices - Contract
 description: A series of conversations that development teams should have around building event driven or microservice architectures
 ispublished: false
 showinlist: false
-publicationdate: 2022-12-13T07:00:00Z
-lastmodificationdate: 2022-12-13T07:00:00Z
+publicationdate: 2022-12-26T07:00:00Z
+lastmodificationdate: 2022-12-26T07:00:00Z
 slug: critical-cs-of-microservices-3of6-contract
 
 ---
-&quot;**The Critical C's of Microservices**&quot; are a series of conversations that development teams should have around building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building the systems and processes in a reliable and supportable way.
+&quot;**The Critical C's of Microservices**&quot; are a series of conversations that development teams should have around building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way.
 
 The &quot;Critical C's&quot; are: **Context**, **Consistency**, **Contract**, **Chaos**, **Competencies** and **Coalescence**. Each of these topics will be covered in detail in this series of articles. This is article 3 of the 6, and covers the topic of **Contract**.
 
