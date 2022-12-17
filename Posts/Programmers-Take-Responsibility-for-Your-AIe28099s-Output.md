@@ -7,6 +7,7 @@ tags:
 - testing
 - ai
 - algorithms
+- ethics
 menuorder: 0
 id: 686f1de9-562f-4ef5-a3ac-4a75da9373f8
 author: bsstahl
