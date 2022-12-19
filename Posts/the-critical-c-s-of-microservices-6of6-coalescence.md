@@ -14,15 +14,16 @@ tags:
 - event-driven
 - microservices
 - soa
-categories: [ ]
+categories:
+- Development
 menuorder: 0
 id: a0280db3-6d32-4c89-81c4-10ce2cd3522d
 title: The Critical C's of Microservices - Coalescence
 description: A series of conversations that development teams should have around building event driven or microservice architectures
 ispublished: false
 showinlist: false
-publicationdate: 2022-12-13T07:00:00Z
-lastmodificationdate: 2022-12-13T07:00:00Z
+publicationdate: 2023-01-16T07:00:00Z
+lastmodificationdate: 2023-01-16T07:00:00Z
 slug: critical-cs-of-microservices-6of6-coalescence
 
 ---

@@ -14,12 +14,13 @@ tags:
 - event-driven
 - microservices
 - soa
-categories: [ ]
+categories:
+- Development
 menuorder: 0
 id: 86685931-2951-4253-a923-563537481cee
 title: The Critical C's of Microservices - Consistency
 description: A series of conversations that development teams should have around building event driven or microservice architectures
-ispublished: false
+ispublished: true
 showinlist: false
 publicationdate: 2022-12-19T07:00:00Z
 lastmodificationdate: 2022-12-19T07:00:00Z

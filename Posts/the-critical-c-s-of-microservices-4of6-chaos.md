@@ -14,15 +14,16 @@ tags:
 - event-driven
 - microservices
 - soa
-categories: [ ]
+categories:
+- Development
 menuorder: 0
 id: 0d794105-ef08-4465-b806-4a8eff7523c7
 title: The Critical C's of Microservices - Chaos
 description: A series of conversations that development teams should have around building event driven or microservice architectures
 ispublished: false
 showinlist: false
-publicationdate: 2022-12-13T07:00:00Z
-lastmodificationdate: 2022-12-13T07:00:00Z
+publicationdate: 2023-01-02T07:00:00Z
+lastmodificationdate: 2023-01-02T07:00:00Z
 slug: critical-cs-of-microservices-4of6-chaos
 
 ---

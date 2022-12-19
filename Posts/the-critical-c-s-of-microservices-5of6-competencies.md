@@ -14,15 +14,16 @@ tags:
 - event-driven
 - microservices
 - soa
-categories: [ ]
+categories:
+- Development
 menuorder: 0
 id: a99861ed-9829-4110-9e2f-1e75efcb43a2
 title: The Critical C's of Microservices - Competencies
 description: A series of conversations that development teams should have around building event driven or microservice architectures
 ispublished: false
 showinlist: false
-publicationdate: 2022-12-13T07:00:00Z
-lastmodificationdate: 2022-12-13T07:00:00Z
+publicationdate: 2023-01-09T07:00:00Z
+lastmodificationdate: 2023-01-09T07:00:00Z
 slug: critical-cs-of-microservices-5of6-competencies
 
 ---

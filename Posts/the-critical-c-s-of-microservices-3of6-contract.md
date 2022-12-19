@@ -14,7 +14,8 @@ tags:
 - event-driven
 - microservices
 - soa
-categories: [ ]
+categories:
+- Development
 menuorder: 0
 id: d4b58b20-d4d7-4234-a828-4563d68db564
 title: The Critical C's of Microservices - Contract
