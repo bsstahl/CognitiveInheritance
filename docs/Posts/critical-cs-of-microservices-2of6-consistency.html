@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang="en">
     <head>
-        <!-- Template: Content Page -->
+        <!-- Template: Post Page -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     
-        <meta name="description" content="{Description}">
+        <meta name="description" content="The Critical C's of Microservices - Consistency, an article on Cognitive Inheritance.">
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -16,11 +16,10 @@
         <title>Cognitive Inheritance - The Application Development Experiences of an Enterprise Developer</title>
     </head>
     <body>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 <a class="navbar-brand" href="../index.html">Cognitive Inheritance</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
@@ -55,17 +54,15 @@
 </div>
 </nav>
 
-                    <header>The Application Development Experiences of an Enterprise Developer</header>
-                </div>
+                <header>The Application Development Experiences of an Enterprise Developer</header>
             </div>
+        </div>
 
         <div class="row">
             <div class="col-md-8">
-                <h1>Tag: antipattern</h1>
-                <div>
-    <h3>The Critical C's of Microservices - Consistency</h3>
-    <h5>Posted by bsstahl on 2022-12-19 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <p>&quot;<strong>The Critical C's of Microservices</strong>&quot; are a series of conversations that development teams should have around building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way.</p>
+              <h1>The Critical C's of Microservices - Consistency</h1>
+              <h5>Posted by bsstahl on 2022-12-19 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+              <p>&quot;<strong>The Critical C's of Microservices</strong>&quot; are a series of conversations that development teams should have around building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way.</p>
 <p>The &quot;Critical C's&quot; are: <strong>Context</strong>, <strong>Consistency</strong>, <strong>Contract</strong>, <strong>Chaos</strong>, <strong>Competencies</strong> and <strong>Coalescence</strong>. Each of these topics will be covered in detail in this series of articles. This is article 2 of the 6, and covers the topic of <strong>Consistency</strong>.</p>
 <h4>Consistency</h4>
 <p>The world is eventually consistent. The sooner we get that through our heads and start expecting our systems to act like it, the fewer problems, we will have. In fact, I'll go out on a limb and say that most of the problems in building and maintaining microservice architectures are the result of failing to fully embrace eventual consistency from the start.</p>
@@ -96,113 +93,8 @@
 <h4>Next Up - Contract</h4>
 <p>In the next article of this series we will look at <strong>Contract</strong> and how we can leverage contracts to make our systems more reliable while still maintaining our agility.</p>
 
-    <h5>Tags: <a title="Tag: agile" class="small" href="../Search/agile.html">agile</a>&nbsp;<a title="Tag: antipattern" class="small" href="../Search/antipattern.html">antipattern</a>&nbsp;<a title="Tag: apache-kafka" class="small" href="../Search/apache-kafka.html">apache-kafka</a>&nbsp;<a title="Tag: api" class="small" href="../Search/api.html">api</a>&nbsp;<a title="Tag: apps" class="small" href="../Search/apps.html">apps</a>&nbsp;<a title="Tag: architecture" class="small" href="../Search/architecture.html">architecture</a>&nbsp;<a title="Tag: aspdotnet" class="small" href="../Search/aspdotnet.html">aspdotnet</a>&nbsp;<a title="Tag: ci_cd" class="small" href="../Search/ci_cd.html">ci_cd</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: coupling" class="small" href="../Search/coupling.html">coupling</a>&nbsp;<a title="Tag: event-driven" class="small" href="../Search/event-driven.html">event-driven</a>&nbsp;<a title="Tag: microservices" class="small" href="../Search/microservices.html">microservices</a>&nbsp;<a title="Tag: soa" class="small" href="../Search/soa.html">soa</a>&nbsp;</h5>
-    <div class="share"><a href="../Permalinks/86685931-2951-4253-a923-563537481cee.html" rel="bookmark">Permalink</a></div>
-</div><hr/><div>
-    <h3>The Critical C's of Microservices - Context</h3>
-    <h5>Posted by bsstahl on 2022-12-12 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <p>&quot;<strong>The Critical C's of Microservices</strong>&quot; are a series of conversations that development teams should have around building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way.</p>
-<p>The &quot;Critical C's&quot; are: <strong>Context</strong>, <strong>Consistency</strong>, <strong>Contract</strong>, <strong>Chaos</strong>, <strong>Competencies</strong> and <strong>Coalescence</strong>. Each of these topics will be covered in detail in this series of articles, starting with <strong>Context</strong>.</p>
-<h3>Context</h3>
-<h4>The Execution Context</h4>
-<p>The <strong>execution context</strong> is the unit of work of all services. It represents the life-cycle of a single request, regardless of the details of how that request was received. So, whether an HTTP web request, or an asynchronous message from <em>Apache Kafka</em> or <em>Azure Service Bus</em>, the context we care about here is that of a single service processing that one message. Since, for reasons that will be discussed in a future article, there is no way to reliably make more than one change to system state within a single execution context, we must defend this context from the tendency to add additional state changes which would damage the reliability of our services.</p>
-<p>There are generally only two situations where it is ok to make more than one change to system state in a single execution context:</p>
-<ol>
-<li><p>When the first change is <a href="https://en.wikipedia.org/wiki/Idempotence" title="Idempotence is the ability to execute a task an arbitrary number of times (&gt;1) and have the resulting state of the system be the same as if the task was executed once.">idempotent</a> so we can rollback the message and try again later without bad things happening due to duplication. An example of this is a database <strong>Upsert</strong> where all of the data, including keys, is supplied. In this case, the 1st time we execute the request, we might insert the record in the DB. If a later change fails in the same context and we end up receiving the same message a 2nd time, the resulting update using the same data will leave the system in the same state as if the request was only executed once. Since this <em>idempotent</em> operation can be executed as many times as necessary without impacting the ultimate state of the system, we can make other changes after this one and still rollback and retry the request if a subsequent operation fails, without damaging the system. Services that are <em>idempotent</em> are much easier to orchestrate reliably, so much so that <em>idempotence</em> is considered a highly-desireable feature of microservices.</p>
-</li>
-<li><p>When the second change is understood to be less-reliable. An example of this is logging. We don't want to fail a business-process due to failures in logging, so we accept that our logging, and certain other technical processes, may be less-reliable than our business processes. It is <strong>rarely</strong> ok for a business process to be less-reliable in this way. Implementations that make certain business features less-reliable should be identified, documented, and discussed with an eye toward repaying what is likely to be technical debt.</p>
-</li>
-</ol>
-<h4>Avoiding Dual-Writes</h4>
-<p>Ultimately, to maintain the reliability of our systems, we must be sure we are never trying to make more than one reliable change to system state in a single execution context. This is a very different way of thinking than most developers are used to. In fact, I would say it is the opposite of how many of us have been taught to think about these types of problems. Developers value simplicity, and rightfully so. Unfortunately, problems where we already have a service running that can host logic we need to add, make it <strong>seem like</strong> the simplest solution is to just &quot;add-on&quot; the new logic to the existing code. The truth of the matter is far different. Let's look at an example:</p>
-<p><img src="../Images/CTP%20Pattern%20-%20Never%20Add-On.png" alt="Defend the Execution Context" /></p>
-<p>In these drawings we start with a RESTful service that updates a database and returns an appropriate response. This service makes only 1 change to system state so it can be built reliably.</p>
-<p>The next two drawings show ways of implementing a new requirement for the system to update a downstream dependency, say a Kafka topic, in addition to the database update. The default for many Technologists would be to just to add-on inside the service. That is, they might suggest that we should have the service update both the database and the topic as shown in the second drawing. This would be an example of the Dual-Writes Anti-Pattern and would hurt both system <em>reliability</em> and <em>supportability</em>.</p>
-<p>Instead, the simplest solution that doesn't harm our system's reliability is actually to trigger the downstream action off of the DB update. That is, we can use the <strong>Outbox Pattern</strong> or if the database supports it, <strong>Change Data Capture</strong> or a <strong>Change Feed</strong> to trigger a secondary process that produces the event message. Adding a deployment unit like this might make it feel like a more complicated solution, however it actually reduces the complexity of the initial service, avoids making a change to a working service, and will avoid creating reliability problems by not performing dual-writes.</p>
-<p>There are a few things to note here regarding atomic database transactions. An ACID-compliant update to a database represents a single change to system state. If we could make fully ACID-compliant changes across multiple data stores, or other boundaries like web services, the Dual-Writes Anti-Pattern would be much less of a problem. Unfortunately, distributed transactions cannot be used without severely impacting both scalability and performance and are not recommended. It should also be noted that, when talking about only 2 state changes, some threats to reliability may be reduced by being clever with our use of transactions. However, these tricks help us far less than one might think, and have severely diminishing returns when 3 or more state-changes are in-scope. Transactions, while good for keeping local data consistent, are not good for maintaining system reliability and are horrible for system scalability.</p>
-<h4>Goals of the Conversation</h4>
-<p>Development teams should have conversations around <strong>Context</strong> that are primarily focused around the tools and techniques that they intend to use to avoid the Dual-Writes Anti-Pattern. These conversations should include answering questions like:</p>
-<ul>
-<li><p>What database technologies will we use and how can we leverage these tools to create downstream events based on changes to the database state?</p>
-</li>
-<li><p>Which of our services are currently idempotent and which ones could reasonably made so? How can we leverage our idempotent services to improve system reliability?</p>
-</li>
-<li><p>Do we have any services right now that contain business processes implemented in a less-reliable way? If so, pulling this functionality out into their own microservices might be a good starting point for decomposition.</p>
-</li>
-<li><p>What processes will we as a development team implement to track and manage the technical debt of having business processes implemented in a less-reliable way?</p>
-</li>
-<li><p>What processes will we implement to be sure that any future less-reliable implementations of business functionality are made with consideration and understanding of the debt being created and a plan to pay it off.</p>
-</li>
-<li><p>What processes will we implement to be sure that any existing or future less-reliable implementations of business functionality are documented, understood by, and prioritized by the business process owners.</p>
-</li>
-</ul>
-<h4>Next Up - Consistency</h4>
-<p>In the next article of this series we will look at <strong>Consistency</strong>, and see how <strong>Eventual Consistency</strong> represents the reality of the world we live in.</p>
-
-    <h5>Tags: <a title="Tag: agile" class="small" href="../Search/agile.html">agile</a>&nbsp;<a title="Tag: antipattern" class="small" href="../Search/antipattern.html">antipattern</a>&nbsp;<a title="Tag: apache-kafka" class="small" href="../Search/apache-kafka.html">apache-kafka</a>&nbsp;<a title="Tag: api" class="small" href="../Search/api.html">api</a>&nbsp;<a title="Tag: apps" class="small" href="../Search/apps.html">apps</a>&nbsp;<a title="Tag: architecture" class="small" href="../Search/architecture.html">architecture</a>&nbsp;<a title="Tag: aspdotnet" class="small" href="../Search/aspdotnet.html">aspdotnet</a>&nbsp;<a title="Tag: ci_cd" class="small" href="../Search/ci_cd.html">ci_cd</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: coupling" class="small" href="../Search/coupling.html">coupling</a>&nbsp;<a title="Tag: event-driven" class="small" href="../Search/event-driven.html">event-driven</a>&nbsp;<a title="Tag: microservices" class="small" href="../Search/microservices.html">microservices</a>&nbsp;<a title="Tag: soa" class="small" href="../Search/soa.html">soa</a>&nbsp;</h5>
-    <div class="share"><a href="../Permalinks/082c3f8a-ac4a-4231-9962-01536167e4a5.html" rel="bookmark">Permalink</a></div>
-</div><hr/><div>
-    <h3>Identifying the Extraneous Publishing AntiPattern</h3>
-    <h5>Posted by bsstahl on 2022-08-08 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <p>What do you do when a dependency of one of your components needs data, ostensibly from your component, that your component doesn't actually need itself?</p>
-<p>Let's think about an example. Suppose our problem domain (the big black box in the drawings below) uses some data from 3 different data sources (labeled Source A, B &amp; C in the drawings). There is also a downstream dependency that needs data from the problem domain, as well as from sources B &amp; C. Some of the data required by the downstream dependency are not needed by, or owned by, the problem domain.</p>
-<p>There are 2 common implementations discussed now, and 1 slightly less obvious one discussed later in this article. We could:</p>
-<ol>
-<li>Pass-through the needed values on the output from our problem domain. This is the default option in many environments.</li>
-<li>Force the downstream to take additional dependencies on sources B &amp; C</li>
-</ol>
-<p>Note: In the worst of these cases, the data from one or more of these sources is not needed at all in the problem domain.</p>
-<h2>Option 1 - Increase Stamp Coupling</h2>
-<p>The most common choice is for the problem domain to publish all data that it is system of record for, as well as passing-through data needed by the downstream dependencies from the other sources. Since we know that a dependency needs the data, we simply provide it as part of the output of the problem domain system.</p>
-<p><img src="../Images/Reducing Stamp Coupling - Coupled Data Feed - 800x314.png" alt="Coupled Data Feed" /></p>
-<h3>Option 1 Advantages</h3>
-<ul>
-<li>The downstream systems only needs to take a dependency on a single data source.</li>
-</ul>
-<h3>Option 1 Disadvantages</h3>
-<ul>
-<li>Violates the Single Responsibility Principle because the problem domain may need to change for reasons the system doesn't care about. This can occur if a upstream producer adds or changes data, or a downstream consumer needs additional or changed data.</li>
-<li>The problem domain becomes the de-facto system of record for data it doesn't own. This may cause downstream consumers to be blocked by changes important to the consumers but not the problem domain. It also means that the provenance of the data is obscured from the consumer.</li>
-<li>Problems incurred by upstream data sources are exposed in the problem domain rather than in the dependent systems, irrespective of where the problem occurs or whether that problem actually impacts the problem domain. That is, the owners of the system in the problem domain become the &quot;one neck to wring&quot; for problems with the data, regardless of whether the problem is theirs, or they even care about that data.</li>
-</ul>
-<p>I refer to this option as an implementation of the <strong>Extraneous Publishing Antipattern</strong> (Thanks to <a href="https://twitter.com/jcnusz">John Nusz</a> for the naming suggestion). When this antipattern is used it will eventually cause significant problems for both the problem domain and its consumers as they evolve independently and the needs of each system change. The problem domain will be stuck with both their own requirements, and the requirements of their dependencies. The dependent systems meanwhile will be stuck waiting for changes in the upstream data provider. These changes will have no priority in that system because the changes are not needed in that domain and are not cared about by that product's ownership.</p>
-<p>The relationship between two components created by a shared data contract is known as <strong>stamp coupling</strong>. Like any form of coupling, we should attempt to minimize it as much as possible between components so that we don't create hard dependencies that reduce our agility.</p>
-<h2>Option 2 - Multiplicative Dependencies</h2>
-<p>This option requires each downstream system to take a dependency on every system of record whose data it needs, regardless of what upstream data systems may already be utilizing that data source.</p>
-<p><img src="../Images/Reducing Stamp Coupling - Direct Dependencies - 800x544.png" alt="Direct Dependencies" /></p>
-<h3>Option 2 Advantages</h3>
-<ul>
-<li>Each system publishes only that information for which it is system of record, along with any necessary identifiers.</li>
-<li>Each dependency gets its data directly from the system of record without concern for intermediate actors.</li>
-</ul>
-<h3>Option 2 Disadvantages</h3>
-<ul>
-<li>A combinatorial explosion of dependencies is possible since each system has to take dependencies on every system it needs data from. In some cases, this means that the primary systems will have a huge number of dependencies.</li>
-</ul>
-<p>While there is nothing inherently wrong with having a large number of repeated dependencies within the broader system, it can still cause difficulties in managing the various products when the dependency graph starts to get unwieldy. We've seen similar problems in package-management and other dependency models before. However, there is a more common problem when we prematurely optimize our systems. If we optimize prematurely, we can create artifacts that we need to support forever, that create unnecessary complexity. As a result, I tend to use option 2 until the number of dependencies starts to grow. At that point, when the dependency graph starts to get out of control, we should look for another alternative.</p>
-<h2>Option 3 - Shared Aggregation Feed</h2>
-<p>Fortunately, there is a third option that may not be immediately apparent. We can get the best of both worlds, and limit the impact of the disadvantages described above, by moving the aggregation of the data to a separate system. In fact, depending on the technologies used, this aggregation may be able to be done using an infrastructure component that is a low-code solution less likely to have reliability concerns.</p>
-<p>In this option, each system publishes only the data for which it is system of record, as in option 1 above. However, instead of every system having to take a direct dependency on all of the upstream systems, a separate component is used to create a shared feed that represents the aggregation of the data from all of the sources.</p>
-<p><img src="../Images/Reducing Stamp Coupling - Aggregated Data Feed - 800x276.png" alt="Aggregated Data Feed" /></p>
-<h3>Option 3 Advantages</h3>
-<ul>
-<li>Each system publishes only that information for which it is system of record, along with any necessary identifiers.</li>
-<li>The downstream systems only needs to take a dependency on a single data source.</li>
-<li>A shared ownership can be arranged for the aggregation source that does not put the burden entirely on a single domain team.</li>
-</ul>
-<h3>Option 3 Disadvantages</h3>
-<ul>
-<li>The aggregation becomes the de-facto system of record for data it doesn't own, though that fact is anticipated and hopefully planned for. The ownership of this aggregation needs to be well-defined, potentially even shared among the teams that provide data for the aggregation. This still means though that the provenance of the data is obscured from the consumer.</li>
-<li>Problems incurred by upstream data sources are exposed in the aggregator rather than in the dependent systems, irrespective of where the problem occurs. That is, the owners of the aggregation system become the &quot;one neck to wring&quot; for problems with the data. However, as described above, that ownership can be shared among the teams that own the data sources.</li>
-</ul>
-<p>It should be noted that in any case, regardless of implementation, a mechanism for correlating data across the feeds will be required. That is, the entity being described will need either a common identifier, or a way to translate the identifiers from one system to the others so that the system can match the data for the same entities appropriately.</p>
-<p>You'll notice that the aggregation system described in this option suffers from some of the same disadvantages as the other two options. The biggest difference however is that the sole purpose of this tool is to provide this aggregation. As a result, we handle all of these drawbacks in a domain that is entirely built for this purpose. Our business services remain focused on our business problems, and we create a special domain for the purpose of this data aggregation, with development processes that serve that purpose. In other words, we avoid expanding the definition of our problem domain to include the data aggregation as well. By maintaining each component's single responsibility in this way, we have the best chance of remaining agile, and not losing velocity due to extraneous concerns like unnecessary data dependencies.</p>
-<h2>Implementation</h2>
-<p>There are a number of ways we can perform the aggregation described in option 3.  Certain databases such as MongoDb and CosmosDb provide mechanisms that can be used to aggregate multiple data elements. There are also streaming data implementations which include tools for joining multiple streams, such as Apache Kafka's <em>kSQL</em>. In future articles, I will explore some of these methods for minimizing stamp coupling and avoiding the Extraneous Publishing AntiPattern.</p>
-
-    <h5>Tags: <a title="Tag: agile" class="small" href="../Search/agile.html">agile</a>&nbsp;<a title="Tag: antipattern" class="small" href="../Search/antipattern.html">antipattern</a>&nbsp;<a title="Tag: apache-kafka" class="small" href="../Search/apache-kafka.html">apache-kafka</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: coupling" class="small" href="../Search/coupling.html">coupling</a>&nbsp;<a title="Tag: data-structures" class="small" href="../Search/data-structures.html">data-structures</a>&nbsp;<a title="Tag: database" class="small" href="../Search/database.html">database</a>&nbsp;<a title="Tag: development" class="small" href="../Search/development.html">development</a>&nbsp;<a title="Tag: ksql" class="small" href="../Search/ksql.html">ksql</a>&nbsp;<a title="Tag: microservices" class="small" href="../Search/microservices.html">microservices</a>&nbsp;</h5>
-    <div class="share"><a href="../Permalinks/ea36d928-bb1c-4e06-95b0-de60a470c389.html" rel="bookmark">Permalink</a></div>
-</div>
+              <h5>Tags: <a title="Tag: agile" class="small" href="../Search/agile.html">agile</a>&nbsp;<a title="Tag: antipattern" class="small" href="../Search/antipattern.html">antipattern</a>&nbsp;<a title="Tag: apache-kafka" class="small" href="../Search/apache-kafka.html">apache-kafka</a>&nbsp;<a title="Tag: api" class="small" href="../Search/api.html">api</a>&nbsp;<a title="Tag: apps" class="small" href="../Search/apps.html">apps</a>&nbsp;<a title="Tag: architecture" class="small" href="../Search/architecture.html">architecture</a>&nbsp;<a title="Tag: aspdotnet" class="small" href="../Search/aspdotnet.html">aspdotnet</a>&nbsp;<a title="Tag: ci_cd" class="small" href="../Search/ci_cd.html">ci_cd</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: coupling" class="small" href="../Search/coupling.html">coupling</a>&nbsp;<a title="Tag: event-driven" class="small" href="../Search/event-driven.html">event-driven</a>&nbsp;<a title="Tag: microservices" class="small" href="../Search/microservices.html">microservices</a>&nbsp;<a title="Tag: soa" class="small" href="../Search/soa.html">soa</a>&nbsp;</h5>
+              <div class="share"><a href="../Permalinks/86685931-2951-4253-a923-563537481cee.html" rel="bookmark">Permalink</a></div>
             </div>
             <div class="col-md-4">
                 <div class="widgetzone"><div class="widget textbox"><h4>About the Author</h4><div class="content"><p><img style="float: left; padding: 0px 3px 0px 0px;" src="../Pics/bsstahl_left.gif" alt="Barry S. Stahl" width="95" /> <strong>Barry S. Stahl</strong> (he/him/his) - Barry is a .NET Software Engineer who has been creating business solutions for enterprise customers for more than 30 years. Barry is also an Election Integrity Activist, baseball and hockey fan, husband of one genius and father of another, and a 30+ year resident of Phoenix Arizona USA. When Barry is not traveling around the world to speak at Conferences, Code Camps and User Groups or to participate in GiveCamp events, he spends his days as a Solution Architect for <a href="https://grnh.se/ba048c6d1">Carvana</a> in Tempe AZ and his nights thinking about the next <a href="https://www.azgivecamp.org">AZGiveCamp</a> event where software creators come together to build websites and apps for some great non-profit organizations.</p>
@@ -221,11 +113,10 @@
             </div>
         </div>
     </div>
-    
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 </body>
-
 </html>
