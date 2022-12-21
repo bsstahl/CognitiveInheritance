@@ -29,7 +29,7 @@ slug: critical-cs-of-microservices-4of6-chaos
 ---
 &quot;**The Critical C's of Microservices**&quot; are a series of conversations that development teams should have around building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way.
 
-The &quot;Critical C's&quot; are: **Context**, **Consistency**, **Contract**, **Chaos**, **Competencies** and **Coalescence**. Each of these topics will be covered in detail in this series of articles. This is article 4 of the 6, and covers the topic of **Chaos**.
+The &quot;Critical C's&quot; are: **Context**, **Consistency**, **Contract**, **Chaos**, **Competencies** and **Coalescence**. Each of these topics will be covered in detail in this series of articles. The first article of the 6 was on the subject of {PostLink:critical-cs-of-microservices-1of6-context|Context}. This is article 4 of the series, and covers the topic of **Chaos**.
 
 #### Chaos
 

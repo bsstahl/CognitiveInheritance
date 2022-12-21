@@ -31,6 +31,8 @@ slug: critical-cs-of-microservices-1of6-context
 
 The &quot;Critical C's&quot; are: **Context**, **Consistency**, **Contract**, **Chaos**, **Competencies** and **Coalescence**. Each of these topics will be covered in detail in this series of articles, starting with **Context**.
 
+Update: Part 2 of this series, {PostLink:critical-cs-of-microservices-2of6-consistency|Consistency} is now available.
+
 ### Context
 
 #### The Execution Context
@@ -75,4 +77,4 @@ Development teams should have conversations around **Context** that are primaril
 
 #### Next Up - Consistency
 
-In the next article of this series we will look at **Consistency**, and see how **Eventual Consistency** represents the reality of the world we live in.
+In the next article of this series we will look at {PostLink:critical-cs-of-microservices-2of6-consistency|Consistency}, and see how **Eventual Consistency** represents the reality of the world we live in.
