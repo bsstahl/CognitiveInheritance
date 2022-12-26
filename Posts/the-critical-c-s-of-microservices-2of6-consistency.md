@@ -67,4 +67,4 @@ Development teams should have conversations around **Consistency** that are prim
 
 #### Next Up - Contract
 
-In the next article of this series we will look at **Contract** and how we can leverage contracts to make our systems more reliable while still maintaining our agility.
+In the next article of this series we will look at{PostLink:critical-cs-of-microservices-3of6-contract|Contract} and how we can leverage contracts to make our systems more reliable while still maintaining our agility.
