@@ -9,6 +9,39 @@
     <language>en-US</language>
     <atom:link href="https://cognitiveinheritance.com/syndication.xml" rel="self" type="application/rss+xml" />	
     <item>
+  <title>The Critical C's of Microservices - Chaos</title>
+  <description>&lt;p&gt;&amp;quot;&lt;strong&gt;The Critical C&apos;s of Microservices&lt;/strong&gt;&amp;quot; are a series of conversations that development teams should have around building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way.&lt;/p&gt;
+&lt;p&gt;The &amp;quot;Critical C&apos;s&amp;quot; are: &lt;strong&gt;Context&lt;/strong&gt;, &lt;strong&gt;Consistency&lt;/strong&gt;, &lt;strong&gt;Contract&lt;/strong&gt;, &lt;strong&gt;Chaos&lt;/strong&gt;, &lt;strong&gt;Competencies&lt;/strong&gt; and &lt;strong&gt;Coalescence&lt;/strong&gt;. Each of these topics will be covered in detail in this series of articles. The first article of the 6 was on the subject of &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-1of6-context.html&quot;&gt;Context&lt;/a&gt;. This is article 4 of the series, and covers the topic of &lt;strong&gt;Chaos&lt;/strong&gt;.&lt;/p&gt;
+&lt;h4&gt;Chaos&lt;/h4&gt;
+&lt;p&gt;One of the &lt;a href=&quot;https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing&quot;&gt;Fallacies of Distributed Computing&lt;/a&gt; is that the network is reliable. We should have similarly low expectations for the reliability of all of the infrastructure on which our services depend. Networks will segment, commodity servers and drives will fail, containers and operating systems will become unstable. In other words, our software will have errors during operation, no matter how resilient we attempt to make it. We need to embrace the fact that failures will occur in our software, and will do so at random times and often in unpredictable ways.&lt;/p&gt;
+&lt;p&gt;If we are to build systems that don&apos;t require our constant attention, especially during off-hours, we need to be able to identify what happens when failures occur, and design our systems in ways that will allow them to heal automatically once the problem is corrected.&lt;/p&gt;
+&lt;p&gt;To start this process, I recommend playing &amp;quot;what-if&amp;quot; games using diagrams of the system. Walk through the components of the system, and how the data flows through it, identifying each place where a failure could occur. Then, in each area where failures could happen, attempt to define the possible failure modes and explore what the impact of those failures might be. This kind of &amp;quot;virtual&amp;quot; Chaos Engineering is certainly no substitute for actual experimentation and testing, but is a good starting point for more in-depth analysis. It also can be very valuable in helping to understand the system and to produce more hardened services in the future.&lt;/p&gt;
+&lt;p&gt;Thought experiments are useful, but you cannot really know how a system will respond to different types of failures until you have those failures in production. Historically, such &amp;quot;tests&amp;quot; have occurred at random, at the whim of the infrastructure, and usually at the worst possible time. Instead of leaving these things to chance, tools like &lt;em&gt;Chaos Monkey&lt;/em&gt; can be used to simulate failures in production, and can be configured to create these failures during times where the appropriate support engineers are available and ready to respond if necessary. This way, we can see if our systems respond as we expect, and more importantly, heal themselves as we expect.&lt;/p&gt;
+&lt;p&gt;Even if you&apos;re not ready to jump into using automated experimentation tools in production just yet, a lot can be learned from using feature-flags and changing service behaviors in a more controlled manner as a starting point. This might involve a flag that can be set to cause an API method to return an error response, either as a hard failure, or during random requests for a period of time. Perhaps a switch could be set to stop a service from picking-up asynchronous messages from a queue or topic. Of course, these flags can only be placed in code we control, so we can&apos;t test failures of dependencies like databases and other infrastructure components in this way. For that, we&apos;ll need more involved testing methods.&lt;/p&gt;
+&lt;p&gt;Regardless of how we test our systems, it is important that we do everything we can to build systems that will heal themselves without the need for us to intervene every time a failure occurs. As a result, I highly recommend using asynchronous messaging patterns whenever possible. The asynchrony of these tools allow our services to be &amp;quot;temporally decoupled&amp;quot; from their dependencies. As a result, if a container fails and is restarted by Kubernetes, any message in process is rolled-back onto the queue or topic, and the system can pick right up where it left off.&lt;/p&gt;
+&lt;h4&gt;Goals of the Conversation&lt;/h4&gt;
+&lt;p&gt;Development teams should have conversations around &lt;strong&gt;Chaos&lt;/strong&gt; that are primarily focused around procedures for identifying and remediating possible failure points in the application. These conversations should include answering questions like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How will we evaluate potential sources of failures in our systems before they are built?
+&lt;ul&gt;
+&lt;li&gt;How will we handle the inability to reach a dependency such as a database?&lt;/li&gt;
+&lt;li&gt;How will we handle duplicate messages sent from our upstream data sources?&lt;/li&gt;
+&lt;li&gt;How will we handle messages sent out-of-order from our upstream data sources?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;How will we expose possible sources of failures during any pre-deployment testing?&lt;/li&gt;
+&lt;li&gt;How will we expose possible sources of failures in the production environment before they occur for users?&lt;/li&gt;
+&lt;li&gt;How will we identify errors that occur for users within production?&lt;/li&gt;
+&lt;li&gt;How will we prioritize changes to the system based on the results of these experiments?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Next Up - Competencies&lt;/h4&gt;
+&lt;p&gt;In the next article of this series we will look at &lt;strong&gt;Competencies&lt;/strong&gt; and how we should focus at least as much on what we build as how we build it.&lt;/p&gt;
+</description>
+  <link>https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-4of6-chaos.html</link>
+  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
+  <guid>https://www.cognitiveinheritance.com/Permalinks/0d794105-ef08-4465-b806-4a8eff7523c7.html</guid>
+  <pubDate>Mon, 02 Jan 2023 07:00:00 GMT</pubDate>
+</item><item>
   <title>The Critical C's of Microservices - Contract</title>
   <description>&lt;p&gt;&amp;quot;&lt;strong&gt;The Critical C&apos;s of Microservices&lt;/strong&gt;&amp;quot; are a series of conversations that development teams should have around building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way.&lt;/p&gt;
 &lt;p&gt;The &amp;quot;Critical C&apos;s&amp;quot; are: &lt;strong&gt;Context&lt;/strong&gt;, &lt;strong&gt;Consistency&lt;/strong&gt;, &lt;strong&gt;Contract&lt;/strong&gt;, &lt;strong&gt;Chaos&lt;/strong&gt;, &lt;strong&gt;Competencies&lt;/strong&gt; and &lt;strong&gt;Coalescence&lt;/strong&gt;. Each of these topics will be covered in detail in this series of articles. The first article of the 6 was on the subject of &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-1of6-context.html&quot;&gt;Context&lt;/a&gt;. This is article 3 of the series, and covers the topic of &lt;strong&gt;Contract&lt;/strong&gt;.&lt;/p&gt;
@@ -30,7 +63,7 @@
 &lt;li&gt;How can we leverage upstream messaging contracts to further reduce the coupling of our systems to our upstream dependencies?&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4&gt;Next Up - Chaos&lt;/h4&gt;
-&lt;p&gt;In the next article of this series we will look at &lt;strong&gt;Chaos&lt;/strong&gt; and how we can use thought experiments and existing tools to help improve our system&apos;s reliability.&lt;/p&gt;
+&lt;p&gt;In the next article of this series we will look at &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-4of6-chaos.html&quot;&gt;Chaos&lt;/a&gt; and how we can use both thought and physical experiments to help improve our system&apos;s reliability.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-3of6-contract.html</link>
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
@@ -67,7 +100,7 @@
 &lt;li&gt;How will we communicate the status of the system and any delays in reaching a consistent state to the relevant stakeholders?&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4&gt;Next Up - Contract&lt;/h4&gt;
-&lt;p&gt;In the next article of this series we will look at&lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-3of6-contract.html&quot;&gt;Contract&lt;/a&gt; and how we can leverage contracts to make our systems more reliable while still maintaining our agility.&lt;/p&gt;
+&lt;p&gt;In the next article of this series we will look at &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-3of6-contract.html&quot;&gt;Contract&lt;/a&gt; and how we can leverage contracts to make our systems more reliable while still maintaining our agility.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-2of6-consistency.html</link>
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
@@ -532,15 +565,6 @@ This option must be checked so that the script can acquire the permissions to up
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/a9d7154a-2798-4a77-851b-0783b45bc1b4.html</guid>
   <pubDate>Mon, 18 May 2020 15:35:16 GMT</pubDate>
-</item><item>
-  <title>South Florida Code Camp 2019</title>
-  <description>&lt;p&gt;Thanks again to all the organizers, speakers and attendees of the 2019 South Florida Code Camp. As always, it was an amazing and fun experience.&lt;/p&gt;
-&lt;p&gt;The slides for my presentation are online &lt;a href=&quot;http://introwasmblazor-201903.azurewebsites.net&quot;&gt;Intro to WebAssembly and Blazor&lt;/a&gt; and the Blazor Chutes &amp;amp; Ladders Simulation sample code can be found in my &lt;a href=&quot;https://github.com/bsstahl/AIDemos&quot;&gt;AIDemos GitHub Repo&lt;/a&gt;.&lt;/p&gt;
-</description>
-  <link>https://www.cognitiveinheritance.com/Posts/South-Florida-Code-Camp-2019.html</link>
-  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
-  <guid>https://www.cognitiveinheritance.com/Permalinks/ba2507c7-41d6-4e4e-8e65-10c22451edd7.html</guid>
-  <pubDate>Sun, 03 Mar 2019 16:47:53 GMT</pubDate>
 </item>
 </channel>
 </rss>
