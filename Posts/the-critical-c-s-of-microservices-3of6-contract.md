@@ -59,4 +59,4 @@ Development teams should have conversations around **Contract** that are primari
 
 #### Next Up - Chaos
 
-In the next article of this series we will look at **Chaos** and how we can use thought experiments and existing tools to help improve our system's reliability.
+In the next article of this series we will look at {PostLink:critical-cs-of-microservices-4of6-chaos|Chaos} and how we can use both thought and physical experiments to help improve our system's reliability.
