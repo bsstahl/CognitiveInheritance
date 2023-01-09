@@ -9,6 +9,33 @@
     <language>en-US</language>
     <atom:link href="https://cognitiveinheritance.com/syndication.xml" rel="self" type="application/rss+xml" />	
     <item>
+  <title>The Critical C's of Microservices - Competencies</title>
+  <description>&lt;p&gt;&amp;quot;&lt;strong&gt;The Critical C&apos;s of Microservices&lt;/strong&gt;&amp;quot; are a series of conversations that development teams should have around building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way.&lt;/p&gt;
+&lt;p&gt;The &amp;quot;Critical C&apos;s&amp;quot; are: &lt;strong&gt;Context&lt;/strong&gt;, &lt;strong&gt;Consistency&lt;/strong&gt;, &lt;strong&gt;Contract&lt;/strong&gt;, &lt;strong&gt;Chaos&lt;/strong&gt;, &lt;strong&gt;Competencies&lt;/strong&gt; and &lt;strong&gt;Coalescence&lt;/strong&gt;. Each of these topics will be covered in detail in this series of articles. The first article of the 6 was on the subject of &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-1of6-context.html&quot;&gt;Context&lt;/a&gt;. This is article 5 of the series, and covers the topic of &lt;strong&gt;Competencies&lt;/strong&gt;.&lt;/p&gt;
+&lt;h4&gt;Competencies&lt;/h4&gt;
+&lt;p&gt;It is our responsibility as engineers to spend our limited resources on those things that give the companies we are building for a competitive advantage in the market. This means limiting our software builds to areas where we can differentiate that company from others. Not every situation requires us to build a custom solution, and even when we do, there is usually no need for us to build every component of that system.&lt;/p&gt;
+&lt;p&gt;If the problem we are solving is a common one that many companies deal with, and our solution does not give us a competitive advantage over those other companies, we are probably better off using an off-the-shelf product, whether that is a commercial (COTS) product, or a Free or Open-Source one (FOSS). Software we build should be unique to the company it is being built for, and provide that company with a competitive advantage. There is no need for us to build another Customer Relationship Manager (CRM) or Accounting system since these systems implement solutions to solved problemns that are generally solved in the same way by everyone. We should only build custom solutions if we are doing something that has never been done before or we need to do things in a way that is different from everyone else and can&apos;t be done using off-the-shelf systems.&lt;/p&gt;
+&lt;p&gt;We should also only be building custom software when the problem being solved is part of our company&apos;s &lt;a href=&quot;https://en.wikipedia.org/wiki/Core_competency&quot; title=&quot;A combination of multiple resources and skills that distinguish a firm in the marketplace and therefore are the foundation of companies&apos; competitiveness&quot;&gt;core competencies&lt;/a&gt;. If we are doing this work for a company that builds widgets, it is unlikely, though not impossible, that building a custom solution for getting parts needed to build the widgets will provide that company with a competitive advantage. We are probably better off if we focus our efforts on software to help make the widgets in ways that are better, faster or cheaper.&lt;/p&gt;
+&lt;p&gt;If our &amp;quot;build vs. buy&amp;quot; decision is to build a custom solution, there are likely to be opportunities within those systems to use pre-existing capabilities rather than writing everything from scratch. For example, many cross-cutting concerns within our applications have libraries that support them very effectively. We should not be coding our own implementations for things like &lt;a href=&quot;https://en.wikipedia.org/wiki/Logging_(computing)&quot; title=&quot;The act of keeping a log of events that occur in a computer system, such as problems, errors or just information on current operation&quot;&gt;logging&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/Computer_configuration&quot; title=&quot;The arrangement of a system&apos;s functional units according to their nature, number and chief characteristics&quot;&gt;configuration&lt;/a&gt; and &lt;a href=&quot;https://en.wikipedia.org/wiki/Security&quot; title=&quot;Protection from or resilience against, potential harm (or other unwanted coercive change) caused by others, by restraining the freedom of others to act&quot;&gt;security&lt;/a&gt;. Likewise, there are many capabilities that already exist in our infrastructure that we should take advantage of. &lt;a href=&quot;https://en.wikipedia.org/wiki/Encryption&quot; title=&quot;The process of encoding information&quot;&gt;Encryption&lt;/a&gt;, which is often a capability of the operating system, is one that springs to mind. We should certainly never &amp;quot;roll-our-own&amp;quot; for more complex infrastructure features like &lt;a href=&quot;https://en.wikipedia.org/wiki/Replication_(computing)&quot; title=&quot;Sharing information so as to ensure consistency between redundant resources, such as software or hardware components, to improve reliability, fault-tolerance, or accessibility.&quot;&gt;Replication&lt;/a&gt; or &lt;a href=&quot;https://en.wikipedia.org/wiki/Change_data_capture&quot; title=&quot;CDC is a set of software design patterns used to determine and track the data that has changed so that action can be taken using the changed data.&quot;&gt;Change Data Capture&lt;/a&gt;, but might even want to consider avoiding rebuilding infrastructure capabilities that we more commonly build. An example of this might be if we would typically build a &lt;a href=&quot;https://en.wikipedia.org/wiki/Web_API&quot; title=&quot;An Application Programming Interface exposed over HTTP(S)&quot;&gt;Web API&lt;/a&gt; for our systems, we might consider exposing the API&apos;s of our backing infrastructure components instead, properly isolated and secured of course, perhaps via an &lt;a href=&quot;https://en.wikipedia.org/wiki/API_management&quot; title=&quot;The process of creating and publishing web application programming interfaces (APIs), enforcing their usage policies, controlling access, nurturing the subscriber community, collecting and analyzing usage statistics, and reporting on performance&quot;&gt;API Management&lt;/a&gt; component.&lt;/p&gt;
+&lt;h4&gt;Goals of the Conversation&lt;/h4&gt;
+&lt;p&gt;Development teams should have conversations around &lt;strong&gt;Competencies&lt;/strong&gt; that are primarily focused around what systems, sub-systems, and components should be built, which should be installed off-the-shelf, and what libraries or infrastructure capabilities should be utilized. These conversations should include answering questions like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What are our core competencies?&lt;/li&gt;
+&lt;li&gt;How do we identify &amp;quot;build vs. buy&amp;quot; opportunities?&lt;/li&gt;
+&lt;li&gt;How do we make &amp;quot;build vs. buy&amp;quot; decisions on needed systems?&lt;/li&gt;
+&lt;li&gt;How do we identify cross-cutting concerns and infrastructure capabilites that can be leveraged?&lt;/li&gt;
+&lt;li&gt;How do we determine which libraries or infrastructure components will be utilized?&lt;/li&gt;
+&lt;li&gt;How do we manage the versioning of utilized components, especially in regard to security updates?&lt;/li&gt;
+&lt;li&gt;How do we document our decisions for later review?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Next Up - Coalescence&lt;/h4&gt;
+&lt;p&gt;In the final article of this series we will look at &lt;strong&gt;Coalescence&lt;/strong&gt; and how we should work to bring all of the data together for our operations &amp;amp; support engineers.&lt;/p&gt;
+</description>
+  <link>https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-5of6-competencies.html</link>
+  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
+  <guid>https://www.cognitiveinheritance.com/Permalinks/a99861ed-9829-4110-9e2f-1e75efcb43a2.html</guid>
+  <pubDate>Mon, 09 Jan 2023 07:00:00 GMT</pubDate>
+</item><item>
   <title>The Critical C's of Microservices - Chaos</title>
   <description>&lt;p&gt;&amp;quot;&lt;strong&gt;The Critical C&apos;s of Microservices&lt;/strong&gt;&amp;quot; are a series of conversations that development teams should have around building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way.&lt;/p&gt;
 &lt;p&gt;The &amp;quot;Critical C&apos;s&amp;quot; are: &lt;strong&gt;Context&lt;/strong&gt;, &lt;strong&gt;Consistency&lt;/strong&gt;, &lt;strong&gt;Contract&lt;/strong&gt;, &lt;strong&gt;Chaos&lt;/strong&gt;, &lt;strong&gt;Competencies&lt;/strong&gt; and &lt;strong&gt;Coalescence&lt;/strong&gt;. Each of these topics will be covered in detail in this series of articles. The first article of the 6 was on the subject of &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-1of6-context.html&quot;&gt;Context&lt;/a&gt;. This is article 4 of the series, and covers the topic of &lt;strong&gt;Chaos&lt;/strong&gt;.&lt;/p&gt;
@@ -35,7 +62,7 @@
 &lt;li&gt;How will we prioritize changes to the system based on the results of these experiments?&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4&gt;Next Up - Competencies&lt;/h4&gt;
-&lt;p&gt;In the next article of this series we will look at &lt;strong&gt;Competencies&lt;/strong&gt; and how we should focus at least as much on what we build as how we build it.&lt;/p&gt;
+&lt;p&gt;In the next article of this series we will look at &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-5of6-competencies.html&quot;&gt;Competencies&lt;/a&gt; and how we should focus at least as much on what we build as how we build it.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-4of6-chaos.html</link>
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
@@ -508,63 +535,6 @@ This option must be checked so that the script can acquire the permissions to up
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/ee2bd796-a0f2-4536-af7d-3c1499c093b6.html</guid>
   <pubDate>Wed, 17 Jun 2020 16:55:00 GMT</pubDate>
-</item><item>
-  <title>Meta-Abstraction -- You Ain't Gonna Need It!</title>
-  <description>&lt;blockquote&gt;
-&lt;p&gt;When we look at the abstractions in our applications, we should see a description of the capabilities of our applications, not the capabilities of the abstraction&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Let’s start this discussion by looking at an example of a simple repository.&lt;/p&gt;
-&lt;div class=&quot;lang-csharp editor-colors&quot;&gt;&lt;div style=&quot;color:Black;background-color:White;&quot;&gt;&lt;pre&gt;
-&lt;span style=&quot;color:Blue;&quot;&gt;public&lt;/span&gt; &lt;span style=&quot;color:Blue;&quot;&gt;interface&lt;/span&gt; IMeetingReadRepository
-{
-    IEnumerable&amp;lt;Meeting&amp;gt; GetMeetings(DateTime start, DateTime end);
-}
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;It is easy to see the capability being described by this abstraction – any implementation of this interface will have the ability to load a collection of Meeting objects that occur within a given timeframe. There are still some unknown details of the implementation, but the capabilities are described reasonably well.&lt;/p&gt;
-&lt;p&gt;Now let’s look at a different implementation of the Repository pattern.&lt;/p&gt;
-&lt;div class=&quot;lang-csharp editor-colors&quot;&gt;&lt;div style=&quot;color:Black;background-color:White;&quot;&gt;&lt;pre&gt;
-&lt;span style=&quot;color:Blue;&quot;&gt;public&lt;/span&gt; &lt;span style=&quot;color:Blue;&quot;&gt;interface&lt;/span&gt; IReadRepository&amp;lt;T&amp;gt;
-{
-    IEnumerable&amp;lt;T&amp;gt; Get(Func&amp;lt;T, &lt;span style=&quot;color:Blue;&quot;&gt;bool&lt;/span&gt;&amp;gt; predicate);
-}
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;We can still see that something is going to be loaded using this abstraction, we just don’t know what, and we don’t know what criteria will be used.&lt;/p&gt;
-&lt;p&gt;This 2nd implementation is a more flexible interface. That is, we can use this interface to describe many different repositories that do many different things. All we have described in this interface is that we have the ability to create something that will load an entity. In other words, we have described our abstraction but said very little about the capabilities of the application itself. In this case, we have to look at a specific implementation to see what it loads, but we still have no idea what criteria can be used to load it.&lt;/p&gt;
-&lt;div class=&quot;lang-csharp editor-colors&quot;&gt;&lt;div style=&quot;color:Black;background-color:White;&quot;&gt;&lt;pre&gt;
-&lt;span style=&quot;color:Blue;&quot;&gt;public&lt;/span&gt; &lt;span style=&quot;color:Blue;&quot;&gt;class&lt;/span&gt; MeetingReadRepository : IReadRepository&amp;lt;Meeting&amp;gt;
-{
-    IEnumerable&amp;lt;Meeting&amp;gt; Get(Func&amp;lt;Meeting, &lt;span style=&quot;color:Blue;&quot;&gt;bool&lt;/span&gt;&amp;gt; predicate);
-}
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;We could extend this class with a method that specifically loads meetings by start and end date, but then that method is not on the abstraction so it cannot be used without leaking the details of the implementation to the application.  The only way to implement this pattern in a way that uses the generic interface, but still fully describes the capabilities of the application is to use both methods described above. That is, we implement the specific repository, using the generic repository – layering abstraction on top of abstraction, as shown below.&lt;/p&gt;
-&lt;div class=&quot;lang-csharp editor-colors&quot;&gt;&lt;div style=&quot;color:Black;background-color:White;&quot;&gt;&lt;pre&gt;
-&lt;span style=&quot;color:Blue;&quot;&gt;public&lt;/span&gt; &lt;span style=&quot;color:Blue;&quot;&gt;interface&lt;/span&gt; IMeetingReadRepository : IReadRepository&amp;lt;Meeting&amp;gt;
-{
-    IEnumerable&amp;lt;Meeting&amp;gt; GetMeetings(DateTime start, DateTime end);
-}
-
-&lt;span style=&quot;color:Blue;&quot;&gt;public&lt;/span&gt; &lt;span style=&quot;color:Blue;&quot;&gt;class&lt;/span&gt; MeetingReadRepository : IMeetingReadRepository
-{
-    IEnumerable&amp;lt;Meeting&amp;gt; GetMeetings(DateTime start, DateTime end)
-        =&amp;gt; Get(m =&amp;gt; m.Start &amp;gt;= start &amp;amp;&amp;amp; m.Start &amp;lt; end)
-
-    &lt;span style=&quot;color:Green;&quot;&gt;// TODO: Implement&lt;/span&gt;
-    IEnumerable&amp;lt;Meeting&amp;gt; Get(Func&amp;lt;Meeting, &lt;span style=&quot;color:Blue;&quot;&gt;bool&lt;/span&gt;&amp;gt; predicate)
-        =&amp;gt; &lt;span style=&quot;color:Blue;&quot;&gt;throw&lt;/span&gt; &lt;span style=&quot;color:Blue;&quot;&gt;new&lt;/span&gt; NotImplementedException();
-}
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Is this worth the added complexity? It seems to me that as application developers we should be concerned about describing and building our applications in the simplest, most maintainable and extensible way possible. To do so, we need seams in our applications in the form of abstractions. However, we generally do not need to build frameworks on which we build those abstractions. Framework creation is an entirely other topic with an entirely different set of concerns.&lt;/p&gt;
-&lt;p&gt;I think it is easy to see how quickly things can get overly-complex when we start building abstractions on top of our own abstractions in our applications. Using Microsoft or 3rd party frameworks is fine when appropriate, but there is generally no need to build your own frameworks, especially within your applications. In the vast majority of cases, &lt;a href=&quot;https://www.cognitiveinheritance.com/Search/yagni.html&quot;&gt;YAGNI&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Did I miss something here? Do you have a situation where you feel it is worth it to build a framework, or even part of a framework, within your applications. Please let me know about it &lt;a rel=&quot;me&quot; href=&quot;https://fosstodon.org/@Bsstahl&quot;&gt;@bsstahl@fosstodon.org&lt;/a&gt;.&lt;/p&gt;
-</description>
-  <link>https://www.cognitiveinheritance.com/Posts/Meta-Abstraction-You-Aint-Gonna-Need-It!.html</link>
-  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
-  <guid>https://www.cognitiveinheritance.com/Permalinks/a9d7154a-2798-4a77-851b-0783b45bc1b4.html</guid>
-  <pubDate>Mon, 18 May 2020 15:35:16 GMT</pubDate>
 </item>
 </channel>
 </rss>
