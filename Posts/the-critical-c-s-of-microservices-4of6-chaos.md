@@ -60,4 +60,4 @@ Development teams should have conversations around **Chaos** that are primarily 
 
 #### Next Up - Competencies
 
-In the next article of this series we will look at **Competencies** and how we should focus at least as much on what we build as how we build it.
+In the next article of this series we will look at {PostLink:critical-cs-of-microservices-5of6-competencies|Competencies} and how we should focus at least as much on what we build as how we build it.
