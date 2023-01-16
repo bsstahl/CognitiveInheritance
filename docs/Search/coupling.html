@@ -63,6 +63,50 @@
             <div class="col-md-8">
                 <h1>Tag: coupling</h1>
                 <div>
+    <h3>The Critical C's of Microservices - Coalescence</h3>
+    <h5>Posted by bsstahl on 2023-01-16 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <p>&quot;<strong>The Critical C's of Microservices</strong>&quot; are a series of conversations that development teams should have around building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way.</p>
+<p>The &quot;Critical C's&quot; are: <strong>Context</strong>, <strong>Consistency</strong>, <strong>Contract</strong>, <strong>Chaos</strong>, <strong>Competencies</strong> and <strong>Coalescence</strong>. Each of these topics has been covered in detail in this series of 6 articles. The first article of the 6 was on the subject of <a href="../Posts/critical-cs-of-microservices-1of6-context.html">Context</a>. This is the final article in the series, and covers the topic of <strong>Coalescence</strong>.</p>
+<h4>Coalescence</h4>
+<p>The use of Microservices reduces the complexity of our services in many ways, however it also adds complexity when it comes to deployment and operations. More services mean more deployments, even as each of those deployments is smaller and more isolated. Additionally, they can be harder on operations and support teams since there can be many more places to go when you need to find information. Ideally, we would coalesce all of the necessary information to operate and troubleshoot our systems in a single pane-of-glass so that our operations and support engineers don't have to search for information in a crisis.</p>
+<p>Deployment and system verification testing can help us identify when there are problems at any point in our system and give us insight into what the problems might be and what caused them. Tests run immediately after any deployment can help identify when a particular deployment has caused a problem so it can be addressed quickly. Likewise, ongoing system verification tests can give early indications of problems irrespective of the cause. Getting information about the results of these tests quickly and easily into the hands of the engineers that can act on them can reduce costs and prevent outages.</p>
+<p>Logging and traceability is generally considered a solved problem, so long as it is used effectively. We need to setup our systems to make the best use of our distributed logging systems. This often means adding a correlation identifier alongside various request and causation ids to make it easy to trace requests through the system. We also need to be able to monitor and surface our logs so that unusual activity can be recognized and acted on as quickly as possible.</p>
+<p>Service Level Indicators (SLIs) and other metrics can provide key insights into the operations of our systems, even if no unusual activity is seen within our logs. Knowing what operational metrics suggest there might be problems within our systems, and monitoring changes to those metrics for both our services and our dependencies can help identify, troubleshoot and even prevent outages. Surfacing those metrics for easy access can give our support and operations engineers the tools they need to do their jobs effectively.</p>
+<h4>Goals of the Conversation</h4>
+<p>Development teams should have conversations around <strong>Coalescence</strong> that are primarily focused around brining critical information about the operation of our systems together for easy acess. These conversations should include answering questions like:</p>
+<ul>
+<li>What is our mechanism for deployment and system verification?
+<ul>
+<li>How will we identify, as quickly as possible, when a deployment has had a negative impact on our system?</li>
+<li>Are there tests that can validate the operation of the system end-to-end?</li>
+<li>How will we surface the status of any deployment and system verification tests?</li>
+</ul>
+</li>
+<li>What is our mechanism for logging/traceability within our system?
+<ul>
+<li>How will we coalesce our logs from the various services within the system?</li>
+<li>How will we know if there are anomalies in our logs?</li>
+<li>Are there additional identifiers we need to add to allow traceability?</li>
+<li>Are there log queries that, if enabled, might provide additional support during an outage?</li>
+<li>Are there ways to increase the level of logging when needed to provide additional information and can this be done wholistically on the system?</li>
+</ul>
+</li>
+<li>How will we expose SLIs and other metrics so they are available when needed?</li>
+<li>How will we know when there are anomalies in our metrics?</li>
+<li>What are the metrics that would be needed in an outage and how will we surface those for easy access?</li>
+<li>Are there additional metrics that, if enabled, might provide additional support during an outage?</li>
+<li>Are there ways to perform ad-hoc queries against SLIs and metrics to provide additional insight in an outage?</li>
+<li>How will we identify the status of dependencies so we can understand when our systems are reacting to downstream anomalies?
+<ul>
+<li>How will we surface dependency status for easy access during an outage?</li>
+<li>Are there metrics we can surface for our dependencies that might help during an outage?</li>
+</ul>
+</li>
+</ul>
+
+    <h5>Tags: <a title="Tag: agile" class="small" href="../Search/agile.html">agile</a>&nbsp;<a title="Tag: antipattern" class="small" href="../Search/antipattern.html">antipattern</a>&nbsp;<a title="Tag: apache-kafka" class="small" href="../Search/apache-kafka.html">apache-kafka</a>&nbsp;<a title="Tag: api" class="small" href="../Search/api.html">api</a>&nbsp;<a title="Tag: apps" class="small" href="../Search/apps.html">apps</a>&nbsp;<a title="Tag: architecture" class="small" href="../Search/architecture.html">architecture</a>&nbsp;<a title="Tag: aspdotnet" class="small" href="../Search/aspdotnet.html">aspdotnet</a>&nbsp;<a title="Tag: ci_cd" class="small" href="../Search/ci_cd.html">ci_cd</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: coupling" class="small" href="../Search/coupling.html">coupling</a>&nbsp;<a title="Tag: event-driven" class="small" href="../Search/event-driven.html">event-driven</a>&nbsp;<a title="Tag: microservices" class="small" href="../Search/microservices.html">microservices</a>&nbsp;<a title="Tag: soa" class="small" href="../Search/soa.html">soa</a>&nbsp;</h5>
+    <div class="share"><a href="../Permalinks/a0280db3-6d32-4c89-81c4-10ce2cd3522d.html" rel="bookmark">Permalink</a></div>
+</div><hr/><div>
     <h3>The Critical C's of Microservices - Competencies</h3>
     <h5>Posted by bsstahl on 2023-01-09 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>&quot;<strong>The Critical C's of Microservices</strong>&quot; are a series of conversations that development teams should have around building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way.</p>
@@ -84,7 +128,7 @@
 <li>How do we document our decisions for later review?</li>
 </ul>
 <h4>Next Up - Coalescence</h4>
-<p>In the final article of this series we will look at <strong>Coalescence</strong> and how we should work to bring all of the data together for our operations &amp; support engineers.</p>
+<p>In the final article of this series we will look at <a href="../Posts/critical-cs-of-microservices-6of6-coalescence.html">Coalescence</a> and how we should work to bring all of the data together for our operations &amp; support engineers.</p>
 
     <h5>Tags: <a title="Tag: agile" class="small" href="../Search/agile.html">agile</a>&nbsp;<a title="Tag: antipattern" class="small" href="../Search/antipattern.html">antipattern</a>&nbsp;<a title="Tag: apache-kafka" class="small" href="../Search/apache-kafka.html">apache-kafka</a>&nbsp;<a title="Tag: api" class="small" href="../Search/api.html">api</a>&nbsp;<a title="Tag: apps" class="small" href="../Search/apps.html">apps</a>&nbsp;<a title="Tag: architecture" class="small" href="../Search/architecture.html">architecture</a>&nbsp;<a title="Tag: aspdotnet" class="small" href="../Search/aspdotnet.html">aspdotnet</a>&nbsp;<a title="Tag: ci_cd" class="small" href="../Search/ci_cd.html">ci_cd</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: coupling" class="small" href="../Search/coupling.html">coupling</a>&nbsp;<a title="Tag: event-driven" class="small" href="../Search/event-driven.html">event-driven</a>&nbsp;<a title="Tag: microservices" class="small" href="../Search/microservices.html">microservices</a>&nbsp;<a title="Tag: soa" class="small" href="../Search/soa.html">soa</a>&nbsp;</h5>
     <div class="share"><a href="../Permalinks/a99861ed-9829-4110-9e2f-1e75efcb43a2.html" rel="bookmark">Permalink</a></div>

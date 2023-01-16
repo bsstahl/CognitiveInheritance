@@ -9,6 +9,51 @@
     <language>en-US</language>
     <atom:link href="https://cognitiveinheritance.com/syndication.xml" rel="self" type="application/rss+xml" />	
     <item>
+  <title>The Critical C's of Microservices - Coalescence</title>
+  <description>&lt;p&gt;&amp;quot;&lt;strong&gt;The Critical C&apos;s of Microservices&lt;/strong&gt;&amp;quot; are a series of conversations that development teams should have around building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way.&lt;/p&gt;
+&lt;p&gt;The &amp;quot;Critical C&apos;s&amp;quot; are: &lt;strong&gt;Context&lt;/strong&gt;, &lt;strong&gt;Consistency&lt;/strong&gt;, &lt;strong&gt;Contract&lt;/strong&gt;, &lt;strong&gt;Chaos&lt;/strong&gt;, &lt;strong&gt;Competencies&lt;/strong&gt; and &lt;strong&gt;Coalescence&lt;/strong&gt;. Each of these topics has been covered in detail in this series of 6 articles. The first article of the 6 was on the subject of &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-1of6-context.html&quot;&gt;Context&lt;/a&gt;. This is the final article in the series, and covers the topic of &lt;strong&gt;Coalescence&lt;/strong&gt;.&lt;/p&gt;
+&lt;h4&gt;Coalescence&lt;/h4&gt;
+&lt;p&gt;The use of Microservices reduces the complexity of our services in many ways, however it also adds complexity when it comes to deployment and operations. More services mean more deployments, even as each of those deployments is smaller and more isolated. Additionally, they can be harder on operations and support teams since there can be many more places to go when you need to find information. Ideally, we would coalesce all of the necessary information to operate and troubleshoot our systems in a single pane-of-glass so that our operations and support engineers don&apos;t have to search for information in a crisis.&lt;/p&gt;
+&lt;p&gt;Deployment and system verification testing can help us identify when there are problems at any point in our system and give us insight into what the problems might be and what caused them. Tests run immediately after any deployment can help identify when a particular deployment has caused a problem so it can be addressed quickly. Likewise, ongoing system verification tests can give early indications of problems irrespective of the cause. Getting information about the results of these tests quickly and easily into the hands of the engineers that can act on them can reduce costs and prevent outages.&lt;/p&gt;
+&lt;p&gt;Logging and traceability is generally considered a solved problem, so long as it is used effectively. We need to setup our systems to make the best use of our distributed logging systems. This often means adding a correlation identifier alongside various request and causation ids to make it easy to trace requests through the system. We also need to be able to monitor and surface our logs so that unusual activity can be recognized and acted on as quickly as possible.&lt;/p&gt;
+&lt;p&gt;Service Level Indicators (SLIs) and other metrics can provide key insights into the operations of our systems, even if no unusual activity is seen within our logs. Knowing what operational metrics suggest there might be problems within our systems, and monitoring changes to those metrics for both our services and our dependencies can help identify, troubleshoot and even prevent outages. Surfacing those metrics for easy access can give our support and operations engineers the tools they need to do their jobs effectively.&lt;/p&gt;
+&lt;h4&gt;Goals of the Conversation&lt;/h4&gt;
+&lt;p&gt;Development teams should have conversations around &lt;strong&gt;Coalescence&lt;/strong&gt; that are primarily focused around brining critical information about the operation of our systems together for easy acess. These conversations should include answering questions like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What is our mechanism for deployment and system verification?
+&lt;ul&gt;
+&lt;li&gt;How will we identify, as quickly as possible, when a deployment has had a negative impact on our system?&lt;/li&gt;
+&lt;li&gt;Are there tests that can validate the operation of the system end-to-end?&lt;/li&gt;
+&lt;li&gt;How will we surface the status of any deployment and system verification tests?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;What is our mechanism for logging/traceability within our system?
+&lt;ul&gt;
+&lt;li&gt;How will we coalesce our logs from the various services within the system?&lt;/li&gt;
+&lt;li&gt;How will we know if there are anomalies in our logs?&lt;/li&gt;
+&lt;li&gt;Are there additional identifiers we need to add to allow traceability?&lt;/li&gt;
+&lt;li&gt;Are there log queries that, if enabled, might provide additional support during an outage?&lt;/li&gt;
+&lt;li&gt;Are there ways to increase the level of logging when needed to provide additional information and can this be done wholistically on the system?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;How will we expose SLIs and other metrics so they are available when needed?&lt;/li&gt;
+&lt;li&gt;How will we know when there are anomalies in our metrics?&lt;/li&gt;
+&lt;li&gt;What are the metrics that would be needed in an outage and how will we surface those for easy access?&lt;/li&gt;
+&lt;li&gt;Are there additional metrics that, if enabled, might provide additional support during an outage?&lt;/li&gt;
+&lt;li&gt;Are there ways to perform ad-hoc queries against SLIs and metrics to provide additional insight in an outage?&lt;/li&gt;
+&lt;li&gt;How will we identify the status of dependencies so we can understand when our systems are reacting to downstream anomalies?
+&lt;ul&gt;
+&lt;li&gt;How will we surface dependency status for easy access during an outage?&lt;/li&gt;
+&lt;li&gt;Are there metrics we can surface for our dependencies that might help during an outage?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+  <link>https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-6of6-coalescence.html</link>
+  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
+  <guid>https://www.cognitiveinheritance.com/Permalinks/a0280db3-6d32-4c89-81c4-10ce2cd3522d.html</guid>
+  <pubDate>Mon, 16 Jan 2023 07:00:00 GMT</pubDate>
+</item><item>
   <title>The Critical C's of Microservices - Competencies</title>
   <description>&lt;p&gt;&amp;quot;&lt;strong&gt;The Critical C&apos;s of Microservices&lt;/strong&gt;&amp;quot; are a series of conversations that development teams should have around building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way.&lt;/p&gt;
 &lt;p&gt;The &amp;quot;Critical C&apos;s&amp;quot; are: &lt;strong&gt;Context&lt;/strong&gt;, &lt;strong&gt;Consistency&lt;/strong&gt;, &lt;strong&gt;Contract&lt;/strong&gt;, &lt;strong&gt;Chaos&lt;/strong&gt;, &lt;strong&gt;Competencies&lt;/strong&gt; and &lt;strong&gt;Coalescence&lt;/strong&gt;. Each of these topics will be covered in detail in this series of articles. The first article of the 6 was on the subject of &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-1of6-context.html&quot;&gt;Context&lt;/a&gt;. This is article 5 of the series, and covers the topic of &lt;strong&gt;Competencies&lt;/strong&gt;.&lt;/p&gt;
@@ -29,7 +74,7 @@
 &lt;li&gt;How do we document our decisions for later review?&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4&gt;Next Up - Coalescence&lt;/h4&gt;
-&lt;p&gt;In the final article of this series we will look at &lt;strong&gt;Coalescence&lt;/strong&gt; and how we should work to bring all of the data together for our operations &amp;amp; support engineers.&lt;/p&gt;
+&lt;p&gt;In the final article of this series we will look at &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-6of6-coalescence.html&quot;&gt;Coalescence&lt;/a&gt; and how we should work to bring all of the data together for our operations &amp;amp; support engineers.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-5of6-competencies.html</link>
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
@@ -472,69 +517,6 @@
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/f7d71577-57c3-4676-a5fa-2745a2bb8cf7.html</guid>
   <pubDate>Sat, 03 Apr 2021 18:00:00 GMT</pubDate>
-</item><item>
-  <title>Committing to Git from an Azure DevOps Pipeline</title>
-  <description>&lt;p&gt;There are occasions, such as when working with static website generators, that you&apos;ll want to push some changes made in an Azure DevOps pipeline, back into the source Git repository. This process is simple enough, but since I have struggled to get it configured twice now, I am documenting the process here for your use, and my future use.&lt;/p&gt;
-&lt;p&gt;Azure DevOps pipelines typically contain two parts, although other configurations are possible. The two standards are:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Get sources - gets the information to work with from a Git repository or other source control environment&lt;/li&gt;
-&lt;li&gt;Agent Job - holds the tasks required to complete the pipeline&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;You&apos;ll need to take the following steps to configure the interactions between your source control provider and your pipeline:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Configure the &lt;strong&gt;Get sources&lt;/strong&gt; section of the pipeline by selecting your source control provider from the list of options and then choosing the repository from the list within that provider. For most providers, you will need to supply credentials with access to the repository, although the pipeline may already have the basic access it needs to read from an Azure DevOps Repo.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;/Images/azure_devops_sources.PNG&quot; alt=&quot;Azure DevOps Sources&quot; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;[optional] Configure an &lt;strong&gt;Agent Job&lt;/strong&gt; to perform any cleanup of the repo necessary. When building a static website, I first delete all files from the target directory (the old static website files) so that only the files that are still needed are included in the final deployment.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Note: for all Agent Job steps that involve scripting, I use the &lt;strong&gt;Command Line&lt;/strong&gt; task which allows me to execute my scripts in one of the native OS shells (Bash on Linux and macOS and cmd.exe on Windows). You could just as easily use the &lt;strong&gt;Powershell&lt;/strong&gt; task, which is cross-platform or any number of other options.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Execute your build process. This is the step that generates the new files that will eventually be committed back into the source repository. Each static website generator has their own method for creating the site, see the documentation for your tooling for specifics. You can also execute custom tools or scripts here that modify files in the repository any way you&apos;d like.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Execute the commit back to the source repo. This is the money step, where everything that has been done to this point is saved in the repository. As with previous steps, I use the &lt;strong&gt;Command Line&lt;/strong&gt; task to execute the needed commands. My script is shown below. It is written for the Windows &lt;strong&gt;cmd.exe&lt;/strong&gt; shell so commands that start with &lt;em&gt;ECHO&lt;/em&gt; are log entries that will be included in the pipeline&apos;s execution log to help with troubleshooting and maintenance. This script uses a number of &lt;strong&gt;pipeline variables&lt;/strong&gt; which take the form &lt;em&gt;$(variableName)&lt;/em&gt; to make configuration easier. The &lt;em&gt;git.email&lt;/em&gt; and &lt;em&gt;git.user&lt;/em&gt; variables were defined by me in the &lt;em&gt;Variables&lt;/em&gt; section of the pipeline, you will need to either configure those variables yourself, or substitute their values in the script. The &lt;em&gt;Build.SourceVersion&lt;/em&gt; and &lt;em&gt;Build.SourceVersionMessage&lt;/em&gt; variables are supplied by the pipeline and no action was required on my part to create or enable them.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;An interesting thing to note about this script is the &lt;em&gt;git push&lt;/em&gt; command. The full command &lt;code&gt;git push origin HEAD:master&lt;/code&gt; is required in this case, rather than just a simple &lt;code&gt;git push&lt;/code&gt; because, once the files are downloaded into the pipeline repo, the local repository is disconnected from the remote by the pipeline, possibly as a safety measure. We have to tell the local repo to push back to the remote HEAD, or else the push will fail. I suspect there is a way to tell the pipeline not to disconnect the head, but doing things this way, to my knowledge, has no ill-effects and is simple enough that it isn&apos;t really worth the effort for me to find out.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;ECHO ** Starting &amp;quot;Git config for user: $(git.user)&amp;quot;
-git config --global user.email &amp;quot;$(git.email)&amp;quot;
-git config --global user.name &amp;quot;$(git.user)&amp;quot;
-
-ECHO ** Starting &amp;quot;Git add...&amp;quot;
-git add .
-
-ECHO ** Starting &amp;quot;Git commit...&amp;quot;
-git commit -m &amp;quot;Static site rebuild due to commit $(Build.SourceVersion) &apos;$(Build.SourceVersionMessage)&apos;&amp;quot;
-
-ECHO ** Starting &amp;quot;Git push...&amp;quot;
-git push origin HEAD:master
-
-ECHO ** Ending Update remote git repo script
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Finally, we need to give the pipeline user permission to write to the repository. This is where things can get a bit tricky and hard to find. The key configuration area within Azure DevOps can be found by going to the &lt;em&gt;Project Settings&lt;/em&gt;.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;For Azure DevOps repositories, select the &lt;em&gt;Repositories&lt;/em&gt; tab and click on the &lt;em&gt;[Projectname] Build Service User&lt;/em&gt; in the &lt;em&gt;Users&lt;/em&gt; section. This will show a list of permissions that the build service user has. There are 4 that are of interest here: &lt;em&gt;Contribute&lt;/em&gt;, &lt;em&gt;Create branch&lt;/em&gt;, &lt;em&gt;Create tag&lt;/em&gt; and &lt;em&gt;Read&lt;/em&gt;. Some of those will probably already be enabled for you. I suspect only the &lt;em&gt;Contribute&lt;/em&gt; needs to be added at this time, but I usually make sure all 4 are allowed.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;For other repositories, things are even more complicated. Accounts need to be configured on the external source control service so that the Build Service User account has the permissions it needs to push to that repository. This may require an SSH configuration, an Auth token, or any number of other mechanisms depending on the source control provider. See that provider&apos;s documentation for the specifics.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Update 2022-07-13: There is an additional option that needs to be enabled in the pipeline&apos;s &lt;em&gt;Agent Job&lt;/em&gt;.
-&lt;code&gt;☑ Allow scripts to access the OAuth token&lt;/code&gt;
-This option must be checked so that the script can acquire the permissions to update the repository.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;There are other ways to do all of this of course. One idea that intrigues me that I haven&apos;t tried yet is to have the build service submit a pull-request to the remote git repo. This would require an additional approval step before the changes are merged into the repo. For static websites where merging into master is the equivalent of publishing the site, this might give me the opportunity to review the built site before it is actually deployed.&lt;/p&gt;
-&lt;p&gt;Have you tried this pull-request method, or used this kind of technique with an non-Azure DevOps repo? If so, please let me know about it &lt;a rel=&quot;me&quot; href=&quot;https://fosstodon.org/@Bsstahl&quot;&gt;@bsstahl@fosstodon.org&lt;/a&gt;.&lt;/p&gt;
-</description>
-  <link>https://www.cognitiveinheritance.com/Posts/Committing-to-Git-from-Azure-DevOps-Pipeline.html</link>
-  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
-  <guid>https://www.cognitiveinheritance.com/Permalinks/ee2bd796-a0f2-4536-af7d-3c1499c093b6.html</guid>
-  <pubDate>Wed, 17 Jun 2020 16:55:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

@@ -63,6 +63,50 @@
             <div class="col-md-8">
                 <br/>
                 <div>
+    <h3>The Critical C's of Microservices - Coalescence</h3>
+    <h5>Posted by bsstahl on 2023-01-16 and Filed Under: <a title="Category: development" class="small" href="Search/development.html">development</a>&nbsp;</h5>
+    <p>&quot;<strong>The Critical C's of Microservices</strong>&quot; are a series of conversations that development teams should have around building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way.</p>
+<p>The &quot;Critical C's&quot; are: <strong>Context</strong>, <strong>Consistency</strong>, <strong>Contract</strong>, <strong>Chaos</strong>, <strong>Competencies</strong> and <strong>Coalescence</strong>. Each of these topics has been covered in detail in this series of 6 articles. The first article of the 6 was on the subject of <a href="Posts/critical-cs-of-microservices-1of6-context.html">Context</a>. This is the final article in the series, and covers the topic of <strong>Coalescence</strong>.</p>
+<h4>Coalescence</h4>
+<p>The use of Microservices reduces the complexity of our services in many ways, however it also adds complexity when it comes to deployment and operations. More services mean more deployments, even as each of those deployments is smaller and more isolated. Additionally, they can be harder on operations and support teams since there can be many more places to go when you need to find information. Ideally, we would coalesce all of the necessary information to operate and troubleshoot our systems in a single pane-of-glass so that our operations and support engineers don't have to search for information in a crisis.</p>
+<p>Deployment and system verification testing can help us identify when there are problems at any point in our system and give us insight into what the problems might be and what caused them. Tests run immediately after any deployment can help identify when a particular deployment has caused a problem so it can be addressed quickly. Likewise, ongoing system verification tests can give early indications of problems irrespective of the cause. Getting information about the results of these tests quickly and easily into the hands of the engineers that can act on them can reduce costs and prevent outages.</p>
+<p>Logging and traceability is generally considered a solved problem, so long as it is used effectively. We need to setup our systems to make the best use of our distributed logging systems. This often means adding a correlation identifier alongside various request and causation ids to make it easy to trace requests through the system. We also need to be able to monitor and surface our logs so that unusual activity can be recognized and acted on as quickly as possible.</p>
+<p>Service Level Indicators (SLIs) and other metrics can provide key insights into the operations of our systems, even if no unusual activity is seen within our logs. Knowing what operational metrics suggest there might be problems within our systems, and monitoring changes to those metrics for both our services and our dependencies can help identify, troubleshoot and even prevent outages. Surfacing those metrics for easy access can give our support and operations engineers the tools they need to do their jobs effectively.</p>
+<h4>Goals of the Conversation</h4>
+<p>Development teams should have conversations around <strong>Coalescence</strong> that are primarily focused around brining critical information about the operation of our systems together for easy acess. These conversations should include answering questions like:</p>
+<ul>
+<li>What is our mechanism for deployment and system verification?
+<ul>
+<li>How will we identify, as quickly as possible, when a deployment has had a negative impact on our system?</li>
+<li>Are there tests that can validate the operation of the system end-to-end?</li>
+<li>How will we surface the status of any deployment and system verification tests?</li>
+</ul>
+</li>
+<li>What is our mechanism for logging/traceability within our system?
+<ul>
+<li>How will we coalesce our logs from the various services within the system?</li>
+<li>How will we know if there are anomalies in our logs?</li>
+<li>Are there additional identifiers we need to add to allow traceability?</li>
+<li>Are there log queries that, if enabled, might provide additional support during an outage?</li>
+<li>Are there ways to increase the level of logging when needed to provide additional information and can this be done wholistically on the system?</li>
+</ul>
+</li>
+<li>How will we expose SLIs and other metrics so they are available when needed?</li>
+<li>How will we know when there are anomalies in our metrics?</li>
+<li>What are the metrics that would be needed in an outage and how will we surface those for easy access?</li>
+<li>Are there additional metrics that, if enabled, might provide additional support during an outage?</li>
+<li>Are there ways to perform ad-hoc queries against SLIs and metrics to provide additional insight in an outage?</li>
+<li>How will we identify the status of dependencies so we can understand when our systems are reacting to downstream anomalies?
+<ul>
+<li>How will we surface dependency status for easy access during an outage?</li>
+<li>Are there metrics we can surface for our dependencies that might help during an outage?</li>
+</ul>
+</li>
+</ul>
+
+    <h5>Tags: <a title="Tag: agile" class="small" href="Search/agile.html">agile</a>&nbsp;<a title="Tag: antipattern" class="small" href="Search/antipattern.html">antipattern</a>&nbsp;<a title="Tag: apache-kafka" class="small" href="Search/apache-kafka.html">apache-kafka</a>&nbsp;<a title="Tag: api" class="small" href="Search/api.html">api</a>&nbsp;<a title="Tag: apps" class="small" href="Search/apps.html">apps</a>&nbsp;<a title="Tag: architecture" class="small" href="Search/architecture.html">architecture</a>&nbsp;<a title="Tag: aspdotnet" class="small" href="Search/aspdotnet.html">aspdotnet</a>&nbsp;<a title="Tag: ci_cd" class="small" href="Search/ci_cd.html">ci_cd</a>&nbsp;<a title="Tag: coding-practices" class="small" href="Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: coupling" class="small" href="Search/coupling.html">coupling</a>&nbsp;<a title="Tag: event-driven" class="small" href="Search/event-driven.html">event-driven</a>&nbsp;<a title="Tag: microservices" class="small" href="Search/microservices.html">microservices</a>&nbsp;<a title="Tag: soa" class="small" href="Search/soa.html">soa</a>&nbsp;</h5>
+    <div class="share"><a href="Permalinks/a0280db3-6d32-4c89-81c4-10ce2cd3522d.html" rel="bookmark">Permalink</a></div>
+</div><hr/><div>
     <h3>The Critical C's of Microservices - Competencies</h3>
     <h5>Posted by bsstahl on 2023-01-09 and Filed Under: <a title="Category: development" class="small" href="Search/development.html">development</a>&nbsp;</h5>
     <p>&quot;<strong>The Critical C's of Microservices</strong>&quot; are a series of conversations that development teams should have around building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way.</p>
@@ -84,7 +128,7 @@
 <li>How do we document our decisions for later review?</li>
 </ul>
 <h4>Next Up - Coalescence</h4>
-<p>In the final article of this series we will look at <strong>Coalescence</strong> and how we should work to bring all of the data together for our operations &amp; support engineers.</p>
+<p>In the final article of this series we will look at <a href="Posts/critical-cs-of-microservices-6of6-coalescence.html">Coalescence</a> and how we should work to bring all of the data together for our operations &amp; support engineers.</p>
 
     <h5>Tags: <a title="Tag: agile" class="small" href="Search/agile.html">agile</a>&nbsp;<a title="Tag: antipattern" class="small" href="Search/antipattern.html">antipattern</a>&nbsp;<a title="Tag: apache-kafka" class="small" href="Search/apache-kafka.html">apache-kafka</a>&nbsp;<a title="Tag: api" class="small" href="Search/api.html">api</a>&nbsp;<a title="Tag: apps" class="small" href="Search/apps.html">apps</a>&nbsp;<a title="Tag: architecture" class="small" href="Search/architecture.html">architecture</a>&nbsp;<a title="Tag: aspdotnet" class="small" href="Search/aspdotnet.html">aspdotnet</a>&nbsp;<a title="Tag: ci_cd" class="small" href="Search/ci_cd.html">ci_cd</a>&nbsp;<a title="Tag: coding-practices" class="small" href="Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: coupling" class="small" href="Search/coupling.html">coupling</a>&nbsp;<a title="Tag: event-driven" class="small" href="Search/event-driven.html">event-driven</a>&nbsp;<a title="Tag: microservices" class="small" href="Search/microservices.html">microservices</a>&nbsp;<a title="Tag: soa" class="small" href="Search/soa.html">soa</a>&nbsp;</h5>
     <div class="share"><a href="Permalinks/a99861ed-9829-4110-9e2f-1e75efcb43a2.html" rel="bookmark">Permalink</a></div>
@@ -688,40 +732,6 @@ This option must be checked so that the script can acquire the permissions to up
 
     <h5>Tags: <a title="Tag: abstraction" class="small" href="Search/abstraction.html">abstraction</a>&nbsp;<a title="Tag: agile" class="small" href="Search/agile.html">agile</a>&nbsp;<a title="Tag: coding-practices" class="small" href="Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: microservices" class="small" href="Search/microservices.html">microservices</a>&nbsp;<a title="Tag: optimization" class="small" href="Search/optimization.html">optimization</a>&nbsp;<a title="Tag: pattern" class="small" href="Search/pattern.html">pattern</a>&nbsp;<a title="Tag: principle" class="small" href="Search/principle.html">principle</a>&nbsp;<a title="Tag: flexibility" class="small" href="Search/flexibility.html">flexibility</a>&nbsp;<a title="Tag: yagni" class="small" href="Search/yagni.html">yagni</a>&nbsp;<a title="Tag: event-driven" class="small" href="Search/event-driven.html">event-driven</a>&nbsp;</h5>
     <div class="share"><a href="Permalinks/578752d7-225b-4510-8de2-2c35ded2eb84.html" rel="bookmark">Permalink</a></div>
-</div><hr/><div>
-    <h3>Back to Basics–the Double Data Type</h3>
-    <h5>Posted by bsstahl on 2019-02-12 and Filed Under: <a title="Category: development" class="small" href="Search/development.html">development</a>&nbsp;</h5>
-    <p>What is the result of converting a value that is close to, but not at, the maximum value of an Int64 from a double to a long (Int64)?  That is, what would be the result of an expression like:</p>
-<p><code>(long)((double)(Int64.MaxValue – 1))</code></p>
-<ol>
-<li>9223372036854775806 (2<sup>63</sup>-2, the correct value numerically)</li>
-<li>-9223372036854775808 or another obviously incorrect value</li>
-<li>OverflowException</li>
-<li>Any of the above</li>
-</ol>
-<p>Based on the framing of the question it is probably clear that the correct answer is &quot;D&quot;. It is possible, depending on the hardware details and current state of your system, for any of the 3 possible outcomes.  Why is this and what can we do to be sure that the results of our floating-point operations are what we expect them to be?</p>
-<p>Before we go into the ways we can modify the behavior of our operations, let's take a look at the two data types in question, <strong>Int64</strong> and <strong>Double</strong>.</p>
-<p>An Int64 value, also known as a long, is a fairly straightforward storage mechanism that uses 63 bits for the value and 1 bit to represent the sign.  Negative numbers are stored in twos-complement form to make mathematical operations simpler.  The result is that the Int64 type can store, with perfect fidelity, any integral value between -9223372036854775808 and 9223372036854775807.</p>
-<p>The Double data type on the other hand is far more complex. It requires storage for continuous values, not just integers. As a result, the Double data type uses 52 bits to store the mantissa (value), 11 bits to store the exponent (order of magnitude) and the remaining bit of the 64-bit structure to store the sign. Both the exponent and mantissa are shifted by a few bits based on some fairly safe assumptions.  This gives us a range of values for the exponent of -1023 to 1024 and a little more than 52 bits of fidelity in the mantissa.</p>
-<p>It is this difference in fidelity; 63 bits for Int64 and roughly 52 bits for Doubles, that can cause us problems when converting between the two types.  As long as the integer value can be stored in less than 52 bits (value &lt; 4503599627370495) values can be converted back and forth between Int64 and Double without any data loss. However, as soon as the values cannot be represented completely in 52 bits, data loss is likely to occur.</p>
-<p>To store such a value in a Double data type, the exponent is adjusted higher and the best available value for the mantissa is found.  When converted back to Int64, this value will be rounded automatically by the framework into the closest integer value. This resulting value may, or may not, be exactly the same as the original value.  To see an example of this, execute the following code in your favorite C# environment:</p>
-<p><code>Console.WriteLine((long)9223372036854773765.0);</code></p>
-<p>If your system is like mine, you’ll get an answer that is not the same as the original value. On my system, I get the result <strong>9223372036854773760</strong>. It is said that this integer does not “round-trip” since it cannot be converted into a Double and then back to an integer.</p>
-<p>To make matters worse, the rounding that is required for this conversion can be unsafe under certain conditions. On my machine, if the values get within 512 of Int64.MaxValue, even though they don’t exceed it, attempting the conversion may result in an invalid result, or an <strong>OverflowException</strong>. Even performing the operation without overflow checking using the <strong>unchecked</strong> keyword or compiler switch doesn't improve things since, if done unchecked, any overflow in the operation will result in an incorrect value rather than an exception. I prefer the exception in this kind of situation so I generally keep overflow checking on.</p>
-<p>The key takeaway for me is that just checking to make certain that a Double value is less than Int64.MaxValue is not enough to guarantee it will convert without error, and certainly does not guarantee the accuracy of any such conversion. Only integer values below 52 bits can be accurately converted into Int64 values.</p>
-<p>It is always best to avoid type conversions if possible, but if you are in a situation where it is necessary to convert from large Double values into Integers, I recommend trying some experiments in your production environment to see what range of values will convert accurately. I also highly recommend including very large integers, approaching or at Int64.MaxValue as test data against any method that accepts Int64 values.  Values that are very large in the negative direction (nearing Int64.MinValue) are also good candidates to be used as test data in these methods.</p>
-<p>I’ve attached a number of resources below that I used in my research to produce this article, and to fix the bug I caused doing this kind of conversion.  If you have run into this situation and come up with an interesting way of handling it, or if the results of your conversions are different than mine, please let me know about it <a rel="me" href="https://fosstodon.org/@Bsstahl">@bsstahl@fosstodon.org</a>.</p>
-<h2>Resources</h2>
-<ul>
-<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.double?view=netcore-2.2">Double Struct</a> in the .NET API Browser</li>
-<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.convert.toint64?view=netcore-2.2#System_Convert_ToInt64_System_Double_">Convert.ToInt64 method</a> in the .NET API Browser</li>
-<li><a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types">double data type</a> in the C# Language Reference</li>
-<li>John Skeet on <a href="https://csharpindepth.com/Articles/General/FloatingPoint.aspx?printable=true">Binary floating point numbers in .NET</a></li>
-<li>John Skeet’s <a href="https://jonskeet.uk/csharp/DoubleConverter.cs">code to convert doubles to the string representation of their exact decimal value</a></li>
-</ul>
-
-    <h5>Tags: <a title="Tag: type" class="small" href="Search/type.html">type</a>&nbsp;<a title="Tag: csharp" class="small" href="Search/csharp.html">csharp</a>&nbsp;<a title="Tag: clr" class="small" href="Search/clr.html">clr</a>&nbsp;<a title="Tag: data structures" class="small" href="Search/data-structures.html">data structures</a>&nbsp;</h5>
-    <div class="share"><a href="Permalinks/c2b6a683-a9cf-4fce-96c1-5401648c056e.html" rel="bookmark">Permalink</a></div>
 </div>
             </div>
             <div class="col-md-4">
