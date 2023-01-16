@@ -55,4 +55,4 @@ Development teams should have conversations around **Competencies** that are pri
 
 #### Next Up - Coalescence
 
-In the final article of this series we will look at **Coalescence** and how we should work to bring all of the data together for our operations & support engineers.
+In the final article of this series we will look at {PostLink:critical-cs-of-microservices-6of6-coalescence|Coalescence} and how we should work to bring all of the data together for our operations & support engineers.
