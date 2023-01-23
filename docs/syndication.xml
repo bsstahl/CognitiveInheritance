@@ -9,6 +9,101 @@
     <language>en-US</language>
     <atom:link href="https://cognitiveinheritance.com/syndication.xml" rel="self" type="application/rss+xml" />	
     <item>
+  <title>Critical Questions to Ask Your Team About Microservices</title>
+  <description>&lt;p&gt;Over the last 6 weeks we have discussed the creation, maintenance and operations of microservices and event-driven systems. We explored different conversations that development teams should have prior to working with these types of architectures. Asking the questions we outlined, and answering as many of them as are appropriate, will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way. These conversations are known as &amp;quot;&lt;strong&gt;The Critical C&apos;s of Microservices&lt;/strong&gt;&amp;quot;, and each is detailed individually in its own article.&lt;/p&gt;
+&lt;p&gt;The &amp;quot;Critical C&apos;s&amp;quot; are: &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-1of6-context.html&quot;&gt;Context&lt;/a&gt;, &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-2of6-consistency.html&quot;&gt;Consistency&lt;/a&gt;, &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-3of6-contract.html&quot;&gt;Contract&lt;/a&gt;, &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-4of6-chaos.html&quot;&gt;Chaos&lt;/a&gt;, &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-5of6-competencies.html&quot;&gt;Competencies&lt;/a&gt; and &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-6of6-coalescence.html&quot;&gt;Coalescence&lt;/a&gt;. For easy reference, I have aggregated all of the key elements of each conversation in this article. For details about &lt;strong&gt;why&lt;/strong&gt; each is important, please consult the article specific to that topic.&lt;/p&gt;
+&lt;p&gt;There is also a  &lt;a href=&quot;https://www.cognitiveinheritance.com//CriticalCs/index.html&quot;&gt;Critical C&apos;s of Microservices&lt;/a&gt; website that includes the same information as in these articles. This site will be kept up-to-date as the guidance evolves.&lt;/p&gt;
+&lt;h4&gt;Questions about Context&lt;/h4&gt;
+&lt;p&gt;Development teams should have conversations around &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-1of6-context.html&quot;&gt;Context&lt;/a&gt; that are primarily focused around the tools and techniques that they intend to use to avoid the Dual-Writes Anti-Pattern. These conversations should include answering questions like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What database technologies will we use and how can we leverage these tools to create downstream events based on changes to the database state?&lt;/li&gt;
+&lt;li&gt;Which of our services are currently idempotent and which ones could reasonably made so? How can we leverage our idempotent services to improve system reliability?&lt;/li&gt;
+&lt;li&gt;Do we have any services right now that contain business processes implemented in a less-reliable way? If so, pulling this functionality out into their own microservices might be a good starting point for decomposition.&lt;/li&gt;
+&lt;li&gt;What processes will we as a development team implement to track and manage the technical debt of having business processes implemented in a less-reliable way?&lt;/li&gt;
+&lt;li&gt;What processes will we implement to be sure that any future less-reliable implementations of business functionality are made with consideration and understanding of the debt being created and a plan to pay it off.&lt;/li&gt;
+&lt;li&gt;What processes will we implement to be sure that any existing or future less-reliable implementations of business functionality are documented, understood by, and prioritized by the business process owners.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Questions about Consistency&lt;/h4&gt;
+&lt;p&gt;Development teams should have conversations around &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-2of6-consistency.html&quot;&gt;Consistency&lt;/a&gt; that are primarily focused around making certain that the system is assumed to be eventually consistency throughout. These conversations should include answering questions like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What patterns and tools will we use to create systems that support reliable, eventually consistent operations?&lt;/li&gt;
+&lt;li&gt;How will we identify existing areas where higher-levels of consistency have been wedged-in and should be removed?&lt;/li&gt;
+&lt;li&gt;How will we prevent future demands for higher-levels of consistency, either explicit or assumed, to creep in to our systems?&lt;/li&gt;
+&lt;li&gt;How will we identify when there are unusual or unacceptable delays in the system reaching a consistent state?&lt;/li&gt;
+&lt;li&gt;How will we communicate the status of the system and any delays in reaching a consistent state to the relevant stakeholders?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Questions about Contract&lt;/h4&gt;
+&lt;p&gt;Development teams should have conversations around &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-3of6-contract.html&quot;&gt;Contract&lt;/a&gt; that are primarily focused around creating processes that define any integration contracts for both upstream and downstream services, and serve to defend their internal data representations against any external consumers. These conversations should include answering questions like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How will we isolate our internal data representations from those of our downstream consumers?&lt;/li&gt;
+&lt;li&gt;What types of compatibility guarantees are our tools and practices capable of providing?&lt;/li&gt;
+&lt;li&gt;What procedures should we have in place to monitor incoming and outgoing contracts for compatibility?&lt;/li&gt;
+&lt;li&gt;What should our procedures look like for making a change to a stream that has downstream consumers?&lt;/li&gt;
+&lt;li&gt;How can we leverage upstream messaging contracts to further reduce the coupling of our systems to our upstream dependencies?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Questions about Chaos&lt;/h4&gt;
+&lt;p&gt;Development teams should have conversations around &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-4of6-chaos.html&quot;&gt;Chaos&lt;/a&gt; that are primarily focused around procedures for identifying and remediating possible failure points in the application. These conversations should include answering questions like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How will we evaluate potential sources of failures in our systems before they are built?
+&lt;ul&gt;
+&lt;li&gt;How will we handle the inability to reach a dependency such as a database?&lt;/li&gt;
+&lt;li&gt;How will we handle duplicate messages sent from our upstream data sources?&lt;/li&gt;
+&lt;li&gt;How will we handle messages sent out-of-order from our upstream data sources?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;How will we expose possible sources of failures during any pre-deployment testing?&lt;/li&gt;
+&lt;li&gt;How will we expose possible sources of failures in the production environment before they occur for users?&lt;/li&gt;
+&lt;li&gt;How will we identify errors that occur for users within production?&lt;/li&gt;
+&lt;li&gt;How will we prioritize changes to the system based on the results of these experiments?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Questions about Competencies&lt;/h4&gt;
+&lt;p&gt;Development teams should have conversations around &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-5of6-competencies.html&quot;&gt;Competencies&lt;/a&gt; that are primarily focused around what systems, sub-systems, and components should be built, which should be installed off-the-shelf, and what libraries or infrastructure capabilities should be utilized. These conversations should include answering questions like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What are our core competencies?&lt;/li&gt;
+&lt;li&gt;How do we identify &amp;quot;build vs. buy&amp;quot; opportunities?&lt;/li&gt;
+&lt;li&gt;How do we make &amp;quot;build vs. buy&amp;quot; decisions on needed systems?&lt;/li&gt;
+&lt;li&gt;How do we identify cross-cutting concerns and infrastructure capabilites that can be leveraged?&lt;/li&gt;
+&lt;li&gt;How do we determine which libraries or infrastructure components will be utilized?&lt;/li&gt;
+&lt;li&gt;How do we manage the versioning of utilized components, especially in regard to security updates?&lt;/li&gt;
+&lt;li&gt;How do we document our decisions for later review?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Questions about Coalescence&lt;/h4&gt;
+&lt;p&gt;Development teams should have conversations around &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-6of6-coalescence.html&quot;&gt;Coalescence&lt;/a&gt; that are primarily focused around brining critical information about the operation of our systems together for easy access. These conversations should include answering questions like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What is our mechanism for deployment and system verification?
+&lt;ul&gt;
+&lt;li&gt;How will we identify, as quickly as possible, when a deployment has had a negative impact on our system?&lt;/li&gt;
+&lt;li&gt;Are there tests that can validate the operation of the system end-to-end?&lt;/li&gt;
+&lt;li&gt;How will we surface the status of any deployment and system verification tests?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;What is our mechanism for logging/traceability within our system?
+&lt;ul&gt;
+&lt;li&gt;How will we coalesce our logs from the various services within the system?&lt;/li&gt;
+&lt;li&gt;How will we know if there are anomalies in our logs?&lt;/li&gt;
+&lt;li&gt;Are there additional identifiers we need to add to allow traceability?&lt;/li&gt;
+&lt;li&gt;Are there log queries that, if enabled, might provide additional support during an outage?&lt;/li&gt;
+&lt;li&gt;Are there ways to increase the level of logging when needed to provide additional information and can this be done wholistically on the system?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;How will we expose SLIs and other metrics so they are available when needed?&lt;/li&gt;
+&lt;li&gt;How will we know when there are anomalies in our metrics?&lt;/li&gt;
+&lt;li&gt;What are the metrics that would be needed in an outage and how will we surface those for easy access?&lt;/li&gt;
+&lt;li&gt;Are there additional metrics that, if enabled, might provide additional support during an outage?&lt;/li&gt;
+&lt;li&gt;Are there ways to perform ad-hoc queries against SLIs and metrics to provide additional insight in an outage?&lt;/li&gt;
+&lt;li&gt;How will we identify the status of dependencies so we can understand when our systems are reacting to downstream anomalies?
+&lt;ul&gt;
+&lt;li&gt;How will we surface dependency status for easy access during an outage?&lt;/li&gt;
+&lt;li&gt;Are there metrics we can surface for our dependencies that might help during an outage?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+  <link>https://www.cognitiveinheritance.com/Posts/critical-questions-about-microservice.html</link>
+  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
+  <guid>https://www.cognitiveinheritance.com/Permalinks/082c3f8a-ac4a-4231-9962-01536167e4a5.html</guid>
+  <pubDate>Mon, 23 Jan 2023 07:00:00 GMT</pubDate>
+</item><item>
   <title>The Critical C's of Microservices - Coalescence</title>
   <description>&lt;p&gt;&amp;quot;&lt;strong&gt;The Critical C&apos;s of Microservices&lt;/strong&gt;&amp;quot; are a series of conversations that development teams should have around building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way.&lt;/p&gt;
 &lt;p&gt;The &amp;quot;Critical C&apos;s&amp;quot; are: &lt;strong&gt;Context&lt;/strong&gt;, &lt;strong&gt;Consistency&lt;/strong&gt;, &lt;strong&gt;Contract&lt;/strong&gt;, &lt;strong&gt;Chaos&lt;/strong&gt;, &lt;strong&gt;Competencies&lt;/strong&gt; and &lt;strong&gt;Coalescence&lt;/strong&gt;. Each of these topics has been covered in detail in this series of 6 articles. The first article of the 6 was on the subject of &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-1of6-context.html&quot;&gt;Context&lt;/a&gt;. This is the final article in the series, and covers the topic of &lt;strong&gt;Coalescence&lt;/strong&gt;.&lt;/p&gt;
@@ -18,7 +113,7 @@
 &lt;p&gt;Logging and traceability is generally considered a solved problem, so long as it is used effectively. We need to setup our systems to make the best use of our distributed logging systems. This often means adding a correlation identifier alongside various request and causation ids to make it easy to trace requests through the system. We also need to be able to monitor and surface our logs so that unusual activity can be recognized and acted on as quickly as possible.&lt;/p&gt;
 &lt;p&gt;Service Level Indicators (SLIs) and other metrics can provide key insights into the operations of our systems, even if no unusual activity is seen within our logs. Knowing what operational metrics suggest there might be problems within our systems, and monitoring changes to those metrics for both our services and our dependencies can help identify, troubleshoot and even prevent outages. Surfacing those metrics for easy access can give our support and operations engineers the tools they need to do their jobs effectively.&lt;/p&gt;
 &lt;h4&gt;Goals of the Conversation&lt;/h4&gt;
-&lt;p&gt;Development teams should have conversations around &lt;strong&gt;Coalescence&lt;/strong&gt; that are primarily focused around brining critical information about the operation of our systems together for easy acess. These conversations should include answering questions like:&lt;/p&gt;
+&lt;p&gt;Development teams should have conversations around &lt;strong&gt;Coalescence&lt;/strong&gt; that are primarily focused around brining critical information about the operation of our systems together for easy access. These conversations should include answering questions like:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;What is our mechanism for deployment and system verification?
 &lt;ul&gt;
@@ -461,62 +556,6 @@
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/ea36d928-bb1c-4e06-95b0-de60a470c389.html</guid>
   <pubDate>Mon, 08 Aug 2022 23:30:00 GMT</pubDate>
-</item><item>
-  <title>Troubleshooting Information for Machinelearning-ModelBuilder Issue #1027</title>
-  <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: The issue has been resolved. There was an old version of the Extension installed on failing systems that was causing problems with Visual Studio Extensions. Even though the version of the Extension showed as the correct one, an old version was being used. A reinstall of Visual Studio was needed to fix the problem.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;There appears to be a problem with the &lt;em&gt;Preview&lt;/em&gt; version of the ModelBuilder tool for Visual Studio. This issue has been logged on &lt;a href=&quot;https://github.com/dotnet/machinelearning-modelbuilder/issues/1027&quot;&gt;GitHub&lt;/a&gt; and I am documenting my findings here in the hope that they will provide some insight into the problem. I will update this post when a solution or workaround is found.&lt;/p&gt;
-&lt;p&gt;I want to be clear that this problem is in a &lt;strong&gt;preview version&lt;/strong&gt;, where problems like this are expected. I don&apos;t want the team working on this tooling to think that I am being reproachful of their work in any way. In fact, I want to compliment them and thank them for what is generally an extremely valuable tool.&lt;/p&gt;
-&lt;p&gt;To reproduce this problem, use this &lt;a href=&quot;https://gist.githubusercontent.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/7466eb3f60fe881300de004954b240950069675d/SourceData_Mocked.csv&quot;&gt;Data File&lt;/a&gt; to train an &lt;strong&gt;Issue Classification&lt;/strong&gt; or &lt;strong&gt;Text Classification&lt;/strong&gt; model in the ModelBuilder tool by using the &lt;em&gt;Key&lt;/em&gt; column to predict the &lt;em&gt;Value&lt;/em&gt; column. The keys have intelligence built into them that are valid predictors of the Value (I didn&apos;t design this stuff).&lt;/p&gt;
-&lt;p&gt;Machines that are unable to complete this task get a error stating &lt;code&gt;Specified label column &apos;Value&apos; was not found.&lt;/code&gt; with a stack trace similar to &lt;a href=&quot;https://gist.githubusercontent.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/52e01628cb6f449fd95091eaa033559a6c4b386e/StackTrace.txt&quot;&gt;this&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;This process seems to work fine on some machines and not on others. I have a machine that it works on, and one that it fails on, so I will attempt to document the differences here.&lt;/p&gt;
-&lt;p&gt;The first thing I noticed is that the experience within the tool is &lt;em&gt;VERY DIFFERENT&lt;/em&gt; even though it is using the exact same version of the Model Builder.&lt;/p&gt;
-&lt;h3&gt;From the machine that is able to train the model&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/b73f673ab81247a529e419e56e1441b6b3cc099b/FunctionalMachine_ModelBuilder_Scenario.png&quot; alt=&quot;Scenarios - Functional Machine&quot; /&gt;&lt;/p&gt;
-&lt;h3&gt;From the machine having the failure&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/b73f673ab81247a529e419e56e1441b6b3cc099b/ProblemMachine_ModelBuilder_Scenario.png&quot; alt=&quot;Scenarios - Failing Machine&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;Everything seems to be different. The headline text, the options that can be chosen, and the graphics (or lack thereof). My first reaction when I saw this was to double-check that both machines are actually using the same version of the Model Builder tool.&lt;/p&gt;
-&lt;h2&gt;Verifying the Version of the Tool&lt;/h2&gt;
-&lt;p&gt;Spoiler alert: &lt;strong&gt;To the best I am able to verify, both machines are using the same version of the tool&lt;/strong&gt;.&lt;/p&gt;
-&lt;h3&gt;From the machine that is able to train the model&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/28226dc3fccf0155815f323a484146b7fc662305/FunctionalMachine_ModelBuilder_Version.png&quot; alt=&quot;ModelBuilder Tool Version - Functional Machine&quot; /&gt;&lt;/p&gt;
-&lt;h3&gt;From the machine having the failure&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/28226dc3fccf0155815f323a484146b7fc662305/ProblemMachine_ModelBuilder_Version.png&quot; alt=&quot;ModelBuilder Tool Version - Failing Machine&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;My next thought is that I&apos;m not looking at the right thing. Perhaps, &lt;strong&gt;ML.NET Model Builder (Preview)&lt;/strong&gt; is not the correct Extension, or maybe the UI for this Extension is loaded separately from the Extension. I can&apos;t be sure, but I can&apos;t find anything that suggests this is really the case. Perhaps the dev team can give me some insight here.&lt;/p&gt;
-&lt;h2&gt;Verifying the Region Settings of the Machine&lt;/h2&gt;
-&lt;p&gt;While these versions are clearly the same, it is obvious from the graphics that the machines have different default date formats. Even though there are no dates in this data file, and both machines were using &lt;em&gt;US English&lt;/em&gt;, I changed the Region settings of the problem machine to match that of the functional machine. Predictably, this didn&apos;t solve the problem.&lt;/p&gt;
-&lt;h3&gt;From the machine that is able to train the model&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/28226dc3fccf0155815f323a484146b7fc662305/FunctionalMachine_Region.png&quot; alt=&quot;Region Settings - Functional Machine&quot; /&gt;&lt;/p&gt;
-&lt;h3&gt;From the machine having the failure - Original Settings&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/28226dc3fccf0155815f323a484146b7fc662305/ProblemMachine_Region.png&quot; alt=&quot;Region Settings - Problem Machine&quot; /&gt;&lt;/p&gt;
-&lt;h3&gt;From the machine having the failure - Updated Settings&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/28226dc3fccf0155815f323a484146b7fc662305/ProblemMachine_Region_Updated.png&quot; alt=&quot;Updated Region Settings - Problem Machine&quot; /&gt;&lt;/p&gt;
-&lt;h2&gt;Checking the Versions of Visual Studio&lt;/h2&gt;
-&lt;p&gt;The biggest difference between the two machines that I can think of, now that the region settings match, is the exact version &amp;amp; configuration of Visual Studio. Both machines have &lt;strong&gt;Visual Studio Enterprise 2019 Preview&lt;/strong&gt; versions, but the working machine has version &lt;em&gt;16.9.0 Preview 1.0&lt;/em&gt; while the failing machine uses version &lt;em&gt;16.10.0 Preview 1.0&lt;/em&gt;. You&apos;ll have to forgive me for not wanting to &amp;quot;upgrade&amp;quot; my working machine to the latest preview of Visual Studio, just in case that actually is the problem, though I suspect that is not the issue.&lt;/p&gt;
-&lt;h3&gt;From the machine that is able to train the model&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/7466eb3f60fe881300de004954b240950069675d/FunctionalMachine_VisualStudio.png&quot; alt=&quot;Visual Studio Version - Functional Machine&quot; /&gt;&lt;/p&gt;
-&lt;h3&gt;From the machine having the failure&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/7466eb3f60fe881300de004954b240950069675d/ProblemMachine_VisualStudio.png&quot; alt=&quot;Visual Studio Version - Problem Machine&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;There are also differences in the installed payloads within Visual Studio between the 2 machines. Files containing information about the installations on each of the machines can be found below. These are the files produced when you click the &lt;em&gt;Copy Info&lt;/em&gt; button from the Visual Studio &lt;em&gt;About&lt;/em&gt; dialog.&lt;/p&gt;
-&lt;h3&gt;From the machine that is able to train the model&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://gist.githubusercontent.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/7466eb3f60fe881300de004954b240950069675d/VisualStudioPayloads_FunctionalMachine.txt&quot;&gt;Visual Studio Payloads - Functional Machine&lt;/a&gt;&lt;/p&gt;
-&lt;h3&gt;From the machine having the failure&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://gist.githubusercontent.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/7466eb3f60fe881300de004954b240950069675d/VisualStudioPayloads_ProblemMachine.txt&quot;&gt;Visual Studio Payloads - Problem Machine&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;Windows Version&lt;/h2&gt;
-&lt;p&gt;Another set of differences involve the machines themselves and the versions of Windows they are running. Both machines are running Windows 10, but the working machine runs a &lt;strong&gt;Pro&lt;/strong&gt; sku, while the problem machine uses an &lt;strong&gt;Enterprise&lt;/strong&gt; sku. Additionally, the machines have different specs, though they are consistent in that they are both underpowered for what I do. I&apos;m going to have to remedy that.&lt;/p&gt;
-&lt;p&gt;I&apos;ve included some of the key information about the machines and their OS installations in the files below. None of it seems particularly probative to me.&lt;/p&gt;
-&lt;h3&gt;From the machine that is able to train the model&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://gist.githubusercontent.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/c5148816444cca781a0ea428d5ed5a58bc6fc434/Windows_FunctionalMachine.txt&quot;&gt;System and OS - Functional Machine&lt;/a&gt;&lt;/p&gt;
-&lt;h3&gt;From the machine having the failure&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://gist.githubusercontent.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/c5148816444cca781a0ea428d5ed5a58bc6fc434/Windows_ProblemMachine.txt&quot;&gt;System and OS - Problem Machine&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;Other Things to Check&lt;/h2&gt;
-&lt;p&gt;There are probably quite a number of additional differences I could look at between the 2 machines. Do you have any ideas about what else I could check to give the dev team the tools they need to solve this problem?&lt;/p&gt;
-</description>
-  <link>https://www.cognitiveinheritance.com/Posts/Troubleshooting-Machine-Learning-ModelBuilder-Issue-1027.html</link>
-  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
-  <guid>https://www.cognitiveinheritance.com/Permalinks/f7d71577-57c3-4676-a5fa-2745a2bb8cf7.html</guid>
-  <pubDate>Sat, 03 Apr 2021 18:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

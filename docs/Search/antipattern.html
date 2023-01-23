@@ -63,6 +63,100 @@
             <div class="col-md-8">
                 <h1>Tag: antipattern</h1>
                 <div>
+    <h3>Critical Questions to Ask Your Team About Microservices</h3>
+    <h5>Posted by bsstahl on 2023-01-23 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <p>Over the last 6 weeks we have discussed the creation, maintenance and operations of microservices and event-driven systems. We explored different conversations that development teams should have prior to working with these types of architectures. Asking the questions we outlined, and answering as many of them as are appropriate, will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way. These conversations are known as &quot;<strong>The Critical C's of Microservices</strong>&quot;, and each is detailed individually in its own article.</p>
+<p>The &quot;Critical C's&quot; are: <a href="../Posts/critical-cs-of-microservices-1of6-context.html">Context</a>, <a href="../Posts/critical-cs-of-microservices-2of6-consistency.html">Consistency</a>, <a href="../Posts/critical-cs-of-microservices-3of6-contract.html">Contract</a>, <a href="../Posts/critical-cs-of-microservices-4of6-chaos.html">Chaos</a>, <a href="../Posts/critical-cs-of-microservices-5of6-competencies.html">Competencies</a> and <a href="../Posts/critical-cs-of-microservices-6of6-coalescence.html">Coalescence</a>. For easy reference, I have aggregated all of the key elements of each conversation in this article. For details about <strong>why</strong> each is important, please consult the article specific to that topic.</p>
+<p>There is also a  <a href="..//CriticalCs/index.html">Critical C's of Microservices</a> website that includes the same information as in these articles. This site will be kept up-to-date as the guidance evolves.</p>
+<h4>Questions about Context</h4>
+<p>Development teams should have conversations around <a href="../Posts/critical-cs-of-microservices-1of6-context.html">Context</a> that are primarily focused around the tools and techniques that they intend to use to avoid the Dual-Writes Anti-Pattern. These conversations should include answering questions like:</p>
+<ul>
+<li>What database technologies will we use and how can we leverage these tools to create downstream events based on changes to the database state?</li>
+<li>Which of our services are currently idempotent and which ones could reasonably made so? How can we leverage our idempotent services to improve system reliability?</li>
+<li>Do we have any services right now that contain business processes implemented in a less-reliable way? If so, pulling this functionality out into their own microservices might be a good starting point for decomposition.</li>
+<li>What processes will we as a development team implement to track and manage the technical debt of having business processes implemented in a less-reliable way?</li>
+<li>What processes will we implement to be sure that any future less-reliable implementations of business functionality are made with consideration and understanding of the debt being created and a plan to pay it off.</li>
+<li>What processes will we implement to be sure that any existing or future less-reliable implementations of business functionality are documented, understood by, and prioritized by the business process owners.</li>
+</ul>
+<h4>Questions about Consistency</h4>
+<p>Development teams should have conversations around <a href="../Posts/critical-cs-of-microservices-2of6-consistency.html">Consistency</a> that are primarily focused around making certain that the system is assumed to be eventually consistency throughout. These conversations should include answering questions like:</p>
+<ul>
+<li>What patterns and tools will we use to create systems that support reliable, eventually consistent operations?</li>
+<li>How will we identify existing areas where higher-levels of consistency have been wedged-in and should be removed?</li>
+<li>How will we prevent future demands for higher-levels of consistency, either explicit or assumed, to creep in to our systems?</li>
+<li>How will we identify when there are unusual or unacceptable delays in the system reaching a consistent state?</li>
+<li>How will we communicate the status of the system and any delays in reaching a consistent state to the relevant stakeholders?</li>
+</ul>
+<h4>Questions about Contract</h4>
+<p>Development teams should have conversations around <a href="../Posts/critical-cs-of-microservices-3of6-contract.html">Contract</a> that are primarily focused around creating processes that define any integration contracts for both upstream and downstream services, and serve to defend their internal data representations against any external consumers. These conversations should include answering questions like:</p>
+<ul>
+<li>How will we isolate our internal data representations from those of our downstream consumers?</li>
+<li>What types of compatibility guarantees are our tools and practices capable of providing?</li>
+<li>What procedures should we have in place to monitor incoming and outgoing contracts for compatibility?</li>
+<li>What should our procedures look like for making a change to a stream that has downstream consumers?</li>
+<li>How can we leverage upstream messaging contracts to further reduce the coupling of our systems to our upstream dependencies?</li>
+</ul>
+<h4>Questions about Chaos</h4>
+<p>Development teams should have conversations around <a href="../Posts/critical-cs-of-microservices-4of6-chaos.html">Chaos</a> that are primarily focused around procedures for identifying and remediating possible failure points in the application. These conversations should include answering questions like:</p>
+<ul>
+<li>How will we evaluate potential sources of failures in our systems before they are built?
+<ul>
+<li>How will we handle the inability to reach a dependency such as a database?</li>
+<li>How will we handle duplicate messages sent from our upstream data sources?</li>
+<li>How will we handle messages sent out-of-order from our upstream data sources?</li>
+</ul>
+</li>
+<li>How will we expose possible sources of failures during any pre-deployment testing?</li>
+<li>How will we expose possible sources of failures in the production environment before they occur for users?</li>
+<li>How will we identify errors that occur for users within production?</li>
+<li>How will we prioritize changes to the system based on the results of these experiments?</li>
+</ul>
+<h4>Questions about Competencies</h4>
+<p>Development teams should have conversations around <a href="../Posts/critical-cs-of-microservices-5of6-competencies.html">Competencies</a> that are primarily focused around what systems, sub-systems, and components should be built, which should be installed off-the-shelf, and what libraries or infrastructure capabilities should be utilized. These conversations should include answering questions like:</p>
+<ul>
+<li>What are our core competencies?</li>
+<li>How do we identify &quot;build vs. buy&quot; opportunities?</li>
+<li>How do we make &quot;build vs. buy&quot; decisions on needed systems?</li>
+<li>How do we identify cross-cutting concerns and infrastructure capabilites that can be leveraged?</li>
+<li>How do we determine which libraries or infrastructure components will be utilized?</li>
+<li>How do we manage the versioning of utilized components, especially in regard to security updates?</li>
+<li>How do we document our decisions for later review?</li>
+</ul>
+<h4>Questions about Coalescence</h4>
+<p>Development teams should have conversations around <a href="../Posts/critical-cs-of-microservices-6of6-coalescence.html">Coalescence</a> that are primarily focused around brining critical information about the operation of our systems together for easy access. These conversations should include answering questions like:</p>
+<ul>
+<li>What is our mechanism for deployment and system verification?
+<ul>
+<li>How will we identify, as quickly as possible, when a deployment has had a negative impact on our system?</li>
+<li>Are there tests that can validate the operation of the system end-to-end?</li>
+<li>How will we surface the status of any deployment and system verification tests?</li>
+</ul>
+</li>
+<li>What is our mechanism for logging/traceability within our system?
+<ul>
+<li>How will we coalesce our logs from the various services within the system?</li>
+<li>How will we know if there are anomalies in our logs?</li>
+<li>Are there additional identifiers we need to add to allow traceability?</li>
+<li>Are there log queries that, if enabled, might provide additional support during an outage?</li>
+<li>Are there ways to increase the level of logging when needed to provide additional information and can this be done wholistically on the system?</li>
+</ul>
+</li>
+<li>How will we expose SLIs and other metrics so they are available when needed?</li>
+<li>How will we know when there are anomalies in our metrics?</li>
+<li>What are the metrics that would be needed in an outage and how will we surface those for easy access?</li>
+<li>Are there additional metrics that, if enabled, might provide additional support during an outage?</li>
+<li>Are there ways to perform ad-hoc queries against SLIs and metrics to provide additional insight in an outage?</li>
+<li>How will we identify the status of dependencies so we can understand when our systems are reacting to downstream anomalies?
+<ul>
+<li>How will we surface dependency status for easy access during an outage?</li>
+<li>Are there metrics we can surface for our dependencies that might help during an outage?</li>
+</ul>
+</li>
+</ul>
+
+    <h5>Tags: <a title="Tag: agile" class="small" href="../Search/agile.html">agile</a>&nbsp;<a title="Tag: antipattern" class="small" href="../Search/antipattern.html">antipattern</a>&nbsp;<a title="Tag: apache-kafka" class="small" href="../Search/apache-kafka.html">apache-kafka</a>&nbsp;<a title="Tag: api" class="small" href="../Search/api.html">api</a>&nbsp;<a title="Tag: apps" class="small" href="../Search/apps.html">apps</a>&nbsp;<a title="Tag: architecture" class="small" href="../Search/architecture.html">architecture</a>&nbsp;<a title="Tag: aspdotnet" class="small" href="../Search/aspdotnet.html">aspdotnet</a>&nbsp;<a title="Tag: ci_cd" class="small" href="../Search/ci_cd.html">ci_cd</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: coupling" class="small" href="../Search/coupling.html">coupling</a>&nbsp;<a title="Tag: event-driven" class="small" href="../Search/event-driven.html">event-driven</a>&nbsp;<a title="Tag: microservices" class="small" href="../Search/microservices.html">microservices</a>&nbsp;<a title="Tag: soa" class="small" href="../Search/soa.html">soa</a>&nbsp;</h5>
+    <div class="share"><a href="../Permalinks/082c3f8a-ac4a-4231-9962-01536167e4a5.html" rel="bookmark">Permalink</a></div>
+</div><hr/><div>
     <h3>The Critical C's of Microservices - Coalescence</h3>
     <h5>Posted by bsstahl on 2023-01-16 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <p>&quot;<strong>The Critical C's of Microservices</strong>&quot; are a series of conversations that development teams should have around building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way.</p>
@@ -73,7 +167,7 @@
 <p>Logging and traceability is generally considered a solved problem, so long as it is used effectively. We need to setup our systems to make the best use of our distributed logging systems. This often means adding a correlation identifier alongside various request and causation ids to make it easy to trace requests through the system. We also need to be able to monitor and surface our logs so that unusual activity can be recognized and acted on as quickly as possible.</p>
 <p>Service Level Indicators (SLIs) and other metrics can provide key insights into the operations of our systems, even if no unusual activity is seen within our logs. Knowing what operational metrics suggest there might be problems within our systems, and monitoring changes to those metrics for both our services and our dependencies can help identify, troubleshoot and even prevent outages. Surfacing those metrics for easy access can give our support and operations engineers the tools they need to do their jobs effectively.</p>
 <h4>Goals of the Conversation</h4>
-<p>Development teams should have conversations around <strong>Coalescence</strong> that are primarily focused around brining critical information about the operation of our systems together for easy acess. These conversations should include answering questions like:</p>
+<p>Development teams should have conversations around <strong>Coalescence</strong> that are primarily focused around brining critical information about the operation of our systems together for easy access. These conversations should include answering questions like:</p>
 <ul>
 <li>What is our mechanism for deployment and system verification?
 <ul>
