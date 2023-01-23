@@ -17,36 +17,25 @@ tags:
 categories:
 - Development
 menuorder: 0
-id: fbfe137c-b52a-4419-b282-c814296d9157
-title: The Critical C's of Microservices
+id: 082c3f8a-ac4a-4231-9962-01536167e4a5
+title: Critical Questions to Ask Your Team About Microservices
 description: A series of conversations that development teams should have around building event driven or microservice architectures
-ispublished: false
+ispublished: true
 showinlist: false
 publicationdate: 2023-01-23T07:00:00Z
 lastmodificationdate: 2023-01-23T07:00:00Z
-slug: critical-cs-of-microservices-summary
+slug: critical-questions-about-microservice
 
 ---
-&quot;**The Critical C's of Microservices**&quot; are a series of conversations that development teams should have around building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way.
+Over the last 6 weeks we have discussed the creation, maintenance and operations of microservices and event-driven systems. We explored different conversations that development teams should have prior to working with these types of architectures. Asking the questions we outlined, and answering as many of them as are appropriate, will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way. These conversations are known as &quot;**The Critical C's of Microservices**&quot;, and each is detailed individually in its own article.
 
-Each of these topics has been covered in detail in a series of 6 articles. These articles are linked below. Additionally, all of the sample questions for the conversations are listed together below for easy reference.
+The &quot;Critical C's&quot; are: {PostLink:critical-cs-of-microservices-1of6-context|Context}, {PostLink:critical-cs-of-microservices-2of6-consistency|Consistency}, {PostLink:critical-cs-of-microservices-3of6-contract|Contract}, {PostLink:critical-cs-of-microservices-4of6-chaos|Chaos}, {PostLink:critical-cs-of-microservices-5of6-competencies|Competencies} and {PostLink:critical-cs-of-microservices-6of6-coalescence|Coalescence}. For easy reference, I have aggregated all of the key elements of each conversation in this article. For details about **why** each is important, please consult the article specific to that topic.
 
 There is also a  [Critical C's of Microservices]({PathToRoot}/CriticalCs/index.html) website that includes the same information as in these articles. This site will be kept up-to-date as the guidance evolves.
 
-#### Links to the articles
+#### Questions about Context
 
-1. {PostLink:critical-cs-of-microservices-1of6-context|Context}
-1. {PostLink:critical-cs-of-microservices-2of6-consistency|Consistency}
-1. {PostLink:critical-cs-of-microservices-3of6-contract|Contract}
-1. {PostLink:critical-cs-of-microservices-4of6-chaos|Chaos}
-1. {PostLink:critical-cs-of-microservices-5of6-competencies|Competencies}
-1. {PostLink:critical-cs-of-microservices-6of6-coalescence|Coalescence}
-
-#### Summaries of Questions
-
-##### Context
-
-Development teams should have conversations around **Context** that are primarily focused around the tools and techniques that they intend to use to avoid the Dual-Writes Anti-Pattern. These conversations should include answering questions like:
+Development teams should have conversations around {PostLink:critical-cs-of-microservices-1of6-context|Context} that are primarily focused around the tools and techniques that they intend to use to avoid the Dual-Writes Anti-Pattern. These conversations should include answering questions like:
 
 * What database technologies will we use and how can we leverage these tools to create downstream events based on changes to the database state?
 * Which of our services are currently idempotent and which ones could reasonably made so? How can we leverage our idempotent services to improve system reliability?
@@ -55,9 +44,9 @@ Development teams should have conversations around **Context** that are primaril
 * What processes will we implement to be sure that any future less-reliable implementations of business functionality are made with consideration and understanding of the debt being created and a plan to pay it off.
 * What processes will we implement to be sure that any existing or future less-reliable implementations of business functionality are documented, understood by, and prioritized by the business process owners.
 
-##### Consistency
+#### Questions about Consistency
 
-Development teams should have conversations around **Consistency** that are primarily focused around making certain that the system is assumed to be eventually consistency throughout. These conversations should include answering questions like:
+Development teams should have conversations around {PostLink:critical-cs-of-microservices-2of6-consistency|Consistency} that are primarily focused around making certain that the system is assumed to be eventually consistency throughout. These conversations should include answering questions like:
 
 * What patterns and tools will we use to create systems that support reliable, eventually consistent operations?
 * How will we identify existing areas where higher-levels of consistency have been wedged-in and should be removed?
@@ -65,9 +54,9 @@ Development teams should have conversations around **Consistency** that are prim
 * How will we identify when there are unusual or unacceptable delays in the system reaching a consistent state?
 * How will we communicate the status of the system and any delays in reaching a consistent state to the relevant stakeholders?
 
-##### Contract
+#### Questions about Contract
 
-Development teams should have conversations around **Contract** that are primarily focused around creating processes that define any integration contracts for both upstream and downstream services, and serve to defend their internal data representations against any external consumers. These conversations should include answering questions like:
+Development teams should have conversations around {PostLink:critical-cs-of-microservices-3of6-contract|Contract} that are primarily focused around creating processes that define any integration contracts for both upstream and downstream services, and serve to defend their internal data representations against any external consumers. These conversations should include answering questions like:
 
 * How will we isolate our internal data representations from those of our downstream consumers?
 * What types of compatibility guarantees are our tools and practices capable of providing?
@@ -75,9 +64,9 @@ Development teams should have conversations around **Contract** that are primari
 * What should our procedures look like for making a change to a stream that has downstream consumers?
 * How can we leverage upstream messaging contracts to further reduce the coupling of our systems to our upstream dependencies?
 
-##### Chaos
+#### Questions about Chaos
 
-Development teams should have conversations around **Chaos** that are primarily focused around procedures for identifying and remediating possible failure points in the application. These conversations should include answering questions like:
+Development teams should have conversations around {PostLink:critical-cs-of-microservices-4of6-chaos|Chaos} that are primarily focused around procedures for identifying and remediating possible failure points in the application. These conversations should include answering questions like:
 
 * How will we evaluate potential sources of failures in our systems before they are built?
   * How will we handle the inability to reach a dependency such as a database?
@@ -88,9 +77,9 @@ Development teams should have conversations around **Chaos** that are primarily 
 * How will we identify errors that occur for users within production?
 * How will we prioritize changes to the system based on the results of these experiments?
 
-##### Competencies
+#### Questions about Competencies
 
-Development teams should have conversations around **Competencies** that are primarily focused around what systems, sub-systems, and components should be built, which should be installed off-the-shelf, and what libraries or infrastructure capabilities should be utilized. These conversations should include answering questions like:
+Development teams should have conversations around {PostLink:critical-cs-of-microservices-5of6-competencies|Competencies} that are primarily focused around what systems, sub-systems, and components should be built, which should be installed off-the-shelf, and what libraries or infrastructure capabilities should be utilized. These conversations should include answering questions like:
 
 * What are our core competencies?
 * How do we identify "build vs. buy" opportunities?
@@ -100,9 +89,9 @@ Development teams should have conversations around **Competencies** that are pri
 * How do we manage the versioning of utilized components, especially in regard to security updates?
 * How do we document our decisions for later review?
 
-##### Coalescence
+#### Questions about Coalescence
 
-Development teams should have conversations around **Coalescence** that are primarily focused around brining critical information about the operation of our systems together for easy acess. These conversations should include answering questions like:
+Development teams should have conversations around {PostLink:critical-cs-of-microservices-6of6-coalescence|Coalescence} that are primarily focused around brining critical information about the operation of our systems together for easy access. These conversations should include answering questions like:
 
 * What is our mechanism for deployment and system verification?
   * How will we identify, as quickly as possible, when a deployment has had a negative impact on our system?

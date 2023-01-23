@@ -43,7 +43,7 @@ Service Level Indicators (SLIs) and other metrics can provide key insights into 
 
 #### Goals of the Conversation
 
-Development teams should have conversations around **Coalescence** that are primarily focused around brining critical information about the operation of our systems together for easy acess. These conversations should include answering questions like:
+Development teams should have conversations around **Coalescence** that are primarily focused around brining critical information about the operation of our systems together for easy access. These conversations should include answering questions like:
 
 * What is our mechanism for deployment and system verification?
   * How will we identify, as quickly as possible, when a deployment has had a negative impact on our system?
