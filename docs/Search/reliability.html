@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang=en>
     <head>
-        <!-- Template: Post Page -->
+        <!-- Template: Content Page -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     
-        <meta name="description" content="Conflict of Interest -- YAGNI vs. Standardization, an article on Cognitive Inheritance.">
+        <meta name="description" content="{Description}">
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -16,10 +16,11 @@
         <title>Cognitive Inheritance - The Application Development Experiences of an Enterprise Developer</title>
     </head>
     <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 <a class="navbar-brand" href="../index.html">Cognitive Inheritance</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
@@ -54,32 +55,14 @@
 </div>
 </nav>
 
-                <header>The Application Development Experiences of an Enterprise Developer</header>
+                    <header>The Application Development Experiences of an Enterprise Developer</header>
+                </div>
             </div>
-        </div>
 
         <div class="row">
             <div class="col-md-8">
-              <h1>Conflict of Interest -- YAGNI vs. Standardization</h1>
-              <h5>Posted by bsstahl on 2014-07-28 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-              <p>While working on the OSS project mentioned in my <a href="../Posts/New-OSS-Project.html">previous post</a>, I have run across a dilemma where two of the principles I try to work by are in conflict. The two principles in question are:</p>
-<ol>
-<li><strong>YAGNI</strong> - <em>You aint gonna need it</em>, which prescribes not coding anything unless the need already exists. This principle is a core of Test Driven Development of which I am a practitioner and a strong proponent.</li>
-<li><strong>Standardization</strong> - Where components, especially those built for use by other developers, are implemented in a common way in order to shorten the learning curve of future developers who will use the component and to reduce implementation bugs.</li>
-</ol>
-<p>I have run across this type of decision many times before and have noted the following:</p>
-<ul>
-<li>YAGNI is usually correct, if you don't need it now, you are unlikely to need it in the future.</li>
-<li>Standard implementations which are built incompletely tend to be implemented badly later because there tends to be more time pressure further along into projects, and because it is often implemented by someone other than the original programmer who may not be as familiar with the pattern.</li>
-<li>The fact that there is less time pressure early in projects is another great reason to respect YAGNI because if we are always writing unnecessary code early in projects, a project can quickly become late.</li>
-<li>Implementing code that is not currently required by the use-cases being built requires the addition of unit tests that are specific to the underlying functionality rather than user requested features. While often valuable, the very fact that we are writing such tests is a code smell.</li>
-<li>Since I use FxCop Code Analysis built-in to Visual Studio, not supplying all features of a standard implementation may require overriding one or more analysis rules.</li>
-</ul>
-<p>Taking all of this into account, the simplest solution (which is usually the best) is to override the FxCop rules in the code, and continue without implementing the unneeded, albeit standard features.</p>
-<p>Do you disagree with my decision? Tell me why <a rel="me" href="https://fosstodon.org/@Bsstahl">@bsstahl@cognitiveinheritance.com</a>.</p>
-
-              <h5>Tags: <a title="Tag: yagni" class="small" href="../Search/yagni.html">yagni</a>&nbsp;<a title="Tag: standardization" class="small" href="../Search/standardization.html">standardization</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: code analysis" class="small" href="../Search/code-analysis.html">code analysis</a>&nbsp;<a title="Tag: tdd" class="small" href="../Search/tdd.html">tdd</a>&nbsp;<a title="Tag: unit testing" class="small" href="../Search/unit-testing.html">unit testing</a>&nbsp;</h5>
-              <div class="share"><a href="../Permalinks/9b50d169-d967-4ee1-ba25-e97713bed19b.html" rel="bookmark">Permalink</a></div>
+                <h1>Tag: reliability</h1>
+                
             </div>
             <div class="col-md-4">
                 <div class="widgetzone"><div class="widget textbox"><h4>About the Author</h4><div class="content"><p><img style="float: left; padding: 0px 3px 0px 0px;" src="../Pics/bsstahl_left.gif" alt="Barry S. Stahl" width="95" /> <strong>Barry S. Stahl</strong> (he/him/his) - Barry is a .NET Software Engineer who has been creating business solutions for enterprise customers for more than 30 years. Barry is also an Election Integrity Activist, baseball and hockey fan, husband of one genius and father of another, and a 30+ year resident of Phoenix Arizona USA. When Barry is not traveling around the world to speak at Conferences, Code Camps and User Groups or to participate in GiveCamp events, he spends his days as a Solution Architect for <a href="https://grnh.se/ba048c6d1">Carvana</a> in Tempe AZ and his nights thinking about the next <a href="https://www.azgivecamp.org">AZGiveCamp</a> event where software creators come together to build websites and apps for some great non-profit organizations.</p>
@@ -98,10 +81,11 @@
             </div>
         </div>
     </div>
-
+    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 </body>
+
 </html>
