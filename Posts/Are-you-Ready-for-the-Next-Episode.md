@@ -12,7 +12,6 @@ tags:
 - visual studio
 - xaml
 - windows
-- windows phone
 - apache cordova
 menuorder: 0
 id: ceb59f2f-55d7-447b-8470-a19d93fb29e7

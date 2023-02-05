@@ -1,7 +1,6 @@
 ---
 tags:
 - entity framework
-- foreign key
 - entity
 - data structures
 menuorder: 0

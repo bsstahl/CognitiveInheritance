@@ -1,7 +1,6 @@
 ---
 tags:
 - code camp
-- ajax
 - javascript
 menuorder: 0
 id: fa64c95d-3b3d-4192-8c35-86d1a64d4cda
