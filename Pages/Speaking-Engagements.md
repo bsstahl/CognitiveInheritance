@@ -16,7 +16,7 @@ categories: []
 
 ### Upcoming Talks
 
-* **CodeMash 2023** | Sandusky Ohio, USA | 1/10/2023 - 1/13/2023 | "Event Storming Workshop"
+I currently have no talks scheduled. {ContactPageLink:Contact me} to arrange to have me speak at your event.
 
 ***
 
@@ -96,7 +96,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 * **Pushing AI to the Client with WebAssembly and Blazor** (also available as a half-day workshop) - Want to run your .NET Standard code directly in the browser on the client-side without the need for transpilers or browser plug-ins? Well, now you can with WebAssembly and Blazor. WebAssembly (WASM) is the W3C specification that will be used to provide the next generation of development tools for the web and beyond. Blazor is Microsoft's experiment that allows ASP.Net developers to create web pages that do much of the scripting work in C# using WASM. Come join us as we explore the basics of WebAssembly and how WASM can be used to run existing C# code client side in the browser. You will walk away with an understanding of what WebAssembly and Blazor can do for you and how to immediately get started running your own .NET code in the browser.
 
-  [Latest Slide Deck](https://pushingaitotheclient.azurewebsites.net) | [Video: J on the Beach - Marbella Spain - May 2019](https://www.youtube.com/watch?v=JtqOSfmw1CY&list=FLq-iLd7rfmqSIFiujBGIRSw&index=3)
+  [Video: J on the Beach - Marbella Spain - May 2019](https://www.youtube.com/watch?v=JtqOSfmw1CY&list=FLq-iLd7rfmqSIFiujBGIRSw&index=3)
 
 ***
 
@@ -112,8 +112,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ***
 
-* **Building AI Solutions Using Combinatorial Solvers** - We depend on Artificial Intelligences to solve many types of problems for us. Some of these problems have more than one possible solution. Handling those problems with more than one solution while building a modern AI system is something every developer will be asked to do over the course of his or her career. Figuring out the best way to utilize the capacity of a device or machine, finding the shortest path between two points, or determining the best way to schedule people or events are all problems where mathematical optimization techniques and tooling can be used to quickly and efficiently find solutions. This session is a software developers introduction to using mathematical optimization in Artificial Intelligence. In it, we will explore some of the foundational techniques for solving these types of problems, and use combinatorial solver tools to put them to work in our AI systems. Since this is a session for developers, we'll keep it in terms that work best for us. That is, we'll go heavy on the code and lighter on the math. **Note**: This talk can be specifically targeted to one of several solver tools including
-  Gurobi, Microsoft Solver Foundation and Google OR-Tools.
+* **Building AI Solutions Using Combinatorial Solvers** - We depend on Artificial Intelligences to solve many types of problems for us. Some of these problems have more than one possible solution. Handling those problems with more than one solution while building a modern AI system is something every developer will be asked to do over the course of his or her career. Figuring out the best way to utilize the capacity of a device or machine, finding the shortest path between two points, or determining the best way to schedule people or events are all problems where mathematical optimization techniques and tooling can be used to quickly and efficiently find solutions. This session is a software developers introduction to using mathematical optimization in Artificial Intelligence. In it, we will explore some of the foundational techniques for solving these types of problems, and use combinatorial solver tools to put them to work in our AI systems. Since this is a session for developers, we'll keep it in terms that work best for us. That is, we'll go heavy on the code and lighter on the math. **Note**: This talk can be specifically targeted to one of several solver tools including Gurobi, Microsoft Solver Foundation and Google OR-Tools.
 
   [Video: NDC Sydney - Sydney Australia - August 2017](https://www.youtube.com/watch?v=zZAobExOMB0&list=FLq-iLd7rfmqSIFiujBGIRSw&index=2)
 
@@ -121,6 +120,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ### Past engagements
 
+* **CodeMash 2023** - 1/10/2023 - 1/13/2023 - "Event Storming Workshop"
 * **Edmonton .NET User Group** - 11/29/2022 - "Introduction to Microservices"
 * **NDC Oslo 2022** - 9/26/2022 - 9/30/2022 - "Amazing Algorithms for Solving Problems in Software" & "Event Storming Workshop"
 * **Code PaLOUsa 2022** - 8/17/2022 - 8/19/2022 - "Design Patterns for Loosely Coupled Applications" & "Event Storming Workshop"
