@@ -12,6 +12,7 @@ name:
 - Johann Gauss
 - Grace Hopper
 - Daphne Koller
+- Grady Booch
 - Benoit Mandelbrot
 lastmodificationdate: 2020-06-03T22:05:00.000+00:00
 
