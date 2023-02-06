@@ -47,7 +47,7 @@ I often describe myself as the kind of person who has a list of his favorite phy
 1. Johann Gauss
 1. Grace Hopper
 
-* Other notables: Daphne Koller, Benoit Mandelbrot
+* Other notables: Daphne Koller, Grady Booch, Benoit Mandelbrot
 
 ---
 
