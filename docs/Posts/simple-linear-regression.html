@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang="en">
     <head>
-        <!-- Template: Content Page -->
+        <!-- Template: Post Page -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     
-        <meta name="description" content="{Description}">
+        <meta name="description" content="Simple Linear Regression, an article on Cognitive Inheritance.">
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -16,11 +16,10 @@
         <title>Cognitive Inheritance - The Application Development Experiences of an Enterprise Developer</title>
     </head>
     <body>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 <a class="navbar-brand" href="../index.html">Cognitive Inheritance</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
@@ -55,17 +54,15 @@
 </div>
 </nav>
 
-                    <header>The Application Development Experiences of an Enterprise Developer</header>
-                </div>
+                <header>The Application Development Experiences of an Enterprise Developer</header>
             </div>
+        </div>
 
         <div class="row">
             <div class="col-md-8">
-                <h1>Tag: ml</h1>
-                <div>
-    <h3>Simple Linear Regression</h3>
-    <h5>Posted by bsstahl on 2023-02-13 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <p>My high-school chemistry teacher, Mrs. J, had a name for that moment when she could see the lightbulb go on over your head. You know, that instant where realization hits and a concept sinks-in and becomes part of your consciousness. The moment that you truly &quot;Grok&quot; a principle. She called that an &quot;aha experience&quot;.</p>
+              <h1>Simple Linear Regression</h1>
+              <h5>Posted by bsstahl on 2023-02-13 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+              <p>My high-school chemistry teacher, Mrs. J, had a name for that moment when she could see the lightbulb go on over your head. You know, that instant where realization hits and a concept sinks-in and becomes part of your consciousness. The moment that you truly &quot;Grok&quot; a principle. She called that an &quot;aha experience&quot;.</p>
 <p>One of my favorite &quot;aha experiences&quot; from my many years as a Software Engineer, is when I realized that the simplest neural network, a model with one input and one output, was simply modeling a line, and that training such a model, was just performing a linear regression. Mind. Blown.</p>
 <p>In case you haven't had this particular epiphany yet, allow me to go into some detail. I also discuss this in my conference talk, <a href="https://cognitiveinheritance.com/Pages/Speaking-Engagements.html#ai-talks">A Developer's Introduction to Artificial Intelligences</a>.</p>
 <h4>Use Case: Predict the Location of a Train</h4>
@@ -87,64 +84,8 @@
 <p>There are many ways to perform the error-minimization process. Many more complicated models are trained using an iterative optimization routine called <strong>Gradient Descent</strong>. Extremely simple models like this one often use a less complicated process such as <strong>Ordinary Least Squares</strong>. The goals are the same however, values for weights and biases in the model are found that minimize the error in the output, resulting in a model can make the desired predictions based on known inputs.</p>
 <p>Regardless of the method used, the realization that training the simplest neural network results in a model of a line provided the &quot;aha experience&quot; I needed as the foundation for my understanding of Machine Learning models. I hope, by publishing this article, that others may also benefit from this recognition.</p>
 
-    <h5>Tags: <a title="Tag: ai" class="small" href="../Search/ai.html">ai</a>&nbsp;<a title="Tag: algorithms" class="small" href="../Search/algorithms.html">algorithms</a>&nbsp;<a title="Tag: ml" class="small" href="../Search/ml.html">ml</a>&nbsp;<a title="Tag: optimization" class="small" href="../Search/optimization.html">optimization</a>&nbsp;<a title="Tag: presentation" class="small" href="../Search/presentation.html">presentation</a>&nbsp;</h5>
-    <div class="share"><a href="../Permalinks/18a693d3-448c-4477-b4e2-7193e896a2b6.html" rel="bookmark">Permalink</a></div>
-</div><hr/><div>
-    <h3>Troubleshooting Information for Machinelearning-ModelBuilder Issue #1027</h3>
-    <h5>Posted by bsstahl on 2021-04-03 and Filed Under: <a title="Category: tools" class="small" href="../Search/tools.html">tools</a>&nbsp;</h5>
-    <blockquote>
-<p><strong>Update</strong>: The issue has been resolved. There was an old version of the Extension installed on failing systems that was causing problems with Visual Studio Extensions. Even though the version of the Extension showed as the correct one, an old version was being used. A reinstall of Visual Studio was needed to fix the problem.</p>
-</blockquote>
-<p>There appears to be a problem with the <em>Preview</em> version of the ModelBuilder tool for Visual Studio. This issue has been logged on <a href="https://github.com/dotnet/machinelearning-modelbuilder/issues/1027">GitHub</a> and I am documenting my findings here in the hope that they will provide some insight into the problem. I will update this post when a solution or workaround is found.</p>
-<p>I want to be clear that this problem is in a <strong>preview version</strong>, where problems like this are expected. I don't want the team working on this tooling to think that I am being reproachful of their work in any way. In fact, I want to compliment them and thank them for what is generally an extremely valuable tool.</p>
-<p>To reproduce this problem, use this <a href="https://gist.githubusercontent.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/7466eb3f60fe881300de004954b240950069675d/SourceData_Mocked.csv">Data File</a> to train an <strong>Issue Classification</strong> or <strong>Text Classification</strong> model in the ModelBuilder tool by using the <em>Key</em> column to predict the <em>Value</em> column. The keys have intelligence built into them that are valid predictors of the Value (I didn't design this stuff).</p>
-<p>Machines that are unable to complete this task get a error stating <code>Specified label column 'Value' was not found.</code> with a stack trace similar to <a href="https://gist.githubusercontent.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/52e01628cb6f449fd95091eaa033559a6c4b386e/StackTrace.txt">this</a>.</p>
-<p>This process seems to work fine on some machines and not on others. I have a machine that it works on, and one that it fails on, so I will attempt to document the differences here.</p>
-<p>The first thing I noticed is that the experience within the tool is <em>VERY DIFFERENT</em> even though it is using the exact same version of the Model Builder.</p>
-<h3>From the machine that is able to train the model</h3>
-<p><img src="https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/b73f673ab81247a529e419e56e1441b6b3cc099b/FunctionalMachine_ModelBuilder_Scenario.png" alt="Scenarios - Functional Machine" /></p>
-<h3>From the machine having the failure</h3>
-<p><img src="https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/b73f673ab81247a529e419e56e1441b6b3cc099b/ProblemMachine_ModelBuilder_Scenario.png" alt="Scenarios - Failing Machine" /></p>
-<p>Everything seems to be different. The headline text, the options that can be chosen, and the graphics (or lack thereof). My first reaction when I saw this was to double-check that both machines are actually using the same version of the Model Builder tool.</p>
-<h2>Verifying the Version of the Tool</h2>
-<p>Spoiler alert: <strong>To the best I am able to verify, both machines are using the same version of the tool</strong>.</p>
-<h3>From the machine that is able to train the model</h3>
-<p><img src="https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/28226dc3fccf0155815f323a484146b7fc662305/FunctionalMachine_ModelBuilder_Version.png" alt="ModelBuilder Tool Version - Functional Machine" /></p>
-<h3>From the machine having the failure</h3>
-<p><img src="https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/28226dc3fccf0155815f323a484146b7fc662305/ProblemMachine_ModelBuilder_Version.png" alt="ModelBuilder Tool Version - Failing Machine" /></p>
-<p>My next thought is that I'm not looking at the right thing. Perhaps, <strong>ML.NET Model Builder (Preview)</strong> is not the correct Extension, or maybe the UI for this Extension is loaded separately from the Extension. I can't be sure, but I can't find anything that suggests this is really the case. Perhaps the dev team can give me some insight here.</p>
-<h2>Verifying the Region Settings of the Machine</h2>
-<p>While these versions are clearly the same, it is obvious from the graphics that the machines have different default date formats. Even though there are no dates in this data file, and both machines were using <em>US English</em>, I changed the Region settings of the problem machine to match that of the functional machine. Predictably, this didn't solve the problem.</p>
-<h3>From the machine that is able to train the model</h3>
-<p><img src="https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/28226dc3fccf0155815f323a484146b7fc662305/FunctionalMachine_Region.png" alt="Region Settings - Functional Machine" /></p>
-<h3>From the machine having the failure - Original Settings</h3>
-<p><img src="https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/28226dc3fccf0155815f323a484146b7fc662305/ProblemMachine_Region.png" alt="Region Settings - Problem Machine" /></p>
-<h3>From the machine having the failure - Updated Settings</h3>
-<p><img src="https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/28226dc3fccf0155815f323a484146b7fc662305/ProblemMachine_Region_Updated.png" alt="Updated Region Settings - Problem Machine" /></p>
-<h2>Checking the Versions of Visual Studio</h2>
-<p>The biggest difference between the two machines that I can think of, now that the region settings match, is the exact version &amp; configuration of Visual Studio. Both machines have <strong>Visual Studio Enterprise 2019 Preview</strong> versions, but the working machine has version <em>16.9.0 Preview 1.0</em> while the failing machine uses version <em>16.10.0 Preview 1.0</em>. You'll have to forgive me for not wanting to &quot;upgrade&quot; my working machine to the latest preview of Visual Studio, just in case that actually is the problem, though I suspect that is not the issue.</p>
-<h3>From the machine that is able to train the model</h3>
-<p><img src="https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/7466eb3f60fe881300de004954b240950069675d/FunctionalMachine_VisualStudio.png" alt="Visual Studio Version - Functional Machine" /></p>
-<h3>From the machine having the failure</h3>
-<p><img src="https://gist.github.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/7466eb3f60fe881300de004954b240950069675d/ProblemMachine_VisualStudio.png" alt="Visual Studio Version - Problem Machine" /></p>
-<p>There are also differences in the installed payloads within Visual Studio between the 2 machines. Files containing information about the installations on each of the machines can be found below. These are the files produced when you click the <em>Copy Info</em> button from the Visual Studio <em>About</em> dialog.</p>
-<h3>From the machine that is able to train the model</h3>
-<p><a href="https://gist.githubusercontent.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/7466eb3f60fe881300de004954b240950069675d/VisualStudioPayloads_FunctionalMachine.txt">Visual Studio Payloads - Functional Machine</a></p>
-<h3>From the machine having the failure</h3>
-<p><a href="https://gist.githubusercontent.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/7466eb3f60fe881300de004954b240950069675d/VisualStudioPayloads_ProblemMachine.txt">Visual Studio Payloads - Problem Machine</a></p>
-<h2>Windows Version</h2>
-<p>Another set of differences involve the machines themselves and the versions of Windows they are running. Both machines are running Windows 10, but the working machine runs a <strong>Pro</strong> sku, while the problem machine uses an <strong>Enterprise</strong> sku. Additionally, the machines have different specs, though they are consistent in that they are both underpowered for what I do. I'm going to have to remedy that.</p>
-<p>I've included some of the key information about the machines and their OS installations in the files below. None of it seems particularly probative to me.</p>
-<h3>From the machine that is able to train the model</h3>
-<p><a href="https://gist.githubusercontent.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/c5148816444cca781a0ea428d5ed5a58bc6fc434/Windows_FunctionalMachine.txt">System and OS - Functional Machine</a></p>
-<h3>From the machine having the failure</h3>
-<p><a href="https://gist.githubusercontent.com/bsstahl/06db6cfce2fbbc2e6d455631ffff8108/raw/c5148816444cca781a0ea428d5ed5a58bc6fc434/Windows_ProblemMachine.txt">System and OS - Problem Machine</a></p>
-<h2>Other Things to Check</h2>
-<p>There are probably quite a number of additional differences I could look at between the 2 machines. Do you have any ideas about what else I could check to give the dev team the tools they need to solve this problem?</p>
-
-    <h5>Tags: <a title="Tag: ml" class="small" href="../Search/ml.html">ml</a>&nbsp;<a title="Tag: modelbuilder" class="small" href="../Search/modelbuilder.html">modelbuilder</a>&nbsp;</h5>
-    <div class="share"><a href="../Permalinks/f7d71577-57c3-4676-a5fa-2745a2bb8cf7.html" rel="bookmark">Permalink</a></div>
-</div>
+              <h5>Tags: <a title="Tag: ai" class="small" href="../Search/ai.html">ai</a>&nbsp;<a title="Tag: algorithms" class="small" href="../Search/algorithms.html">algorithms</a>&nbsp;<a title="Tag: ml" class="small" href="../Search/ml.html">ml</a>&nbsp;<a title="Tag: optimization" class="small" href="../Search/optimization.html">optimization</a>&nbsp;<a title="Tag: presentation" class="small" href="../Search/presentation.html">presentation</a>&nbsp;</h5>
+              <div class="share"><a href="../Permalinks/18a693d3-448c-4477-b4e2-7193e896a2b6.html" rel="bookmark">Permalink</a></div>
             </div>
             <div class="col-md-4">
                 <div class="widgetzone"><div class="widget textbox"><h4>About the Author</h4><div class="content"><p><img style="float: left; padding: 0px 3px 0px 0px;" src="../Pics/bsstahl_left.gif" alt="Barry S. Stahl" width="95" /> <strong>Barry S. Stahl</strong> (he/him/his) - Barry is a .NET Software Engineer who has been creating business solutions for enterprise customers for more than 35 years. Barry is also an Election Integrity Activist, baseball and hockey fan, husband of one genius and father of another, and a 40 year resident of Phoenix Arizona USA. When Barry is not traveling around the world to speak at Conferences, Code Camps and User Groups or to participate in GiveCamp events, he spends his days as a Solution Architect for <a href="https://grnh.se/ba048c6d1">Carvana</a> in Tempe AZ and his nights thinking about the next <a href="https://www.azgivecamp.org">AZGiveCamp</a> event where software creators come together to build websites and apps for some great non-profit organizations.</p>
@@ -163,11 +104,10 @@
             </div>
         </div>
     </div>
-    
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 </body>
-
 </html>
