@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     
-        <meta name="description" content="Committing to Git from an Azure DevOps Pipeline, an article on Cognitive Inheritance.">
+        <meta name="description" content="Microservices&colon; Size Doesn&apos;t Matter, Reliability Does, an article on Cognitive Inheritance.">
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -60,67 +60,26 @@
 
         <div class="row">
             <div class="col-md-8">
-              <h1>Committing to Git from an Azure DevOps Pipeline</h1>
-              <h5>Posted by bsstahl on 2020-06-17 and Filed Under: <a title="Category: tools" class="small" href="../Search/tools.html">tools</a>&nbsp;</h5>
-              <p>There are occasions, such as when working with static website generators, that you'll want to push some changes made in an Azure DevOps pipeline, back into the source Git repository. This process is simple enough, but since I have struggled to get it configured twice now, I am documenting the process here for your use, and my future use.</p>
-<p>Azure DevOps pipelines typically contain two parts, although other configurations are possible. The two standards are:</p>
+              <h1>Microservices&colon; Size Doesn&apos;t Matter, Reliability Does</h1>
+              <h5>Posted by bsstahl on 2023-02-20 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+              <p>There are conflicting opinions among architects about how many microservices a distributed system should have, and the size of those services. Some people may say that a particular design has too many microservices, and that it should be consolidated into fewer, larger services to reduce deployment and operational complexity. Others may say that the same design doesn't have enough microservices, and that it should be broken-down into smaller, more granular services to reduce internal complexity. Aside from the always true and rarely helpful &quot;it depends...&quot;, is there good guidance on the subject?</p>
+<p>The truth is, the number and size of microservices is not a measure of quality or performance unto itself, it is a design decision based on one primary characteristic, <strong>Reliability</strong>. As such, there is a simple rule guiding the creation of services, but it isn't based on the size or quantity of services. The rule is based entirely on how much work a service does.</p>
+<p>After security, reliability is the most important attribute of any system, because it affects the satisfaction of both the users and developers, as well as the productivity and agility of the development and support teams. A reliable system has the following characteristics:</p>
 <ul>
-<li>Get sources - gets the information to work with from a Git repository or other source control environment</li>
-<li>Agent Job - holds the tasks required to complete the pipeline</li>
+<li>It performs its duties as expected</li>
+<li>It has minimal failures where it has to report to the user that it is unable to perform its duties</li>
+<li>It has minimal downtime when it cannot be reached and opportunities may be lost</li>
+<li>It recovers itself automatically when outages do occur, without data loss</li>
 </ul>
-<p>You'll need to take the following steps to configure the interactions between your source control provider and your pipeline:</p>
-<ul>
-<li>Configure the <strong>Get sources</strong> section of the pipeline by selecting your source control provider from the list of options and then choosing the repository from the list within that provider. For most providers, you will need to supply credentials with access to the repository, although the pipeline may already have the basic access it needs to read from an Azure DevOps Repo.</li>
-</ul>
-<p><img src="/Images/azure_devops_sources.PNG" alt="Azure DevOps Sources" /></p>
-<ul>
-<li>[optional] Configure an <strong>Agent Job</strong> to perform any cleanup of the repo necessary. When building a static website, I first delete all files from the target directory (the old static website files) so that only the files that are still needed are included in the final deployment.</li>
-</ul>
-<blockquote>
-<p>Note: for all Agent Job steps that involve scripting, I use the <strong>Command Line</strong> task which allows me to execute my scripts in one of the native OS shells (Bash on Linux and macOS and cmd.exe on Windows). You could just as easily use the <strong>Powershell</strong> task, which is cross-platform or any number of other options.</p>
-</blockquote>
-<ul>
-<li><p>Execute your build process. This is the step that generates the new files that will eventually be committed back into the source repository. Each static website generator has their own method for creating the site, see the documentation for your tooling for specifics. You can also execute custom tools or scripts here that modify files in the repository any way you'd like.</p>
-</li>
-<li><p>Execute the commit back to the source repo. This is the money step, where everything that has been done to this point is saved in the repository. As with previous steps, I use the <strong>Command Line</strong> task to execute the needed commands. My script is shown below. It is written for the Windows <strong>cmd.exe</strong> shell so commands that start with <em>ECHO</em> are log entries that will be included in the pipeline's execution log to help with troubleshooting and maintenance. This script uses a number of <strong>pipeline variables</strong> which take the form <em>$(variableName)</em> to make configuration easier. The <em>git.email</em> and <em>git.user</em> variables were defined by me in the <em>Variables</em> section of the pipeline, you will need to either configure those variables yourself, or substitute their values in the script. The <em>Build.SourceVersion</em> and <em>Build.SourceVersionMessage</em> variables are supplied by the pipeline and no action was required on my part to create or enable them.</p>
-</li>
-</ul>
-<p>An interesting thing to note about this script is the <em>git push</em> command. The full command <code>git push origin HEAD:master</code> is required in this case, rather than just a simple <code>git push</code> because, once the files are downloaded into the pipeline repo, the local repository is disconnected from the remote by the pipeline, possibly as a safety measure. We have to tell the local repo to push back to the remote HEAD, or else the push will fail. I suspect there is a way to tell the pipeline not to disconnect the head, but doing things this way, to my knowledge, has no ill-effects and is simple enough that it isn't really worth the effort for me to find out.</p>
-<pre><code>ECHO ** Starting &quot;Git config for user: $(git.user)&quot;
-git config --global user.email &quot;$(git.email)&quot;
-git config --global user.name &quot;$(git.user)&quot;
+<p>Having reliable systems means that your support engineers won't be constantly woken-up in the middle of the night to deal with outages, and your customers will remain satisfied with the quality of the product.</p>
+<h4>How do we build reliable systems with microservices?</h4>
+<p>To build a reliable system using microservices, we need to follow one simple rule: <strong>avoid dual-writes</strong>. A dual-write is when a service makes more than one change to system state within an execution context. For example, a web API that updates a database and sends a message to a queue during the execution of a single web request is performing a dual-write since it is making two different changes to the state of the system, and both of the changes are expected to occur reliably. Dual-writes are the enemy of reliability, because they create the risk of inconsistency, data loss, and data corruption. If one of the writes succeeds and the other fails, the system state becomes out of sync and system behavior becomes unpredictable. The errors these types of failures create are often hard to find and remediate because they usually present very differently depending on when the failure occurred. The best-practice is clear, microservices can read data as often as they need, but should only write data once. An <strong>atomic update</strong> to a database is an example of such a write, regardless of how many tables or collections are updated during that process. In this way, we can keep the state of each service consistent, and the system behavior deterministic. If the process fails even part-way through, we know how to recover, and can often do it automatically.</p>
+<p>Building this type of system does require a change in how we design our services. In the past, it was very common for us to make multiple state changes to a system's state, especially inside a monolithic application. To remain reliable, we need to leverage tools like <a href="https://en.wikipedia.org/wiki/Change_data_capture" title="Events created by a database system when data updates occur that can reliably trigger downstream actions">Change Data Capture (CDC)</a>, which is available in most modern database systems, or the <a href="https://learn.microsoft.com/en-us/azure/architecture/best-practices/transactional-outbox-cosmos" title="Reliably update a data store AND take additional downstream action by atomically writing 2 updates to the data store, the state update, and an event that is monitored for by another system and used to take the additional action">Transactional Outbox Pattern</a> so that we can write our data once, and have that update trigger other activities downstream.</p>
+<p>Since microservices are sized to avoid dual-writes, the number of microservices in a system is determined by what they do and how they interact. The number of microservices is not a fixed or arbitrary number, but a result of the system design and the business needs. By following the rule of avoiding dual-writes, you can size your microservices appropriately, and achieve a system that is scalable and adaptable, but most of all, reliable.</p>
+<p>For more detail on how to avoid the Dual-Writes Anti-Pattern, please see my article from December 2022 on <a href="../Posts/critical-cs-of-microservices-1of6-context.html">The Execution Context</a>.</p>
 
-ECHO ** Starting &quot;Git add...&quot;
-git add .
-
-ECHO ** Starting &quot;Git commit...&quot;
-git commit -m &quot;Static site rebuild due to commit $(Build.SourceVersion) '$(Build.SourceVersionMessage)'&quot;
-
-ECHO ** Starting &quot;Git push...&quot;
-git push origin HEAD:master
-
-ECHO ** Ending Update remote git repo script
-</code></pre>
-<ul>
-<li><p>Finally, we need to give the pipeline user permission to write to the repository. This is where things can get a bit tricky and hard to find. The key configuration area within Azure DevOps can be found by going to the <em>Project Settings</em>.</p>
-<ul>
-<li><p>For Azure DevOps repositories, select the <em>Repositories</em> tab and click on the <em>[Projectname] Build Service User</em> in the <em>Users</em> section. This will show a list of permissions that the build service user has. There are 4 that are of interest here: <em>Contribute</em>, <em>Create branch</em>, <em>Create tag</em> and <em>Read</em>. Some of those will probably already be enabled for you. I suspect only the <em>Contribute</em> needs to be added at this time, but I usually make sure all 4 are allowed.</p>
-</li>
-<li><p>For other repositories, things are even more complicated. Accounts need to be configured on the external source control service so that the Build Service User account has the permissions it needs to push to that repository. This may require an SSH configuration, an Auth token, or any number of other mechanisms depending on the source control provider. See that provider's documentation for the specifics.</p>
-</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>Update 2022-07-13: There is an additional option that needs to be enabled in the pipeline's <em>Agent Job</em>.
-<code>☑ Allow scripts to access the OAuth token</code>
-This option must be checked so that the script can acquire the permissions to update the repository.</p>
-</blockquote>
-<p>There are other ways to do all of this of course. One idea that intrigues me that I haven't tried yet is to have the build service submit a pull-request to the remote git repo. This would require an additional approval step before the changes are merged into the repo. For static websites where merging into master is the equivalent of publishing the site, this might give me the opportunity to review the built site before it is actually deployed.</p>
-<p>Have you tried this pull-request method, or used this kind of technique with an non-Azure DevOps repo? If so, please let me know about it <a rel="me" href="https://fosstodon.org/@Bsstahl">@bsstahl@cognitiveinheritance.com</a>.</p>
-
-              <h5>Tags: <a title="Tag: ci_cd" class="small" href="../Search/ci_cd.html">ci_cd</a>&nbsp;<a title="Tag: git" class="small" href="../Search/git.html">git</a>&nbsp;<a title="Tag: azure" class="small" href="../Search/azure.html">azure</a>&nbsp;<a title="Tag: devops" class="small" href="../Search/devops.html">devops</a>&nbsp;<a title="Tag: azure devops" class="small" href="../Search/azure-devops.html">azure devops</a>&nbsp;</h5>
-              <div class="share"><a href="../Permalinks/ee2bd796-a0f2-4536-af7d-3c1499c093b6.html" rel="bookmark">Permalink</a></div>
+              <h5>Tags: <a title="Tag: architecture" class="small" href="../Search/architecture.html">architecture</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: event-driven" class="small" href="../Search/event-driven.html">event-driven</a>&nbsp;<a title="Tag: microservices" class="small" href="../Search/microservices.html">microservices</a>&nbsp;<a title="Tag: reliability" class="small" href="../Search/reliability.html">reliability</a>&nbsp;<a title="Tag: soa" class="small" href="../Search/soa.html">soa</a>&nbsp;</h5>
+              <div class="share"><a href="../Permalinks/53e0a79d-1096-4874-9639-6c1fb3eb8b47.html" rel="bookmark">Permalink</a></div>
             </div>
             <div class="col-md-4">
                 <div class="widgetzone"><div class="widget textbox"><h4>About the Author</h4><div class="content"><p><img style="float: left; padding: 0px 3px 0px 0px;" src="../Pics/bsstahl_left.gif" alt="Barry S. Stahl" width="95" /> <strong>Barry S. Stahl</strong> (he/him/his) - Barry is a .NET Software Engineer who has been creating business solutions for enterprise customers for more than 35 years. Barry is also an Election Integrity Activist, baseball and hockey fan, husband of one genius and father of another, and a 40 year resident of Phoenix Arizona USA. When Barry is not traveling around the world to speak at Conferences, Code Camps and User Groups or to participate in GiveCamp events, he spends his days as a Solution Architect for <a href="https://grnh.se/ba048c6d1">Carvana</a> in Tempe AZ and his nights thinking about the next <a href="https://www.azgivecamp.org">AZGiveCamp</a> event where software creators come together to build websites and apps for some great non-profit organizations.</p>
