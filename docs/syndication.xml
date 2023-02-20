@@ -9,6 +9,30 @@
     <language>en-US</language>
     <atom:link href="https://cognitiveinheritance.com/syndication.xml" rel="self" type="application/rss+xml" />	
     <item>
+  <title>Microservices&colon; Size Doesn&apos;t Matter, Reliability Does</title>
+  <description>&lt;p&gt;There are conflicting opinions among architects about how many microservices a distributed system should have, and the size of those services. Some people may say that a particular design has too many microservices, and that it should be consolidated into fewer, larger services to reduce deployment and operational complexity. Others may say that the same design doesn&apos;t have enough microservices, and that it should be broken-down into smaller, more granular services to reduce internal complexity. Aside from the always true and rarely helpful &amp;quot;it depends...&amp;quot;, is there good guidance on the subject?&lt;/p&gt;
+&lt;p&gt;The truth is, the number and size of microservices is not a measure of quality or performance unto itself, it is a design decision based on one primary characteristic, &lt;strong&gt;Reliability&lt;/strong&gt;. As such, there is a simple rule guiding the creation of services, but it isn&apos;t based on the size or quantity of services. The rule is based entirely on how much work a service does.&lt;/p&gt;
+&lt;p&gt;After security, reliability is the most important attribute of any system, because it affects the satisfaction of both the users and developers, as well as the productivity and agility of the development and support teams. A reliable system has the following characteristics:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It performs its duties as expected&lt;/li&gt;
+&lt;li&gt;It has minimal failures where it has to report to the user that it is unable to perform its duties&lt;/li&gt;
+&lt;li&gt;It has minimal downtime when it cannot be reached and opportunities may be lost&lt;/li&gt;
+&lt;li&gt;It recovers itself automatically when outages do occur, without data loss&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Having reliable systems means that your support engineers won&apos;t be constantly woken-up in the middle of the night to deal with outages, and your customers will remain satisfied with the quality of the product.&lt;/p&gt;
+&lt;h4&gt;How do we build reliable systems with microservices?&lt;/h4&gt;
+&lt;p&gt;The key to building reliable systems using microservices is to follow one simple rule: &lt;strong&gt;avoid dual-writes&lt;/strong&gt;. A dual-write is when a service makes more than one change to system state within an execution context. Dual-writes are the enemy of reliability, because they create the risk of inconsistency, data loss, and data corruption.&lt;/p&gt;
+&lt;p&gt;For example, a web API that updates a database and sends a message to a queue during the execution of a single web request is performing a dual-write since it is making two different changes to the state of the system, and both of the changes are expected to occur reliably. If one of the writes succeeds and the other fails, the system state becomes out of sync and system behavior becomes unpredictable. The errors created when these types of failures occur are often hard to find and remediate because they can present very differently depending on the part of the process being executed when the failure happened.&lt;/p&gt;
+&lt;p&gt;The best-practice is to allow microservices to perform &lt;a href=&quot;https://en.wikipedia.org/wiki/Idempotence&quot; title=&quot;Idempotence is the ability to execute a task an arbitrary number of times (&amp;gt;1) and have the resulting state of the system be the same as if the task was executed once.&quot;&gt;idempotent&lt;/a&gt; operations like database reads as often as they need, but to only write data once. An &lt;strong&gt;atomic update&lt;/strong&gt; to a database is an example of such a write, regardless of how many tables or collections are updated during that process. In this way, we can keep the state of each service consistent, and the system behavior deterministic. If the process fails even part-way through, we know how to recover, and can often do it automatically.&lt;/p&gt;
+&lt;p&gt;Building this type of system does require a change in how we design our services. In the past, it was very common for us to make multiple changes to a system&apos;s state, especially inside a monolithic application. To remain reliable, we need to leverage tools like &lt;a href=&quot;https://en.wikipedia.org/wiki/Change_data_capture&quot; title=&quot;Events created by a database system when data updates occur that can reliably trigger downstream actions&quot;&gt;Change Data Capture (CDC)&lt;/a&gt;, which is available in most modern database systems, or the &lt;a href=&quot;https://learn.microsoft.com/en-us/azure/architecture/best-practices/transactional-outbox-cosmos&quot; title=&quot;Reliably update a data store AND take additional downstream action by atomically writing 2 updates to the data store, the state update, and an event that is monitored for by another system and used to take the additional action&quot;&gt;Transactional Outbox Pattern&lt;/a&gt; so that we can write our data once, and have that update trigger other activities downstream.&lt;/p&gt;
+&lt;p&gt;Since microservices are sized to avoid dual-writes, the number of microservices in a system is determined by what they do and how they interact. The number of microservices is not a fixed or arbitrary number, but a result of the system design and the business needs. By following the rule of avoiding dual-writes, you can size your microservices appropriately, and achieve a system that is scalable and adaptable, but most of all, reliable. Of course, this practice alone will not guarantee the reliability of your systems, but it will make reliability possible, and is the best guideline I&apos;ve found for sizing microservices.&lt;/p&gt;
+&lt;p&gt;For more detail on how to avoid the Dual-Writes Anti-Pattern, please see my article from December 2022 on &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-1of6-context.html&quot;&gt;The Execution Context&lt;/a&gt;.&lt;/p&gt;
+</description>
+  <link>https://www.cognitiveinheritance.com/Posts/microservices-size-does-not-matter.html</link>
+  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
+  <guid>https://www.cognitiveinheritance.com/Permalinks/53e0a79d-1096-4874-9639-6c1fb3eb8b47.html</guid>
+  <pubDate>Mon, 20 Feb 2023 07:00:00 GMT</pubDate>
+</item><item>
   <title>Simple Linear Regression</title>
   <description>&lt;p&gt;My high-school chemistry teacher, Mrs. J, had a name for that moment when she could see the lightbulb go on over your head. You know, that instant where realization hits and a concept sinks-in and becomes part of your consciousness. The moment that you truly &amp;quot;Grok&amp;quot; a principle. She called that an &amp;quot;aha experience&amp;quot;.&lt;/p&gt;
 &lt;p&gt;One of my favorite &amp;quot;aha experiences&amp;quot; from my many years as a Software Engineer, is when I realized that the simplest neural network, a model with one input and one output, was simply modeling a line, and that training such a model, was just performing a linear regression. Mind. Blown.&lt;/p&gt;
@@ -347,51 +371,6 @@
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/86685931-2951-4253-a923-563537481cee.html</guid>
   <pubDate>Mon, 19 Dec 2022 07:00:00 GMT</pubDate>
-</item><item>
-  <title>Teach Students how to Use ChatGPT</title>
-  <description>&lt;p&gt;There have been a number of concerns raised, with clearly more to come, about the use of &lt;em&gt;ChatGPT&lt;/em&gt; and similar tools in academic circles. I am not an academic, but I am a professional and I believe these concerns to be misplaced.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;As a professional in my field, I should and do use tools like &lt;em&gt;ChatGPT&lt;/em&gt; to do my job.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;I, and the teams I work with, experiment with ways to use tools like ChatGPT better. We use these tools to create the foundation for our written work. We use them to automate the mundane stuff. We use them as thinking tools, to prompt us with ideas we might not have considered. This is not only allowed, it is encouraged!&lt;/p&gt;
-&lt;h4&gt;Why should it be different for students?&lt;/h4&gt;
-&lt;p&gt;There are several good analogs for &lt;em&gt;ChatGPT&lt;/em&gt; that we all have used for years, these include:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;The predictive text on our mobile phones - It is the same as pressing the middle word on the virtual keyboard to autocomplete a sentence. That is all this tool does, predict what is the most likely next word based on the inputs.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The template in your chosen word processing software (i.e. MS Word or Google Docs) - Both will create a framework for you where you fill in the details. This is really all that &lt;em&gt;ChatGPT&lt;/em&gt; does, it just does it in a more visually impressive way.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Grammar and Thesaurus Software - &amp;quot;Suggests&amp;quot; words that can be modified to make the meaning clearer or the language more traditionally appropriate.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Wikipedia, or other information aggregator - A source of text that can be used as a starting point for research, or a source of plagiarized material, at the discretion of the user.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Nobody thinks twice about using any of these tools anymore, though there was certainly concern early-on about Wikipedia. This is probably due to reasons like these:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;If anyone, student or professional, produced a work product that was just an unmodified template, it would considered very sloppy and incomplete work, and would be judged as such on its merits.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;If anyone, student or professional, produced a work product that was copied from Wikipedia or other source, without significant modification or citation, there would be clear evidence of that fact available via the Internet.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;ChatGPT&lt;/em&gt; is concerning to academics because it has become good enough at doing the work of these template and predictive tools to pass a higher standard of review, and its use cannot be proven, only given a probability score. However, like all tools, the key is not &lt;strong&gt;that&lt;/strong&gt; it is used, but &lt;strong&gt;how&lt;/strong&gt; it is used.&lt;/p&gt;
-&lt;p&gt;The text that &lt;em&gt;ChatGPT&lt;/em&gt; produces is generated probabilistically. It is not enough just to have it spit out a template and submit it as work product. Its facts need to be verified (and are often wrong). Its &amp;quot;analysis&amp;quot; needs to be tested and verified. Its &amp;quot;writing&amp;quot; needs to be clarified and organized. When you submit work where &lt;em&gt;ChatGPT&lt;/em&gt; was used to automate the mundane task of generating the basic layout, you are saying that you have verified the text and that you stand behind it. It is your work and you are approving it. &lt;strong&gt;If it has lied, you have lied. If the words it spit-out result in a bad analysis, it is your bad analysis&lt;/strong&gt;. The words are yours when you submit them regardless of whether they were generated via the neural network of your brain, the artificial neural network of &lt;em&gt;ChatGPT&lt;/em&gt;, or some other, perhaps procedural method.&lt;/p&gt;
-&lt;p&gt;I&apos;ll say it clearly for emphasis:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;All work should be judged on its merits&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4&gt;Educators should teach how to use these tools responsibly and safely&lt;/h4&gt;
-&lt;p&gt;Academics and professionals alike, please do not attempt to legislate the use of these tools. Instead, focus on how they &lt;strong&gt;should be used&lt;/strong&gt;. Teach ethical and safe usage of these tools in a similar way to how we teach students to use Wikipedia. These productivity aids are not going away, they are only going to get better. We need to show everyone how to use them to their advantage, and to the advantage of their teams and of society.&lt;/p&gt;
-&lt;p&gt;My field of &lt;em&gt;Software Engineering&lt;/em&gt; is primarily about solving problems. To solve problems, we describe solutions to these problems in ways that are easy for a machine to interpret. The only difference between the code I write that goes into a &lt;em&gt;compiler&lt;/em&gt; to be turned into machine-executable instructions, and the code I write to go into &lt;em&gt;ChatGPT&lt;/em&gt; is the language that I use to describe my intent. Using &lt;em&gt;ChatGPT&lt;/em&gt; is just writing a computer program using the English language rather than &lt;em&gt;C#&lt;/em&gt; or &lt;em&gt;Python&lt;/em&gt;. A process such as that should absolutely be encouraged whether the usage is academic or not.&lt;/p&gt;
-&lt;p&gt;It is my firm belief that the handwringing about the productivity gains that a fantastic tool like ChatGPT can give us is not only misplaced, it is often dangerously misleading.&lt;/p&gt;
-&lt;h4&gt;Addendum&lt;/h4&gt;
-&lt;p&gt;I am only now realizing I should have used ChatGPT to produce the foundations of this text. A missed opportunity to be certain, though to be fair, I originally intended this to be a one or two liner, not an essay.&lt;/p&gt;
-&lt;h4&gt;Disclosure&lt;/h4&gt;
-&lt;p&gt;I have no stake whatsoever in ChatGPT except as a beta user.&lt;/p&gt;
-</description>
-  <link>https://www.cognitiveinheritance.com/Posts/teach-students-how-to-use-chatgpt.html</link>
-  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
-  <guid>https://www.cognitiveinheritance.com/Permalinks/8ef8b660-1646-4b1b-91b8-e5cfdedad0b0.html</guid>
-  <pubDate>Sat, 17 Dec 2022 16:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
