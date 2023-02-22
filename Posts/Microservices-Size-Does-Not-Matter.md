@@ -15,13 +15,13 @@ ispublished: true
 buildifnotpublished: true
 showinlist: false
 publicationdate: 2023-02-20T07:00:00.000+00:00
-lastmodificationdate: 2023-02-20T07:00:00.000+00:00
+lastmodificationdate: 2023-02-22T07:00:00.000+00:00
 slug: microservices-size-does-not-matter
 categories:
 - Development
 
 ---
-There are conflicting opinions among architects about how many microservices a distributed system should have, and the size of those services. Some people may say that a particular design has too many microservices, and that it should be consolidated into fewer, larger services to reduce deployment and operational complexity. Others may say that the same design doesn't have enough microservices, and that it should be broken-down into smaller, more granular services to reduce internal complexity. Aside from the always true and rarely helpful "it depends...", is there good guidance on the subject?
+There are conflicting opinions among architects about how many microservices a distributed system should have, and the size of those services. Some may say that a particular design has too many microservices, and that it should be consolidated into fewer, larger services to reduce deployment and operational complexity. Others may say that the same design doesn't have enough microservices, and that it should be broken-down into smaller, more granular services to reduce code complexity and improve team agility. Aside from the always true and rarely helpful "it depends...", is there good guidance on the subject?
 
 The truth is, the number and size of microservices is not a measure of quality or performance unto itself, it is a design decision based on one primary characteristic, **Reliability**. As such, there is a simple rule guiding the creation of services, but it isn't based on the size or quantity of services. The rule is based entirely on how much work a service does.
 
