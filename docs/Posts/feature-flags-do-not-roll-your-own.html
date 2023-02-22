@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     
-        <meta name="description" content="Microservices&colon; Size Doesn&apos;t Matter, Reliability Does, an article on Cognitive Inheritance.">
+        <meta name="description" content="Feature Flags&colon; Don&apos;t Roll Your Own, an article on Cognitive Inheritance.">
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -60,28 +60,83 @@
 
         <div class="row">
             <div class="col-md-8">
-              <h1>Microservices&colon; Size Doesn&apos;t Matter, Reliability Does</h1>
-              <h5>Posted by bsstahl on 2023-02-20 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-              <p>There are conflicting opinions among architects about how many microservices a distributed system should have, and the size of those services. Some may say that a particular design has too many microservices, and that it should be consolidated into fewer, larger services to reduce deployment and operational complexity. Others may say that the same design doesn't have enough microservices, and that it should be broken-down into smaller, more granular services to reduce code complexity and improve team agility. Aside from the always true and rarely helpful &quot;it depends...&quot;, is there good guidance on the subject?</p>
-<p>The truth is, the number and size of microservices is not a measure of quality or performance unto itself, it is a design decision based on one primary characteristic, <strong>Reliability</strong>. As such, there is a simple rule guiding the creation of services, but it isn't based on the size or quantity of services. The rule is based entirely on how much work a service does.</p>
-<p>After security, reliability is the most important attribute of any system, because it affects the satisfaction of both the users and developers, as well as the productivity and agility of the development and support teams. A reliable system has the following characteristics:</p>
+              <h1>Feature Flags&colon; Don&apos;t Roll Your Own</h1>
+              <h5>Posted by bsstahl on 2023-02-27 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+              <p>Feature flags are a powerful tool for controlling the availability and behavior of features in your software. They allow you to turn features on or off at runtime, without deploying new code, and target specific segments of users with different variations of your features. This enables you to experiment, test, and release features faster and safer than ever before.</p>
+<p>But feature flags are not something you should implement yourself. Rolling your own feature flags may seem like a simple and cost-effective solution, but it comes with many hidden pitfalls and risks that can undermine your software quality, performance, security, and maintainability. Ultimately, rolling your own feature flag system may end up costing you much more than using an existing product.</p>
+<p>We should always have a strong bias against building anything that falls outside of our team's <a href="../Posts/critical-cs-of-microservices-5of6-competencies.html">core competencies</a>, but feature flags in particular have their own special set of concerns, especially since, on the surface, it seems like such a simple problem.</p>
+<p>Here are some of the specific reasons why you should avoid rolling your own feature flags:</p>
 <ul>
-<li>It performs its duties as expected</li>
-<li>It has minimal failures where it has to report to the user that it is unable to perform its duties</li>
-<li>It has minimal downtime when it cannot be reached and opportunities may be lost</li>
-<li>It recovers itself automatically when outages do occur, without data loss</li>
+<li><p><strong>Complexity</strong>: Implementing feature flags requires more than just adding some if statements to your code. You need to design a robust system for managing, storing, updating, evaluating, and auditing your feature flags across different environments, platforms, services, and teams. You also need to handle edge cases such as flag dependencies, conflicts, defaults, fallbacks, rollbacks, etc. This adds a lot of complexity and overhead to your codebase that can introduce bugs, errors, inconsistencies, and technical debt.</p>
+</li>
+<li><p><strong>Performance</strong>: Evaluating feature flags at runtime can have a significant impact on your application's performance if not done properly. You need to ensure that your feature flag system is fast, scalable, reliable, resilient, and secure. You also need to optimize your flag evaluation logic for minimal latency and resource consumption. If you roll your own feature flags without proper performance testing and monitoring tools, you may end up slowing down or crashing your application due to excessive network calls, database queries, memory usage, or CPU cycles.</p>
+</li>
+<li><p><strong>Security</strong>: Feature flags can expose sensitive information or functionality that should not be accessible by unauthorized users or attackers. You need to ensure that your feature flag system is secure from both internal and external threats. You also need to comply with any regulatory or legal requirements for data privacy and protection. If you roll your own feature flags without proper security measures and best practices, you may end up leaking confidential data or compromising your application's integrity.</p>
+</li>
+<li><p><strong>Maintainability</strong>: Feature flags are meant to be temporary switches that enable or disable features until they are ready for full release or removal. However, if you roll your own feature flags without proper management tools and processes, you may end up with a large number of stale or unused flags that clutter or pollute your codebase. This makes it harder to understand or modify your code, increases the risk of errors or conflicts, and reduces the readability or testability of your code.</p>
+</li>
 </ul>
-<p>Having reliable systems means that your support engineers won't be constantly woken-up in the middle of the night to deal with outages, and your customers will remain satisfied with the quality of the product.</p>
-<h4>How do we build reliable systems with microservices?</h4>
-<p>The key to building reliable systems using microservices is to follow one simple rule: <strong>avoid dual-writes</strong>. A dual-write is when a service makes more than one change to system state within an execution context. Dual-writes are the enemy of reliability, because they create the risk of inconsistency, data loss, and data corruption.</p>
-<p>For example, a web API that updates a database and sends a message to a queue during the execution of a single web request is performing a dual-write since it is making two different changes to the state of the system, and both of the changes are expected to occur reliably. If one of the writes succeeds and the other fails, the system state becomes out of sync and system behavior becomes unpredictable. The errors created when these types of failures occur are often hard to find and remediate because they can present very differently depending on the part of the process being executed when the failure happened.</p>
-<p>The best-practice is to allow microservices to perform <a href="https://en.wikipedia.org/wiki/Idempotence" title="Idempotence is the ability to execute a task an arbitrary number of times (&gt;1) and have the resulting state of the system be the same as if the task was executed once.">idempotent</a> operations like database reads as often as they need, but to only write data once. An <strong>atomic update</strong> to a database is an example of such a write, regardless of how many tables or collections are updated during that process. In this way, we can keep the state of each service consistent, and the system behavior deterministic. If the process fails even part-way through, we know how to recover, and can often do it automatically.</p>
-<p>Building this type of system does require a change in how we design our services. In the past, it was very common for us to make multiple changes to a system's state, especially inside a monolithic application. To remain reliable, we need to leverage tools like <a href="https://en.wikipedia.org/wiki/Change_data_capture" title="Events created by a database system when data updates occur that can reliably trigger downstream actions">Change Data Capture (CDC)</a>, which is available in most modern database systems, or the <a href="https://learn.microsoft.com/en-us/azure/architecture/best-practices/transactional-outbox-cosmos" title="Reliably update a data store AND take additional downstream action by atomically writing 2 updates to the data store, the state update, and an event that is monitored for by another system and used to take the additional action">Transactional Outbox Pattern</a> so that we can write our data once, and have that update trigger other activities downstream.</p>
-<p>Since microservices are sized to avoid dual-writes, the number of microservices in a system is determined by what they do and how they interact. The number of microservices is not a fixed or arbitrary number, but a result of the system design and the business needs. By following the rule of avoiding dual-writes, you can size your microservices appropriately, and achieve a system that is scalable and adaptable, but most of all, reliable. Of course, this practice alone will not guarantee the reliability of your systems, but it will make reliability possible, and is the best guideline I've found for sizing microservices.</p>
-<p>For more detail on how to avoid the Dual-Writes Anti-Pattern, please see my article from December 2022 on <a href="../Posts/critical-cs-of-microservices-1of6-context.html">The Execution Context</a>.</p>
+<p>As you can see, rolling your own feature flags is not as easy as it sounds. It requires a lot of time,
+effort, skill, and discipline to do it right. And even if you do it right, you may still face challenges such as compatibility issues or vendor lock-in.</p>
+<p>That's why you should use a professional feature flag management platform instead. A feature flag management platform provides you with all the tools and services you need to implement and manage feature flags effectively and efficiently.</p>
+<p>With a feature flag management platform:</p>
+<ul>
+<li><p>You can create and update feature flags easily using a user-friendly interface or API.</p>
+</li>
+<li><p>You can target specific segments of users based on various criteria such as location, device type, user behavior, etc.</p>
+</li>
+<li><p>You can monitor and measure the impact of your features on key metrics such as conversion rates, engagement levels, error rates, etc.</p>
+</li>
+<li><p>You can control the rollout speed and strategy of your features using various methods such as percentage-based splits, canary releases, blue-green deployments, etc.</p>
+</li>
+<li><p>You can integrate with various tools such as CI/CD pipelines, testing frameworks, analytics platforms, etc. to streamline your development and delivery workflows.</p>
+</li>
+<li><p>You can ensure the performance, security, reliability, scalability, of your feature flag system using advanced techniques such as caching, encryption, failover mechanisms, load balancing, etc.</p>
+</li>
+<li><p>You can manage the lifecycle of your feature flags using best practices such as naming conventions, documentation, flag retirement policies, etc.</p>
+</li>
+</ul>
+<p>A feature flag management platform takes care of all these aspects for you, so you can focus on building and delivering great features for your customers.</p>
+<p>There are many feature flag management platforms available in the market, such as LaunchDarkly, Split, Optimizely, Taplytics, etc. Each platform has its own features, pricing, and integrations that you can compare and choose from based on your needs and preferences.</p>
+<p>However, regardless of which platform you use, there are some best practices that you should follow when using feature flags. These best practices will help you avoid common pitfalls and maximize the benefits of feature flags for your software development and delivery process.</p>
+<p>Here are some of the best practices that you should know:</p>
+<ul>
+<li><p><strong>Use a consistent system for feature flag management</strong>: It doesn't matter if you use a feature flag management tool or a custom solution, as long as you have a consistent system for creating, updating, and deleting your feature flags. You should also have a clear ownership and accountability model for each flag, so that you know who is responsible for what.</p>
+</li>
+<li><p><strong>Set naming conventions for different types of feature flags</strong>: You can implement feature flags to achieve many different goals, such as testing, experimenting, releasing, or hiding features. You should use descriptive and meaningful names for your flags that indicate their purpose and scope. You should also use prefixes or suffixes to distinguish between different types of flags, such as release flags, experiment flags, kill switches, etc.</p>
+</li>
+<li><p><strong>Make it easy to switch a flag on/off</strong>: You should be able to turn a feature flag on or off with minimal effort and delay. You should also be able to override or modify a flag's settings at any time without redeploying your code. This will allow you to react quickly and flexibly to any changes or issues that may arise during your feature development or delivery cycle.</p>
+</li>
+<li><p><strong>Make feature flag settings visible</strong>: You should be able to see and monitor the current state and configuration of each feature flag at any given time. You should also be able to track and audit the history and usage of each flag across different environments, platforms, services, and teams. This will help you ensure transparency and traceability of your feature development and delivery process.</p>
+</li>
+<li><p><strong>Clean up obsolete flags</strong>: You should remove any feature flags that are no longer needed or used as soon as possible. This will prevent cluttering or polluting your codebase with unnecessary or outdated code paths that can increase complexity or introduce errors or conflicts¹⁶.</p>
+</li>
+</ul>
+<p>Some additional recommendations are:</p>
+<ul>
+<li><p><strong>Avoid dependencies between flags</strong>: You should avoid creating complex dependencies or interactions between different feature flags that can make it hard to understand or predict their behavior or impact. You should also avoid nesting or chaining multiple flags within each other that can increase latency or resource consumption.</p>
+</li>
+<li><p><strong>Use feature switches to avoid code branches</strong>: You should use simple boolean expressions to evaluate your feature flags rather than creating multiple code branches with if/else statements. This will reduce code duplication and improve readability and testability of your code.</p>
+</li>
+<li><p><strong>Use feature flags for small test releases</strong>: You should use feature flags to release small batches of features incrementally rather than releasing large groups of features altogether. This will allow you to test and validate your features with real users in production without affecting everyone at once. It will also enable you to roll back or fix any issues quickly if something goes wrong[^1]^ [8]^.</p>
+</li>
+</ul>
+<p>By following these best practices, you can leverage the power of feature flags without compromising on quality, performance, security, or maintainability.</p>
+<h4>Some Open Source Feature Flag Systems</h4>
+<p>Yes, there are some open source projects that support feature flag management. For example:</p>
+<ul>
+<li><p><strong>GrowthBook</strong>: GrowthBook is an open source feature management and experimentation platform that helps your engineering team adopt an experimentation culture. It enables you to create gradual or canary releases with user targeting, run A/B tests, track key metrics, and integrate with various data sources.</p>
+</li>
+<li><p><strong>Flagsmith</strong>: Flagsmith is an open source feature flag and remote config service that makes it easy to create and manage features flags across web, mobile, and server side applications. It allows you to control feature access, segment users, toggle features on/off, and customize your app behavior without redeploying your code.</p>
+</li>
+<li><p><strong>Unleash</strong>: Unleash is an open source feature flag management system that helps you deploy new features at incredible speed. It lets you decouple deployment from release, run experiments easily, scale as your business grows, and integrate with various tools and platforms.</p>
+</li>
+</ul>
+<p>These are just some examples of open source feature flag management projects. There may be others that suit your needs better.</p>
+<p>Feature flags are an essential tool for modern software development and delivery. They enable you to deliver faster, safer, and better features for your customers while reducing risk and cost. But don't try to roll your own feature flags unless you have a good reason and enough resources to do so. Instead, use a professional feature flag management platform that provides you with all the tools and services you need to implement and manage feature  flags effectively  and efficiently.</p>
 
-              <h5>Tags: <a title="Tag: architecture" class="small" href="../Search/architecture.html">architecture</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: event-driven" class="small" href="../Search/event-driven.html">event-driven</a>&nbsp;<a title="Tag: microservices" class="small" href="../Search/microservices.html">microservices</a>&nbsp;<a title="Tag: reliability" class="small" href="../Search/reliability.html">reliability</a>&nbsp;<a title="Tag: soa" class="small" href="../Search/soa.html">soa</a>&nbsp;</h5>
-              <div class="share"><a href="../Permalinks/53e0a79d-1096-4874-9639-6c1fb3eb8b47.html" rel="bookmark">Permalink</a></div>
+              <h5>Tags: <a title="Tag: architecture" class="small" href="../Search/architecture.html">architecture</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;</h5>
+              <div class="share"><a href="../Permalinks/c41a49df-5394-44ff-93a9-62f8c87e89b4.html" rel="bookmark">Permalink</a></div>
             </div>
             <div class="col-md-4">
                 <div class="widgetzone"><div class="widget textbox"><h4>About the Author</h4><div class="content"><p><img style="float: left; padding: 0px 3px 0px 0px;" src="../Pics/bsstahl_left.gif" alt="Barry S. Stahl" width="95" /> <strong>Barry S. Stahl</strong> (he/him/his) - Barry is a .NET Software Engineer who has been creating business solutions for enterprise customers for more than 35 years. Barry is also an Election Integrity Activist, baseball and hockey fan, husband of one genius and father of another, and a 40 year resident of Phoenix Arizona USA. When Barry is not traveling around the world to speak at Conferences, Code Camps and User Groups or to participate in GiveCamp events, he spends his days as a Solution Architect for <a href="https://grnh.se/ba048c6d1">Carvana</a> in Tempe AZ and his nights thinking about the next <a href="https://www.azgivecamp.org">AZGiveCamp</a> event where software creators come together to build websites and apps for some great non-profit organizations.</p>
