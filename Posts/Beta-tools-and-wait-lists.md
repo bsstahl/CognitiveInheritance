@@ -8,7 +8,7 @@ menuorder: 0
 id: dbbcb0db-7465-4489-a07b-eae7c8716685
 title: Beta Tools and Wait-Lists
 description: I wonder how many awesome products just died because they weren't available for people when they actually needed them
-ispublished: false
+ispublished: true
 showinlist: false
 buildifnotpublished: true
 publicationdate: 2023-04-12T07:00:00Z

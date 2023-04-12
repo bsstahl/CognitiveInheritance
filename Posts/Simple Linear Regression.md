@@ -12,6 +12,7 @@ title: Simple Linear Regression
 description: The Connection Between Simple Neural Networks and Linear Regression
 ispublished: true
 showinlist: false
+buildifnotpublished: true
 publicationdate: 2023-02-13T07:00:00.000+00:00
 lastmodificationdate: 2023-02-13T07:00:00.000+00:00
 slug: simple-linear-regression
