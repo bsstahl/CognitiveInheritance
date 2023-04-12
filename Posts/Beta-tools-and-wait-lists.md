@@ -10,6 +10,7 @@ title: Beta Tools and Wait-Lists
 description: I wonder how many awesome products just died because they weren't available for people when they actually needed them
 ispublished: false
 showinlist: false
+buildifnotpublished: true
 publicationdate: 2023-04-12T07:00:00Z
 lastmodificationdate: 2023-04-12T07:00:00Z
 slug: beta-tools-and-wait-lists
