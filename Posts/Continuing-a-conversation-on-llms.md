@@ -20,14 +20,14 @@ showinlist: false
 buildifnotpublished: false
 publicationdate: 2023-04-13T07:00:00Z
 lastmodificationdate: 2023-04-13T08:00:00Z
-slug: continuing-a-conversation-on-llms
+slug: Continuing-a-conversation-on-llms
 
 ---
 This post is the continuation of a conversation from Mastodon. The thread begins [here](https://fosstodon.org/@arthurdoler@mastodon.sandwich.net/110177834073037647).
 ***
 I understand and share your concerns about biased training data in Large Language Models like GPT. Bias in these models exists and is a real problem, one I've [written about in the past](https://cognitiveinheritance.com/Posts/Programmers-Take-Responsibility-for-Your-AIe28099s-Output.html). That post enumerates my belief that it is our responsibility as technologists to understand and work around these biases. I believe we agree in this area. I also suspect that we agree that the loud voices with something to sell are to be ignored, regardless of what they are selling. I hope we also agree that the opinions of these people should not bias our opinions in any direction. That is, just because they are saying it, doesn't make it true or false. They should be ignored, with no attention paid to them whatsoever regarding the truth of any general proposition.
 
-Where we clearly disagree is this: all of these technologies *can* help create real value for ourselves and our users.
+Where we clearly disagree is this: all of these technologies *can* help create real value for ourselves, our users, and our society.
 
 In some cases, like with crypto currencies, that value may never be realized because the scale that is needed to be successful with it is only available to those who have already proven their desire to fleece the rest of us, and because there is no reasonable way to tell the scammers from legit-minded individuals when new products are released. There is also no mechanism to prevent a takeover of such a system by those with malicious intent. This is unfortunate, but it is the state of our very broken system.
 
