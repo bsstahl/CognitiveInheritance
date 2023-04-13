@@ -17,10 +17,10 @@ title: Continuing a Conversation on LLMs
 description: A continuation of a conversation from Mastodon on Large Language Models
 ispublished: true
 showinlist: false
-buildifnotpublished: true
+buildifnotpublished: false
 publicationdate: 2023-04-13T07:00:00Z
 lastmodificationdate: 2023-04-13T08:00:00Z
-slug: continuing-a-conversation-on-llms
+slug: Continuing-a-conversation-on-llms
 
 ---
 This post is the continuation of a conversation from Mastodon. The thread begins [here](https://fosstodon.org/@arthurdoler@mastodon.sandwich.net/110177834073037647).
@@ -47,7 +47,7 @@ I accept that you may disagree. You know that I, and all of our shared circle to
 
 To be clear here, it is possible that it is I who is misunderstanding these capabilities. Obviously, I don't believe that to be the case but it is always a possibility, especially as I am not an expert in the field. Since I find the example you gave about replacing words in a Shakespearean poem to be a very obvious (to me) false analog, it is clear that at lease one of us, perhaps both of us, are misunderstanding its capabilities.
 
-I still think it would be worth your time, and a benefit to society, if people who care about the proper use of these tools, would consider how they could be used to society's benefit rather than allowing the only use to be by those who care only about extracting value from users. You have already admitted there are at least "one and a half valid use cases for LLMs". I'm guessing you would accept then that there are probably more you haven't seen yet. Knowing that, isn't it our *responsibility* as technologists to find those uses and work to creating the better society we seek.
+I still think it would be worth your time, and a benefit to society, if people who care about the proper use of these tools, would consider how they could be used to society's benefit rather than allowing the only use to be by those who care only about extracting value from users. You have already admitted there are at least "one and a half valid use cases for LLMs". I'm guessing you would accept then that there are probably more you haven't seen yet. Knowing that, isn't it our *responsibility* as technologists to find those uses and work toward creating the better society we seek, rather than just allowing extremists to use it to our detriment.
 
 ***
 
