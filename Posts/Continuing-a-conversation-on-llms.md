@@ -15,11 +15,11 @@ menuorder: 0
 id: dbbcb0db-7465-4489-a07b-eae7c8716685
 title: Continuing a Conversation on LLMs
 description: 
-ispublished: true
+ispublished: false
 showinlist: false
 buildifnotpublished: true
 publicationdate: 2023-04-13T07:00:00Z
-lastmodificationdate: 2023-04-13T07:00:00Z
+lastmodificationdate: 2023-04-13T08:00:00Z
 slug: continuing-a-conversation-on-llms
 
 ---
@@ -44,3 +44,9 @@ So then, what should we build to leverage the capabilities of these tools to the
 Let me say it this way: If the only choices people have are to use tools created by those with questionable intent, or to not use these tools at all, many people will choose the easy path, the one that gives them some short-term value regardless of the societal impact. If we can create value for those people without malicious intent, then the users have a choice, and will often choose those things that don't harm society. It is up to us to make sure that choice exists.
 
 I accept that you may disagree. You know that I, and all of our shared circle to the best of my knowledge, find your opinion thoughtful and valuable on many things. That doesn't mean we have to agree on everything. However, I hope that disagreement is based on far more than just the mistrust of screaming hyperbolists, and a misunderstanding of what it means to be a "overgrown autocomplete". To be clear here, it is possible that it is I who is misunderstanding this. Obviously, I don't believe that to be the case but it is always a possibility, especially since I am not an expert in the field. However, I think it would be worth your time, and a benefit to society, if people who care about the proper use of these tools, would consider how they could be used to society's benefit rather than allowing the only use to be by those who care only about extracting value from users.
+
+***
+
+Update: I realize I never addressed the issue of the models being trained on licensed works.
+
+Unless a model builder has permission from a user to train their models using that user's works, be it an OSS or Copyleft license, explicit license agreement, or direct permission, those items should not be used to train models. If it is shown that a model has been trained using such data sets, and there have been indications (unproven as yet to my knowledge) that this may be the case for some models, especially image-generators, then that is a problem with those models that needs to be addressed. It does not invalidate the general use of these models, nor is it an indictment of any person or model except those in violation. Our trademark and copyright systems are another place where we, as a society, have completely fallen-down. Hopefully, that collapse will not cause us to forsake the value that these tools can provide.
