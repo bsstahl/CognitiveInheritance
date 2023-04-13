@@ -28,7 +28,7 @@
 &lt;p&gt;Update: I realize I never addressed the issue of the models being trained on licensed works.&lt;/p&gt;
 &lt;p&gt;Unless a model builder has permission from a user to train their models using that user&apos;s works, be it an OSS or Copyleft license, explicit license agreement, or direct permission, those items should not be used to train models. If it is shown that a model has been trained using such data sets, and there have been indications (unproven as yet to my knowledge) that this may be the case for some models, especially image-generators, then that is a problem with those models that needs to be addressed. It does not invalidate the general use of these models, nor is it an indictment of any person or model except those in violation. Our trademark and copyright systems are another place where we, as a society, have completely fallen-down. Hopefully, that collapse will not cause us to forsake the value that these tools can provide.&lt;/p&gt;
 </description>
-  <link>https://www.cognitiveinheritance.com/Posts/Continuing-a-conversation-on-llms.html</link>
+  <link>https://www.cognitiveinheritance.com/Posts/continuing-a-conversation-on-llms.html</link>
   <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/dbbcb0db-7465-4489-a07b-eae7c8716685.html</guid>
   <pubDate>Thu, 13 Apr 2023 07:00:00 GMT</pubDate>
