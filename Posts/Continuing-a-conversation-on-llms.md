@@ -20,7 +20,7 @@ showinlist: false
 buildifnotpublished: false
 publicationdate: 2023-04-13T07:00:00Z
 lastmodificationdate: 2023-04-13T08:00:00Z
-slug: Continuing-a-conversation-on-llms
+slug: continuing-a-conversation-on-llms
 
 ---
 This post is the continuation of a conversation from Mastodon. The thread begins [here](https://fosstodon.org/@arthurdoler@mastodon.sandwich.net/110177834073037647).
