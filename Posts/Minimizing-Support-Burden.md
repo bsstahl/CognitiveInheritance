@@ -10,7 +10,7 @@ tags:
 categories:
 - development
 menuorder: 0
-id: 
+id: 454b2b73-17fa-4bd0-ba87-6d279c7fdc22
 title: Minimizing Support Burden - A Comparison of Three Architectures
 description: 
 ispublished: false
