@@ -13,6 +13,7 @@ name:
 - Grace Hopper
 - Daphne Koller
 - Grady Booch
+- Evelyn Berezin
 - Benoit Mandelbrot
 lastmodificationdate: 2020-06-03T22:05:00.000+00:00
 
