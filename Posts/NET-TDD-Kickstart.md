@@ -20,7 +20,7 @@ tags:
 menuorder: 0
 id: aaa35320-c03d-41ef-95bc-8b79614344fb
 author: bsstahl
-title: ".NET TDD Kickstart"
+title: '.NET TDD Kickstart'
 description: 
 ispublished: true
 showinlist: false

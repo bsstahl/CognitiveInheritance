@@ -23,6 +23,10 @@ slug: minimizing-support-burden
 ---
 There's been some talk lately about well abstracted monoliths and how they may be more effective at times than microservice architectures. While there are likely to be some use cases where this is true, there's one thing that a monolith can never do: it can't fully isolate concerns. Monoliths, like microservices, can abstract the various concerns to reduce the coupling between them, but monoliths make it much more difficult to determine in which concern a failures occurred, often requiring teams to respond to support issues unnecessarily. In this post, we'll compare three architectures and demonstrate why completely separating concerns is important in this context.
 
+TODO: It also needs a bus. That is, we need to be able to add functionality without impacting existing functionality, as you can with a message-driven architecture (whether that is in a monolith or not). (is this support burden? -- should it be broken out?)
+
+## Our Problem Domain
+
 For this example, we'll use the Bus Maintenance domain. The work we need to perform in each of the architectures is to determine if a bus is likely to be available to move passengers tomorrow. To do so, we need our Scheduling subsystem to check with the Preventative Maintenance subsystem to see if the bus is due for scheduled maintenance, and also check with our Predictive Failure model to determine the likelihood of a failure occurring between now and the end of the bus's run tomorrow. We'll assume for the purpose of demonstration, that each subdomain is supported by a different development team.
 
 ## Architecture 1: Monolith

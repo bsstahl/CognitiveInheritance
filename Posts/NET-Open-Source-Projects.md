@@ -5,7 +5,7 @@ tags:
 menuorder: 0
 id: 69c65f4d-352e-4e1d-92bd-79d5b8cae4b3
 author: bsstahl
-title: ".NET Open-Source Projects"
+title: '.NET Open-Source Projects'
 description: 
 ispublished: true
 showinlist: false

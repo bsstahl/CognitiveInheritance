@@ -17,7 +17,7 @@ tags:
 categories:
 - Development
 menuorder: 0
-id: 082c3f8a-ac4a-4231-9962-01536167e4a5
+id: 8e262558-bd6d-4e3d-b20e-36fe3bbc5e05
 title: Critical Questions to Ask Your Team About Microservices
 description: A series of conversations that development teams should have around building event driven or microservice architectures
 ispublished: true
