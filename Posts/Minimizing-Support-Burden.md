@@ -7,8 +7,6 @@ tags:
 - microservices
 - reliability
 - soa
-categories:
-- Development
 menuorder: 0
 id: 454b2b73-17fa-4bd0-ba87-6d279c7fdc22
 title: Minimizing Support Burden - A Comparison of Three Architectures
@@ -19,6 +17,8 @@ buildifnotpublished: true
 publicationdate: 2023-04-24T07:00:00Z
 lastmodificationdate: 2023-04-24T07:00:00Z
 slug: minimizing-support-burden
+categories:
+- Development
 
 ---
 There's been some talk lately about well abstracted monoliths and how they may be more effective at times than microservice architectures. While there are likely to be some use cases where this is true, there's one thing that a monolith can never do: it can't fully isolate concerns. Monoliths, like microservices, can abstract the various concerns to reduce the coupling between them, but monoliths make it much more difficult to determine in which concern a failures occurred, often requiring teams to respond to support issues unnecessarily. In this post, we'll compare three architectures and demonstrate why completely separating concerns is important in this context.

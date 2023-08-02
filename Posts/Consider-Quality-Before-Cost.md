@@ -4,8 +4,6 @@ tags:
 - architecture
 - coding-practices
 - reliability
-categories:
-- Development
 menuorder: 0
 id: c4e4c620-5bfb-4875-bb53-94cea651a19e
 title: Consider Quality Before Cost in Application Development
@@ -16,6 +14,8 @@ buildifnotpublished: true
 publicationdate: 2023-08-02T07:00:00Z
 lastmodificationdate: 2023-08-02T07:00:00Z
 slug: consider-quality-before-cost
+categories:
+- Development
 
 ---
 Measuring the cost of utilizing a particular tool is often simpler than assessing more esoteric costs of an application's life-cycle, such as quality related costs. This can result in an excessive focus on cost optimization, potentially overshadowing vital factors like reliability and maintainability.
