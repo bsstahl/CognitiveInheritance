@@ -22,7 +22,7 @@ Measuring the cost of utilizing a particular tool is often simpler than assessin
 
 As an example, consider a solution that uses a CosmosDB instance. It is easy to determine how much it costs to use that resource, since the Azure Portal gives us good estimates up-front, and insights as we go. It is much more difficult to determine how much it would cost to build the same functionality without the use of that CosmosDB instance, and what the scalability and maintainability impacts of that decision would be.
 
-In this article, we will consider a set of high-level guidelines that can help you identify when to consider costs during the development process. By following these guidelines, you can make it more likely that your dev team considers accurately prioritizes all aspects of the application without falling into the trap of over-valuing easily measurable costs.
+In this article, we will consider a set of high-level guidelines that can help you identify when to consider costs during the development process. By following these guidelines, you can make it more likely that your dev team accurately prioritizes all aspects of the application without falling into the trap of over-valuing easily measurable costs.
 
 ## 1. Focus on Quality First
 
