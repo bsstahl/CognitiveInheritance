@@ -90,7 +90,7 @@ Yes, there are some open source projects that support feature flag management. F
 
 * **Flagsmith**: Flagsmith is an open source feature flag and remote config service that makes it easy to create and manage features flags across web, mobile, and server side applications. It allows you to control feature access, segment users, toggle features on/off, and customize your app behavior without redeploying your code.
 
-* **Unleash**: Unleash is an open source feature flag management system that helps you deploy new features at incredible speed. It lets you decouple deployment from release, run experiments easily, scale as your business grows, and integrate with various tools and platforms.
+* **Unleash**: Unleash is an open source feature flag management system that helps you deploy new features at high speed. It lets you decouple deployment from release, run experiments easily, scale as your business grows, and integrate with various tools and platforms.
 
 These are just some examples of open source feature flag management projects. There may be others that suit your needs better.
 

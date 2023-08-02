@@ -20,6 +20,6 @@ Here's a problem I am clearly privileged to have. I'll be working on a project a
 
 Then, at some point, I get an email from them saying congratulations you've been accepted to our beta program. Well, guess what? I don't even remember who you are or what problem I was trying to solve anymore or even if I actually even signed up for it. In fact, most of the time that I get emails like that, I just assume that it is another spam email.
 
-I understand there are valid reasons for sometimes putting customers on waitlists. I also understand that sometimes companies just try to create artificial scarcity so that their product takes on a cool factor. Please know that, if this is what you're doing, you're likely losing as many customers as you would gain if not more, and may be putting your very existance at risk.
+I understand there are valid reasons for sometimes putting customers on wait-lists. I also understand that sometimes companies just try to create artificial scarcity so that their product takes on a cool factor. Please know that, if this is what you're doing, you're likely losing as many customers as you would gain if not more, and may be putting your very existence at risk.
 
 I wonder how many cool products I've missed out on because of that delay in getting access? I wonder how many cool products just died because they weren't there for people when they actually needed them.
