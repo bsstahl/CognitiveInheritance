@@ -18,15 +18,17 @@ lastmodificationdate: 2023-08-02T07:00:00Z
 slug: consider-quality-before-cost
 
 ---
-It is usually easier to measure the cost of using a certain tool than it is to measure the harder-to-quantify aspects of the development process such as quality. This can sometimes lead to an overemphasis on cost optimization at the expense of arguably more important factors like reliability and maintainability.
+Measuring the cost of utilizing a specific tool is often simpler than assessing the costs of more elusive aspects of the development process, such as quality. This can result in an excessive focus on cost optimization, potentially overshadowing vital factors like reliability and maintainability.
 
-As an example, consider a CosmosDB instance. It is easy to see how much it costs to use that resource, since the Azure Portal gives us good estimates up-front, and insights as we go. It is much more difficult to determine how much it will cost to build the same functionality without the use of that CosmosDB instance, and what the scalability and maintainability impacts of that decision will be.
+As an example, consider a CosmosDB instance. It is easy to see how much it costs to use that resource, since the Azure Portal gives us good estimates up-front, and insights as we go. It is much more difficult to determine how much it will cost to build the same functionality without the use of that CosmosDB instance, and what the scalability and maintainability impacts of that decision would be.
 
-In this blog post, we will consider a set of high-level guidelines that can help you identify when to consider costs during the development process. By following these guidelines, you can make it more likely that your dev team considers the correct aspects of the application without falling into the trap of prioritizing easily measurable costs over quality.
+In this article, we will consider a set of high-level guidelines that can help you identify when to consider costs during the development process. By following these guidelines, you can make it more likely that your dev team considers accurately prioritizes all aspects of the application without falling into the trap of over-valuing easily measurable costs.
 
 ## 1. Focus on Quality First
 
-As a developer, your primary objective should be to create applications that meet desired performance, scalability, and maintainability requirements. With Cosmos DB, for example, you can leverage its global distribution, low-latency, and high-throughput capabilities to build applications that cater to a wide range of user needs.
+As a developer, your primary objective should be to create applications that meet the customers needs with the desired performance, scalability, and maintainability characteristics. If we can meet a user need using a pre-packaged solution such as CosmosDB or MongoDB, we should generally do so. While there are some appropriate considerations regarding cost here, the primary focus of the development team should be on quality. Ideally, there should already be a best-practice in the organization for solving problems of this type.
+
+Using Cosmos DB as an example, we can leverage its global distribution, low-latency, and high-throughput capabilities to build applications that cater to a wide range of user needs. If CosmosDB is considered a best-practice tool in our organization, and using it solves the current problem effectively, the dev team should not consider building without it as an alternative for the purpose of cost savings.
 
 ## 2. Employ Best Practices and Expert Advice
 
