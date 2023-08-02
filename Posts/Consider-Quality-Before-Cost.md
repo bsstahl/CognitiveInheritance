@@ -5,7 +5,7 @@ tags:
 - coding-practices
 - reliability
 categories:
-- development
+- Development
 menuorder: 0
 id: c4e4c620-5bfb-4875-bb53-94cea651a19e
 title: Consider Quality Before Cost in Application Development

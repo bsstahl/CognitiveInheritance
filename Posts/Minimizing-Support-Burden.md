@@ -8,7 +8,7 @@ tags:
 - reliability
 - soa
 categories:
-- development
+- Development
 menuorder: 0
 id: 454b2b73-17fa-4bd0-ba87-6d279c7fdc22
 title: Minimizing Support Burden - A Comparison of Three Architectures
