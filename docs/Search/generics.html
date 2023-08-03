@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <!-- Template: Content Page -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    
+        <meta name="description" content="{Description}">
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="../Style.css" type="text/css" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="../syndication.xml" />
+        
+        <title>Cognitive Inheritance - The Application Development Experiences of an Enterprise Developer</title>
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<a class="navbar-brand" href="../index.html">Cognitive Inheritance</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a class="nav-link" href="../archive.html">Archive</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../contact.html">Contact</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../Pages/AZGiveCamp.html">AZGiveCamp</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../Pages/Speaking-Engagements.html">Community Speaker</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../Pages/Unit-Testing-and-TDD-FAQ.html">FAQ</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../Pages/Open-Source.html">Open Source</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../syndication.xml"><img align="absbottom" id="rssIcon" src="../Pics/rssButton.gif" /></a>
+</li>
+</ul>
+</div>
+</nav>
+
+                    <header>The Application Development Experiences of an Enterprise Developer</header>
+                </div>
+            </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <h1>Tag: generics</h1>
+                <div>
+    <h3>Meta-Abstraction -- You Ain't Gonna Need It!</h3>
+    <h5>Posted by bsstahl on 2020-05-18 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <blockquote>
+<p>When we look at the abstractions in our applications, we should see a description of the capabilities of our applications, not the capabilities of the abstraction</p>
+</blockquote>
+<p>Let’s start this discussion by looking at an example of a simple repository.</p>
+<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">public</span> <span style="color:Blue;">interface</span> IMeetingReadRepository
+{
+    IEnumerable&lt;Meeting&gt; GetMeetings(DateTime start, DateTime end);
+}
+</pre></div>
+</div>
+<p>It is easy to see the capability being described by this abstraction – any implementation of this interface will have the ability to load a collection of Meeting objects that occur within a given timeframe. There are still some unknown details of the implementation, but the capabilities are described reasonably well.</p>
+<p>Now let’s look at a different implementation of the Repository pattern.</p>
+<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">public</span> <span style="color:Blue;">interface</span> IReadRepository&lt;T&gt;
+{
+    IEnumerable&lt;T&gt; Get(Func&lt;T, <span style="color:Blue;">bool</span>&gt; predicate);
+}
+</pre></div>
+</div>
+<p>We can still see that something is going to be loaded using this abstraction, we just don’t know what, and we don’t know what criteria will be used.</p>
+<p>This 2nd implementation is a more flexible interface. That is, we can use this interface to describe many different repositories that do many different things. All we have described in this interface is that we have the ability to create something that will load an entity. In other words, we have described our abstraction but said very little about the capabilities of the application itself. In this case, we have to look at a specific implementation to see what it loads, but we still have no idea what criteria can be used to load it.</p>
+<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">public</span> <span style="color:Blue;">class</span> MeetingReadRepository : IReadRepository&lt;Meeting&gt;
+{
+    IEnumerable&lt;Meeting&gt; Get(Func&lt;Meeting, <span style="color:Blue;">bool</span>&gt; predicate);
+}
+</pre></div>
+</div>
+<p>We could extend this class with a method that specifically loads meetings by start and end date, but then that method is not on the abstraction so it cannot be used without leaking the details of the implementation to the application.  The only way to implement this pattern in a way that uses the generic interface, but still fully describes the capabilities of the application is to use both methods described above. That is, we implement the specific repository, using the generic repository – layering abstraction on top of abstraction, as shown below.</p>
+<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">public</span> <span style="color:Blue;">interface</span> IMeetingReadRepository : IReadRepository&lt;Meeting&gt;
+{
+    IEnumerable&lt;Meeting&gt; GetMeetings(DateTime start, DateTime end);
+}
+
+<span style="color:Blue;">public</span> <span style="color:Blue;">class</span> MeetingReadRepository : IMeetingReadRepository
+{
+    IEnumerable&lt;Meeting&gt; GetMeetings(DateTime start, DateTime end)
+        =&gt; Get(m =&gt; m.Start &gt;= start &amp;&amp; m.Start &lt; end)
+
+    <span style="color:Green;">// TODO: Implement</span>
+    IEnumerable&lt;Meeting&gt; Get(Func&lt;Meeting, <span style="color:Blue;">bool</span>&gt; predicate)
+        =&gt; <span style="color:Blue;">throw</span> <span style="color:Blue;">new</span> NotImplementedException();
+}
+</pre></div>
+</div>
+<p>Is this worth the added complexity? It seems to me that as application developers we should be concerned about describing and building our applications in the simplest, most maintainable and extensible way possible. To do so, we need seams in our applications in the form of abstractions. However, we generally do not need to build frameworks on which we build those abstractions. Framework creation is an entirely other topic with an entirely different set of concerns.</p>
+<p>I think it is easy to see how quickly things can get overly-complex when we start building abstractions on top of our own abstractions in our applications. Using Microsoft or 3rd party frameworks is fine when appropriate, but there is generally no need to build your own frameworks, especially within your applications. In the vast majority of cases, <a href="../Search/yagni.html">YAGNI</a>.</p>
+<p>Did I miss something here? Do you have a situation where you feel it is worth it to build a framework, or even part of a framework, within your applications. Please let me know about it <a rel="me" href="https://fosstodon.org/@Bsstahl">@bsstahl@cognitiveinheritance.com</a>.</p>
+
+    <h5>Tags: <a title="Tag: abstraction" class="small" href="../Search/abstraction.html">abstraction</a>&nbsp;<a title="Tag: apps" class="small" href="../Search/apps.html">apps</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: development" class="small" href="../Search/development.html">development</a>&nbsp;<a title="Tag: entity" class="small" href="../Search/entity.html">entity</a>&nbsp;<a title="Tag: flexibility" class="small" href="../Search/flexibility.html">flexibility</a>&nbsp;<a title="Tag: framework" class="small" href="../Search/framework.html">framework</a>&nbsp;<a title="Tag: generics" class="small" href="../Search/generics.html">generics</a>&nbsp;<a title="Tag: principle" class="small" href="../Search/principle.html">principle</a>&nbsp;<a title="Tag: yagni" class="small" href="../Search/yagni.html">yagni</a>&nbsp;<a title="Tag: interface" class="small" href="../Search/interface.html">interface</a>&nbsp;</h5>
+    <div class="share"><a href="../Permalinks/a9d7154a-2798-4a77-851b-0783b45bc1b4.html" rel="bookmark">Permalink</a></div>
+</div><hr/><div>
+    <h3>Is a Type an Implementation of an Interface?</h3>
+    <h5>Posted by bsstahl on 2016-11-17 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <p>One of the techniques I recommend highly in my <a href="../Posts/Simplify-Your-API.html">Simplify Your API</a> talk is the use of extension methods to hide the complexity of lower-level API functionality.  A good example of a place to use this methodology came-up last night in a great Reflection talk by Jeremy Clark (<a href="https://twitter.com/jeremybytes">Twitter</a>, <a href="https://jeremybytes.blogspot.com/">Blog</a>) at the <a href="http://www.nwvdnug.org">NorthWest Valley .NET User Group</a>.</p>
+<p><img src="../Images/Jeremy_2.jpg" alt="Jeremy" /></p>
+<p>Jeremy was demonstrating a method that would spin-through an assembly and load all classes within that assembly that implemented a particular interface.  The syntax to do the checks on each type were just a bit more obtuse than Jeremy would have liked them to be.  As we left that talk, I only half-jokingly told Jeremy that I was going to write him an extension method to make that activity simpler.  Being a man of my word, I present the code below to do just that.</p>
+<script src="https://gist.github.com/anonymous/7ccef188bff40f89f5cf62e20d998d04.js"></script>
+
+    <h5>Tags: <a title="Tag: assembly" class="small" href="../Search/assembly.html">assembly</a>&nbsp;<a title="Tag: api" class="small" href="../Search/api.html">api</a>&nbsp;<a title="Tag: class" class="small" href="../Search/class.html">class</a>&nbsp;<a title="Tag: code sample" class="small" href="../Search/code-sample.html">code sample</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: community" class="small" href="../Search/community.html">community</a>&nbsp;<a title="Tag: csharp" class="small" href="../Search/csharp.html">csharp</a>&nbsp;<a title="Tag: development" class="small" href="../Search/development.html">development</a>&nbsp;<a title="Tag: extension method" class="small" href="../Search/extension-method.html">extension method</a>&nbsp;<a title="Tag: framework" class="small" href="../Search/framework.html">framework</a>&nbsp;<a title="Tag: generics" class="small" href="../Search/generics.html">generics</a>&nbsp;<a title="Tag: interface" class="small" href="../Search/interface.html">interface</a>&nbsp;<a title="Tag: presentation" class="small" href="../Search/presentation.html">presentation</a>&nbsp;<a title="Tag: professional development" class="small" href="../Search/professional-development.html">professional development</a>&nbsp;<a title="Tag: reflection" class="small" href="../Search/reflection.html">reflection</a>&nbsp;<a title="Tag: user group" class="small" href="../Search/user-group.html">user group</a>&nbsp;</h5>
+    <div class="share"><a href="../Permalinks/464d1675-ae11-4ad2-b088-4aa806582210.html" rel="bookmark">Permalink</a></div>
+</div><hr/><div>
+    <h3>No More Collection Objects</h3>
+    <h5>Posted by bsstahl on 2015-10-27 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <p>I don't create collection objects anymore.</p>
+<p>I know, I know. I was they guy always preaching that every entity that was being collected had to have its own collection object. It was the right thing at the time; if you needed to take an action on an enumeration or list of objects, those actions needed to be done within a strongly-typed collection object to maintain encapsulation. Even if all that was happening was that an inherited <em>List&lt;T&gt;</em> function was being called, that functionality needed to be called on the <em>TCollection</em> object because, if it wasn't, it was likely that the next time logic needed to be performed on the collection, there wouldn't be a place to put it. Collection logic would end up being spread-out around your code rather than encapsulated in the collection. It was also possible that the implementation might change and need to be updated everywhere, instead of in one place.</p>
+<p>Today however, that has all changed. Extension methods now allow us, at any time, to add functionality to <em>ICollection&lt;T&gt;</em>, <em>IList&lt;T&gt;</em>, <em>IEnumerable&lt;T&gt;</em> or any other interface or class. We can attach our list or enumeration based actions directly to the list or enumeration class, and do so at any time, since the methods appear the same to the developer as methods directly on the collection type. Thus, the &quot;no place to put it&quot; fear no longer exists. I've even started using this technique for my factory methods to make it clear that what I am creating is, in fact, an <em>IEnumerable&lt;T&gt;</em>, as in this example.</p>
+<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">var</span> stations = (<span style="color:Blue;">null</span> <span style="color:Blue;">as</span> IEnumerable&lt;Station&gt;).Create();
+<span style="color:Blue;">var</span> localStations = stations.GetNearby(currentLocation);
+</pre></div>
+</div>
+<p>In this example, both the <strong>Create</strong> and <strong>GetNearby</strong> methods are extension methods found in a static class called <strong>StationExtensions</strong>.</p>
+<p>So, the big advantage here is that these methods can be added anytime, meaning we don't need to create an object that we MAY need in the future. This is better adherence to the <a href="../Search/yagni.html">YAGNI</a> principle so it is a better pattern to follow. But what about disadvantages? Does it hurt us in any way to perform our collection actions this way? I'm not comfortable answering that question with an absolute &quot;no&quot; yet because I don't think I've been using this technique long enough to have covered enough ground with it, but I can certainly say that I haven't found any disadvantages yet. It seems like these extension methods are basically perfect for this type of activity. These methods do everything that the methods of a collection object do, can (and should) be put in a separate module to keep the code together, can be navigated to by Visual Studio in the same way as other methods, and have the same access (<em>private</em>, <em>internal</em>, <em>public</em>) restrictions that collection objects have. About the only thing I can say that is not 100% positive about using these techniques is that the <em>(null as IEnumerable&lt;T&gt;)</em> syntax to create a local variable instance to call the class factory from is not quite as elegant as I'd like it to be.</p>
+<p>So you tell me, do you still create collection objects? Have you found any reason why using extension methods in this way is not as good as putting those methods into a strongly-typed collection? Sound off in the Fediverse <a rel="me" href="https://fosstodon.org/@Bsstahl">@bsstahl@cognitiveinheritance.com</a> and let's talk about it.</p>
+
+    <h5>Tags: <a title="Tag: class" class="small" href="../Search/class.html">class</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: csharp" class="small" href="../Search/csharp.html">csharp</a>&nbsp;<a title="Tag: development" class="small" href="../Search/development.html">development</a>&nbsp;<a title="Tag: encapsulation" class="small" href="../Search/encapsulation.html">encapsulation</a>&nbsp;<a title="Tag: entity" class="small" href="../Search/entity.html">entity</a>&nbsp;<a title="Tag: generics" class="small" href="../Search/generics.html">generics</a>&nbsp;<a title="Tag: inheritance" class="small" href="../Search/inheritance.html">inheritance</a>&nbsp;<a title="Tag: list" class="small" href="../Search/list.html">list</a>&nbsp;<a title="Tag: visual studio" class="small" href="../Search/visual-studio.html">visual studio</a>&nbsp;<a title="Tag: yagni" class="small" href="../Search/yagni.html">yagni</a>&nbsp;</h5>
+    <div class="share"><a href="../Permalinks/88da0d75-ea12-4eb5-ac5c-0b197dd8bc48.html" rel="bookmark">Permalink</a></div>
+</div><hr/><div>
+    <h3>Simplify Your API</h3>
+    <h5>Posted by bsstahl on 2015-10-12 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <p>If you are building an API for other Developers to use, you will find out two things very quickly:</p>
+<ol>
+<li>Developers don't read documentation (you probably already know this).</li>
+<li>If your API depends on its documentation to get developers to understand and discover its features, it is likely that it will not be used.</li>
+</ol>
+<p>Fortunately, there are some simple mechanisms for wrapping complex APIs and making their functionality both easy to use, and highly discoverable. An API that uses tools like IntelliSense in Visual Studio to make its features discoverable by the downstream developer is far more likely to be adopted then one that doesn't. In recent years, additions to the C# language have made creating a Domain Specific Language that uses a fluent syntax for nearly any API into a simple process.</p>
+<h4>Create the Context</h4>
+<p>The 1st step in simplifying any API is to provide a single starting point for the downstream developer to interact with. In most cases, the best practice is to use the façade pattern to define a context that holds our entity collections. Each collection of entities becomes a property on the context object. These properties all return an IQueryable&lt;Entity&gt;. For example, in the EnumerableStack demo solution on GitHub (<a href="https://github.com/bsstahl/SimpleAPI">https://github.com/bsstahl/SimpleAPI</a>), I created an object Bss.EnumerableStack.Data.EnumerableStack to provide this functionality. It has two properties, Posts and Questions, each of which returns an IQueryable&lt;Post&gt;. It is these properties that will be used to access the data from our API.</p>
+<p>The context object, on top of becoming the single point of entry for downstream developers, also hides any complexities in the construction logic of the underlying data source. That is, if there is any configuration or other setup required to access the upstream data provider (such as web service access or database connections), much of the complexity of that construction can be hidden from the API user. A good example of this can be seen in the FluentStack demo solution from the same GitHub repository. There, the Bss.FluentStack.Data.OData.FluentStack context object wraps the functionality of constructing the connection to the StackOverflow OData web service.</p>
+<h4>Extend Our Language</h4>
+<p>Now that we have data to access, it's time for us to extend our domain specific language to provide tools to make accessing this data simpler for the API caller. We can use Extension methods on IQueryable&lt;Entity&gt; to create custom filters for our data. By creating extension methods that accept IQueryable&lt;Entity&gt; as a parameter and return the same, we can create methods that can be chained together to form a fluent syntax that will perform complex filtering. For example, in the EnumerableStack solution , the Questions, WithAcceptedAnswer and TaggedWith methods found in the Bss.EnumerableStack.Data.Extensions module, can all be used to execute queries on the data exposed by the properties of our context object, as shown below:</p>
+<p><code>var results = new EnumerableStack().Posts.WithAcceptedAnswer().TaggedWith(&quot;odata&quot;);</code></p>
+<p>In this case, both the WithAcceptedAnswer and TaggedWith filters are applied to the data. The best part about these methods are that they are visible in Intellisense (once the namespace has been brought into scope with a Using statement) making the functionality easy to discover and use.</p>
+<p>Another big advantage of creating these extension methods is that they can hide the complexity of the lower level API. Here, the WithAcceptedAnswer method is wrapping a where clause that filters for those posts that have an AcceptedAnswerId property that is non-null. It may not be obvious to a downstream API consumer that the definition of a post with an &quot;accepted answer&quot; is one where the AcceptedAnswerId has a value. Our API hides that implementation detail and allows the consumer to simply request what is needed. Similarly, the TaggedWith method hides the fact that the StackOverflow API stores tags in lower-case, within angle-brackets, and with all tags on a post joined into a single string. To search for tags, the consumer would need to know this, and take all appropriate actions when searching for a tag if we didn't hide that complexity in the TaggedWith method.</p>
+<h4>Simplify Query Predicates</h4>
+<p>A predicate is a function that accepts an entity as a parameter, and returns a boolean value. These functions are often used in the Where clause of a query to indicate which objects should be included in the result set. For example, in the query below</p>
+<p><code>var results = new EnumerableStack().Posts.Where(p =&gt; p.Parent == null);</code></p>
+<p>the function expression p =&gt; p.Parent == null is a predicate that returns true if the Parent property of the entity is null. For each entity passed to the function, the value of that property is tested, and if null, the entity is included in the results of the query. Here we are using a Lambda Expression to provide a delegate to our function. One of the coolest things about Linq is that we can now represent this expression in a variable of type Expression&lt;Func&lt;Entity, bool&gt;&gt;, that is, a Lambda expression of a function that takes an Entity and returns a boolean. This is pretty awesome because if we can store it in a variable, we can pass it around and enable extension methods like this one, as found in the Asked class of the Bss.EnumerableStack.Data library:</p>
+<pre><code>public static Expression&lt;Func&lt;Post, bool&gt;&gt; InLast(TimeSpan span)
+   {
+   return p =&gt; p.CreationDate &gt; DateTime.UtcNow.Subtract(span);
+   }
+</code></pre>
+<p>This method accepts a TimeSpan object and returns the Lambda Expression type useable as a predicate. The input TimeSpan is subtracted from the current DateTime UTC value, and compared to the CreationDate property of a Post entity. If the creation date of the Post is later than 30-days prior to the current date, the function returns true. Since this InLast method is static on a class called Asked, we can use it like this:</p>
+<p><code>var results = new EnumerableStack().Questions.Where(Asked.InLast(TimeSpan.FromDays(30));</code></p>
+<p>Which will return questions that were asked in the last 30 days. This becomes even simpler to understand if we add a method extending Int called Days that returns a Timespan, like this:</p>
+<pre><code>public static TimeSpan Days(this int value)
+   {
+   return TimeSpan.FromDays(value);
+   }
+</code></pre>
+<p>allowing our expression to become:</p>
+<p><code>var results = new EnumerableStack().Questions.Where(Asked.InLast(30.Days());</code></p>
+<h4>Walking through the Process</h4>
+<p>In my conference sessions, Simplify Your API: Creating Maintainable and Discoverable Code, I walk through this process on the FluentStack demo code. We take a query created against the StackOverflow OData API that starts off looking like this:</p>
+<pre><code>var questions = new StackOverflowService.Entities(new Uri(_serviceRoot))
+   .Posts.Where(p =&gt; p.Parent == null &amp;&amp; p.AcceptedAnswerId != null
+   &amp;&amp; p.CreationDate &gt; DateTime.UtcNow.Subtract(TimeSpan.FromDays(30))
+   &amp;&amp; p.Tags.Contains(&quot;&lt;odata&gt;&quot;));
+</code></pre>
+<p>and convert it, one step at a time, to this:</p>
+<pre><code>var questions = new FluentStack().Questions.WithAcceptedAnswer()
+    .Where(Asked.InLast(30.Days)).TaggedWith(&quot;odata&quot;);
+</code></pre>
+<p>a query that is much simpler, easier to understand, easier to create and easier to maintain. The sample code on GitHub, referenced above, and available at <a href="https://github.com/bsstahl/SimpleAPI">https://github.com/bsstahl/SimpleAPI</a>, contains the FluentStack.sln example which shows how to simplify an API created with an OData source. It also contains the EnumerableStack.sln project which walks through the same process on a purely enumerable data source, that is, an implementation that will work with any collection.</p>
+<h4>Sound Off</h4>
+<p>Have you used these tools to simplify an API for downstream programmers? Do you have other techniques that you use to do the same, similar, or additional things to make your APIs better? If so, send it to me <a rel="me" href="https://fosstodon.org/@Bsstahl">@bsstahl@cognitiveinheritance.com</a> and let's keep the conversation going.</p>
+
+    <h5>Tags: <a title="Tag: api" class="small" href="../Search/api.html">api</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: code sample" class="small" href="../Search/code-sample.html">code sample</a>&nbsp;<a title="Tag: development" class="small" href="../Search/development.html">development</a>&nbsp;<a title="Tag: generics" class="small" href="../Search/generics.html">generics</a>&nbsp;<a title="Tag: presentation" class="small" href="../Search/presentation.html">presentation</a>&nbsp;<a title="Tag: services" class="small" href="../Search/services.html">services</a>&nbsp;<a title="Tag: skill" class="small" href="../Search/skill.html">skill</a>&nbsp;<a title="Tag: speaking" class="small" href="../Search/speaking.html">speaking</a>&nbsp;<a title="Tag: visual studio" class="small" href="../Search/visual-studio.html">visual studio</a>&nbsp;<a title="Tag: soa" class="small" href="../Search/soa.html">soa</a>&nbsp;</h5>
+    <div class="share"><a href="../Permalinks/09a68c70-e4bc-494b-852b-e067b55c00e1.html" rel="bookmark">Permalink</a></div>
+</div><hr/><div>
+    <h3>Windows 8 Store Development for Enterprise Devs</h3>
+    <h5>Posted by bsstahl on 2013-02-28 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <h3>or, How I found my Passion for Windows 8 Store App Development</h3>
+<p>Update: My first Windows Store app was published on March 27, 2013.</p>
+<p>I don't have any apps in the Windows 8 Store yet. For that matter, I don't have any apps in the Windows Phone store, or the Apple or Android stores either. I have many ideas for apps, and a number of them in the works for both Windows 8 and Windows Phone, but I have nothing real to show for it yet. Nothing to show for several years of attending sessions at conferences, user groups, and code camps on building these apps; for many hours of hacking on front-end interfaces and business logic. Don’t get me wrong, I've wanted to build these apps, but I didn't have that burning desire that I usually get when I am solving problems with software. You know that desire, the one that compels you to sit in front of a computer for hours at a time until you've completed a solution. I didn't have it.</p>
+<p>This recently changed for me -- let me explain.</p>
+<p>I have spent most of the last 20 years building enterprise web applications that do most of the work on the server side. My user interfaces have been built in HTML, with some JavaScript for validation and Ajax for dynamic post-backs, but all business rules were housed entirely on the server in either C#, VB or something similar. Even before .NET, in the classic ASP days, my logic executed on the server with VBScript calling components created in Visual Basic. Before that, it was Pascal programs spitting out pure HTML to the console which was then redirected to the browser stream by the web server. As a result, I am very comfortable with using HTML for layout, and multi-purpose languages like C# and VB.Net for the business logic and data access.</p>
+<p>In the app world however, this combination of technologies has seemed out-of-reach. In Windows Phone development, I could use C#, but needed to use XAML for layout and style, a technology that I have not yet been able to get comfortable with. For Windows 8 store apps there are more options, including HTML5/JavaScript apps, but I have never been comfortable writing code in JavaScript. The advent of <a href="https://www.typescriptlang.org">TypeScript</a> has brought us even closer to a solution in my comfort zone where I can get almost a C# style experience with HTML5 as my layout mechanism, but I am still missing key features like LINQ and generics.</p>
+<p>Enter Windows Runtime Components. I say “enter”, as if they were new -- they're not, I just apparently allowed myself to forget about them. RT Components can be written in C# (and other languages), but can be called from JavaScript or any Windows 8 Store code, just as if they were written in that same language. RT components can also call into any .NET code that can be executed in a Windows Store App. As a result, I have the power of C# and the .NET Framework at my disposal while writing a JavaScript app. All I have to do is wrap my .NET Windows Store compatible libraries in an RT component, and use JavaScript to bind it to my HTML layout. Since I have been using Portable Libraries for most of my business logic for some time now, and those libraries that aren't yet portable, are generally easily translated, most of my .NET business logic is already available for me to wrap in an RT Component.</p>
+<p>With the primary business functionality done in C#, it becomes a relatively trivial exercise in JavaScript to bind my RT model to the HTML components in my UI. This experience is completely comfortable to me, and in using this process, I have found the passion I was missing for building these apps. I will have several apps in the Windows 8 store in the next few weeks with more to follow after that. I will also be writing about my methods in building these apps, from the perspective of an enterprise developer. Hopefully, this will allow others to find the passion for creating these apps as I have. In the meantime, here are a few tips you can start using now to ease the transition into building apps:</p>
+<ol>
+<li>Use portable libraries wherever possible, especially for business logic.</li>
+<li>Use dependency injection to make non-portable dependencies available to portable libraries. This will allow your business logic access to platform-specific functionality (such as network access) without sacrificing portability.</li>
+<li>Do as much of the work as possible in the underlying .NET libraries and keep the RT Component as thin a translation layer as possible. I will be exploring techniques for this in the near future. Possibilities here include making this layer either a View-Model or a Repository implementation.</li>
+<li>The only logic in the JavaScript code should be that which is required to bind the RT Component to your controls. If you are doing more than setting event handlers and other control properties in your JavaScript, you might want to think about moving that functionality into a lower layer. This has the added benefit of making that logic potentially reusable across applications.</li>
+</ol>
+<p>I’m interested to hear if there are other enterprise developers with similar stories, whose comfort zones of HTML and C# or VB have kept them from building apps as they’d like. Please contact me <a rel="me" href="https://fosstodon.org/@Bsstahl">@bsstahl@cognitiveinheritance.com</a>.</p>
+
+    <h5>Tags: <a title="Tag: assembly" class="small" href="../Search/assembly.html">assembly</a>&nbsp;<a title="Tag: csharp" class="small" href="../Search/csharp.html">csharp</a>&nbsp;<a title="Tag: development" class="small" href="../Search/development.html">development</a>&nbsp;<a title="Tag: enterprise" class="small" href="../Search/enterprise.html">enterprise</a>&nbsp;<a title="Tag: generics" class="small" href="../Search/generics.html">generics</a>&nbsp;<a title="Tag: javascript" class="small" href="../Search/javascript.html">javascript</a>&nbsp;<a title="Tag: microsoft" class="small" href="../Search/microsoft.html">microsoft</a>&nbsp;<a title="Tag: vb.net" class="small" href="../Search/vbdotnet.html">vb.net</a>&nbsp;<a title="Tag: xaml" class="small" href="../Search/xaml.html">xaml</a>&nbsp;<a title="Tag: html5" class="small" href="../Search/html5.html">html5</a>&nbsp;<a title="Tag: dotnet" class="small" href="../Search/dotnet.html">dotnet</a>&nbsp;<a title="Tag: windows" class="small" href="../Search/windows.html">windows</a>&nbsp;</h5>
+    <div class="share"><a href="../Permalinks/1ad203b0-f604-43c0-8293-aad482376f98.html" rel="bookmark">Permalink</a></div>
+</div><hr/><div>
+    <h3>Encapsulation and Generic Lists</h3>
+    <h5>Posted by bsstahl on 2007-09-16 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <p>It has often been said that each new language feature gives programmers more rope with which to hang themselves. Unfortunately, what it really seems like is that each feature gives other programmers more rope with which to hang me, or you, or whomever the next poor schmuck is who has to deal with their code. Back in the relatively early days of .NET 2.0, I wrote about <a href="../Posts/Generics-Concerns.html">some concerns I had with Generics</a>. It has turned out that Generics are everything I could have hoped for in a language feature, and everything I feared.</p>
+<p>Generics are an outstanding way of dealing with a number of issues in a very elegant, but also type-safe way. Among many things, this includes collections. I see no reason why there should be any new collections created that are not based on Generics and it is my understanding that System.Collections.CollectionBase (the non-Generic base collection class) is to be deprecated sometime in the near future. However, as I feared over a year ago, there are many that miss the point somewhat and expose List&lt;t&gt; on their interfaces. The Generic List object is a very powerful and easy to use collection, but it is not extensible. If you write code that exposes List&lt;t&gt;, you are effectively passing a strongly-typed array-list. Doing this breaks encapsulation because any code we write against that list, has to be repeated everywhere we want to perform that operation.</p>
+<p>For example, suppose we have a calendar object that exposes a list of events that we want to reserve. We often see this code:</p>
+<pre><code>  List&lt;CalendarEvent&gt; calendarEvents = Calendar.Events;  
+  for each (CalendarEvent evt in calendarEvents)  
+      evt.Reserve();
+</code></pre>
+<p>rather than the far preferable:</p>
+<pre><code>  CalendarEventsCollection calendarEvents = Calendar.Events;  
+  calendarEvents.Reserve();
+</code></pre>
+<p>where the CalendarEventsCollection object contains:</p>
+<pre><code>  public void Reserve()  
+   {  
+       for each (CalendarEvent evt in this)  
+           evt.Reserve();   
+   }
+</code></pre>
+<p>or even better:</p>
+<pre><code>  Calendar.ReserveEvents();
+</code></pre>
+<p>where the Calendar object contains:</p>
+<pre><code>  private CalendarEventsCollection _calendarEvents;  
+  public CalendarEventsCollection Events  
+    { return _calendarEvents; }  
+  
+   public void ReserveEvents()  
+   {  
+       this.Events.Reserve();  
+   }
+</code></pre>
+<p>The latter being preferable because all of the functionality we want to expose is completely encapsulated in the appropriate object and doesn't have to be repeated wherever it is needed. Of course, we can't do this if we are lobbing around <em>List<T></em> instead of collection objects that derive from <em>System.Collections.ObjectModel.Collection</em>.</p>
+<p>While the improper use of <em>List<T></em> may not be exactly the &quot;House of Sticks&quot; that I feared in early 2006, it is an item where proper use is not necessarily obvious and which has been misunderstood by many very good programmers.  Please, encourage all developers to practice proper encapsulation by deriving collection classes from one of the Generic collection implementations.</p>
+
+    <h5>Tags: <a title="Tag: encapsulation" class="small" href="../Search/encapsulation.html">encapsulation</a>&nbsp;<a title="Tag: generics" class="small" href="../Search/generics.html">generics</a>&nbsp;<a title="Tag: list" class="small" href="../Search/list.html">list</a>&nbsp;</h5>
+    <div class="share"><a href="../Permalinks/2eb911d4-b484-48f6-9986-5534a1f5581f.html" rel="bookmark">Permalink</a></div>
+</div><hr/><div>
+    <h3>Generics Concerns</h3>
+    <h5>Posted by bsstahl on 2006-04-29 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <p>Another feature that concerns me (see my <a href="../Posts/NET-20-Concerns.html">earlier post</a>) is .NET Generics. While it is nice to be able to specify a strongly-typed collection without having to create a class, it seems to me like this is still the <a href="http://msdn2.microsoft.com/en-us/library/Aa716279%28VS.60%29.aspx">house of sticks</a>, rather than the house of bricks we really want. Also, extensibility seems to suffer in this model because we are limiting our encapsulation. I certainly have not used this enough to say one way or another for certain, I just currently have concerns.</p>
+
+    <h5>Tags: <a title="Tag: generics" class="small" href="../Search/generics.html">generics</a>&nbsp;<a title="Tag: class" class="small" href="../Search/class.html">class</a>&nbsp;<a title="Tag: dotnet" class="small" href="../Search/dotnet.html">dotnet</a>&nbsp;</h5>
+    <div class="share"><a href="../Permalinks/d615e6b9-cd71-47f7-9c5b-42e834bb1201.html" rel="bookmark">Permalink</a></div>
+</div>
+            </div>
+            <div class="col-md-4">
+                <div class="widgetzone"><div class="widget textbox"><h4>About the Author</h4><div class="content"><p><img style="float: left; padding: 0px 3px 0px 0px;" src="../Pics/bsstahl_left.gif" alt="Barry S. Stahl" width="95" /> <strong>Barry S. Stahl</strong> (he/him/his) - Barry is a .NET Software Engineer who has been creating business solutions for enterprise customers for more than 35 years. Barry is also an Election Integrity Activist, baseball and hockey fan, husband of one genius and father of another, and a 40 year resident of Phoenix Arizona USA. When Barry is not traveling around the world to speak at Conferences, Code Camps and User Groups or to participate in GiveCamp events, he spends his days as a Solution Architect for <a href="https://grnh.se/ba048c6d1">Carvana</a> in Tempe AZ and his nights thinking about the next <a href="https://www.azgivecamp.org">AZGiveCamp</a> event where software creators come together to build websites and apps for some great non-profit organizations.</p>
+<blockquote>
+<p>Barry has started delivering in-person talks again now that numerous mechanisms for protecting our communities from Covid-19 are available. He will, of course, still entertain opportunities to speak online. Please <a href="../contact.html">contact</a> him if you would like him to deliver one of his talks at your event, either online or in-person. Refer to his <a href="../Pages/Speaking-Engagements.html">Community Speaker page</a> for available options.</p>
+</blockquote>
+</div></div><div class="widget textbox"><h4>Social Media</h4><div class="content"><ul>
+<li>Mastodon: <a rel="me" href="https://fosstodon.org/@Bsstahl">@bsstahl@cognitiveinheritance.com</a></li>
+<li>Facebook: <a href="https://www.facebook.com/barrystahl">Barry Stahl</a></li>
+<li>LinkedIn: <a href="https://www.linkedin.com/in/bstahl">BStahl</a></li>
+<li>Flickr: <a href="https://www.flickr.com/photos/bsstahl">BSStahl</a></li>
+<li>GitHub: <a href="https://github.com/bsstahl">bsstahl</a></li>
+<li>Community Speaker: <a href="..//Pages/Speaking-Engagements.html">Barry S. Stahl</a></li>
+</ul>
+</div></div><div class="widget tagcloud"><h4>Tag Cloud</h4><div class="content"><ul><li><a title="Tag: abstraction" class="big" href="../Search/abstraction.html">abstraction</a></li> <li><a title="Tag: agile" class="biggest" href="../Search/agile.html">agile</a></li> <li><a title="Tag: ai" class="big" href="../Search/ai.html">ai</a></li> <li><a title="Tag: algorithms" class="big" href="../Search/algorithms.html">algorithms</a></li> <li><a title="Tag: antipattern" class="medium" href="../Search/antipattern.html">antipattern</a></li> <li><a title="Tag: apache-cordova" class="small" href="../Search/apache-cordova.html">apache-cordova</a></li> <li><a title="Tag: apache-kafka" class="medium" href="../Search/apache-kafka.html">apache-kafka</a></li> <li><a title="Tag: api" class="medium" href="../Search/api.html">api</a></li> <li><a title="Tag: apps" class="medium" href="../Search/apps.html">apps</a></li> <li><a title="Tag: architecture" class="big" href="../Search/architecture.html">architecture</a></li> <li><a title="Tag: aspdotnet" class="big" href="../Search/aspdotnet.html">aspdotnet</a></li> <li><a title="Tag: assembly" class="medium" href="../Search/assembly.html">assembly</a></li> <li><a title="Tag: assert" class="small" href="../Search/assert.html">assert</a></li> <li><a title="Tag: augmented-reality" class="small" href="../Search/augmented-reality.html">augmented-reality</a></li> <li><a title="Tag: azgivecamp" class="medium" href="../Search/azgivecamp.html">azgivecamp</a></li> <li><a title="Tag: azure" class="small" href="../Search/azure.html">azure</a></li> <li><a title="Tag: azure-devops" class="small" href="../Search/azure-devops.html">azure-devops</a></li> <li><a title="Tag: blazor" class="small" href="../Search/blazor.html">blazor</a></li> <li><a title="Tag: caching" class="small" href="../Search/caching.html">caching</a></li> <li><a title="Tag: charity" class="medium" href="../Search/charity.html">charity</a></li> <li><a title="Tag: chatgpt" class="small" href="../Search/chatgpt.html">chatgpt</a></li> <li><a title="Tag: ci_cd" class="medium" href="../Search/ci_cd.html">ci_cd</a></li> <li><a title="Tag: class" class="small" href="../Search/class.html">class</a></li> <li><a title="Tag: cloud" class="small" href="../Search/cloud.html">cloud</a></li> <li><a title="Tag: cloud-foundry" class="small" href="../Search/cloud-foundry.html">cloud-foundry</a></li> <li><a title="Tag: clr" class="medium" href="../Search/clr.html">clr</a></li> <li><a title="Tag: code-analysis" class="small" href="../Search/code-analysis.html">code-analysis</a></li> <li><a title="Tag: code-camp" class="biggest" href="../Search/code-camp.html">code-camp</a></li> <li><a title="Tag: code-contracts" class="small" href="../Search/code-contracts.html">code-contracts</a></li> <li><a title="Tag: code-coverage" class="small" href="../Search/code-coverage.html">code-coverage</a></li> <li><a title="Tag: code-sample" class="big" href="../Search/code-sample.html">code-sample</a></li> <li><a title="Tag: coding" class="small" href="../Search/coding.html">coding</a></li> <li><a title="Tag: coding-practices" class="biggest" href="../Search/coding-practices.html">coding-practices</a></li> <li><a title="Tag: community" class="biggest" href="../Search/community.html">community</a></li> <li><a title="Tag: conference" class="big" href="../Search/conference.html">conference</a></li> <li><a title="Tag: controls" class="small" href="../Search/controls.html">controls</a></li> <li><a title="Tag: corporate-culture" class="small" href="../Search/corporate-culture.html">corporate-culture</a></li> <li><a title="Tag: coupling" class="medium" href="../Search/coupling.html">coupling</a></li> <li><a title="Tag: csharp" class="biggest" href="../Search/csharp.html">csharp</a></li> <li><a title="Tag: data-structures" class="small" href="../Search/data-structures.html">data-structures</a></li> <li><a title="Tag: data-structures" class="small" href="../Search/data-structures.html">data-structures</a></li> <li><a title="Tag: database" class="small" href="../Search/database.html">database</a></li> <li><a title="Tag: datetime" class="small" href="../Search/datetime.html">datetime</a></li> <li><a title="Tag: decision" class="small" href="../Search/decision.html">decision</a></li> <li><a title="Tag: dependency-injection" class="small" href="../Search/dependency-injection.html">dependency-injection</a></li> <li><a title="Tag: development" class="biggest" href="../Search/development.html">development</a></li> <li><a title="Tag: device" class="small" href="../Search/device.html">device</a></li> <li><a title="Tag: devops" class="small" href="../Search/devops.html">devops</a></li> <li><a title="Tag: di" class="small" href="../Search/di.html">di</a></li> <li><a title="Tag: dotnet" class="big" href="../Search/dotnet.html">dotnet</a></li> <li><a title="Tag: dynamic" class="small" href="../Search/dynamic.html">dynamic</a></li> <li><a title="Tag: email" class="small" href="../Search/email.html">email</a></li> <li><a title="Tag: employment" class="small" href="../Search/employment.html">employment</a></li> <li><a title="Tag: encapsulation" class="small" href="../Search/encapsulation.html">encapsulation</a></li> <li><a title="Tag: encryption" class="small" href="../Search/encryption.html">encryption</a></li> <li><a title="Tag: enterprise" class="medium" href="../Search/enterprise.html">enterprise</a></li> <li><a title="Tag: enterprise-library" class="small" href="../Search/enterprise-library.html">enterprise-library</a></li> <li><a title="Tag: entity" class="medium" href="../Search/entity.html">entity</a></li> <li><a title="Tag: entity-framework" class="medium" href="../Search/entity-framework.html">entity-framework</a></li> <li><a title="Tag: ethics" class="small" href="../Search/ethics.html">ethics</a></li> <li><a title="Tag: event" class="biggest" href="../Search/event.html">event</a></li> <li><a title="Tag: event-driven" class="medium" href="../Search/event-driven.html">event-driven</a></li> <li><a title="Tag: exception-handling" class="small" href="../Search/exception-handling.html">exception-handling</a></li> <li><a title="Tag: extension-method" class="small" href="../Search/extension-method.html">extension-method</a></li> <li><a title="Tag: fakes" class="small" href="../Search/fakes.html">fakes</a></li> <li><a title="Tag: fediverse" class="small" href="../Search/fediverse.html">fediverse</a></li> <li><a title="Tag: flexibility" class="small" href="../Search/flexibility.html">flexibility</a></li> <li><a title="Tag: framework" class="big" href="../Search/framework.html">framework</a></li> <li><a title="Tag: funny" class="small" href="../Search/funny.html">funny</a></li> <li><a title="Tag: fxcop" class="small" href="../Search/fxcop.html">fxcop</a></li> <li><a title="Tag: gac" class="small" href="../Search/gac.html">gac</a></li> <li><a title="Tag: generics" class="medium" href="../Search/generics.html">generics</a></li> <li><a title="Tag: git" class="small" href="../Search/git.html">git</a></li> <li><a title="Tag: givecamp" class="medium" href="../Search/givecamp.html">givecamp</a></li> <li><a title="Tag: hashing" class="small" href="../Search/hashing.html">hashing</a></li> <li><a title="Tag: html5" class="small" href="../Search/html5.html">html5</a></li> <li><a title="Tag: ignite" class="small" href="../Search/ignite.html">ignite</a></li> <li><a title="Tag: indirection" class="small" href="../Search/indirection.html">indirection</a></li> <li><a title="Tag: inheritance" class="small" href="../Search/inheritance.html">inheritance</a></li> <li><a title="Tag: interface" class="big" href="../Search/interface.html">interface</a></li> <li><a title="Tag: introduction" class="small" href="../Search/introduction.html">introduction</a></li> <li><a title="Tag: ioc" class="small" href="../Search/ioc.html">ioc</a></li> <li><a title="Tag: ionic" class="small" href="../Search/ionic.html">ionic</a></li> <li><a title="Tag: javascript" class="small" href="../Search/javascript.html">javascript</a></li> <li><a title="Tag: ksql" class="small" href="../Search/ksql.html">ksql</a></li> <li><a title="Tag: list" class="small" href="../Search/list.html">list</a></li> <li><a title="Tag: logging" class="small" href="../Search/logging.html">logging</a></li> <li><a title="Tag: master-pages" class="small" href="../Search/master-pages.html">master-pages</a></li> <li><a title="Tag: mastodon" class="small" href="../Search/mastodon.html">mastodon</a></li> <li><a title="Tag: math" class="small" href="../Search/math.html">math</a></li> <li><a title="Tag: membership" class="small" href="../Search/membership.html">membership</a></li> <li><a title="Tag: microservices" class="big" href="../Search/microservices.html">microservices</a></li> <li><a title="Tag: microsoft" class="medium" href="../Search/microsoft.html">microsoft</a></li> <li><a title="Tag: ml" class="small" href="../Search/ml.html">ml</a></li> <li><a title="Tag: mocks" class="small" href="../Search/mocks.html">mocks</a></li> <li><a title="Tag: modelbuilder" class="small" href="../Search/modelbuilder.html">modelbuilder</a></li> <li><a title="Tag: moles" class="small" href="../Search/moles.html">moles</a></li> <li><a title="Tag: moq" class="small" href="../Search/moq.html">moq</a></li> <li><a title="Tag: mstest" class="small" href="../Search/mstest.html">mstest</a></li> <li><a title="Tag: net-neutrality" class="small" href="../Search/net-neutrality.html">net-neutrality</a></li> <li><a title="Tag: nonprofit" class="medium" href="../Search/nonprofit.html">nonprofit</a></li> <li><a title="Tag: nunit" class="small" href="../Search/nunit.html">nunit</a></li> <li><a title="Tag: onenote" class="small" href="../Search/onenote.html">onenote</a></li> <li><a title="Tag: oop" class="small" href="../Search/oop.html">oop</a></li> <li><a title="Tag: open-source" class="medium" href="../Search/open-source.html">open-source</a></li> <li><a title="Tag: opinion" class="small" href="../Search/opinion.html">opinion</a></li> <li><a title="Tag: optimization" class="medium" href="../Search/optimization.html">optimization</a></li> <li><a title="Tag: oracle" class="small" href="../Search/oracle.html">oracle</a></li> <li><a title="Tag: pattern" class="small" href="../Search/pattern.html">pattern</a></li> <li><a title="Tag: pcl" class="small" href="../Search/pcl.html">pcl</a></li> <li><a title="Tag: pdc" class="big" href="../Search/pdc.html">pdc</a></li> <li><a title="Tag: pex" class="small" href="../Search/pex.html">pex</a></li> <li><a title="Tag: phoenix" class="medium" href="../Search/phoenix.html">phoenix</a></li> <li><a title="Tag: phone" class="small" href="../Search/phone.html">phone</a></li> <li><a title="Tag: pluralsight" class="small" href="../Search/pluralsight.html">pluralsight</a></li> <li><a title="Tag: podcast" class="small" href="../Search/podcast.html">podcast</a></li> <li><a title="Tag: presentation" class="big" href="../Search/presentation.html">presentation</a></li> <li><a title="Tag: principle" class="small" href="../Search/principle.html">principle</a></li> <li><a title="Tag: professional-development" class="big" href="../Search/professional-development.html">professional-development</a></li> <li><a title="Tag: profile" class="small" href="../Search/profile.html">profile</a></li> <li><a title="Tag: properties" class="small" href="../Search/properties.html">properties</a></li> <li><a title="Tag: provider" class="small" href="../Search/provider.html">provider</a></li> <li><a title="Tag: reflection" class="small" href="../Search/reflection.html">reflection</a></li> <li><a title="Tag: regex" class="small" href="../Search/regex.html">regex</a></li> <li><a title="Tag: reliability" class="small" href="../Search/reliability.html">reliability</a></li> <li><a title="Tag: responsibility" class="small" href="../Search/responsibility.html">responsibility</a></li> <li><a title="Tag: schedule" class="small" href="../Search/schedule.html">schedule</a></li> <li><a title="Tag: scrum" class="small" href="../Search/scrum.html">scrum</a></li> <li><a title="Tag: security" class="small" href="../Search/security.html">security</a></li> <li><a title="Tag: serialization" class="small" href="../Search/serialization.html">serialization</a></li> <li><a title="Tag: services" class="small" href="../Search/services.html">services</a></li> <li><a title="Tag: skill" class="medium" href="../Search/skill.html">skill</a></li> <li><a title="Tag: sla" class="small" href="../Search/sla.html">sla</a></li> <li><a title="Tag: slides" class="medium" href="../Search/slides.html">slides</a></li> <li><a title="Tag: soa" class="big" href="../Search/soa.html">soa</a></li> <li><a title="Tag: social-media" class="small" href="../Search/social-media.html">social-media</a></li> <li><a title="Tag: solid" class="small" href="../Search/solid.html">solid</a></li> <li><a title="Tag: solution" class="small" href="../Search/solution.html">solution</a></li> <li><a title="Tag: speaking" class="medium" href="../Search/speaking.html">speaking</a></li> <li><a title="Tag: sql" class="small" href="../Search/sql.html">sql</a></li> <li><a title="Tag: standardization" class="small" href="../Search/standardization.html">standardization</a></li> <li><a title="Tag: startup-culture" class="small" href="../Search/startup-culture.html">startup-culture</a></li> <li><a title="Tag: strong-name" class="small" href="../Search/strong-name.html">strong-name</a></li> <li><a title="Tag: tdd" class="biggest" href="../Search/tdd.html">tdd</a></li> <li><a title="Tag: testing" class="biggest" href="../Search/testing.html">testing</a></li> <li><a title="Tag: time-zone" class="small" href="../Search/time-zone.html">time-zone</a></li> <li><a title="Tag: toastmasters" class="small" href="../Search/toastmasters.html">toastmasters</a></li> <li><a title="Tag: transit" class="small" href="../Search/transit.html">transit</a></li> <li><a title="Tag: transitech" class="small" href="../Search/transitech.html">transitech</a></li> <li><a title="Tag: troubleshooting" class="small" href="../Search/troubleshooting.html">troubleshooting</a></li> <li><a title="Tag: twitter" class="small" href="../Search/twitter.html">twitter</a></li> <li><a title="Tag: type" class="small" href="../Search/type.html">type</a></li> <li><a title="Tag: unit-testing" class="biggest" href="../Search/unit-testing.html">unit-testing</a></li> <li><a title="Tag: us-airways" class="small" href="../Search/us-airways.html">us-airways</a></li> <li><a title="Tag: user-error" class="small" href="../Search/user-error.html">user-error</a></li> <li><a title="Tag: user-group" class="small" href="../Search/user-group.html">user-group</a></li> <li><a title="Tag: ux" class="small" href="../Search/ux.html">ux</a></li> <li><a title="Tag: vbdotnet" class="small" href="../Search/vbdotnet.html">vbdotnet</a></li> <li><a title="Tag: visual-studio" class="biggest" href="../Search/visual-studio.html">visual-studio</a></li> <li><a title="Tag: w3c" class="small" href="../Search/w3c.html">w3c</a></li> <li><a title="Tag: wasm" class="small" href="../Search/wasm.html">wasm</a></li> <li><a title="Tag: wcf" class="small" href="../Search/wcf.html">wcf</a></li> <li><a title="Tag: web-parts" class="small" href="../Search/web-parts.html">web-parts</a></li> <li><a title="Tag: webassembly" class="small" href="../Search/webassembly.html">webassembly</a></li> <li><a title="Tag: windows" class="small" href="../Search/windows.html">windows</a></li> <li><a title="Tag: xaml" class="small" href="../Search/xaml.html">xaml</a></li> <li><a title="Tag: xml" class="small" href="../Search/xml.html">xml</a></li> <li><a title="Tag: xsl" class="small" href="../Search/xsl.html">xsl</a></li> <li><a title="Tag: xunit" class="small" href="../Search/xunit.html">xunit</a></li> <li><a title="Tag: yagni" class="small" href="../Search/yagni.html">yagni</a></li> </ul></div></div></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
