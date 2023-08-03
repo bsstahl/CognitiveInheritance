@@ -50,7 +50,7 @@ A common strategy for managing costs is to introduce another ceremony specifical
 - **Utilize tools for cost analysis**: Leverage tools and extensions that can help you analyze and estimate costs within your development environment. For example, you can use Azure Cost Management tools to gain insights into your Cosmos DB usage patterns and costs. Integrating these tools into your development process can help developers become more aware of the cost implications of their code changes, and act in a similar manner to quality analysis tools, making them just another piece of the overall puzzle, instead of a special-case for costs.
 - **Include cost-related SLOs**: As part of your performance monitoring, include cost-related SLIs and SLOs, such as cost per request or cost per user, alongside other important metrics like throughput and latency. This will help you keep an eye on costs without overemphasizing them and ensure they are considered alongside other crucial aspects of your application.
 
-## 5. Optimize When Necessary
+## 5. Optimize Only When Necessary
 
 If cost inefficiencies are identified during code reviews or monitoring, assess the trade-offs and determine if optimization is necessary without compromising the application's quality. In Cosmos DB, you can optimize various aspects, such as query performance, indexing policy, and partitioning strategy.
 
