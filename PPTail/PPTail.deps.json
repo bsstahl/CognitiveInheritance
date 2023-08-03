@@ -1104,6 +1104,7 @@
       "PPTail.Generator.Template/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
           "PPTail.Common": "1.0.0"
         },
         "runtime": {
