@@ -15,7 +15,7 @@ lastmodificationdate: 2023-02-27T07:00:00.000+00:00
 slug: feature-flags-do-not-roll-your-own
 categories:
 - Development
-
+        
 ---
 Feature flags are a powerful tool for controlling the availability and behavior of features in your software. They allow you to turn features on or off at runtime, without deploying new code, and target specific segments of users with different variations of your features. This enables you to experiment, test, and release features faster and safer than ever before.
 
@@ -33,10 +33,9 @@ Here are some of the specific reasons why you should avoid rolling your own feat
 
 * **Maintainability**: Feature flags are meant to be temporary switches that enable or disable features until they are ready for full release or removal. However, if you roll your own feature flags without proper management tools and processes, you may end up with a large number of stale or unused flags that clutter or pollute your codebase. This makes it harder to understand or modify your code, increases the risk of errors or conflicts, and reduces the readability or testability of your code.
 
-As you can see, rolling your own feature flags is not as easy as it sounds. It requires a lot of time,
-effort, skill, and discipline to do it right. And even if you do it right, you may still face challenges such as compatibility issues or vendor lock-in.
+As you can see, rolling your own feature flags is not as easy as it sounds. It requires a lot of time, effort, skill, and discipline to do it well. And even if you manage that nebulous challenge at rollout, you still have to maintain and extend the system for the life of the products that use it.
 
-That's why you should use a professional feature flag management platform instead. A feature flag management platform provides you with all the tools and services you need to implement and manage feature flags effectively and efficiently.
+That's why you should use a feature flag management platform instead. A feature flag management platform provides you with all the tools and services you need to implement and manage feature flags effectively and efficiently.
 
 With a feature flag management platform:
 
@@ -95,3 +94,6 @@ Yes, there are some open source projects that support feature flag management. F
 These are just some examples of open source feature flag management projects. There may be others that suit your needs better.
 
 Feature flags are an essential tool for modern software development and delivery. They enable you to deliver faster, safer, and better features for your customers while reducing risk and cost. But don't try to roll your own feature flags unless you have a good reason and enough resources to do so. Instead, use a professional feature flag management platform that provides you with all the tools and services you need to implement and manage feature  flags effectively  and efficiently.
+
+***
+Disclaimer: My teams use *LaunchDarkly* for feature-flagging but I am not affiliated with that product or company in any way and have not received, nor will I receive, any compensation of any type for this article.
