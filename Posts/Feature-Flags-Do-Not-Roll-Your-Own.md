@@ -10,8 +10,8 @@ description: Rolling your own feature flags comes with complexity, performance, 
 ispublished: false
 buildifnotpublished: true
 showinlist: false
-publicationdate: 2023-02-27T07:00:00.000+00:00
-lastmodificationdate: 2023-02-27T07:00:00.000+00:00
+publicationdate: 2023-08-03T07:00:00.000+00:00
+lastmodificationdate: 2023-08-03T07:00:00.000+00:00
 slug: feature-flags-do-not-roll-your-own
 categories:
 - Development
@@ -77,7 +77,7 @@ Some additional recommendations are:
 
 * **Use feature switches to avoid code branches**: You should use simple boolean expressions to evaluate your feature flags rather than creating multiple code branches with if/else statements. This will reduce code duplication and improve readability and testability of your code.
 
-* **Use feature flags for small test releases**: You should use feature flags to release small batches of features incrementally rather than releasing large groups of features altogether. This will allow you to test and validate your features with real users in production without affecting everyone at once. It will also enable you to roll back or fix any issues quickly if something goes wrong[^1]^ [8]^.
+* **Use feature flags for small test releases**: You should use feature flags to release small batches of features incrementally rather than releasing large groups of features altogether. This will allow you to test and validate your features with real users in production without affecting everyone at once. It will also enable you to roll back or fix any issues quickly if something goes wrong.
 
 By following these best practices, you can leverage the power of feature flags without compromising on quality, performance, security, or maintainability.
 
@@ -85,15 +85,15 @@ By following these best practices, you can leverage the power of feature flags w
 
 Yes, there are some open source projects that support feature flag management. For example:
 
-* **GrowthBook**: GrowthBook is an open source feature management and experimentation platform that helps your engineering team adopt an experimentation culture. It enables you to create gradual or canary releases with user targeting, run A/B tests, track key metrics, and integrate with various data sources.
+* [GrowthBook](https://github.com/growthbook/growthbook): GrowthBook is an open source feature management and experimentation platform that helps your engineering team adopt an experimentation culture. It enables you to create gradual or canary releases with user targeting, run A/B tests, track key metrics, and integrate with various data sources.
 
-* **Flagsmith**: Flagsmith is an open source feature flag and remote config service that makes it easy to create and manage features flags across web, mobile, and server side applications. It allows you to control feature access, segment users, toggle features on/off, and customize your app behavior without redeploying your code.
+* [Flagsmith](https://github.com/Flagsmith/flagsmithhttps://github.com/Flagsmith/flagsmith): Flagsmith is an open source feature flag and remote config service that makes it easy to create and manage features flags across web, mobile, and server side applications. It allows you to control feature access, segment users, toggle features on/off, and customize your app behavior without redeploying your code.
 
-* **Unleash**: Unleash is an open source feature flag management system that helps you deploy new features at high speed. It lets you decouple deployment from release, run experiments easily, scale as your business grows, and integrate with various tools and platforms.
+* [Unleash](https://github.com/Unleash/unleash): Unleash is an open source feature flag management system that helps you deploy new features at high speed. It lets you decouple deployment from release, run experiments easily, scale as your business grows, and integrate with various tools and platforms.
 
 These are just some examples of open source feature flag management projects. There may be others that suit your needs better.
 
 Feature flags are an essential tool for modern software development and delivery. They enable you to deliver faster, safer, and better features for your customers while reducing risk and cost. But don't try to roll your own feature flags unless you have a good reason and enough resources to do so. Instead, use a professional feature flag management platform that provides you with all the tools and services you need to implement and manage feature  flags effectively  and efficiently.
 
 ***
-Disclaimer: My teams use *LaunchDarkly* for feature-flagging but I am not affiliated with that product or company in any way and have not received, nor will I receive, any compensation of any type for this article.
+Disclaimer: My teams use *LaunchDarkly* for feature-flagging but I am not affiliated with that product or company in any way. I am also not associated with any similar product or company that makes such a product and have not received, nor will I receive, any compensation of any type, either direct or indirect, for this article.
