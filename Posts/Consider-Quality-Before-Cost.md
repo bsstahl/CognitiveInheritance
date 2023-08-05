@@ -18,7 +18,7 @@ categories:
 - Development
 
 ---
-Measuring the cost of utilizing a particular tool is often simpler than assessing more esoteric costs of an application's life-cycle, such as quality related costs. This can result in an excessive focus on cost optimization, potentially overshadowing vital factors like reliability and maintainability.
+Assessing the costs associated with using a specific tool is usually more straightforward than evaluating the less tangible costs related to an application's life-cycle, such as those tied to quality. This can result in an excessive focus on cost optimization, potentially overshadowing vital factors like reliability and maintainability.
 
 As an example, consider a solution that uses a Cosmos DB instance. It is easy to determine how much it costs to use that resource, since the Azure Portal gives us good estimates up-front, and insights as we go. It is much more difficult to determine how much it would cost to build the same functionality without the use of that Cosmos DB instance, and what the scalability and maintainability impacts of that decision would be.
 
@@ -34,7 +34,7 @@ Using Cosmos DB as an example, we can leverage its global distribution, low-late
 
 During the development of an application, it's essential to follow best practices and consult experts to identify areas for improvement or cost-effectiveness without compromising quality. Since most problems fall into a type that has already been solved many times, the ideal circumstance is that there is already a best-practice for solving problems of the type you are currently facing. If your organization has these best-practices or best-of-breed tools identified, there is usually no need to break-out of that box.
 
-In the context of Cosmos DB, you can refer to Microsoft's performance and optimization guidelines or consult with your own DBAs to ensure efficient partitioning, indexing, and query optimization. For instance, you can seek advice on choosing the appropriate partition key to ensure even data distribution and avoid hot-spots. Additionally, you can discuss the optimal indexing policy to balance the trade-off between query performance and indexing cost.
+In the context of Cosmos DB, you can refer to Microsoft's performance and optimization guidelines or consult with your own DBAs to ensure efficient partitioning, indexing, and query optimization. For instance, you can seek advice on choosing the appropriate partition key to ensure even data distribution and avoid hot-spots. Additionally, you can discuss the optimal indexing policy to balance the trade-off between query performance and indexing cost, and define the best time-to-live (TTL) for data elements that balance the need for historical data against query costs. If you are seeing an uneven distribution of data leading to higher consumption of RU/s, you can look at adjusting the partition key. If you need to query data in several different ways, you might consider using the Materialized View pattern to make the same data queryable using different partitioning strategies. All of these changes however have their own implementation costs, and potentially other costs, that should be considered.
 
 ## 3. Establish Cost Thresholds
 
@@ -52,9 +52,7 @@ A common strategy for managing costs is to introduce another ceremony specifical
 
 ## 5. Optimize Only When Necessary
 
-If cost inefficiencies are identified during code reviews or monitoring, assess the trade-offs and determine if optimization is necessary without compromising the application's quality. In Cosmos DB, you can optimize various aspects, such as query performance, indexing policy, and partitioning strategy.
-
-For instance, you can re-evaluate your application's indexing policy to ensure only relevant attributes are indexed, which can help reduce indexing costs. Similarly, you might consider adjusting the partition key if it's causing an uneven data distribution leading to higher consumption of RU/s. If you need to query data in several different ways, you might consider using the Materialized View pattern to make the same data queryable using different partitioning strategies.
+If cost inefficiencies are identified during code reviews or monitoring, assess the trade-offs and determine if optimization is necessary without compromising the application's quality. If cost targets are being exceeded by a small amount, and are not climbing rapidly, it may be much cheaper to simply adjust the target. If target costs are being exceeded by an order-of-magnitude, or if they are rising rapidly, that's when it probably makes sense to address the issues. There may be other circumstances where it is apporpriate to prioritize these types of costs, but always be aware that there are costs to making these changes too, and they may not be as obvious as those that are easily measured.
 
 ## Conclusion
 
