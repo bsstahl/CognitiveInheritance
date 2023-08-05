@@ -8,11 +8,11 @@ menuorder: 0
 id: c4e4c620-5bfb-4875-bb53-94cea651a19e
 title: Consider Quality Before Cost in Application Development
 description: Guidelines on when to consider costs as part of the application development process
-ispublished: false
+ispublished: true
 showinlist: false
 buildifnotpublished: true
-publicationdate: 2023-08-02T07:00:00Z
-lastmodificationdate: 2023-08-02T07:00:00Z
+publicationdate: 2023-08-04T07:00:00Z
+lastmodificationdate: 2023-08-04T07:00:00Z
 slug: consider-quality-before-cost
 categories:
 - Development
