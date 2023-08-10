@@ -41,16 +41,23 @@ Each workflow step is then tied to either a command or a view/read-model. The sp
 
 ## The Unified process
 
-| Step | Participants | Process | Key Deliverables |
-| --- | --- | --- | --- |
-| Collect Domain Events | Domain experts, software developers, UX designers, project managers | Event Storming | Collection of Domain Events |
-| Refine Domain Events | All participants | Event Storming | Refined and organized Domain Events |
-| Track Causes | All participants | Event Storming | Identified commands and views |
-| Aggregation | All participants | Event Storming | Grouped logic by Aggregate to create "sub-systems" |
-| Identify Inputs | Development team, Product Owner | Event Modeling | Identified inputs to the system (commands) |
-| Identify Outputs | Development team, Product Owner | Event Modeling | Linked information accumulated by storing Domain Events back into the UI via views |
-| Elaborate Scenarios | Development team, Product Owner | Event Modeling | Specifications for each workflow step |
-| Completeness Check | Development team, Product Owner | Event Modeling | Verification that every field is accounted for and all information has an origin and a destination |
+- **Collect Domain Events**: This is the first step in the Event Storming process, where domain experts, software developers, UX designers, and project managers come together to brainstorm all the Domain Events that occur within the system. The key deliverable from this step is a collection of Domain Events.
+
+- **Refine Domain Events**: In this step, all participants work together to refine and organize the Domain Events, creating a visual map of the system's behavior. This step is part of the Event Storming process.
+
+- **Track Causes**: This is another step in the Event Storming process, where all participants identify the commands (triggers for the Domain Events) and the views (how the system presents data to the user).
+
+- **Aggregation**: In this step of the Event Storming process, all participants group the logic by Aggregate to create "sub-systems", aligning the technical architecture with the business processes.
+
+***
+
+- **Identify Inputs**: This step marks the transition to Event Modeling. The development team and the Product Owner identify the inputs to the system, which are represented as commands.
+
+- **Identify Outputs**: In this step of the Event Modeling process, the development team and the Product Owner link the information accumulated by storing Domain Events back into the UI via views.
+
+- **Elaborate Scenarios**: This is another step in the Event Modeling process, where the development team and the Product Owner construct specifications for each workflow step.
+
+- **Completeness Check**: This is the final step in the Event Modeling process, where the development team and the Product Owner perform a verification to ensure that every field is accounted for and all information has an origin and a destination.
 
 ## The Intersection of AI and Event Modeling
 
