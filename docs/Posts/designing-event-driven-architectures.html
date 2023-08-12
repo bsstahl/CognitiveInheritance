@@ -74,16 +74,27 @@
 <p>The team starts by identifying the inputs to the system. This is usually the step in which the introduction of these blue boxes (commands) happens. Next, the team links information accumulated by storing Domain Events back into the UI via views (aka read-models).</p>
 <p>Each workflow step is then tied to either a command or a view/read-model. The specifications are constructed one after the other very rapidly while being reviewed by multiple role representatives. Finally, a completeness check is performed to ensure that every field is accounted for and all information has an origin and a destination.</p>
 <h2>The Unified process</h2>
-<p>| Step | Participants | Process | Key Deliverables |
-| --- | --- | --- | --- |
-| Collect Domain Events | Domain experts, software developers, UX designers, project managers | Event Storming | Collection of Domain Events |
-| Refine Domain Events | All participants | Event Storming | Refined and organized Domain Events |
-| Track Causes | All participants | Event Storming | Identified commands and views |
-| Aggregation | All participants | Event Storming | Grouped logic by Aggregate to create &quot;sub-systems&quot; |
-| Identify Inputs | Development team, Product Owner | Event Modeling | Identified inputs to the system (commands) |
-| Identify Outputs | Development team, Product Owner | Event Modeling | Linked information accumulated by storing Domain Events back into the UI via views |
-| Elaborate Scenarios | Development team, Product Owner | Event Modeling | Specifications for each workflow step |
-| Completeness Check | Development team, Product Owner | Event Modeling | Verification that every field is accounted for and all information has an origin and a destination |</p>
+<ul>
+<li><p><strong>Collect Domain Events</strong>: This is the first step in the Event Storming process, where domain experts, software developers, UX designers, and project managers come together to brainstorm all the Domain Events that occur within the system. The key deliverable from this step is a collection of Domain Events.</p>
+</li>
+<li><p><strong>Refine Domain Events</strong>: In this step, all participants work together to refine and organize the Domain Events, creating a visual map of the system's behavior. This step is part of the Event Storming process.</p>
+</li>
+<li><p><strong>Track Causes</strong>: This is another step in the Event Storming process, where all participants identify the commands (triggers for the Domain Events) and the views (how the system presents data to the user).</p>
+</li>
+<li><p><strong>Aggregation</strong>: In this step of the Event Storming process, all participants group the logic by Aggregate to create &quot;sub-systems&quot;, aligning the technical architecture with the business processes.</p>
+</li>
+</ul>
+<hr />
+<ul>
+<li><p><strong>Identify Inputs</strong>: This step marks the transition to Event Modeling. The development team and the Product Owner identify the inputs to the system, which are represented as commands.</p>
+</li>
+<li><p><strong>Identify Outputs</strong>: In this step of the Event Modeling process, the development team and the Product Owner link the information accumulated by storing Domain Events back into the UI via views.</p>
+</li>
+<li><p><strong>Elaborate Scenarios</strong>: This is another step in the Event Modeling process, where the development team and the Product Owner construct specifications for each workflow step.</p>
+</li>
+<li><p><strong>Completeness Check</strong>: This is the final step in the Event Modeling process, where the development team and the Product Owner perform a verification to ensure that every field is accounted for and all information has an origin and a destination.</p>
+</li>
+</ul>
 <h2>The Intersection of AI and Event Modeling</h2>
 <p>As we delve deeper into the realm of artificial intelligence and machine learning, the principles of Event Modeling become even more relevant. Large Language Models like GPT and Word2Vec operate in a 60-dimensional vector store, a sphere of capabilities that can be likened to the multi-dimensional space of Domain Events, commands, and views in Event Modeling.</p>
 <p>Just as we use Event Modeling to map out the flow of data through a system, we can use similar techniques to map out the flow of information through a machine learning model. For instance, the autocomplete feature in GPT-4 can be seen as a 'view' that presents data to the user based on the 'Domain Events' of the user's input.</p>
