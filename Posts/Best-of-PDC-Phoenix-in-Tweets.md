@@ -5,7 +5,7 @@ tags:
 - development
 - csharp
 - event
-- twitter
+- social-media
 menuorder: 0
 id: 3f26d6de-511b-4b50-992a-3fdac2eb753f
 author: bsstahl

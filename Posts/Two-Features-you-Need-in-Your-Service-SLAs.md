@@ -4,7 +4,6 @@ tags:
 - interface
 - services
 - sla
-- wcf
 - soa
 menuorder: 0
 id: 9b51fb05-53a6-44e0-bddb-fddfa1b542dc

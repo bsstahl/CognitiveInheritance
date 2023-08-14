@@ -3,7 +3,7 @@ tags:
 - pdc
 - azure
 - cloud
-- twitter
+- social-media
 - windows
 menuorder: 0
 id: 39a71c38-6692-49c9-94fe-a70aa9035078
@@ -22,9 +22,9 @@ categories:
 ---
 Day 2 was a more focused day for me at PDC 2008. After attending the morning keynotes, which included the first peeks at Windows 7 features as well as a terrific (as always) code-only presentation on programming against the cloud by Don Box and Chris Anderson, I headed over to the hands-on-labs where I spent the rest of the day working with Azure and creating applications that run in the cloud. I also received my Azure key and began the process of setting up a virtual machine to house the Azure tools.
 
-### Real-Time Updates on Twitter
+### Real-Time Updates on Social Media
 
-Just a reminder that much of what is happening here at the PDC is being posted in real-time (or close to it) on Twitter. My Twitter updates can be found {TwitterLink}.
+Just a reminder that much of what is happening here at the PDC is being posted in real-time (or close to it) on social media. My updates can be found {TwitterLink|here}.
 
 ### Keynotes
 

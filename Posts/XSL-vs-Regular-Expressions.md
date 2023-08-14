@@ -1,7 +1,6 @@
 ---
 tags:
 - xml
-- xsl
 - regex
 menuorder: 0
 id: 7033a3af-acf1-49a5-877a-a66d22f175c8

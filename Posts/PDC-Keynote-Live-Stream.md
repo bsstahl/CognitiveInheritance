@@ -1,7 +1,7 @@
 ---
 tags:
 - pdc
-- twitter
+- social-media
 menuorder: 0
 id: 556cde80-bc1a-412f-ab63-9b505ec49970
 author: bsstahl

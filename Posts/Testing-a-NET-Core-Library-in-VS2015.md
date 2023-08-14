@@ -6,7 +6,6 @@ tags:
 - di
 - ioc
 - microsoft
-- xunit
 - moq
 - mocks
 - professional development

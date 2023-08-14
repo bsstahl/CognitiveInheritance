@@ -2,7 +2,6 @@
 author: bsstahl
 tags:
 - social-media
-- twitter
 - mastodon
 - fediverse
 categories:
