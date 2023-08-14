@@ -24,7 +24,7 @@ Day 2 was a more focused day for me at PDC 2008. After attending the morning key
 
 ### Real-Time Updates on Social Media
 
-Just a reminder that much of what is happening here at the PDC is being posted in real-time (or close to it) on social media. My updates can be found {TwitterLink|here}.
+Just a reminder that much of what is happening here at the PDC is being posted in real-time (or close to it) on social media. My updates can now be found {TwitterLink}.
 
 ### Keynotes
 
@@ -40,4 +40,4 @@ The remainder of my day, after lunch, was spent in the hands-on labs working thr
 
 ### Day 3 Preview
 
-Day 3 looks to be futures day, with the keynote focusing on Microsoft Research properties and technologies. Watch Twitter for all the action as it occurs.
+Day 3 looks to be futures day, with the keynote focusing on Microsoft Research properties and technologies. Watch social media for all the action as it occurs.
