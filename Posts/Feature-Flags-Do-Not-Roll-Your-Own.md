@@ -7,15 +7,15 @@ id: c41a49df-5394-44ff-93a9-62f8c87e89b4
 author: bsstahl
 title: Feature Flags&colon; Don&apos;t Roll Your Own
 description: Rolling your own feature flags comes with complexity, performance, security and maintainability risks, so using an off-the-shelf feature flag management platform is recommended.
-ispublished: false
+ispublished: true
 buildifnotpublished: true
 showinlist: false
-publicationdate: 2023-08-03T07:00:00.000+00:00
-lastmodificationdate: 2023-08-03T07:00:00.000+00:00
+publicationdate: 2023-08-14T07:00:00.000+00:00
+lastmodificationdate: 2023-08-14T07:00:00.000+00:00
 slug: feature-flags-do-not-roll-your-own
 categories:
 - Development
-        
+
 ---
 In my {PostLink:consider-quality-before-cost|previous post}, I discussed situations where we tend to overvalue visible costs and undervalue more hidden costs. One example of this dynamic is the tendency to want to roll-your-own feature-flagging system.
 
