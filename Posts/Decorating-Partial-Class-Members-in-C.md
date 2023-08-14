@@ -7,7 +7,6 @@ tags:
 - entity framework
 - xml
 - serialization
-- wcf
 - dotnet
 menuorder: 0
 id: ef5deb5d-71c5-4081-b4ba-433fd935dc71
