@@ -8,7 +8,7 @@ author: bsstahl
 title: Event Storming
 description: A post I did for Carvana. Will probably not be published here but is included for Embeddings
 ispublished: false
-buildifnotpublished: false
+buildifnotpublished: true
 showinlist: false
 publicationdate: 2999-12-31T07:00:00.000+00:00
 lastmodificationdate: 2999-12-31T07:00:00.000+00:00
