@@ -44,10 +44,10 @@ These distances can be used to very quickly explore the semantic meaning of a wo
 
 2. **Text Classification**: In machine learning, embeddings can be used to classify text into different categories based on their semantic meaning. This can be used in spam detection, news categorization, and many other applications.
 
-3. **Information Retrieval**: Search engines can use embeddings and Euclidean distance to understand the context of a search query, allowing the context of the query to be augmented with relevant data to provide better results.
+3. **Information Retrieval**: We can use embeddings and distance metrics to understand the context of a natural language query, allowing the context of the query to be augmented with relevant data to provide better results.
 
 ## Conclusion
 
-As software engineers and solution architects, understanding embeddings and Euclidean distance is a key aspect of working with NLP. These concepts allow models like GPT to interpret the context of words and their semantic relationships with other words, which in turn aids in generating more contextually relevant responses.
+As engineers building tools using these models, our understanding of these representations and the distance calculations they enable, will be key to working with NLP. These concepts allow models like GPT to interpret the context of words and their semantic relationships with other words, which in turn aids in generating more contextually relevant responses.
 
-Practical applications of these concepts in the field include tasks such as sentiment analysis, information retrieval, and text classification. As we continue to work with and develop these models, the understanding and application of embeddings and Euclidean distances will remain a fundamental part of the process. This understanding is crucial in our ongoing efforts to improve and refine the capabilities of NLP models and tools.
+Practical applications of these concepts in the field include tasks such as sentiment analysis, information retrieval, and text classification. As we continue to work with and develop these models, the understanding and application of embeddings and their distance calculations will remain a fundamental part of the process. This understanding is crucial in our ongoing efforts to improve and refine the capabilities of our tools built on top of these semantic models.
