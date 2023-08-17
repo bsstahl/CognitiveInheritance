@@ -28,6 +28,18 @@ Embeddings are a method of encapsulating words as vectors in a high-dimensional 
 
 Consider the word 'Ram'. In the sphere of computing, 'Ram' signifies memory. In the automotive domain, 'Ram' could denote a truck model. In an agricultural context, 'Ram' could imply a male sheep. The embeddings for the word 'Ram', or a phrase containing it, would be different in each of these contexts, reflecting the different semantic meanings.
 
+To help us visualize this idea, let's imagine a super-simplified version, one that embeds text in only 3-dimensions. Picture a cube where each axis represents a different context: computing, automotive, and agriculture.
+
+* The embedding of a sentence like 'I need to buy more RAM for my PC' would be positioned close to other embeddings related to computers, such as 'Memory', 'Storage' and 'ROM', high on the computing axis.
+
+* The embedding of a sentence like 'I need to buy a Ram to haul my boat' would be close to words like 'Truck', 'Vehicle', and 'Dodge', high on the automotive axis.
+
+* The embedding of a sentence like 'I put the ram in the pen with the chickens' would be close to words like 'Sheep', 'Farm' and 'Livestock', high on the agricultural axis.
+
+In this 3-dimensional space, the word 'Ram' itself would have three different embeddings, each representing a different semantic meaning based on the context. The Euclidean distance between 'Ram' and other words in this space would indicate their semantic similarity in each context.
+
+Remember, this is a simplified example. In reality, embeddings exist in high-dimensional space, and words are related to many more contexts. The GPT-4 model contains 1536 dimensions. It is also very difficult (currently impossible) to identify what the different dimensions in the vector-space represent.
+
 ## Euclidean Distance: A Measure of Semantic Similarity
 
 Once we have these embeddings, we can then compute the 'Euclidean distance' between different text. The Euclidean distance is a measure of the straight-line distance between two points in a space. In the context of word embeddings, a smaller Euclidean distance between two word vectors indicates a closer semantic relationship.
