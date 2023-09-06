@@ -5,7 +5,7 @@ theme: Default
 title: Cognitive Inheritance
 description: The Application Development Experiences of an Enterprise Developer
 copyright: "&copy; 2003-2023 by Barry S. Stahl"
-contactemail: aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com
+contactemail: aa888322-fa60-417f-b247-e2119756d383@bsstahl.com
 sitevariables:
 - variablename: TwitterLink
   variablevalue: <a rel="me" href="https://fosstodon.org/@Bsstahl">@bsstahl@cognitiveinheritance.com</a>
