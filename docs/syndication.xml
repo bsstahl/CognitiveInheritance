@@ -86,7 +86,7 @@
 &lt;p&gt;Disclaimer: My teams use &lt;em&gt;LaunchDarkly&lt;/em&gt; for feature-flagging but I am not affiliated with that product or company in any way. I am also not associated with any similar product or company that makes such a product and have not received, nor will I receive, any compensation of any type, either direct or indirect, for this article.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/feature-flags-do-not-roll-your-own.html</link>
-  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
+  <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/c41a49df-5394-44ff-93a9-62f8c87e89b4.html</guid>
   <pubDate>Mon, 14 Aug 2023 07:00:00 GMT</pubDate>
 </item><item>
@@ -116,7 +116,7 @@
 &lt;p&gt;Balancing quality and cost in application development is crucial for building successful applications. By focusing on quality first, employing best practices, establishing cost thresholds, and integrating cost checks into your existing code review and monitoring processes, you can create an environment that considers all costs of application development, without overemphasizing those that are easy to measure.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/consider-quality-before-cost.html</link>
-  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
+  <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/c4e4c620-5bfb-4875-bb53-94cea651a19e.html</guid>
   <pubDate>Fri, 04 Aug 2023 07:00:00 GMT</pubDate>
 </item><item>
@@ -140,7 +140,7 @@
 &lt;p&gt;Unless a model builder has permission from a user to train their models using that user&apos;s works, be it an OSS or Copyleft license, explicit license agreement, or direct permission, those items should not be used to train models. If it is shown that a model has been trained using such data sets, and there have been indications (unproven as yet to my knowledge) that this may be the case for some models, especially image-generators, then that is a problem with those models that needs to be addressed. It does not invalidate the general use of these models, nor is it an indictment of any person or model except those in violation. Our trademark and copyright systems are another place where we, as a society, have completely fallen-down. Hopefully, that collapse will not cause us to forsake the value that these tools can provide.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/continuing-a-conversation-on-llms.html</link>
-  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
+  <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/dbbcb0db-7465-4489-a07b-eae7c8716685.html</guid>
   <pubDate>Thu, 13 Apr 2023 07:00:00 GMT</pubDate>
 </item><item>
@@ -151,7 +151,7 @@
 &lt;p&gt;I wonder how many cool products I&apos;ve missed out on because of that delay in getting access? I wonder how many cool products just died because they weren&apos;t there for people when they actually needed them.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/beta-tools-and-wait-lists.html</link>
-  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
+  <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/7a38959c-92fa-47f3-aee9-19fdc2b21a28.html</guid>
   <pubDate>Wed, 12 Apr 2023 07:00:00 GMT</pubDate>
 </item><item>
@@ -175,7 +175,7 @@
 &lt;p&gt;For more detail on how to avoid the Dual-Writes Anti-Pattern, please see my article from December 2022 on &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-1of6-context.html&quot;&gt;The Execution Context&lt;/a&gt;.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/microservices-size-does-not-matter.html</link>
-  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
+  <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/53e0a79d-1096-4874-9639-6c1fb3eb8b47.html</guid>
   <pubDate>Mon, 20 Feb 2023 07:00:00 GMT</pubDate>
 </item><item>
@@ -203,7 +203,7 @@
 &lt;p&gt;Regardless of the method used, the realization that training the simplest neural network results in a model of a line provided the &amp;quot;aha experience&amp;quot; I needed as the foundation for my understanding of Machine Learning models. I hope, by publishing this article, that others may also benefit from this recognition.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/simple-linear-regression.html</link>
-  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
+  <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/18a693d3-448c-4477-b4e2-7193e896a2b6.html</guid>
   <pubDate>Mon, 13 Feb 2023 07:00:00 GMT</pubDate>
 </item><item>
@@ -236,7 +236,7 @@
 &lt;p&gt;The comparisons of creating software to creating an edifice is not going away any time soon. Regardless of its efficacy, this model has come to be part of our corporate lexicon and will likely remain so for the foreseeable future. Even the title of &amp;quot;Software Architect&amp;quot; is extremely prevalent in our culture, a title which I have held, and a role that I have enjoyed for many years now. That said, it could only benefit our craft to make more clear the ways in which that metaphor fails. This clarity would benefit not just the non-technical among us who have little basis to judge our actions aside from these metaphors, but also us as engineers. It is far too easy for anyone to start to view developers as mere bricklayers, rather than the ships captains we are. This is especially true when generations of engineers have been brought up on and trained on the architecture metaphor. If they think of themselves as just workers of limited, albeit currently valuable skill, it will make it much harder for them to challenge those things in our culture that need to be challenged, and to prevent the use of our technologies for nefarious purposes.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/like-a-river.html</link>
-  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
+  <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/472f33ba-2519-4fa0-84c1-f1dc869d4cba.html</guid>
   <pubDate>Mon, 06 Feb 2023 07:00:00 GMT</pubDate>
 </item><item>
@@ -249,7 +249,7 @@
 &lt;p&gt;If you have avoided using event-driven microservices because scalability isn&apos;t one of the key features of your application, I encourage you to explore the many other benefits of these architectures.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/microservices-not-just-about-scale.html</link>
-  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
+  <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/fb1cfc1d-1635-45f9-954f-772527d43661.html</guid>
   <pubDate>Mon, 30 Jan 2023 07:00:00 GMT</pubDate>
 </item><item>
@@ -344,7 +344,7 @@
 &lt;/ul&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/critical-questions-about-microservice.html</link>
-  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
+  <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/8e262558-bd6d-4e3d-b20e-36fe3bbc5e05.html</guid>
   <pubDate>Mon, 23 Jan 2023 07:00:00 GMT</pubDate>
 </item><item>
@@ -389,7 +389,7 @@
 &lt;/ul&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-6of6-coalescence.html</link>
-  <author>aa88801d-9543-467e-9d7e-8768d2d14aa7@bsstahl.com (Barry S. Stahl)</author>
+  <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/a0280db3-6d32-4c89-81c4-10ce2cd3522d.html</guid>
   <pubDate>Mon, 16 Jan 2023 07:00:00 GMT</pubDate>
 </item>
