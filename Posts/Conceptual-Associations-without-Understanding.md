@@ -12,6 +12,7 @@ menuorder: 0
 id: cefd35ad-e6c3-466d-907d-f6301212a9bb
 title: Conceptual Associations Without Understanding
 description: Exploring the potential of LLMs to generate novel insights by identifying associations in high-dimensional data
+teaser: Large Language Models (LLMs) like GPT can identify novel associations in high-dimensional data, even without human-like understanding. They can link disparate ideas across domains, potentially leading to innovative insights.
 ispublished: false
 showinlist: false
 buildifnotpublished: true
