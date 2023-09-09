@@ -62,15 +62,14 @@
             <div class="col-md-8">
                 <h3>Entity Framework Associations on Non-Key Fields</h3>
                 <h5>Posted by bsstahl on 2011-02-03 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-                <div>
-                    <share-on-mastodon 
-                        share_title="Check out this post on Cognitive Inheritance: 'Entity Framework Associations on Non-Key Fields'"
-                        share_description="&quot;Using the Entity Framework with databases that have foreign-key relationships that do not link to the primary key of the child element.&quot;"
-                        hashtags="#entity framework #entity #data structures"
-                        author="@bsstahl@cognitiveinheritance.com"
-                        default_url="https://fosstodon.org">
-                    </share-on-mastodon>
-                </div>
+                <share-on-mastodon 
+                    share_title="Check out this post on Cognitive Inheritance: 'Entity Framework Associations on Non-Key Fields'"
+                    share_description="&quot;Using the Entity Framework with databases that have foreign-key relationships that do not link to the primary key of the child element.&quot;"
+                    hashtags="#entity framework #entity #data structures"
+                    author="@bsstahl@cognitiveinheritance.com"
+                    default_url="https://fosstodon.org">
+                </share-on-mastodon>
+                <hr style="border-top: dotted 1px;">
                 <p>Since I have now, for the second time, run into a problem working with Associations on non-key fields in Entity Framework, it is time for me to take a serious look at the issue.</p>
 <p>Consider the model below.  There are two entities, a Flight and an Airport.  In this scenario, there are two associations between the entities, Flight.DepartFromAirportId –&gt; Airport.Id and Flight.ArriveAtAirportId –&gt; Airport.Id.  These associations represent the Departure and Arrival airport of the flight.  This model works quite well in Entity Framework 4, making a collection of the arriving and departing flights for each airport available through the navigation properties on the Airport object, and providing a shortcut to the departure and arrival Airport objects for each flight via the navigation properties on the Flight object.</p>
 <p><img src="../Images/Flight%20Airport%20Ok%20ERD.png" alt="Flight Airport Ok ERD" /></p>
