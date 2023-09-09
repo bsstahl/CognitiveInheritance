@@ -31,15 +31,14 @@
             <div class="col-md-8">
                 <h3>{Title}</h3>
                 <h5>Posted {ByLine} on {PublicationDate} and Filed Under: {Categories}</h5>
-                <div>
-                    <share-on-mastodon 
-                        share_title="Check out this post on Cognitive Inheritance: '{Title}'"
-                        share_description="&quot;{TeaserOrDescription}&quot;"
-                        hashtags="{Hashtags}"
-                        author="@bsstahl@cognitiveinheritance.com"
-                        default_url="https://fosstodon.org">
-                    </share-on-mastodon>
-                </div>
+                <share-on-mastodon 
+                    share_title="Check out this post on Cognitive Inheritance: '{Title}'"
+                    share_description="&quot;{TeaserOrDescription}&quot;"
+                    hashtags="{Hashtags}"
+                    author="@bsstahl@cognitiveinheritance.com"
+                    default_url="https://fosstodon.org">
+                </share-on-mastodon>
+                <hr style="border-top: dotted 1px;">
                 {Content}
                 <h5>Tags: {Tags}</h5>
                 <div class="share">{Permalink}</div>
