@@ -60,21 +60,16 @@
 
         <div class="row">
             <div class="col-md-8">
-                <table>
-                    <tr>
-                        <td><h3>Profile Provider Exception</h3></td>
-                        <td align="right" rowspan="2"><share-on-mastodon 
+                <h3>Profile Provider Exception</h3>
+                <h5>Posted by bsstahl on 2006-10-07 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+                <br/>
+                <share-on-mastodon 
                             share_title="Check out this post on Cognitive Inheritance: 'Profile Provider Exception'"
                             share_description="&quot;&quot;"
                             hashtags="#provider #profile #framework #aspdotnet"
                             author="@bsstahl@cognitiveinheritance.com"
                             default_url="https://fosstodon.org">
-                        </share-on-mastodon></td>
-                    </tr>
-                    <tr>
-                        <td><h5>Posted by bsstahl on 2006-10-07 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5></td>
-                    </tr>
-                </table>
+                        </share-on-mastodon>
                 <br/>
                 <p>While working on a custom Profile provider, I needed to set the values in a SettingPropertyValuesCollection object to pass to the SetPropertyValues method of the provider. Using the code below, I was always getting a NullReferenceException when the provider attempted to read the values out of the collection.</p>
 <p>Dim objProperties As New System.Configuration.SettingsPropertyValueCollection<br />

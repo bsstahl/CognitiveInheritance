@@ -60,21 +60,16 @@
 
         <div class="row">
             <div class="col-md-8">
-                <table>
-                    <tr>
-                        <td><h3>Minimizing Support Burden - A Comparison of Three Architectures</h3></td>
-                        <td align="right" rowspan="2"><share-on-mastodon 
+                <h3>Minimizing Support Burden - A Comparison of Three Architectures</h3>
+                <h5>Posted by bsstahl on 2023-04-24 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+                <br/>
+                <share-on-mastodon 
                             share_title="Check out this post on Cognitive Inheritance: 'Minimizing Support Burden - A Comparison of Three Architectures'"
                             share_description="&quot;&quot;"
                             hashtags="#architecture #coding-practices #event-driven #microservices #reliability #soa"
                             author="@bsstahl@cognitiveinheritance.com"
                             default_url="https://fosstodon.org">
-                        </share-on-mastodon></td>
-                    </tr>
-                    <tr>
-                        <td><h5>Posted by bsstahl on 2023-04-24 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5></td>
-                    </tr>
-                </table>
+                        </share-on-mastodon>
                 <br/>
                 <p>There's been some talk lately about well abstracted monoliths and how they may be more effective at times than microservice architectures. While there are likely to be some use cases where this is true, there's one thing that a monolith can never do: it can't fully isolate concerns. Monoliths, like microservices, can abstract the various concerns to reduce the coupling between them, but monoliths make it much more difficult to determine in which concern a failures occurred, often requiring teams to respond to support issues unnecessarily. In this post, we'll compare three architectures and demonstrate why completely separating concerns is important in this context.</p>
 <p>TODO: It also needs a bus. That is, we need to be able to add functionality without impacting existing functionality, as you can with a message-driven architecture (whether that is in a monolith or not). (is this support burden? -- should it be broken out?)</p>

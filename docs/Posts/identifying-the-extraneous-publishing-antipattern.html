@@ -60,21 +60,16 @@
 
         <div class="row">
             <div class="col-md-8">
-                <table>
-                    <tr>
-                        <td><h3>Identifying the Extraneous Publishing AntiPattern</h3></td>
-                        <td align="right" rowspan="2"><share-on-mastodon 
+                <h3>Identifying the Extraneous Publishing AntiPattern</h3>
+                <h5>Posted by bsstahl on 2022-08-08 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+                <br/>
+                <share-on-mastodon 
                             share_title="Check out this post on Cognitive Inheritance: 'Identifying the Extraneous Publishing AntiPattern'"
                             share_description="&quot;&quot;"
                             hashtags="#agile #antipattern #apache-kafka #coding-practices #coupling #data-structures #database #development #ksql #microservices"
                             author="@bsstahl@cognitiveinheritance.com"
                             default_url="https://fosstodon.org">
-                        </share-on-mastodon></td>
-                    </tr>
-                    <tr>
-                        <td><h5>Posted by bsstahl on 2022-08-08 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5></td>
-                    </tr>
-                </table>
+                        </share-on-mastodon>
                 <br/>
                 <p>What do you do when a dependency of one of your components needs data, ostensibly from your component, that your component doesn't actually need itself?</p>
 <p>Let's think about an example. Suppose our problem domain (the big black box in the drawings below) uses some data from 3 different data sources (labeled Source A, B &amp; C in the drawings). There is also a downstream dependency that needs data from the problem domain, as well as from sources B &amp; C. Some of the data required by the downstream dependency are not needed by, or owned by, the problem domain.</p>
