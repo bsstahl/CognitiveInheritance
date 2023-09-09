@@ -6,7 +6,7 @@ menuorder: 0
 id: c41a49df-5394-44ff-93a9-62f8c87e89b4
 author: bsstahl
 title: Feature Flags&colon; Don&apos;t Roll Your Own
-teaser: Rolling your own feature flags may seem cost-effective, but it brings hidden pitfalls that can undermine software quality, performance, security, and maintainability. Instead, use a feature flag management platform to handle complexities and ensure efficient implementation
+teaser: Rolling your own feature flags may seem cost-effective, but it brings hidden pitfalls that can undermine software quality, performance, security, and maintainability. Instead, use a feature flag management platform to handle complexities and ensure efficient implementation.
 description: Rolling your own feature flags comes with complexity, performance, security and maintainability risks, so using an off-the-shelf feature flag management platform is recommended.
 ispublished: true
 buildifnotpublished: true
