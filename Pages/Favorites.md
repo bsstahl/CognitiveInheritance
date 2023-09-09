@@ -17,6 +17,8 @@ categories:
 ---
 I like to describe myself as the kind of person who has a list of his favorite physicists and favorite mathematicians. The thought being that just knowing I have such a list tells you everything you really need to know about me.
 
+<share-on-mastodon share_title="Check it out, this nerd keeps an up-to-date list of his favorite Physicists and Mathematicians" share_description="&quot;My Favorites on Cognitive Inheritance&quot;" hashtags="#physicists #mathematicians #physics #math" author="@bsstahl@cognitiveinheritance.com" default_url="https://fosstodon.org"></share-on-mastodon>
+
 
 #### Favorite Physicists
 
