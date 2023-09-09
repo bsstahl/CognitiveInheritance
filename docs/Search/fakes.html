@@ -63,15 +63,21 @@
             <div class="col-md-8">
                 <h1>Tag: fakes</h1>
                 <div>
-    <h3>Testing the Untestable with Microsoft Fakes</h3>
-    <h5>Posted by bsstahl on 2017-03-20 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;
-    <share-on-mastodon 
-        share_title="Check out this post on Cognitive Inheritance: 'Testing the Untestable with Microsoft Fakes'"
-        share_description="&quot;&quot;"
-        hashtags="#abstraction #assembly #code sample #framework #fakes #interface #moles #mstest #solid #tdd #testing #unit testing #visual studio"
-        author="@bsstahl@cognitiveinheritance.com"
-        default_url="https://fosstodon.org">
-    </share-on-mastodon></h5>
+    <table>
+        <tr>
+            <td><h3>Testing the Untestable with Microsoft Fakes</h3></td>
+            <td rowspan="2"><share-on-mastodon 
+                share_title="Check out this post on Cognitive Inheritance: 'Testing the Untestable with Microsoft Fakes'"
+                share_description="&quot;&quot;"
+                hashtags="#abstraction #assembly #code sample #framework #fakes #interface #moles #mstest #solid #tdd #testing #unit testing #visual studio"
+                author="@bsstahl@cognitiveinheritance.com"
+                default_url="https://fosstodon.org">
+            </share-on-mastodon></td>
+        </tr>
+        <tr>
+            <td><h5>Posted by bsstahl on 2017-03-20 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5></td>
+        </tr>
+    </table>
     <br/>
     <p>It is fairly easy these days to test code in isolation if its dependencies are abstracted by a reusable interface. But what do we do if the dependency cannot easily be referenced via such an interface?  Enter <strong>Shims</strong>, from the <strong>Microsoft Fakes Framework</strong>(formerly Moles).  Shims allow us to isolate our testing from any dependent methods, including methods in assemblies we do not control, even if those methods are not exposed through a reusable interface. To see how easy it is, follow along with me through this example.</p>
 <p>In this <a href="https://github.com/bsstahl/VS2017Launch">sample code on GitHub</a>, we are building a repository for an application that currently gets its data from a file exported from a system that tracks scheduled meetings.  It is very likely that the system will, in the future, expose a more modern interface for that data so we have isolated the data storage using a simple Repository interface that has one method.  This method, called <strong>GetMeetings</strong> returns a collection of Meeting entities that start during the specified date range.  The method will return an empty collection if no data is found matching the specified criteria, and could throw either of 2 custom errors, a <strong>PermissionsException</strong>when the user does not have the proper permissions to access the information, and a <strong>DataUnavailableException</strong> for when the data source is unavailable for any other reason, such as a network outage or if the data file cannot be located.</p>

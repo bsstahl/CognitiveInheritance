@@ -63,15 +63,21 @@
             <div class="col-md-8">
                 <h1>Tag: moles</h1>
                 <div>
-    <h3>Testing the Untestable with Microsoft Fakes</h3>
-    <h5>Posted by bsstahl on 2017-03-20 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;
-    <share-on-mastodon 
-        share_title="Check out this post on Cognitive Inheritance: 'Testing the Untestable with Microsoft Fakes'"
-        share_description="&quot;&quot;"
-        hashtags="#abstraction #assembly #code sample #framework #fakes #interface #moles #mstest #solid #tdd #testing #unit testing #visual studio"
-        author="@bsstahl@cognitiveinheritance.com"
-        default_url="https://fosstodon.org">
-    </share-on-mastodon></h5>
+    <table>
+        <tr>
+            <td><h3>Testing the Untestable with Microsoft Fakes</h3></td>
+            <td rowspan="2"><share-on-mastodon 
+                share_title="Check out this post on Cognitive Inheritance: 'Testing the Untestable with Microsoft Fakes'"
+                share_description="&quot;&quot;"
+                hashtags="#abstraction #assembly #code sample #framework #fakes #interface #moles #mstest #solid #tdd #testing #unit testing #visual studio"
+                author="@bsstahl@cognitiveinheritance.com"
+                default_url="https://fosstodon.org">
+            </share-on-mastodon></td>
+        </tr>
+        <tr>
+            <td><h5>Posted by bsstahl on 2017-03-20 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5></td>
+        </tr>
+    </table>
     <br/>
     <p>It is fairly easy these days to test code in isolation if its dependencies are abstracted by a reusable interface. But what do we do if the dependency cannot easily be referenced via such an interface?  Enter <strong>Shims</strong>, from the <strong>Microsoft Fakes Framework</strong>(formerly Moles).  Shims allow us to isolate our testing from any dependent methods, including methods in assemblies we do not control, even if those methods are not exposed through a reusable interface. To see how easy it is, follow along with me through this example.</p>
 <p>In this <a href="https://github.com/bsstahl/VS2017Launch">sample code on GitHub</a>, we are building a repository for an application that currently gets its data from a file exported from a system that tracks scheduled meetings.  It is very likely that the system will, in the future, expose a more modern interface for that data so we have isolated the data storage using a simple Repository interface that has one method.  This method, called <strong>GetMeetings</strong> returns a collection of Meeting entities that start during the specified date range.  The method will return an empty collection if no data is found matching the specified criteria, and could throw either of 2 custom errors, a <strong>PermissionsException</strong>when the user does not have the proper permissions to access the information, and a <strong>DataUnavailableException</strong> for when the data source is unavailable for any other reason, such as a network outage or if the data file cannot be located.</p>
@@ -114,15 +120,21 @@
     <h5>Tags: <a title="Tag: abstraction" class="small" href="../Search/abstraction.html">abstraction</a>&nbsp;<a title="Tag: assembly" class="small" href="../Search/assembly.html">assembly</a>&nbsp;<a title="Tag: code sample" class="small" href="../Search/code-sample.html">code sample</a>&nbsp;<a title="Tag: framework" class="small" href="../Search/framework.html">framework</a>&nbsp;<a title="Tag: fakes" class="small" href="../Search/fakes.html">fakes</a>&nbsp;<a title="Tag: interface" class="small" href="../Search/interface.html">interface</a>&nbsp;<a title="Tag: moles" class="small" href="../Search/moles.html">moles</a>&nbsp;<a title="Tag: mstest" class="small" href="../Search/mstest.html">mstest</a>&nbsp;<a title="Tag: solid" class="small" href="../Search/solid.html">solid</a>&nbsp;<a title="Tag: tdd" class="small" href="../Search/tdd.html">tdd</a>&nbsp;<a title="Tag: testing" class="small" href="../Search/testing.html">testing</a>&nbsp;<a title="Tag: unit testing" class="small" href="../Search/unit-testing.html">unit testing</a>&nbsp;<a title="Tag: visual studio" class="small" href="../Search/visual-studio.html">visual studio</a>&nbsp;</h5>
     <div class="share"><a href="../Permalinks/7727238c-18ba-45a3-bd65-f79d20c5cc07.html" rel="bookmark">Permalink</a></div>
 </div><hr/><div>
-    <h3>Demo Code for Testing in Visual Studio 2017</h3>
-    <h5>Posted by bsstahl on 2017-03-16 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;
-    <share-on-mastodon 
-        share_title="Check out this post on Cognitive Inheritance: 'Demo Code for Testing in Visual Studio 2017'"
-        share_description="&quot;&quot;"
-        hashtags="#abstraction #code sample #coding-practices #community #conference #development #di #interface #microsoft #moles #mstest #pex #phoenix #presentation #tdd #testing #unit testing #visual studio"
-        author="@bsstahl@cognitiveinheritance.com"
-        default_url="https://fosstodon.org">
-    </share-on-mastodon></h5>
+    <table>
+        <tr>
+            <td><h3>Demo Code for Testing in Visual Studio 2017</h3></td>
+            <td rowspan="2"><share-on-mastodon 
+                share_title="Check out this post on Cognitive Inheritance: 'Demo Code for Testing in Visual Studio 2017'"
+                share_description="&quot;&quot;"
+                hashtags="#abstraction #code sample #coding-practices #community #conference #development #di #interface #microsoft #moles #mstest #pex #phoenix #presentation #tdd #testing #unit testing #visual studio"
+                author="@bsstahl@cognitiveinheritance.com"
+                default_url="https://fosstodon.org">
+            </share-on-mastodon></td>
+        </tr>
+        <tr>
+            <td><h5>Posted by bsstahl on 2017-03-16 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;</h5></td>
+        </tr>
+    </table>
     <br/>
     <p>The demo code for my presentation on Testing in Visual Studio 2017 at the VS2017 Launch event can be found on <a href="https://github.com/bsstahl/VS2017Launch">GitHub</a>.  There are 2 branches to this repository, the <strong>Main</strong> branch which holds the completed demo, and the <strong>DemoStart</strong> branch which holds the starting point of the demonstration in case you would like to implement the sample yourself.</p>
 <p>The demo shows how Microsoft Fakes (formerly Moles) can be used to create tests against code that does not implement a reusable interface. This can be done  without having to resort to integration style tests or writing extra wrapper code just to implement an interface.  During my launch presentation, I also use this code to demonstrate the use of Intellitest (formerly Pex) to generate exploratory tests.</p>
@@ -130,15 +142,21 @@
     <h5>Tags: <a title="Tag: abstraction" class="small" href="../Search/abstraction.html">abstraction</a>&nbsp;<a title="Tag: code sample" class="small" href="../Search/code-sample.html">code sample</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: community" class="small" href="../Search/community.html">community</a>&nbsp;<a title="Tag: conference" class="small" href="../Search/conference.html">conference</a>&nbsp;<a title="Tag: development" class="small" href="../Search/development.html">development</a>&nbsp;<a title="Tag: di" class="small" href="../Search/di.html">di</a>&nbsp;<a title="Tag: interface" class="small" href="../Search/interface.html">interface</a>&nbsp;<a title="Tag: microsoft" class="small" href="../Search/microsoft.html">microsoft</a>&nbsp;<a title="Tag: moles" class="small" href="../Search/moles.html">moles</a>&nbsp;<a title="Tag: mstest" class="small" href="../Search/mstest.html">mstest</a>&nbsp;<a title="Tag: pex" class="small" href="../Search/pex.html">pex</a>&nbsp;<a title="Tag: phoenix" class="small" href="../Search/phoenix.html">phoenix</a>&nbsp;<a title="Tag: presentation" class="small" href="../Search/presentation.html">presentation</a>&nbsp;<a title="Tag: tdd" class="small" href="../Search/tdd.html">tdd</a>&nbsp;<a title="Tag: testing" class="small" href="../Search/testing.html">testing</a>&nbsp;<a title="Tag: unit testing" class="small" href="../Search/unit-testing.html">unit testing</a>&nbsp;<a title="Tag: visual studio" class="small" href="../Search/visual-studio.html">visual studio</a>&nbsp;</h5>
     <div class="share"><a href="../Permalinks/f15bb636-ebc5-4400-8404-5381ebe2279c.html" rel="bookmark">Permalink</a></div>
 </div><hr/><div>
-    <h3>Two Things I Learned on Pex4Fun.com Today</h3>
-    <h5>Posted by bsstahl on 2010-11-12 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;
-    <share-on-mastodon 
-        share_title="Check out this post on Cognitive Inheritance: 'Two Things I Learned on Pex4Fun.com Today'"
-        share_description="&quot;&quot;"
-        hashtags="#pex #code contracts #moles #unit testing #csharp #dotnet"
-        author="@bsstahl@cognitiveinheritance.com"
-        default_url="https://fosstodon.org">
-    </share-on-mastodon></h5>
+    <table>
+        <tr>
+            <td><h3>Two Things I Learned on Pex4Fun.com Today</h3></td>
+            <td rowspan="2"><share-on-mastodon 
+                share_title="Check out this post on Cognitive Inheritance: 'Two Things I Learned on Pex4Fun.com Today'"
+                share_description="&quot;&quot;"
+                hashtags="#pex #code contracts #moles #unit testing #csharp #dotnet"
+                author="@bsstahl@cognitiveinheritance.com"
+                default_url="https://fosstodon.org">
+            </share-on-mastodon></td>
+        </tr>
+        <tr>
+            <td><h5>Posted by bsstahl on 2010-11-12 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5></td>
+        </tr>
+    </table>
     <br/>
     <p>Since I’m a fan of puzzles, I’ve been spending a bit of time on <a href="https://web.archive.org/web/20101112142013/http://www.pexforfun.com/">PexForFun.com</a> lately.  This site was put together by the Pex team (part of Microsoft Research) to show off the capabilities of some of the research group’s  latest creations; Pex, Moles, and Code Contracts.  I’ve been enjoying this site because it gives me the opportunity to solve some coding puzzles, while at the same time discovering things about these new tools.  Today alone, I discovered the following:</p>
 <h2>The order of Contract.Requires() in Code Contracts matters.</h2>

@@ -63,15 +63,21 @@
             <div class="col-md-8">
                 <h1>Tag: code coverage</h1>
                 <div>
-    <h3>Testing a .NET Core Library in VS2015</h3>
-    <h5>Posted by bsstahl on 2017-01-09 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;
-    <share-on-mastodon 
-        share_title="Check out this post on Cognitive Inheritance: 'Testing a .NET Core Library in VS2015'"
-        share_description="&quot;&quot;"
-        hashtags="#testing #code coverage #development #di #ioc #microsoft #moq #mocks #professional development #tdd #unit testing #visual studio #dotnet"
-        author="@bsstahl@cognitiveinheritance.com"
-        default_url="https://fosstodon.org">
-    </share-on-mastodon></h5>
+    <table>
+        <tr>
+            <td><h3>Testing a .NET Core Library in VS2015</h3></td>
+            <td rowspan="2"><share-on-mastodon 
+                share_title="Check out this post on Cognitive Inheritance: 'Testing a .NET Core Library in VS2015'"
+                share_description="&quot;&quot;"
+                hashtags="#testing #code coverage #development #di #ioc #microsoft #moq #mocks #professional development #tdd #unit testing #visual studio #dotnet"
+                author="@bsstahl@cognitiveinheritance.com"
+                default_url="https://fosstodon.org">
+            </share-on-mastodon></td>
+        </tr>
+        <tr>
+            <td><h5>Posted by bsstahl on 2017-01-09 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5></td>
+        </tr>
+    </table>
     <br/>
     <p>I really enjoy working with .NET Core.  I like the fact that my code is portable to many platforms and that the footprint is so much smaller than with traditional .NET applications.  Unfortunately, the tooling has not quite reached the level that we expect from a Microsoft finished product (which it isn’t – yet). As a result, there are some additional actions we need to take when setting up our solutions in Visual Studio 2015 to allow us to unit test our code properly.  The following are the steps that I currently take to setup and test a .NET Core library using XUnit and Moq.  I know that a number of these steps will be done for us, or at least made much easier, by the tooling in the coming months, either by Visual Studio 2017, or by enhancements to the Visual Studio 2015 environments.</p>
 <ol>
@@ -143,15 +149,21 @@
     <h5>Tags: <a title="Tag: testing" class="small" href="../Search/testing.html">testing</a>&nbsp;<a title="Tag: code coverage" class="small" href="../Search/code-coverage.html">code coverage</a>&nbsp;<a title="Tag: development" class="small" href="../Search/development.html">development</a>&nbsp;<a title="Tag: di" class="small" href="../Search/di.html">di</a>&nbsp;<a title="Tag: ioc" class="small" href="../Search/ioc.html">ioc</a>&nbsp;<a title="Tag: microsoft" class="small" href="../Search/microsoft.html">microsoft</a>&nbsp;<a title="Tag: moq" class="small" href="../Search/moq.html">moq</a>&nbsp;<a title="Tag: mocks" class="small" href="../Search/mocks.html">mocks</a>&nbsp;<a title="Tag: professional development" class="small" href="../Search/professional-development.html">professional development</a>&nbsp;<a title="Tag: tdd" class="small" href="../Search/tdd.html">tdd</a>&nbsp;<a title="Tag: unit testing" class="small" href="../Search/unit-testing.html">unit testing</a>&nbsp;<a title="Tag: visual studio" class="small" href="../Search/visual-studio.html">visual studio</a>&nbsp;<a title="Tag: dotnet" class="small" href="../Search/dotnet.html">dotnet</a>&nbsp;</h5>
     <div class="share"><a href="../Permalinks/8d08d120-ece8-47d2-b6be-0bd5416d5c90.html" rel="bookmark">Permalink</a></div>
 </div><hr/><div>
-    <h3>Code Coverage Teaches and Protects</h3>
-    <h5>Posted by bsstahl on 2016-10-14 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;
-    <share-on-mastodon 
-        share_title="Check out this post on Cognitive Inheritance: 'Code Coverage Teaches and Protects'"
-        share_description="&quot;&quot;"
-        hashtags="#abstraction #agile #assert #code analysis #code coverage #coding-practices #csharp #ioc #testing #unit testing #dotnet"
-        author="@bsstahl@cognitiveinheritance.com"
-        default_url="https://fosstodon.org">
-    </share-on-mastodon></h5>
+    <table>
+        <tr>
+            <td><h3>Code Coverage Teaches and Protects</h3></td>
+            <td rowspan="2"><share-on-mastodon 
+                share_title="Check out this post on Cognitive Inheritance: 'Code Coverage Teaches and Protects'"
+                share_description="&quot;&quot;"
+                hashtags="#abstraction #agile #assert #code analysis #code coverage #coding-practices #csharp #ioc #testing #unit testing #dotnet"
+                author="@bsstahl@cognitiveinheritance.com"
+                default_url="https://fosstodon.org">
+            </share-on-mastodon></td>
+        </tr>
+        <tr>
+            <td><h5>Posted by bsstahl on 2016-10-14 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5></td>
+        </tr>
+    </table>
     <br/>
     <p>I often hail code coverage as a great tool to help improve your code base.  Today, my use of Code Coverage taught me something about the new .NET Core tooling, and helped protect me from having to support useless code for the lifespan of my project.</p>
 <p>In the code below, I used a common dependency injection pattern. That is, an IServiceProvider object holding my dependencies is passed-in to my object and stored as a member variable.  When a dependency is needed, I retrieve that dependency from the service provider, and then take action on it.  Since there is no guarantee that the dependency I need will have been placed in the container, I use some common guard logic to protect my code.</p>
@@ -175,15 +187,21 @@ For those who might be thinking something similar to, &quot;It's nice that the c
     <h5>Tags: <a title="Tag: abstraction" class="small" href="../Search/abstraction.html">abstraction</a>&nbsp;<a title="Tag: agile" class="small" href="../Search/agile.html">agile</a>&nbsp;<a title="Tag: assert" class="small" href="../Search/assert.html">assert</a>&nbsp;<a title="Tag: code analysis" class="small" href="../Search/code-analysis.html">code analysis</a>&nbsp;<a title="Tag: code coverage" class="small" href="../Search/code-coverage.html">code coverage</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: csharp" class="small" href="../Search/csharp.html">csharp</a>&nbsp;<a title="Tag: ioc" class="small" href="../Search/ioc.html">ioc</a>&nbsp;<a title="Tag: testing" class="small" href="../Search/testing.html">testing</a>&nbsp;<a title="Tag: unit testing" class="small" href="../Search/unit-testing.html">unit testing</a>&nbsp;<a title="Tag: dotnet" class="small" href="../Search/dotnet.html">dotnet</a>&nbsp;</h5>
     <div class="share"><a href="../Permalinks/68269657-e0c9-430d-acd4-9b4cc211fcc7.html" rel="bookmark">Permalink</a></div>
 </div><hr/><div>
-    <h3>TDD Helps Validate Your Tests</h3>
-    <h5>Posted by bsstahl on 2016-03-05 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;
-    <share-on-mastodon 
-        share_title="Check out this post on Cognitive Inheritance: 'TDD Helps Validate Your Tests'"
-        share_description="&quot;&quot;"
-        hashtags="#code analysis #code coverage #coding-practices #tdd #testing #unit testing"
-        author="@bsstahl@cognitiveinheritance.com"
-        default_url="https://fosstodon.org">
-    </share-on-mastodon></h5>
+    <table>
+        <tr>
+            <td><h3>TDD Helps Validate Your Tests</h3></td>
+            <td rowspan="2"><share-on-mastodon 
+                share_title="Check out this post on Cognitive Inheritance: 'TDD Helps Validate Your Tests'"
+                share_description="&quot;&quot;"
+                hashtags="#code analysis #code coverage #coding-practices #tdd #testing #unit testing"
+                author="@bsstahl@cognitiveinheritance.com"
+                default_url="https://fosstodon.org">
+            </share-on-mastodon></td>
+        </tr>
+        <tr>
+            <td><h5>Posted by bsstahl on 2016-03-05 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5></td>
+        </tr>
+    </table>
     <br/>
     <p>One of the reasons to use TDD over test-later approaches is that you get a better validation of your tests.</p>
 <p>When the first thing you do with a test or series of tests is to run them against code that does nothing but throw a <em>NotImplementedException</em>, you know exactly what to expect. That is, all tests should fail because the code under test threw a <em>NotImplementedException</em>. After that, you can take iterative steps to implement the code. Along the way, you should always see your tests fail in appropriate ways.  Eventually, all of your tests should pass when the code is complete.</p>
@@ -200,15 +218,21 @@ For those who might be thinking something similar to, &quot;It's nice that the c
     <h5>Tags: <a title="Tag: code analysis" class="small" href="../Search/code-analysis.html">code analysis</a>&nbsp;<a title="Tag: code coverage" class="small" href="../Search/code-coverage.html">code coverage</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: tdd" class="small" href="../Search/tdd.html">tdd</a>&nbsp;<a title="Tag: testing" class="small" href="../Search/testing.html">testing</a>&nbsp;<a title="Tag: unit testing" class="small" href="../Search/unit-testing.html">unit testing</a>&nbsp;</h5>
     <div class="share"><a href="../Permalinks/7de3f401-e11b-4170-b1fe-d3b3f71c303d.html" rel="bookmark">Permalink</a></div>
 </div><hr/><div>
-    <h3>Remove Any Code Your Users Don't Care About</h3>
-    <h5>Posted by bsstahl on 2015-09-28 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;
-    <share-on-mastodon 
-        share_title="Check out this post on Cognitive Inheritance: 'Remove Any Code Your Users Don't Care About'"
-        share_description="&quot;&quot;"
-        hashtags="#code coverage #testing #tdd #unit testing #yagni #agile"
-        author="@bsstahl@cognitiveinheritance.com"
-        default_url="https://fosstodon.org">
-    </share-on-mastodon></h5>
+    <table>
+        <tr>
+            <td><h3>Remove Any Code Your Users Don't Care About</h3></td>
+            <td rowspan="2"><share-on-mastodon 
+                share_title="Check out this post on Cognitive Inheritance: 'Remove Any Code Your Users Don't Care About'"
+                share_description="&quot;&quot;"
+                hashtags="#code coverage #testing #tdd #unit testing #yagni #agile"
+                author="@bsstahl@cognitiveinheritance.com"
+                default_url="https://fosstodon.org">
+            </share-on-mastodon></td>
+        </tr>
+        <tr>
+            <td><h5>Posted by bsstahl on 2015-09-28 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5></td>
+        </tr>
+    </table>
     <br/>
     <p>Code Coverage has been the topic of a number of conversations lately, most recently after the last <a href="https://www.meetup.com/sevdnug/events/223863304/">Southeast Valley .NET User Group</a> meeting where <a href="https://twitter.com/jeremybytes">Jeremy Clark</a> presented his great talk, <a href="http://jeremybytes.com/Demos.aspx#UTMMF">Unit Testing Makes Me Faster</a>.  During this presentation, Jeremy eponymized, on my behalf, something I've been saying for a while, that <a href="https://jeremybytes.blogspot.com/2015/02/unit-test-coverage-what-parts-of-your.html">the part of an application that you don't need to test is the part that your users don't care about</a>. That is, if your users care about something in your application, you should be writing tests that ensure that the users' needs are fulfilled by your code. This has never really been a controversial statement, just one that sometimes gets lost in the myriad of information about unit testing and test driven development.</p>
 <p>Where the conversation got really interesting was when we started discussing what should happen if you decide that a piece of code really isn't important to your users.  It is my assertion that code which is deemed unimportant enough to the user that it might not be tested, should be removed from the project, even if is part of a standard implementation.  I will attempt to justify this assertion by using the example of a property implementation that supports the <em>INotifyPropertyChanged</em> interface.</p>
