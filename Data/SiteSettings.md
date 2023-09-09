@@ -16,6 +16,7 @@ additionalfilepaths:
 - .well-known
 -  _config.yml
 - CriticalCs
+- Modules
 dateformatspecifier: yyyy-MM-dd
 datetimeformatspecifier: yyyy-MM-dd H:mm UTC
 itemseparator: "<hr/>"
