@@ -284,11 +284,17 @@ export class shareOnMastodon extends HTMLElement {
       author = "";
     };
 
-    // Get the current page's URL
-    const url = window.location.href;
 
+      // If the target_url attribute is set use it. Otherwise, set it to the current page's URL
+      let target_url = this.getAttribute('target_url');
+      if (target_url) {
+        target_url = target_url;
+      } else {
+        hashtags = window.location.href;
+      };
+    
     // Create the Share URL
-    const mastodon_url = instance + "share?text=" + encodeURIComponent(shareTitle + desc + url + hashtags + author);
+    const mastodon_url = instance + "share?text=" + encodeURIComponent(shareTitle + desc + target_url + hashtags + author);
 
     // Open a new tab at the share location
     window.open(mastodon_url, '_blank');
