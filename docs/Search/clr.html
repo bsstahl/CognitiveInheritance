@@ -64,14 +64,15 @@
                 <h1>Tag: clr</h1>
                 <div>
     <h3>Back to Basics–the Double Data Type</h3>
-    <h5>Posted by bsstahl on 2019-02-12 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2019-02-12 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;
     <share-on-mastodon 
         share_title="Check out this post on Cognitive Inheritance: 'Back to Basics–the Double Data Type'"
-        share_description=""
+        share_description="&quot;&quot;"
         hashtags="#type #csharp #clr #data structures"
         author="@bsstahl@cognitiveinheritance.com"
         default_url="https://fosstodon.org">
-    </share-on-mastodon>
+    </share-on-mastodon></h5>
+    <br/>
     <p>What is the result of converting a value that is close to, but not at, the maximum value of an Int64 from a double to a long (Int64)?  That is, what would be the result of an expression like:</p>
 <p><code>(long)((double)(Int64.MaxValue – 1))</code></p>
 <ol>
@@ -105,14 +106,15 @@
     <div class="share"><a href="../Permalinks/c2b6a683-a9cf-4fce-96c1-5401648c056e.html" rel="bookmark">Permalink</a></div>
 </div><hr/><div>
     <h3>Multiple Inheritance - Its Time Should Come Again Soon</h3>
-    <h5>Posted by bsstahl on 2008-06-16 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2008-06-16 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;
     <share-on-mastodon 
         share_title="Check out this post on Cognitive Inheritance: 'Multiple Inheritance - Its Time Should Come Again Soon'"
-        share_description=""
+        share_description="&quot;&quot;"
         hashtags="#clr #inheritance #interface #dotnet"
         author="@bsstahl@cognitiveinheritance.com"
         default_url="https://fosstodon.org">
-    </share-on-mastodon>
+    </share-on-mastodon></h5>
+    <br/>
     <p>Over the last few years I've heard a number of public statements from developers about the lack of need for multiple implementation inheritance in .NET and other modern development platforms. Their logic often seems to imply that if you need multiple implementation inheritance, you are not designing your applications properly.  While admittedly, there are usually work-arounds (such as interface inheritance) that allow us to simulate this feature, they usually require that portions of our code are duplicated, violating the Agile requirement &quot;Don't Repeat Yourself&quot;.</p>
 <p>One commonly seen example of where multiple implementation inheritance would be very valuable is in multi-tiered, domain specific applications, especially in the data-tier where we may wish to have more-than-one implementation to support multiple data-stores.  Think about the typical data-tier scenario. In this scenario we have a set of domain objects, based on an inherited set of entities with common properties and methods that represent a physical object in the problem domain. These objects also have a commonality in that they are implementations of an object-type common to that data store and may have properties and methods relating specifically to the storage of data.  So, an object whose responsibility it is to persist an Employee entity to a SQL Server data store, could inherit from both our domain Employee entity, and our SQL Data Storage object.  If we also had an implementation that stored data in XML format, we might have an object that inherits both from the same Employee entity as well as from the XMLNode object. If multiple implementation inheritance were supported in our framework, we could avoid the common work-around of repeating our entity implementation by using an interface to simulate that inheritance, or by simply repeating our data persistence logic in each object.</p>
 <p>I certainly understand the need to ship a product.  Since I am also well aware of the added complexity that multiple implementation inheritance creates in compilers and frameworks, it is easy for me to imagine why this feature did not make it into either of the first two major revs of Microsoft's Common Language Runtime.  It is my opinion however that, with the third major release of the CLR forthcoming (Rev 3s being where Microsoft traditionally &quot;nails it&quot;) they should strongly consider adding support for multiple implementation inheritance.</p>
@@ -121,14 +123,15 @@
     <div class="share"><a href="../Permalinks/bbcd1ce3-22d3-47b2-90b0-02fef43a1984.html" rel="bookmark">Permalink</a></div>
 </div><hr/><div>
     <h3>Desert Code Camp IV - Another Great Day</h3>
-    <h5>Posted by bsstahl on 2008-06-04 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2008-06-04 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;
     <share-on-mastodon 
         share_title="Check out this post on Cognitive Inheritance: 'Desert Code Camp IV - Another Great Day'"
-        share_description=""
+        share_description="&quot;&quot;"
         hashtags="#code camp #agile #scrum #csharp #clr"
         author="@bsstahl@cognitiveinheritance.com"
         default_url="https://fosstodon.org">
-    </share-on-mastodon>
+    </share-on-mastodon></h5>
+    <br/>
     <p>I would once again like to thank the organizers, presenters and sponsors of <a href="https://www.desertcodecamp.com/">Desert Code Camp</a> for giving of their time, effort and funding to support such an outstanding community resource.  Desert Code Camp IV, held yesterday, May 31st at the <a href="https://www.uat.edu/">University of Advancing Technology</a> in Tempe, AZ featured well over 40 sessions on topics such as Agile &amp; TDD, ASP.NET, Flash, Silverlight, iPhone SDK, XAML, Apache, Ruby and much more.  I was fortunate enough to attend 4 of these sessions, all of which were well worth my time in attending.</p>
 <p>The first session I attended was &quot;Scrum 101&quot; presented by Dan Weinmann (who I think works for Desert Code Camp sponsor <a href="https://www.neudesic.com/">Neudesic</a> but I am not sure because it is not listed in Dan's extremely minimalist bio on the Code Camp website). Dan spent the first part of the session explaining general Agile concepts which is appropriate for a &quot;101&quot; class, and his explanation was quite solid.  What I was looking for however came in the remainder of the discussion where Dan gave specific examples of how his organization has utilized Scrum as an effective project management methodology.  I found especially interesting the parts where Dan explained how they use Scrum &quot;under the covers&quot; when working with a client who, for whatever reason, will not use Scrum.  I found this similar in a number of ways to how my team currently functions and came-away with several ideas of how we might be able to improve on our current processes.</p>
 <p>The next session I attended was &quot;Silverlight Zero to Hero&quot; given by Simon Allardice of <a href="https://www.interfacett.com/">Interface Technical Training</a> and gets my vote for the mythical &quot;session of the day&quot; award. This session gets my vote not for the abundant humor, which had the room in stitches and led me to refer to Simon on Twitter as &quot;..the Eddie Izzard of the tech world, without the dress...&quot;.  No, this was the best session I attended because of the unique perspective he gave to the topic.  That is, he didn't waste our time by giving us the same overview of Silverlight that we could get in any 10k foot video from the Mix conference.  Instead, we were taken step-by-step through Simon's unique metaphors detailing how we can use the generalized feature-set of Silverlight as well as how it could be used to create Rich Internet Applications that are truly effective in communicating  with the user.  The next time I am looking to take a class, I hope Simon is teaching it. In addition, if anyone is looking to become an instructor, I hope they sit-in on some of Simon's sessions which couldn't help but improve anyone's teaching technique.</p>
@@ -140,14 +143,15 @@
     <div class="share"><a href="../Permalinks/16ee9efb-bcb7-4972-8c4c-1790656bed7d.html" rel="bookmark">Permalink</a></div>
 </div><hr/><div>
     <h3>Removing Assemblies from the GAC</h3>
-    <h5>Posted by bsstahl on 2007-07-01 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2007-07-01 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;
     <share-on-mastodon 
         share_title="Check out this post on Cognitive Inheritance: 'Removing Assemblies from the GAC'"
-        share_description=""
+        share_description="&quot;&quot;"
         hashtags="#clr #gac #assembly #strong name"
         author="@bsstahl@cognitiveinheritance.com"
         default_url="https://fosstodon.org">
-    </share-on-mastodon>
+    </share-on-mastodon></h5>
+    <br/>
     <p>I recently stumbled across an interesting item in a back-issue of MSDN Magazine. The article, <a href="..//Files/MSDNMag-CLRInsideOut-200602.pdf">&quot;Improving Application Startup Time&quot; by Claudio Caldato</a>, appeared in the CLR Inside Out segment in February 2006. While discussing strong-named assemblies, Claudio recommended adding them to the GAC for performance.</p>
 <blockquote>
 <p>If an assembly is not installed in the Global Assembly Cache (GAC), you will pay the cost of hash verification of strong-named assemblies along with native code generation (NGEN) image validation if a native image for that assembly is available in the machine. In other words, if an assembly is strong named, the CLR will ensure the integrity of the assembly binary by verifying that the cryptographic hash of the assembly matches the one in the assembly manifest. But if the assembly is in the GAC, this verification can be skipped because the verification is performed as part of installation into the GAC and any update requires administrative permissions. So the CLR is basically assured that changes have not occurred.</p>
@@ -161,28 +165,30 @@
     <div class="share"><a href="../Permalinks/567d54a3-06c2-4939-9655-6d045be217fb.html" rel="bookmark">Permalink</a></div>
 </div><hr/><div>
     <h3>.NET 2.0 Concerns</h3>
-    <h5>Posted by bsstahl on 2006-04-29 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2006-04-29 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;
     <share-on-mastodon 
         share_title="Check out this post on Cognitive Inheritance: '.NET 2.0 Concerns'"
-        share_description=""
+        share_description="&quot;&quot;"
         hashtags="#clr #aspdotnet #dotnet"
         author="@bsstahl@cognitiveinheritance.com"
         default_url="https://fosstodon.org">
-    </share-on-mastodon>
+    </share-on-mastodon></h5>
+    <br/>
     <p>I am seeing some things in .NET 2.0 that concern me. Much of it has to do with Microsoft putting in features that have obviously been demanded by many developers, but were not included in earlier versions of the framework because, for the most part, they are the wrong thing to do the majority of the time. For example, Microsoft has included the ability to have inline code as well as the standard code-behind model in ASP.NET 2.0 pages. While this seems like a nice feature, I can't come up with a good reason to ever mix my object code and HTML code. Perhaps someone else can. If you do, please let me know.</p>
 
     <h5>Tags: <a title="Tag: clr" class="small" href="../Search/clr.html">clr</a>&nbsp;<a title="Tag: aspdotnet" class="small" href="../Search/aspdotnet.html">aspdotnet</a>&nbsp;<a title="Tag: dotnet" class="small" href="../Search/dotnet.html">dotnet</a>&nbsp;</h5>
     <div class="share"><a href="../Permalinks/ab6940e3-5422-4be6-8722-028636eeac46.html" rel="bookmark">Permalink</a></div>
 </div><hr/><div>
     <h3>Day 2 AM</h3>
-    <h5>Posted by bsstahl on 2003-10-30 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2003-10-30 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;
     <share-on-mastodon 
         share_title="Check out this post on Cognitive Inheritance: 'Day 2 AM'"
-        share_description=""
+        share_description="&quot;&quot;"
         hashtags="#pdc #conference #event #clr"
         author="@bsstahl@cognitiveinheritance.com"
         default_url="https://fosstodon.org">
-    </share-on-mastodon>
+    </share-on-mastodon></h5>
+    <br/>
     <p>The morning sessions of Day 2 were highlighted by drill-downs into Yukon and WinFS. The most impressive demo of the conference so far was done during the WinFS drill-down by Gord Mangione and Tom Rizzo. They used the Information Agents of WinFS to configure their voicemail application so that when a call came in from a client matching specified custom criteria, and the calendar showed that the user was busy, it would respond to the caller with the time the user's calendar next showed him free.</p>
 <p>WinFS may finally make good on the decade-old promise of turning the file-system into a relational database. Its metadata features, including extensible schema, appear poised to make the file-system as programmatically accessible as a database server, with many of the same query capabilities including natural language or SQL style queries.</p>
 <p>Yukon also appears to be a major improvement in development technology. This next generation of SQL Server provides CLR (Common Language Runtime - AKA, the .NET Framework) in-process to the SQL Server. This will allow developers to separate the application (or system) tiers physically as well as logically, improving performance, scalability, security, maintainability and extensibility. It will also allow queries to be written in any CLR language, provides structured exception handling for those queries (including in T-SQL) and will allow us to build queries that easily integrate data from various sources (including Web Services).</p>
@@ -213,7 +219,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script defer type="module" src="./Modules/share-on-mastodon.js"></script>
+    <script defer type="module" src="..//Modules/share-on-mastodon.js"></script>
 
 </body>
 
