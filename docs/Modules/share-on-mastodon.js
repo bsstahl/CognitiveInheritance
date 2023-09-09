@@ -290,7 +290,7 @@ export class shareOnMastodon extends HTMLElement {
       if (target_url) {
         target_url = target_url;
       } else {
-        hashtags = window.location.href;
+        target_url = window.location.href;
       };
     
     // Create the Share URL
