@@ -1,13 +1,19 @@
 ﻿<div>
-    <h3>{Title}</h3>
-    <h5>Posted {ByLine} on {PublicationDate} and Filed Under: {Categories}
-    <share-on-mastodon 
-        share_title="Check out this post on Cognitive Inheritance: '{Title}'"
-        share_description="&quot;{TeaserOrDescription}&quot;"
-        hashtags="{Hashtags}"
-        author="@bsstahl@cognitiveinheritance.com"
-        default_url="https://fosstodon.org">
-    </share-on-mastodon></h5>
+    <table>
+        <tr>
+            <td><h3>{Title}</h3></td>
+            <td rowspan="2"><share-on-mastodon 
+                share_title="Check out this post on Cognitive Inheritance: '{Title}'"
+                share_description="&quot;{TeaserOrDescription}&quot;"
+                hashtags="{Hashtags}"
+                author="@bsstahl@cognitiveinheritance.com"
+                default_url="https://fosstodon.org">
+            </share-on-mastodon></td>
+        </tr>
+        <tr>
+            <td><h5>Posted {ByLine} on {PublicationDate} and Filed Under: {Categories}</h5></td>
+        </tr>
+    </table>
     <br/>
     {Content}
     <h5>Tags: {Tags}</h5>
