@@ -9,7 +9,7 @@
     <language>en-US</language>
     <atom:link href="https://cognitiveinheritance.com/syndication.xml" rel="self" type="application/rss+xml" />	
     <item>
-  <title>Feature Flags&colon; Don&apos;t Roll Your Own</title>
+  <title>Feature Flags&#58; Don&apos;t Roll Your Own</title>
   <description>&lt;p&gt;In my &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/consider-quality-before-cost.html&quot;&gt;previous post&lt;/a&gt;, I discussed situations where we tend to overvalue visible costs and undervalue more hidden costs. One example of this dynamic is the tendency to want to roll-your-own feature-flagging system.&lt;/p&gt;
 &lt;p&gt;Feature flags are a powerful tool for controlling the availability and behavior of features in your software. They allow you to turn features on or off at runtime, without deploying new code, and target specific segments of users with different variations of your features. This enables you to experiment, test, and release features faster and safer than ever before.&lt;/p&gt;
 &lt;p&gt;But feature flags are not something you should implement yourself. Rolling your own feature flags may seem like a simple and cost-effective solution, but it comes with many hidden pitfalls and risks that can undermine your software quality, performance, security, and maintainability. Ultimately, rolling your own feature flag system may end up costing you much more than using an existing product.&lt;/p&gt;
@@ -155,7 +155,7 @@
   <guid>https://www.cognitiveinheritance.com/Permalinks/7a38959c-92fa-47f3-aee9-19fdc2b21a28.html</guid>
   <pubDate>Wed, 12 Apr 2023 07:00:00 GMT</pubDate>
 </item><item>
-  <title>Microservices&colon; Size Doesn&apos;t Matter, Reliability Does</title>
+  <title>Microservices&#58; Size Doesn&apos;t Matter, Reliability Does</title>
   <description>&lt;p&gt;There are conflicting opinions among architects about how many microservices a distributed system should have, and the size of those services. Some may say that a particular design has too many microservices, and that it should be consolidated into fewer, larger services to reduce deployment and operational complexity. Others may say that the same design doesn&apos;t have enough microservices, and that it should be broken-down into smaller, more granular services to reduce code complexity and improve team agility. Aside from the always true and rarely helpful &amp;quot;it depends...&amp;quot;, is there good guidance on the subject?&lt;/p&gt;
 &lt;p&gt;The truth is, the number and size of microservices is not a measure of quality or performance unto itself, it is a design decision based on one primary characteristic, &lt;strong&gt;Reliability&lt;/strong&gt;. As such, there is a simple rule guiding the creation of services, but it isn&apos;t based on the size or quantity of services. The rule is based entirely on how much work a service does.&lt;/p&gt;
 &lt;p&gt;After security, reliability is the most important attribute of any system, because it affects the satisfaction of both the users and developers, as well as the productivity and agility of the development and support teams. A reliable system has the following characteristics:&lt;/p&gt;
