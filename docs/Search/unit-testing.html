@@ -66,14 +66,13 @@
     <h3>A Requirement for AI Systems</h3>
     <h5>Posted by bsstahl on 2017-05-24 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'A Requirement for AI Systems'"
-                share_description="&quot;&quot;"
-                hashtags="#abstraction #algorithms #ai #cloud #coding-practices #decision #interface #pattern #testing #unit testing"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'A Requirement for AI Systems'"
+        share_description="&quot;&quot;"
+        hashtags="#abstraction #algorithms #ai #cloud #coding-practices #decision #interface #pattern #testing #unit testing"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>I've written and spoken before about the importance of using the Strategy Pattern to create maintainable and testable systems. Strategies are even more important, almost to the level of necessity, when building AI systems.</p>
 <blockquote>
 <p>The Strategy Pattern is to algorithms what the Repository Pattern is to data stores, a useful and well-known abstraction for loose-coupling.
@@ -90,14 +89,13 @@
     <h3>Testing the Untestable with Microsoft Fakes</h3>
     <h5>Posted by bsstahl on 2017-03-20 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'Testing the Untestable with Microsoft Fakes'"
-                share_description="&quot;&quot;"
-                hashtags="#abstraction #assembly #code sample #framework #fakes #interface #moles #mstest #solid #tdd #testing #unit testing #visual studio"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'Testing the Untestable with Microsoft Fakes'"
+        share_description="&quot;&quot;"
+        hashtags="#abstraction #assembly #code sample #framework #fakes #interface #moles #mstest #solid #tdd #testing #unit testing #visual studio"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>It is fairly easy these days to test code in isolation if its dependencies are abstracted by a reusable interface. But what do we do if the dependency cannot easily be referenced via such an interface?  Enter <strong>Shims</strong>, from the <strong>Microsoft Fakes Framework</strong>(formerly Moles).  Shims allow us to isolate our testing from any dependent methods, including methods in assemblies we do not control, even if those methods are not exposed through a reusable interface. To see how easy it is, follow along with me through this example.</p>
 <p>In this <a href="https://github.com/bsstahl/VS2017Launch">sample code on GitHub</a>, we are building a repository for an application that currently gets its data from a file exported from a system that tracks scheduled meetings.  It is very likely that the system will, in the future, expose a more modern interface for that data so we have isolated the data storage using a simple Repository interface that has one method.  This method, called <strong>GetMeetings</strong> returns a collection of Meeting entities that start during the specified date range.  The method will return an empty collection if no data is found matching the specified criteria, and could throw either of 2 custom errors, a <strong>PermissionsException</strong>when the user does not have the proper permissions to access the information, and a <strong>DataUnavailableException</strong> for when the data source is unavailable for any other reason, such as a network outage or if the data file cannot be located.</p>
 <p>It is important to point out why a custom exception should be thrown when the data file is not found, rather than allowing the <strong>FileNotFoundException</strong> to bubble-up.  If we allow the implementation-specific exception to bubble, we have exposed an implementation detail to the caller. That is, the calling code is now aware of the fact that this is a file system implementation.  If code is written in a client that traps for <strong>FileNotFoundException</strong>, then the repository implementation is swapped-out for a SQL server implementation, the client code will have to change to handle the new types of errors that could be thrown by that implementation.  This violates the Dependency Inversion principle, the “D” from the <strong>SOLID</strong> principles.  By exposing only a custom exception, we are hiding those implementation details from the caller.</p>
@@ -142,14 +140,13 @@
     <h3>Demo Code for Testing in Visual Studio 2017</h3>
     <h5>Posted by bsstahl on 2017-03-16 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'Demo Code for Testing in Visual Studio 2017'"
-                share_description="&quot;&quot;"
-                hashtags="#abstraction #code sample #coding-practices #community #conference #development #di #interface #microsoft #moles #mstest #pex #phoenix #presentation #tdd #testing #unit testing #visual studio"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'Demo Code for Testing in Visual Studio 2017'"
+        share_description="&quot;&quot;"
+        hashtags="#abstraction #code sample #coding-practices #community #conference #development #di #interface #microsoft #moles #mstest #pex #phoenix #presentation #tdd #testing #unit testing #visual studio"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>The demo code for my presentation on Testing in Visual Studio 2017 at the VS2017 Launch event can be found on <a href="https://github.com/bsstahl/VS2017Launch">GitHub</a>.  There are 2 branches to this repository, the <strong>Main</strong> branch which holds the completed demo, and the <strong>DemoStart</strong> branch which holds the starting point of the demonstration in case you would like to implement the sample yourself.</p>
 <p>The demo shows how Microsoft Fakes (formerly Moles) can be used to create tests against code that does not implement a reusable interface. This can be done  without having to resort to integration style tests or writing extra wrapper code just to implement an interface.  During my launch presentation, I also use this code to demonstrate the use of Intellitest (formerly Pex) to generate exploratory tests.</p>
 
@@ -159,14 +156,13 @@
     <h3>Testing a .NET Core Library in VS2015</h3>
     <h5>Posted by bsstahl on 2017-01-09 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'Testing a .NET Core Library in VS2015'"
-                share_description="&quot;&quot;"
-                hashtags="#testing #code coverage #development #di #ioc #microsoft #moq #mocks #professional development #tdd #unit testing #visual studio #dotnet"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'Testing a .NET Core Library in VS2015'"
+        share_description="&quot;&quot;"
+        hashtags="#testing #code coverage #development #di #ioc #microsoft #moq #mocks #professional development #tdd #unit testing #visual studio #dotnet"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>I really enjoy working with .NET Core.  I like the fact that my code is portable to many platforms and that the footprint is so much smaller than with traditional .NET applications.  Unfortunately, the tooling has not quite reached the level that we expect from a Microsoft finished product (which it isn’t – yet). As a result, there are some additional actions we need to take when setting up our solutions in Visual Studio 2015 to allow us to unit test our code properly.  The following are the steps that I currently take to setup and test a .NET Core library using XUnit and Moq.  I know that a number of these steps will be done for us, or at least made much easier, by the tooling in the coming months, either by Visual Studio 2017, or by enhancements to the Visual Studio 2015 environments.</p>
 <ol>
 <li>Create the library to be tested in Visual Studio 2015
@@ -240,14 +236,13 @@
     <h3>Code Coverage Teaches and Protects</h3>
     <h5>Posted by bsstahl on 2016-10-14 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'Code Coverage Teaches and Protects'"
-                share_description="&quot;&quot;"
-                hashtags="#abstraction #agile #assert #code analysis #code coverage #coding-practices #csharp #ioc #testing #unit testing #dotnet"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'Code Coverage Teaches and Protects'"
+        share_description="&quot;&quot;"
+        hashtags="#abstraction #agile #assert #code analysis #code coverage #coding-practices #csharp #ioc #testing #unit testing #dotnet"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>I often hail code coverage as a great tool to help improve your code base.  Today, my use of Code Coverage taught me something about the new .NET Core tooling, and helped protect me from having to support useless code for the lifespan of my project.</p>
 <p>In the code below, I used a common dependency injection pattern. That is, an IServiceProvider object holding my dependencies is passed-in to my object and stored as a member variable.  When a dependency is needed, I retrieve that dependency from the service provider, and then take action on it.  Since there is no guarantee that the dependency I need will have been placed in the container, I use some common guard logic to protect my code.</p>
 <pre><code>templates = _serviceProvider.GetService&lt;IEnumerable&lt;Template&gt;&gt;();
@@ -273,14 +268,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
     <h3>TDD Helps Validate Your Tests</h3>
     <h5>Posted by bsstahl on 2016-03-05 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'TDD Helps Validate Your Tests'"
-                share_description="&quot;&quot;"
-                hashtags="#code analysis #code coverage #coding-practices #tdd #testing #unit testing"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'TDD Helps Validate Your Tests'"
+        share_description="&quot;&quot;"
+        hashtags="#code analysis #code coverage #coding-practices #tdd #testing #unit testing"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>One of the reasons to use TDD over test-later approaches is that you get a better validation of your tests.</p>
 <p>When the first thing you do with a test or series of tests is to run them against code that does nothing but throw a <em>NotImplementedException</em>, you know exactly what to expect. That is, all tests should fail because the code under test threw a <em>NotImplementedException</em>. After that, you can take iterative steps to implement the code. Along the way, you should always see your tests fail in appropriate ways.  Eventually, all of your tests should pass when the code is complete.</p>
 <p>If tests start passing before they should, continue to fail when they shouldn’t, or fail for reasons that are different than what you’d expect at that point in the development process, you have a good indication that the test may not be doing what you want it to be doing.  This additional information about the tests can be very helpful in making sure your unit tests are properly testing your code.</p>
@@ -299,14 +293,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
     <h3>Test-Driven Bug Fixes</h3>
     <h5>Posted by bsstahl on 2016-02-27 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'Test-Driven Bug Fixes'"
-                share_description="&quot;&quot;"
-                hashtags="#agile #coding-practices #professional development #tdd #testing #unit testing"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'Test-Driven Bug Fixes'"
+        share_description="&quot;&quot;"
+        hashtags="#agile #coding-practices #professional development #tdd #testing #unit testing"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>I had an experience this past week that reminded me of both the importance of continuing the Test Driven Development process beyond the initial development phases of a application's life-cycle, and that not all developers have yet fully grasped the concepts behind Test Driven Development.</p>
 <p>One of the development teams I work with had a bug come-up in a bit of complex logic that I designed. I was asked to pair-up with one of the developers to help figure out the bug since he had already spent several hours looking at it. When I asked him to show me the tests that were failing, there weren't any. The bug was for a situation that we hadn't anticipated during initial development (a common occurrence) and he had not yet setup any tests that exposed the bug.</p>
 <p>We immediately set out to rectify the situation by creating tests that failed as a result of the bug. Once these tests were created, it was a fairly simple process to use those tests as a debug platform to step through the code, find the problem and correct the bug. As is sometimes the case, fixing that bug caused another test to fail, a situation that was easily remedied since we knew about it due to the failing test.</p>
@@ -320,14 +313,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
     <h3>Remove Any Code Your Users Don't Care About</h3>
     <h5>Posted by bsstahl on 2015-09-28 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'Remove Any Code Your Users Don't Care About'"
-                share_description="&quot;&quot;"
-                hashtags="#code coverage #testing #tdd #unit testing #yagni #agile"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'Remove Any Code Your Users Don't Care About'"
+        share_description="&quot;&quot;"
+        hashtags="#code coverage #testing #tdd #unit testing #yagni #agile"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>Code Coverage has been the topic of a number of conversations lately, most recently after the last <a href="https://www.meetup.com/sevdnug/events/223863304/">Southeast Valley .NET User Group</a> meeting where <a href="https://twitter.com/jeremybytes">Jeremy Clark</a> presented his great talk, <a href="http://jeremybytes.com/Demos.aspx#UTMMF">Unit Testing Makes Me Faster</a>.  During this presentation, Jeremy eponymized, on my behalf, something I've been saying for a while, that <a href="https://jeremybytes.blogspot.com/2015/02/unit-test-coverage-what-parts-of-your.html">the part of an application that you don't need to test is the part that your users don't care about</a>. That is, if your users care about something in your application, you should be writing tests that ensure that the users' needs are fulfilled by your code. This has never really been a controversial statement, just one that sometimes gets lost in the myriad of information about unit testing and test driven development.</p>
 <p>Where the conversation got really interesting was when we started discussing what should happen if you decide that a piece of code really isn't important to your users.  It is my assertion that code which is deemed unimportant enough to the user that it might not be tested, should be removed from the project, even if is part of a standard implementation.  I will attempt to justify this assertion by using the example of a property implementation that supports the <em>INotifyPropertyChanged</em> interface.</p>
 <p><img src="..//Images/CodeCoverageDemoProperty_2.png" alt="Code Coverage Results -- Standard Property Implementation" /></p>
@@ -360,14 +352,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
     <h3>Introducing TestHelperExtensions</h3>
     <h5>Posted by bsstahl on 2015-08-26 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'Introducing TestHelperExtensions'"
-                share_description="&quot;&quot;"
-                hashtags="#agile #community #development #framework #open source #tdd #testing #unit testing #visual studio"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'Introducing TestHelperExtensions'"
+        share_description="&quot;&quot;"
+        hashtags="#agile #community #development #framework #open source #tdd #testing #unit testing #visual studio"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <h2>TL;DR Version</h2>
 <p>I've released a new Open-Source library of extension methods that can be used to create more effective unit and integration tests. This library is called TestHelperExtensions. The source code is available on <a href="https://github.com/bsstahl/testhelperextensions">GitHub</a> (pull requests welcome), a .NET 4 package is available via <a href="http://www.nuget.org/packages/TestHelperExtensions/">NuGet</a>, and the documentation is available <a href="http://testhelperextensions.cognitiveinheritance.com">here</a>. The goal is to allow anyone to have access to the same set of test helpers I have been using, and building up, for many years.</p>
 <h2>The Story</h2>
@@ -381,14 +372,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
     <h3>Conflict of Interest -- YAGNI vs. Standardization</h3>
     <h5>Posted by bsstahl on 2014-07-28 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'Conflict of Interest -- YAGNI vs. Standardization'"
-                share_description="&quot;&quot;"
-                hashtags="#yagni #standardization #coding-practices #code analysis #tdd #unit testing"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'Conflict of Interest -- YAGNI vs. Standardization'"
+        share_description="&quot;&quot;"
+        hashtags="#yagni #standardization #coding-practices #code analysis #tdd #unit testing"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>While working on the OSS project mentioned in my <a href="../Posts/New-OSS-Project.html">previous post</a>, I have run across a dilemma where two of the principles I try to work by are in conflict. The two principles in question are:</p>
 <ol>
 <li><strong>YAGNI</strong> - <em>You aint gonna need it</em>, which prescribes not coding anything unless the need already exists. This principle is a core of Test Driven Development of which I am a practitioner and a strong proponent.</li>
@@ -411,14 +401,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
     <h3>New OSS Project</h3>
     <h5>Posted by bsstahl on 2014-07-11 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'New OSS Project'"
-                share_description="&quot;&quot;"
-                hashtags="#ai #code camp #community #conference #csharp #enterprise #mstest #nunit #open source #professional development #tdd #testing #unit testing"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'New OSS Project'"
+        share_description="&quot;&quot;"
+        hashtags="#ai #code camp #community #conference #csharp #enterprise #mstest #nunit #open source #professional development #tdd #testing #unit testing"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>I recently started working on a set of open-source projects for Code Camps and other community conferences with my friend Rob Richardson <a href="https://twitter.com/rob_rich">(@rob_rich</a>). In addition to doing some good for the community, I expect these projects, which I will describe in more detail in upcoming posts, to allow me to experiment with several elements of software development that I have been looking forward to trying out. These include:</p>
 <ul>
 <li>Using Git as a source control repository</li>
@@ -438,14 +427,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
     <h3>Visual Studio Unit Test Generator</h3>
     <h5>Posted by bsstahl on 2013-08-05 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'Visual Studio Unit Test Generator'"
-                share_description="&quot;&quot;"
-                hashtags="#visual studio #unit testing #testing #tdd"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'Visual Studio Unit Test Generator'"
+        share_description="&quot;&quot;"
+        hashtags="#visual studio #unit testing #testing #tdd"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>As a follow-up to my posts <a href="..//Posts/The-Missing-e2809cCreate-Unit-Teste2809d-feature-in-Visual-Studio-2012.html">here</a> and <a href="..//Posts/Regain-Access-to-the-CreateUnitTests-Command-in-VS2012.html">here</a> on the missing “Create Unit Test” feature in VS2012, I point you to <a href="https://web.archive.org/web/20190426104920/https://devblogs.microsoft.com/devops/visual-studio-unit-test-generator-is-feature-complete-v1-release-candidate-lands-2/">this post</a> from the Visual Studio ALM &amp; TFS blog announcing the Release Candidate of their new Unit Test Generator for Visual Studio.  According to the post, this extension</p>
 <blockquote>
 <p>“…adds the “create unit test” feature back, with a focus on automating project creation, adding references and generating stubs, extensibility, and targeting of multiple test frameworks.”</p>
@@ -458,14 +446,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
     <h3>Regain Access to the CreateUnitTests Command in VS2012</h3>
     <h5>Posted by bsstahl on 2012-12-27 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'Regain Access to the CreateUnitTests Command in VS2012'"
-                share_description="&quot;&quot;"
-                hashtags="#visual studio #unit testing #tdd"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'Regain Access to the CreateUnitTests Command in VS2012'"
+        share_description="&quot;&quot;"
+        hashtags="#visual studio #unit testing #tdd"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>I previously expressed my annoyance <a href="..//Posts/The-Missing-e2809cCreate-Unit-Teste2809d-feature-in-Visual-Studio-2012.html">here</a> and <a href="http://channel9.msdn.com/Events/Build/2012/3-017">here (starting at 01:02:06)</a> about the lack of the Create Unit Tests feature in Visual Studio 2012, similar to the one in Visual Studio 2010.  It is interesting that none of the Microsoft people I’ve spoken to on the issue were able to provide me with a reasonable work-around, but apparently, <a href="http://stackoverflow.com/users/1741116/intrueder">intrueder</a>, a commenter at <a href="http://stackoverflow.com/questions/9547055/where-is-the-create-unit-tests-selection">Stack Overflow</a>, has.  It turns out that the functionality was not removed from the Visual Studio product, just from the context menu. Therefore, we can give ourselves access to the command again by assigning a keyboard shortcut to it.  The steps to do so are as follows:</p>
 <ol>
 <li>In Visual Studio 2012, select <strong>Options</strong> from the <strong>Tools</strong> menu on the top menu bar.</li>
@@ -483,14 +470,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
     <h3>The Missing “Create Unit Test” feature in Visual Studio 2012</h3>
     <h5>Posted by bsstahl on 2012-09-16 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'The Missing “Create Unit Test” feature in Visual Studio 2012'"
-                share_description="&quot;&quot;"
-                hashtags="#visual studio #unit testing #tdd"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'The Missing “Create Unit Test” feature in Visual Studio 2012'"
+        share_description="&quot;&quot;"
+        hashtags="#visual studio #unit testing #tdd"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>I am loving many of the improvements made in Visual Studio 2012.  The performance and overall user experience of the test runner has improved tremendously from Visual Studio 2010 and the IDE is generally a joy to use.  <em><strong>Unfortunately, I can’t use it</strong></em>. It is missing one of the key features I use in my development workflow, that is, the “Create Unit Test” option.  This function, in VS2010, generates the stub of unit tests based on the interfaces of the selected methods.  It is hard for me to imagine why this feature was left out of Visual Studio 2012, but it needs to be put back in immediately.</p>
 <p>Please let Microsoft know how you feel about the absence of this feature in VS2012 by voting the feature request up on <a href="https://web.archive.org/web/20130311134957/http://visualstudio.uservoice.com/forums/121579-visual-studio/suggestions/2748862-add-create-unit-tests-menu-option-back-">UserVoice</a>.</p>
 
@@ -500,14 +486,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
     <h3>Code Sample for My TDD Kickstart Sessions</h3>
     <h5>Posted by bsstahl on 2012-02-13 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'Code Sample for My TDD Kickstart Sessions'"
-                share_description="&quot;&quot;"
-                hashtags="#abstraction #agile #assert #code camp #coding-practices #community #conference #csharp #development #di #event #framework #ioc #tdd #testing #unit testing #visual studio"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'Code Sample for My TDD Kickstart Sessions'"
+        share_description="&quot;&quot;"
+        hashtags="#abstraction #agile #assert #code camp #coding-practices #community #conference #csharp #development #di #event #framework #ioc #tdd #testing #unit testing #visual studio"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>The complete, working application for my <a href="../Posts/NET-TDD-Kickstart.html">.NET TDD Kickstart</a> sessions can be found <a href="../Files/TDDKickstart.zip">here</a>.</p>
 <p>Unzip the files into a solution folder and open the <strong>Demo.sln</strong> solution in a version of Visual Studio 2010 that has Unit Testing capability (Professional, Premium or Ultimate).  Immediately, you should be able to compile the whole solution, and successfully execute the tests in the <strong>Bss.QueueMonitor.Test</strong> and <strong>Bss.Timing.Test</strong> libraries.</p>
 <p>To get the tests in the other two test libraries (<strong>Bss.QueueMonitor.Data.EF.Test</strong> &amp; <strong>Bss.QueueMonitor.IntegrationTest</strong>) to pass, you will need to create the database used to store the monitored data in the data-tier and integration tests, and enable MSMQ on your system so that a queue to be monitored can be created for the Integration test.</p>
@@ -521,14 +506,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
     <h3>.NET TDD Kickstart</h3>
     <h5>Posted by bsstahl on 2012-01-26 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;<a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: '.NET TDD Kickstart'"
-                share_description="&quot;&quot;"
-                hashtags="#abstraction #agile #assert #code camp #coding-practices #community #conference #csharp #development #di #event #framework #ioc #tdd #testing #unit testing #visual studio"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: '.NET TDD Kickstart'"
+        share_description="&quot;&quot;"
+        hashtags="#abstraction #agile #assert #code camp #coding-practices #community #conference #csharp #development #di #event #framework #ioc #tdd #testing #unit testing #visual studio"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>I head out to Fullerton tomorrow for the start of my .NET TDD Kickstart world tour. <img src="../Images/wlEmoticon-smile.png" alt="Smile" /></p>
 <blockquote>
 <p>In this session, the speaker and the audience will &quot;pair up&quot; for a coding session which will serve as an introduction to Test Driven Development in an Agile environment. We will use C#, Visual Studio and Rhino Mocks to unit test code to be built both with and without dependencies. We will also highlight some of the common issues encountered during TDD and discuss strategies for overcoming them.</p>
@@ -550,14 +534,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
     <h3>Demo Code for EF4Ent Sessions</h3>
     <h5>Posted by bsstahl on 2011-06-26 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'Demo Code for EF4Ent Sessions'"
-                share_description="&quot;&quot;"
-                hashtags="#abstraction #agile #assembly #code analysis #code camp #code contracts #code sample #coding-practices #conference #csharp #enterprise library #entity #entity framework #fxcop #interface #testing #unit testing #visual studio"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'Demo Code for EF4Ent Sessions'"
+        share_description="&quot;&quot;"
+        hashtags="#abstraction #agile #assembly #code analysis #code camp #code contracts #code sample #coding-practices #conference #csharp #enterprise library #entity #entity framework #fxcop #interface #testing #unit testing #visual studio"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>I previously posted the slides for my <strong>Building Enterprise Apps using Entity Framework 4</strong> talk <a href="../Posts/Desert-Code-Camp-Presentation.html">here</a>. I can now post the source code for the completed demo application.  That code, created for use in Visual Studio 2010 Ultimate, is available in zip format below.  This is the same code that was demonstrated at Desert Code Camp 2011.1 and SoCalCodeCamp 2011 as well as the New Mexico .NET User’s Group (NMUG).</p>
 <p><a href="https://docs.google.com/uc?id=0B6PPrBnxN6VtMGRhNzZhOGUtNGY5NC00M2IyLTgxYzMtOTVlNDU0MDQyNjc1&amp;export=download&amp;hl=en_US">EF4EnterpriseDemoCode.zip</a></p>
 
@@ -567,14 +550,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
     <h3>Desert Code Camp Presentation</h3>
     <h5>Posted by bsstahl on 2011-04-02 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;<a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'Desert Code Camp Presentation'"
-                share_description="&quot;&quot;"
-                hashtags="#abstraction #agile #coding-practices #community #conference #encapsulation #entity #entity framework #event #provider #unit testing #us airways #pluralsight"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'Desert Code Camp Presentation'"
+        share_description="&quot;&quot;"
+        hashtags="#abstraction #agile #coding-practices #community #conference #encapsulation #entity #entity framework #event #provider #unit testing #us airways #pluralsight"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>Thanks to all of the organizers, speakers, sponsors and attendees of <a href="https://apr2011.desertcodecamp.com/">Desert Code Camp 2011.1</a>.  This is the first time that I’ve presented at a Code Camp and it was a fantastic experience for me.  My session, <strong>Building Enterprise Apps using Entity Framework 4</strong>, was very well attended with 35 people cramming, standing-room-only, into a room with a capacity of 28 (please don’t tell the Fire Marshall).  The demos went very well (everything worked as it was supposed to) and the feedback I’ve gotten so far was entirely positive.</p>
 <p>I will be posting some additional information from the session shortly, including the sample code and the changes I make to the <strong>Microsoft All Rules</strong> code analysis ruleset, but I wanted to get the session slides up as quickly as possible.</p>
 <p>If you have any additional feedback on the session, please feel free to <a href="../contact.html">contact me here</a>, in the Fediverse <a rel="me" href="https://fosstodon.org/@Bsstahl">@bsstahl@cognitiveinheritance.com</a> or by email as shown in the slide deck.</p>
@@ -586,14 +568,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
     <h3>Two Things I Learned on Pex4Fun.com Today</h3>
     <h5>Posted by bsstahl on 2010-11-12 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'Two Things I Learned on Pex4Fun.com Today'"
-                share_description="&quot;&quot;"
-                hashtags="#pex #code contracts #moles #unit testing #csharp #dotnet"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'Two Things I Learned on Pex4Fun.com Today'"
+        share_description="&quot;&quot;"
+        hashtags="#pex #code contracts #moles #unit testing #csharp #dotnet"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>Since I’m a fan of puzzles, I’ve been spending a bit of time on <a href="https://web.archive.org/web/20101112142013/http://www.pexforfun.com/">PexForFun.com</a> lately.  This site was put together by the Pex team (part of Microsoft Research) to show off the capabilities of some of the research group’s  latest creations; Pex, Moles, and Code Contracts.  I’ve been enjoying this site because it gives me the opportunity to solve some coding puzzles, while at the same time discovering things about these new tools.  Today alone, I discovered the following:</p>
 <h2>The order of Contract.Requires() in Code Contracts matters.</h2>
 <p>Though it doesn’t seem like it should matter (at least to me), the order that code contracts are specified does seem to matter at execution, at least in some circumstances, if runtime checking is enabled.  For example, in my <em>ChallengeAuction</em> code duel there is a practical limit to how many bids may be supplied since Pex has to test each of the data elements.  Defining this limit in as a Contract.Requires() element works well as long as that statement is placed before a statement testing the data elements, such as one verifying that the key for each bid is not an empty string.  Reversing the order of these contract statements causes the test to occur for each data element of the dictionary, and a “path bounds exceeded” error to be generated by Pex.</p>
@@ -614,14 +595,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
     <h3>Using Constraints in Rhino Mocks</h3>
     <h5>Posted by bsstahl on 2009-04-17 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'Using Constraints in Rhino Mocks'"
-                share_description="&quot;&quot;"
-                hashtags="#unit testing #tdd #mocks"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'Using Constraints in Rhino Mocks'"
+        share_description="&quot;&quot;"
+        hashtags="#unit testing #tdd #mocks"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>In <a href="https://web.archive.org/web/20090404034137/http://codebetter.com/blogs/karlseguin/archive/2009/04/01/don-t-be-afraid-of-complex-constraints.aspx">Don't be afraid of complex constraints</a>, Karl Seguin gives a nice overview of using constraints in Rhino Mocks to test complex unit interactions:</p>
 <blockquote>
 <p>...complex constraints can be handled one of three different ways: using a partial mock and externalizing the parameter creation, using inline custom constraints or using full blown constraint objects.</p>
@@ -633,14 +613,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
     <h3>Testing Properties with Inconsistent Accessibility</h3>
     <h5>Posted by bsstahl on 2007-06-26 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'Testing Properties with Inconsistent Accessibility'"
-                share_description="&quot;&quot;"
-                hashtags="#tdd #unit testing #properties #csharp"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'Testing Properties with Inconsistent Accessibility'"
+        share_description="&quot;&quot;"
+        hashtags="#tdd #unit testing #properties #csharp"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>I ran into an interesting problem today while attempting to test a property member which had a <strong>public</strong> getter, but an <strong>internal</strong> setter (a .NET 2.0 construction in C#).</p>
 <p>Consider the following class:</p>
 <p><img src="..//Images/TestClass.png" alt="Class Definition" /></p>

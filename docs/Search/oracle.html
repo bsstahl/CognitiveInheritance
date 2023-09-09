@@ -66,14 +66,13 @@
     <h3>Oracle String SQL Query using a DateTime from C#</h3>
     <h5>Posted by bsstahl on 2009-03-07 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'Oracle String SQL Query using a DateTime from C#'"
-                share_description="&quot;&quot;"
-                hashtags="#csharp #oracle #sql #datetime #dotnet"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'Oracle String SQL Query using a DateTime from C#'"
+        share_description="&quot;&quot;"
+        hashtags="#csharp #oracle #sql #datetime #dotnet"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>The following statement builds a C# string containing an Oracle SQL query that uses a DateTime specified in the .NET code.  It uses the Oracle TO_DATE function to convert the string date to an oracle date object and specifies the format of the string date for both the C# output and the Oracle input. Using this statement, there can never be a date format mismatch since the same format is specified at both ends.</p>
 <p>string sql = string.Format(&quot;select * from MyDB.MyTable t where t.MyDate &gt; <br />
      TO_DATE('{0:MM/dd/yyyy hh:mm}', 'MM/dd/yyyy HH24:mi')&quot;, DateTime.Now);</p>

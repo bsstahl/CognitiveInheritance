@@ -66,14 +66,13 @@
     <h3>Meta-Abstraction -- You Ain't Gonna Need It!</h3>
     <h5>Posted by bsstahl on 2020-05-18 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'Meta-Abstraction -- You Ain't Gonna Need It!'"
-                share_description="&quot;&quot;"
-                hashtags="#abstraction #apps #coding-practices #development #entity #flexibility #framework #generics #principle #yagni #interface"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'Meta-Abstraction -- You Ain't Gonna Need It!'"
+        share_description="&quot;&quot;"
+        hashtags="#abstraction #apps #coding-practices #development #entity #flexibility #framework #generics #principle #yagni #interface"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <blockquote>
 <p>When we look at the abstractions in our applications, we should see a description of the capabilities of our applications, not the capabilities of the abstraction</p>
 </blockquote>
@@ -131,14 +130,13 @@
     <h3>The Value of Flexibility</h3>
     <h5>Posted by bsstahl on 2019-02-14 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'The Value of Flexibility'"
-                share_description="&quot;&quot;"
-                hashtags="#abstraction #agile #coding-practices #microservices #optimization #pattern #principle #flexibility #yagni #event-driven"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'The Value of Flexibility'"
+        share_description="&quot;&quot;"
+        hashtags="#abstraction #agile #coding-practices #microservices #optimization #pattern #principle #flexibility #yagni #event-driven"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>Have you ever experienced that feeling you get when you need to extend an existing system and there is an extension point that is exactly what you need to build on?</p>
 <p>For example, suppose I get a request to extend a system so that an additional action is taken whenever a new user signs-up.  The system already has an event message that is published whenever a new user signs-up that contains all of the information I need for the new functionality.  All I have to do is subscribe a new microservice to this event message, and have that service take the new action whenever it receives a message. Boom! Done.</p>
 <p>Now think about the converse. The many situations we’ve all experienced where there is no extension point. Or maybe there is an extension mechanism in place but it isn’t quite right; perhaps an event that doesn’t fire on exactly the situation you need, or doesn’t contain the data you require for your use case and you have to build an entirely new data support mechanism to get access to the bits you need.</p>

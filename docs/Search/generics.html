@@ -66,14 +66,13 @@
     <h3>Meta-Abstraction -- You Ain't Gonna Need It!</h3>
     <h5>Posted by bsstahl on 2020-05-18 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'Meta-Abstraction -- You Ain't Gonna Need It!'"
-                share_description="&quot;&quot;"
-                hashtags="#abstraction #apps #coding-practices #development #entity #flexibility #framework #generics #principle #yagni #interface"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'Meta-Abstraction -- You Ain't Gonna Need It!'"
+        share_description="&quot;&quot;"
+        hashtags="#abstraction #apps #coding-practices #development #entity #flexibility #framework #generics #principle #yagni #interface"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <blockquote>
 <p>When we look at the abstractions in our applications, we should see a description of the capabilities of our applications, not the capabilities of the abstraction</p>
 </blockquote>
@@ -131,14 +130,13 @@
     <h3>Is a Type an Implementation of an Interface?</h3>
     <h5>Posted by bsstahl on 2016-11-17 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'Is a Type an Implementation of an Interface?'"
-                share_description="&quot;&quot;"
-                hashtags="#assembly #api #class #code sample #coding-practices #community #csharp #development #extension method #framework #generics #interface #presentation #professional development #reflection #user group"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'Is a Type an Implementation of an Interface?'"
+        share_description="&quot;&quot;"
+        hashtags="#assembly #api #class #code sample #coding-practices #community #csharp #development #extension method #framework #generics #interface #presentation #professional development #reflection #user group"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>One of the techniques I recommend highly in my <a href="../Posts/Simplify-Your-API.html">Simplify Your API</a> talk is the use of extension methods to hide the complexity of lower-level API functionality.  A good example of a place to use this methodology came-up last night in a great Reflection talk by Jeremy Clark (<a href="https://twitter.com/jeremybytes">Twitter</a>, <a href="https://jeremybytes.blogspot.com/">Blog</a>) at the <a href="http://www.nwvdnug.org">NorthWest Valley .NET User Group</a>.</p>
 <p><img src="../Images/Jeremy_2.jpg" alt="Jeremy" /></p>
 <p>Jeremy was demonstrating a method that would spin-through an assembly and load all classes within that assembly that implemented a particular interface.  The syntax to do the checks on each type were just a bit more obtuse than Jeremy would have liked them to be.  As we left that talk, I only half-jokingly told Jeremy that I was going to write him an extension method to make that activity simpler.  Being a man of my word, I present the code below to do just that.</p>
@@ -150,14 +148,13 @@
     <h3>No More Collection Objects</h3>
     <h5>Posted by bsstahl on 2015-10-27 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'No More Collection Objects'"
-                share_description="&quot;&quot;"
-                hashtags="#class #coding-practices #csharp #development #encapsulation #entity #generics #inheritance #list #visual studio #yagni"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'No More Collection Objects'"
+        share_description="&quot;&quot;"
+        hashtags="#class #coding-practices #csharp #development #encapsulation #entity #generics #inheritance #list #visual studio #yagni"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>I don't create collection objects anymore.</p>
 <p>I know, I know. I was they guy always preaching that every entity that was being collected had to have its own collection object. It was the right thing at the time; if you needed to take an action on an enumeration or list of objects, those actions needed to be done within a strongly-typed collection object to maintain encapsulation. Even if all that was happening was that an inherited <em>List&lt;T&gt;</em> function was being called, that functionality needed to be called on the <em>TCollection</em> object because, if it wasn't, it was likely that the next time logic needed to be performed on the collection, there wouldn't be a place to put it. Collection logic would end up being spread-out around your code rather than encapsulated in the collection. It was also possible that the implementation might change and need to be updated everywhere, instead of in one place.</p>
 <p>Today however, that has all changed. Extension methods now allow us, at any time, to add functionality to <em>ICollection&lt;T&gt;</em>, <em>IList&lt;T&gt;</em>, <em>IEnumerable&lt;T&gt;</em> or any other interface or class. We can attach our list or enumeration based actions directly to the list or enumeration class, and do so at any time, since the methods appear the same to the developer as methods directly on the collection type. Thus, the &quot;no place to put it&quot; fear no longer exists. I've even started using this technique for my factory methods to make it clear that what I am creating is, in fact, an <em>IEnumerable&lt;T&gt;</em>, as in this example.</p>
@@ -176,14 +173,13 @@
     <h3>Simplify Your API</h3>
     <h5>Posted by bsstahl on 2015-10-12 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'Simplify Your API'"
-                share_description="&quot;&quot;"
-                hashtags="#api #coding-practices #code sample #development #generics #presentation #services #skill #speaking #visual studio #soa"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'Simplify Your API'"
+        share_description="&quot;&quot;"
+        hashtags="#api #coding-practices #code sample #development #generics #presentation #services #skill #speaking #visual studio #soa"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>If you are building an API for other Developers to use, you will find out two things very quickly:</p>
 <ol>
 <li>Developers don't read documentation (you probably already know this).</li>
@@ -238,14 +234,13 @@
     <h3>Windows 8 Store Development for Enterprise Devs</h3>
     <h5>Posted by bsstahl on 2013-02-28 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'Windows 8 Store Development for Enterprise Devs'"
-                share_description="&quot;&quot;"
-                hashtags="#assembly #csharp #development #enterprise #generics #javascript #microsoft #vb.net #xaml #html5 #dotnet #windows"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'Windows 8 Store Development for Enterprise Devs'"
+        share_description="&quot;&quot;"
+        hashtags="#assembly #csharp #development #enterprise #generics #javascript #microsoft #vb.net #xaml #html5 #dotnet #windows"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <h3>or, How I found my Passion for Windows 8 Store App Development</h3>
 <p>Update: My first Windows Store app was published on March 27, 2013.</p>
 <p>I don't have any apps in the Windows 8 Store yet. For that matter, I don't have any apps in the Windows Phone store, or the Apple or Android stores either. I have many ideas for apps, and a number of them in the works for both Windows 8 and Windows Phone, but I have nothing real to show for it yet. Nothing to show for several years of attending sessions at conferences, user groups, and code camps on building these apps; for many hours of hacking on front-end interfaces and business logic. Don’t get me wrong, I've wanted to build these apps, but I didn't have that burning desire that I usually get when I am solving problems with software. You know that desire, the one that compels you to sit in front of a computer for hours at a time until you've completed a solution. I didn't have it.</p>
@@ -268,14 +263,13 @@
     <h3>Encapsulation and Generic Lists</h3>
     <h5>Posted by bsstahl on 2007-09-16 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'Encapsulation and Generic Lists'"
-                share_description="&quot;&quot;"
-                hashtags="#encapsulation #generics #list"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'Encapsulation and Generic Lists'"
+        share_description="&quot;&quot;"
+        hashtags="#encapsulation #generics #list"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>It has often been said that each new language feature gives programmers more rope with which to hang themselves. Unfortunately, what it really seems like is that each feature gives other programmers more rope with which to hang me, or you, or whomever the next poor schmuck is who has to deal with their code. Back in the relatively early days of .NET 2.0, I wrote about <a href="../Posts/Generics-Concerns.html">some concerns I had with Generics</a>. It has turned out that Generics are everything I could have hoped for in a language feature, and everything I feared.</p>
 <p>Generics are an outstanding way of dealing with a number of issues in a very elegant, but also type-safe way. Among many things, this includes collections. I see no reason why there should be any new collections created that are not based on Generics and it is my understanding that System.Collections.CollectionBase (the non-Generic base collection class) is to be deprecated sometime in the near future. However, as I feared over a year ago, there are many that miss the point somewhat and expose List&lt;t&gt; on their interfaces. The Generic List object is a very powerful and easy to use collection, but it is not extensible. If you write code that exposes List&lt;t&gt;, you are effectively passing a strongly-typed array-list. Doing this breaks encapsulation because any code we write against that list, has to be repeated everywhere we want to perform that operation.</p>
 <p>For example, suppose we have a calendar object that exposes a list of events that we want to reserve. We often see this code:</p>
@@ -316,14 +310,13 @@
     <h3>Generics Concerns</h3>
     <h5>Posted by bsstahl on 2006-04-29 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'Generics Concerns'"
-                share_description="&quot;&quot;"
-                hashtags="#generics #class #dotnet"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'Generics Concerns'"
+        share_description="&quot;&quot;"
+        hashtags="#generics #class #dotnet"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>Another feature that concerns me (see my <a href="../Posts/NET-20-Concerns.html">earlier post</a>) is .NET Generics. While it is nice to be able to specify a strongly-typed collection without having to create a class, it seems to me like this is still the <a href="http://msdn2.microsoft.com/en-us/library/Aa716279%28VS.60%29.aspx">house of sticks</a>, rather than the house of bricks we really want. Also, extensibility seems to suffer in this model because we are limiting our encapsulation. I certainly have not used this enough to say one way or another for certain, I just currently have concerns.</p>
 
     <h5>Tags: <a title="Tag: generics" class="small" href="../Search/generics.html">generics</a>&nbsp;<a title="Tag: class" class="small" href="../Search/class.html">class</a>&nbsp;<a title="Tag: dotnet" class="small" href="../Search/dotnet.html">dotnet</a>&nbsp;</h5>

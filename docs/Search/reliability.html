@@ -66,14 +66,13 @@
     <h3>Consider Quality Before Cost in Application Development</h3>
     <h5>Posted by bsstahl on 2023-08-04 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'Consider Quality Before Cost in Application Development'"
-                share_description="&quot;Guidelines on when to consider costs as part of the application development process&quot;"
-                hashtags="#architecture #coding-practices #reliability"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'Consider Quality Before Cost in Application Development'"
+        share_description="&quot;Guidelines on when to consider costs as part of the application development process&quot;"
+        hashtags="#architecture #coding-practices #reliability"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>Assessing the costs associated with using a specific tool is usually more straightforward than evaluating the less tangible costs related to an application's life-cycle, such as those tied to quality. This can result in an excessive focus on cost optimization, potentially overshadowing vital factors like reliability and maintainability.</p>
 <p>As an example, consider a solution that uses a Cosmos DB instance. It is easy to determine how much it costs to use that resource, since the Azure Portal gives us good estimates up-front, and insights as we go. It is much more difficult to determine how much it would cost to build the same functionality without the use of that Cosmos DB instance, and what the scalability and maintainability impacts of that decision would be.</p>
 <p>In this article, we will consider a set of high-level guidelines that can help you identify when to consider costs during the development process. By following these guidelines, you can make it more likely that your dev team accurately prioritizes all aspects of the application without falling into the trap of over-valuing easily measurable costs.</p>
@@ -104,14 +103,13 @@
     <h3>Microservices&colon; Size Doesn&apos;t Matter, Reliability Does</h3>
     <h5>Posted by bsstahl on 2023-02-20 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'Microservices&colon; Size Doesn&apos;t Matter, Reliability Does'"
-                share_description="&quot;The number and size of microservices is irrelevant as long as they are reliable&quot;"
-                hashtags="#architecture #coding-practices #event-driven #microservices #reliability #soa"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'Microservices&colon; Size Doesn&apos;t Matter, Reliability Does'"
+        share_description="&quot;The number and size of microservices is irrelevant as long as they are reliable&quot;"
+        hashtags="#architecture #coding-practices #event-driven #microservices #reliability #soa"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p>There are conflicting opinions among architects about how many microservices a distributed system should have, and the size of those services. Some may say that a particular design has too many microservices, and that it should be consolidated into fewer, larger services to reduce deployment and operational complexity. Others may say that the same design doesn't have enough microservices, and that it should be broken-down into smaller, more granular services to reduce code complexity and improve team agility. Aside from the always true and rarely helpful &quot;it depends...&quot;, is there good guidance on the subject?</p>
 <p>The truth is, the number and size of microservices is not a measure of quality or performance unto itself, it is a design decision based on one primary characteristic, <strong>Reliability</strong>. As such, there is a simple rule guiding the creation of services, but it isn't based on the size or quantity of services. The rule is based entirely on how much work a service does.</p>
 <p>After security, reliability is the most important attribute of any system, because it affects the satisfaction of both the users and developers, as well as the productivity and agility of the development and support teams. A reliable system has the following characteristics:</p>
@@ -136,14 +134,13 @@
     <h3>Microservices - Not Just About Scalability</h3>
     <h5>Posted by bsstahl on 2023-01-30 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
-                share_title="Check out this post on Cognitive Inheritance: 'Microservices - Not Just About Scalability'"
-                share_description="&quot;Scalability is only one of the many benefits provided by event-driven microservice architectures&quot;"
-                hashtags="#architecture #coding-practices #event-driven #microservices #reliability #soa"
-                author="@bsstahl@cognitiveinheritance.com"
-                default_url="https://fosstodon.org">
-            </share-on-mastodon>
-    <br/>
-    <br/>
+        share_title="Check out this post on Cognitive Inheritance: 'Microservices - Not Just About Scalability'"
+        share_description="&quot;Scalability is only one of the many benefits provided by event-driven microservice architectures&quot;"
+        hashtags="#architecture #coding-practices #event-driven #microservices #reliability #soa"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <hr style="border-top: dotted 1px black;">
     <p><strong>Scalability</strong> is an important feature of microservices and event-driven architectures, however it is only one of the many benefits these types of architectures provide. Event-driven designs create systems with high availability and fault tolerance, as well as improvements for the development teams such as flexibility in technology choices and the ability to subdivide tasks better. These features can help make systems more robust and reliable, and have a great impact on development team satisfaction. It is important to consider these types of architectures not just for systems that need to scale to a high degree, but for any system where reliability or complexity are a concern.</p>
 <p>The reliability of microservices come from the fact that they break-down monolithic applications into smaller, independently deployable services. When implemented properly this approach allows for the isolation of failures, where the impact of a failure in one service can be limited to that service and its consumers, rather than cascading throughout the entire system. Additionally, microservice architectures enable much easier rollbacks, where if a new service version has a bug, it can be rolled back to a previous version without affecting other services. Event-driven approaches also decouple services by communicating through events rather than direct calls, making it easier to change or replace them without affecting other services. Perhaps most importantly, microservice architectures help reliability by avoiding dual-writes. Ensuring that our services make at most one state change per execution context allows us to avoid the very painful inconsistencies that can occur when data is written to multiple locations simultaneously and these updates are only partially successful.</p>
 <p>When asynchronous eventing is used rather than request-response messages, these systems are further decoupled in time, improving fault-tolerance and allowing the systems to self-heal from failures in downstream dependencies. Microservices also enable fault-tolerance in our services by making it possible for some of our services to be idempotent or even fully stateless. Idempotent services can be called repeatedly without additional side-effects, making it easy to recover from failures that occur during our processes.</p>
