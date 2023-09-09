@@ -69,7 +69,7 @@
                     author="@bsstahl@cognitiveinheritance.com"
                     default_url="https://fosstodon.org">
                 </share-on-mastodon>
-                <hr style="border-top: dotted 1px gainsboro;">
+                <br/><br/>
                 <p>What do you do when a dependency of one of your components needs data, ostensibly from your component, that your component doesn't actually need itself?</p>
 <p>Let's think about an example. Suppose our problem domain (the big black box in the drawings below) uses some data from 3 different data sources (labeled Source A, B &amp; C in the drawings). There is also a downstream dependency that needs data from the problem domain, as well as from sources B &amp; C. Some of the data required by the downstream dependency are not needed by, or owned by, the problem domain.</p>
 <p>There are 2 common implementations discussed now, and 1 slightly less obvious one discussed later in this article. We could:</p>

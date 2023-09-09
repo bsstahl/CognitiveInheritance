@@ -72,7 +72,7 @@
         author="@bsstahl@cognitiveinheritance.com"
         default_url="https://fosstodon.org">
     </share-on-mastodon>
-    <hr style="border-top: dotted 1px black;">
+    <br/><br/>
     <p>Thanks again to all the organizers, speakers and attendees of the 2019 South Florida Code Camp. As always, it was an amazing and fun experience.</p>
 <p>The slides for my presentation are online <a href="http://introwasmblazor-201903.azurewebsites.net">Intro to WebAssembly and Blazor</a> and the Blazor Chutes &amp; Ladders Simulation sample code can be found in my <a href="https://github.com/bsstahl/AIDemos">AIDemos GitHub Repo</a>.</p>
 
@@ -88,7 +88,7 @@
         author="@bsstahl@cognitiveinheritance.com"
         default_url="https://fosstodon.org">
     </share-on-mastodon>
-    <hr style="border-top: dotted 1px black;">
+    <br/><br/>
     <p>It is fairly easy these days to test code in isolation if its dependencies are abstracted by a reusable interface. But what do we do if the dependency cannot easily be referenced via such an interface?  Enter <strong>Shims</strong>, from the <strong>Microsoft Fakes Framework</strong>(formerly Moles).  Shims allow us to isolate our testing from any dependent methods, including methods in assemblies we do not control, even if those methods are not exposed through a reusable interface. To see how easy it is, follow along with me through this example.</p>
 <p>In this <a href="https://github.com/bsstahl/VS2017Launch">sample code on GitHub</a>, we are building a repository for an application that currently gets its data from a file exported from a system that tracks scheduled meetings.  It is very likely that the system will, in the future, expose a more modern interface for that data so we have isolated the data storage using a simple Repository interface that has one method.  This method, called <strong>GetMeetings</strong> returns a collection of Meeting entities that start during the specified date range.  The method will return an empty collection if no data is found matching the specified criteria, and could throw either of 2 custom errors, a <strong>PermissionsException</strong>when the user does not have the proper permissions to access the information, and a <strong>DataUnavailableException</strong> for when the data source is unavailable for any other reason, such as a network outage or if the data file cannot be located.</p>
 <p>It is important to point out why a custom exception should be thrown when the data file is not found, rather than allowing the <strong>FileNotFoundException</strong> to bubble-up.  If we allow the implementation-specific exception to bubble, we have exposed an implementation detail to the caller. That is, the calling code is now aware of the fact that this is a file system implementation.  If code is written in a client that traps for <strong>FileNotFoundException</strong>, then the repository implementation is swapped-out for a SQL server implementation, the client code will have to change to handle the new types of errors that could be thrown by that implementation.  This violates the Dependency Inversion principle, the “D” from the <strong>SOLID</strong> principles.  By exposing only a custom exception, we are hiding those implementation details from the caller.</p>
@@ -139,7 +139,7 @@
         author="@bsstahl@cognitiveinheritance.com"
         default_url="https://fosstodon.org">
     </share-on-mastodon>
-    <hr style="border-top: dotted 1px black;">
+    <br/><br/>
     <p>One of the techniques I recommend highly in my <a href="../Posts/Simplify-Your-API.html">Simplify Your API</a> talk is the use of extension methods to hide the complexity of lower-level API functionality.  A good example of a place to use this methodology came-up last night in a great Reflection talk by Jeremy Clark (<a href="https://twitter.com/jeremybytes">Twitter</a>, <a href="https://jeremybytes.blogspot.com/">Blog</a>) at the <a href="http://www.nwvdnug.org">NorthWest Valley .NET User Group</a>.</p>
 <p><img src="../Images/Jeremy_2.jpg" alt="Jeremy" /></p>
 <p>Jeremy was demonstrating a method that would spin-through an assembly and load all classes within that assembly that implemented a particular interface.  The syntax to do the checks on each type were just a bit more obtuse than Jeremy would have liked them to be.  As we left that talk, I only half-jokingly told Jeremy that I was going to write him an extension method to make that activity simpler.  Being a man of my word, I present the code below to do just that.</p>
@@ -157,7 +157,7 @@
         author="@bsstahl@cognitiveinheritance.com"
         default_url="https://fosstodon.org">
     </share-on-mastodon>
-    <hr style="border-top: dotted 1px black;">
+    <br/><br/>
     <h3>or, How I found my Passion for Windows 8 Store App Development</h3>
 <p>Update: My first Windows Store app was published on March 27, 2013.</p>
 <p>I don't have any apps in the Windows 8 Store yet. For that matter, I don't have any apps in the Windows Phone store, or the Apple or Android stores either. I have many ideas for apps, and a number of them in the works for both Windows 8 and Windows Phone, but I have nothing real to show for it yet. Nothing to show for several years of attending sessions at conferences, user groups, and code camps on building these apps; for many hours of hacking on front-end interfaces and business logic. Don’t get me wrong, I've wanted to build these apps, but I didn't have that burning desire that I usually get when I am solving problems with software. You know that desire, the one that compels you to sit in front of a computer for hours at a time until you've completed a solution. I didn't have it.</p>
@@ -186,7 +186,7 @@
         author="@bsstahl@cognitiveinheritance.com"
         default_url="https://fosstodon.org">
     </share-on-mastodon>
-    <hr style="border-top: dotted 1px black;">
+    <br/><br/>
     <p>I previously posted the slides for my <strong>Building Enterprise Apps using Entity Framework 4</strong> talk <a href="../Posts/Desert-Code-Camp-Presentation.html">here</a>. I can now post the source code for the completed demo application.  That code, created for use in Visual Studio 2010 Ultimate, is available in zip format below.  This is the same code that was demonstrated at Desert Code Camp 2011.1 and SoCalCodeCamp 2011 as well as the New Mexico .NET User’s Group (NMUG).</p>
 <p><a href="https://docs.google.com/uc?id=0B6PPrBnxN6VtMGRhNzZhOGUtNGY5NC00M2IyLTgxYzMtOTVlNDU0MDQyNjc1&amp;export=download&amp;hl=en_US">EF4EnterpriseDemoCode.zip</a></p>
 
@@ -202,7 +202,7 @@
         author="@bsstahl@cognitiveinheritance.com"
         default_url="https://fosstodon.org">
     </share-on-mastodon>
-    <hr style="border-top: dotted 1px black;">
+    <br/><br/>
     <p>FxCop, the built-in code-analysis tool in Visual Studio, is the first thing I check when doing a code review.  If Code Analysis is enabled for a project, setup properly, and its rules have not been overridden, this tool will help maintain consistency in the code, even if that code is worked on by multiple developers.  FxCop also does a good job of identifying if some common mistakes have been made, such as not disposing of an IDisposable object, and can identify things that will help the compiler do its job better, such as ensuring that assemblies which expose public objects identify whether or not they are intended to be CLS compliant.</p>
 <p>In order to get these benefits, code analysis must be enabled for each project and a rule set must be selected.  Because adding code-analysis to existing assemblies can be a bit painful, it is recommended that you enable this analysis as soon as a project is created in Visual Studio.  To enable code analysis for an assembly, select the project properties, go to the Code Analysis tab, and check the “Enable Code Analysis on Build (defines CODE_ANALYSIS constant)” box.</p>
 <p><img src="../Images/image_2.png" alt="Visual Studio Dialog" /></p>
@@ -248,7 +248,7 @@
         author="@bsstahl@cognitiveinheritance.com"
         default_url="https://fosstodon.org">
     </share-on-mastodon>
-    <hr style="border-top: dotted 1px black;">
+    <br/><br/>
     <p>I recently stumbled across an interesting item in a back-issue of MSDN Magazine. The article, <a href="..//Files/MSDNMag-CLRInsideOut-200602.pdf">&quot;Improving Application Startup Time&quot; by Claudio Caldato</a>, appeared in the CLR Inside Out segment in February 2006. While discussing strong-named assemblies, Claudio recommended adding them to the GAC for performance.</p>
 <blockquote>
 <p>If an assembly is not installed in the Global Assembly Cache (GAC), you will pay the cost of hash verification of strong-named assemblies along with native code generation (NGEN) image validation if a native image for that assembly is available in the machine. In other words, if an assembly is strong named, the CLR will ensure the integrity of the assembly binary by verifying that the cryptographic hash of the assembly matches the one in the assembly manifest. But if the assembly is in the GAC, this verification can be skipped because the verification is performed as part of installation into the GAC and any update requires administrative permissions. So the CLR is basically assured that changes have not occurred.</p>
