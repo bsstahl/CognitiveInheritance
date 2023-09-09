@@ -65,6 +65,13 @@
                 <div>
     <h3>Back to Basics–the Double Data Type</h3>
     <h5>Posted by bsstahl on 2019-02-12 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'Back to Basics–the Double Data Type'"
+        share_description=""
+        hashtags="#type #csharp #clr #data structures"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>What is the result of converting a value that is close to, but not at, the maximum value of an Int64 from a double to a long (Int64)?  That is, what would be the result of an expression like:</p>
 <p><code>(long)((double)(Int64.MaxValue – 1))</code></p>
 <ol>
@@ -99,6 +106,13 @@
 </div><hr/><div>
     <h3>Intro to WebAssembly Using Blazor</h3>
     <h5>Posted by bsstahl on 2018-09-26 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'Intro to WebAssembly Using Blazor'"
+        share_description=""
+        hashtags="#apps #community #csharp #framework #html5 #introduction #microsoft #presentation #phoenix #speaking #user group #ux #wasm #webassembly #w3c"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>I will be speaking tonight, 9/26/2018 at the <a href="https://www.meetup.com/NWVDNUG/events/254835128/">Northwest Valley .NET User Group</a> and tomorrow, 9/27/2018 at the <a href="https://www.meetup.com/sevdnug/events/254838096/">Southeast Valley .NET User Group</a>. I will be speaking on the subject of WebAssembly. The talk will go into what WebAssembly programs look and act like, and how they run, then explore how we as .NET developers can write WebAssembly programs with Microsoft’s experimental platform, Blazor.</p>
 <blockquote>
 <p>Want to run your .NET Standard code directly in the browser on the client-side without the need for transpilers or browser plug-ins? Well, now you can with WebAssembly and Blazor.</p>
@@ -112,6 +126,13 @@
 </div><hr/><div>
     <h3>Is a Type an Implementation of an Interface?</h3>
     <h5>Posted by bsstahl on 2016-11-17 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'Is a Type an Implementation of an Interface?'"
+        share_description=""
+        hashtags="#assembly #api #class #code sample #coding-practices #community #csharp #development #extension method #framework #generics #interface #presentation #professional development #reflection #user group"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>One of the techniques I recommend highly in my <a href="../Posts/Simplify-Your-API.html">Simplify Your API</a> talk is the use of extension methods to hide the complexity of lower-level API functionality.  A good example of a place to use this methodology came-up last night in a great Reflection talk by Jeremy Clark (<a href="https://twitter.com/jeremybytes">Twitter</a>, <a href="https://jeremybytes.blogspot.com/">Blog</a>) at the <a href="http://www.nwvdnug.org">NorthWest Valley .NET User Group</a>.</p>
 <p><img src="../Images/Jeremy_2.jpg" alt="Jeremy" /></p>
 <p>Jeremy was demonstrating a method that would spin-through an assembly and load all classes within that assembly that implemented a particular interface.  The syntax to do the checks on each type were just a bit more obtuse than Jeremy would have liked them to be.  As we left that talk, I only half-jokingly told Jeremy that I was going to write him an extension method to make that activity simpler.  Being a man of my word, I present the code below to do just that.</p>
@@ -122,6 +143,13 @@
 </div><hr/><div>
     <h3>Code Coverage Teaches and Protects</h3>
     <h5>Posted by bsstahl on 2016-10-14 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'Code Coverage Teaches and Protects'"
+        share_description=""
+        hashtags="#abstraction #agile #assert #code analysis #code coverage #coding-practices #csharp #ioc #testing #unit testing #dotnet"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>I often hail code coverage as a great tool to help improve your code base.  Today, my use of Code Coverage taught me something about the new .NET Core tooling, and helped protect me from having to support useless code for the lifespan of my project.</p>
 <p>In the code below, I used a common dependency injection pattern. That is, an IServiceProvider object holding my dependencies is passed-in to my object and stored as a member variable.  When a dependency is needed, I retrieve that dependency from the service provider, and then take action on it.  Since there is no guarantee that the dependency I need will have been placed in the container, I use some common guard logic to protect my code.</p>
 <pre><code>templates = _serviceProvider.GetService&lt;IEnumerable&lt;Template&gt;&gt;();
@@ -146,6 +174,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div><hr/><div>
     <h3>No More Collection Objects</h3>
     <h5>Posted by bsstahl on 2015-10-27 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'No More Collection Objects'"
+        share_description=""
+        hashtags="#class #coding-practices #csharp #development #encapsulation #entity #generics #inheritance #list #visual studio #yagni"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>I don't create collection objects anymore.</p>
 <p>I know, I know. I was they guy always preaching that every entity that was being collected had to have its own collection object. It was the right thing at the time; if you needed to take an action on an enumeration or list of objects, those actions needed to be done within a strongly-typed collection object to maintain encapsulation. Even if all that was happening was that an inherited <em>List&lt;T&gt;</em> function was being called, that functionality needed to be called on the <em>TCollection</em> object because, if it wasn't, it was likely that the next time logic needed to be performed on the collection, there wouldn't be a place to put it. Collection logic would end up being spread-out around your code rather than encapsulated in the collection. It was also possible that the implementation might change and need to be updated everywhere, instead of in one place.</p>
 <p>Today however, that has all changed. Extension methods now allow us, at any time, to add functionality to <em>ICollection&lt;T&gt;</em>, <em>IList&lt;T&gt;</em>, <em>IEnumerable&lt;T&gt;</em> or any other interface or class. We can attach our list or enumeration based actions directly to the list or enumeration class, and do so at any time, since the methods appear the same to the developer as methods directly on the collection type. Thus, the &quot;no place to put it&quot; fear no longer exists. I've even started using this technique for my factory methods to make it clear that what I am creating is, in fact, an <em>IEnumerable&lt;T&gt;</em>, as in this example.</p>
@@ -163,6 +198,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div><hr/><div>
     <h3>New OSS Project</h3>
     <h5>Posted by bsstahl on 2014-07-11 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'New OSS Project'"
+        share_description=""
+        hashtags="#ai #code camp #community #conference #csharp #enterprise #mstest #nunit #open source #professional development #tdd #testing #unit testing"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>I recently started working on a set of open-source projects for Code Camps and other community conferences with my friend Rob Richardson <a href="https://twitter.com/rob_rich">(@rob_rich</a>). In addition to doing some good for the community, I expect these projects, which I will describe in more detail in upcoming posts, to allow me to experiment with several elements of software development that I have been looking forward to trying out. These include:</p>
 <ul>
 <li>Using Git as a source control repository</li>
@@ -181,6 +223,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div><hr/><div>
     <h3>Windows 8 Store Development for Enterprise Devs</h3>
     <h5>Posted by bsstahl on 2013-02-28 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'Windows 8 Store Development for Enterprise Devs'"
+        share_description=""
+        hashtags="#assembly #csharp #development #enterprise #generics #javascript #microsoft #vb.net #xaml #html5 #dotnet #windows"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <h3>or, How I found my Passion for Windows 8 Store App Development</h3>
 <p>Update: My first Windows Store app was published on March 27, 2013.</p>
 <p>I don't have any apps in the Windows 8 Store yet. For that matter, I don't have any apps in the Windows Phone store, or the Apple or Android stores either. I have many ideas for apps, and a number of them in the works for both Windows 8 and Windows Phone, but I have nothing real to show for it yet. Nothing to show for several years of attending sessions at conferences, user groups, and code camps on building these apps; for many hours of hacking on front-end interfaces and business logic. Don’t get me wrong, I've wanted to build these apps, but I didn't have that burning desire that I usually get when I am solving problems with software. You know that desire, the one that compels you to sit in front of a computer for hours at a time until you've completed a solution. I didn't have it.</p>
@@ -202,6 +251,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div><hr/><div>
     <h3>Code Sample for My TDD Kickstart Sessions</h3>
     <h5>Posted by bsstahl on 2012-02-13 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'Code Sample for My TDD Kickstart Sessions'"
+        share_description=""
+        hashtags="#abstraction #agile #assert #code camp #coding-practices #community #conference #csharp #development #di #event #framework #ioc #tdd #testing #unit testing #visual studio"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>The complete, working application for my <a href="../Posts/NET-TDD-Kickstart.html">.NET TDD Kickstart</a> sessions can be found <a href="../Files/TDDKickstart.zip">here</a>.</p>
 <p>Unzip the files into a solution folder and open the <strong>Demo.sln</strong> solution in a version of Visual Studio 2010 that has Unit Testing capability (Professional, Premium or Ultimate).  Immediately, you should be able to compile the whole solution, and successfully execute the tests in the <strong>Bss.QueueMonitor.Test</strong> and <strong>Bss.Timing.Test</strong> libraries.</p>
 <p>To get the tests in the other two test libraries (<strong>Bss.QueueMonitor.Data.EF.Test</strong> &amp; <strong>Bss.QueueMonitor.IntegrationTest</strong>) to pass, you will need to create the database used to store the monitored data in the data-tier and integration tests, and enable MSMQ on your system so that a queue to be monitored can be created for the Integration test.</p>
@@ -214,6 +270,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div><hr/><div>
     <h3>.NET TDD Kickstart</h3>
     <h5>Posted by bsstahl on 2012-01-26 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;<a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: '.NET TDD Kickstart'"
+        share_description=""
+        hashtags="#abstraction #agile #assert #code camp #coding-practices #community #conference #csharp #development #di #event #framework #ioc #tdd #testing #unit testing #visual studio"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>I head out to Fullerton tomorrow for the start of my .NET TDD Kickstart world tour. <img src="../Images/wlEmoticon-smile.png" alt="Smile" /></p>
 <blockquote>
 <p>In this session, the speaker and the audience will &quot;pair up&quot; for a coding session which will serve as an introduction to Test Driven Development in an Agile environment. We will use C#, Visual Studio and Rhino Mocks to unit test code to be built both with and without dependencies. We will also highlight some of the common issues encountered during TDD and discuss strategies for overcoming them.</p>
@@ -234,6 +297,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div><hr/><div>
     <h3>Demo Code for EF4Ent Sessions</h3>
     <h5>Posted by bsstahl on 2011-06-26 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'Demo Code for EF4Ent Sessions'"
+        share_description=""
+        hashtags="#abstraction #agile #assembly #code analysis #code camp #code contracts #code sample #coding-practices #conference #csharp #enterprise library #entity #entity framework #fxcop #interface #testing #unit testing #visual studio"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>I previously posted the slides for my <strong>Building Enterprise Apps using Entity Framework 4</strong> talk <a href="../Posts/Desert-Code-Camp-Presentation.html">here</a>. I can now post the source code for the completed demo application.  That code, created for use in Visual Studio 2010 Ultimate, is available in zip format below.  This is the same code that was demonstrated at Desert Code Camp 2011.1 and SoCalCodeCamp 2011 as well as the New Mexico .NET User’s Group (NMUG).</p>
 <p><a href="https://docs.google.com/uc?id=0B6PPrBnxN6VtMGRhNzZhOGUtNGY5NC00M2IyLTgxYzMtOTVlNDU0MDQyNjc1&amp;export=download&amp;hl=en_US">EF4EnterpriseDemoCode.zip</a></p>
 
@@ -242,6 +312,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div><hr/><div>
     <h3>Decorating Partial Class Members in C#</h3>
     <h5>Posted by bsstahl on 2011-03-08 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'Decorating Partial Class Members in C#'"
+        share_description=""
+        hashtags="#csharp #class #coding-practices #entity #entity framework #xml #serialization #dotnet"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>Anyone who uses code generation more than trivially in their .NET solutions knows how difficult it is to add metadata to a member of a generated class, even if that class is marked as partial.  Partial classes are terrific for adding members to generated classes, and even allow you to change metadata and other information about the class itself, such as by adding an interface that it implements.  You cannot however, modify an existing member of the class by marking it to not be serialized, or to make it a part of a WCF data contract. I believe, as more and more code is generated by .NET developers using Entity Framework, wsdl.exe and other proxy generation tools, or even T4 directly; we will see a greatly increased need for a workable solution to this problem.</p>
 <p>The most common work-around for this problem today is the use of “buddy classes” where a separate class is created to hold the metadata.  A good example of this type of solution can be found in <a href="http://www.asp.net/dynamicdata">ASP.NET Dynamic Data</a>.  However, as you might imagine, this type of implementation has some fairly severe drawbacks.  For one, it requires some sort of mechanism for unifying the functionality of the two classes. An example of this is the case where we have a property on an Entity Framework POCO that should not be serialized when we serialize the rest of the class.  We cannot serialize the POCO correctly unless we use a custom serializer that is aware of the metadata in the buddy class.  We have similar problems if we are trying to use a generated base class as the output of a WCF service.  If the [DataContract] attribute is not already on the generated code (which requires a reference to the System.Runtime.Serialization library) we will have to create a separate object that implements the DataContract to be exposed by the service.  In most cases, this object will be an almost exact duplicate of the state features of the original object, forcing the replication of some code, even if that code is just the properties of the object.</p>
 <p>There is a feature that has been proposed in the C# language for some time now that would allow this type of behavior within a single class.  This feature would use the keyword <em><strong>existing</strong></em> to allow the duplication of the definition of partial class members into non-code-generated files so that those members can be decorated with additional metadata without risk of being overwritten when the automatic code is regenerated, and without duplicating the functionality in the member.  Unfortunately, it appears that this feature is not going to make it into the next version of C# and is at risk of not being in the following version as well.  In an email exchange, Mads Torgersen, C# Program Manager at Microsoft, stated that</p>
@@ -264,6 +341,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div><hr/><div>
     <h3>Two Things I Learned on Pex4Fun.com Today</h3>
     <h5>Posted by bsstahl on 2010-11-12 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'Two Things I Learned on Pex4Fun.com Today'"
+        share_description=""
+        hashtags="#pex #code contracts #moles #unit testing #csharp #dotnet"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>Since I’m a fan of puzzles, I’ve been spending a bit of time on <a href="https://web.archive.org/web/20101112142013/http://www.pexforfun.com/">PexForFun.com</a> lately.  This site was put together by the Pex team (part of Microsoft Research) to show off the capabilities of some of the research group’s  latest creations; Pex, Moles, and Code Contracts.  I’ve been enjoying this site because it gives me the opportunity to solve some coding puzzles, while at the same time discovering things about these new tools.  Today alone, I discovered the following:</p>
 <h2>The order of Contract.Requires() in Code Contracts matters.</h2>
 <p>Though it doesn’t seem like it should matter (at least to me), the order that code contracts are specified does seem to matter at execution, at least in some circumstances, if runtime checking is enabled.  For example, in my <em>ChallengeAuction</em> code duel there is a practical limit to how many bids may be supplied since Pex has to test each of the data elements.  Defining this limit in as a Contract.Requires() element works well as long as that statement is placed before a statement testing the data elements, such as one verifying that the key for each bid is not an empty string.  Reversing the order of these contract statements causes the test to occur for each data element of the dictionary, and a “path bounds exceeded” error to be generated by Pex.</p>
@@ -283,6 +367,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div><hr/><div>
     <h3>Oracle String SQL Query using a DateTime from C#</h3>
     <h5>Posted by bsstahl on 2009-03-07 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'Oracle String SQL Query using a DateTime from C#'"
+        share_description=""
+        hashtags="#csharp #oracle #sql #datetime #dotnet"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>The following statement builds a C# string containing an Oracle SQL query that uses a DateTime specified in the .NET code.  It uses the Oracle TO_DATE function to convert the string date to an oracle date object and specifies the format of the string date for both the C# output and the Oracle input. Using this statement, there can never be a date format mismatch since the same format is specified at both ends.</p>
 <p>string sql = string.Format(&quot;select * from MyDB.MyTable t where t.MyDate &gt; <br />
      TO_DATE('{0:MM/dd/yyyy hh:mm}', 'MM/dd/yyyy HH24:mi')&quot;, DateTime.Now);</p>
@@ -293,6 +384,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div><hr/><div>
     <h3>Best of PDC Phoenix in Tweets</h3>
     <h5>Posted by bsstahl on 2008-12-14 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;<a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'Best of PDC Phoenix in Tweets'"
+        share_description=""
+        hashtags="#pdc #phoenix #development #csharp #event #social-media"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>Joe Guadagno has posted <a href="https://web.archive.org/web/*/http://weblogs.asp.net/jguadagno/archive/2008/12/11/the-best-of-pdc-in-phx.aspx">his summary of The Best of PDC in PHX</a>. This was a great event and I want to make sure those who put it together, spoke, and sponsored it know we are tremendously appreciative of their efforts.  This includes: <a href="https://www.josephguadagno.net/">Joseph Guadagno</a>, <a href="https://www.scottcate.com/">Scott Cate</a> and <a href="https://docs.microsoft.com/en-us/archive/blogs/bags/">Rob Bagby</a> as well as <a href="https://www.microsoft.com/">Microsoft</a>, <a href="https://www.rht.com/">Robert Half Technology</a>, <a href="https://www.teksystems.com/">TekSystems</a> and <a href="https://www.godaddy.com/">GoDaddy</a>.</p>
 <p>I think that the best summary I can give of my experience at this event is through the tweets I sent in real-time while there.  Below, are what I think are my tweets most representative of the experience.</p>
 <blockquote>
@@ -331,6 +429,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div><hr/><div>
     <h3>PDC 2008 Day 1</h3>
     <h5>Posted by bsstahl on 2008-10-29 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'PDC 2008 Day 1'"
+        share_description=""
+        hashtags="#pdc #azure #cloud #csharp #dynamic"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <h3>Windows Azure</h3>
 <p>As you've probably already heard, the big announcement coming out of PDC 2008 Day 1 was &quot;Windows Azure&quot;, Microsoft's Cloud Computing Operating System. This is a very interesting story since it has implications, in theory at least, for developers working in any size organization, who need to provide public services that could potentially scale globally or massively. I won't spend time on the specifics right now since there are many who are more knowledgeable than me who have already written about it.  I do however, have a few open questions on the topic, which I hope to have answered either in sessions today, or in the hands-on-labs.  These include the pricing model (i.e. whether it will really be affordable for the &quot;garage developer&quot;), as well as what actually constitutes an Azure &quot;web role&quot;. If, as I suspect, a web role can be a SOAP service or an ASP.NET web page, then the model makes a lot of sense to me and I will definitely be spending some time becoming familiar with the features and capabilities of this tool.  I have sketched-out a simple application model that I hope to implement, either in the hands-on-labs or in the online community preview, sometime today.  Since I have not yet been granted access to the public CTP, I suspect this will have to occur in the hands-on-labs.</p>
 <h3>The Future of .NET Development</h3>
@@ -346,6 +451,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div><hr/><div>
     <h3>Desert Code Camp IV - Another Great Day</h3>
     <h5>Posted by bsstahl on 2008-06-04 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'Desert Code Camp IV - Another Great Day'"
+        share_description=""
+        hashtags="#code camp #agile #scrum #csharp #clr"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>I would once again like to thank the organizers, presenters and sponsors of <a href="https://www.desertcodecamp.com/">Desert Code Camp</a> for giving of their time, effort and funding to support such an outstanding community resource.  Desert Code Camp IV, held yesterday, May 31st at the <a href="https://www.uat.edu/">University of Advancing Technology</a> in Tempe, AZ featured well over 40 sessions on topics such as Agile &amp; TDD, ASP.NET, Flash, Silverlight, iPhone SDK, XAML, Apache, Ruby and much more.  I was fortunate enough to attend 4 of these sessions, all of which were well worth my time in attending.</p>
 <p>The first session I attended was &quot;Scrum 101&quot; presented by Dan Weinmann (who I think works for Desert Code Camp sponsor <a href="https://www.neudesic.com/">Neudesic</a> but I am not sure because it is not listed in Dan's extremely minimalist bio on the Code Camp website). Dan spent the first part of the session explaining general Agile concepts which is appropriate for a &quot;101&quot; class, and his explanation was quite solid.  What I was looking for however came in the remainder of the discussion where Dan gave specific examples of how his organization has utilized Scrum as an effective project management methodology.  I found especially interesting the parts where Dan explained how they use Scrum &quot;under the covers&quot; when working with a client who, for whatever reason, will not use Scrum.  I found this similar in a number of ways to how my team currently functions and came-away with several ideas of how we might be able to improve on our current processes.</p>
 <p>The next session I attended was &quot;Silverlight Zero to Hero&quot; given by Simon Allardice of <a href="https://www.interfacett.com/">Interface Technical Training</a> and gets my vote for the mythical &quot;session of the day&quot; award. This session gets my vote not for the abundant humor, which had the room in stitches and led me to refer to Simon on Twitter as &quot;..the Eddie Izzard of the tech world, without the dress...&quot;.  No, this was the best session I attended because of the unique perspective he gave to the topic.  That is, he didn't waste our time by giving us the same overview of Silverlight that we could get in any 10k foot video from the Mix conference.  Instead, we were taken step-by-step through Simon's unique metaphors detailing how we can use the generalized feature-set of Silverlight as well as how it could be used to create Rich Internet Applications that are truly effective in communicating  with the user.  The next time I am looking to take a class, I hope Simon is teaching it. In addition, if anyone is looking to become an instructor, I hope they sit-in on some of Simon's sessions which couldn't help but improve anyone's teaching technique.</p>
@@ -358,6 +470,13 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div><hr/><div>
     <h3>Testing Properties with Inconsistent Accessibility</h3>
     <h5>Posted by bsstahl on 2007-06-26 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'Testing Properties with Inconsistent Accessibility'"
+        share_description=""
+        hashtags="#tdd #unit testing #properties #csharp"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>I ran into an interesting problem today while attempting to test a property member which had a <strong>public</strong> getter, but an <strong>internal</strong> setter (a .NET 2.0 construction in C#).</p>
 <p>Consider the following class:</p>
 <p><img src="..//Images/TestClass.png" alt="Class Definition" /></p>
@@ -400,6 +519,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script defer type="module" src="./Modules/share-on-mastodon.js"></script>
 
 </body>
 

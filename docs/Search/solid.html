@@ -65,6 +65,13 @@
                 <div>
     <h3>Testing the Untestable with Microsoft Fakes</h3>
     <h5>Posted by bsstahl on 2017-03-20 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'Testing the Untestable with Microsoft Fakes'"
+        share_description=""
+        hashtags="#abstraction #assembly #code sample #framework #fakes #interface #moles #mstest #solid #tdd #testing #unit testing #visual studio"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>It is fairly easy these days to test code in isolation if its dependencies are abstracted by a reusable interface. But what do we do if the dependency cannot easily be referenced via such an interface?  Enter <strong>Shims</strong>, from the <strong>Microsoft Fakes Framework</strong>(formerly Moles).  Shims allow us to isolate our testing from any dependent methods, including methods in assemblies we do not control, even if those methods are not exposed through a reusable interface. To see how easy it is, follow along with me through this example.</p>
 <p>In this <a href="https://github.com/bsstahl/VS2017Launch">sample code on GitHub</a>, we are building a repository for an application that currently gets its data from a file exported from a system that tracks scheduled meetings.  It is very likely that the system will, in the future, expose a more modern interface for that data so we have isolated the data storage using a simple Repository interface that has one method.  This method, called <strong>GetMeetings</strong> returns a collection of Meeting entities that start during the specified date range.  The method will return an empty collection if no data is found matching the specified criteria, and could throw either of 2 custom errors, a <strong>PermissionsException</strong>when the user does not have the proper permissions to access the information, and a <strong>DataUnavailableException</strong> for when the data source is unavailable for any other reason, such as a network outage or if the data file cannot be located.</p>
 <p>It is important to point out why a custom exception should be thrown when the data file is not found, rather than allowing the <strong>FileNotFoundException</strong> to bubble-up.  If we allow the implementation-specific exception to bubble, we have exposed an implementation detail to the caller. That is, the calling code is now aware of the fact that this is a file system implementation.  If code is written in a client that traps for <strong>FileNotFoundException</strong>, then the repository implementation is swapped-out for a SQL server implementation, the client code will have to change to handle the new types of errors that could be thrown by that implementation.  This violates the Dependency Inversion principle, the “D” from the <strong>SOLID</strong> principles.  By exposing only a custom exception, we are hiding those implementation details from the caller.</p>
@@ -108,6 +115,13 @@
 </div><hr/><div>
     <h3>“One Reason to Change” Means the Code</h3>
     <h5>Posted by bsstahl on 2015-07-06 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: '“One Reason to Change” Means the Code'"
+        share_description=""
+        hashtags="#class #coding-practices #development #solid #oop"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>There was some confusion last week at the SoCalCodeCamp about what the phrase “One Reason to Change” actually means.  As you probably know, the Single Responsibility Principle states that every class should have one and only one responsibility within the system. A common check for adherence to this principal is that the object has only one reason to change. However, it is important to realize that this is referring to the code (the class), not the state of the object (the instance).  The state of the object may have many reasons to change, however, we as developers should have only 1 reason to change the code for our objects.  For example, if the object is in the business-rules layer, we should only have to change the code if the business rules change.  Likewise, if the object is in the data tier, it should only need code changes if the structure of the data changes.</p>
 
     <h5>Tags: <a title="Tag: class" class="small" href="../Search/class.html">class</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: development" class="small" href="../Search/development.html">development</a>&nbsp;<a title="Tag: solid" class="small" href="../Search/solid.html">solid</a>&nbsp;<a title="Tag: oop" class="small" href="../Search/oop.html">oop</a>&nbsp;</h5>
@@ -135,6 +149,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script defer type="module" src="./Modules/share-on-mastodon.js"></script>
 
 </body>
 

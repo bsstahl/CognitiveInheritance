@@ -65,6 +65,13 @@
                 <div>
     <h3>Identifying the Extraneous Publishing AntiPattern</h3>
     <h5>Posted by bsstahl on 2022-08-08 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'Identifying the Extraneous Publishing AntiPattern'"
+        share_description=""
+        hashtags="#agile #antipattern #apache-kafka #coding-practices #coupling #data-structures #database #development #ksql #microservices"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>What do you do when a dependency of one of your components needs data, ostensibly from your component, that your component doesn't actually need itself?</p>
 <p>Let's think about an example. Suppose our problem domain (the big black box in the drawings below) uses some data from 3 different data sources (labeled Source A, B &amp; C in the drawings). There is also a downstream dependency that needs data from the problem domain, as well as from sources B &amp; C. Some of the data required by the downstream dependency are not needed by, or owned by, the problem domain.</p>
 <p>There are 2 common implementations discussed now, and 1 slightly less obvious one discussed later in this article. We could:</p>
@@ -146,6 +153,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script defer type="module" src="./Modules/share-on-mastodon.js"></script>
 
 </body>
 

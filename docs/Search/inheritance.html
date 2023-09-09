@@ -65,6 +65,13 @@
                 <div>
     <h3>No More Collection Objects</h3>
     <h5>Posted by bsstahl on 2015-10-27 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'No More Collection Objects'"
+        share_description=""
+        hashtags="#class #coding-practices #csharp #development #encapsulation #entity #generics #inheritance #list #visual studio #yagni"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>I don't create collection objects anymore.</p>
 <p>I know, I know. I was they guy always preaching that every entity that was being collected had to have its own collection object. It was the right thing at the time; if you needed to take an action on an enumeration or list of objects, those actions needed to be done within a strongly-typed collection object to maintain encapsulation. Even if all that was happening was that an inherited <em>List&lt;T&gt;</em> function was being called, that functionality needed to be called on the <em>TCollection</em> object because, if it wasn't, it was likely that the next time logic needed to be performed on the collection, there wouldn't be a place to put it. Collection logic would end up being spread-out around your code rather than encapsulated in the collection. It was also possible that the implementation might change and need to be updated everywhere, instead of in one place.</p>
 <p>Today however, that has all changed. Extension methods now allow us, at any time, to add functionality to <em>ICollection&lt;T&gt;</em>, <em>IList&lt;T&gt;</em>, <em>IEnumerable&lt;T&gt;</em> or any other interface or class. We can attach our list or enumeration based actions directly to the list or enumeration class, and do so at any time, since the methods appear the same to the developer as methods directly on the collection type. Thus, the &quot;no place to put it&quot; fear no longer exists. I've even started using this technique for my factory methods to make it clear that what I am creating is, in fact, an <em>IEnumerable&lt;T&gt;</em>, as in this example.</p>
@@ -82,6 +89,13 @@
 </div><hr/><div>
     <h3>Entity Framework Inheritance</h3>
     <h5>Posted by bsstahl on 2011-01-20 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'Entity Framework Inheritance'"
+        share_description=""
+        hashtags="#entity framework #inheritance"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p><em>Alex D. James</em> posted a great little primer on Entity Framework inheritance strategies and when to use each.</p>
 <p>His post can be found <a href="https://web.archive.org/web/20110917021606/http://blogs.msdn.com/b/alexj/archive/2009/04/15/tip-12-choosing-an-inheritance-strategy.aspx?CommentPosted=true">here</a>.</p>
 
@@ -90,6 +104,13 @@
 </div><hr/><div>
     <h3>Multiple Inheritance - Its Time Should Come Again Soon</h3>
     <h5>Posted by bsstahl on 2008-06-16 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'Multiple Inheritance - Its Time Should Come Again Soon'"
+        share_description=""
+        hashtags="#clr #inheritance #interface #dotnet"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>Over the last few years I've heard a number of public statements from developers about the lack of need for multiple implementation inheritance in .NET and other modern development platforms. Their logic often seems to imply that if you need multiple implementation inheritance, you are not designing your applications properly.  While admittedly, there are usually work-arounds (such as interface inheritance) that allow us to simulate this feature, they usually require that portions of our code are duplicated, violating the Agile requirement &quot;Don't Repeat Yourself&quot;.</p>
 <p>One commonly seen example of where multiple implementation inheritance would be very valuable is in multi-tiered, domain specific applications, especially in the data-tier where we may wish to have more-than-one implementation to support multiple data-stores.  Think about the typical data-tier scenario. In this scenario we have a set of domain objects, based on an inherited set of entities with common properties and methods that represent a physical object in the problem domain. These objects also have a commonality in that they are implementations of an object-type common to that data store and may have properties and methods relating specifically to the storage of data.  So, an object whose responsibility it is to persist an Employee entity to a SQL Server data store, could inherit from both our domain Employee entity, and our SQL Data Storage object.  If we also had an implementation that stored data in XML format, we might have an object that inherits both from the same Employee entity as well as from the XMLNode object. If multiple implementation inheritance were supported in our framework, we could avoid the common work-around of repeating our entity implementation by using an interface to simulate that inheritance, or by simply repeating our data persistence logic in each object.</p>
 <p>I certainly understand the need to ship a product.  Since I am also well aware of the added complexity that multiple implementation inheritance creates in compilers and frameworks, it is easy for me to imagine why this feature did not make it into either of the first two major revs of Microsoft's Common Language Runtime.  It is my opinion however that, with the third major release of the CLR forthcoming (Rev 3s being where Microsoft traditionally &quot;nails it&quot;) they should strongly consider adding support for multiple implementation inheritance.</p>
@@ -119,6 +140,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script defer type="module" src="./Modules/share-on-mastodon.js"></script>
 
 </body>
 

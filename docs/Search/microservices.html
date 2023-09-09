@@ -65,6 +65,13 @@
                 <div>
     <h3>Microservices&colon; Size Doesn&apos;t Matter, Reliability Does</h3>
     <h5>Posted by bsstahl on 2023-02-20 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'Microservices&colon; Size Doesn&apos;t Matter, Reliability Does'"
+        share_description="The number and size of microservices is irrelevant as long as they are reliable"
+        hashtags="#architecture #coding-practices #event-driven #microservices #reliability #soa"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>There are conflicting opinions among architects about how many microservices a distributed system should have, and the size of those services. Some may say that a particular design has too many microservices, and that it should be consolidated into fewer, larger services to reduce deployment and operational complexity. Others may say that the same design doesn't have enough microservices, and that it should be broken-down into smaller, more granular services to reduce code complexity and improve team agility. Aside from the always true and rarely helpful &quot;it depends...&quot;, is there good guidance on the subject?</p>
 <p>The truth is, the number and size of microservices is not a measure of quality or performance unto itself, it is a design decision based on one primary characteristic, <strong>Reliability</strong>. As such, there is a simple rule guiding the creation of services, but it isn't based on the size or quantity of services. The rule is based entirely on how much work a service does.</p>
 <p>After security, reliability is the most important attribute of any system, because it affects the satisfaction of both the users and developers, as well as the productivity and agility of the development and support teams. A reliable system has the following characteristics:</p>
@@ -88,6 +95,13 @@
 </div><hr/><div>
     <h3>Microservices - Not Just About Scalability</h3>
     <h5>Posted by bsstahl on 2023-01-30 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'Microservices - Not Just About Scalability'"
+        share_description="Scalability is only one of the many benefits provided by event-driven microservice architectures"
+        hashtags="#architecture #coding-practices #event-driven #microservices #reliability #soa"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p><strong>Scalability</strong> is an important feature of microservices and event-driven architectures, however it is only one of the many benefits these types of architectures provide. Event-driven designs create systems with high availability and fault tolerance, as well as improvements for the development teams such as flexibility in technology choices and the ability to subdivide tasks better. These features can help make systems more robust and reliable, and have a great impact on development team satisfaction. It is important to consider these types of architectures not just for systems that need to scale to a high degree, but for any system where reliability or complexity are a concern.</p>
 <p>The reliability of microservices come from the fact that they break-down monolithic applications into smaller, independently deployable services. When implemented properly this approach allows for the isolation of failures, where the impact of a failure in one service can be limited to that service and its consumers, rather than cascading throughout the entire system. Additionally, microservice architectures enable much easier rollbacks, where if a new service version has a bug, it can be rolled back to a previous version without affecting other services. Event-driven approaches also decouple services by communicating through events rather than direct calls, making it easier to change or replace them without affecting other services. Perhaps most importantly, microservice architectures help reliability by avoiding dual-writes. Ensuring that our services make at most one state change per execution context allows us to avoid the very painful inconsistencies that can occur when data is written to multiple locations simultaneously and these updates are only partially successful.</p>
 <p>When asynchronous eventing is used rather than request-response messages, these systems are further decoupled in time, improving fault-tolerance and allowing the systems to self-heal from failures in downstream dependencies. Microservices also enable fault-tolerance in our services by making it possible for some of our services to be idempotent or even fully stateless. Idempotent services can be called repeatedly without additional side-effects, making it easy to recover from failures that occur during our processes.</p>
@@ -100,6 +114,13 @@
 </div><hr/><div>
     <h3>Critical Questions to Ask Your Team About Microservices</h3>
     <h5>Posted by bsstahl on 2023-01-23 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'Critical Questions to Ask Your Team About Microservices'"
+        share_description="A series of conversations that development teams should have around building event driven or microservice architectures"
+        hashtags="#agile #antipattern #apache-kafka #api #apps #architecture #aspdotnet #ci_cd #coding-practices #coupling #event-driven #microservices #soa"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>Over the last 6 weeks we have discussed the creation, maintenance and operations of microservices and event-driven systems. We explored different conversations that development teams should have prior to working with these types of architectures. Asking the questions we outlined, and answering as many of them as are appropriate, will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way. These conversations are known as &quot;<strong>The Critical C's of Microservices</strong>&quot;, and each is detailed individually in its own article.</p>
 <p>The &quot;Critical C's&quot; are: <a href="../Posts/critical-cs-of-microservices-1of6-context.html">Context</a>, <a href="../Posts/critical-cs-of-microservices-2of6-consistency.html">Consistency</a>, <a href="../Posts/critical-cs-of-microservices-3of6-contract.html">Contract</a>, <a href="../Posts/critical-cs-of-microservices-4of6-chaos.html">Chaos</a>, <a href="../Posts/critical-cs-of-microservices-5of6-competencies.html">Competencies</a> and <a href="../Posts/critical-cs-of-microservices-6of6-coalescence.html">Coalescence</a>. For easy reference, I have aggregated all of the key elements of each conversation in this article. For details about <strong>why</strong> each is important, please consult the article specific to that topic.</p>
 <p>There is also a  <a href="..//CriticalCs/index.html">Critical C's of Microservices</a> website that includes the same information as in these articles. This site will be kept up-to-date as the guidance evolves.</p>
@@ -194,6 +215,13 @@
 </div><hr/><div>
     <h3>The Critical C's of Microservices - Coalescence</h3>
     <h5>Posted by bsstahl on 2023-01-16 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'The Critical C's of Microservices - Coalescence'"
+        share_description="A series of conversations that development teams should have around building event driven or microservice architectures"
+        hashtags="#agile #antipattern #apache-kafka #api #apps #architecture #aspdotnet #ci_cd #coding-practices #coupling #event-driven #microservices #soa"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>&quot;<strong>The Critical C's of Microservices</strong>&quot; are a series of conversations that development teams should have around building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way.</p>
 <p>The &quot;Critical C's&quot; are: <strong>Context</strong>, <strong>Consistency</strong>, <strong>Contract</strong>, <strong>Chaos</strong>, <strong>Competencies</strong> and <strong>Coalescence</strong>. Each of these topics has been covered in detail in this series of 6 articles. The first article of the 6 was on the subject of <a href="../Posts/critical-cs-of-microservices-1of6-context.html">Context</a>. This is the final article in the series, and covers the topic of <strong>Coalescence</strong>.</p>
 <h4>Coalescence</h4>
@@ -238,6 +266,13 @@
 </div><hr/><div>
     <h3>The Critical C's of Microservices - Competencies</h3>
     <h5>Posted by bsstahl on 2023-01-09 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'The Critical C's of Microservices - Competencies'"
+        share_description="A series of conversations that development teams should have around building event driven or microservice architectures"
+        hashtags="#agile #antipattern #apache-kafka #api #apps #architecture #aspdotnet #ci_cd #coding-practices #coupling #event-driven #microservices #soa"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>&quot;<strong>The Critical C's of Microservices</strong>&quot; are a series of conversations that development teams should have around building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way.</p>
 <p>The &quot;Critical C's&quot; are: <strong>Context</strong>, <strong>Consistency</strong>, <strong>Contract</strong>, <strong>Chaos</strong>, <strong>Competencies</strong> and <strong>Coalescence</strong>. Each of these topics will be covered in detail in this series of articles. The first article of the 6 was on the subject of <a href="../Posts/critical-cs-of-microservices-1of6-context.html">Context</a>. This is article 5 of the series, and covers the topic of <strong>Competencies</strong>.</p>
 <h4>Competencies</h4>
@@ -264,6 +299,13 @@
 </div><hr/><div>
     <h3>The Critical C's of Microservices - Chaos</h3>
     <h5>Posted by bsstahl on 2023-01-02 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'The Critical C's of Microservices - Chaos'"
+        share_description="A series of conversations that development teams should have around building event driven or microservice architectures"
+        hashtags="#agile #antipattern #apache-kafka #api #apps #architecture #aspdotnet #ci_cd #coding-practices #coupling #event-driven #microservices #soa"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>&quot;<strong>The Critical C's of Microservices</strong>&quot; are a series of conversations that development teams should have around building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way.</p>
 <p>The &quot;Critical C's&quot; are: <strong>Context</strong>, <strong>Consistency</strong>, <strong>Contract</strong>, <strong>Chaos</strong>, <strong>Competencies</strong> and <strong>Coalescence</strong>. Each of these topics will be covered in detail in this series of articles. The first article of the 6 was on the subject of <a href="../Posts/critical-cs-of-microservices-1of6-context.html">Context</a>. This is article 4 of the series, and covers the topic of <strong>Chaos</strong>.</p>
 <h4>Chaos</h4>
@@ -296,6 +338,13 @@
 </div><hr/><div>
     <h3>The Critical C's of Microservices - Contract</h3>
     <h5>Posted by bsstahl on 2022-12-26 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'The Critical C's of Microservices - Contract'"
+        share_description="A series of conversations that development teams should have around building event driven or microservice architectures"
+        hashtags="#agile #antipattern #apache-kafka #api #apps #architecture #aspdotnet #ci_cd #coding-practices #coupling #event-driven #microservices #soa"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>&quot;<strong>The Critical C's of Microservices</strong>&quot; are a series of conversations that development teams should have around building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way.</p>
 <p>The &quot;Critical C's&quot; are: <strong>Context</strong>, <strong>Consistency</strong>, <strong>Contract</strong>, <strong>Chaos</strong>, <strong>Competencies</strong> and <strong>Coalescence</strong>. Each of these topics will be covered in detail in this series of articles. The first article of the 6 was on the subject of <a href="../Posts/critical-cs-of-microservices-1of6-context.html">Context</a>. This is article 3 of the series, and covers the topic of <strong>Contract</strong>.</p>
 <h4>Contract</h4>
@@ -323,6 +372,13 @@
 </div><hr/><div>
     <h3>The Critical C's of Microservices - Consistency</h3>
     <h5>Posted by bsstahl on 2022-12-19 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'The Critical C's of Microservices - Consistency'"
+        share_description="A series of conversations that development teams should have around building event driven or microservice architectures"
+        hashtags="#agile #antipattern #apache-kafka #api #apps #architecture #aspdotnet #ci_cd #coding-practices #coupling #event-driven #microservices #soa"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>&quot;<strong>The Critical C's of Microservices</strong>&quot; are a series of conversations that development teams should have around building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way.</p>
 <p>The &quot;Critical C's&quot; are: <strong>Context</strong>, <strong>Consistency</strong>, <strong>Contract</strong>, <strong>Chaos</strong>, <strong>Competencies</strong> and <strong>Coalescence</strong>. Each of these topics will be covered in detail in this series of articles. Article 1 of the 6 was on the subject of <a href="../Posts/critical-cs-of-microservices-1of6-context.html">Context</a>. This is article 2 of the series, and covers the topic of <strong>Consistency</strong>.</p>
 <h4>Consistency</h4>
@@ -359,6 +415,13 @@
 </div><hr/><div>
     <h3>The Critical C's of Microservices - Context</h3>
     <h5>Posted by bsstahl on 2022-12-12 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'The Critical C's of Microservices - Context'"
+        share_description="A series of conversations that development teams should have around building event driven or microservice architectures"
+        hashtags="#agile #antipattern #apache-kafka #api #apps #architecture #aspdotnet #ci_cd #coding-practices #coupling #event-driven #microservices #soa"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>&quot;<strong>The Critical C's of Microservices</strong>&quot; are a series of conversations that development teams should have around building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way.</p>
 <p>The &quot;Critical C's&quot; are: <strong>Context</strong>, <strong>Consistency</strong>, <strong>Contract</strong>, <strong>Chaos</strong>, <strong>Competencies</strong> and <strong>Coalescence</strong>. Each of these topics will be covered in detail in this series of articles, starting with <strong>Context</strong>.</p>
 <p>Update: Part 2 of this series, <a href="../Posts/critical-cs-of-microservices-2of6-consistency.html">Consistency</a> is now available.</p>
@@ -403,6 +466,13 @@
 </div><hr/><div>
     <h3>Identifying the Extraneous Publishing AntiPattern</h3>
     <h5>Posted by bsstahl on 2022-08-08 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'Identifying the Extraneous Publishing AntiPattern'"
+        share_description=""
+        hashtags="#agile #antipattern #apache-kafka #coding-practices #coupling #data-structures #database #development #ksql #microservices"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>What do you do when a dependency of one of your components needs data, ostensibly from your component, that your component doesn't actually need itself?</p>
 <p>Let's think about an example. Suppose our problem domain (the big black box in the drawings below) uses some data from 3 different data sources (labeled Source A, B &amp; C in the drawings). There is also a downstream dependency that needs data from the problem domain, as well as from sources B &amp; C. Some of the data required by the downstream dependency are not needed by, or owned by, the problem domain.</p>
 <p>There are 2 common implementations discussed now, and 1 slightly less obvious one discussed later in this article. We could:</p>
@@ -464,6 +534,13 @@
 </div><hr/><div>
     <h3>The Value of Flexibility</h3>
     <h5>Posted by bsstahl on 2019-02-14 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'The Value of Flexibility'"
+        share_description=""
+        hashtags="#abstraction #agile #coding-practices #microservices #optimization #pattern #principle #flexibility #yagni #event-driven"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>Have you ever experienced that feeling you get when you need to extend an existing system and there is an extension point that is exactly what you need to build on?</p>
 <p>For example, suppose I get a request to extend a system so that an additional action is taken whenever a new user signs-up.  The system already has an event message that is published whenever a new user signs-up that contains all of the information I need for the new functionality.  All I have to do is subscribe a new microservice to this event message, and have that service take the new action whenever it receives a message. Boom! Done.</p>
 <p>Now think about the converse. The many situations we’ve all experienced where there is no extension point. Or maybe there is an extension mechanism in place but it isn’t quite right; perhaps an event that doesn’t fire on exactly the situation you need, or doesn’t contain the data you require for your use case and you have to build an entirely new data support mechanism to get access to the bits you need.</p>
@@ -491,6 +568,13 @@
 </div><hr/><div>
     <h3>Microservices Presentation</h3>
     <h5>Posted by bsstahl on 2017-05-06 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'Microservices Presentation'"
+        share_description=""
+        hashtags="#coding-practices #community #conference #development #presentation #services #soa #microservices"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
     <p>The slide deck for my presentation “Examples of Microservice Architectures” can be found <a href="https://1drv.ms/p/s!AswbHpz53UVdmb54V_pOCZHH6haGrg">here</a>.</p>
 <blockquote>
 <p>There isn't one clear answer to the question &quot;what does a micro-service architecture look like?&quot; so it can be very enlightening to see some existing implementations. In this presentation, we will look at 2 different applications that would not traditionally be thought of as candidates for a service-oriented approach. We'll look at how they were implemented and what benefits the micro-services architecture brought to the table for each application.</p>
@@ -521,6 +605,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script defer type="module" src="./Modules/share-on-mastodon.js"></script>
 
 </body>
 
