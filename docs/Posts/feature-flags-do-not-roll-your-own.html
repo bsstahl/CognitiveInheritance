@@ -60,9 +60,23 @@
 
         <div class="row">
             <div class="col-md-8">
-              <h1>Feature Flags&colon; Don&apos;t Roll Your Own</h1>
-              <h5>Posted by bsstahl on 2023-08-14 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-              <p>In my <a href="../Posts/consider-quality-before-cost.html">previous post</a>, I discussed situations where we tend to overvalue visible costs and undervalue more hidden costs. One example of this dynamic is the tendency to want to roll-your-own feature-flagging system.</p>
+                <table>
+                    <tr>
+                        <td><h3>Feature Flags&colon; Don&apos;t Roll Your Own</h3></td>
+                        <td align="right" rowspan="2"><share-on-mastodon 
+                            share_title="Check out this post on Cognitive Inheritance: 'Feature Flags&colon; Don&apos;t Roll Your Own'"
+                            share_description="&quot;Rolling your own feature flags may seem cost-effective, but it brings hidden pitfalls that can undermine software quality, performance, security, and maintainability. Instead, use a feature flag management platform to handle complexities and ensure efficient implementation.&quot;"
+                            hashtags="#architecture #coding-practices"
+                            author="@bsstahl@cognitiveinheritance.com"
+                            default_url="https://fosstodon.org">
+                        </share-on-mastodon></td>
+                    </tr>
+                    <tr>
+                        <td><h5>Posted by bsstahl on 2023-08-14 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5></td>
+                    </tr>
+                </table>
+                <br/>
+                <p>In my <a href="../Posts/consider-quality-before-cost.html">previous post</a>, I discussed situations where we tend to overvalue visible costs and undervalue more hidden costs. One example of this dynamic is the tendency to want to roll-your-own feature-flagging system.</p>
 <p>Feature flags are a powerful tool for controlling the availability and behavior of features in your software. They allow you to turn features on or off at runtime, without deploying new code, and target specific segments of users with different variations of your features. This enables you to experiment, test, and release features faster and safer than ever before.</p>
 <p>But feature flags are not something you should implement yourself. Rolling your own feature flags may seem like a simple and cost-effective solution, but it comes with many hidden pitfalls and risks that can undermine your software quality, performance, security, and maintainability. Ultimately, rolling your own feature flag system may end up costing you much more than using an existing product.</p>
 <p>We should always have a strong bias against building anything that falls outside of our team's <a href="../Posts/critical-cs-of-microservices-5of6-competencies.html">core competencies</a>, but feature flags in particular have their own special set of concerns, especially since, on the surface, it seems like such a simple problem.</p>
@@ -137,8 +151,8 @@
 <hr />
 <p>Disclaimer: My teams use <em>LaunchDarkly</em> for feature-flagging but I am not affiliated with that product or company in any way. I am also not associated with any similar product or company that makes such a product and have not received, nor will I receive, any compensation of any type, either direct or indirect, for this article.</p>
 
-              <h5>Tags: <a title="Tag: architecture" class="small" href="../Search/architecture.html">architecture</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;</h5>
-              <div class="share"><a href="../Permalinks/c41a49df-5394-44ff-93a9-62f8c87e89b4.html" rel="bookmark">Permalink</a></div>
+                <h5>Tags: <a title="Tag: architecture" class="small" href="../Search/architecture.html">architecture</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;</h5>
+                <div class="share"><a href="../Permalinks/c41a49df-5394-44ff-93a9-62f8c87e89b4.html" rel="bookmark">Permalink</a></div>
             </div>
             <div class="col-md-4">
                 <div class="widgetzone"><div class="widget textbox"><h4>About the Author</h4><div class="content"><p><img style="float: left; padding: 0px 3px 0px 0px;" src="../Pics/bsstahl_left.gif" alt="Barry S. Stahl" width="95" /> <strong>Barry S. Stahl</strong> (he/him/his) - Barry is a .NET Software Engineer who has been creating business solutions for enterprise customers for more than 35 years. Barry is also an Election Integrity Activist, baseball and hockey fan, husband of one genius and father of another, and a 40 year resident of Phoenix Arizona USA. When Barry is not traveling around the world to speak at Conferences, Code Camps and User Groups or to participate in GiveCamp events, he spends his days as a Solution Architect for <a href="https://grnh.se/ba048c6d1">Carvana</a> in Tempe AZ and his nights thinking about the next <a href="https://www.azgivecamp.org">AZGiveCamp</a> event where software creators come together to build websites and apps for some great non-profit organizations.</p>

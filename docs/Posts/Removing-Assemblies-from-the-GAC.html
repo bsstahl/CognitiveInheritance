@@ -60,9 +60,23 @@
 
         <div class="row">
             <div class="col-md-8">
-              <h1>Removing Assemblies from the GAC</h1>
-              <h5>Posted by bsstahl on 2007-07-01 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-              <p>I recently stumbled across an interesting item in a back-issue of MSDN Magazine. The article, <a href="../Files/MSDNMag-CLRInsideOut-200602.pdf">&quot;Improving Application Startup Time&quot; by Claudio Caldato</a>, appeared in the CLR Inside Out segment in February 2006. While discussing strong-named assemblies, Claudio recommended adding them to the GAC for performance.</p>
+                <table>
+                    <tr>
+                        <td><h3>Removing Assemblies from the GAC</h3></td>
+                        <td align="right" rowspan="2"><share-on-mastodon 
+                            share_title="Check out this post on Cognitive Inheritance: 'Removing Assemblies from the GAC'"
+                            share_description="&quot;&quot;"
+                            hashtags="#clr #gac #assembly #strong name"
+                            author="@bsstahl@cognitiveinheritance.com"
+                            default_url="https://fosstodon.org">
+                        </share-on-mastodon></td>
+                    </tr>
+                    <tr>
+                        <td><h5>Posted by bsstahl on 2007-07-01 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5></td>
+                    </tr>
+                </table>
+                <br/>
+                <p>I recently stumbled across an interesting item in a back-issue of MSDN Magazine. The article, <a href="../Files/MSDNMag-CLRInsideOut-200602.pdf">&quot;Improving Application Startup Time&quot; by Claudio Caldato</a>, appeared in the CLR Inside Out segment in February 2006. While discussing strong-named assemblies, Claudio recommended adding them to the GAC for performance.</p>
 <blockquote>
 <p>If an assembly is not installed in the Global Assembly Cache (GAC), you will pay the cost of hash verification of strong-named assemblies along with native code generation (NGEN) image validation if a native image for that assembly is available in the machine. In other words, if an assembly is strong named, the CLR will ensure the integrity of the assembly binary by verifying that the cryptographic hash of the assembly matches the one in the assembly manifest. But if the assembly is in the GAC, this verification can be skipped because the verification is performed as part of installation into the GAC and any update requires administrative permissions. So the CLR is basically assured that changes have not occurred.</p>
 <p>The hash verification process is expensive because it involves touching every page in the assembly, which can be bad for cold startup. Also, the hash computation is CPU-intensive and thus impacts warm startup, too. The extent of the impact depends on the size of the assembly being verified.</p>
@@ -71,8 +85,8 @@
 <p>I found this particularly interesting because I generally do not recommend putting assemblies into the GAC unless there is a particular need. The GAC is a very useful and powerful tool, but it does add complexity to the deployment of applications, occasionally limiting the frequency with which applications can be deployed, and often increasing the testing requirements for deployment of applications that use shared assemblies. As a result, I usually avoid putting assemblies in the GAC unless they truly need to be there (such as shared .dlls in applications that require that they be using the same version of the assembly). I have also heard of people pulling assemblies that were installed in the GAC, back out into bin-folder type deployments in order to simplify the deployment process.</p>
 <p>The information from this article adds a wrinkle to the process of removing assemblies from the GAC because it makes the best-practice for doing so include the removal of the strong-name (which was required for inclusion in the GAC). As a result, there may be a performance penalty incurred at each application startup for these apps if the strong-name is left in place. Since removal of the strong-name will not always be possible, this is certainly something to consider. While I doubt that this could cause enough of a performance decrease by itself to make it worth keeping assemblies in the GAC that would otherwise be removed, it is a fact worth knowing, and more importantly, worth testing when considering such a move.</p>
 
-              <h5>Tags: <a title="Tag: clr" class="small" href="../Search/clr.html">clr</a>&nbsp;<a title="Tag: gac" class="small" href="../Search/gac.html">gac</a>&nbsp;<a title="Tag: assembly" class="small" href="../Search/assembly.html">assembly</a>&nbsp;<a title="Tag: strong name" class="small" href="../Search/strong-name.html">strong name</a>&nbsp;</h5>
-              <div class="share"><a href="../Permalinks/567d54a3-06c2-4939-9655-6d045be217fb.html" rel="bookmark">Permalink</a></div>
+                <h5>Tags: <a title="Tag: clr" class="small" href="../Search/clr.html">clr</a>&nbsp;<a title="Tag: gac" class="small" href="../Search/gac.html">gac</a>&nbsp;<a title="Tag: assembly" class="small" href="../Search/assembly.html">assembly</a>&nbsp;<a title="Tag: strong name" class="small" href="../Search/strong-name.html">strong name</a>&nbsp;</h5>
+                <div class="share"><a href="../Permalinks/567d54a3-06c2-4939-9655-6d045be217fb.html" rel="bookmark">Permalink</a></div>
             </div>
             <div class="col-md-4">
                 <div class="widgetzone"><div class="widget textbox"><h4>About the Author</h4><div class="content"><p><img style="float: left; padding: 0px 3px 0px 0px;" src="../Pics/bsstahl_left.gif" alt="Barry S. Stahl" width="95" /> <strong>Barry S. Stahl</strong> (he/him/his) - Barry is a .NET Software Engineer who has been creating business solutions for enterprise customers for more than 35 years. Barry is also an Election Integrity Activist, baseball and hockey fan, husband of one genius and father of another, and a 40 year resident of Phoenix Arizona USA. When Barry is not traveling around the world to speak at Conferences, Code Camps and User Groups or to participate in GiveCamp events, he spends his days as a Solution Architect for <a href="https://grnh.se/ba048c6d1">Carvana</a> in Tempe AZ and his nights thinking about the next <a href="https://www.azgivecamp.org">AZGiveCamp</a> event where software creators come together to build websites and apps for some great non-profit organizations.</p>

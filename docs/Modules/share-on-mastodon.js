@@ -255,9 +255,9 @@ export class shareOnMastodon extends HTMLElement {
     // If the share_title attribute is set use it. Otherwise, use the page title
     let shareTitle = this.pageTitle;
     if (this.getAttribute('share_title')) {
-      shareTitle = this.getAttribute('share_title')  + "\n";
+      shareTitle = this.getAttribute('share_title')  + "\n\n";
     } else {
-      shareTitle = docTitle  + "\n";
+      shareTitle = docTitle  + "\n\n";
     };
 
     // If the share_description attribute is set use it. Otherwise, only use this for formating

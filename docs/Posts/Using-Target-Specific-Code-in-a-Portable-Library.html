@@ -60,9 +60,23 @@
 
         <div class="row">
             <div class="col-md-8">
-              <h1>Using Target-Specific Code in a Portable Library</h1>
-              <h5>Posted by bsstahl on 2013-06-27 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-              <p>On at least 2 occasions recently, I have heard speakers tell their audience that you cannot reference a target-specific .NET library (such as a .NET Framework 4.5 library) from a Portable Class Library.  While this is technically true, it doesn't tell nearly the whole story.  Even though we can't reference target-specific libraries, we can still USE these libraries. We can call their methods and access their properties under the right circumstances. We can gain access to these libraries via an abstraction.  My preferred method of doing this is known as Dependency Injection.</p>
+                <table>
+                    <tr>
+                        <td><h3>Using Target-Specific Code in a Portable Library</h3></td>
+                        <td align="right" rowspan="2"><share-on-mastodon 
+                            share_title="Check out this post on Cognitive Inheritance: 'Using Target-Specific Code in a Portable Library'"
+                            share_description="&quot;&quot;"
+                            hashtags="#abstraction #pcl #device #phone #dotnet #dependency injection #windows"
+                            author="@bsstahl@cognitiveinheritance.com"
+                            default_url="https://fosstodon.org">
+                        </share-on-mastodon></td>
+                    </tr>
+                    <tr>
+                        <td><h5>Posted by bsstahl on 2013-06-27 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5></td>
+                    </tr>
+                </table>
+                <br/>
+                <p>On at least 2 occasions recently, I have heard speakers tell their audience that you cannot reference a target-specific .NET library (such as a .NET Framework 4.5 library) from a Portable Class Library.  While this is technically true, it doesn't tell nearly the whole story.  Even though we can't reference target-specific libraries, we can still USE these libraries. We can call their methods and access their properties under the right circumstances. We can gain access to these libraries via an abstraction.  My preferred method of doing this is known as Dependency Injection.</p>
 <p>I'm going to give some quick background on PCLs and DI before getting into the details of how they can be used in this context. If you are familiar with Dependency Injection and .NET Portable Class Libraries you can skip these sections.</p>
 <h3>.NET Portable Class Libraries (PCLs)</h3>
 <p>Portable Class Libraries are .NET assemblies designed to be used by multiple target platforms in the .NET application space. You can specify which targets you want to be able to use, such as .NET 4.5, Silverlight 4, Windows Phone 8, etc.  The compiler then does the work to limit the APIs you have at your disposal in that library to only the intersection of all of the selected targets.  This guarantees that any code written in that library will work in all of those targets, but no target-specific (device-specific) functionality will be available.  These libraries are great for business-logic and other platform-independent services but are not useable for code that requires direct access to device features like the UI, camera, GPS, etc.  This code can be compiled and tested once, and then accessed from any of the selected target contexts.</p>
@@ -73,8 +87,8 @@
 <p>A sample app that is available in the 3 targets previously described may look something like <a href="https://onedrive.live.com/?cid=5D45DDF99C1E1BCC&amp;id=5D45DDF99C1E1BCC%21144541&amp;parId=5D45DDF99C1E1BCC%21154&amp;o=OneUp">this</a>.  The business-logic and domain layers (interfaces, exceptions, entities, etc) are both PCLs and exist for use in all 3 targets.  The UI layer and Infrastructure layers (in this case, storage) are target-specific and require a separate implementation for each target platform.  A system designed in this way can maximize the use of common, shared code while still making platform specific features available in a type-safe way.</p>
 <p>If you are interested in seeing this implementation done live, you can come to one of my Code Camp talks on the subject, or request me as a speaker for your User Group by <a href="../contact.html">Contacting Me</a>.</p>
 
-              <h5>Tags: <a title="Tag: abstraction" class="small" href="../Search/abstraction.html">abstraction</a>&nbsp;<a title="Tag: pcl" class="small" href="../Search/pcl.html">pcl</a>&nbsp;<a title="Tag: device" class="small" href="../Search/device.html">device</a>&nbsp;<a title="Tag: phone" class="small" href="../Search/phone.html">phone</a>&nbsp;<a title="Tag: dotnet" class="small" href="../Search/dotnet.html">dotnet</a>&nbsp;<a title="Tag: dependency injection" class="small" href="../Search/dependency-injection.html">dependency injection</a>&nbsp;<a title="Tag: windows" class="small" href="../Search/windows.html">windows</a>&nbsp;</h5>
-              <div class="share"><a href="../Permalinks/bd40aaeb-c0af-43e4-badb-6b95327f8e9e.html" rel="bookmark">Permalink</a></div>
+                <h5>Tags: <a title="Tag: abstraction" class="small" href="../Search/abstraction.html">abstraction</a>&nbsp;<a title="Tag: pcl" class="small" href="../Search/pcl.html">pcl</a>&nbsp;<a title="Tag: device" class="small" href="../Search/device.html">device</a>&nbsp;<a title="Tag: phone" class="small" href="../Search/phone.html">phone</a>&nbsp;<a title="Tag: dotnet" class="small" href="../Search/dotnet.html">dotnet</a>&nbsp;<a title="Tag: dependency injection" class="small" href="../Search/dependency-injection.html">dependency injection</a>&nbsp;<a title="Tag: windows" class="small" href="../Search/windows.html">windows</a>&nbsp;</h5>
+                <div class="share"><a href="../Permalinks/bd40aaeb-c0af-43e4-badb-6b95327f8e9e.html" rel="bookmark">Permalink</a></div>
             </div>
             <div class="col-md-4">
                 <div class="widgetzone"><div class="widget textbox"><h4>About the Author</h4><div class="content"><p><img style="float: left; padding: 0px 3px 0px 0px;" src="../Pics/bsstahl_left.gif" alt="Barry S. Stahl" width="95" /> <strong>Barry S. Stahl</strong> (he/him/his) - Barry is a .NET Software Engineer who has been creating business solutions for enterprise customers for more than 35 years. Barry is also an Election Integrity Activist, baseball and hockey fan, husband of one genius and father of another, and a 40 year resident of Phoenix Arizona USA. When Barry is not traveling around the world to speak at Conferences, Code Camps and User Groups or to participate in GiveCamp events, he spends his days as a Solution Architect for <a href="https://grnh.se/ba048c6d1">Carvana</a> in Tempe AZ and his nights thinking about the next <a href="https://www.azgivecamp.org">AZGiveCamp</a> event where software creators come together to build websites and apps for some great non-profit organizations.</p>

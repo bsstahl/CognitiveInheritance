@@ -60,17 +60,31 @@
 
         <div class="row">
             <div class="col-md-8">
-              <h1>Test-Driven Bug Fixes</h1>
-              <h5>Posted by bsstahl on 2016-02-27 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-              <p>I had an experience this past week that reminded me of both the importance of continuing the Test Driven Development process beyond the initial development phases of a application's life-cycle, and that not all developers have yet fully grasped the concepts behind Test Driven Development.</p>
+                <table>
+                    <tr>
+                        <td><h3>Test-Driven Bug Fixes</h3></td>
+                        <td align="right" rowspan="2"><share-on-mastodon 
+                            share_title="Check out this post on Cognitive Inheritance: 'Test-Driven Bug Fixes'"
+                            share_description="&quot;&quot;"
+                            hashtags="#agile #coding-practices #professional development #tdd #testing #unit testing"
+                            author="@bsstahl@cognitiveinheritance.com"
+                            default_url="https://fosstodon.org">
+                        </share-on-mastodon></td>
+                    </tr>
+                    <tr>
+                        <td><h5>Posted by bsstahl on 2016-02-27 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5></td>
+                    </tr>
+                </table>
+                <br/>
+                <p>I had an experience this past week that reminded me of both the importance of continuing the Test Driven Development process beyond the initial development phases of a application's life-cycle, and that not all developers have yet fully grasped the concepts behind Test Driven Development.</p>
 <p>One of the development teams I work with had a bug come-up in a bit of complex logic that I designed. I was asked to pair-up with one of the developers to help figure out the bug since he had already spent several hours looking at it. When I asked him to show me the tests that were failing, there weren't any. The bug was for a situation that we hadn't anticipated during initial development (a common occurrence) and he had not yet setup any tests that exposed the bug.</p>
 <p>We immediately set out to rectify the situation by creating tests that failed as a result of the bug. Once these tests were created, it was a fairly simple process to use those tests as a debug platform to step through the code, find the problem and correct the bug. As is sometimes the case, fixing that bug caused another test to fail, a situation that was easily remedied since we knew about it due to the failing test.</p>
 <p>After the code was complete and checked-in for build, the developer I was working with remarked on how he now &quot;got it&quot;. He had heard the words before, &quot;…write a test to expose the bug, then fix the bug.&quot; but they were empty words until he actually experienced using a test to do the debugging, and then saw existing tests prevent a regression failure in other code due to our bug fix. It is an experience all TDD practitioners have at some point and it is easy to forget that others may not yet have grokked the concepts behind the process.</p>
 <p>Coincidentally, that very night, I got a ping from my friend Jeremy Clark (<a href="https://jeremybytes.blogspot.com">blog</a>, <a href="https://twitter.com/jeremybytes">twitter</a>) asking for comments on his latest <a href="https://youtu.be/l4xhTq4qmC0">YouTube video on TDD</a>. After watching it, I really couldn't offer any constructive criticism for him because there was absolutely nothing to criticize. As an introduction to the basics of TDD, I don't think it could have been done any better. If you are just getting started with TDD, or want to get started with TDD, or want a refresher on the basics of TDD, you need to watch this video.</p>
 <p>Jeremy has indicated he will be doing more in this series in the future, delving deeper into the topic of TDD. Perhaps he will include an example of fixing a bug in existing code in a future video.</p>
 
-              <h5>Tags: <a title="Tag: agile" class="small" href="../Search/agile.html">agile</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: professional development" class="small" href="../Search/professional-development.html">professional development</a>&nbsp;<a title="Tag: tdd" class="small" href="../Search/tdd.html">tdd</a>&nbsp;<a title="Tag: testing" class="small" href="../Search/testing.html">testing</a>&nbsp;<a title="Tag: unit testing" class="small" href="../Search/unit-testing.html">unit testing</a>&nbsp;</h5>
-              <div class="share"><a href="../Permalinks/dade0093-4e08-4576-9ea3-b9fc326d6a81.html" rel="bookmark">Permalink</a></div>
+                <h5>Tags: <a title="Tag: agile" class="small" href="../Search/agile.html">agile</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: professional development" class="small" href="../Search/professional-development.html">professional development</a>&nbsp;<a title="Tag: tdd" class="small" href="../Search/tdd.html">tdd</a>&nbsp;<a title="Tag: testing" class="small" href="../Search/testing.html">testing</a>&nbsp;<a title="Tag: unit testing" class="small" href="../Search/unit-testing.html">unit testing</a>&nbsp;</h5>
+                <div class="share"><a href="../Permalinks/dade0093-4e08-4576-9ea3-b9fc326d6a81.html" rel="bookmark">Permalink</a></div>
             </div>
             <div class="col-md-4">
                 <div class="widgetzone"><div class="widget textbox"><h4>About the Author</h4><div class="content"><p><img style="float: left; padding: 0px 3px 0px 0px;" src="../Pics/bsstahl_left.gif" alt="Barry S. Stahl" width="95" /> <strong>Barry S. Stahl</strong> (he/him/his) - Barry is a .NET Software Engineer who has been creating business solutions for enterprise customers for more than 35 years. Barry is also an Election Integrity Activist, baseball and hockey fan, husband of one genius and father of another, and a 40 year resident of Phoenix Arizona USA. When Barry is not traveling around the world to speak at Conferences, Code Camps and User Groups or to participate in GiveCamp events, he spends his days as a Solution Architect for <a href="https://grnh.se/ba048c6d1">Carvana</a> in Tempe AZ and his nights thinking about the next <a href="https://www.azgivecamp.org">AZGiveCamp</a> event where software creators come together to build websites and apps for some great non-profit organizations.</p>

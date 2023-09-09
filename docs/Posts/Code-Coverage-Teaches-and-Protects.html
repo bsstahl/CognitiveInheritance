@@ -60,9 +60,23 @@
 
         <div class="row">
             <div class="col-md-8">
-              <h1>Code Coverage Teaches and Protects</h1>
-              <h5>Posted by bsstahl on 2016-10-14 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-              <p>I often hail code coverage as a great tool to help improve your code base.  Today, my use of Code Coverage taught me something about the new .NET Core tooling, and helped protect me from having to support useless code for the lifespan of my project.</p>
+                <table>
+                    <tr>
+                        <td><h3>Code Coverage Teaches and Protects</h3></td>
+                        <td align="right" rowspan="2"><share-on-mastodon 
+                            share_title="Check out this post on Cognitive Inheritance: 'Code Coverage Teaches and Protects'"
+                            share_description="&quot;&quot;"
+                            hashtags="#abstraction #agile #assert #code analysis #code coverage #coding-practices #csharp #ioc #testing #unit testing #dotnet"
+                            author="@bsstahl@cognitiveinheritance.com"
+                            default_url="https://fosstodon.org">
+                        </share-on-mastodon></td>
+                    </tr>
+                    <tr>
+                        <td><h5>Posted by bsstahl on 2016-10-14 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5></td>
+                    </tr>
+                </table>
+                <br/>
+                <p>I often hail code coverage as a great tool to help improve your code base.  Today, my use of Code Coverage taught me something about the new .NET Core tooling, and helped protect me from having to support useless code for the lifespan of my project.</p>
 <p>In the code below, I used a common dependency injection pattern. That is, an IServiceProvider object holding my dependencies is passed-in to my object and stored as a member variable.  When a dependency is needed, I retrieve that dependency from the service provider, and then take action on it.  Since there is no guarantee that the dependency I need will have been placed in the container, I use some common guard logic to protect my code.</p>
 <pre><code>templates = _serviceProvider.GetService&lt;IEnumerable&lt;Template&gt;&gt;();
 if ((templates==null) || (!templates.Any(s =&gt; s.TemplateType==ContactPage)))
@@ -81,8 +95,8 @@ if ((templates==null) || (!templates.Any(s =&gt; s.TemplateType==ContactPage)))
    <br />
 For those who might be thinking something similar to, &quot;It's nice that the coverage tooling helped you learn about your code, but using Code Coverage as a metric is actually a bad idea so I won't use Code Coverage at all&quot;, I'd like to remind you that any tool, such as a hammer or a car, can be abused. That doesn't mean we don't continue to use them, we just make certain that we use them properly.  Code Coverage is a horrible way to measure a development team or effort, but it is an outstanding tool and should be used by the development team whenever possible to discover things about the code base.</p>
 
-              <h5>Tags: <a title="Tag: abstraction" class="small" href="../Search/abstraction.html">abstraction</a>&nbsp;<a title="Tag: agile" class="small" href="../Search/agile.html">agile</a>&nbsp;<a title="Tag: assert" class="small" href="../Search/assert.html">assert</a>&nbsp;<a title="Tag: code analysis" class="small" href="../Search/code-analysis.html">code analysis</a>&nbsp;<a title="Tag: code coverage" class="small" href="../Search/code-coverage.html">code coverage</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: csharp" class="small" href="../Search/csharp.html">csharp</a>&nbsp;<a title="Tag: ioc" class="small" href="../Search/ioc.html">ioc</a>&nbsp;<a title="Tag: testing" class="small" href="../Search/testing.html">testing</a>&nbsp;<a title="Tag: unit testing" class="small" href="../Search/unit-testing.html">unit testing</a>&nbsp;<a title="Tag: dotnet" class="small" href="../Search/dotnet.html">dotnet</a>&nbsp;</h5>
-              <div class="share"><a href="../Permalinks/68269657-e0c9-430d-acd4-9b4cc211fcc7.html" rel="bookmark">Permalink</a></div>
+                <h5>Tags: <a title="Tag: abstraction" class="small" href="../Search/abstraction.html">abstraction</a>&nbsp;<a title="Tag: agile" class="small" href="../Search/agile.html">agile</a>&nbsp;<a title="Tag: assert" class="small" href="../Search/assert.html">assert</a>&nbsp;<a title="Tag: code analysis" class="small" href="../Search/code-analysis.html">code analysis</a>&nbsp;<a title="Tag: code coverage" class="small" href="../Search/code-coverage.html">code coverage</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: csharp" class="small" href="../Search/csharp.html">csharp</a>&nbsp;<a title="Tag: ioc" class="small" href="../Search/ioc.html">ioc</a>&nbsp;<a title="Tag: testing" class="small" href="../Search/testing.html">testing</a>&nbsp;<a title="Tag: unit testing" class="small" href="../Search/unit-testing.html">unit testing</a>&nbsp;<a title="Tag: dotnet" class="small" href="../Search/dotnet.html">dotnet</a>&nbsp;</h5>
+                <div class="share"><a href="../Permalinks/68269657-e0c9-430d-acd4-9b4cc211fcc7.html" rel="bookmark">Permalink</a></div>
             </div>
             <div class="col-md-4">
                 <div class="widgetzone"><div class="widget textbox"><h4>About the Author</h4><div class="content"><p><img style="float: left; padding: 0px 3px 0px 0px;" src="../Pics/bsstahl_left.gif" alt="Barry S. Stahl" width="95" /> <strong>Barry S. Stahl</strong> (he/him/his) - Barry is a .NET Software Engineer who has been creating business solutions for enterprise customers for more than 35 years. Barry is also an Election Integrity Activist, baseball and hockey fan, husband of one genius and father of another, and a 40 year resident of Phoenix Arizona USA. When Barry is not traveling around the world to speak at Conferences, Code Camps and User Groups or to participate in GiveCamp events, he spends his days as a Solution Architect for <a href="https://grnh.se/ba048c6d1">Carvana</a> in Tempe AZ and his nights thinking about the next <a href="https://www.azgivecamp.org">AZGiveCamp</a> event where software creators come together to build websites and apps for some great non-profit organizations.</p>
