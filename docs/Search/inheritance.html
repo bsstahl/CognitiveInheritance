@@ -65,7 +65,6 @@
                 <div>
     <h3>No More Collection Objects</h3>
     <h5>Posted by bsstahl on 2015-10-27 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'No More Collection Objects'"
                 share_description="&quot;&quot;"
@@ -73,6 +72,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>I don't create collection objects anymore.</p>
 <p>I know, I know. I was they guy always preaching that every entity that was being collected had to have its own collection object. It was the right thing at the time; if you needed to take an action on an enumeration or list of objects, those actions needed to be done within a strongly-typed collection object to maintain encapsulation. Even if all that was happening was that an inherited <em>List&lt;T&gt;</em> function was being called, that functionality needed to be called on the <em>TCollection</em> object because, if it wasn't, it was likely that the next time logic needed to be performed on the collection, there wouldn't be a place to put it. Collection logic would end up being spread-out around your code rather than encapsulated in the collection. It was also possible that the implementation might change and need to be updated everywhere, instead of in one place.</p>
@@ -91,7 +91,6 @@
 </div><hr/><div>
     <h3>Entity Framework Inheritance</h3>
     <h5>Posted by bsstahl on 2011-01-20 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Entity Framework Inheritance'"
                 share_description="&quot;&quot;"
@@ -99,6 +98,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p><em>Alex D. James</em> posted a great little primer on Entity Framework inheritance strategies and when to use each.</p>
 <p>His post can be found <a href="https://web.archive.org/web/20110917021606/http://blogs.msdn.com/b/alexj/archive/2009/04/15/tip-12-choosing-an-inheritance-strategy.aspx?CommentPosted=true">here</a>.</p>
@@ -108,7 +108,6 @@
 </div><hr/><div>
     <h3>Multiple Inheritance - Its Time Should Come Again Soon</h3>
     <h5>Posted by bsstahl on 2008-06-16 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Multiple Inheritance - Its Time Should Come Again Soon'"
                 share_description="&quot;&quot;"
@@ -116,6 +115,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>Over the last few years I've heard a number of public statements from developers about the lack of need for multiple implementation inheritance in .NET and other modern development platforms. Their logic often seems to imply that if you need multiple implementation inheritance, you are not designing your applications properly.  While admittedly, there are usually work-arounds (such as interface inheritance) that allow us to simulate this feature, they usually require that portions of our code are duplicated, violating the Agile requirement &quot;Don't Repeat Yourself&quot;.</p>
 <p>One commonly seen example of where multiple implementation inheritance would be very valuable is in multi-tiered, domain specific applications, especially in the data-tier where we may wish to have more-than-one implementation to support multiple data-stores.  Think about the typical data-tier scenario. In this scenario we have a set of domain objects, based on an inherited set of entities with common properties and methods that represent a physical object in the problem domain. These objects also have a commonality in that they are implementations of an object-type common to that data store and may have properties and methods relating specifically to the storage of data.  So, an object whose responsibility it is to persist an Employee entity to a SQL Server data store, could inherit from both our domain Employee entity, and our SQL Data Storage object.  If we also had an implementation that stored data in XML format, we might have an object that inherits both from the same Employee entity as well as from the XMLNode object. If multiple implementation inheritance were supported in our framework, we could avoid the common work-around of repeating our entity implementation by using an interface to simulate that inheritance, or by simply repeating our data persistence logic in each object.</p>

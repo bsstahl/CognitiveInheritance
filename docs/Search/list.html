@@ -65,7 +65,6 @@
                 <div>
     <h3>No More Collection Objects</h3>
     <h5>Posted by bsstahl on 2015-10-27 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'No More Collection Objects'"
                 share_description="&quot;&quot;"
@@ -73,6 +72,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>I don't create collection objects anymore.</p>
 <p>I know, I know. I was they guy always preaching that every entity that was being collected had to have its own collection object. It was the right thing at the time; if you needed to take an action on an enumeration or list of objects, those actions needed to be done within a strongly-typed collection object to maintain encapsulation. Even if all that was happening was that an inherited <em>List&lt;T&gt;</em> function was being called, that functionality needed to be called on the <em>TCollection</em> object because, if it wasn't, it was likely that the next time logic needed to be performed on the collection, there wouldn't be a place to put it. Collection logic would end up being spread-out around your code rather than encapsulated in the collection. It was also possible that the implementation might change and need to be updated everywhere, instead of in one place.</p>
@@ -91,7 +91,6 @@
 </div><hr/><div>
     <h3>Encapsulation and Generic Lists</h3>
     <h5>Posted by bsstahl on 2007-09-16 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Encapsulation and Generic Lists'"
                 share_description="&quot;&quot;"
@@ -99,6 +98,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>It has often been said that each new language feature gives programmers more rope with which to hang themselves. Unfortunately, what it really seems like is that each feature gives other programmers more rope with which to hang me, or you, or whomever the next poor schmuck is who has to deal with their code. Back in the relatively early days of .NET 2.0, I wrote about <a href="../Posts/Generics-Concerns.html">some concerns I had with Generics</a>. It has turned out that Generics are everything I could have hoped for in a language feature, and everything I feared.</p>
 <p>Generics are an outstanding way of dealing with a number of issues in a very elegant, but also type-safe way. Among many things, this includes collections. I see no reason why there should be any new collections created that are not based on Generics and it is my understanding that System.Collections.CollectionBase (the non-Generic base collection class) is to be deprecated sometime in the near future. However, as I feared over a year ago, there are many that miss the point somewhat and expose List&lt;t&gt; on their interfaces. The Generic List object is a very powerful and easy to use collection, but it is not extensible. If you write code that exposes List&lt;t&gt;, you are effectively passing a strongly-typed array-list. Doing this breaks encapsulation because any code we write against that list, has to be repeated everywhere we want to perform that operation.</p>

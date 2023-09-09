@@ -65,7 +65,6 @@
                 <div>
     <h3>Meta-Abstraction -- You Ain't Gonna Need It!</h3>
     <h5>Posted by bsstahl on 2020-05-18 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Meta-Abstraction -- You Ain't Gonna Need It!'"
                 share_description="&quot;&quot;"
@@ -73,6 +72,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <blockquote>
 <p>When we look at the abstractions in our applications, we should see a description of the capabilities of our applications, not the capabilities of the abstraction</p>
@@ -130,7 +130,6 @@
 </div><hr/><div>
     <h3>The Value of Flexibility</h3>
     <h5>Posted by bsstahl on 2019-02-14 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'The Value of Flexibility'"
                 share_description="&quot;&quot;"
@@ -138,6 +137,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>Have you ever experienced that feeling you get when you need to extend an existing system and there is an extension point that is exactly what you need to build on?</p>
 <p>For example, suppose I get a request to extend a system so that an additional action is taken whenever a new user signs-up.  The system already has an event message that is published whenever a new user signs-up that contains all of the information I need for the new functionality.  All I have to do is subscribe a new microservice to this event message, and have that service take the new action whenever it receives a message. Boom! Done.</p>
@@ -166,7 +166,6 @@
 </div><hr/><div>
     <h3>No More Collection Objects</h3>
     <h5>Posted by bsstahl on 2015-10-27 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'No More Collection Objects'"
                 share_description="&quot;&quot;"
@@ -174,6 +173,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>I don't create collection objects anymore.</p>
 <p>I know, I know. I was they guy always preaching that every entity that was being collected had to have its own collection object. It was the right thing at the time; if you needed to take an action on an enumeration or list of objects, those actions needed to be done within a strongly-typed collection object to maintain encapsulation. Even if all that was happening was that an inherited <em>List&lt;T&gt;</em> function was being called, that functionality needed to be called on the <em>TCollection</em> object because, if it wasn't, it was likely that the next time logic needed to be performed on the collection, there wouldn't be a place to put it. Collection logic would end up being spread-out around your code rather than encapsulated in the collection. It was also possible that the implementation might change and need to be updated everywhere, instead of in one place.</p>
@@ -192,7 +192,6 @@
 </div><hr/><div>
     <h3>Remove Any Code Your Users Don't Care About</h3>
     <h5>Posted by bsstahl on 2015-09-28 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Remove Any Code Your Users Don't Care About'"
                 share_description="&quot;&quot;"
@@ -200,6 +199,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>Code Coverage has been the topic of a number of conversations lately, most recently after the last <a href="https://www.meetup.com/sevdnug/events/223863304/">Southeast Valley .NET User Group</a> meeting where <a href="https://twitter.com/jeremybytes">Jeremy Clark</a> presented his great talk, <a href="http://jeremybytes.com/Demos.aspx#UTMMF">Unit Testing Makes Me Faster</a>.  During this presentation, Jeremy eponymized, on my behalf, something I've been saying for a while, that <a href="https://jeremybytes.blogspot.com/2015/02/unit-test-coverage-what-parts-of-your.html">the part of an application that you don't need to test is the part that your users don't care about</a>. That is, if your users care about something in your application, you should be writing tests that ensure that the users' needs are fulfilled by your code. This has never really been a controversial statement, just one that sometimes gets lost in the myriad of information about unit testing and test driven development.</p>
 <p>Where the conversation got really interesting was when we started discussing what should happen if you decide that a piece of code really isn't important to your users.  It is my assertion that code which is deemed unimportant enough to the user that it might not be tested, should be removed from the project, even if is part of a standard implementation.  I will attempt to justify this assertion by using the example of a property implementation that supports the <em>INotifyPropertyChanged</em> interface.</p>
@@ -232,7 +232,6 @@
 </div><hr/><div>
     <h3>Conflict of Interest -- YAGNI vs. Standardization</h3>
     <h5>Posted by bsstahl on 2014-07-28 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Conflict of Interest -- YAGNI vs. Standardization'"
                 share_description="&quot;&quot;"
@@ -240,6 +239,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>While working on the OSS project mentioned in my <a href="../Posts/New-OSS-Project.html">previous post</a>, I have run across a dilemma where two of the principles I try to work by are in conflict. The two principles in question are:</p>
 <ol>

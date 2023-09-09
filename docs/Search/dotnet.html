@@ -65,7 +65,6 @@
                 <div>
     <h3>Testing a .NET Core Library in VS2015</h3>
     <h5>Posted by bsstahl on 2017-01-09 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Testing a .NET Core Library in VS2015'"
                 share_description="&quot;&quot;"
@@ -73,6 +72,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>I really enjoy working with .NET Core.  I like the fact that my code is portable to many platforms and that the footprint is so much smaller than with traditional .NET applications.  Unfortunately, the tooling has not quite reached the level that we expect from a Microsoft finished product (which it isn’t – yet). As a result, there are some additional actions we need to take when setting up our solutions in Visual Studio 2015 to allow us to unit test our code properly.  The following are the steps that I currently take to setup and test a .NET Core library using XUnit and Moq.  I know that a number of these steps will be done for us, or at least made much easier, by the tooling in the coming months, either by Visual Studio 2017, or by enhancements to the Visual Studio 2015 environments.</p>
 <ol>
@@ -146,7 +146,6 @@
 </div><hr/><div>
     <h3>Code Coverage Teaches and Protects</h3>
     <h5>Posted by bsstahl on 2016-10-14 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Code Coverage Teaches and Protects'"
                 share_description="&quot;&quot;"
@@ -154,6 +153,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>I often hail code coverage as a great tool to help improve your code base.  Today, my use of Code Coverage taught me something about the new .NET Core tooling, and helped protect me from having to support useless code for the lifespan of my project.</p>
 <p>In the code below, I used a common dependency injection pattern. That is, an IServiceProvider object holding my dependencies is passed-in to my object and stored as a member variable.  When a dependency is needed, I retrieve that dependency from the service provider, and then take action on it.  Since there is no guarantee that the dependency I need will have been placed in the container, I use some common guard logic to protect my code.</p>
@@ -179,7 +179,6 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div><hr/><div>
     <h3>Using Target-Specific Code in a Portable Library</h3>
     <h5>Posted by bsstahl on 2013-06-27 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Using Target-Specific Code in a Portable Library'"
                 share_description="&quot;&quot;"
@@ -187,6 +186,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>On at least 2 occasions recently, I have heard speakers tell their audience that you cannot reference a target-specific .NET library (such as a .NET Framework 4.5 library) from a Portable Class Library.  While this is technically true, it doesn't tell nearly the whole story.  Even though we can't reference target-specific libraries, we can still USE these libraries. We can call their methods and access their properties under the right circumstances. We can gain access to these libraries via an abstraction.  My preferred method of doing this is known as Dependency Injection.</p>
 <p>I'm going to give some quick background on PCLs and DI before getting into the details of how they can be used in this context. If you are familiar with Dependency Injection and .NET Portable Class Libraries you can skip these sections.</p>
@@ -204,7 +204,6 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div><hr/><div>
     <h3>Windows 8 Store Development for Enterprise Devs</h3>
     <h5>Posted by bsstahl on 2013-02-28 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Windows 8 Store Development for Enterprise Devs'"
                 share_description="&quot;&quot;"
@@ -212,6 +211,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <h3>or, How I found my Passion for Windows 8 Store App Development</h3>
 <p>Update: My first Windows Store app was published on March 27, 2013.</p>
@@ -234,7 +234,6 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div><hr/><div>
     <h3>Decorating Partial Class Members in C#</h3>
     <h5>Posted by bsstahl on 2011-03-08 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Decorating Partial Class Members in C#'"
                 share_description="&quot;&quot;"
@@ -242,6 +241,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>Anyone who uses code generation more than trivially in their .NET solutions knows how difficult it is to add metadata to a member of a generated class, even if that class is marked as partial.  Partial classes are terrific for adding members to generated classes, and even allow you to change metadata and other information about the class itself, such as by adding an interface that it implements.  You cannot however, modify an existing member of the class by marking it to not be serialized, or to make it a part of a WCF data contract. I believe, as more and more code is generated by .NET developers using Entity Framework, wsdl.exe and other proxy generation tools, or even T4 directly; we will see a greatly increased need for a workable solution to this problem.</p>
 <p>The most common work-around for this problem today is the use of “buddy classes” where a separate class is created to hold the metadata.  A good example of this type of solution can be found in <a href="http://www.asp.net/dynamicdata">ASP.NET Dynamic Data</a>.  However, as you might imagine, this type of implementation has some fairly severe drawbacks.  For one, it requires some sort of mechanism for unifying the functionality of the two classes. An example of this is the case where we have a property on an Entity Framework POCO that should not be serialized when we serialize the rest of the class.  We cannot serialize the POCO correctly unless we use a custom serializer that is aware of the metadata in the buddy class.  We have similar problems if we are trying to use a generated base class as the output of a WCF service.  If the [DataContract] attribute is not already on the generated code (which requires a reference to the System.Runtime.Serialization library) we will have to create a separate object that implements the DataContract to be exposed by the service.  In most cases, this object will be an almost exact duplicate of the state features of the original object, forcing the replication of some code, even if that code is just the properties of the object.</p>
@@ -265,7 +265,6 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div><hr/><div>
     <h3>Looking for Evening Events at Mix11</h3>
     <h5>Posted by bsstahl on 2011-01-30 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Looking for Evening Events at Mix11'"
                 share_description="&quot;&quot;"
@@ -273,6 +272,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>I won’t be an attendee at the <a href="https://web.archive.org/web/20110129071452/http://visitmix.com/">Mix</a> conference this year.  Nothing against this conference; it is usually fantastic and I have met many awesome people there.  This year, my focus is elsewhere, on SOA and Middleware/Back-End technologies.  Not that I’ve ever really been a front-end guy mind you, but I am of the opinion that balance is a good thing and since I consider myself weaker in front-end (UX) technologies, Mix has been a good learning experience for me in the past.  However, as I said, this year, my primary focuses are elsewhere.</p>
 <p>Not being an attendee doesn’t stop me from wanting to meet with old friends and continue the awesome technical discussions that go on at these events.  I have loved meeting with the product teams in the past, both to learn from them and to provide my input into the future directions of the products.  So, it is my intent to fly up to Las Vegas (it is less than an hour flight from Phoenix) for at lease 1 evening of the Mix conference, perhaps 2.  Right now, I am looking for events to schedule for that (those) evening(s).</p>
@@ -283,7 +283,6 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div><hr/><div>
     <h3>Two Things I Learned on Pex4Fun.com Today</h3>
     <h5>Posted by bsstahl on 2010-11-12 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Two Things I Learned on Pex4Fun.com Today'"
                 share_description="&quot;&quot;"
@@ -291,6 +290,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>Since I’m a fan of puzzles, I’ve been spending a bit of time on <a href="https://web.archive.org/web/20101112142013/http://www.pexforfun.com/">PexForFun.com</a> lately.  This site was put together by the Pex team (part of Microsoft Research) to show off the capabilities of some of the research group’s  latest creations; Pex, Moles, and Code Contracts.  I’ve been enjoying this site because it gives me the opportunity to solve some coding puzzles, while at the same time discovering things about these new tools.  Today alone, I discovered the following:</p>
 <h2>The order of Contract.Requires() in Code Contracts matters.</h2>
@@ -311,7 +311,6 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div><hr/><div>
     <h3>Oracle String SQL Query using a DateTime from C#</h3>
     <h5>Posted by bsstahl on 2009-03-07 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Oracle String SQL Query using a DateTime from C#'"
                 share_description="&quot;&quot;"
@@ -319,6 +318,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>The following statement builds a C# string containing an Oracle SQL query that uses a DateTime specified in the .NET code.  It uses the Oracle TO_DATE function to convert the string date to an oracle date object and specifies the format of the string date for both the C# output and the Oracle input. Using this statement, there can never be a date format mismatch since the same format is specified at both ends.</p>
 <p>string sql = string.Format(&quot;select * from MyDB.MyTable t where t.MyDate &gt; <br />
@@ -330,7 +330,6 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div><hr/><div>
     <h3>Multiple Inheritance - Its Time Should Come Again Soon</h3>
     <h5>Posted by bsstahl on 2008-06-16 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Multiple Inheritance - Its Time Should Come Again Soon'"
                 share_description="&quot;&quot;"
@@ -338,6 +337,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>Over the last few years I've heard a number of public statements from developers about the lack of need for multiple implementation inheritance in .NET and other modern development platforms. Their logic often seems to imply that if you need multiple implementation inheritance, you are not designing your applications properly.  While admittedly, there are usually work-arounds (such as interface inheritance) that allow us to simulate this feature, they usually require that portions of our code are duplicated, violating the Agile requirement &quot;Don't Repeat Yourself&quot;.</p>
 <p>One commonly seen example of where multiple implementation inheritance would be very valuable is in multi-tiered, domain specific applications, especially in the data-tier where we may wish to have more-than-one implementation to support multiple data-stores.  Think about the typical data-tier scenario. In this scenario we have a set of domain objects, based on an inherited set of entities with common properties and methods that represent a physical object in the problem domain. These objects also have a commonality in that they are implementations of an object-type common to that data store and may have properties and methods relating specifically to the storage of data.  So, an object whose responsibility it is to persist an Employee entity to a SQL Server data store, could inherit from both our domain Employee entity, and our SQL Data Storage object.  If we also had an implementation that stored data in XML format, we might have an object that inherits both from the same Employee entity as well as from the XMLNode object. If multiple implementation inheritance were supported in our framework, we could avoid the common work-around of repeating our entity implementation by using an interface to simulate that inheritance, or by simply repeating our data persistence logic in each object.</p>
@@ -348,7 +348,6 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div><hr/><div>
     <h3>Generics Concerns</h3>
     <h5>Posted by bsstahl on 2006-04-29 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Generics Concerns'"
                 share_description="&quot;&quot;"
@@ -357,6 +356,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
     <br/>
+    <br/>
     <p>Another feature that concerns me (see my <a href="../Posts/NET-20-Concerns.html">earlier post</a>) is .NET Generics. While it is nice to be able to specify a strongly-typed collection without having to create a class, it seems to me like this is still the <a href="http://msdn2.microsoft.com/en-us/library/Aa716279%28VS.60%29.aspx">house of sticks</a>, rather than the house of bricks we really want. Also, extensibility seems to suffer in this model because we are limiting our encapsulation. I certainly have not used this enough to say one way or another for certain, I just currently have concerns.</p>
 
     <h5>Tags: <a title="Tag: generics" class="small" href="../Search/generics.html">generics</a>&nbsp;<a title="Tag: class" class="small" href="../Search/class.html">class</a>&nbsp;<a title="Tag: dotnet" class="small" href="../Search/dotnet.html">dotnet</a>&nbsp;</h5>
@@ -364,7 +364,6 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div><hr/><div>
     <h3>.NET 2.0 Concerns</h3>
     <h5>Posted by bsstahl on 2006-04-29 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: '.NET 2.0 Concerns'"
                 share_description="&quot;&quot;"
@@ -372,6 +371,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>I am seeing some things in .NET 2.0 that concern me. Much of it has to do with Microsoft putting in features that have obviously been demanded by many developers, but were not included in earlier versions of the framework because, for the most part, they are the wrong thing to do the majority of the time. For example, Microsoft has included the ability to have inline code as well as the standard code-behind model in ASP.NET 2.0 pages. While this seems like a nice feature, I can't come up with a good reason to ever mix my object code and HTML code. Perhaps someone else can. If you do, please let me know.</p>
 

@@ -62,15 +62,15 @@
             <div class="col-md-8">
                 <h3>Removing Assemblies from the GAC</h3>
                 <h5>Posted by bsstahl on 2007-07-01 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-                <br/>
-                <share-on-mastodon 
-                            share_title="Check out this post on Cognitive Inheritance: 'Removing Assemblies from the GAC'"
-                            share_description="&quot;&quot;"
-                            hashtags="#clr #gac #assembly #strong name"
-                            author="@bsstahl@cognitiveinheritance.com"
-                            default_url="https://fosstodon.org">
-                        </share-on-mastodon>
-                <br/>
+                <div>
+                    <share-on-mastodon 
+                        share_title="Check out this post on Cognitive Inheritance: 'Removing Assemblies from the GAC'"
+                        share_description="&quot;&quot;"
+                        hashtags="#clr #gac #assembly #strong name"
+                        author="@bsstahl@cognitiveinheritance.com"
+                        default_url="https://fosstodon.org">
+                    </share-on-mastodon>
+                </div>
                 <p>I recently stumbled across an interesting item in a back-issue of MSDN Magazine. The article, <a href="../Files/MSDNMag-CLRInsideOut-200602.pdf">&quot;Improving Application Startup Time&quot; by Claudio Caldato</a>, appeared in the CLR Inside Out segment in February 2006. While discussing strong-named assemblies, Claudio recommended adding them to the GAC for performance.</p>
 <blockquote>
 <p>If an assembly is not installed in the Global Assembly Cache (GAC), you will pay the cost of hash verification of strong-named assemblies along with native code generation (NGEN) image validation if a native image for that assembly is available in the machine. In other words, if an assembly is strong named, the CLR will ensure the integrity of the assembly binary by verifying that the cryptographic hash of the assembly matches the one in the assembly manifest. But if the assembly is in the GAC, this verification can be skipped because the verification is performed as part of installation into the GAC and any update requires administrative permissions. So the CLR is basically assured that changes have not occurred.</p>

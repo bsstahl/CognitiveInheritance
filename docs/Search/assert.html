@@ -65,7 +65,6 @@
                 <div>
     <h3>Code Coverage Teaches and Protects</h3>
     <h5>Posted by bsstahl on 2016-10-14 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Code Coverage Teaches and Protects'"
                 share_description="&quot;&quot;"
@@ -73,6 +72,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>I often hail code coverage as a great tool to help improve your code base.  Today, my use of Code Coverage taught me something about the new .NET Core tooling, and helped protect me from having to support useless code for the lifespan of my project.</p>
 <p>In the code below, I used a common dependency injection pattern. That is, an IServiceProvider object holding my dependencies is passed-in to my object and stored as a member variable.  When a dependency is needed, I retrieve that dependency from the service provider, and then take action on it.  Since there is no guarantee that the dependency I need will have been placed in the container, I use some common guard logic to protect my code.</p>
@@ -98,7 +98,6 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div><hr/><div>
     <h3>Code Sample for My TDD Kickstart Sessions</h3>
     <h5>Posted by bsstahl on 2012-02-13 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Code Sample for My TDD Kickstart Sessions'"
                 share_description="&quot;&quot;"
@@ -106,6 +105,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>The complete, working application for my <a href="../Posts/NET-TDD-Kickstart.html">.NET TDD Kickstart</a> sessions can be found <a href="../Files/TDDKickstart.zip">here</a>.</p>
 <p>Unzip the files into a solution folder and open the <strong>Demo.sln</strong> solution in a version of Visual Studio 2010 that has Unit Testing capability (Professional, Premium or Ultimate).  Immediately, you should be able to compile the whole solution, and successfully execute the tests in the <strong>Bss.QueueMonitor.Test</strong> and <strong>Bss.Timing.Test</strong> libraries.</p>
@@ -119,7 +119,6 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div><hr/><div>
     <h3>.NET TDD Kickstart</h3>
     <h5>Posted by bsstahl on 2012-01-26 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;<a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: '.NET TDD Kickstart'"
                 share_description="&quot;&quot;"
@@ -127,6 +126,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>I head out to Fullerton tomorrow for the start of my .NET TDD Kickstart world tour. <img src="../Images/wlEmoticon-smile.png" alt="Smile" /></p>
 <blockquote>
@@ -148,7 +148,6 @@ For those who might be thinking something similar to, &quot;It's nice that the c
 </div><hr/><div>
     <h3>Unit Test "Normalization"</h3>
     <h5>Posted by bsstahl on 2007-07-07 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Unit Test "Normalization"'"
                 share_description="&quot;&quot;"
@@ -156,6 +155,7 @@ For those who might be thinking something similar to, &quot;It's nice that the c
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>In a recent conversation about Unit Tests, I was asked about how many asserts I would put into a single test, since some feel that there should only be one Assert per test. My answer was, that I look at it like database normalization with the test name serving as the primary key; that is, the asserts in the test should relate directly and only to that key. This analogy is also appropriate because DB normalization is a good thing within reason, but can definately be overdone. Unit test &quot;normalization&quot; can also be overdone if we try to break-out each assert into its own test.</p>
 <p>An example of where multiple asserts might be put into one test is a test of the Add method of a collection object which inherits from System.Collection.CollectionBase. When an item is added, it is appropriate to test for the proper index of that item to be returned from the method, as well as to test that the collection is holding the correct number of items after the Add is done. Both tests relate directly to the Add method. An argument could be made that the count of items relates to the Count property of the collection and therefore that assert doesn't relate only to the Add method, but since we are usually not coding the count property (because it was coded for us in CollectionBase), we don't need to test the Count property on its own, and it should be tested as part of the Add test.</p>

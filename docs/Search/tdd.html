@@ -65,7 +65,6 @@
                 <div>
     <h3>Testing the Untestable with Microsoft Fakes</h3>
     <h5>Posted by bsstahl on 2017-03-20 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Testing the Untestable with Microsoft Fakes'"
                 share_description="&quot;&quot;"
@@ -73,6 +72,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>It is fairly easy these days to test code in isolation if its dependencies are abstracted by a reusable interface. But what do we do if the dependency cannot easily be referenced via such an interface?  Enter <strong>Shims</strong>, from the <strong>Microsoft Fakes Framework</strong>(formerly Moles).  Shims allow us to isolate our testing from any dependent methods, including methods in assemblies we do not control, even if those methods are not exposed through a reusable interface. To see how easy it is, follow along with me through this example.</p>
 <p>In this <a href="https://github.com/bsstahl/VS2017Launch">sample code on GitHub</a>, we are building a repository for an application that currently gets its data from a file exported from a system that tracks scheduled meetings.  It is very likely that the system will, in the future, expose a more modern interface for that data so we have isolated the data storage using a simple Repository interface that has one method.  This method, called <strong>GetMeetings</strong> returns a collection of Meeting entities that start during the specified date range.  The method will return an empty collection if no data is found matching the specified criteria, and could throw either of 2 custom errors, a <strong>PermissionsException</strong>when the user does not have the proper permissions to access the information, and a <strong>DataUnavailableException</strong> for when the data source is unavailable for any other reason, such as a network outage or if the data file cannot be located.</p>
@@ -117,7 +117,6 @@
 </div><hr/><div>
     <h3>Demo Code for Testing in Visual Studio 2017</h3>
     <h5>Posted by bsstahl on 2017-03-16 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Demo Code for Testing in Visual Studio 2017'"
                 share_description="&quot;&quot;"
@@ -125,6 +124,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>The demo code for my presentation on Testing in Visual Studio 2017 at the VS2017 Launch event can be found on <a href="https://github.com/bsstahl/VS2017Launch">GitHub</a>.  There are 2 branches to this repository, the <strong>Main</strong> branch which holds the completed demo, and the <strong>DemoStart</strong> branch which holds the starting point of the demonstration in case you would like to implement the sample yourself.</p>
 <p>The demo shows how Microsoft Fakes (formerly Moles) can be used to create tests against code that does not implement a reusable interface. This can be done  without having to resort to integration style tests or writing extra wrapper code just to implement an interface.  During my launch presentation, I also use this code to demonstrate the use of Intellitest (formerly Pex) to generate exploratory tests.</p>
@@ -134,7 +134,6 @@
 </div><hr/><div>
     <h3>Testing a .NET Core Library in VS2015</h3>
     <h5>Posted by bsstahl on 2017-01-09 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Testing a .NET Core Library in VS2015'"
                 share_description="&quot;&quot;"
@@ -142,6 +141,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>I really enjoy working with .NET Core.  I like the fact that my code is portable to many platforms and that the footprint is so much smaller than with traditional .NET applications.  Unfortunately, the tooling has not quite reached the level that we expect from a Microsoft finished product (which it isn’t – yet). As a result, there are some additional actions we need to take when setting up our solutions in Visual Studio 2015 to allow us to unit test our code properly.  The following are the steps that I currently take to setup and test a .NET Core library using XUnit and Moq.  I know that a number of these steps will be done for us, or at least made much easier, by the tooling in the coming months, either by Visual Studio 2017, or by enhancements to the Visual Studio 2015 environments.</p>
 <ol>
@@ -215,7 +215,6 @@
 </div><hr/><div>
     <h3>TDD Helps Validate Your Tests</h3>
     <h5>Posted by bsstahl on 2016-03-05 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'TDD Helps Validate Your Tests'"
                 share_description="&quot;&quot;"
@@ -223,6 +222,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>One of the reasons to use TDD over test-later approaches is that you get a better validation of your tests.</p>
 <p>When the first thing you do with a test or series of tests is to run them against code that does nothing but throw a <em>NotImplementedException</em>, you know exactly what to expect. That is, all tests should fail because the code under test threw a <em>NotImplementedException</em>. After that, you can take iterative steps to implement the code. Along the way, you should always see your tests fail in appropriate ways.  Eventually, all of your tests should pass when the code is complete.</p>
@@ -241,7 +241,6 @@
 </div><hr/><div>
     <h3>Test-Driven Bug Fixes</h3>
     <h5>Posted by bsstahl on 2016-02-27 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Test-Driven Bug Fixes'"
                 share_description="&quot;&quot;"
@@ -249,6 +248,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>I had an experience this past week that reminded me of both the importance of continuing the Test Driven Development process beyond the initial development phases of a application's life-cycle, and that not all developers have yet fully grasped the concepts behind Test Driven Development.</p>
 <p>One of the development teams I work with had a bug come-up in a bit of complex logic that I designed. I was asked to pair-up with one of the developers to help figure out the bug since he had already spent several hours looking at it. When I asked him to show me the tests that were failing, there weren't any. The bug was for a situation that we hadn't anticipated during initial development (a common occurrence) and he had not yet setup any tests that exposed the bug.</p>
@@ -262,7 +262,6 @@
 </div><hr/><div>
     <h3>Remove Any Code Your Users Don't Care About</h3>
     <h5>Posted by bsstahl on 2015-09-28 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Remove Any Code Your Users Don't Care About'"
                 share_description="&quot;&quot;"
@@ -270,6 +269,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>Code Coverage has been the topic of a number of conversations lately, most recently after the last <a href="https://www.meetup.com/sevdnug/events/223863304/">Southeast Valley .NET User Group</a> meeting where <a href="https://twitter.com/jeremybytes">Jeremy Clark</a> presented his great talk, <a href="http://jeremybytes.com/Demos.aspx#UTMMF">Unit Testing Makes Me Faster</a>.  During this presentation, Jeremy eponymized, on my behalf, something I've been saying for a while, that <a href="https://jeremybytes.blogspot.com/2015/02/unit-test-coverage-what-parts-of-your.html">the part of an application that you don't need to test is the part that your users don't care about</a>. That is, if your users care about something in your application, you should be writing tests that ensure that the users' needs are fulfilled by your code. This has never really been a controversial statement, just one that sometimes gets lost in the myriad of information about unit testing and test driven development.</p>
 <p>Where the conversation got really interesting was when we started discussing what should happen if you decide that a piece of code really isn't important to your users.  It is my assertion that code which is deemed unimportant enough to the user that it might not be tested, should be removed from the project, even if is part of a standard implementation.  I will attempt to justify this assertion by using the example of a property implementation that supports the <em>INotifyPropertyChanged</em> interface.</p>
@@ -302,7 +302,6 @@
 </div><hr/><div>
     <h3>Introducing TestHelperExtensions</h3>
     <h5>Posted by bsstahl on 2015-08-26 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Introducing TestHelperExtensions'"
                 share_description="&quot;&quot;"
@@ -310,6 +309,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <h2>TL;DR Version</h2>
 <p>I've released a new Open-Source library of extension methods that can be used to create more effective unit and integration tests. This library is called TestHelperExtensions. The source code is available on <a href="https://github.com/bsstahl/testhelperextensions">GitHub</a> (pull requests welcome), a .NET 4 package is available via <a href="http://www.nuget.org/packages/TestHelperExtensions/">NuGet</a>, and the documentation is available <a href="http://testhelperextensions.cognitiveinheritance.com">here</a>. The goal is to allow anyone to have access to the same set of test helpers I have been using, and building up, for many years.</p>
@@ -323,7 +323,6 @@
 </div><hr/><div>
     <h3>Conflict of Interest -- YAGNI vs. Standardization</h3>
     <h5>Posted by bsstahl on 2014-07-28 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Conflict of Interest -- YAGNI vs. Standardization'"
                 share_description="&quot;&quot;"
@@ -331,6 +330,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>While working on the OSS project mentioned in my <a href="../Posts/New-OSS-Project.html">previous post</a>, I have run across a dilemma where two of the principles I try to work by are in conflict. The two principles in question are:</p>
 <ol>
@@ -353,7 +353,6 @@
 </div><hr/><div>
     <h3>New OSS Project</h3>
     <h5>Posted by bsstahl on 2014-07-11 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'New OSS Project'"
                 share_description="&quot;&quot;"
@@ -361,6 +360,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>I recently started working on a set of open-source projects for Code Camps and other community conferences with my friend Rob Richardson <a href="https://twitter.com/rob_rich">(@rob_rich</a>). In addition to doing some good for the community, I expect these projects, which I will describe in more detail in upcoming posts, to allow me to experiment with several elements of software development that I have been looking forward to trying out. These include:</p>
 <ul>
@@ -380,7 +380,6 @@
 </div><hr/><div>
     <h3>Visual Studio Unit Test Generator</h3>
     <h5>Posted by bsstahl on 2013-08-05 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Visual Studio Unit Test Generator'"
                 share_description="&quot;&quot;"
@@ -388,6 +387,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>As a follow-up to my posts <a href="..//Posts/The-Missing-e2809cCreate-Unit-Teste2809d-feature-in-Visual-Studio-2012.html">here</a> and <a href="..//Posts/Regain-Access-to-the-CreateUnitTests-Command-in-VS2012.html">here</a> on the missing “Create Unit Test” feature in VS2012, I point you to <a href="https://web.archive.org/web/20190426104920/https://devblogs.microsoft.com/devops/visual-studio-unit-test-generator-is-feature-complete-v1-release-candidate-lands-2/">this post</a> from the Visual Studio ALM &amp; TFS blog announcing the Release Candidate of their new Unit Test Generator for Visual Studio.  According to the post, this extension</p>
 <blockquote>
@@ -400,7 +400,6 @@
 </div><hr/><div>
     <h3>Regain Access to the CreateUnitTests Command in VS2012</h3>
     <h5>Posted by bsstahl on 2012-12-27 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Regain Access to the CreateUnitTests Command in VS2012'"
                 share_description="&quot;&quot;"
@@ -408,6 +407,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>I previously expressed my annoyance <a href="..//Posts/The-Missing-e2809cCreate-Unit-Teste2809d-feature-in-Visual-Studio-2012.html">here</a> and <a href="http://channel9.msdn.com/Events/Build/2012/3-017">here (starting at 01:02:06)</a> about the lack of the Create Unit Tests feature in Visual Studio 2012, similar to the one in Visual Studio 2010.  It is interesting that none of the Microsoft people I’ve spoken to on the issue were able to provide me with a reasonable work-around, but apparently, <a href="http://stackoverflow.com/users/1741116/intrueder">intrueder</a>, a commenter at <a href="http://stackoverflow.com/questions/9547055/where-is-the-create-unit-tests-selection">Stack Overflow</a>, has.  It turns out that the functionality was not removed from the Visual Studio product, just from the context menu. Therefore, we can give ourselves access to the command again by assigning a keyboard shortcut to it.  The steps to do so are as follows:</p>
 <ol>
@@ -425,7 +425,6 @@
 </div><hr/><div>
     <h3>The Missing “Create Unit Test” feature in Visual Studio 2012</h3>
     <h5>Posted by bsstahl on 2012-09-16 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'The Missing “Create Unit Test” feature in Visual Studio 2012'"
                 share_description="&quot;&quot;"
@@ -433,6 +432,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>I am loving many of the improvements made in Visual Studio 2012.  The performance and overall user experience of the test runner has improved tremendously from Visual Studio 2010 and the IDE is generally a joy to use.  <em><strong>Unfortunately, I can’t use it</strong></em>. It is missing one of the key features I use in my development workflow, that is, the “Create Unit Test” option.  This function, in VS2010, generates the stub of unit tests based on the interfaces of the selected methods.  It is hard for me to imagine why this feature was left out of Visual Studio 2012, but it needs to be put back in immediately.</p>
 <p>Please let Microsoft know how you feel about the absence of this feature in VS2012 by voting the feature request up on <a href="https://web.archive.org/web/20130311134957/http://visualstudio.uservoice.com/forums/121579-visual-studio/suggestions/2748862-add-create-unit-tests-menu-option-back-">UserVoice</a>.</p>
@@ -442,7 +442,6 @@
 </div><hr/><div>
     <h3>Code Sample for My TDD Kickstart Sessions</h3>
     <h5>Posted by bsstahl on 2012-02-13 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Code Sample for My TDD Kickstart Sessions'"
                 share_description="&quot;&quot;"
@@ -450,6 +449,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>The complete, working application for my <a href="../Posts/NET-TDD-Kickstart.html">.NET TDD Kickstart</a> sessions can be found <a href="../Files/TDDKickstart.zip">here</a>.</p>
 <p>Unzip the files into a solution folder and open the <strong>Demo.sln</strong> solution in a version of Visual Studio 2010 that has Unit Testing capability (Professional, Premium or Ultimate).  Immediately, you should be able to compile the whole solution, and successfully execute the tests in the <strong>Bss.QueueMonitor.Test</strong> and <strong>Bss.Timing.Test</strong> libraries.</p>
@@ -463,7 +463,6 @@
 </div><hr/><div>
     <h3>.NET TDD Kickstart</h3>
     <h5>Posted by bsstahl on 2012-01-26 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;<a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: '.NET TDD Kickstart'"
                 share_description="&quot;&quot;"
@@ -471,6 +470,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>I head out to Fullerton tomorrow for the start of my .NET TDD Kickstart world tour. <img src="../Images/wlEmoticon-smile.png" alt="Smile" /></p>
 <blockquote>
@@ -492,7 +492,6 @@
 </div><hr/><div>
     <h3>Order Matters in the Rhino Mocks Fluent Interface</h3>
     <h5>Posted by bsstahl on 2012-01-16 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Order Matters in the Rhino Mocks Fluent Interface'"
                 share_description="&quot;&quot;"
@@ -500,6 +499,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>I noticed something interesting with Rhino Mocks today while testing some demo code:
 <code>Rhino.Mocks.Expect.Call(myDependency.MyMethod(param1)).Return(result).Repeat.Times(5);</code>
@@ -513,7 +513,6 @@ also has the expectation of 5 executions, but it returns the value of <strong>re
 </div><hr/><div>
     <h3>Developer Ignite in Chandler</h3>
     <h5>Posted by bsstahl on 2009-07-13 and Filed Under: <a title="Category: event" class="small" href="../Search/event.html">event</a>&nbsp;<a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Developer Ignite in Chandler'"
                 share_description="&quot;&quot;"
@@ -521,6 +520,7 @@ also has the expectation of 5 executions, but it returns the value of <strong>re
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>I will be speaking at the <a href="https://web.archive.org/web/20100512033945/http://software.intel.com/en-us/articles/developer-ignite/">Developer Ignite</a> event in Chandler on July 22nd.  The topic of my talk will be &quot;Simplicity Through Abstraction&quot; during which I will be giving a very high-level overview of using Dependency Injection as an Inversion-of-Control methodology to create simplicity in software architecture.</p>
 <p>While putting my presentation together I have found a number of items that I wanted to include in my presentation, but simply can't due to the obvious constraints of a 5-minute presentation.  Some of these items won't even get a mention, others will be mentioned only in passing.  I include them here as a list of topics for me to discuss in future posts to this blog.  Hopefully this will occur, at least in part, prior to the ignite event so that there will be a set of resources available to those at the event who were previously unfamiliar with these techniques and wish to explore them further.</p>
@@ -541,7 +541,6 @@ also has the expectation of 5 executions, but it returns the value of <strong>re
 </div><hr/><div>
     <h3>Using Constraints in Rhino Mocks</h3>
     <h5>Posted by bsstahl on 2009-04-17 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Using Constraints in Rhino Mocks'"
                 share_description="&quot;&quot;"
@@ -549,6 +548,7 @@ also has the expectation of 5 executions, but it returns the value of <strong>re
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>In <a href="https://web.archive.org/web/20090404034137/http://codebetter.com/blogs/karlseguin/archive/2009/04/01/don-t-be-afraid-of-complex-constraints.aspx">Don't be afraid of complex constraints</a>, Karl Seguin gives a nice overview of using constraints in Rhino Mocks to test complex unit interactions:</p>
 <blockquote>
@@ -560,7 +560,6 @@ also has the expectation of 5 executions, but it returns the value of <strong>re
 </div><hr/><div>
     <h3>Unit Test "Normalization"</h3>
     <h5>Posted by bsstahl on 2007-07-07 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Unit Test "Normalization"'"
                 share_description="&quot;&quot;"
@@ -568,6 +567,7 @@ also has the expectation of 5 executions, but it returns the value of <strong>re
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>In a recent conversation about Unit Tests, I was asked about how many asserts I would put into a single test, since some feel that there should only be one Assert per test. My answer was, that I look at it like database normalization with the test name serving as the primary key; that is, the asserts in the test should relate directly and only to that key. This analogy is also appropriate because DB normalization is a good thing within reason, but can definately be overdone. Unit test &quot;normalization&quot; can also be overdone if we try to break-out each assert into its own test.</p>
 <p>An example of where multiple asserts might be put into one test is a test of the Add method of a collection object which inherits from System.Collection.CollectionBase. When an item is added, it is appropriate to test for the proper index of that item to be returned from the method, as well as to test that the collection is holding the correct number of items after the Add is done. Both tests relate directly to the Add method. An argument could be made that the count of items relates to the Count property of the collection and therefore that assert doesn't relate only to the Add method, but since we are usually not coding the count property (because it was coded for us in CollectionBase), we don't need to test the Count property on its own, and it should be tested as part of the Add test.</p>
@@ -577,7 +577,6 @@ also has the expectation of 5 executions, but it returns the value of <strong>re
 </div><hr/><div>
     <h3>Testing Properties with Inconsistent Accessibility</h3>
     <h5>Posted by bsstahl on 2007-06-26 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Testing Properties with Inconsistent Accessibility'"
                 share_description="&quot;&quot;"
@@ -585,6 +584,7 @@ also has the expectation of 5 executions, but it returns the value of <strong>re
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>I ran into an interesting problem today while attempting to test a property member which had a <strong>public</strong> getter, but an <strong>internal</strong> setter (a .NET 2.0 construction in C#).</p>
 <p>Consider the following class:</p>
@@ -608,7 +608,6 @@ also has the expectation of 5 executions, but it returns the value of <strong>re
 </div><hr/><div>
     <h3>nUnit vs. VSTS</h3>
     <h5>Posted by bsstahl on 2006-10-07 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'nUnit vs. VSTS'"
                 share_description="&quot;&quot;"
@@ -616,6 +615,7 @@ also has the expectation of 5 executions, but it returns the value of <strong>re
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>Mark Michaelis posted a hit list of things to do to convert from nUnit to VSTS tests in his article <a href="https://web.archive.org/web/20080708110723/http://mark.michaelis.net:80/Blog/ConvertingAClassLibraryToAVSTSTestProject.aspx">Converting a class library to a VSTS Test Project</a>. A big part of this process is understanding the attribute translation:</p>
 <table border=1>

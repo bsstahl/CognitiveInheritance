@@ -65,7 +65,6 @@
                 <div>
     <h3>Is a Type an Implementation of an Interface?</h3>
     <h5>Posted by bsstahl on 2016-11-17 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Is a Type an Implementation of an Interface?'"
                 share_description="&quot;&quot;"
@@ -73,6 +72,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>One of the techniques I recommend highly in my <a href="../Posts/Simplify-Your-API.html">Simplify Your API</a> talk is the use of extension methods to hide the complexity of lower-level API functionality.  A good example of a place to use this methodology came-up last night in a great Reflection talk by Jeremy Clark (<a href="https://twitter.com/jeremybytes">Twitter</a>, <a href="https://jeremybytes.blogspot.com/">Blog</a>) at the <a href="http://www.nwvdnug.org">NorthWest Valley .NET User Group</a>.</p>
 <p><img src="../Images/Jeremy_2.jpg" alt="Jeremy" /></p>
@@ -84,7 +84,6 @@
 </div><hr/><div>
     <h3>No More Collection Objects</h3>
     <h5>Posted by bsstahl on 2015-10-27 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'No More Collection Objects'"
                 share_description="&quot;&quot;"
@@ -92,6 +91,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>I don't create collection objects anymore.</p>
 <p>I know, I know. I was they guy always preaching that every entity that was being collected had to have its own collection object. It was the right thing at the time; if you needed to take an action on an enumeration or list of objects, those actions needed to be done within a strongly-typed collection object to maintain encapsulation. Even if all that was happening was that an inherited <em>List&lt;T&gt;</em> function was being called, that functionality needed to be called on the <em>TCollection</em> object because, if it wasn't, it was likely that the next time logic needed to be performed on the collection, there wouldn't be a place to put it. Collection logic would end up being spread-out around your code rather than encapsulated in the collection. It was also possible that the implementation might change and need to be updated everywhere, instead of in one place.</p>
@@ -110,7 +110,6 @@
 </div><hr/><div>
     <h3>“One Reason to Change” Means the Code</h3>
     <h5>Posted by bsstahl on 2015-07-06 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: '“One Reason to Change” Means the Code'"
                 share_description="&quot;&quot;"
@@ -119,6 +118,7 @@
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
     <br/>
+    <br/>
     <p>There was some confusion last week at the SoCalCodeCamp about what the phrase “One Reason to Change” actually means.  As you probably know, the Single Responsibility Principle states that every class should have one and only one responsibility within the system. A common check for adherence to this principal is that the object has only one reason to change. However, it is important to realize that this is referring to the code (the class), not the state of the object (the instance).  The state of the object may have many reasons to change, however, we as developers should have only 1 reason to change the code for our objects.  For example, if the object is in the business-rules layer, we should only have to change the code if the business rules change.  Likewise, if the object is in the data tier, it should only need code changes if the structure of the data changes.</p>
 
     <h5>Tags: <a title="Tag: class" class="small" href="../Search/class.html">class</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: development" class="small" href="../Search/development.html">development</a>&nbsp;<a title="Tag: solid" class="small" href="../Search/solid.html">solid</a>&nbsp;<a title="Tag: oop" class="small" href="../Search/oop.html">oop</a>&nbsp;</h5>
@@ -126,7 +126,6 @@
 </div><hr/><div>
     <h3>Decorating Partial Class Members in C#</h3>
     <h5>Posted by bsstahl on 2011-03-08 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Decorating Partial Class Members in C#'"
                 share_description="&quot;&quot;"
@@ -134,6 +133,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>Anyone who uses code generation more than trivially in their .NET solutions knows how difficult it is to add metadata to a member of a generated class, even if that class is marked as partial.  Partial classes are terrific for adding members to generated classes, and even allow you to change metadata and other information about the class itself, such as by adding an interface that it implements.  You cannot however, modify an existing member of the class by marking it to not be serialized, or to make it a part of a WCF data contract. I believe, as more and more code is generated by .NET developers using Entity Framework, wsdl.exe and other proxy generation tools, or even T4 directly; we will see a greatly increased need for a workable solution to this problem.</p>
 <p>The most common work-around for this problem today is the use of “buddy classes” where a separate class is created to hold the metadata.  A good example of this type of solution can be found in <a href="http://www.asp.net/dynamicdata">ASP.NET Dynamic Data</a>.  However, as you might imagine, this type of implementation has some fairly severe drawbacks.  For one, it requires some sort of mechanism for unifying the functionality of the two classes. An example of this is the case where we have a property on an Entity Framework POCO that should not be serialized when we serialize the rest of the class.  We cannot serialize the POCO correctly unless we use a custom serializer that is aware of the metadata in the buddy class.  We have similar problems if we are trying to use a generated base class as the output of a WCF service.  If the [DataContract] attribute is not already on the generated code (which requires a reference to the System.Runtime.Serialization library) we will have to create a separate object that implements the DataContract to be exposed by the service.  In most cases, this object will be an almost exact duplicate of the state features of the original object, forcing the replication of some code, even if that code is just the properties of the object.</p>
@@ -157,7 +157,6 @@
 </div><hr/><div>
     <h3>Generics Concerns</h3>
     <h5>Posted by bsstahl on 2006-04-29 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Generics Concerns'"
                 share_description="&quot;&quot;"
@@ -165,6 +164,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>Another feature that concerns me (see my <a href="../Posts/NET-20-Concerns.html">earlier post</a>) is .NET Generics. While it is nice to be able to specify a strongly-typed collection without having to create a class, it seems to me like this is still the <a href="http://msdn2.microsoft.com/en-us/library/Aa716279%28VS.60%29.aspx">house of sticks</a>, rather than the house of bricks we really want. Also, extensibility seems to suffer in this model because we are limiting our encapsulation. I certainly have not used this enough to say one way or another for certain, I just currently have concerns.</p>
 

@@ -65,7 +65,6 @@
                 <div>
     <h3>Solving DataSet Constraint Problems</h3>
     <h5>Posted by bsstahl on 2006-08-31 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Solving DataSet Constraint Problems'"
                 share_description="&quot;&quot;"
@@ -73,6 +72,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>Roy Osherove, and one of his commenters on <a href="https://osherove.com/blog/">his blog</a>, explains how to find out the source of a constraint problem in a DataSet. To do so, simply set the <strong>DataSet.EnforceConstraints</strong> property to false, then load your data. Once everything is loaded, set the <strong>EnforceConstraints</strong> property back to True, while trapping for the error. Once the error occurs, you can iterate through the Tables, testing the <strong>HasErrors</strong> property. For each table with errors, iterate through its rows testing the same property. Rows that have errors will have a property called <strong>RowError</strong> that describes the specific problem with that row.</p>
 <p>Roy's original article is: <a href="https://osherove.com/blog/2004/10/3/dataset-hell-failed-to-enable-constraints-one-or-more-rows-c.html?rq=DataSet%20hell%20-%20%22Failed%20to%20enable%20constraints">DataSet hell - &quot;Failed to enable constraints. One or more rows contain values....&quot;</a>.</p>

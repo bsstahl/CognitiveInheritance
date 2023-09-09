@@ -65,7 +65,6 @@
                 <div>
     <h3>Office Lens–Magic in a Free App</h3>
     <h5>Posted by bsstahl on 2015-09-30 and Filed Under: <a title="Category: tools" class="small" href="../Search/tools.html">tools</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Office Lens–Magic in a Free App'"
                 share_description="&quot;&quot;"
@@ -73,6 +72,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>While I was working on my <a href="../Posts/Remove-Any-Code-Your-Users-Dont-Care-About.html">last post</a>, I experimented with some visualizations that I thought might help make my point a bit more clearly.  I didn’t end up using them, but the whiteboard exercise that I went through in developing them helped me organize my thoughts, and, I believe, resulted in a better article.</p>
 <p><img src="..//Images/Office%20Lens_20150928_155346_processed_thumb.jpg" alt="After Office Lens Processing" /></p>
@@ -87,7 +87,6 @@
 </div><hr/><div>
     <h3>Are you Ready for the Next Episode?</h3>
     <h5>Posted by bsstahl on 2015-06-29 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Are you Ready for the Next Episode?'"
                 share_description="&quot;&quot;"
@@ -95,6 +94,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>In the last episode of “<a href="../Posts/Windows-8-Store-Development-for-Enterprise-Devs.html">Refactoring my App Development Mojo</a>”, I explained how I had discovered my passion for building Windows Store applications by using a hybrid solution of HTML5 with very minimal JavaScript, bound to a view-model written in C# running as a Windows Runtime Component, communicating with services written in C# using WCF.  The goal was to do as much of the coding as possible in the technologies I was very comfortable with, C# and HTML, and minimize the use of those technologies which I had never gotten comfortable with, namely JavaScript and XAML.</p>
 <p>While this was an interesting and somewhat novel approach, it turned out to have a few fairly significant drawbacks:</p>
@@ -113,7 +113,6 @@
 </div><hr/><div>
     <h3>The Next Old New way of Thinking About App Interfaces</h3>
     <h5>Posted by bsstahl on 2014-04-04 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'The Next Old New way of Thinking About App Interfaces'"
                 share_description="&quot;&quot;"
@@ -121,6 +120,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>One thing I've noticed during my 30 years in software engineering is that everything old eventually becomes new again.  If you have a particular skill or preferred methodology that seems to have become irrelevant,  just wait a while, it is likely to return in some form or another.  In this case, it seems that recent announcements by Microsoft about how developers will be able to leverage the power of Cortana, are likely to revitalize the need for text processing as an input to the apps we build.</p>
 <p>At one time, many years ago, we had two primary methods of letting the computer know what path we wanted to take within an application; we could select a value from a displayed (textual) menu, or, if we were getting fancy, we could provide an input box that the user could type commands into.  This latter technique was often the purview of text-only adventure games and inputs came in the form &quot;move left&quot; and &quot;look east&quot;.  While neither of these input methods was particularly exciting or &quot;natural&quot; to use today's parlance, it was only text input that allowed the full flexibility of executing nearly any application action from any location.  Now that Microsoft has announce that developers on Windows Phone, and likely other platforms, will be able to leverage the platform's built-in digital assistant named &quot;Cortana&quot; and receive inputs into their applications as text input translated from the user's speech (or directly as text typed into Cortana's input box) it makes sense for us to start thinking about our application inputs in this way again. That is, we want to consider, for each action a user might take, how the user might trigger that action by voice command.</p>
@@ -131,7 +131,6 @@
 </div><hr/><div>
     <h3>Using Target-Specific Code in a Portable Library</h3>
     <h5>Posted by bsstahl on 2013-06-27 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <br/>
     <share-on-mastodon 
                 share_title="Check out this post on Cognitive Inheritance: 'Using Target-Specific Code in a Portable Library'"
                 share_description="&quot;&quot;"
@@ -139,6 +138,7 @@
                 author="@bsstahl@cognitiveinheritance.com"
                 default_url="https://fosstodon.org">
             </share-on-mastodon>
+    <br/>
     <br/>
     <p>On at least 2 occasions recently, I have heard speakers tell their audience that you cannot reference a target-specific .NET library (such as a .NET Framework 4.5 library) from a Portable Class Library.  While this is technically true, it doesn't tell nearly the whole story.  Even though we can't reference target-specific libraries, we can still USE these libraries. We can call their methods and access their properties under the right circumstances. We can gain access to these libraries via an abstraction.  My preferred method of doing this is known as Dependency Injection.</p>
 <p>I'm going to give some quick background on PCLs and DI before getting into the details of how they can be used in this context. If you are familiar with Dependency Injection and .NET Portable Class Libraries you can skip these sections.</p>
