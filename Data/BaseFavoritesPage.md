@@ -15,6 +15,10 @@ categories:
  - General
 
 ---
+Note: This template is not currently used. It is here for future use. At the moment, this page is generated from the template hardcoded in the FavGen.exe tool.
+
+***
+
 I often describe myself as the kind of person who has a list of his favorite Physicists and a list of his favorite Mathematicians. The thought behind this description is that just knowing I have these types of lists tells you everything you really need to know about me. I try to keep these lists up-to-date based on my current feelings. Please remember that these are my personal favorites, not those whom I necessarily think are the "best", whatever that means, or even most influential. I include Computer Scientists and Software Engineers in with Mathematicians because I believe that is where they belong.
 
 I am always open to constructive criticism and disagreement. Please feel free to comment on this list using the Fediverse {TwitterLink}.

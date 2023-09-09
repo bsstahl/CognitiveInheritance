@@ -9,7 +9,7 @@ tags:
 menuorder: 0
 id: 53e0a79d-1096-4874-9639-6c1fb3eb8b47
 author: bsstahl
-title: Microservices&colon; Size Doesn&apos;t Matter, Reliability Does
+title: Microservices&#58; Size Doesn&apos;t Matter, Reliability Does
 description: The number and size of microservices is irrelevant as long as they are reliable
 ispublished: true
 buildifnotpublished: true
