@@ -22,7 +22,7 @@
 &lt;p&gt;We now know that we have at least 10&lt;sup&gt;733&lt;/sup&gt; possible states for each vector. But that is just using integer values. What happens if we start increasing the fidelity of our value. The next step is to assume that we can use values with a single decimal place. That is, the numbers in each dimension can take values such as &lt;strong&gt;0.1&lt;/strong&gt; and &lt;strong&gt;-0.5&lt;/strong&gt;. This increases the base in the above equation by a factor of 10, from 3 to 30. Our new values to plug in to the equation are:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;V = 30&lt;sup&gt;1536&lt;/sup&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Which is equivalent to &lt;strong&gt;2&lt;sup&gt;7537&lt;/sup&gt;&lt;/strong&gt; or &lt;strong&gt;10&lt;sup&gt;2269&lt;/sup&gt;&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Another way of thinking about these values is that they require a data structure not of 32 or 64 bits to represent, but of 2269 bits. That is, we would need a data structure that is 2269 bits long to represent all of the possible values of a vector that uses just one decimal place.&lt;/p&gt;
+&lt;p&gt;Another way of thinking about these values is that they require a data structure not of 32 or 64 bits to represent, but of 7537 bits. That is, we would need a data structure that is 2269 bits long to represent all of the possible values of a vector that uses just one decimal place.&lt;/p&gt;
 &lt;p&gt;We can continue this process for a few more decimal places, each time increasing the base by a factor of 10. The results can be found in the table below.&lt;/p&gt;
 &lt;table border=1&gt;
 &lt;tr&gt;&lt;th&gt;B&lt;/th&gt;&lt;th&gt;Example&lt;/th&gt;&lt;th&gt;Base-2&lt;/th&gt;&lt;th&gt;Base-10&lt;/th&gt;&lt;/tr&gt;

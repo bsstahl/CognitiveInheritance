@@ -86,7 +86,7 @@
 <p>We now know that we have at least 10<sup>733</sup> possible states for each vector. But that is just using integer values. What happens if we start increasing the fidelity of our value. The next step is to assume that we can use values with a single decimal place. That is, the numbers in each dimension can take values such as <strong>0.1</strong> and <strong>-0.5</strong>. This increases the base in the above equation by a factor of 10, from 3 to 30. Our new values to plug in to the equation are:</p>
 <p><strong>V = 30<sup>1536</sup></strong></p>
 <p>Which is equivalent to <strong>2<sup>7537</sup></strong> or <strong>10<sup>2269</sup></strong>.</p>
-<p>Another way of thinking about these values is that they require a data structure not of 32 or 64 bits to represent, but of 2269 bits. That is, we would need a data structure that is 2269 bits long to represent all of the possible values of a vector that uses just one decimal place.</p>
+<p>Another way of thinking about these values is that they require a data structure not of 32 or 64 bits to represent, but of 7537 bits. That is, we would need a data structure that is 2269 bits long to represent all of the possible values of a vector that uses just one decimal place.</p>
 <p>We can continue this process for a few more decimal places, each time increasing the base by a factor of 10. The results can be found in the table below.</p>
 <table border=1>
 <tr><th>B</th><th>Example</th><th>Base-2</th><th>Base-10</th></tr>
