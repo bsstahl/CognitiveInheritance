@@ -14,7 +14,7 @@ ispublished: true
 showinlist: false
 buildifnotpublished: true
 publicationdate: 2023-10-03T07:00:00Z
-lastmodificationdate: 2023-10-03T08:00:00Z
+lastmodificationdate: 2023-10-07T08:00:00Z
 slug: depth-of-gpt-embeddings
 ---
 I've been trying to get a handle on the number of representations possible in a GPT vector and thought others might find this interesting as well. For the purposes of this discussion, a GPT vector is a 1536 dimensional structure that is unit-length, encoded using the **text-embedding-ada-002** embedding model.
@@ -41,7 +41,7 @@ We now know that we have at least 10<sup>733</sup> possible states for each vect
 
 Which is equivalent to **2<sup>7537</sup>** or **10<sup>2269</sup>**.
 
-Another way of thinking about these values is that they require a data structure not of 32 or 64 bits to represent, but of 2269 bits. That is, we would need a data structure that is 2269 bits long to represent all of the possible values of a vector that uses just one decimal place.
+Another way of thinking about these values is that they require a data structure not of 32 or 64 bits to represent, but of 7537 bits. That is, we would need a data structure that is 2269 bits long to represent all of the possible values of a vector that uses just one decimal place.
 
 We can continue this process for a few more decimal places, each time increasing the base by a factor of 10. The results can be found in the table below.
 
