@@ -41,7 +41,7 @@ We now know that we have at least 10<sup>733</sup> possible states for each vect
 
 Which is equivalent to **2<sup>7537</sup>** or **10<sup>2269</sup>**.
 
-Another way of thinking about these values is that they require a data structure not of 32 or 64 bits to represent, but of 7537 bits. That is, we would need a data structure that is 2269 bits long to represent all of the possible values of a vector that uses just one decimal place.
+Another way of thinking about these values is that they require a data structure not of 32 or 64 bits to represent, but of 7537 bits. That is, we would need a data structure that is 7537 bits long to represent all of the possible values of a vector that uses just one decimal place.
 
 We can continue this process for a few more decimal places, each time increasing the base by a factor of 10. The results can be found in the table below.
 
