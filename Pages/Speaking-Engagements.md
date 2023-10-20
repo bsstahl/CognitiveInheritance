@@ -8,7 +8,7 @@ description: Technical presentations given by Barry S. Stahl.
 ispublished: true
 showinlist: true
 publicationdate: 2009-08-01T00:00:00.000+00:00
-lastmodificationdate: 2023-09-30T00:00:00.000+00:00
+lastmodificationdate: 2023-10-20T00:00:00.000+00:00
 slug: Speaking-Engagements
 categories: []
 
@@ -16,6 +16,7 @@ categories: []
 
 ### Upcoming Talks
 
+* **Tulsa .NET User Group** - 10/24/2023 - "Defining the Business Domain using Event Storming"
 * **CodeMash 2024** - 1/9/2023 - 1/12/2023 - "GPT Embeddings - Not Magic, Just Math"
 
 <!-- I currently have no talks scheduled. {ContactPageLink:Contact me} to arrange to have me speak at your event. -->
