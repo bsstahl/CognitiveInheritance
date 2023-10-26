@@ -16,7 +16,6 @@ categories: []
 
 ### Upcoming Talks
 
-* **Tulsa .NET User Group** - 10/24/2023 - "Defining the Business Domain using Event Storming"
 * **CodeMash 2024** - 1/9/2023 - 1/12/2023 - "GPT Embeddings - Not Magic, Just Math"
 
 <!-- I currently have no talks scheduled. {ContactPageLink:Contact me} to arrange to have me speak at your event. -->
@@ -131,6 +130,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ### Past engagements
 
+* **Tulsa .NET User Group** - 10/24/2023 - "Defining the Business Domain using Event Storming"
 * **CodeMash 2023** - 1/10/2023 - 1/13/2023 - "Event Storming Workshop"
 * **Edmonton .NET User Group** - 11/29/2022 - "Introduction to Microservices"
 * **NDC Oslo 2022** - 9/26/2022 - 9/30/2022 - "Amazing Algorithms for Solving Problems in Software" & "Event Storming Workshop"

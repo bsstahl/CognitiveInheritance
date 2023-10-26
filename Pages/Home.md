@@ -15,23 +15,17 @@ categories: []
 ---
 ## Social Media
 
-* [CognitiveInheritance](https://cognitiveinheritance.com)
 * [Fosstodon](https://fosstodon.org/@bsstahl)
 * [lemmy.az.social - Lemmy Server for the State of Arizona](https://lemmy.az.social/)
 * [WhatsApp Web](https://web.whatsapp.com/)
 * [Explore Popular Debates, Discussions and Critical Thinking… | Kialo](https://www.kialo.com/)
 * [Google Voice](https://voice.google.com)
 
-## Reference Tools
-
-* [Listen Notes: Best podcast search engine & podcast database](https://www.listennotes.com/)
-* [SeatGuru Seat Map US Airways Airbus A321 (321)](http://www.seatguru.com/airlines/US_Airways/US_Airways_Airbus_A321.php)
-* [Welcome to World Airport Codes](http://www.world-airport-codes.com/)
-
 ## Fun Stuff
 
 * [BlackJack Trainer](http://bjtrainer.azurewebsites.net/)
 * [Tamarian language | Memory Alpha](https://memory-alpha.fandom.com/wiki/Tamarian_language)
+* [Internet Artifacts](https://neal.fun/internet-artifacts/)
 * [Virtual Piano](http://virtualpiano.net/)
 * [MomsMinivan.com - 101 Car Games, Travel Games and Road Trip Games for Kids -- Printable Road Trip Activities](http://www.momsminivan.com/)
 
@@ -39,6 +33,12 @@ categories: []
 
 * [Super Jo Baseball](http://baseball.fantasysports.yahoo.com/league/superjobaseball)
 * [Super Jo Football](http://football.fantasysports.yahoo.com/league/superjo)
+
+## Reference Tools
+
+* [Listen Notes: Best podcast search engine & podcast database](https://www.listennotes.com/)
+* [SeatGuru Seat Map US Airways Airbus A321 (321)](http://www.seatguru.com/airlines/US_Airways/US_Airways_Airbus_A321.php)
+* [Welcome to World Airport Codes](http://www.world-airport-codes.com/)
 
 ## To Read or Watch
 
