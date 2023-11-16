@@ -17,6 +17,7 @@ categories: []
 ### Upcoming Talks
 
 * **CodeMash 2024** - 1/9/2023 - 1/12/2023 - "GPT Embeddings - Not Magic, Just Math"
+* **ConFoo Montreal 2024** - 2/21/2024 - 2/23/2024 - "GPT Embeddings - Not Magic, Just Math" & "Amazing Algorithms for Solving Problems in Software"
 
 <!-- I currently have no talks scheduled. {ContactPageLink:Contact me} to arrange to have me speak at your event. -->
 
@@ -130,6 +131,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ### Past engagements
 
+* **Carvana Spark** - 11/14/2023 - 11/15/2023 - "Apache Kafka: Driving System Reliability" (Panel Moderator)
 * **Tulsa .NET User Group** - 10/24/2023 - "Defining the Business Domain using Event Storming"
 * **CodeMash 2023** - 1/10/2023 - 1/13/2023 - "Event Storming Workshop"
 * **Edmonton .NET User Group** - 11/29/2022 - "Introduction to Microservices"

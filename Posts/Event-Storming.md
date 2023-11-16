@@ -47,7 +47,7 @@ A Bounded Context is a logical area within a system where business processes are
 
 The business rules and logic required to handle a Command or a Domain Event. A business process may create one or more domain events, or may reject the command outright.
 
-### Command (light blue) 
+### Command (light blue)
 
 An instruction submitted by a user, usually through a view, that typically results in the creation of one or more Domain Events. Commands may be rejected by the Business Processes that handle them, perhaps due to permissions or data validation issues. If a command is rejected, it may or may not result in one or more domain events representing the submission and/or rejection of that command.
 
@@ -114,4 +114,3 @@ External Systems are business processes that exist outside of the domain, and as
 The final step is all about grouping our new logic flows around the Aggregates they act upon and describing the communications between these newly identified sub-domains.
 
 As you recall, an Aggregate is an object graph treated as a single object and identified by the Aggregate Root. In this step we identify the aggregates in our system, and then group each of the flows from step 3 by the Aggregate they act upon. At the same time, we can draw lines between the groups to identify the communications across these boundaries. This will result in the final model of this process, a set of flows grouped by their Aggregate into subdomains that can often be viewed as a good proxy for a microservice.
-
