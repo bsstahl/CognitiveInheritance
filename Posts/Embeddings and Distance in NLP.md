@@ -28,7 +28,7 @@ Embeddings are a method of encapsulating words as vectors in a high-dimensional 
 
 Consider the word 'Ram'. In the sphere of computing, 'Ram' signifies memory. In the automotive domain, 'Ram' could denote a truck model. In an agricultural context, 'Ram' could imply a male sheep. The embeddings for the word 'Ram', or a phrase containing it, would be different in each of these contexts, reflecting the different semantic meanings.
 
-To help us visualize this idea, let's imagine a super-simplified version, one that embeds text in only 3-dimensions. Picture a cube where each axis represents a different context: computing, automotive, and agriculture.
+To help us visualize this idea, let's imagine a super-simplified version, one that embeds text in only 3-dimensions. Picture a cube where each dimension represents a different context: computing, automotive, and agriculture.
 
 * The embedding of a sentence like 'I need to buy more RAM for my PC' would be positioned close to other embeddings related to computers, such as 'Memory', 'Storage' and 'ROM', high on the computing axis.
 
