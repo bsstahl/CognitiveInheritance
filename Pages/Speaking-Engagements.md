@@ -90,11 +90,19 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 <h4 id="ai-talks">Artificial Intelligence and Algorithms</h4>
 
+* **The Future of Information Retrieval: A Deep-Dive into RAG** - Retrieval Augmented Generation (RAG) may be the most important new software technology for business applications in a generation. RAG is revolutionizing the way we approach documentation and other information retrieval tasks. By combining the pre-training of large language models with your own data, RAG systems can help generate insights and ideas you might have never considered, enhancing real-world applications from question answering systems to content creation. Of course, these tools are not without their challenges. Systems built using any probabilistic model must be able to manage the size and complexity of requests and responses, ensure accurate and relevant retrieval, handle the biases inherent in the models, and identify if inaccuracies occur in responses.
+
+  In this session, we will empower you to harness the full potential of RAG. We will provide a detailed walkthrough of RAG implementation, offering practical insights and strategies to overcome the most common challenges associated with the use of language models. By the end of this session, you will understand how to build effective RAG systems that address many of the concerns with using these types of tools. Since we will be focusing on business operations tasks, our code samples will be in C# and leverage the Microsoft OpenAI Client and Semantic Kernel.
+
+***
+
 * **GPT Embeddings: Not Magic, Just Math** - Embeddings may be the least understood yet most valuable tool to come out of the world of Large Language Models. In this presentation, we will unravel the mystery of embeddings, emphasizing their mathematical foundations and practical applications.
 
   We'll start by discussing what embeddings are, and what they represent. Then we'll delve into the variety of tools we have to compare and contrast them, including Cosine similarity and distance, as well as clustering. Then we'll put those tools to use creating powerful applications that go beyond just typical chat and analytics use-cases. Because we'll be focusing on operational use-cases, code demos will be done using C#.
   
   Attendees will leave with a deeper understanding of the mathematical underpinnings of embeddings, practical knowledge of how to use them, and an appreciation for their value in our applications. This session is ideal for developers, data scientists, and anyone interested in the mathematical underpinnings of machine learning and natural language processing.
+
+    [Latest Slide Deck](https://introtoembeddings.azurewebsites.net)
 
 ***
 
