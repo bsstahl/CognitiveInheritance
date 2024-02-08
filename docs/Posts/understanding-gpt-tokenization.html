@@ -71,9 +71,7 @@
                 </share-on-mastodon>
                 <br/><br/>
                 <h2>Introduction</h2>
-<ul>
-<li>Why are we here?</li>
-</ul>
+<p>[TODO: Why are we here?]</p>
 <h2>Tokenization in natural language processing (NLP)</h2>
 <p>Tokenization is the process of converting text input into a numeric form that machine learning models can interpret. During this process, text strings are broken into segments, often corresponding to words, phrases, or other meaningful elements, and each segment is then mapped to one or more unique integer values called tokens. This numerical representation allows algorithms to perform operations on textual data since the models require quantitative inputs.</p>
 <h3>Why Tokenization?</h3>
@@ -82,11 +80,10 @@
 <h3>The <em>cl100k</em> Tokenization Model</h3>
 <p>The <code>cl100k</code> tokenization model is the encoding scheme employed by OpenAI's GPT (Generative Pre-trained Transformer) models. This encoding is built to parse input text into 100,256 (100k) different tokens, efficiently representing a vast range of linguistic elements from individual characters to full words and phrases in numerous languages and alphabets. This approach allows GPT models to grasp the nuances of language, handle a variety of linguistic tasks, and generate coherent, contextually relevant text based on the input they receive. The cl100k tokenizer is an integral part of how GPT models manage to achieve their impressive performance in generating human-like text.</p>
 <h2>The <em>cl100k</em> Tokenizer Sample Code</h2>
-<p>I found it difficult to understand the tokenization process from looking at the code for some of the standard implementations. There is a simple reason for this -- those implementations are optimized for speed and efficiency, not for clarity and understanding. To solve this problem, and help my understanding of this process, I created a new implementation using an object-oriented approach. This implementation prioritizes clarity and understanding over raw performance. While it is not optimized for high-speed, production-level applications, its OOP design makes the concepts of encoding and decoding with <code>cl100k</code> far more accessible for educational purposes, allowing learners to grasp the nuances of tokenization without getting lost in the weeds of complex array operations. The code is written in <em>C#</em> and is available on <a href="https://github.com/bsstahl/AIDemos/tree/master/Tokenizer">GitHub</a>.</p>
-<ul>
-<li>Walk throught the sample code, explaining how the Encode and Decode methods work.</li>
-<li>Link to the model translation data file on Github.</li>
-</ul>
+<p>I found it difficult to understand the tokenization process from looking at the code for some of the standard implementations. There is a simple reason for this -- those implementations are optimized for speed and efficiency, not for clarity and understanding. To solve this problem, and help my understanding of this process, I created a new implementation using an object-oriented approach. This implementation prioritizes clarity over performance, making the concepts of encoding and decoding with <code>cl100k</code> far more accessible for educational purposes. This approach allows learners to investigate the nuances of tokenization without getting lost in the weeds of complex array operations. The code is written in <em>C#</em> and is available on <a href="https://github.com/bsstahl/AIDemos/tree/master/Tokenizer">GitHub</a>.</p>
+<h3><em>cl100k</em> Tokenization Replacements</h3>
+<p>The key to the tokenization process using <em>cl100k</em> is the replacements data, found in the <a href="https://github.com/bsstahl/AIDemos/blob/master/Tokenizer/Tokenizer/data/cl100k_base.tiktoken">cl100k_base.tiktoken file</a> in the code sample. This file contains a list of Base-64 encoded strings, and the token that each string represents. A decoded version of this file can be found in <a href="../Pages/cl100k-token-replacements.html">this table</a>.</p>
+<p>[TODO: Walk throught the sample code, explaining how the Encode and Decode methods work]</p>
 <h2>Intriguing Token Findings</h2>
 <ul>
 <li>Longest Value Tokens
@@ -167,6 +164,7 @@
 | Washington | 6652: ' Washington', 39231: 'Washington', 94771: ' washington' |
 | Wilson | 17882: ' Wilson', 92493: 'Wilson' |</p>
 <h2>Conclusion</h2>
+<p>[TODO: Add conclusion]</p>
 
                 <h5>Tags: <a title="Tag: development" class="small" href="../Search/development.html">development</a>&nbsp;<a title="Tag: ai" class="small" href="../Search/ai.html">ai</a>&nbsp;</h5>
                 <div class="share"><a href="../Permalinks/802ad127-19a0-4a19-9bc7-a753e64d3124.html" rel="bookmark">Permalink</a></div>
