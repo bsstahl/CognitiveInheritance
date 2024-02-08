@@ -1,0 +1,120 @@
+---
+author: bsstahl
+tags:
+- development
+- ai
+categories:
+- Tools
+menuorder: 0
+id: 802ad127-19a0-4a19-9bc7-a753e64d3124
+title: Understanding GPT Tokenization
+description: 
+teaser: 
+ispublished: false
+showinlist: false
+buildifnotpublished: true
+publicationdate: 2024-03-01T07:00:00Z
+lastmodificationdate: 2024-03-01T08:00:00Z
+slug: understanding-gpt-tokenization
+
+---
+## Introduction
+
+* Why are we here?
+
+## Tokenization in natural language processing (NLP)
+
+Tokenization is the process of converting text input into a numeric form that machine learning models can interpret. During this process, text strings are broken into segments, often corresponding to words, phrases, or other meaningful elements, and each segment is then mapped to one or more unique integer values called tokens. This numerical representation allows algorithms to perform operations on textual data since the models require quantitative inputs.
+
+### Why Tokenization?
+
+NLP models utilize tokenization over direct UTF-8 byte representation because tokens offer meaningful linguistic units that align with the way language is structured and understood. Tokens abstract text into discrete elements that capture semantics, enable better generalization, and facilitate sequence processing. This approach simplifies the complexity inherent in multi-byte characters and enhances model efficiency by reducing the input space. Consequently, tokenization leads to more compact, contextually aware, and semantically rich representations that are essential for the sophisticated pattern recognition tasks required in NLP.
+
+By translating text into a sequence of numbers, tokenization enables the algorithmic manipulation necessary for tasks like pattern recognition, language modeling, and predictive text analysis within the realm of NLP.
+
+### The *cl100k* Tokenization Model
+
+The `cl100k` tokenization model is the encoding scheme employed by OpenAI's GPT (Generative Pre-trained Transformer) models. This encoding is built to parse input text into 100,256 (100k) different tokens, efficiently representing a vast range of linguistic elements from individual characters to full words and phrases in numerous languages and alphabets. This approach allows GPT models to grasp the nuances of language, handle a variety of linguistic tasks, and generate coherent, contextually relevant text based on the input they receive. The cl100k tokenizer is an integral part of how GPT models manage to achieve their impressive performance in generating human-like text.
+
+## The *cl100k* Tokenizer Sample Code
+
+I found it difficult to understand the tokenization process from looking at the code for some of the standard implementations. There is a simple reason for this -- those implementations are optimized for speed and efficiency, not for clarity and understanding. To solve this problem, and help my understanding of this process, I created a new implementation using an object-oriented approach. This implementation prioritizes clarity and understanding over raw performance. While it is not optimized for high-speed, production-level applications, its OOP design makes the concepts of encoding and decoding with `cl100k` far more accessible for educational purposes, allowing learners to grasp the nuances of tokenization without getting lost in the weeds of complex array operations. The code is written in *C#* and is available on [GitHub](https://github.com/bsstahl/AIDemos/tree/master/Tokenizer).
+
+
+* Walk throught the sample code, explaining how the Encode and Decode methods work.
+* Link to the model translation data file on Github.
+
+## Intriguing Token Findings
+
+* Longest Value Tokens
+  * Discussion on the longest value (128 spaces) and its significance
+  * Other tokens beyond 42 characters long
+* Tokens Beyond Programming
+  * Presentation of the longest readable term .translatesAutoresizingMaskIntoConstraints
+  * Exploration of the longest term not programming related: abcdefghijklmnopqrstuvwxyz
+  * Analysis of the longest word not specifically programming related:  responsibilities
+* Social Media's Influence
+  * Examination of the term unconstitutional and its reflection of social media content
+* Notable Tokens
+  * Insights into tokens like -m, mary, and значения
+  * The curious case of redacted text representation with █████
+
+### The Tokenization of US Presidents Last Names
+
+The tokenization of the names of US presidents within the *cl100k* model presents a fascinating case study in how natural language processing deals with proper nouns, particularly those with high cultural and historical significance. The way these names are broken down into tokens can reveal patterns in the dataset's composition and the model's efficiency at encoding information. For instance, some presidential last names require multiple tokens to represent, while others can be captured in a single token, often depending on their frequency in the training data or their commonality in the English language. The variation in tokenization—from 'Ford' having multiple representations due to its regular appearance as a common noun or brand name, to more unique surnames—highlights the intricate balance between context, frequency, and the distinctiveness of proper nouns in the realm of machine learning. Understanding this can provide insights into the model's linguistic comprehension and its potential biases or strengths in recognizing and processing culturally relevant names.
+
+Of the 40 distinct last names of US Presidents:
+
+* 7 require more than 1 token to represent in any form
+* 22 have only 1 way to represent it in a single token, usually with a leading space andinitial cap
+* Ford has 4 ways, which makes sense since there are so many other reasons to write thatname
+* All of the remaining 10 names have 2 or 3 ways to represent them in a single token
+
+**Note: Derivatives of these names that are not actually the name of the President are not included here. For example: "Obamacare".**
+
+| President | Tokens |
+| --- | --- |
+| Adams | 27329: ' Adams' |
+| Arthur | 28686: ' Arthur', 60762: 'Arthur' |
+| Biden | 38180: ' Biden' |
+| Buchanan | 85290: ' Buchanan' |
+| Bush | 14409: ' Bush', 30773: ' bush', 100175: 'Bush' |
+| Carter | 25581: ' Carter' |
+| Cleveland | 24372: ' Cleveland' |
+| Clinton | 8283: ' Clinton', 51308: 'Clinton' |
+| Coolidge |  |
+| Eisenhower | 89181: ' Eisenhower' |
+| Fillmore |  |
+| Ford | 8350: 'ford', 14337: ' Ford', 45728: ' ford', 59663: 'Ford' |
+| Garfield |  |
+| Grant | 13500: ' grant', 24668: ' Grant', 52727: 'grant', 69071: 'Grant' |
+| Harding | 97593: ' Harding' |
+| Harrison | 36627: ' Harrison' |
+| Hayes | 53522: ' Hayes' |
+| Hoover | 73409: ' Hoover' |
+| Jackson | 13972: ' Jackson', 62382: 'Jackson' |
+| Jefferson | 34644: ' Jefferson' |
+| Johnson | 11605: ' Johnson', 63760: 'Johnson' |
+| Kennedy | 24573: ' Kennedy' |
+| Lincoln | 25379: ' Lincoln' |
+| Madison | 31015: ' Madison' |
+| McKinley |  |
+| Monroe | 50887: ' Monroe' |
+| Nixon | 42726: ' Nixon' |
+| Obama | 7250: ' Obama', 45437: 'Obama' |
+| Pierce | 50930: ' Pierce' |
+| Polk |  |
+| Reagan | 35226: ' Reagan' |
+| Roosevelt | 47042: ' Roosevelt' |
+| Taft |  |
+| Taylor | 16844: ' Taylor', 68236: 'Taylor' |
+| Truman | 80936: ' Truman' |
+| Trump | 3420: ' Trump', 16509: 'Trump', 39155: ' trump' |
+| Tyler | 32320: ' Tyler', 100224: 'Tyler' |
+| Van Buren |  |
+| Washington | 6652: ' Washington', 39231: 'Washington', 94771: ' washington' |
+| Wilson | 17882: ' Wilson', 92493: 'Wilson' |
+
+
+## Conclusion
+
