@@ -16,7 +16,6 @@ categories: []
 
 ### Upcoming Talks
 
-* **CodeMash 2024** - 1/9/2023 - 1/12/2023 - "GPT Embeddings - Not Magic, Just Math"
 * **ConFoo Montreal 2024** - 2/21/2024 - 2/23/2024 - "GPT Embeddings - Not Magic, Just Math" & "Amazing Algorithms for Solving Problems in Software"
 
 <!-- I currently have no talks scheduled. {ContactPageLink:Contact me} to arrange to have me speak at your event. -->
@@ -34,6 +33,12 @@ I have the following talks on topics of interest to Enterprise Developers that I
 * **Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems** - There is a danger lurking in every system that hasn't taken explicit steps to eliminate it. This under-recognized data killer can cause intermittent inconsistencies in your data which can be as difficult to find as they are to correct. Fortunately, recognizing this monster is easy, and there are a number of great techniques you can use to keep it away for good. In this talk, we will learn about the Dual-Writes anti-pattern: how to spot it, and what to do to avoid it. In doing so, we'll discuss the 4 primary patterns for keeping data consistent in modern software systems, so you can spend less time supporting your applications. We'll see examples in C# of each pattern, including demonstrations using SQL Server, Cosmos DB and Redis.
 
   [Latest Slide Deck](https://avoidingdualwrites.azurewebsites.net)
+
+***
+
+* **Success with Microservices: The Critical &quot;Cs&quot;** - Microservices allow you to build systems that are scalable, flexible, and resilient, but as valuable as they are, they also come with a set of challenges that can derail your development efforts. In this talk, we will dive into the "Critical C's of Microservices" - a framework for guiding important conversations in the design, development, and maintenance of microservices that can help you determine if you should be using microservices, and if so, identify many of the oft-overlooked considerations when building them. We will cover each of the 6 C's in detail: Context, Consistency, Contract, Chaos, Competencies, and Coalescence. We will drill-in to the goals of each of the conversations including why they are important, as well as patterns and best practices for leveraging them to create great outcomes for your users, your team and your organization. You will leave this talk with a deep understanding of how to be successful when building systems using event-driven microservice architectures. Whether you are new to microservices or an experienced practitioner, this talk will provide you with the tools you need to determine if microservices are right for your use-case, and what you need to consider if you decide to move forward with a microservices architecture.
+
+  [Critical &quot;C's&quot; Website](https://criticalcs.azurewebsites.net/)
 
 ***
 
@@ -91,11 +96,19 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 <h4 id="ai-talks">Artificial Intelligence and Algorithms</h4>
 
+* **The Future of Information Retrieval: A Deep-Dive into RAG** - Retrieval Augmented Generation (RAG) may be the most important new software technology for business applications in a generation. RAG is revolutionizing the way we approach documentation and other information retrieval tasks. By combining the pre-training of large language models with your own data, RAG systems can help generate insights and ideas you might have never considered, enhancing real-world applications from question answering systems to content creation. Of course, these tools are not without their challenges. Systems built using any probabilistic model must be able to manage the size and complexity of requests and responses, ensure accurate and relevant retrieval, handle the biases inherent in the models, and identify if inaccuracies occur in responses.
+
+  In this session, we will empower you to harness the full potential of RAG. We will provide a detailed walkthrough of RAG implementation, offering practical insights and strategies to overcome the most common challenges associated with the use of language models. By the end of this session, you will understand how to build effective RAG systems that address many of the concerns with using these types of tools. Since we will be focusing on business operations tasks, our code samples will be in C# and leverage the Microsoft OpenAI Client and Semantic Kernel.
+
+***
+
 * **GPT Embeddings: Not Magic, Just Math** - Embeddings may be the least understood yet most valuable tool to come out of the world of Large Language Models. In this presentation, we will unravel the mystery of embeddings, emphasizing their mathematical foundations and practical applications.
 
   We'll start by discussing what embeddings are, and what they represent. Then we'll delve into the variety of tools we have to compare and contrast them, including Cosine similarity and distance, as well as clustering. Then we'll put those tools to use creating powerful applications that go beyond just typical chat and analytics use-cases. Because we'll be focusing on operational use-cases, code demos will be done using C#.
   
   Attendees will leave with a deeper understanding of the mathematical underpinnings of embeddings, practical knowledge of how to use them, and an appreciation for their value in our applications. This session is ideal for developers, data scientists, and anyone interested in the mathematical underpinnings of machine learning and natural language processing.
+
+    [Latest Slide Deck](https://introtoembeddings.azurewebsites.net)
 
 ***
 
@@ -131,6 +144,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ### Past engagements
 
+* **CodeMash 2024** - 1/9/2023 - 1/12/2023 - "GPT Embeddings - Not Magic, Just Math"
 * **Carvana Spark** - 11/14/2023 - 11/15/2023 - "Apache Kafka: Driving System Reliability" (Panel Moderator)
 * **Tulsa .NET User Group** - 10/24/2023 - "Defining the Business Domain using Event Storming"
 * **CodeMash 2023** - 1/10/2023 - 1/13/2023 - "Event Storming Workshop"
