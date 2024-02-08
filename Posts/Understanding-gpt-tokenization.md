@@ -20,7 +20,7 @@ slug: understanding-gpt-tokenization
 ---
 ## Introduction
 
-* Why are we here?
+[TODO: Why are we here?]
 
 ## Tokenization in natural language processing (NLP)
 
@@ -38,11 +38,13 @@ The `cl100k` tokenization model is the encoding scheme employed by OpenAI's GPT 
 
 ## The *cl100k* Tokenizer Sample Code
 
-I found it difficult to understand the tokenization process from looking at the code for some of the standard implementations. There is a simple reason for this -- those implementations are optimized for speed and efficiency, not for clarity and understanding. To solve this problem, and help my understanding of this process, I created a new implementation using an object-oriented approach. This implementation prioritizes clarity and understanding over raw performance. While it is not optimized for high-speed, production-level applications, its OOP design makes the concepts of encoding and decoding with `cl100k` far more accessible for educational purposes, allowing learners to grasp the nuances of tokenization without getting lost in the weeds of complex array operations. The code is written in *C#* and is available on [GitHub](https://github.com/bsstahl/AIDemos/tree/master/Tokenizer).
+I found it difficult to understand the tokenization process from looking at the code for some of the standard implementations. There is a simple reason for this -- those implementations are optimized for speed and efficiency, not for clarity and understanding. To solve this problem, and help my understanding of this process, I created a new implementation using an object-oriented approach. This implementation prioritizes clarity over performance, making the concepts of encoding and decoding with `cl100k` far more accessible for educational purposes. This approach allows learners to investigate the nuances of tokenization without getting lost in the weeds of complex array operations. The code is written in *C#* and is available on [GitHub](https://github.com/bsstahl/AIDemos/tree/master/Tokenizer).
 
+### *cl100k* Tokenization Replacements
 
-* Walk throught the sample code, explaining how the Encode and Decode methods work.
-* Link to the model translation data file on Github.
+The key to the tokenization process using *cl100k* is the replacements data, found in the [cl100k_base.tiktoken file](https://github.com/bsstahl/AIDemos/blob/master/Tokenizer/Tokenizer/data/cl100k_base.tiktoken) in the code sample. This file contains a list of Base-64 encoded strings, and the token that each string represents. A decoded version of this file can be found in {PageLink:cl100k-token-replacements|this table}. 
+
+[TODO: Walk throught the sample code, explaining how the Encode and Decode methods work]
 
 ## Intriguing Token Findings
 
@@ -115,6 +117,6 @@ Of the 40 distinct last names of US Presidents:
 | Washington | 6652: ' Washington', 39231: 'Washington', 94771: ' washington' |
 | Wilson | 17882: ' Wilson', 92493: 'Wilson' |
 
-
 ## Conclusion
 
+[TODO: Add conclusion]
