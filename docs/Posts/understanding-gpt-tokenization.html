@@ -72,18 +72,23 @@
                 <br/><br/>
                 <h2>Introduction</h2>
 <p>[TODO: Why are we here?]</p>
-<h2>Tokenization in natural language processing (NLP)</h2>
-<p>Tokenization is the process of converting text input into a numeric form that machine learning models can interpret. During this process, text strings are broken into segments, often corresponding to words, phrases, or other meaningful elements, and each segment is then mapped to one or more unique integer values called tokens. This numerical representation allows algorithms to perform operations on textual data since the models require quantitative inputs.</p>
+<h2>BPE Tokenization in natural language processing (NLP)</h2>
+<p>BPE (Byte-Pair Encoding) Tokenization is the process of converting text input into a numeric form that machine learning models can interpret. During this process, text strings are broken into segments, usually words or word-segments; and then segments are iteratively merged with the following segments based on the commonality of their usage. Eventually, these merged segments are mapped to one or more unique integer values called tokens. This numerical representation allows algorithms to perform operations on textual data since the models require quantitative inputs.</p>
 <h3>Why Tokenization?</h3>
-<p>NLP models utilize tokenization over direct UTF-8 byte representation because tokens offer meaningful linguistic units that align with the way language is structured and understood. Tokens abstract text into discrete elements that capture semantics, enable better generalization, and facilitate sequence processing. This approach simplifies the complexity inherent in multi-byte characters and enhances model efficiency by reducing the input space. Consequently, tokenization leads to more compact, contextually aware, and semantically rich representations that are essential for the sophisticated pattern recognition tasks required in NLP.</p>
-<p>By translating text into a sequence of numbers, tokenization enables the algorithmic manipulation necessary for tasks like pattern recognition, language modeling, and predictive text analysis within the realm of NLP.</p>
+<p>NLP models utilize tokenization over direct UTF-8 byte representation because tokens offer linguistic units that more meaningfully align with the way language is structured and understood. Tokens abstract text into discrete elements that capture semantics, enable better generalization, and facilitate sequence processing. This approach simplifies the complexity inherent in multi-byte characters and enhances model efficiency by reducing the input space. Consequently, tokenization leads to more compact, contextually aware, and semantically rich representations that are useful for the pattern recognition tasks required in NLP.</p>
 <h3>The <em>cl100k</em> Tokenization Model</h3>
-<p>The <em>cl100k</em> tokenization model is the encoding scheme employed by OpenAI's GPT (Generative Pre-trained Transformer) models. This encoding is built to parse input text into 100,256 (100k) different tokens, efficiently representing a vast range of linguistic elements from individual characters to full words and phrases in numerous languages and alphabets. This approach allows GPT models to grasp the nuances of language, handle a variety of linguistic tasks, and generate coherent, contextually relevant text based on the input they receive. The cl100k tokenizer is an integral part of how GPT models manage to achieve their impressive performance in generating human-like text.</p>
+<p>The <em>cl100k</em> tokenization model is the encoding scheme employed by OpenAI's GPT (Generative Pre-trained Transformer) models. This encoding is built to parse input text into 100,256 (100k) different tokens, efficiently representing a vast range of linguistic elements from individual characters to full words and phrases in numerous languages and alphabets. This approach allows GPT models to grasp the nuances of language, handle a variety of linguistic tasks, and generate coherent, contextually relevant text based on the input they receive. The <em>cl100k</em> tokenizer is an integral part of how GPT models manage to achieve their impressive performance in generating human-like text.</p>
 <h2>The <em>cl100k</em> Tokenizer Sample Code</h2>
 <p>I found it difficult to understand the tokenization process from looking at the code for some of the standard implementations. There is a simple reason for this -- those implementations are optimized for speed and efficiency, not for clarity and understanding. To solve this problem, and help my understanding of this process, I created a new implementation using an object-oriented approach. This implementation prioritizes clarity over performance, making the concepts of encoding and decoding with <em>cl100k</em> far more accessible for educational purposes. This approach allows learners to investigate the nuances of tokenization without getting lost in the weeds of complex array operations. The code is written in <em>C#</em> and is available on <a href="https://github.com/bsstahl/AIDemos/tree/master/Tokenizer">GitHub</a>.</p>
 <h3><em>cl100k</em> Tokenization Replacements</h3>
 <p>The key to the tokenization process using <em>cl100k</em> is the replacements data, found in the <a href="https://github.com/bsstahl/AIDemos/blob/master/Tokenizer/Tokenizer/data/cl100k_base.tiktoken">cl100k_base.tiktoken file</a> in the code sample. This file contains a list of Base-64 encoded strings, and the token that each string represents. A decoded version of this file can be found in <a href="../Pages/cl100k-token-replacements.html">this table</a>.</p>
 <p>[TODO: Walk throught the sample code, explaining how the Encode and Decode methods work]</p>
+<h3>Invalid UTF-8 Sequences</h3>
+<p>One of the things that concerned me when learning about this process was the fact that a number of tokens translated to invalid UTF-8 sequences. This didn't seem right since all input text is encoded as UTF-8 characters. One thing I've learned as an Engineer, if something seems off or doesn't make sense, it means there is a much greater liklihood of something being actually wrong, either in my implementation or my understanding of the process.</p>
+<p>Fortunately this particular oddity is not actually indicative a problem, but is instead an artifact of the training and encoding processes that generally only occurs during the use of characters other than those typically used in English.</p>
+<p>I will explain with an example using token <em>1717</em>. This token is replaced by the byte sequence <em>0x20 0xC3</em>, which is a space character followed by a byte that does not represent valid UTF-8 on its own. This would be a problem if this token were ever used by itself or at the end of a sequence of tokens since that would leave a byte hanging that couldn't be translated into UTF-8. However, there is no way for a token like this to be used by itself or at the end of a sequence as long as the text it is representing has been properly encoded as UTF-8. Instead, such a token is always followed by at least one additional token, which will result in one or more valid UTF-8 characters.</p>
+<p>If for our example, the <em>1717</em> token is followed by token <em>104</em> (<em>0xAB</em> -- also invalid on its own), it combines with the <em>0xC3</em> left over from the <em>1717</em> token, forming the sequence <em>0xC3 0xAB</em>, which is the UTF-8 character &quot;ë&quot;. Similarly, if <em>1717</em> were combined with token <em>109</em> (<em>0xB1</em> -- again invalid Unicode), we'd get the sequence <em>0xC3 0xB1</em>, the Spanish character &quot;ñ&quot;.</p>
+<p>This means that if we encode the Spanish exclamation &quot;Vaya, ñu&quot; (&quot;Wow, wildebeest&quot;) into tokens, we would get the sequence <em>[53,12874,11,1717,109,84]</em>. Note the <em>1717,109</em> combination towards the end of the squence. These integers represent a set of UTF-8 characters that are encoded into tokens where the tokens can't all be translated to valid UTF-8 characters individually.</p>
 <h2>Intriguing Token Findings</h2>
 <ul>
 <li>Longest Value Tokens
@@ -116,16 +121,19 @@
 <p>Of the 40 distinct last names of US Presidents:</p>
 <ul>
 <li>7 require more than 1 token to represent in any form</li>
-<li>22 have only 1 way to represent it in a single token, usually with a leading space andinitial cap</li>
-<li>Ford has 4 ways, which makes sense since there are so many other reasons to write thatname</li>
-<li>All of the remaining 10 names have 2 or 3 ways to represent them in a single token</li>
+<li>20 have only 1 way to represent their name in a single token; with a leading space and initial cap</li>
+<li>8 have 2 ways to represent the name in a single token; an initial cap, with and without a leading space</li>
+<li>3 presidents have 3 ways to represent their name in a single token</li>
+<li>Ford and Grant have all 4 possible ways</li>
 </ul>
+<p>The fact that Ford and Grant have the most ways to represent their names makes sense since there are so many other reasons to write those words other than to mean the name of the President. The Presidents where the name cannot be represented in a single token generally indicates the lack of mentions of these Presidents in the training data. Since the corpus of training data is from the Internet, it makes sense that the Presidents who have a lower cultural significance in the Internet era would be less likely to have their names represented in a single token. Thus, Presidents Coolidge, Fillmore, Garfield, McKinley, Polk, Taft, and Van Buren all require more than one token to represent their names in any form. These names are also less likely to be represented in the training data as a reference to someone or something else.</p>
+<p>Meanwhile, names like Washington, Jefferson, and Johnson, which are more common in the English language, have multiple representations in a single token. This is likely due to the frequency of these names in the US population, which in itself is a nod to the historical and cultural significance of the Presidents themselves.</p>
 <p><strong>Note: Derivatives of these names that are not actually the name of the President are not included here. For example: &quot;Obamacare&quot;.</strong></p>
 <table border="2">
   <thead>
     <tr>
-      <th>Word</th>
-      <th>Variants</th>
+      <th>President</th>
+      <th>Tokens</th>
     </tr>
   </thead>
   <tbody>
