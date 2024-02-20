@@ -21,13 +21,34 @@ categories:
 - Development
 
 ---
-There's been some talk lately about well abstracted monoliths and how they may be more effective at times than microservice architectures. While there are likely to be some use cases where this is true, there's one thing that a monolith can never do: it can't fully isolate concerns. Monoliths, like microservices, can abstract the various concerns to reduce the coupling between them, but monoliths make it much more difficult to determine in which concern a failures occurred, often requiring teams to respond to support issues unnecessarily. In this post, we'll compare three architectures and demonstrate why completely separating concerns is important in this context.
 
-TODO: It also needs a bus. That is, we need to be able to add functionality without impacting existing functionality, as you can with a message-driven architecture (whether that is in a monolith or not). (is this support burden? -- should it be broken out?)
+Note: A WIP event storming and other diagrams can be found here: https://lucid.app/lucidchart/3b6a8978-64ab-4458-9dca-88ab3b75767b/edit?beaconFlowId=140CA4DD4F888E74&invitationId=inv_ed1185ed-756e-4d06-84fc-dc6a69f456e6&page=eqs0TI9YjX~X#
+
+
+There's been some talk lately about well abstracted monoliths and how they may be more effective at times than microservice architectures. While there are almost certainly some use cases where this is true, there are things that a monolith doesn't do as well as other architectures.
+
+* Isolate concerns
+* Provide a bus
+* [TODO: Pick-up where it left off]
+
+Monoliths, like microservices, can abstract the various concerns to reduce the coupling between them, but monoliths make it much more difficult to determine in which concern a failures occurred, often requiring teams to respond to support issues unnecessarily. Additionally, it is far more risky to add new functionality to a monolith than it is to add it to an event-driven microservice because of the direct nature of the interactions within a monolith.
+
+In this post, we'll compare three architectures and demonstrate why completely separating concerns is important in most non-trivial cases.
 
 ## Our Problem Domain
 
-For this example, we'll use the Bus Maintenance domain. The work we need to perform in each of the architectures is to determine if a bus is likely to be available to move passengers tomorrow. To do so, we need our Scheduling subsystem to check with the Preventative Maintenance subsystem to see if the bus is due for scheduled maintenance, and also check with our Predictive Failure model to determine the likelihood of a failure occurring between now and the end of the bus's run tomorrow. We'll assume for the purpose of demonstration, that each subdomain is supported by a different development team.
+For this example, we'll use an urban bus service provider. When a bus returns to the depot from its daily route, it is cleaned, and then parked in the appropriate staging area for the next day's activities. There are separate staging areas for busses that will be running routes than for those that will be going into the maintenance shop to have work performed. Our application needs to inform the user which staging area to park the bus in when it returns from its route.
+
+The work we need to perform in each of the architectures is to determine if a bus is scheduled to move passengers tomorrow. To do so, we need our *Scheduling* subsystem to check with the various *Maintenance* subsystems to see if the bus is due for maintenance, or if there is a high probability of a failure occurring between now and the end of the bus's run tomorrow.
+
+The development teams supporting this tooling are as follows:
+
+* **Application** - A team of front-end developers working in HTML5, CSS, JavaScript and supporting libraries, as well as back end developers working server-side in technologies such as C#, Java, and Node. This team is responsible for the user interface and the API that supports it.
+* **Scheduling** - A team of operations research scientists who are experts in scheduling and optimization, often using Mixed-Integer Programming (MIP) models to perform assignments of busses to routes. Work is done primarily in Python.
+* **Preventative Maintenance** - A team of data scientists who work primarily with predictive models, usually based on Machine Learning, to determine when maintenance should be performed on busses. This team is also responsible for making sure that legal requirments for maintenance are met, often using logical models. This team works primarily in Python.
+
+
+We'll assume for the purpose of demonstration, that each subdomain is supported by a different development team.
 
 ## Architecture 1: Monolith
 
