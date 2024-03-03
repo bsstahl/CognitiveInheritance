@@ -14,7 +14,7 @@ additionalfilepaths:
 - Pics
 - Files
 - .well-known
--  _config.yml
+- _config.yml
 - CriticalCs
 - Modules
 dateformatspecifier: yyyy-MM-dd

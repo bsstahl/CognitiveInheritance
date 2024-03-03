@@ -8,7 +8,7 @@ description: Technical presentations given by Barry S. Stahl.
 ispublished: true
 showinlist: true
 publicationdate: 2009-08-01T00:00:00.000+00:00
-lastmodificationdate: 2023-10-20T00:00:00.000+00:00
+lastmodificationdate: 2024-03-03T00:00:00.000+00:00
 slug: Speaking-Engagements
 categories: []
 
@@ -16,7 +16,7 @@ categories: []
 
 ### Upcoming Talks
 
-* **ConFoo Montreal 2024** - 2/21/2024 - 2/23/2024 - "GPT Embeddings - Not Magic, Just Math" & "Amazing Algorithms for Solving Problems in Software"
+* **Desert Code Camp, April 2024** - 4/6/2024 - "Success with Microservices: The Critical 'Cs'"
 
 <!-- I currently have no talks scheduled. {ContactPageLink:Contact me} to arrange to have me speak at your event. -->
 
@@ -102,6 +102,14 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ***
 
+* **GPT Under the Covers** - Generative Pre-trained Transformers (GPT) have revolutionized the field of natural language processing, enabling machines to generate human-like text with remarkable coherence. This presentation delves into the intricacies of GPT models, shedding light on the underlying mechanisms that enable these tools to predict tokens and generate text. We will unravel the architecture of GPT, from embedding layers to attention mechanisms, and provide a clear understanding of the processes that contribute to the model's performance.
+
+  Beyond the technical deep dive, we will explore practical applications, discussing valid use-cases where GPT models excel, such as chatbots, content creation, and language translation. We will also critically evaluate scenarios where GPT models may fall short or prove unsuitable, addressing common myths and misconceptions.
+  
+  By bridging technical expertise with real-world application, this talk aims to equip programmers and other software creators with a nuanced understanding of GPT models, empowering them to harness these tools responsibly and effectively. Join us for an engaging session filled with insights, interactive discussions, and forward-thinking perspectives on one of today's most groundbreaking technological advancements.
+
+***
+
 * **GPT Embeddings: Not Magic, Just Math** - Embeddings may be the least understood yet most valuable tool to come out of the world of Large Language Models. In this presentation, we will unravel the mystery of embeddings, emphasizing their mathematical foundations and practical applications.
 
   We'll start by discussing what embeddings are, and what they represent. Then we'll delve into the variety of tools we have to compare and contrast them, including Cosine similarity and distance, as well as clustering. Then we'll put those tools to use creating powerful applications that go beyond just typical chat and analytics use-cases. Because we'll be focusing on operational use-cases, code demos will be done using C#.
@@ -144,6 +152,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ### Past engagements
 
+* **ConFoo Montreal 2024** - 2/21/2024 - 2/23/2024 - "GPT Embeddings - Not Magic, Just Math" & "Amazing Algorithms for Solving Problems in Software"
 * **CodeMash 2024** - 1/9/2023 - 1/12/2023 - "GPT Embeddings - Not Magic, Just Math"
 * **Carvana Spark** - 11/14/2023 - 11/15/2023 - "Apache Kafka: Driving System Reliability" (Panel Moderator)
 * **Tulsa .NET User Group** - 10/24/2023 - "Defining the Business Domain using Event Storming"
