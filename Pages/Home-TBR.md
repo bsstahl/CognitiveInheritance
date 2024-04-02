@@ -15,15 +15,22 @@ categories: []
 ---
 ## To Read
 
+### Development
+
 * [Make Illegal States Unrepresentable! - Domain-Driven Design w/ TypeScript | Khalil Stemmler](https://khalilstemmler.com/articles/typescript-domain-driven-design/make-illegal-states-unrepresentable/)
 * [Building Kafka Event-Driven Applications with KafkaFlow](https://www.infoq.com/articles/kafkaflow-dotnet-framework/)
 * [Microsoft Power Automate](https://make.powerautomate.com/environments/ebafe3cb-dc4c-4566-9086-d7397f557cc0/flows/1950ac75-45f7-4e81-9ab6-f3598285ef3d/details)
-* [TED Reveals Top 20 Most-Watched Talks, Sir Ken Robinson Tops The List  TechCrunch](http://techcrunch.com/2012/08/21/ted-reveals-top-20-most-watched-talks-sir-ken-robinson-tops-the-list/)
 * [Understanding systems thinking concepts and workplace applications](https://www.phoenix.edu/blog/what-is-systems-thinking.html)
 * [Concurrent Flows](https://concurrentflows.com/)
 * [Where is this API Gateway thing Going?](https://apievangelist.com/2023/11/12/where-is-this-api-gateway-thing-going/)
+* [REST State Machine Revisited](https://nordicapis.com/rest-state-machine-revisited/)
+* [The Rise of the Tech Workers Union](https://techcrunch.com/2021/03/08/the-rise-of-the-tech-workers-union-and-what-comes-next/)
+* [.NET Native AOT Explained](https://blog.ndepend.com/net-native-aot-explained/)
+* [The Spotify Software Development Model](https://jchyip.medium.com/my-critique-of-the-spotify-model-part-1-197d335ef7af)
 
-## To Watch
+### Science
+
+* [The Shape of Space](https://www.math.brown.edu/tbanchof/STG/ma8/papers/leckstein/Cosmo/intro.html#contents)
 
 ## Classes
 

@@ -19,32 +19,6 @@ categories: []
 * [SeatGuru Seat Map US Airways Airbus A321 (321)](http://www.seatguru.com/airlines/US_Airways/US_Airways_Airbus_A321.php)
 * [Welcome to World Airport Codes](http://www.world-airport-codes.com/)
 
-## My Presentations
-
-### Full Length Talks
-
-* [A Devs Intro to AI](https://adevsintrotoai.azurewebsites.net/)
-* [Amazing Algorithms](https://amazingalgorithms.azurewebsites.net/)
-* [Avoiding Dual Writes](https://avoidingdualwrites.azurewebsites.net/)
-* [Design Patterns for Loose Coupling](http://designpatternsforloosecoupling.azurewebsites.net/)
-* [Dev Team Dreams](https://devteamdreams.azurewebsites.net/)
-* [Genetic Algorithms](http://geneticalgorithmsforai.azurewebsites.net/)
-* [GPT Embeddings](https://introtoembeddings.azurewebsites.net/)
-* [Intro to Event Storming](http://introtoeventstorming.azurewebsites.net/)
-* [Introduction to Microservices](https://introtomicroservices.azurewebsites.net/)
-* [One AI Algorithm](https://oneaialgorithm.azurewebsites.net/)
-* [The Future of Information Retrieval - RAG Deep-Dive (WIP)](https://ragdeepdive.azurewebsites.net/)
-
-### Lightning Talks
-
-* Agile is for You
-* Amazing Algorithms
-* Bend it Like Einstein
-* Consume-Transform-Produce
-* Genetic Algorithms
-* GiveCamp
-* [How the Fediverse Could Save Democracy](https://fediverse.azurewebsites.net/)
-
 ## AI Tools
 
 * [Murf - AI Text to Speech](https://murf.ai/studio/project/2/P016846823999002PM)
@@ -56,6 +30,7 @@ categories: []
 * [RSS Feeds from Mastdon](https://rss-is-dead.lol/user?profileUrl=https%3A%2F%2Ffosstodon.org%2Fusers%2FBsstahl)
 * [FollowGraph](https://followgraph.vercel.app/)
 * [Smilodon - .NET ActivityPub Implementation](https://devchatter.com/Smilodon/)
+* [Mastodon Public Data](https://docs.joinmastodon.org/client/public/#:~:text=The%20following%20methods%20may%20be%20of%20interest%3A%201,GET%20%2Fapi%2Fv1%2Fstatuses%2F%3Aid%20to%20view%20the%20Status%20entity.%20)
 
 ## Development Links
 
@@ -75,6 +50,9 @@ categories: []
 * [User Group TV](https://usergroup.tv/)
 * [OpenStreetMap](https://www.openstreetmap.org/)
 * [Microsoft Power Automate](https://make.powerautomate.com/environments/ebafe3cb-dc4c-4566-9086-d7397f557cc0/home)
+* [Crafting beautiful interactive console apps with Spectre.Console](https://dev.to/asimmon/crafting-beautiful-interactive-console-apps-with-systemcommandline-and-spectreconsole-c6f)
+* [ArchUnitNet](https://archunitnet.readthedocs.io/en/latest/)
+* [Change C# Class Templates to use File Scoped Namespaces](https://blog.jdriven.com/2022/12/changing_visual_studio_cs_templates/)
 
 ## Specifications
 

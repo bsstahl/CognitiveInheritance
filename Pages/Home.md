@@ -21,6 +21,34 @@ categories: []
 * [Explore Popular Debates, Discussions and Critical Thinking… | Kialo](https://www.kialo.com/)
 * [Google Voice](https://voice.google.com)
 
+## My Presentations
+
+* [Beary Stickers](https://www.stickermule.com/artworks/14219958?token=5c62437cb203f6e1f4790b70a7f94296)
+
+### Full Length Talks
+
+* [A Devs Intro to AI](https://adevsintrotoai.azurewebsites.net/)
+* [Amazing Algorithms](https://amazingalgorithms.azurewebsites.net/)
+* [Avoiding Dual Writes](https://avoidingdualwrites.azurewebsites.net/)
+* [Design Patterns for Loose Coupling](http://designpatternsforloosecoupling.azurewebsites.net/)
+* [Dev Team Dreams](https://devteamdreams.azurewebsites.net/)
+* [Genetic Algorithms](http://geneticalgorithmsforai.azurewebsites.net/)
+* [GPT Embeddings](https://introtoembeddings.azurewebsites.net/)
+* [Intro to Event Storming](http://introtoeventstorming.azurewebsites.net/)
+* [Introduction to Microservices](https://introtomicroservices.azurewebsites.net/)
+* [One AI Algorithm](https://oneaialgorithm.azurewebsites.net/)
+* [The Future of Information Retrieval - RAG Deep-Dive (WIP)](https://ragdeepdive.azurewebsites.net/)
+
+### Lightning Talks
+
+* Agile is for You
+* Amazing Algorithms
+* Bend it Like Einstein
+* Consume-Transform-Produce
+* Genetic Algorithms
+* GiveCamp
+* [How the Fediverse Could Save Democracy](https://fediverse.azurewebsites.net/)
+
 ***
 
 * [Personal](./home-personal.html)

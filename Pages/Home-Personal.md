@@ -22,6 +22,7 @@ categories: []
 ### Fun Family Stuff
 
 * [Carrie's 50th Birthay Party Album](https://photos.google.com/share/AF1QipP6LRr50steWN6l2knoMAAaPP51RlBrpPd1cki-I5xOXT3R70y3qmWh5uKdhtpzCA?obfsgid=107543756038165503594&email=barry.s.stahl@gmail.com&pli=1&key=bEZUQm50bWNocUtULVJMWTBoOHgyQ3FhN3hPcnpR)
+* [Noel's Blog - Eco Birding](https://ecobirding.blogspot.com/?m=1)
 
 ## Fun Stuff
 
@@ -39,9 +40,11 @@ categories: []
 
 ## News &amp; Events
 
+* [Maricopa County Weather Info](https://www.maricopa.gov/3833/Get-Weather-Information)
 * [Popehat - Speech or Cancel Culture At Boston University?](https://popehat.substack.com/p/speech-or-cancel-culture-at-boston)
 * [The Overton Window](https://en.wikipedia.org/wiki/Overton_window)
-* [Proof News - Data Driven Reporting](https://www.proofnews.org/) 
+* [Proof News - Data Driven Reporting](https://www.proofnews.org/)
+* [Carl Sagan's Baloney Detection Kit](https://www.themarginalian.org/2014/01/03/baloney-detection-kit-carl-sagan/)
 
 ## Video - TV & Movies
 
@@ -49,6 +52,7 @@ categories: []
 * [Movie and TV Scripts](https://sites.google.com/site/tvwriting)
 * [Feynman's Messenger Lectures](https://www.feynmanlectures.caltech.edu/messenger.html)
 * [Open Science Binge Watching](https://www.openscience-twente.com/binge-watching/)
+* [TED Reveals Top 20 Most-Watched Talks, Sir Ken Robinson Tops The List  TechCrunch](http://techcrunch.com/2012/08/21/ted-reveals-top-20-most-watched-talks-sir-ken-robinson-tops-the-list/)
 
 ## Reference Data
 
