@@ -21,6 +21,7 @@ categories: []
 * [TED Reveals Top 20 Most-Watched Talks, Sir Ken Robinson Tops The List  TechCrunch](http://techcrunch.com/2012/08/21/ted-reveals-top-20-most-watched-talks-sir-ken-robinson-tops-the-list/)
 * [Understanding systems thinking concepts and workplace applications](https://www.phoenix.edu/blog/what-is-systems-thinking.html)
 * [Concurrent Flows](https://concurrentflows.com/)
+* [Where is this API Gateway thing Going?](https://apievangelist.com/2023/11/12/where-is-this-api-gateway-thing-going/)
 
 ## To Watch
 
@@ -28,3 +29,4 @@ categories: []
 
 * [Probabilistic Graphical Models](https://class.coursera.org/pgm/class/index)
 * [Toastmasters](https://www.toastmasters.org/myhome)
+* [ConFoo Videos](https://confoo.thinkific.com/enrollments)

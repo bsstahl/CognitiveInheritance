@@ -40,14 +40,20 @@ categories: []
 ## News &amp; Events
 
 * [Popehat - Speech or Cancel Culture At Boston University?](https://popehat.substack.com/p/speech-or-cancel-culture-at-boston)
- *[The Overton Window](https://en.wikipedia.org/wiki/Overton_window)
+* [The Overton Window](https://en.wikipedia.org/wiki/Overton_window)
+* [Proof News - Data Driven Reporting](https://www.proofnews.org/) 
 
 ## Video - TV & Movies
 
 * [Cosmos: Possible Worlds (TV Series 2020– ) - Episodes - IMDb](https://m.imdb.com/title/tt11170862/episodes/?season=1)
 * [Movie and TV Scripts](https://sites.google.com/site/tvwriting)
 * [Feynman's Messenger Lectures](https://www.feynmanlectures.caltech.edu/messenger.html)
+* [Open Science Binge Watching](https://www.openscience-twente.com/binge-watching/)
 
 ## Reference Data
 
 * [Online TV Database - An open directory of television shows for HTPC software](http://thetvdb.com/)
+
+## Charity and NPOs
+
+* [RIPMedicalDebt](https://ripmedicaldebt.donorsupport.co/)

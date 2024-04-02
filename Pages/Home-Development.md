@@ -54,6 +54,8 @@ categories: []
 
 * [ActivityPub Rocks](https://activitypub.rocks/)
 * [RSS Feeds from Mastdon](https://rss-is-dead.lol/user?profileUrl=https%3A%2F%2Ffosstodon.org%2Fusers%2FBsstahl)
+* [FollowGraph](https://followgraph.vercel.app/)
+* [Smilodon - .NET ActivityPub Implementation](https://devchatter.com/Smilodon/)
 
 ## Development Links
 
@@ -70,6 +72,9 @@ categories: []
 * [SamIam - Sensitivity Analysis, Modeling, Inference and More](http://reasoning.cs.ucla.edu/samiam/)
 * [AsyncAPI - Confluent](https://docs.confluent.io/cloud/current/stream-governance/async-api.html)
 * [ReqBin Online Curl Client](https://reqbin.com/curl)
+* [User Group TV](https://usergroup.tv/)
+* [OpenStreetMap](https://www.openstreetmap.org/)
+* [Microsoft Power Automate](https://make.powerautomate.com/environments/ebafe3cb-dc4c-4566-9086-d7397f557cc0/home)
 
 ## Specifications
 
