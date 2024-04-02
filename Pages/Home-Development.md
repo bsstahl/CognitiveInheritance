@@ -15,9 +15,11 @@ categories: []
 ---
 ## Reference Tools
 
+* [23khz Project - Make Dog Whistles Audible](https://23khz.babka.net/)
 * [Listen Notes: Best podcast search engine & podcast database](https://www.listennotes.com/)
 * [SeatGuru Seat Map US Airways Airbus A321 (321)](http://www.seatguru.com/airlines/US_Airways/US_Airways_Airbus_A321.php)
 * [Welcome to World Airport Codes](http://www.world-airport-codes.com/)
+* [MegaGladys - A Collection of People Search tools based on Wikipedia](https://megagladys.com/)
 
 ## AI Tools
 
@@ -31,6 +33,8 @@ categories: []
 * [FollowGraph](https://followgraph.vercel.app/)
 * [Smilodon - .NET ActivityPub Implementation](https://devchatter.com/Smilodon/)
 * [Mastodon Public Data](https://docs.joinmastodon.org/client/public/#:~:text=The%20following%20methods%20may%20be%20of%20interest%3A%201,GET%20%2Fapi%2Fv1%2Fstatuses%2F%3Aid%20to%20view%20the%20Status%20entity.%20)
+* [Mastodon Powered Blog Comments](https://cassidyjames.com/blog/fediverse-blog-comments-mastodon/)
+* [Using Lemmy from Mastodon](https://vijayprema.com/using-lemmy-from-my-existing-mastodon/)
 
 ## Development Links
 
@@ -53,6 +57,7 @@ categories: []
 * [Crafting beautiful interactive console apps with Spectre.Console](https://dev.to/asimmon/crafting-beautiful-interactive-console-apps-with-systemcommandline-and-spectreconsole-c6f)
 * [ArchUnitNet](https://archunitnet.readthedocs.io/en/latest/)
 * [Change C# Class Templates to use File Scoped Namespaces](https://blog.jdriven.com/2022/12/changing_visual_studio_cs_templates/)
+* [Don't Shave that Yak](https://seths.blog/2005/03/dont_shave_that/)
 
 ## Specifications
 

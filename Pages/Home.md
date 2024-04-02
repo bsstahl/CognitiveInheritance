@@ -49,7 +49,7 @@ categories: []
 * GiveCamp
 * [How the Fediverse Could Save Democracy](https://fediverse.azurewebsites.net/)
 
-***
+## Other Link Groups
 
 * [Personal](./home-personal.html)
 * [Development](./home-development.html)

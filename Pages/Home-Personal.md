@@ -23,6 +23,7 @@ categories: []
 
 * [Carrie's 50th Birthay Party Album](https://photos.google.com/share/AF1QipP6LRr50steWN6l2knoMAAaPP51RlBrpPd1cki-I5xOXT3R70y3qmWh5uKdhtpzCA?obfsgid=107543756038165503594&email=barry.s.stahl@gmail.com&pli=1&key=bEZUQm50bWNocUtULVJMWTBoOHgyQ3FhN3hPcnpR)
 * [Noel's Blog - Eco Birding](https://ecobirding.blogspot.com/?m=1)
+* [Donations to Liberty Wildlife](https://e.givesmart.com/events/xiK/i/_All/nQAE/#)
 
 ## Fun Stuff
 
@@ -31,6 +32,9 @@ categories: []
 * [Internet Artifacts](https://neal.fun/internet-artifacts/)
 * [Virtual Piano](http://virtualpiano.net/)
 * [MomsMinivan.com - 101 Car Games, Travel Games and Road Trip Games for Kids -- Printable Road Trip Activities](http://www.momsminivan.com/)
+* [Debbie Harry - Rock & Rule Soundtrack - Send Love Through](https://genius.com/Debbie-harry-send-love-through-lyrics)
+* [LibreVox - Free Public Domain Audiobooks](https://librivox.org/)
+* [The Lever - Free eBooks from Investigative Reporters](https://www.levernews.com/lever-readers/)
 
 ## Fantasy Sports
 
@@ -45,13 +49,20 @@ categories: []
 * [The Overton Window](https://en.wikipedia.org/wiki/Overton_window)
 * [Proof News - Data Driven Reporting](https://www.proofnews.org/)
 * [Carl Sagan's Baloney Detection Kit](https://www.themarginalian.org/2014/01/03/baloney-detection-kit-carl-sagan/)
+* [Center for Countering Digital Hate](https://counterhate.com/)
+* [Scalia and Torture - When he Invoked Jack Bauer](https://www.theatlantic.com/daily-dish/archive/2007/06/scalia-and-torture/227548/)
+* [Israel-Palestine Misconceptions](https://www.vox.com/2015/5/14/18093732/israel-palestine-misconceptions)
+
+## Citizen Science
+
+* [ASU - Citizen Science Kits](https://www.statepress.com/article/2023/01/university-provide-citizen-science-kits-to-public-libraries)
+* [Open Science Binge Watching](https://www.openscience-twente.com/binge-watching/)
 
 ## Video - TV & Movies
 
 * [Cosmos: Possible Worlds (TV Series 2020– ) - Episodes - IMDb](https://m.imdb.com/title/tt11170862/episodes/?season=1)
 * [Movie and TV Scripts](https://sites.google.com/site/tvwriting)
 * [Feynman's Messenger Lectures](https://www.feynmanlectures.caltech.edu/messenger.html)
-* [Open Science Binge Watching](https://www.openscience-twente.com/binge-watching/)
 * [TED Reveals Top 20 Most-Watched Talks, Sir Ken Robinson Tops The List  TechCrunch](http://techcrunch.com/2012/08/21/ted-reveals-top-20-most-watched-talks-sir-ken-robinson-tops-the-list/)
 
 ## Reference Data
