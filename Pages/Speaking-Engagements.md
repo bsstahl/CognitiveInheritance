@@ -16,7 +16,7 @@ categories: []
 
 ### Upcoming Talks
 
-* **Desert Code Camp, April 2024** - 4/6/2024 - "Success with Microservices: The Critical 'Cs'"
+* **Cincy Deliver 2024** - 7/26/2024 - "Success with Microservices: The Critical 'Cs'"
 
 <!-- I currently have no talks scheduled. {ContactPageLink:Contact me} to arrange to have me speak at your event. -->
 
