@@ -13,21 +13,17 @@ slug: home-personal
 categories: []
 
 ---
-## Personal
+## Family
 
-* [RSS Feeds from Mastdon](https://rss-is-dead.lol/user?profileUrl=https%3A%2F%2Ffosstodon.org%2Fusers%2FBsstahl)
-
-### Family
-
-#### Estate Stuff
+### Estate Stuff
 
 * [Estates Task Board - Trello](https://trello.com/b/MJ0LQsPj/estates)
 
-#### Good Family Stuff
+### Fun Family Stuff
 
 * [Carrie's 50th Birthay Party Album](https://photos.google.com/share/AF1QipP6LRr50steWN6l2knoMAAaPP51RlBrpPd1cki-I5xOXT3R70y3qmWh5uKdhtpzCA?obfsgid=107543756038165503594&email=barry.s.stahl@gmail.com&pli=1&key=bEZUQm50bWNocUtULVJMWTBoOHgyQ3FhN3hPcnpR)
 
-### Fun Stuff
+## Fun Stuff
 
 * [BlackJack Trainer](http://bjtrainer.azurewebsites.net/)
 * [Tamarian language | Memory Alpha](https://memory-alpha.fandom.com/wiki/Tamarian_language)
@@ -35,23 +31,23 @@ categories: []
 * [Virtual Piano](http://virtualpiano.net/)
 * [MomsMinivan.com - 101 Car Games, Travel Games and Road Trip Games for Kids -- Printable Road Trip Activities](http://www.momsminivan.com/)
 
-### Fantasy Sports
+## Fantasy Sports
 
 * [RotoWire - My Leagues](https://www.rotowire.com/myleagues/)
 * [Super Jo Baseball](http://baseball.fantasysports.yahoo.com/league/superjobaseball)
 * [Super Jo Football](http://football.fantasysports.yahoo.com/league/superjo)
 
-### News &amp; Events
+## News &amp; Events
 
 * [Popehat - Speech or Cancel Culture At Boston University?](https://popehat.substack.com/p/speech-or-cancel-culture-at-boston)
  *[The Overton Window](https://en.wikipedia.org/wiki/Overton_window)
 
-### Video - TV & Movies
+## Video - TV & Movies
 
 * [Cosmos: Possible Worlds (TV Series 2020– ) - Episodes - IMDb](https://m.imdb.com/title/tt11170862/episodes/?season=1)
 * [Movie and TV Scripts](https://sites.google.com/site/tvwriting)
 * [Feynman's Messenger Lectures](https://www.feynmanlectures.caltech.edu/messenger.html)
 
-### Reference Data
+## Reference Data
 
 * [Online TV Database - An open directory of television shows for HTPC software](http://thetvdb.com/)

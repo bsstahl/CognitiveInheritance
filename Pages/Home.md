@@ -23,5 +23,6 @@ categories: []
 
 ***
 
-* [Personal](.\home-personal.html)
-* [Development](.\home-development.html)
+* [Personal](./home-personal.html)
+* [Development](./home-development.html)
+* [To Be Read](./home-tbr.html)

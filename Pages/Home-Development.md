@@ -13,27 +13,15 @@ slug: home-development
 categories: []
 
 ---
-## Development
-
-### Reference Tools
+## Reference Tools
 
 * [Listen Notes: Best podcast search engine & podcast database](https://www.listennotes.com/)
 * [SeatGuru Seat Map US Airways Airbus A321 (321)](http://www.seatguru.com/airlines/US_Airways/US_Airways_Airbus_A321.php)
 * [Welcome to World Airport Codes](http://www.world-airport-codes.com/)
 
-### To Read or Watch
+## My Presentations
 
-* [Make Illegal States Unrepresentable! - Domain-Driven Design w/ TypeScript | Khalil Stemmler](https://khalilstemmler.com/articles/typescript-domain-driven-design/make-illegal-states-unrepresentable/)
-* [Building Kafka Event-Driven Applications with KafkaFlow](https://www.infoq.com/articles/kafkaflow-dotnet-framework/)
-* [Microsoft Power Automate](https://make.powerautomate.com/environments/ebafe3cb-dc4c-4566-9086-d7397f557cc0/flows/1950ac75-45f7-4e81-9ab6-f3598285ef3d/details)
-* [TED Reveals Top 20 Most-Watched Talks, Sir Ken Robinson Tops The List  TechCrunch](http://techcrunch.com/2012/08/21/ted-reveals-top-20-most-watched-talks-sir-ken-robinson-tops-the-list/)
-* [Understanding systems thinking concepts and workplace applications](https://www.phoenix.edu/blog/what-is-systems-thinking.html)
-* [Concurrent Flows](https://concurrentflows.com/)
-
-
-### My Presentations
-
-#### Full Length Talks
+### Full Length Talks
 
 * [A Devs Intro to AI](https://adevsintrotoai.azurewebsites.net/)
 * [Amazing Algorithms](https://amazingalgorithms.azurewebsites.net/)
@@ -47,29 +35,27 @@ categories: []
 * [One AI Algorithm](https://oneaialgorithm.azurewebsites.net/)
 * [The Future of Information Retrieval - RAG Deep-Dive (WIP)](https://ragdeepdive.azurewebsites.net/)
 
-#### Lightning Talks
+### Lightning Talks
 
+* Agile is for You
+* Amazing Algorithms
+* Bend it Like Einstein
+* Consume-Transform-Produce
+* Genetic Algorithms
+* GiveCamp
 * [How the Fediverse Could Save Democracy](https://fediverse.azurewebsites.net/)
-* []
 
-### Classes
-
-* [Probabilistic Graphical Models](https://class.coursera.org/pgm/class/index)
-* [Toastmasters](https://www.toastmasters.org/myhome)
-
-### AI Tools
+## AI Tools
 
 * [Murf - AI Text to Speech](https://murf.ai/studio/project/2/P016846823999002PM)
 * [Gamma](https://gamma.app/tour)
 
-### Development Links
-
-#### Fediverse
+## Fediverse
 
 * [ActivityPub Rocks](https://activitypub.rocks/)
+* [RSS Feeds from Mastdon](https://rss-is-dead.lol/user?profileUrl=https%3A%2F%2Ffosstodon.org%2Fusers%2FBsstahl)
 
-
-#### General Reference
+## Development Links
 
 * [Markdown Cheat Sheet | Markdown Guide](https://www.markdownguide.org/cheat-sheet)
 * [Lucid Chart](https://lucid.app/documents#/dashboard?folder_id=home)
@@ -85,11 +71,11 @@ categories: []
 * [AsyncAPI - Confluent](https://docs.confluent.io/cloud/current/stream-governance/async-api.html)
 * [ReqBin Online Curl Client](https://reqbin.com/curl)
 
-#### Specifications
+## Specifications
 
 * [ActivityPub](https://www.w3.org/TR/activitypub/)
 
-### Other Tools
+## Other Tools
 
 * [Aliases](https://cp.rackspace.com/EmailHosting/Mail/Aliases/List)
 * [Azure Portal](http://portal.azure.com/)
