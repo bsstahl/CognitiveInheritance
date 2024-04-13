@@ -61,3 +61,9 @@ categories: []
 * [Toastmasters](https://www.toastmasters.org/myhome)
 * [ConFoo Videos](https://confoo.thinkific.com/enrollments)
 * [Feynman Lectures on Physics](https://www.feynmanlectures.caltech.edu/I_01.html)
+
+## Other Link Groups
+
+* [Home](./home.html)
+* [Personal](./home-personal.html)
+* [Development](./home-development.html)
