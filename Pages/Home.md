@@ -43,7 +43,7 @@ categories: []
 
 * Agile is for You
 * Amazing Algorithms
-* Bend it Like Einstein
+* [Bend it Like Einstein](https://benditlikeeinstein.azurewebsites.net/)
 * Consume-Transform-Produce
 * Genetic Algorithms
 * GiveCamp
