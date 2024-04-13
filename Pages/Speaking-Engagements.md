@@ -17,6 +17,7 @@ categories: []
 ### Upcoming Talks
 
 * **Cincy Deliver 2024** - 7/26/2024 - "Success with Microservices: The Critical 'Cs'"
+* **THATConference Wisconsin** - 7/31/2024 - "GPT Under the Covers"
 
 <!-- I currently have no talks scheduled. {ContactPageLink:Contact me} to arrange to have me speak at your event. -->
 
