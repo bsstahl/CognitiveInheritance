@@ -38,7 +38,8 @@ categories: []
 
 ## Development Links
 
-* [Markdown Cheat Sheet | Markdown Guide](https://www.markdownguide.org/cheat-sheet)
+* [Non-Functional Requirements](https://playbook.microsoft.com/code-with-engineering/design/design-patterns/non-functional-requirements-capture-guide/#production-ecosystem)
+* [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet)
 * [Lucid Chart](https://lucid.app/documents#/dashboard?folder_id=home)
 * [Markdig - Github](https://github.com/xoofx/markdig)
 * [SharpLab - C# Playground](https://sharplab.io)
