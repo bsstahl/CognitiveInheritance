@@ -18,6 +18,7 @@ categories: []
 
 * **Cincy Deliver 2024** - 7/26/2024 - "Success with Microservices: The Critical 'Cs'"
 * **THATConference Wisconsin** - 7/31/2024 - "GPT Under the Covers"
+* **Beer City Code 2024** - 8/3/2024 - "GPT Embeddings: Not Magic, Just Math" and "Amazing Algorithms for Solving Problems in Software"
 
 <!-- I currently have no talks scheduled. {ContactPageLink:Contact me} to arrange to have me speak at your event. -->
 
