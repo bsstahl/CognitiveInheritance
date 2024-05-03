@@ -1,1 +1,5 @@
-dotnet ".\PPTail\PPTail.dll" "Provider=PPTail.Data.Forestry.Repository;Filepath=." "Provider=PPTail.Output.FileSystem.Repository;FilePath=.\docs" .\Templates\
+.\PPTail\PPTail.exe `
+	'Provider=PPTail.Data.Forestry.Repository;FilePath=.\' `
+	'Provider=PPTail.Output.FileSystem.Repository;FilePath=.\docs' `
+	'Provider=PPTail.Templates.Yaml.ReadRepository;FilePath=.\Templates' `
+	--ValidateOnly
