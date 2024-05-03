@@ -17,6 +17,7 @@ additionalfilepaths:
 - _config.yml
 - CriticalCs
 - Modules
+- Presentations
 dateformatspecifier: yyyy-MM-dd
 datetimeformatspecifier: yyyy-MM-dd H:mm UTC
 itemseparator: "<hr/>"
