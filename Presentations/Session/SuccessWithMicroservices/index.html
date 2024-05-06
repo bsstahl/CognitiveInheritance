@@ -1,0 +1,1042 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Success With Microservices</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/carvana.css">
+    <link rel="stylesheet" href="css/headers.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-transition="slide-in slide-out" data-background='img/19ae31f8-078b-4bd3-8411-0222b6a09c25.jpg'>
+<a id="91c584ee-8a56-44ae-bdb1-80de69f46f60">&nbsp;</a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:ebc67800-7a56-421a-bab6-7f3f0feafc99 -->
+<!-- ContentItem:685060d8-4205-4db9-b44d-9610a7729e7d -->
+
+<table><tr><td style="vertical-align:top;">
+<h2 id="success-with-microservices">Success With Microservices</h2>
+<h4 id="the-critical-cs">The Critical C's</h4>
+<hr />
+<h3 id="barry-s.stahl">Barry S. Stahl</h3>
+<h3 id="solution-architect-developer">Solution Architect &amp; Developer</h3>
+<h3 id="bsstahlcognitiveinheritance.com"><a href="https://fosstodon.org/@Bsstahl">@bsstahl@cognitiveinheritance.com</a></h3>
+<h3 id="httpscognitiveinheritance.com"><a href="https://cognitiveinheritance.com">https://CognitiveInheritance.com</a></h3>
+
+</td>
+<td width="60%"><img alt="Transparent Image 540x720.png" src="img/685060d8-4205-4db9-b44d-9610a7729e7d.png" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="636059f9-aa9d-4444-b4ec-dd7f62badd98"><h1>Favorite Physicists & Mathematicians</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:30f7e9d2-b154-4895-bed7-2765f7bdc6fe -->
+<!-- ContentItem:8a83be06-76e9-4028-9630-c6a7de92ae99 -->
+<aside class="notes"><p>An up-to-date list is available on my blog at <a href="https://cognitiveinheritance.com/Pages/Favorites.html">https://cognitiveinheritance.com/Pages/Favorites.html</a></p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<h4 id="favorite-physicists">Favorite Physicists</h4>
+<ol>
+<li>Harold &quot;Hal&quot; Stahl</li>
+<li>Carl Sagan</li>
+<li>Richard Feynman</li>
+<li>Marie Curie</li>
+<li>Nikola Tesla</li>
+<li>Albert Einstein</li>
+<li>Neil Degrasse Tyson</li>
+<li>Niels Bohr</li>
+<li>Galileo Galilei</li>
+<li>Michael Faraday</li>
+</ol>
+<p><em>Other notables</em>: Stephen Hawking, Edwin Hubble</p>
+
+</td>
+<td style="vertical-align:top;">
+<h4 id="favorite-mathematicians">Favorite Mathematicians</h4>
+<ol>
+<li>Ada Lovelace</li>
+<li>Alan Turing</li>
+<li>Johannes Kepler</li>
+<li>Rene Descartes</li>
+<li>Isaac Newton</li>
+<li>Leonardo Fibonacci</li>
+<li>George Boole</li>
+<li>Blaise Pascal</li>
+<li>Johann Gauss</li>
+<li>Grace Hopper</li>
+</ol>
+<p><em>Other notables</em>: Daphne Koller, Grady Booch, Evelyn Berezin</p>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="23528a73-7bc1-4e39-9f2f-c8b9e2cff982"><h1>Some OSS Projects I Run</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:f8cbcb81-15f7-48e0-bc29-b348732f6f05 -->
+<ol>
+<li><a href="https://github.com/bsstahl/liquidvictor">Liquid Victor</a> : Media tracking and aggregation [used to assemble this presentation]</li>
+<li><a href="https://github.com/bsstahl/pptail">Prehensile Pony-Tail</a> : A static site generator built in c#</li>
+<li><a href="https://github.com/bsstahl/testhelperextensions">TestHelperExtensions</a> : A set of extension methods helpful when building unit tests</li>
+<li><a href="https://github.com/bsstahl/conferencescheduler">Conference Scheduler</a> : A conference schedule optimizer</li>
+<li><a href="https://github.com/bsstahl/intentbot">IntentBot</a> : A microservices framework for creating conversational bots on top of Bot Framework</li>
+<li><a href="https://github.com/bsstahl/liquidnun">LiquidNun</a> : Library of abstractions and implementations for loosely-coupled applications</li>
+<li><a href="https://github.com/bsstahl/toastmastersagenda">Toastmasters Agenda</a> : A c# library and website for generating agenda's for Toastmasters meetings</li>
+<li><a href="https://github.com/bsstahl/PDM">ProtoBuf Data Mapper</a> : A c# library for mapping and transforming ProtoBuf messages</li>
+</ol>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="3129a405-82a7-432c-ae55-6f9d2335ab17"><h1>http://GiveCamp.org</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:2ca346de-d62c-4c6b-834d-7ccab290a6ab -->
+<img alt="GiveCamp.png" src="img/2ca346de-d62c-4c6b-834d-7ccab290a6ab.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>July 25, 2022 was my 100th public talk. Thank you for allowing me to participate in your community over these past few decades!</p>
+</aside>
+<a id="39c6410c-3913-410b-abab-984014a15d84">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a042b106-4bab-4403-b5b6-0d7b414ef789 -->
+<img alt="bss-100-achievement-unlocked-1024x250.png" src="img/a042b106-4bab-4403-b5b6-0d7b414ef789.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="fb2483e5-5371-49f1-a5e0-c8d579bdd9d3"><h1>The Critical C's of Microservices</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:96e7e0cf-747b-4927-9c7c-756b0bcc821c -->
+<!-- ContentItem:2d188e35-ae3d-4bbd-8f47-33ed9642681a -->
+<aside class="notes"><p>These conversations will help make explicit what is often left implicit or even unconsidered</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>6 Conversations around building µservice architectures</p>
+</blockquote>
+<ul>
+<li><a href="https://criticalcs.azurewebsites.net/#dc6bd8ec-2c26-40da-9247-17e7c39ae21f">Consistency</a></li>
+<li><a href="https://criticalcs.azurewebsites.net/#fdcf3278-5565-426a-ba75-bd6833547fcb">Context</a></li>
+<li><a href="https://criticalcs.azurewebsites.net/#48d99832-c9d5-4ec9-92f3-7cddf32344e7">Contract</a></li>
+<li><a href="https://criticalcs.azurewebsites.net/#c59c1de2-0719-46ad-9677-8c7b9a110b6f">Chaos</a></li>
+<li><a href="https://criticalcs.azurewebsites.net/#06cef84b-e5bb-47eb-a21d-3c9a0bbd8361">Competencies</a></li>
+<li><a href="https://criticalcs.azurewebsites.net/#0909eda9-2713-49ed-8c41-ac664a49495e">Coalescence</a></li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Software Engineering Discussion 800x800.jpg" src="img/2d188e35-ae3d-4bbd-8f47-33ed9642681a.jpg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="ad7ad5f3-6d27-4db4-8626-f15def9a2749">&nbsp;</a>
+<!-- Layout:ImageWithCaption -->
+<!-- ContentItem:c85c5758-8faa-4dea-96fd-a9358ed0bd82 -->
+<!-- ContentItem:67b2ce3b-0176-4486-8d91-bf561564c51e -->
+<aside class="notes"><p>...such a topic has a tendency to become too philosophical, because it becomes so general that a person talks in such generalities that everybody can understand him—and it’s considered to be some deep philosophy, if you will. However, I would like to be rather more special, and I would like to be understood in an honest way rather than in a vague way to some extent; and so, if you don’t mind, I am going to try to give—instead of only generalities in this first lecture—an example of physical law, so that you have at least one example of the things about which I am speaking generally. In this way, I can use this example again and again to give an instance to make a reality out of something which would otherwise be too abstract. - Richard Feynman</p>
+</aside>
+<img alt="Feynman 800x603.jpg" src="img/c85c5758-8faa-4dea-96fd-a9358ed0bd82.jpg" />
+<h2><p>The Law of Gravitation: an Example of Physical Law
+by Richard Feynman
+from the Cornell Messenger Lectures, November 9, 1964.</p>
+</h2>
+</section>
+
+<section data-transition="slide-in slide-out">
+<a id="9dd397e3-1e2d-49ae-9543-c89a7fa66a06"><h1>Bus Maintenance System</h1></a>
+<!-- Layout:ImageLeft -->
+<!-- ContentItem:096163e4-9953-4912-aef6-e22210ee2147 -->
+<!-- ContentItem:194869b6-bae7-4a3f-aec7-821b37cbd177 -->
+
+<table><tr><td width="60%">
+<img alt="Bus-Maintenance Required-800x800.jpg" src="img/096163e4-9953-4912-aef6-e22210ee2147.jpg" />
+</td>
+<td style="vertical-align:top;">
+<p><strong>Given</strong>: A telemetry message is sent by a bus in our network</p>
+<p><strong>When</strong>: The message requires maintenance action (details to be supplied)</p>
+<p><strong>Then</strong>: A WorkOrder is created for the bus</p>
+<p><strong>And</strong>: The bus manufacturer is notified</p>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="a00f93fc-5642-4cd8-911b-37e7f7b28aa7">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:96ad8e5c-06a6-4646-bbfb-84404a8fe6ea -->
+<img alt="Bus Work Order System - Monolith.png" src="img/96ad8e5c-06a6-4646-bbfb-84404a8fe6ea.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="a54289cc-802e-4d73-a3db-a5e7d306cd30"><h1>Consistency</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:e76a4e45-4e0b-48c0-8bcc-9078629dc658 -->
+<!-- ContentItem:1f8aad23-2a05-4236-860d-17efa5e2051b -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Data is consistent when it appears the same way when viewed from any perspective</p>
+</blockquote>
+<hr />
+<blockquote>
+<p>Systems are consistent when all of the data them is consistent</p>
+</blockquote>
+
+</td>
+<td width="60%"><img alt="Consistency 800x800.jpg" src="img/e76a4e45-4e0b-48c0-8bcc-9078629dc658.jpg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="4c4f9db4-3849-4391-8857-1c95327c2957"><h1>Consistency is a Lie</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:08b309dd-c4fa-4dc6-9b6a-a7cb514727b5 -->
+<!-- ContentItem:41eef079-8f4f-4afd-a60f-62a3119b3de9 -->
+<aside class="notes"><p>The speed of causation is not infinite, therefore the world is eventually consistent.  Data retrieved from a database is consisistent until the moment it leaves the DB, and transactions can't help here. Trx just force the process (including the user) to wait until everything is done.
+FWIW: Light travels roughly 2500 miles in 13ms (the shortest perceptible delay). That is roughly the distance from Phoenix to Cincinnati.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>All consistency is <strong>simulated</strong></p>
+</blockquote>
+<hr />
+<blockquote>
+<p>The Universe is <strong>Eventually Consistent</strong></p>
+</blockquote>
+
+</td>
+<td width="60%"><img alt="Lightning 800x800.jpg" src="img/41eef079-8f4f-4afd-a60f-62a3119b3de9.jpg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="328454da-bba3-4504-ab67-9fda8e346679"><h1>Eventual Consistency</h1></a>
+<!-- Layout:ImageWithCaption -->
+<!-- ContentItem:973ed730-8b45-40a8-ac04-8543d742f11c -->
+<!-- ContentItem:90cb5c38-3370-45d8-821f-a102f0e200bb -->
+<aside class="notes"><p>Users may insist that they need full consistency, but I'd hate to do that <strong>to</strong> them. If they still insist, we can simulate that consistency at the UI, rather than saddling the whole system with it.</p>
+</aside>
+<img alt="KendallMiller.png" src="img/973ed730-8b45-40a8-ac04-8543d742f11c.png" />
+<h2><blockquote>
+<p>The real world doesn't require the consistency we tend to demand of our systems - Kendall Miller 2022-01-14</p>
+</blockquote>
+</h2>
+</section>
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Not that everything will be perfect, you still need to look for things like race-conditions. But their existence should be a smell that is investigated.</p>
+</aside>
+<a id="39f2c1e2-63e0-4e83-888b-74a1bf519510">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:8f7c1b25-d587-4145-b05a-f56591dd8405 -->
+<img alt="Eventual Consistency Post.png" src="img/8f7c1b25-d587-4145-b05a-f56591dd8405.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>...some are useful. In this case, the model of the world as synchronous &amp; consistent was useful before distributed systems were prevelent.</p>
+</aside>
+<a id="b1716f61-a80d-4d13-99fe-1bd8a478449f"><h1>All Models are Wrong</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:ca07675e-be40-472b-8400-0b27a29b2c40 -->
+<img alt="AllModelsAreWrong 800x800.jpg" src="img/ca07675e-be40-472b-8400-0b27a29b2c40.jpg" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="6dd32506-de37-4800-a7b1-266ff15b850c"><h1>Eventual Consistency</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:62adcbf3-3b17-44f5-85e6-9264f4eeb793 -->
+<!-- ContentItem:0ff622c5-ac26-4de3-b88d-ca635d57cf7b -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Eliminates temporal coupling</p>
+</blockquote>
+<ul>
+<li><p>Enables Patterns &amp; Practices that can improve</p>
+<ul>
+<li>Resiliency &amp; Fault Tolerance
+<ul>
+<li>Failures are isolated and self-healing</li>
+</ul>
+</li>
+<li>Maintainability &amp; Extensibility
+<ul>
+<li>Easier to change individual components without disrupting others</li>
+</ul>
+</li>
+<li>Performance &amp; Scalability
+<ul>
+<li>Components operate and scale independently</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Eventual Consistency 800x800.jpg" src="img/0ff622c5-ac26-4de3-b88d-ca635d57cf7b.jpg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="355cd002-e398-43d5-99cc-eb46495f7527"><h1>Store &amp; Forward</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:be500c66-beb1-4d2f-a3c5-0ddbb134d078 -->
+<!-- ContentItem:90f00558-d88f-4a30-a76e-18be93432c1d -->
+<aside class="notes"><p>Embracing <strong>Eventual Consistency</strong> enables the use of patterns like <strong>Store &amp; Forward</strong></p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Get it safe, <strong>then</strong> get it done</p>
+</blockquote>
+<ul>
+<li>Do no work until the data is persisted</li>
+<li>Verify the message is <em>well-formed</em></li>
+<li>Do not verify the message is <em>valid</em> if that requires work</li>
+<li>Once stored, return &quot;Accepted&quot;
+<ul>
+<li>i.e. HTTP 202</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="SafetyFirst 800x800.jpg" src="img/be500c66-beb1-4d2f-a3c5-0ddbb134d078.jpg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="a00f93fc-5642-4cd8-911b-37e7f7b28aa7">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:96ad8e5c-06a6-4646-bbfb-84404a8fe6ea -->
+<img alt="Bus Work Order System - Monolith.png" src="img/96ad8e5c-06a6-4646-bbfb-84404a8fe6ea.png" />
+</section>
+
+
+<section data-transition="fade-in slide-out">
+<aside class="notes"><p>Since our system is assumed to be eventually consistent, we no longer have to process every request immediately. Instead we can &quot;get it safe, then get it done&quot; by publishing to a Topic or DB 1st. In many environments, this can be done with minimal additional components by having API management tools route the request into an infrastructure producer API.</p>
+</aside>
+<a id="1bba40d2-a3fa-4cad-9aaf-0f9cbb6fc175">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:036006d6-5fb4-4776-889f-f13cd41f6a8f -->
+<img alt="Bus Management System - Simplified - Consistency-StoreAndForward - 1684x800.png" src="img/036006d6-5fb4-4776-889f-f13cd41f6a8f.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="13484169-00f0-4e62-8063-d59c2cd456a5"><h1>Consistency</h1></a>
+<!-- Layout:ImageLeft -->
+<!-- ContentItem:d3fb6d14-c4b9-4f9e-ab79-9f18dafb78d3 -->
+<!-- ContentItem:1207fe51-18fd-43f5-a549-9419a1e0dd4b -->
+
+<table><tr><td width="60%">
+<img alt="Consistency Flipped 800x800.jpg" src="img/d3fb6d14-c4b9-4f9e-ab79-9f18dafb78d3.jpg" />
+</td>
+<td style="vertical-align:top;">
+<blockquote>
+<p>Embrace Eventual Consistency</p>
+</blockquote>
+<ul>
+<li>There is no such thing as &quot;Full Consistency&quot;</li>
+<li>Our systems <strong>RARELY</strong> need more than eventual consistency</li>
+<li>Don't force your users or other systems to wait for an answer</li>
+<li>Get it safe, <strong>then</strong> get it done</li>
+</ul>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="facb7b59-0cc0-491d-89b5-1404cf72fe47"><h1>Consistency Conversation</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:92b88f90-ee0a-4679-b889-0c2fc10b30d1 -->
+<!-- ContentItem:2d188e35-ae3d-4bbd-8f47-33ed9642681a -->
+
+<table><tr><td style="vertical-align:top;">
+<p>Development teams should have conversations around <strong>Consistency</strong> that are primarily focused around making certain that the system is assumed to be eventually consistency throughout.</p>
+
+</td>
+<td width="60%"><img alt="Software Engineering Discussion 800x800.jpg" src="img/2d188e35-ae3d-4bbd-8f47-33ed9642681a.jpg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="7ff3d5bf-d5ea-4e3d-a105-4a12bee66a18"><h1>Consistency Questions</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:62f8ff4d-90eb-4777-88d3-7205d110a7f8 -->
+<ul>
+<li>What patterns and tools will we use to create systems that support reliable, eventually consistent operations?
+<ul>
+<li>Example: Reliable messaging using ASB or Cosmos Change-Feed</li>
+</ul>
+</li>
+<li>How will we identify areas where stronger consistency has been wedged-in and should be removed?
+<ul>
+<li>Example: Look for polling, distributed trx, etc</li>
+</ul>
+</li>
+<li>How will we prevent future demands for strong consistency, either explicit or assumed, from weakening our systems?
+<ul>
+<li>Example: Document our commitment to Eventual Consistency in an ADR and explicitly discuss in code reviews</li>
+</ul>
+</li>
+<li>How will we identify when there are unusual or unacceptable delays in reaching consistency?
+<ul>
+<li>Example: Data Freshness SLIs/SLOs</li>
+</ul>
+</li>
+<li>How will we communicate the status of the system and any delays in reaching consistency to the stakeholders?
+<ul>
+<li>Example: Dashboards or toast notifications</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="d56333d0-88ee-41bc-bd8d-17fc9266ca76"><h1>Context</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:5867842d-20dd-4b8d-bc55-5ad4380ca5f0 -->
+<!-- ContentItem:605ce389-8769-497b-b6c0-b6421e37ecd1 -->
+<aside class="notes"><p>The <em>Context</em> is the setting in which a software-intensive system exists and operates.  It includes the system's interactions with users, other systems, and its environment. It can be difficult to define and is often overlooked in system design. Fortunately, there are processes to help us.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>The boundary within which a system or sub-system operates</p>
+</blockquote>
+<ul>
+<li>Actors
+<ul>
+<li>User</li>
+<li>Other Sub-systems</li>
+<li>Other Systems</li>
+</ul>
+</li>
+<li>Entities
+<ul>
+<li>Owned (Read/Write)</li>
+<li>Reference (Read only)</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Context 800x800.jpg" src="img/605ce389-8769-497b-b6c0-b6421e37ecd1.jpg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="99bef0a9-8a56-4f5f-b620-b4e918c9d491"><h1>Event Storming</h1></a>
+<!-- Layout:ImageLeft -->
+<!-- ContentItem:aa1f66a3-14ef-4f0f-98cf-0153c177c3a8 -->
+<!-- ContentItem:5c080c7c-e928-4fe0-a022-f681404f9582 -->
+<aside class="notes"><p>There are a number of different techniques for modeling systems. One of the most effective is Event Storming. These techniques produce a number of artifacts that are valuable to both the business experts, and to engineers.</p>
+</aside>
+<table><tr><td width="60%">
+<img alt="Storm 1024x683.jpg" src="img/aa1f66a3-14ef-4f0f-98cf-0153c177c3a8.jpg" />
+</td>
+<td style="vertical-align:top;">
+<h3 id="a-process-for-modeling-a-business-domain-from-the-perspective-of-the-business-experts">A process for modeling a business domain from the perspective of the business experts</h3>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background='img/4975485e-1ebf-4a51-9615-5ba634acd13e.png'>
+<aside class="notes"><p>This diagram shows the 5 different contexts that exist in our system as identified using Event Storming. Each subsystem is a good proxy for a microservice as well as a bounded context.</p>
+</aside>
+<a id="005c85db-cd93-44c9-9372-e49ba517d28a">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="7125f414-f771-4688-a0a0-6a9e6a739a7c"><h1>Bounded Context</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:af0ab4db-1ed4-4b0e-8498-a1771d4f0e6f -->
+<!-- ContentItem:682becc8-8e0a-4e76-8927-ba278a950f8a -->
+<aside class="notes"><p>If we do a good job of defining our Bounded Contexts, we'll have fewer conflicts and less confusion.
+However, this is not the only kind of Context we need to care about. We also need to consider the Execution Context.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>A single business grammar</p>
+</blockquote>
+<ul>
+<li>Every term has exactly one meaning</li>
+<li>Example: <strong>Bus</strong>
+<ul>
+<li>Work Order Context: A vehicle needing diagostics or repair
+<ul>
+<li>Service Time</li>
+<li>Repair History</li>
+</ul>
+</li>
+<li>Inventory Context: A depreciable asset
+<ul>
+<li>In-Service date</li>
+<li>Manufacturer and Type</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Terms are captured in <strong>Ubiquitous Language</strong></li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Bounded Context 800x800 - Text Blurred.jpg" src="img/af0ab4db-1ed4-4b0e-8498-a1771d4f0e6f.jpg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="7c4c39d7-7ed3-4fcc-85eb-b21dc391732e"><h1>Execution Context</h1></a>
+<!-- Layout:ImageLeft -->
+<!-- ContentItem:ca248b91-cd03-488d-a295-c87123493eea -->
+<!-- ContentItem:1cbfb21f-dcd8-427e-b3b8-e854ab7568f2 -->
+<aside class="notes"><p>Image Source: Context: DALL-E via Microsoft Designer</p>
+</aside>
+<table><tr><td width="60%">
+<img alt="Execution Context - Silicon City 800x800.jpg" src="img/ca248b91-cd03-488d-a295-c87123493eea.jpg" />
+</td>
+<td style="vertical-align:top;">
+<ul>
+<li><p>The unit of work of all services</p>
+</li>
+<li><p>The life-cycle of a single request</p>
+</li>
+<li><p>The key to service reliability</p>
+</li>
+</ul>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="11957b1a-6696-440a-b626-e88c740de862"><h1>Two At-A-Time</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:44137a8e-424d-42d5-8af4-efd28828c797 -->
+<!-- ContentItem:43065c72-170a-4000-a11e-96a570dd703b -->
+<aside class="notes"><p>An ACID compliant transaction is a single change, just don't abuse that to the detriment of your performance, availability &amp; scalability</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Is is <strong>NOT</strong> possible to <strong>reliably</strong> make more than one change to system state in a single execution context</p>
+</blockquote>
+<h3 id="two-changes-can-be-made-to-system-state-in-a-single-execution-context-if">Two changes can be made to system state in a single execution context if:</h3>
+<ul>
+<li>The 1st change is <strong>idempotent</strong></li>
+<li>The 2nd change is <strong>unreliable</strong></li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Two Things at Once 800x800.jpg" src="img/43065c72-170a-4000-a11e-96a570dd703b.jpg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background='img/cfba22fd-70c3-4f9d-8e65-8989522f0519.png'>
+<aside class="notes"><p>Don't depend on idempotence unless A) <strong>You fully control it</strong>, or B) <strong>It is guaranteed in writing</strong></p>
+<p><strong>Green Smiley</strong> = All tasks succeeded, <strong>Half-Filled Circle</strong> = 1 task completed successfully the other failed, <strong>Dead Face</strong> = Neither task Completed Successfully, <strong>Double Click Icon</strong> = 1 task is Executed More than Once, <strong>Green Left Arrow</strong> = Ok to Retry, no action taken'</p>
+</aside>
+<a id="5215fcb6-24c3-46fd-8a41-f7dbfb0177f5">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="9befb65c-cfe7-4b03-8eab-8082a90a3a28"><h1>Less Reliable Changes</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:cd614c5c-09e3-419b-b0e2-014ba7ebcdb9 -->
+<!-- ContentItem:bc1a051b-ba23-4996-aa62-11ebdd60d432 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Should be rare, approved, documented &amp; quickly remediated</p>
+</blockquote>
+<ul>
+<li>Logging &amp; Telemetry</li>
+<li>Cache-aside</li>
+<li>Security or major system failures</li>
+<li>Legacy systems integration</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Changes to System State 800x800.jpg" src="img/bc1a051b-ba23-4996-aa62-11ebdd60d432.jpg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="07980b52-a85d-4833-8337-b26cfa0b9e24"><h1>Idempotence</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:32ed5b1f-b0ee-4e5c-a6ec-6dffc9a7705f -->
+<!-- ContentItem:df31491f-a94c-48bb-add1-781d499f2c67 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>We should make our services idempotent when reasonable</p>
+</blockquote>
+<ul>
+<li>Improves Reliability
+<ul>
+<li>Retry at will</li>
+</ul>
+</li>
+<li>May Hurt Maintainability &amp; Extensibility
+<ul>
+<li>Once published or utilized, it becomes part of the contract</li>
+</ul>
+</li>
+<li>Can be abused
+<ul>
+<li>Unintentional DoS attacks</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Idempotence is Golden 800x800.jpg" src="img/df31491f-a94c-48bb-add1-781d499f2c67.jpg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="4c5a9302-4513-4fde-bbb4-5d0cd8717f12"><h1>Context</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:779f277d-6251-442a-a081-9877eabd09d3 -->
+<!-- ContentItem:605ce389-8769-497b-b6c0-b6421e37ecd1 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>We must define our Bounded Contexts well and defend our Execution contexts</p>
+</blockquote>
+
+</td>
+<td width="60%"><img alt="Context 800x800.jpg" src="img/605ce389-8769-497b-b6c0-b6421e37ecd1.jpg" /></td>
+</tr></table></section>
+
+<section data-transition="fade-in slide-out">
+
+<a id="c7320bd0-7774-4b1a-b2ed-3bb42bbeed88">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:036006d6-5fb4-4776-889f-f13cd41f6a8f -->
+<img alt="Bus Management System - Simplified - Consistency-StoreAndForward - 1684x800.png" src="img/036006d6-5fb4-4776-889f-f13cd41f6a8f.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>We can avoid a dual-write by using the DBs CDC capability or the Outbox Pattern</p>
+</aside>
+<a id="c574fc25-7107-47c5-8b67-535b4bdcbce2">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:0cf7b1ba-7820-4072-acfd-a3fa0e96950b -->
+<img alt="Bus Management System - Simplified - Context-Single Write - 1920x1080.png" src="img/0cf7b1ba-7820-4072-acfd-a3fa0e96950b.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>We can use the producer pattern with an infrastructure component to bridge the data to a reliable messaging system</p>
+</aside>
+<a id="68766c0d-788a-494a-806b-dec31f650374">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:6ea438d2-32a1-43ff-8712-b0ba7a86242b -->
+<img alt="Bus Management System - Simplified - Context-Producer - 1920x1080.png" src="img/6ea438d2-32a1-43ff-8712-b0ba7a86242b.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="73c07295-0310-43ec-97b0-91c7f5009f84"><h1>Context Conversation</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:2d3ac854-678b-46de-aca5-7a2561d377b8 -->
+<!-- ContentItem:2d188e35-ae3d-4bbd-8f47-33ed9642681a -->
+
+<table><tr><td style="vertical-align:top;">
+<p>Development teams should have conversations around <strong>Context</strong> that are primarily focused around the tools and techniques that they intend to use to define their <strong>Bounded Contexts</strong> and to avoid the <strong>Dual-Writes Anti-Pattern</strong>.</p>
+
+</td>
+<td width="60%"><img alt="Software Engineering Discussion 800x800.jpg" src="img/2d188e35-ae3d-4bbd-8f47-33ed9642681a.jpg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="52281c8a-22e7-4764-a5da-137645ba137f"><h1>Context</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:104d5fcb-7884-4cdc-863a-5b6b788258cd -->
+<ul>
+<li><p>What database technologies will we use and how can we leverage these tools to create downstream events based on changes to the database state?</p>
+</li>
+<li><p>Which of our services are currently idempotent and which ones could reasonably made so? How can we leverage our idempotent services to improve system reliability?</p>
+</li>
+<li><p>Do we have any services right now that contain business processes implemented in a less-reliable way? If so, pulling this functionality out into their own microservices might be a good starting point for decomposition.</p>
+</li>
+<li><p>What processes will we as a development team implement to track and manage the technical debt of having business processes implemented in a less-reliable way?</p>
+</li>
+<li><p>What processes will we implement to be sure that any future less-reliable implementations of business functionality are made only after strong consideration and with a plan to pay it off, appropriate documentation and prioritization by the business and product owner.</p>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="23b14acc-ab39-44a6-9981-ffed3a6d62f5"><h1>Contract</h1></a>
+<!-- Layout:ImageLeft -->
+<!-- ContentItem:a38df767-f62f-44dd-ad9c-d3d16e0bf0d3 -->
+<!-- ContentItem:f2af9b7f-9572-4e1c-afff-5c1a55e4dd82 -->
+<aside class="notes"><p>It's easy to fall into the trap of assuming that OpenAPI or AsyncAPI specs are all we need for contracts. Those specs generally only deal with the 1st 2 items, and often the last 2 are completely ignored.</p>
+</aside>
+<table><tr><td width="60%">
+<img alt="Contract 800x800.jpg" src="img/a38df767-f62f-44dd-ad9c-d3d16e0bf0d3.jpg" />
+</td>
+<td style="vertical-align:top;">
+<blockquote>
+<p>An agreement between service providers and consumers</p>
+</blockquote>
+<ul>
+<li><p>Operations</p>
+</li>
+<li><p>Data Types &amp; Structures</p>
+</li>
+<li><p>Quality of Service</p>
+<ul>
+<li>i.e. SLAs</li>
+</ul>
+</li>
+<li><p>Versioning Strategy</p>
+<ul>
+<li>i.e. compatibility</li>
+</ul>
+</li>
+<li><p>Behavior</p>
+<ul>
+<li>i.e. idempotence</li>
+</ul>
+</li>
+</ul>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="128bdb81-2848-499d-afbf-79b2e25b4a5c"><h1>Upstream & Downstream Contract</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:8580e0f3-9455-4500-a85d-f17d3a9f3be5 -->
+<!-- ContentItem:bc3d9b67-f024-474b-a181-848638af35c3 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Both directions need to be carefully considered</p>
+</blockquote>
+<ul>
+<li>Upstream
+<ul>
+<li>How other systems pass info us</li>
+</ul>
+</li>
+<li>Downstream
+<ul>
+<li>How we pass info to other systems</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Upstream and Downstream Contract 800x800.jpg" src="img/bc3d9b67-f024-474b-a181-848638af35c3.jpg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="d99fd8f5-2786-49d6-ab3b-daf11eaaf6d5"><h1>Async vs Sync</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:03341d16-7e28-471f-a476-73c8dddf1e4c -->
+<!-- ContentItem:bd4c9322-7651-43b0-a6a4-7750d51cfe85 -->
+<aside class="notes"><p>With apologies to Dijkstra, if you create an API that allows synchronous queries,  you are saying you will support everyone's query methods and deal with the inevitable inefficiencies yourself, forever.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Synchronous interfaces considered harmful</p>
+</blockquote>
+<ul>
+<li>Synchronous
+<ul>
+<li>May reduce the effort for multiple downstreams</li>
+</ul>
+</li>
+<li>Asynchronous
+<ul>
+<li>Improve Reliability
+<ul>
+<li>Avoids Temporal Coupling</li>
+<li>Limits cascading failures</li>
+</ul>
+</li>
+<li>Maintain Team Agility
+<ul>
+<li>Single responsibility</li>
+</ul>
+</li>
+<li>Avoid Ineficiencies
+<ul>
+<li>Optimized Storage</li>
+<li>Eliminates noisy-neighbors</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Async Interfaces 800x800.jpg" src="img/bd4c9322-7651-43b0-a6a4-7750d51cfe85.jpg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="a2b0645b-82fa-4f4b-9a76-fec333a55121"><h1>Contract</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:efe99832-7076-401b-9a5d-994c1d6654de -->
+<blockquote>
+<p>Once a message is defined, all stakeholders have a compatibility expectation</p>
+</blockquote>
+<ul>
+<li>Have an internal (non-contract) stream for rapid iteration</li>
+<li>Isolate internal streams
+<ul>
+<li>Only one service should write to it</li>
+<li>Only services in THIS SUBSYSTEM should read from it</li>
+</ul>
+</li>
+<li>Use upstream contracts to bring external data to local stores</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="353e4db9-46e2-48e1-a9a4-c84d90a73bda"><h1>Contract Conversation</h1></a>
+<!-- Layout:ImageLeft -->
+<!-- ContentItem:99d57001-35e4-4cbe-91f1-be53793b387d -->
+<!-- ContentItem:e43d64a2-a591-4f61-800f-7223ce62a64a -->
+
+<table><tr><td width="60%">
+<img alt="Placeholder 800x800.jpg" src="img/e43d64a2-a591-4f61-800f-7223ce62a64a.jpg" />
+</td>
+<td style="vertical-align:top;">
+<p>Development teams should have conversations around <strong>Contract</strong> that are primarily focused around creating processes that define any integration contracts for both upstream and downstream services, and serve to defend their internal data representations against any external consumers.</p>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="6217c849-2ed9-4acd-8652-cb05dd7800b7"><h1>Questions about Contract</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:0eb92172-88ee-4e30-93c1-f3856857752e -->
+<ul>
+<li>How will we isolate our internal data representations from those of our downstream consumers?</li>
+<li>What types of compatibility guarantees are our tools and practices capable of providing?</li>
+<li>What procedures should we have in place to monitor incoming and outgoing contracts for compatibility?</li>
+<li>What should our procedures look like for making a change to a stream that has downstream consumers?</li>
+<li>How can we leverage upstream messaging contracts to further reduce the coupling of our systems to our upstream dependencies?</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="811f194f-c34a-4f92-8965-9e5ef9f94670"><h1>Chaos</h1></a>
+<!-- Layout:ImageLeft -->
+<!-- ContentItem:73aa71d6-38b8-4371-8032-4dd675a53d4d -->
+<!-- ContentItem:e43d64a2-a591-4f61-800f-7223ce62a64a -->
+
+<table><tr><td width="60%">
+<img alt="Placeholder 800x800.jpg" src="img/e43d64a2-a591-4f61-800f-7223ce62a64a.jpg" />
+</td>
+<td style="vertical-align:top;">
+<p>One of the <a href="https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing">Fallacies of Distributed Computing</a> is that the network is reliable. We should have similarly low expectations for the reliability of all of the infrastructure on which our services depend. Networks will segment, commodity servers and drives will fail, containers and operating systems will become unstable. In other words, our software will have errors during operation, no matter how resilient we attempt to make it. We need to embrace the fact that failures will occur in our software, and will do so at random times and often in unpredictable ways.</p>
+<p>If we are to build systems that don't require our constant attention, especially during off-hours, we need to be able to identify what happens when failures occur, and design our systems in ways that will allow them to heal automatically once the problem is corrected.</p>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="db884315-acbd-418c-a6c8-3e40e535d1f1"><h1>Chaos</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:db2649e9-fe50-4162-8520-12679a5a6cdb -->
+<!-- ContentItem:e43d64a2-a591-4f61-800f-7223ce62a64a -->
+<aside class="notes"><p>Thought experiments are useful, but you cannot really know how a system will respond to different types of failures until you have those failures in production. Historically, such &quot;tests&quot; have occurred at random, at the whim of the infrastructure, and usually at the worst possible time. Instead of leaving these things to chance, tools like <em>Chaos Monkey</em> can be used to simulate failures in production, and can be configured to create these failures during times where the appropriate support engineers are available and ready to respond if necessary.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Embrace the fact that failures <em>will</em> occur</p>
+</blockquote>
+<ul>
+<li>Failure Mode Analysis
+<ul>
+<li>Analytical
+<ul>
+<li>FMEA</li>
+<li>Virtual Chaos Engineering</li>
+</ul>
+</li>
+<li>Empirical
+<ul>
+<li>Leverage Feature Flags</li>
+<li>Simian Army (Chaos Monkey, etc)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Build self-healing systems</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Placeholder 800x800.jpg" src="img/e43d64a2-a591-4f61-800f-7223ce62a64a.jpg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="d5c43576-ced9-4149-acc5-fddae73e647b"><h1>Recoverability</h1></a>
+<!-- Layout:ImageLeft -->
+<!-- ContentItem:df9cc20d-bcd1-4303-9f5d-c6d666838eb3 -->
+<!-- ContentItem:e43d64a2-a591-4f61-800f-7223ce62a64a -->
+
+<table><tr><td width="60%">
+<img alt="Placeholder 800x800.jpg" src="img/e43d64a2-a591-4f61-800f-7223ce62a64a.jpg" />
+</td>
+<td style="vertical-align:top;">
+<p>Regardless of how we test our systems, it is important that we do everything we can to build systems that will heal themselves without the need for us to intervene every time a failure occurs. As a result, I highly recommend using asynchronous messaging patterns whenever possible. The asynchrony of these tools allow our services to be &quot;temporally decoupled&quot; from their dependencies. As a result, if a container fails and is restarted by Kubernetes, any message in process is rolled-back onto the queue or topic, and the system can pick right up where it left off.</p>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="2e28f028-519d-4381-9d1d-7aca4ef6870d"><h1>Questions About Chaos</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:f6809126-2f8a-40fb-bcc4-2b47759f9470 -->
+<ul>
+<li>How will we evaluate potential sources of failures in our systems before they are built?
+<ul>
+<li>How will we handle the inability to reach a dependency such as a database?</li>
+<li>How will we handle duplicate messages sent from our upstream data sources?</li>
+<li>How will we handle messages sent out-of-order from our upstream data sources?</li>
+</ul>
+</li>
+<li>How will we expose possible sources of failures during any pre-deployment testing?</li>
+<li>How will we expose possible sources of failures in the production environment before they occur for users?</li>
+<li>How will we identify errors that occur for users within production?</li>
+<li>How will we prioritize changes to the system based on the results of these experiments?</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="4326f042-fc5c-4e2f-8976-e57731c3cbd0"><h1>Appendix A - Uptime Metrics</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:690c2aba-5144-4131-8b5f-e0869eae0d52 -->
+<ul>
+<li><p>3-9's (unimportant)</p>
+<ul>
+<li>99.9% uptime</li>
+<li>1 outage second in 1000</li>
+<li>~ 43 min / month</li>
+</ul>
+</li>
+<li><p>4-9's (important)</p>
+<ul>
+<li>99.99% uptime</li>
+<li>1 outage second in 10,000</li>
+<li>~ 4.3 min / month</li>
+</ul>
+</li>
+<li><p>5-9's (critical)</p>
+<ul>
+<li>99.999% uptime</li>
+<li>1 outage second in 100,000</li>
+<li>~ 0.43 min (26 sec) / month</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="57b6188a-bb92-4584-b620-2c9faad1069b"><h1>Appendix B - Delivery Guarantees</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:2e544475-a2cb-4782-b648-2901fe4a3e20 -->
+<ul>
+<li><p>At-Least Once</p>
+<ul>
+<li>Every messages will be delivered 1+ times</li>
+<li>The vast majority of message systems make this guarantee</li>
+</ul>
+</li>
+<li><p>At-Most once</p>
+<ul>
+<li>Every message will be delivered 0-1 times</li>
+<li>i.e. Logging</li>
+</ul>
+</li>
+<li><p>Exactly once</p>
+<ul>
+<li>Every message will be delivered 1 and only 1 time</li>
+<li>Very difficult and expensive</li>
+<li>Limited usefulness while maintaining this guarantee</li>
+<li>Combination of idempotent input and a downstream transaction</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+
+        </div>
+        <div class="footer-left">Success With Microservices</div>
+        <div class="footer-right">Barry S. Stahl - Mastodon:@bsstahl@cognitiveinheritance.com - Blog:http://www.cognitiveinheritance.com</div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+        // More info about config & dependencies:
+        // - https://github.com/hakimel/reveal.js#configuration
+        // - https://github.com/hakimel/reveal.js#dependencies
+
+
+        Reveal.initialize({
+			width: 1920,
+			height: 1080,
+            transition: 'slide',
+            showNotes: window.location.search.match(/print-pdf/gi) ? true : false,
+            dependencies: [
+                { src: 'plugin/markdown/marked.js' },
+                { src: 'plugin/markdown/markdown.js' },
+                { src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+            ]
+        });
+    </script>
+</body>
+</html>
