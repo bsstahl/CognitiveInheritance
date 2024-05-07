@@ -165,20 +165,18 @@ from the Cornell Messenger Lectures, November 9, 1964.</p>
 
 <section data-transition="slide-in slide-out">
 <a id="9dd397e3-1e2d-49ae-9543-c89a7fa66a06"><h1>Bus Maintenance System</h1></a>
-<!-- Layout:ImageLeft -->
+<!-- Layout:ImageRight -->
 <!-- ContentItem:096163e4-9953-4912-aef6-e22210ee2147 -->
 <!-- ContentItem:194869b6-bae7-4a3f-aec7-821b37cbd177 -->
 
-<table><tr><td width="60%">
-<img alt="Bus-Maintenance Required-800x800.jpg" src="img/096163e4-9953-4912-aef6-e22210ee2147.jpg" />
-</td>
-<td style="vertical-align:top;">
+<table><tr><td style="vertical-align:top;">
 <p><strong>Given</strong>: A telemetry message is sent by a bus in our network</p>
 <p><strong>When</strong>: The message requires maintenance action (details to be supplied)</p>
 <p><strong>Then</strong>: A WorkOrder is created for the bus</p>
 <p><strong>And</strong>: The bus manufacturer is notified</p>
 
 </td>
+<td width="60%"><img alt="Bus-Maintenance Required-800x800.jpg" src="img/096163e4-9953-4912-aef6-e22210ee2147.jpg" /></td>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
@@ -347,14 +345,11 @@ FWIW: Light travels roughly 2500 miles in 13ms (the shortest perceptible delay).
 
 <section data-transition="slide-in slide-out">
 <a id="13484169-00f0-4e62-8063-d59c2cd456a5"><h1>Consistency</h1></a>
-<!-- Layout:ImageLeft -->
+<!-- Layout:ImageRight -->
 <!-- ContentItem:d3fb6d14-c4b9-4f9e-ab79-9f18dafb78d3 -->
 <!-- ContentItem:1207fe51-18fd-43f5-a549-9419a1e0dd4b -->
 
-<table><tr><td width="60%">
-<img alt="Consistency Flipped 800x800.jpg" src="img/d3fb6d14-c4b9-4f9e-ab79-9f18dafb78d3.jpg" />
-</td>
-<td style="vertical-align:top;">
+<table><tr><td style="vertical-align:top;">
 <blockquote>
 <p>Embrace Eventual Consistency</p>
 </blockquote>
@@ -366,6 +361,7 @@ FWIW: Light travels roughly 2500 miles in 13ms (the shortest perceptible delay).
 </ul>
 
 </td>
+<td width="60%"><img alt="Consistency Flipped 800x800.jpg" src="img/d3fb6d14-c4b9-4f9e-ab79-9f18dafb78d3.jpg" /></td>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
@@ -450,18 +446,16 @@ FWIW: Light travels roughly 2500 miles in 13ms (the shortest perceptible delay).
 
 <section data-transition="slide-in slide-out">
 <a id="99bef0a9-8a56-4f5f-b620-b4e918c9d491"><h1>Event Storming</h1></a>
-<!-- Layout:ImageLeft -->
+<!-- Layout:ImageRight -->
 <!-- ContentItem:aa1f66a3-14ef-4f0f-98cf-0153c177c3a8 -->
 <!-- ContentItem:5c080c7c-e928-4fe0-a022-f681404f9582 -->
 <aside class="notes"><p>There are a number of different techniques for modeling systems. One of the most effective is Event Storming. These techniques produce a number of artifacts that are valuable to both the business experts, and to engineers.</p>
 </aside>
-<table><tr><td width="60%">
-<img alt="Storm 1024x683.jpg" src="img/aa1f66a3-14ef-4f0f-98cf-0153c177c3a8.jpg" />
-</td>
-<td style="vertical-align:top;">
+<table><tr><td style="vertical-align:top;">
 <h3 id="a-process-for-modeling-a-business-domain-from-the-perspective-of-the-business-experts">A process for modeling a business domain from the perspective of the business experts</h3>
 
 </td>
+<td width="60%"><img alt="Storm 1024x683.jpg" src="img/aa1f66a3-14ef-4f0f-98cf-0153c177c3a8.jpg" /></td>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background='img/4975485e-1ebf-4a51-9615-5ba634acd13e.png'>
@@ -512,15 +506,12 @@ However, this is not the only kind of Context we need to care about. We also nee
 
 <section data-transition="slide-in slide-out">
 <a id="7c4c39d7-7ed3-4fcc-85eb-b21dc391732e"><h1>Execution Context</h1></a>
-<!-- Layout:ImageLeft -->
+<!-- Layout:ImageRight -->
 <!-- ContentItem:ca248b91-cd03-488d-a295-c87123493eea -->
 <!-- ContentItem:1cbfb21f-dcd8-427e-b3b8-e854ab7568f2 -->
 <aside class="notes"><p>Image Source: Context: DALL-E via Microsoft Designer</p>
 </aside>
-<table><tr><td width="60%">
-<img alt="Execution Context - Silicon City 800x800.jpg" src="img/ca248b91-cd03-488d-a295-c87123493eea.jpg" />
-</td>
-<td style="vertical-align:top;">
+<table><tr><td style="vertical-align:top;">
 <ul>
 <li><p>The unit of work of all services</p>
 </li>
@@ -531,6 +522,7 @@ However, this is not the only kind of Context we need to care about. We also nee
 </ul>
 
 </td>
+<td width="60%"><img alt="Execution Context - Silicon City 800x800.jpg" src="img/ca248b91-cd03-488d-a295-c87123493eea.jpg" /></td>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
@@ -593,7 +585,7 @@ However, this is not the only kind of Context we need to care about. We also nee
 
 <table><tr><td style="vertical-align:top;">
 <blockquote>
-<p>We should make our services idempotent when reasonable</p>
+<p>We should make our services idempotent when reasonable to do so</p>
 </blockquote>
 <ul>
 <li>Improves Reliability
@@ -627,6 +619,11 @@ However, this is not the only kind of Context we need to care about. We also nee
 <blockquote>
 <p>We must define our Bounded Contexts well and defend our Execution contexts</p>
 </blockquote>
+<ul>
+<li>Utilize Event Storming</li>
+<li>Avoid Dual-Writes</li>
+<li>Leverage Idempotence when possible</li>
+</ul>
 
 </td>
 <td width="60%"><img alt="Context 800x800.jpg" src="img/605ce389-8769-497b-b6c0-b6421e37ecd1.jpg" /></td>
@@ -697,15 +694,12 @@ However, this is not the only kind of Context we need to care about. We also nee
 
 <section data-transition="slide-in slide-out">
 <a id="23b14acc-ab39-44a6-9981-ffed3a6d62f5"><h1>Contract</h1></a>
-<!-- Layout:ImageLeft -->
+<!-- Layout:ImageRight -->
 <!-- ContentItem:a38df767-f62f-44dd-ad9c-d3d16e0bf0d3 -->
 <!-- ContentItem:f2af9b7f-9572-4e1c-afff-5c1a55e4dd82 -->
 <aside class="notes"><p>It's easy to fall into the trap of assuming that OpenAPI or AsyncAPI specs are all we need for contracts. Those specs generally only deal with the 1st 2 items, and often the last 2 are completely ignored.</p>
 </aside>
-<table><tr><td width="60%">
-<img alt="Contract 800x800.jpg" src="img/a38df767-f62f-44dd-ad9c-d3d16e0bf0d3.jpg" />
-</td>
-<td style="vertical-align:top;">
+<table><tr><td style="vertical-align:top;">
 <blockquote>
 <p>An agreement between service providers and consumers</p>
 </blockquote>
@@ -732,6 +726,7 @@ However, this is not the only kind of Context we need to care about. We also nee
 </ul>
 
 </td>
+<td width="60%"><img alt="Contract 800x800.jpg" src="img/a38df767-f62f-44dd-ad9c-d3d16e0bf0d3.jpg" /></td>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
@@ -756,17 +751,30 @@ However, this is not the only kind of Context we need to care about. We also nee
 </ul>
 </li>
 </ul>
+<hr />
+<ul>
+<li>Commands
+<ul>
+<li>Requests to modify data</li>
+</ul>
+</li>
+<li>Queries
+<ul>
+<li>Requests for data</li>
+</ul>
+</li>
+</ul>
 
 </td>
 <td width="60%"><img alt="Upstream and Downstream Contract 800x800.jpg" src="img/bc3d9b67-f024-474b-a181-848638af35c3.jpg" /></td>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
-<a id="d99fd8f5-2786-49d6-ab3b-daf11eaaf6d5"><h1>Async vs Sync</h1></a>
+<a id="d99fd8f5-2786-49d6-ab3b-daf11eaaf6d5"><h1>Sync vs Async</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:03341d16-7e28-471f-a476-73c8dddf1e4c -->
 <!-- ContentItem:bd4c9322-7651-43b0-a6a4-7750d51cfe85 -->
-<aside class="notes"><p>With apologies to Dijkstra, if you create an API that allows synchronous queries,  you are saying you will support everyone's query methods and deal with the inevitable inefficiencies yourself, forever.</p>
+<aside class="notes"><p>With apologies to Dijkstra, if you create an API that allows predicate queries,  you are saying you will support everyone's query methods and deal with the inevitable inefficiencies yourself.</p>
 </aside>
 <table><tr><td style="vertical-align:top;">
 <blockquote>
@@ -775,23 +783,24 @@ However, this is not the only kind of Context we need to care about. We also nee
 <ul>
 <li>Synchronous
 <ul>
-<li>May reduce the effort for multiple downstreams</li>
+<li>Combines downstream effort</li>
+<li>Rapid feedback (see Consistency)</li>
 </ul>
 </li>
 <li>Asynchronous
 <ul>
-<li>Improve Reliability
+<li>Improves Reliability
 <ul>
 <li>Avoids Temporal Coupling</li>
 <li>Limits cascading failures</li>
 </ul>
 </li>
-<li>Maintain Team Agility
+<li>Maintains Team Agility
 <ul>
 <li>Single responsibility</li>
 </ul>
 </li>
-<li>Avoid Ineficiencies
+<li>Avoids Ineficiencies
 <ul>
 <li>Optimized Storage</li>
 <li>Eliminates noisy-neighbors</li>
@@ -806,6 +815,67 @@ However, this is not the only kind of Context we need to care about. We also nee
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
+<a id="43865019-e7a4-4953-980c-e84b289dd7ec"><h1>Sending Messages Downstream</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:2d979ebc-70e0-4d28-b6f4-3333d2b9816e -->
+<!-- ContentItem:0749ad16-f23c-4413-868b-b2d2db9dda52 -->
+<aside class="notes"><p>Claim-Check is one of the few good reasons to use a synchronous API for downstream communication. It is best used when entity messages are large and rarely needed and should be queried by Id only.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Use the best-fit approach to publication</p>
+</blockquote>
+<ul>
+<li><p>Publish what you Know</p>
+<ul>
+<li>Domain Events</li>
+<li>Event Carried State Transfer</li>
+</ul>
+</li>
+<li><p>Claim Check</p>
+<ul>
+<li>Minimal messages with links</li>
+<li>Requires an API</li>
+</ul>
+</li>
+<li><p>Event Sourcing</p>
+<ul>
+<li>When interpretation of events may change</li>
+</ul>
+</li>
+<li><p>Request-Reply</p>
+<ul>
+<li>REST over Reliable Messaging</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Messaging 800x800.jpg" src="img/0749ad16-f23c-4413-868b-b2d2db9dda52.jpg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="f6e49200-3a8c-4db8-879a-7da4a600e52e"><h1>The Canonical Model</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:ebd8cf04-3f82-41cf-8a25-34fce97a9f58 -->
+<!-- ContentItem:86c99348-c1bb-4ad3-9263-d7a5efd93227 -->
+<aside class="notes"><p>Empowering innovation in the shadows, while ensuring stability in the spotlight</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Maintain a distinct internal model</p>
+</blockquote>
+<ul>
+<li>Preserve team agility</li>
+<li>Stability for Consumers</li>
+<li>Robustness to Change</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Canonical vs Public Contract 800x800.jpg" src="img/86c99348-c1bb-4ad3-9263-d7a5efd93227.jpg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
 
 <a id="a2b0645b-82fa-4f4b-9a76-fec333a55121"><h1>Contract</h1></a>
 <!-- Layout:FullPage -->
@@ -814,14 +884,18 @@ However, this is not the only kind of Context we need to care about. We also nee
 <p>Once a message is defined, all stakeholders have a compatibility expectation</p>
 </blockquote>
 <ul>
-<li>Have an internal (non-contract) stream for rapid iteration</li>
-<li>Isolate internal streams
+<li><p>Have an internal (non-contract) stream for rapid iteration</p>
+</li>
+<li><p>Isolate internal streams</p>
 <ul>
 <li>Only one service should write to it</li>
 <li>Only services in THIS SUBSYSTEM should read from it</li>
 </ul>
 </li>
-<li>Use upstream contracts to bring external data to local stores</li>
+<li><p>Use upstream contracts to bring external data to local stores</p>
+</li>
+<li><p>Avoid creating predicate queries for downstream use</p>
+</li>
 </ul>
 
 </section>
@@ -829,17 +903,15 @@ However, this is not the only kind of Context we need to care about. We also nee
 
 <section data-transition="slide-in slide-out">
 <a id="353e4db9-46e2-48e1-a9a4-c84d90a73bda"><h1>Contract Conversation</h1></a>
-<!-- Layout:ImageLeft -->
+<!-- Layout:ImageRight -->
 <!-- ContentItem:99d57001-35e4-4cbe-91f1-be53793b387d -->
-<!-- ContentItem:e43d64a2-a591-4f61-800f-7223ce62a64a -->
+<!-- ContentItem:2d188e35-ae3d-4bbd-8f47-33ed9642681a -->
 
-<table><tr><td width="60%">
-<img alt="Placeholder 800x800.jpg" src="img/e43d64a2-a591-4f61-800f-7223ce62a64a.jpg" />
-</td>
-<td style="vertical-align:top;">
-<p>Development teams should have conversations around <strong>Contract</strong> that are primarily focused around creating processes that define any integration contracts for both upstream and downstream services, and serve to defend their internal data representations against any external consumers.</p>
+<table><tr><td style="vertical-align:top;">
+<p>Development teams should have conversations around <strong>Contract</strong> that are primarily focused around creating processes that define any integration contracts for both upstream and downstream services, and serve to defend their internal data representations and implementations against any external consumers.</p>
 
 </td>
+<td width="60%"><img alt="Software Engineering Discussion 800x800.jpg" src="img/2d188e35-ae3d-4bbd-8f47-33ed9642681a.jpg" /></td>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
@@ -860,18 +932,16 @@ However, this is not the only kind of Context we need to care about. We also nee
 
 <section data-transition="slide-in slide-out">
 <a id="811f194f-c34a-4f92-8965-9e5ef9f94670"><h1>Chaos</h1></a>
-<!-- Layout:ImageLeft -->
+<!-- Layout:ImageRight -->
 <!-- ContentItem:73aa71d6-38b8-4371-8032-4dd675a53d4d -->
 <!-- ContentItem:e43d64a2-a591-4f61-800f-7223ce62a64a -->
 
-<table><tr><td width="60%">
-<img alt="Placeholder 800x800.jpg" src="img/e43d64a2-a591-4f61-800f-7223ce62a64a.jpg" />
-</td>
-<td style="vertical-align:top;">
+<table><tr><td style="vertical-align:top;">
 <p>One of the <a href="https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing">Fallacies of Distributed Computing</a> is that the network is reliable. We should have similarly low expectations for the reliability of all of the infrastructure on which our services depend. Networks will segment, commodity servers and drives will fail, containers and operating systems will become unstable. In other words, our software will have errors during operation, no matter how resilient we attempt to make it. We need to embrace the fact that failures will occur in our software, and will do so at random times and often in unpredictable ways.</p>
 <p>If we are to build systems that don't require our constant attention, especially during off-hours, we need to be able to identify what happens when failures occur, and design our systems in ways that will allow them to heal automatically once the problem is corrected.</p>
 
 </td>
+<td width="60%"><img alt="Placeholder 800x800.jpg" src="img/e43d64a2-a591-4f61-800f-7223ce62a64a.jpg" /></td>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
@@ -911,17 +981,15 @@ However, this is not the only kind of Context we need to care about. We also nee
 
 <section data-transition="slide-in slide-out">
 <a id="d5c43576-ced9-4149-acc5-fddae73e647b"><h1>Recoverability</h1></a>
-<!-- Layout:ImageLeft -->
+<!-- Layout:ImageRight -->
 <!-- ContentItem:df9cc20d-bcd1-4303-9f5d-c6d666838eb3 -->
 <!-- ContentItem:e43d64a2-a591-4f61-800f-7223ce62a64a -->
 
-<table><tr><td width="60%">
-<img alt="Placeholder 800x800.jpg" src="img/e43d64a2-a591-4f61-800f-7223ce62a64a.jpg" />
-</td>
-<td style="vertical-align:top;">
+<table><tr><td style="vertical-align:top;">
 <p>Regardless of how we test our systems, it is important that we do everything we can to build systems that will heal themselves without the need for us to intervene every time a failure occurs. As a result, I highly recommend using asynchronous messaging patterns whenever possible. The asynchrony of these tools allow our services to be &quot;temporally decoupled&quot; from their dependencies. As a result, if a container fails and is restarted by Kubernetes, any message in process is rolled-back onto the queue or topic, and the system can pick right up where it left off.</p>
 
 </td>
+<td width="60%"><img alt="Placeholder 800x800.jpg" src="img/e43d64a2-a591-4f61-800f-7223ce62a64a.jpg" /></td>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
