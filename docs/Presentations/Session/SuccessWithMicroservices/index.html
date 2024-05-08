@@ -569,8 +569,11 @@ However, this is not the only kind of Context we need to care about. We also nee
 <ul>
 <li>Logging &amp; Telemetry</li>
 <li>Cache-aside</li>
-<li>Security or major system failures</li>
+</ul>
+<hr />
+<ul>
 <li>Legacy systems integration</li>
+<li>Security or major incident</li>
 </ul>
 
 </td>
@@ -1042,17 +1045,23 @@ However, this is not the only kind of Context we need to care about. We also nee
 <!-- Layout:FullPage -->
 <!-- ContentItem:f6809126-2f8a-40fb-bcc4-2b47759f9470 -->
 <ul>
-<li>How will we evaluate potential sources of failures in our systems before they are built?
+<li><p>How can we make our systems self-healing?</p>
+</li>
+<li><p>How will we evaluate potential sources of failures in our systems before they are built?</p>
 <ul>
 <li>How will we handle the inability to reach a dependency such as a database?</li>
 <li>How will we handle duplicate messages sent from our upstream data sources?</li>
 <li>How will we handle messages sent out-of-order from our upstream data sources?</li>
 </ul>
 </li>
-<li>How will we expose possible sources of failures during any pre-deployment testing?</li>
-<li>How will we expose possible sources of failures in the production environment before they occur for users?</li>
-<li>How will we identify errors that occur for users within production?</li>
-<li>How will we prioritize changes to the system based on the results of these experiments?</li>
+<li><p>How will we expose possible sources of failures during any pre-deployment testing?</p>
+</li>
+<li><p>How will we expose possible sources of failures in the production environment before they occur for users?</p>
+</li>
+<li><p>How will we identify errors that occur for users within production?</p>
+</li>
+<li><p>How will we prioritize changes to the system based on the results of these experiments?</p>
+</li>
 </ul>
 
 </section>
@@ -1285,10 +1294,27 @@ However, this is not the only kind of Context we need to care about. We also nee
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
-
 <a id="1d3765b6-fb46-4bf9-b16b-0b9618427a22"><h1>Resources</h1></a>
-<!-- Layout:FullPage -->
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:5b146c9e-0ac7-4177-a5e3-50bc75077dbb -->
 <!-- ContentItem:cd4cfe61-07ac-4b95-b7b0-3122358bf1f6 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><a href="https://docs.google.com/document/d/18UP5r9Seuba5O9tsBQqkYFRNVI66fqjKQ-els6Ow_iw/edit">Third Party Integration with Kafka - Dharini Patel</a></li>
+<li><a href="https://docs.confluent.io/platform/current/schema-registry/fundamentals/schema-evolution.html">Confluent - Compatibility Types</a></li>
+<li>Event Storming - Carvana Center of Excellence 💀</li>
+<li>Enzo Assistants
+<ul>
+<li><code>enzo-adr</code> - An expert in creating and documenting technical decisions using Architectural Decision Records</li>
+<li><code>enzo-kafka</code> - An expert in Kafka and Confluent Platform at Carvana</li>
+<li><code>event-storm</code> - An expert to guide us through the process of Event Storming</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
 <ul>
 <li>Reference Website: <a href="https://criticalcs.azurewebsites.net">Critical C's Website</a></li>
 <li>Blog Post: <a href="https://cognitiveinheritance.com/Posts/critical-questions-about-microservice.html">Cognitive Inheritance: Critical Questions to Ask Your Team about Microservices</a></li>
@@ -1299,8 +1325,8 @@ However, this is not the only kind of Context we need to care about. We also nee
 <li>Video: <a href="https://www.youtube.com/watch?v=g6tnRWN9vy0&amp;list=PLCo2TFzFXPTQ5qIZTbbzFNcJL348fl6uO&amp;index=6&amp;t=1996s">Eliminating Hidden Dangers to your Applications: Patterns for Reliable Systems</a></li>
 </ul>
 
-</section>
-
+</td>
+</tr></table></section>
 
 <section data-transition="slide-in slide-out">
 
