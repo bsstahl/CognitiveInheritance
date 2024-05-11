@@ -29,7 +29,7 @@
 <a id="ee062bcb-426b-49d3-8e8a-2d0e005245d0">&nbsp;</a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:8ac9d5ff-1136-4d99-8448-de49bd005889 -->
-<!-- ContentItem:f28e9518-3a64-4a5c-85ad-73a750ce0a62 -->
+<!-- ContentItem:685060d8-4205-4db9-b44d-9610a7729e7d -->
 
 <table><tr><td style="vertical-align:top;">
 <h1 id="rag-deep-dive">RAG Deep-Dive</h1>
@@ -40,7 +40,9 @@
 <h3 id="httpscognitiveinheritance.com"><a href="https://cognitiveinheritance.com">https://CognitiveInheritance.com</a></h3>
 
 </td>
-<td width="60%"><img alt="Transparent Half Width Image.png" src="img/f28e9518-3a64-4a5c-85ad-73a750ce0a62.png" /></td>
+<td style="text-align: left;">
+<img src="img/685060d8-4205-4db9-b44d-9610a7729e7d.png" alt="Transparent Half Width Image 720x800.png" />
+</td>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
@@ -48,7 +50,8 @@
 <!-- Layout:MultiColumn -->
 <!-- ContentItem:30f7e9d2-b154-4895-bed7-2765f7bdc6fe -->
 <!-- ContentItem:8a83be06-76e9-4028-9630-c6a7de92ae99 -->
-
+<aside class="notes"><p>An up-to-date list is available on my blog at <a href="https://cognitiveinheritance.com/Pages/Favorites.html">https://cognitiveinheritance.com/Pages/Favorites.html</a></p>
+</aside>
 <table><tr><td style="vertical-align:top;">
 <h4 id="favorite-physicists">Favorite Physicists</h4>
 <ol>
@@ -114,9 +117,9 @@
 
 
 <section data-transition="slide-in slide-out">
-<aside class="notes"><p>July 25, 2022 was my 100th public talk. Thank you for allowing me to participate in your community over these past 13 years!</p>
+<aside class="notes"><p>July 25, 2022 was my 100th public talk. Thank you for allowing me to participate in your community over these past few decades!</p>
 </aside>
-<a id="39c6410c-3913-410b-abab-984014a15d84">&nbsp;</a>
+<a id="39c6410c-3913-410b-abab-984014a15d84"><h1>Achievement Unlocked</h1></a>
 <!-- Layout:FullPage -->
 <!-- ContentItem:a042b106-4bab-4403-b5b6-0d7b414ef789 -->
 <img alt="bss-100-achievement-unlocked-1024x250.png" src="img/a042b106-4bab-4403-b5b6-0d7b414ef789.png" />
@@ -613,10 +616,13 @@ Old image: 59bf56c7-2e3d-4a25-b78e-ade863990440</p>
         // More info about config & dependencies:
         // - https://github.com/hakimel/reveal.js#configuration
         // - https://github.com/hakimel/reveal.js#dependencies
+
+
         Reveal.initialize({
 			width: 1920,
 			height: 1080,
             transition: 'slide',
+            showNotes: window.location.search.match(/print-pdf/gi) ? true : false,
             dependencies: [
                 { src: 'plugin/markdown/marked.js' },
                 { src: 'plugin/markdown/markdown.js' },
