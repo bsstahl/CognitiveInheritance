@@ -23,6 +23,7 @@ categories: []
 
 ## My Presentations
 
+* [WIP / Locally Hosted](../Presentations/index.html)
 * [Beary Stickers](https://www.stickermule.com/artworks/14219958?token=5c62437cb203f6e1f4790b70a7f94296)
 
 ### Full Length Talks
@@ -37,17 +38,6 @@ categories: []
 * [Intro to Event Storming](http://introtoeventstorming.azurewebsites.net/)
 * [Introduction to Microservices](https://introtomicroservices.azurewebsites.net/)
 * [One AI Algorithm](https://oneaialgorithm.azurewebsites.net/)
-* [The Future of Information Retrieval - RAG Deep-Dive (WIP)](https://ragdeepdive.azurewebsites.net/)
-
-### Lightning Talks
-
-* Agile is for You
-* Amazing Algorithms
-* [Bend it Like Einstein](https://benditlikeeinstein.azurewebsites.net/)
-* Consume-Transform-Produce
-* Genetic Algorithms
-* GiveCamp
-* [How the Fediverse Could Save Democracy](https://fediverse.azurewebsites.net/)
 
 ## Other Link Groups
 
