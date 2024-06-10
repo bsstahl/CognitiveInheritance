@@ -1,0 +1,690 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Success With Microservices</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/carvana.css">
+    <link rel="stylesheet" href="css/headers.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-transition="slide-in slide-out" data-background='img/19ae31f8-078b-4bd3-8411-0222b6a09c25.jpg'>
+<a id="91c584ee-8a56-44ae-bdb1-80de69f46f60">&nbsp;</a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:ebc67800-7a56-421a-bab6-7f3f0feafc99 -->
+<!-- ContentItem:685060d8-4205-4db9-b44d-9610a7729e7d -->
+
+<table><tr><td style="vertical-align:top;">
+<h2 id="success-with-microservices">Success With Microservices</h2>
+<h4 id="the-critical-cs">The Critical C's</h4>
+<hr />
+<h3 id="barry-s.stahl">Barry S. Stahl</h3>
+<h3 id="solution-architect-developer">Solution Architect &amp; Developer</h3>
+<h3 id="bsstahlcognitiveinheritance.com"><a href="https://fosstodon.org/@Bsstahl">@bsstahl@cognitiveinheritance.com</a></h3>
+<h3 id="httpscognitiveinheritance.com"><a href="https://cognitiveinheritance.com">https://CognitiveInheritance.com</a></h3>
+
+</td>
+<td style="text-align: left;">
+<img src="img/685060d8-4205-4db9-b44d-9610a7729e7d.png" alt="Transparent Half Width Image 720x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="636059f9-aa9d-4444-b4ec-dd7f62badd98"><h1>Favorite Physicists & Mathematicians</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:30f7e9d2-b154-4895-bed7-2765f7bdc6fe -->
+<!-- ContentItem:8a83be06-76e9-4028-9630-c6a7de92ae99 -->
+<aside class="notes"><p>An up-to-date list is available on my blog at <a href="https://cognitiveinheritance.com/Pages/Favorites.html">https://cognitiveinheritance.com/Pages/Favorites.html</a></p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<h4 id="favorite-physicists">Favorite Physicists</h4>
+<ol>
+<li>Harold &quot;Hal&quot; Stahl</li>
+<li>Carl Sagan</li>
+<li>Richard Feynman</li>
+<li>Marie Curie</li>
+<li>Nikola Tesla</li>
+<li>Albert Einstein</li>
+<li>Neil Degrasse Tyson</li>
+<li>Niels Bohr</li>
+<li>Galileo Galilei</li>
+<li>Michael Faraday</li>
+</ol>
+<p><em>Other notables</em>: Stephen Hawking, Edwin Hubble</p>
+
+</td>
+<td style="vertical-align:top;">
+<h4 id="favorite-mathematicians">Favorite Mathematicians</h4>
+<ol>
+<li>Ada Lovelace</li>
+<li>Alan Turing</li>
+<li>Johannes Kepler</li>
+<li>Rene Descartes</li>
+<li>Isaac Newton</li>
+<li>Leonardo Fibonacci</li>
+<li>George Boole</li>
+<li>Blaise Pascal</li>
+<li>Johann Gauss</li>
+<li>Grace Hopper</li>
+</ol>
+<p><em>Other notables</em>: Daphne Koller, Grady Booch, Evelyn Berezin</p>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="23528a73-7bc1-4e39-9f2f-c8b9e2cff982"><h1>Some OSS Projects I Run</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:f8cbcb81-15f7-48e0-bc29-b348732f6f05 -->
+<ol>
+<li><a href="https://github.com/bsstahl/liquidvictor">Liquid Victor</a> : Media tracking and aggregation [used to assemble this presentation]</li>
+<li><a href="https://github.com/bsstahl/pptail">Prehensile Pony-Tail</a> : A static site generator built in c#</li>
+<li><a href="https://github.com/bsstahl/testhelperextensions">TestHelperExtensions</a> : A set of extension methods helpful when building unit tests</li>
+<li><a href="https://github.com/bsstahl/conferencescheduler">Conference Scheduler</a> : A conference schedule optimizer</li>
+<li><a href="https://github.com/bsstahl/intentbot">IntentBot</a> : A microservices framework for creating conversational bots on top of Bot Framework</li>
+<li><a href="https://github.com/bsstahl/liquidnun">LiquidNun</a> : Library of abstractions and implementations for loosely-coupled applications</li>
+<li><a href="https://github.com/bsstahl/toastmastersagenda">Toastmasters Agenda</a> : A c# library and website for generating agenda's for Toastmasters meetings</li>
+<li><a href="https://github.com/bsstahl/PDM">ProtoBuf Data Mapper</a> : A c# library for mapping and transforming ProtoBuf messages</li>
+</ol>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="3129a405-82a7-432c-ae55-6f9d2335ab17"><h1>http://GiveCamp.org</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:2ca346de-d62c-4c6b-834d-7ccab290a6ab -->
+<img alt="GiveCamp.png" src="img/2ca346de-d62c-4c6b-834d-7ccab290a6ab.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="fb2483e5-5371-49f1-a5e0-c8d579bdd9d3"><h1>The Critical C's of Microservices</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:96e7e0cf-747b-4927-9c7c-756b0bcc821c -->
+<!-- ContentItem:2d188e35-ae3d-4bbd-8f47-33ed9642681a -->
+<aside class="notes"><p>These conversations will help make explicit what is often left implicit or even unconsidered</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>6 Conversations around building µservice architectures</p>
+</blockquote>
+<ul>
+<li><a href="https://criticalcs.azurewebsites.net/#dc6bd8ec-2c26-40da-9247-17e7c39ae21f">Consistency</a></li>
+<li><a href="https://criticalcs.azurewebsites.net/#fdcf3278-5565-426a-ba75-bd6833547fcb">Context</a></li>
+<li><a href="https://criticalcs.azurewebsites.net/#48d99832-c9d5-4ec9-92f3-7cddf32344e7">Contract</a></li>
+<li><a href="https://criticalcs.azurewebsites.net/#c59c1de2-0719-46ad-9677-8c7b9a110b6f">Chaos</a></li>
+<li><a href="https://criticalcs.azurewebsites.net/#06cef84b-e5bb-47eb-a21d-3c9a0bbd8361">Competencies</a></li>
+<li><a href="https://criticalcs.azurewebsites.net/#0909eda9-2713-49ed-8c41-ac664a49495e">Coalescence</a></li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/2d188e35-ae3d-4bbd-8f47-33ed9642681a.jpg" alt="Software Engineering Discussion 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="d8b8bd94-589f-43b5-8bce-56d0e3d9eb2c"><h1>Consistency</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:41eef079-8f4f-4afd-a60f-62a3119b3de9 -->
+<!-- ContentItem:df741dc0-764e-4cfa-92ec-3c7e5ea3f8c7 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Data is consistent when it appears the same way when viewed from any perspective</p>
+</blockquote>
+<ul>
+<li><p>All consistency is simulated</p>
+<ul>
+<li>i.e. Transactions</li>
+</ul>
+</li>
+<li><p>We rarely if ever need it</p>
+</li>
+<li><p>Eventual consistency is enabling</p>
+<ul>
+<li>Patterns such as <strong>Store &amp; Forward</strong>
+<ul>
+<li>Get it safe, then get it done</li>
+</ul>
+</li>
+<li>Don't force your users to wait</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/41eef079-8f4f-4afd-a60f-62a3119b3de9.jpg" alt="Lightning 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="7ff3d5bf-d5ea-4e3d-a105-4a12bee66a18"><h1>Consistency Questions</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:62f8ff4d-90eb-4777-88d3-7205d110a7f8 -->
+<ul>
+<li>What patterns and tools will we use to create systems that support reliable, eventually consistent operations?
+<ul>
+<li>Example: Reliable messaging using ASB or Cosmos Change-Feed</li>
+</ul>
+</li>
+<li>How will we identify areas where stronger consistency has been wedged-in and should be removed?
+<ul>
+<li>Example: Look for polling, distributed trx, etc</li>
+</ul>
+</li>
+<li>How will we prevent future demands for strong consistency, either explicit or assumed, from weakening our systems?
+<ul>
+<li>Example: Document our commitment to Eventual Consistency in an ADR and explicitly discuss in code reviews</li>
+</ul>
+</li>
+<li>How will we identify when there are unusual or unacceptable delays in reaching consistency?
+<ul>
+<li>Example: Data Freshness SLIs/SLOs</li>
+</ul>
+</li>
+<li>How will we communicate the status of the system and any delays in reaching consistency to the stakeholders?
+<ul>
+<li>Example: Dashboards or toast notifications</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="edaa5868-3408-4f62-8066-40b9869bc825"><h1>Context</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:d8547d6f-8ccd-49b5-89b1-828afa42ef94 -->
+<!-- ContentItem:af0ab4db-1ed4-4b0e-8498-a1771d4f0e6f -->
+<aside class="notes"><p>The <em>Context</em> is the setting in which a software-intensive system exists and operates.  It includes the system's interactions with users, other systems, and its environment. It can be difficult to define and is often overlooked in system design. Fortunately, there are processes to help us.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Avoid the Dual-Writes Anti-Pattern</p>
+</blockquote>
+<ul>
+<li><p>Understand your system contexts</p>
+<ul>
+<li>Use Event Storming or Modeling</li>
+</ul>
+</li>
+<li><p>Defend the Execution Context</p>
+<ul>
+<li>One Reliable change to system state
+<ul>
+<li>An atomic transaction is 1 change</li>
+</ul>
+</li>
+<li>Document &amp; Remediate less reliable changes</li>
+<li>Leverage Idempotency when reasonable</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/af0ab4db-1ed4-4b0e-8498-a1771d4f0e6f.jpg" alt="Bounded Context 800x800 - Text Blurred.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="52281c8a-22e7-4764-a5da-137645ba137f"><h1>Context Questions</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:104d5fcb-7884-4cdc-863a-5b6b788258cd -->
+<ul>
+<li><p>What database technologies will we use and how can we leverage these tools to create downstream events based on changes to the database state?</p>
+</li>
+<li><p>Which of our services are currently idempotent and which ones could reasonably made so? How can we leverage our idempotent services to improve system reliability?</p>
+</li>
+<li><p>Do we have any services right now that contain business processes implemented in a less-reliable way? If so, pulling this functionality out into their own microservices might be a good starting point for decomposition.</p>
+</li>
+<li><p>What processes will we as a development team implement to track and manage the technical debt of having business processes implemented in a less-reliable way?</p>
+</li>
+<li><p>What processes will we implement to be sure that any future less-reliable implementations of business functionality are made only after strong consideration and with a plan to pay it off, appropriate documentation and prioritization by the business and product owner.</p>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="4d7fd579-2143-4ac8-98d3-c788a8925ace"><h1>Contract</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:d32389ba-906b-4b36-bcb2-cec562d3b22a -->
+<!-- ContentItem:a38df767-f62f-44dd-ad9c-d3d16e0bf0d3 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Agreement between producer and consumer</p>
+</blockquote>
+<ul>
+<li><p>Operations, Data types &amp; structures, QoS, Versioning, Behavior</p>
+</li>
+<li><p>Upstream &amp; Downstream, Commands &amp; Queries</p>
+</li>
+<li><p>Synchronous (i.e WebAPI), Asynchronous (i.e. Messaging)</p>
+</li>
+<li><p>Internal Model (Canonical), Public Model (API)</p>
+</li>
+<li><p>Recommendations</p>
+<ul>
+<li>Avoid Synchronous
+<ul>
+<li>Don't support predicate queries</li>
+</ul>
+</li>
+<li>Protect the Canonical Model</li>
+<li>Use the Microservices Pattern</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/a38df767-f62f-44dd-ad9c-d3d16e0bf0d3.jpg" alt="Contract 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="6217c849-2ed9-4acd-8652-cb05dd7800b7"><h1>Contract Questions</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:0eb92172-88ee-4e30-93c1-f3856857752e -->
+<ul>
+<li>How will we isolate our internal data representations from those of our downstream consumers?</li>
+<li>What types of compatibility guarantees are our tools and practices capable of providing?</li>
+<li>What procedures should we have in place to monitor incoming and outgoing contracts for compatibility?</li>
+<li>What should our procedures look like for making a change to a stream that has downstream consumers?</li>
+<li>How can we leverage upstream messaging contracts to further reduce the coupling of our systems to our upstream dependencies?</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="e4b8e9c5-0bb3-4552-aa60-d446f1e8595f"><h1>Chaos</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:143d78b9-8bae-423f-88f4-3730177a4313 -->
+<!-- ContentItem:26339b72-efe3-4417-8386-97c3a14588de -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Software Systems will fail - Embrace it</p>
+</blockquote>
+<ul>
+<li><p>Networks, Pods/Servers, Drives, Containers, OSs</p>
+</li>
+<li><p>Test for Understanding</p>
+<ul>
+<li>Analytical
+<ul>
+<li>FMEA, Virtual Chaos Engineering</li>
+</ul>
+</li>
+<li>Empirical
+<ul>
+<li>Leverage Feature Flags</li>
+<li>Simian Army</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Protect your nights &amp; weekends</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/26339b72-efe3-4417-8386-97c3a14588de.jpg" alt="Embrace the Chaos 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="2e28f028-519d-4381-9d1d-7aca4ef6870d"><h1>Chaos Questions</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:f6809126-2f8a-40fb-bcc4-2b47759f9470 -->
+<ul>
+<li><p>How can we make our systems self-healing?</p>
+</li>
+<li><p>How will we evaluate potential sources of failures in our systems before they are built?</p>
+<ul>
+<li>How will we handle the inability to reach a dependency such as a database?</li>
+<li>How will we handle duplicate messages sent from our upstream data sources?</li>
+<li>How will we handle messages sent out-of-order from our upstream data sources?</li>
+</ul>
+</li>
+<li><p>How will we expose possible sources of failures during any pre-deployment testing?</p>
+</li>
+<li><p>How will we expose possible sources of failures in the production environment before they occur for users?</p>
+</li>
+<li><p>How will we identify errors that occur for users within production?</p>
+</li>
+<li><p>How will we prioritize changes to the system based on the results of these experiments?</p>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="7fe7df51-0ca4-4458-828f-5fe600333cf4"><h1>Competencies</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:d0730412-5f9b-4f4e-9b15-ad8364f01c4c -->
+<!-- ContentItem:ccfb7594-47f0-4d69-8d06-98c1cd9319bb -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>The skills and capabilities that differentiate us from our competitors</p>
+</blockquote>
+<ul>
+<li><p>Focus on processes that</p>
+<ul>
+<li>Are unique to our business
+<ul>
+<li>Provide competitive advantage</li>
+</ul>
+</li>
+<li>Change frequently</li>
+<li>Are complex parts of the domain
+<ul>
+<li>Require frequent comms with domain experts</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Don't build in Non-Core Domains</p>
+<ul>
+<li>Supporting Domains
+<ul>
+<li>i.e. Employee Relations</li>
+</ul>
+</li>
+<li>Generic Domains
+<ul>
+<li>i.e. Feature Flagging</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/ccfb7594-47f0-4d69-8d06-98c1cd9319bb.jpg" alt="Competencies 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="7dd59034-86d7-4fce-bf1d-5e10bc0c0a06"><h1>Competencies Questions</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:9ec3456e-a53a-4856-aa31-7991d8011bb1 -->
+<ul>
+<li>What are our core competencies?</li>
+<li>How do we identify &quot;build vs. buy&quot; opportunities?</li>
+<li>How do we make &quot;build vs. buy&quot; decisions on needed systems?</li>
+<li>How do we identify cross-cutting concerns and infrastructure capabilites that can be leveraged?</li>
+<li>How do we determine which libraries or infrastructure components will be utilized?</li>
+<li>How do we manage the versioning of utilized components, especially in regard to security updates?</li>
+<li>How do we document our decisions for later review?</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="c51a6177-e9a8-41d3-b0d9-7824f0e922e9"><h1>Coalescence</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:902314a4-4c9b-4b81-8772-54dc8a3f9196 -->
+<!-- ContentItem:86044754-eb01-42f1-822f-2a8b4538c8f2 -->
+<aside class="notes"><p>Dashboard are our friends, especially in a crisis. Don't wait for an outage to create and learn these tools. By then, it is too late.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Automate gathering operational data</p>
+</blockquote>
+<ul>
+<li>Deployment &amp; Verfication Testing
+<ul>
+<li>Know if a deployment is successful</li>
+</ul>
+</li>
+<li>Logging, Tracing, &amp; Monitoring
+<ul>
+<li>Know if a system is unstable</li>
+<li>Diagnose problems quickly</li>
+</ul>
+</li>
+<li>Feature Flagging
+<ul>
+<li>Turn off a feature quickly</li>
+</ul>
+</li>
+<li>Dependency Status
+<ul>
+<li>Know when required dependencies are unstable</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/86044754-eb01-42f1-822f-2a8b4538c8f2.jpg" alt="Coalescence 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="696a91db-7318-45c0-a8a0-8931ab964d73"><h1>Questions About Coalescence</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:d8a6c01e-3986-4c73-8476-d0d0a825d7ed -->
+<ul>
+<li>What is our mechanism for deployment and system verification?</li>
+<li>What is our mechanism for logging/traceability within our system?</li>
+<li>How will we increase the level of logging when needed?</li>
+<li>How will we expose SLIs and other metrics so they are available when needed?</li>
+<li>How will we identify the status of dependencies so we can understand when our systems are reacting to downstream anomalies?</li>
+<li>Are there ways to perform ad-hoc queries against logs, metrics or dependencies to provide additional insight in an outage?</li>
+<li>How will we know when there are anomalies in our logs, metrics or dependencies?</li>
+<li>How will we coalesce our logs, metrics and dependency statuses for easy access?</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="e1fdedfe-a87b-4344-bf18-63fba8105ff3"><h1>Recommendations on these Conversations</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:e5c8e184-ed80-4214-bdcf-5690b0503030 -->
+<!-- ContentItem:5af762e2-96d6-462c-9ddf-207685872d1d -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Start having them early</p>
+<ul>
+<li>Later today will do fine</li>
+</ul>
+</li>
+<li><p>Don't try to do them all at once</p>
+<ul>
+<li>Never more than 90 min at a time</li>
+<li>Usually 30-60 min</li>
+</ul>
+</li>
+<li><p>Get help from local experts</p>
+</li>
+<li><p>Leverage Domain Driven Design</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/5af762e2-96d6-462c-9ddf-207685872d1d.jpg" alt="Recommendations on the Conversations 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="fb2483e5-5371-49f1-a5e0-c8d579bdd9d3"><h1>The Critical C's of Microservices</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:96e7e0cf-747b-4927-9c7c-756b0bcc821c -->
+<!-- ContentItem:2d188e35-ae3d-4bbd-8f47-33ed9642681a -->
+<aside class="notes"><p>These conversations will help make explicit what is often left implicit or even unconsidered</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>6 Conversations around building µservice architectures</p>
+</blockquote>
+<ul>
+<li><a href="https://criticalcs.azurewebsites.net/#dc6bd8ec-2c26-40da-9247-17e7c39ae21f">Consistency</a></li>
+<li><a href="https://criticalcs.azurewebsites.net/#fdcf3278-5565-426a-ba75-bd6833547fcb">Context</a></li>
+<li><a href="https://criticalcs.azurewebsites.net/#48d99832-c9d5-4ec9-92f3-7cddf32344e7">Contract</a></li>
+<li><a href="https://criticalcs.azurewebsites.net/#c59c1de2-0719-46ad-9677-8c7b9a110b6f">Chaos</a></li>
+<li><a href="https://criticalcs.azurewebsites.net/#06cef84b-e5bb-47eb-a21d-3c9a0bbd8361">Competencies</a></li>
+<li><a href="https://criticalcs.azurewebsites.net/#0909eda9-2713-49ed-8c41-ac664a49495e">Coalescence</a></li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/2d188e35-ae3d-4bbd-8f47-33ed9642681a.jpg" alt="Software Engineering Discussion 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="1d3765b6-fb46-4bf9-b16b-0b9618427a22"><h1>Resources</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:cd4cfe61-07ac-4b95-b7b0-3122358bf1f6 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Reference Website: <a href="https://criticalcs.azurewebsites.net">Critical C's Website</a></li>
+<li>Blog Post: <a href="https://cognitiveinheritance.com/Posts/critical-questions-about-microservice.html">Cognitive Inheritance: Critical Questions to Ask Your Team about Microservices</a></li>
+<li>Microsoft Learn: <a href="https://learn.microsoft.com/en-us/azure/architecture/microservices/design/data-considerations">Data Considerations for Microservices</a></li>
+<li>Book: <a href="https://learning.oreilly.com/library/view/domain-driven-design-distilled/9780134434964/">Domain-Driven Design Distilled</a></li>
+<li>Coursera Course: <a href="https://www.coursera.org/learn/site-reliability-engineering-slos">Google Site Reliability Engineering</a></li>
+<li>Wikipedia: <a href="https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing">The Fallacies of Distributed Computing</a></li>
+<li>Video: <a href="https://www.youtube.com/watch?v=g6tnRWN9vy0&amp;list=PLCo2TFzFXPTQ5qIZTbbzFNcJL348fl6uO&amp;index=6&amp;t=1996s">Eliminating Hidden Dangers to your Applications: Patterns for Reliable Systems</a></li>
+</ul>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="4326f042-fc5c-4e2f-8976-e57731c3cbd0"><h1>Appendix A - Uptime Metrics</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:690c2aba-5144-4131-8b5f-e0869eae0d52 -->
+<ul>
+<li><p>3-9's (unimportant)</p>
+<ul>
+<li>99.9% uptime</li>
+<li>1 outage second in 1000</li>
+<li>~ 43 min / month</li>
+</ul>
+</li>
+<li><p>4-9's (important)</p>
+<ul>
+<li>99.99% uptime</li>
+<li>1 outage second in 10,000</li>
+<li>~ 4.3 min / month</li>
+</ul>
+</li>
+<li><p>5-9's (critical)</p>
+<ul>
+<li>99.999% uptime</li>
+<li>1 outage second in 100,000</li>
+<li>~ 0.43 min (26 sec) / month</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="57b6188a-bb92-4584-b620-2c9faad1069b"><h1>Appendix B - Delivery Guarantees</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:2e544475-a2cb-4782-b648-2901fe4a3e20 -->
+<ul>
+<li><p>At-Least Once</p>
+<ul>
+<li>Every messages will be delivered 1+ times</li>
+<li>The vast majority of message systems make this guarantee</li>
+</ul>
+</li>
+<li><p>At-Most once</p>
+<ul>
+<li>Every message will be delivered 0-1 times</li>
+<li>i.e. Logging</li>
+</ul>
+</li>
+<li><p>Exactly once</p>
+<ul>
+<li>Every message will be delivered 1 and only 1 time</li>
+<li>Very difficult and expensive</li>
+<li>Limited usefulness while maintaining this guarantee</li>
+<li>Combination of idempotent input and a downstream transaction</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+
+        </div>
+        <div class="footer-left">Success With Microservices</div>
+        <div class="footer-right">Barry S. Stahl - Mastodon:@bsstahl@cognitiveinheritance.com - Blog:http://www.cognitiveinheritance.com</div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+        // More info about config & dependencies:
+        // - https://github.com/hakimel/reveal.js#configuration
+        // - https://github.com/hakimel/reveal.js#dependencies
+
+
+        Reveal.initialize({
+			width: 1920,
+			height: 1080,
+            transition: 'slide',
+            showNotes: window.location.search.match(/print-pdf/gi) ? true : false,
+            dependencies: [
+                { src: 'plugin/markdown/marked.js' },
+                { src: 'plugin/markdown/markdown.js' },
+                { src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+            ]
+        });
+    </script>
+</body>
+</html>

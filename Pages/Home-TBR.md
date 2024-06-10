@@ -27,6 +27,10 @@ categories: []
 * [Opinion: We need to examine the beliefs of today’s tech luminaries](https://www.ft.com/content/edc30352-05fb-4fd8-a503-20b50ce014ab)
 * [The Dehumanizing Myth of the Meritocracy](https://modelviewculture.com/pieces/the-dehumanizing-myth-of-the-meritocracy)
 
+### Leadership
+
+* [Engineering Leadership with a Little Help from my Friends - Networking](https://leaddev.com/leadingeng-new-york/video/engineering-leadership-little-help-my-friends)
+
 ### Development
 
 * [Make Illegal States Unrepresentable! - Domain-Driven Design w/ TypeScript | Khalil Stemmler](https://khalilstemmler.com/articles/typescript-domain-driven-design/make-illegal-states-unrepresentable/)

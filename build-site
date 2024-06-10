@@ -1,2 +1,0 @@
-./FaveGen/FavGen.exe "./" "./Pages/Favorites.md"
-./PPTail/PPTail.exe "Provider=PPTail.Data.Forestry.Repository;Filepath=./" "Provider=PPTail.Output.FileSystem.Repository;FilePath=./docs"

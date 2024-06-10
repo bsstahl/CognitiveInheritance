@@ -68,6 +68,7 @@ categories: []
 ## Reference Data
 
 * [Online TV Database - An open directory of television shows for HTPC software](http://thetvdb.com/)
+* [Levels.fyi - Compare career levels across companies](https://www.levels.fyi/)
 
 ## Charity and NPOs
 

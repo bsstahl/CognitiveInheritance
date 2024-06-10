@@ -44,13 +44,13 @@ I like to describe myself as the kind of person who has a list of his favorite p
 1. Johannes Kepler
 1. Rene Descartes
 1. Isaac Newton
-1. Leonardo Fibonacci
+1. Emmy Noether
 1. George Boole
 1. Blaise Pascal
 1. Johann Gauss
 1. Grace Hopper
 
-* Other notables: Daphne Koller, Grady Booch, Evelyn Berezin, Benoit Mandelbrot
+* Other notables: Daphne Koller, Grady Booch, Leonardo Fibonacci, Evelyn Berezin, Benoit Mandelbrot
 
 ---
 

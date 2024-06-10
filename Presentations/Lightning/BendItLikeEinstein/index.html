@@ -1,0 +1,462 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Bend it Like Einstein</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/carvana.css">
+    <link rel="stylesheet" href="css/headers.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-transition="slide-in slide-out" data-background='img/19ae31f8-078b-4bd3-8411-0222b6a09c25.jpg'>
+<a id="afa27c9f-01e8-4911-bc7c-0e66438f14c2">&nbsp;</a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:60fff32a-2f15-4111-9bea-612fb95ee3fa -->
+<!-- ContentItem:685060d8-4205-4db9-b44d-9610a7729e7d -->
+
+<table><tr><td style="vertical-align:top;">
+<h2 id="bend-it-like-einstein">Bend it Like Einstein</h2>
+<h4 id="your-guide-to-everyday-time-dilation">Your Guide to Everyday Time Dilation</h4>
+<hr />
+<h3 id="barry-s.stahl">Barry S. Stahl</h3>
+<h3 id="solution-architect-developer">Solution Architect &amp; Developer</h3>
+<h3 id="bsstahlcognitiveinheritance.com"><a href="https://fosstodon.org/@Bsstahl">@bsstahl@cognitiveinheritance.com</a></h3>
+<h3 id="httpscognitiveinheritance.com"><a href="https://cognitiveinheritance.com">https://CognitiveInheritance.com</a></h3>
+
+</td>
+<td style="text-align: left;">
+<img src="img/685060d8-4205-4db9-b44d-9610a7729e7d.png" alt="Transparent Half Width Image 720x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="388cc2f7-f135-484c-80fe-61e784ccb167"><h1>Favorite Physicists & Mathematicians</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:30f7e9d2-b154-4895-bed7-2765f7bdc6fe -->
+<!-- ContentItem:8a83be06-76e9-4028-9630-c6a7de92ae99 -->
+<aside class="notes"><p>I'm the type of person who keeps a list of his favorite physicists and favorite mathematicians.  That probably tells you everything you really need to know about me, but it will also explain a lot of why I'm presenting this subject in the way I am.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<h4 id="favorite-physicists">Favorite Physicists</h4>
+<ol>
+<li>Harold &quot;Hal&quot; Stahl</li>
+<li>Carl Sagan</li>
+<li>Richard Feynman</li>
+<li>Marie Curie</li>
+<li>Nikola Tesla</li>
+<li>Albert Einstein</li>
+<li>Neil Degrasse Tyson</li>
+<li>Niels Bohr</li>
+<li>Galileo Galilei</li>
+<li>Michael Faraday</li>
+</ol>
+<p><em>Other notables</em>: Stephen Hawking, Edwin Hubble</p>
+
+</td>
+<td style="vertical-align:top;">
+<h4 id="favorite-mathematicians">Favorite Mathematicians</h4>
+<ol>
+<li>Ada Lovelace</li>
+<li>Alan Turing</li>
+<li>Johannes Kepler</li>
+<li>Rene Descartes</li>
+<li>Isaac Newton</li>
+<li>Leonardo Fibonacci</li>
+<li>George Boole</li>
+<li>Blaise Pascal</li>
+<li>Johann Gauss</li>
+<li>Grace Hopper</li>
+</ol>
+<p><em>Other notables</em>: Daphne Koller, Grady Booch, Evelyn Berezin</p>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="bee16414-1118-477c-8993-fa13d3dc8d22"><h1>Time Dilation</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:c54d829e-1e3c-448a-9372-28db79302738 -->
+<!-- ContentItem:0665c1a7-e354-4e07-9ed0-109da36ef099 -->
+<aside class="notes"><p>Time Dilation blew everyone's mind starting in 1905 with the publication of Einstein's theory of Special Relativity in which he posited that, as we move faster and faster, getting closer to the speed of light, time slows down relative to a stationary observer.  Thus, it was slightly less startling in 1916 when Einstein generalized the concept to include proximity to a strong source of gravity.  I don't, as yet, have the ability to travel at relativistic speeds, but, fortunately or otherwise, I do have some experience with gravity, so that is where we'll focus this discussion.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Special Relativity (1905)</p>
+<ul>
+<li>Our perception of time changes with our velocity</li>
+</ul>
+</li>
+<li><p>General Relativity (1916)</p>
+<ul>
+<li>Our perception of time changes with gravity</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/0665c1a7-e354-4e07-9ed0-109da36ef099.jpg" alt="Einstein Portrait 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="10f93b8a-3054-4641-8383-20fa22018472"><h1>The Big Rocks</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:8bb9598d-3ce2-437e-bd81-02628ff7292b -->
+<!-- ContentItem:27d66125-88de-4d26-baec-18aab46e993c -->
+<aside class="notes"><p>I know we all want to be able to bend time. There's just too much to do out there.  There are not enough hours in the day to get everything done that we feel like we should be getting done, and we feel like we spend all of our time stuck in the minutia of our daily lives and never enough time doing the things that are really important to us, our big rocks.  Fortunately, there are things that can be done about it, but to take advantage of them, we're going to need to look at a little bit of how about how our brain works.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Big Rocks = Stuff Important to Us</li>
+<li>Little Rocks/Sand = Everything Else</li>
+</ul>
+<hr />
+<blockquote>
+<p>Covey, S. R. (1997). The Seven Habits of Highly Effective People: Restoring the Character Ethic</p>
+</blockquote>
+
+</td>
+<td style="text-align: left;">
+<img src="img/27d66125-88de-4d26-baec-18aab46e993c.jpg" alt="Big Rocks in Space 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="fab009bb-ff87-4279-b486-18babd421833"><h1>Roger Sperry and &quot;Split Brain&quot;</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:3214c6f4-d5c1-4f7a-87e3-49e5e776a73a -->
+<!-- ContentItem:4bda6aa5-957a-432f-98d7-15e41a5c023c -->
+<aside class="notes"><p>Our first approximations of how our brains process information, including time, was by Roger Sperry in his split brain experiments back in the 1960s.  This is where we got our idea of the left brain being the engineering and and critical thinking center and the right brain being the creativity center of the of the brain.  Theories in this space have gotten a lot more nuanced since then, at least partially as a result of improvements to neuroimaging.  We've gotten a lot better at being able to see what parts of the brain light up when we do different things, and this has led to a few additional theories.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Specialization by Function</p>
+<ul>
+<li>Right: Spatial abilities and holistic processing</li>
+<li>Left: Logic, analysis, language and math</li>
+</ul>
+<blockquote>
+<p>First approximations -- since supplanted</p>
+</blockquote>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/4bda6aa5-957a-432f-98d7-15e41a5c023c.jpg" alt="Split Brain 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="9253d2e5-999c-488d-bae7-13cb4c02023e"><h1>Daniel Kahneman Thinking Fast &amp; Slow</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:05c61b55-a8c8-4332-9c19-35b3b13bee31 -->
+<!-- ContentItem:185a3e66-2096-4c34-9399-1319fcdafc21 -->
+<aside class="notes"><p>One such theory was popularized by Daniel Kahneman in his thinking fast and slow book where he talks about our brains in terms of &quot;system 1&quot; versus &quot;system 2&quot;.  The fast, intuitive thinking like &quot;Oh, crap! A predator!&quot;, versus slower, more analytical problem solving and calculating, like what is the value of 1024x768?  So in the theory espoused by Kahneman, the 2 hemispheres are separated by what mode of thinking they perform.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Specialization by Processing Mode
+<ul>
+<li>Right: Fast, intuitive and effortless</li>
+<li>Left: Slow, analytical and deliberate</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/185a3e66-2096-4c34-9399-1319fcdafc21.jpg" alt="Fast and Slow 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="c386404f-e9ab-4d10-ab64-dc4877c5b4bf"><h1>Iain McGilchrist and Harmonized Brain</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:476704fd-14bb-4dba-8ade-f40e6932ea64 -->
+<!-- ContentItem:9f861d14-fae9-4767-ae0e-c429c61fe425 -->
+<aside class="notes"><p>There's a similar but very distinct theory, somewhat more controversial because of where it leads, espoused by Ian Mcgilchrist on the harmonized brain.  This theory separates the 2 hemispheres by their modes of attention, where the right hemisphere is doing the autonomous, background work of watching for predators while the left hemisphere is doing the work that requires focused attention like solving complex problems.  It's both of these hemispheres working together, according to McGillchrist and his theory, that are necessary to balance our understanding of the world.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Specialization by Attention Mode
+<ul>
+<li>Right: Autonomous and context-aware</li>
+<li>Left: Requires focused attention</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>The reasonings of both hemispheres combine to balance our understanding of the world</p>
+</blockquote>
+
+</td>
+<td style="text-align: left;">
+<img src="img/9f861d14-fae9-4767-ae0e-c429c61fe425.jpg" alt="McGilchrist Brain 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="5e282671-8d02-41ea-84c8-6f9a6249f0d5"><h1>David Eagleman's Free-Fall Experiment</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:0f54771a-c4a0-4d9e-83b2-3118305adcc9 -->
+<!-- ContentItem:77658160-3a00-4e2f-b346-03a98254ab3e -->
+<aside class="notes"><p>These 2 theories have led to some very interesting experiments. One such experiment was done by David Eagleman and his team.  Eagleman had a theory that people can do more work during a situation of hightened stress.  So he designed an experiment where he pushed people off high towers into safety nets and measured how much they could accomplish.  The thinking was that if we could use this stress to move the brain into &quot;System 1&quot; mode (fast thinking), we could accomplish more.  Fortunately for us, the data did not support that theory.  Even though participants all reported the time spent in free-fall as much longer than it actually was, their ability to process information didn't improve.  This suggested to him that time slowing was actually a retrospective view.  Eagleman theorized that, in our brains, the amygdala kicked in and wrote more memories of this time, due to the stress, and therefore, when we look back at it, it feels like it took longer than it did.  So now, the thinking is that high stress situations lead to increased memory encoding, and thus the feeling of things taking longer than they actually did.
+Falling from the Tower: Created by Dalle via Microsoft Designer</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Hypothesis:</p>
+<ul>
+<li>Participants could do more work during situations of heightened stress</li>
+</ul>
+</li>
+<li><p>Method:</p>
+<ul>
+<li>Participants free-fall from a 150-foot tower while attempting to read numbers on a &quot;perceptual chronometer&quot;</li>
+</ul>
+</li>
+<li><p>Results:</p>
+<ul>
+<li>Participants estimated fall-times as longer than actual</li>
+<li>Participants did not show an increase in work</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/77658160-3a00-4e2f-b346-03a98254ab3e.jpg" alt="Falling from the Tower 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="1176c341-392e-4208-9f08-35f8857b5ab6"><h1>A Temporal Pioneer?</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:15bb8239-9465-4edf-8e74-36e3820f9488 -->
+<!-- ContentItem:587a6938-4cd0-4aad-8544-f7c6a352b9c5 -->
+<aside class="notes"><p>There have been 3 times in my life, where I have experienced time dilation for myself. All 3 of them also involve flying through the air, as seen in these actual photos of the events. These are stories I am happy to tell over a beer. Whether I was leaping to catch a drumstick, diving for a ball or falling off a horse, the common trait is that I was, like the participants in the Eagleman study, subject to a situation of perceived &quot;high gravity&quot; ...and that's the key!</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>3 Temporal-Pioneering Events</p>
+<ul>
+<li>Catching the Drumstick</li>
+<li>Diving Catch in Softball</li>
+<li>Falling off a horse</li>
+</ul>
+</li>
+<li><p>All 3 involve flying through the air</p>
+<ul>
+<li>High-Gravity Situations?</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/587a6938-4cd0-4aad-8544-f7c6a352b9c5.jpg" alt="Time Dilation Events - With Award - 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="d540bee2-991a-449b-8e6d-66a068c5814a"><h1>Time Perception is Skewed by High-Gravity</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:ab2db56b-3e3e-4a5b-a60e-7a62e4c0a642 -->
+<!-- ContentItem:0fe50abb-e9fb-426d-8179-6f953f63a4c3 -->
+<aside class="notes"><p>So, while we may not fully understand why just yet, it is clear that our time perception is skewed by being in high gravity situations.  If we have focused attention, if we're under high stress, if we're worried about something, it takes up more of our thoughts, and therefore we write more memories of it, and it feels like it took longer than it did.  We have dilated time by making the experience of these unimportant tasks. These focused attention tasks, seem longer than they actually took.  Likewise, the autonomous things, the things we're doing when we're having fun or when we're in flow state, are the things that feel like they don't take any time at all, because we're not in a high gravity situation.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Focused Attention = Longer Perception</p>
+<ul>
+<li>High-Stress (worry)</li>
+<li>Manual Effort (calculation)</li>
+</ul>
+</li>
+<li><p>Autonomous Action = Shorter Perception</p>
+<ul>
+<li>Low-Stress (flow)</li>
+<li>Automatic Effort (habit)</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/0fe50abb-e9fb-426d-8179-6f953f63a4c3.jpg" alt="Deadline 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="85d177be-2ac2-41f4-a714-3e585c9e402a"><h1>Why We Suck at Estimating</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:7e47456c-1436-4d51-a1fe-f69fce682ace -->
+<!-- ContentItem:5412095e-2fd9-43ed-8d22-92fe931c397a -->
+<aside class="notes"><p>I think that this explains why we suck at estimating our coding tasks.  When we're writing code, we often get into &quot;the zone&quot;, sometimes called a &quot;flow state&quot;.  It feels like those tasks hardly took any time at all.  So it seems like we could do something similar super-fast, so we always estimate low. In contrast, boring, menial tasks seem to take forever, so we tend to estimate them high.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Focused Attention = Longer Perception
+<ul>
+<li>Boring but Urgent</li>
+<li>Stressful and uncomfortable</li>
+</ul>
+</li>
+<li>Autonomous Action = Shorter Perception
+<ul>
+<li>Flow State</li>
+<li>Pleasant and familiar</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/5412095e-2fd9-43ed-8d22-92fe931c397a.jpg" alt="Flow State 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="6e664747-16a9-4319-bcc2-1b56db18aede"><h1>The Paradox of Productivity</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:6cc35711-b3aa-4446-b18b-597273b7d06a -->
+<!-- ContentItem:99bb1d15-594c-4a07-b72f-9a091c60341c -->
+<aside class="notes"><p>The key to performing time-dilation then may be found in our attention spotlight.  It seems as though we dedicate every waking moment to our mundane responsibilities, mainly because we worry about these tasks, so they tend to monopolize our memory.  This perceived disproportion of time spent results in a feeling of underachievement, pressuring us to pour even more time into these tasks.  This cycle squeezes out the time for activities we truly relish, creating a frustrating paradox of productivity.  I remember flying through the air as if it was in slow motion - I don't remember flow-state at all.  Time didn't exist during flow.  It just didn't even happen.</p>
+<p>General Relativity: Created by Dalle via Microsoft Designer</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Our mundane tasks monopolize our memory</li>
+<li>This perception results in a feeling of underachievement</li>
+<li>Which pressures us to spend even more time on them</li>
+</ul>
+<hr />
+<blockquote>
+<p>Time flies in the zone, yet drags in detail; our minds make the mundane more memorable</p>
+</blockquote>
+
+</td>
+<td style="text-align: left;">
+<img src="img/99bb1d15-594c-4a07-b72f-9a091c60341c.jpg" alt="General Relativity 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="250a7528-655c-4889-a2d3-195312a7b270"><h1>Focus Modulation (FM)</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f16b4d68-c45c-4afa-8694-8fc5c4cd562b -->
+<!-- ContentItem:89f1d3c0-7a6a-42a8-a523-dd6bee8ad33d -->
+<aside class="notes"><p>Since the problem then is that our minds are making mundane things, these things that are not important to us, more memorable than the things we really care about, what can we do about it? I like to call this process focus modulation, which is really just 2 things, but there are lots of different ways to do these 2 particular things. Step one is to make sure that we cultivate and document our productive time. Create the conditions for a flow state and then recognize it after it happened and narrate it, bringing it to the forefront of our attention.  I believe the most important thing we can do with our work is to narrate it, either to ourselves or to someone else. Microblog it, journal it, blog about it if that's what you prefer, just make sure you've registered the fact in your mind that you did this thing. It doesn't have to be public, just make sure you recognize that you spent this time doing this thing that you value. Likewise try not to focus on less productive things.  It's hard, but try not to worry so much about the unimportant stuff.</p>
+<p>I'd like to leave you with one more thought.  I highly recommend you do these things, find ways that work for you to to perform, focus modulation and put more of your attention spotlight on the things that are really important to you.  But the one thing I would definitely ask you not to do is...</p>
+<p>Focus on Things that Make Time Fly: Created by Dalle via Microsoft Designer</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Cultivate &amp; document productive time</p>
+<ul>
+<li>Setup the conditions for flow state</li>
+<li>Recognize and value flow when it ends</li>
+</ul>
+</li>
+<li><p>Limit focus on less productive time</p>
+<ul>
+<li>Reduce time spent worrying</li>
+<li>Automate the boring stuff</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/89f1d3c0-7a6a-42a8-a523-dd6bee8ad33d.jpg" alt="Focus on Things that Make Time Fly 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="d2816841-57fc-4773-a686-c5aba1db316c"><h1>Don't Tell Our Managers</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:5c9e84a9-f75c-4fcc-b678-4b55239d57e8 -->
+<!-- ContentItem:1f7a4da0-0a3c-4eb1-bd9a-a98c02bc2a77 -->
+<aside class="notes"><p>Please don't tell our managers about the Eagleman experiments.  The last thing we need is for us to have our managers start pushing us off towers because they think it might squeeze a little more productivity out of us.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>We've got enough to worry about already</li>
+<li>Worrying about being yeeted off of high towers will result in poor Focus Modulation</li>
+</ul>
+<hr />
+<blockquote>
+<p>New experiment, who dis?</p>
+</blockquote>
+
+</td>
+<td style="text-align: left;">
+<img src="img/1f7a4da0-0a3c-4eb1-bd9a-a98c02bc2a77.jpg" alt="Falling from the Tower - Busted.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="1c3f9c1d-8162-4b24-aeee-cd9c38552651"><h1>Thank You!!</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:3695383b-1c7a-4b89-91ca-f076f46f291d -->
+<!-- ContentItem:3cfdfe01-6689-4619-9851-72710aaaaf22 -->
+
+<table><tr><td style="vertical-align:top;">
+<p>Link to this slide deck --&gt;</p>
+
+</td>
+<td style="text-align: left;">
+<img src="img/3cfdfe01-6689-4619-9851-72710aaaaf22.png" alt="QR Code - Time Dilation - Lightning Talk.png" />
+</td>
+</tr></table></section>
+
+
+        </div>
+        <div class="footer-left">Bend it Like Einstein</div>
+        <div class="footer-right">Barry S. Stahl - Mastodon:@bsstahl@cognitiveinheritance.com - Blog:http://www.cognitiveinheritance.com</div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+        // More info about config & dependencies:
+        // - https://github.com/hakimel/reveal.js#configuration
+        // - https://github.com/hakimel/reveal.js#dependencies
+
+
+        Reveal.initialize({
+			width: 1920,
+			height: 1080,
+            transition: 'slide',
+            showNotes: window.location.search.match(/print-pdf/gi) ? true : false,
+            dependencies: [
+                { src: 'plugin/markdown/marked.js' },
+                { src: 'plugin/markdown/markdown.js' },
+                { src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+            ]
+        });
+    </script>
+</body>
+</html>
