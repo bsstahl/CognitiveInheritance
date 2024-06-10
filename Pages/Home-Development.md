@@ -13,13 +13,14 @@ slug: home-development
 categories: []
 
 ---
-## Reference Tools
+## Reference & Reference Tools
 
 * [23khz Project - Make Dog Whistles Audible](https://23khz.babka.net/)
 * [Listen Notes: Best podcast search engine & podcast database](https://www.listennotes.com/)
 * [SeatGuru Seat Map US Airways Airbus A321 (321)](http://www.seatguru.com/airlines/US_Airways/US_Airways_Airbus_A321.php)
 * [Welcome to World Airport Codes](http://www.world-airport-codes.com/)
 * [MegaGladys - A Collection of People Search tools based on Wikipedia](https://megagladys.com/)
+* [The Reactive Manifesto](https://www.reactivemanifesto.org/)
 
 ## AI Tools
 
