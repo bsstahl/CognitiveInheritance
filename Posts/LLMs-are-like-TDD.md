@@ -12,6 +12,7 @@ title: LLMs can be to writing what TDD is to coding
 description: 
 ispublished: false
 showinlist: false
+buildifnotpublished: true
 publicationdate: 2023-06-10T07:00:00Z
 lastmodificationdate: 2024-06-10T07:00:00Z
 slug: llms-are-like-tdd
