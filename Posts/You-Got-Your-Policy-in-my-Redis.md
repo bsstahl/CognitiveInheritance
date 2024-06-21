@@ -8,7 +8,7 @@ categories:
 menuorder: 0
 id: 243c2c4d-cef1-4769-91d0-d401185c361b
 title: You Got Your Policy in my Redis
-description: Using distributed cache with Policies in c#
+description: Discusses the strategic implementation of Redis distributed caches to enhance application performance and reliability, emphasizing the importance of resilience patterns, specifically through the use of the Polly library, to mitigate outages and improve user experience.
 ispublished: false
 showinlist: false
 buildifnotpublished: true
@@ -65,7 +65,7 @@ Many policy libraries have methods to handle this pattern as well. A Polly polic
 
 And to access the cache using this policy, we might use code like this.
 
-{ImageLink: Cache Retrieval with Failover.png|Cache Retrieval with Failover}
+{ImageLink:Cache%20Retrieval%20with%20Failover.png|Cache Retrieval with Failover}
 
 You’ll notice that the code to update the cache is specified in the policy itself (the 2nd Lambda). Like the circuit-breaker, this policy  responds when any Exception is thrown or a default value (i.e. null) is returned. Unlike the circuit-breaker however, this policy executes its code every time there is a miss or error, not just when thresholds have been exceeded.  You’ll also notice that, in the calling code, a **Context** object is defined and the cache key value is added to that property bag. This is used in the handling mechanism to access the value from the System of Record and to update the cache with that value. Once the value has been updated in the cache, it is returned to the caller by being pulled back out of the property bag by the 1st Lambda expression in the policy.
 
@@ -77,7 +77,7 @@ We can now declare a policy to fail-over to the system of record if that is appr
 
 One of the real advantages of using a policy library like Polly is the ability to chain policies together to form complex reliability logic. Before going too deep into how we can use this to protect our cache-based applications, let’s look at the code to combine the two policies defined above, the Circuit-Breaker and Fallback policies. The code inside the **CreateFallbackPolicy** and **CreateCircuitBreakerPolicy** methods are just the return statements shown above that create each policy.
 
-{ImageLink: Wrapped Policy.png|Wrapped Policy}
+{ImageLink:Wrapped Policy.png|Wrapped Policy}
 
 These policies are executed in the order specified, which means that the last one specified is the one closest to the cache itself. This is important because, if our circuit is open, we want the Fallback policy to handle the request and fail-over to the system of record. If we were to reverse this order, opening the circuit would mean that the Fallback policy is never executed because the Circuit Breaker policy would block it.
 
