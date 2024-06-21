@@ -36,7 +36,7 @@ A circuit-breaker allows us to specify conditions where the cache is not accesse
 
 To use a Polly circuit-breaker in C#, we first define the policy, then execute our request against the policy. For example, a sample policy to open the circuit-breaker under the configured conditions and log the change of state is shown below.
 
-{ImageLink:CircuitBreakerPolicy.png|Circuit Breaker Policy}
+{ImageLink:Circuit Breaker Policy.png|Circuit Breaker Policy}
 
 This code uses the static logger to log the state changes and has members (**_circuitBreakerFailureThresholdPercentage**, **_circuitBreakerSamplingDuration**, etc...) for the configuration values that specify the failure conditions. For example, we could configure this policy to open when 50% of our requests fail during a 15 second interval where we handle at least 20 requests. We could then specify to keep the circuit open for 1 minute before allowing traffic through again. A failure, in this policy, is defined at the top of the above expression as:
 
@@ -65,7 +65,7 @@ Many policy libraries have methods to handle this pattern as well. A Polly polic
 
 And to access the cache using this policy, we might use code like this.
 
-{ImageLink:Cache%20Retrieval%20with%20Failover.png|Cache Retrieval with Failover}
+{ImageLink:Cache Retrieval with Failover.png|Cache Retrieval with Failover}
 
 You’ll notice that the code to update the cache is specified in the policy itself (the 2nd Lambda). Like the circuit-breaker, this policy  responds when any Exception is thrown or a default value (i.e. null) is returned. Unlike the circuit-breaker however, this policy executes its code every time there is a miss or error, not just when thresholds have been exceeded.  You’ll also notice that, in the calling code, a **Context** object is defined and the cache key value is added to that property bag. This is used in the handling mechanism to access the value from the System of Record and to update the cache with that value. Once the value has been updated in the cache, it is returned to the caller by being pulled back out of the property bag by the 1st Lambda expression in the policy.
 
