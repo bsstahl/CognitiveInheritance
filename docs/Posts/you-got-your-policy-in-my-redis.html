@@ -64,7 +64,7 @@
                 <h5>Posted by bsstahl on 2021-04-22 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
                 <share-on-mastodon 
                     share_title="Check out this post on Cognitive Inheritance: 'You Got Your Policy in my Redis'"
-                    share_description="&quot;Using distributed cache with Policies in c#&quot;"
+                    share_description="&quot;Discusses the strategic implementation of Redis distributed caches to enhance application performance and reliability, emphasizing the importance of resilience patterns, specifically through the use of the Polly library, to mitigate outages and improve user experience.&quot;"
                     hashtags="#development #reliability"
                     author="@bsstahl@cognitiveinheritance.com"
                     default_url="https://fosstodon.org">
@@ -99,13 +99,13 @@
 <p>Many policy libraries have methods to handle this pattern as well. A Polly policy describing this pattern is shown below.</p>
 <p><img src="../Images/Failover Policy.png" alt="Failover Policy" /></p>
 <p>And to access the cache using this policy, we might use code like this.</p>
-<p><img src="../Images/ Cache Retrieval with Failover.png" alt="Cache Retrieval with Failover" /></p>
+<p><img src="../Images/Cache%20Retrieval%20with%20Failover.png" alt="Cache Retrieval with Failover" /></p>
 <p>You’ll notice that the code to update the cache is specified in the policy itself (the 2nd Lambda). Like the circuit-breaker, this policy  responds when any Exception is thrown or a default value (i.e. null) is returned. Unlike the circuit-breaker however, this policy executes its code every time there is a miss or error, not just when thresholds have been exceeded.  You’ll also notice that, in the calling code, a <strong>Context</strong> object is defined and the cache key value is added to that property bag. This is used in the handling mechanism to access the value from the System of Record and to update the cache with that value. Once the value has been updated in the cache, it is returned to the caller by being pulled back out of the property bag by the 1st Lambda expression in the policy.</p>
 <p>We’ll need to be careful here that we set the <strong>_failoverCacheEntryOptions</strong> appropriately for our use-case. If we allow our values to live too long in the cache without expiring, we can miss changes, or cause other values to be ejected from the cache. As always, be thoughtful with how long to cache the values in your use-case. We also do nothing here to handle errors occurring in the fallback system. You’ll want to manage those failures appropriately as well.</p>
 <p>We can now declare a policy to fail-over to the system of record if that is appropriate for our use-case, but this policy doesn’t do anything to protect our systems from outages like our circuit-breaker example does. This is where our policy libraries can really shine, in their ability to combine policies.</p>
 <h3>Wrapping It Up - Combining Multiple Policies using Policy Wrappers</h3>
 <p>One of the real advantages of using a policy library like Polly is the ability to chain policies together to form complex reliability logic. Before going too deep into how we can use this to protect our cache-based applications, let’s look at the code to combine the two policies defined above, the Circuit-Breaker and Fallback policies. The code inside the <strong>CreateFallbackPolicy</strong> and <strong>CreateCircuitBreakerPolicy</strong> methods are just the return statements shown above that create each policy.</p>
-<p><img src="../Images/ Wrapped Policy.png" alt="Wrapped Policy" /></p>
+<p><img src="../Images/Wrapped Policy.png" alt="Wrapped Policy" /></p>
 <p>These policies are executed in the order specified, which means that the last one specified is the one closest to the cache itself. This is important because, if our circuit is open, we want the Fallback policy to handle the request and fail-over to the system of record. If we were to reverse this order, opening the circuit would mean that the Fallback policy is never executed because the Circuit Breaker policy would block it.</p>
 <p>This combined policy, as shown above, does everything we need from a cache client for our most common use-cases.</p>
 <ul>
