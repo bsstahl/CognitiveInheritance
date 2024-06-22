@@ -3,6 +3,8 @@ author: bsstahl
 tags:
 - development
 - reliability
+- caching
+- pattern
 categories:
 - Development
 menuorder: 0
@@ -16,17 +18,19 @@ publicationdate: 2021-04-22T07:00:00Z
 lastmodificationdate: 2021-04-22T07:00:00Z
 slug: you-got-your-policy-in-my-redis
 ---
-Using a distributed cache such as Redis is a proven method of improving the performance and reliability of our applications. Redis caches are used often at Carvana, with 37 instances in our production Azure subscription at the time of this writing. As with any tool, use in accordance with best practices will help to reduce support time and outages, and give our customers the best possible experience.
+> Cross-posted from an internal Engineering blog
+
+Using a distributed cache such as Redis is a proven method of improving the performance and reliability of our applications. As with any tool, use in accordance with best practices will help to reduce support time and outages, and give our customers the best possible experience.
 
 As much as we’d like to believe that our cloud services are highly available and reliable, the fact is that no matter how much effort goes into their resilience, we will never get 100% availability from them. Even if it is just due to random Internet routing issues, we must take measures to protect our applications, our customers, and our support personnel, from these inevitable hiccups. There are a number of patterns we can use to make our cache access more resilient, and therefore less susceptible to these outages. There are also libraries we can use to implement these patterns, allowing us to declare policies for these patterns, and implement and compose them with ease.
 
-These concepts are useful in all tool chains, with or without a policy library, and policy libraries are available for all of Carvana’s Golden Path languages. However, this article will focus on using the [Polly](https://stackexchange.github.io/StackExchange.Redis/) library in **C#** for implementation. That said, I will attempt to describe the concepts, as much as possible, in terms that are accessible to developers using all tool chains. I have also used the Polly library generically. That is, any calls that result in data being returned could be used in place of the caching operations described here. In addition, for clients that use Microsoft’s **IDisributedCache** abstraction, there is a caching specific package, **Polly.Caching.Distributed**, that does all of these same things, but with a simplified syntax for caching operations. Carvana engineering groups should consider using this tooling if appropriate.
+These concepts are useful in all tool chains, with or without a policy library, and policy libraries are available for many common development languages. However, this article will focus on using the [Polly](https://stackexchange.github.io/StackExchange.Redis/) library in **C#** for implementation. That said, I will attempt to describe the concepts, as much as possible, in terms that are accessible to developers using all tool chains. I have also used the Polly library generically. That is, any calls that result in data being returned could be used in place of the caching operations described here. In addition, for clients that use Microsoft’s **IDisributedCache** abstraction, there is a caching specific package, **Polly.Caching.Distributed**, that does all of these same things, but with a simplified syntax for caching operations.
 
 ### Basic Cache-Retrieval
 
-The most straightforward use-case for a caching client is to have the cache pre-populated by some other means so that the client only has to retrieve required values. In this situation, either the value is successfully retrieved from the cache, or some error condition occurs (perhaps a null returned or an Exception thrown). This usage, as described, is very simple, but can still provide a lot of value for our applications. Having low-latency access to data across multiple instances of our application can certainly improve the performance of our apps, but can also improve their reliability, depending on the original data source. We can even use the cache as a means for our services to own-their-own-data, assuming we take any long-term persistence needs into account. 
+The most straightforward use-case for a caching client is to have the cache pre-populated by some other means so that the client only has to retrieve required values. In this situation, either the value is successfully retrieved from the cache, or some error condition occurs (perhaps a null returned or an Exception thrown). This usage, as described, is very simple, but can still provide a lot of value for our applications. Having low-latency access to data across multiple instances of our application can certainly improve the performance of our apps, but can also improve their reliability, depending on the original data source. We can even use the cache as a means for our services to own-their-own-data, assuming we take any long-term persistence needs into account.
 
-It goes without saying however that this simple implementation doesn’t handle every circumstance on its own. Many situations exist where the data cannot all be stored in the cache. Even if the cache can be fully populated, there are circumstances, depending on the configuration, where values may need to be evicted. This pattern also requires each client to handle cache errors and misses on their own, and provides no short-circuiting of the cache during outage periods. In many cases, these types of situations are handled, often very differently, by the consuming clients. Fortunately, tools exist for all Golden Path languages that allow us to avoid repeating the code to manage these situations by defining policies to handle them.
+It goes without saying however that this simple implementation doesn’t handle every circumstance on its own. Many situations exist where the data cannot all be stored in the cache. Even if the cache can be fully populated, there are circumstances, depending on the configuration, where values may need to be evicted. This pattern also requires each client to handle cache errors and misses on their own, and provides no short-circuiting of the cache during outage periods. In many cases, these types of situations are handled, often very differently, by the consuming clients. Fortunately, tools exist for many languages that allow us to avoid repeating the code to manage these situations by defining policies to handle them.
 
 ### Using a Circuit-Breaker Policy
 
