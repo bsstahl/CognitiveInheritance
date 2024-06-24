@@ -10,8 +10,8 @@ categories:
 menuorder: 0
 id: 243c2c4d-cef1-4769-91d0-d401185c361b
 title: You Got Your Policy in my Redis
-description: Discusses the strategic implementation of Redis distributed caches to enhance application performance and reliability, emphasizing the importance of resilience patterns, specifically through the use of the Polly library, to mitigate outages and improve user experience.
-ispublished: false
+description: Discusses the strategic implementation of Redis distributed caches to enhance application performance and reliability, emphasizing the importance of resilience patterns, specifically through the use of a Policy library, to mitigate outages and improve user experience.
+ispublished: true
 showinlist: false
 buildifnotpublished: true
 publicationdate: 2021-04-22T07:00:00Z

@@ -5,13 +5,12 @@ tags:
 - coding-practices
 - ddd
 - event-driven
-- team-building
 menuorder: 0
 id: 384084a3-40f0-4340-a17d-34202ab973b7
 author: bsstahl
 title: Event Storming
 description: Event Storming is a collaborative, domain-modeling workshop aimed at gaining a deeper understanding of business processes. Utilizing sticky-notes for visual representation, the method facilitates the creation of a shared model and language among team members, spanning various roles, to efficiently design and implement software systems that align with business objectives.
-ispublished: false
+ispublished: true
 buildifnotpublished: true
 showinlist: false
 publicationdate: 2021-09-21T07:00:00.000+00:00
@@ -69,7 +68,7 @@ We use pink stickies to identify items that are unclear, overly complex or have 
 
 ### Ubiquitous Language
 
-A set of terms describing the domain that are meaningful to the business team. These are the terms that are used by all domain team members to identify and communicate about activities of the system.
+A set of terms describing the domain that are meaningful to the business team. These are the terms that are used by all domain team members to identify and communicate about activities of the system. A sample excerpted from a Ubiquitous Language document is shown below.
 
 {ImageLink:UbiquitousLanguageSample.png|Sample from a Ubiquitous Language Document}
 
