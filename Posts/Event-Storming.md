@@ -21,8 +21,6 @@ categories:
 - Development
         
 ---
-> Cross-posted from an internal website
-
 ## What is Event Storming?
 
 Event storming is a process for building a model of a problem domain by analyzing the domain from a business perspective. The results of an Event Storming session include a logical model of the domain, as seen by the business owners, that is extremely useful to engineers in defining software systems for that domain. Event Storming follows a four-step process to produce a model of the system that is based on Domain Events, historical facts about the business process that are relevant to the business owners.

@@ -18,8 +18,6 @@ publicationdate: 2021-04-22T07:00:00Z
 lastmodificationdate: 2021-04-22T07:00:00Z
 slug: you-got-your-policy-in-my-redis
 ---
-> Cross-posted from an internal Engineering blog
-
 Using a distributed cache such as Redis is a proven method of improving the performance and reliability of our applications. As with any tool, use in accordance with best practices will help to reduce support time and outages, and give our customers the best possible experience.
 
 As much as we’d like to believe that our cloud services are highly available and reliable, the fact is that no matter how much effort goes into their resilience, we will never get 100% availability from them. Even if it is just due to random Internet routing issues, we must take measures to protect our applications, our customers, and our support personnel, from these inevitable hiccups. There are a number of patterns we can use to make our cache access more resilient, and therefore less susceptible to these outages. There are also libraries we can use to implement these patterns, allowing us to declare policies for these patterns, and implement and compose them with ease.
