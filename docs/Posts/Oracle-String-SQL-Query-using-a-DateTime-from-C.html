@@ -71,8 +71,11 @@
                 </share-on-mastodon>
                 <br/><br/>
                 <p>The following statement builds a C# string containing an Oracle SQL query that uses a DateTime specified in the .NET code.  It uses the Oracle TO_DATE function to convert the string date to an oracle date object and specifies the format of the string date for both the C# output and the Oracle input. Using this statement, there can never be a date format mismatch since the same format is specified at both ends.</p>
-<p>string sql = string.Format(&quot;select * from MyDB.MyTable t where t.MyDate &gt; <br />
-     TO_DATE('{0:MM/dd/yyyy hh:mm}', 'MM/dd/yyyy HH24:mi')&quot;, DateTime.Now);</p>
+<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">string</span> sql = <span style="color:Blue;">string</span>.Format(&quot;<span style="color:Blue;">select</span> \* <span style="color:Blue;">from</span> MyDB.MyTable t <span style="color:Blue;">where</span> t.MyDate &amp;gt;
+&#160;&#160;&#160;&#160; TO\_DATE(<span style="color:#A31515;">&#39;{0:MM/dd/yyyy hh:mm}&#39;</span>, <span style="color:#A31515;">&#39;MM/dd/yyyy HH24:mi&#39;</span>)&quot;, DateTime.Now);
+</pre></div>
+</div>
 <p>I have found myself using this type of statement fairly often to create tools that help me do my job.  For what it's worth, I wouldn't put this type of code in production since you rarely want to execute a query from a string in a production environment.</p>
 
                 <h5>Tags: <a title="Tag: csharp" class="small" href="../Search/csharp.html">csharp</a>&nbsp;<a title="Tag: oracle" class="small" href="../Search/oracle.html">oracle</a>&nbsp;<a title="Tag: sql" class="small" href="../Search/sql.html">sql</a>&nbsp;<a title="Tag: datetime" class="small" href="../Search/datetime.html">datetime</a>&nbsp;<a title="Tag: dotnet" class="small" href="../Search/dotnet.html">dotnet</a>&nbsp;</h5>

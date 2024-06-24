@@ -447,13 +447,16 @@ Field sysname 'Field/Name' ) x</p>
         default_url="https://fosstodon.org">
     </share-on-mastodon>
     <br/><br/>
-    <p>Using wsBlogService As New BlogService.Blog<br />
-     Try<br />
-          Me.Text = wsBlogService.DisplayBlog(&quot;BlogName&quot;, 0)<br />
-     Catch objException As System.Exception<br />
-          Me.Text = String.Format(&quot;&quot;, objException.Message, wsBlogService.url)<br />
-     End Try<br />
-End Using</p>
+    <div class="lang-vb editor-colors"><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">Using</span> wsBlogService <span style="color:Blue;">As</span> <span style="color:Blue;">New</span> BlogService.Blog  
+ &#160;&#160;&#160;&#160;&#160;<span style="color:Blue;">Try</span>  
+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="color:Blue;">Me</span>.Text = wsBlogService.DisplayBlog(<span style="color:#A31515;">&quot;BlogName&quot;</span>, 0)  
+ &#160;&#160;&#160;&#160;&#160;<span style="color:Blue;">Catch</span> objException <span style="color:Blue;">As</span> System.Exception  
+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="color:Blue;">Me</span>.Text = <span style="color:Blue;">String</span>.Format(<span style="color:#A31515;">&quot;&quot;</span>, objException.Message, wsBlogService.url)  
+ &#160;&#160;&#160;&#160;&#160;<span style="color:Blue;">End</span> <span style="color:Blue;">Try</span>  
+ <span style="color:Blue;">End</span> <span style="color:Blue;">Using</span>
+</pre></div>
+</div>
 
     <h5>Tags: <a title="Tag: vb.net" class="small" href="../Search/vbdotnet.html">vb.net</a>&nbsp;<a title="Tag: code sample" class="small" href="../Search/code-sample.html">code sample</a>&nbsp;</h5>
     <div class="share"><a href="../Permalinks/12361edd-560a-4532-bec9-53b11dc3767e.html" rel="bookmark">Permalink</a></div>
