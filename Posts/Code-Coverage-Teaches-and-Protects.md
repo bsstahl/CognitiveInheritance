@@ -29,7 +29,7 @@ I often hail code coverage as a great tool to help improve your code base.  Tod
 
 In the code below, I used a common dependency injection pattern. That is, an IServiceProvider object holding my dependencies is passed-in to my object and stored as a member variable.  When a dependency is needed, I retrieve that dependency from the service provider, and then take action on it.  Since there is no guarantee that the dependency I need will have been placed in the container, I use some common guard logic to protect my code.
 
-```
+```csharp
 templates = _serviceProvider.GetService<IEnumerable<Template>>();
 if ((templates==null) || (!templates.Any(s => s.TemplateType==ContactPage)))
      throw new TemplateNotFoundException(TemplateType.ContactPage, string.Empty);
@@ -47,5 +47,5 @@ Based on this new knowledge of the behavior of the IServiceProvider, I had a few
 4. Remove the guard code that tests for null and the test that supports it.  Since the code is completely unnecessary, the test itself is redundant because it is, essentially identical to the test verifying that the template I need is in the collection.
 
 I'm sure you've guessed by now that I selected option 4.  I removed the guard code and the test from my solution.  In doing so, I removed dead code that served no purpose, but would have to be supported through the life of the project.  
-     
+
 For those who might be thinking something similar to, "It's nice that the coverage tooling helped you learn about your code, but using Code Coverage as a metric is actually a bad idea so I won't use Code Coverage at all", I'd like to remind you that any tool, such as a hammer or a car, can be abused. That doesn't mean we don't continue to use them, we just make certain that we use them properly.  Code Coverage is a horrible way to measure a development team or effort, but it is an outstanding tool and should be used by the development team whenever possible to discover things about the code base.

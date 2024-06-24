@@ -16,6 +16,7 @@ categories:
 - Development
 
 ---
+```vb
 Using wsBlogService As New BlogService.Blog  
       Try  
            Me.Text = wsBlogService.DisplayBlog("BlogName", 0)  
@@ -23,3 +24,4 @@ Using wsBlogService As New BlogService.Blog
            Me.Text = String.Format("", objException.Message, wsBlogService.url)  
       End Try  
  End Using
+ ```

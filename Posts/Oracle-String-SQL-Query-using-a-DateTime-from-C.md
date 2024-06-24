@@ -21,7 +21,9 @@ categories:
 ---
 The following statement builds a C# string containing an Oracle SQL query that uses a DateTime specified in the .NET code.  It uses the Oracle TO\_DATE function to convert the string date to an oracle date object and specifies the format of the string date for both the C# output and the Oracle input. Using this statement, there can never be a date format mismatch since the same format is specified at both ends.
 
-string sql = string.Format("select \* from MyDB.MyTable t where t.MyDate &gt;   
-	     TO\_DATE('{0:MM/dd/yyyy hh:mm}', 'MM/dd/yyyy HH24:mi')", DateTime.Now);
+```csharp
+string sql = string.Format("select \* from MyDB.MyTable t where t.MyDate &gt;
+     TO\_DATE('{0:MM/dd/yyyy hh:mm}', 'MM/dd/yyyy HH24:mi')", DateTime.Now);
+```
 
 I have found myself using this type of statement fairly often to create tools that help me do my job.  For what it's worth, I wouldn't put this type of code in production since you rarely want to execute a query from a string in a production environment.
