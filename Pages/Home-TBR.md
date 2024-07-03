@@ -58,6 +58,7 @@ categories: []
 ### Science
 
 * [The Shape of Space](https://www.math.brown.edu/tbanchof/STG/ma8/papers/leckstein/Cosmo/intro.html#contents)
+* [The Work of E. O. Wilson - creator of the field of SocioBiology](https://www.google.com/search?gs_ssp=eJzj4tDP1TcwKi6pNGD04kpVyFcoz8wpzs8DAEieBtU&q=e+o+wilson&rlz=1C1GCEB_enUS1069US1069&oq=e+o+wil&gs_lcrp=EgZjaHJvbWUqBwgBEC4YgAQyCggAEAAY4wIYgAQyBwgBEC4YgAQyBggCEEUYOTIHCAMQABiABDIHCAQQABiABDIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDI4NjJqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8)
 
 ## Classes
 

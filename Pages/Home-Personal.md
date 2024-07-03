@@ -52,6 +52,8 @@ categories: []
 * [Center for Countering Digital Hate](https://counterhate.com/)
 * [Scalia and Torture - When he Invoked Jack Bauer](https://www.theatlantic.com/daily-dish/archive/2007/06/scalia-and-torture/227548/)
 * [Israel-Palestine Misconceptions](https://www.vox.com/2015/5/14/18093732/israel-palestine-misconceptions)
+* [Al Gore Interview with Wolf Blitzer](http://edition.cnn.com/ALLPOLITICS/stories/1999/03/09/president.2000/transcript.gore/) - Where he allegedly claimed to have invented the internet.
+* [High-Performance Computing Act of 1991, aka the Al Gore Act](https://www.congress.gov/102/statute/STATUTE-105/STATUTE-105-Pg1594.pdf) - The legislations that actually did create the internet.
 
 ## Citizen Science
 

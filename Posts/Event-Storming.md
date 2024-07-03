@@ -4,6 +4,7 @@ tags:
 - architecture
 - coding-practices
 - ddd
+- event
 - event-driven
 menuorder: 0
 id: 384084a3-40f0-4340-a17d-34202ab973b7
