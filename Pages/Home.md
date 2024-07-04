@@ -16,7 +16,7 @@ categories: []
 ## Cognitive Inheritance
 
 * [Unpublished Posts](unpublished-posts.html)
-* [WIP / Locally Hosted](presentations.html)
+* [Locally Hosted Presentations](presentations.html)
 
 ## Social Media
 
