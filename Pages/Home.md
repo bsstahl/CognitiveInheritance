@@ -16,6 +16,7 @@ categories: []
 ## Cognitive Inheritance
 
 * [Unpublished Posts](unpublished-posts.html)
+* [WIP / Locally Hosted](presentations.html)
 
 ## Social Media
 
@@ -27,10 +28,9 @@ categories: []
 
 ## My Presentations
 
-* [WIP / Locally Hosted](../Presentations/index.html)
 * [Beary Stickers](https://www.stickermule.com/artworks/14219958?token=5c62437cb203f6e1f4790b70a7f94296)
 
-### Full Length Talks
+### Remotely Hosted Presentations
 
 * [A Devs Intro to AI](https://adevsintrotoai.azurewebsites.net/)
 * [Amazing Algorithms](https://amazingalgorithms.azurewebsites.net/)

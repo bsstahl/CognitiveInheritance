@@ -808,6 +808,7 @@
       "PPTail.Console.Common/1.0.0": {
         "dependencies": {
           "PPTail.Common": "1.0.0",
+          "PPTail.Content.Presentations": "1.0.0",
           "PPTail.Content.UnpublishedPosts": "1.0.0",
           "PPTail.Data.Ef": "1.0.0",
           "PPTail.Data.FileSystem": "1.0.0",
@@ -840,6 +841,15 @@
         },
         "runtime": {
           "PPTail.Console.Common.dll": {}
+        }
+      },
+      "PPTail.Content.Presentations/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "8.0.0",
+          "PPTail.Common": "1.0.0"
+        },
+        "runtime": {
+          "PPTail.Content.Presentations.dll": {}
         }
       },
       "PPTail.Content.UnpublishedPosts/1.0.0": {
@@ -1708,6 +1718,11 @@
       "sha512": ""
     },
     "PPTail.Console.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PPTail.Content.Presentations/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
