@@ -26,10 +26,6 @@ categories: []
 * [Explore Popular Debates, Discussions and Critical Thinking… | Kialo](https://www.kialo.com/)
 * [Google Voice](https://voice.google.com)
 
-## My Presentations
-
-* [Beary Stickers](https://www.stickermule.com/artworks/14219958?token=5c62437cb203f6e1f4790b70a7f94296)
-
 ### Remotely Hosted Presentations
 
 * [A Devs Intro to AI](https://adevsintrotoai.azurewebsites.net/)
