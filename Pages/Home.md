@@ -13,6 +13,10 @@ slug: home
 categories: []
 
 ---
+## Cognitive Inheritance
+
+* [Unpublished Posts](unpublished-posts.html)
+
 ## Social Media
 
 * [Fosstodon](https://fosstodon.org/@bsstahl)
