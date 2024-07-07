@@ -19,6 +19,11 @@ categories: []
 
 * [Estates Task Board - Trello](https://trello.com/b/MJ0LQsPj/estates)
 
+### Other Important Stuff
+
+* [Consumer Reports - 60 Used Cars to Avoid Buying](https://www.consumerreports.org/cars/used-cars-to-avoid-buying-a4034931071/?EXTKEY=NWT46TSD4&utm_source=acxiom&utm_medium=email&utm_campaign=20240628_nsltr_whatsnew&utm_nsltr=whatsnew&utm_segment=digital)
+* [Consumer Reports - Guide to Smart Home Devices &amp; Tech](https://www.consumerreports.org/home-garden/smart-home/guide-to-smart-home-devices-tech-a1007276600/)
+
 ### Fun Family Stuff
 
 * [Carrie's 50th Birthay Party Album](https://photos.google.com/share/AF1QipP6LRr50steWN6l2knoMAAaPP51RlBrpPd1cki-I5xOXT3R70y3qmWh5uKdhtpzCA?obfsgid=107543756038165503594&email=barry.s.stahl@gmail.com&pli=1&key=bEZUQm50bWNocUtULVJMWTBoOHgyQ3FhN3hPcnpR)
