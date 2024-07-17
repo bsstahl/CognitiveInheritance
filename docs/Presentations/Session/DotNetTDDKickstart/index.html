@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>GPT Under the Covers</title>
+    <title>DotNet TDD Kickstart</title>
 
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/carvana.css">
@@ -26,13 +26,13 @@
     <div class="reveal">
         <div class="slides">
             <section data-transition="slide-in slide-out" data-background='img/19ae31f8-078b-4bd3-8411-0222b6a09c25.jpg'>
-<a id="c7355d4f-f3fa-468d-be7c-3e3a435e9cac">&nbsp;</a>
+<a id="82cf40ec-ba79-4372-9ceb-25a098b5357b">&nbsp;</a>
 <!-- Layout:ImageRight -->
-<!-- ContentItem:dee3516f-4359-4f28-898e-6effc7981e56 -->
+<!-- ContentItem:d8e62392-c6d1-4533-aa84-322d9a13be31 -->
 <!-- ContentItem:685060d8-4205-4db9-b44d-9610a7729e7d -->
 
 <table><tr><td style="vertical-align:top;">
-<h2 id="gpt-under-the-covers">GPT Under the Covers</h2>
+<h2 id="dotnet-tdd-kickstart">DotNet TDD Kickstart</h2>
 <h4 id="section"></h4>
 <hr />
 <h3 id="barry-s.stahl">Barry S. Stahl</h3>
@@ -139,153 +139,9 @@
 </section>
 
 
-<section data-transition="slide-in slide-out" data-background='img/a1b5d3d8-9e8e-4a97-983c-82765f2833cc.png'>
-
-<a id="f0dc280f-1db5-4258-ad5f-f04a1f40b2b9">&nbsp;</a>
-<!-- Layout:FullPage -->
-
-</section>
-
-
-<section data-transition="slide-in slide-out" data-background='img/956f7e7e-d1aa-49a5-a47b-4dec4936596c.png'>
-
-<a id="1ea48dff-202e-4774-9d17-fc2c7e4201cb">&nbsp;</a>
-<!-- Layout:FullPage -->
-
-</section>
-
-
-<section data-transition="slide-in slide-out" data-background='img/86fdd248-e651-4290-9f72-e1c1295669c1.png'>
-<aside class="notes"><p>Was a24b75f3-4f6c-4715-be5f-740a597cd3b3</p>
-</aside>
-<a id="56467599-0c70-4e59-b4a7-472ced422c84">&nbsp;</a>
-<!-- Layout:FullPage -->
-
-</section>
-
-
-<section data-transition="slide-in slide-out">
-<a id="c0856058-b753-43da-bbf7-fd6bab107e7a"><h1>Resume Scanning</h1></a>
-<!-- Layout:ImageRight -->
-<!-- ContentItem:afa0ae28-cd12-4714-82c0-d9d6686f2230 -->
-<!-- ContentItem:412011fa-11c7-4b62-8bac-9c3d8af4c3e7 -->
-<aside class="notes"><p>Jonathon_Nixon_8: 0.148041
-Armando_Castro_10: 0.165220
-Armando_Castro_8: 0.166799</p>
-</aside>
-<table><tr><td style="vertical-align:top;">
-<ul>
-<li>Armando's Resume: 12.7% &quot;worse&quot;
-<ul>
-<li>More distant from a match to the job listing</li>
-<li>A 95 for Jonathon's resume ≈ an 84 for Armando's</li>
-</ul>
-</li>
-<li>If Armando had 2 additional years of experience
-<ul>
-<li>His score only increases by ≈ 1 point to 85</li>
-</ul>
-</li>
-</ul>
-
-</td>
-<td style="text-align: left;">
-<img src="img/412011fa-11c7-4b62-8bac-9c3d8af4c3e7.jpg" alt="TwoResumes_800x800.jpg" />
-</td>
-</tr></table></section>
-
-<section data-transition="slide-in slide-out">
-<a id="9d231531-47fc-4e7a-a631-77d4623717fb"><h1>Agenda</h1></a>
-<!-- Layout:ImageRight -->
-<!-- ContentItem:92f3658b-deac-4c88-9912-9eae058687dc -->
-<!-- ContentItem:309217ec-2088-487a-980f-b4d7711687f7 -->
-<aside class="notes"><p>The goal here is not to enable us to build our own GPT, but to understanding how they work so we can use them effectively.</p>
-</aside>
-<table><tr><td style="vertical-align:top;">
-<ul>
-<li>Generative Transformer Models
-<ul>
-<li>Tokenization</li>
-<li>Embedding</li>
-<li>Attention</li>
-<li>Transformer Blocks</li>
-</ul>
-</li>
-<li>Use-Case Analysis
-<ul>
-<li>What these tools do well and why</li>
-<li>What they don't do well and why</li>
-<li>How they can be improved</li>
-<li>Ethical Considerations</li>
-</ul>
-</li>
-</ul>
-
-</td>
-<td style="text-align: left;">
-<img src="img/309217ec-2088-487a-980f-b4d7711687f7.jpg" alt="Generative Transformer Models 800x800.jpg" />
-</td>
-</tr></table></section>
-
-<section data-transition="slide-in slide-out">
-<a id="caa34b5f-7af0-401b-919f-614ed8e96ce2"><h1>Discriminative vs Generative</h1></a>
-<!-- Layout:ImageRight -->
-<!-- ContentItem:9e6fed31-5d1e-4edc-9863-86b31e0c5eb6 -->
-<!-- ContentItem:944a54fa-3a1f-43c9-82a1-cbee6cb569c8 -->
-
-<table><tr><td style="vertical-align:top;">
-<ul>
-<li>Discriminative Models
-<ul>
-<li>Conditional Probability: Predict label Y based on input X</li>
-<li>Identify the boundaries between data groups</li>
-<li>Great for classification and tokenization</li>
-<li>Examples: BERT, Random Forest</li>
-</ul>
-</li>
-<li>Generative Models
-<ul>
-<li>Joint Probability: Predict when label Y occurs along with input X</li>
-<li>Predict new data instances</li>
-<li>Great for predicting text, creating audio &amp; video</li>
-<li>Examples: GPT-4o, PixelRNN/PixelCNN</li>
-</ul>
-</li>
-</ul>
-
-</td>
-<td style="text-align: left;">
-<img src="img/944a54fa-3a1f-43c9-82a1-cbee6cb569c8.jpg" alt="Conditional vs Joint Probability 800x800.jpg" />
-</td>
-</tr></table></section>
-
-<section data-transition="slide-in slide-out">
-<a id="b27f99f8-d70f-4436-9f66-b2601a5eba65"><h1>Resources</h1></a>
-<!-- Layout:MultiColumn -->
-<!-- ContentItem:215da295-ffdd-4a8d-81f9-f69250eb4696 -->
-<!-- ContentItem:fb4f6295-2566-4848-892c-d7c60053e8ab -->
-
-<table><tr><td style="vertical-align:top;">
-<ul>
-<li>This Presentation - <a href="https://IntroToEmbeddings.azurewebsites.net/">Web</a> | <a href="?print-pdf">PDF</a></li>
-<li>These Demos - <a href="https://github.com/bsstahl/AIDemos/tree/master/Embeddings">Code</a> | <a href="https://github.com/bsstahl/AIDemos/wiki/Embeddings">Docs</a></li>
-<li><a href="https://cognitiveinheritance.com/Posts/depth-of-gpt-embeddings.html">The Depth of GPT Embeddings</a></li>
-<li><a href="https://cognitiveinheritance.com/Posts/Programmers-Take-Responsibility-for-Your-AIe28099s-Output.html">Programmers -- Take Responsibility for Your AI’s Output</a></li>
-<li><a href="https://thesephist.notion.site/text-embedding-ada-002-embedding-reconstructions-2ea55ae9525d49dfa9d16213474e0895">Experiments in Reconstructing Text from Embeddings</a></li>
-<li><a href="https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/openai/Azure.AI.OpenAI">Azure OpenAI Client</a></li>
-<li><a href="https://github.com/microsoft/semantic-kernel">Semantic Kernel</a></li>
-<li><a href="https://www.youtube.com/watch?v=UnURElCzGc0">Carl Sagan - Reasoning on Higher Dimensions (YouTube)</a></li>
-</ul>
-
-</td>
-<td style="vertical-align:top;">
-<img alt="IntroToEmbeddings_QR.png" src="img/fb4f6295-2566-4848-892c-d7c60053e8ab.png" />
-</td>
-</tr></table></section>
-
 
         </div>
-        <div class="footer-left">GPT Under the Covers</div>
+        <div class="footer-left">DotNet TDD Kickstart</div>
         <div class="footer-right">Barry S. Stahl - Mastodon:@bsstahl@cognitiveinheritance.com - Blog:http://www.cognitiveinheritance.com</div>
     </div>
 
