@@ -194,458 +194,70 @@ Armando_Castro_8: 0.166799</p>
 </td>
 </tr></table></section>
 
-<section data-transition="slide-in slide-out" data-background='img/4b6b21f6-04f6-4b44-b48b-a620c295ee4d.png'>
-<a id="5d979917-37b8-4337-a076-be890a1d2d61"><h1>Embeddings</h1></a>
-<!-- Layout:FullPageFragments -->
-<!-- ContentItem:d4a17eef-5a35-4595-82bd-43b11c9362d9 -->
-<!-- ContentItem:212cfe49-195f-4554-9941-3a05bd43f89b -->
-<table border="0" width="100%">
-<aside class="notes"><p>There are many other embedding models, some are optimized for different purposes. You should consider what model might work best for your use-case. This presentation uses the same model used by GPT-3 and GPT-4.</p>
-</aside>
-<tr><td>
-<ul class="fragment">
-<li>A point in multi-dimensional space</li>
-<li>Mathematical representation of a word or phrase</li>
-<li>Encode both <strong>semantic</strong> and <strong>contextual</strong> information</li>
-</ul>
-
-</td></tr>
-<tr><td>
-<ul class="fragment">
-<li>Model: <code>text-embedding-ada-002</code></li>
-<li>Vectors normalized to unit length</li>
-<li>Use 1536 dimensions</li>
-</ul>
-
-</td></tr>
-</table></section>
-
-
-<section data-transition="slide-in slide-out" data-background='img/0061a3c6-2d1f-47d5-bedd-46a12b01ba4b.jpg'>
-<aside class="notes"><p>Image Source: Inconceivable-626x600.jpg - Image falls under &quot;fair-use&quot;</p>
-</aside>
-<a id="8340b3f9-36bc-4dc3-b3b3-1d18b4b5d30b">&nbsp;</a>
-<!-- Layout:FullPage -->
-
-</section>
-
-
 <section data-transition="slide-in slide-out">
-<aside class="notes"><p>It is not possible for us to reason on space greater than 3D without doing some form of projection.</p>
-<p>Image Source: WikiMedia</p>
-</aside>
-<a id="affc18de-26dd-4bed-acbe-99beddf497f4"><h1>3-D Space Projected into 2-D</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:8738d954-63a2-40f5-aa5e-deeb431d5f52 -->
-<img alt="Necker_cube_with_background.png" src="img/8738d954-63a2-40f5-aa5e-deeb431d5f52.png" />
-</section>
-
-
-<section data-transition="slide-in none-out">
-<aside class="notes"><p>I used a T-SNE (T-distributed Stochastic Neighbor Embedding) transformation to perform this dimensionality reduction</p>
-</aside>
-<a id="9ec34ef5-afab-43e9-abf1-010e746b7af4">&nbsp;</a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:2313fe54-9904-4e1c-b5de-3c29c297fdc7 -->
-<img alt="Ram - Just Statements.png" src="img/2313fe54-9904-4e1c-b5de-3c29c297fdc7.png" />
-</section>
-
-
-<section data-transition="none-in none-out">
-<aside class="notes"><p>I used a T-SNE (T-distributed Stochastic Neighbor Embedding) transformation to perform this dimensionality reduction</p>
-</aside>
-<a id="50da6b31-0139-4b4c-bdc6-7f7eedef6044">&nbsp;</a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:ba598d38-6e47-4a26-8065-3487bfd3f51a -->
-<img alt="Ram - With Terms.png" src="img/ba598d38-6e47-4a26-8065-3487bfd3f51a.png" />
-</section>
-
-
-<section data-transition="none-in slide-out">
-<aside class="notes"><p>Ram - With Clusters.png</p>
-</aside>
-<a id="3714c934-4902-45a1-9948-3b31c7f02bba">&nbsp;</a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:43926256-864d-4a0a-aad0-b7ea6fa5b74e -->
-<img alt="Ram - With Clusters.png" src="img/43926256-864d-4a0a-aad0-b7ea6fa5b74e.png" />
-</section>
-
-
-<section data-transition="slide-in slide-out">
-<a id="72e0090e-a40f-4410-91e0-919b3ed09004"><h1>Cosine Similarity &amp; Distance</h1></a>
-<!-- Layout:MultiColumn -->
-<!-- ContentItem:89b66910-a26e-4116-b41d-3ada3f74c92b -->
-<!-- ContentItem:d44bda2e-06bd-4064-9c06-12d564a6f5cf -->
-<aside class="notes"><p>Since GPT vectors are normalized to unit length, Cosine distance is proportional to Euclidean distance, and will result in the same relative rankings.</p>
+<a id="9d231531-47fc-4e7a-a631-77d4623717fb"><h1>Agenda</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:92f3658b-deac-4c88-9912-9eae058687dc -->
+<!-- ContentItem:309217ec-2088-487a-980f-b4d7711687f7 -->
+<aside class="notes"><p>The goal here is not to enable us to build our own GPT, but to understanding how they work so we can use them effectively.</p>
 </aside>
 <table><tr><td style="vertical-align:top;">
-<blockquote>
-<p>Relate vectors based on the angle between them</p>
-</blockquote>
 <ul>
-<li><p><em>Cosine Similarity</em> ranges from -1 to 1, where:</p>
+<li>Generative Transformer Models
 <ul>
-<li>+1 indicates that the vectors represent similar semantics &amp; context</li>
-<li>0 indicates that the vectors are orthogonal (no similarity)</li>
-<li>-1 indicates that the vectors have opposing semantics &amp; context</li>
+<li>Tokenization</li>
+<li>Embedding</li>
+<li>Attention</li>
+<li>Transformer Blocks</li>
 </ul>
 </li>
-<li><p><em>Cosine Distance</em> is defined as <strong>1 - cosine similarity</strong> where:</p>
+<li>Use-Case Analysis
 <ul>
-<li>0 = Synonymous</li>
-<li>1 = Orthogonal</li>
-<li>2 = Antonymous</li>
+<li>What these tools do well and why</li>
+<li>What they don't do well and why</li>
+<li>How they can be improved</li>
+<li>Ethical Considerations</li>
 </ul>
 </li>
 </ul>
 
 </td>
-<td style="vertical-align:top;">
-<img alt="Cosine Unit Circle - Enhanced.jpg" src="img/d44bda2e-06bd-4064-9c06-12d564a6f5cf.jpg" />
+<td style="text-align: left;">
+<img src="img/309217ec-2088-487a-980f-b4d7711687f7.jpg" alt="Generative Transformer Models 800x800.jpg" />
 </td>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
-
-<a id="0e2a1080-2694-447d-85ec-30f6863051de"><h1>Cosine Distance</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:1c9aab67-70df-45a0-b05d-4aae3c3a20c5 -->
-<img alt="Cosine Distance 989x600.png" src="img/1c9aab67-70df-45a0-b05d-4aae3c3a20c5.png" />
-</section>
-
-
-<section data-transition="slide-in slide-out">
-<aside class="notes"><p>I added additional context here: i.e. &quot;Sheep&quot; =&gt; &quot;Bighorn Sheep&quot;, to make the distances more visible.</p>
-</aside>
-<a id="952e53c0-3883-490e-a43f-c3f86853fc08"><h1>Cosine Distance</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:b079c831-8d8c-425b-8e49-c8674d0b3ec6 -->
-<img alt="Angles2.svg" src="img/b079c831-8d8c-425b-8e49-c8674d0b3ec6.svg" />
-</section>
-
-
-<section data-transition="slide-in slide-out">
-<a id="c504d2aa-f3e6-4956-b06c-96ba4a551dfc"><h1>Clustering</h1></a>
-<!-- Layout:MultiColumn -->
-<!-- ContentItem:81fec6ba-5786-4258-b8ac-a742fe19af01 -->
-<!-- ContentItem:53a6cce5-95de-4e12-8035-bf68503c1bbe -->
-<aside class="notes"><p>Clusters contains items more similar to each other than to those in other clusters</p>
-<ul>
-<li>Key to use: Experiment</li>
-</ul>
-<p>Source Image: <a href="https://www.bing.com/images/search?view=detailV2&amp;ccid=vNng%2foOs&amp;id=2652F88E274436CB6C8CC623A778D7B9F2475FC9&amp;thid=OIP.vNng_oOsNRHKrlh3pjSAyAHaDw&amp;mediaurl=https%3a%2f%2fi.stack.imgur.com%2fcIDB3.png&amp;cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.bcd9e0fe83ac3511caae5877a63480c8%3frik%3dyV9H8rnXeKcjxg%26pid%3dImgRaw%26r%3d0&amp;exph=517&amp;expw=1017&amp;q=k-means+clustering&amp;simid=608026322933788461&amp;FORM=IRPRST&amp;ck=8E4BDA3E627011B4CADA2B68FB818490&amp;selectedIndex=0&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;ajaxserp=0">https://www.bing.com/images/search?view=detailV2&amp;ccid=vNng%2foOs&amp;id=2652F88E274436CB6C8CC623A778D7B9F2475FC9&amp;thid=OIP.vNng_oOsNRHKrlh3pjSAyAHaDw&amp;mediaurl=https%3a%2f%2fi.stack.imgur.com%2fcIDB3.png&amp;cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.bcd9e0fe83ac3511caae5877a63480c8%3frik%3dyV9H8rnXeKcjxg%26pid%3dImgRaw%26r%3d0&amp;exph=517&amp;expw=1017&amp;q=k-means+clustering&amp;simid=608026322933788461&amp;FORM=IRPRST&amp;ck=8E4BDA3E627011B4CADA2B68FB818490&amp;selectedIndex=0&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;ajaxserp=0</a></p>
-</aside>
-<table><tr><td style="vertical-align:top;">
-<ul>
-<li>Unsupervised machine learning technique</li>
-<li>Clusters form around centroids (the geometric center of the cluster)</li>
-<li>Data points are grouped (clustered) based on their similarity
-<ul>
-<li>Minimize the error (distance from centroid)</li>
-</ul>
-</li>
-<li>Embeddings cluster with others of similar semantic and contextual meaning</li>
-<li>Advantages
-<ul>
-<li>No need to define a distance threshold</li>
-</ul>
-</li>
-<li>Disadvantages
-<ul>
-<li>Quality is use-case dependent</li>
-<li>Requires the number of clusters to be specified</li>
-</ul>
-</li>
-</ul>
-
-</td>
-<td style="vertical-align:top;">
-<img alt="k-means results.png" src="img/53a6cce5-95de-4e12-8035-bf68503c1bbe.png" />
-</td>
-</tr></table></section>
-
-<section data-transition="slide-in slide-out">
-
-<a id="b1b27a07-42ee-481c-92f4-6791f7204828"><h1>Embedding Distance</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:fcee17b4-8b97-487e-9644-0c45033c1ff3 -->
-<table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Synonym</td>
-<td>&quot;Happy&quot; is closer to &quot;Joyful&quot; than to &quot;Sad&quot;</td>
-</tr>
-<tr>
-<td>Language</td>
-<td>&quot;The Queen&quot; is very close to &quot;La Reina&quot;</td>
-</tr>
-<tr>
-<td>Idiom</td>
-<td>&quot;He kicked the bucket&quot; is closer to &quot;He died&quot; than to &quot;He kicked the ball&quot;</td>
-</tr>
-<tr>
-<td>Sarcasm</td>
-<td>&quot;Well, look who's on time&quot; is closer to &quot;Actually Late&quot; than &quot;Actually Early&quot;</td>
-</tr>
-<tr>
-<td>Homonym</td>
-<td>&quot;Bark&quot; (dog sound) is closer to &quot;Howl&quot; than to &quot;Bark&quot; (tree layer)</td>
-</tr>
-<tr>
-<td>Collocation</td>
-<td>&quot;Fast food&quot; is closer to &quot;Junk food&quot; than to &quot;Fast car&quot;</td>
-</tr>
-<tr>
-<td>Proverb</td>
-<td>&quot;The early bird catches the worm&quot; is closer to &quot;Success comes to those who prepare well and put in effort&quot; than to &quot;A bird in the hand is worth two in the bush&quot;</td>
-</tr>
-<tr>
-<td>Metaphor</td>
-<td>&quot;Time is money&quot; is closer to &quot;Don't waste your time&quot; than to &quot;Time flies&quot;</td>
-</tr>
-<tr>
-<td>Simile</td>
-<td>&quot;He is as brave as a lion&quot; is closer to &quot;He is very courageous&quot; than to &quot;He is a lion&quot;</td>
-</tr>
-</tbody>
-</table>
-
-</section>
-
-
-<section data-transition="slide-in slide-out">
-<a id="295f37ae-5979-40ae-a5d9-a22bd58ef30a"><h1>Vector Databases</h1></a>
-<!-- Layout:MultiColumn -->
-<!-- ContentItem:fd61eed6-fd5e-4ce2-b9c9-f4c06f5287ff -->
-<!-- ContentItem:7a67ae3f-567b-4099-b9ea-a2c2fb484d7f -->
-<aside class="notes"><p>The key to operational use of Embeddings is some form of Vector data store, whether that is persistent or in-memory</p>
-</aside>
-<table><tr><td style="vertical-align:top;">
-<ul>
-<li>Designed to store/retrieve high-dimensional vectors</li>
-<li>Values are retrieved using similarity searches</li>
-<li>Leverage data-structures such as K-D Trees</li>
-<li>Examples
-<ul>
-<li>Azure Cognitive Search</li>
-<li>Redis</li>
-<li>Qdrant</li>
-<li>Pinecone</li>
-<li>Chroma</li>
-</ul>
-</li>
-</ul>
-
-</td>
-<td style="vertical-align:top;">
-<img alt="VectorDB-650x650.png" src="img/7a67ae3f-567b-4099-b9ea-a2c2fb484d7f.png" />
-</td>
-</tr></table></section>
-
-<section data-transition="slide-in slide-out">
-
-<a id="0195afa9-114b-42ae-83a5-0eead5510785"><h1>Classification</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:e9d49de0-6ca2-43fd-a669-1a7c4ba1f9a7 -->
-<blockquote>
-<p>Grouping data into categories based on features of each item</p>
-</blockquote>
-<ul>
-<li>Can be used for:
-<ul>
-<li>Identifying which known group a new item belongs to</li>
-<li>Grouping items with shared properties together (clustering)</li>
-<li>Normalization of input/output</li>
-</ul>
-</li>
-</ul>
-
-</section>
-
-
-<section data-transition="slide-in slide-out">
-
-<a id="a366ffa5-a2f6-4ba8-9d0d-fb053444e3d3"><h1>Polarity Detection</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:6c9105d7-650e-465e-bc4b-3a3ac2f2d2b2 -->
-<blockquote>
-<p>Determines if the input is an affirmative or negative response to a question</p>
-</blockquote>
-<ul>
-<li>&quot;I'm a canine lover&quot; is an affirmative response to &quot;Are dogs your favorite pets?&quot;</li>
-<li>&quot;Nobody does&quot; is a negative response to &quot;Do you like Javascript?&quot;</li>
-</ul>
-
-</section>
-
-
-<section data-transition="slide-in slide-out">
-
-<a id="d2bdd9c4-98d0-4d55-aa53-871b017fb0ec"><h1>Sentiment Analysis</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:5f607c0f-e6a3-4d2b-ad63-8c673c1a4da6 -->
-<blockquote>
-<p>Determines the emotional tone of a response</p>
-</blockquote>
-<ul>
-<li>&quot;I love speaking at great conferences like this&quot; =&gt; <em>Enthusiasm</em></li>
-<li>&quot;I had to miss so many great conferences due to covid&quot; =&gt; <em>Regret</em></li>
-</ul>
-
-</section>
-
-
-<section data-transition="slide-in slide-out">
-<aside class="notes"><p>If we are not augmenting the model with our own data, we are just hoping the model happens to be trained on the right things for our use-case.</p>
-</aside>
-<a id="f8c3912e-08e3-46e9-b5b9-92f492e5780b"><h1>Retrieval Augmented Generation (RAG)</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:7d502157-fe4b-4891-9ddb-90d231368958 -->
-<ul>
-<li>Combines the benefits of retrieval-based and generative models
-<ul>
-<li>Identify and retrieve relevant information</li>
-<li>Agument context of the generative models</li>
-<li>Generative responses based on the augmented context</li>
-</ul>
-</li>
-<li>Potential uses include
-<ul>
-<li>Explore large sets of documentation conversationally</li>
-<li>Generate recommendations and insights based on retrieved relevant information</li>
-<li>Summarization of articles in light of known relevant information</li>
-</ul>
-</li>
-</ul>
-
-</section>
-
-
-<section data-transition="slide-in slide-out">
-<aside class="notes"><p>The ethics of AI are complex, and you should explore them. The simplest rule is: &quot;If you can't build it ethically with an AI model, don't build it with an AI model&quot;</p>
-<p>Image Source: <a href="https://www.bing.com/images/search?view=detailV2&amp;ccid=SF5NW%2F2E&amp;id=867710BF172B3480BE22F1F1FE19397AE0A6FE8A&amp;thid=OIP.SF5NW_2E8OBt2DbDD1pomgHaDE&amp;mediaurl=https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FR.485e4d5bfd84f0e06dd836c30f5a689a%3Frik%3Div6m4Ho5Gf7x8Q%26riu%3Dhttp%253a%252f%252fmarcogomes.com%252fblog%252fwp-content%252fuploads%252f2010%252f09%252fherebedragons.jpg%26ehk%3DFB%252fMQocKYDXUvxHKhrvHWg9Meu0PUBJWlSnfk%252bjgSp4%253d%26risl%3D%26pid%3DImgRaw%26r%3D0%26sres%3D1%26sresct%3D1&amp;exph=224&amp;expw=540&amp;q=here+there+be+dragons&amp;simid=608053647533357231&amp;form=IRPRST&amp;ck=2AD9AF425E791ED0BDF2696C5EB0557E&amp;selectedindex=7&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;ajaxserp=0&amp;vt=2&amp;sim=15,16&amp;ajaxhist=0&amp;ajaxserp=0">https://www.bing.com/images/search?view=detailV2&amp;ccid=SF5NW%2F2E&amp;id=867710BF172B3480BE22F1F1FE19397AE0A6FE8A&amp;thid=OIP.SF5NW_2E8OBt2DbDD1pomgHaDE&amp;mediaurl=https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FR.485e4d5bfd84f0e06dd836c30f5a689a%3Frik%3Div6m4Ho5Gf7x8Q%26riu%3Dhttp%253a%252f%252fmarcogomes.com%252fblog%252fwp-content%252fuploads%252f2010%252f09%252fherebedragons.jpg%26ehk%3DFB%252fMQocKYDXUvxHKhrvHWg9Meu0PUBJWlSnfk%252bjgSp4%253d%26risl%3D%26pid%3DImgRaw%26r%3D0%26sres%3D1%26sresct%3D1&amp;exph=224&amp;expw=540&amp;q=here+there+be+dragons&amp;simid=608053647533357231&amp;form=IRPRST&amp;ck=2AD9AF425E791ED0BDF2696C5EB0557E&amp;selectedindex=7&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;ajaxserp=0&amp;vt=2&amp;sim=15,16&amp;ajaxhist=0&amp;ajaxserp=0</a></p>
-</aside>
-<a id="c28997ab-1cec-407e-b069-06efd5dc5a7f"><h1>Using LLM Output Has Dangers</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:d950c2c7-f2fe-4af9-b210-18d33c40661a -->
-<img alt="herebedragons.jpg" src="img/d950c2c7-f2fe-4af9-b210-18d33c40661a.jpg" />
-</section>
-
-
-<section data-transition="slide-in slide-out">
-<a id="302ab20a-f006-4521-8c30-2dbc46d99ed6"><h1>Model Answers May Be</h1></a>
-<!-- Layout:MultiColumn -->
-<!-- ContentItem:540f4702-43af-4a34-915e-6f8ec49ca672 -->
-<!-- ContentItem:3b97dc48-fe4a-4f30-8139-3aa93949bd6b -->
-<aside class="notes"><p>Whether using GPT directly or semantic search with embeddings.
-Old image: 59bf56c7-2e3d-4a25-b78e-ade863990440</p>
-</aside>
-<table><tr><td style="vertical-align:top;">
-<ul>
-<li>Incomplete</li>
-<li>Poorly phrased</li>
-<li>Outright wrong</li>
-</ul>
-
-</td>
-<td style="vertical-align:top;">
-<img alt="No Takesies backsies.png" src="img/3b97dc48-fe4a-4f30-8139-3aa93949bd6b.png" />
-</td>
-</tr></table></section>
-
-<section data-transition="slide-in slide-out">
-<a id="08f50362-8bf7-48a2-a61a-0980f21d9a19"><h1>The model is biased</h1></a>
-<!-- Layout:MultiColumn -->
-<!-- ContentItem:0b06fef2-cc47-4acb-963e-4aa8a1a2aaeb -->
-<!-- ContentItem:0c946a74-2029-4651-9eee-a2645dba9317 -->
+<a id="caa34b5f-7af0-401b-919f-614ed8e96ce2"><h1>Discriminative vs Generative</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:9e6fed31-5d1e-4edc-9863-86b31e0c5eb6 -->
+<!-- ContentItem:944a54fa-3a1f-43c9-82a1-cbee6cb569c8 -->
 
 <table><tr><td style="vertical-align:top;">
 <ul>
-<li>Not handling the bias makes bias a feature of your app</li>
-<li>Prevent all predictable biases</li>
-<li>Watch for unpredictable biases</li>
-</ul>
-
-</td>
-<td style="vertical-align:top;">
-<img alt="bias logo - large.jpg" src="img/0c946a74-2029-4651-9eee-a2645dba9317.jpg" />
-</td>
-</tr></table></section>
-
-<section data-transition="slide-in slide-out">
-<a id="c77448f6-5c86-44aa-96a4-e5d960c222ef"><h1>Embeddings are Reversable</h1></a>
-<!-- Layout:MultiColumn -->
-<!-- ContentItem:cccf95ad-420d-4027-ba9d-8e33f762eb6b -->
-<!-- ContentItem:18980ad3-d112-4fd7-9221-717689b8ae12 -->
-<aside class="notes"><p>Article from Linus Lee of Notion linked on Resources slide</p>
-</aside>
-<table><tr><td style="vertical-align:top;">
+<li>Discriminative Models
 <ul>
-<li>Researchers have had success in reversing embeddings
-<ul>
-<li>Using distance-measurements against a large Vector DB</li>
-<li>Using models trained to predict the text from the embedding</li>
+<li>Conditional Probability: Predict label Y based on input X</li>
+<li>Identify the boundaries between data groups</li>
+<li>Great for classification and tokenization</li>
+<li>Examples: BERT, Random Forest</li>
 </ul>
 </li>
-<li>Embeddings can be thought-of like a hash
+<li>Generative Models
 <ul>
-<li>Data is obscured, but not encrypted</li>
-</ul>
-</li>
-<li>Do not expect embeddings alone to protect PII
-<ul>
-<li>Encrypt or tokenize all PII before embedding</li>
+<li>Joint Probability: Predict when label Y occurs along with input X</li>
+<li>Predict new data instances</li>
+<li>Great for predicting text, creating audio &amp; video</li>
+<li>Examples: GPT-4o, PixelRNN/PixelCNN</li>
 </ul>
 </li>
 </ul>
 
 </td>
-<td style="vertical-align:top;">
-<img alt="Simpleicons_Interface_unlocked-padlock - Red 600x600.png" src="img/18980ad3-d112-4fd7-9221-717689b8ae12.png" />
+<td style="text-align: left;">
+<img src="img/944a54fa-3a1f-43c9-82a1-cbee6cb569c8.jpg" alt="Conditional vs Joint Probability 800x800.jpg" />
 </td>
 </tr></table></section>
-
-<section data-transition="slide-in slide-out">
-<aside class="notes"><p>I worry that situations where it is safe to use these models are more rare than people realize or are willing to accept. That said, we can't let the only people building using AI models be those whose only goal is to separate us from our wealth.</p>
-</aside>
-<a id="944ae71d-a8b3-4de4-9a9e-ffeef6e07fcd"><h1>When Should AI be Used?</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:0b8f654e-2dc5-41c1-b195-f0495b79d62e -->
-<ul>
-<li>When all possible biases have been accounted for</li>
-<li>When all sensitive data has been removed, tokenized or encrypted</li>
-<li>When the stochastic nature of responses has been accounted for
-<ul>
-<li>A wrong answer is no worse than no answer</li>
-<li>Outputs have been fully constrained</li>
-<li>A human is in-the-loop to fix the inevitable errors</li>
-</ul>
-</li>
-</ul>
-
-</section>
-
-
-<section data-transition="slide-in slide-out">
-
-<a id="ac8bc960-baa4-41e1-a289-3d2352f7cf96"><h1>What Are Embeddings?</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:41ce545a-ffe3-4ec6-b4c6-43c4516c63b1 -->
-<ul>
-<li>Arrays of 1536 floating-point values</li>
-<li>Structured numeric data that represents unstructured text</li>
-<li>Representations of the semantics and context of the source text</li>
-<li>Vectors that support standard mathematical operations</li>
-</ul>
-
-</section>
-
 
 <section data-transition="slide-in slide-out">
 <a id="b27f99f8-d70f-4436-9f66-b2601a5eba65"><h1>Resources</h1></a>
