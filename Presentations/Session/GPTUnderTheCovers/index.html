@@ -139,6 +139,15 @@
 </section>
 
 
+<section data-transition="slide-in slide-out" data-background='img/aae80855-f795-4b54-a5fc-bcd703588629.png'>
+<aside class="notes"><p>THATConference 2024</p>
+</aside>
+<a id="6bbcdb61-f759-4e12-9c2c-d8d780a4f6c3">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
 <section data-transition="slide-in slide-out" data-background='img/a1b5d3d8-9e8e-4a97-983c-82765f2833cc.png'>
 
 <a id="f0dc280f-1db5-4258-ad5f-f04a1f40b2b9">&nbsp;</a>
@@ -195,13 +204,57 @@ Armando_Castro_8: 0.166799</p>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
+<a id="7aa154db-8976-4a95-b8fa-eff9dff0865a"><h1>Transformer Architectures</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:2416b2f3-14c0-4d6c-99a5-00376fe32b45 -->
+<!-- ContentItem:237d52d6-2283-42c9-a4b8-f446a858d874 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>A neural network architecture that has enabled the recent advancements in NLP</p>
+</blockquote>
+<ul>
+<li>Based on the 2017 Google paper <a href="https://arxiv.org/abs/1706.03762">Attention is All You Need</a> by Vaswani et al.</li>
+<li>Key Breakthrough: The Self-Attention Mechanism
+<ul>
+<li>Focus on most relevant words</li>
+<li>Add critical context even at a distance</li>
+</ul>
+</li>
+<li>Enables Parallel Processing
+<ul>
+<li>Process all words in a sentence simultaneously</li>
+<li>Unlike traditional RNNs that process data sequentially</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/237d52d6-2283-42c9-a4b8-f446a858d874.jpg" alt="Self Attention 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="641c55c3-7953-4b54-8e5f-5a9da54beaf9"><h1>Transformer (Simplified)</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:782f2af6-5beb-4c69-8380-b2bd40f5d639 -->
+<img alt="Transformer Architectures - 938x800.png" src="img/782f2af6-5beb-4c69-8380-b2bd40f5d639.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
 <a id="9d231531-47fc-4e7a-a631-77d4623717fb"><h1>Agenda</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:92f3658b-deac-4c88-9912-9eae058687dc -->
 <!-- ContentItem:309217ec-2088-487a-980f-b4d7711687f7 -->
-<aside class="notes"><p>The goal here is not to enable us to build our own GPT, but to understanding how they work so we can use them effectively.</p>
+<aside class="notes"><p>The goal here is not to enable us to build our own GPT, but to understand how these models work so we can use them effectively.</p>
 </aside>
 <table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Goal: Build intuition for when and why these models may be effectively applied by understanding how they work</p>
+</blockquote>
 <ul>
 <li>Generative Transformer Models
 <ul>
@@ -213,9 +266,9 @@ Armando_Castro_8: 0.166799</p>
 </li>
 <li>Use-Case Analysis
 <ul>
-<li>What these tools do well and why</li>
-<li>What they don't do well and why</li>
-<li>How they can be improved</li>
+<li>What they don't work for</li>
+<li>What these tools do well</li>
+<li>How we can reduce risk</li>
 <li>Ethical Considerations</li>
 </ul>
 </li>
@@ -224,6 +277,455 @@ Armando_Castro_8: 0.166799</p>
 </td>
 <td style="text-align: left;">
 <img src="img/309217ec-2088-487a-980f-b4d7711687f7.jpg" alt="Generative Transformer Models 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>There is also the de-tokenization process at the end that reverses this</p>
+</aside>
+<a id="458bf51f-78f0-45fc-8a6f-27759b2e6cc2"><h1>Tokenization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:413b56e7-e1c0-487a-b45f-e9ede7332409 -->
+<img alt="Transformer Architectures - Tokenization - 938x800.png" src="img/413b56e7-e1c0-487a-b45f-e9ede7332409.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="c3d1f179-4ece-4386-8da1-b3cdf65693a3"><h1>Tokenization</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:a1216cea-eb29-4725-be15-51afd1644b9d -->
+<!-- ContentItem:dd532522-8719-40b5-9acd-ba518ecdcd87 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Convert UTF-8 text containing words, word parts, or characters into an equivalent numeric representation</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Unicode</th>
+<th>Token</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hello</td>
+<td>15339</td>
+<td>Common words</td>
+</tr>
+<tr>
+<td>Don</td>
+<td>8161</td>
+<td>Common names</td>
+</tr>
+<tr>
+<td>[space]Qu</td>
+<td>3489</td>
+<td>Common sequences</td>
+</tr>
+<tr>
+<td>注</td>
+<td>26130</td>
+<td>Foreign characters</td>
+</tr>
+<tr>
+<td>█████</td>
+<td>93429</td>
+<td>Redaction characters</td>
+</tr>
+<tr>
+<td>/&gt;[newline]</td>
+<td>10381</td>
+<td>Symbols</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+<td style="text-align: left;">
+<img src="img/dd532522-8719-40b5-9acd-ba518ecdcd87.jpg" alt="Cosmic Library 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="ce9ee3e1-69b6-48d8-b7a3-6b46a8006adc"><h1>GPT Tokenization</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:9aa8f0fb-1223-4b33-a8f5-3b7fb8a0642e -->
+<!-- ContentItem:017d4a5a-68a3-4ff4-b571-3535d12a9f02 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>GPT-3 and beyond use the <code>cl100K</code> tokenization model</p>
+</blockquote>
+<ul>
+<li>Defines 100,256 tokens
+<ul>
+<li>Word</li>
+<li>Word part</li>
+<li>Character combination</li>
+<li>Character</li>
+<li>Character part</li>
+</ul>
+</li>
+<li>Efficiently reprepresent language numerically
+<ul>
+<li>Minimize token usage</li>
+<li>More compact than Unicode</li>
+<li>More flexible than ASCII</li>
+<li>Large vocabulary
+<ul>
+<li>All Unicode characters available</li>
+</ul>
+</li>
+<li>The most-common combinations</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/017d4a5a-68a3-4ff4-b571-3535d12a9f02.jpg" alt="Cosmic Library Book 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background='img/346ddeef-7e23-4623-8739-f4e97e2dec9b.png'>
+<aside class="notes"><p>Remember that billing is generally done based on the number of tokens processd -- both input and output</p>
+</aside>
+<a id="a9fe8bf2-ba3a-49a7-a2b2-33e0ab5b2ed0">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="61f33816-4b63-47d1-8ab7-a5072b55fa3a"><h1>Exploring Tokenization</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:bb07e031-1872-47a1-bd10-38843045c5df -->
+<!-- ContentItem:9c0a89c7-3fa8-49f5-bfcd-c712d1c5c1ac -->
+
+<table><tr><td style="vertical-align:top;">
+<p><a href="https://github.com/bsstahl/AIDemos/tree/master/Tokenizer">Reference Implementation - AI Demos on GitHub</a></p>
+<ul>
+<li>Examples from the code
+<ul>
+<li>&quot;Hello, World! How are you today? 🌍&quot;
+<ul>
+<li>9906, 11, 4435, 0, 2650, 527, 499, 3432, 30, 11410, 234, 235</li>
+</ul>
+</li>
+<li>&quot;こんにちは、世界！お元気ですか？&quot;
+<ul>
+<li>90115, 5486, 3574, 244, 98220, 6447, 33334, 24186, 95221, 38641, 32149, 11571</li>
+</ul>
+</li>
+<li>&quot;Hola, mundo! ¿Cómo estás hoy? 🇪🇸&quot;
+<ul>
+<li>69112, 11, 29452, 0, 29386, 96997, 1826, 7206, 49841, 30, 11410, 229, 103, 9468, 229, 116</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/9c0a89c7-3fa8-49f5-bfcd-c712d1c5c1ac.png" alt="AI Demos - Tokenization.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="751516d4-575e-406c-9094-43c628a3a321"><h1>Embedding</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:28e6c300-d782-494c-a4f3-ac4b6690d3e5 -->
+<img alt="Transformer Architectures - Embedding - 938x800.png" src="img/28e6c300-d782-494c-a4f3-ac4b6690d3e5.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="54851746-90a1-45fa-980d-9cdcc12953cc"><h1>Embeddings</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:8c297a4c-5130-4206-ae37-995649e7d962 -->
+<!-- ContentItem:0e0658fb-5565-43c7-a9fc-3de3155352f3 -->
+<aside class="notes"><p>There are many other embedding models, some are optimized for different purposes. You should consider what model might work best for your use-case. This presentation uses the same model used by GPT-3 and GPT-4.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>A point in multi-dimensional space</li>
+<li>Mathematical representation of a word or phrase</li>
+<li>Encode both <strong>semantic</strong> and <strong>contextual</strong> information</li>
+</ul>
+<hr />
+<ul>
+<li>Model: <code>text-embedding-ada-002</code></li>
+<li>Vectors normalized to unit length</li>
+<li>Use 1536 dimensions</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/0e0658fb-5565-43c7-a9fc-3de3155352f3.jpg" alt="Embeddings - Cosmic Desert 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in none-out">
+<aside class="notes"><p>I used a T-SNE (T-distributed Stochastic Neighbor Embedding) transformation to perform this dimensionality reduction</p>
+</aside>
+<a id="9ec34ef5-afab-43e9-abf1-010e746b7af4">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:2313fe54-9904-4e1c-b5de-3c29c297fdc7 -->
+<img alt="Ram - Just Statements.png" src="img/2313fe54-9904-4e1c-b5de-3c29c297fdc7.png" />
+</section>
+
+
+<section data-transition="none-in slide-out">
+<aside class="notes"><p>Ram - With Clusters.png</p>
+</aside>
+<a id="3714c934-4902-45a1-9948-3b31c7f02bba">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:43926256-864d-4a0a-aad0-b7ea6fa5b74e -->
+<img alt="Ram - With Clusters.png" src="img/43926256-864d-4a0a-aad0-b7ea6fa5b74e.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="72e0090e-a40f-4410-91e0-919b3ed09004"><h1>Cosine Similarity &amp; Distance</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:89b66910-a26e-4116-b41d-3ada3f74c92b -->
+<!-- ContentItem:d44bda2e-06bd-4064-9c06-12d564a6f5cf -->
+<aside class="notes"><p>Since GPT vectors are normalized to unit length, Cosine similarity and dot-product calculations will produce the same result.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Relate vectors based on the angle between them</p>
+</blockquote>
+<ul>
+<li><p><em>Cosine Similarity</em> ranges from -1 to 1, where:</p>
+<ul>
+<li>+1 indicates that the vectors represent similar semantics &amp; context</li>
+<li>0 indicates that the vectors are orthogonal (no similarity)</li>
+<li>-1 indicates that the vectors have opposing semantics &amp; context</li>
+</ul>
+</li>
+<li><p><em>Cosine Distance</em> is defined as <strong>1 - cosine similarity</strong> where:</p>
+<ul>
+<li>0 = Synonymous</li>
+<li>1 = Orthogonal</li>
+<li>2 = Antonymous</li>
+</ul>
+</li>
+</ul>
+<p>Note: For normalized vectors, cosine similarity is the same as the dot-product</p>
+
+</td>
+<td style="vertical-align:top;">
+<img alt="Cosine Unit Circle - Enhanced.jpg" src="img/d44bda2e-06bd-4064-9c06-12d564a6f5cf.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="0e2a1080-2694-447d-85ec-30f6863051de"><h1>Cosine Distance</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:1c9aab67-70df-45a0-b05d-4aae3c3a20c5 -->
+<img alt="Cosine Distance 989x600.png" src="img/1c9aab67-70df-45a0-b05d-4aae3c3a20c5.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>I added additional context here: i.e. &quot;Sheep&quot; =&gt; &quot;Bighorn Sheep&quot;, to make the distances more visible.</p>
+</aside>
+<a id="952e53c0-3883-490e-a43f-c3f86853fc08"><h1>Cosine Distance</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:b079c831-8d8c-425b-8e49-c8674d0b3ec6 -->
+<img alt="Angles2.svg" src="img/b079c831-8d8c-425b-8e49-c8674d0b3ec6.svg" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="c504d2aa-f3e6-4956-b06c-96ba4a551dfc"><h1>Clustering</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:81fec6ba-5786-4258-b8ac-a742fe19af01 -->
+<!-- ContentItem:53a6cce5-95de-4e12-8035-bf68503c1bbe -->
+<aside class="notes"><p>Clusters contains items more similar to each other than to those in other clusters</p>
+<ul>
+<li>Key to use: Experiment</li>
+</ul>
+<p>Source Image: <a href="https://www.bing.com/images/search?view=detailV2&amp;ccid=vNng%2foOs&amp;id=2652F88E274436CB6C8CC623A778D7B9F2475FC9&amp;thid=OIP.vNng_oOsNRHKrlh3pjSAyAHaDw&amp;mediaurl=https%3a%2f%2fi.stack.imgur.com%2fcIDB3.png&amp;cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.bcd9e0fe83ac3511caae5877a63480c8%3frik%3dyV9H8rnXeKcjxg%26pid%3dImgRaw%26r%3d0&amp;exph=517&amp;expw=1017&amp;q=k-means+clustering&amp;simid=608026322933788461&amp;FORM=IRPRST&amp;ck=8E4BDA3E627011B4CADA2B68FB818490&amp;selectedIndex=0&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;ajaxserp=0">https://www.bing.com/images/search?view=detailV2&amp;ccid=vNng%2foOs&amp;id=2652F88E274436CB6C8CC623A778D7B9F2475FC9&amp;thid=OIP.vNng_oOsNRHKrlh3pjSAyAHaDw&amp;mediaurl=https%3a%2f%2fi.stack.imgur.com%2fcIDB3.png&amp;cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.bcd9e0fe83ac3511caae5877a63480c8%3frik%3dyV9H8rnXeKcjxg%26pid%3dImgRaw%26r%3d0&amp;exph=517&amp;expw=1017&amp;q=k-means+clustering&amp;simid=608026322933788461&amp;FORM=IRPRST&amp;ck=8E4BDA3E627011B4CADA2B68FB818490&amp;selectedIndex=0&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;ajaxserp=0</a></p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Unsupervised machine learning technique</li>
+<li>Clusters form around centroids (the geometric center of the cluster)</li>
+<li>Data points are grouped (clustered) based on their similarity
+<ul>
+<li>Minimize the error (distance from centroid)</li>
+</ul>
+</li>
+<li>Embeddings cluster with others of similar semantic and contextual meaning</li>
+<li>Advantages
+<ul>
+<li>No need to define a distance threshold</li>
+</ul>
+</li>
+<li>Disadvantages
+<ul>
+<li>Quality is use-case dependent</li>
+<li>Requires the number of clusters to be specified</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
+<img alt="k-means results.png" src="img/53a6cce5-95de-4e12-8035-bf68503c1bbe.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="b1b27a07-42ee-481c-92f4-6791f7204828"><h1>Embedding Distance</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:fcee17b4-8b97-487e-9644-0c45033c1ff3 -->
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Synonym</td>
+<td>&quot;Happy&quot; is closer to &quot;Joyful&quot; than to &quot;Sad&quot;</td>
+</tr>
+<tr>
+<td>Language</td>
+<td>&quot;The Queen&quot; is very close to &quot;La Reina&quot;</td>
+</tr>
+<tr>
+<td>Idiom</td>
+<td>&quot;He kicked the bucket&quot; is closer to &quot;He died&quot; than to &quot;He kicked the ball&quot;</td>
+</tr>
+<tr>
+<td>Sarcasm</td>
+<td>&quot;Well, look who's on time&quot; is closer to &quot;Actually Late&quot; than &quot;Actually Early&quot;</td>
+</tr>
+<tr>
+<td>Homonym</td>
+<td>&quot;Bark&quot; (dog sound) is closer to &quot;Howl&quot; than to &quot;Bark&quot; (tree layer)</td>
+</tr>
+<tr>
+<td>Collocation</td>
+<td>&quot;Fast food&quot; is closer to &quot;Junk food&quot; than to &quot;Fast car&quot;</td>
+</tr>
+<tr>
+<td>Proverb</td>
+<td>&quot;The early bird catches the worm&quot; is closer to &quot;Success comes to those who prepare well and put in effort&quot; than to &quot;A bird in the hand is worth two in the bush&quot;</td>
+</tr>
+<tr>
+<td>Metaphor</td>
+<td>&quot;Time is money&quot; is closer to &quot;Don't waste your time&quot; than to &quot;Time flies&quot;</td>
+</tr>
+<tr>
+<td>Simile</td>
+<td>&quot;He is as brave as a lion&quot; is closer to &quot;He is very courageous&quot; than to &quot;He is a lion&quot;</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="da95e918-79d8-4565-9aaf-1322ce8f58e3"><h1>Attention Blocks</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:0e727dad-172f-4208-a0c3-f3eba69b3820 -->
+<img alt="Transformer Architectures - Attention - 938x800.png" src="img/0e727dad-172f-4208-a0c3-f3eba69b3820.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>AKA Feature Blocks</p>
+</aside>
+<a id="82689873-ceba-4ee8-b147-6fb704c3a12a"><h1>Transformer Blocks</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:3ecee8e2-7107-4da8-8692-0018d1371966 -->
+<img alt="Transformer Architectures - Features - 938x800.png" src="img/3ecee8e2-7107-4da8-8692-0018d1371966.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="ac3355bd-37f8-4362-a7ce-1e75bfdbaaf1"><h1>Cosine Distances</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:bdd399e9-f225-4943-bf1a-26b57c78fbee -->
+
+<table><tr><td style="vertical-align:top;">
+<table>
+<thead>
+<tr>
+<th>Country</th>
+<th>D(USA,C)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>United Kingdom</td>
+<td>0.11981422</td>
+</tr>
+<tr>
+<td>United Kingdom of Great Britain and Northern Ireland</td>
+<td>0.16426033</td>
+</tr>
+<tr>
+<td>England</td>
+<td>0.16678649</td>
+</tr>
+<tr>
+<td>Argentine Republic</td>
+<td>0.18766826</td>
+</tr>
+<tr>
+<td>República Argentina</td>
+<td>0.20281911</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background='img/01f8802f-7db6-4312-9064-54ec9739692a.png'>
+
+<a id="cba9750d-b194-4ea8-a8a2-ebeeca872161">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="b27f99f8-d70f-4436-9f66-b2601a5eba65"><h1>Resources</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:215da295-ffdd-4a8d-81f9-f69250eb4696 -->
+<!-- ContentItem:fb4f6295-2566-4848-892c-d7c60053e8ab -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>This Presentation - <a href="https://IntroToEmbeddings.azurewebsites.net/">Web</a> | <a href="?print-pdf">PDF</a></li>
+<li>These Demos - <a href="https://github.com/bsstahl/AIDemos/tree/master/Embeddings">Code</a> | <a href="https://github.com/bsstahl/AIDemos/wiki/Embeddings">Docs</a></li>
+<li><a href="https://cognitiveinheritance.com/Posts/depth-of-gpt-embeddings.html">The Depth of GPT Embeddings</a></li>
+<li><a href="https://cognitiveinheritance.com/Posts/Programmers-Take-Responsibility-for-Your-AIe28099s-Output.html">Programmers -- Take Responsibility for Your AI’s Output</a></li>
+<li><a href="https://thesephist.notion.site/text-embedding-ada-002-embedding-reconstructions-2ea55ae9525d49dfa9d16213474e0895">Experiments in Reconstructing Text from Embeddings</a></li>
+<li><a href="https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/openai/Azure.AI.OpenAI">Azure OpenAI Client</a></li>
+<li><a href="https://github.com/microsoft/semantic-kernel">Semantic Kernel</a></li>
+<li><a href="https://www.youtube.com/watch?v=UnURElCzGc0">Carl Sagan - Reasoning on Higher Dimensions (YouTube)</a></li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
+<img alt="IntroToEmbeddings_QR.png" src="img/fb4f6295-2566-4848-892c-d7c60053e8ab.png" />
 </td>
 </tr></table></section>
 
@@ -256,30 +758,6 @@ Armando_Castro_8: 0.166799</p>
 </td>
 <td style="text-align: left;">
 <img src="img/944a54fa-3a1f-43c9-82a1-cbee6cb569c8.jpg" alt="Conditional vs Joint Probability 800x800.jpg" />
-</td>
-</tr></table></section>
-
-<section data-transition="slide-in slide-out">
-<a id="b27f99f8-d70f-4436-9f66-b2601a5eba65"><h1>Resources</h1></a>
-<!-- Layout:MultiColumn -->
-<!-- ContentItem:215da295-ffdd-4a8d-81f9-f69250eb4696 -->
-<!-- ContentItem:fb4f6295-2566-4848-892c-d7c60053e8ab -->
-
-<table><tr><td style="vertical-align:top;">
-<ul>
-<li>This Presentation - <a href="https://IntroToEmbeddings.azurewebsites.net/">Web</a> | <a href="?print-pdf">PDF</a></li>
-<li>These Demos - <a href="https://github.com/bsstahl/AIDemos/tree/master/Embeddings">Code</a> | <a href="https://github.com/bsstahl/AIDemos/wiki/Embeddings">Docs</a></li>
-<li><a href="https://cognitiveinheritance.com/Posts/depth-of-gpt-embeddings.html">The Depth of GPT Embeddings</a></li>
-<li><a href="https://cognitiveinheritance.com/Posts/Programmers-Take-Responsibility-for-Your-AIe28099s-Output.html">Programmers -- Take Responsibility for Your AI’s Output</a></li>
-<li><a href="https://thesephist.notion.site/text-embedding-ada-002-embedding-reconstructions-2ea55ae9525d49dfa9d16213474e0895">Experiments in Reconstructing Text from Embeddings</a></li>
-<li><a href="https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/openai/Azure.AI.OpenAI">Azure OpenAI Client</a></li>
-<li><a href="https://github.com/microsoft/semantic-kernel">Semantic Kernel</a></li>
-<li><a href="https://www.youtube.com/watch?v=UnURElCzGc0">Carl Sagan - Reasoning on Higher Dimensions (YouTube)</a></li>
-</ul>
-
-</td>
-<td style="vertical-align:top;">
-<img alt="IntroToEmbeddings_QR.png" src="img/fb4f6295-2566-4848-892c-d7c60053e8ab.png" />
 </td>
 </tr></table></section>
 
