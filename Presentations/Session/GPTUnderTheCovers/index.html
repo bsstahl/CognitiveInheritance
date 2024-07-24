@@ -139,15 +139,6 @@
 </section>
 
 
-<section data-transition="slide-in slide-out" data-background='img/aae80855-f795-4b54-a5fc-bcd703588629.png'>
-<aside class="notes"><p>THATConference 2024</p>
-</aside>
-<a id="6bbcdb61-f759-4e12-9c2c-d8d780a4f6c3">&nbsp;</a>
-<!-- Layout:FullPage -->
-
-</section>
-
-
 <section data-transition="slide-in slide-out" data-background='img/a1b5d3d8-9e8e-4a97-983c-82765f2833cc.png'>
 
 <a id="f0dc280f-1db5-4258-ad5f-f04a1f40b2b9">&nbsp;</a>
@@ -987,7 +978,7 @@ Armando_Castro_8: 0.166799</p>
 <ul>
 <li>Long Sequence Processing
 <ul>
-<li>Attention is an O(n<sup>2</sup>) operation</li>
+<li>Attention uses O(n<sup>2</sup>) memory</li>
 <li>Some models may fragment or chunk the input</li>
 <li>Be careful with attention over long input</li>
 </ul>
@@ -1188,15 +1179,64 @@ Old image: 59bf56c7-2e3d-4a25-b78e-ade863990440</p>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
-<a id="b27f99f8-d70f-4436-9f66-b2601a5eba65"><h1>Resources</h1></a>
-<!-- Layout:MultiColumn -->
-<!-- ContentItem:215da295-ffdd-4a8d-81f9-f69250eb4696 -->
-<!-- ContentItem:fb4f6295-2566-4848-892c-d7c60053e8ab -->
+<a id="dd25a1f2-89a1-4e8a-864a-61323a493293"><h1>Safe Chatbot Interactions</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:4902deb1-240c-42f6-b434-55c0d6d12ed6 -->
+<!-- ContentItem:79ceb6b4-7a84-47a8-a57a-f3db996f6fc8 -->
 
 <table><tr><td style="vertical-align:top;">
 <ul>
-<li>This Presentation - <a href="https://IntroToEmbeddings.azurewebsites.net/">Web</a> | <a href="?print-pdf">PDF</a></li>
-<li>These Demos - <a href="https://github.com/bsstahl/AIDemos/tree/master/Embeddings">Code</a> | <a href="https://github.com/bsstahl/AIDemos/wiki/Embeddings">Docs</a></li>
+<li>Use the model to verify it isn't a jailbreak attempt</li>
+<li>Have the model predict the best answer to the query</li>
+<li>Get embedding from predicted answers</li>
+<li>Compare this embedding with a set of pre-defined answer embeddings</li>
+<li>If a close match is found within the pre-defined answers, use it</li>
+<li>If no suitable pre-defined answer is found, request additional information from the user</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/79ceb6b4-7a84-47a8-a57a-f3db996f6fc8.png" alt="Safe Chatbot 800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="944ae71d-a8b3-4de4-9a9e-ffeef6e07fcd"><h1>When Should AI be Used?</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:0b8f654e-2dc5-41c1-b195-f0495b79d62e -->
+<!-- ContentItem:2f5756ee-7bb2-49ea-9982-bc08c8ce72f9 -->
+<aside class="notes"><p>I worry that situations where it is safe to use these models are more rare than people realize or are willing to accept. That said, we can't let the only people building using AI models be those whose only goal is to separate us from our wealth.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>When all possible biases have been accounted for</li>
+<li>When all sensitive data has been removed, tokenized or encrypted</li>
+<li>When the stochastic nature of responses has been accounted for
+<ul>
+<li>A wrong answer is no worse than no answer</li>
+<li>Outputs have been fully constrained</li>
+<li>A human is in-the-loop to fix the inevitable errors</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/2f5756ee-7bb2-49ea-9982-bc08c8ce72f9.jpg" alt="When to use AI 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="9807e0b9-a5da-48ba-889e-8e2eafc857e3"><h1>Resources</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:c99130a3-fce3-4ce7-b64e-a1b5891f8829 -->
+<!-- ContentItem:41ad43e8-0445-43db-bf73-1bbaf737538f -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>This Presentation - <a href="https://cognitiveinheritance.com/Presentations/Session/GPTUnderTheCovers/index.html">Web</a> | <a href="?print-pdf">PDF</a></li>
+<li>AI Code Demos - <a href="https://github.com/bsstahl/AIDemos/tree/master/Embeddings">Code</a> | <a href="https://github.com/bsstahl/AIDemos/wiki/Embeddings">Docs</a></li>
+<li><a href="https://introtoembeddings.azurewebsites.net/">GPT Embeddings: Not Magic - Just Math</a></li>
 <li><a href="https://cognitiveinheritance.com/Posts/depth-of-gpt-embeddings.html">The Depth of GPT Embeddings</a></li>
 <li><a href="https://cognitiveinheritance.com/Posts/Programmers-Take-Responsibility-for-Your-AIe28099s-Output.html">Programmers -- Take Responsibility for Your AI’s Output</a></li>
 <li><a href="https://thesephist.notion.site/text-embedding-ada-002-embedding-reconstructions-2ea55ae9525d49dfa9d16213474e0895">Experiments in Reconstructing Text from Embeddings</a></li>
@@ -1207,7 +1247,7 @@ Old image: 59bf56c7-2e3d-4a25-b78e-ade863990440</p>
 
 </td>
 <td style="vertical-align:top;">
-<img alt="IntroToEmbeddings_QR.png" src="img/fb4f6295-2566-4848-892c-d7c60053e8ab.png" />
+<img alt="GPT Under the Covers - Slide Deck - QR Code.png" src="img/41ad43e8-0445-43db-bf73-1bbaf737538f.png" />
 </td>
 </tr></table></section>
 
@@ -1240,6 +1280,67 @@ Old image: 59bf56c7-2e3d-4a25-b78e-ade863990440</p>
 </td>
 <td style="text-align: left;">
 <img src="img/944a54fa-3a1f-43c9-82a1-cbee6cb569c8.jpg" alt="Conditional vs Joint Probability 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="45b21c5c-a602-4e68-bdf0-9bae283d4a87"><h1>Softmax Activation Function</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:0fe4b21c-50ee-470c-89e3-7b6d8a7684ed -->
+<!-- ContentItem:3d6845ad-f9c6-4d8f-8a67-06a3fb74df2c -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>SoftMax(z) = e^(z_i) / Σ(e^(z_j))</p>
+</blockquote>
+<ul>
+<li>Converts a vector into a probability distribution</li>
+<li>Output probabilities range from 0 to 1</li>
+<li>Output probabilities sum up to 1</li>
+<li>Where
+<ul>
+<li><code>z</code> is the input vector</li>
+<li><code>i</code> is the class being predicted</li>
+<li><code>j</code> runs over all classes</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/3d6845ad-f9c6-4d8f-8a67-06a3fb74df2c.jpg" alt="Softmax 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="1eb574c6-0956-4713-b11a-75caff099e34"><h1>ReLU Activation Function</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:a5f3dcdc-e12b-484f-842f-4f7e75e20cd4 -->
+<!-- ContentItem:08fe9100-3724-446e-b144-713604b6cf17 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>f(x) = max(0, x)</p>
+</blockquote>
+<ul>
+<li><code>ReLU</code> (Rectified Linear Unit)
+<ul>
+<li>Outputs the input directly if it is positive</li>
+<li>Otherwise, it outputs zero</li>
+</ul>
+</li>
+<li>Common activation function used in neural networks
+<ul>
+<li>Very fast and efficient</li>
+<li>Helps avoid the vanishing gradient problem</li>
+<li>Training often converges faster vs <code>sigmoid</code> or <code>tanh</code></li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/08fe9100-3724-446e-b144-713604b6cf17.jpg" alt="ReLU 800x800.jpg" />
 </td>
 </tr></table></section>
 
