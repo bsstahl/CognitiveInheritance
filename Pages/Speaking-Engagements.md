@@ -16,7 +16,6 @@ categories: []
 
 ### Upcoming Talks
 
-* **Beer City Code 2024** - 8/3/2024 - "GPT Embeddings: Not Magic, Just Math" and "Amazing Algorithms for Solving Problems in Software"
 * **Techorama Netherlands** - 10/7/2024 - 10/9/2024 - "Amazing Algorithms for Solving Problems in Software" and "The Future of Information Retrieval: A Deep-Dive into RAG"
 
 <!-- I currently have no talks scheduled. {ContactPageLink:Contact me} to arrange to have me speak at your event. -->
@@ -153,6 +152,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ### Past engagements
 
+* **Beer City Code 2024** - 8/3/2024 - "GPT Embeddings: Not Magic, Just Math" and "Amazing Algorithms for Solving Problems in Software"
 * **THATConference Wisconsin** - 7/31/2024 - "GPT Under the Covers"
 * **Cincy Deliver 2024** - 7/26/2024 - "Success with Microservices: The Critical 'Cs'"
 * **ConFoo Montreal 2024** - 2/21/2024 - 2/23/2024 - "GPT Embeddings - Not Magic, Just Math" & "Amazing Algorithms for Solving Problems in Software"
