@@ -3,8 +3,8 @@ postsperpage: 15
 postsperfeed: 10
 theme: Default
 title: Cognitive Inheritance
-description: The Application Development Experiences of an Enterprise Developer
-copyright: "&copy; 2003-2023 by Barry S. Stahl"
+description: The Application Development Experiences of an Enterprise Engineer
+copyright: "&copy; 2003-2024 by Barry S. Stahl. Some Rights Reserved."
 contactemail: aa888322-fa60-417f-b247-e2119756d383@bsstahl.com
 sitevariables:
 - variablename: TwitterLink
