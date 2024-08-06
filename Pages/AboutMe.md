@@ -47,11 +47,11 @@ As an avid community speaker, I've had the privilege of sharing my expertise and
 
 My speaking engagements have spanned continents:
 
-* In Europe I've spoken on the banks of the Danube in Budapest Hungary, on the sunny beaches of Malaga Spain, and in the shadow of the Shard in London England.
+* In Europe I've spoken on the banks of the Danube in Budapest Hungary, on the sunny beaches of Malaga Spain, near the fjords of Oslo Norway, and in the shadow of the Shard in London England.
 
 * I've spoken on the beach in Tel Aviv Israel and near the famed Opera House in Sydney Australia.
 
-* Closer to home, I've presented in front of North American audiences in Quebec, Ohio, Wisconsin, Kentucky, Missouri, Tennesee, Michigan, Florida, Texas, Nevada, Virginia, California, Minnesota, New York, Georgia and of course, Arizona.
+* Closer to home, I've presented for North American audiences in Quebec, Ohio, Wisconsin, Kentucky, Missouri, Tennesee, Michigan, Florida, Texas, Nevada, Virginia, California, Minnesota, New York, Georgia and of course, Arizona.
 
 Each presentation is crafted not just to impart technical knowledge but to ignite discussions on the ethical use of technology, the future of software engineering, and the vital role of community-driven development. For more details on my speaking history and to access presentation materials, please visit the {PageLink:Speaking-Engagements|Speaking Engagements} page of my website.
 
