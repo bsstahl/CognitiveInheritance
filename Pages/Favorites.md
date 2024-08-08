@@ -33,7 +33,7 @@ I like to describe myself as the kind of person who has a list of his favorite p
 1. Galileo Galilei
 1. Michael Faraday
 
-* Other notables: Stephen Hawking, Edwin Hubble
+* Other notables: Stephen Hawking, Edwin Hubble, Leonard Susskind
 
 ---
 
