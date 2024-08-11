@@ -30,6 +30,7 @@ categories: []
 ### Leadership
 
 * [Engineering Leadership with a Little Help from my Friends - Networking](https://leaddev.com/leadingeng-new-york/video/engineering-leadership-little-help-my-friends)
+* [The Imposter's Roadmap - Rob Conery](https://sales.bigmachine.io/roadmap/?ck_subscriber_id=2617970493&utm_source=convertkit&utm_medium=email&utm_campaign=The%20Happiness%20and%20Terror%20of%20Shipping%20-%2014027651)
 
 ### Development
 
