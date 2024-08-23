@@ -102,7 +102,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ***
 
-* **GPT Under the Covers** - Generative Pre-trained Transformers (GPT) have revolutionized the field of natural language processing, enabling machines to generate human-like text with remarkable coherence. This presentation delves into the intricacies of GPT models, shedding light on the underlying mechanisms that enable these tools to predict tokens and generate text. We will unravel the architecture of GPT, from embedding layers to attention mechanisms, and provide a clear understanding of the processes that contribute to the model's performance.
+* **GPT Under the Hood** - Generative Pre-trained Transformers (GPT) have revolutionized the field of natural language processing, enabling machines to generate human-like text with remarkable coherence. This presentation delves into the intricacies of GPT models, shedding light on the underlying mechanisms that enable these tools to predict tokens and generate text. We will unravel the architecture of GPT, from embedding layers to attention mechanisms, and provide a clear understanding of the processes that contribute to the model's performance.
 
   Beyond the technical deep dive, we will explore practical applications, discussing valid use-cases where GPT models excel, such as chatbots, content creation, and language translation. We will also critically evaluate scenarios where GPT models may fall short or prove unsuitable, addressing common myths and misconceptions.
   
