@@ -1,0 +1,1433 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>GPT Under the Hood</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/carvana.css">
+    <link rel="stylesheet" href="css/headers.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-transition="slide-in slide-out" data-background='img/19ae31f8-078b-4bd3-8411-0222b6a09c25.jpg'>
+<a id="c7355d4f-f3fa-468d-be7c-3e3a435e9cac">&nbsp;</a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:dee3516f-4359-4f28-898e-6effc7981e56 -->
+<!-- ContentItem:685060d8-4205-4db9-b44d-9610a7729e7d -->
+
+<table><tr><td style="vertical-align:top;">
+<h2 id="gpt-under-the-hood">GPT Under the Hood</h2>
+<h4 id="section"></h4>
+<hr />
+<h3 id="barry-s.stahl">Barry S. Stahl</h3>
+<h3 id="solution-architect-developer">Solution Architect &amp; Developer</h3>
+<h3 id="bsstahlcognitiveinheritance.com"><a href="https://fosstodon.org/@Bsstahl">@bsstahl@cognitiveinheritance.com</a></h3>
+<h3 id="httpscognitiveinheritance.com"><a href="https://cognitiveinheritance.com">https://CognitiveInheritance.com</a></h3>
+
+</td>
+<td style="text-align: left;">
+<img src="img/685060d8-4205-4db9-b44d-9610a7729e7d.png" alt="Transparent Half Width Image 720x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="636059f9-aa9d-4444-b4ec-dd7f62badd98"><h1>Favorite Physicists & Mathematicians</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:30f7e9d2-b154-4895-bed7-2765f7bdc6fe -->
+<!-- ContentItem:8a83be06-76e9-4028-9630-c6a7de92ae99 -->
+<aside class="notes"><p>An up-to-date list is available on my blog at <a href="https://cognitiveinheritance.com/Pages/Favorites.html">https://cognitiveinheritance.com/Pages/Favorites.html</a></p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<h4 id="favorite-physicists">Favorite Physicists</h4>
+<ol>
+<li>Harold &quot;Hal&quot; Stahl</li>
+<li>Carl Sagan</li>
+<li>Richard Feynman</li>
+<li>Marie Curie</li>
+<li>Nikola Tesla</li>
+<li>Albert Einstein</li>
+<li>Neil Degrasse Tyson</li>
+<li>Niels Bohr</li>
+<li>Galileo Galilei</li>
+<li>Michael Faraday</li>
+</ol>
+<p><em>Other notables</em>: Stephen Hawking, Edwin Hubble</p>
+
+</td>
+<td style="vertical-align:top;">
+<h4 id="favorite-mathematicians">Favorite Mathematicians</h4>
+<ol>
+<li>Ada Lovelace</li>
+<li>Alan Turing</li>
+<li>Johannes Kepler</li>
+<li>Rene Descartes</li>
+<li>Isaac Newton</li>
+<li>Emmy Noether</li>
+<li>George Boole</li>
+<li>Blaise Pascal</li>
+<li>Johann Gauss</li>
+<li>Grace Hopper</li>
+</ol>
+<p><em>Other notables</em>: Daphne Koller, Grady Booch, Leonardo Fibonacci, Evelyn Berezin, Benoit Mandelbrot</p>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="23528a73-7bc1-4e39-9f2f-c8b9e2cff982"><h1>Some OSS Projects I Run</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:f8cbcb81-15f7-48e0-bc29-b348732f6f05 -->
+<ol>
+<li><a href="https://github.com/bsstahl/liquidvictor">Liquid Victor</a> : Media tracking and aggregation [used to assemble this presentation]</li>
+<li><a href="https://github.com/bsstahl/pptail">Prehensile Pony-Tail</a> : A static site generator built in c#</li>
+<li><a href="https://github.com/bsstahl/testhelperextensions">TestHelperExtensions</a> : A set of extension methods helpful when building unit tests</li>
+<li><a href="https://github.com/bsstahl/conferencescheduler">Conference Scheduler</a> : A conference schedule optimizer</li>
+<li><a href="https://github.com/bsstahl/intentbot">IntentBot</a> : A microservices framework for creating conversational bots on top of Bot Framework</li>
+<li><a href="https://github.com/bsstahl/liquidnun">LiquidNun</a> : Library of abstractions and implementations for loosely-coupled applications</li>
+<li><a href="https://github.com/bsstahl/toastmastersagenda">Toastmasters Agenda</a> : A c# library and website for generating agenda's for Toastmasters meetings</li>
+<li><a href="https://github.com/bsstahl/PDM">ProtoBuf Data Mapper</a> : A c# library for mapping and transforming ProtoBuf messages</li>
+</ol>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="a1e2eaad-5633-41dc-9e1b-c724e30ac85f"><h1>Fediverse Supporter</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:a937ed96-7c15-4ede-a3d0-09dc382590eb -->
+
+<table><tr><td style="vertical-align:top;">
+</td>
+<td style="text-align: left;">
+<img src="img/a937ed96-7c15-4ede-a3d0-09dc382590eb.png" alt="Logos.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="3129a405-82a7-432c-ae55-6f9d2335ab17"><h1>http://GiveCamp.org</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:2ca346de-d62c-4c6b-834d-7ccab290a6ab -->
+<img alt="GiveCamp.png" src="img/2ca346de-d62c-4c6b-834d-7ccab290a6ab.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>July 25, 2022 was my 100th public talk. Thank you for allowing me to participate in your community over these past few decades!</p>
+</aside>
+<a id="39c6410c-3913-410b-abab-984014a15d84"><h1>Achievement Unlocked</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a042b106-4bab-4403-b5b6-0d7b414ef789 -->
+<img alt="bss-100-achievement-unlocked-1024x250.png" src="img/a042b106-4bab-4403-b5b6-0d7b414ef789.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/a1b5d3d8-9e8e-4a97-983c-82765f2833cc.png'>
+
+<a id="f0dc280f-1db5-4258-ad5f-f04a1f40b2b9">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/956f7e7e-d1aa-49a5-a47b-4dec4936596c.png'>
+
+<a id="1ea48dff-202e-4774-9d17-fc2c7e4201cb">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/86fdd248-e651-4290-9f72-e1c1295669c1.png'>
+<aside class="notes"><p>Was a24b75f3-4f6c-4715-be5f-740a597cd3b3</p>
+</aside>
+<a id="56467599-0c70-4e59-b4a7-472ced422c84">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="c0856058-b753-43da-bbf7-fd6bab107e7a"><h1>Resume Scanning</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:afa0ae28-cd12-4714-82c0-d9d6686f2230 -->
+<!-- ContentItem:412011fa-11c7-4b62-8bac-9c3d8af4c3e7 -->
+<aside class="notes"><p>Jonathon_Nixon_8: 0.148041
+Armando_Castro_10: 0.165220
+Armando_Castro_8: 0.166799</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Armando's Resume: 12.7% &quot;worse&quot;
+<ul>
+<li>More distant from a match to the job listing</li>
+<li>A 95 for Jonathon's resume ≈ an 84 for Armando's</li>
+</ul>
+</li>
+<li>If Armando had 2 additional years of experience
+<ul>
+<li>His score only increases by ≈ 1 point to 85</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/412011fa-11c7-4b62-8bac-9c3d8af4c3e7.jpg" alt="TwoResumes_800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="df01c530-b747-499c-81dc-a8152523d82b"><h1>Neural Networks</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:26a341da-57cf-4edc-bb3b-1938d0fa1b9c -->
+<!-- ContentItem:f2909882-3e57-432e-9f1b-45a906045a4f -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Machine Learning
+<ul>
+<li>Make predictions based on input</li>
+<li>Model is tuned via &quot;Training&quot;</li>
+</ul>
+</li>
+<li>Training
+<ul>
+<li>Minimize the error in the model</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/f2909882-3e57-432e-9f1b-45a906045a4f.jpg" alt="Training a Neural Network 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="7aa154db-8976-4a95-b8fa-eff9dff0865a"><h1>Transformer Architectures</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:2416b2f3-14c0-4d6c-99a5-00376fe32b45 -->
+<!-- ContentItem:237d52d6-2283-42c9-a4b8-f446a858d874 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>A neural network architecture that has enabled the recent advancements in NLP</p>
+</blockquote>
+<ul>
+<li>Based on the 2017 Google paper <a href="https://arxiv.org/abs/1706.03762">Attention is All You Need</a> by Vaswani et al.</li>
+<li>Key Breakthrough: The Self-Attention Mechanism
+<ul>
+<li>Focus on most relevant words</li>
+<li>Add critical context even at a distance</li>
+</ul>
+</li>
+<li>Enables Parallel Processing
+<ul>
+<li>Process all words in a sentence simultaneously</li>
+<li>Unlike traditional RNNs that process data sequentially</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/237d52d6-2283-42c9-a4b8-f446a858d874.jpg" alt="Self Attention 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="641c55c3-7953-4b54-8e5f-5a9da54beaf9"><h1>Transformer (Simplified)</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:782f2af6-5beb-4c69-8380-b2bd40f5d639 -->
+<img alt="Transformer Architectures - 938x800.png" src="img/782f2af6-5beb-4c69-8380-b2bd40f5d639.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="9d231531-47fc-4e7a-a631-77d4623717fb"><h1>Agenda</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:92f3658b-deac-4c88-9912-9eae058687dc -->
+<!-- ContentItem:309217ec-2088-487a-980f-b4d7711687f7 -->
+<aside class="notes"><p>The goal here is not to enable us to build our own GPT, but to understand how these models work so we can use them effectively.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Goal: Build intuition for when and why these models may be effectively applied by understanding how they work</p>
+</blockquote>
+<ul>
+<li>Generative Transformer Models
+<ul>
+<li>Tokenization</li>
+<li>Embedding</li>
+<li>Attention</li>
+<li>Transformer Blocks</li>
+</ul>
+</li>
+<li>Use-Case Analysis
+<ul>
+<li>What they don't work for</li>
+<li>What these tools do well</li>
+<li>How we can reduce risk</li>
+<li>Ethical Considerations</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/309217ec-2088-487a-980f-b4d7711687f7.jpg" alt="Generative Transformer Models 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>There is also the de-tokenization process at the end that reverses this</p>
+</aside>
+<a id="458bf51f-78f0-45fc-8a6f-27759b2e6cc2"><h1>Tokenization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:413b56e7-e1c0-487a-b45f-e9ede7332409 -->
+<img alt="Transformer Architectures - Tokenization - 938x800.png" src="img/413b56e7-e1c0-487a-b45f-e9ede7332409.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="c3d1f179-4ece-4386-8da1-b3cdf65693a3"><h1>Tokenization</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:a1216cea-eb29-4725-be15-51afd1644b9d -->
+<!-- ContentItem:dd532522-8719-40b5-9acd-ba518ecdcd87 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Convert UTF-8 text containing words, word parts, or characters into an equivalent numeric representation</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Unicode</th>
+<th>Token</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hello</td>
+<td>15339</td>
+<td>Common words</td>
+</tr>
+<tr>
+<td>Don</td>
+<td>8161</td>
+<td>Common names</td>
+</tr>
+<tr>
+<td>[space]Qu</td>
+<td>3489</td>
+<td>Common sequences</td>
+</tr>
+<tr>
+<td>注</td>
+<td>26130</td>
+<td>Foreign characters</td>
+</tr>
+<tr>
+<td>█████</td>
+<td>93429</td>
+<td>Redaction characters</td>
+</tr>
+<tr>
+<td>/&gt;[newline]</td>
+<td>10381</td>
+<td>Symbols</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+<td style="text-align: left;">
+<img src="img/dd532522-8719-40b5-9acd-ba518ecdcd87.jpg" alt="Cosmic Library 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="ce9ee3e1-69b6-48d8-b7a3-6b46a8006adc"><h1>GPT Tokenization</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:9aa8f0fb-1223-4b33-a8f5-3b7fb8a0642e -->
+<!-- ContentItem:017d4a5a-68a3-4ff4-b571-3535d12a9f02 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>GPT-3 and beyond use the <code>cl100K</code> tokenization model</p>
+</blockquote>
+<ul>
+<li>Defines 100,256 tokens
+<ul>
+<li>Word</li>
+<li>Word part</li>
+<li>Character combination</li>
+<li>Character</li>
+<li>Character part</li>
+</ul>
+</li>
+<li>Efficiently reprepresent language numerically
+<ul>
+<li>Minimize token usage</li>
+<li>More compact than Unicode</li>
+<li>More flexible than ASCII</li>
+<li>Large vocabulary
+<ul>
+<li>All Unicode characters available</li>
+</ul>
+</li>
+<li>The most-common combinations</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/017d4a5a-68a3-4ff4-b571-3535d12a9f02.jpg" alt="Cosmic Library Book 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background='img/346ddeef-7e23-4623-8739-f4e97e2dec9b.png'>
+<aside class="notes"><p>Remember that billing is generally done based on the number of tokens processd -- both input and output</p>
+</aside>
+<a id="a9fe8bf2-ba3a-49a7-a2b2-33e0ab5b2ed0">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="61f33816-4b63-47d1-8ab7-a5072b55fa3a"><h1>Exploring Tokenization</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:bb07e031-1872-47a1-bd10-38843045c5df -->
+<!-- ContentItem:9c0a89c7-3fa8-49f5-bfcd-c712d1c5c1ac -->
+
+<table><tr><td style="vertical-align:top;">
+<p><a href="https://github.com/bsstahl/AIDemos/tree/master/Tokenizer">Reference Implementation - AI Demos on GitHub</a></p>
+<ul>
+<li>Examples from the code
+<ul>
+<li>&quot;Hello, World! How are you today? 🌍&quot;
+<ul>
+<li>9906, 11, 4435, 0, 2650, 527, 499, 3432, 30, 11410, 234, 235</li>
+</ul>
+</li>
+<li>&quot;こんにちは、世界！お元気ですか？&quot;
+<ul>
+<li>90115, 5486, 3574, 244, 98220, 6447, 33334, 24186, 95221, 38641, 32149, 11571</li>
+</ul>
+</li>
+<li>&quot;Hola, mundo! ¿Cómo estás hoy? 🇪🇸&quot;
+<ul>
+<li>69112, 11, 29452, 0, 29386, 96997, 1826, 7206, 49841, 30, 11410, 229, 103, 9468, 229, 116</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/9c0a89c7-3fa8-49f5-bfcd-c712d1c5c1ac.png" alt="AI Demos - Tokenization.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="751516d4-575e-406c-9094-43c628a3a321"><h1>Embedding</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:28e6c300-d782-494c-a4f3-ac4b6690d3e5 -->
+<img alt="Transformer Architectures - Embedding - 938x800.png" src="img/28e6c300-d782-494c-a4f3-ac4b6690d3e5.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="54851746-90a1-45fa-980d-9cdcc12953cc"><h1>Embeddings</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:8c297a4c-5130-4206-ae37-995649e7d962 -->
+<!-- ContentItem:0e0658fb-5565-43c7-a9fc-3de3155352f3 -->
+<aside class="notes"><p>There are many other embedding models, some are optimized for different purposes. You should consider what model might work best for your use-case. This presentation uses the same model used by GPT-3 and GPT-4.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>A point in multi-dimensional space</li>
+<li>Mathematical representation of a word or phrase</li>
+<li>Encode both <strong>semantic</strong> and <strong>contextual</strong> information</li>
+</ul>
+<hr />
+<ul>
+<li>Model: <code>text-embedding-ada-002</code></li>
+<li>Vectors normalized to unit length</li>
+<li>Use 1536 dimensions</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/0e0658fb-5565-43c7-a9fc-3de3155352f3.jpg" alt="Embeddings - Cosmic Desert 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in none-out">
+<aside class="notes"><p>I used a T-SNE (T-distributed Stochastic Neighbor Embedding) transformation to perform this dimensionality reduction</p>
+</aside>
+<a id="9ec34ef5-afab-43e9-abf1-010e746b7af4">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:2313fe54-9904-4e1c-b5de-3c29c297fdc7 -->
+<img alt="Ram - Just Statements.png" src="img/2313fe54-9904-4e1c-b5de-3c29c297fdc7.png" />
+</section>
+
+
+<section data-transition="none-in slide-out">
+<aside class="notes"><p>The key to understanding embeddings is to remember that they are a way to represent a word or phrase in a multi-dimensional space.  The distance between two embeddings can be used to determine how similar the words or phrases they represent are to each other.</p>
+</aside>
+<a id="3714c934-4902-45a1-9948-3b31c7f02bba">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:43926256-864d-4a0a-aad0-b7ea6fa5b74e -->
+<img alt="Ram - With Clusters.png" src="img/43926256-864d-4a0a-aad0-b7ea6fa5b74e.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="72e0090e-a40f-4410-91e0-919b3ed09004"><h1>Cosine Similarity &amp; Distance</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:89b66910-a26e-4116-b41d-3ada3f74c92b -->
+<!-- ContentItem:d44bda2e-06bd-4064-9c06-12d564a6f5cf -->
+<aside class="notes"><p>Since GPT vectors are normalized to unit length, Cosine similarity and dot-product calculations will produce the same result.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Relate vectors based on the angle between them</p>
+</blockquote>
+<ul>
+<li><p><em>Cosine Similarity</em> ranges from -1 to 1, where:</p>
+<ul>
+<li>+1 indicates that the vectors represent similar semantics &amp; context</li>
+<li>0 indicates that the vectors are orthogonal (no similarity)</li>
+<li>-1 indicates that the vectors have opposing semantics &amp; context</li>
+</ul>
+</li>
+<li><p><em>Cosine Distance</em> is defined as <strong>1 - cosine similarity</strong> where:</p>
+<ul>
+<li>0 = Synonymous</li>
+<li>1 = Orthogonal</li>
+<li>2 = Antonymous</li>
+</ul>
+</li>
+</ul>
+<p>Note: For normalized vectors, cosine similarity is the same as the dot-product</p>
+
+</td>
+<td style="vertical-align:top;">
+<img alt="Cosine Unit Circle - Enhanced.jpg" src="img/d44bda2e-06bd-4064-9c06-12d564a6f5cf.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="0e2a1080-2694-447d-85ec-30f6863051de"><h1>Cosine Distance</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:1c9aab67-70df-45a0-b05d-4aae3c3a20c5 -->
+<img alt="Cosine Distance 989x600.png" src="img/1c9aab67-70df-45a0-b05d-4aae3c3a20c5.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>I added additional context here: i.e. &quot;Sheep&quot; =&gt; &quot;Bighorn Sheep&quot;, to make the distances more visible.</p>
+</aside>
+<a id="952e53c0-3883-490e-a43f-c3f86853fc08"><h1>Cosine Distance</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:b079c831-8d8c-425b-8e49-c8674d0b3ec6 -->
+<img alt="Angles2.svg" src="img/b079c831-8d8c-425b-8e49-c8674d0b3ec6.svg" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Embeddings encode many facets of a word or phrase, including language spoken, idioms, sarcasm, and figurative language</p>
+</aside>
+<a id="b1b27a07-42ee-481c-92f4-6791f7204828"><h1>Embedding Distance</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:fcee17b4-8b97-487e-9644-0c45033c1ff3 -->
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Synonym</td>
+<td>&quot;Happy&quot; is closer to &quot;Joyful&quot; than to &quot;Sad&quot;</td>
+</tr>
+<tr>
+<td>Language</td>
+<td>&quot;The Queen&quot; is very close to &quot;La Reina&quot;</td>
+</tr>
+<tr>
+<td>Idiom</td>
+<td>&quot;He kicked the bucket&quot; is closer to &quot;He died&quot; than to &quot;He kicked the ball&quot;</td>
+</tr>
+<tr>
+<td>Sarcasm</td>
+<td>&quot;Well, look who's on time&quot; is closer to &quot;Actually Late&quot; than &quot;Actually Early&quot;</td>
+</tr>
+<tr>
+<td>Homonym</td>
+<td>&quot;Bark&quot; (dog sound) is closer to &quot;Howl&quot; than to &quot;Bark&quot; (tree layer)</td>
+</tr>
+<tr>
+<td>Collocation</td>
+<td>&quot;Fast food&quot; is closer to &quot;Junk food&quot; than to &quot;Fast car&quot;</td>
+</tr>
+<tr>
+<td>Proverb</td>
+<td>&quot;The early bird catches the worm&quot; is closer to &quot;Success comes to those who prepare well and put in effort&quot; than to &quot;A bird in the hand is worth two in the bush&quot;</td>
+</tr>
+<tr>
+<td>Metaphor</td>
+<td>&quot;Time is money&quot; is closer to &quot;Don't waste your time&quot; than to &quot;Time flies&quot;</td>
+</tr>
+<tr>
+<td>Simile</td>
+<td>&quot;He is as brave as a lion&quot; is closer to &quot;He is very courageous&quot; than to &quot;He is a lion&quot;</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="bf053f6c-0de0-413e-84cd-b8f69090cc03"><h1>Usage of Embeddings</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:8444a317-9255-4c86-a91c-a077fc3f967e -->
+<!-- ContentItem:48268ace-db06-4a45-8bf0-b3f623e08868 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Embeddings can be used directly, or as an input to other models</p>
+</blockquote>
+<ul>
+<li>Direct Usage
+<ul>
+<li>Measuring Semantic Distance
+<ul>
+<li>Quantify similarity between pieces of text</li>
+<li>Useful for tasks like semantic search</li>
+</ul>
+</li>
+<li>Clustering for Pattern Discovery
+<ul>
+<li>Discover groupings in the data</li>
+<li>Useful when categorizing user comments or other textual characteristics</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Indirect Usage
+<ul>
+<li>Feature Vectors for Machine Learning
+<ul>
+<li>Inputs to traditional ML models</li>
+</ul>
+</li>
+<li>Input to Transformer Attention Mechanisms
+<ul>
+<li>Dynamically adjusted by attention blocks</li>
+<li>Powers text generation tasks</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/48268ace-db06-4a45-8bf0-b3f623e08868.jpg" alt="Cosmic Desert under the Milky Way 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="da95e918-79d8-4565-9aaf-1322ce8f58e3"><h1>Attention Blocks</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:0e727dad-172f-4208-a0c3-f3eba69b3820 -->
+<img alt="Transformer Architectures - Attention - 938x800.png" src="img/0e727dad-172f-4208-a0c3-f3eba69b3820.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="1a88c228-bf93-4cf0-acaa-a27b59dd5e82"><h1>&quot;I'm getting PC ram&quot;</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:cdb7f01c-6c5c-409f-81f5-6581c0c183b6 -->
+<!-- ContentItem:5c033f88-4d80-4fb6-898d-bcc0bf15a928 -->
+<aside class="notes"><p>Remember that this visual is a 2-D representation of what happens in 1536 dimensions</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Attention mechanisms consider relationships between words, helping the model emphasize relevant context, even if far away.</p>
+</blockquote>
+<ul>
+<li>Pre-Attention
+<ul>
+<li>Does &quot;Ram&quot; represent a sheep, truck or memory?</li>
+<li>The model has a general understanding of the word without context</li>
+</ul>
+</li>
+<li>Post-Attention
+<ul>
+<li>The &quot;Ram&quot; vector shifts towards &quot;Computer Memory&quot;</li>
+<li>Context has been added</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/5c033f88-4d80-4fb6-898d-bcc0bf15a928.png" alt="Ram Graph 2 800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>The details of positional encoding are not critical to understanding these models, but they are interesting, and they are a good reminder that these are not purely iterative processes. During matrix operations, there is no way to stop and ask &quot;what index am I currently at?&quot; because it is all done in parallel. This process also likely creates a loss of fidelity since we are adding information without adding additonal storage.</p>
+</aside>
+<a id="3b1e19ff-dfed-43c8-9226-49b8515948a3"><h1>Positional Encoding</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:1b970f96-47b6-4408-a49c-db2c887668c4 -->
+<img alt="Sine Waves 1280x720.png" src="img/1b970f96-47b6-4408-a49c-db2c887668c4.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="f109f36d-c3df-4774-b88a-0a703b2e2a61"><h1>Attention Heads</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:c24dc902-e295-4835-ba05-08be4330b954 -->
+<!-- ContentItem:1fc5e96b-9d7d-4451-8d03-2ccead779ed9 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>The 3 matrices that are learned in training of the attention mechanism</p>
+</blockquote>
+<ul>
+<li>Query (Q)
+<ul>
+<li>Can be thought of as a question about the current token</li>
+</ul>
+</li>
+<li>Key (K)
+<ul>
+<li>How well the token &quot;attends to&quot; the Query</li>
+</ul>
+</li>
+<li>Value (V)
+<ul>
+<li>How much the embedding should be moved towards each other token</li>
+</ul>
+</li>
+</ul>
+<p>When these 3 matrices are applied to the positionalized input, it results in the model adding appropriate context to each token.</p>
+
+</td>
+<td style="text-align: left;">
+<img src="img/1fc5e96b-9d7d-4451-8d03-2ccead779ed9.jpg" alt="Query-Key-Value 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>AKA Feature Blocks</p>
+</aside>
+<a id="82689873-ceba-4ee8-b147-6fb704c3a12a"><h1>Transformer Blocks</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:3ecee8e2-7107-4da8-8692-0018d1371966 -->
+<img alt="Transformer Architectures - Features - 938x800.png" src="img/3ecee8e2-7107-4da8-8692-0018d1371966.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="aa873d9d-c7cc-4806-9f17-76b1b05d0f67"><h1>Feature Layers</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:57560c8f-3b6d-4b54-8e80-328dd01ff0e2 -->
+<!-- ContentItem:77bde5c8-45b4-441c-bcc2-cf5489ddd2dc -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>The Feature layers allow the Transformer to understand and generate complex language patterns through deep learning from the structure of the input data</p>
+</blockquote>
+<ul>
+<li>Each layer acts as a mini neural network</li>
+<li>In the Encoder:
+<ul>
+<li>Complex Feature Extraction from the input data</li>
+</ul>
+</li>
+<li>In the Decoder
+<ul>
+<li>Refines the model's predictions by processing the encoder's output alongside previous decoder outputs</li>
+</ul>
+</li>
+</ul>
+<p>By stacking multiple Feature between Attention layers, GPT models achieve deeper learning capabilities, allowing for more nuanced understanding and generation of text</p>
+
+</td>
+<td style="text-align: left;">
+<img src="img/77bde5c8-45b4-441c-bcc2-cf5489ddd2dc.jpg" alt="Perceptron 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="641c55c3-7953-4b54-8e5f-5a9da54beaf9"><h1>Transformer (Simplified)</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:782f2af6-5beb-4c69-8380-b2bd40f5d639 -->
+<img alt="Transformer Architectures - 938x800.png" src="img/782f2af6-5beb-4c69-8380-b2bd40f5d639.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/86fdd248-e651-4290-9f72-e1c1295669c1.png'>
+<aside class="notes"><p>Was a24b75f3-4f6c-4715-be5f-740a597cd3b3</p>
+</aside>
+<a id="56467599-0c70-4e59-b4a7-472ced422c84">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Searches based on the Cosine Similarity of Embeddings don't leverage the attention mechanisms of the model. They only measure the aggregate distance of the tokens from the other items in the search.</p>
+</aside>
+<a id="7b5a883a-dea6-49e7-9edb-786b6298ed62"><h1>Embeddings Search</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:54ddbe15-27b7-4e55-813f-db3a52ec54e1 -->
+<img alt="Transformer Architectures - Embedding Only - 938x800.png" src="img/54ddbe15-27b7-4e55-813f-db3a52ec54e1.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="ac3355bd-37f8-4362-a7ce-1e75bfdbaaf1"><h1>Cosine Distances</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:bdd399e9-f225-4943-bf1a-26b57c78fbee -->
+<!-- ContentItem:88b85f91-aa78-4683-bec1-20b4655d7cf3 -->
+<aside class="notes"><p>We never told the model what was important to us, and we never even allowed the Attention mechanism to try to figure it out. Instead, it just looked at the differences between the tokens, and found Argentina to be farther from the US than the UK is.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<table>
+<thead>
+<tr>
+<th>Country</th>
+<th>D(USA,C)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>United Kingdom</td>
+<td>0.11981422</td>
+</tr>
+<tr>
+<td>United Kingdom of Great Britain and Northern Ireland</td>
+<td>0.16426033</td>
+</tr>
+<tr>
+<td>England</td>
+<td>0.16678649</td>
+</tr>
+<tr>
+<td>Argentine Republic</td>
+<td>0.18766826</td>
+</tr>
+<tr>
+<td>República Argentina</td>
+<td>0.20281911</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+<td style="text-align: left;">
+<img src="img/88b85f91-aa78-4683-bec1-20b4655d7cf3.png" alt="Country Distances.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="4ead4f8a-8956-4f5b-8ada-a16a7e883b8f"><h1>Embeddings Differences</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:cfd42d94-fa37-4878-b2ac-acfb2f3c1bbe -->
+<!-- ContentItem:d9562b82-479e-47cc-9074-3abaae05babd -->
+<aside class="notes"><p>There are lots of reasons why the embeddings relating the US &amp; Argentina are farther apart than US vs UK. They all have to do with how the Embeddings are encoded.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Language
+<ul>
+<li>English (different dialects) vs Spanish</li>
+</ul>
+</li>
+<li>Historical Ties
+<ul>
+<li>USA and UK - Political (colonial), economic and cultural ties</li>
+</ul>
+</li>
+<li>Cultural Similarities
+<ul>
+<li>USA and UK - shared media, literature, entertainment, and educational exchanges including TV, movies, music, and news</li>
+</ul>
+</li>
+<li>Political Systems
+<ul>
+<li>USA and UK - Democracies w/ common roots</li>
+</ul>
+</li>
+<li>Other differences
+<ul>
+<li>Economic Ties</li>
+<li>Geopolitical Alliances</li>
+<li>Educational Systems</li>
+<li>Legal Systems</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/d9562b82-479e-47cc-9074-3abaae05babd.jpg" alt="Embedding Differences - USA UK Argentina - 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background='img/01f8802f-7db6-4312-9064-54ec9739692a.png'>
+<aside class="notes"><p>I think we got lucky that adding 2 years made Armando's resume better. It could just as easily gotten worse.</p>
+</aside>
+<a id="cba9750d-b194-4ea8-a8a2-ebeeca872161">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>One big risk here is that one or more aspects of the summary may be wrong, and those could be the result of systemic bias.\r\n\r\nRemember: &quot;CAN&quot; does not mean &quot;SHOULD&quot;. We'll talk more about the ethics of using these models coming up.</p>
+</aside>
+<a id="66b92892-456e-41cd-b779-105e77d1190b"><h1>Resume Summarization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:e0550c18-b794-49f1-9b89-89aacdc847d9 -->
+<ul>
+<li><p><em>System</em>: As a resume scanner specializing in software engineers, focus solely on summarizing their key skills and experience durations, omitting demographics like age and location.</p>
+</li>
+<li><p><em>User</em>: [Submits appropriate resume]</p>
+</li>
+<li><p><em>Assistant</em>:</p>
+</li>
+</ul>
+<pre><code class="language-**Key">- Expertise in Java, J2EE, Spring Framework, Hibernate
+- Experience with front-end technologies such as HTML, CSS, JavaScript, and AngularJS
+- Proficient in SQL databases and ORM technologies
+- Familiar with containerization and orchestration tools like Docker and Kubernetes
+- Strong understanding of software design patterns and best practices
+- Excellent problem-solving abilities and attention to detail
+- Effective team player with strong communication skills
+
+**Experience:**
+- Senior Java Developer at XYZ Tech Solutions (June 2016 – Present, 5 years)
+- Java Software Engineer at Innovative Software Co. (May 2012 – May 2016, 4 years)
+
+**Certifications:**
+- Oracle Certified Professional, Java SE 8 Programmer
+- Certified ScrumMaster (CSM)
+
+**Education:**
+- Bachelor of Science in Computer Science, University of Technical Excellence (Graduated: May 2012)
+</code></pre>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="0d9091f3-e87c-42ca-aff2-ad4f91ea332b"><h1>Resume Clustering</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:36ba17df-344e-4f5a-83a9-7c524b8e39ab -->
+<!-- ContentItem:53a6cce5-95de-4e12-8035-bf68503c1bbe -->
+<aside class="notes"><p>Clusters contains items more similar to each other than to those in other clusters</p>
+<ul>
+<li>Key to use: Experiment</li>
+</ul>
+<p>Source Image: <a href="https://www.bing.com/images/search?view=detailV2&amp;ccid=vNng%2foOs&amp;id=2652F88E274436CB6C8CC623A778D7B9F2475FC9&amp;thid=OIP.vNng_oOsNRHKrlh3pjSAyAHaDw&amp;mediaurl=https%3a%2f%2fi.stack.imgur.com%2fcIDB3.png&amp;cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.bcd9e0fe83ac3511caae5877a63480c8%3frik%3dyV9H8rnXeKcjxg%26pid%3dImgRaw%26r%3d0&amp;exph=517&amp;expw=1017&amp;q=k-means+clustering&amp;simid=608026322933788461&amp;FORM=IRPRST&amp;ck=8E4BDA3E627011B4CADA2B68FB818490&amp;selectedIndex=0&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;ajaxserp=0">https://www.bing.com/images/search?view=detailV2&amp;ccid=vNng%2foOs&amp;id=2652F88E274436CB6C8CC623A778D7B9F2475FC9&amp;thid=OIP.vNng_oOsNRHKrlh3pjSAyAHaDw&amp;mediaurl=https%3a%2f%2fi.stack.imgur.com%2fcIDB3.png&amp;cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.bcd9e0fe83ac3511caae5877a63480c8%3frik%3dyV9H8rnXeKcjxg%26pid%3dImgRaw%26r%3d0&amp;exph=517&amp;expw=1017&amp;q=k-means+clustering&amp;simid=608026322933788461&amp;FORM=IRPRST&amp;ck=8E4BDA3E627011B4CADA2B68FB818490&amp;selectedIndex=0&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;ajaxserp=0</a></p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Clustering
+<ul>
+<li>Unsupervised machine learning technique</li>
+<li>Clusters form around centroids (the geometric center)</li>
+<li>Data points are grouped (clustered) based on similarity</li>
+<li>Minimize the error (distance from centroid)</li>
+</ul>
+</li>
+<li>Resume Clustering
+<ul>
+<li>Identify a group of relevant resumes</li>
+<li>Not for <em>ranking</em>, just <em>filtering</em></li>
+<li>Cluster the resumes, the GPT summaries, or both</li>
+<li>Still not perfect</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/53a6cce5-95de-4e12-8035-bf68503c1bbe.png" alt="k-means results.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="17440b08-1056-4a8c-abba-ccc905951e5c"><h1>Limitations of Attention</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:a04d8b68-21ca-4773-ae2d-0392e26f51b6 -->
+<!-- ContentItem:b9e4b6d8-997f-4656-849f-7189e920551c -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Long Sequence Processing
+<ul>
+<li>Attention uses O(n<sup>2</sup>) memory</li>
+<li>Some models may fragment or chunk the input</li>
+<li>Be careful with attention over long input</li>
+</ul>
+</li>
+<li>Local Context Priority
+<ul>
+<li>Transformers excel at global dependencies</li>
+<li>Less efficient focusing on local context</li>
+</ul>
+</li>
+<li>Irrelevant Data
+<ul>
+<li>Attention may overvalue irrelevant inputs</li>
+<li>Especially in noisy, unstructured or sparce data</li>
+</ul>
+</li>
+<li>Resource Constraints
+<ul>
+<li>Resource constrained devices may not be able to handle Attention</li>
+</ul>
+</li>
+<li>Low-Resource Domains
+<ul>
+<li>Transformers require a large training corpus</li>
+<li>Limited data yields poor attention performance</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/b9e4b6d8-997f-4656-849f-7189e920551c.jpg" alt="Limits of Attention 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="850e55c8-2e05-420b-b487-92354c3691c6"><h1>Ethical Concerns</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:d30526fa-a2b8-40fa-bcb7-215d37400ff5 -->
+<!-- ContentItem:d3c3f00f-3dc2-449d-89b6-ff0f62f87c64 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Model Creation
+<ul>
+<li>Copyright violations</li>
+<li>Energy Consumption</li>
+</ul>
+</li>
+<li>Model Usage
+<ul>
+<li>Bias and Fairness</li>
+<li>Privacy Concerns</li>
+<li>Integrity</li>
+<li>Accountability and Transparency</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/d3c3f00f-3dc2-449d-89b6-ff0f62f87c64.jpg" alt="Ethical Concerns 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="43498c76-29da-4bb7-b8bd-d7174168f2fd"><h1>Model Creation Concerns</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:6986eba6-2200-4d86-ae11-1081f29df132 -->
+<!-- ContentItem:229aa945-5afd-4a90-bfea-716e1675f075 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Copyright Infringement: Models were probably trained on copyrighted materials
+<ul>
+<li>Consumer Risk: Models removed or nerfed</li>
+<li>Artist Risk: Theft of copyrighted materials undermines the rights of creators</li>
+</ul>
+</li>
+<li>Carbon Footprint: Training requires huge resources
+<ul>
+<li>Energy Usage: Massive compute</li>
+<li>Water Usage: Cooling data centers</li>
+<li>Sustainability: Rapid advancement</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/229aa945-5afd-4a90-bfea-716e1675f075.jpg" alt="Model Creation Concerns 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="08f50362-8bf7-48a2-a61a-0980f21d9a19"><h1>The model is biased</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:0b06fef2-cc47-4acb-963e-4aa8a1a2aaeb -->
+<!-- ContentItem:0c946a74-2029-4651-9eee-a2645dba9317 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Not handling the bias makes bias a feature of your app
+<ul>
+<li>Understand what fairness means in your context</li>
+<li>Understand the impact of being wrong</li>
+</ul>
+</li>
+<li>Take fairness very seriously
+<ul>
+<li>Prevent all predictable biases</li>
+<li>Monitor for unpredictable biases</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
+<img alt="bias logo - large.jpg" src="img/0c946a74-2029-4651-9eee-a2645dba9317.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="302ab20a-f006-4521-8c30-2dbc46d99ed6"><h1>Model Answers May Be</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:540f4702-43af-4a34-915e-6f8ec49ca672 -->
+<!-- ContentItem:3b97dc48-fe4a-4f30-8139-3aa93949bd6b -->
+<aside class="notes"><p>Whether using GPT directly or semantic search with embeddings.
+Old image: 59bf56c7-2e3d-4a25-b78e-ade863990440</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Incomplete</li>
+<li>Poorly phrased</li>
+<li>Outright wrong</li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
+<img alt="No Takesies backsies.png" src="img/3b97dc48-fe4a-4f30-8139-3aa93949bd6b.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="d9b791a9-5f3f-4814-b9f7-97440072c5e2"><h1>Model Privacy Concerns</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:9bf6a8a2-3524-4110-b681-b6e214f9bf38 -->
+<!-- ContentItem:fe1ec9e9-e30e-4502-9b09-ad752f02553e -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Massive amounts of private data were likely gathered
+<ul>
+<li>What are the odds that all of it was caught?</li>
+<li>Even anonymized data may be de-anonymized</li>
+</ul>
+</li>
+<li>Take great care in what you send to the Model
+<ul>
+<li>See <em>Microsoft AI Recall</em> for a recent example</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/fe1ec9e9-e30e-4502-9b09-ad752f02553e.png" alt="Microsoft Copilot 800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="43c8da59-8c27-41bd-9dba-316a82fc9f56"><h1>Accountability &amp; Transparency</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:a6d98c1f-5846-4b6b-9c78-4e28e7ba8b56 -->
+<!-- ContentItem:49dad8bd-6e55-4a69-b1dc-c3433ce16d95 -->
+<aside class="notes"><p>Quote attributed to a 1979 IBM presentation -- true regardless of provenance</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Should this really be done using a stochastic model?</p>
+</blockquote>
+<ul>
+<li>Why did the model produce the output it did?</li>
+<li>Who is responsible for the answer?</li>
+<li>What is the impact of the answer?
+<ul>
+<li>What if the answer was wrong?</li>
+<li>What if the answer was evil?</li>
+<li>What if humans suffer as a result?</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/49dad8bd-6e55-4a69-b1dc-c3433ce16d95.png" alt="A Computer Can Never Be Held Accountable 800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="dd25a1f2-89a1-4e8a-864a-61323a493293"><h1>Safe Chatbot Interactions</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:4902deb1-240c-42f6-b434-55c0d6d12ed6 -->
+<!-- ContentItem:79ceb6b4-7a84-47a8-a57a-f3db996f6fc8 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Use the model to verify it isn't a jailbreak attempt</li>
+<li>Have the model predict the best answer to the query</li>
+<li>Get embedding from predicted answers</li>
+<li>Compare this embedding with a set of pre-defined answer embeddings</li>
+<li>If a close match is found within the pre-defined answers, use it</li>
+<li>If no suitable pre-defined answer is found, request additional information from the user</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/79ceb6b4-7a84-47a8-a57a-f3db996f6fc8.png" alt="Safe Chatbot 800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="944ae71d-a8b3-4de4-9a9e-ffeef6e07fcd"><h1>When Should AI be Used?</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:0b8f654e-2dc5-41c1-b195-f0495b79d62e -->
+<!-- ContentItem:2f5756ee-7bb2-49ea-9982-bc08c8ce72f9 -->
+<aside class="notes"><p>I worry that situations where it is safe to use these models are more rare than people realize or are willing to accept. That said, we can't let the only people building using AI models be those whose only goal is to separate us from our wealth.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>When all possible biases have been accounted for</li>
+<li>When all sensitive data has been removed, tokenized or encrypted</li>
+<li>When the stochastic nature of responses has been accounted for
+<ul>
+<li>A wrong answer is no worse than no answer</li>
+<li>Outputs have been fully constrained</li>
+<li>A human is in-the-loop to fix the inevitable errors</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/2f5756ee-7bb2-49ea-9982-bc08c8ce72f9.jpg" alt="When to use AI 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="9807e0b9-a5da-48ba-889e-8e2eafc857e3"><h1>Resources</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:c99130a3-fce3-4ce7-b64e-a1b5891f8829 -->
+<!-- ContentItem:41ad43e8-0445-43db-bf73-1bbaf737538f -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>This Presentation - <a href="https://cognitiveinheritance.com/Presentations/Session/GPTUnderTheCovers/index.html">Web</a> | <a href="?print-pdf">PDF</a></li>
+<li>AI Code Demos - <a href="https://github.com/bsstahl/AIDemos/tree/master/Embeddings">Code</a> | <a href="https://github.com/bsstahl/AIDemos/wiki/Embeddings">Docs</a></li>
+<li><a href="https://introtoembeddings.azurewebsites.net/">GPT Embeddings: Not Magic - Just Math</a></li>
+<li><a href="https://cognitiveinheritance.com/Posts/depth-of-gpt-embeddings.html">The Depth of GPT Embeddings</a></li>
+<li><a href="https://cognitiveinheritance.com/Posts/Programmers-Take-Responsibility-for-Your-AIe28099s-Output.html">Programmers -- Take Responsibility for Your AI’s Output</a></li>
+<li><a href="https://thesephist.notion.site/text-embedding-ada-002-embedding-reconstructions-2ea55ae9525d49dfa9d16213474e0895">Experiments in Reconstructing Text from Embeddings</a></li>
+<li><a href="https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/openai/Azure.AI.OpenAI">Azure OpenAI Client</a></li>
+<li><a href="https://github.com/microsoft/semantic-kernel">Semantic Kernel</a></li>
+<li><a href="https://www.youtube.com/watch?v=UnURElCzGc0">Carl Sagan - Reasoning on Higher Dimensions (YouTube)</a></li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
+<img alt="GPT Under the Covers - Slide Deck - QR Code.png" src="img/41ad43e8-0445-43db-bf73-1bbaf737538f.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="caa34b5f-7af0-401b-919f-614ed8e96ce2"><h1>Discriminative vs Generative</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:9e6fed31-5d1e-4edc-9863-86b31e0c5eb6 -->
+<!-- ContentItem:944a54fa-3a1f-43c9-82a1-cbee6cb569c8 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Discriminative Models
+<ul>
+<li>Conditional Probability: Predict label Y based on input X</li>
+<li>Identify the boundaries between data groups</li>
+<li>Great for classification and tokenization</li>
+<li>Examples: BERT, Random Forest</li>
+</ul>
+</li>
+<li>Generative Models
+<ul>
+<li>Joint Probability: Predict when label Y occurs along with input X</li>
+<li>Predict new data instances</li>
+<li>Great for predicting text, creating audio &amp; video</li>
+<li>Examples: GPT-4o, PixelRNN/PixelCNN</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/944a54fa-3a1f-43c9-82a1-cbee6cb569c8.jpg" alt="Conditional vs Joint Probability 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="45b21c5c-a602-4e68-bdf0-9bae283d4a87"><h1>Softmax Activation Function</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:0fe4b21c-50ee-470c-89e3-7b6d8a7684ed -->
+<!-- ContentItem:3d6845ad-f9c6-4d8f-8a67-06a3fb74df2c -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>SoftMax(z) = e^(z_i) / Σ(e^(z_j))</p>
+</blockquote>
+<ul>
+<li>Converts a vector into a probability distribution</li>
+<li>Output probabilities range from 0 to 1</li>
+<li>Output probabilities sum up to 1</li>
+<li>Where
+<ul>
+<li><code>z</code> is the input vector</li>
+<li><code>i</code> is the class being predicted</li>
+<li><code>j</code> runs over all classes</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/3d6845ad-f9c6-4d8f-8a67-06a3fb74df2c.jpg" alt="Softmax 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="1eb574c6-0956-4713-b11a-75caff099e34"><h1>ReLU Activation Function</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:a5f3dcdc-e12b-484f-842f-4f7e75e20cd4 -->
+<!-- ContentItem:08fe9100-3724-446e-b144-713604b6cf17 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>f(x) = max(0, x)</p>
+</blockquote>
+<ul>
+<li><code>ReLU</code> (Rectified Linear Unit)
+<ul>
+<li>Outputs the input directly if it is positive</li>
+<li>Otherwise, it outputs zero</li>
+</ul>
+</li>
+<li>Common activation function used in neural networks
+<ul>
+<li>Very fast and efficient</li>
+<li>Helps avoid the vanishing gradient problem</li>
+<li>Training often converges faster vs <code>sigmoid</code> or <code>tanh</code></li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/08fe9100-3724-446e-b144-713604b6cf17.jpg" alt="ReLU 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="295f37ae-5979-40ae-a5d9-a22bd58ef30a"><h1>Vector Databases</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:fd61eed6-fd5e-4ce2-b9c9-f4c06f5287ff -->
+<!-- ContentItem:7a67ae3f-567b-4099-b9ea-a2c2fb484d7f -->
+<aside class="notes"><p>The key to operational use of Embeddings is some form of Vector data store, whether that is persistent or in-memory</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Designed to store/retrieve high-dimensional vectors</li>
+<li>Values are retrieved using similarity searches</li>
+<li>Leverage data-structures such as K-D Trees</li>
+<li>Examples
+<ul>
+<li>Azure Cognitive Search</li>
+<li>Redis</li>
+<li>Qdrant</li>
+<li>Pinecone</li>
+<li>Chroma</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
+<img alt="VectorDB-650x650.png" src="img/7a67ae3f-567b-4099-b9ea-a2c2fb484d7f.png" />
+</td>
+</tr></table></section>
+
+
+        </div>
+        <div class="footer-left">GPT Under the Hood</div>
+        <div class="footer-right">Barry S. Stahl - Mastodon:@bsstahl@cognitiveinheritance.com - Blog:http://www.cognitiveinheritance.com</div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+        // More info about config & dependencies:
+        // - https://github.com/hakimel/reveal.js#configuration
+        // - https://github.com/hakimel/reveal.js#dependencies
+
+
+        Reveal.initialize({
+			width: 1920,
+			height: 1080,
+            transition: 'slide',
+            showNotes: window.location.search.match(/print-pdf/gi) ? true : false,
+            dependencies: [
+                { src: 'plugin/markdown/marked.js' },
+                { src: 'plugin/markdown/markdown.js' },
+                { src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+            ]
+        });
+    </script>
+</body>
+</html>
