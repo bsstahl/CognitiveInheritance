@@ -41,6 +41,7 @@ categories: []
 * [Debbie Harry - Rock & Rule Soundtrack - Send Love Through](https://genius.com/Debbie-harry-send-love-through-lyrics)
 * [LibreVox - Free Public Domain Audiobooks](https://librivox.org/)
 * [The Lever - Free eBooks from Investigative Reporters](https://www.levernews.com/lever-readers/)
+* [Full Text Search - Brooklyn (from !!Con 2024)](https://alltexts.nyc)
 
 ## Fantasy Sports
 
