@@ -126,7 +126,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ***
 
-* **Crafting AI: A Developer's Guid to Machine Learning** - With Machine Learning (ML) making huge impacts across the software industry, it has become almost imperative for developers to understand its principles and applications. Unfortunately, the complexity of some ML models and the mathematical rigor of its algorithms can be intimidating. This talk aims to bridge this gap, making ML understandable and engaging for developers eager to learn this technology from the ground up.
+* **Crafting AI: A Developer's Guide to Machine Learning** - With Machine Learning (ML) making huge impacts across the software industry, it has become almost imperative for developers to understand its principles and applications. Unfortunately, the complexity of some ML models and the mathematical rigor of its algorithms can be intimidating. This talk aims to bridge this gap, making ML understandable and engaging for developers eager to learn this technology from the ground up.
 
   In this session, attendees will learn the foundational concepts of ML by coding their own models from scratch, without relying on pre-trained models like GPT. We'll start with a simple linear regression, a foundational tool to gain understanding of ML's error minimization and training processes. We'll then explain neural networks with a binary classification example. By the end, participants will not only grasp fundamental ML concepts but will also walk away with their own code implementing one of these models. This talk is designed to equip developers with the knowledge and confidence to use Machine Learning in their projects.
 
