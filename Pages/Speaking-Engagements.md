@@ -126,6 +126,12 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ***
 
+* **Crafting AI: A Developer's Guid to Machine Learning** - With Machine Learning (ML) making huge impacts across the software industry, it has become almost imperative for developers to understand its principles and applications. Unfortunately, the complexity of some ML models and the mathematical rigor of its algorithms can be intimidating. This talk aims to bridge this gap, making ML understandable and engaging for developers eager to learn this technology from the ground up.
+
+  In this session, attendees will learn the foundational concepts of ML by coding their own models from scratch, without relying on pre-trained models like GPT. We'll start with a simple linear regression, a foundational tool to gain understanding of ML's error minimization and training processes. We'll then explain neural networks with a binary classification example. By the end, participants will not only grasp fundamental ML concepts but will also walk away with their own code implementing one of these models. This talk is designed to equip developers with the knowledge and confidence to use Machine Learning in their projects.
+
+***
+
 * **Pushing AI to the Client with WebAssembly and Blazor** (also available as a half-day workshop) - Want to run your .NET Standard code directly in the browser on the client-side without the need for transpilers or browser plug-ins? Well, now you can with WebAssembly and Blazor. WebAssembly (WASM) is the W3C specification that will be used to provide the next generation of development tools for the web and beyond. Blazor is Microsoft's experiment that allows ASP.Net developers to create web pages that do much of the scripting work in C# using WASM. Come join us as we explore the basics of WebAssembly and how WASM can be used to run existing C# code client side in the browser. You will walk away with an understanding of what WebAssembly and Blazor can do for you and how to immediately get started running your own .NET code in the browser.
 
   [Video: J on the Beach - Marbella Spain - May 2019](https://www.youtube.com/watch?v=JtqOSfmw1CY&list=FLq-iLd7rfmqSIFiujBGIRSw&index=3)

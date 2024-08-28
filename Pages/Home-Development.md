@@ -26,6 +26,7 @@ categories: []
 
 * [Murf - AI Text to Speech](https://murf.ai/studio/project/2/P016846823999002PM)
 * [Gamma](https://gamma.app/tour)
+* [Udio (music)](https://www.udio.com/)
 
 ## Fediverse
 
