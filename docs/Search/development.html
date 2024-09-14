@@ -3150,43 +3150,59 @@ objProperties.Add(objPropertyValue)</p>
         default_url="https://fosstodon.org">
     </share-on-mastodon>
     <br/><br/>
-    <p>DECLARE @sxml varchar(8000)<br />
-SET @sxml = '&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br />
-&lt;Change xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; Version=&quot;1.0&quot;&gt;<br />
-&lt;SourceApplication&gt;&lt;Name&gt;Intranet&lt;/Name&gt;&lt;/SourceApplication&gt;<br />
-&lt;DestinationApplication&gt;&lt;Name&gt;FundsDB&lt;/Name&gt;&lt;/DestinationApplication&gt;<br />
-&lt;UserName&gt;JDoe&lt;/UserName&gt;&lt;IPAddress&gt;192.168.101.2&lt;/IPAddress&gt;<br />
-&lt;BusinessEntity&gt;&lt;Name&gt;Fund&lt;/Name&gt;&lt;/BusinessEntity&gt;&lt;ChangeItems&gt;<br />
-&lt;ChangeItem&gt;&lt;OriginalData&gt;ABC Fund&lt;/OriginalData&gt;&lt;NewData&gt;123 Fund&lt;/NewData&gt;<br />
-&lt;DataID&gt;5&lt;/DataID&gt;&lt;Field&gt;&lt;Name&gt;Name&lt;/Name&gt;&lt;/Field&gt;&lt;/ChangeItem&gt;<br />
-&lt;ChangeItem&gt;&lt;OriginalData&gt;Type A&lt;/OriginalData&gt;&lt;NewData&gt;Type B&lt;/NewData&gt;<br />
-&lt;DataID&gt;5&lt;/DataID&gt;&lt;Field&gt;&lt;Name&gt;Type&lt;/Name&gt;&lt;/Field&gt;&lt;/ChangeItem&gt;<br />
-&lt;/ChangeItems&gt;&lt;ChangeDate&gt;2004-10-12T12:57:00-07:00&lt;/ChangeDate&gt;<br />
-&lt;CommandText&gt;s_SaveFund&lt;/CommandText&gt;&lt;/Change&gt;'</p>
-<hr />
-<p>DECLARE @ixml int</p>
-<hr />
-<p>EXEC dbo.sp_xml_preparedocument @ixml OUTPUT, @sxml</p>
-<hr />
-<p>SELECT x.*<br />
-FROM OPENXML( @ixml, '/Change', 1)<br />
-WITH ( SourceApplication varchar(64) 'SourceApplication/Name',<br />
-DestinationApplication varchar(64) 'DestinationApplication/Name',<br />
-UserName varchar(64) 'UserName',<br />
-IPAddress varchar(23) 'IPAddress',<br />
-BusinessEntity varchar(64) 'BusinessEntity/Name',<br />
-ChangeDate varchar(16) 'ChangeDate',<br />
-CommandText varchar(128) 'CommandText' ) x</p>
-<hr />
-<p>SELECT x.*<br />
-FROM OPENXML( @ixml, '/Change/ChangeItems/ChangeItem', 1)<br />
-WITH ( OriginalData varchar(2000) 'OriginalData',<br />
-NewData varchar(2000) 'NewData',<br />
-DataID varchar(32) 'DataID',<br />
-Field sysname 'Field/Name' ) x</p>
-<hr />
-<p>EXEC dbo.sp_xml_removedocument @ixml</p>
-<hr />
+    <p>Here are some Sample SQL 2000 XML Queries.</p>
+<div class="lang-sql editor-colors"><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">DECLARE</span> @sxml <span style="color:Blue;">varchar</span>(8000)  
+ <span style="color:Blue;">SET</span> @sxml = <span style="color:#A31515;">&#39;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;  
+ &amp;lt;Change xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; Version=&quot;1.0&quot;&amp;gt;  
+ &amp;lt;SourceApplication&amp;gt;&amp;lt;Name&amp;gt;Intranet&amp;lt;/Name&amp;gt;&amp;lt;/SourceApplication&amp;gt;  
+ &amp;lt;DestinationApplication&amp;gt;&amp;lt;Name&amp;gt;FundsDB&amp;lt;/Name&amp;gt;&amp;lt;/DestinationApplication&amp;gt;  
+ &amp;lt;UserName&amp;gt;JDoe&amp;lt;/UserName&amp;gt;&amp;lt;IPAddress&amp;gt;192.168.101.2&amp;lt;/IPAddress&amp;gt;  
+ &amp;lt;BusinessEntity&amp;gt;&amp;lt;Name&amp;gt;Fund&amp;lt;/Name&amp;gt;&amp;lt;/BusinessEntity&amp;gt;&amp;lt;ChangeItems&amp;gt;  
+ &amp;lt;ChangeItem&amp;gt;&amp;lt;OriginalData&amp;gt;ABC Fund&amp;lt;/OriginalData&amp;gt;&amp;lt;NewData&amp;gt;123 Fund&amp;lt;/NewData&amp;gt;  
+ &amp;lt;DataID&amp;gt;5&amp;lt;/DataID&amp;gt;&amp;lt;Field&amp;gt;&amp;lt;Name&amp;gt;Name&amp;lt;/Name&amp;gt;&amp;lt;/Field&amp;gt;&amp;lt;/ChangeItem&amp;gt;  
+ &amp;lt;ChangeItem&amp;gt;&amp;lt;OriginalData&amp;gt;Type A&amp;lt;/OriginalData&amp;gt;&amp;lt;NewData&amp;gt;Type B&amp;lt;/NewData&amp;gt;  
+ &amp;lt;DataID&amp;gt;5&amp;lt;/DataID&amp;gt;&amp;lt;Field&amp;gt;&amp;lt;Name&amp;gt;Type&amp;lt;/Name&amp;gt;&amp;lt;/Field&amp;gt;&amp;lt;/ChangeItem&amp;gt;  
+ &amp;lt;/ChangeItems&amp;gt;&amp;lt;ChangeDate&amp;gt;2004-10-12T12:57:00-07:00&amp;lt;/ChangeDate&amp;gt;  
+ &amp;lt;CommandText&amp;gt;s\_SaveFund&amp;lt;/CommandText&amp;gt;&amp;lt;/Change&amp;gt;&#39;</span>  
+  
+ <span style="color:Green;">--- ----- -----   </span>
+  
+ <span style="color:Blue;">DECLARE</span> @ixml <span style="color:Blue;">int</span>  
+  
+ <span style="color:Green;">--- ----- -----   </span>
+  
+ <span style="color:Blue;">EXEC</span> dbo.sp\_xml\_preparedocument @ixml <span style="color:Blue;">OUTPUT</span>, @sxml  
+  
+ <span style="color:Green;">--- ----- -----   </span>
+  
+ <span style="color:Blue;">SELECT</span> x.\*  
+ <span style="color:Blue;">FROM</span> <span style="color:Blue;">OPENXML</span>( @ixml, <span style="color:#A31515;">&#39;/Change&#39;</span>, 1)  
+ <span style="color:Blue;">WITH</span> ( SourceApplication <span style="color:Blue;">varchar</span>(64) <span style="color:#A31515;">&#39;SourceApplication/Name&#39;</span>,  
+ DestinationApplication <span style="color:Blue;">varchar</span>(64) <span style="color:#A31515;">&#39;DestinationApplication/Name&#39;</span>,  
+ UserName <span style="color:Blue;">varchar</span>(64) <span style="color:#A31515;">&#39;UserName&#39;</span>,  
+ IPAddress <span style="color:Blue;">varchar</span>(23) <span style="color:#A31515;">&#39;IPAddress&#39;</span>,   
+ BusinessEntity <span style="color:Blue;">varchar</span>(64) <span style="color:#A31515;">&#39;BusinessEntity/Name&#39;</span>,  
+ ChangeDate <span style="color:Blue;">varchar</span>(16) <span style="color:#A31515;">&#39;ChangeDate&#39;</span>,  
+ CommandText <span style="color:Blue;">varchar</span>(128) <span style="color:#A31515;">&#39;CommandText&#39;</span> ) x  
+  
+ <span style="color:Green;">--- ----- -----   </span>
+  
+ <span style="color:Blue;">SELECT</span> x.\*  
+ <span style="color:Blue;">FROM</span> <span style="color:Blue;">OPENXML</span>( @ixml, <span style="color:#A31515;">&#39;/Change/ChangeItems/ChangeItem&#39;</span>, 1)  
+ <span style="color:Blue;">WITH</span> ( OriginalData <span style="color:Blue;">varchar</span>(2000) <span style="color:#A31515;">&#39;OriginalData&#39;</span>,  
+ NewData <span style="color:Blue;">varchar</span>(2000) <span style="color:#A31515;">&#39;NewData&#39;</span>,  
+ DataID <span style="color:Blue;">varchar</span>(32) <span style="color:#A31515;">&#39;DataID&#39;</span>,  
+ Field <span style="color:Blue;">sysname</span> <span style="color:#A31515;">&#39;Field/Name&#39;</span> ) x  
+  
+ <span style="color:Green;">--- ----- -----   </span>
+  
+ <span style="color:Blue;">EXEC</span> dbo.sp\_xml\_removedocument @ixml  
+  
+ <span style="color:Green;">--- ----- -----</span>
+
+</pre></div>
+</div>
 
     <h5>Tags: <a title="Tag: xml" class="small" href="../Search/xml.html">xml</a>&nbsp;<a title="Tag: sql" class="small" href="../Search/sql.html">sql</a>&nbsp;<a title="Tag: code sample" class="small" href="../Search/code-sample.html">code sample</a>&nbsp;</h5>
     <div class="share"><a href="../Permalinks/ebfc5816-e855-47dd-898b-8163932d85ef.html" rel="bookmark">Permalink</a></div>
@@ -3404,7 +3420,8 @@ when an appropriate exception doesn't already exist To add discreet handling To 
         default_url="https://fosstodon.org">
     </share-on-mastodon>
     <br/><br/>
-    <div class="lang-vb editor-colors"><div style="color:Black;background-color:White;"><pre>
+    <p>For future reference, here is a sample using statement in VB.NET 2005.</p>
+<div class="lang-vb editor-colors"><div style="color:Black;background-color:White;"><pre>
 <span style="color:Blue;">Using</span> wsBlogService <span style="color:Blue;">As</span> <span style="color:Blue;">New</span> BlogService.Blog  
  &#160;&#160;&#160;&#160;&#160;<span style="color:Blue;">Try</span>  
  &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="color:Blue;">Me</span>.Text = wsBlogService.DisplayBlog(<span style="color:#A31515;">&quot;BlogName&quot;</span>, 0)  
