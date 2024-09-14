@@ -66,25 +66,9 @@ The best tools we have today to measure use-case coverage are Behavior Driven De
 
 The language used to describe these use-cases is called **Gherkin**, and uses a *Given-When-Then* construction. An example of one such use-case test for a simple car search scenario might look like this:
 
-```gherkin
-Feature: Car Search
+{ImageLink:Gherkin-CarSearch.png|Car Search Use-Case in Gherkin}
 
-  As a user
-  I want to search for cars with specific characteristics
-  So that I can view and select a car to purchase
-
-  Scenario: View available cars with specific characteristics
-    Given I am on the car search page
-    When I enter "4-door sedan" as the style
-    And I set the price range between $10,000 and $20,000
-    And I click the search button
-    Then I should see a list of available cars
-    And each car should be a "4-door sedan"
-    And each car's price should be between $10,000 and $20,000
-    And all cars should be marked as available for purchase
-```
-
-These Gherkin scenarios, often created by analysts, are translated into executable tests using step definitions. Each Gherkin step (Given, When, Then) corresponds to a method in a step definition file created by a developer, where annotations or attributes bind these steps to the code that performs the actions or checks described. This setup allows the BDD tool to execute the methods during test runs, directly interacting with the application and ensuring that its behavior aligns with defined requirements.
+These Gherkin scenarios, often created by analysts, are translated into executable tests using step definitions. Each Gherkin step (*Given*, *When*, *Then*) corresponds to a method in a step definition file created by a developer, where annotations or attributes bind these steps to the code that performs the actions or checks described. This setup allows the BDD tool to execute the methods during test runs, directly interacting with the application and ensuring that its behavior aligns with defined requirements.
 
 Since these tests exercise the areas of the code that are important to the users, coverage metrics here are a much better proxy for the real goal of testing, because they are testing the use-cases that are important to the users. If an area of code is untested by BDD style tests, that code is either unnecessary or we are missing use-cases in our tests.
 
