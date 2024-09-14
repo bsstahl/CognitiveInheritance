@@ -104,23 +104,8 @@
 <p>If we want to determine the quality of our tests, we need to measure the coverage of our use-cases, not our code. This is a more difficult metric to measure, but it is a much better proxy for the real goal of testing. If we can measure how well our code satisfies the needs of the users, we can be much more confident that our tests are doing what they are supposed to do -- ensuring that the software behaves as expected in all cases.</p>
 <p>The best tools we have today to measure use-case coverage are Behavior Driven Development tools like Cucumber, for which the .NET implementation is called SpecFlow. These tools test how well our software meets the user's needs by creating tests around how the users will utilize our software. This is a much better proxy for the real goal of testing, and is much more likely to help us achieve our quality goals.</p>
 <p>The language used to describe these use-cases is called <strong>Gherkin</strong>, and uses a <em>Given-When-Then</em> construction. An example of one such use-case test for a simple car search scenario might look like this:</p>
-<div class="lang-gherkin editor-colors">Feature: Car Search
-
-  As a user
-  I want to search for cars with specific characteristics
-  So that I can view and select a car to purchase
-
-  Scenario: View available cars with specific characteristics
-    Given I am on the car search page
-    When I enter "4-door sedan" as the style
-    And I set the price range between $10,000 and $20,000
-    And I click the search button
-    Then I should see a list of available cars
-    And each car should be a "4-door sedan"
-    And each car's price should be between $10,000 and $20,000
-    And all cars should be marked as available for purchase
-</div>
-<p>These Gherkin scenarios, often created by analysts, are translated into executable tests using step definitions. Each Gherkin step (Given, When, Then) corresponds to a method in a step definition file created by a developer, where annotations or attributes bind these steps to the code that performs the actions or checks described. This setup allows the BDD tool to execute the methods during test runs, directly interacting with the application and ensuring that its behavior aligns with defined requirements.</p>
+<p><img src="../Images/Gherkin-CarSearch.png" alt="Car Search Use-Case in Gherkin" /></p>
+<p>These Gherkin scenarios, often created by analysts, are translated into executable tests using step definitions. Each Gherkin step (<em>Given</em>, <em>When</em>, <em>Then</em>) corresponds to a method in a step definition file created by a developer, where annotations or attributes bind these steps to the code that performs the actions or checks described. This setup allows the BDD tool to execute the methods during test runs, directly interacting with the application and ensuring that its behavior aligns with defined requirements.</p>
 <p>Since these tests exercise the areas of the code that are important to the users, coverage metrics here are a much better proxy for the real goal of testing, because they are testing the use-cases that are important to the users. If an area of code is untested by BDD style tests, that code is either unnecessary or we are missing use-cases in our tests.</p>
 <h2>Empowering Developers: Code Coverage Tools, Visualization, and Use Case Coverage</h2>
 <p>One of the most powerful aspects of code coverage tools are their data visualizations, allowing developers to assess which lines of code have been tested and which have not, right inside the code. This visualization transcends the mere percentage or number of lines covered, adding significant value to the development process and enabling developers to make informed decisions about where to focus their testing efforts.</p>
