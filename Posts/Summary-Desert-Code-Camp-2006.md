@@ -15,4 +15,4 @@ categories:
 - Event
 
 ---
-	Overall, I (fully) attended 7 sessions and garnered quite a bit of useful information (especially what should be on my reading material list). I consider the Desert Code Camp a tremendous success and look forward to the next one. A big thank-you to the organizers and presenters.
+Overall, I (fully) attended 7 sessions and garnered quite a bit of useful information (especially what should be on my reading material list). I consider the Desert Code Camp a tremendous success and look forward to the next one. A big thank-you to the organizers and presenters.

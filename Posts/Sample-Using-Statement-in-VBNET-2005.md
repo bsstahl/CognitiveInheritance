@@ -16,6 +16,8 @@ categories:
 - Development
 
 ---
+For future reference, here is a sample using statement in VB.NET 2005.
+
 ```vb
 Using wsBlogService As New BlogService.Blog  
       Try  

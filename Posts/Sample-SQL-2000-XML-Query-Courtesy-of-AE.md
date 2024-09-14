@@ -17,7 +17,9 @@ categories:
 - Development
 
 ---
+Here are some Sample SQL 2000 XML Queries.
 
+```sql
 DECLARE @sxml varchar(8000)  
  SET @sxml = '&lt;?xml version="1.0" encoding="UTF-8"?&gt;  
  &lt;Change xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0"&gt;  
@@ -67,3 +69,4 @@ DECLARE @sxml varchar(8000)
   
  --------------- ----------------------- -----------------------
 
+```
