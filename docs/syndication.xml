@@ -9,63 +9,6 @@
     <language>en-US</language>
     <atom:link href="https://cognitiveinheritance.com/syndication.xml" rel="self" type="application/rss+xml" />	
     <item>
-  <title>Objects with the Same Name in Different Bounded Contexts</title>
-  <description>&lt;p&gt;Imagine you&apos;re working with a &lt;em&gt;Flight&lt;/em&gt; entity within an airline management system. This object exists in at least two (probably more) distinct execution spaces or &apos;bounded contexts&apos;: the &apos;passenger pre-purchase&apos; context, handled by the sales service, and the &apos;gate agent&apos; context, managed by the Gate service.&lt;/p&gt;
-&lt;p&gt;In the &apos;passenger pre-purchase&apos; context, the &apos;Flight&apos; object might encapsulate attributes like ticket price and seat availability and have behaviors such as &apos;purchase&apos;. In contrast, the &apos;gate agent&apos; context might focus on details like gate number and boarding status, and have behaviors like &apos;check-in crew member&apos; and &apos;check-in passenger&apos;.&lt;/p&gt;
-&lt;p&gt;Some questions often arise in this situation: Should we create a special translation between the flight entities in these two contexts? Should we include the &apos;Flight&apos; object in a Shared Kernel to avoid duplication, adhering to the DRY (Don&apos;t Repeat Yourself) principle?&lt;/p&gt;
-&lt;p&gt;My default stance is to treat objects with the same name in different bounded contexts as distinct entities. I advocate for each context to have the autonomy to define and operate on its own objects, without the need for translation or linking. This approach aligns with the principle of low coupling, which suggests that components should be as independent as possible.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.cognitiveinheritance.com/Images/Airline%20Subsystems.png&quot; alt=&quot;Airline Subsystems&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;In the simplified example shown in the graphic, both the Sales and Gate services need to know when a new flight is created so they can start capturing relevant information about that flight. There is nothing special about the relationship however. The fact that the object has the same name, and in some ways represents an equivalent concept, is immaterial to those subsystems. The domain events are captured and acted on in the same way as they would be if the object did not have the same name.&lt;/p&gt;
-&lt;p&gt;You can think about it as analogous to a relational database where there are two tables that have columns with the same names. The two columns may represent the same or similar concepts, but unless there are referential integrity rules in place to force them to be the same value, they are actually distinct and should be treated as such.&lt;/p&gt;
-&lt;p&gt;I do recognize that there are likely to be situations where a Shared Kernel can be beneficial. If the &apos;Flight&apos; object has common attributes and behaviors that are stable and unlikely to change, including it in the Shared Kernel could reduce duplication without increasing coupling to an unnaceptable degree, especially if there is only a single team developing and maintaining both contexts. I have found however, that this is rarely the case, especially since, in many large and/or growing organizations, team construction and application ownership can easily change. Managing shared entities across multiple teams usually ends up with one of the teams having to wait for the other, hurting agility. I have found it very rare in my experience that the added complexity of an object in the Shared Kernel is worth the little bit of duplicated code that is removed, when that object is not viewed identically across the entire domain.&lt;/p&gt;
-&lt;p&gt;Ultimately, the decision to link objects across bounded contexts or include them in a Shared Kernel should be based on a deep understanding of the domain and the specific requirements and constraints of the project. If it isn&apos;t clear that an entity is seen identically across the entirety of a domain, distinct views of that object should be represented separately inside their appropriate bounded contexts. If you are struggling with this type of question, I reccommend &lt;a href=&quot;https://youtu.be/6DgGhQQbfDE&quot;&gt;Event Storming&lt;/a&gt; to help gain the needed understanding of the domain.&lt;/p&gt;
-</description>
-  <link>https://www.cognitiveinheritance.com/Posts/objects-with-the-same-name-in-different-bounded-contexts.html</link>
-  <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
-  <guid>https://www.cognitiveinheritance.com/Permalinks/8a1260ce-2b01-401c-96e2-8954e8091f86.html</guid>
-  <pubDate>Sun, 29 Oct 2023 07:00:00 GMT</pubDate>
-</item><item>
-  <title>The Depth of GPT Embeddings</title>
-  <description>&lt;p&gt;I&apos;ve been trying to get a handle on the number of representations possible in a GPT vector and thought others might find this interesting as well. For the purposes of this discussion, a GPT vector is a 1536 dimensional structure that is unit-length, encoded using the &lt;strong&gt;text-embedding-ada-002&lt;/strong&gt; embedding model.&lt;/p&gt;
-&lt;p&gt;We know that the number of theoretical representations is infinite, being that there are an infinite number of possible values between 0 and 1, and thus an infinite number of values between -1 and +1. However, we are not working with truly infinite values since we need to be able to represent them in a computer. This means that we are limited to a finite number of decimal places. Thus, we may be able to get an approximation for the number of possible values by looking at the number of decimal places we can represent.&lt;/p&gt;
-&lt;h3&gt;Calculating the number of possible states&lt;/h3&gt;
-&lt;p&gt;I started by looking for a lower-bound for the value, and incresing fidelity from there. We know that these embeddings, because they are unit-length, can take values from -1 to +1 in each dimension. If we assume temporarily that only integer values are used, we can say there are only 3 possible states for each of the 1536 dimensions of the vector (-1, 0 +1). A base (B) of 3, with a digit count (D) of 1536, which can by supplied to the general equation for the number of possible values that can be represented:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;V = B&lt;sup&gt;D&lt;/sup&gt;&lt;/strong&gt; or &lt;strong&gt;V = 3&lt;sup&gt;1536&lt;/sup&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;The result of this calculation is equivalent to 2&lt;sup&gt;2435&lt;/sup&gt; or 10&lt;sup&gt;733&lt;/sup&gt; or, if you prefer, a number of this form:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Already an insanely large number. For comparison, the number of atoms in the universe is roughly 10&lt;sup&gt;80&lt;/sup&gt;.&lt;/p&gt;
-&lt;p&gt;We now know that we have at least 10&lt;sup&gt;733&lt;/sup&gt; possible states for each vector. But that is just using integer values. What happens if we start increasing the fidelity of our value. The next step is to assume that we can use values with a single decimal place. That is, the numbers in each dimension can take values such as &lt;strong&gt;0.1&lt;/strong&gt; and &lt;strong&gt;-0.5&lt;/strong&gt;. This increases the base in the above equation by a factor of 10, from 3 to 30. Our new values to plug in to the equation are:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;V = 30&lt;sup&gt;1536&lt;/sup&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Which is equivalent to &lt;strong&gt;2&lt;sup&gt;7537&lt;/sup&gt;&lt;/strong&gt; or &lt;strong&gt;10&lt;sup&gt;2269&lt;/sup&gt;&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Another way of thinking about these values is that they require a data structure not of 32 or 64 bits to represent, but of 7537 bits. That is, we would need a data structure that is 7537 bits long to represent all of the possible values of a vector that uses just one decimal place.&lt;/p&gt;
-&lt;p&gt;We can continue this process for a few more decimal places, each time increasing the base by a factor of 10. The results can be found in the table below.&lt;/p&gt;
-&lt;table border=1&gt;
-&lt;tr&gt;&lt;th&gt;B&lt;/th&gt;&lt;th&gt;Example&lt;/th&gt;&lt;th&gt;Base-2&lt;/th&gt;&lt;th&gt;Base-10&lt;/th&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;2435&lt;/td&gt;&lt;td&gt;733&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;30&lt;/td&gt;&lt;td&gt;0.1&lt;/td&gt;&lt;td&gt;7537&lt;/td&gt;&lt;td&gt;2269&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;300&lt;/td&gt;&lt;td&gt;0.01&lt;/td&gt;&lt;td&gt;12639&lt;/td&gt;&lt;td&gt;3805&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3000&lt;/td&gt;&lt;td&gt;0.001&lt;/td&gt;&lt;td&gt;17742&lt;/td&gt;&lt;td&gt;5341&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;30000&lt;/td&gt;&lt;td&gt;0.0001&lt;/td&gt;&lt;td&gt;22844&lt;/td&gt;&lt;td&gt;6877&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;300000&lt;/td&gt;&lt;td&gt;0.00001&lt;/td&gt;&lt;td&gt;27947&lt;/td&gt;&lt;td&gt;8413&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3000000&lt;/td&gt;&lt;td&gt;0.000001&lt;/td&gt;&lt;td&gt;33049&lt;/td&gt;&lt;td&gt;9949&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;30000000&lt;/td&gt;&lt;td&gt;0.0000001&lt;/td&gt;&lt;td&gt;38152&lt;/td&gt;&lt;td&gt;11485&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;300000000&lt;/td&gt;&lt;td&gt;0.00000001&lt;/td&gt;&lt;td&gt;43254&lt;/td&gt;&lt;td&gt;13021&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3000000000&lt;/td&gt;&lt;td&gt;0.000000001&lt;/td&gt;&lt;td&gt;48357&lt;/td&gt;&lt;td&gt;14557&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;30000000000&lt;/td&gt;&lt;td&gt;1E-10&lt;/td&gt;&lt;td&gt;53459&lt;/td&gt;&lt;td&gt;16093&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3E+11&lt;/td&gt;&lt;td&gt;1E-11&lt;/td&gt;&lt;td&gt;58562&lt;/td&gt;&lt;td&gt;17629&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&lt;p&gt;This means that if we assume 7 decimal digits of precision in our data structures, we can represent &lt;strong&gt;10&lt;sup&gt;11485&lt;/sup&gt;&lt;/strong&gt; distinct values in our vector.&lt;/p&gt;
-&lt;p&gt;This number is so large that all the computers in the world, churning out millions of values per second for the entire history (start to finish) of the universe, would not even come close to being able to generate all of the possible values of a single vector.&lt;/p&gt;
-&lt;h3&gt;What does all this mean?&lt;/h3&gt;
-&lt;p&gt;Since we currently have no way of knowing how dense the representation of data inside the GPT models is, we can only guess at how many of these possible values actually represent ideas. However, this analysis gives us a reasonable proxy for how many the model can hold. If there is even a small fraction of this information encoded in these models, then it is nearly guaranteed that these models hold in them insights that have never before been identified by humans. We just need to figure out how to access these revelations.&lt;/p&gt;
-&lt;p&gt;That is a discussion for another day.&lt;/p&gt;
-</description>
-  <link>https://www.cognitiveinheritance.com/Posts/depth-of-gpt-embeddings.html</link>
-  <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
-  <guid>https://www.cognitiveinheritance.com/Permalinks/e47eddf9-fcda-4382-a7c8-e498026fbfee.html</guid>
-  <pubDate>Tue, 03 Oct 2023 07:00:00 GMT</pubDate>
-</item><item>
   <title>Code Coverage&colon; The Essential Tool That Must Never Be Measured</title>
   <description>&lt;h2&gt;TLDR: Code Coverage is the Wrong Target&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Code coverage metrics HURT code quality&lt;/strong&gt;, especially when gating deployments, because they are a misleading target, prioritizing superficial benchmarks over meaningful use-case validation. A focus on achieving coverage percentages detracts from real quality assurance, as developers write tests that do what the targets insist that they do, satisfy coverage metrics rather than ensuring comprehensive use-case functionality.&lt;/p&gt;
@@ -128,7 +71,64 @@
   <link>https://www.cognitiveinheritance.com/Posts/code-coverage-must-never-be-used-as-a-metric.html</link>
   <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/052711e4-2d3c-48cf-8959-8d964b1c05ab.html</guid>
-  <pubDate>Thu, 14 Sep 2023 07:00:00 GMT</pubDate>
+  <pubDate>Sat, 14 Sep 2024 07:00:00 GMT</pubDate>
+</item><item>
+  <title>Objects with the Same Name in Different Bounded Contexts</title>
+  <description>&lt;p&gt;Imagine you&apos;re working with a &lt;em&gt;Flight&lt;/em&gt; entity within an airline management system. This object exists in at least two (probably more) distinct execution spaces or &apos;bounded contexts&apos;: the &apos;passenger pre-purchase&apos; context, handled by the sales service, and the &apos;gate agent&apos; context, managed by the Gate service.&lt;/p&gt;
+&lt;p&gt;In the &apos;passenger pre-purchase&apos; context, the &apos;Flight&apos; object might encapsulate attributes like ticket price and seat availability and have behaviors such as &apos;purchase&apos;. In contrast, the &apos;gate agent&apos; context might focus on details like gate number and boarding status, and have behaviors like &apos;check-in crew member&apos; and &apos;check-in passenger&apos;.&lt;/p&gt;
+&lt;p&gt;Some questions often arise in this situation: Should we create a special translation between the flight entities in these two contexts? Should we include the &apos;Flight&apos; object in a Shared Kernel to avoid duplication, adhering to the DRY (Don&apos;t Repeat Yourself) principle?&lt;/p&gt;
+&lt;p&gt;My default stance is to treat objects with the same name in different bounded contexts as distinct entities. I advocate for each context to have the autonomy to define and operate on its own objects, without the need for translation or linking. This approach aligns with the principle of low coupling, which suggests that components should be as independent as possible.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.cognitiveinheritance.com/Images/Airline%20Subsystems.png&quot; alt=&quot;Airline Subsystems&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;In the simplified example shown in the graphic, both the Sales and Gate services need to know when a new flight is created so they can start capturing relevant information about that flight. There is nothing special about the relationship however. The fact that the object has the same name, and in some ways represents an equivalent concept, is immaterial to those subsystems. The domain events are captured and acted on in the same way as they would be if the object did not have the same name.&lt;/p&gt;
+&lt;p&gt;You can think about it as analogous to a relational database where there are two tables that have columns with the same names. The two columns may represent the same or similar concepts, but unless there are referential integrity rules in place to force them to be the same value, they are actually distinct and should be treated as such.&lt;/p&gt;
+&lt;p&gt;I do recognize that there are likely to be situations where a Shared Kernel can be beneficial. If the &apos;Flight&apos; object has common attributes and behaviors that are stable and unlikely to change, including it in the Shared Kernel could reduce duplication without increasing coupling to an unnaceptable degree, especially if there is only a single team developing and maintaining both contexts. I have found however, that this is rarely the case, especially since, in many large and/or growing organizations, team construction and application ownership can easily change. Managing shared entities across multiple teams usually ends up with one of the teams having to wait for the other, hurting agility. I have found it very rare in my experience that the added complexity of an object in the Shared Kernel is worth the little bit of duplicated code that is removed, when that object is not viewed identically across the entire domain.&lt;/p&gt;
+&lt;p&gt;Ultimately, the decision to link objects across bounded contexts or include them in a Shared Kernel should be based on a deep understanding of the domain and the specific requirements and constraints of the project. If it isn&apos;t clear that an entity is seen identically across the entirety of a domain, distinct views of that object should be represented separately inside their appropriate bounded contexts. If you are struggling with this type of question, I reccommend &lt;a href=&quot;https://youtu.be/6DgGhQQbfDE&quot;&gt;Event Storming&lt;/a&gt; to help gain the needed understanding of the domain.&lt;/p&gt;
+</description>
+  <link>https://www.cognitiveinheritance.com/Posts/objects-with-the-same-name-in-different-bounded-contexts.html</link>
+  <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
+  <guid>https://www.cognitiveinheritance.com/Permalinks/8a1260ce-2b01-401c-96e2-8954e8091f86.html</guid>
+  <pubDate>Sun, 29 Oct 2023 07:00:00 GMT</pubDate>
+</item><item>
+  <title>The Depth of GPT Embeddings</title>
+  <description>&lt;p&gt;I&apos;ve been trying to get a handle on the number of representations possible in a GPT vector and thought others might find this interesting as well. For the purposes of this discussion, a GPT vector is a 1536 dimensional structure that is unit-length, encoded using the &lt;strong&gt;text-embedding-ada-002&lt;/strong&gt; embedding model.&lt;/p&gt;
+&lt;p&gt;We know that the number of theoretical representations is infinite, being that there are an infinite number of possible values between 0 and 1, and thus an infinite number of values between -1 and +1. However, we are not working with truly infinite values since we need to be able to represent them in a computer. This means that we are limited to a finite number of decimal places. Thus, we may be able to get an approximation for the number of possible values by looking at the number of decimal places we can represent.&lt;/p&gt;
+&lt;h3&gt;Calculating the number of possible states&lt;/h3&gt;
+&lt;p&gt;I started by looking for a lower-bound for the value, and incresing fidelity from there. We know that these embeddings, because they are unit-length, can take values from -1 to +1 in each dimension. If we assume temporarily that only integer values are used, we can say there are only 3 possible states for each of the 1536 dimensions of the vector (-1, 0 +1). A base (B) of 3, with a digit count (D) of 1536, which can by supplied to the general equation for the number of possible values that can be represented:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;V = B&lt;sup&gt;D&lt;/sup&gt;&lt;/strong&gt; or &lt;strong&gt;V = 3&lt;sup&gt;1536&lt;/sup&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The result of this calculation is equivalent to 2&lt;sup&gt;2435&lt;/sup&gt; or 10&lt;sup&gt;733&lt;/sup&gt; or, if you prefer, a number of this form:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Already an insanely large number. For comparison, the number of atoms in the universe is roughly 10&lt;sup&gt;80&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;We now know that we have at least 10&lt;sup&gt;733&lt;/sup&gt; possible states for each vector. But that is just using integer values. What happens if we start increasing the fidelity of our value. The next step is to assume that we can use values with a single decimal place. That is, the numbers in each dimension can take values such as &lt;strong&gt;0.1&lt;/strong&gt; and &lt;strong&gt;-0.5&lt;/strong&gt;. This increases the base in the above equation by a factor of 10, from 3 to 30. Our new values to plug in to the equation are:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;V = 30&lt;sup&gt;1536&lt;/sup&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Which is equivalent to &lt;strong&gt;2&lt;sup&gt;7537&lt;/sup&gt;&lt;/strong&gt; or &lt;strong&gt;10&lt;sup&gt;2269&lt;/sup&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Another way of thinking about these values is that they require a data structure not of 32 or 64 bits to represent, but of 7537 bits. That is, we would need a data structure that is 7537 bits long to represent all of the possible values of a vector that uses just one decimal place.&lt;/p&gt;
+&lt;p&gt;We can continue this process for a few more decimal places, each time increasing the base by a factor of 10. The results can be found in the table below.&lt;/p&gt;
+&lt;table border=1&gt;
+&lt;tr&gt;&lt;th&gt;B&lt;/th&gt;&lt;th&gt;Example&lt;/th&gt;&lt;th&gt;Base-2&lt;/th&gt;&lt;th&gt;Base-10&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;2435&lt;/td&gt;&lt;td&gt;733&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;30&lt;/td&gt;&lt;td&gt;0.1&lt;/td&gt;&lt;td&gt;7537&lt;/td&gt;&lt;td&gt;2269&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;300&lt;/td&gt;&lt;td&gt;0.01&lt;/td&gt;&lt;td&gt;12639&lt;/td&gt;&lt;td&gt;3805&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;3000&lt;/td&gt;&lt;td&gt;0.001&lt;/td&gt;&lt;td&gt;17742&lt;/td&gt;&lt;td&gt;5341&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;30000&lt;/td&gt;&lt;td&gt;0.0001&lt;/td&gt;&lt;td&gt;22844&lt;/td&gt;&lt;td&gt;6877&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;300000&lt;/td&gt;&lt;td&gt;0.00001&lt;/td&gt;&lt;td&gt;27947&lt;/td&gt;&lt;td&gt;8413&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;3000000&lt;/td&gt;&lt;td&gt;0.000001&lt;/td&gt;&lt;td&gt;33049&lt;/td&gt;&lt;td&gt;9949&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;30000000&lt;/td&gt;&lt;td&gt;0.0000001&lt;/td&gt;&lt;td&gt;38152&lt;/td&gt;&lt;td&gt;11485&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;300000000&lt;/td&gt;&lt;td&gt;0.00000001&lt;/td&gt;&lt;td&gt;43254&lt;/td&gt;&lt;td&gt;13021&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;3000000000&lt;/td&gt;&lt;td&gt;0.000000001&lt;/td&gt;&lt;td&gt;48357&lt;/td&gt;&lt;td&gt;14557&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;30000000000&lt;/td&gt;&lt;td&gt;1E-10&lt;/td&gt;&lt;td&gt;53459&lt;/td&gt;&lt;td&gt;16093&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;3E+11&lt;/td&gt;&lt;td&gt;1E-11&lt;/td&gt;&lt;td&gt;58562&lt;/td&gt;&lt;td&gt;17629&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;p&gt;This means that if we assume 7 decimal digits of precision in our data structures, we can represent &lt;strong&gt;10&lt;sup&gt;11485&lt;/sup&gt;&lt;/strong&gt; distinct values in our vector.&lt;/p&gt;
+&lt;p&gt;This number is so large that all the computers in the world, churning out millions of values per second for the entire history (start to finish) of the universe, would not even come close to being able to generate all of the possible values of a single vector.&lt;/p&gt;
+&lt;h3&gt;What does all this mean?&lt;/h3&gt;
+&lt;p&gt;Since we currently have no way of knowing how dense the representation of data inside the GPT models is, we can only guess at how many of these possible values actually represent ideas. However, this analysis gives us a reasonable proxy for how many the model can hold. If there is even a small fraction of this information encoded in these models, then it is nearly guaranteed that these models hold in them insights that have never before been identified by humans. We just need to figure out how to access these revelations.&lt;/p&gt;
+&lt;p&gt;That is a discussion for another day.&lt;/p&gt;
+</description>
+  <link>https://www.cognitiveinheritance.com/Posts/depth-of-gpt-embeddings.html</link>
+  <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
+  <guid>https://www.cognitiveinheritance.com/Permalinks/e47eddf9-fcda-4382-a7c8-e498026fbfee.html</guid>
+  <pubDate>Tue, 03 Oct 2023 07:00:00 GMT</pubDate>
 </item><item>
   <title>Feature Flags&#58; Don&apos;t Roll Your Own</title>
   <description>&lt;p&gt;In my &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/consider-quality-before-cost.html&quot;&gt;previous post&lt;/a&gt;, I discussed situations where we tend to overvalue visible costs and undervalue more hidden costs. One example of this dynamic is the tendency to want to roll-your-own feature-flagging system.&lt;/p&gt;
