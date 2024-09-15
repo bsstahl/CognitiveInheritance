@@ -15,7 +15,7 @@ teaser: Code coverage is a vital tool for identifying gaps in unit tests, but it
 ispublished: true
 showinlist: false
 buildifnotpublished: true
-publicationdate: 2023-09-14T07:00:00Z
+publicationdate: 2024-09-14T07:00:00Z
 lastmodificationdate: 2024-09-14T07:00:00Z
 slug: code-coverage-must-never-be-used-as-a-metric
 ---
