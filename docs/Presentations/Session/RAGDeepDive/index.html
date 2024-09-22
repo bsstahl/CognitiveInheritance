@@ -32,7 +32,8 @@
 <!-- ContentItem:685060d8-4205-4db9-b44d-9610a7729e7d -->
 
 <table><tr><td style="vertical-align:top;">
-<h1 id="rag-deep-dive">RAG Deep-Dive</h1>
+<h1 id="the-future-of-information-retrieval">The Future of Information Retrieval</h1>
+<h2 id="a-deep-dive-into-rag">A Deep Dive into RAG</h2>
 <hr />
 <h3 id="barry-s.stahl">Barry S. Stahl</h3>
 <h3 id="solution-architect-developer">Solution Architect &amp; Developer</h3>
@@ -50,7 +51,8 @@
 <!-- Layout:MultiColumn -->
 <!-- ContentItem:30f7e9d2-b154-4895-bed7-2765f7bdc6fe -->
 <!-- ContentItem:8a83be06-76e9-4028-9630-c6a7de92ae99 -->
-<aside class="notes"><p>An up-to-date list is available on my blog at <a href="https://cognitiveinheritance.com/Pages/Favorites.html">https://cognitiveinheritance.com/Pages/Favorites.html</a></p>
+<aside class="notes"><p>An up-to-date list is available on <a href="https://cognitiveinheritance.com/Pages/Favorites.html">my blog at https://cognitiveinheritance.com/Pages/Favorites.html</a>
+Please ping me on Mastodon to tell me where I messed-up with this list, or this presentation for that matter. 😉</p>
 </aside>
 <table><tr><td style="vertical-align:top;">
 <h4 id="favorite-physicists">Favorite Physicists</h4>
@@ -77,19 +79,20 @@
 <li>Johannes Kepler</li>
 <li>Rene Descartes</li>
 <li>Isaac Newton</li>
-<li>Leonardo Fibonacci</li>
+<li>Emmy Noether</li>
 <li>George Boole</li>
 <li>Blaise Pascal</li>
 <li>Johann Gauss</li>
 <li>Grace Hopper</li>
 </ol>
-<p><em>Other notables</em>: Daphne Koller, Grady Booch, Evelyn Berezin</p>
+<p><em>Other notables</em>: Daphne Koller, Grady Booch, Leonardo Fibonacci, Evelyn Berezin, Benoit Mandelbrot</p>
 
 </td>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
-
+<aside class="notes"><p>Liquid Victor was used to create this slide deck</p>
+</aside>
 <a id="23528a73-7bc1-4e39-9f2f-c8b9e2cff982"><h1>Some OSS Projects I Run</h1></a>
 <!-- Layout:FullPage -->
 <!-- ContentItem:f8cbcb81-15f7-48e0-bc29-b348732f6f05 -->
@@ -108,7 +111,9 @@
 
 
 <section data-transition="slide-in slide-out">
-
+<aside class="notes"><p>I am proud to be one of the founders of AZGiveCamp.
+GiveCamps are weekend events where we put a bunch of software creators in a room with a bunch of great local charities, and through the course of the weekend, we create software to help them further their mission</p>
+</aside>
 <a id="3129a405-82a7-432c-ae55-6f9d2335ab17"><h1>http://GiveCamp.org</h1></a>
 <!-- Layout:FullPage -->
 <!-- ContentItem:2ca346de-d62c-4c6b-834d-7ccab290a6ab -->
@@ -126,82 +131,155 @@
 </section>
 
 
-<section data-transition="slide-in slide-out" data-background='img/4b6b21f6-04f6-4b44-b48b-a620c295ee4d.png'>
-<aside class="notes"><p>Completions is a legacy capability that has been superceded by ChatCompletions.</p>
+<section data-transition="slide-in slide-out" data-background='img/23075294-3e2f-4352-8a16-9080139eab75.png'>
+<aside class="notes"><p>To start with, let's look a a traditional keyword search, then see how that presents using more-modern methods</p>
 </aside>
-<a id="35a7a96d-3a7b-4cac-a5d7-79b6bc8c6455"><h1>The OpenAI API</h1></a>
+<a id="abdbcca9-568e-43c5-95bb-9932e51994be">&nbsp;</a>
 <!-- Layout:FullPage -->
-<!-- ContentItem:5e187c38-77c2-46a8-907b-ae16a5c956aa -->
-<ul>
-<li>Chat Completions
-<ul>
-<li>ChatGPT gets most of its power here</li>
-</ul>
-</li>
-<li>Embeddings
-<ul>
-<li>Enable additional features that can be used with Chat Completions</li>
-<li>Especially useful operationally</li>
-</ul>
-</li>
-</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/4b375b32-043a-4bb6-97a7-15c641e79175.png'>
+<aside class="notes"><p>The same search query performed using an Embeddings based vector search. The results are much  more relevant than with keywords because the context of each word  is better &quot;understood&quot; by the model.</p>
+</aside>
+<a id="10650fc2-1bfa-4f5b-a305-c19fa95efd86">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/598de942-8d93-47cc-a5e4-69a1b7064353.png'>
+<aside class="notes"><p>Using an LLM, the same search results produced an actual answer rather than just  a list of documents that might be relevant. The question then becomes, is this  answer correct?</p>
+</aside>
+<a id="242d0812-764c-4a2f-8b7c-61ec5c4514da">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/669ba222-afb5-4826-9dd4-916d99a0910a.png'>
+<aside class="notes"><p>The answer also comes with a list of references, the same documents returned by the vector search. This can help us determine if the answer is correct, or at least as correct as   the documents themselves.</p>
+</aside>
+<a id="e741ef19-86d7-4461-af1d-23c4407b9705">&nbsp;</a>
+<!-- Layout:FullPage -->
 
 </section>
 
 
 <section data-transition="slide-in slide-out">
-<aside class="notes"><p>We tend to focus on productivity and analytics when we talk about GPT type models. I'd like to look at some of the operational uses. Embeddings are a big part of that.</p>
-</aside>
-<a id="b3b2e119-9289-418e-8ad6-0f365013e1b9"><h1>Questions to be Answered</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:f024f688-b495-4fb5-a3dc-bae44d30a9fc -->
+<a id="1ea94cc1-73c2-448c-9853-0029065899f3"><h1>Keyword Search</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:81298dd1-0dd5-4d22-bbbb-5ac12dbe3c7d -->
+<!-- ContentItem:5d62a9ac-151b-4110-8371-5f10f4f1440f -->
+<aside class="notes"><p>Keyword Search produces inferior results to Vector Search,  because it throws-away important context.</p>
 <ul>
-<li>What are embeddings?</li>
-<li>What do they represent?</li>
-<li>How do we compare/contrast them?</li>
-<li>How can we use them operationally?</li>
+<li>Removing Stop words eliminates context i.e.  &quot;looking place stay new york&quot; matches places to find jobs,  sights, relationships, etc during a stay in NY.</li>
+<li>Stemming removes context: <em>running a program</em>  might return docs on <em>10k runs</em>.</li>
+</ul>
+<p>An Index is &quot;Inverted&quot; when it starts with words and lists documents instead of  starting with a document and listing words</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Tokenization</p>
+<ul>
+<li>Break into lower-case tokens</li>
+<li><strong>best</strong>,<strong>ways</strong>,<strong>to</strong>,<strong>learn</strong>,<strong>about</strong>,<strong>my</strong>,<strong>problem</strong>,<strong>domain</strong></li>
+</ul>
+</li>
+<li><p>Remove Stop Words</p>
+<ul>
+<li>Words like &quot;to,&quot; &quot;about,&quot; and &quot;my&quot; are removed</li>
+<li><strong>best</strong>,<strong>ways</strong>,<strong>learn</strong>,<strong>problem</strong>,<strong>domain</strong></li>
+</ul>
+</li>
+<li><p>Stemming/Lemmatization</p>
+<ul>
+<li>Reduce tokens to their root form</li>
+<li>No changes are required to this query</li>
+<li>Examples: &quot;runner&quot; =&gt; &quot;run&quot;, &quot;children&quot; =&gt; &quot;child&quot;</li>
+</ul>
+</li>
+<li><p>Inverted Index Lookup:</p>
+<ul>
+<li>Find matching documents</li>
+<li>Sort descending by Relevance Score</li>
+</ul>
+</li>
 </ul>
 
+</td>
+<td style="text-align: left;">
+<img src="img/5d62a9ac-151b-4110-8371-5f10f4f1440f.jpg" alt="Card Catalog 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><ul>
+<li>Before 2013, all innovation was about adding context to keyword searches.
+<ul>
+<li>i.e. <strong>BM25</strong>, which ranks documents based on term frequency, inverse document frequency, and
+document length normalization.</li>
+</ul>
+</li>
+<li><strong>word2vec</strong> (2013) introduced us to using mathematical representations of words and concepts</li>
+<li><strong>Attention is all you Need</strong> (2017) kicked-off the LLM revolution</li>
+<li>By 2022, nearly all search mechanisms are using some form of Vector search</li>
+</ul>
+</aside>
+<a id="2179bff6-ac81-4818-9da4-261f65279a0a"><h1>Evolution of Search Tech</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:756413f9-4e34-408a-9c28-93704ecd07ab -->
+<img alt="Timeline-Evolution of Search Tech.png" src="img/756413f9-4e34-408a-9c28-93704ecd07ab.png" />
 </section>
 
 
-<section data-transition="slide-in slide-out" data-background='img/4b6b21f6-04f6-4b44-b48b-a620c295ee4d.png'>
-<a id="5d979917-37b8-4337-a076-be890a1d2d61"><h1>Embeddings</h1></a>
-<!-- Layout:FullPageFragments -->
-<!-- ContentItem:d4a17eef-5a35-4595-82bd-43b11c9362d9 -->
-<!-- ContentItem:212cfe49-195f-4554-9941-3a05bd43f89b -->
-<table border="0" width="100%">
+<section data-transition="slide-in slide-out">
+<a id="300adcbd-5473-464b-85e0-25b86f0d40bf"><h1>Questions to be Answered</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:00dda57f-1c9c-45b0-87da-8a778f899496 -->
+<!-- ContentItem:a3655477-bc7d-4526-ab36-9129ed7967a0 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>What are Embeddings?</li>
+<li>How does Vector Search leverage Embeddings to find relevant info?</li>
+<li>How does RAG build on top of Vector Search?</li>
+<li>How do we overcome the limitations of these models?</li>
+<li>How do we leverage these tools for the benefit of our Users?</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/a3655477-bc7d-4526-ab36-9129ed7967a0.jpg" alt="Questions to be Answered 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="54851746-90a1-45fa-980d-9cdcc12953cc"><h1>Embeddings</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:8c297a4c-5130-4206-ae37-995649e7d962 -->
+<!-- ContentItem:0e0658fb-5565-43c7-a9fc-3de3155352f3 -->
 <aside class="notes"><p>There are many other embedding models, some are optimized for different purposes. You should consider what model might work best for your use-case. This presentation uses the same model used by GPT-3 and GPT-4.</p>
 </aside>
-<tr><td>
-<ul class="fragment">
+<table><tr><td style="vertical-align:top;">
+<ul>
 <li>A point in multi-dimensional space</li>
 <li>Mathematical representation of a word or phrase</li>
 <li>Encode both <strong>semantic</strong> and <strong>contextual</strong> information</li>
 </ul>
-
-</td></tr>
-<tr><td>
-<ul class="fragment">
+<hr />
+<ul>
 <li>Model: <code>text-embedding-ada-002</code></li>
 <li>Vectors normalized to unit length</li>
 <li>Use 1536 dimensions</li>
 </ul>
 
-</td></tr>
-</table></section>
-
-
-<section data-transition="slide-in slide-out">
-<aside class="notes"><p>It is not possible for us to reason on space greater than 3D without doing some form of projection.</p>
-<p>Image Source: WikiMedia</p>
-</aside>
-<a id="affc18de-26dd-4bed-acbe-99beddf497f4"><h1>3-D Space Projected into 2-D</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:8738d954-63a2-40f5-aa5e-deeb431d5f52 -->
-<img alt="Necker_cube_with_background.png" src="img/8738d954-63a2-40f5-aa5e-deeb431d5f52.png" />
-</section>
-
+</td>
+<td style="text-align: left;">
+<img src="img/0e0658fb-5565-43c7-a9fc-3de3155352f3.jpg" alt="Embeddings - Cosmic Desert 800x800.jpg" />
+</td>
+</tr></table></section>
 
 <section data-transition="slide-in none-out">
 <aside class="notes"><p>I used a T-SNE (T-distributed Stochastic Neighbor Embedding) transformation to perform this dimensionality reduction</p>
@@ -213,18 +291,8 @@
 </section>
 
 
-<section data-transition="none-in none-out">
-<aside class="notes"><p>I used a T-SNE (T-distributed Stochastic Neighbor Embedding) transformation to perform this dimensionality reduction</p>
-</aside>
-<a id="50da6b31-0139-4b4c-bdc6-7f7eedef6044">&nbsp;</a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:ba598d38-6e47-4a26-8065-3487bfd3f51a -->
-<img alt="Ram - With Terms.png" src="img/ba598d38-6e47-4a26-8065-3487bfd3f51a.png" />
-</section>
-
-
 <section data-transition="none-in slide-out">
-<aside class="notes"><p>Ram - With Clusters.png</p>
+<aside class="notes"><p>The key to understanding embeddings is to remember that they are a way to represent a word or phrase in a multi-dimensional space.  The distance between two embeddings can be used to determine how similar the words or phrases they represent are to each other.</p>
 </aside>
 <a id="3714c934-4902-45a1-9948-3b31c7f02bba">&nbsp;</a>
 <!-- Layout:FullPage -->
@@ -238,7 +306,7 @@
 <!-- Layout:MultiColumn -->
 <!-- ContentItem:89b66910-a26e-4116-b41d-3ada3f74c92b -->
 <!-- ContentItem:d44bda2e-06bd-4064-9c06-12d564a6f5cf -->
-<aside class="notes"><p>Since GPT vectors are normalized to unit length, Cosine distance is proportional to Euclidean distance, and will result in the same relative rankings.</p>
+<aside class="notes"><p>Since GPT vectors are normalized to unit length, Cosine similarity and dot-product calculations will produce the same result.</p>
 </aside>
 <table><tr><td style="vertical-align:top;">
 <blockquote>
@@ -260,6 +328,7 @@
 </ul>
 </li>
 </ul>
+<p>Note: For normalized vectors, cosine similarity is the same as the dot-product</p>
 
 </td>
 <td style="vertical-align:top;">
@@ -287,47 +356,8 @@
 
 
 <section data-transition="slide-in slide-out">
-<a id="c504d2aa-f3e6-4956-b06c-96ba4a551dfc"><h1>Clustering</h1></a>
-<!-- Layout:MultiColumn -->
-<!-- ContentItem:81fec6ba-5786-4258-b8ac-a742fe19af01 -->
-<!-- ContentItem:53a6cce5-95de-4e12-8035-bf68503c1bbe -->
-<aside class="notes"><p>Clusters contains items more similar to each other than to those in other clusters</p>
-<ul>
-<li>Key to use: Experiment</li>
-</ul>
-<p>Source Image: <a href="https://www.bing.com/images/search?view=detailV2&amp;ccid=vNng%2foOs&amp;id=2652F88E274436CB6C8CC623A778D7B9F2475FC9&amp;thid=OIP.vNng_oOsNRHKrlh3pjSAyAHaDw&amp;mediaurl=https%3a%2f%2fi.stack.imgur.com%2fcIDB3.png&amp;cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.bcd9e0fe83ac3511caae5877a63480c8%3frik%3dyV9H8rnXeKcjxg%26pid%3dImgRaw%26r%3d0&amp;exph=517&amp;expw=1017&amp;q=k-means+clustering&amp;simid=608026322933788461&amp;FORM=IRPRST&amp;ck=8E4BDA3E627011B4CADA2B68FB818490&amp;selectedIndex=0&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;ajaxserp=0">https://www.bing.com/images/search?view=detailV2&amp;ccid=vNng%2foOs&amp;id=2652F88E274436CB6C8CC623A778D7B9F2475FC9&amp;thid=OIP.vNng_oOsNRHKrlh3pjSAyAHaDw&amp;mediaurl=https%3a%2f%2fi.stack.imgur.com%2fcIDB3.png&amp;cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.bcd9e0fe83ac3511caae5877a63480c8%3frik%3dyV9H8rnXeKcjxg%26pid%3dImgRaw%26r%3d0&amp;exph=517&amp;expw=1017&amp;q=k-means+clustering&amp;simid=608026322933788461&amp;FORM=IRPRST&amp;ck=8E4BDA3E627011B4CADA2B68FB818490&amp;selectedIndex=0&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;ajaxserp=0</a></p>
+<aside class="notes"><p>Embeddings encode many facets of a word or phrase, including language spoken, idioms, sarcasm, and figurative language</p>
 </aside>
-<table><tr><td style="vertical-align:top;">
-<ul>
-<li>Unsupervised machine learning technique</li>
-<li>Clusters form around centroids (the geometric center of the cluster)</li>
-<li>Data points are grouped (clustered) based on their similarity
-<ul>
-<li>Minimize the error (distance from centroid)</li>
-</ul>
-</li>
-<li>Embeddings cluster with others of similar semantic and contextual meaning</li>
-<li>Advantages
-<ul>
-<li>No need to define a distance threshold</li>
-</ul>
-</li>
-<li>Disadvantages
-<ul>
-<li>Quality is use-case dependent</li>
-<li>Requires the number of clusters to be specified</li>
-</ul>
-</li>
-</ul>
-
-</td>
-<td style="vertical-align:top;">
-<img alt="k-means results.png" src="img/53a6cce5-95de-4e12-8035-bf68503c1bbe.png" />
-</td>
-</tr></table></section>
-
-<section data-transition="slide-in slide-out">
-
 <a id="b1b27a07-42ee-481c-92f4-6791f7204828"><h1>Embedding Distance</h1></a>
 <!-- Layout:FullPage -->
 <!-- ContentItem:fcee17b4-8b97-487e-9644-0c45033c1ff3 -->
@@ -382,35 +412,6 @@
 
 
 <section data-transition="slide-in slide-out">
-<a id="295f37ae-5979-40ae-a5d9-a22bd58ef30a"><h1>Vector Databases</h1></a>
-<!-- Layout:MultiColumn -->
-<!-- ContentItem:fd61eed6-fd5e-4ce2-b9c9-f4c06f5287ff -->
-<!-- ContentItem:7a67ae3f-567b-4099-b9ea-a2c2fb484d7f -->
-<aside class="notes"><p>The key to operational use of Embeddings is some form of Vector data store, whether that is persistent or in-memory</p>
-</aside>
-<table><tr><td style="vertical-align:top;">
-<ul>
-<li>Designed to store/retrieve high-dimensional vectors</li>
-<li>Values are retrieved using similarity searches</li>
-<li>Leverage data-structures such as K-D Trees</li>
-<li>Examples
-<ul>
-<li>Azure Cognitive Search</li>
-<li>Redis</li>
-<li>Qdrant</li>
-<li>Pinecone</li>
-<li>Chroma</li>
-</ul>
-</li>
-</ul>
-
-</td>
-<td style="vertical-align:top;">
-<img alt="VectorDB-650x650.png" src="img/7a67ae3f-567b-4099-b9ea-a2c2fb484d7f.png" />
-</td>
-</tr></table></section>
-
-<section data-transition="slide-in slide-out">
 <aside class="notes"><p>If we are not augmenting the model with our own data, we are just hoping the model happens to be trained on the right things for our use-case.</p>
 </aside>
 <a id="f8c3912e-08e3-46e9-b5b9-92f492e5780b"><h1>Retrieval Augmented Generation (RAG)</h1></a>
@@ -437,6 +438,36 @@
 
 
 <section data-transition="slide-in slide-out">
+<a id="295f37ae-5979-40ae-a5d9-a22bd58ef30a"><h1>Vector Databases</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:fd61eed6-fd5e-4ce2-b9c9-f4c06f5287ff -->
+<!-- ContentItem:7a67ae3f-567b-4099-b9ea-a2c2fb484d7f -->
+<aside class="notes"><p>The key to operational use of Embeddings is some form of Vector data store,  whether that is persistent or in-memory.</p>
+<p><strong>Azure AI Search</strong> was formerly known as <strong>Azure Cognitive Search</strong>.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Store/retrieve high-dimensional vectors</li>
+<li>Values are retrieved using similarity searches</li>
+<li>Leverage data-structures such as K-D Trees</li>
+<li>Examples
+<ul>
+<li>Azure AI Search</li>
+<li>Redis</li>
+<li>Qdrant</li>
+<li>Pinecone</li>
+<li>Chroma</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
+<img alt="VectorDB-650x650.png" src="img/7a67ae3f-567b-4099-b9ea-a2c2fb484d7f.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
 
 <a id="f1a2a6fe-439d-435e-b9e8-20af0aa13d69"><h1>Beary - The Beary Barry Bot</h1></a>
 <!-- Layout:FullPage -->
@@ -449,19 +480,104 @@
 
 <a id="6ed666b8-ccc0-4ce0-b035-1e5532a9ea77"><h1>Beary Flow</h1></a>
 <!-- Layout:FullPage -->
-<!-- ContentItem:c19314dc-adde-4e88-9f01-c781f26d19b6 -->
-<img alt="Beary Demo - Flowchart - Horizontal Flow.png" src="img/c19314dc-adde-4e88-9f01-c781f26d19b6.png" />
+<!-- ContentItem:dd5439d2-6794-4c28-adff-2964a833995b -->
+<img alt="Beary Demo - Flowchart - Horizontal Flow - 1280x381.png" src="img/dd5439d2-6794-4c28-adff-2964a833995b.png" />
 </section>
 
 
 <section data-transition="slide-in slide-out">
-
-<a id="9fa65486-faeb-4be1-8973-46698fa008b5"><h1>Beary Embeddings Json Snippet</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:9e0c1a7c-5a7a-4734-83ae-93233fb99341 -->
-<img alt="Beary Embeddings Json Snippet.png" src="img/9e0c1a7c-5a7a-4734-83ae-93233fb99341.png" />
+<a id="a90739ca-6f34-43a1-9ed7-08c8a91a1f2f"><h1>No More Search Engines</h1></a>
+<!-- Layout:ImageWithCaption -->
+<!-- ContentItem:58f71386-37a3-4e9e-8c8b-f3f1cf9cda23 -->
+<!-- ContentItem:6ed8ae72-9bf0-46b5-98f6-912d25c0bf74 -->
+<aside class="notes"><p>We are using probabilistic models to generate recommendations  about what information our users need to know. This means we need to start thinking differently about how we gather data to  present to the user.</p>
+</aside>
+<img alt="Information Recommendation 600x600.jpeg" src="img/58f71386-37a3-4e9e-8c8b-f3f1cf9cda23.jpeg" />
+<h2><h3 id="we-now-use-information-recommendation-engines">We now use Information Recommendation Engines</h3>
+</h2>
 </section>
 
+<section data-transition="slide-in slide-out">
+<a id="923a9b20-f827-4a7f-947e-ee501fff9a15"><h1>More than just a query</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:0bfd3d5b-dabe-4511-895f-8bd44df89c89 -->
+<!-- ContentItem:8c3f9082-b1c9-4c8b-a49e-765712b374d7 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Don't leave important information &quot;on the table&quot;</p>
+</blockquote>
+<ul>
+<li>Leverage contextual data to enrich the user experience
+<ul>
+<li>Ensure interactions are relevant</li>
+</ul>
+</li>
+<li>Always Maintain high standards
+<ul>
+<li>User Privacy</li>
+<li>User Data Protection</li>
+<li>Consent where appropriate</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/8c3f9082-b1c9-4c8b-a49e-765712b374d7.jpeg" alt="More than Just a Query 800x800.jpeg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="658580b3-48e9-4904-a8bd-de4d83fd2aa2"><h1>Contextual Clues</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:29a14869-a948-49c5-9a0e-c31b54ad4aa8 -->
+<!-- ContentItem:15661a21-92bf-4901-976a-258f795ce935 -->
+<aside class="notes"><p>We should not be <strong>collecting</strong> this data, but instead leveraging it  in real-time to provide a better user experience</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Use Responsibly - Be careful to respect user privacy</p>
+</blockquote>
+<ul>
+<li>Time of Day &amp; Week: Routine vs urgent</li>
+<li>Mouse &amp; Eye Movements: Regions of interest</li>
+<li>Device &amp; Platform: Accessibility preferences</li>
+<li>Location: Geographical relevance</li>
+<li>Browsing History: Interests</li>
+<li>Social Media: Personal interests</li>
+<li>Purchases: Preferences and future needs</li>
+<li>Content Consumption Rate: Casual vs focused</li>
+<li>Feedback: Satisfaction and preferences</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/15661a21-92bf-4901-976a-258f795ce935.jpeg" alt="Contextual Clues 800x800.jpeg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="95a50a2a-56dc-42b9-b6d2-cb9029614d84"><h1>Yo Dawg!</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:85b4667c-9231-4915-a037-fdf51688cc08 -->
+<!-- ContentItem:f1a37766-6a5c-4088-af98-99ce2d7a7d22 -->
+<aside class="notes"><p>Image Created by Dall-e via Microsoft Designer, 2024-09-22</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>I heard you like 'cooking'  so I calculated some recipes from your shopping list so you so you can turn that grocery haul into a Michelin-star meal</li>
+<li>I heard you like 'photography',  so I enhanced your photos with your most-used AI filters  so your style shines through</li>
+<li>I heard you like 'apple products' so I ordered you a ladder so you can reach those <em>elevated features</em></li>
+<li>I heard you like coffee,  so I scoured local social-media to make you a map  so you can find all the best hidden cafes in town</li>
+<li>I heard you like 'JavaScript'  so I created a playlist for you composed entirely of loops so you can get into the proper frame-of-mind for coding</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/f1a37766-6a5c-4088-af98-99ce2d7a7d22.jpg" alt="Definitely not Xzibit 800x800.jpg" />
+</td>
+</tr></table></section>
 
 <section data-transition="slide-in slide-out">
 <aside class="notes"><p>The ethics of AI are complex, and you should explore them. The simplest rule is: &quot;If you can't build it ethically with an AI model, don't build it with an AI model&quot;</p>
@@ -503,9 +619,18 @@ Old image: 59bf56c7-2e3d-4a25-b78e-ade863990440</p>
 
 <table><tr><td style="vertical-align:top;">
 <ul>
-<li>Not handling the bias makes bias a feature of your app</li>
+<li>Not handling the bias makes bias a feature of your app
+<ul>
+<li>Understand what fairness means in your context</li>
+<li>Understand the impact of being wrong</li>
+</ul>
+</li>
+<li>Take fairness very seriously
+<ul>
 <li>Prevent all predictable biases</li>
-<li>Watch for unpredictable biases</li>
+<li>Monitor for unpredictable biases</li>
+</ul>
+</li>
 </ul>
 
 </td>
@@ -548,11 +673,13 @@ Old image: 59bf56c7-2e3d-4a25-b78e-ade863990440</p>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
+<a id="944ae71d-a8b3-4de4-9a9e-ffeef6e07fcd"><h1>When Should AI be Used?</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:0b8f654e-2dc5-41c1-b195-f0495b79d62e -->
+<!-- ContentItem:2f5756ee-7bb2-49ea-9982-bc08c8ce72f9 -->
 <aside class="notes"><p>I worry that situations where it is safe to use these models are more rare than people realize or are willing to accept. That said, we can't let the only people building using AI models be those whose only goal is to separate us from our wealth.</p>
 </aside>
-<a id="944ae71d-a8b3-4de4-9a9e-ffeef6e07fcd"><h1>When Should AI be Used?</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:0b8f654e-2dc5-41c1-b195-f0495b79d62e -->
+<table><tr><td style="vertical-align:top;">
 <ul>
 <li>When all possible biases have been accounted for</li>
 <li>When all sensitive data has been removed, tokenized or encrypted</li>
@@ -565,8 +692,11 @@ Old image: 59bf56c7-2e3d-4a25-b78e-ade863990440</p>
 </li>
 </ul>
 
-</section>
-
+</td>
+<td style="text-align: left;">
+<img src="img/2f5756ee-7bb2-49ea-9982-bc08c8ce72f9.jpg" alt="When to use AI 800x800.jpg" />
+</td>
+</tr></table></section>
 
 <section data-transition="slide-in slide-out">
 
