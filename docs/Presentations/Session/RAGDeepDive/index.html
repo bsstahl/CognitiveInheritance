@@ -912,6 +912,24 @@ Remember: &quot;CAN&quot; does not mean &quot;SHOULD&quot;.</p>
 </section>
 
 
+<section data-transition="slide-in slide-out" data-background='img/598de942-8d93-47cc-a5e4-69a1b7064353.png'>
+<aside class="notes"><p>Using an LLM, the same search results produced an actual answer rather than just  a list of documents that might be relevant. The question then becomes, is this  answer correct?</p>
+</aside>
+<a id="242d0812-764c-4a2f-8b7c-61ec5c4514da">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/669ba222-afb5-4826-9dd4-916d99a0910a.png'>
+<aside class="notes"><p>The answer also comes with a list of references, the same documents returned by the vector search. This can help us determine if the answer is correct, or at least as correct as   the documents themselves.</p>
+</aside>
+<a id="e741ef19-86d7-4461-af1d-23c4407b9705">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
 <section data-transition="slide-in slide-out">
 
 <a id="6ed666b8-ccc0-4ce0-b035-1e5532a9ea77"><h1>Beary Flow</h1></a>
@@ -1016,99 +1034,6 @@ Remember: &quot;CAN&quot; does not mean &quot;SHOULD&quot;.</p>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
-<aside class="notes"><p>The ethics of AI are complex, and you should explore them. The simplest rule is: &quot;If you can't build it ethically with an AI model, don't build it with an AI model&quot;</p>
-<p>Image Source: <a href="https://www.bing.com/images/search?view=detailV2&amp;ccid=SF5NW%2F2E&amp;id=867710BF172B3480BE22F1F1FE19397AE0A6FE8A&amp;thid=OIP.SF5NW_2E8OBt2DbDD1pomgHaDE&amp;mediaurl=https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FR.485e4d5bfd84f0e06dd836c30f5a689a%3Frik%3Div6m4Ho5Gf7x8Q%26riu%3Dhttp%253a%252f%252fmarcogomes.com%252fblog%252fwp-content%252fuploads%252f2010%252f09%252fherebedragons.jpg%26ehk%3DFB%252fMQocKYDXUvxHKhrvHWg9Meu0PUBJWlSnfk%252bjgSp4%253d%26risl%3D%26pid%3DImgRaw%26r%3D0%26sres%3D1%26sresct%3D1&amp;exph=224&amp;expw=540&amp;q=here+there+be+dragons&amp;simid=608053647533357231&amp;form=IRPRST&amp;ck=2AD9AF425E791ED0BDF2696C5EB0557E&amp;selectedindex=7&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;ajaxserp=0&amp;vt=2&amp;sim=15,16&amp;ajaxhist=0&amp;ajaxserp=0">https://www.bing.com/images/search?view=detailV2&amp;ccid=SF5NW%2F2E&amp;id=867710BF172B3480BE22F1F1FE19397AE0A6FE8A&amp;thid=OIP.SF5NW_2E8OBt2DbDD1pomgHaDE&amp;mediaurl=https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FR.485e4d5bfd84f0e06dd836c30f5a689a%3Frik%3Div6m4Ho5Gf7x8Q%26riu%3Dhttp%253a%252f%252fmarcogomes.com%252fblog%252fwp-content%252fuploads%252f2010%252f09%252fherebedragons.jpg%26ehk%3DFB%252fMQocKYDXUvxHKhrvHWg9Meu0PUBJWlSnfk%252bjgSp4%253d%26risl%3D%26pid%3DImgRaw%26r%3D0%26sres%3D1%26sresct%3D1&amp;exph=224&amp;expw=540&amp;q=here+there+be+dragons&amp;simid=608053647533357231&amp;form=IRPRST&amp;ck=2AD9AF425E791ED0BDF2696C5EB0557E&amp;selectedindex=7&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;ajaxserp=0&amp;vt=2&amp;sim=15,16&amp;ajaxhist=0&amp;ajaxserp=0</a></p>
-</aside>
-<a id="c28997ab-1cec-407e-b069-06efd5dc5a7f"><h1>Using LLM Output Has Dangers</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:d950c2c7-f2fe-4af9-b210-18d33c40661a -->
-<img alt="herebedragons.jpg" src="img/d950c2c7-f2fe-4af9-b210-18d33c40661a.jpg" />
-</section>
-
-
-<section data-transition="slide-in slide-out">
-<a id="302ab20a-f006-4521-8c30-2dbc46d99ed6"><h1>Model Answers May Be</h1></a>
-<!-- Layout:MultiColumn -->
-<!-- ContentItem:540f4702-43af-4a34-915e-6f8ec49ca672 -->
-<!-- ContentItem:3b97dc48-fe4a-4f30-8139-3aa93949bd6b -->
-<aside class="notes"><p>Whether using GPT directly or semantic search with embeddings.
-Old image: 59bf56c7-2e3d-4a25-b78e-ade863990440</p>
-</aside>
-<table><tr><td style="vertical-align:top;">
-<ul>
-<li>Incomplete</li>
-<li>Poorly phrased</li>
-<li>Outright wrong</li>
-</ul>
-
-</td>
-<td style="vertical-align:top;">
-<img alt="No Takesies backsies.png" src="img/3b97dc48-fe4a-4f30-8139-3aa93949bd6b.png" />
-</td>
-</tr></table></section>
-
-<section data-transition="slide-in slide-out">
-<a id="08f50362-8bf7-48a2-a61a-0980f21d9a19"><h1>The model is biased</h1></a>
-<!-- Layout:MultiColumn -->
-<!-- ContentItem:0b06fef2-cc47-4acb-963e-4aa8a1a2aaeb -->
-<!-- ContentItem:0c946a74-2029-4651-9eee-a2645dba9317 -->
-
-<table><tr><td style="vertical-align:top;">
-<ul>
-<li>Not handling the bias makes bias a feature of your app
-<ul>
-<li>Understand what fairness means in your context</li>
-<li>Understand the impact of being wrong</li>
-</ul>
-</li>
-<li>Take fairness very seriously
-<ul>
-<li>Prevent all predictable biases</li>
-<li>Monitor for unpredictable biases</li>
-</ul>
-</li>
-</ul>
-
-</td>
-<td style="vertical-align:top;">
-<img alt="bias logo - large.jpg" src="img/0c946a74-2029-4651-9eee-a2645dba9317.jpg" />
-</td>
-</tr></table></section>
-
-<section data-transition="slide-in slide-out">
-<a id="c77448f6-5c86-44aa-96a4-e5d960c222ef"><h1>Embeddings are Reversable</h1></a>
-<!-- Layout:MultiColumn -->
-<!-- ContentItem:cccf95ad-420d-4027-ba9d-8e33f762eb6b -->
-<!-- ContentItem:18980ad3-d112-4fd7-9221-717689b8ae12 -->
-<aside class="notes"><p>Article from Linus Lee of Notion linked on Resources slide</p>
-</aside>
-<table><tr><td style="vertical-align:top;">
-<ul>
-<li>Researchers have had success in reversing embeddings
-<ul>
-<li>Using distance-measurements against a large Vector DB</li>
-<li>Using models trained to predict the text from the embedding</li>
-</ul>
-</li>
-<li>Embeddings can be thought-of like a hash
-<ul>
-<li>Data is obscured, but not encrypted</li>
-</ul>
-</li>
-<li>Do not expect embeddings alone to protect PII
-<ul>
-<li>Encrypt or tokenize all PII before embedding</li>
-</ul>
-</li>
-</ul>
-
-</td>
-<td style="vertical-align:top;">
-<img alt="Simpleicons_Interface_unlocked-padlock - Red 600x600.png" src="img/18980ad3-d112-4fd7-9221-717689b8ae12.png" />
-</td>
-</tr></table></section>
-
-<section data-transition="slide-in slide-out">
 <a id="944ae71d-a8b3-4de4-9a9e-ffeef6e07fcd"><h1>When Should AI be Used?</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:0b8f654e-2dc5-41c1-b195-f0495b79d62e -->
@@ -1135,29 +1060,66 @@ Old image: 59bf56c7-2e3d-4a25-b78e-ade863990440</p>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
-
 <a id="ac8bc960-baa4-41e1-a289-3d2352f7cf96"><h1>What Are Embeddings?</h1></a>
-<!-- Layout:FullPage -->
+<!-- Layout:ImageRight -->
 <!-- ContentItem:41ce545a-ffe3-4ec6-b4c6-43c4516c63b1 -->
-<ul>
-<li>Arrays of 1536 floating-point values</li>
-<li>Structured numeric data that represents unstructured text</li>
-<li>Representations of the semantics and context of the source text</li>
-<li>Vectors that support standard mathematical operations</li>
-</ul>
-
-</section>
-
-
-<section data-transition="slide-in slide-out">
-<a id="8c8e5769-8a07-4a92-a315-1a02d79c9bfb"><h1>Resources</h1></a>
-<!-- Layout:MultiColumn -->
-<!-- ContentItem:97720f70-277d-44b0-b113-274ffa0db619 -->
+<!-- ContentItem:0e0658fb-5565-43c7-a9fc-3de3155352f3 -->
 
 <table><tr><td style="vertical-align:top;">
 <ul>
-<li>This Presentation - <a href="https://RAGDeepDive.azurewebsites.net/">Web</a> | <a href="?print-pdf">PDF</a></li>
-<li>These Demos - <a href="https://github.com/bsstahl/AIDemos/tree/master/Embeddings">Code</a> | <a href="https://github.com/bsstahl/AIDemos/wiki/Embeddings">Docs</a></li>
+<li>Arrays of 1536 floating-point values</li>
+<li>Numeric data representing unstructured data</li>
+<li>Representations of the semantics and context of data</li>
+<li>Vectors that support standard mathematical operations</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/0e0658fb-5565-43c7-a9fc-3de3155352f3.jpg" alt="Embeddings - Cosmic Desert 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="f8c3912e-08e3-46e9-b5b9-92f492e5780b"><h1>Retrieval Augmented Generation (RAG)</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:7d502157-fe4b-4891-9ddb-90d231368958 -->
+<!-- ContentItem:77d9dede-033f-4a7a-9f4f-e56b4632a73e -->
+<aside class="notes"><p>If we are not augmenting the model with our own data, we are just hoping the model  happens to be trained on the right things for our use-case.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Combines the benefits of retrieval-based and generative models
+<ul>
+<li>Identify and retrieve relevant information</li>
+<li>Agument context of the generative models</li>
+<li>Generative responses based on the augmented context</li>
+</ul>
+</li>
+<li>Potential uses include
+<ul>
+<li>Explore large sets of documentation conversationally</li>
+<li>Generate recommendations and insights based on retrieved relevant information</li>
+<li>Summarization of articles in light of known relevant information</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/77d9dede-033f-4a7a-9f4f-e56b4632a73e.jpg" alt="RAG 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="8c8e5769-8a07-4a92-a315-1a02d79c9bfb"><h1>Resources</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:97720f70-277d-44b0-b113-274ffa0db619 -->
+<!-- ContentItem:a538ccc3-9558-4c3e-b105-a615e388e3a1 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>This Presentation - <a href="https://cognitiveinheritance.com/Presentations/Session/RAGDeepDive/index.html">Web</a> | <a href="?print-pdf">PDF</a></li>
+<li>These Demos - <a href="https://github.com/bsstahl/AIDemos/tree/master/RAG">Code</a> | <a href="https://github.com/bsstahl/AIDemos/wiki/RAG">Docs</a></li>
 <li><a href="https://cognitiveinheritance.com/Posts/depth-of-gpt-embeddings.html">The Depth of GPT Embeddings</a></li>
 <li><a href="https://cognitiveinheritance.com/Posts/Programmers-Take-Responsibility-for-Your-AIe28099s-Output.html">Programmers -- Take Responsibility for Your AI’s Output</a></li>
 <li><a href="https://thesephist.notion.site/text-embedding-ada-002-embedding-reconstructions-2ea55ae9525d49dfa9d16213474e0895">Experiments in Reconstructing Text from Embeddings</a></li>
@@ -1166,6 +1128,9 @@ Old image: 59bf56c7-2e3d-4a25-b78e-ade863990440</p>
 <li><a href="https://www.youtube.com/watch?v=UnURElCzGc0">Carl Sagan - Reasoning on Higher Dimensions (YouTube)</a></li>
 </ul>
 
+</td>
+<td style="text-align: left;">
+<img src="img/a538ccc3-9558-4c3e-b105-a615e388e3a1.png" alt="PresentationQR.png" />
 </td>
 </tr></table></section>
 
