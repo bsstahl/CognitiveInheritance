@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang="en">
     <head>
-        <!-- Template: Content Page -->
+        <!-- Template: Post Page -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     
-        <meta name="description" content="All posts that are Work-in-Progress">
+        <meta name="description" content="Understanding the ID Entanglement Effect, an article on Cognitive Inheritance.">
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -16,11 +16,10 @@
         <title>Cognitive Inheritance - The Application Development Experiences of an Enterprise Engineer</title>
     </head>
     <body>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 <a class="navbar-brand" href="../index.html">Cognitive Inheritance</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
@@ -55,24 +54,46 @@
 </div>
 </nav>
 
-                    <header>The Application Development Experiences of an Enterprise Engineer</header>
-                </div>
+                <header>The Application Development Experiences of an Enterprise Engineer</header>
             </div>
+        </div>
 
         <div class="row">
             <div class="col-md-8">
-                <h1>Unpublished Posts</h1>
-                <ul>
-<li><a href="../Posts/conceptual-associations-without-understanding.html">Conceptual Associations Without Understanding</a></li>
-<li><a href="../Posts/designing-event-driven-architectures.html">Designing Event Driven Architectures</a></li>
-<li><a href="../Posts/developing-with-csharp-using-html5-and-css.html">Developing with C# using HTML5 and CSS</a></li>
-<li><a href="../Posts/embeddings-and-distance-in-nlp.html">Embeddings and Distance in Natural Language Processing</a></li>
-<li><a href="../Posts/llms-are-like-tdd.html">LLMs can be to writing what TDD is to coding</a></li>
-<li><a href="../Posts/minimizing-support-burden.html">Minimizing Support Burden - A Comparison of Three Architectures</a></li>
-<li><a href="../Posts/the-id-entanglement-effect.html">Understanding the ID Entanglement Effect</a></li>
-<li><a href="../Posts/understanding-gpt-tokenization.html">Understanding GPT Tokenization</a></li>
+                <h3>Understanding the ID Entanglement Effect</h3>
+                <h5>Posted by bsstahl on 2024-12-31 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+                <share-on-mastodon 
+                    share_title="Check out this post on Cognitive Inheritance: 'Understanding the ID Entanglement Effect'"
+                    share_description="&quot;Using composite IDs can lead to the "ID Entanglement Effect," causing structural dependency, data parsing issues, maintenance complexity, inflexibility, and data integrity risks to our applications. To avoid these pitfalls, it's recommended to use clear, atomic identifiers, which enhance scalability, maintainability, and data integrity.&quot;"
+                    hashtags="#architecture #coding-practices"
+                    author="@bsstahl@cognitiveinheritance.com"
+                    default_url="https://fosstodon.org">
+                </share-on-mastodon>
+                <br/><br/>
+                <p>In system design, creating unique identifiers often involves complex methods. One common approach is using composite IDs, where multiple elements form a single identifier. This method can lead to what we call the &quot;<strong>ID Entanglement Effect</strong>&quot; highlighting the complications that arise from such practices.</p>
+<h2>Critical Characteristics</h2>
+<h3>Structural Dependency</h3>
+<p>Systems relying on a specific format for composite IDs become fragile. Any format change can disrupt functionality and complicate maintenance.</p>
+<h3>Data Parsing</h3>
+<p>Extracting components from a composite ID is often inevitable, leading to inefficiencies and potential errors, especially if parsing logic is flawed.</p>
+<h3>Maintenance Complexity</h3>
+<p>Parsing logic embedded throughout the codebase increases complexity, making debugging and future development challenging.</p>
+<h3>Inflexibility</h3>
+<p>Composite IDs limit adaptability. Modifications can ripple through the system, complicating changes or scaling.</p>
+<h3>Data Integrity Risks</h3>
+<p>Parsing composite IDs can lead to inconsistencies, especially in dynamic environments.</p>
+<h2>The Way Forward</h2>
+<p>To avoid the ID Entanglement Effect, it's important to use clear, atomic identifiers:</p>
+<ul>
+<li><em>Scalability</em>: Simple, unique identifiers make scaling and adaptation easier.</li>
+<li><em>Maintainability</em>: Clear data structures reduce complexity, simplifying management.</li>
+<li><em>Data Integrity</em>: Atomic identifiers reduce parsing errors and maintain consistency.</li>
 </ul>
+<h2>Conclusion</h2>
+<p>While composite IDs may initially seem effective, they often lead to unintended issues. By understanding these pitfalls, developers can make better decisions, prioritizing clarity and simplicity. Embracing best practices enhances system robustness and supports sustainable growth and innovation.</p>
 
+                <h5>Tags: <a title="Tag: architecture" class="small" href="../Search/architecture.html">architecture</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;</h5>
+                <div class="share"><a href="../Permalinks/2d9c8f17-09c4-48a4-873c-4624cfd4fbd1.html" rel="bookmark">Permalink</a></div>
             </div>
             <div class="col-md-4">
                 <div class="widgetzone"><div class="widget textbox"><h4>About the Author</h4><div class="content"><p><img style="float: left; padding: 0px 3px 0px 0px;" src="../Pics/bsstahl_left.gif" alt="Barry S. Stahl" width="95" /><strong>Barry S. Stahl</strong> (he/him/his) - Barry is a .NET Software Engineer who has been creating business solutions for enterprise customers since the mid 1980s. Barry is also an Election Integrity Activist, baseball and hockey fan, husband of one genius and father of another, and a 40 year resident of Phoenix Arizona USA. When Barry is not traveling around the world to speak at Conferences, Code Camps and User Groups or to participate in GiveCamp events, he spends his days as a Solution Architect for <a href="https://grnh.se/ba048c6d1">Carvana</a> in Tempe AZ and his nights thinking about the next <a href="https://www.azgivecamp.org">AZGiveCamp</a> event where software creators come together to build websites and apps for some great non-profit organizations.</p>
@@ -92,12 +113,11 @@
             </div>
         </div>
     </div>
-    
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script defer type="module" src="../Modules/share-on-mastodon.js"></script>
 
 </body>
-
 </html>
