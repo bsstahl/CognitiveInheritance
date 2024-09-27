@@ -302,6 +302,126 @@ document length normalization.</li>
 
 
 <section data-transition="slide-in slide-out">
+<a id="2a4404ba-5f58-4efc-a214-b720b27105d7"><h1>Embedding</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:4e98361e-c44b-4fb0-b524-808cf99d9dbc -->
+<!-- ContentItem:eca91cad-0f7d-40f9-a474-151b769223d1 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Creating Order from Chaos</p>
+</blockquote>
+<ul>
+<li>Unstructured <code>string</code> =&gt; Structured <code>float[]</code></li>
+<li>Allows mathematical operations
+<ul>
+<li>Cosine Similarity &amp; Distance</li>
+<li>Nearest Neighbor Search</li>
+<li>Clustering</li>
+<li>Vector Addition &amp; Subtraction</li>
+<li>Dimensionality Reduction (e.g., PCA)</li>
+<li>Anomaly Detection</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/eca91cad-0f7d-40f9-a474-151b769223d1.jpg" alt="Order from Chaos 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="05fbe145-6ed0-419c-aec9-1ccf634854b2"><h1>LM Studio</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:58300355-6876-465b-9d6d-cd37ad322b96 -->
+<!-- ContentItem:73837f99-a36b-4270-8926-41e651161762 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Interface to language &amp; embedding models</li>
+<li>Fine-tune, evaluate, and integrate models into apps</li>
+<li>Local server for testing models and applications</li>
+<li>Models can be downloaded from <a href="https://huggingface.co/models">HuggingFace</a></li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/73837f99-a36b-4270-8926-41e651161762.png" alt="LMStudio - Features 800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background='img/8dd40c19-2389-43aa-8b95-b0cfa03d8d8b.png'>
+
+<a id="0b786f57-ef49-4f6a-8e68-21ba7ebd117e">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/071045c7-5518-46cf-b8db-24b23fc85cf9.png'>
+
+<a id="438dd1ec-3ab9-490d-860c-d27329156303">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/d2760bb9-f64a-4ae9-b351-165882d85076.png'>
+
+<a id="f101f2e7-8c01-402e-91e1-85e9aa128ed6">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/7d6f9c87-cc7c-4cf8-840a-8fc9a70550d1.png'>
+
+<a id="2396f909-6cb5-495e-91ca-4db9c6c65a4c">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="1390e720-0103-4d3b-8282-2eeb7f3be60b"><h1>Embedding Services</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:bd7c7347-347e-43d3-9e67-5f923ced0d7e -->
+<!-- ContentItem:ca2f277b-647d-4526-acd6-9015061bf92c -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Local Models</p>
+<ol>
+<li><p>Load Model in LM Studio</p>
+</li>
+<li><p>Start Local Inference Server</p>
+</li>
+<li><p>Issue HTTP request for embedding</p>
+</li>
+<li><p>Retrieve embedding from response</p>
+</li>
+</ol>
+</li>
+<li><p>Remote Models</p>
+<ol>
+<li><p>Deploy model API</p>
+</li>
+<li><p>Issue HTTP request for embedding</p>
+</li>
+<li><p>Retrieve embedding from response</p>
+</li>
+</ol>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/ca2f277b-647d-4526-acd6-9015061bf92c.png" alt="Postman - Get Embedding from Local Model.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
 <a id="72e0090e-a40f-4410-91e0-919b3ed09004"><h1>Cosine Similarity &amp; Distance</h1></a>
 <!-- Layout:MultiColumn -->
 <!-- ContentItem:89b66910-a26e-4116-b41d-3ada3f74c92b -->
@@ -412,32 +532,6 @@ document length normalization.</li>
 
 
 <section data-transition="slide-in slide-out">
-<aside class="notes"><p>If we are not augmenting the model with our own data, we are just hoping the model happens to be trained on the right things for our use-case.</p>
-</aside>
-<a id="f8c3912e-08e3-46e9-b5b9-92f492e5780b"><h1>Retrieval Augmented Generation (RAG)</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:7d502157-fe4b-4891-9ddb-90d231368958 -->
-<ul>
-<li>Combines the benefits of retrieval-based and generative models
-<ul>
-<li>Identify and retrieve relevant information</li>
-<li>Agument context of the generative models</li>
-<li>Generative responses based on the augmented context</li>
-</ul>
-</li>
-<li>Potential uses include
-<ul>
-<li>Explore large sets of documentation conversationally</li>
-<li>Generate recommendations and insights based on retrieved relevant information</li>
-<li>Summarization of articles in light of known relevant information</li>
-</ul>
-</li>
-</ul>
-
-</section>
-
-
-<section data-transition="slide-in slide-out">
 <a id="295f37ae-5979-40ae-a5d9-a22bd58ef30a"><h1>Vector Databases</h1></a>
 <!-- Layout:MultiColumn -->
 <!-- ContentItem:fd61eed6-fd5e-4ce2-b9c9-f4c06f5287ff -->
@@ -464,6 +558,348 @@ document length normalization.</li>
 </td>
 <td style="vertical-align:top;">
 <img alt="VectorDB-650x650.png" src="img/7a67ae3f-567b-4099-b9ea-a2c2fb484d7f.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="fcad5e62-f63e-45e4-b527-a12751208862"><h1>KD-Tree</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:1f451aee-70a3-497a-b53c-3ba95f17f453 -->
+<!-- ContentItem:5c63c605-c602-4d5c-ac81-27501112174e -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>&quot;Binary&quot; Search across K-Dimensions
+<ul>
+<li>O(n log n) for construction</li>
+<li>O(log n) for search</li>
+</ul>
+</li>
+<li>Construction
+<ul>
+<li>Recursively partitioning dataset</li>
+<li>Rotate the dimension for each depth level</li>
+</ul>
+</li>
+<li>Nearest Neighbor Search
+<ul>
+<li>Recursively search for nearest neighbor</li>
+<li>Backtrack to find additional neighbors</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/5c63c605-c602-4d5c-ac81-27501112174e.jpg" alt="KD-Tree 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="7cd31e00-ffff-4f26-8321-2c9f8ccc1c93"><h1>Vector Search</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:533c8d05-697a-47d2-9ca0-366ab843a788 -->
+<!-- ContentItem:6f12ef80-a7a5-4ca3-84ac-28d3c2b494e7 -->
+<aside class="notes"><p>Vector search alone may not be enough to provide accurate results since <strong>Attention</strong> is not involved.
+Let's look at an example of what this means.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Vector Search: critical to modern information retrieval systems</p>
+</blockquote>
+<ul>
+<li>Find the closest vectors to a query vector
+<ul>
+<li>Identifies Embeddings that are semantically similar to the query</li>
+<li>Requires the same embedding model for query and search vectors</li>
+</ul>
+</li>
+<li>Works with nearly any type of data
+<ul>
+<li>Images, text, audio, etc.</li>
+<li>Requires an encoding model for each type</li>
+</ul>
+</li>
+<li>Still a stochastic process
+<ul>
+<li>Results <em>may</em> vary between executions</li>
+<li>Results <em>will</em> vary between encoding models</li>
+<li>May produce <em>unexpected</em> results</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/6f12ef80-a7a5-4ca3-84ac-28d3c2b494e7.jpg" alt="Vector Search 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background='img/a1b5d3d8-9e8e-4a97-983c-82765f2833cc.png'>
+
+<a id="f0dc280f-1db5-4258-ad5f-f04a1f40b2b9">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/956f7e7e-d1aa-49a5-a47b-4dec4936596c.png'>
+
+<a id="1ea48dff-202e-4774-9d17-fc2c7e4201cb">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/86fdd248-e651-4290-9f72-e1c1295669c1.png'>
+<aside class="notes"><p>Was a24b75f3-4f6c-4715-be5f-740a597cd3b3</p>
+</aside>
+<a id="56467599-0c70-4e59-b4a7-472ced422c84">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="c0856058-b753-43da-bbf7-fd6bab107e7a"><h1>Resume Scanning</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:afa0ae28-cd12-4714-82c0-d9d6686f2230 -->
+<!-- ContentItem:412011fa-11c7-4b62-8bac-9c3d8af4c3e7 -->
+<aside class="notes"><p>Jonathon_Nixon_8: 0.148041
+Armando_Castro_10: 0.165220
+Armando_Castro_8: 0.166799</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Armando's Resume: 12.7% &quot;worse&quot;
+<ul>
+<li>More distant from a match to the job listing</li>
+<li>A 95 for Jonathon's resume ≈ an 84 for Armando's</li>
+</ul>
+</li>
+<li>If Armando had 2 additional years of experience
+<ul>
+<li>His score only increases by ≈ 1 point to 85</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/412011fa-11c7-4b62-8bac-9c3d8af4c3e7.jpg" alt="TwoResumes_800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Searches based on the Cosine Similarity of Embeddings don't leverage the attention mechanisms of the model. They only measure the aggregate distance of the tokens from the other items in the search.</p>
+</aside>
+<a id="7b5a883a-dea6-49e7-9edb-786b6298ed62"><h1>Embeddings Search</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:54ddbe15-27b7-4e55-813f-db3a52ec54e1 -->
+<img alt="Transformer Architectures - Embedding Only - 938x800.png" src="img/54ddbe15-27b7-4e55-813f-db3a52ec54e1.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="ac3355bd-37f8-4362-a7ce-1e75bfdbaaf1"><h1>Cosine Distances</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:bdd399e9-f225-4943-bf1a-26b57c78fbee -->
+<!-- ContentItem:88b85f91-aa78-4683-bec1-20b4655d7cf3 -->
+<aside class="notes"><p>We never told the model what was important to us, and we never even allowed the Attention mechanism to try to figure it out. Instead, it just looked at the differences between the tokens, and found Argentina to be farther from the US than the UK is.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<table>
+<thead>
+<tr>
+<th>Country</th>
+<th>D(USA,C)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>United Kingdom</td>
+<td>0.11981422</td>
+</tr>
+<tr>
+<td>United Kingdom of Great Britain and Northern Ireland</td>
+<td>0.16426033</td>
+</tr>
+<tr>
+<td>England</td>
+<td>0.16678649</td>
+</tr>
+<tr>
+<td>Argentine Republic</td>
+<td>0.18766826</td>
+</tr>
+<tr>
+<td>República Argentina</td>
+<td>0.20281911</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+<td style="text-align: left;">
+<img src="img/88b85f91-aa78-4683-bec1-20b4655d7cf3.png" alt="Country Distances.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="4ead4f8a-8956-4f5b-8ada-a16a7e883b8f"><h1>Embeddings Differences</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:cfd42d94-fa37-4878-b2ac-acfb2f3c1bbe -->
+<!-- ContentItem:d9562b82-479e-47cc-9074-3abaae05babd -->
+<aside class="notes"><p>There are lots of reasons why the embeddings relating the US &amp; Argentina are farther apart than US vs UK. They all have to do with how the Embeddings are encoded.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Language
+<ul>
+<li>English (different dialects) vs Spanish</li>
+</ul>
+</li>
+<li>Historical Ties
+<ul>
+<li>USA and UK - Political (colonial), economic and cultural ties</li>
+</ul>
+</li>
+<li>Cultural Similarities
+<ul>
+<li>USA and UK - shared media, literature, entertainment, and educational exchanges including TV, movies, music, and news</li>
+</ul>
+</li>
+<li>Political Systems
+<ul>
+<li>USA and UK - Democracies w/ common roots</li>
+</ul>
+</li>
+<li>Other differences
+<ul>
+<li>Economic Ties</li>
+<li>Geopolitical Alliances</li>
+<li>Educational Systems</li>
+<li>Legal Systems</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/d9562b82-479e-47cc-9074-3abaae05babd.jpg" alt="Embedding Differences - USA UK Argentina - 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background='img/01f8802f-7db6-4312-9064-54ec9739692a.png'>
+<aside class="notes"><p>I think we got lucky that adding 2 years made Armando's resume better. It could just as easily gotten worse.</p>
+</aside>
+<a id="cba9750d-b194-4ea8-a8a2-ebeeca872161">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="0d9091f3-e87c-42ca-aff2-ad4f91ea332b"><h1>Resume Clustering</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:36ba17df-344e-4f5a-83a9-7c524b8e39ab -->
+<!-- ContentItem:53a6cce5-95de-4e12-8035-bf68503c1bbe -->
+<aside class="notes"><p>Clusters contains items more similar to each other than to those in other clusters</p>
+<p>Things get even better if we can bring the attention mechanisms into play. i.e. we leverage embeddings of the GPT summary of the resume, excluding the name and location</p>
+<p>Source Image: <a href="https://www.bing.com/images/search?view=detailV2&amp;ccid=vNng%2foOs&amp;id=2652F88E274436CB6C8CC623A778D7B9F2475FC9&amp;thid=OIP.vNng_oOsNRHKrlh3pjSAyAHaDw&amp;mediaurl=https%3a%2f%2fi.stack.imgur.com%2fcIDB3.png&amp;cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.bcd9e0fe83ac3511caae5877a63480c8%3frik%3dyV9H8rnXeKcjxg%26pid%3dImgRaw%26r%3d0&amp;exph=517&amp;expw=1017&amp;q=k-means+clustering&amp;simid=608026322933788461&amp;FORM=IRPRST&amp;ck=8E4BDA3E627011B4CADA2B68FB818490&amp;selectedIndex=0&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;ajaxserp=0">https://www.bing.com/images/search?view=detailV2&amp;ccid=vNng%2foOs&amp;id=2652F88E274436CB6C8CC623A778D7B9F2475FC9&amp;thid=OIP.vNng_oOsNRHKrlh3pjSAyAHaDw&amp;mediaurl=https%3a%2f%2fi.stack.imgur.com%2fcIDB3.png&amp;cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.bcd9e0fe83ac3511caae5877a63480c8%3frik%3dyV9H8rnXeKcjxg%26pid%3dImgRaw%26r%3d0&amp;exph=517&amp;expw=1017&amp;q=k-means+clustering&amp;simid=608026322933788461&amp;FORM=IRPRST&amp;ck=8E4BDA3E627011B4CADA2B68FB818490&amp;selectedIndex=0&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;ajaxserp=0</a></p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Clustering
+<ul>
+<li>Unsupervised machine learning technique</li>
+<li>Clusters form around centroids (the geometric center)</li>
+<li>Data points are grouped (clustered) based on similarity</li>
+<li>Minimize the error (distance from centroid)</li>
+</ul>
+</li>
+<li>Resume Clustering
+<ul>
+<li>Identify a group of relevant resumes</li>
+<li>Not for <em>ranking</em>, just <em>filtering</em></li>
+<li>Cluster the resumes, the GPT summaries, or both</li>
+<li>Still not perfect</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/53a6cce5-95de-4e12-8035-bf68503c1bbe.png" alt="k-means results.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>One big risk here is that one or more aspects of the summary may be wrong,  and those could be the result of systemic bias.
+Remember: &quot;CAN&quot; does not mean &quot;SHOULD&quot;.</p>
+</aside>
+<a id="66b92892-456e-41cd-b779-105e77d1190b"><h1>Resume Summarization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:e0550c18-b794-49f1-9b89-89aacdc847d9 -->
+<ul>
+<li><p><em>System</em>: As a resume scanner specializing in software engineers, focus solely on summarizing their key skills and experience durations, omitting demographics like age and location.</p>
+</li>
+<li><p><em>User</em>: [Submits appropriate resume]</p>
+</li>
+<li><p><em>Assistant</em>:</p>
+</li>
+</ul>
+<pre><code class="language-**Key">- Expertise in Java, J2EE, Spring Framework, Hibernate
+- Experience with front-end technologies such as HTML, CSS, JavaScript, and AngularJS
+- Proficient in SQL databases and ORM technologies
+- Familiar with containerization and orchestration tools like Docker and Kubernetes
+- Strong understanding of software design patterns and best practices
+- Excellent problem-solving abilities and attention to detail
+- Effective team player with strong communication skills
+
+**Experience:**
+- Senior Java Developer at XYZ Tech Solutions (June 2016 – Present, 5 years)
+- Java Software Engineer at Innovative Software Co. (May 2012 – May 2016, 4 years)
+
+**Certifications:**
+- Oracle Certified Professional, Java SE 8 Programmer
+- Certified ScrumMaster (CSM)
+
+**Education:**
+- Bachelor of Science in Computer Science, University of Technical Excellence (Graduated: May 2012)
+</code></pre>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="f8c3912e-08e3-46e9-b5b9-92f492e5780b"><h1>Retrieval Augmented Generation (RAG)</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:7d502157-fe4b-4891-9ddb-90d231368958 -->
+<!-- ContentItem:77d9dede-033f-4a7a-9f4f-e56b4632a73e -->
+<aside class="notes"><p>If we are not augmenting the model with our own data, we are just hoping the model  happens to be trained on the right things for our use-case.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Combines the benefits of retrieval-based and generative models
+<ul>
+<li>Identify and retrieve relevant information</li>
+<li>Agument context of the generative models</li>
+<li>Generative responses based on the augmented context</li>
+</ul>
+</li>
+<li>Potential uses include
+<ul>
+<li>Explore large sets of documentation conversationally</li>
+<li>Generate recommendations and insights based on retrieved relevant information</li>
+<li>Summarization of articles in light of known relevant information</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/77d9dede-033f-4a7a-9f4f-e56b4632a73e.jpg" alt="RAG 800x800.jpg" />
 </td>
 </tr></table></section>
 
