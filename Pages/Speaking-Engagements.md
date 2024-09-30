@@ -17,6 +17,7 @@ categories: []
 ### Upcoming Talks
 
 * **Techorama Netherlands** - 10/7/2024 - 10/9/2024 - "Amazing Algorithms for Solving Problems in Software" and "The Future of Information Retrieval: A Deep-Dive into RAG"
+* **CodeMash 2025** - 1/14/2025 - 1/17/2025  - "Crafting AI: A Developer's Guide to Machine Learning"
 
 <!-- I currently have no talks scheduled. {ContactPageLink:Contact me} to arrange to have me speak at your event. -->
 
