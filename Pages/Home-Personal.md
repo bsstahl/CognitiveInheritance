@@ -53,6 +53,7 @@ categories: []
 ## News &amp; Events
 
 * [American Autocracy Threat Tracker](https://www.justsecurity.org/92714/american-autocracy-threat-tracker/)
+* [Democracy Docket](https://www.democracydocket.com/)
 * [Maricopa County Weather Info](https://www.maricopa.gov/3833/Get-Weather-Information)
 * [Popehat - Speech or Cancel Culture At Boston University?](https://popehat.substack.com/p/speech-or-cancel-culture-at-boston)
 * [The Overton Window](https://en.wikipedia.org/wiki/Overton_window)
