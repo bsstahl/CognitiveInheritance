@@ -20,7 +20,6 @@ categories: []
 * [SeatGuru Seat Map US Airways Airbus A321 (321)](http://www.seatguru.com/airlines/US_Airways/US_Airways_Airbus_A321.php)
 * [Welcome to World Airport Codes](http://www.world-airport-codes.com/)
 * [MegaGladys - A Collection of People Search tools based on Wikipedia](https://megagladys.com/)
-* [The Reactive Manifesto](https://www.reactivemanifesto.org/)
 
 ## AI Tools
 
@@ -40,6 +39,10 @@ categories: []
 
 ## Development Links
 
+* [The Reactive Manifesto](https://www.reactivemanifesto.org/)
+* [The Context Driven School of Testing](https://context-driven-testing.com/)
+* [The Agile Manifesto](http://agilemanifesto.org/)
+* [Attention Is All You Need](https://arxiv.org/pdf/1706.03762v5)
 * [Non-Functional Requirements](https://playbook.microsoft.com/code-with-engineering/design/design-patterns/non-functional-requirements-capture-guide/#production-ecosystem)
 * [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet)
 * [Lucid Chart](https://lucid.app/documents#/dashboard?folder_id=home)
@@ -62,9 +65,11 @@ categories: []
 * [Change C# Class Templates to use File Scoped Namespaces](https://blog.jdriven.com/2022/12/changing_visual_studio_cs_templates/)
 * [Don't Shave that Yak](https://seths.blog/2005/03/dont_shave_that/)
 
-## Specifications
+## Fediverse Resources
 
 * [ActivityPub](https://www.w3.org/TR/activitypub/)
+* [Guide for new ActivityPub Implementers](https://socialhub.activitypub.rocks/t/guide-for-new-activitypub-implementers/479)
+* [Social Web Working Group - Inactive](https://www.w3.org/Social/WG#See_Also)
 
 ## Other Tools
 

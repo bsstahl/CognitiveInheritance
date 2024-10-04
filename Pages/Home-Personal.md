@@ -23,6 +23,7 @@ categories: []
 
 * [Consumer Reports - 60 Used Cars to Avoid Buying](https://www.consumerreports.org/cars/used-cars-to-avoid-buying-a4034931071/?EXTKEY=NWT46TSD4&utm_source=acxiom&utm_medium=email&utm_campaign=20240628_nsltr_whatsnew&utm_nsltr=whatsnew&utm_segment=digital)
 * [Consumer Reports - Guide to Smart Home Devices &amp; Tech](https://www.consumerreports.org/home-garden/smart-home/guide-to-smart-home-devices-tech-a1007276600/)
+* [Dell - Pre-boot Analysis Failure](https://www.dell.com/support/home/en-us/pre-boot-analysis/result?token=TURDdVdGd2tEY0V3NTJSaXVOSmZKQi83U2RiOU1WOEp2cVhQYUphK3l6Q0ZKb0JnanJvU0EvNEdQL2gvZzZyYzVKc2Z5RWdMbkRKbXFESkZ5RzE0Z2c9PQ2&lwp=rt&fru=CN09M39PWSC000C20024A00)
 
 ### Fun Family Stuff
 
@@ -51,6 +52,7 @@ categories: []
 
 ## News &amp; Events
 
+* [American Autocracy Threat Tracker](https://www.justsecurity.org/92714/american-autocracy-threat-tracker/)
 * [Maricopa County Weather Info](https://www.maricopa.gov/3833/Get-Weather-Information)
 * [Popehat - Speech or Cancel Culture At Boston University?](https://popehat.substack.com/p/speech-or-cancel-culture-at-boston)
 * [The Overton Window](https://en.wikipedia.org/wiki/Overton_window)
@@ -78,6 +80,7 @@ categories: []
 
 * [Online TV Database - An open directory of television shows for HTPC software](http://thetvdb.com/)
 * [Levels.fyi - Compare career levels across companies](https://www.levels.fyi/)
+* [Cognitive Biases Codex](https://www.sog.unc.edu/sites/www.sog.unc.edu/files/course_materials/Cognitive%20Biases%20Codex.pdf)
 
 ## Charity and NPOs
 
