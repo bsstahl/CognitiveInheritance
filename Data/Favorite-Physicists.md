@@ -14,6 +14,7 @@ name:
 - Stephen Hawking
 - Edwin Hubble
 - Leonard Susskind
-lastmodificationdate: 2020-06-04T21:06:00.000+00:00
+- Christiaan Huygens
+lastmodificationdate: 2024-10-15T07:00:00.000+00:00
 
 ---
