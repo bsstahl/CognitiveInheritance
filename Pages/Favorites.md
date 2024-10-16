@@ -9,7 +9,7 @@ description: My favorite physicists and favorite mathematicians
 ispublished: true
 showinlist: true
 publicationdate: 2017-06-22T07:00:00
-lastmodificationdate: 2020-06-04T21:06:00
+lastmodificationdate: 2024-10-15T07:00:00
 slug: Favorites
 categories:
 - General
@@ -33,7 +33,7 @@ I like to describe myself as the kind of person who has a list of his favorite p
 1. Galileo Galilei
 1. Michael Faraday
 
-* Other notables: Stephen Hawking, Edwin Hubble, Leonard Susskind
+* Other notables: Stephen Hawking, Edwin Hubble, Leonard Susskind, Christiaan Huygens
 
 ---
 
