@@ -19,40 +19,45 @@
         <title>{SiteTitle} - {SiteDescription}</title>
     </head>
     <body>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
+        <div class="container-fluid px-0">
+            <div class="row no-gutters">
+                <div class="col-12">
                     {NavigationMenu}
-                    <header>{SiteDescription}</header>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid content-wrapper">
+            <div class="row">
+                <div class="col-12">
+                    <header class="site-header">{SiteDescription}</header>
                 </div>
             </div>
 
             <div class="row">
-            <div class="col-md-8">
-                <h1>Contact Me</h1>
-                <p>The best way to reach me in real-time is usually in the Fediverse {TwitterLink}.</p>
-                <p>The email address below can be used temporarily, but will be replaced with a new address when
-                it starts getting a bunch of spam.</p>
-                <p><a href="mailto:{ContactEmail}">{ContactEmail}</a></p>
-                <p>I am also available on several community Slack channels including 
-                    <a target="Slack" href="https://aspnetcore.slack.com/">.NET</a>, 
-                    <a target="Slack" href="http://speaknet.slack.com">SpeakNet</a>, 
-                    and <a target="Slack" href="http://thatslack.slack.com">THATSlack</a>
-                    under the username <b>bsstahl</b>.
-                </p>
-                <p>&nbsp;</p>
-            </div>
-            <div class="col-md-4">
-                {Sidebar}
+                <main class="col-lg-9 col-xl-10 content-main">
+                    <h1>Contact Me</h1>
+                    <p>The best way to reach me in real-time is usually in the Fediverse {TwitterLink}.</p>
+                    <p>The email address below can be used temporarily, but will be replaced with a new address when
+                    it starts getting a bunch of spam.</p>
+                    <p><a href="mailto:{ContactEmail}">{ContactEmail}</a></p>
+                    <p>I am also available on several community Slack channels including 
+                        <a target="Slack" href="https://aspnetcore.slack.com/">.NET</a>, 
+                        <a target="Slack" href="http://speaknet.slack.com">SpeakNet</a>, 
+                        and <a target="Slack" href="http://thatslack.slack.com">THATSlack</a>
+                        under the username <b>bsstahl</b>.
+                    </p>
+                </main>
+                <aside class="col-lg-3 col-xl-2 sidebar">
+                    {Sidebar}
+                </aside>
             </div>
         </div>
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script defer type="module" src="{PathToRoot}/Modules/share-on-mastodon.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script defer type="module" src="{PathToRoot}/Modules/share-on-mastodon.js"></script>
 
-</body>
+    </body>
 </html>

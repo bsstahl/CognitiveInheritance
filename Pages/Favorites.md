@@ -9,7 +9,7 @@ description: My favorite physicists and favorite mathematicians
 ispublished: true
 showinlist: true
 publicationdate: 2017-06-22T07:00:00
-lastmodificationdate: 2024-10-15T07:00:00
+lastmodificationdate: 2024-12-27T22:05:00
 slug: Favorites
 categories:
 - General
@@ -47,10 +47,10 @@ I like to describe myself as the kind of person who has a list of his favorite p
 1. Emmy Noether
 1. George Boole
 1. Blaise Pascal
-1. Johann Gauss
 1. Grace Hopper
+1. Daphne Koller
 
-* Other notables: Daphne Koller, Grady Booch, Leonardo Fibonacci, Evelyn Berezin, Benoit Mandelbrot
+* Other notables: Grady Booch, Leonardo Fibonacci, Evelyn Berezin, Pascal Van Hentenryck, Johann Gauss, Benoit Mandelbrot
 
 ---
 

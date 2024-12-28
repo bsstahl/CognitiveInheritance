@@ -9,13 +9,14 @@ name:
 - Emmy Noether
 - George Boole
 - Blaise Pascal
-- Johann Gauss
 - Grace Hopper
 - Daphne Koller
 - Grady Booch
 - Leonardo Fibonacci
 - Evelyn Berezin
+- Pascal Van Hentenryck
+- Johann Gauss
 - Benoit Mandelbrot
-lastmodificationdate: 2020-06-03T22:05:00.000+00:00
+lastmodificationdate: 2024-12-27T22:05:00.000+00:00
 
 ---
