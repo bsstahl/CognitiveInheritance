@@ -517,6 +517,86 @@ We will start with a simple linear regression model and build on that to create 
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
+
+<a id="007b9ad8-51d1-495e-bd58-f4cbf527c5d8"><h1>Voting Dataset</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:15aa309a-7d45-49d2-a476-f165758f9a18 -->
+<img alt="Congressional Voting Dataset 1280x720.png" src="img/15aa309a-7d45-49d2-a476-f165758f9a18.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="15dbfd0f-028e-4d68-a1a2-6a535d1dff93"><h1>Voting Data</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:ea0bd9c3-058f-4aa2-a20c-932b57a7ff97 -->
+<img alt="Excel - Voting Dataset 1280x720.png" src="img/ea0bd9c3-058f-4aa2-a20c-932b57a7ff97.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>This model won't work without a little something more. The voting data we are working with is NOT linearly  separable. That means we need to do something more than just a straight linear transformation.</p>
+</aside>
+<a id="ebf12f89-6014-4ba9-8775-c2d4dcbee242"><h1>Voting Model</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:4209462e-7f67-40c8-beea-33bbf31c969a -->
+<img alt="AI Models - SingleLayer Voter Model - 1280x720.png" src="img/4209462e-7f67-40c8-beea-33bbf31c969a.png" />
+</section>
+
+
+<section data-transition="slide-in fade-out">
+<aside class="notes"><p>All of the problems we've looked at so far are linearly separable. If you want to prove that to yourself just draw a 3D graph of the AND gate data with 1 input on the X axis, the other on the Y axis, and the output on the Z axis. You'll see that a plane can be drawn at Z=0.5 that separates the data into two distinct regions.</p>
+</aside>
+<a id="df29a9e8-a98d-4397-8f06-5bfdec5a2fe7"><h1>Linear Separability</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:e91e1b70-5571-4dfb-a3a5-9a4b5472b147 -->
+<img alt="LinearSeparability.png" src="img/e91e1b70-5571-4dfb-a3a5-9a4b5472b147.png" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="c2f73941-9061-49ab-948c-4b7a120a36d5"><h1>Linear Separability</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:729efb18-b698-4d28-9a4c-c698c18764f6 -->
+<img alt="LinearSeparability-WithLine.png" src="img/729efb18-b698-4d28-9a4c-c698c18764f6.png" />
+</section>
+
+
+<section data-transition="fade-in slide-out">
+<aside class="notes"><p>Our voting data is more along these lines. We can't draw a straight line or even a hyperplane to separate the data into two groups. We need more than just a linear transformation to model this.</p>
+</aside>
+<a id="adaf8d4b-eb3d-4aa2-bf29-72d21637fb86"><h1>Not Linearly Separable</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:9ad8b06e-963c-4d4e-bcc9-2b0d77b1eea2 -->
+<img alt="NotLinearlySeparable.png" src="img/9ad8b06e-963c-4d4e-bcc9-2b0d77b1eea2.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="dfa89dda-5578-4bc4-b793-887e4c69e9b3"><h1>Activation</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:3d9fd9d6-9953-4b23-aea4-3bbc7da806ac -->
+<!-- ContentItem:d71b9c37-4656-449d-8471-7e888ba6b7da -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Functions applied to the output of a layer to introduce non-linearity</p>
+</blockquote>
+<ul>
+<li>Allow the network to learn complex mappings</li>
+<li>The sum of linear functions is linear (multiple variables in a layer)</li>
+<li>Composition of linear functions is linear (multiple layers)</li>
+<li>Composition of linear and non-linear functions is non-linear (activation)</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/d71b9c37-4656-449d-8471-7e888ba6b7da.png" alt="Activation.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
 <aside class="notes"><p>Sigmoid Activation Function</p>
 </aside>
 <a id="81d9e46f-b176-4ec7-8037-93cf97ff88f3">&nbsp;</a>
@@ -539,6 +619,7 @@ We will start with a simple linear regression model and build on that to create 
 <li><a href="https://www.youtube.com/watch?v=zZAobExOMB0&amp;list=FLq-iLd7rfmqSIFiujBGIRSw&amp;index=2">Building AI Solutions with Google OR-Tools</a></li>
 <li><a href="https://github.com/TheAlgorithms">The Algorithms Repo</a></li>
 <li><a href="https://github.com/bsstahl/AIDemos">My AI Demos</a></li>
+<li><a href="https://archive.ics.uci.edu/dataset/105/congressional+voting+records">Congressional Voting Data - UC Irvine</a></li>
 </ul>
 
 </td>
