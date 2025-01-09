@@ -505,9 +505,9 @@ We will start with a simple linear regression model and build on that to create 
 </aside>
 <table><tr><td style="vertical-align:top;">
 <ul>
-<li>Simple Linear Regression (<a href="https://github.com/bsstahl/AIDemos/tree/master/CraftingAI/src/GradientDescent/LinearRegression">C# Code</a>)</li>
-<li>AND Gate (Excel)</li>
-<li>Maintainability (Excel)</li>
+<li>Linear Regression - <a href="https://github.com/bsstahl/AIDemos/tree/master/CraftingAI/src/GradientDescent/LinearRegression">C# Code</a></li>
+<li>AND Gate Model - <a href="https://github.com/bsstahl/AIDemos/tree/master/CraftingAI/AND%20Gate%20Model.xlsx">Excel</a></li>
+<li>Maintainability Model - <a href="https://github.com/bsstahl/AIDemos/tree/master/CraftingAI/Maintainability%20Model.xlsx">Excel</a></li>
 </ul>
 
 </td>
@@ -578,16 +578,33 @@ We will start with a simple linear regression model and build on that to create 
 <!-- Layout:ImageRight -->
 <!-- ContentItem:3d9fd9d6-9953-4b23-aea4-3bbc7da806ac -->
 <!-- ContentItem:d71b9c37-4656-449d-8471-7e888ba6b7da -->
-
+<aside class="notes"><p>Allow the network to learn complex mappings between the inputs and outputs.</p>
+</aside>
 <table><tr><td style="vertical-align:top;">
 <blockquote>
-<p>Functions applied to the output of a layer to introduce non-linearity</p>
+<p>Functions applied to the output to introduce non-linearity</p>
 </blockquote>
 <ul>
-<li>Allow the network to learn complex mappings</li>
-<li>The sum of linear functions is linear (multiple variables in a layer)</li>
-<li>Composition of linear functions is linear (multiple layers)</li>
-<li>Composition of linear and non-linear functions is non-linear (activation)</li>
+<li><p>The sum of linear functions is linear</p>
+<ul>
+<li>i.e. multiple variables in a layer</li>
+<li><code>Y = M1*X1 + M2*X2 + ... + Mn*Xn + B</code></li>
+<li>Hyperplane in n-dimensional space</li>
+</ul>
+</li>
+<li><p>Composition of linear functions is linear</p>
+<ul>
+<li>i.e. multiple layers</li>
+<li><code>Y = M1*(M2*X1 + ... + Mn*Xn + B2) + B1</code></li>
+<li>Hyperplane in n-dimensional space</li>
+</ul>
+</li>
+<li><p>Composition of linear and non-linear is non-linear</p>
+<ul>
+<li>i.e. Activation functions</li>
+<li>Non-linear</li>
+</ul>
+</li>
 </ul>
 
 </td>
@@ -605,6 +622,103 @@ We will start with a simple linear regression model and build on that to create 
 <img alt="Sigmoid Function.png" src="img/a8be0761-428c-420e-9ea5-b68b6cfe29cb.png" />
 </section>
 
+
+<section data-transition="slide-in slide-out">
+<a id="6edc47cf-c854-45e3-b429-c38114380b99"><h1>Feature Analysis</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:d59f515f-3d1e-4596-97aa-a5a2d1dd0321 -->
+<!-- ContentItem:c9cc5525-2ffb-4dfc-b88c-8fb41a3bdc35 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Weights represent the influence of an input feature</p>
+</li>
+<li><p>The 13th weight is the smallest - least influential</p>
+<ul>
+<li>Least partisan: <code>Superfund Right to Sue</code></li>
+</ul>
+</li>
+<li><p>The 4th weight is the largest - most influential</p>
+<ul>
+<li>Most partisan: <code>Physician Fee Freeze</code></li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/c9cc5525-2ffb-4dfc-b88c-8fb41a3bdc35.png" alt="Trained Model Parameters - Voting Model - 800x800 - With Highlights.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="ec957a36-508d-4a7b-a0ac-e29d1b75e39e"><h1>Features of the Voting Model</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:de42d810-da0a-4f3c-91a8-e7100b16a6c7 -->
+<!-- ContentItem:4209462e-7f67-40c8-beea-33bbf31c969a -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Current Model</p>
+<ul>
+<li><p><strong>Inputs</strong>: 16 Features</p>
+</li>
+<li><p><strong>Output</strong>: 1 Neuron</p>
+</li>
+<li><p><strong>Architecture</strong>: Linear Perceptron</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Hypothesis</strong>: Existence of factions within parties</p>
+<ul>
+<li>Single-layer model may not capture this non-linear feature</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/4209462e-7f67-40c8-beea-33bbf31c969a.png" alt="AI Models - SingleLayer Voter Model - 1280x720.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="76978ea6-11e4-4c8c-b0c5-2f88fc055cd1"><h1>Enhancing the Voting Model</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:a1039217-9ef1-4e6f-8e00-3b4898eb5cba -->
+<!-- ContentItem:6d34b87a-8248-484b-b71c-68004f63a4a9 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Solution: Hidden Layer</p>
+</li>
+<li><p>Expected Outcome</p>
+<ul>
+<li><p>Better insight into party dynamics</p>
+</li>
+<li><p>Improved accuracy</p>
+</li>
+</ul>
+</li>
+<li><p>New Model</p>
+<ul>
+<li><p><strong>Inputs</strong>: 16 Features</p>
+</li>
+<li><p><strong>Hidden Layer</strong>: 3 Neurons</p>
+</li>
+<li><p><strong>Output</strong>: 1 Neuron</p>
+</li>
+<li><p><strong>Architecture</strong>: Multi-layer Perceptron</p>
+</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/6d34b87a-8248-484b-b71c-68004f63a4a9.png" alt="AI Models - MultiLayer Voter Model - 1280x720.png" />
+</td>
+</tr></table></section>
 
 <section data-transition="slide-in slide-out">
 <a id="f9c23129-0050-4248-b294-c6d43aa8ec51"><h1>Resources</h1></a>
