@@ -747,6 +747,38 @@ In this case, it represents the distance travelled on a train between stations a
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
+<a id="5d9c98bb-120b-4d61-9eba-53caa250d2ee"><h1>Feature Engineering</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:97b075f4-e20f-4bb9-a830-b116b881c6f5 -->
+<!-- ContentItem:8738d954-63a2-40f5-aa5e-deeb431d5f52 -->
+<aside class="notes"><p>The better we understand the problem we are trying to solve, the better we can describe it in a model that can be solved by a computer. This is the essence of feature engineering.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>The process of identifying, selecting, and combining key attributes of a problem to help a model make better predictions</p>
+</blockquote>
+<ul>
+<li>Choice and quality of features are critical
+<ul>
+<li>Directly impact the model's ability to learn and make accurate predictions</li>
+</ul>
+</li>
+<li>Hierarchical layers enable complex feature extraction, capturing non-linear relationships</li>
+<li>Techniques like <em>Dimensionality Reduction</em> help reduce the number of features while preserving key information
+<ul>
+<li>Example: Combine length and width to create a single feature representing area</li>
+</ul>
+</li>
+<li>Requires experimentation and iteration to find the best feature set for a given problem</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/8738d954-63a2-40f5-aa5e-deeb431d5f52.png" alt="Necker_cube_with_background.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
 <a id="ec957a36-508d-4a7b-a0ac-e29d1b75e39e"><h1>Features of the Voting Model</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:de42d810-da0a-4f3c-91a8-e7100b16a6c7 -->
@@ -907,6 +939,41 @@ In this case, it represents the distance travelled on a train between stations a
 <li><p>Enables calculation of gradients for each layer by propagating errors backward through the network</p>
 </li>
 <li><p>Essential for training deep networks, as it helps adjust weights and biases to minimize prediction error</p>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="0fcbd3ff-f477-4d53-aed1-bfd48944e967"><h1>Overfitting</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:0d71d819-45e2-4da5-9eb2-3613eb30f805 -->
+<blockquote>
+<p>When a neural network learns the training data too well, capturing noise rather than the underlying pattern</p>
+</blockquote>
+<ul>
+<li>Produces a model that performs well on training data but poorly on other data</li>
+<li>Can happen when the model is too complex relative to the dataset
+<ul>
+<li>Excessive parameters allow it to fit even noise within the data</li>
+</ul>
+</li>
+<li>Solutions include:
+<ul>
+<li>Regularization: Add a penalty to the loss function
+<ul>
+<li>L1 (Lasso): Performs feature selection by setting some coefficients to zero</li>
+<li>L2 (Ridge): Disperses the weights across all features</li>
+</ul>
+</li>
+<li>Dropout: Randomly drop neurons during training to force the network to learn more robust features</li>
+<li>Early stopping: Stop training when performance on a validation set starts to degrade</li>
+<li>Data augmentation: Diversify the training set by applying transformations to the input data</li>
+<li>Weight initialization: Better initialization to avoid configurations that lead to overfitting</li>
+<li>Batch normalization: Normalize inputs on mini-batches to reduce fluctuations</li>
+</ul>
 </li>
 </ul>
 
