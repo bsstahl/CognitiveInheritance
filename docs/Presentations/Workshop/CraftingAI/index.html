@@ -516,6 +516,101 @@ We will start with a simple linear regression model and build on that to create 
 </td>
 </tr></table></section>
 
+<section data-transition="slide-in fade-out" data-background='img/2c292b6c-c30a-434c-bda9-bafdaa9fe689.png'>
+<aside class="notes"><p>This data has obviously been cleaned. There are no major outliers and data appears fairly consistent.
+In this case, it represents the distance travelled on a train between stations at various points in time.</p>
+</aside>
+<a id="7d843486-629e-4172-9476-76197d6547b7">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="fade-in slide-out" data-background='img/a3a2b6ff-8588-4925-8d50-c6af8d86635f.png'>
+<aside class="notes"><p>It is also clearly linear so we can easily add a best fit line to the data</p>
+</aside>
+<a id="7f8d5089-c696-446a-b353-90e3a67ba020">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Of course, there are simpler ways to do this type of linear regression. We are using this example  to demonstrate the process of training a model, not to show the simplest way to solve this problem.</p>
+</aside>
+<a id="50bc745b-52ef-4ff2-a094-3f4b4860d1a6"><h1>Railroad Times Model</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:d19223dc-ec19-4348-801e-4a05333f33a3 -->
+<img alt="AI Models - Single Input Linear - 1280x720.png" src="img/d19223dc-ec19-4348-801e-4a05333f33a3.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Shown here are just 4 of the 1000 records in our data set. Above that, is the top-level Code to perform the train/test cycle.</p>
+</aside>
+<a id="7ec0327a-31f1-4a3b-9c9a-f1a4ba0506f3"><h1>Train & Test Cycle</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:b7bc5109-1b1e-46d6-8030-180af857319c -->
+<img alt="Train and Test Cycle.png" src="img/b7bc5109-1b1e-46d6-8030-180af857319c.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/007e403c-08f0-499a-add9-12cff2e7906b.png'>
+
+<a id="0ff74b67-83cb-4fbf-8408-92f8705264b0">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/ecff52dd-e87d-4a39-9832-bdc57caf2e52.png'>
+
+<a id="171c8491-2e85-4a63-b2fe-5b1b31807ec9">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/01923bec-dc28-4de5-b40a-70791b182886.png'>
+
+<a id="3eff8033-459e-49e1-894b-e2fb5f741b79">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/a60ec9d0-8588-48ee-a9e6-48ad3e3a7500.png'>
+
+<a id="9aa6a523-cae0-4324-bf91-ee9704169138">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/b61618cd-de4d-461d-aa36-9ce3b082653b.png'>
+
+<a id="0856338a-493b-4069-96d2-1984a46011ef">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/701e6cc7-7e68-4c9d-a561-f9a51c96c361.png'>
+
+<a id="3d654205-f486-4467-a359-a590b1ac6520">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/da463e8a-c454-45fb-b8f6-9d93a1e0813b.png'>
+
+<a id="35109645-5c2c-4f1d-9c0c-a7ad340ee869">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
 <section data-transition="slide-in slide-out">
 
 <a id="007b9ad8-51d1-495e-bd58-f4cbf527c5d8"><h1>Voting Dataset</h1></a>
@@ -687,7 +782,8 @@ We will start with a simple linear regression model and build on that to create 
 <!-- Layout:ImageRight -->
 <!-- ContentItem:a1039217-9ef1-4e6f-8e00-3b4898eb5cba -->
 <!-- ContentItem:6d34b87a-8248-484b-b71c-68004f63a4a9 -->
-
+<aside class="notes"><p>Notice that we have had a bit of an explosion in parameter count. We now have <code>(16x3)+3+(3*1)+1=55</code> parameters.  But we also have another problem in that during training, we have no idea what the output of the 1st layer should be.</p>
+</aside>
 <table><tr><td style="vertical-align:top;">
 <ul>
 <li><p>Solution: Hidden Layer</p>
@@ -721,6 +817,56 @@ We will start with a simple linear regression model and build on that to create 
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
+<a id="5566c84d-a3e0-4b57-8b8e-2e5dd11ff349"><h1>BackPropagation</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:8ebc7fce-f2e0-4370-87d7-7989abfa6fff -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>A mechanism to train multi-layer perceptrons by determining the appropriate outputs for hidden layers during training</p>
+</blockquote>
+<ul>
+<li><p>Create a feed-forward prediction</p>
+</li>
+<li><p>Calculate error at the output layer</p>
+</li>
+<li><p>Compute error gradient using the <a href="#3304b85c-094c-4353-be51-8339ebe4d55c">chain rule</a></p>
+</li>
+<li><p>Update Parameters using gradients</p>
+<ul>
+<li><p>Start from output layer, move backwards through network.</p>
+</li>
+<li><p>Adjustments to weights are weighted by the input values</p>
+</li>
+<li><p>Adjustments to biases are not weighted</p>
+</li>
+</ul>
+</li>
+<li><p>No need to recalculate gradient after each update during an iteration</p>
+</li>
+</ul>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background='img/0d4cd05c-0bf4-472a-9f68-906607e9e2c5.png'>
+
+<a id="db56d525-9fd2-4da8-8316-486593e87f2d">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/3b7896bb-7ab7-4e20-bd8e-8a7be3bac912.png'>
+<aside class="notes"><p>The method on top is used for linear Models, the one on the bottom is used for non-linear models  that are activated with the Sigmoid function</p>
+</aside>
+<a id="21cbd034-a298-452b-bac6-f8eefaf514f4">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
 <a id="f9c23129-0050-4248-b294-c6d43aa8ec51"><h1>Resources</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:8136cce7-014e-4809-b419-8b2d1aed0d48 -->
@@ -741,6 +887,56 @@ We will start with a simple linear regression model and build on that to create 
 <img src="img/871ff846-5ca3-4d9a-bf0c-110b1dd27624.png" alt="Crafting AI - QR Code.png" />
 </td>
 </tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="3304b85c-094c-4353-be51-8339ebe4d55c"><h1>Chain Rule of Calculus</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:21e6277a-2d21-43bd-ae52-1416e5cba08a -->
+<blockquote>
+<p>To find the derivative of a composite function <code>h(x) = f(g(x))</code>, you take the derivative of the outer function <code>f</code> with respect to the inner function <code>g</code>, and multiply it by the derivative of the inner function <code>g</code> with respect to  <code>x</code></p>
+</blockquote>
+<ul>
+<li><p>If <code>h(x)</code> = <code>f(g(x))</code>, then:</p>
+<ul>
+<li><code>dh/dx</code> = <code>df/dg</code> * <code>dg/dx</code></li>
+</ul>
+</li>
+<li><p>How changes in <code>x</code> affect the output <code>h</code> by accounting for how <code>x</code> influences <code>g</code> and how <code>g</code> influences <code>f</code></p>
+</li>
+<li><p>Enables calculation of gradients for each layer by propagating errors backward through the network</p>
+</li>
+<li><p>Essential for training deep networks, as it helps adjust weights and biases to minimize prediction error</p>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="a3c4f31c-30da-4144-a3e5-76d9b471075e"><h1>Xavier/Glorot Initialization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:ded01e5f-adf3-4e1b-85d5-7bd0c3c1f655 -->
+<blockquote>
+<p>Helps prevent gradients from becoming too small or large, aiding convergence</p>
+</blockquote>
+<pre><code class="language-csharp">  // Xavier/Glorot initialization for better gradient flow
+  int inputWeightCount = inputCount * hiddenLayerNodes;
+  int totalWeightCount = inputWeightCount + hiddenLayerNodes;
+  var weightScale = Math.Sqrt(2.0 / inputWeightCount);
+  startingWeights = new double[totalWeightCount];
+  for (int i = 0; i &lt; startingWeights.Length; i++)
+    startingWeights[i] = _random.GetRandomDouble(-weightScale, weightScale);
+</code></pre>
+<ul>
+<li>Balances the signal through layers</li>
+<li>Prevents activation function saturation</li>
+<li>Ideal for symmetric activations (e.g., sigmoid or hyperbolic tangent)</li>
+</ul>
+
+</section>
+
 
 
         </div>
