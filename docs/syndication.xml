@@ -9,7 +9,7 @@
     <language>en-US</language>
     <atom:link href="https://cognitiveinheritance.com/syndication.xml" rel="self" type="application/rss+xml" />	
     <item>
-  <title>Code Coverage&colon; The Essential Tool That Must Never Be Measured</title>
+  <title>Code Coverage - The Essential Tool That Must Never Be Measured</title>
   <description>&lt;h2&gt;TLDR: Code Coverage is the Wrong Target&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Code coverage metrics HURT code quality&lt;/strong&gt;, especially when gating deployments, because they are a misleading target, prioritizing superficial benchmarks over meaningful use-case validation. A focus on achieving coverage percentages detracts from real quality assurance, as developers write tests that do what the targets insist that they do, satisfy coverage metrics rather than ensuring comprehensive use-case functionality.&lt;/p&gt;
 &lt;p&gt;When we measure code coverage instead of use-case coverage, we limit the value of the Code Coverage tools for the developer going forward as a means of identifying areas of concern within the code. If instead we implement the means to measure use-case coverage, perhaps using Cucumber/SpecFlow BDD tools, such metrics might become a valuable target for automation. Short of that, test coverage metrics and gates actually hurt quality rather than helping it.&lt;/p&gt;
