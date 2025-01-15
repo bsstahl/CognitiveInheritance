@@ -17,7 +17,7 @@ publicationdate: 2023-06-10T07:00:00Z
 lastmodificationdate: 2024-06-10T07:00:00Z
 slug: llms-are-like-tdd
 ---
-In the realm of software development, Test-Driven Development (TDD) has long been heralded for its systematic approach to building robust and reliable software. By writing tests that define the desired behavior of code before the implementation, TDD ensures that development is driven by clearly specified requirements. Similarly, Large Language Models (LLMs) like GPT-4 can be leveraged across various text-related activities in a manner akin to TDD. They help users define outputs before creation and overcome the daunting blank page syndrome, whether you're writing code, crafting a blog post, drafting a letter, or creating an instruction manual. 
+Test-Driven Development (TDD) approaches to building software have been known to result in more robust reliable software for several decades now. By writing tests that define the desired behavior of code before the implementation, TDD ensures that development is driven by clearly specified requirements. Similarly, Large Language Models (LLMs) like GPT-4 can be leveraged across various text-related activities in a manner akin to TDD. They help users define outputs before creation and overcome the daunting blank page syndrome, whether you're writing code, crafting a blog post, drafting a letter, or creating an instruction manual.
 
 In this post, we’ll explore how LLMs can be used to mirror the principles of TDD and offer additional benefits that can streamline both technical and non-technical tasks.
 

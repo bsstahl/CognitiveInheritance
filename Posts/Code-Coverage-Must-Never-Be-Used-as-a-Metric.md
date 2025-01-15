@@ -9,7 +9,7 @@ categories:
 - Development
 menuorder: 0
 id: 052711e4-2d3c-48cf-8959-8d964b1c05ab
-title: Code Coverage&colon; The Essential Tool That Must Never Be Measured
+title: Code Coverage - The Essential Tool That Must Never Be Measured
 description: This article emphasizes that code coverage should never be used as a metric because it is too valuable a tool. Code Coverage is not a valid proxy for code quality.
 teaser: Code coverage is a vital tool for identifying gaps in unit tests, but it shouldn't be used as a metric. Misusing it can lead to superficial testing and overlooked use cases. Instead, focus on use case coverage and equip developers with the right tools for comprehensive testing
 ispublished: true
