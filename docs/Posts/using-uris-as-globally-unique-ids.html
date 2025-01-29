@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     
-        <meta name="description" content="Testing a .NET Core Library in VS2015, an article on Cognitive Inheritance.">
+        <meta name="description" content="Using URIs as Globally Unique Identifiers, an article on Cognitive Inheritance.">
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -67,85 +67,156 @@
 
             <div class="row">
                 <main class="col-lg-9 col-xl-10 content-main">
-                    <h3>Testing a .NET Core Library in VS2015</h3>
-                    <h5>Posted by bsstahl on 2017-01-09 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+                    <h3>Using URIs as Globally Unique Identifiers</h3>
+                    <h5>Posted by bsstahl on 2025-01-29 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
                     <share-on-mastodon 
-                        share_title="Check out this post on Cognitive Inheritance: 'Testing a .NET Core Library in VS2015'"
-                        share_description="&quot;&quot;"
-                        hashtags="#testing #code coverage #development #di #ioc #microsoft #moq #mocks #professional development #tdd #unit testing #visual studio #dotnet"
+                        share_title="Check out this post on Cognitive Inheritance: 'Using URIs as Globally Unique Identifiers'"
+                        share_description="&quot;Learn how URIs provide a robust solution for creating unique, self-describing identifiers while avoiding the pitfalls of composite IDs. This comprehensive guide covers implementation best practices, common anti-patterns, and real-world examples.&quot;"
+                        hashtags="#architecture #coding-practices"
                         author="@bsstahl@cognitiveinheritance.com"
                         default_url="https://fosstodon.org">
                     </share-on-mastodon>
                     <br/><br/>
-                    <p>I really enjoy working with .NET Core.  I like the fact that my code is portable to many platforms and that the footprint is so much smaller than with traditional .NET applications.  Unfortunately, the tooling has not quite reached the level that we expect from a Microsoft finished product (which it isn’t – yet). As a result, there are some additional actions we need to take when setting up our solutions in Visual Studio 2015 to allow us to unit test our code properly.  The following are the steps that I currently take to setup and test a .NET Core library using XUnit and Moq.  I know that a number of these steps will be done for us, or at least made much easier, by the tooling in the coming months, either by Visual Studio 2017, or by enhancements to the Visual Studio 2015 environments.</p>
-<ol>
-<li>Create the library to be tested in Visual Studio 2015
-<ol>
-<li>File &gt; New Project &gt; .Net Core &gt; Class Library</li>
-<li>Notice that this project is created in a solution folder called ‘src’</li>
-</ol>
-</li>
-<li>Create a solution folder named ‘test’ to hold our test projects
-<ol>
-<li>Right-click on the Solution &gt; Add &gt; New Solution Folder</li>
-</ol>
-</li>
-<li>Add a new console application to the test folder as our test project
-<ol>
-<li>Right-click on the ‘test’ folder &gt; Add &gt; New Project &gt; .Net Core &gt; Console Application</li>
-</ol>
-</li>
-<li>Add a reference to the library being tested in the test project
-<ol>
-<li>Right-click on the test project &gt; Add &gt; Reference &gt; Select the library to be tested</li>
-</ol>
-</li>
-<li>Install packages needed for unit testing from NuGet to the test project
-<ol>
-<li>Right-click on the test project &gt; Manage NuGet Packages &gt; Browse</li>
-<li>Install ‘xunit’ as our unit test runner
-<ol>
-<li>The current version for .Net Core is ‘2.2.0-beta4-build3444’</li>
-</ol>
-</li>
-<li>Install ‘dotnet-test-xunit’ to integrate xunit with the Visual Studio test tools
-<ol>
-<li>The current version for .Net Core is ‘2.2.0-preview2-build1029’</li>
-</ol>
-</li>
-<li>Install ‘Moq’ as our mocking library
-<ol>
-<li>The current version for .Net Core is ‘4.6.38-alpha’</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Edit the project.json of the test library
-<ol>
-<li>Change the “EmitEntryPoint” option to false</li>
-<li>Add “testrunner” : “xunit” node</li>
-</ol>
-</li>
-</ol>
-<p>Some other optional steps include:</p>
+                    <p>In our companion article on <a href="the-id-entanglement-effect">The ID Entanglement Effect</a>, we explored the challenges and risks of using composite IDs that encode business logic or mutable state. A powerful alternative that addresses many of these concerns is the use of URIs (Uniform Resource Identifiers) as identifiers. URIs provide a standardized way to create unique, self-describing identifiers while avoiding the pitfalls of traditional composite IDs.</p>
+<h3>Benefits of URI-Based Identifiers</h3>
 <ul>
-<li>Install the ‘Microsoft.CodeCoverage’ package from NuGet to enable the code coverage tooling</li>
-<li>Install the ‘Microsoft.Extension.DependencyInjection’ package from NuGet to enable DI</li>
-<li>Install the ‘TestHelperExtensions’ package from NuGet to add extensions that assist with writing good unit tests</li>
-<li>Add any additional runtimes that might be needed. Some options are:
+<li><p><em>Global Uniqueness</em>: URIs provide natural namespace separation through domain names and paths (e.g., <code>https://example.com/employees/12345</code>). This eliminates ID conflicts across systems and organizations without requiring complex prefixing schemes.</p>
+</li>
+<li><p><em>Standard Format</em>: URIs follow well-defined standards (RFC 3986) with robust parsing libraries available in every major programming language. This standardization means teams don't need to create and maintain custom parsing logic.</p>
+</li>
+<li><p><em>Self-Describing</em>: URIs can convey meaning through their structure without requiring parsing of the identifier itself. For example, <code>https://api.example.com/orders/2024/01/12345</code> clearly indicates an order resource while maintaining a clean separation between the identifier and its metadata.</p>
+</li>
+<li><p><em>Extensible</em>: New properties can be added through query parameters without breaking existing systems. For instance, <code>https://api.example.com/products/12345?version=2</code> can introduce versioning without changing the base identifier.</p>
+</li>
+<li><p><em>Interoperable</em>: URIs work seamlessly across different systems and protocols, making them ideal for distributed systems and microservices architectures.</p>
+</li>
+</ul>
+<h3>Implementation Guidelines</h3>
+<p>When implementing URI-based identifiers, consider these best practices:</p>
+<ol>
+<li><p><strong>Keep Base URIs Stable</strong></p>
 <ul>
-<li>win10-x86</li>
-<li>win10-x64</li>
-<li>win7-x86</li>
-<li>win7-x64</li>
+<li>Choose domain names and base paths that won't need to change</li>
+<li>Use dedicated subdomains for different environments (e.g., <code>api.example.com</code>, <code>test-api.example.com</code>)</li>
+<li>Consider using URNs (e.g., <code>urn:example:order:12345</code>) for purely internal identifiers</li>
 </ul>
 </li>
-<li>Set ‘Run tests after build’ in Visual Studio so tests run automatically</li>
+<li><p><strong>Structure Meaningful Paths</strong></p>
+<ul>
+<li>Use clear resource types in paths (<code>/orders/</code>, <code>/customers/</code>, <code>/products/</code>)</li>
+<li>Include version information in the path if needed (<code>/v1/orders/</code>)</li>
+<li>Keep path segments simple and consistent</li>
 </ul>
-<p>There will likely be better ways to do many of these things shortly, but if you know a better way now, please let me know <a rel="me" href="https://fosstodon.org/@Bsstahl" title="@bsstahl@cognitiveinheritance.com">@bsstahl</a>.</p>
+</li>
+<li><p><strong>Use Appropriate Identifiers</strong></p>
+<ul>
+<li>UUIDs work well for unique segments (<code>/orders/550e8400-e29b-41d4-a716-446655440000</code>)</li>
+<li>Short, random strings can be more user-friendly (<code>/products/xy7z9</code>)</li>
+<li>Avoid sequential numbers to prevent enumeration attacks</li>
+</ul>
+</li>
+<li><p><strong>Handle Query Parameters Carefully</strong></p>
+<ul>
+<li>Use query parameters for optional metadata only</li>
+<li>Never include mutable state in the base URI</li>
+<li>Document which parameters are part of the identifier</li>
+</ul>
+</li>
+</ol>
+<h3>Common Anti-Patterns to Avoid</h3>
+<ol>
+<li><p><strong>Encoding Mutable Data</strong></p>
+<pre><code># Bad: Including status in URI
+https://api.example.com/orders/active/12345
 
-                    <h5>Tags: <a title="Tag: testing" class="small" href="../Search/testing.html">testing</a>&nbsp;<a title="Tag: code coverage" class="small" href="../Search/code-coverage.html">code coverage</a>&nbsp;<a title="Tag: development" class="small" href="../Search/development.html">development</a>&nbsp;<a title="Tag: di" class="small" href="../Search/di.html">di</a>&nbsp;<a title="Tag: ioc" class="small" href="../Search/ioc.html">ioc</a>&nbsp;<a title="Tag: microsoft" class="small" href="../Search/microsoft.html">microsoft</a>&nbsp;<a title="Tag: moq" class="small" href="../Search/moq.html">moq</a>&nbsp;<a title="Tag: mocks" class="small" href="../Search/mocks.html">mocks</a>&nbsp;<a title="Tag: professional development" class="small" href="../Search/professional-development.html">professional development</a>&nbsp;<a title="Tag: tdd" class="small" href="../Search/tdd.html">tdd</a>&nbsp;<a title="Tag: unit testing" class="small" href="../Search/unit-testing.html">unit testing</a>&nbsp;<a title="Tag: visual studio" class="small" href="../Search/visual-studio.html">visual studio</a>&nbsp;<a title="Tag: dotnet" class="small" href="../Search/dotnet.html">dotnet</a>&nbsp;</h5>
-                    <div class="share"><a href="../Permalinks/8d08d120-ece8-47d2-b6be-0bd5416d5c90.html" rel="bookmark">Permalink</a></div>
+# Good: Status as a property
+https://api.example.com/orders/12345
+</code></pre>
+</li>
+<li><p><strong>Deep Hierarchical Nesting</strong></p>
+<pre><code># Bad: Deep nesting creates brittleness
+https://api.example.com/departments/sales/regions/west/employees/12345
+
+# Good: Flat structure with relationships
+https://api.example.com/employees/12345
+</code></pre>
+</li>
+<li><p><strong>Overloading Query Parameters</strong></p>
+<pre><code># Bad: Essential data in query parameters
+https://api.example.com/products?category=electronics&amp;id=12345
+
+# Good: Clean resource path
+https://api.example.com/products/12345
+</code></pre>
+</li>
+</ol>
+<h3>Real-World Examples</h3>
+<ol>
+<li><p><strong>E-Commerce System</strong></p>
+<pre><code># Order ID
+https://shop.example.com/orders/2024/550e8400-e29b-41d4-a716-446655440000
+
+# Product ID
+https://shop.example.com/products/electronics/laptop-x1
+</code></pre>
+</li>
+<li><p><strong>Content Management System</strong></p>
+<pre><code># Article ID
+https://cms.example.com/articles/2024/01/using-uris-as-ids
+
+# Asset ID
+https://cms.example.com/assets/images/header-logo
+</code></pre>
+</li>
+<li><p><strong>Microservices Architecture</strong></p>
+<pre><code># Customer Service
+https://customers.example.com/v1/profiles/12345
+
+# Inventory Service
+https://inventory.example.com/v1/items/in-stock/89abc
+</code></pre>
+</li>
+</ol>
+<h3>Storage Considerations</h3>
+<p>When storing URI identifiers:</p>
+<ol>
+<li><p><strong>Database Design</strong></p>
+<ul>
+<li>Use VARCHAR/TEXT columns with appropriate length</li>
+<li>Consider indexing for performance</li>
+<li>Validate URI format before storage</li>
+</ul>
+</li>
+<li><p><strong>Normalization</strong></p>
+<ul>
+<li>Store canonical forms (lowercase, no trailing slashes)</li>
+<li>Consider storing components separately if needed</li>
+<li>Document normalization rules</li>
+</ul>
+</li>
+<li><p><strong>Performance</strong></p>
+<ul>
+<li>Use proper indexing strategies</li>
+<li>Consider URI length limits</li>
+<li>Cache frequently accessed resources</li>
+</ul>
+</li>
+</ol>
+<h3>Migration Strategies</h3>
+<p>When moving to URI-based identifiers:</p>
+<ol>
+<li>Start with new resources</li>
+<li>Create URI aliases for existing IDs</li>
+<li>Gradually transition systems to use URIs</li>
+<li>Maintain backwards compatibility during transition</li>
+<li>Document both old and new formats</li>
+</ol>
+<h3>Conclusion</h3>
+<p>URI-based identifiers offer a robust solution to many of the challenges posed by traditional composite IDs. By following established standards and best practices, teams can create scalable, maintainable systems that avoid the ID Entanglement Effect while maintaining flexibility for future growth.</p>
+<p>Remember that URIs are not just for web resources - they provide a standardized format for creating unique, self-describing identifiers in any system. Whether you're building a distributed microservices architecture or a monolithic application, URI-based identifiers can help create cleaner, more maintainable code.</p>
+
+                    <h5>Tags: <a title="Tag: architecture" class="small" href="../Search/architecture.html">architecture</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;</h5>
+                    <div class="share"><a href="../Permalinks/3381f760-a4f1-4335-b7c5-3b1da1ff85c0.html" rel="bookmark">Permalink</a></div>
                 </main>
                 <aside class="col-lg-3 col-xl-2 sidebar">
                     <div class="widgetzone"><div class="widget textbox"><h4>About the Author</h4><div class="content"><p><img style="float: left; padding: 0px 3px 0px 0px;" src="../Pics/bsstahl_left.gif" alt="Barry S. Stahl" width="95" /><strong>Barry S. Stahl</strong> (he/him/his) - Barry is a .NET Software Engineer who has been creating business solutions for enterprise customers since the mid 1980s. Barry is also an Election Integrity Activist, baseball and hockey fan, husband of one genius and father of another, and a 40 year resident of Phoenix Arizona USA. When Barry is not traveling around the world to speak at Conferences, Code Camps and User Groups or to participate in GiveCamp events, he spends his days as a Solution Architect for Carvana in Tempe AZ and his nights thinking about the next AZGiveCamp event where software creators come together to build websites and apps for some great non-profit organizations.</p>
