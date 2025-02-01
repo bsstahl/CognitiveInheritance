@@ -68,6 +68,87 @@
         <div class="row">
             <main class="col-lg-9 col-xl-10 content-main">
                 <div>
+    <h3>Understanding the ID Entanglement Effect</h3>
+    <h5>Posted by bsstahl on 2025-02-01 and Filed Under: <a title="Category: development" class="small" href="Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'Understanding the ID Entanglement Effect'"
+        share_description="&quot;Using composite IDs can lead to the "ID Entanglement Effect," causing structural dependency, data parsing issues, maintenance complexity, inflexibility, and data integrity risks to our applications. To avoid these pitfalls, it's recommended to use clear, atomic identifiers, which enhance scalability, maintainability, and data integrity.&quot;"
+        target_url="https://CognitiveInheritance.com/Permalinks/2d9c8f17-09c4-48a4-873c-4624cfd4fbd1.html"
+        hashtags="#antipattern #architecture #coding-practices #coupling #flexibility"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <br/><br/>
+    <p>Every developer has faced it: the temptation to make identifiers &quot;smarter&quot; by embedding information. A customer ID that includes their region, an order number containing the date, a product code that encodes its category - these patterns appear innocent at first, even helpful. But they hide a subtle trap I call the &quot;<strong>ID Entanglement Effect</strong>&quot; - a cascade of complexity that emerges when identifiers become intertwined with business logic and mutable state.</p>
+<p>This effect manifests when we blur the line between identification and information, creating a web of dependencies that grows increasingly difficult to maintain. What starts as a convenient shortcut often evolves into a significant source of technical debt, affecting everything from system flexibility to data integrity.</p>
+<h2>Critical Characteristics</h2>
+<h3>Structural Dependency</h3>
+<p>Systems relying on a specific format for composite IDs become fragile. Any format change can disrupt functionality and complicate maintenance. For instance, if a system uses &quot;DEPT-EMP-123&quot; as an employee ID, changing the department code structure creates a difficult choice: either update all systems and databases that use this format (a risky and potentially expensive undertaking), or abandon the standard for new records while keeping old IDs in the legacy format. The latter option results in inconsistent IDs across the system where some follow the old standard and others follow the new one, effectively creating a partial, incomplete, and incorrect standard within the IDs themselves. This inconsistency further complicates maintenance and can lead to confusion and errors in data processing.</p>
+<h3>Data Parsing</h3>
+<p>When information is embedded in composite IDs, parsing them often appears to be the simplest solution - and it's a completely understandable choice when the data is readily available in the ID itself. Consider an order ID like &quot;2024-01-NA-12345&quot; containing year, region, and sequence number information. Using this embedded data seems more straightforward than querying additional fields or services. However, this parsing must be replicated across different applications and languages, increasing the risk of inconsistencies and errors. The only way to be sure we don't end up parsing these IDs, and in doing so bringing the <strong>ID Entanglement Effect</strong> into play, is to avoid creating systems that embed business data in identifiers in the first place.</p>
+<h3>Maintenance Complexity</h3>
+<p>Parsing logic embedded throughout the codebase increases complexity, making debugging and future development challenging. For example, if an order ID contains both a date and location code (like &quot;20240129-PHX-1234&quot;), every service that processes orders must implement and maintain the same parsing logic. When this logic needs to change, such as adding a new location format, developers must update and test the parsing code across multiple codebases, increasing the risk of inconsistencies.</p>
+<h3>Inflexibility</h3>
+<p>Composite IDs limit adaptability. Modifications can ripple through the system, complicating changes or scaling. For example, if a product ID includes a category code (like &quot;TECH-LAPTOP-123&quot;), adding new product categories or reorganizing the category hierarchy becomes a major undertaking. Similarly, if a customer ID includes a region code (&quot;US-WEST-789&quot;), business expansion to new regions or changes in regional organization can require extensive system updates.</p>
+<h3>Data Integrity Risks</h3>
+<p>Parsing composite IDs can lead to inconsistencies, especially in dynamic environments. Consider a system where we create product IDs by combining our supplier code with a sequence number (like &quot;SUP123-WIDGET-456&quot;). If the supplier's business is acquired and rebranded, or if the product's manufacturing moves to a different supplier, should all related IDs be updated? This creates significant challenges: either maintain increasingly inaccurate IDs, implement complex ID migration processes, or risk breaking existing references across the system.</p>
+<p>Note that using a manufacturer's actual part number (like &quot;ACME-WIDGET-123&quot;) as an opaque identifier is perfectly fine - the key is that we treat it as an unchanging reference and don't try to parse meaning from its structure. The ID Entanglement Effect occurs when we create our own composite IDs that encode business relationships or mutable state that we expect to parse and interpret later.</p>
+<h3>Security Vulnerabilities</h3>
+<p>Auto-incrementing integers, while simple, introduce significant security risks. Their predictable nature makes it easy for attackers to enumerate resources (like guessing user IDs to access profiles) or gather business intelligence (such as order volumes from sequential order numbers). They can also lead to race conditions in high-concurrency systems and make it difficult to merge data from different sources without ID conflicts.</p>
+<h2>Long-Term Impact</h2>
+<p>The ID Entanglement Effect compounds over time, creating increasingly complex challenges:</p>
+<ul>
+<li><em>Technical Debt</em>: As systems evolve, the cost of maintaining and updating composite ID logic grows exponentially</li>
+<li><em>Integration Barriers</em>: New systems and third-party integrations must implement complex parsing logic</li>
+<li><em>Performance Overhead</em>: Constant parsing and validation of composite IDs impacts system performance</li>
+<li><em>Error Propagation</em>: Mistakes in ID parsing can cascade through multiple systems</li>
+<li><em>Documentation Burden</em>: Teams must maintain detailed documentation about ID formats and parsing rules</li>
+</ul>
+<h2>Prevention Strategies</h2>
+<p>To avoid the ID Entanglement Effect, consider these key strategies:</p>
+<h3>Use Clean, Stable Identifiers</h3>
+<ul>
+<li>Treat all identifiers, especially those from external systems, as opaque strings whose sole purpose is to establish equivalence through exact matching. This is crucial because:
+<ul>
+<li>It prevents accidental coupling to internal structures or business logic that may be embedded in the ID</li>
+<li>It ensures the system remains resilient to changes in ID format or structure</li>
+<li>It maintains compatibility with different ID generation schemes across systems</li>
+<li>It avoids assumptions about ID content that could break when integrating with new systems</li>
+</ul>
+</li>
+<li>Generate unique identifiers that remain consistent over time</li>
+<li>Human-readable identifiers (like &quot;ORDER-12345&quot;) are perfectly acceptable</li>
+<li>Avoid encoding mutable data or business logic in the identifier</li>
+<li>Use non-sequential identifiers (like UUIDs) to prevent enumeration attacks</li>
+<li>Consider the security implications of identifier patterns</li>
+</ul>
+<h3>Maintain Clear Boundaries</h3>
+<ul>
+<li>Store business data in proper fields, not in the identifier</li>
+<li>Keep temporal data (dates, versions) in dedicated attributes</li>
+<li>Track status and metadata independently of the ID</li>
+</ul>
+<h3>Design for Change</h3>
+<ul>
+<li>Assume business rules and categories will evolve</li>
+<li>Plan for system growth and new use cases</li>
+<li>Consider future integration requirements</li>
+</ul>
+<h2>Best Practices</h2>
+<p>When designing identifier systems:</p>
+<ol>
+<li><em>Keep IDs Clean</em>: Use straightforward identifiers that don't encode mutable data</li>
+<li><em>Separate Concerns</em>: Store business data, status, and metadata in dedicated fields</li>
+<li><em>Plan for Scale</em>: Choose identifier formats that support future growth</li>
+<li><em>Consider Relations</em>: Use proper database relationships instead of encoding hierarchies in IDs</li>
+<li><em>Document Clearly</em>: Maintain clear documentation about identifier generation and usage</li>
+</ol>
+<h2>Conclusion</h2>
+<p>The ID Entanglement Effect represents a significant challenge in system design, where the convenience of composite IDs leads to long-term maintenance and scalability issues. By understanding these risks and following best practices for identifier design, teams can create more maintainable and adaptable systems. Remember: while identifiers can be human-readable, they should never become entangled with business logic or mutable state - this separation is key to maintaining system flexibility and reliability over time.</p>
+
+    <h5>Tags: <a title="Tag: antipattern" class="small" href="Search/antipattern.html">antipattern</a>&nbsp;<a title="Tag: architecture" class="small" href="Search/architecture.html">architecture</a>&nbsp;<a title="Tag: coding-practices" class="small" href="Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: coupling" class="small" href="Search/coupling.html">coupling</a>&nbsp;<a title="Tag: flexibility" class="small" href="Search/flexibility.html">flexibility</a>&nbsp;</h5>
+    <div class="share"><a href="Permalinks/2d9c8f17-09c4-48a4-873c-4624cfd4fbd1.html" rel="bookmark">Permalink</a></div>
+</div><hr/><div>
     <h3>Code Coverage - The Essential Tool That Must Never Be Measured</h3>
     <h5>Posted by bsstahl on 2024-09-14 and Filed Under: <a title="Category: development" class="small" href="Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
@@ -723,47 +804,6 @@
 
     <h5>Tags: <a title="Tag: agile" class="small" href="Search/agile.html">agile</a>&nbsp;<a title="Tag: antipattern" class="small" href="Search/antipattern.html">antipattern</a>&nbsp;<a title="Tag: apache-kafka" class="small" href="Search/apache-kafka.html">apache-kafka</a>&nbsp;<a title="Tag: api" class="small" href="Search/api.html">api</a>&nbsp;<a title="Tag: apps" class="small" href="Search/apps.html">apps</a>&nbsp;<a title="Tag: architecture" class="small" href="Search/architecture.html">architecture</a>&nbsp;<a title="Tag: aspdotnet" class="small" href="Search/aspdotnet.html">aspdotnet</a>&nbsp;<a title="Tag: ci_cd" class="small" href="Search/ci_cd.html">ci_cd</a>&nbsp;<a title="Tag: coding-practices" class="small" href="Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: coupling" class="small" href="Search/coupling.html">coupling</a>&nbsp;<a title="Tag: event-driven" class="small" href="Search/event-driven.html">event-driven</a>&nbsp;<a title="Tag: microservices" class="small" href="Search/microservices.html">microservices</a>&nbsp;<a title="Tag: soa" class="small" href="Search/soa.html">soa</a>&nbsp;</h5>
     <div class="share"><a href="Permalinks/a99861ed-9829-4110-9e2f-1e75efcb43a2.html" rel="bookmark">Permalink</a></div>
-</div><hr/><div>
-    <h3>The Critical C's of Microservices - Chaos</h3>
-    <h5>Posted by bsstahl on 2023-01-02 and Filed Under: <a title="Category: development" class="small" href="Search/development.html">development</a>&nbsp;</h5>
-    <share-on-mastodon 
-        share_title="Check out this post on Cognitive Inheritance: 'The Critical C's of Microservices - Chaos'"
-        share_description="&quot;A series of conversations that development teams should have around building event driven or microservice architectures&quot;"
-        target_url="https://CognitiveInheritance.com/Permalinks/0d794105-ef08-4465-b806-4a8eff7523c7.html"
-        hashtags="#agile #antipattern #apache-kafka #api #apps #architecture #aspdotnet #ci_cd #coding-practices #coupling #event-driven #microservices #soa"
-        author="@bsstahl@cognitiveinheritance.com"
-        default_url="https://fosstodon.org">
-    </share-on-mastodon>
-    <br/><br/>
-    <p>&quot;<strong>The Critical C's of Microservices</strong>&quot; are a series of conversations that development teams should have around building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way.</p>
-<p>The &quot;Critical C's&quot; are: <strong>Context</strong>, <strong>Consistency</strong>, <strong>Contract</strong>, <strong>Chaos</strong>, <strong>Competencies</strong> and <strong>Coalescence</strong>. Each of these topics will be covered in detail in this series of articles. The first article of the 6 was on the subject of <a href="Posts/critical-cs-of-microservices-1of6-context.html">Context</a>. This is article 4 of the series, and covers the topic of <strong>Chaos</strong>.</p>
-<h4>Chaos</h4>
-<p>One of the <a href="https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing">Fallacies of Distributed Computing</a> is that the network is reliable. We should have similarly low expectations for the reliability of all of the infrastructure on which our services depend. Networks will segment, commodity servers and drives will fail, containers and operating systems will become unstable. In other words, our software will have errors during operation, no matter how resilient we attempt to make it. We need to embrace the fact that failures will occur in our software, and will do so at random times and often in unpredictable ways.</p>
-<p>If we are to build systems that don't require our constant attention, especially during off-hours, we need to be able to identify what happens when failures occur, and design our systems in ways that will allow them to heal automatically once the problem is corrected.</p>
-<p>To start this process, I recommend playing &quot;what-if&quot; games using diagrams of the system. Walk through the components of the system, and how the data flows through it, identifying each place where a failure could occur. Then, in each area where failures could happen, attempt to define the possible failure modes and explore what the impact of those failures might be. This kind of &quot;virtual&quot; Chaos Engineering is certainly no substitute for actual experimentation and testing, but is a good starting point for more in-depth analysis. It also can be very valuable in helping to understand the system and to produce more hardened services in the future.</p>
-<p>Thought experiments are useful, but you cannot really know how a system will respond to different types of failures until you have those failures in production. Historically, such &quot;tests&quot; have occurred at random, at the whim of the infrastructure, and usually at the worst possible time. Instead of leaving these things to chance, tools like <em>Chaos Monkey</em> can be used to simulate failures in production, and can be configured to create these failures during times where the appropriate support engineers are available and ready to respond if necessary. This way, we can see if our systems respond as we expect, and more importantly, heal themselves as we expect.</p>
-<p>Even if you're not ready to jump into using automated experimentation tools in production just yet, a lot can be learned from using feature-flags and changing service behaviors in a more controlled manner as a starting point. This might involve a flag that can be set to cause an API method to return an error response, either as a hard failure, or during random requests for a period of time. Perhaps a switch could be set to stop a service from picking-up asynchronous messages from a queue or topic. Of course, these flags can only be placed in code we control, so we can't test failures of dependencies like databases and other infrastructure components in this way. For that, we'll need more involved testing methods.</p>
-<p>Regardless of how we test our systems, it is important that we do everything we can to build systems that will heal themselves without the need for us to intervene every time a failure occurs. As a result, I highly recommend using asynchronous messaging patterns whenever possible. The asynchrony of these tools allow our services to be &quot;temporally decoupled&quot; from their dependencies. As a result, if a container fails and is restarted by Kubernetes, any message in process is rolled-back onto the queue or topic, and the system can pick right up where it left off.</p>
-<h4>Goals of the Conversation</h4>
-<p>Development teams should have conversations around <strong>Chaos</strong> that are primarily focused around procedures for identifying and remediating possible failure points in the application. These conversations should include answering questions like:</p>
-<ul>
-<li>How will we evaluate potential sources of failures in our systems before they are built?
-<ul>
-<li>How will we handle the inability to reach a dependency such as a database?</li>
-<li>How will we handle duplicate messages sent from our upstream data sources?</li>
-<li>How will we handle messages sent out-of-order from our upstream data sources?</li>
-</ul>
-</li>
-<li>How will we expose possible sources of failures during any pre-deployment testing?</li>
-<li>How will we expose possible sources of failures in the production environment before they occur for users?</li>
-<li>How will we identify errors that occur for users within production?</li>
-<li>How will we prioritize changes to the system based on the results of these experiments?</li>
-</ul>
-<h4>Next Up - Competencies</h4>
-<p>In the next article of this series we will look at <a href="Posts/critical-cs-of-microservices-5of6-competencies.html">Competencies</a> and how we should focus at least as much on what we build as how we build it.</p>
-
-    <h5>Tags: <a title="Tag: agile" class="small" href="Search/agile.html">agile</a>&nbsp;<a title="Tag: antipattern" class="small" href="Search/antipattern.html">antipattern</a>&nbsp;<a title="Tag: apache-kafka" class="small" href="Search/apache-kafka.html">apache-kafka</a>&nbsp;<a title="Tag: api" class="small" href="Search/api.html">api</a>&nbsp;<a title="Tag: apps" class="small" href="Search/apps.html">apps</a>&nbsp;<a title="Tag: architecture" class="small" href="Search/architecture.html">architecture</a>&nbsp;<a title="Tag: aspdotnet" class="small" href="Search/aspdotnet.html">aspdotnet</a>&nbsp;<a title="Tag: ci_cd" class="small" href="Search/ci_cd.html">ci_cd</a>&nbsp;<a title="Tag: coding-practices" class="small" href="Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: coupling" class="small" href="Search/coupling.html">coupling</a>&nbsp;<a title="Tag: event-driven" class="small" href="Search/event-driven.html">event-driven</a>&nbsp;<a title="Tag: microservices" class="small" href="Search/microservices.html">microservices</a>&nbsp;<a title="Tag: soa" class="small" href="Search/soa.html">soa</a>&nbsp;</h5>
-    <div class="share"><a href="Permalinks/0d794105-ef08-4465-b806-4a8eff7523c7.html" rel="bookmark">Permalink</a></div>
 </div>
             </main>
             <aside class="col-lg-3 col-xl-2 sidebar">
@@ -783,7 +823,7 @@
 <li>Community Speaker: <a href=".//Pages/Speaking-Engagements.html">Barry S. Stahl</a></li>
 <li>AZGiveCamp: <a href="https://www.azgivecamp.org">https://azgivecamp.org</a></li>
 </ul>
-</div></div><div class="widget textbox"><h4>Transparency Report</h4><div class="content"><h6>Date: 2025-01-29</h6>
+</div></div><div class="widget textbox"><h4>Transparency Report</h4><div class="content"><h6>Date: 2025-02-01</h6>
 <p>As of the date of this report, neither CognitiveInheritance.com nor its owners/operators have received a national security order. Furthermore, we have not been required by a court to keep any secrets that are not in this transparency report.</p>
 </div></div><div class="widget textbox"><h4>Countdown</h4><div class="content"><script>
     (function() {

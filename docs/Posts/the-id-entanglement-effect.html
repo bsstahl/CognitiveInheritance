@@ -68,22 +68,22 @@
             <div class="row">
                 <main class="col-lg-9 col-xl-10 content-main">
                     <h3>Understanding the ID Entanglement Effect</h3>
-                    <h5>Posted by bsstahl on 2024-12-31 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+                    <h5>Posted by bsstahl on 2025-02-01 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
                     <share-on-mastodon 
                         share_title="Check out this post on Cognitive Inheritance: 'Understanding the ID Entanglement Effect'"
                         share_description="&quot;Using composite IDs can lead to the "ID Entanglement Effect," causing structural dependency, data parsing issues, maintenance complexity, inflexibility, and data integrity risks to our applications. To avoid these pitfalls, it's recommended to use clear, atomic identifiers, which enhance scalability, maintainability, and data integrity.&quot;"
-                        hashtags="#architecture #coding-practices"
+                        hashtags="#antipattern #architecture #coding-practices #coupling #flexibility"
                         author="@bsstahl@cognitiveinheritance.com"
                         default_url="https://fosstodon.org">
                     </share-on-mastodon>
                     <br/><br/>
-                    <p>Every developer has faced it: the temptation to make identifiers &quot;smarter&quot; by embedding extra information. A customer ID that includes their region, an order number containing the date, a product code that encodes its category - these patterns appear innocent at first, even helpful. But they hide a subtle trap I call the &quot;<strong>ID Entanglement Effect</strong>&quot; - a cascade of complexity that emerges when identifiers become intertwined with business logic and mutable state.</p>
+                    <p>Every developer has faced it: the temptation to make identifiers &quot;smarter&quot; by embedding information. A customer ID that includes their region, an order number containing the date, a product code that encodes its category - these patterns appear innocent at first, even helpful. But they hide a subtle trap I call the &quot;<strong>ID Entanglement Effect</strong>&quot; - a cascade of complexity that emerges when identifiers become intertwined with business logic and mutable state.</p>
 <p>This effect manifests when we blur the line between identification and information, creating a web of dependencies that grows increasingly difficult to maintain. What starts as a convenient shortcut often evolves into a significant source of technical debt, affecting everything from system flexibility to data integrity.</p>
 <h2>Critical Characteristics</h2>
 <h3>Structural Dependency</h3>
-<p>Systems relying on a specific format for composite IDs become fragile. Any format change can disrupt functionality and complicate maintenance. For instance, if a system uses &quot;DEPT-EMP-123&quot; as an employee ID, changing the department code structure would require updates across multiple systems and databases.</p>
+<p>Systems relying on a specific format for composite IDs become fragile. Any format change can disrupt functionality and complicate maintenance. For instance, if a system uses &quot;DEPT-EMP-123&quot; as an employee ID, changing the department code structure creates a difficult choice: either update all systems and databases that use this format (a risky and potentially expensive undertaking), or abandon the standard for new records while keeping old IDs in the legacy format. The latter option results in inconsistent IDs across the system where some follow the old standard and others follow the new one, effectively creating a partial, incomplete, and incorrect standard within the IDs themselves. This inconsistency further complicates maintenance and can lead to confusion and errors in data processing.</p>
 <h3>Data Parsing</h3>
-<p>Extracting components from a composite ID is often inevitable, leading to inefficiencies and potential errors, especially if parsing logic is flawed. Consider an order ID like &quot;2024-01-NA-12345&quot; where developers need to extract the year, region, and sequence number. This parsing must be replicated across different applications and languages, increasing the risk of inconsistencies.</p>
+<p>When information is embedded in composite IDs, parsing them often appears to be the simplest solution - and it's a completely understandable choice when the data is readily available in the ID itself. Consider an order ID like &quot;2024-01-NA-12345&quot; containing year, region, and sequence number information. Using this embedded data seems more straightforward than querying additional fields or services. However, this parsing must be replicated across different applications and languages, increasing the risk of inconsistencies and errors. The only way to be sure we don't end up parsing these IDs, and in doing so bringing the <strong>ID Entanglement Effect</strong> into play, is to avoid creating systems that embed business data in identifiers in the first place.</p>
 <h3>Maintenance Complexity</h3>
 <p>Parsing logic embedded throughout the codebase increases complexity, making debugging and future development challenging. For example, if an order ID contains both a date and location code (like &quot;20240129-PHX-1234&quot;), every service that processes orders must implement and maintain the same parsing logic. When this logic needs to change, such as adding a new location format, developers must update and test the parsing code across multiple codebases, increasing the risk of inconsistencies.</p>
 <h3>Inflexibility</h3>
@@ -106,6 +106,14 @@
 <p>To avoid the ID Entanglement Effect, consider these key strategies:</p>
 <h3>Use Clean, Stable Identifiers</h3>
 <ul>
+<li>Treat all identifiers, especially those from external systems, as opaque strings whose sole purpose is to establish equivalence through exact matching. This is crucial because:
+<ul>
+<li>It prevents accidental coupling to internal structures or business logic that may be embedded in the ID</li>
+<li>It ensures the system remains resilient to changes in ID format or structure</li>
+<li>It maintains compatibility with different ID generation schemes across systems</li>
+<li>It avoids assumptions about ID content that could break when integrating with new systems</li>
+</ul>
+</li>
 <li>Generate unique identifiers that remain consistent over time</li>
 <li>Human-readable identifiers (like &quot;ORDER-12345&quot;) are perfectly acceptable</li>
 <li>Avoid encoding mutable data or business logic in the identifier</li>
@@ -136,7 +144,7 @@
 <h2>Conclusion</h2>
 <p>The ID Entanglement Effect represents a significant challenge in system design, where the convenience of composite IDs leads to long-term maintenance and scalability issues. By understanding these risks and following best practices for identifier design, teams can create more maintainable and adaptable systems. Remember: while identifiers can be human-readable, they should never become entangled with business logic or mutable state - this separation is key to maintaining system flexibility and reliability over time.</p>
 
-                    <h5>Tags: <a title="Tag: architecture" class="small" href="../Search/architecture.html">architecture</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;</h5>
+                    <h5>Tags: <a title="Tag: antipattern" class="small" href="../Search/antipattern.html">antipattern</a>&nbsp;<a title="Tag: architecture" class="small" href="../Search/architecture.html">architecture</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: coupling" class="small" href="../Search/coupling.html">coupling</a>&nbsp;<a title="Tag: flexibility" class="small" href="../Search/flexibility.html">flexibility</a>&nbsp;</h5>
                     <div class="share"><a href="../Permalinks/2d9c8f17-09c4-48a4-873c-4624cfd4fbd1.html" rel="bookmark">Permalink</a></div>
                 </main>
                 <aside class="col-lg-3 col-xl-2 sidebar">
@@ -156,7 +164,7 @@
 <li>Community Speaker: <a href="..//Pages/Speaking-Engagements.html">Barry S. Stahl</a></li>
 <li>AZGiveCamp: <a href="https://www.azgivecamp.org">https://azgivecamp.org</a></li>
 </ul>
-</div></div><div class="widget textbox"><h4>Transparency Report</h4><div class="content"><h6>Date: 2025-01-29</h6>
+</div></div><div class="widget textbox"><h4>Transparency Report</h4><div class="content"><h6>Date: 2025-02-01</h6>
 <p>As of the date of this report, neither CognitiveInheritance.com nor its owners/operators have received a national security order. Furthermore, we have not been required by a court to keep any secrets that are not in this transparency report.</p>
 </div></div><div class="widget textbox"><h4>Countdown</h4><div class="content"><script>
     (function() {
