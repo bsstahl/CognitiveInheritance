@@ -1,7 +1,10 @@
 ---
 tags:
+- antipattern
 - architecture
 - coding-practices
+- coupling
+- flexibility
 menuorder: 0
 id: 2d9c8f17-09c4-48a4-873c-4624cfd4fbd1
 author: bsstahl
