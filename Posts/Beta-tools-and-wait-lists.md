@@ -22,4 +22,4 @@ Then, at some point, I get an email from them saying congratulations you've been
 
 I understand there are valid reasons for sometimes putting customers on wait-lists. I also understand that sometimes companies just try to create artificial scarcity so that their product takes on a cool factor. Please know that, if this is what you're doing, you're likely losing as many customers as you would gain if not more, and may be putting your very existence at risk.
 
-I wonder how many cool products I've missed out on because of that delay in getting access? I wonder how many cool products just died because they weren't there for people when they actually needed them.
+I wonder how many cool products I've missed out on because of that delay in getting access? I wonder how many cool products just died because they weren't there for people when they actually needed them?
