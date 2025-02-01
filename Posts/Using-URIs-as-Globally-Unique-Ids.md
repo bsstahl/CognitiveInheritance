@@ -17,9 +17,9 @@ categories:
 - Development
 
 ---
-In our companion article on [The ID Entanglement Effect](the-id-entanglement-effect), we explored the challenges and risks of using composite IDs that encode business logic or mutable state. A powerful alternative that addresses many of these concerns is the use of URIs (Uniform Resource Identifiers) as identifiers. URIs provide a standardized way to create unique, self-describing identifiers while avoiding the pitfalls of traditional composite IDs.
+In my previous article on {PostLink:the-id-entanglement-effect|The ID Entanglement Effect}, we explored the challenges and risks of using composite IDs that encode business logic or mutable state. A powerful alternative that addresses many of these concerns is the use of URIs (Uniform Resource Identifiers) as identifiers. URIs provide a standardized way to create unique, self-describing identifiers while avoiding the pitfalls of traditional composite IDs.
 
-### Benefits of URI-Based Identifiers
+#### Benefits of URI-Based Identifiers
 
 * _Global Uniqueness_: URIs provide natural namespace separation through domain names and paths (e.g., `https://example.com/employees/12345`). This eliminates ID conflicts across systems and organizations without requiring complex prefixing schemes.
 
@@ -31,7 +31,7 @@ In our companion article on [The ID Entanglement Effect](the-id-entanglement-eff
 
 * _Interoperable_: URIs work seamlessly across different systems and protocols, making them ideal for distributed systems and microservices architectures.
 
-### Implementation Guidelines
+#### Implementation Guidelines
 
 When implementing URI-based identifiers, consider these best practices:
 
@@ -55,7 +55,7 @@ When implementing URI-based identifiers, consider these best practices:
    - Never include mutable state in the base URI
    - Document which parameters are part of the identifier
 
-### Common Anti-Patterns to Avoid
+#### Common Anti-Patterns to Avoid
 
 1. **Encoding Mutable Data**
    ```
@@ -84,7 +84,7 @@ When implementing URI-based identifiers, consider these best practices:
    https://api.example.com/products/12345
    ```
 
-### Real-World Examples
+#### Real-World Examples
 
 1. **E-Commerce System**
    ```
@@ -113,7 +113,7 @@ When implementing URI-based identifiers, consider these best practices:
    https://inventory.example.com/v1/items/in-stock/89abc
    ```
 
-### Storage Considerations
+#### Storage Considerations
 
 When storing URI identifiers:
 
@@ -132,7 +132,7 @@ When storing URI identifiers:
    - Consider URI length limits
    - Cache frequently accessed resources
 
-### Migration Strategies
+#### Migration Strategies
 
 When moving to URI-based identifiers:
 
@@ -142,7 +142,7 @@ When moving to URI-based identifiers:
 4. Maintain backwards compatibility during transition
 5. Document both old and new formats
 
-### Conclusion
+#### Conclusion
 
 URI-based identifiers offer a robust solution to many of the challenges posed by traditional composite IDs. By following established standards and best practices, teams can create scalable, maintainable systems that avoid the ID Entanglement Effect while maintaining flexibility for future growth.
 
