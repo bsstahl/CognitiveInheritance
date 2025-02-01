@@ -7,17 +7,17 @@ id: 2d9c8f17-09c4-48a4-873c-4624cfd4fbd1
 author: bsstahl
 title: Understanding the ID Entanglement Effect
 description: Using composite IDs can lead to the "ID Entanglement Effect," causing structural dependency, data parsing issues, maintenance complexity, inflexibility, and data integrity risks to our applications. To avoid these pitfalls, it's recommended to use clear, atomic identifiers, which enhance scalability, maintainability, and data integrity.
-ispublished: false
+ispublished: true
 buildifnotpublished: true
 showinlist: false
-publicationdate: 2024-12-31T07:00:00.000+00:00
-lastmodificationdate: 2024-12-31T07:00:00.000+00:00
+publicationdate: 2025-02-01T07:00:00.000+00:00
+lastmodificationdate: 2025-02-01T07:00:00.000+00:00
 slug: the-id-entanglement-effect
 categories:
 - Development
         
 ---
-Every developer has faced it: the temptation to make identifiers "smarter" by embedding extra information. A customer ID that includes their region, an order number containing the date, a product code that encodes its category - these patterns appear innocent at first, even helpful. But they hide a subtle trap I call the "**ID Entanglement Effect**" - a cascade of complexity that emerges when identifiers become intertwined with business logic and mutable state.
+Every developer has faced it: the temptation to make identifiers "smarter" by embedding information. A customer ID that includes their region, an order number containing the date, a product code that encodes its category - these patterns appear innocent at first, even helpful. But they hide a subtle trap I call the "**ID Entanglement Effect**" - a cascade of complexity that emerges when identifiers become intertwined with business logic and mutable state.
 
 This effect manifests when we blur the line between identification and information, creating a web of dependencies that grows increasingly difficult to maintain. What starts as a convenient shortcut often evolves into a significant source of technical debt, affecting everything from system flexibility to data integrity.
 
@@ -25,11 +25,11 @@ This effect manifests when we blur the line between identification and informati
 
 ### Structural Dependency
 
-Systems relying on a specific format for composite IDs become fragile. Any format change can disrupt functionality and complicate maintenance. For instance, if a system uses "DEPT-EMP-123" as an employee ID, changing the department code structure would require updates across multiple systems and databases.
+Systems relying on a specific format for composite IDs become fragile. Any format change can disrupt functionality and complicate maintenance. For instance, if a system uses "DEPT-EMP-123" as an employee ID, changing the department code structure creates a difficult choice: either update all systems and databases that use this format (a risky and potentially expensive undertaking), or abandon the standard for new records while keeping old IDs in the legacy format. The latter option results in inconsistent IDs across the system where some follow the old standard and others follow the new one, effectively creating a partial, incomplete, and incorrect standard within the IDs themselves. This inconsistency further complicates maintenance and can lead to confusion and errors in data processing.
 
 ### Data Parsing
 
-Extracting components from a composite ID is often inevitable, leading to inefficiencies and potential errors, especially if parsing logic is flawed. Consider an order ID like "2024-01-NA-12345" where developers need to extract the year, region, and sequence number. This parsing must be replicated across different applications and languages, increasing the risk of inconsistencies.
+When information is embedded in composite IDs, parsing them often appears to be the simplest solution - and it's a completely understandable choice when the data is readily available in the ID itself. Consider an order ID like "2024-01-NA-12345" containing year, region, and sequence number information. Using this embedded data seems more straightforward than querying additional fields or services. However, this parsing must be replicated across different applications and languages, increasing the risk of inconsistencies and errors. The only way to be sure we don't end up parsing these IDs, and in doing so bringing the **ID Entanglement Effect** into play, is to avoid creating systems that embed business data in identifiers in the first place.
 
 ### Maintenance Complexity
 
@@ -65,6 +65,11 @@ To avoid the ID Entanglement Effect, consider these key strategies:
 
 ### Use Clean, Stable Identifiers
 
+* Treat all identifiers, especially those from external systems, as opaque strings whose sole purpose is to establish equivalence through exact matching. This is crucial because:
+  * It prevents accidental coupling to internal structures or business logic that may be embedded in the ID
+  * It ensures the system remains resilient to changes in ID format or structure
+  * It maintains compatibility with different ID generation schemes across systems
+  * It avoids assumptions about ID content that could break when integrating with new systems
 * Generate unique identifiers that remain consistent over time
 * Human-readable identifiers (like "ORDER-12345") are perfectly acceptable
 * Avoid encoding mutable data or business logic in the identifier
