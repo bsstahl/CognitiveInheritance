@@ -77,8 +77,8 @@
                         default_url="https://fosstodon.org">
                     </share-on-mastodon>
                     <br/><br/>
-                    <p>In our companion article on <a href="the-id-entanglement-effect">The ID Entanglement Effect</a>, we explored the challenges and risks of using composite IDs that encode business logic or mutable state. A powerful alternative that addresses many of these concerns is the use of URIs (Uniform Resource Identifiers) as identifiers. URIs provide a standardized way to create unique, self-describing identifiers while avoiding the pitfalls of traditional composite IDs.</p>
-<h3>Benefits of URI-Based Identifiers</h3>
+                    <p>In my previous article on <a href="../Posts/the-id-entanglement-effect.html">The ID Entanglement Effect</a>, we explored the challenges and risks of using composite IDs that encode business logic or mutable state. A powerful alternative that addresses many of these concerns is the use of URIs (Uniform Resource Identifiers) as identifiers. URIs provide a standardized way to create unique, self-describing identifiers while avoiding the pitfalls of traditional composite IDs.</p>
+<h4>Benefits of URI-Based Identifiers</h4>
 <ul>
 <li><p><em>Global Uniqueness</em>: URIs provide natural namespace separation through domain names and paths (e.g., <code>https://example.com/employees/12345</code>). This eliminates ID conflicts across systems and organizations without requiring complex prefixing schemes.</p>
 </li>
@@ -91,7 +91,7 @@
 <li><p><em>Interoperable</em>: URIs work seamlessly across different systems and protocols, making them ideal for distributed systems and microservices architectures.</p>
 </li>
 </ul>
-<h3>Implementation Guidelines</h3>
+<h4>Implementation Guidelines</h4>
 <p>When implementing URI-based identifiers, consider these best practices:</p>
 <ol>
 <li><p><strong>Keep Base URIs Stable</strong></p>
@@ -123,7 +123,7 @@
 </ul>
 </li>
 </ol>
-<h3>Common Anti-Patterns to Avoid</h3>
+<h4>Common Anti-Patterns to Avoid</h4>
 <ol>
 <li><p><strong>Encoding Mutable Data</strong></p>
 <pre><code># Bad: Including status in URI
@@ -150,7 +150,7 @@ https://api.example.com/products/12345
 </code></pre>
 </li>
 </ol>
-<h3>Real-World Examples</h3>
+<h4>Real-World Examples</h4>
 <ol>
 <li><p><strong>E-Commerce System</strong></p>
 <pre><code># Order ID
@@ -177,7 +177,7 @@ https://inventory.example.com/v1/items/in-stock/89abc
 </code></pre>
 </li>
 </ol>
-<h3>Storage Considerations</h3>
+<h4>Storage Considerations</h4>
 <p>When storing URI identifiers:</p>
 <ol>
 <li><p><strong>Database Design</strong></p>
@@ -202,7 +202,7 @@ https://inventory.example.com/v1/items/in-stock/89abc
 </ul>
 </li>
 </ol>
-<h3>Migration Strategies</h3>
+<h4>Migration Strategies</h4>
 <p>When moving to URI-based identifiers:</p>
 <ol>
 <li>Start with new resources</li>
@@ -211,7 +211,7 @@ https://inventory.example.com/v1/items/in-stock/89abc
 <li>Maintain backwards compatibility during transition</li>
 <li>Document both old and new formats</li>
 </ol>
-<h3>Conclusion</h3>
+<h4>Conclusion</h4>
 <p>URI-based identifiers offer a robust solution to many of the challenges posed by traditional composite IDs. By following established standards and best practices, teams can create scalable, maintainable systems that avoid the ID Entanglement Effect while maintaining flexibility for future growth.</p>
 <p>Remember that URIs are not just for web resources - they provide a standardized format for creating unique, self-describing identifiers in any system. Whether you're building a distributed microservices architecture or a monolithic application, URI-based identifiers can help create cleaner, more maintainable code.</p>
 
@@ -235,7 +235,7 @@ https://inventory.example.com/v1/items/in-stock/89abc
 <li>Community Speaker: <a href="..//Pages/Speaking-Engagements.html">Barry S. Stahl</a></li>
 <li>AZGiveCamp: <a href="https://www.azgivecamp.org">https://azgivecamp.org</a></li>
 </ul>
-</div></div><div class="widget textbox"><h4>Transparency Report</h4><div class="content"><h6>Date: 2025-02-01</h6>
+</div></div><div class="widget textbox"><h4>Transparency Report</h4><div class="content"><h6>Date: 2025-02-02</h6>
 <p>As of the date of this report, neither CognitiveInheritance.com nor its owners/operators have received a national security order. Furthermore, we have not been required by a court to keep any secrets that are not in this transparency report.</p>
 </div></div><div class="widget textbox"><h4>Countdown</h4><div class="content"><script>
     (function() {
