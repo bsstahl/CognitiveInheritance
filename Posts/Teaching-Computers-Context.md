@@ -23,15 +23,21 @@ slug: teaching-computers-context
 ---
 ## Introduction
 
-Imagine trying to teach a computer the subtle difference between "I need to address this issue" and "What's your address?" While humans intuitively understand these contextual differences, computers need a more structured approach. This is where word embeddings, one of the most powerful innovations in Natural Language Processing (NLP), come into play. By transforming words into numerical vectors in a multi-dimensional space, embeddings have revolutionized how machines understand and process human language, enabling breakthroughs in everything from search engines to language translation.
+Imagine trying to teach a computer the subtle difference between "I need to address this issue" and "What's your address?" While humans intuitively understand these contextual differences, computers need a more structured approach. This is where word embeddings, one of the most powerful innovations in Natural Language Processing (NLP), come into play. By transforming the meanings of words and phrases into numerical vectors, embeddings have revolutionized how machines understand and process human language. This capability has alredy enabled breakthroughs in spaces ranging from search engines to language translation, with much greater possibilities to come.
 
 ## Understanding Embeddings
 
-At their core, embeddings are mathematical representations of words or phrases in a high-dimensional space. Think of each word as a point in this space, where the coordinates (vector values) capture different aspects of the word's meaning. These vectors typically have hundreds or thousands of dimensions, allowing them to encode subtle nuances of language that simple one-hot encoding or bag-of-words approaches miss.
+At their core, embeddings are mathematical representations of the meanings behind words or phrases in a high-dimensional space. Think of each idea as a point in this space, where the coordinates (vector values) capture different aspects of the context of an idea. These vectors typically have hundreds or thousands of dimensions, allowing them to encode subtle nuances of language that simple one-shot encoding or bag-of-words approaches miss.
+
+TODO: What is one-shot and bag-of-words...
 
 ### How Embeddings Work in Practice
 
-When a neural network processes text, it learns these embeddings through exposure to vast amounts of text data. The network adjusts the vector values based on how words are used together, following the distributional hypothesis: words that appear in similar contexts tend to have similar meanings. This is why embeddings can capture semantic relationships like:
+For a neural network the be able to process text, it must first convert the text input into numerical values that it can operate on mathematically. The first step is to convert the text values to tokens. This is similar to encoding using ASCII or UTF, though the process is somewhat more complicated. The key is that text values are encoded using numbers. Once we have a set of numbers we can work with, we could just send these values directly to our language models. However, it turns out that we can make our models much more effective by instead operating on the meaning of the text, rather than a direct encoding of the text.
+
+TODO: Transition these paragraphs
+
+Models learn these embeddings through exposure to vast amounts of text data. The network adjusts the vector values based on how words are used together, following the distributional hypothesis: words that appear in similar contexts tend to have similar meanings. This is why embeddings can capture semantic relationships like:
 
 * `king - man + woman ≈ queen` (gender relationship)
 * `paris - france + italy ≈ rome` (capital city relationship)
