@@ -78,11 +78,14 @@
                     </share-on-mastodon>
                     <br/><br/>
                     <h2>Introduction</h2>
-<p>Imagine trying to teach a computer the subtle difference between &quot;I need to address this issue&quot; and &quot;What's your address?&quot; While humans intuitively understand these contextual differences, computers need a more structured approach. This is where word embeddings, one of the most powerful innovations in Natural Language Processing (NLP), come into play. By transforming words into numerical vectors in a multi-dimensional space, embeddings have revolutionized how machines understand and process human language, enabling breakthroughs in everything from search engines to language translation.</p>
+<p>Imagine trying to teach a computer the subtle difference between &quot;I need to address this issue&quot; and &quot;What's your address?&quot; While humans intuitively understand these contextual differences, computers need a more structured approach. This is where word embeddings, one of the most powerful innovations in Natural Language Processing (NLP), come into play. By transforming the meanings of words and phrases into numerical vectors, embeddings have revolutionized how machines understand and process human language. This capability has alredy enabled breakthroughs in spaces ranging from search engines to language translation, with much greater possibilities to come.</p>
 <h2>Understanding Embeddings</h2>
-<p>At their core, embeddings are mathematical representations of words or phrases in a high-dimensional space. Think of each word as a point in this space, where the coordinates (vector values) capture different aspects of the word's meaning. These vectors typically have hundreds or thousands of dimensions, allowing them to encode subtle nuances of language that simple one-hot encoding or bag-of-words approaches miss.</p>
+<p>At their core, embeddings are mathematical representations of the meanings behind words or phrases in a high-dimensional space. Think of each idea as a point in this space, where the coordinates (vector values) capture different aspects of the context of an idea. These vectors typically have hundreds or thousands of dimensions, allowing them to encode subtle nuances of language that simple one-shot encoding or bag-of-words approaches miss.</p>
+<p>TODO: What is one-shot and bag-of-words...</p>
 <h3>How Embeddings Work in Practice</h3>
-<p>When a neural network processes text, it learns these embeddings through exposure to vast amounts of text data. The network adjusts the vector values based on how words are used together, following the distributional hypothesis: words that appear in similar contexts tend to have similar meanings. This is why embeddings can capture semantic relationships like:</p>
+<p>For a neural network the be able to process text, it must first convert the text input into numerical values that it can operate on mathematically. The first step is to convert the text values to tokens. This is similar to encoding using ASCII or UTF, though the process is somewhat more complicated. The key is that text values are encoded using numbers. Once we have a set of numbers we can work with, we could just send these values directly to our language models. However, it turns out that we can make our models much more effective by instead operating on the meaning of the text, rather than a direct encoding of the text.</p>
+<p>TODO: Transition these paragraphs</p>
+<p>Models learn these embeddings through exposure to vast amounts of text data. The network adjusts the vector values based on how words are used together, following the distributional hypothesis: words that appear in similar contexts tend to have similar meanings. This is why embeddings can capture semantic relationships like:</p>
 <ul>
 <li><code>king - man + woman ≈ queen</code> (gender relationship)</li>
 <li><code>paris - france + italy ≈ rome</code> (capital city relationship)</li>
@@ -175,7 +178,7 @@
 <li>Community Speaker: <a href="..//Pages/Speaking-Engagements.html">Barry S. Stahl</a></li>
 <li>AZGiveCamp: <a href="https://www.azgivecamp.org">https://azgivecamp.org</a></li>
 </ul>
-</div></div><div class="widget textbox"><h4>Transparency Report</h4><div class="content"><h6>Date: 2025-02-25</h6>
+</div></div><div class="widget textbox"><h4>Transparency Report</h4><div class="content"><h6>Date: 2025-02-28</h6>
 <p>As of the date of this report, neither CognitiveInheritance.com nor its owners/operators have received a national security order. Furthermore, we have not been required by a court to keep any secrets that are not in this transparency report.</p>
 </div></div><div class="widget textbox"><h4>Countdown</h4><div class="content"><script>
     (function() {
