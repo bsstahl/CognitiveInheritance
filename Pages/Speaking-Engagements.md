@@ -16,9 +16,7 @@ categories: []
 
 ### Upcoming Talks
 
-* **ConFoo 2025** - 2/26/2025 - 2/28/2025 - "Crafting AI: A Developer's Guide to Machine Learning" and "The Future of Information Retrieval: A Deep-Dive into RAG"
-
-<!-- I currently have no talks scheduled. {ContactPageLink:Contact me} to arrange to have me speak at your event. -->
+I currently have no talks scheduled. {ContactPageLink:Contact me} to arrange to have me speak at your event.
 
 ***
 
@@ -158,6 +156,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ### Past engagements
 
+* **ConFoo 2025** - 2/26/2025 - 2/28/2025 - "Crafting AI: A Developer's Guide to Machine Learning" and "The Future of Information Retrieval: A Deep-Dive into RAG"
 * **CodeMash 2025** - 1/14/2025 - 1/17/2025  - "Crafting AI: A Developer's Guide to Machine Learning"
 * **Techorama Netherlands** - 10/7/2024 - 10/9/2024 - "Amazing Algorithms for Solving Problems in Software" and "The Future of Information Retrieval: A Deep-Dive into RAG"
 * **Beer City Code 2024** - 8/3/2024 - "GPT Embeddings: Not Magic, Just Math" and "Amazing Algorithms for Solving Problems in Software"
