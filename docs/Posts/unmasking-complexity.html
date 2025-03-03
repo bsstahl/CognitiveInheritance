@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang="en">
     <head>
-        <!-- Template: Content Page -->
+        <!-- Template: Post Page -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     
-        <meta name="description" content="All posts that are Work-in-Progress">
+        <meta name="description" content="Unmasking Complexity - Real Strategies for Managing Complexity in Software Systems, an article on Cognitive Inheritance.">
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -67,20 +67,76 @@
 
             <div class="row">
                 <main class="col-lg-9 col-xl-10 content-main">
-                    <h1>Unpublished Posts</h1>
-                    <ul>
-<li><a href="../Posts/conceptual-associations-without-understanding.html">Conceptual Associations Without Understanding</a></li>
-<li><a href="../Posts/designing-event-driven-architectures.html">Designing Event Driven Architectures</a></li>
-<li><a href="../Posts/developing-with-csharp-using-html5-and-css.html">Developing with C# using HTML5 and CSS</a></li>
-<li><a href="../Posts/llms-are-like-tdd.html">LLMs can be to writing what TDD is to coding</a></li>
-<li><a href="../Posts/minimizing-support-burden.html">Minimizing Support Burden - A Comparison of Three Architectures</a></li>
-<li><a href="../Posts/reducing-order-dependency-with-event-sourcing.html">Reducing Order Dependency with Event Sourcing</a></li>
-<li><a href="../Posts/teaching-computers-context.html">Teaching Computers Context: An Introduction to Word Embeddings</a></li>
-<li><a href="../Posts/understanding-gpt-tokenization.html">Understanding GPT Tokenization</a></li>
-<li><a href="../Posts/unmasking-complexity.html">Unmasking Complexity - Real Strategies for Managing Complexity in Software Systems</a></li>
-<li><a href="../Posts/using-uris-as-globally-unique-ids.html">Using URIs as Globally Unique Identifiers</a></li>
+                    <h3>Unmasking Complexity - Real Strategies for Managing Complexity in Software Systems</h3>
+                    <h5>Posted by bsstahl on 2025-03-03 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+                    <share-on-mastodon 
+                        share_title="Check out this post on Cognitive Inheritance: 'Unmasking Complexity - Real Strategies for Managing Complexity in Software Systems'"
+                        share_description="&quot;&quot;"
+                        hashtags="#development"
+                        author="@bsstahl@cognitiveinheritance.com"
+                        default_url="https://fosstodon.org">
+                    </share-on-mastodon>
+                    <br/><br/>
+                    <p>In the world of software development, complexity is an unavoidable reality. It arises from both the nature of the problems we solve and the solutions we implement. While some complexity is inherent and necessary, much of it is accidental and can be managed more effectively. Unfortunately, all too often, complexity is merely hidden rather than addressed, leading to systems that are difficult to maintain, scale, and understand.</p>
+<h4>Identifying Hidden Complexity</h4>
+<p>Before we can manage complexity, we need to recognize where it hides. Here are some common culprits:</p>
+<ol>
+<li><p><strong>Framework Over-Reliance</strong>: While frameworks and libraries can speed up development by abstracting complex tasks, they can also obscure the underlying processes. Developers may become reliant on these tools without understanding their inner workings, leading to difficulties when debugging or customizing behavior.</p>
+</li>
+<li><p><strong>Monolithic Architecture</strong>: Monolithic systems bundle many components into a single large codebase. This approach might seem simple initially but can mask the intricate dependencies between components, making it challenging to isolate changes and manage scaling.</p>
+</li>
+<li><p><strong>Implicit Dependencies</strong>: Dependencies that are not explicitly documented or declared create invisible ties between different parts of a system. These can lead to unexpected behaviors when changes are made, as the interactions between components are not fully understood.</p>
+</li>
+</ol>
+<h4>Managing Complexity: Practical Strategies</h4>
+<p>To effectively manage complexity, we need to bring it to the surface and address it head-on. Here are some strategies with practical examples:</p>
+<h5>1. Embrace Modularization</h5>
+<p><strong>Example</strong>: Instead of a monolithic architecture, consider breaking down your application into smaller, self-contained modules or microservices. Each module should have a clear purpose and well-defined interfaces.</p>
+<p><strong>Solution</strong>:</p>
+<ul>
+<li>Use Domain-Driven Design (DDD) principles to identify bounded contexts within your system.</li>
+<li>Implement microservices for each context, allowing for independent development, deployment, and scaling.</li>
 </ul>
+<h5>2. Foster Transparency Through Documentation</h5>
+<p><strong>Example</strong>: A system with poorly documented APIs can lead to integration challenges and misunderstandings about how components interact.</p>
+<p><strong>Solution</strong>:</p>
+<ul>
+<li>Maintain up-to-date API documentation using tools like Swagger or OpenAPI.</li>
+<li>Encourage developers to document not just the &quot;what,&quot; but also the &quot;why&quot; behind design decisions.</li>
+</ul>
+<h5>3. Regularly Refactor to Reduce Technical Debt</h5>
+<p><strong>Example</strong>: A codebase littered with temporary fixes and workarounds accumulates technical debt that obscures complexity.</p>
+<p><strong>Solution</strong>:</p>
+<ul>
+<li>Schedule regular refactoring sessions to clean up code, remove deprecated dependencies, and simplify logic.</li>
+<li>Use automated tools like SonarQube to identify code smells and areas for improvement.</li>
+</ul>
+<h5>4. Establish Clear Dependency Management</h5>
+<p><strong>Example</strong>: Implicit dependencies between libraries or modules can lead to version conflicts and unexpected behavior during updates.</p>
+<p><strong>Solution</strong>:</p>
+<ul>
+<li>Use dependency management tools like Maven or npm to explicitly declare dependencies.</li>
+<li>Adopt Semantic Versioning to communicate changes clearly and avoid breaking changes.</li>
+</ul>
+<h5>5. Implement Robust Testing Practices</h5>
+<p><strong>Example</strong>: Inadequate testing can hide complexity related to edge cases and integration points.</p>
+<p><strong>Solution</strong>:</p>
+<ul>
+<li>Develop comprehensive test suites covering unit, integration, and system tests.</li>
+<li>Implement continuous integration/continuous deployment (CI/CD) pipelines to ensure tests are run consistently.</li>
+</ul>
+<h5>6. Cultivate a Culture of Knowledge Sharing</h5>
+<p><strong>Example</strong>: When critical system knowledge resides with a few individuals, it creates bottlenecks and risks if those people become unavailable.</p>
+<p><strong>Solution</strong>:</p>
+<ul>
+<li>Conduct regular knowledge-sharing sessions and code reviews.</li>
+<li>Use collaborative platforms like Confluence or GitHub Wikis for centralized documentation.</li>
+</ul>
+<h4>Conclusion</h4>
+<p>Complexity is an inherent part of software development, but by recognizing where it hides and employing strategic approaches to manage it, we can create systems that are not only functional but also maintainable and scalable. By embracing modularization, transparency, regular refactoring, clear dependency management, robust testing, and a culture of knowledge sharing, we move from merely hiding complexity to truly understanding and managing it. This shift not only improves our systems but also enhances our ability to innovate and adapt in an ever-evolving technological landscape.</p>
 
+                    <h5>Tags: <a title="Tag: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+                    <div class="share"><a href="../Permalinks/9319b39d-c97f-4f6b-927e-eb6c7ea2a2d9.html" rel="bookmark">Permalink</a></div>
                 </main>
                 <aside class="col-lg-3 col-xl-2 sidebar">
                     <div class="widgetzone"><div class="widget textbox"><h4>About the Author</h4><div class="content"><p><img style="float: left; padding: 0px 3px 0px 0px;" src="../Pics/bsstahl_left.gif" alt="Barry S. Stahl" width="95" /><strong>Barry S. Stahl</strong> (he/him/his) - Barry is a .NET Software Engineer who has been creating business solutions for enterprise customers since the mid 1980s. Barry is also an Election Integrity Activist, baseball and hockey fan, husband of one genius and father of another, and a 40 year resident of Phoenix Arizona USA. When Barry is not traveling around the world to speak at Conferences, Code Camps and User Groups or to participate in GiveCamp events, he spends his days as a Solution Architect for Carvana in Tempe AZ and his nights thinking about the next AZGiveCamp event where software creators come together to build websites and apps for some great non-profit organizations.</p>
@@ -122,12 +178,11 @@
                 </aside>
             </div>
         </div>
-    
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script defer type="module" src="../Modules/share-on-mastodon.js"></script>
 
-</body>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script defer type="module" src="../Modules/share-on-mastodon.js"></script>
 
+    </body>
 </html>
