@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang="en">
     <head>
-        <!-- Template: Search Page -->
+        <!-- Template: Post Page -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     
-        <meta name="description" content="{Description}">
+        <meta name="description" content="Reducing Order Dependency with Event Sourcing, an article on Cognitive Inheritance.">
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -67,60 +67,40 @@
 
             <div class="row">
                 <main class="col-lg-9 col-xl-10 content-main">
-                    <h1>Tag: funny</h1>
-                    <div>
-    <h3>Programming Jargon Dictionary</h3>
-    <h5>Posted by bsstahl on 2011-06-20 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-    <share-on-mastodon 
-        share_title="Check out this post on Cognitive Inheritance: 'Programming Jargon Dictionary'"
-        share_description="&quot;&quot;"
-        target_url="https://CognitiveInheritance.com/../Permalinks/c8aadf7b-b60b-4b46-9efd-3f28f51b3c89.html"
-        hashtags="#funny"
-        author="@bsstahl@cognitiveinheritance.com"
-        default_url="https://fosstodon.org">
-    </share-on-mastodon>
-    <br/><br/>
-    <p><a href="https://web.archive.org/web/20111011212045/http://stackoverflow.com/questions/2349378/new-programming-jargon-you-coined">StackOverflow</a> has a fantastic list of programming terms that have been coined by the development community recently. Some of the best, most appropriate terms are documented below.</p>
-<p><strong>Automanually</strong>
-Used to refer to a batch job or application that should be scheduled or triggered automatically, but due to unspecified reasons requires manual intervention every time. (not the same as automagically)</p>
-<p><strong>Boolean Zen</strong>
-The proper practice of using boolean expressions directly without testing for equality to true or false.</p>
-<p><strong>Common Law Feature</strong>
-A bug in the application that has existed for so long that it is now part of the expected functionality.</p>
-<p><strong>Disaster Driven Development</strong>
-When Your PMs and salesmen promised that You will build a &quot;space shuttle&quot; in one month.</p>
-<p><strong>Egyptian Brackets</strong>
-Describes the god-awful c-style where curly-braces are not aligned.</p>
-<p><strong>Heisenbug</strong>
-An oldie, but still valuable…describes a bug that disappears or changes when put under scrutiny.</p>
-<p><strong>Higgs-Bugson</strong>
-A hypothetical bug predicted to exist based on a small number of possibly related event log entries and other anecdotal evidence.</p>
-<p><strong>Hindenbug</strong>
-A catastrophic, data destroying bug.</p>
-<p><strong>Jimmy</strong>
-A non-inclusive name for a low-level developer (n00b). (note: all non-inclusive language is inappropriate and should not be used)</p>
-<p><strong>Nopping</strong>
-From the assembler instruction NOP (no operation). Similar to nap but doesn’t imply sleep, just zoning out.</p>
-<p><strong>Object Oriented Pasta</strong>
-Used to describe spaghetti code wrapped in classes to make it look like an object.</p>
-<p><strong>Perl-Grade Obfuscation</strong>
-The highest level of code obfuscation possible. Better than passing code through a 1-way hash function.</p>
-<p><strong>Refuctoring</strong>
-The process of taking a well-designed piece of code and, through a series of small, reversible changes, making it completely unmaintainable by anyone except yourself.</p>
-<p><strong>Rubberducking</strong>
-The process of talking your own way through a problem, as if talking to a rubber duck.</p>
-<p><strong>Scar Tissue</strong>
-Any code that is commented out but still included in the current and/or checked-in version.</p>
-<p><strong>Smurf Naming Convention</strong>
-When almost every class has the same prefix. IE, when a user clicks on the button, a SmurfAccountView passes a SmurfAccountDTO to the SmurfAccountController. The SmurfID is used to fetch a SmurfOrderHistory which is passed to the SmurfHistoryMatch…</p>
-<p><strong>Stringly Typed</strong>
-One of the antitheses of strongly typed. It describes an implementation that uses strings where more strongly-type options are available.</p>
-<p><strong>Try, Catch, Forget</strong>
-An empty catch block, no tracing, not even a comment. No attempt to resolve the error and of course the catch block is not at all specific on the exception type.</p>
+                    <h3>Reducing Order Dependency with Event Sourcing</h3>
+                    <h5>Posted by bsstahl on 2025-03-03 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+                    <share-on-mastodon 
+                        share_title="Check out this post on Cognitive Inheritance: 'Reducing Order Dependency with Event Sourcing'"
+                        share_description="&quot;&quot;"
+                        hashtags="#development"
+                        author="@bsstahl@cognitiveinheritance.com"
+                        default_url="https://fosstodon.org">
+                    </share-on-mastodon>
+                    <br/><br/>
+                    <p>In the world of software architecture, creating robust and flexible systems is essential. Event Sourcing is a pattern that helps achieve these goals by capturing all changes to an application's state as a sequence of events. This approach not only provides a complete history and improves auditing capabilities but also reduces the dependency on strict message order, which enhances the effectiveness of Dead-Letter Queues (DLQs).</p>
+<h3>What is Event Sourcing?</h3>
+<p>Event Sourcing involves recording every change to the application's state as an event. These events provide a comprehensive history that can be used to reconstruct the application's state at any point in time.</p>
+<h3>Challenges of Maintaining Message Order</h3>
+<p>In many systems, processing messages in a specific order is necessary for consistency. However, strict order requirements can complicate error handling and limit the usefulness of DLQs. DLQs typically store messages that cannot be processed due to errors, allowing for their correction and reprocessing.</p>
+<h3>Benefits of Event Sourcing</h3>
+<ol>
+<li><p><strong>Reduced Order Dependency</strong>: By storing events with timestamps, Event Sourcing allows for more flexible processing. While maintaining logical order is still important, events can be processed based on their timestamps rather than the order they are received.</p>
+</li>
+<li><p><strong>Improved DLQ Usability</strong>: With less dependency on message order, DLQs become more effective. Events sent to a DLQ can be corrected and reintroduced without disrupting system operations. They can be sorted by their timestamps to ensure accurate state reconstruction.</p>
+</li>
+<li><p><strong>Efficient Error Handling</strong>: Errors causing messages to be routed to DLQs can be addressed separately. Once corrected, these messages can be reprocessed in the correct sequence to maintain a consistent application state.</p>
+</li>
+<li><p><strong>Scalability and Flexibility</strong>: Systems can scale more effectively as they are not bound by strict order requirements. Components can process events independently, improving system responsiveness and performance.</p>
+</li>
+<li><p><strong>Increased Fault Tolerance</strong>: By using DLQs alongside Event Sourcing, systems become more resilient to errors. Problems can be isolated and resolved without affecting the main processing flow.</p>
+</li>
+</ol>
+<h3>Conclusion</h3>
+<p>Event Sourcing reduces the dependency on strict message order, enhancing the usability of Dead-Letter Queues. By allowing events to be processed based on timestamps, systems can handle errors more effectively and maintain a consistent state. As businesses seek to build resilient and adaptable systems, integrating Event Sourcing with DLQs is a practical strategy. This approach not only improves error handling but also enables scalable and flexible architectures.</p>
+<p>Whether you are developing new systems or optimizing existing ones, consider using Event Sourcing to reduce order dependency and improve the effectiveness of your DLQs.</p>
 
-    <h5>Tags: <a title="Tag: funny" class="small" href="../Search/funny.html">funny</a>&nbsp;</h5>
-    <div class="share"><a href="../Permalinks/c8aadf7b-b60b-4b46-9efd-3f28f51b3c89.html" rel="bookmark">Permalink</a></div>
-</div>
+                    <h5>Tags: <a title="Tag: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+                    <div class="share"><a href="../Permalinks/de59a1e2-7f51-4d54-8c44-d7d9b2e13f2d.html" rel="bookmark">Permalink</a></div>
                 </main>
                 <aside class="col-lg-3 col-xl-2 sidebar">
                     <div class="widgetzone"><div class="widget textbox"><h4>About the Author</h4><div class="content"><p><img style="float: left; padding: 0px 3px 0px 0px;" src="../Pics/bsstahl_left.gif" alt="Barry S. Stahl" width="95" /><strong>Barry S. Stahl</strong> (he/him/his) - Barry is a .NET Software Engineer who has been creating business solutions for enterprise customers since the mid 1980s. Barry is also an Election Integrity Activist, baseball and hockey fan, husband of one genius and father of another, and a 40 year resident of Phoenix Arizona USA. When Barry is not traveling around the world to speak at Conferences, Code Camps and User Groups or to participate in GiveCamp events, he spends his days as a Solution Architect for Carvana in Tempe AZ and his nights thinking about the next AZGiveCamp event where software creators come together to build websites and apps for some great non-profit organizations.</p>
@@ -162,11 +142,11 @@ An empty catch block, no tracing, not even a comment. No attempt to resolve the 
                 </aside>
             </div>
         </div>
-    
+
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-        <script defer type="module" src="..//Modules/share-on-mastodon.js"></script>
+        <script defer type="module" src="../Modules/share-on-mastodon.js"></script>
 
     </body>
 </html>
