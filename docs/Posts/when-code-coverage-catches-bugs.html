@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang="en">
     <head>
-        <!-- Template: Content Page -->
+        <!-- Template: Post Page -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     
-        <meta name="description" content="All posts that are Work-in-Progress">
+        <meta name="description" content="When Code Coverage Catches Bugs - A Case for Complete Coverage, an article on Cognitive Inheritance.">
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -67,21 +67,80 @@
 
             <div class="row">
                 <main class="col-lg-9 col-xl-10 content-main">
-                    <h1>Unpublished Posts</h1>
-                    <ul>
-<li><a href="../Posts/conceptual-associations-without-understanding.html">Conceptual Associations Without Understanding</a></li>
-<li><a href="../Posts/designing-event-driven-architectures.html">Designing Event Driven Architectures</a></li>
-<li><a href="../Posts/developing-with-csharp-using-html5-and-css.html">Developing with C# using HTML5 and CSS</a></li>
-<li><a href="../Posts/llms-are-like-tdd.html">LLMs can be to writing what TDD is to coding</a></li>
-<li><a href="../Posts/minimizing-support-burden.html">Minimizing Support Burden - A Comparison of Three Architectures</a></li>
-<li><a href="../Posts/reducing-order-dependency-with-event-sourcing.html">Reducing Order Dependency with Event Sourcing</a></li>
-<li><a href="../Posts/teaching-computers-context.html">Teaching Computers Context: An Introduction to Word Embeddings</a></li>
-<li><a href="../Posts/understanding-gpt-tokenization.html">Understanding GPT Tokenization</a></li>
-<li><a href="../Posts/unmasking-complexity.html">Unmasking Complexity - Real Strategies for Managing Complexity in Software Systems</a></li>
-<li><a href="../Posts/using-uris-as-globally-unique-ids.html">Using URIs as Globally Unique Identifiers</a></li>
-<li><a href="../Posts/when-code-coverage-catches-bugs.html">When Code Coverage Catches Bugs - A Case for Complete Coverage</a></li>
-</ul>
+                    <h3>When Code Coverage Catches Bugs - A Case for Complete Coverage</h3>
+                    <h5>Posted by bsstahl on 2025-03-07 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+                    <share-on-mastodon 
+                        share_title="Check out this post on Cognitive Inheritance: 'When Code Coverage Catches Bugs - A Case for Complete Coverage'"
+                        share_description="&quot;&quot;"
+                        hashtags="#development #testing #code-coverage #tdd #quality"
+                        author="@bsstahl@cognitiveinheritance.com"
+                        default_url="https://fosstodon.org">
+                    </share-on-mastodon>
+                    <br/><br/>
+                    <p>The debate around code coverage metrics has been ongoing in the software development community for years. While some argue that pursuing 100% code coverage is a waste of resources, I recently had an experience that reinforces the value of complete coverage as a tool for quality improvement, not just a vanity metric.</p>
+<h4>The Uncovered Branch</h4>
+<p>During a routine review of our code coverage reports, I noticed an uncovered branch in a validation method. This method was responsible for validating input parameters before they were processed by our business logic. The coverage report showed that while most of the method was covered by our tests, one particular conditional branch remained untested.</p>
+<p>My initial reaction was straightforward: &quot;Let's write a test to cover this branch and get to 100% coverage.&quot; However, as I began crafting the test, I encountered an unexpected challenge.</p>
+<h4>The Discovery</h4>
+<p>The validation method looked something like this:</p>
+<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">public</span> <span style="color:Blue;">bool</span> IsValid(<span style="color:Blue;">string</span> input)
+{
+    <span style="color:Blue;">if</span> (<span style="color:Blue;">string</span>.IsNullOrEmpty(input))
+        <span style="color:Blue;">return</span> <span style="color:Blue;">false</span>;
+    
+    <span style="color:Blue;">if</span> (input.Length &lt; 3 || input.Length &gt; 50)
+        <span style="color:Blue;">return</span> <span style="color:Blue;">false</span>;
+    
+    <span style="color:Green;">// The uncovered branch</span>
+    <span style="color:Blue;">if</span> (!input.All(c =&gt; <span style="color:Blue;">char</span>.IsLetterOrDigit(c) || c == <span style="color:#A31515;">&#39;-&#39;</span> || c == <span style="color:#A31515;">&#39;_&#39;</span>))
+        <span style="color:Blue;">return</span> <span style="color:Blue;">false</span>;
+    
+    <span style="color:Blue;">return</span> <span style="color:Blue;">true</span>;
+}
+</pre></div>
+</div>
+<p>The uncovered branch was checking if all characters in the input were either alphanumeric, hyphens, or underscores. When I tried to write a test that would trigger this branch (by providing an input with invalid characters), I realized something important: our application actually needed to accept certain special characters that weren't included in the validation.</p>
+<p>In our domain context, inputs like &quot;Customer.Profile&quot; or &quot;Order#123&quot; were perfectly valid and expected, but the validation method would reject them. This wasn't just a matter of incomplete test coverage—it was a functional bug that could potentially reject valid user inputs.</p>
+<h4>Two Birds, One Stone</h4>
+<p>I updated the validation method to include the additional valid characters:</p>
+<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">public</span> <span style="color:Blue;">bool</span> IsValid(<span style="color:Blue;">string</span> input)
+{
+    <span style="color:Blue;">if</span> (<span style="color:Blue;">string</span>.IsNullOrEmpty(input))
+        <span style="color:Blue;">return</span> <span style="color:Blue;">false</span>;
+    
+    <span style="color:Blue;">if</span> (input.Length &lt; 3 || input.Length &gt; 50)
+        <span style="color:Blue;">return</span> <span style="color:Blue;">false</span>;
+    
+    <span style="color:Green;">// Updated to include additional valid characters</span>
+    <span style="color:Blue;">if</span> (!input.All(c =&gt; <span style="color:Blue;">char</span>.IsLetterOrDigit(c) || c == <span style="color:#A31515;">&#39;-&#39;</span> || c == <span style="color:#A31515;">&#39;_&#39;</span> || c == <span style="color:#A31515;">&#39;.&#39;</span> || c == <span style="color:#A31515;">&#39;#&#39;</span>))
+        <span style="color:Blue;">return</span> <span style="color:Blue;">false</span>;
+    
+    <span style="color:Blue;">return</span> <span style="color:Blue;">true</span>;
+}
+</pre></div>
+</div>
+<p>Then I wrote tests that verified both the acceptance of valid special characters and the rejection of truly invalid ones. This not only achieved 100% code coverage for the method but also fixed a bug that might have caused problems in production.</p>
+<h4>The Value of Complete Coverage</h4>
+<p>This experience highlights several important points about code coverage:</p>
+<ol>
+<li><p><strong>Coverage as a Discovery Tool</strong>: Pursuing complete coverage forces us to examine all code paths, which can reveal logical inconsistencies or gaps in our understanding of requirements.</p>
+</li>
+<li><p><strong>Uncovered Code Often Hides Bugs</strong>: Code that remains untested is more likely to contain bugs. In this case, the uncovered branch contained a validation rule that was too restrictive.</p>
+</li>
+<li><p><strong>Quality Beyond Metrics</strong>: While achieving 100% coverage was satisfying, the real value came from improving the correctness of our code and preventing potential user frustration.</p>
+</li>
+<li><p><strong>Test-Driven Refinement</strong>: The process of writing tests to cover untested code often leads to refinements in the implementation, making the code more robust and aligned with actual requirements.</p>
+</li>
+</ol>
+<h4>Conclusion</h4>
+<p>Code coverage shouldn't be pursued blindly as a metric, but it can serve as a valuable tool for discovering potential issues. In this case, the pursuit of complete coverage led to the discovery and correction of a bug that might have otherwise gone unnoticed until it affected users in production.</p>
+<p>While 100% code coverage doesn't guarantee bug-free code, it does ensure that every line and branch has been executed at least once during testing. This basic level of verification can catch many issues early in the development process.</p>
+<p>The next time you see an uncovered branch in your code, don't just write a test to cover it—take a moment to question why it's uncovered. You might find, as I did, that there's more to the story than just missing test cases.</p>
 
+                    <h5>Tags: <a title="Tag: development" class="small" href="../Search/development.html">development</a>&nbsp;<a title="Tag: testing" class="small" href="../Search/testing.html">testing</a>&nbsp;<a title="Tag: code-coverage" class="small" href="../Search/code-coverage.html">code-coverage</a>&nbsp;<a title="Tag: tdd" class="small" href="../Search/tdd.html">tdd</a>&nbsp;<a title="Tag: quality" class="small" href="../Search/quality.html">quality</a>&nbsp;</h5>
+                    <div class="share"><a href="../Permalinks/7e8f5a3d-9b12-4f8a-b6e7-c5d9e2a3f4b1.html" rel="bookmark">Permalink</a></div>
                 </main>
                 <aside class="col-lg-3 col-xl-2 sidebar">
                     <div class="widgetzone"><div class="widget textbox"><h4>About the Author</h4><div class="content"><p><img style="float: left; padding: 0px 3px 0px 0px;" src="../Pics/bsstahl_left.gif" alt="Barry S. Stahl" width="95" /><strong>Barry S. Stahl</strong> (he/him/his) - Barry is a .NET Software Engineer who has been creating business solutions for enterprise customers since the mid 1980s. Barry is also an Election Integrity Activist, baseball and hockey fan, husband of one genius and father of another, and a 40 year resident of Phoenix Arizona USA. When Barry is not traveling around the world to speak at Conferences, Code Camps and User Groups or to participate in GiveCamp events, he spends his days as a Solution Architect for Carvana in Tempe AZ and his nights thinking about the next AZGiveCamp event where software creators come together to build websites and apps for some great non-profit organizations.</p>
@@ -123,12 +182,11 @@
                 </aside>
             </div>
         </div>
-    
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script defer type="module" src="../Modules/share-on-mastodon.js"></script>
 
-</body>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script defer type="module" src="../Modules/share-on-mastodon.js"></script>
 
+    </body>
 </html>
