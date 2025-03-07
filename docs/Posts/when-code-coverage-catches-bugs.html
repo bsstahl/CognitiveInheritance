@@ -79,49 +79,60 @@
                     <br/><br/>
                     <p>The debate around code coverage metrics has been ongoing in the software development community for years. While some argue that pursuing 100% code coverage is a waste of resources, I recently had an experience that reinforces the value of complete coverage as a tool for quality improvement, not just a vanity metric.</p>
 <h4>The Uncovered Branch</h4>
-<p>During a routine review of our code coverage reports, I noticed an uncovered branch in a validation method. This method was responsible for validating input parameters before they were processed by our business logic. The coverage report showed that while most of the method was covered by our tests, one particular conditional branch remained untested.</p>
-<p>My initial reaction was straightforward: &quot;Let's write a test to cover this branch and get to 100% coverage.&quot; However, as I began crafting the test, I encountered an unexpected challenge.</p>
+<p>While adding a feature to a product in development, I noticed an uncovered branch in a validation method. This method was responsible for validating input parameters before they were processed by our business logic. The coverage report showed that while most of the method was covered by our tests, however one particular conditional remained partially untested.</p>
+<p>My initial reaction was straightforward since it was a logical branch that should reasonbly have coverage: &quot;Let's write a test to cover this branch.&quot; However, as I began crafting the test, I encountered an unexpected challenge.</p>
 <h4>The Discovery</h4>
-<p>The validation method looked something like this:</p>
+<p>The validation method in question was a utility method designed to validate enum parameters:</p>
 <div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
-<span style="color:Blue;">public</span> <span style="color:Blue;">bool</span> IsValid(<span style="color:Blue;">string</span> input)
+<span style="color:Blue;">public</span> <span style="color:Blue;">static</span> <span style="color:Blue;">void</span> ThrowIfInvalidEnum&lt;T&gt;(T value)
 {
-    <span style="color:Blue;">if</span> (<span style="color:Blue;">string</span>.IsNullOrEmpty(input))
-        <span style="color:Blue;">return</span> <span style="color:Blue;">false</span>;
-    
-    <span style="color:Blue;">if</span> (input.Length &lt; 3 || input.Length &gt; 50)
-        <span style="color:Blue;">return</span> <span style="color:Blue;">false</span>;
-    
-    <span style="color:Green;">// The uncovered branch</span>
-    <span style="color:Blue;">if</span> (!input.All(c =&gt; <span style="color:Blue;">char</span>.IsLetterOrDigit(c) || c == <span style="color:#A31515;">&#39;-&#39;</span> || c == <span style="color:#A31515;">&#39;_&#39;</span>))
-        <span style="color:Blue;">return</span> <span style="color:Blue;">false</span>;
-    
-    <span style="color:Blue;">return</span> <span style="color:Blue;">true</span>;
+    ArgumentNullException.ThrowIfNull(value);
+
+    <span style="color:Blue;">if</span> (!Enum.IsDefined(<span style="color:Blue;">typeof</span>(T), value))
+    {
+        <span style="color:Blue;">throw</span> <span style="color:Blue;">new</span> ArgumentOutOfRangeException($<span style="color:#A31515;">&quot;{value} is not a valid {typeof(T)}&quot;</span>);
+    }
+
+    <span style="color:Blue;">if</span> (value.Equals(<span style="color:Blue;">default</span>(T))) <span style="color:Green;">// &lt;-- Incompletely covered block</span>
+    {
+        <span style="color:Blue;">throw</span> <span style="color:Blue;">new</span> ArgumentOutOfRangeException($<span style="color:#A31515;">&quot;{value} is not a valid {typeof(T)}&quot;</span>);
+    }
 }
 </pre></div>
 </div>
-<p>The uncovered branch was checking if all characters in the input were either alphanumeric, hyphens, or underscores. When I tried to write a test that would trigger this branch (by providing an input with invalid characters), I realized something important: our application actually needed to accept certain special characters that weren't included in the validation.</p>
-<p>In our domain context, inputs like &quot;Customer.Profile&quot; or &quot;Order#123&quot; were perfectly valid and expected, but the validation method would reject them. This wasn't just a matter of incomplete test coverage—it was a functional bug that could potentially reject valid user inputs.</p>
+<p>The uncovered branch was the check for whether the value equals the default value for the enum type. When I tried to write a test to cover this branch, I realized something important: the method had a logical flaw.</p>
+<p>For many enum types in our codebase, the default value (typically 0) was a valid, defined value. For example:</p>
+<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">public</span> <span style="color:Blue;">enum</span> TaskStatus
+{
+    Draft = 0,
+    NotDone = 1,
+    Done = 2,
+    Skipped = 3,
+    Cancelled = 4
+}
+</pre></div>
+</div>
+<p>In this case, <code>TaskStatus.Draft</code> is both a defined enum value AND equal to the default value of the enum (0) because it is the logical default state of the entity. The validation method would first check if the value is defined (it is), but then incorrectly throw an exception because it equals the default value.</p>
+<p>This wasn't just a matter of incomplete test coverage—it was a functional bug that would reject valid enum values in certain cases.</p>
 <h4>Two Birds, One Stone</h4>
-<p>I updated the validation method to include the additional valid characters:</p>
+<p>I wrote tests that exposed the error by verifying both the acceptance of valid default values and the rejection of default values that should have been valid.</p>
+<p>Once I had tests that were failing appropriately, I then updated the validation method to fix this logical issue:</p>
 <div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
-<span style="color:Blue;">public</span> <span style="color:Blue;">bool</span> IsValid(<span style="color:Blue;">string</span> input)
+<span style="color:Blue;">public</span> <span style="color:Blue;">static</span> <span style="color:Blue;">void</span> ThrowIfInvalidEnum&lt;T&gt;(T value)
 {
-    <span style="color:Blue;">if</span> (<span style="color:Blue;">string</span>.IsNullOrEmpty(input))
-        <span style="color:Blue;">return</span> <span style="color:Blue;">false</span>;
-    
-    <span style="color:Blue;">if</span> (input.Length &lt; 3 || input.Length &gt; 50)
-        <span style="color:Blue;">return</span> <span style="color:Blue;">false</span>;
-    
-    <span style="color:Green;">// Updated to include additional valid characters</span>
-    <span style="color:Blue;">if</span> (!input.All(c =&gt; <span style="color:Blue;">char</span>.IsLetterOrDigit(c) || c == <span style="color:#A31515;">&#39;-&#39;</span> || c == <span style="color:#A31515;">&#39;_&#39;</span> || c == <span style="color:#A31515;">&#39;.&#39;</span> || c == <span style="color:#A31515;">&#39;#&#39;</span>))
-        <span style="color:Blue;">return</span> <span style="color:Blue;">false</span>;
-    
-    <span style="color:Blue;">return</span> <span style="color:Blue;">true</span>;
+    <span style="color:Blue;">public</span> <span style="color:Blue;">static</span> <span style="color:Blue;">void</span> ThrowIfInvalidEnum&lt;T&gt;(T value)
+    {
+        ArgumentNullException.ThrowIfNull(value);
+
+        <span style="color:Green;">// If the value is not defined in the enum it&#39;s invalid</span>
+        <span style="color:Blue;">if</span> (!Enum.IsDefined(<span style="color:Blue;">typeof</span>(T), value))
+            <span style="color:Blue;">throw</span> <span style="color:Blue;">new</span> ArgumentOutOfRangeException($<span style="color:#A31515;">&quot;{value} is not a valid {typeof(T)}&quot;</span>);
+    }
 }
 </pre></div>
 </div>
-<p>Then I wrote tests that verified both the acceptance of valid special characters and the rejection of truly invalid ones. This not only achieved 100% code coverage for the method but also fixed a bug that might have caused problems in production.</p>
+<p>This not only achieved 100% code coverage for the method but also fixed a bug that might have caused problems in production.</p>
 <h4>The Value of Complete Coverage</h4>
 <p>This experience highlights several important points about code coverage:</p>
 <ol>
