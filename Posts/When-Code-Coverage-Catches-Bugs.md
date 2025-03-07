@@ -25,57 +25,71 @@ The debate around code coverage metrics has been ongoing in the software develop
 
 #### The Uncovered Branch
 
-During a routine review of our code coverage reports, I noticed an uncovered branch in a validation method. This method was responsible for validating input parameters before they were processed by our business logic. The coverage report showed that while most of the method was covered by our tests, one particular conditional branch remained untested.
+While adding a feature to a product in development, I noticed an uncovered branch in a validation method. This method was responsible for validating input parameters before they were processed by our business logic. The coverage report showed that while most of the method was covered by our tests, however one particular conditional remained partially untested.
 
-My initial reaction was straightforward: "Let's write a test to cover this branch and get to 100% coverage." However, as I began crafting the test, I encountered an unexpected challenge.
+My initial reaction was straightforward since it was a logical branch that should reasonbly have coverage: "Let's write a test to cover this branch." However, as I began crafting the test, I encountered an unexpected challenge.
 
 #### The Discovery
 
-The validation method looked something like this:
+The validation method in question was a utility method designed to validate enum parameters:
 
 ```csharp
-public bool IsValid(string input)
+public static void ThrowIfInvalidEnum<T>(T value)
 {
-    if (string.IsNullOrEmpty(input))
-        return false;
-    
-    if (input.Length < 3 || input.Length > 50)
-        return false;
-    
-    // The uncovered branch
-    if (!input.All(c => char.IsLetterOrDigit(c) || c == '-' || c == '_'))
-        return false;
-    
-    return true;
+    ArgumentNullException.ThrowIfNull(value);
+
+    if (!Enum.IsDefined(typeof(T), value))
+    {
+        throw new ArgumentOutOfRangeException($"{value} is not a valid {typeof(T)}");
+    }
+
+    if (value.Equals(default(T))) // <-- Incompletely covered block
+    {
+        throw new ArgumentOutOfRangeException($"{value} is not a valid {typeof(T)}");
+    }
 }
 ```
 
-The uncovered branch was checking if all characters in the input were either alphanumeric, hyphens, or underscores. When I tried to write a test that would trigger this branch (by providing an input with invalid characters), I realized something important: our application actually needed to accept certain special characters that weren't included in the validation.
+The uncovered branch was the check for whether the value equals the default value for the enum type. When I tried to write a test to cover this branch, I realized something important: the method had a logical flaw.
 
-In our domain context, inputs like "Customer.Profile" or "Order#123" were perfectly valid and expected, but the validation method would reject them. This wasn't just a matter of incomplete test coverage—it was a functional bug that could potentially reject valid user inputs.
+For many enum types in our codebase, the default value (typically 0) was a valid, defined value. For example:
+
+```csharp
+public enum TaskStatus
+{
+    Draft = 0,
+    NotDone = 1,
+    Done = 2,
+    Skipped = 3,
+    Cancelled = 4
+}
+```
+
+In this case, `TaskStatus.Draft` is both a defined enum value AND equal to the default value of the enum (0) because it is the logical default state of the entity. The validation method would first check if the value is defined (it is), but then incorrectly throw an exception because it equals the default value.
+
+This wasn't just a matter of incomplete test coverage—it was a functional bug that would reject valid enum values in certain cases.
 
 #### Two Birds, One Stone
 
-I updated the validation method to include the additional valid characters:
+I wrote tests that exposed the error by verifying both the acceptance of valid default values and the rejection of default values that should have been valid.
+
+Once I had tests that were failing appropriately, I then updated the validation method to fix this logical issue:
 
 ```csharp
-public bool IsValid(string input)
+public static void ThrowIfInvalidEnum<T>(T value)
 {
-    if (string.IsNullOrEmpty(input))
-        return false;
-    
-    if (input.Length < 3 || input.Length > 50)
-        return false;
-    
-    // Updated to include additional valid characters
-    if (!input.All(c => char.IsLetterOrDigit(c) || c == '-' || c == '_' || c == '.' || c == '#'))
-        return false;
-    
-    return true;
+    public static void ThrowIfInvalidEnum<T>(T value)
+    {
+        ArgumentNullException.ThrowIfNull(value);
+
+        // If the value is not defined in the enum it's invalid
+        if (!Enum.IsDefined(typeof(T), value))
+            throw new ArgumentOutOfRangeException($"{value} is not a valid {typeof(T)}");
+    }
 }
 ```
 
-Then I wrote tests that verified both the acceptance of valid special characters and the rejection of truly invalid ones. This not only achieved 100% code coverage for the method but also fixed a bug that might have caused problems in production.
+This not only achieved 100% code coverage for the method but also fixed a bug that might have caused problems in production.
 
 #### The Value of Complete Coverage
 
