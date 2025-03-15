@@ -71,7 +71,7 @@
                     <h5>Posted by bsstahl on 2023-04-24 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
                     <share-on-mastodon 
                         share_title="Check out this post on Cognitive Inheritance: 'Minimizing Support Burden - A Comparison of Three Architectures'"
-                        share_description="&quot;&quot;"
+                        share_description="&quot;The article compares three architectural approaches (monolith, separated services, and direct messaging) to demonstrate how properly isolating concerns across system components can minimize support burden by ensuring that only the relevant teams need to respond when failures occur.&quot;"
                         hashtags="#architecture #coding-practices #event-driven #microservices #reliability #soa"
                         author="@bsstahl@cognitiveinheritance.com"
                         default_url="https://fosstodon.org">
@@ -79,10 +79,12 @@
                     <br/><br/>
                     <p>Note: A WIP event storming and other diagrams can be found here: https://lucid.app/lucidchart/3b6a8978-64ab-4458-9dca-88ab3b75767b/edit?beaconFlowId=140CA4DD4F888E74&amp;invitationId=inv_ed1185ed-756e-4d06-84fc-dc6a69f456e6&amp;page=eqs0TI9YjX~X#</p>
 <p>There's been some talk lately about well abstracted monoliths and how they may be more effective at times than microservice architectures. While there are almost certainly some use cases where this is true, there are things that a monolith doesn't do as well as other architectures.</p>
+<p>TODO: Determine if the below are really true. It seems like at least some of them <em>could</em> be done using a monolith, it just might be more difficult. That said, if you are going to do those things, you might as well use a microservice architecture.</p>
 <ul>
-<li>Isolate concerns</li>
-<li>Provide a bus</li>
-<li>[TODO: Pick-up where it left off]</li>
+<li>Isolate concerns effectively to contain failures</li>
+<li>Provide a reliable messaging bus for asynchronous communication</li>
+<li>Enable independent deployment and scaling of components</li>
+<li>Clearly delineate responsibility boundaries for support incidents</li>
 </ul>
 <p>Monoliths, like microservices, can abstract the various concerns to reduce the coupling between them, but monoliths make it much more difficult to determine in which concern a failures occurred, often requiring teams to respond to support issues unnecessarily. Additionally, it is far more risky to add new functionality to a monolith than it is to add it to an event-driven microservice because of the direct nature of the interactions within a monolith.</p>
 <p>In this post, we'll compare three architectures and demonstrate why completely separating concerns is important in most non-trivial cases.</p>
@@ -97,13 +99,87 @@
 </ul>
 <p>We'll assume for the purpose of demonstration, that each subdomain is supported by a different development team.</p>
 <h2>Architecture 1: Monolith</h2>
-<p>TODO: Change from <em>all</em> to the primary subsystem (Scheduling) and describe it in terms of cascading failures from the perspective of Scheduling.</p>
-<p>In Architecture 1, all 3 subsystems are contained within a single monolith. The scheduling subsystem receives an API call, calls the 2 dependency subsystems, and stores the results to disk. Any failures within the monolith impact the entire system and present to the caller as a failure within the scheduling process of the system. If a failure occurs in the Preventative Maintenance subsystem, the whole system has failed and all involved need to be prepared to deal with it.</p>
+<p>In Architecture 1, all 3 subsystems are contained within a single monolith. The Scheduling subsystem receives an API call, then internally calls the Preventative Maintenance and Application subsystems to determine if a bus should be scheduled for maintenance.</p>
+<p>The critical issue with this architecture is how failures cascade from the perspective of the Scheduling team:</p>
+<ol>
+<li><p>If the Preventative Maintenance subsystem fails (e.g., a machine learning model crashes or returns invalid results), this failure appears as a Scheduling subsystem failure to the end user.</p>
+</li>
+<li><p>When support is alerted about the failure, the Scheduling team must be involved in the initial response, even though the root cause may be in the Preventative Maintenance subsystem.</p>
+</li>
+<li><p>This creates unnecessary support burden for the Scheduling team, who must participate in triage and potentially coordinate with the Preventative Maintenance team to resolve issues that aren't within their domain of expertise.</p>
+</li>
+<li><p>The monolith architecture obscures the true source of failures, making it difficult to route support incidents directly to the responsible team.</p>
+</li>
+</ol>
+<p>Any failures within the monolith impact the entire system and present to the caller as a failure within the scheduling process. This means all teams potentially need to be prepared to deal with support incidents, regardless of where in the system the actual failure occurred.</p>
 <h2>Architecture 2: Separated API and Business Rules Services</h2>
-<p>In Architecture 2, the API call is made, validated, and pushed into a reliable messaging system like Azure Service bus or Apache Kafka. Then, the separate Business Rules Services read the message and performs the necessary work. This can be accomplished through either orchestration or choreography, which is the subject of a future article.</p>
+<p>In Architecture 2, the API call is made, validated, and pushed into a reliable messaging system like Azure Service Bus or Apache Kafka. Then, the separate Business Rules Services read the message and perform the necessary work.</p>
+<p>When a failure occurs in this architecture:</p>
+<ol>
+<li><p>If the Preventative Maintenance service fails, only the Preventative Maintenance team needs to respond, as the failure is isolated to their service.</p>
+</li>
+<li><p>The Scheduling service can implement fallback logic to handle temporary unavailability of the Preventative Maintenance service, such as assuming no maintenance is required or using cached results.</p>
+</li>
+<li><p>The Application team only needs to be involved if the failure occurs during the API validation or message publishing phase.</p>
+</li>
+</ol>
+<p>This architecture significantly reduces cross-team support burden compared to the monolith, as failures are more clearly isolated to specific services and their responsible teams. This can be accomplished through either orchestration or choreography, which is the subject of a future article.</p>
 <h2>Architecture 3: Push Messages Directly to Reliable Messaging System</h2>
-<p>In Architecture 3, we can eliminate the need for an API by having the upstream client push the message directly to a reliable messaging system. The Business Rules Services then process the messages from there. In many circumstances, such as when using ProtoBuf or Avro messages in Kafka, these messages can be schema validated using infrastructure, providing much the same level of validation as an API service would, without the need for an additional application team.</p>
+<p>In Architecture 3, we eliminate the need for an API by having the upstream client push the message directly to a reliable messaging system. The Business Rules Services then process the messages from there.</p>
+<p>This architecture provides the clearest isolation of concerns:</p>
+<ol>
+<li><p>Infrastructure failures (network, messaging system) are handled exclusively by the Infrastructure team.</p>
+</li>
+<li><p>Business logic failures in each service are handled only by the team responsible for that service.</p>
+</li>
+<li><p>The client application can implement retry logic and receive acknowledgments directly from the messaging system.</p>
+</li>
+<li><p>Schema validation can be performed by the messaging infrastructure using formats like ProtoBuf or Avro, eliminating the need for a separate API validation layer.</p>
+</li>
+</ol>
+<p>This approach minimizes support burden by ensuring that only the team with the relevant expertise needs to respond to any given failure, and by leveraging highly reliable infrastructure components to handle message delivery guarantees.</p>
+<h2>Comparison of Support Requirements Across Architectures</h2>
+<p>The following table demonstrates which teams need to respond to different types of failures in each architecture:</p>
+<p>| Failure Type | Architecture 1: Monolith | Architecture 2: Separated Services | Architecture 3: Direct Messaging |
+|-----|-----|-----|-----|
+| <strong>Message Ingress Failure</strong> | Application Team + potentially all teams for triage | Application Team | Infrastructure Team only |
+| <strong>Scheduling Logic Failure</strong> | Scheduling Team + Application Team | Scheduling Team only | Scheduling Team only |
+| <strong>Preventative Maintenance Failure</strong> | All teams involved in initial triage | Preventative Maintenance Team only | Preventative Maintenance Team only |
+| <strong>Infrastructure Failure</strong> | All teams involved in triage | Infrastructure Team + potentially Application Team | Infrastructure Team only |</p>
 <p>As the table demonstrates, in Architectures 1 and 2, failures on message ingress require at least one application team to respond to any failure. This is because these architectures cannot fully isolate application concerns from infrastructure ones. However, in Architecture 3, if there is an Ingress failure, the Infrastructure team is responsible for responding because they are the ones responsible for managing the network and the messaging tooling. Infrastructure implementations also typically offer a higher degree of reliability than applications can.</p>
+<h2>Visual Representation of Failure Paths</h2>
+<h3>Architecture 1: Monolith</h3>
+<div class="lang-mermaid editor-colors">graph TD
+    Client[Client] --> API[API Layer]
+    API --> Monolith[Monolith]
+    Monolith --> Scheduling[Scheduling Logic]
+    Monolith --> PM[Preventative Maintenance]
+    Monolith --> App[Application Logic]
+    
+    classDef failure fill:#f96,stroke:#333,stroke-width:2px;
+    class PM failure;
+    
+    subgraph "Support Response Required"
+        Scheduling
+        PM
+        App
+    end
+</div>
+<h3>Architecture 3: Direct Messaging</h3>
+<div class="lang-mermaid editor-colors">graph TD
+    Client[Client] --> MQ[Message Queue]
+    MQ --> Scheduling[Scheduling Service]
+    MQ --> PM[Preventative Maintenance Service]
+    MQ --> App[Application Service]
+    
+    classDef failure fill:#f96,stroke:#333,stroke-width:2px;
+    class PM failure;
+    
+    subgraph "Support Response Required"
+        PM
+    end
+</div>
+<p>The diagrams above illustrate how a failure in the Preventative Maintenance component affects the support response requirements in different architectures. In Architecture 1, all teams must be involved in the support response, while in Architecture 3, only the Preventative Maintenance team needs to respond.</p>
 <h2>Summary</h2>
 <p>In conclusion, by separating concerns into different services, we can reduce the coupling between different parts of the system and minimize the support requirements for each individual team. Furthermore, by pushing messages directly to a reliable messaging system, we can improve reliability by putting as much burden as possible on the infrastructure pieces, which have the highest reliability guarantees.</p>
 
