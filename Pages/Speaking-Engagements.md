@@ -136,7 +136,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ***
 
-* **A Developer's Introduction to Artificial Intelligences** (also available as a half-day or full-day workshop) - There are a number of ways that developers can build systems that make decisions on our behalf. In this introductory course specifically for software developers, we explore a variety of methods used to create Artificial Intelligences. Using demo code written in c#, we will survey the breadth of AI methodologies and develop an understanding of when each might be best utilized. You will also leave with a library of sample code available for reference.
+* **A Developer's Introduction to Artificial Intelligences** (also available as a half-day or full-day workshop) - There are a number of ways that developers can build systems that make decisions on our behalf. In this introductory course specifically for software developers, we explore various AI methodologies with a focus on two major categories: Search & Optimization techniques (including Dynamic Programming and Linear Programming) and Probabilistic/Learning models (including Neural Networks, Genetic Algorithms, and LLMs). Using demo code written in C#, we'll examine each methodology, understand its strengths and limitations, and identify when each is best utilized. You'll learn how to implement several of these models and gain practical insights into selecting the right AI approach for different problem domains.
 
   [Latest Slide Deck](https://ADevsIntroToAI.azurewebsites.net)
 
