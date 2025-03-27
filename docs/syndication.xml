@@ -9,6 +9,32 @@
     <language>en-US</language>
     <atom:link href="https://cognitiveinheritance.com/syndication.xml" rel="self" type="application/rss+xml" />	
     <item>
+  <title>Preserve Section 230 to Protect Free Speech and Competition</title>
+  <description>&lt;blockquote&gt;
+&lt;p&gt;An open letter to Senators Kelly and Gallego urging them to oppose any weakening of the protections found in Section 230 of the Communications Decency Act (CDA) of 1996.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Dear Senator,&lt;/p&gt;
+&lt;p&gt;I am reaching out to express my strong opposition to any modifications or repeal of Section 230 of the Communications Decency Act.&lt;/p&gt;
+&lt;p&gt;I am a constituent and a professional with 40 years of experience in distributed systems development, including my work on some of the earliest Internet-based applications at Intel Corporation in Chandler.&lt;/p&gt;
+&lt;p&gt;Section 230 is a foundational element of the Internet&apos;s legal framework and altering it could have profound negative impacts on both free speech and competition in the Internet services space. Here are my primary concerns:&lt;/p&gt;
+&lt;h4&gt;Impact on Free Speech&lt;/h4&gt;
+&lt;p&gt;Section 230 provides a crucial liability shield that enables platforms to host diverse content without fear of constant litigation. Repealing or modifying this section would lead to increased censorship as platforms become overly cautious in moderating content. This could stifle free expression and create a chilling effect, where administrators are forced to censor, or shut down operations altogether, out of fear that perfectly legal speech might lead to liabilities for the platform. The open dialogue and exchange of ideas that are core to our democratic principles would be severely compromised.&lt;/p&gt;
+&lt;p&gt;In addition, modifying or even eliminating Section 230 wouldn&apos;t stop bad actors from spreading harmful content, as they are adept at exploiting loopholes and adapting to new platforms. A much better approach lies in addressing the behavior of the bad actors themselves, not transferring the responsibility onto Internet platform administrators. The issues that people seek to solve by modifying Section 230 simply would not be improved by this legislation.&lt;/p&gt;
+&lt;h4&gt;Impact on Competition&lt;/h4&gt;
+&lt;p&gt;The current protections encourage innovation and allow new entrants to compete in the Internet services space. Without these protections, smaller companies and startups would face significant barriers to entry due to the threat of costly litigation and the need to support large staff of content moderators. This could lead to an even greater consolidation of power among a few large corporations, reducing competition and limiting consumer choice. Furthermore, these same increased operational costs could stifle innovation and slow the development of new technologies.&lt;/p&gt;
+&lt;p&gt;As someone who has been deeply involved in the growth and evolution of Internet technologies, I believe that maintaining the integrity of Section 230 is essential for fostering a vibrant, competitive, and open Internet. I urge you to consider the potential ramifications of modifying this critical piece of legislation and to oppose any efforts that would undermine its foundational principles.&lt;/p&gt;
+&lt;p&gt;Thank you for your attention to this important matter. I appreciate your service to our state and your consideration of my perspective. Please feel free to contact me if you wish to discuss this issue further.&lt;/p&gt;
+&lt;p&gt;Sincerely,&lt;/p&gt;
+&lt;p&gt;Barry Stahl
+Software Engineer
+Phoenix AZ
+&lt;a href=&quot;https://CognitiveInheritance.com&quot;&gt;https://CognitiveInheritance.com&lt;/a&gt;&lt;/p&gt;
+</description>
+  <link>https://www.cognitiveinheritance.com/Posts/protect-section-230.html</link>
+  <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
+  <guid>https://www.cognitiveinheritance.com/Permalinks/536c1aea-080b-4ecf-95ae-73022ad48781.html</guid>
+  <pubDate>Wed, 26 Mar 2025 11:00:00 GMT</pubDate>
+</item><item>
   <title>Understanding the ID Entanglement Effect</title>
   <description>&lt;p&gt;Every developer has faced it: the temptation to make identifiers &amp;quot;smarter&amp;quot; by embedding information. A customer ID that includes their region, an order number containing the date, a product code that encodes its category - these patterns appear innocent at first, even helpful. But they hide a subtle trap I call the &amp;quot;&lt;strong&gt;ID Entanglement Effect&lt;/strong&gt;&amp;quot; - a cascade of complexity that emerges when identifiers become intertwined with business logic and mutable state.&lt;/p&gt;
 &lt;p&gt;This effect manifests when we blur the line between identification and information, creating a web of dependencies that grows increasingly difficult to maintain. What starts as a convenient shortcut often evolves into a significant source of technical debt, affecting everything from system flexibility to data integrity.&lt;/p&gt;
@@ -384,34 +410,6 @@
   <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/53e0a79d-1096-4874-9639-6c1fb3eb8b47.html</guid>
   <pubDate>Mon, 20 Feb 2023 07:00:00 GMT</pubDate>
-</item><item>
-  <title>Simple Linear Regression</title>
-  <description>&lt;p&gt;My high-school chemistry teacher, Mrs. J, had a name for that moment when she could see the lightbulb go on over your head. You know, that instant where realization hits and a concept sinks-in and becomes part of your consciousness. The moment that you truly &amp;quot;Grok&amp;quot; a principle. She called that an &amp;quot;aha experience&amp;quot;.&lt;/p&gt;
-&lt;p&gt;One of my favorite &amp;quot;aha experiences&amp;quot; from my many years as a Software Engineer, is when I realized that the simplest neural network, a model with one input and one output, was simply modeling a line, and that training such a model, was just performing a linear regression. Mind. Blown.&lt;/p&gt;
-&lt;p&gt;In case you haven&apos;t had this particular epiphany yet, allow me to go into some detail. I also discuss this in my conference talk, &lt;a href=&quot;https://cognitiveinheritance.com/Pages/Speaking-Engagements.html#ai-talks&quot;&gt;A Developer&apos;s Introduction to Artificial Intelligences&lt;/a&gt;.&lt;/p&gt;
-&lt;h4&gt;Use Case: Predict the Location of a Train&lt;/h4&gt;
-&lt;p&gt;Let&apos;s use the example of predicting the location of a train. Because they are on rails, trains move in 1-dimensional space. We can get a good approximation of their movement, especially between stops, by assuming they travel at a consistent speed. As a result, we can make a reasonably accurate prediction of a train&apos;s distance from a particular point on the rail, using a linear equation.&lt;/p&gt;
-&lt;p&gt;If we have sensors reporting the location and time of detection of our train, spread-out across our fictional rail system, we might be able to build a graph of these reports that looks something like this:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.cognitiveinheritance.com/Images/Positive Only Linear Data.png&quot; alt=&quot;A plot of data points that, while noisy, clearly start from the origin at the bottom-left and moves in a line toward the top-right&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;I think it is clear that this data can be represented using a &amp;quot;best-fit line&amp;quot;. Certainly there is some error in the model, perhaps due to sensor or reporting errors, or maybe just to normal variance of the data. However, there can be no doubt that the best fit for this data would be represented as a line. In fact, there are a number of tools that can make it very easy to generate such a line. But what does that line really represent? To be a &amp;quot;best-fit&amp;quot;, the line needs to be drawn in such a way as to minimize the differences between the values found in the data and the values on the line. Thus, the total error between the values predicted by our best-fit line, and the actual values that we measured, is as small as we can possibly get it.&lt;/p&gt;
-&lt;h4&gt;A Linear Neural Network&lt;/h4&gt;
-&lt;p&gt;A simple neural network, one without any hidden layers, consists of one or more input nodes, connected with edges to one or more output nodes. Each of the edges has a weight and each output node has a bias. The values of the output nodes are calculated by summing the product of each input connected to it, along with its corresponding weight, and adding in the output node&apos;s bias. Let&apos;s see what our railroad model might look like using a simple neural network.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.cognitiveinheritance.com/Images/Simplest Neural Network.png&quot; alt=&quot;The simplest neural network; 1 input node, connected to 1 output node via 1 edge&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;Ours is the simplest possible neural network, one input connected to one output, where our &lt;strong&gt;X&lt;/strong&gt; value (time) is the input and the output &lt;strong&gt;Y&lt;/strong&gt; is our prediction of the distance the train has traveled in that time. To make the best prediction we need to determine the values for the weight of the edge &lt;strong&gt;m&lt;/strong&gt; and the bias of the output node &lt;strong&gt;b&lt;/strong&gt; that produce the output that minimizes the errors in the model.&lt;/p&gt;
-&lt;p&gt;The process of finding the weights and biases values for a neural network that minimize the error is know as &lt;em&gt;Training&lt;/em&gt; the model. Once these values are determined, we use the fact that we multiply the weight by the input (m * X) and add in the bias. This gives us an equation in the form:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Y = mX + b&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;You may recognize this as the &lt;strong&gt;slope-intercept&lt;/strong&gt; form of the equation for a line, where the slope &lt;strong&gt;m&lt;/strong&gt; represents the speed of the train, and the bias &lt;strong&gt;b&lt;/strong&gt; represents the starting distance from the origin. Once our training process gives us values for &lt;strong&gt;m&lt;/strong&gt; and &lt;strong&gt;b&lt;/strong&gt;, we can easily plug-in any value for &lt;strong&gt;X&lt;/strong&gt; and get a prediction for the location of our train.&lt;/p&gt;
-&lt;h4&gt;Training a Model&lt;/h4&gt;
-&lt;p&gt;Training an AI model is simply finding the set of parameters that minimize the difference between the predicted output and the actual output. This is key to understanding AI - it&apos;s all about minimizing the error. Error minimization is the exact same goal as we have when performing a linear regression, which makes sense since these regressions are predictive models on their own, they just aren&apos;t generally depicted as neural networks.&lt;/p&gt;
-&lt;p&gt;There are many ways to perform the error-minimization process. Many more complicated models are trained using an iterative optimization routine called &lt;strong&gt;Gradient Descent&lt;/strong&gt;. Extremely simple models like this one often use a less complicated process such as &lt;strong&gt;Ordinary Least Squares&lt;/strong&gt;. The goals are the same however, values for weights and biases in the model are found that minimize the error in the output, resulting in a model can make the desired predictions based on known inputs.&lt;/p&gt;
-&lt;p&gt;Regardless of the method used, the realization that training the simplest neural network results in a model of a line provided the &amp;quot;aha experience&amp;quot; I needed as the foundation for my understanding of Machine Learning models. I hope, by publishing this article, that others may also benefit from this recognition.&lt;/p&gt;
-</description>
-  <link>https://www.cognitiveinheritance.com/Posts/simple-linear-regression.html</link>
-  <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
-  <guid>https://www.cognitiveinheritance.com/Permalinks/18a693d3-448c-4477-b4e2-7193e896a2b6.html</guid>
-  <pubDate>Mon, 13 Feb 2023 07:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
