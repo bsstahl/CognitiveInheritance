@@ -47,6 +47,9 @@ Thank you for your attention to this important matter. I appreciate your service
 Sincerely,
 
 Barry Stahl
+
 Software Engineer
+
 Phoenix AZ
+
 [https://CognitiveInheritance.com](https://CognitiveInheritance.com)
