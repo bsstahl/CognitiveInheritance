@@ -10,7 +10,7 @@ categories:
 - General
 menuorder: 0
 id: 536c1aea-080b-4ecf-95ae-73022ad48781
-title: Urgent: Preserve Section 230 to Protect Free Speech and Competition
+title: Preserve Section 230 to Protect Free Speech and Competition
 description: An open letter to Senators Kelly and Gallego urging them to oppose any weakening of the protections found in Section 230 of the Communications Decency Act (CDA) of 1996
 ispublished: true
 showinlist: false
