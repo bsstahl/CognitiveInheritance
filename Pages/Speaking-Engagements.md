@@ -157,6 +157,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
   * Variables: Which players to field, in what positions, and when to substitute
   * Solution: A dynamic system that adapts to game conditions for optimal performance
 
+
   This representation of sports strategy illustrates the core of combinatorial optimization: finding the best arrangement of resources under constraints. From this foundation, we'll dive into software problems across various domains:
 
   * Resource allocation in distributed systems
@@ -164,6 +165,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
   * Multi-objective optimization in logistics
   * Configuration optimization in system design
   * Real-time solving techniques for responsive applications
+
 
   Through code-focused demonstrations using industry tools like the open-source Google OR-Tools, you'll learn to implement these techniques without needing an advanced mathematics background. You'll walk away with immediately applicable strategies to solve seemingly impossible problems, optimize resource usage, and deliver more intelligent solutions with less code.
 
