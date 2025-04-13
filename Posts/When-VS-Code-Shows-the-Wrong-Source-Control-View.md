@@ -23,7 +23,7 @@ slug: when-vs-code-shows-the-wrong-source-control-view
 ---
 Recently, I encountered a confusing issue with Visual Studio Code where the source control tab wasn't showing my modified files anymore. Git was correctly detecting changes since the **git status** command correctly showed modifications, but those changes weren't appearing in VS Code's source control panel. Instead, I was seeing a graph view of my repository history.
 
-## The Investigation
+#### The Investigation
 
 I turned to Claude Sonnet 3.7 (via the Cline extension in VS Code) for help troubleshooting this issue. We started with some basic diagnostics:
 
@@ -33,7 +33,7 @@ I turned to Claude Sonnet 3.7 (via the Cline extension in VS Code) for help trou
 
 This last step was the key insight - pressing Ctrl+Shift+G showed the standard Source Control view with a list of modified files (what I wanted), but clicking the Source Control icon in the Activity Bar showed a different view (the graph view).
 
-## The Solution
+#### The Solution
 
 After some investigation, we discovered the root cause: I had two different source control icons in my Activity Bar:
 
@@ -47,7 +47,7 @@ The solution was simple:
 
 After making these changes, clicking the Source Control icon in the Activity Bar now consistently shows my modified files, just like pressing Ctrl+Shift+G.
 
-## Why This Happens
+#### Why This Happens
 
 VS Code allows multiple views with similar icons to coexist in the Activity Bar. This flexibility is powerful but can sometimes lead to confusion:
 
@@ -57,7 +57,7 @@ VS Code allows multiple views with similar icons to coexist in the Activity Bar.
 
 In my case, I had somehow ended up with duplicate Source Control icons in my Activity Bar, each showing different views of my repository.
 
-## Preventing Future Issues
+#### Preventing Future Issues
 
 To avoid similar confusion in the future, I will make sure that I:
 
