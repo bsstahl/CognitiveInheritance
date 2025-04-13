@@ -10,7 +10,7 @@
     <atom:link href="https://cognitiveinheritance.com/syndication.xml" rel="self" type="application/rss+xml" />	
     <item>
   <title>When VS Code Shows the Wrong Source Control View - Resolving Duplicate Icons</title>
-  <description>&lt;p&gt;Recently, I encountered a confusing issue with Visual Studio Code where the source control tab wasn&apos;t showing my modified files anymore. Git was correctly detecting changes since the &lt;code&gt;git status&lt;/code&gt; command correctly showed modifications, but those changes weren&apos;t appearing in VS Code&apos;s source control panel. Instead, I was seeing a graph view of my repository history.&lt;/p&gt;
+  <description>&lt;p&gt;Recently, I encountered a confusing issue with Visual Studio Code where the source control tab wasn&apos;t showing my modified files anymore. Git was correctly detecting changes since the &lt;strong&gt;git status&lt;/strong&gt; command correctly showed modifications, but those changes weren&apos;t appearing in VS Code&apos;s source control panel. Instead, I was seeing a graph view of my repository history.&lt;/p&gt;
 &lt;h2&gt;The Investigation&lt;/h2&gt;
 &lt;p&gt;I turned to Claude Sonnet 3.7 (via the Cline extension in VS Code) for help troubleshooting this issue. We started with some basic diagnostics:&lt;/p&gt;
 &lt;ol&gt;
