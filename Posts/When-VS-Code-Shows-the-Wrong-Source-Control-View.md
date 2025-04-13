@@ -21,7 +21,7 @@ lastmodificationdate: 2025-04-13T07:00:00Z
 slug: when-vs-code-shows-the-wrong-source-control-view
 
 ---
-Recently, I encountered a confusing issue with Visual Studio Code where the source control tab wasn't showing my modified files anymore. Git was correctly detecting changes since the `git status` command correctly showed modifications, but those changes weren't appearing in VS Code's source control panel. Instead, I was seeing a graph view of my repository history.
+Recently, I encountered a confusing issue with Visual Studio Code where the source control tab wasn't showing my modified files anymore. Git was correctly detecting changes since the **git status** command correctly showed modifications, but those changes weren't appearing in VS Code's source control panel. Instead, I was seeing a graph view of my repository history.
 
 ## The Investigation
 
