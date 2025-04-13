@@ -80,7 +80,7 @@
     </share-on-mastodon>
     <br/><br/>
     <p>Recently, I encountered a confusing issue with Visual Studio Code where the source control tab wasn't showing my modified files anymore. Git was correctly detecting changes since the <strong>git status</strong> command correctly showed modifications, but those changes weren't appearing in VS Code's source control panel. Instead, I was seeing a graph view of my repository history.</p>
-<h2>The Investigation</h2>
+<h4>The Investigation</h4>
 <p>I turned to Claude Sonnet 3.7 (via the Cline extension in VS Code) for help troubleshooting this issue. We started with some basic diagnostics:</p>
 <ol>
 <li>First, we verified Git was working correctly by viewing modified fiels in the terminal using <strong>git status</strong></li>
@@ -88,7 +88,7 @@
 <li>Claude suggested trying the Ctrl+Shift+G keyboard shortcut, which immediately showed the correct view with my modified files</li>
 </ol>
 <p>This last step was the key insight - pressing Ctrl+Shift+G showed the standard Source Control view with a list of modified files (what I wanted), but clicking the Source Control icon in the Activity Bar showed a different view (the graph view).</p>
-<h2>The Solution</h2>
+<h4>The Solution</h4>
 <p>After some investigation, we discovered the root cause: I had two different source control icons in my Activity Bar:</p>
 <ol>
 <li>One at the top labeled &quot;Source Control&quot; that showed the graph view</li>
@@ -100,7 +100,7 @@
 <li>Move the correct icon (&quot;Source Control (Ctrl-Shift-G)&quot;) to a more visible position in the Activity Bar</li>
 </ul>
 <p>After making these changes, clicking the Source Control icon in the Activity Bar now consistently shows my modified files, just like pressing Ctrl+Shift+G.</p>
-<h2>Why This Happens</h2>
+<h4>Why This Happens</h4>
 <p>VS Code allows multiple views with similar icons to coexist in the Activity Bar. This flexibility is powerful but can sometimes lead to confusion:</p>
 <ul>
 <li>Extensions can add their own source control-related views</li>
@@ -108,7 +108,7 @@
 <li>Without careful attention to the hover labels, it's easy to confuse which icon does what</li>
 </ul>
 <p>In my case, I had somehow ended up with duplicate Source Control icons in my Activity Bar, each showing different views of my repository.</p>
-<h2>Preventing Future Issues</h2>
+<h4>Preventing Future Issues</h4>
 <p>To avoid similar confusion in the future, I will make sure that I:</p>
 <ul>
 <li>Hover over icons in the Activity Bar to see their full labels</li>
