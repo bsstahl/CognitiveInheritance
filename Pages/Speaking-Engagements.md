@@ -148,7 +148,28 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ***
 
-* **Building AI Solutions Using Combinatorial Solvers** - We depend on Artificial Intelligences to solve many types of problems for us. Some of these problems have more than one possible solution. Handling those problems with more than one solution while building a modern AI system is something every developer will be asked to do over the course of his or her career. Figuring out the best way to utilize the capacity of a device or machine, finding the shortest path between two points, or determining the best way to schedule people or events are all problems where mathematical optimization techniques and tooling can be used to quickly and efficiently find solutions. This session is a software developers introduction to using mathematical optimization in Artificial Intelligence. In it, we will explore some of the foundational techniques for solving these types of problems, and use combinatorial solver tools to put them to work in our AI systems. Since this is a session for developers, we'll keep it in terms that work best for us. That is, we'll go heavy on the code and lighter on the math. **Note**: This talk can be specifically targeted to one of several solver tools including Gurobi, Microsoft Solver Foundation and Google OR-Tools.
+* **Game-Changing Algorithms: Sports Strategy Meets Software Optimization** - Championship teams don't just rely on talent—they use sophisticated strategies to optimize player positions, manage resources, and adapt to changing conditions. Similarly, combinatorial optimization transforms problem solving in software by enabling systems to find optimal solutions among countless possibilities.
+
+  Consider team sports strategy as an optimization problem:
+
+  * Objective: Maximize wins across a season
+  * Constraints: Player abilities, fatigue levels, and positional requirements
+  * Variables: Which players to field, in what positions, and when to substitute
+  * Solution: A dynamic system that adapts to game conditions for optimal performance
+
+  This representation of sports strategy illustrates the core of combinatorial optimization: finding the best arrangement of resources under constraints. From this foundation, we'll dive into software problems across various domains:
+
+  * Resource allocation in distributed systems
+  * Constraint satisfaction in scheduling applications
+  * Multi-objective optimization in logistics
+  * Configuration optimization in system design
+  * Real-time solving techniques for responsive applications
+
+  Through code-focused demonstrations using industry tools like the open-source Google OR-Tools, you'll learn to implement these techniques without needing an advanced mathematics background. You'll walk away with immediately applicable strategies to solve seemingly impossible problems, optimize resource usage, and deliver more intelligent solutions with less code.
+
+  Whether you're building scheduling systems, logistics applications, or any software that needs to make complex decisions, this session will equip you with powerful combinatorial optimization techniques that can be applied to a wide range of real-world problems.
+
+  **Note**: An early version of this presentation, then called "Building AI Solutions Using Combinatorial Solvers" was presented at NDC Sydney in 2017, as well as several domestic code camps in 2017 and 2018. It was very well received and has since been fully updated to use a popular sports metaphor to help establish the foundations of the process, making the experience even better for the attendees.
 
   [Video: NDC Sydney - Sydney Australia - August 2017](https://www.youtube.com/watch?v=zZAobExOMB0&list=FLq-iLd7rfmqSIFiujBGIRSw&index=2)
 
