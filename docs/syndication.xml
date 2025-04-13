@@ -9,6 +9,50 @@
     <language>en-US</language>
     <atom:link href="https://cognitiveinheritance.com/syndication.xml" rel="self" type="application/rss+xml" />	
     <item>
+  <title>When VS Code Shows the Wrong Source Control View - Resolving Duplicate Icons</title>
+  <description>&lt;p&gt;Recently, I encountered a confusing issue with Visual Studio Code where the source control tab wasn&apos;t showing my modified files anymore. Git was correctly detecting changes (&lt;code&gt;git status&lt;/code&gt; showed modifications), but they weren&apos;t appearing in VS Code&apos;s source control panel. Instead, I was seeing a graph view of my repository history.&lt;/p&gt;
+&lt;h2&gt;The Investigation&lt;/h2&gt;
+&lt;p&gt;I turned to Claude Sonnet 3.7 (via the Cline extension in VS Code) for help troubleshooting this issue. We started with some basic diagnostics:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;First, we verified Git was working correctly by running &lt;code&gt;git status&lt;/code&gt;, which showed my modified files&lt;/li&gt;
+&lt;li&gt;We checked VS Code&apos;s Git extensions and settings to see if anything was misconfigured&lt;/li&gt;
+&lt;li&gt;Claude suggested trying the Ctrl+Shift+G keyboard shortcut, which immediately showed the correct view with my modified files&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This last step was the key insight - pressing Ctrl+Shift+G showed the standard Source Control view with a list of modified files (what I wanted), but clicking the Source Control icon in the Activity Bar showed a different view (the graph view).&lt;/p&gt;
+&lt;h2&gt;The Solution&lt;/h2&gt;
+&lt;p&gt;After some investigation, we discovered the root cause: I had two different source control icons in my Activity Bar:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;One at the top labeled &amp;quot;Source Control&amp;quot; that showed the graph view&lt;/li&gt;
+&lt;li&gt;One at the bottom (off-screen, requiring scrolling) labeled &amp;quot;Source Control (Ctrl-Shift-G)&amp;quot; that showed the view of changed files&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The solution was simple:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Remove the unwanted icon (the top one showing the graph view)&lt;/li&gt;
+&lt;li&gt;Move the correct icon (&amp;quot;Source Control (Ctrl-Shift-G)&amp;quot;) to a more visible position in the Activity Bar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;After making these changes, clicking the Source Control icon in the Activity Bar now consistently shows my modified files, just like pressing Ctrl+Shift+G.&lt;/p&gt;
+&lt;h2&gt;Why This Happens&lt;/h2&gt;
+&lt;p&gt;VS Code allows multiple views with similar icons to coexist in the Activity Bar. This flexibility is powerful but can sometimes lead to confusion:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Extensions can add their own source control-related views&lt;/li&gt;
+&lt;li&gt;These views might use similar terminology and iconography&lt;/li&gt;
+&lt;li&gt;Without careful attention to the hover labels, it&apos;s easy to confuse which icon does what&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In my case, I had somehow ended up with duplicate Source Control icons in my Activity Bar, each showing different views of my repository.&lt;/p&gt;
+&lt;h2&gt;Preventing Future Issues&lt;/h2&gt;
+&lt;p&gt;To avoid similar confusion in the future, I will make sure that I:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Hover over icons in the Activity Bar to see their full labels&lt;/li&gt;
+&lt;li&gt;Pay attention to keyboard shortcuts listed in the labels (like &amp;quot;Ctrl-Shift-G&amp;quot;)&lt;/li&gt;
+&lt;li&gt;Right-click on the Activity Bar and review which views are enabled&lt;/li&gt;
+&lt;li&gt;Remove the ones I use less frequently when I end up with multiple, similar icons.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+  <link>https://www.cognitiveinheritance.com/Posts/when-vs-code-shows-the-wrong-source-control-view.html</link>
+  <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
+  <guid>https://www.cognitiveinheritance.com/Permalinks/8f7e6d5c-4b3a-2a1d-9c8b-7e6f5d4c3b2a.html</guid>
+  <pubDate>Sun, 13 Apr 2025 07:00:00 GMT</pubDate>
+</item><item>
   <title>Preserve Section 230 to Protect Free Speech and Competition</title>
   <description>&lt;blockquote&gt;
 &lt;p&gt;An open letter to Senators Kelly and Gallego urging them to oppose any weakening of the protections found in Section 230 of the Communications Decency Act (CDA) of 1996.&lt;/p&gt;
@@ -386,30 +430,6 @@ Phoenix AZ&lt;br/&gt;
   <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/7a38959c-92fa-47f3-aee9-19fdc2b21a28.html</guid>
   <pubDate>Wed, 12 Apr 2023 07:00:00 GMT</pubDate>
-</item><item>
-  <title>Microservices&#58; Size Doesn&apos;t Matter, Reliability Does</title>
-  <description>&lt;p&gt;There are conflicting opinions among architects about how many microservices a distributed system should have, and the size of those services. Some may say that a particular design has too many microservices, and that it should be consolidated into fewer, larger services to reduce deployment and operational complexity. Others may say that the same design doesn&apos;t have enough microservices, and that it should be broken-down into smaller, more granular services to reduce code complexity and improve team agility. Aside from the always true and rarely helpful &amp;quot;it depends...&amp;quot;, is there good guidance on the subject?&lt;/p&gt;
-&lt;p&gt;The truth is, the number and size of microservices is not a measure of quality or performance unto itself, it is a design decision based on one primary characteristic, &lt;strong&gt;Reliability&lt;/strong&gt;. As such, there is a simple rule guiding the creation of services, but it isn&apos;t based on the size or quantity of services. The rule is based entirely on how much work a service does.&lt;/p&gt;
-&lt;p&gt;After security, reliability is the most important attribute of any system, because it affects the satisfaction of both the users and developers, as well as the productivity and agility of the development and support teams. A reliable system has the following characteristics:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;It performs its duties as expected&lt;/li&gt;
-&lt;li&gt;It has minimal failures where it has to report to the user that it is unable to perform its duties&lt;/li&gt;
-&lt;li&gt;It has minimal downtime when it cannot be reached and opportunities may be lost&lt;/li&gt;
-&lt;li&gt;It recovers itself automatically when outages do occur, without data loss&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Having reliable systems means that your support engineers won&apos;t be constantly woken-up in the middle of the night to deal with outages, and your customers will remain satisfied with the quality of the product.&lt;/p&gt;
-&lt;h4&gt;How do we build reliable systems with microservices?&lt;/h4&gt;
-&lt;p&gt;The key to building reliable systems using microservices is to follow one simple rule: &lt;strong&gt;avoid dual-writes&lt;/strong&gt;. A dual-write is when a service makes more than one change to system state within an execution context. Dual-writes are the enemy of reliability, because they create the risk of inconsistency, data loss, and data corruption.&lt;/p&gt;
-&lt;p&gt;For example, a web API that updates a database and sends a message to a queue during the execution of a single web request is performing a dual-write since it is making two different changes to the state of the system, and both of the changes are expected to occur reliably. If one of the writes succeeds and the other fails, the system state becomes out of sync and system behavior becomes unpredictable. The errors created when these types of failures occur are often hard to find and remediate because they can present very differently depending on the part of the process being executed when the failure happened.&lt;/p&gt;
-&lt;p&gt;The best-practice is to allow microservices to perform &lt;a href=&quot;https://en.wikipedia.org/wiki/Idempotence&quot; title=&quot;Idempotence is the ability to execute a task an arbitrary number of times (&amp;gt;1) and have the resulting state of the system be the same as if the task was executed once.&quot;&gt;idempotent&lt;/a&gt; operations like database reads as often as they need, but to only write data once. An &lt;strong&gt;atomic update&lt;/strong&gt; to a database is an example of such a write, regardless of how many tables or collections are updated during that process. In this way, we can keep the state of each service consistent, and the system behavior deterministic. If the process fails even part-way through, we know how to recover, and can often do it automatically.&lt;/p&gt;
-&lt;p&gt;Building this type of system does require a change in how we design our services. In the past, it was very common for us to make multiple changes to a system&apos;s state, especially inside a monolithic application. To remain reliable, we need to leverage tools like &lt;a href=&quot;https://en.wikipedia.org/wiki/Change_data_capture&quot; title=&quot;Events created by a database system when data updates occur that can reliably trigger downstream actions&quot;&gt;Change Data Capture (CDC)&lt;/a&gt;, which is available in most modern database systems, or the &lt;a href=&quot;https://learn.microsoft.com/en-us/azure/architecture/best-practices/transactional-outbox-cosmos&quot; title=&quot;Reliably update a data store AND take additional downstream action by atomically writing 2 updates to the data store, the state update, and an event that is monitored for by another system and used to take the additional action&quot;&gt;Transactional Outbox Pattern&lt;/a&gt; so that we can write our data once, and have that update trigger other activities downstream.&lt;/p&gt;
-&lt;p&gt;Since microservices are sized to avoid dual-writes, the number of microservices in a system is determined by what they do and how they interact. The number of microservices is not a fixed or arbitrary number, but a result of the system design and the business needs. By following the rule of avoiding dual-writes, you can size your microservices appropriately, and achieve a system that is scalable and adaptable, but most of all, reliable. Of course, this practice alone will not guarantee the reliability of your systems, but it will make reliability possible, and is the best guideline I&apos;ve found for sizing microservices.&lt;/p&gt;
-&lt;p&gt;For more detail on how to avoid the Dual-Writes Anti-Pattern, please see my article from December 2022 on &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-1of6-context.html&quot;&gt;The Execution Context&lt;/a&gt;.&lt;/p&gt;
-</description>
-  <link>https://www.cognitiveinheritance.com/Posts/microservices-size-does-not-matter.html</link>
-  <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
-  <guid>https://www.cognitiveinheritance.com/Permalinks/53e0a79d-1096-4874-9639-6c1fb3eb8b47.html</guid>
-  <pubDate>Mon, 20 Feb 2023 07:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
