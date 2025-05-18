@@ -9,9 +9,9 @@ tags:
 - principle
 - reliability
 menuorder: 0
-id: 20eeb04e-9865-4842-8e1e-0592ef9049a5}}
+id: 517c2af3-f7a8-4988-b700-7dc2967942e2
 author: bsstahl
-title: The Concurrency Conundrum: Letting Tools Shoulder the Complexity
+title: The Concurrency Conundrum&#58; Letting Tools Shoulder the Complexity
 description: Writing concurrency code in software development is challenging, often resulting in unpredictable bugs and difficult maintenance. This article explores the reasons why manual concurrency management can lead to persistent issues and presents an alternative approach. By using modern tools, developers can focus on innovation while allowing specialized solutions to manage concurrency. Learn how to effectively navigate these challenges by letting tools take on the complexity.
 ispublished: false
 showinlist: false

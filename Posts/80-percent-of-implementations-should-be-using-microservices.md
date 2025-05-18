@@ -2,9 +2,9 @@
 tags:
 - microservices
 menuorder: 0
-id: 35f9cadf-4f00-4952-9931-17c0ec08595a}}
+id: 2eabd648-feb1-4f89-beb7-8f3a29dc6828
 author: bsstahl
-title: 80% of Implementations Should be Using Microservices
+title: 80&#37; of Implementations Should be Using Microservices
 description: Explore why microservices should be the default architecture for most modern software implementations. This post highlights the advantages of microservices over monolithic architectures, focusing on reliability. Gain insights into the importance of eventual consistency and learn about the challenges and benefits involved in transitioning to microservices after-the-fact. Perfect for developers and architects looking to make informed decisions about their software design, and for ignoring the well-intentioned but dangerous hype around "well-architected monoliths".
 ispublished: false
 showinlist: false
