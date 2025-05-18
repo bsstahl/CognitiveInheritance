@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang="en">
     <head>
-        <!-- Template: Content Page -->
+        <!-- Template: Post Page -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     
-        <meta name="description" content="All posts that are Work-in-Progress">
+        <meta name="description" content="80&#37; of Implementations Should be Using Microservices, an article on Cognitive Inheritance.">
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -67,23 +67,106 @@
 
             <div class="row">
                 <main class="col-lg-9 col-xl-10 content-main">
-                    <h1>Unpublished Posts</h1>
-                    <ul>
-<li><a href="../Posts/80-percent-of-implementations-should-be-using-microservices.html">80% of Implementations Should be Using Microservices</a></li>
-<li><a href="../Posts/conceptual-associations-without-understanding.html">Conceptual Associations Without Understanding</a></li>
-<li><a href="../Posts/designing-event-driven-architectures.html">Designing Event Driven Architectures</a></li>
-<li><a href="../Posts/developing-with-csharp-using-html5-and-css.html">Developing with C# using HTML5 and CSS</a></li>
-<li><a href="../Posts/llms-are-like-tdd.html">LLMs can be to writing what TDD is to coding</a></li>
-<li><a href="../Posts/minimizing-support-burden.html">Minimizing Support Burden - A Comparison of Three Architectures</a></li>
-<li><a href="../Posts/reducing-order-dependency-with-event-sourcing.html">Reducing Order Dependency with Event Sourcing</a></li>
-<li><a href="../Posts/teaching-computers-context.html">Teaching Computers Context: An Introduction to Word Embeddings</a></li>
-<li><a href="../Posts/the-concurrency-conundrum-letting-tools-shoulder-the-complexity.html">The Concurrency Conundrum: Letting Tools Shoulder the Complexity</a></li>
-<li><a href="../Posts/understanding-gpt-tokenization.html">Understanding GPT Tokenization</a></li>
-<li><a href="../Posts/unmasking-complexity.html">Unmasking Complexity - Real Strategies for Managing Complexity in Software Systems</a></li>
-<li><a href="../Posts/using-uris-as-globally-unique-ids.html">Using URIs as Globally Unique Identifiers</a></li>
-<li><a href="../Posts/when-code-coverage-catches-bugs.html">When Code Coverage Catches Bugs - A Case for Complete Coverage</a></li>
+                    <h3>80&#37; of Implementations Should be Using Microservices</h3>
+                    <h5>Posted by bsstahl on 2025-05-17 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+                    <share-on-mastodon 
+                        share_title="Check out this post on Cognitive Inheritance: '80&#37; of Implementations Should be Using Microservices'"
+                        share_description="&quot;Explore why microservices should be the default architecture for most modern software implementations. This post highlights the advantages of microservices over monolithic architectures, focusing on reliability. Gain insights into the importance of eventual consistency and learn about the challenges and benefits involved in transitioning to microservices after-the-fact. Perfect for developers and architects looking to make informed decisions about their software design, and for ignoring the well-intentioned but dangerous hype around &quot;well-architected monoliths&quot;.&quot;"
+                        hashtags="#microservices"
+                        author="@bsstahl@cognitiveinheritance.com"
+                        default_url="https://fosstodon.org">
+                    </share-on-mastodon>
+                    <br/><br/>
+                    <p>In the ever-evolving landscape of software architecture, the debate between monolithic and microservices architectures continues to spark passionate discussions. However, based on years of experience and observation across numerous implementations, I firmly believe that approximately 80% of modern software implementations should be built using microservices architecture. This isn't just a trend - it's a practical necessity driven by the demands of modern software development.</p>
+<h2>Why Microservices Should Be Your Default Choice</h2>
+<h3>1. Reliability Through Isolation</h3>
+<p>One of the most compelling arguments for microservices is the inherent reliability gained through service isolation. When a service fails in a monolithic application, it often brings down the entire system. In contrast, microservices architecture allows for graceful degradation:</p>
+<ul>
+<li>Individual service failures remain isolated</li>
+<li>The rest of the system continues functioning</li>
+<li>Recovery can occur without system-wide impact</li>
+<li>Circuit breakers can protect dependent services</li>
 </ul>
+<h3>2. Scalability Where It Matters</h3>
+<p>Microservices enable precise scaling of specific functionality:</p>
+<ul>
+<li>High-demand services can scale independently</li>
+<li>Resource allocation becomes more efficient</li>
+<li>Cost optimization is more granular</li>
+<li>Performance bottlenecks are easier to identify and address</li>
+</ul>
+<h3>3. Team Autonomy and Velocity</h3>
+<p>Modern development teams thrive when they can work independently:</p>
+<ul>
+<li>Teams can own their services end-to-end</li>
+<li>Deployment cycles are shorter and lower risk</li>
+<li>Technology choices can be optimized per service</li>
+<li>Parallel development becomes more natural</li>
+</ul>
+<h2>The Power of Eventual Consistency</h2>
+<p>One of the key paradigm shifts in microservices architecture is embracing eventual consistency. While this concept might seem challenging at first, it often better reflects real-world business processes:</p>
+<ul>
+<li>Most business processes are naturally eventually consistent</li>
+<li>Reduced coupling between services</li>
+<li>Better handling of distributed system realities</li>
+<li>Improved system resilience</li>
+</ul>
+<h2>Addressing the Monolith Advocates</h2>
+<p>Proponents of monolithic architecture often cite several concerns that, while well-intentioned, don't hold up under scrutiny:</p>
+<h3>&quot;Monoliths are simpler&quot;</h3>
+<p>This is only true in the short term. As systems grow:</p>
+<ul>
+<li>Monolithic codebases become increasingly complex</li>
+<li>Dependencies become more tangled</li>
+<li>Testing becomes more challenging</li>
+<li>Deployment risk increases</li>
+</ul>
+<h3>&quot;Microservices add overhead&quot;</h3>
+<p>While there is some truth to this, the benefits typically outweigh the costs:</p>
+<ul>
+<li>Initial setup complexity is a one-time cost</li>
+<li>Modern tools and platforms simplify management</li>
+<li>The overhead is offset by reduced maintenance costs</li>
+<li>Improved reliability justifies the investment</li>
+</ul>
+<h2>When to Consider a Monolith</h2>
+<p>While microservices should be the default choice, there are legitimate cases for monolithic architecture:</p>
+<ul>
+<li>Extremely simple applications with limited scope</li>
+<li>Projects with very small teams and minimal growth expectations</li>
+<li>Proof-of-concept implementations</li>
+<li>Applications with extreme latency requirements</li>
+</ul>
+<p>However, these cases represent the minority of modern software implementations.</p>
+<h2>Transitioning from Monolith to Microservices</h2>
+<p>Many organizations face the challenge of transitioning existing monolithic applications to microservices. While this process can be complex, it's often necessary and can be managed effectively:</p>
+<h3>Strangler Fig Pattern</h3>
+<ul>
+<li>Gradually replace functionality with services</li>
+<li>Keep the monolith running during transition</li>
+<li>Minimize risk through incremental changes</li>
+<li>Validate the approach with initial services</li>
+</ul>
+<h3>Key Transition Strategies</h3>
+<ul>
+<li>Start with new features as services</li>
+<li>Identify natural service boundaries</li>
+<li>Use event-driven patterns for integration</li>
+<li>Implement robust monitoring early</li>
+</ul>
+<h2>Conclusion</h2>
+<p>The software industry has evolved to a point where microservices should be the default architectural choice for most implementations. The benefits of reliability, scalability, and team autonomy far outweigh the initial complexity. While monolithic architecture still has its place, it should be the exception rather than the rule.</p>
+<p>The key is to approach microservices pragmatically:</p>
+<ul>
+<li>Start with clear service boundaries</li>
+<li>Embrace eventual consistency</li>
+<li>Implement robust monitoring and observability</li>
+<li>Focus on automation and DevOps practices</li>
+</ul>
+<p>By making microservices your default architectural choice, you're setting your implementation up for better scalability, maintainability, and long-term success in today's dynamic software landscape.</p>
 
+                    <h5>Tags: <a title="Tag: microservices" class="small" href="../Search/microservices.html">microservices</a>&nbsp;</h5>
+                    <div class="share"><a href="../Permalinks/2eabd648-feb1-4f89-beb7-8f3a29dc6828.html" rel="bookmark">Permalink</a></div>
                 </main>
                 <aside class="col-lg-3 col-xl-2 sidebar">
                     <div class="widgetzone"><div class="widget textbox"><h4>About the Author</h4><div class="content"><p><img style="float: left; padding: 0px 3px 0px 0px;" src="../Pics/bsstahl_left.gif" alt="Barry S. Stahl" width="95" /><strong>Barry S. Stahl</strong> (he/him/his) - Barry is a .NET Software Engineer who has been creating business solutions for enterprise customers since the mid 1980s. Barry is also an Election Integrity Activist, baseball and hockey fan, husband of one genius and father of another, and a 40 year resident of Phoenix Arizona USA. When Barry is not traveling around the world to speak at Conferences, Code Camps and User Groups or to participate in GiveCamp events, he spends his days as a Solution Architect for Carvana in Tempe AZ and his nights thinking about the next AZGiveCamp event where software creators come together to build websites and apps for some great non-profit organizations.</p>
@@ -125,12 +208,11 @@
                 </aside>
             </div>
         </div>
-    
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script defer type="module" src="../Modules/share-on-mastodon.js"></script>
 
-</body>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script defer type="module" src="../Modules/share-on-mastodon.js"></script>
 
+    </body>
 </html>
