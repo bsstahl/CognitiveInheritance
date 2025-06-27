@@ -16,7 +16,13 @@ categories: []
 
 ### Upcoming Talks
 
-I currently have no talks scheduled. {ContactPageLink:Contact me} to arrange to have me speak at your event.
+<!-- I currently have no talks scheduled. {ContactPageLink:Contact me} to arrange to have me speak at your event. -->
+
+* **Combined .NET User Groups** - 7/10/2025 - "The Future of Information Retrieval: A Deep-Dive into RAG"
+
+* **ML Con New York 2025** - 9/29/2025 - 10/3/2025 - "LLM Embeddings: Not Magic, Just Math"
+
+* **NDC Porto 2025** - 10/20/2025 - 10/24/2025 - "LLMs Under the Hood" (workshop), "Amazing Algorithms for Solving Problems in Software" (workshop) and ".NET Aspire Accelerator: Fast Track to Cloud-Native Development" (workshop with Rob Richardson)
 
 ***
 
