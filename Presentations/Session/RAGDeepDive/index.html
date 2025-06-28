@@ -24,8 +24,8 @@
 <!-- ContentItem:685060d8-4205-4db9-b44d-9610a7729e7d -->
 
 <table><tr><td style="vertical-align:top;">
-<h1 id="the-future-of-information-retrieval">The Future of Information Retrieval</h1>
-<h2 id="a-deep-dive-into-rag">A Deep Dive into RAG</h2>
+<h2 id="the-future-of-information-retrieval">The Future of Information Retrieval</h2>
+<h3 id="a-deep-dive-into-rag">A Deep Dive into RAG</h3>
 <hr />
 <h3 id="barry-s.stahl">Barry S. Stahl</h3>
 <h3 id="solution-architect-developer">Solution Architect &amp; Developer</h3>
@@ -81,6 +81,32 @@ Please ping me on Mastodon to tell me where I messed-up with this list, or this 
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
+<a id="a1e2eaad-5633-41dc-9e1b-c724e30ac85f"><h1>Fediverse Supporter</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f48757bb-8e16-418d-857d-26908de5ef1e -->
+<!-- ContentItem:a937ed96-7c15-4ede-a3d0-09dc382590eb -->
+<aside class="notes"><p>It is now more important than ever that we create networks that are not  controlled by corporate entities or petulant oligarchs</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Hear my thoughts on why a thriving Fediverse is so critical on David Giard's <a href="https://davidgiard.com/barry-stahl-on-the-fediverse">Technology and Friends</a> show.</p>
+</li>
+<li><p>Learn more about the Fediverse at <a href="https://fediverse.party/en/fediverse">fediverse.party</a>.</p>
+</li>
+<li><p>Get your own Mastodon account at <a href="https://joinmastodon.org/">Join Mastodon</a>.</p>
+<ul>
+<li>Don't stress on what server to use, just pick one and go.  You can always move later.</li>
+</ul>
+</li>
+<li><p>Follow me on Mastodon at <a href="https://fosstodon.org/@bsstahl">@bsstahl@CognitiveInheritance.com</a>.</p>
+</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Logos.png" src="img/a937ed96-7c15-4ede-a3d0-09dc382590eb.png" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
 <aside class="notes"><p>Liquid Victor was used to create this slide deck</p>
 </aside>
 <a id="23528a73-7bc1-4e39-9f2f-c8b9e2cff982"><h1>Some OSS Projects I Run</h1></a>
@@ -96,6 +122,14 @@ Please ping me on Mastodon to tell me where I messed-up with this list, or this 
 <li><a href="https://github.com/bsstahl/toastmastersagenda">Toastmasters Agenda</a> : A c# library and website for generating agenda's for Toastmasters meetings</li>
 <li><a href="https://github.com/bsstahl/PDM">ProtoBuf Data Mapper</a> : A c# library for mapping and transforming ProtoBuf messages</li>
 </ol>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/8a54d2f3-22c6-4307-a8d8-98697df38aae.PNG'>
+
+<a id="b3a20b9c-8fad-4c6b-a13b-4426eeb62994">&nbsp;</a>
+<!-- Layout:FullPage -->
 
 </section>
 
@@ -179,21 +213,19 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 </li>
 <li><p>Remove Stop Words</p>
 <ul>
-<li>Words like &quot;to,&quot; &quot;about,&quot; and &quot;my&quot; are removed</li>
+<li>Words like &quot;to,&quot; and &quot;my&quot; are removed</li>
 <li><strong>best</strong>,<strong>ways</strong>,<strong>learn</strong>,<strong>problem</strong>,<strong>domain</strong></li>
 </ul>
 </li>
 <li><p>Stemming/Lemmatization</p>
 <ul>
 <li>Reduce tokens to their root form</li>
-<li>No changes are required to this query</li>
-<li>Examples: &quot;runner&quot; =&gt; &quot;run&quot;, &quot;children&quot; =&gt; &quot;child&quot;</li>
+<li>&quot;runner&quot; =&gt; &quot;run&quot;, &quot;children&quot; =&gt; &quot;child&quot;</li>
 </ul>
 </li>
 <li><p>Inverted Index Lookup:</p>
 <ul>
-<li>Find matching documents</li>
-<li>Sort descending by Relevance Score</li>
+<li>Find documents from words</li>
 </ul>
 </li>
 </ul>
@@ -584,22 +616,22 @@ Let's look at an example of what this means.</p>
 <p>Vector Search: critical to modern information retrieval systems</p>
 </blockquote>
 <ul>
-<li>Find the closest vectors to a query vector
+<li>Closest vectors to a query vector
 <ul>
-<li>Identifies Embeddings that are semantically similar to the query</li>
+<li>Identifies embeddings that are similar to the query</li>
 <li>Requires the same embedding model for query and search vectors</li>
 </ul>
 </li>
 <li>Works with nearly any type of data
 <ul>
 <li>Images, text, audio, etc.</li>
-<li>Requires an encoding model for each type</li>
+<li>Requires an encoding model for each</li>
 </ul>
 </li>
 <li>Still a stochastic process
 <ul>
-<li>Results <em>may</em> vary between executions</li>
-<li>Results <em>will</em> vary between encoding models</li>
+<li><em>May</em> vary between executions</li>
+<li><em>Will</em> vary between models</li>
 <li>May produce <em>unexpected</em> results</li>
 </ul>
 </li>
@@ -736,7 +768,7 @@ Armando_Castro_8: 0.166799</p>
 </li>
 <li>Cultural Similarities
 <ul>
-<li>USA and UK - shared media, literature, entertainment, and educational exchanges including TV, movies, music, and news</li>
+<li>USA and UK - shared media, literature, entertainment, etc.</li>
 </ul>
 </li>
 <li>Political Systems
@@ -927,25 +959,9 @@ Remember: &quot;CAN&quot; does not mean &quot;SHOULD&quot;.</p>
 </section>
 
 
-<section data-transition="slide-in slide-out" data-background='img/c4658964-8e19-42b0-873b-5f8e7ed90d73.png'>
-
-<a id="500b2cc6-8bd1-4c7e-bfe4-0cfb34576a4b">&nbsp;</a>
-<!-- Layout:FullPage -->
-
-</section>
-
-
 <section data-transition="slide-in slide-out" data-background='img/d67452a3-cd83-451c-b233-593206933e24.png'>
 
 <a id="5baced3c-d161-4ec5-b96e-0b26bf26eeb4">&nbsp;</a>
-<!-- Layout:FullPage -->
-
-</section>
-
-
-<section data-transition="slide-in slide-out" data-background='img/9987d48a-78a0-4373-b940-7f46d27fee0e.png'>
-
-<a id="a75ead83-4222-498d-aff0-57482df1c2ac">&nbsp;</a>
 <!-- Layout:FullPage -->
 
 </section>
@@ -1034,17 +1050,134 @@ Remember: &quot;CAN&quot; does not mean &quot;SHOULD&quot;.</p>
 <td width="60%"><img alt="Contextual Clues 800x800.jpeg" src="img/15661a21-92bf-4901-976a-258f795ce935.jpeg" /></td>
 </tr></table></section>
 
+<section data-transition="slide-in slide-out" data-background='img/653bbefd-e1c4-49ca-9d52-da6302a70956.png'>
+
+<a id="9996b3a7-bc80-414d-b4cc-980d783d2a3a">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="63a522fb-2964-43ec-aef9-6b4c0262b03b"><h1>Meet Bentley</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:08677cc5-bb42-4519-9bf1-1a740d2c856f -->
+<!-- ContentItem:1abfc0a5-d80c-4cef-ad93-8bd024c83b72 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Role: Operations Manager</li>
+<li>Location: Tolleson Dealership</li>
+<li>Form of Address: Bentley</li>
+<li>Pronouns: He/Him</li>
+<li>Date Format: American (M/D/Y)</li>
+<li>Time Format: 12-hour (1:45 pm)</li>
+<li>Time Zone: Arizona (MST)</li>
+<li>Info Format: Bullet-Points</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="bentley-silverstone 800x294.png" src="img/08677cc5-bb42-4519-9bf1-1a740d2c856f.png" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="dda46fbe-9a69-45f9-bbe8-c7fbddcc1dd6"><h1>Operations Manager Role</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:e4100184-6793-4a91-aea6-2ab2d19396ab -->
+<!-- ContentItem:89206b4d-b182-486e-b224-c0fa289668f8 -->
+<aside class="notes"><p>Operations Manager Role</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Including details of the user's role allows the model to make better predictions about  what is important to that user.</p>
+</blockquote>
+<ul>
+<li>Key Responsibilities</li>
+<li>Primary Goals and Metrics</li>
+<li>Factors that impact decisions</li>
+<li>Common Challenges</li>
+<li>Tools and Technologies Used</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Operations-Manager_Job-Description_800x269.png" src="img/e4100184-6793-4a91-aea6-2ab2d19396ab.png" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="8961e813-9211-454b-aa9b-7ad66499c3b0"><h1>Additional Information</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:dfe100e3-ed76-489a-823a-f3d02fe7c9ae -->
+<!-- ContentItem:3b339671-f479-4569-a72a-f2af8de02acf -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Including additional context allows the model to make predictions about how this information might impact the user's activities and experiences</p>
+</blockquote>
+<ul>
+<li>Location
+<ul>
+<li>Including local weather</li>
+<li>Traffic if relevant</li>
+</ul>
+</li>
+<li>Current Situation
+<ul>
+<li>Upcoming events and requirements</li>
+<li>Current state of the network</li>
+</ul>
+</li>
+<li>Other possibilities
+<ul>
+<li>Purchase propensity</li>
+<li>User Survey Information</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Weather and Key Info 800x379.png" src="img/3b339671-f479-4569-a72a-f2af8de02acf.png" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="ceb842f1-c5ae-444e-838f-151aaf71140c"><h1>Prompts</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:5e6fe074-68a0-4829-996a-24668aae8c8c -->
+<!-- ContentItem:7cd5d094-0d6a-44ec-9548-ff190b48f3ef -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Allowing the model to make predictions about what information this user most needs to know,  we can improve the user's experience and the relevance of our application's content</p>
+</blockquote>
+<ul>
+<li>Better Awareness of Issues</li>
+<li>Improved Decision-Making</li>
+<li>Greater Efficiency</li>
+<li>Improved User Satisfaction</li>
+<li>Easier Adaptability</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Prompts_800x600.png" src="img/7cd5d094-0d6a-44ec-9548-ff190b48f3ef.png" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background='img/39e166ec-835d-44ed-9ba4-11aaeff37754.png'>
+
+<a id="61024293-4d16-4ac7-b4cf-341b8fa625b5">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
 <section data-transition="slide-in slide-out">
 <a id="95a50a2a-56dc-42b9-b6d2-cb9029614d84"><h1>Yo Dawg!</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:85b4667c-9231-4915-a037-fdf51688cc08 -->
 <!-- ContentItem:f1a37766-6a5c-4088-af98-99ce2d7a7d22 -->
-<aside class="notes"><p>Image Created by Dall-e via Microsoft Designer, 2024-09-22</p>
+<aside class="notes"><p>Definitely not Xzibit - Created by Dall-e via Microsoft Designer, 2024-09-22</p>
 </aside>
 <table><tr><td style="vertical-align:top;">
 <ul>
 <li>I heard you like 'cooking'  so I calculated some recipes from your shopping list so you so you can turn that grocery haul into a Michelin-star meal</li>
-<li>I heard you like 'photography',  so I enhanced your photos with your most-used AI filters  so your style shines through</li>
 <li>I heard you like 'apple products' so I ordered you a ladder so you can reach those <em>elevated features</em></li>
 <li>I heard you like coffee,  so I scoured local social-media to make you a map  so you can find all the best hidden cafes in town</li>
 <li>I heard you like 'JavaScript'  so I created a playlist for you composed entirely of loops so you can get into the proper frame-of-mind for coding</li>
@@ -1066,27 +1199,72 @@ Remember: &quot;CAN&quot; does not mean &quot;SHOULD&quot;.</p>
 </section>
 
 <section data-transition="slide-in slide-out">
-<a id="944ae71d-a8b3-4de4-9a9e-ffeef6e07fcd"><h1>When Should AI be Used?</h1></a>
+<a id="609d2e19-5eff-4346-9805-d3602d2841dc"><h1>RAG via MCP</h1></a>
 <!-- Layout:ImageRight -->
-<!-- ContentItem:0b8f654e-2dc5-41c1-b195-f0495b79d62e -->
-<!-- ContentItem:2f5756ee-7bb2-49ea-9982-bc08c8ce72f9 -->
-<aside class="notes"><p>I worry that situations where it is safe to use these models are more rare than people realize or are willing to accept. That said, we can't let the only people building using AI models be those whose only goal is to separate us from our wealth.</p>
+<!-- ContentItem:a03f8ac4-0db2-4365-bc7a-1ff6eed94bbf -->
+<!-- ContentItem:f6092c8b-1263-42a3-89c5-dfef4908cd7e -->
+<aside class="notes"><p>We can also expose the RAG functionality via the MCP. This allows us to allow agents to access our RAG data when needed.</p>
 </aside>
 <table><tr><td style="vertical-align:top;">
 <ul>
-<li>When all possible biases have been accounted for</li>
-<li>When all sensitive data has been removed, tokenized or encrypted</li>
-<li>When the stochastic nature of responses has been accounted for
+<li>Allow the host agent to determine when and how to use our data
 <ul>
-<li>A wrong answer is no worse than no answer</li>
-<li>Outputs have been fully constrained</li>
-<li>A human is in-the-loop to fix the inevitable errors</li>
+<li>Based on our instructions and descriptions</li>
+<li>Can also be used to take actions on the user's behalf</li>
 </ul>
 </li>
 </ul>
 
 </td>
-<td width="60%"><img alt="When to use AI 800x800.jpg" src="img/2f5756ee-7bb2-49ea-9982-bc08c8ce72f9.jpg" /></td>
+<td width="60%"><img alt="BearyMCP-Code-800x800.png" src="img/a03f8ac4-0db2-4365-bc7a-1ff6eed94bbf.png" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>We have tools that can radiate information, determine user intent, and act on them. How can we leverage these tools to create amazing experiences for our users?</p>
+</aside>
+<a id="9b779948-2b7d-4772-9934-b6581563e6a7"><h1>Challenge: Think Outside the App</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:c3d0f557-9fa3-49d7-97d0-1b519ce8d6f4 -->
+<blockquote>
+<p>How can we leverage these tools to create amazing experiences for our users?</p>
+</blockquote>
+<ul>
+<li>Move Beyond Tables and Chat Boxes
+<ul>
+<li>Explore unconventional formats for information</li>
+</ul>
+</li>
+<li>Understand the user's goals
+<ul>
+<li>Design interactions that guide them to solutions</li>
+<li>Example: CoPilot Suggestions</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="8c8e5769-8a07-4a92-a315-1a02d79c9bfb"><h1>Resources</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:97720f70-277d-44b0-b113-274ffa0db619 -->
+<!-- ContentItem:a409776f-f0a2-4f9f-9bd0-becdfbe572c8 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>This Presentation - <a href="https://cognitiveinheritance.com/Presentations/Session/RAGDeepDive/index.html">Web</a> | <a href="?print-pdf">PDF</a></li>
+<li>These Demos - <a href="https://github.com/bsstahl/AIDemos/tree/master/RAG">Code</a> | <a href="https://github.com/bsstahl/AIDemos/wiki/RAG">Docs</a></li>
+<li><a href="https://cognitiveinheritance.com/Posts/depth-of-gpt-embeddings.html">The Depth of GPT Embeddings</a></li>
+<li><a href="https://cognitiveinheritance.com/Posts/Programmers-Take-Responsibility-for-Your-AIe28099s-Output.html">Programmers -- Take Responsibility for Your AI’s Output</a></li>
+<li><a href="https://thesephist.notion.site/text-embedding-ada-002-embedding-reconstructions-2ea55ae9525d49dfa9d16213474e0895">Experiments in Reconstructing Text from Embeddings</a></li>
+<li><a href="https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/openai/Azure.AI.OpenAI">Azure OpenAI Client</a></li>
+<li><a href="https://github.com/microsoft/semantic-kernel">Semantic Kernel</a></li>
+<li><a href="https://www.youtube.com/watch?v=UnURElCzGc0">Carl Sagan - Reasoning on Higher Dimensions (YouTube)</a></li>
+</ul>
+
+</td>
+<td width="60%"><img alt="PresentationQR.png" src="img/a409776f-f0a2-4f9f-9bd0-becdfbe572c8.png" /></td>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
