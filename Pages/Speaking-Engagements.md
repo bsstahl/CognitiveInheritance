@@ -183,7 +183,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ### Past engagements
 
-* **Combined .NET User Groups** - 7/10/2025 - "The Future of Information Retrieval: A Deep-Dive into RAG"
+* **Combined .NET User Groups** (Salt Lake City UT, Provo UT, SE Valley AZ, NW Valley AZ) - 7/10/2025 - "The Future of Information Retrieval: A Deep-Dive into RAG"
 * **ConFoo 2025** - 2/26/2025 - 2/28/2025 - "Crafting AI: A Developer's Guide to Machine Learning" and "The Future of Information Retrieval: A Deep-Dive into RAG"
 * **CodeMash 2025** - 1/14/2025 - 1/17/2025  - "Crafting AI: A Developer's Guide to Machine Learning"
 * **Techorama Netherlands** - 10/7/2024 - 10/9/2024 - "Amazing Algorithms for Solving Problems in Software" and "The Future of Information Retrieval: A Deep-Dive into RAG"
