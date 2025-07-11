@@ -16,7 +16,7 @@ categories:
 - Development
 
 ---
-In the ever-evolving landscape of software architecture, the debate between monolithic and microservices architectures continues to spark passionate discussions. However, based on years of experience and observation across numerous implementations, I firmly believe that approximately 80% of modern software implementations should be built using microservices architecture. This isn't just a trend - it's a practical necessity driven by the demands of modern software development.
+The debate between monolithic and microservices architectures continues to spark passionate discussions. However, based on years of experience and observation across numerous implementations, I firmly believe that approximately 80% of modern software implementations should be built using microservices architecture. This isn't just a trend - it's a practical necessity driven by the demands of modern software development.
 
 ## Why Microservices Should Be Your Default Choice
 
@@ -55,6 +55,31 @@ One of the key paradigm shifts in microservices architecture is embracing eventu
 * Reduced coupling between services
 * Better handling of distributed system realities
 * Improved system resilience
+
+<!-- 
+EDITORIAL NOTES - "The Power of Eventual Consistency" Section:
+
+STRENGTHS:
+* Car repair shop analogy is highly effective - makes eventual consistency concept tangible
+* Async/await critique shows sophisticated understanding of implementation challenges
+* Successfully bridges abstract theory with practical programming concerns
+* Strong support for main thesis by reframing eventual consistency as natural
+
+IMPROVEMENT OPPORTUNITIES (TODO):
+* Add smoother transition from bullet points to paragraph text
+* Consider adding concrete code example to illustrate "sitting in the repair shop" anti-pattern
+* Potentially expand the car repair analogy given its effectiveness
+
+OVERALL: One of the stronger sections - preserve and potentially enhance the analogy.
+
+Additional note: This section is one of the key reasons, maybe it should be up higher?
+-->
+
+It is only people that tend to want full-consistency, the processes don't care.
+
+Our typical patterns are the functional equivalent of waiting at the repair shop for our car to be fixed, when we also need to do the grocery shopping, mail packages, and have lunch. If we truly can't do those things without OUR car, then ok, but most of the time, we can walk, get a rental from the shop, or have someone pick us up so we can accomplish all of our tasks with a similar effort and timeframe to just doing the longest of them.
+
+Unfortunately, this is one place where the languages don't really help us. `Async/Await` is amazing for what it does, but most of our `async` methods simply `await` a response. They sit in the repair shop. We should be leaving that repair shop and coming back later. Monoliths make it way too easy to accidentally sit and wait for an answer, and once implemented, those patterns can be much harder to replace than simply respecting asynchrony from the start.
 
 ## Addressing the Monolith Advocates
 
