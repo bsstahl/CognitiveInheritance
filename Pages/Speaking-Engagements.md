@@ -18,8 +18,6 @@ categories: []
 
 <!-- I currently have no talks scheduled. {ContactPageLink:Contact me} to arrange to have me speak at your event. -->
 
-* **Combined .NET User Groups** - 7/10/2025 - "The Future of Information Retrieval: A Deep-Dive into RAG"
-
 * **ML Con New York 2025** - 9/29/2025 - 10/3/2025 - "LLM Embeddings: Not Magic, Just Math"
 
 * **NDC Porto 2025** - 10/20/2025 - 10/24/2025 - "LLMs Under the Hood" (workshop), "Amazing Algorithms for Solving Problems in Software" (workshop) and ".NET Aspire Accelerator: Fast Track to Cloud-Native Development" (workshop with Rob Richardson)
@@ -185,6 +183,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ### Past engagements
 
+* **Combined .NET User Groups** - 7/10/2025 - "The Future of Information Retrieval: A Deep-Dive into RAG"
 * **ConFoo 2025** - 2/26/2025 - 2/28/2025 - "Crafting AI: A Developer's Guide to Machine Learning" and "The Future of Information Retrieval: A Deep-Dive into RAG"
 * **CodeMash 2025** - 1/14/2025 - 1/17/2025  - "Crafting AI: A Developer's Guide to Machine Learning"
 * **Techorama Netherlands** - 10/7/2024 - 10/9/2024 - "Amazing Algorithms for Solving Problems in Software" and "The Future of Information Retrieval: A Deep-Dive into RAG"
