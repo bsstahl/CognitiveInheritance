@@ -13,7 +13,7 @@ slug: aboutme
 categories: []
 
 ---
-I'm **Barry S. Stahl**, a Solution Architect and Developer working as the embedded architect in the Logistics organization at Carvana. I have been very fortunate in my journey to have worked with and learned from so many amazing people on lots of interesting and exciting projects.
+I'm **Barry S. Stahl**, a Solution Architect and Developer working as the Principal Engineer for AZNerds.net in Phoenix AZ USA. I have been very fortunate in my journey to have worked with and learned from so many amazing people on lots of interesting and exciting projects.
 
 ### Links
 
@@ -63,7 +63,7 @@ Following my time at Intel, I ventured into the airline industry. For another 11
 
 In between these significant roles, I wore the hat of a consultant, working with different organizations across the country. One highlight was designing and building a Work Order system for bus and train maintenance for the Port Authority of Allegheny County in Pittsburgh, PA.
 
-These diverse experiences eventually led me to Carvana, where I've spent a good portion of my time since 2019 designing and building a Logistics Transportation Management System.
+These diverse experiences eventually led me to Carvana, where I spent a good portion of my time since 2019 designing and building a Logistics Transportation Management System.
 
 ### Beyond Work
 

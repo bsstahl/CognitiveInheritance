@@ -2,7 +2,7 @@
 id: ab32912a-93ac-4107-84b5-ecc5dfd8e3d9
 title: Countdown
 showtitle: true
-showinsidebar: true
+showinsidebar: false
 widgettype: TextBox
 orderindex: 13
 

@@ -18,36 +18,39 @@
     
     <title>{SiteTitle} - {SiteDescription}</title>
 </head>
-<body>
-    <div class="container-fluid px-0">
-        <div class="row no-gutters">
-            <div class="col-12">
-                {NavigationMenu}
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid content-wrapper">
-        <div class="row">
-            <div class="col-12">
-                <header class="site-header">{SiteDescription}</header>
+    <body>
+        <div class="container-fluid px-0">
+            <div class="row no-gutters">
+                <div class="col-12">
+                    {NavigationMenu}
+                </div>
             </div>
         </div>
 
-        <div class="row">
-            <main class="col-lg-9 col-xl-10 content-main">
-                {Content}
-            </main>
-            <aside class="col-lg-3 col-xl-2 sidebar">
-                {Sidebar}
-            </aside>
+        <div class="container-fluid content-wrapper">
+            <div class="row">
+                <div class="col-12">
+                    <header class="site-header">{SiteDescription}</header>
+                </div>
+            </div>
+
+            <div class="row">
+                <main class="col-lg-9 col-xl-10 content-main">
+                    {Content}
+                </main>
+                <aside class="col-lg-3 col-xl-2 sidebar">
+                    {Sidebar}
+                </aside>
+            </div>
         </div>
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script defer type="module" src="{PathToRoot}/Modules/share-on-mastodon.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script defer type="module" src="{PathToRoot}/Modules/share-on-mastodon.js"></script>
 
-</body>
+        <!-- 100% privacy-first analytics -->
+        <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+        <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true" alt="" referrerpolicy="no-referrer-when-downgrade"/></noscript>
+    </body>
 </html>
