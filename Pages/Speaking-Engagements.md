@@ -18,13 +18,13 @@ categories: []
 
 <!-- I currently have no talks scheduled. {ContactPageLink:Contact me} to arrange to have me speak at your event. -->
 
-* **ML Con New York 2025** - 9/29/2025 - 10/3/2025 - "LLM Embeddings: Not Magic, Just Math"
-
 * **NDC Porto 2025** - 10/20/2025 - 10/24/2025 - "LLMs Under the Hood" (workshop), "Amazing Algorithms for Solving Problems in Software" (workshop) and ".NET Aspire Accelerator: Fast Track to Cloud-Native Development" (workshop with Rob Richardson)
 
 * **The Valley's .NET User Groups** - 11/4/2025 - ".NET Aspire Accelerator: Fast Track to Cloud-Native Development" (co-presented with Rob Richardson)
 
 * **Hot Topics Developer Group** (San Diego CA) - 12/02/2025 - "The Future of Information Retrieval: A Deep-Dive into RAG"
+
+* **CodeMash 2026** (Sandusky, OH) - 1/13/2025 - 1/16/2025 - "Amazing Algorithms Workshop" & "LLMs Under the Hood Workshop"
 
 * **NDC London 2026** - 1/26/2026 - 1/30/2026 - "Solutions That Evolve: Building Self-Improving Systems with Genetic Algorithms"
 
@@ -189,6 +189,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ### Past engagements
 
+* **ML Con New York 2025** - 9/29/2025 - 10/3/2025 - "LLM Embeddings: Not Magic, Just Math"
 * **Combined .NET User Groups** (Salt Lake City UT, Provo UT, SE Valley AZ, NW Valley AZ) - 7/10/2025 - "The Future of Information Retrieval: A Deep-Dive into RAG"
 * **ConFoo 2025** - 2/26/2025 - 2/28/2025 - "Crafting AI: A Developer's Guide to Machine Learning" and "The Future of Information Retrieval: A Deep-Dive into RAG"
 * **CodeMash 2025** - 1/14/2025 - 1/17/2025  - "Crafting AI: A Developer's Guide to Machine Learning"
