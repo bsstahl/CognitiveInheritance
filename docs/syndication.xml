@@ -49,7 +49,7 @@
 &lt;/ul&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/when-vs-code-shows-the-wrong-source-control-view.html</link>
-  <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
+  <author>aa94bef8-9a1d-4486-8024-e38b3f45e8e4@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/8f7e6d5c-4b3a-2a1d-9c8b-7e6f5d4c3b2a.html</guid>
   <pubDate>Sun, 13 Apr 2025 07:00:00 GMT</pubDate>
 </item><item>
@@ -75,7 +75,7 @@ Phoenix AZ&lt;br/&gt;
 &lt;a href=&quot;https://CognitiveInheritance.com&quot;&gt;https://CognitiveInheritance.com&lt;/a&gt;&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/protect-section-230.html</link>
-  <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
+  <author>aa94bef8-9a1d-4486-8024-e38b3f45e8e4@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/536c1aea-080b-4ecf-95ae-73022ad48781.html</guid>
   <pubDate>Wed, 26 Mar 2025 11:00:00 GMT</pubDate>
 </item><item>
@@ -148,7 +148,7 @@ Phoenix AZ&lt;br/&gt;
 &lt;p&gt;The ID Entanglement Effect represents a significant challenge in system design, where the convenience of composite IDs leads to long-term maintenance and scalability issues. By understanding these risks and following best practices for identifier design, teams can create more maintainable and adaptable systems. Remember: while identifiers can be human-readable, they should never become entangled with business logic or mutable state - this separation is key to maintaining system flexibility and reliability over time.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/the-id-entanglement-effect.html</link>
-  <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
+  <author>aa94bef8-9a1d-4486-8024-e38b3f45e8e4@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/2d9c8f17-09c4-48a4-873c-4624cfd4fbd1.html</guid>
   <pubDate>Sat, 01 Feb 2025 07:00:00 GMT</pubDate>
 </item><item>
@@ -212,7 +212,7 @@ Phoenix AZ&lt;br/&gt;
 &lt;p&gt;Code coverage is an invaluable tool for developers, but it should not be misused as a superficial metric. By shifting our focus from the number of code blocks covered to empowering developers with the right tools and environment, we can ensure software quality through proper use-case coverage. We must allow developers to utilize these valuable tools, without diluting their value by using them as metrics.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/code-coverage-must-never-be-used-as-a-metric.html</link>
-  <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
+  <author>aa94bef8-9a1d-4486-8024-e38b3f45e8e4@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/052711e4-2d3c-48cf-8959-8d964b1c05ab.html</guid>
   <pubDate>Sat, 14 Sep 2024 07:00:00 GMT</pubDate>
 </item><item>
@@ -228,7 +228,7 @@ Phoenix AZ&lt;br/&gt;
 &lt;p&gt;Ultimately, the decision to link objects across bounded contexts or include them in a Shared Kernel should be based on a deep understanding of the domain and the specific requirements and constraints of the project. If it isn&apos;t clear that an entity is seen identically across the entirety of a domain, distinct views of that object should be represented separately inside their appropriate bounded contexts. If you are struggling with this type of question, I reccommend &lt;a href=&quot;https://youtu.be/6DgGhQQbfDE&quot;&gt;Event Storming&lt;/a&gt; to help gain the needed understanding of the domain.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/objects-with-the-same-name-in-different-bounded-contexts.html</link>
-  <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
+  <author>aa94bef8-9a1d-4486-8024-e38b3f45e8e4@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/8a1260ce-2b01-401c-96e2-8954e8091f86.html</guid>
   <pubDate>Sun, 29 Oct 2023 07:00:00 GMT</pubDate>
 </item><item>
@@ -269,7 +269,7 @@ Phoenix AZ&lt;br/&gt;
 &lt;p&gt;That is a discussion for another day.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/depth-of-gpt-embeddings.html</link>
-  <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
+  <author>aa94bef8-9a1d-4486-8024-e38b3f45e8e4@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/e47eddf9-fcda-4382-a7c8-e498026fbfee.html</guid>
   <pubDate>Tue, 03 Oct 2023 07:00:00 GMT</pubDate>
 </item><item>
@@ -350,7 +350,7 @@ Phoenix AZ&lt;br/&gt;
 &lt;p&gt;Disclaimer: My teams use &lt;em&gt;LaunchDarkly&lt;/em&gt; for feature-flagging but I am not affiliated with that product or company in any way. I am also not associated with any similar product or company that makes such a product and have not received, nor will I receive, any compensation of any type, either direct or indirect, for this article.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/feature-flags-do-not-roll-your-own.html</link>
-  <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
+  <author>aa94bef8-9a1d-4486-8024-e38b3f45e8e4@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/c41a49df-5394-44ff-93a9-62f8c87e89b4.html</guid>
   <pubDate>Mon, 14 Aug 2023 07:00:00 GMT</pubDate>
 </item><item>
@@ -380,7 +380,7 @@ Phoenix AZ&lt;br/&gt;
 &lt;p&gt;Balancing quality and cost in application development is crucial for building successful applications. By focusing on quality first, employing best practices, establishing cost thresholds, and integrating cost checks into your existing code review and monitoring processes, you can create an environment that considers all costs of application development, without overemphasizing those that are easy to measure.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/consider-quality-before-cost.html</link>
-  <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
+  <author>aa94bef8-9a1d-4486-8024-e38b3f45e8e4@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/c4e4c620-5bfb-4875-bb53-94cea651a19e.html</guid>
   <pubDate>Fri, 04 Aug 2023 07:00:00 GMT</pubDate>
 </item><item>
@@ -416,7 +416,7 @@ Phoenix AZ&lt;br/&gt;
 &lt;p&gt;Unless a model builder has permission from a user to train their models using that user&apos;s works, be it an OSS or Copyleft license, explicit license agreement, or direct permission, those items should not be used to train models. If it is shown that a model has been trained using such data sets, and there have been indications (unproven as yet to my knowledge) that this may be the case for some models, especially image-generators, then that is a problem with those models that needs to be addressed. It does not invalidate the general use of these models, nor is it an indictment of any person or model except those in violation. Our trademark and copyright systems are another place where we, as a society, have completely fallen-down. Hopefully, that collapse will not cause us to forsake the value that these tools can provide.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/continuing-a-conversation-on-llms.html</link>
-  <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
+  <author>aa94bef8-9a1d-4486-8024-e38b3f45e8e4@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/dbbcb0db-7465-4489-a07b-eae7c8716685.html</guid>
   <pubDate>Thu, 13 Apr 2023 07:00:00 GMT</pubDate>
 </item><item>
@@ -427,7 +427,7 @@ Phoenix AZ&lt;br/&gt;
 &lt;p&gt;I wonder how many cool products I&apos;ve missed out on because of that delay in getting access? I wonder how many cool products just died because they weren&apos;t there for people when they actually needed them?&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/beta-tools-and-wait-lists.html</link>
-  <author>aa888322-fa60-417f-b247-e2119756d383@bsstahl.com (Barry S. Stahl)</author>
+  <author>aa94bef8-9a1d-4486-8024-e38b3f45e8e4@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/7a38959c-92fa-47f3-aee9-19fdc2b21a28.html</guid>
   <pubDate>Wed, 12 Apr 2023 07:00:00 GMT</pubDate>
 </item>
