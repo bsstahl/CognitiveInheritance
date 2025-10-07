@@ -7,6 +7,6 @@ widgettype: TextBox
 orderindex: 12
 
 ---
-###### Date: 2025-10-06
+###### Date: 2025-10-07
 
 As of the date of this report, neither CognitiveInheritance.com nor its owners/operators have received a national security order. Furthermore, we have not been required by a court to keep any secrets that are not in this transparency report.
