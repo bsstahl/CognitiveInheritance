@@ -1,0 +1,2009 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Amazing Algorithms</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-transition="slide-in slide-out" data-background='img/9e6ab921-3e77-4338-a837-006ace1b80b7.png'>
+<a id="ac4df666-70fe-4ae5-babc-8129630a10e7">&nbsp;</a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:de5a81f0-efad-4e0b-9707-d9874420665c -->
+<!-- ContentItem:2f2cf6b5-5644-4a88-9520-c6401b4ecb23 -->
+<aside class="notes"><p>Amazing Algorithms Title - was 7fd3b3ea-e301-4f5f-936e-230b5acff6e7</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<h2 id="amazing-algorithms">Amazing Algorithms</h2>
+<h3 id="for-solving-problems-in-software">For Solving Problems in Software</h3>
+<hr />
+<h3 id="barry-s.stahl">Barry S. Stahl</h3>
+<h4 id="principal-engineer-aznerds.net">Principal Engineer - AZNerds.net</h4>
+<h4 id="bsstahlcognitiveinheritance.com"><a href="https://fosstodon.org/@Bsstahl">@bsstahl@cognitiveinheritance.com</a></h4>
+<h4 id="httpscognitiveinheritance.com"><a href="https://cognitiveinheritance.com">https://CognitiveInheritance.com</a></h4>
+
+</td>
+<td width="60%"><img alt="Transparent Half Width Image 800x800.png" src="img/2f2cf6b5-5644-4a88-9520-c6401b4ecb23.png" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="636059f9-aa9d-4444-b4ec-dd7f62badd98"><h1>Favorite Physicists & Mathematicians</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:30f7e9d2-b154-4895-bed7-2765f7bdc6fe -->
+<!-- ContentItem:8a83be06-76e9-4028-9630-c6a7de92ae99 -->
+<aside class="notes"><p>An up-to-date list is available on <a href="https://cognitiveinheritance.com/Pages/Favorites.html">my blog at https://cognitiveinheritance.com/Pages/Favorites.html</a>
+Please ping me on Mastodon to tell me where I messed-up with this list, or this presentation for that matter. 😉</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<h4 id="favorite-physicists">Favorite Physicists</h4>
+<ol>
+<li>Harold &quot;Hal&quot; Stahl</li>
+<li>Carl Sagan</li>
+<li>Richard Feynman</li>
+<li>Marie Curie</li>
+<li>Nikola Tesla</li>
+<li>Albert Einstein</li>
+<li>Neil Degrasse Tyson</li>
+<li>Niels Bohr</li>
+<li>Galileo Galilei</li>
+<li>Michael Faraday</li>
+</ol>
+<p><em>Other notables</em>: Stephen Hawking, Edwin Hubble, Leonard Susskind, Christiaan Huygens</p>
+
+</td>
+<td style="vertical-align:top;">
+<h4 id="favorite-mathematicians">Favorite Mathematicians</h4>
+<ol>
+<li>Ada Lovelace</li>
+<li>Alan Turing</li>
+<li>Johannes Kepler</li>
+<li>Rene Descartes</li>
+<li>Isaac Newton</li>
+<li>Emmy Noether</li>
+<li>George Boole</li>
+<li>Blaise Pascal</li>
+<li>Johann Gauss</li>
+<li>Grace Hopper</li>
+</ol>
+<p><em>Other notables</em>: Daphne Koller, Grady Booch, Leonardo Fibonacci, Evelyn Berezin, Benoit Mandelbrot</p>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="a1e2eaad-5633-41dc-9e1b-c724e30ac85f"><h1>Fediverse Supporter</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f48757bb-8e16-418d-857d-26908de5ef1e -->
+<!-- ContentItem:a937ed96-7c15-4ede-a3d0-09dc382590eb -->
+<aside class="notes"><p>It is now more important than ever that we create networks that are not  controlled by corporate entities or petulant oligarchs</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Hear my thoughts on why a thriving Fediverse is so critical on David Giard's <a href="https://davidgiard.com/barry-stahl-on-the-fediverse">Technology and Friends</a> show.</p>
+</li>
+<li><p>Learn more about the Fediverse at <a href="https://fediverse.party/en/fediverse">fediverse.party</a>.</p>
+</li>
+<li><p>Get your own Mastodon account at <a href="https://joinmastodon.org/">Join Mastodon</a>.</p>
+<ul>
+<li>Don't stress on what server to use, just pick one and go.  You can always move later.</li>
+</ul>
+</li>
+<li><p>Follow me on Mastodon at <a href="https://fosstodon.org/@bsstahl">@bsstahl@CognitiveInheritance.com</a>.</p>
+</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Logos.png" src="img/a937ed96-7c15-4ede-a3d0-09dc382590eb.png" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>I am proud to be one of the founders of AZGiveCamp.
+GiveCamps are weekend events where we put a bunch of software creators in a room with a bunch of great local charities, and through the course of the weekend, we create software to help them further their mission</p>
+</aside>
+<a id="3129a405-82a7-432c-ae55-6f9d2335ab17"><h1>http://GiveCamp.org</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:2ca346de-d62c-4c6b-834d-7ccab290a6ab -->
+<img alt="GiveCamp.png" src="img/2ca346de-d62c-4c6b-834d-7ccab290a6ab.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Liquid Victor was used to create this slide deck</p>
+</aside>
+<a id="23528a73-7bc1-4e39-9f2f-c8b9e2cff982"><h1>Some OSS Projects I Run</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:f8cbcb81-15f7-48e0-bc29-b348732f6f05 -->
+<ol>
+<li><a href="https://github.com/bsstahl/liquidvictor">Liquid Victor</a> : Media tracking and aggregation [used to assemble this presentation]</li>
+<li><a href="https://github.com/bsstahl/pptail">Prehensile Pony-Tail</a> : A static site generator built in c#</li>
+<li><a href="https://github.com/bsstahl/testhelperextensions">TestHelperExtensions</a> : A set of extension methods helpful when building unit tests</li>
+<li><a href="https://github.com/bsstahl/conferencescheduler">Conference Scheduler</a> : A conference schedule optimizer</li>
+<li><a href="https://github.com/bsstahl/intentbot">IntentBot</a> : A microservices framework for creating conversational bots on top of Bot Framework</li>
+<li><a href="https://github.com/bsstahl/liquidnun">LiquidNun</a> : Library of abstractions and implementations for loosely-coupled applications</li>
+<li><a href="https://github.com/bsstahl/toastmastersagenda">Toastmasters Agenda</a> : A c# library and website for generating agenda's for Toastmasters meetings</li>
+<li><a href="https://github.com/bsstahl/PDM">ProtoBuf Data Mapper</a> : A c# library for mapping and transforming ProtoBuf messages</li>
+</ol>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>July 25, 2022 was my 100th public talk. Thank you for allowing me to participate in your community over these past few decades!</p>
+</aside>
+<a id="39c6410c-3913-410b-abab-984014a15d84"><h1>Achievement Unlocked</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a042b106-4bab-4403-b5b6-0d7b414ef789 -->
+<img alt="bss-100-achievement-unlocked-1024x250.png" src="img/a042b106-4bab-4403-b5b6-0d7b414ef789.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>NDC Porto 2025</p>
+</aside>
+<a id="28bba267-39d0-4f87-ba74-1645ae804147"><h1>Agenda</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:6ead33bb-7047-4a2f-b00f-dd61bfd9dbbc -->
+<ul>
+<li>13:30 - 13:45 : Intro and Modeling</li>
+<li>13:45 - 14:45 : Dynamic Programming</li>
+<li>14:45 - 15:30 : Genetic Algorithms</li>
+<li>15:30 - 16:00 : Break</li>
+<li>16:00 - 16:30 : Best-Path Algorithms</li>
+<li>16:30 - 17:00 : Cost-Minimization Algorithms</li>
+<li>17:00 - 17:15 : Training ML</li>
+<li>17:15 - 18:00 : Solving <em>YOUR</em> problems</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="6de8d83e-ebbf-466c-9501-91dbe2ac6382"><h1>Models are the Blueprint</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:4e4788fb-5542-49ef-b12d-d4c9460e776e -->
+<!-- ContentItem:dc63e838-d23c-47b0-93f5-197bcf55ba26 -->
+<aside class="notes"><ul>
+<li>The best coder in the world can't solve a problem if they don't understand it.</li>
+<li>The best algorithm in the world can't solve a problem if it isn't modeled well.</li>
+<li>The model is how we describe the problem to the system</li>
+</ul>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<p>The success of a problem-solving algorithm is often determined before the algorithm even runs -- by how the problem is modeled</p>
+
+</td>
+<td width="60%"><img alt="Models are the Blueprint 800x800.jpg" src="img/dc63e838-d23c-47b0-93f5-197bcf55ba26.jpg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="0f670a5a-0570-4497-bab7-1c178579a1d6"><h1>Modeling</h1></a>
+<!-- Layout:FullPageFragments -->
+<!-- ContentItem:cb1313d2-948b-4aa5-95e5-d6d6df7395c0 -->
+<!-- ContentItem:79845fb0-2ded-409a-90eb-012795a6ff6d -->
+<!-- ContentItem:0a42324d-d9d2-4c36-9284-a4e8ebb27607 -->
+<table border="0" width="100%">
+<aside class="notes"><p>A traveling salesman problem with only 20 cities has 20! (2x10<sup>18</sup>) possible routes. A brute-force solution that checks each route would take over 77 million years to complete, assuming it could evaluate one route per microsecond.</p>
+</aside>
+<tr><td>
+<ul class="fragment">
+<li>Modeling defines the problem space
+<ul>
+<li>What’s included &amp; what’s ignored</li>
+<li>Poor models lead to irrelevant solutions</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+<tr><td>
+<ul class="fragment">
+<li>Modeling shapes the solution strategy
+<ul>
+<li>Logical models » OOP or Rules Engines</li>
+<li>Graph models » traversal algorithms</li>
+<li>Constraint models » LP or MIP</li>
+<li>Probabilistic models » Neural/Bayesian Networks</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+<tr><td>
+<ul class="fragment">
+<li>Modeling can determine tractability
+<ul>
+<li>Some formulations make problems NP-hard</li>
+<li>Others reveal polynomial-time solutions</li>
+<li>Examples
+<ul>
+<li>Conference Scheduling with LP vs MIP</li>
+<li>Traveling Salesman with OOP</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+</table></section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="c731266d-1cc3-4b6e-96b3-7f74a64d18a0"><h1>Workshop Goals</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:aec93d43-202e-4aea-9578-854677854e42 -->
+<!-- ContentItem:0ba4e0ef-a1b0-4289-bbfb-d42bd0ae40ac -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Describe these algorithms
+<ul>
+<li>Show models that work well with each type of problem</li>
+<li>Describe sample implementations for your use</li>
+<li>Provide intuition as to why they work as they do</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Models and Algorithms 800x800.jpg" src="img/0ba4e0ef-a1b0-4289-bbfb-d42bd0ae40ac.jpg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="a751be30-3c3d-4dae-9593-ef56f9802c86"><h1>Knapsack Problems</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:c0b6a284-f3ab-4005-af5e-31446249ee11 -->
+<!-- ContentItem:944d3913-8f61-4faf-9592-5651372da64b -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>A family of combinatorial optimization problems</li>
+<li>Goal
+<ul>
+<li>Select a subset of items from a larger set</li>
+<li>Without exceeding resource constraints</li>
+<li>Such that total value is maximized</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Knapsack 800x800.jpeg" src="img/944d3913-8f61-4faf-9592-5651372da64b.jpeg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="092579ce-5162-494e-80a9-42c5527d6f8d"><h1>Memoization</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:e07521b3-183a-4277-a512-e489325fb554 -->
+<!-- ContentItem:5c2e9928-ddcb-4bda-a2fb-f9f3c22d1ce9 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Store the results of function calls for reuse when the same inputs occur again</p>
+</blockquote>
+<ul>
+<li>Goal: Compute the nth Fibonacci number
+<ul>
+<li>F(n) = F(n-1) + F(n-2)</li>
+</ul>
+</li>
+<li>Naïve Recursion
+<ul>
+<li>Recomputes each subproblem multiple times</li>
+<li>O(2<sup>n</sup>) Problem - Exponential time</li>
+</ul>
+</li>
+<li>With Memoization
+<ul>
+<li>Store results of F(k)</li>
+<li>Reuse stored values</li>
+<li>O(n) Problem - Linear Time</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Memoization 800x800.jpeg" src="img/5c2e9928-ddcb-4bda-a2fb-f9f3c22d1ce9.jpeg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>We'll start by solving this toy problem using CP, then, once we understand how CP works, we'll explore why it is a good fit for solving knapsack problems.</p>
+</aside>
+<a id="9a8cdfed-b24a-4a40-8602-dfdf074aaed5"><h1>Canonical Knapsack Problem</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a79e1eb4-8014-4281-ad0e-193c15812972 -->
+<img alt="Knapsack Problem.png" src="img/a79e1eb4-8014-4281-ad0e-193c15812972.png" />
+</section>
+
+
+<section data-transition="slide-in fade-out">
+
+<a id="d8939e5a-ea82-423d-8208-ae6367d64b3a"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:7e180539-8714-4e43-b537-33ab6dfae457 -->
+<img alt="Slide7_1200x600.jpg" src="img/7e180539-8714-4e43-b537-33ab6dfae457.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="44894665-4675-4621-80a6-f53220a5a476"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:6bdb132e-ad01-4109-9ac6-f50a350bcd4a -->
+<img alt="Slide8_1200x600.jpg" src="img/6bdb132e-ad01-4109-9ac6-f50a350bcd4a.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="5c665d08-949f-40dd-8439-f1a91b38be33"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:57cd6f9b-f6c4-4cbc-beb1-9c24116ba44c -->
+<img alt="Slide9_1200x600.jpg" src="img/57cd6f9b-f6c4-4cbc-beb1-9c24116ba44c.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="05cc403a-9c04-489f-a0e3-726604ba23ea"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:8418d8c7-df87-4548-890a-b418101820c6 -->
+<img alt="Slide10_1200x600.jpg" src="img/8418d8c7-df87-4548-890a-b418101820c6.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="79bc9cc0-0440-4f5e-b76b-54897751e41d"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:75251b14-18c9-4530-a849-5e1d789065c9 -->
+<img alt="Slide11_1200x600.jpg" src="img/75251b14-18c9-4530-a849-5e1d789065c9.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="47d6be0c-378b-41d6-bb05-1454b0acfeaa"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:ba4fc1c8-3eb4-4d37-906f-9dc7de377e9a -->
+<img alt="Slide12_1200x600.jpg" src="img/ba4fc1c8-3eb4-4d37-906f-9dc7de377e9a.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="1d7d041a-e1c6-4b52-8501-4fccb0563e91"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a8b02119-64b3-439f-b470-418f72f89add -->
+<img alt="Slide13_1200x600.jpg" src="img/a8b02119-64b3-439f-b470-418f72f89add.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="13dc99a2-d806-427d-9227-dcdd3c3470ac"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:2c19ef71-d81b-4f5c-a57b-eb5ab9aefdd0 -->
+<img alt="Slide14_1200x600.jpg" src="img/2c19ef71-d81b-4f5c-a57b-eb5ab9aefdd0.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="d63a5e2b-0199-46cd-8d87-1b0742da8ed4"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:13edccac-b88f-4bed-98dc-374506caa698 -->
+<img alt="Slide15_1200x600.jpg" src="img/13edccac-b88f-4bed-98dc-374506caa698.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="8b5a925e-88b6-4741-8433-90ab5f385de2"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:9dfdd197-a092-4925-b3b3-171a581eea60 -->
+<img alt="Slide16_1200x600.jpg" src="img/9dfdd197-a092-4925-b3b3-171a581eea60.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="87acab75-f70f-4907-9f83-eb91cf5015fb"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:3a6b55b2-116a-4f9d-8f92-be5f1a289e64 -->
+<img alt="Slide17_1200x600.jpg" src="img/3a6b55b2-116a-4f9d-8f92-be5f1a289e64.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="ce768506-a612-450f-ad19-d45d3c660725"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:053887ad-058f-4758-989c-2a660e6ab75a -->
+<img alt="Slide18_1200x600.jpg" src="img/053887ad-058f-4758-989c-2a660e6ab75a.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="c46b01d8-71f5-4171-9c54-ad8713b97412"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:5dd782a7-ca7d-45a4-aff0-759dcac6bdc3 -->
+<img alt="Slide19_1200x600.jpg" src="img/5dd782a7-ca7d-45a4-aff0-759dcac6bdc3.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="af553b10-a5eb-40f9-af45-b984d03178ed"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:7f3922ba-cecf-4382-8f4a-3c499db58852 -->
+<img alt="Slide20_1200x600.jpg" src="img/7f3922ba-cecf-4382-8f4a-3c499db58852.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="3cd03684-a557-4f83-9f38-5d714a3a5a95"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:290d1bf9-fcf5-4a5c-85ad-0d14426a9a9d -->
+<img alt="Slide21_1200x600.jpg" src="img/290d1bf9-fcf5-4a5c-85ad-0d14426a9a9d.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="05171e4a-7ec3-4593-970f-64fefd78ab63"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:2c6212f8-2439-4a0f-8ea4-8e71ab36c0bb -->
+<img alt="Slide22_1200x600.jpg" src="img/2c6212f8-2439-4a0f-8ea4-8e71ab36c0bb.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="fc319834-7116-4c27-860f-ff6097b1d19a"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:0ee7f0ca-97d2-4b5c-b49e-f189d169346f -->
+<img alt="Slide23_1200x600.jpg" src="img/0ee7f0ca-97d2-4b5c-b49e-f189d169346f.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="246ebf5d-415b-47bc-a86b-7457486bf523"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:aa2aeeea-9d39-4f6c-9f8d-9ed29f35ccc0 -->
+<img alt="Slide24_1200x600.jpg" src="img/aa2aeeea-9d39-4f6c-9f8d-9ed29f35ccc0.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="6399ac55-1692-41a6-9c3f-fbcf42f5bb3d"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:9a387bed-a5b2-4bc4-92c7-be5fa1c28065 -->
+<img alt="Slide25_1200x600.jpg" src="img/9a387bed-a5b2-4bc4-92c7-be5fa1c28065.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="75c768ad-2fae-4c6f-b5c3-a8a2473c3c5d"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:1553f666-f8d7-4bcc-ad4f-05561f7bde56 -->
+<img alt="Slide26_1200x600.jpg" src="img/1553f666-f8d7-4bcc-ad4f-05561f7bde56.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="c83dbdb2-63a5-4892-ac59-db43be5c8048"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:7838e263-951a-435e-91e3-695a968d8d32 -->
+<img alt="Slide27_1200x600.jpg" src="img/7838e263-951a-435e-91e3-695a968d8d32.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="331d3fb8-8bbb-4b83-806e-abfe80f366c2"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:e1acee94-8d36-48d6-85d3-da07b4915406 -->
+<img alt="Slide28_1200x600.jpg" src="img/e1acee94-8d36-48d6-85d3-da07b4915406.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="c8e6cebb-ab94-497a-99c7-6c12435a8f0e"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:6297aacb-8e6e-4dce-9367-65abd32f4fc3 -->
+<img alt="Slide29_1200x600.jpg" src="img/6297aacb-8e6e-4dce-9367-65abd32f4fc3.jpg" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="8b18b779-4e34-42b6-8e90-96d402d554d0"><h1>Dynamic Programming</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:ae61c1c4-838d-455f-92aa-28951acc563a -->
+<h3 id="a-mathematical-optimization-technique">A mathematical optimization technique</h3>
+<ul>
+<li>Best for solving problems that can be described recursively</li>
+<li>Breaks the problem into smaller sub-problems​</li>
+<li>Solves each small problem only once​</li>
+<li>Guarantees an optimal solution​</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><ul>
+<li>Examples: Scheduling, Routing</li>
+<li>This will become very important later</li>
+</ul>
+</aside>
+<a id="0a7859bd-d578-4e82-852a-8512083742df"><h1>Optimization Problems</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:4285373f-edd6-4559-a1dd-3a6ff008bbca -->
+<ul>
+<li>Find the best values for a set of decision variables that​
+<ul>
+<li>Satisfies all constraints</li>
+<li>Maximizes the features we want​</li>
+<li>Minimizes the features we don’t want</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="2918edda-6864-46f6-a67f-9ade9ebf0621"><h1>Simple Example - Chutes and Ladders</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:ac2956de-585d-4e52-acad-ceb574de9071 -->
+<!-- ContentItem:1b49b56c-9ae2-42e6-824c-1ef4c13ad68e -->
+<img alt="Chutes and Ladders 3.gif" src="img/ac2956de-585d-4e52-acad-ceb574de9071.gif" />
+<img alt="Linear Array.jpg" src="img/1b49b56c-9ae2-42e6-824c-1ef4c13ad68e.jpg" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="35a5d5eb-5ca8-46b6-ad52-f165c452feea"><h1>Chutes and Ladders - Greedy Algorithm</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:0462237e-6157-4ca5-942e-41a807556391 -->
+<!-- ContentItem:9fd672c5-88f1-4410-b157-eb8bc17ae2ea -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Start at the 1st space on the board​</li>
+<li>While we haven't reached the last space​
+<ul>
+<li>Add the space to the current path​</li>
+<li>If the current space has a ladder​
+<ul>
+<li>Add the end of the ladder to the path​</li>
+<li>Make that space the current space​</li>
+</ul>
+</li>
+<li>Move to the next space on the board​</li>
+</ul>
+</li>
+<li>Return the completed path through the board</li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
+<img alt="Greedy Algorithm.jpg" src="img/9fd672c5-88f1-4410-b157-eb8bc17ae2ea.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="fd1e230a-511d-4d64-8b83-06240b612c09"><h1>Dynamic Programming - Step 1</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:7a7b1b5f-be64-4b71-9213-7e9129dc9bee -->
+<!-- ContentItem:bb573326-303a-4bf0-b131-818b43ae3d67 -->
+
+<table><tr><td style="vertical-align:top;">
+<h3 id="determinedistancesd">DetermineDistance(s,d)</h3>
+<ul>
+<li>Call <code>DetermineDistance(space[0], 0)</code></li>
+<li>If shorter​ than previously found
+<ul>
+<li>Set DistanceFromStart property</li>
+<li>If this space starts a chute or ladder​
+<ul>
+<li><code>DetermineDistance(endOfNavigation, distanceFromStart+1​)</code></li>
+</ul>
+</li>
+<li>If not at the end of board​
+<ul>
+<li><code>DetermineDistance(nextSpace, distanceFromStart+1)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Return all spaces with their DistanceFromStart property populated</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Determine Distance from Start.png" src="img/bb573326-303a-4bf0-b131-818b43ae3d67.png" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="0dccfbdf-8ff7-4019-960a-a8e224ad3567"><h1>Dynamic Programming - Step 2</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:3b82378d-4df0-4274-b11b-f8012518009e -->
+<!-- ContentItem:1a138932-ef64-4f30-8e2d-42d643e7f767 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Start at the last space on the board​</li>
+<li>While we are still on the board​
+<ul>
+<li>Add the current space to the path​</li>
+<li>Set the current space to a space that is a neighbor of the current space and whose DistanceFromStart is space.DistanceFromStart-1​</li>
+</ul>
+</li>
+<li>Reverse the direction of the path​</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Retrace Path - Smaller.png" src="img/1a138932-ef64-4f30-8e2d-42d643e7f767.png" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="f96b3651-1a05-4f5c-9a9d-a74a71d2b11f"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:50185bdb-927d-43ae-9739-be7b2795fdb4 -->
+<img alt="Memoization.gif" src="img/50185bdb-927d-43ae-9739-be7b2795fdb4.gif" />
+</section>
+
+
+<section data-transition="slide-in fade-out">
+
+<a id="ced234f8-ba00-4592-84fa-aaac8f99f909"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:84e31f8d-ddc8-4e1e-abb7-e174757324c6 -->
+<img alt="Slide79_1000x475.jpg" src="img/84e31f8d-ddc8-4e1e-abb7-e174757324c6.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="14ad7926-8ba5-4e9c-9e73-d2cbdcd99d66"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:4d2a8561-f700-4b62-8ea1-c5ea847e82b3 -->
+<img alt="Slide80_1000x475.jpg" src="img/4d2a8561-f700-4b62-8ea1-c5ea847e82b3.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="1e310437-2b44-450d-84bd-4a116a4448ec"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:7ba6edc3-693b-4fd2-94ee-1a0d6a89759d -->
+<img alt="Slide81_1000x475.jpg" src="img/7ba6edc3-693b-4fd2-94ee-1a0d6a89759d.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="f7f5f355-91a9-414c-858a-411d99ae5288"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:8de61654-74b4-4129-9724-ee9fab940381 -->
+<img alt="Slide82_1000x475.jpg" src="img/8de61654-74b4-4129-9724-ee9fab940381.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="29837c67-a5cb-43ac-b4f7-ecfb54e19698"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:d687db61-c883-4ae8-9309-576070e18c79 -->
+<img alt="Slide83_1000x475.jpg" src="img/d687db61-c883-4ae8-9309-576070e18c79.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="0033e17b-8417-4d09-9419-9c2f80e27c88"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:899cdfdb-c174-4751-9767-83ea8a596b96 -->
+<img alt="Slide84_1000x475.jpg" src="img/899cdfdb-c174-4751-9767-83ea8a596b96.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="e0697a92-d31e-49dc-8783-0667770432ae"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:7854676c-ff27-4d88-a803-9664960e7281 -->
+<img alt="Slide85_1000x475.jpg" src="img/7854676c-ff27-4d88-a803-9664960e7281.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="e43b6a01-5cd3-4b96-823b-5d0f12d16d97"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:6b2d0ed1-8105-4978-91a4-87a85e6fe9f4 -->
+<img alt="Slide86_1000x475.jpg" src="img/6b2d0ed1-8105-4978-91a4-87a85e6fe9f4.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="610c14c0-68b8-4cca-8906-04f0fdc69f34"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:ba70b51b-d706-48c6-9844-dba3f27da842 -->
+<img alt="Slide87_1000x475.jpg" src="img/ba70b51b-d706-48c6-9844-dba3f27da842.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="7c5cd43e-9284-4315-bbaf-62b769960992"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:39944679-28ce-426b-b1f7-9fff6a8871d0 -->
+<img alt="Slide88_1000x475.jpg" src="img/39944679-28ce-426b-b1f7-9fff6a8871d0.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="e0b7bfa9-fce1-4258-9a7b-78e7d68d26b4"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:1ab3927d-28f1-44bb-aa08-313d62ff830f -->
+<img alt="Slide89_1000x475.jpg" src="img/1ab3927d-28f1-44bb-aa08-313d62ff830f.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="caf70f51-1ed6-4808-8d3f-5899a4be9633"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:22366ffb-7a28-47b5-87e1-355c59e8fc24 -->
+<img alt="Slide90_1000x475.jpg" src="img/22366ffb-7a28-47b5-87e1-355c59e8fc24.jpg" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="73bd6011-e0fd-4837-bb86-d75703d379ef"><h1>Summary - Dynamic Programming</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:d34d27d4-f1ad-4c81-b64d-a43f77cb3639 -->
+<ul>
+<li>Populate the cache​
+<ul>
+<li>Simple calculations​</li>
+<li>Build from the ground-up​</li>
+</ul>
+</li>
+<li>Use the cached data to determine the answer(s)​
+<ul>
+<li>Work backwards through the cache​</li>
+</ul>
+</li>
+<li>Guaranteed Optimality​
+<ul>
+<li>A fully populated cache means all options are explored​</li>
+<li>Works in any number of dimensions​</li>
+</ul>
+</li>
+<li>Works with any graph (nodes &amp; edges)​
+<ul>
+<li>Works best when​
+<ul>
+<li>Problems can be described recursively​</li>
+<li>1 or more axis are limited in scope</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Take a break</p>
+</aside>
+<a id="75d96ac4-23d2-40b8-858e-38fd7a6fdf88">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:23df6abb-abad-4335-9cdc-f73797ba10df -->
+<img alt="brainbreaks.png" src="img/23df6abb-abad-4335-9cdc-f73797ba10df.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="0e40692b-fa14-4f05-a8e0-dfc35a1e07fe"><h1>Genetic Algorithms</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:156ff90f-f61c-4eb1-bf70-117826c781ef -->
+<h2 id="find-solutions-by-simulating-darwinian-evolution">Find Solutions by Simulating Darwinian Evolution​</h2>
+<ul>
+<li>Each candidate solution is defined by its properties (chromosomes)​</li>
+<li>A fitness function is used to determine which solutions &quot;survive&quot;
+<ul>
+<li>A simulation may be used as the fitness function</li>
+</ul>
+</li>
+<li>Surviving solutions may mutate and evolve other solutions​</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="741ac5e2-5b11-42dd-8639-0fc38ae8ad23"><h1>Optimality is Never Guaranteed</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:5003851f-7c49-4d8a-a24b-f80c3318faaf -->
+<ul>
+<li>Optimal solution may never be found
+<ul>
+<li>i.e. If a optimality requires a large combination of elements</li>
+</ul>
+</li>
+<li>Optimum may be found but not recognized
+<ul>
+<li>If conditions make that solution non-optimal at that moment
+<ul>
+<li>i.e. If a key feature is not used during the simulation</li>
+</ul>
+</li>
+<li>Minimize the liklihood by increasing simulation size</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="3b2edb0e-08ea-44bb-9006-e3a04ae49e44"><h1>Use Case: Game Strategy</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:dcb0ddc0-30ac-4f83-b182-47a9a9db587a -->
+<!-- ContentItem:ac2956de-585d-4e52-acad-ceb574de9071 -->
+
+<table><tr><td style="vertical-align:top;">
+<h3 id="find-the-best-strategy-in-a-multi-player-board-game">Find the best strategy in a multi-player board game​</h3>
+<ul>
+<li>Variant of Chutes &amp; Ladders​
+<ul>
+<li>Player decides whether or not to take a chute or ladder​</li>
+</ul>
+</li>
+<li>Extremely large <em>Solution Space</em>
+<ul>
+<li>Impossible to simply try all options</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Chutes and Ladders 3.gif" src="img/ac2956de-585d-4e52-acad-ceb574de9071.gif" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="7c83374b-ac81-4878-ab46-adfeeb1a3ad0"><h1>Other Model Types</h1></a>
+<!-- Layout:FullPageFragments -->
+<!-- ContentItem:5273c02c-6710-480e-a17e-b499a4147e5f -->
+<!-- ContentItem:5198d906-a0e2-4c45-9164-2af292d444c3 -->
+<!-- ContentItem:061f3b77-adc6-4ada-88c2-4d73203cb951 -->
+<table border="0" width="100%">
+
+<tr><td>
+<ul class="fragment">
+<li>Mixed-Integer Programming Model
+<ul>
+<li>Requires a mathematical fitness function (can't use a simulation)</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+<tr><td>
+<ul class="fragment">
+<li>Shortest Path Algorithm
+<ul>
+<li>Guarantees shortest path but not necessarily best strategy</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+<tr><td>
+<ul class="fragment">
+<li>Neural Network
+<ul>
+<li>Requires a very large training data corpus</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+</table></section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="3af357e5-e9df-4cad-ae61-d7e32d64c651"><h1>Step 1 - Define DNA</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:e7ed2b75-f5d5-458a-bc3a-d34c530ed864 -->
+<ul>
+<li>The DNA represents all of the possible decisions to be made</li>
+<li>Each chromosome represents a decision point
+<ul>
+<li>Ideally a chromosome fully describes a single game state</li>
+</ul>
+</li>
+<li>Each gene is an option for that decision
+<ul>
+<li>If there are 3 options for a given state there will be 3 possible neuclotides for that chromosome</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="e05ff952-9b21-420d-bba2-9c2c594d4e38"><h1>DNA of Chutes & Ladders</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:bf2731f8-bd6b-456f-bcd7-cde5ba65c865 -->
+<img alt="DNA.png" src="img/bf2731f8-bd6b-456f-bcd7-cde5ba65c865.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="ae2fd0cc-195e-40b5-a30c-69d94f6ad257"><h1>Step 2 - Setup Parameters</h1></a>
+<!-- Layout:FullPageFragments -->
+<!-- ContentItem:0167c5e4-e4d9-41bc-8403-3d9823c39173 -->
+<!-- ContentItem:d7ba8108-1998-4bd4-a32e-9b21de173e0c -->
+<!-- ContentItem:b9d82471-cbfc-41e1-a9e2-6f2ad4e5d5bc -->
+<!-- ContentItem:01391c13-7af7-46f5-83b5-adf542099bff -->
+<table border="0" width="100%">
+
+<tr><td>
+<ul class="fragment">
+<li>Simulations per Generation
+<ul>
+<li>Controls how often the solutions evolve</li>
+<li>More simulations make it more likely the best solution will survive</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+<tr><td>
+<ul class="fragment">
+<li>Generation Count
+<ul>
+<li>Controls simulation length</li>
+<li>Optionally look for convergence
+<ul>
+<li>When does improvement stop?</li>
+<li>When do significant changes stop during crossover?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+<tr><td>
+<ul class="fragment">
+<li>Error (misspelling) rate
+<ul>
+<li>Controls how frequently chromosomes change neucleotides during the evolutionary process</li>
+<li>Higher rates cause greater variations from generation to generation</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+<tr><td>
+<ul class="fragment">
+<li>Selection strategy
+<ul>
+<li>Defines which solutions survive and mutate
+<ul>
+<li>Survive intact - Remain unchanged to next generation</li>
+<li>Survive mutated - Modified versions survive to next generations</li>
+<li>Survive recombined - Crossover between two solutions survives</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+</table></section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="11dc90ed-27a1-4d6e-a2c5-841884b50e7d"><h1>Genetic Algorithm</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:d69bf5fd-bece-47f7-88b2-f4559e466d8d -->
+<img alt="Genetic Algorithm.png" src="img/d69bf5fd-bece-47f7-88b2-f4559e466d8d.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Image Source: <a href="https://www.bing.com/images/search?view=detailV2&amp;ccid=dRMxLBnQ&amp;id=E53F8434658CC083E550D588683387676FE1FA4B&amp;thid=OIP.dRMxLBnQC37slv-FGxf6ygHaEv&amp;mediaurl=https%3a%2f%2fi1.wp.com%2fsitn.hms.harvard.edu%2fwp-content%2fuploads%2f2017%2f11%2fDNA-Methylation.png%3fresize%3d1200%252C768%26ssl%3d1&amp;cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.7513312c19d00b7eec96ff851b17faca%3frik%3dS%252frhb2eHM2iI1Q%26pid%3dImgRaw%26r%3d0&amp;exph=768&amp;expw=1200&amp;q=dna&amp;simid=607993530491414959&amp;FORM=IRPRST&amp;ck=5D6E0434DCD9653251A5DAFA4E1F2CD1&amp;selectedIndex=2&amp;qft=+filterui%3alicenseType-Any&amp;mode=overlay">https://www.bing.com/images/search?view=detailV2&amp;ccid=dRMxLBnQ&amp;id=E53F8434658CC083E550D588683387676FE1FA4B&amp;thid=OIP.dRMxLBnQC37slv-FGxf6ygHaEv&amp;mediaurl=https%3a%2f%2fi1.wp.com%2fsitn.hms.harvard.edu%2fwp-content%2fuploads%2f2017%2f11%2fDNA-Methylation.png%3fresize%3d1200%252C768%26ssl%3d1&amp;cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.7513312c19d00b7eec96ff851b17faca%3frik%3dS%252frhb2eHM2iI1Q%26pid%3dImgRaw%26r%3d0&amp;exph=768&amp;expw=1200&amp;q=dna&amp;simid=607993530491414959&amp;FORM=IRPRST&amp;ck=5D6E0434DCD9653251A5DAFA4E1F2CD1&amp;selectedIndex=2&amp;qft=+filterui%3alicenseType-Any&amp;mode=overlay</a></p>
+</aside>
+<a id="98901236-7782-4645-8961-f2390ed4d4dd"><h1>Step 3 - Run the Simulations</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:d9dfebe3-1397-4b2e-a707-d707fbf3dc1e -->
+<img alt="DNA.png" src="img/d9dfebe3-1397-4b2e-a707-d707fbf3dc1e.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="55328e1b-9965-4c3a-ac59-cbc54545479a"><h1>Options for Experimentation</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:298b5783-a21e-476d-aa65-e976f7722f8b -->
+<ul>
+<li>Implement in your preferred language
+<ul>
+<li>C# implementation is on GitHub</li>
+</ul>
+</li>
+<li>Augment to include what <em>place</em> the player is in
+<ul>
+<li>i.e. Might make different decisions if in 1<sup>st</sup> vs in 6<sup>th</sup> place</li>
+</ul>
+</li>
+<li>Define the DNA of another game
+<ul>
+<li>Recommendation - stick with simpler games to start</li>
+<li>Avoid games like chess with massive complexity</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="391e2511-39cb-49c3-9925-3968c7df036c"><h1>Summary</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:4bee6055-b434-48f0-bb4e-fee220c80e37 -->
+<ul>
+<li>Genetic Algorithms &quot;Learn&quot; by simulating Darwinian Evolution</li>
+<li>The &quot;DNA&quot; represents the decisions that can be made
+<ul>
+<li>One chromosome per condition (game state)</li>
+<li>One gene per option (choices from a state)</li>
+</ul>
+</li>
+<li>Several parameters control how solutions evolve
+<ul>
+<li>Simulations per Generation - how often the solutions change
+<ul>
+<li>Fewer simulations make it more likely a less-fit solution will survive over a more-fit solution</li>
+</ul>
+</li>
+<li>Error (misspelling) rate - how often each chromosome changes between generations
+<ul>
+<li>Higher rates cause greater variations from generation to generation</li>
+</ul>
+</li>
+<li>Selection strategy - Which solutions survive and mutate
+<ul>
+<li>Survive intact - Remain unchanged to next generation</li>
+<li>Survive mutated - Modified versions survive to next generations</li>
+<li>Survive recombined - Crossover between two solutions survives</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/f71d8f54-7f94-4896-aabb-13aa396b53ac.jpg'>
+<aside class="notes"><p>Image Source: <a href="https://www.bing.com/images/search?view=detailV2&amp;ccid=rQwZkzXb&amp;id=CE81AB330C7CBFE1E51C64015E13BB9B91FEC97B&amp;thid=OIP.rQwZkzXbMMakjLdxyi0KEAHaEK&amp;mediaurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.ad0c199335db30c6a48cb771ca2d0a10%3frik%3de8n%252bkZu7E14BZA%26riu%3dhttp%253a%252f%252fi.stack.imgur.com%252f4rce5.jpg%26ehk%3dy3eTNpWhpAFuH8tW70dPlXBxmD2xVFoLbzZD4aiBM08%253d%26risl%3d%26pid%3dImgRaw%26r%3d0&amp;exph=1080&amp;expw=1920&amp;q=best+path&amp;simid=608045907617389745&amp;FORM=IRPRST&amp;ck=80685705AA0D92602D981536195FDA4E&amp;selectedIndex=22&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;ajaxserp=0">https://www.bing.com/images/search?view=detailV2&amp;ccid=rQwZkzXb&amp;id=CE81AB330C7CBFE1E51C64015E13BB9B91FEC97B&amp;thid=OIP.rQwZkzXbMMakjLdxyi0KEAHaEK&amp;mediaurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.ad0c199335db30c6a48cb771ca2d0a10%3frik%3de8n%252bkZu7E14BZA%26riu%3dhttp%253a%252f%252fi.stack.imgur.com%252f4rce5.jpg%26ehk%3dy3eTNpWhpAFuH8tW70dPlXBxmD2xVFoLbzZD4aiBM08%253d%26risl%3d%26pid%3dImgRaw%26r%3d0&amp;exph=1080&amp;expw=1920&amp;q=best+path&amp;simid=608045907617389745&amp;FORM=IRPRST&amp;ck=80685705AA0D92602D981536195FDA4E&amp;selectedIndex=22&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;ajaxserp=0</a></p>
+</aside>
+<a id="3bc845d8-af86-4f3e-bd5b-5c7fd1f68870"><h1>Best Path Algorithms</h1></a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="19abee31-2beb-4171-8522-575f19b12b6e"><h1>Ant Colony Optimization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:def659f4-35f5-43b7-a30e-e40511993b7f -->
+<img alt="Ant Colony - Best Path - Animated.gif" src="img/def659f4-35f5-43b7-a30e-e40511993b7f.gif" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="349b10db-63f0-4752-86a5-6caffd71c0a1"><h1>Pheromones</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:56bdca83-d66b-4592-baa7-f718b8385b6f -->
+<!-- ContentItem:339a5d07-32ec-40d2-9429-bc42f79e96f7 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Greater Usage =&gt; More Pheromones</li>
+<li>Shorter Path Length =&gt; More Pheromones Remain</li>
+<li>More Pheromones =&gt; Higher Probability of Usage</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Pherimones 800x800.jpg" src="img/339a5d07-32ec-40d2-9429-bc42f79e96f7.jpg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="aafa2f55-41f5-49f1-bb57-c13c8b0b1023"><h1>Ant Colony Optimization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:4d18627b-e3e6-4e76-bfda-052b8d151404 -->
+<img alt="Ant Colony Optimization Psudocode.png" src="img/4d18627b-e3e6-4e76-bfda-052b8d151404.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/ef27c4e3-4dc4-4ccf-92c0-ae559ae35e3c.png'>
+
+<a id="6aa2aeba-a073-496c-85b0-59209acbff56">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="9e2e8fdf-d3c0-4c20-8eea-131be82a5737"><h1>Ant Colony Optimization</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:ffa65ce7-5e85-4bb7-b6ba-3832c1b1a0bb -->
+<!-- ContentItem:2484059b-7c16-4175-a561-cd75b1a25a99 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Neighborhood Search
+<ul>
+<li>Start with random paths</li>
+<li>Explore neighboring paths based on probability</li>
+<li>More pheromone = Higher probability of use</li>
+<li>Can get stuck in a local minima</li>
+</ul>
+</li>
+<li>Tweaks
+<ul>
+<li>Number of ants</li>
+<li>Pheromones to dispense</li>
+<li>Pheromone dissipation rate</li>
+</ul>
+</li>
+<li>Features
+<ul>
+<li>Less sensitive to scale</li>
+<li>Optimality not guaranteed</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Ant Colony 800x800.jpg" src="img/2484059b-7c16-4175-a561-cd75b1a25a99.jpg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>There are roughly 1.216 x 10<sup>17</sup> possible paths</p>
+</aside>
+<a id="2cba3924-aa3c-46cb-8b44-adbc2f1cbba9"><h1>Bee Colony Optimization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:6340de3f-6d11-4ce0-8683-3d6ef78c2ade -->
+<img alt="Bee Colony - Best Path - Animated.gif" src="img/6340de3f-6d11-4ce0-8683-3d6ef78c2ade.gif" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="a700feea-7120-46a9-86ce-15aeab74bfbb"><h1>Types of Bees</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:d50c5f19-39e7-4cf2-9401-5ae0fe9ee831 -->
+<!-- ContentItem:a4927384-7080-4f5c-938d-5d0c584954a7 -->
+
+<table><tr><td style="vertical-align:top;">
+<dl><dt>Active Workers</dt><dd>Forage on their known path and on a <b style="color:yellow">neighboring</b> path</dd><br/><dt>Scouts</dt><dd>Forage on a random path</dd><br/><dt>Inactive Workers</dt><dd>Wait for information from other bees</dd></dl>
+
+</td>
+<td width="60%"><img alt="Bee Colony 800x800.jpg" src="img/a4927384-7080-4f5c-938d-5d0c584954a7.jpg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Bee Colony Optimization Psudocode</p>
+</aside>
+<a id="15fc756c-4a52-4933-b4fe-55e491fda762"><h1>Bee Colony Optimization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:5760b7cb-5d81-4682-a10a-ae03560e0be5 -->
+<img alt="Bee Colony Optimization Psudocode.png" src="img/5760b7cb-5d81-4682-a10a-ae03560e0be5.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/640b6b32-1e54-42dd-857f-a82a00845410.png'>
+
+<a id="120a2d25-d209-4f2a-9d4e-a72ecb71120f">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="ad93353a-759a-45de-9666-918f553e178f"><h1>Bee Colony Optimization</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:4b2a0812-03b4-4b1e-b759-4e06e5e8ef26 -->
+<!-- ContentItem:77218930-ab3d-47a7-a65e-067aa5d34d95 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Multiple Search types
+<ul>
+<li>Active Workers perform neighborhood search</li>
+<li>Scouts perform random search</li>
+<li>Best known path propogates</li>
+</ul>
+</li>
+<li>Tweaks
+<ul>
+<li>Number of each type of bee</li>
+<li>Probability of persuasion</li>
+<li>Visit limit</li>
+</ul>
+</li>
+<li>Features
+<ul>
+<li>Less Sensitive to Scale</li>
+<li>Optimality not guaranteed</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Bee Colony Optimization 800x800.jpg" src="img/77218930-ab3d-47a7-a65e-067aa5d34d95.jpg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background='img/a814800b-dde4-4aa8-a7e3-11ab2669a26f.jpg'>
+
+<a id="35028fc8-4c17-4b30-9ec7-87cf9c7c36ad"><h1>Reducing Costs</h1></a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/f5dc5b6f-9845-4f9f-b032-1c39fe2a2fc9.jpg'>
+<aside class="notes"><p>Michalewicz Function Graph - Image Source: <a href="https://www.bing.com/images/search?view=detailV2&amp;id=6A0E93404F50B40CB6B9D94E598A3B53D844FC98&amp;thid=OIP.ybJR3X7IWgNLBGkrxBk-WQHaE4&amp;mediaurl=https%3A%2F%2Fesa.github.io%2Fpagmo%2Fmichalewicz.jpg&amp;exph=368&amp;expw=558&amp;q=Michalewicz&amp;selectedindex=28&amp;ajaxhist=0&amp;vt=0&amp;eim=0">https://www.bing.com/images/search?view=detailV2&amp;id=6A0E93404F50B40CB6B9D94E598A3B53D844FC98&amp;thid=OIP.ybJR3X7IWgNLBGkrxBk-WQHaE4&amp;mediaurl=https%3A%2F%2Fesa.github.io%2Fpagmo%2Fmichalewicz.jpg&amp;exph=368&amp;expw=558&amp;q=Michalewicz&amp;selectedindex=28&amp;ajaxhist=0&amp;vt=0&amp;eim=0</a></p>
+</aside>
+<a id="ae6829fd-dd49-4ec2-977b-bdb7bb661c18">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/416a2fff-99eb-46cb-98ed-528c303ccaf9.gif'>
+<aside class="notes"><p>Firefly Michalewicz swarm</p>
+</aside>
+<a id="45e0b6aa-694c-4314-b9b9-fb3f00bdad76">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Pseudo-code. Source: <a href="https://msdn.microsoft.com/en-us/magazine/mt147244.aspx">https://msdn.microsoft.com/en-us/magazine/mt147244.aspx</a></p>
+</aside>
+<a id="85bca4f3-720d-4951-ba89-c53f00c80706"><h1>Firefly Optimization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:121e9361-2569-49a3-b081-272a89f00e74 -->
+<pre><code>initialize n fireflies to random positions
+loop maxEpochs times
+  for each firefly i
+    for each firefly j
+      if intensity(i) &lt; intensity(j)
+        compute attractiveness
+        move firefly(i) toward firefly(j)
+        update firefly(i) intensity
+      end for
+    end for
+  sort fireflies
+end loop
+return best position found
+</code></pre>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/aae8ca34-f57b-4a8e-8959-f89ca08d2d1f.png'>
+
+<a id="ab2bbb8e-32b5-40ab-bc4c-c48a05fa2973">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="6d10f77c-eb47-4de2-b436-86c5d94f33b2"><h1>Firefly Optimization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:e41568a3-d14f-45f8-bc0c-3bb7112c0cf0 -->
+<!-- ContentItem:f5dc5b6f-9845-4f9f-b032-1c39fe2a2fc9 -->
+<ul>
+<li>Neighborhood Search
+<ul>
+<li>Search the area toward best known solution</li>
+<li>Closer and Brighter: More Attractive
+<ul>
+<li>Similar to gravity</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Tweaks
+<ul>
+<li>Number of fireflies</li>
+<li>Range of possible values</li>
+<li>How fast fireflies move</li>
+</ul>
+</li>
+<li>Features
+<ul>
+<li>Works better for linear problems</li>
+<li>Optimality not guaranteed</li>
+<li>Can suffer from sparseness problems</li>
+</ul>
+</li>
+</ul>
+
+<img alt="MichalewiczFunction.jpg" src="img/f5dc5b6f-9845-4f9f-b032-1c39fe2a2fc9.jpg" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/63e65212-8145-4d43-a513-a1de1b042f9b.jpg'>
+<aside class="notes"><p>Sparseness - There is a lot of matter in the universe, but it is concentrated in relatively small clusters across very large expanses of space.</p>
+</aside>
+<a id="41b55ebb-f2ac-40ff-91eb-93515909bc70">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/2e94ffff-1b8a-4feb-a124-1abb5ad9837d.jpg'>
+<aside class="notes"><p>Amoeba - Image Source: <a href="https://www.bing.com/images/search?view=detailV2&amp;id=EBB4AB9017C8B60D59B62DFA6082C200EB85A47B&amp;thid=OIP.Po_DPC-e6rN5LDDtqM3I9wHaEr&amp;mediaurl=https%3A%2F%2Fc2.staticflickr.com%2F6%2F5046%2F5228996748_08534ffdf4_z.jpg&amp;exph=404&amp;expw=639&amp;q=amoeba&amp;selectedindex=40&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;vt=0&amp;eim=0">https://www.bing.com/images/search?view=detailV2&amp;id=EBB4AB9017C8B60D59B62DFA6082C200EB85A47B&amp;thid=OIP.Po_DPC-e6rN5LDDtqM3I9wHaEr&amp;mediaurl=https%3A%2F%2Fc2.staticflickr.com%2F6%2F5046%2F5228996748_08534ffdf4_z.jpg&amp;exph=404&amp;expw=639&amp;q=amoeba&amp;selectedindex=40&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;vt=0&amp;eim=0</a></p>
+</aside>
+<a id="8a151f27-8fce-4caf-aed5-601b62d2535f">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/c4c0fd86-2477-43dd-bcde-0ca090a478df.gif'>
+<aside class="notes"><p>Amoeba Optimization Animation</p>
+</aside>
+<a id="2e8fb8a0-f472-42f1-b0db-f1459b1dc29e">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Solutions - Image Source: <a href="https://msdn.microsoft.com/magazine/dn201752">https://msdn.microsoft.com/magazine/dn201752</a></p>
+</aside>
+<a id="645eb6ae-0039-4a19-9cfa-5db982588953"><h1>Amoeba Optimization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:30f7ca23-95f9-470c-8ff8-7dc29ab7fe1d -->
+<img alt="Amoeba Optimization - Solutions.png" src="img/30f7ca23-95f9-470c-8ff8-7dc29ab7fe1d.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="1a14d303-366c-4e6f-987c-7b69f352172d"><h1>Amoeba Optimization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:5d3e99c2-e4f3-44b8-9c46-7b26ab714ab3 -->
+<pre><code>initialize the amoeba with n (size) locations
+loop maxEpochs times
+    calculate new possible solutions
+        contracted - midway between centroid and worst
+        reflected - contracted point reflected across centroid
+        expanded - beyond reflected point by a constant factor
+    if any solution is better than the current
+        replace worst value with best value from new solution
+    else
+        shrink (multiple contract) all lesser nodes toward the best
+    increment epoch count
+end loop
+return best position found
+</code></pre>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/b5e76016-23a5-4fa1-adda-9ffe9e44b473.png'>
+
+<a id="87243249-5369-4ab9-85a4-99e1df62a458">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="2605554b-1bf0-40ee-b50c-997ff46b7bb8"><h1>Amoeba Optimization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:4da9c197-d509-4a48-82bf-19565959a5a7 -->
+<!-- ContentItem:f5dc5b6f-9845-4f9f-b032-1c39fe2a2fc9 -->
+<ul>
+<li>Neighborhood Search
+<ul>
+<li>Start with random locations</li>
+<li>Explore neighbors based on amoeba movement</li>
+<li>Surround the solution, then contract to it</li>
+</ul>
+</li>
+<li>Tweaks
+<ul>
+<li>Size of the amoeba
+<ul>
+<li>&gt; # of search dimensions</li>
+</ul>
+</li>
+<li>Number of executions
+<ul>
+<li>Handle local minima</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Features
+<ul>
+<li>Optimality no guaranteed</li>
+<li>Can suffer from sparseness problems</li>
+</ul>
+</li>
+</ul>
+
+<img alt="MichalewiczFunction.jpg" src="img/f5dc5b6f-9845-4f9f-b032-1c39fe2a2fc9.jpg" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/c1f742c7-2c87-49c4-a180-f01242a39a86.jpg'>
+<aside class="notes"><p>Image Source: <a href="https://www.bing.com/images/search?view=detailV2&amp;ccid=8oMAsr1U&amp;id=2A0C59516810E752818A60463CE220265CCC5B91&amp;thid=OIP.8oMAsr1UW6ki0_Fp44GRrAHaEx&amp;mediaurl=https%3a%2f%2fflatworldknowledge.lardbucket.org%2fbooks%2fa-primer-on-communication-studies%2fsection_15%2ff28300b2bd545ba922d3f169e38191ac.jpg&amp;cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.f28300b2bd545ba922d3f169e38191ac%3frik%3dkVvMXCYg4jxGYA%26pid%3dImgRaw%26r%3d0&amp;exph=2250&amp;expw=3488&amp;q=what+can+we+do+with+this+technology&amp;simid=607993663642277342&amp;FORM=IRPRST&amp;ck=4D70700BE5EA3B3D1E9C502E3FAE7C5E&amp;selectedIndex=9&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;ajaxserp=0">https://www.bing.com/images/search?view=detailV2&amp;ccid=8oMAsr1U&amp;id=2A0C59516810E752818A60463CE220265CCC5B91&amp;thid=OIP.8oMAsr1UW6ki0_Fp44GRrAHaEx&amp;mediaurl=https%3a%2f%2fflatworldknowledge.lardbucket.org%2fbooks%2fa-primer-on-communication-studies%2fsection_15%2ff28300b2bd545ba922d3f169e38191ac.jpg&amp;cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.f28300b2bd545ba922d3f169e38191ac%3frik%3dkVvMXCYg4jxGYA%26pid%3dImgRaw%26r%3d0&amp;exph=2250&amp;expw=3488&amp;q=what+can+we+do+with+this+technology&amp;simid=607993663642277342&amp;FORM=IRPRST&amp;ck=4D70700BE5EA3B3D1E9C502E3FAE7C5E&amp;selectedIndex=9&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;ajaxserp=0</a></p>
+</aside>
+<a id="126c70e0-5e4b-4fb8-89ac-eb2a6ff7be14"><h1>What Can We Do With This Stuff?</h1></a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="2d91d5a1-d4a4-47e2-b8f9-4b987fb81e1d"><h1>Linear Data</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:4d6406bb-6f8c-46ee-a55d-c6625462d74c -->
+<img alt="Positive Only Linear Data.png" src="img/4d6406bb-6f8c-46ee-a55d-c6625462d74c.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="a5e35093-a633-4949-b8d9-0ee88c83d8c6"><h1>Linear Regression Model</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:fba5030a-7266-422d-b8ff-7ab916c0692c -->
+<!-- ContentItem:fb26c0f9-4235-410b-a3f8-38011df47d55 -->
+
+<table><tr><td style="vertical-align:top;">
+<h4 id="predict-the-unknown-values-in-a-linear-equation">Predict the unknown values in a linear equation​</h4>
+<ul>
+<li>Given X (time), predict Y (location)​
+<ul>
+<li><code>Y = mX + b​</code></li>
+</ul>
+</li>
+<li>Find the best values for <strong>m</strong> and <strong>b</strong> ​
+<ul>
+<li>Minimize total error</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
+<img alt="Regression Model.png" src="img/fb26c0f9-4235-410b-a3f8-38011df47d55.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="07ebe50d-c195-4031-837a-7a73e9859297"><h1>Error Function</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:4cca160f-5d25-4474-b017-cd31e409d2cb -->
+<!-- ContentItem:92ba6edf-733d-4056-931a-41ff30733ff0 -->
+<aside class="notes"><ul>
+<li><p>It may be difficult to see, but the bias does also contribute to the error, just by  far less that the weight.</p>
+</li>
+<li><p>This makes sense because the weight is multiplied by the input, the bias is just added.</p>
+</li>
+<li><p>Think about what happens if the slope is perpendicular to the expected line.</p>
+<ul>
+<li>The error for every point will be large, except for the area near where the lines cross.</li>
+</ul>
+</li>
+</ul>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>X-Axis: The value of the weight (m)</li>
+<li>Y-Axis: The value of the bias (b)</li>
+<li>Z-Axis: The size of the error</li>
+</ul>
+<p>The weight (m) often has a greater effect on the error than the bias (b)</p>
+
+</td>
+<td width="60%"><img alt="Linear Regression - Error Function Plot - Smaller.png" src="img/92ba6edf-733d-4056-931a-41ff30733ff0.png" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="19a0cfa6-5120-48c0-a4b9-d089cdd47855"><h1>Voter Model</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:1ee0a6fe-6fab-4b65-a219-ebf8d454b532 -->
+<img alt="Voter Network Diagram - 673x800.png" src="img/1ee0a6fe-6fab-4b65-a219-ebf8d454b532.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>For our discussions today, we will be focused only on the Sigmoid activation function as one of the most common and most flexible activations. You should experiment with many to determine which works better for your problem.</p>
+</aside>
+<a id="81d9e46f-b176-4ec7-8037-93cf97ff88f3">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a8be0761-428c-420e-9ea5-b68b6cfe29cb -->
+<img alt="Sigmoid Function.png" src="img/a8be0761-428c-420e-9ea5-b68b6cfe29cb.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/abb3a7ef-698a-4656-8c82-18c92654b4a5.jpg'>
+
+<a id="98b523b8-b34e-4f2a-aa08-f2f8147aa0e0">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:b673afe2-0f7e-47c2-b79d-d0ed96fd47f4 -->
+<h1 id="ml-demo">ML Demo</h1>
+<h4 id="using-amoeba-optimzation-to-train-an-ml-model">Using Amoeba Optimzation to Train an ML Model</h4>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/5196e48c-52eb-47f8-89ba-76d6182f2507.png'>
+
+<a id="016ab8d7-5201-4048-9a05-a90c0cde731f">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/2d1fdc9f-59c0-4ac4-a87e-1ece40b23f52.png'>
+
+<a id="36500cb1-b69e-477c-a9db-7d29156acaac">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/3ee8ebde-40ff-4b19-ab94-29cb0719712c.png'>
+
+<a id="37e1326c-4234-4b28-9cbf-9fb2a586d1e9">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/21cb2c43-9958-463c-83d4-79e899929cab.png'>
+
+<a id="f357f780-5ab3-4d3f-ae8a-c3adcd6f61ca">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/0796cf13-5499-4b5c-a28b-d78574ae0e5a.png'>
+
+<a id="b0a4d97c-d61b-4822-ad34-023e964c9036">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/838a5ad5-22de-4598-9992-312140d010a4.png'>
+
+<a id="2bbcd641-044f-4ff2-8015-00321106fb8b">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/c634de1e-fc70-4bc7-9a26-4b1d99f0030d.png'>
+
+<a id="50cb8798-4775-4693-9067-614e1f0d5b06">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="2f3d1064-efcb-44a1-86ce-f714d120f359"><h1>More Bio-Inspired</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:0ce319fa-15cc-4f5d-9d15-eb4e7aa215c6 -->
+<!-- ContentItem:e59b209a-2956-46b9-ac3a-3138b539ed72 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Roach Infestation Optimization</li>
+<li>Particle Swarm Optimization</li>
+<li>Multi-Swarm (Birds) Optimization</li>
+<li>Bacterial Foraging Optimization</li>
+<li>Genetic Algorithms</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="More Algorithms 800x800.jpg" src="img/e59b209a-2956-46b9-ac3a-3138b539ed72.jpg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="1af9d72c-27c3-4375-920a-739e96597a14"><h1>Solving Tractable Problems</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:70b5a4a2-82a0-40a9-b817-2c64f142ff1d -->
+<ul>
+<li><p>Understand the Problem Deeply</p>
+<ul>
+<li><p>Clarify inputs, outputs, constraints, and goals</p>
+</li>
+<li><p>Is optimality required? Can constraints be relaxed?</p>
+</li>
+<li><p>Identify if it can be broken into reusable parts?</p>
+</li>
+</ul>
+</li>
+<li><p>Classify the Problem Type</p>
+<ul>
+<li><p>Search? Optimization? Graph traversal? Dynamic programming candidate?</p>
+</li>
+<li><p>Are brute-force or exponential-time solutions feasible?</p>
+</li>
+<li><p>What tools do we have that can help? Can we buy vs build?</p>
+</li>
+</ul>
+</li>
+<li><p>Implement and Test</p>
+<ul>
+<li><p><strong>Try a naive solution 1st</strong></p>
+</li>
+<li><p>Use test cases to validate correctness and performance</p>
+</li>
+<li><p>Optimize as needed / Start over if necessary</p>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="3ee45253-e7e2-4344-bc73-2ddd2e0487c8"><h1>Resources - Page 1</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:1aae5c88-ed38-43a3-9814-4be3960767ce -->
+<!-- ContentItem:91080757-d2f8-4d59-9a7b-8766274c29b5 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Code Samples</p>
+<ul>
+<li><p><a href="https://github.com/bsstahl/DPDemo">Dynamic Programming</a></p>
+</li>
+<li><p><a href="https://github.com/bsstahl/AIDemos">AI Demos</a></p>
+</li>
+<li><p><a href="https://github.com/TheAlgorithms">The Algorithms Repo</a></p>
+</li>
+</ul>
+</li>
+<li><p>My Articles/Presentations</p>
+<ul>
+<li><p><a href="http://www.cognitiveinheritance.com/post/Scalable-Decision-Making.aspx">Scalable Decision Making</a></p>
+</li>
+<li><p><a href="http://www.cognitiveinheritance.com/post/AI-That-Can-Explain-Why.aspx">AI That Can Explain Why</a></p>
+</li>
+<li><p><a href="http://www.cognitiveinheritance.com/post/An-Example-of-a-Hybrid-AI-Implementation.aspx">An Example of a Hybrid AI Implementation</a></p>
+</li>
+<li><p><a href="https://www.youtube.com/watch?v=zZAobExOMB0&amp;list=FLq-iLd7rfmqSIFiujBGIRSw&amp;index=2">Building AI Solutions with Google OR-Tools</a></p>
+</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Amazing Algorithms - Short Workshop - QR.png" src="img/91080757-d2f8-4d59-9a7b-8766274c29b5.png" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="7526d404-5366-4591-8bd6-9d29dc9d3c1f"><h1>Resources - Page 2</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:6244bf65-7486-44b7-bf76-dbe231b14ab9 -->
+<!-- ContentItem:91080757-d2f8-4d59-9a7b-8766274c29b5 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Academic Resources</p>
+<ul>
+<li><p><a href="https://www.coursera.org/learn/discrete-optimization">Optimization - Coursera Course</a></p>
+</li>
+<li><p><a href="http://people.cs.clemson.edu/%7Ebcdean/dp_practice/">Clemson University</a></p>
+</li>
+</ul>
+</li>
+<li><p>Other Articles</p>
+<ul>
+<li><p><a href="https://msdn.microsoft.com/en-us/magazine/mt147244.aspx">MSDN Magazine - Firefly Optimization</a></p>
+</li>
+<li><p><a href="https://msdn.microsoft.com/magazine/gg983491">MSDN Magazine - Bee Colony Optimization</a></p>
+</li>
+<li><p><a href="https://msdn.microsoft.com/magazine/dn201752">MSDN Magazine - Amoeba Optimization</a></p>
+</li>
+<li><p><a href="https://msdn.microsoft.com/magazine/hh781027">MSDN Magazine - Ant Colony Optimization</a></p>
+</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Amazing Algorithms - Short Workshop - QR.png" src="img/91080757-d2f8-4d59-9a7b-8766274c29b5.png" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="84b7f3a9-57c1-42a8-8e9d-1f79c6b83f01"><h1>Solving Your Problems</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:00138025-38cd-4992-9c57-098d571e33ce -->
+
+<table><tr><td style="vertical-align:top;">
+<p>Would you like to try to model a problem from one of your domains?</p>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="88349d88-98e1-4326-837d-1c0becc32481"><h1>Bonus Content</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:642f3a14-12f5-4de0-9cd1-e6f6920fbb1c -->
+<p>Linear Programming (LP) &amp; Mixed-Integer Programming (MIP)</p>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="03a27852-4046-4032-80cf-828f7586fb46"><h1>Use Case: Production Targets</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:2f9f6648-d5d4-43dc-91f7-4e529e1b5647 -->
+<!-- ContentItem:faf564a2-6ae3-4c59-9e61-7469f7852a21 -->
+<!-- ContentItem:eb91d467-3cc2-49cc-8c2f-ab4eb87485d5 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Products​
+<ul>
+<li>Small Vase​
+<ul>
+<li>1 oz. clay, 1 oz. glaze​</li>
+<li>Sells for $3.00 each​</li>
+</ul>
+</li>
+<li>Large Vase​
+<ul>
+<li>4 oz. clay, 2 oz. glaze​</li>
+<li>Sells for $9.00 each​</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
+<ul>
+<li>Inventory​
+<ul>
+<li>Clay - 24 oz.​</li>
+<li>Glaze - 16 oz.​</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
+<ul>
+<li>Goal
+<ul>
+<li>Maximize Revenue</li>
+</ul>
+</li>
+</ul>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><ul>
+<li>16oz glaze (1 oz ea) = 16 small</li>
+<li>24oz clay (4 oz ea) = 6 large</li>
+<li>71 feasible values</li>
+<li>What if X and Y are MUCH LARGER?</li>
+</ul>
+</aside>
+<a id="687be335-bef0-40ba-8d6a-1e2064f317b8"><h1>Solution Space</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:cfb07fcd-7c70-4bc6-8d2c-2ba9a3c0815f -->
+<img alt="Solution Space Graph - With Feasible Solutions.png" src="img/cfb07fcd-7c70-4bc6-8d2c-2ba9a3c0815f.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><ul>
+<li>Zeroing out parameters gives us intercepts so we can draw the lines</li>
+</ul>
+</aside>
+<a id="d52678f2-2123-45fa-8ed1-e77f8ca0a7d0"><h1>Constraint Equations</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:257d7165-fe4a-4e12-86cd-d5f5300e27b0 -->
+<ul>
+<li>Clay Constraint
+<ul>
+<li>X + 4Y &lt;= 24 ​
+<ul>
+<li>X &lt;= 24 and Y &lt;= 6​</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Glaze Constraint
+<ul>
+<li>X + 2Y &lt;= 16​
+<ul>
+<li>X &lt;=16 and Y &lt;= 8</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in fade-out">
+
+<a id="8497cd1e-f99b-46c6-88a3-07982a61d890"><h1>Feasible Region</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:31d6ce3e-48d0-4147-ad35-7bb9eae9a1ac -->
+<img alt="Solution Space Graph - With Feasible Solutions and Constraint Lines.png" src="img/31d6ce3e-48d0-4147-ad35-7bb9eae9a1ac.png" />
+</section>
+
+
+<section data-transition="fade-in slide-out">
+<aside class="notes"><ul>
+<li>The solution to any linear objective will fall at one of the vertices of this polytope</li>
+</ul>
+</aside>
+<a id="c7ab6842-f508-4896-83f2-027b7137d673"><h1>Linear Programming - Polytope</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:93808660-5f2e-4265-8a71-323b032c8d8f -->
+<img alt="Solution Space Graph - With Polytope.png" src="img/93808660-5f2e-4265-8a71-323b032c8d8f.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="cf227d4a-1d03-454e-8320-763160d4c22e"><h1>Linear and Mixed-Integer Programming</h1></a>
+<!-- Layout:FullPageFragments -->
+<!-- ContentItem:69ad1ff5-9224-4504-b543-e6e8f6eb7f23 -->
+<!-- ContentItem:bf7a2b92-fda2-4847-8460-0a687150e792 -->
+<table border="0" width="100%">
+
+<tr><td>
+<ul class="fragment">
+<li>Define Constraints that the Solution Must Satisfy​
+<ul>
+<li>Use these constraints to limit the search space​
+<ul>
+<li>More constraints = smaller search space
+<ul>
+<li>Solutions that exist are found faster</li>
+<li>May not find a feasible solution</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+<tr><td>
+<ul class="fragment">
+<li>Add an Objective Function to Improve Solutions​
+<ul>
+<li>All constraints must be satisfied first​</li>
+<li>Objectives are a goal relative to an equation​
+<ul>
+<li>i.e. Maximize revenue where <code>r = 3X + 9Y</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+</table></section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="1a89c361-58d2-4205-a687-b8f18e877445"><h1>Search/Optimization Models</h1></a>
+<!-- Layout:ImageWithCaption -->
+<!-- ContentItem:bd2382ba-e6ba-425f-a049-6ab3c59116d4 -->
+<!-- ContentItem:f6296a52-cb3d-46a4-8ed7-61c03423e3bd -->
+
+<img alt="george-bernard-dantzig.jpg" src="img/bd2382ba-e6ba-425f-a049-6ab3c59116d4.jpg" />
+<h2><p>George Dantzig - Creator of the Simplex Algorithm</p>
+</h2>
+</section>
+
+
+        </div>
+        <div class="footer-left">Amazing Algorithms</div>
+        <div class="footer-right">Barry S. Stahl - Mastodon:@bsstahl@cognitiveinheritance.com - Blog:http://www.cognitiveinheritance.com</div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <!-- Plugins -->
+    <script src="plugin/highlight/highlight.js"></script> 
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+
+        Reveal.initialize({
+            hash: true,
+			width: 1920,
+			height: 1080,
+            transition: 'slide',
+            showNotes: window.location.search.match(/print-pdf/gi) ? true : false,
+            plugins: [RevealHighlight, RevealMarkdown, RevealSearch, RevealNotes, RevealMath, RevealZoom ]
+        });
+    </script>
+</body>
+</html>
