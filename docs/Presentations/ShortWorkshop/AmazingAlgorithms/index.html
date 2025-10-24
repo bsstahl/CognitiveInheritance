@@ -240,6 +240,25 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 
 
 <section data-transition="slide-in slide-out">
+<a id="2d84a744-0676-444e-9e8b-bf8d5ed39224"><h1>A Rational Actor</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f5714ce9-35ea-4b07-8527-87109dab8a7f -->
+<!-- ContentItem:95a214bb-81df-4ff2-b273-94c733f2cac6 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Attempts to make the best possible decision​ based on the model and the data</p>
+</blockquote>
+<ul>
+<li>Model - Our description of the problem</li>
+<li>Data - Our understanding of the state of the domain</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="A Rational Actor 800x800.jpeg" src="img/95a214bb-81df-4ff2-b273-94c733f2cac6.jpeg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
 <a id="c731266d-1cc3-4b6e-96b3-7f74a64d18a0"><h1>Workshop Goals</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:aec93d43-202e-4aea-9578-854677854e42 -->
@@ -823,13 +842,69 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 
 
 <section data-transition="slide-in slide-out">
-<aside class="notes"><p>Take a break</p>
-</aside>
-<a id="75d96ac4-23d2-40b8-858e-38fd7a6fdf88">&nbsp;</a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:23df6abb-abad-4335-9cdc-f73797ba10df -->
-<img alt="brainbreaks.png" src="img/23df6abb-abad-4335-9cdc-f73797ba10df.png" />
-</section>
+<a id="3b2edb0e-08ea-44bb-9006-e3a04ae49e44"><h1>Use Case: Game Strategy</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:dcb0ddc0-30ac-4f83-b182-47a9a9db587a -->
+<!-- ContentItem:ac2956de-585d-4e52-acad-ceb574de9071 -->
+
+<table><tr><td style="vertical-align:top;">
+<h3 id="find-the-best-strategy-in-a-multi-player-board-game">Find the best strategy in a multi-player board game​</h3>
+<ul>
+<li>Variant of Chutes &amp; Ladders​
+<ul>
+<li>Player decides whether or not to take a chute or ladder​</li>
+</ul>
+</li>
+<li>Extremely large <em>Solution Space</em>
+<ul>
+<li>Impossible to simply try all options</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Chutes and Ladders 3.gif" src="img/ac2956de-585d-4e52-acad-ceb574de9071.gif" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="7c83374b-ac81-4878-ab46-adfeeb1a3ad0"><h1>Other Model Types</h1></a>
+<!-- Layout:FullPageFragments -->
+<!-- ContentItem:5198d906-a0e2-4c45-9164-2af292d444c3 -->
+<!-- ContentItem:5273c02c-6710-480e-a17e-b499a4147e5f -->
+<!-- ContentItem:061f3b77-adc6-4ada-88c2-4d73203cb951 -->
+<table border="0" width="100%">
+
+<tr><td>
+<ul class="fragment">
+<li>Shortest Path Algorithm
+<ul>
+<li>Guarantees shortest path but not necessarily best strategy</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+<tr><td>
+<ul class="fragment">
+<li>Mixed-Integer Programming Model
+<ul>
+<li>Requires a mathematical fitness function (can't use a simulation)</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+<tr><td>
+<ul class="fragment">
+<li>Neural Network
+<ul>
+<li>Requires a very large training data corpus</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+</table></section>
 
 
 <section data-transition="slide-in slide-out">
@@ -875,72 +950,6 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 </ul>
 
 </section>
-
-
-<section data-transition="slide-in slide-out">
-<a id="3b2edb0e-08ea-44bb-9006-e3a04ae49e44"><h1>Use Case: Game Strategy</h1></a>
-<!-- Layout:ImageRight -->
-<!-- ContentItem:dcb0ddc0-30ac-4f83-b182-47a9a9db587a -->
-<!-- ContentItem:ac2956de-585d-4e52-acad-ceb574de9071 -->
-
-<table><tr><td style="vertical-align:top;">
-<h3 id="find-the-best-strategy-in-a-multi-player-board-game">Find the best strategy in a multi-player board game​</h3>
-<ul>
-<li>Variant of Chutes &amp; Ladders​
-<ul>
-<li>Player decides whether or not to take a chute or ladder​</li>
-</ul>
-</li>
-<li>Extremely large <em>Solution Space</em>
-<ul>
-<li>Impossible to simply try all options</li>
-</ul>
-</li>
-</ul>
-
-</td>
-<td width="60%"><img alt="Chutes and Ladders 3.gif" src="img/ac2956de-585d-4e52-acad-ceb574de9071.gif" /></td>
-</tr></table></section>
-
-<section data-transition="slide-in slide-out">
-<a id="7c83374b-ac81-4878-ab46-adfeeb1a3ad0"><h1>Other Model Types</h1></a>
-<!-- Layout:FullPageFragments -->
-<!-- ContentItem:5273c02c-6710-480e-a17e-b499a4147e5f -->
-<!-- ContentItem:5198d906-a0e2-4c45-9164-2af292d444c3 -->
-<!-- ContentItem:061f3b77-adc6-4ada-88c2-4d73203cb951 -->
-<table border="0" width="100%">
-
-<tr><td>
-<ul class="fragment">
-<li>Mixed-Integer Programming Model
-<ul>
-<li>Requires a mathematical fitness function (can't use a simulation)</li>
-</ul>
-</li>
-</ul>
-
-</td></tr>
-<tr><td>
-<ul class="fragment">
-<li>Shortest Path Algorithm
-<ul>
-<li>Guarantees shortest path but not necessarily best strategy</li>
-</ul>
-</li>
-</ul>
-
-</td></tr>
-<tr><td>
-<ul class="fragment">
-<li>Neural Network
-<ul>
-<li>Requires a very large training data corpus</li>
-</ul>
-</li>
-</ul>
-
-</td></tr>
-</table></section>
 
 
 <section data-transition="slide-in slide-out">
@@ -1122,6 +1131,16 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 </li>
 </ul>
 
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Take a break</p>
+</aside>
+<a id="75d96ac4-23d2-40b8-858e-38fd7a6fdf88">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:23df6abb-abad-4335-9cdc-f73797ba10df -->
+<img alt="brainbreaks.png" src="img/23df6abb-abad-4335-9cdc-f73797ba10df.png" />
 </section>
 
 
