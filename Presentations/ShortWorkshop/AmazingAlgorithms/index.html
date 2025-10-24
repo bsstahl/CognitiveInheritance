@@ -169,6 +169,25 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 
 
 <section data-transition="slide-in slide-out">
+<a id="2d84a744-0676-444e-9e8b-bf8d5ed39224"><h1>A Rational Actor</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f5714ce9-35ea-4b07-8527-87109dab8a7f -->
+<!-- ContentItem:95a214bb-81df-4ff2-b273-94c733f2cac6 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Attempts to make the best possible decision​ based on the model and the data</p>
+</blockquote>
+<ul>
+<li>Model - Our description of the problem</li>
+<li>Data - Our understanding of the state of the domain</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="A Rational Actor 800x800.jpeg" src="img/95a214bb-81df-4ff2-b273-94c733f2cac6.jpeg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
 <a id="6de8d83e-ebbf-466c-9501-91dbe2ac6382"><h1>Models are the Blueprint</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:4e4788fb-5542-49ef-b12d-d4c9460e776e -->
@@ -238,25 +257,6 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 </td></tr>
 </table></section>
 
-
-<section data-transition="slide-in slide-out">
-<a id="2d84a744-0676-444e-9e8b-bf8d5ed39224"><h1>A Rational Actor</h1></a>
-<!-- Layout:ImageRight -->
-<!-- ContentItem:f5714ce9-35ea-4b07-8527-87109dab8a7f -->
-<!-- ContentItem:95a214bb-81df-4ff2-b273-94c733f2cac6 -->
-
-<table><tr><td style="vertical-align:top;">
-<blockquote>
-<p>Attempts to make the best possible decision​ based on the model and the data</p>
-</blockquote>
-<ul>
-<li>Model - Our description of the problem</li>
-<li>Data - Our understanding of the state of the domain</li>
-</ul>
-
-</td>
-<td width="60%"><img alt="A Rational Actor 800x800.jpeg" src="img/95a214bb-81df-4ff2-b273-94c733f2cac6.jpeg" /></td>
-</tr></table></section>
 
 <section data-transition="slide-in slide-out">
 <a id="c731266d-1cc3-4b6e-96b3-7f74a64d18a0"><h1>Workshop Goals</h1></a>
@@ -1560,39 +1560,193 @@ return best position found
 
 
 <section data-transition="slide-in slide-out">
-
-<a id="2d91d5a1-d4a4-47e2-b8f9-4b987fb81e1d"><h1>Linear Data</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:4d6406bb-6f8c-46ee-a55d-c6625462d74c -->
-<img alt="Positive Only Linear Data.png" src="img/4d6406bb-6f8c-46ee-a55d-c6625462d74c.png" />
-</section>
-
-
-<section data-transition="slide-in slide-out">
-<a id="a5e35093-a633-4949-b8d9-0ee88c83d8c6"><h1>Linear Regression Model</h1></a>
+<a id="ae9400c6-295c-4eac-a452-f29b46414c3c"><h1>Gradient Descent</h1></a>
 <!-- Layout:MultiColumn -->
-<!-- ContentItem:fba5030a-7266-422d-b8ff-7ab916c0692c -->
-<!-- ContentItem:fb26c0f9-4235-410b-a3f8-38011df47d55 -->
+<!-- ContentItem:2efb79ef-f83f-4e01-af5c-a8995f355d62 -->
+<!-- ContentItem:b14eaae1-4711-4ca2-960b-ba7d75667230 -->
 
 <table><tr><td style="vertical-align:top;">
-<h4 id="predict-the-unknown-values-in-a-linear-equation">Predict the unknown values in a linear equation​</h4>
+<blockquote>
+<p>Optimization algorithm used to minimize the cost function of a model</p>
+</blockquote>
 <ul>
-<li>Given X (time), predict Y (location)​
+<li><p>Shifts the parameters in the opposite direction of the cost gradient</p>
 <ul>
-<li><code>Y = mX + b​</code></li>
+<li><p>The 1st derivative of the cost function</p>
+</li>
+<li><p>Represents the slope of that function</p>
+</li>
 </ul>
 </li>
-<li>Find the best values for <strong>m</strong> and <strong>b</strong> ​
+<li><p>Hyperparameters include:</p>
 <ul>
-<li>Minimize total error</li>
+<li><p>Number of iterations</p>
+</li>
+<li><p>Learning rate</p>
+</li>
+<li><p>Convergence criteria</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Stochastic</strong> Gradient Descent</p>
+<ul>
+<li>Updates parameters using a subset of data each cycle</li>
 </ul>
 </li>
 </ul>
 
 </td>
 <td style="vertical-align:top;">
-<img alt="Regression Model.png" src="img/fb26c0f9-4235-410b-a3f8-38011df47d55.png" />
+<img alt="AI Models - Gradient Descent - 400x800.png" src="img/b14eaae1-4711-4ca2-960b-ba7d75667230.png" />
 </td>
+</tr></table></section>
+
+<section data-transition="slide-in fade-out">
+
+<a id="b1cbd255-5152-4558-944b-9ba3e902fa50"><h1>Deep Neural Networks</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:67edd3bb-209f-4808-b4a2-cde3968b1964 -->
+<img alt="DNN.png" src="img/67edd3bb-209f-4808-b4a2-cde3968b1964.png" />
+</section>
+
+
+<section data-transition="slide-in fade-out" data-background='img/2c292b6c-c30a-434c-bda9-bafdaa9fe689.png'>
+<aside class="notes"><p>This data has obviously been cleaned. There are no major outliers and data appears fairly consistent.
+In this case, it represents the distance travelled on a train between stations at various points in time.</p>
+</aside>
+<a id="7d843486-629e-4172-9476-76197d6547b7">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="fade-in slide-out" data-background='img/a3a2b6ff-8588-4925-8d50-c6af8d86635f.png'>
+<aside class="notes"><p>It is also clearly linear so we can easily add a best fit line to the data</p>
+</aside>
+<a id="7f8d5089-c696-446a-b353-90e3a67ba020">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="b554e246-f939-4c90-90be-74e069b9c284"><h1>Linear Model</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:a8363ac9-93bf-43c0-a9f7-9c29445905f8 -->
+<!-- ContentItem:d19223dc-ec19-4348-801e-4a05333f33a3 -->
+<aside class="notes"><ul>
+<li>Input = Independent Variable</li>
+<li>Output = Dependent Variable</li>
+<li>Weight and Bias are Parameters of the Model</li>
+<li>MSE = Mean Squared Errror</li>
+<li>Cost Function (Loss Function) determines how well the predictions match reality</li>
+</ul>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Input Variable</td>
+<td>X</td>
+</tr>
+<tr>
+<td>Output Variable</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Weight Parameter</td>
+<td>M</td>
+</tr>
+<tr>
+<td>Bias Parameter</td>
+<td>B</td>
+</tr>
+<tr>
+<td>Linear Equation</td>
+<td>Y=mX+b</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+<td width="60%"><img alt="AI Models - Single Input Linear - 1280x720.png" src="img/d19223dc-ec19-4348-801e-4a05333f33a3.png" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="1a894f9a-6d1f-4511-aabf-e397d1b1b52a"><h1>ML's Linear Linchpin</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:758cceee-24e1-482f-9d1a-1f3d345d4e96 -->
+<!-- ContentItem:9ea2e21a-1d4c-4e64-b450-cf13291630b2 -->
+<aside class="notes"><p>The power of AI is based primarily on 8th grade mathematics!</p>
+<p>We'll discuss more about linear-separability when we get to model design.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Y = mX + B</p>
+</blockquote>
+<ul>
+<li><p>Every neuron gets its value from a linear transformation</p>
+</li>
+<li><p>Multiple inputs result in a sum of the linear transformations</p>
+<ul>
+<li>The sum of a linear transformation is linear</li>
+</ul>
+</li>
+<li><p>Only linearly-separable functions can be modeled without a non-linear activation</p>
+</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="AI Models - Annotated Single Input Linear - 640x360.png" src="img/9ea2e21a-1d4c-4e64-b450-cf13291630b2.png" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="30f35e81-4658-4b72-aefe-2574e78f0d30"><h1>Model Parameters</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:25c0b05e-b191-4c07-8f01-bcf81f611551 -->
+<!-- ContentItem:0961b3c9-8c97-499d-bb1c-71734b5b089f -->
+<aside class="notes"><p>The goal of the training process is to find the values of our parameters that best predict the output</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p><strong>Parameters</strong>: Internal values learned during training</p>
+<ul>
+<li><p>Define the relationship between input and output</p>
+</li>
+<li><p>Adjusted to minimize prediction error</p>
+</li>
+</ul>
+</li>
+<li><p>In Linear Regression: <code>Y = mX + b</code></p>
+<ul>
+<li><p><strong>m</strong>: Slope (Weight) - The influence of X on Y</p>
+</li>
+<li><p><strong>b</strong>: Intercept (Bias) - Shifts the output vertically</p>
+</li>
+</ul>
+</li>
+<li><p>In more complex models:</p>
+<ul>
+<li><p>Counts include weights/biases across layers</p>
+</li>
+<li><p>Can capture non-linear relationships</p>
+</li>
+<li><p>Parameter counts are a proxy for complexity</p>
+</li>
+<li><p>GPT-4 uses roughly 1.8 trillion parameters</p>
+</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Model Parameters.png" src="img/0961b3c9-8c97-499d-bb1c-71734b5b089f.png" /></td>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
@@ -1622,6 +1776,107 @@ return best position found
 
 </td>
 <td width="60%"><img alt="Linear Regression - Error Function Plot - Smaller.png" src="img/92ba6edf-733d-4056-931a-41ff30733ff0.png" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="6e18bf42-6365-4ff9-9968-54e9f04f7ea5"><h1>Training the Model</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:51aea5b9-beab-4a8c-80ed-28b2297bb8d0 -->
+<!-- ContentItem:3d890146-5e25-4c62-ab36-2b0c82dbd984 -->
+<aside class="notes"><p>We could use any optimization algorithm to train the model. In fact, I have a demo where I use Amoeba Optimization to train a model. However, the most common optimization algorithm used in training neural networks is Gradient Descent.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Objective: Minimize the error
+<ul>
+<li>Error: The difference between the predicted value and the actual value</li>
+<li>MSE: Mean Squared Error - Avg of the squared differences between predicted and actual</li>
+</ul>
+</li>
+<li>Means: Gradient Descent Optimization
+<ul>
+<li>Nearly any Optimization algorithm can be used</li>
+<li>Gradient Descent is the most common/suited</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td width="60%"><img alt="training_animation.gif" src="img/3d890146-5e25-4c62-ab36-2b0c82dbd984.gif" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="47061c9b-b675-4760-8fc3-27c57e0e45d0"><h1>Linear Regression Demos</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:c24ab39e-99c7-482b-825b-a79d8e004a6d -->
+<!-- ContentItem:36bf5baa-91e0-4305-86b2-85d65c93c003 -->
+<aside class="notes"><ul>
+<li>Demo 1 - C# code demonstrating a linear regression using train timings</li>
+<li>Demo 2 - Spreadsheet modeleling the discrete inputs/outputs of an AND gate</li>
+<li>Demo 3 - Spreadsheet modeleling an inverse-proportionality relationship</li>
+</ul>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Linear Regression - <a href="https://github.com/bsstahl/AIDemos/tree/master/CraftingAI/src/GradientDescent/LinearRegression">C# Code</a></li>
+<li>AND Gate Model - <a href="https://github.com/bsstahl/AIDemos/tree/master/CraftingAI/AND%20Gate%20Model.xlsx">Excel</a></li>
+<li>Maintainability Model - <a href="https://github.com/bsstahl/AIDemos/tree/master/CraftingAI/Maintainability%20Model.xlsx">Excel</a></li>
+</ul>
+
+</td>
+<td width="60%"><img alt="Linear Model Demos 800x800.jpg" src="img/36bf5baa-91e0-4305-86b2-85d65c93c003.jpg" /></td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="71736eb2-51f0-4371-962c-e811c5aad331"><h1>Mathematics</h1></a>
+<!-- Layout:ImageWithCaption -->
+<!-- ContentItem:05de858d-cebf-4e43-a9ee-74419ce774f6 -->
+<!-- ContentItem:6d11eeb3-f927-4347-867a-e20b89d32799 -->
+<aside class="notes"><p>The use of Linear Algebra and matrix multiplication in machine learning models serves  as a mathematical optimization that enhances computational efficiency and scalability.  This approach allows for parallel processing of multiple variables, making it faster and  more efficient than traditional loop-based methods. The same results can be achieved, however, through  traditional methods, as long as you have a few million years to train a large model.</p>
+</aside>
+<img alt="Feynman - QED - 600x400.png" src="img/6d11eeb3-f927-4347-867a-e20b89d32799.png" />
+<h2><p><small>...we've invented a fantastic array of tricks and gimmicks for putting together the numbers, without  actually doing it. We don't actually [apply Y = Mx+B for every neuron] We do it by the tricks of  mathematics, and that's all. So, we're not going to worry about that. You don't have to know about  [Linear Algebra]. All you have to know is what it is, tricky ways of doing something which would be  laborious otherwise.</small></p>
+<hr />
+<p><small>With apologies to Professor Feynman, who was talking about the tricks of Calculus as applied
+to Physics, not the tricks of Linear Algebra as applied to Machine Learning.</small></p>
+</h2>
+</section>
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Of course, there are simpler ways to do this type of linear regression. We are using this example  to demonstrate the process of training a model, not to show the simplest way to solve this problem.</p>
+</aside>
+<a id="50bc745b-52ef-4ff2-a094-3f4b4860d1a6"><h1>Railroad Times Model</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:d19223dc-ec19-4348-801e-4a05333f33a3 -->
+<img alt="AI Models - Single Input Linear - 1280x720.png" src="img/d19223dc-ec19-4348-801e-4a05333f33a3.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="a5e35093-a633-4949-b8d9-0ee88c83d8c6"><h1>Linear Regression Model</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:fba5030a-7266-422d-b8ff-7ab916c0692c -->
+<!-- ContentItem:fb26c0f9-4235-410b-a3f8-38011df47d55 -->
+
+<table><tr><td style="vertical-align:top;">
+<h4 id="predict-the-unknown-values-in-a-linear-equation">Predict the unknown values in a linear equation​</h4>
+<ul>
+<li>Given X (time), predict Y (location)​
+<ul>
+<li><code>Y = mX + b​</code></li>
+</ul>
+</li>
+<li>Find the best values for <strong>m</strong> and <strong>b</strong> ​
+<ul>
+<li>Minimize total error</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
+<img alt="Regression Model.png" src="img/fb26c0f9-4235-410b-a3f8-38011df47d55.png" />
+</td>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
