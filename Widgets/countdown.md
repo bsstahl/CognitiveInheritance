@@ -12,7 +12,7 @@ orderindex: 13
         const now = new Date();
 
         // Set the target date to April 2nd, 2027
-        const targetDate = new Date('2027-04-02');
+        const targetDate = new Date('2034-10-02');
 
         // Calculate the difference in time
         const diffTime = targetDate - now;
