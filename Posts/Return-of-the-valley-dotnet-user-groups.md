@@ -19,7 +19,7 @@ publicationdate: 2025-11-04T19:00:00.000+00:00
 lastmodificationdate: 2025-11-04T19:00:00.000+00:00
 slug: return-of-the-valley-dotnet-user-groups
 categories:
-- event
+- Event
 
 ---
 After a long pause, I’m excited to share some great news: **the Valley of the Sun .NET user groups are officially restarting in 2026**! As one of the organizers — and one of the speakers for our first event — I couldn’t be more thrilled to help bring our community back together.
