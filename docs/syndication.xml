@@ -9,6 +9,31 @@
     <language>en-US</language>
     <atom:link href="https://cognitiveinheritance.com/syndication.xml" rel="self" type="application/rss+xml" />	
     <item>
+  <title>The Return of the Valley .NET User Groups</title>
+  <description>&lt;p&gt;After a long pause, I’m excited to share some great news: &lt;strong&gt;the Valley of the Sun .NET user groups are officially restarting in 2026&lt;/strong&gt;! As one of the organizers — and one of the speakers for our first event — I couldn’t be more thrilled to help bring our community back together.&lt;/p&gt;
+&lt;p&gt;We’ll be hosting &lt;strong&gt;quarterly meetups&lt;/strong&gt;, alternating between:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;NWVDNUG&lt;/strong&gt; (Northwest Valley .NET User Group)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SEVDNUG&lt;/strong&gt; (Southeast Valley .NET User Group)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Each event will be &lt;strong&gt;in-person at one location&lt;/strong&gt;, with a &lt;strong&gt;livestream option&lt;/strong&gt; for the other group — so no matter where you are, you’ll have a way to participate.&lt;/p&gt;
+&lt;h3&gt;🚀 First Event: Tuesday, January 20, 2026 at ASU West Valley&lt;/h3&gt;
+&lt;p&gt;To kick things off, &lt;strong&gt;Rob Richardson&lt;/strong&gt; and I will be presenting:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&quot;.NET Aspire Accelerator: Fast-Track to Cloud-Native Development&quot;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This talk is a shortened version of the workshop Rob and I delivered in October 2025 in Porto, Portugal — tailored for our local community.&lt;/p&gt;
+&lt;p&gt;We’ll be live at the &lt;strong&gt;Arizona State University (ASU) West Valley campus&lt;/strong&gt;, and the session will be streamed by the &lt;strong&gt;.NET Foundation’s&lt;/strong&gt; &lt;a href=&quot;https://www.meetup.com/dotnet-virtual-user-group/&quot;&gt;NET Virtual User Group&lt;/a&gt;, making it accessible to developers &lt;strong&gt;across the Valley and around the world&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3&gt;🔄 What’s Next?&lt;/h3&gt;
+&lt;p&gt;The follow-up event will be in the &lt;strong&gt;SE Valley around April&lt;/strong&gt;, continuing our quarterly rotation and hybrid format. We’re committed to making these meetups inclusive, energizing, and valuable for developers across the valley.&lt;/p&gt;
+&lt;p&gt;Meetup listings for January will be posted soon — on both the &lt;a href=&quot;https://www.meetup.com/nwvdnug/&quot;&gt;NWVDNUG&lt;/a&gt; and &lt;a href=&quot;https://www.meetup.com/sevdnug/&quot;&gt;SEVDNUG&lt;/a&gt; pages — so keep an eye out and RSVP when they go live.&lt;/p&gt;
+&lt;p&gt;Thanks for being part of this community. I can’t wait to see familiar faces and meet new ones as we reboot and reconnect in 2026.&lt;/p&gt;
+</description>
+  <link>https://www.cognitiveinheritance.com/Posts/return-of-the-valley-dotnet-user-groups.html</link>
+  <author>aa94bef8-9a1d-4486-8024-e38b3f45e8e4@bsstahl.com (Barry S. Stahl)</author>
+  <guid>https://www.cognitiveinheritance.com/Permalinks/eaf445c6-26bf-4c48-bf93-a2ad67849cbe.html</guid>
+  <pubDate>Tue, 04 Nov 2025 19:00:00 GMT</pubDate>
+</item><item>
   <title>When VS Code Shows the Wrong Source Control View - Resolving Duplicate Icons</title>
   <description>&lt;p&gt;Recently, I encountered a confusing issue with Visual Studio Code where the source control tab wasn&apos;t showing my modified files anymore. Git was correctly detecting changes since the &lt;strong&gt;git status&lt;/strong&gt; command correctly showed modifications, but those changes weren&apos;t appearing in VS Code&apos;s source control panel. Instead, I was seeing a graph view of my repository history.&lt;/p&gt;
 &lt;h4&gt;The Investigation&lt;/h4&gt;
@@ -419,17 +444,6 @@ Phoenix AZ&lt;br/&gt;
   <author>aa94bef8-9a1d-4486-8024-e38b3f45e8e4@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/dbbcb0db-7465-4489-a07b-eae7c8716685.html</guid>
   <pubDate>Thu, 13 Apr 2023 07:00:00 GMT</pubDate>
-</item><item>
-  <title>Beta Tools and Wait-Lists</title>
-  <description>&lt;p&gt;Here&apos;s a problem I am clearly privileged to have. I&apos;ll be working on a project and run into a problem. I search the Internet for ways to solve that problem and find a beta product that looks like a very interesting, innovative way to solve that problem. So, I sign up for the beta and end up getting put on a waitlist. This doesn&apos;t help me, at least not right now. So, I go off and find another way to solve my problem and continue doing what I&apos;m doing and forget all about the beta program that I signed up for.&lt;/p&gt;
-&lt;p&gt;Then, at some point, I get an email from them saying congratulations you&apos;ve been accepted to our beta program. Well, guess what? I don&apos;t even remember who you are or what problem I was trying to solve anymore or even if I actually even signed up for it. In fact, most of the time that I get emails like that, I just assume that it is another spam email.&lt;/p&gt;
-&lt;p&gt;I understand there are valid reasons for sometimes putting customers on wait-lists. I also understand that sometimes companies just try to create artificial scarcity so that their product takes on a cool factor. Please know that, if this is what you&apos;re doing, you&apos;re likely losing as many customers as you would gain if not more, and may be putting your very existence at risk.&lt;/p&gt;
-&lt;p&gt;I wonder how many cool products I&apos;ve missed out on because of that delay in getting access? I wonder how many cool products just died because they weren&apos;t there for people when they actually needed them?&lt;/p&gt;
-</description>
-  <link>https://www.cognitiveinheritance.com/Posts/beta-tools-and-wait-lists.html</link>
-  <author>aa94bef8-9a1d-4486-8024-e38b3f45e8e4@bsstahl.com (Barry S. Stahl)</author>
-  <guid>https://www.cognitiveinheritance.com/Permalinks/7a38959c-92fa-47f3-aee9-19fdc2b21a28.html</guid>
-  <pubDate>Wed, 12 Apr 2023 07:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
