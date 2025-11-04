@@ -1,7 +1,6 @@
 ---
 tags:
 - microsoft
-- event
 - professional development
 menuorder: 0
 id: e20b651b-c0d5-40c0-a94c-29bccce46b8a

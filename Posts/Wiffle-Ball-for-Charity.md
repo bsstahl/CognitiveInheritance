@@ -1,7 +1,6 @@
 ---
 tags:
 - charity
-- event
 menuorder: 0
 id: bce4ff0e-ab0c-4d75-a04d-4b8c207cceb5
 author: bsstahl

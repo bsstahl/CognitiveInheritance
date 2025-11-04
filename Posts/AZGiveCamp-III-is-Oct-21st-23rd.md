@@ -2,7 +2,6 @@
 tags:
 - charity
 - community
-- event
 - givecamp
 - nonprofit
 - azgivecamp

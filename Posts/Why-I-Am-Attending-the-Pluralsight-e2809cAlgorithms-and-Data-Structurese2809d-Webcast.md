@@ -3,7 +3,6 @@ tags:
 - algorithms
 - data structures
 - encryption
-- event
 - skill
 - pluralsight
 menuorder: 0

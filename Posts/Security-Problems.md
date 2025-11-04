@@ -1,6 +1,6 @@
 ---
 tags:
-- event
+- pdc
 menuorder: 0
 id: 0d6e40b6-e082-4a7d-a952-8850ef1e33d8
 author: bsstahl

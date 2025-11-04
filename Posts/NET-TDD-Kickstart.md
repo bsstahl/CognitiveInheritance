@@ -10,7 +10,6 @@ tags:
 - csharp
 - development
 - di
-- event
 - framework
 - ioc
 - tdd

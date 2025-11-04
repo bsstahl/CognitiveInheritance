@@ -2,7 +2,6 @@
 tags:
 - pdc
 - conference
-- event
 - clr
 menuorder: 0
 id: d34e85e8-1ef9-4605-8e74-5bb897823816

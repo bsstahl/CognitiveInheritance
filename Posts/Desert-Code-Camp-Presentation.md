@@ -8,7 +8,6 @@ tags:
 - encapsulation
 - entity
 - entity framework
-- event
 - provider
 - unit testing
 - us airways

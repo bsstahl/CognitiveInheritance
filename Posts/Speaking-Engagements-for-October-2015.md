@@ -1,6 +1,5 @@
 ---
 tags:
-- event
 - code camp
 - user group
 - speaking

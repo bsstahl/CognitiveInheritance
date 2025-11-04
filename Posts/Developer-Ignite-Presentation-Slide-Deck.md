@@ -1,6 +1,6 @@
 ---
 tags:
-- event
+- presentation
 - ignite
 - slides
 menuorder: 0

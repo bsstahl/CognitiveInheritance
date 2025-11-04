@@ -2,7 +2,6 @@
 tags:
 - charity
 - givecamp
-- event
 - nonprofit
 menuorder: 0
 id: b999239d-2aa8-49ed-a189-c9753dd52c5a

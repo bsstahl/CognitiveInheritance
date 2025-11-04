@@ -1,6 +1,6 @@
 ---
 tags:
-- event
+- presentation
 menuorder: 0
 id: 9a2a1e00-ce10-455d-89d7-2381f2bc2584
 author: 
@@ -11,7 +11,8 @@ showinlist: false
 publicationdate: 2013-03-01T00:00:00.000+00:00
 lastmodificationdate: 2013-03-01T00:00:00.000+00:00
 slug: Resources-from-my-South-Florida-Code-Camp-Presentation-Feb-2013
-categories: []
+categories: 
+- event
 
 ---
 **South Florida Code Camp 2013 Presentation**

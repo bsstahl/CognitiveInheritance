@@ -1,6 +1,6 @@
 ---
 tags:
-- event
+- presentation
 - code camp
 menuorder: 0
 id: dfc47978-fa8c-4f3f-a75d-f2c917cb12d4
