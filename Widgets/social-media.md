@@ -8,10 +8,9 @@ orderindex: 10
 
 ---
 * Mastodon: {TwitterLink}
-* Facebook: [Barry Stahl](https://www.facebook.com/barrystahl)
 * LinkedIn: [BStahl](https://www.linkedin.com/in/bstahl)
-* Flickr: [BSStahl](https://www.flickr.com/photos/bsstahl)
 * GitHub: [bsstahl](https://github.com/bsstahl)
+* YouTube: [Technical Appearances](https://www.youtube.com/playlist?list=PLCo2TFzFXPTQ5qIZTbbzFNcJL348fl6uO)
+* Flickr: [BSStahl](https://www.flickr.com/photos/bsstahl)
 * Community Speaker: [Barry S. Stahl]({PathToRoot}/Pages/Speaking-Engagements.html)
-* YouTube: [Tech Presentations](https://www.youtube.com/playlist?list=PLCo2TFzFXPTQ5qIZTbbzFNcJL348fl6uO)
 * AZGiveCamp: [https://azgivecamp.org](https://www.azgivecamp.org)
