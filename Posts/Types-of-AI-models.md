@@ -135,12 +135,38 @@ Understanding the different types of AI models is essential for making informed 
 
 ### Feature Comparison
 
-| Model Type | Results Explainable | Correctness Understood | Solution Discoverability |
-|------------|-------------------|----------------------|-------------------------|
-| **Logical** | Generally | Generally | Low |
-| **Probabilistic/Learning** | Rarely | Somewhat | High |
-| **Optimization/Search** | Sometimes | Somewhat | Limited |
-| **Hybrid** | Often | Often | Moderate to High |
+<table>
+<tr>
+<th>Model Type</td>
+<th>Results Explainable</th>
+<th>Correctness Understood</th>
+<th>Solution Discoverability</th>
+</tr>
+<tr>
+<td><b>Logical</b></td>
+<td>Generally</td>
+<td>Generally</td>
+<td>Low</td>
+</tr>
+<tr>
+<td><b>Probabilistic/Learning</b></td>
+<td>Rarely</td>
+<td>Somewhat</td>
+<td>High</td>
+</tr>
+<tr>
+<td><b>Optimization/Search</b></td>
+<td>Sometimes</td>
+<td>Somewhat</td>
+<td>Limited</td>
+</tr>
+<tr>
+<td><b>Hybrid</b></td>
+<td>Often</td>
+<td>Often</td>
+<td>Moderate to High</td>
+</tr>
+</table>
 
 It is important to remember that artificial intelligence is not synonymous with machine learning. By understanding the full spectrum of AI approaches available, you can select the most appropriate technique for your specific requirements, constraints, and stakeholder needs. Sometimes the best solution isn't the most sophisticated one—it's the one that best fits your problem domain and organizational context.
 
