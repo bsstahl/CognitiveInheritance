@@ -13,18 +13,19 @@ teaser: Artificial Intelligence isn't just machine learning. Discover the four d
 ispublished: false
 showinlist: false
 buildifnotpublished: true
-publicationdate: 2025-07-01T08:00:00Z
-lastmodificationdate: 2017-10-18T07:00:00Z
+publicationdate: 2025-11-06T08:00:00Z
+firstdraftdate: 2017-10-18T07:00:00Z
+lastmodificationdate: 2025-11-08T08:00:00Z
 slug: types-of-ai-models
 ---
-It is a common misconception that to have an Artificial Intelligence you must have some form of machine learning. This belief has become so pervasive in recent years that many developers and business leaders assume that AI and ML are synonymous terms. However, this couldn't be further from the truth.
+It is a common misconception that to have an Artificial Intelligence you must have some form of machine learning. This belief has become so pervasive in recent years that many developers and business leaders assume that AI and ML are synonymous terms, or worse, that LLMs are the definition of AI. However, this couldn't be further from the truth.
 
-Artificial Intelligence encompasses a much broader spectrum of computational approaches than just machine learning. While machine learning has certainly captured the spotlight with impressive advances in areas like natural language processing and computer vision, it represents only one category of AI techniques available to solve complex problems.
+Artificial Intelligence is a broad field that encompasses a wide spectrum of computational approaches. While Machine Learning (ML) and Large Language Models (LLMs) are important subfields, AI also includes rule-based logic, search/optimization techniques, and Hybrid approaches. AI is not synonymous with ML or LLM.
 
 Understanding the different types of AI models is crucial for several reasons:
 
 * **Choosing the Right Tool**: Different problem domains require different approaches. A rules-based system might be more appropriate than a neural network for certain business logic scenarios.
-* **Explainability Requirements**: Some applications demand clear explanations of how decisions are made, which varies dramatically across AI model types.
+* **Explainability Requirements**: Some applications demand clear explanations of how decisions are made, which varies across AI model types.
 * **Resource Constraints**: Different AI approaches have vastly different requirements for data, computational power, and development expertise.
 * **Risk Management**: Understanding the strengths and limitations of each approach helps in making informed decisions about where and how to deploy AI systems.
 
@@ -46,13 +47,7 @@ The key difference between an AI and a decision support system (DSS) is that the
 
 ## The Categories of AI Models
 
-I have found it useful to consider AIs as falling into 3 different categories of models. These are:
-
-1. Logical
-1. Probabilistic/Learning
-1. Optimization/Search
-
-Let's take a look at each of these model types and consider, for each, what makes them unique, when they're most appropriate to use, and how they differ in terms of explainability, correctness, and solution discoverability.
+I find it useful to categorize AI models into four families: Logical Models; Probabilistic/Learning Models; Optimization/Search Models; Hybrid Models. Each category has distinct characteristics, typical use cases, and trade-offs in explainability and performance.
 
 ### Logical Models
 
@@ -80,8 +75,8 @@ However, this power comes with significant trade-offs. The decision-making proce
 
 #### Examples of Probabilistic/Learning Models
 
-1. Neural/Bayesian Networks
-1. Genetic Algorithms
+* Neural/Bayesian Networks
+* Genetic Algorithms
 
 #### Features of Probabilistic/Learning Models
 
@@ -101,8 +96,8 @@ The trade-off with optimization models is that they require problems to be formu
 
 #### Examples
 
-1. Dynamic Programming
-1. Linear Programming
+* Dynamic Programming
+* Linear Programming
 
 #### Features
 
@@ -148,3 +143,11 @@ Understanding the different types of AI models is essential for making informed 
 | **Hybrid** | Often | Often | Moderate to High |
 
 It is important to remember that artificial intelligence is not synonymous with machine learning. By understanding the full spectrum of AI approaches available, you can select the most appropriate technique for your specific requirements, constraints, and stakeholder needs. Sometimes the best solution isn't the most sophisticated one—it's the one that best fits your problem domain and organizational context.
+
+### Glossary
+
+* AI: Artificial Intelligence, a broad family of computational techniques for solving problems and making decisions.
+* ML: Machine Learning, a subset of AI focused on learning from data to improve performance over time.
+* LLM: Large Language Model, a class of ML models specialized for natural language understanding and generation.
+* DSS: Decision Support System, a traditional software system that supports decision making, distinct from autonomous AI.
+* Explainability: The degree to which a system's decisions can be understood by humans.
