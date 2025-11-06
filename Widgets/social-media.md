@@ -13,4 +13,5 @@ orderindex: 10
 * Flickr: [BSStahl](https://www.flickr.com/photos/bsstahl)
 * GitHub: [bsstahl](https://github.com/bsstahl)
 * Community Speaker: [Barry S. Stahl]({PathToRoot}/Pages/Speaking-Engagements.html)
+* YouTube: [Tech Presentations](https://www.youtube.com/playlist?list=PLCo2TFzFXPTQ5qIZTbbzFNcJL348fl6uO)
 * AZGiveCamp: [https://azgivecamp.org](https://www.azgivecamp.org)
