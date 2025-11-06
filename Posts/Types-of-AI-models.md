@@ -14,7 +14,7 @@ ispublished: false
 showinlist: false
 buildifnotpublished: true
 publicationdate: 2025-11-06T08:00:00Z
-firstdraftdate: 2017-10-18T07:00:00Z
+# firstdraftdate: 2017-10-18T07:00:00Z
 lastmodificationdate: 2025-11-08T08:00:00Z
 slug: types-of-ai-models
 ---
@@ -31,7 +31,7 @@ Understanding the different types of AI models is crucial for several reasons:
 
 By exploring the full landscape of AI model types, we can make better architectural decisions and avoid the trap of applying machine learning solutions to problems that might be better solved with other AI approaches.
 
-## What is AI
+#### What is AI
 
 > An AI is a computational system that behaves rationally.
 
@@ -45,11 +45,11 @@ This decision-making process is what distinguishes AI from simpler computational
 
 The key difference between an AI and a decision support system (DSS) is that the DSS aggregates and presents data such that the user can make the best decision whereas the AI attempts to make the decision itself. This autonomous decision-making capability is what transforms a helpful tool into an intelligent agent.
 
-## The Categories of AI Models
+#### The Categories of AI Models
 
 I find it useful to categorize AI models into four families: Logical Models; Probabilistic/Learning Models; Optimization/Search Models; Hybrid Models. Each category has distinct characteristics, typical use cases, and trade-offs in explainability and performance.
 
-### Logical Models
+##### Logical Models
 
 Logical AI models are perhaps the most familiar to traditional software developers because they operate using deterministic rules and conditional logic. These systems make decisions by following explicit, programmed instructions that can be reduced to if-then statements and boolean logic.
 
@@ -57,13 +57,13 @@ This category includes both object-oriented programming approaches (which encomp
 
 The key distinction is that logical AI systems evaluate conditions and make rational decisions within their domain, even if those decisions follow deterministic patterns. A sophisticated business rules engine that processes complex scenarios and determines appropriate actions is exhibiting rational behavior, even though its decision-making process is entirely transparent and predictable.
 
-#### Features of Logical Models
+###### Features of Logical Models
 
 * Results Explainable: Generally - Code is highly imperative
 * Correctness Understood: Generally - Code is highly imperative
 * Solution Discoverability: Low - Code is highly imperative
 
-### Probabilistic/Learning Models
+##### Probabilistic/Learning Models
 
 Probabilistic and learning models represent the category most people think of when they hear "artificial intelligence" today. These stochastic systems operate by learning patterns from data and making predictions based on statistical relationships rather than explicit rules. Unlike logical models, they don't follow predetermined decision trees but instead develop their own understanding of how to map inputs to outputs.
 
@@ -73,18 +73,18 @@ These models are most appropriate when you have large amounts of historical data
 
 However, this power comes with significant trade-offs. The decision-making process is often opaque—even to the system's creators—making it difficult to understand why a particular decision was made. Additionally, their correctness can only be evaluated statistically across many examples rather than being guaranteed for any individual case.
 
-#### Examples of Probabilistic/Learning Models
+###### Examples of Probabilistic/Learning Models
 
 * Neural/Bayesian Networks
 * Genetic Algorithms
 
-#### Features of Probabilistic/Learning Models
+###### Features of Probabilistic/Learning Models
 
 * Results Explainable: Rarely
 * Correctness Understood: Somewhat - Unknown at design time, potentially known at runtime
 * Solution Discoverability: High - Solutions may surprise the implementers
 
-### Optimization/Search Models
+##### Optimization/Search Models
 
 Optimization and search models represent a mathematical approach to artificial intelligence that focuses on finding the best possible solution within a defined solution space. These systems work by systematically exploring possible solutions and applying mathematical techniques to converge on optimal or near-optimal answers to well-defined problems.
 
@@ -94,18 +94,18 @@ These models are most appropriate for problems with clear objectives, well-under
 
 The trade-off with optimization models is that they require problems to be formulated in specific mathematical ways, which can be limiting for complex real-world scenarios. Their solution discoverability is constrained by how well the problem is modeled and the algorithms chosen for implementation. However, when applicable, they often provide the most reliable and defensible solutions.
 
-#### Examples
+###### Examples
 
 * Dynamic Programming
 * Linear Programming
 
-#### Features
+###### Features
 
 * Results Explainable: Sometimes - dependent on implementation
 * Correctness Understood: Somewhat - dependent on implementation
 * Solution Discoverability: Limited - solutions will likely be limited by the implementations
 
-### Hybrid Models
+##### Hybrid Models
 
 Hybrid AI models combine multiple AI approaches to leverage the strengths of different model types while mitigating their individual weaknesses. Rather than relying on a single technique, hybrid systems strategically integrate logical, probabilistic, and optimization approaches to solve complex problems that no single model type could handle effectively.
 
@@ -115,13 +115,13 @@ Hybrid approaches can iteratively combine optimization engines with logical reas
 
 This approach is most appropriate when you need both optimal solutions and the ability to explain decisions to stakeholders. It's particularly valuable in scenarios like resource allocation, scheduling, and assignment problems where users need to understand not just what the solution is, but why certain trade-offs were necessary.
 
-#### Features of Hybrid Models
+###### Features of Hybrid Models
 
 * Results Explainable: Often - Depends on the combination of techniques used
 * Correctness Understood: Often - Combines the characteristics of constituent models
 * Solution Discoverability: Moderate to High - Can surprise implementers while providing reasoning
 
-## Conclusion
+#### Conclusion
 
 Understanding the different types of AI models is essential for making informed architectural decisions and choosing the right approach for your specific problem domain. Each model type offers distinct advantages and trade-offs that make them suitable for different scenarios.
 
@@ -133,7 +133,7 @@ Understanding the different types of AI models is essential for making informed 
 
 **Hybrid Models** combine the best of multiple approaches, providing both optimal solutions and explainable reasoning. They're particularly valuable in complex business scenarios where stakeholders need to understand not just what the solution is, but why certain trade-offs were necessary.
 
-### Feature Comparison
+##### Feature Comparison
 
 <table>
 <tr>
@@ -170,7 +170,7 @@ Understanding the different types of AI models is essential for making informed 
 
 It is important to remember that artificial intelligence is not synonymous with machine learning. By understanding the full spectrum of AI approaches available, you can select the most appropriate technique for your specific requirements, constraints, and stakeholder needs. Sometimes the best solution isn't the most sophisticated one—it's the one that best fits your problem domain and organizational context.
 
-### Glossary
+##### Glossary
 
 * AI: Artificial Intelligence, a broad family of computational techniques for solving problems and making decisions.
 * ML: Machine Learning, a subset of AI focused on learning from data to improve performance over time.
