@@ -10,7 +10,7 @@ id: 37f405ce-7cf9-4aa1-810c-9793f3a1acd7
 title: Types of AI Models
 description: A guide to understanding the four main categories of AI models - Logical, Probabilistic/Learning, Optimization/Search, and Hybrid approaches. Learn when to use each type, their trade-offs in explainability and correctness, and why AI is much broader than just machine learning.
 teaser: Artificial Intelligence isn't just machine learning. Discover the four distinct categories of AI models and learn how to choose the right approach for your specific problem domain, from transparent logical systems to powerful hybrid solutions.
-ispublished: false
+ispublished: true
 showinlist: false
 buildifnotpublished: true
 publicationdate: 2025-11-06T08:00:00Z
