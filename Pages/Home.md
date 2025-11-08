@@ -34,7 +34,6 @@ categories: []
 * [Design Patterns for Loose Coupling](http://designpatternsforloosecoupling.azurewebsites.net/)
 * [Dev Team Dreams](https://devteamdreams.azurewebsites.net/)
 * [Genetic Algorithms](http://geneticalgorithmsforai.azurewebsites.net/)
-* [GPT Embeddings](https://introtoembeddings.azurewebsites.net/)
 * [Intro to Event Storming](http://introtoeventstorming.azurewebsites.net/)
 * [Introduction to Microservices](https://introtomicroservices.azurewebsites.net/)
 * [One AI Algorithm](https://oneaialgorithm.azurewebsites.net/)
@@ -44,3 +43,4 @@ categories: []
 * [Personal](./home-personal.html)
 * [Development](./home-development.html)
 * [To Be Read](./home-tbr.html)
+* [Wish List](./personal-wish-list.html)
