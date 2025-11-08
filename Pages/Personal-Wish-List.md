@@ -26,7 +26,7 @@ I’ve moved my holiday wish list here from Amazon. I wanted to make it easier f
 * [Enshittification - Cory Doctorow](https://bookshop.org/p/books/enshittification-why-everything-suddenly-got-worse-and-what-to-do-about-it-cory-doctorow/d3f8483b158906ce?ean=9780374619329&next=t)
 * [The Bezzle - Cory Doctorow](https://bookshop.org/p/books/the-bezzle-a-martin-hench-novel-cory-doctorow/e38e6a72d40edb5b?ean=9781250865885&next=t)
 
-> Really, any book by Cory Doctorow is great. If I already have that one, I'll happily donate a copy to a school library.
+> Really, any physical (hard or soft cover) book by Cory Doctorow is great. If I already have that one, I'll happily donate a copy to a school library. E-Books can't be donated, so if you go that route, please only pick from the ones listed above.
 
 ### Household Items
 
