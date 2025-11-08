@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang="en">
     <head>
-        <!-- Template: Content Page -->
+        <!-- Template: Post Page -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     
-        <meta name="description" content="All posts that are Work-in-Progress">
+        <meta name="description" content="ASP.NET Middleware: Underused, Understood, an article on Cognitive Inheritance.">
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -67,26 +67,56 @@
 
             <div class="row">
                 <main class="col-lg-9 col-xl-10 content-main">
-                    <h1>Unpublished Posts</h1>
-                    <ul>
-<li><a href="../Posts/80-percent-of-implementations-should-be-using-microservices.html">80% of Implementations Should be Using Microservices</a></li>
-<li><a href="../Posts/conceptual-associations-without-understanding.html">Conceptual Associations Without Understanding</a></li>
-<li><a href="../Posts/designing-event-driven-architectures.html">Designing Event Driven Architectures</a></li>
-<li><a href="../Posts/developing-with-csharp-using-html5-and-css.html">Developing with C# using HTML5 and CSS</a></li>
-<li><a href="../Posts/llms-are-hybrid-models.html">Beyond ML: LLMs are Hybrid Systems</a></li>
-<li><a href="../Posts/llms-are-like-tdd.html">LLMs can be to writing what TDD is to coding</a></li>
-<li><a href="../Posts/aspnet-middleware-is-underused.html">ASP.NET Middleware: Underused, Understood</a></li>
-<li><a href="../Posts/minimizing-support-burden.html">Minimizing Support Burden - A Comparison of Three Architectures</a></li>
-<li><a href="../Posts/most-sdks-are-just-ctp-implementations.html">Most SDKs are CTP: The Unifying Pattern Behind Our APIs</a></li>
-<li><a href="../Posts/reducing-order-dependency-with-event-sourcing.html">Reducing Order Dependency with Event Sourcing</a></li>
-<li><a href="../Posts/teaching-computers-context.html">Teaching Computers Context: An Introduction to Word Embeddings</a></li>
-<li><a href="../Posts/the-concurrency-conundrum-letting-tools-shoulder-the-complexity.html">The Concurrency Conundrum: Letting Tools Shoulder the Complexity</a></li>
-<li><a href="../Posts/understanding-gpt-tokenization.html">Understanding GPT Tokenization</a></li>
-<li><a href="../Posts/unmasking-complexity.html">Unmasking Complexity - Real Strategies for Managing Complexity in Software Systems</a></li>
-<li><a href="../Posts/using-uris-as-globally-unique-ids.html">Using URIs as Globally Unique Identifiers</a></li>
-<li><a href="../Posts/when-code-coverage-catches-bugs.html">When Code Coverage Catches Bugs - A Case for Complete Coverage</a></li>
+                    <h3>ASP.NET Middleware: Underused, Understood</h3>
+                    <h5>Posted by bsstahl on 2025-11-08 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+                    <share-on-mastodon 
+                        share_title="Check out this post on Cognitive Inheritance: 'ASP.NET Middleware: Underused, Understood'"
+                        share_description="&quot;Exploring when ASP.NET middleware is the right architectural choice—and when it's not—to improve modularity, performance, and contributor clarity.&quot;"
+                        hashtags="#microservices"
+                        author="@bsstahl@cognitiveinheritance.com"
+                        default_url="https://fosstodon.org">
+                    </share-on-mastodon>
+                    <br/><br/>
+                    <h3>🧩 What Middleware Actually Is</h3>
+<ul>
+<li><strong>Definition</strong>: Middleware is software assembled into an application pipeline to handle requests and responses.</li>
+<li><strong>Execution model</strong>: Each component can process a request, pass it along, and optionally act on the response.</li>
+<li><strong>Placement</strong>: Runs before MVC routing, making it ideal for cross-cutting concerns.</li>
+</ul>
+<h3>✅ When Middleware Is the Right Tool</h3>
+<p>| Use Case | Why Middleware Works Well |
+|---|----|
+| <strong>Request logging and telemetry</strong> | Centralized, low-overhead, early in pipeline |
+| <strong>Authentication and authorization</strong> | Can short-circuit requests before controller logic |
+| <strong>Rate limiting / throttling</strong> | Efficient, scalable enforcement before business logic |
+| <strong>Header manipulation</strong> | Clean separation from controller logic |
+| <strong>Global exception handling</strong> | Captures unhandled errors across the app |
+| <strong>Custom routing or rewrites</strong> | Can intercept and redirect before MVC kicks in |</p>
+<h3>❌ When Middleware Is the Wrong Tool</h3>
+<ul>
+<li><strong>Business logic</strong>: Should live in services or controllers for clarity and testability.</li>
+<li><strong>Per-route behavior</strong>: Middleware is global; use filters or endpoint-specific logic instead.</li>
+<li><strong>Complex stateful operations</strong>: Middleware is stateless by design—don’t force it to manage session-like behavior.</li>
+<li><strong>Ease of configuration</strong>: Middleware can be easily turned on or off through configuration.</li>
+</ul>
+<h3>🎯 What Middleware Buys You</h3>
+<ul>
+<li><strong>Performance</strong>: Minimal overhead compared to filters or controller logic.</li>
+<li><strong>Modularity</strong>: Easy to compose, reuse, and test in isolation.</li>
+<li><strong>Cross-cutting clarity</strong>: Keeps concerns like logging, security, and error handling out of business logic.</li>
+<li><strong>Contributor friendliness</strong>: Middleware can be documented and versioned independently, aiding onboarding and maintenance.</li>
+</ul>
+<hr />
+<h3>🛠️ Tips for Middleware Success</h3>
+<ul>
+<li>Use <code>IMiddleware</code> for DI-friendly components.</li>
+<li>Keep logic focused—single responsibility per middleware.</li>
+<li>Chain thoughtfully: order matters (e.g., auth before logging).</li>
+<li>Document behavior and placement clearly for contributors.</li>
 </ul>
 
+                    <h5>Tags: <a title="Tag: microservices" class="small" href="../Search/microservices.html">microservices</a>&nbsp;</h5>
+                    <div class="share"><a href="../Permalinks/d68d6646-8e4c-4d0e-a923-1f4a5c2a33d8.html" rel="bookmark">Permalink</a></div>
                 </main>
                 <aside class="col-lg-3 col-xl-2 sidebar">
                     <div class="widgetzone"><div class="widget textbox"><h4>About the Author</h4><div class="content"><p><img style="float: left; padding: 0px 3px 0px 0px;" src="../Pics/bsstahl_left.gif" alt="Barry S. Stahl" width="95" /><strong>Barry S. Stahl</strong> (he/him/his) - Barry is a .NET Software Engineer who has been creating business solutions for enterprise customers since the mid 1980s. Barry is also an Election Integrity Activist, baseball and hockey fan, husband of one genius and father of another, and a 40 year resident of Phoenix Arizona USA. When Barry is not traveling around the world to speak at Conferences, Code Camps and User Groups or to participate in GiveCamp events, he spends his days as the Principal Engineer for AZNerds.net in Phoenix AZ and his nights thinking about the next AZGiveCamp event where software creators come together to build websites and apps for some great non-profit organizations.</p>
@@ -128,7 +158,7 @@
                 </aside>
             </div>
         </div>
-    
+
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
@@ -137,7 +167,5 @@
         <!-- 100% privacy-first analytics -->
         <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
         <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true" alt="" referrerpolicy="no-referrer-when-downgrade"/></noscript>
-
     </body>
-
 </html>
