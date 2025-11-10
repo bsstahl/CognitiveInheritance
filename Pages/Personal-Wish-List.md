@@ -25,6 +25,10 @@ I’ve moved my holiday wish list here from Amazon. I wanted to make it easier f
 
 * [Enshittification - Cory Doctorow](https://bookshop.org/p/books/enshittification-why-everything-suddenly-got-worse-and-what-to-do-about-it-cory-doctorow/d3f8483b158906ce?ean=9780374619329&next=t)
 * [The Bezzle - Cory Doctorow](https://bookshop.org/p/books/the-bezzle-a-martin-hench-novel-cory-doctorow/e38e6a72d40edb5b?ean=9781250865885&next=t)
+* [Starter Villain - John Scalzi](https://bookshop.org/p/books/starter-villain-john-scalzi/9ef795577d80fdf7?ean=9781250879394&next=t)
+* [Constituent Service - John Scalzi](https://bookshop.org/p/books/constituent-service-john-scalzi/da2be810dcf54905?ean=9781645242840&next=t)
+* [When the Moon Hits Your Eye - John Scalzi](https://bookshop.org/p/books/when-the-moon-hits-your-eye-john-scalzi/bcd12e54b97d97e2?ean=9780765389091&next=t)
+
 
 > Really, any physical (hard or soft cover) book by Cory Doctorow is great. If I already have that one, I'll happily donate a copy to a school library. E-Books can't be donated, so if you go that route, please only pick from the ones listed above.
 
@@ -34,4 +38,4 @@ I’ve moved my holiday wish list here from Amazon. I wanted to make it easier f
 
 ### Electronics
 
-No suggestions at this time
+* [Soundcore Sleep A30 Earbuds (expensive)](https://www.soundcore.com/sleep-a30-smart-anc-earbuds-for-sleeping)
