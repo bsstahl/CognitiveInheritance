@@ -30,11 +30,11 @@ categories: []
 
 ### Available Talks
 
-[Microservices and Event-Driven Architectures](#microservices-talks) | [Software Engineering Patterns and Practices](#pnp-talks) | [Artificial Intelligence and Algorithms](#ai-talks)
+[Cloud-Native and Event-Driven Architectures](#microservices-talks) | [Software Engineering Patterns and Practices](#pnp-talks) | [Artificial Intelligence and Algorithms](#ai-talks)
 
 I have the following talks on topics of interest to Enterprise Developers that I can deliver at your user group or conference. You can submit a request for me to speak by {ContactPageLink:contacting me}.
 
-<h4 id="microservices-talks"> Microservices and Event-Driven Architectures</h4>
+<h4 id="microservices-talks"> Cloud-Native and Event-Driven Architectures</h4>
 
 * **Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems** - There is a danger lurking in every system that hasn't taken explicit steps to eliminate it. This under-recognized data killer can cause intermittent inconsistencies in your data which can be as difficult to find as they are to correct. Fortunately, recognizing this monster is easy, and there are a number of great techniques you can use to keep it away for good. In this talk, we will learn about the Dual-Writes anti-pattern: how to spot it, and what to do to avoid it. In doing so, we'll discuss the 4 primary patterns for keeping data consistent in modern software systems, so you can spend less time supporting your applications. We'll see examples in C# of each pattern, including demonstrations using SQL Server, Cosmos DB and Redis.
 
@@ -42,17 +42,11 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ***
 
-* **Success with Microservices: The Critical &quot;Cs&quot;** - Microservices allow you to build systems that are scalable, flexible, and resilient, but as valuable as they are, they also come with a set of challenges that can derail your development efforts. In this talk, we will dive into the "Critical C's of Microservices" - a framework for guiding important conversations in the design, development, and maintenance of microservices that can help you determine if you should be using microservices, and if so, identify many of the oft-overlooked considerations when building them. We will cover each of the 6 C's in detail: Context, Consistency, Contract, Chaos, Competencies, and Coalescence. We will drill-in to the goals of each of the conversations including why they are important, as well as patterns and best practices for leveraging them to create great outcomes for your users, your team and your organization. You will leave this talk with a deep understanding of how to be successful when building systems using event-driven microservice architectures. Whether you are new to microservices or an experienced practitioner, this talk will provide you with the tools you need to determine if microservices are right for your use-case, and what you need to consider if you decide to move forward with a microservices architecture.
+* **Intentional Architecture: Six Conversations to Keep Your Architecture on a Solid Foundation** - Too often, architectural decisions are made in isolation, postponed until they constrain future work, or simply ignored--often resulting in a sub-optimal architecture. This talk explores a framework consisting of six conversations that surface architectural decisions as they become relevant, equipping teams to make deliberate, auditable choices at the right moments. The framework centers on 6 "Critical-Cs": Context, Coordination, Contracts, Chaos, Competencies, and Coalescence, and guides teams in evaluating whether microservices fit the project, or if a modular monolith might serve the project better.
 
   [Critical &quot;C's&quot; Website](https://criticalcs.azurewebsites.net/)
 
 ***
-
-* **Introduction to Microservices** - Are you thinking about using microservices but are not sure if they're right for you? Are your services too small or too big? Do you have trouble debugging, deploying or maintaining your product? Microservice architectures are designed to solve many of the problems we faced with earlier architectural styles. Like all architectural decisions however, there are trade-offs that we should understand so we can identify when to use microservices, and what they should look like when we build them.
-
-  In this talk, we will identify the primary reasons to use microservices. We'll call-out some of the problems they are designed to solve, and identify the things we need to look out for when implementing them. We'll also identify some patterns and processes useful when designing and building systems using microservice architectures. You'll walk away knowing what makes a good microservice, and with the tools you need to build them.
-
-  [Latest Slide Deck](https://introtomicroservices.azurewebsites.net)
 
 <h4 id="pnp-talks"> Software Engineering Patterns and Practices</h4>
 
@@ -66,13 +60,11 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ***
 
-* **Test Driven Development in .NET** - In this talk, the speaker and the audience will "pair up" for a coding session which will serve as an introduction to using a Test Driven Development process to build a .NET Core application. We will use C#, Visual Studio, XUnit and MOQ to unit test code to be built both with and without dependencies. We will also highlight some of the common issues encountered during TDD and discuss strategies for overcoming them.
+* **TDD in the AI Era: No Vibing, Just Velocity** - Test-Driven Development (TDD) has been a stalwart of software engineering for years, delivering reliable, modular code that stands the test of time. As we now find ourselves in the early days of the AI era, TDD isn't just enduring, it's evolving. AI-powered tools are supercharging TDD, turning it into a faster, smarter process that builds on its original strengths. More than just an improvement, the utilization of AI means that TDD isn't only more powerful, but also more vital than ever. As we become more dependent on AI-accelerated workflows, the demand for thorough, rigorous testing practices is increasing, underlining the ever-growing importance of TDD in today's software development landscape.
 
-***
+  In this talk, we explore how AI enhances the TDD process, making it easier to generate comprehensive test cases, uncover edge cases, and refactor code with confidence. Through automation and intelligent analysis, AI reduces the effort required for manual test creation and debugging, freeing developers to focus on innovation and problem-solving. The result? Higher-quality software delivered in less time.
 
-* **Test Driven Development for Managers** - It is generally accepted that having good unit tests is an important factor in agile development. Unit testing is so important that many development teams have chosen to take a test-driven approach to building software. But what does it really mean to be "test-driven" and why is it so important?
-
-  In this session, Barry walks through the process of developing a simple application using TDD methodologies. He teaches the same concepts he has been teaching developers for many years, but does so for an audience of managers and coaches so that you can understand how using Test-Driven-Development makes your teams more agile and more productive. You will walk away with an understanding of some of the key concepts of unit testing and TDD, how they are implemented using Test-Driven Development practices, and how using these techniques before writing production code saves time and money by ensuring that the code that is written is maintainable and extensible.
+  Whether you’re new to TDD or an experienced practitioner looking to adapt to the AI revolution, this talk will offer insights, strategies, and practical examples to help you navigate this transformative moment in software development.
 
 ***
 
@@ -135,12 +127,6 @@ I have the following talks on topics of interest to Enterprise Developers that I
 * **Crafting AI: A Developer's Guide to Machine Learning** - With Machine Learning (ML) making huge impacts across the software industry, it has become almost imperative for developers to understand its principles and applications. Unfortunately, the complexity of some ML models and the mathematical rigor of its algorithms can be intimidating. This talk aims to bridge this gap, making ML understandable and engaging for developers eager to learn this technology from the ground up.
 
   In this session, attendees will learn the foundational concepts of ML by coding their own models from scratch, without relying on pre-trained models like GPT. We'll start with a simple linear regression, a foundational tool to gain understanding of ML's error minimization and training processes. We'll then explain neural networks with a binary classification example. By the end, participants will not only grasp fundamental ML concepts but will also walk away with their own code implementing one of these models. This talk is designed to equip developers with the knowledge and confidence to use Machine Learning in their projects.
-
-***
-
-* **Pushing AI to the Client with WebAssembly and Blazor** (also available as a half-day workshop) - Want to run your .NET Standard code directly in the browser on the client-side without the need for transpilers or browser plug-ins? Well, now you can with WebAssembly and Blazor. WebAssembly (WASM) is the W3C specification that will be used to provide the next generation of development tools for the web and beyond. Blazor is Microsoft's experiment that allows ASP.Net developers to create web pages that do much of the scripting work in C# using WASM. Come join us as we explore the basics of WebAssembly and how WASM can be used to run existing C# code client side in the browser. You will walk away with an understanding of what WebAssembly and Blazor can do for you and how to immediately get started running your own .NET code in the browser.
-
-  [Video: J on the Beach - Marbella Spain - May 2019](https://www.youtube.com/watch?v=JtqOSfmw1CY&list=FLq-iLd7rfmqSIFiujBGIRSw&index=3)
 
 ***
 
@@ -296,4 +282,4 @@ I have the following talks on topics of interest to Enterprise Developers that I
 * **Developer Ignite II** - 11/11/2009 - "AZGiveCamp, Geeks Giving Back to the Community"
 * **Developer Ignite** - 7/22/2009 - "Simplicity Through Abstraction"
 
-[Microservices and Event-Driven Architectures](#microservices-talks) | [Software Engineering Patterns and Practices](#pnp-talks) | [Artificial Intelligence and Algorithms](#ai-talks)
+[Cloud-Native and Event-Driven Architectures](#microservices-talks) | [Software Engineering Patterns and Practices](#pnp-talks) | [Artificial Intelligence and Algorithms](#ai-talks)
