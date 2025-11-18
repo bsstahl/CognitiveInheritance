@@ -8,12 +8,22 @@ description: A Links Home Page for My Devices
 ispublished: true
 showinlist: false
 publicationdate: 2023-10-07T00:00:00.000+00:00
-lastmodificationdate: 2023-10-07T00:00:00.000+00:00
+lastmodificationdate: 2025-11-17T00:00:00.000+00:00
 slug: home-tbr
 categories: []
 
 ---
 ## To Read
+
+### Fiction
+
+* [Marooned in Realtime - Vernor Vinge](https://bookshop.org/p/books/marooned-in-realtime-vernor-vinge/6b890d67ab1359f1?ean=9781429915120&next=t)
+* [Zen and the Art of Motorcycle Maintenance - Robert M Pirsig](https://bookshop.org/p/books/zen-and-the-art-of-motorcycle-maintenance-50th-anniversary-edition-an-inquiry-into-values-robert-m-pirsig/7c2488e3b7642612?ean=9780063342330&next=t)
+
+#### From Carl Sagan's Astronomy 409 Reading List
+
+* [On Liberty - John Stuart Mill](https://bookshop.org/p/books/on-liberty-john-stuart-mill-john-stuart-mill/6d83771a29c3cfeb?ean=9781542500135&next=t)
+* Science and the Paranormal, Abell & Singer, eds. (Scribner, 1981) (Out of Print?)
 
 ### News & Politics
 
@@ -34,6 +44,8 @@ categories: []
 
 ### Development
 
+* [Thinking in Systems - Donella H Meadows](https://bookshop.org/p/books/thinking-in-systems-international-bestseller-donella-meadows/fea83b2e43c07e9a?ean=9781603580557&next=t)
+* [Residues: Time, Uncertainty and Change in Software Architecture - Barry O'Reilly](https://leanpub.com/residuality)
 * [Patterns Failed - Why Should We Care by Brian Marick](https://www.deconstructconf.com/2017/brian-marick-patterns-failed-why-should-we-care)
 * [Make Illegal States Unrepresentable! - Domain-Driven Design w/ TypeScript | Khalil Stemmler](https://khalilstemmler.com/articles/typescript-domain-driven-design/make-illegal-states-unrepresentable/)
 * [Building Kafka Event-Driven Applications with KafkaFlow](https://www.infoq.com/articles/kafkaflow-dotnet-framework/)
