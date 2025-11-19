@@ -31,6 +31,7 @@ Any physical (hard or soft cover) book by Cory Doctorow is great. If I already h
 
 #### Non-Fiction & Technical
 
+* [Pro Microservices in .NET 10 - Richardson & Whitesell](https://bookshop.org/beta-search?keywords=pro+microservices+in+.net+10) - Paperback preferred on this one
 * [Enshittification - Cory Doctorow](https://bookshop.org/p/books/enshittification-why-everything-suddenly-got-worse-and-what-to-do-about-it-cory-doctorow/d3f8483b158906ce?ean=9780374619329&next=t)
 * [Thinking in Systems - Donella H Meadows](https://bookshop.org/p/books/thinking-in-systems-international-bestseller-donella-meadows/fea83b2e43c07e9a?ean=9781603580557&next=t)
 * [Residues: Time, Uncertainty and Change in Software Architecture - Barry O'Reilly](https://leanpub.com/residuality)
