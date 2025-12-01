@@ -12,5 +12,6 @@ orderindex: 10
 * GitHub: [bsstahl](https://github.com/bsstahl)
 * YouTube: [Technical Appearances](https://www.youtube.com/playlist?list=PLCo2TFzFXPTQ5qIZTbbzFNcJL348fl6uO)
 * Flickr: [BSStahl](https://www.flickr.com/photos/bsstahl)
+* NightCafe: [BSStahl](https://nightcafe.art/ru/bsstahl?refsrc=share)
 * Community Speaker: [Barry S. Stahl]({PathToRoot}/Pages/Speaking-Engagements.html)
 * AZGiveCamp: [https://azgivecamp.org](https://www.azgivecamp.org)
