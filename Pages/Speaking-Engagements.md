@@ -18,13 +18,13 @@ categories: []
 
 <!-- I currently have no talks scheduled. {ContactPageLink:Contact me} to arrange to have me speak at your event. -->
 
-* **Hot Topics Developer Group** (San Diego CA) - 12/02/2025 - "The Future of Information Retrieval: A Deep-Dive into RAG"
+* **[Hot Topics Developer Group](https://www.meetup.com/hot-topics-developer-group/events/312133235/)** (San Diego CA) - 12/02/2025 - "The Future of Information Retrieval: A Deep-Dive into RAG"
 
-* **CodeMash 2026** (Sandusky, OH) - 1/13/2025 - 1/16/2025 - "Amazing Algorithms Workshop" & "LLMs Under the Hood Workshop"
+* **[CodeMash 2026](https://events.codemash.org/2026CodeMashConference#/acceptedSpeakers)** (Sandusky, OH) - 1/13/2025 - 1/16/2025 - "Amazing Algorithms Workshop" & "LLMs Under the Hood Workshop"
 
-* **The Valley's .NET User Groups** - 1/20/2026 - ".NET Aspire Accelerator: Fast Track to Cloud-Native Development" (co-presented with Rob Richardson)
+* **[The Valley's .NET User Groups](https://www.meetup.com/nwvdnug/events/311139089/)** - 1/20/2026 - ".NET Aspire Accelerator: Fast Track to Cloud-Native Development" (co-presented with Rob Richardson)
 
-* **NDC London 2026** - 1/26/2026 - 1/30/2026 - "Solutions That Evolve: Building Self-Improving Systems with Genetic Algorithms"
+* **[NDC London 2026](https://ndclondon.com/speakers/barry-stahl)** - 1/26/2026 - 1/30/2026 - "Solutions That Evolve: Building Self-Improving Systems with Genetic Algorithms"
 
 ***
 
