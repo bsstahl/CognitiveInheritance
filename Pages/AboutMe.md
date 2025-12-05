@@ -25,11 +25,11 @@ I'm **Barry S. Stahl**, a Solution Architect and Developer working as the Princi
 
 ### What I Do
 
-My work primarily revolves around Microsoft technologies like C#, SQL Server, and Cosmos DB. However, I'm also adept at creating solutions using tools like Kafka and Redis when they fit the bill.
+My work primarily revolves around building distributed systems using Microsoft technologies like Azure and Aspire in C#, SQL Server and Cosmos DB, however, I'm also adept at creating solutions that leverage tools like Kafka and Redis.
 
-I specialize in designing and developing reliable integrated systems, especially using the Microservices pattern via Kafka or Azure Service Bus. My goal is to create systems that are self-healing to help protect our developers' nights and weekends from support calls.
+I specialize in designing and developing **reliable** integrated systems, especially using the Microservices pattern via Kafka or Azure Service Bus. My goal is to create systems that are self-healing to help protect our developers' nights and weekends from support calls.
 
-Over the years, I've worked in the Optimization and AI space, utilizing Gurobi and Google's OR-Tools to solve interesting problems. More recently, I've been exploring the potential of Large Language Models like OpenAI in Azure, focused on using the amazing capabilities of those technologies while maintaining fair and transparent applications for my customers.
+Over the years, I've worked in the Optimization and AI space, utilizing Gurobi and Google's OR-Tools to solve interesting problems. More recently, I've been exploring the potential of Large Language Models like OpenAI in Azure, focused on using the amazing capabilities of those technologies while maintaining fair and transparent applications for my customers and users.
 
 ### Community Speaker
 
@@ -55,7 +55,7 @@ My speaking engagements have spanned continents:
 
 Each presentation is crafted not just to impart technical knowledge but to ignite discussions on the ethical use of technology, the future of software engineering, and the vital role of community-driven development. For more details on my speaking history and to access presentation materials, please visit the {PageLink:Speaking-Engagements|Speaking Engagements} page of my website.
 
-### My Journey
+### My Time in the Business World
 
 Although I had done software professionally before, my career really kicked off with an incredible 11-year stint at Intel, where I had the unique opportunity to work on the International Space Station project – yes, really! It was an exhilarating experience that fueled my passion for innovative technology.
 
@@ -63,13 +63,13 @@ Following my time at Intel, I ventured into the airline industry. For another 11
 
 In between these significant roles, I wore the hat of a consultant, working with different organizations across the country. One highlight was designing and building a Work Order system for bus and train maintenance for the Port Authority of Allegheny County in Pittsburgh, PA.
 
-These diverse experiences eventually led me to Carvana, where I spent a good portion of my time since 2019 designing and building a Logistics Transportation Management System.
+These diverse experiences eventually led me to Carvana, where I spent 6 years, including 4 years designing and building a world-class Logistics Transportation Management System.
 
 ### Beyond Work
 
-When I'm not immersed in technology, I'm a passionate baseball and hockey fan. Though I must admit, the NHL's decision to move the Coyotes out of Arizona has left me quite frustrated, especially since the Coyotes are right on the cusp of success.
+When I'm not immersed in technology, I'm a passionate baseball and hockey fan, and to a lesser degree, both American and European football. I must admit however, the NHL's decision to move the Coyotes out of Arizona left me quite frustrated, especially since I felt that the Coyotes were right on the cusp of success.
 
-I'm also deeply involved in community projects. As one of the founders of [AZGiveCamp](https://azgivecamp.org), I help organize weekend events where software creators collaborate with local charities to develop meaningful solutions that help those charities further their missions.
+I'm also deeply involved in community projects. As one of the founders of [AZGiveCamp](https://azgivecamp.org), I help organize weekend events where software creators collaborate with local charities to develop meaningful solutions that help those charities further their missions. I'm also part of the leadership of the 2 valley .NET User Groups, the [SouthEast Valley .NET User Group](https://www.meetup.com/sevdnug/) and the [NorthWest Valley .NET User Group](https://www.meetup.com/nwvdnug/).
 
 In my spare time, I maintain a list of {PageLink:Favorites|My Favorite Physicists & Mathematicians} and shepherd several {PageLink:Open-Source|open source projects}. I'm a strong advocate for the open, independent social web, which is why you'll find me on platforms like Mastodon instead of Xitter.
 

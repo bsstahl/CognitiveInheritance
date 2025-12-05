@@ -18,8 +18,6 @@ categories: []
 
 <!-- I currently have no talks scheduled. {ContactPageLink:Contact me} to arrange to have me speak at your event. -->
 
-* **[Hot Topics Developer Group](https://www.meetup.com/hot-topics-developer-group/events/312133235/)** (San Diego CA) - 12/02/2025 - "The Future of Information Retrieval: A Deep-Dive into RAG"
-
 * **[CodeMash 2026](https://events.codemash.org/2026CodeMashConference#/acceptedSpeakers)** (Sandusky, OH) - 1/13/2025 - 1/16/2025 - "Amazing Algorithms Workshop" & "LLMs Under the Hood Workshop"
 
 * **[The Valley's .NET User Groups](https://www.meetup.com/nwvdnug/events/311139089/)** - 1/20/2026 - ".NET Aspire Accelerator: Fast Track to Cloud-Native Development" (co-presented with Rob Richardson)
@@ -173,6 +171,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ### Past engagements
 
+* **Hot Topics Developer Group** (San Diego CA) - 12/02/2025 - "The Future of Information Retrieval: A Deep-Dive into RAG"
 * **NDC Porto 2025** - 10/20/2025 - 10/24/2025 - "LLMs Under the Hood" (workshop), "Amazing Algorithms for Solving Problems in Software" (workshop) and ".NET Aspire Accelerator: Fast Track to Cloud-Native Development" (workshop with Rob Richardson)
 * **ML Con New York 2025** - 9/29/2025 - 10/3/2025 - "LLM Embeddings: Not Magic, Just Math"
 * **Combined .NET User Groups** (Salt Lake City UT, Provo UT, SE Valley AZ, NW Valley AZ) - 7/10/2025 - "The Future of Information Retrieval: A Deep-Dive into RAG"
