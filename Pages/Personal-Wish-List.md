@@ -17,6 +17,8 @@ I’ve moved my holiday wish list here from Amazon. I wanted to make it easier f
 
 ### Clothing
 
+I prefer shirts sized *2XLT*, but if that is unavailable, *3XL* will usually work.
+
 * [Long-Sleeve Pocket T-Shirt (Carbon Heather)](https://www.carhartt.com/product/K126/loose-fit-heavyweight-long-sleeve-pocket-t-shirt) 
 * [Long-Sleeve Pocket T-Shirt (Port)](https://www.carhartt.com/product/K126/loose-fit-heavyweight-long-sleeve-pocket-t-shirt) 
 * [Long-Sleeve Pocket T-Shirt (Black)](https://www.carhartt.com/product/K126/loose-fit-heavyweight-long-sleeve-pocket-t-shirt) 
