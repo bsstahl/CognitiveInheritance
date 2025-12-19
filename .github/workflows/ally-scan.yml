@@ -16,8 +16,8 @@ jobs:
 
       - uses: github/accessibility-scanner@v2
         with:
-          paths: |
-            docs/**/*.html
+          urls: |
+            https://www.cognitiveinheritance.com
           repository: bsstahl/CognitiveInheritance
           token: ${{ secrets.GH_TOKEN }}
           cache_key: docs-a11y-scan
