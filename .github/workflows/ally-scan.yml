@@ -2,7 +2,7 @@ name: Accessibility Scanner
 
 on:
   workflow_run:
-    workflows: ["Azure Static Web Apps CI/CD"]
+    workflows: ["pages build and deployment"]
     types:
       - completed
   workflow_dispatch:
