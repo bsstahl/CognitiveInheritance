@@ -539,3 +539,8 @@ table tr .pubdate {
         max-width: 1140px;
     }
 }
+
+/* Override bootstrap styles for better accessibility */
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,0.8);
+}
