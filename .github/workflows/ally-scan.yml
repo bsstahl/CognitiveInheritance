@@ -1,0 +1,23 @@
+name: Accessibility Scanner
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  accessibility_scanner:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: github/accessibility-scanner@v2
+        with:
+          paths: |
+            docs/**/*.html
+          fail_on_error: false
+          repository: bsstahl/CognitiveInheritance
+          token: ${{ secrets.GH_TOKEN }}
+          cache_key: docs-a11y-scan
