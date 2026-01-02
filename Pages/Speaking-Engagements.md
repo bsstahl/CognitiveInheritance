@@ -24,6 +24,10 @@ categories: []
 
 * **[NDC London 2026](https://ndclondon.com/speakers/barry-stahl)** - 1/26/2026 - 1/30/2026 - "Solutions That Evolve: Building Self-Improving Systems with Genetic Algorithms"
 
+* **[Albuquerque Dot Net Users Group](https://www.meetup.com/albuquerque-net-users-group/) - 2/25/2026 - Topic TBD
+
+* **[Codestock 2026](https://www.codestock.org/)** - 4/9/2026 - 4/10/2026 - "Inside Model Reasoning: Fine-Tuning in Action" & "Crafting AI: A Developer's Guide to Machine Learning"
+
 ***
 
 ### Available Talks
@@ -40,7 +44,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ***
 
-* **Intentional Architecture: Six Conversations to Keep Your Architecture on a Solid Foundation** - Too often, architectural decisions are made in isolation, postponed until they constrain future work, or simply ignored--often resulting in a sub-optimal architecture. This talk explores a framework consisting of six conversations that surface architectural decisions as they become relevant, equipping teams to make deliberate, auditable choices at the right moments. The framework centers on 6 "Critical-Cs": Context, Coordination, Contracts, Chaos, Competencies, and Coalescence, and guides teams in evaluating whether microservices fit the project, or if a modular monolith might serve the project better.
+* **Intentional Architecture: Six Conversations for a Solid Foundation** - Too often, architectural decisions are made in isolation, postponed until they constrain future work, or simply ignored--often resulting in a sub-optimal architecture. This talk explores a framework consisting of six conversations that surface architectural decisions as they become relevant, equipping teams to make deliberate, auditable choices at the right moments. The framework centers on 6 "Critical-Cs": Context, Coordination, Contracts, Chaos, Competencies, and Coalescence, and guides teams in evaluating whether microservices fit the project, or if a modular monolith might serve the project better.
 
   [Critical &quot;C's&quot; Website](https://criticalcs.azurewebsites.net/)
 
@@ -125,6 +129,12 @@ I have the following talks on topics of interest to Enterprise Developers that I
 * **Crafting AI: A Developer's Guide to Machine Learning** - With Machine Learning (ML) making huge impacts across the software industry, it has become almost imperative for developers to understand its principles and applications. Unfortunately, the complexity of some ML models and the mathematical rigor of its algorithms can be intimidating. This talk aims to bridge this gap, making ML understandable and engaging for developers eager to learn this technology from the ground up.
 
   In this session, attendees will learn the foundational concepts of ML by coding their own models from scratch, without relying on pre-trained models like GPT. We'll start with a simple linear regression, a foundational tool to gain understanding of ML's error minimization and training processes. We'll then explain neural networks with a binary classification example. By the end, participants will not only grasp fundamental ML concepts but will also walk away with their own code implementing one of these models. This talk is designed to equip developers with the knowledge and confidence to use Machine Learning in their projects.
+
+***
+
+* **Inside Model Reasoning: Fine-Tuning in Action** - What if I told you that advanced "thinking" AI models are just regular models that learned a new trick? In this session, we'll use Azure Foundry to demonstrate the transformative power of fine-tuning.
+
+  We'll explore how chain-of-thought models, those that generate visible reasoning in `think` tags, are simply fine-tuned versions of standard transformers. This elegant example teaches us two critical concepts: how transformers use their own output tokens as input for subsequent predictions, and how fine-tuning can create entirely new model behaviors without architectural changes, and without requiring huge datasets.
 
 ***
 
