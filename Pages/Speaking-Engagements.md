@@ -24,7 +24,7 @@ categories: []
 
 * **[NDC London 2026](https://ndclondon.com/speakers/barry-stahl)** - 1/26/2026 - 1/30/2026 - "Solutions That Evolve: Building Self-Improving Systems with Genetic Algorithms"
 
-* **[Albuquerque Dot Net Users Group](https://www.meetup.com/albuquerque-net-users-group/) - 2/25/2026 - Topic TBD
+* **[Albuquerque Dot Net Users Group](https://www.meetup.com/albuquerque-net-users-group/)** - 2/25/2026 - Topic TBD
 
 * **[Codestock 2026](https://www.codestock.org/)** - 4/9/2026 - 4/10/2026 - "Inside Model Reasoning: Fine-Tuning in Action" & "Crafting AI: A Developer's Guide to Machine Learning"
 
@@ -134,7 +134,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 * **Inside Model Reasoning: Fine-Tuning in Action** - What if I told you that advanced "thinking" AI models are just regular models that learned a new trick? In this session, we'll use Azure Foundry to demonstrate the transformative power of fine-tuning.
 
-  We'll explore how chain-of-thought models, those that generate visible reasoning in `think` tags, are simply fine-tuned versions of standard transformers. This elegant example teaches us two critical concepts: how transformers use their own output tokens as input for subsequent predictions, and how fine-tuning can create entirely new model behaviors without architectural changes, and without requiring huge datasets.
+  We'll explore how chain-of-thought models, those that generate visible reasoning in **&lt;think&gt;** tags, are simply fine-tuned versions of standard transformers. This elegant example teaches us two critical concepts: how transformers use their own output tokens as input for subsequent predictions, and how fine-tuning can create entirely new model behaviors without architectural changes, and without requiring huge datasets.
 
 ***
 
