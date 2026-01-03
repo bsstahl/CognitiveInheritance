@@ -40,7 +40,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 * **Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems** - There is a danger lurking in every system that hasn't taken explicit steps to eliminate it. This under-recognized data killer can cause intermittent inconsistencies in your data which can be as difficult to find as they are to correct. Fortunately, recognizing this monster is easy, and there are a number of great techniques you can use to keep it away for good. In this talk, we will learn about the Dual-Writes anti-pattern: how to spot it, and what to do to avoid it. In doing so, we'll discuss the 4 primary patterns for keeping data consistent in modern software systems, so you can spend less time supporting your applications. We'll see examples in C# of each pattern, including demonstrations using SQL Server, Cosmos DB and Redis.
 
-  [Latest Slide Deck](https://avoidingdualwrites.azurewebsites.net)
+  [Latest Slide Deck](https://avoidingdualwrites.azurewebsites.net) | [Long-Form Video - 2021-07-22](https://youtu.be/g6tnRWN9vy0?si=rCTluKDKN899Shrw)
 
 ***
 
@@ -62,14 +62,6 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ***
 
-* **TDD in the AI Era: No Vibing, Just Velocity** - Test-Driven Development (TDD) has been a stalwart of software engineering for years, delivering reliable, modular code that stands the test of time. As we now find ourselves in the early days of the AI era, TDD isn't just enduring, it's evolving. AI-powered tools are supercharging TDD, turning it into a faster, smarter process that builds on its original strengths. More than just an improvement, the utilization of AI means that TDD isn't only more powerful, but also more vital than ever. As we become more dependent on AI-accelerated workflows, the demand for thorough, rigorous testing practices is increasing, underlining the ever-growing importance of TDD in today's software development landscape.
-
-  In this talk, we explore how AI enhances the TDD process, making it easier to generate comprehensive test cases, uncover edge cases, and refactor code with confidence. Through automation and intelligent analysis, AI reduces the effort required for manual test creation and debugging, freeing developers to focus on innovation and problem-solving. The result? Higher-quality software delivered in less time.
-
-  Whether you’re new to TDD or an experienced practitioner looking to adapt to the AI revolution, this talk will offer insights, strategies, and practical examples to help you navigate this transformative moment in software development.
-
-***
-
 * **Defining the Business Domain using Event Storming** - Event storming is a process for modeling a business domain from the perspective of the business experts. It comes out of the Domain Driven Design world and has been used by many with great success. Event Storming can help your team:
 
   * Build an understanding of a domain
@@ -82,7 +74,15 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
   In this session, we will explore the process of Event Storming. We will define the goals and expected outputs of the process, and walk through a simple example so that you are ready to bring this important practice into your organization.
 
-  [Latest Slide Deck](https://introtoeventstorming.azurewebsites.net)
+  [Latest Slide Deck](https://introtoeventstorming.azurewebsites.net) | [Lighning Talk Version Video](https://www.youtube.com/watch?v=6DgGhQQbfDE&list=PLCo2TFzFXPTQ5qIZTbbzFNcJL348fl6uO&index=4)
+
+***
+
+* **TDD in the AI Era: No Vibing, Just Velocity** - Test-Driven Development (TDD) has been a stalwart of software engineering for years, delivering reliable, modular code that stands the test of time. As we now find ourselves in the early days of the AI era, TDD isn't just enduring, it's evolving. AI-powered tools are supercharging TDD, turning it into a faster, smarter process that builds on its original strengths. More than just an improvement, the utilization of AI means that TDD isn't only more powerful, but also more vital than ever. As we become more dependent on AI-accelerated workflows, the demand for thorough, rigorous testing practices is increasing, underlining the ever-growing importance of TDD in today's software development landscape.
+
+  In this talk, we explore how AI enhances the TDD process, making it easier to generate comprehensive test cases, uncover edge cases, and refactor code with confidence. Through automation and intelligent analysis, AI reduces the effort required for manual test creation and debugging, freeing developers to focus on innovation and problem-solving. The result? Higher-quality software delivered in less time.
+
+  Whether you’re new to TDD or an experienced practitioner looking to adapt to the AI revolution, this talk will offer insights, strategies, and practical examples to help you navigate this transformative moment in software development.
 
 ***
 
@@ -100,6 +100,8 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
   In this session, we will empower you to harness the full potential of RAG. We will provide a detailed walkthrough of RAG implementation, offering practical insights and strategies to overcome the most common challenges associated with the use of language models. By the end of this session, you will understand how to build effective RAG systems that address many of the concerns with using these types of tools. Since we will be focusing on business operations tasks, our code samples will be in C# and leverage the Microsoft OpenAI Client and Semantic Kernel.
 
+  [Latest Slide Deck](https://cognitiveinheritance.com/Presentations/Session/RAGDeepDive/index.html) | [Video](https://www.youtube.com/watch?v=PsdkqNzVIw4&list=PLCo2TFzFXPTQ5qIZTbbzFNcJL348fl6uO)
+
 ***
 
 * **LLMs Under the Hood** - Large Language Models (LLMs) have revolutionized the field of natural language processing, enabling machines to generate human-like text with remarkable coherence. This presentation delves into the intricacies of LLMs, shedding light on the underlying mechanisms that enable these tools to predict tokens and generate text. We will unravel the architecture of these models, from embedding layers to attention mechanisms, and provide a clear understanding of the processes that contribute to the model's performance.
@@ -107,6 +109,8 @@ I have the following talks on topics of interest to Enterprise Developers that I
   Beyond the technical deep dive, we will explore practical applications, discussing valid use-cases where LLMs excel, such as chatbots, content creation, and language translation. We will also critically evaluate scenarios where they may fall short or prove unsuitable, addressing common myths and misconceptions.
   
   By bridging technical expertise with real-world application, this talk aims to equip programmers and other software creators with a nuanced understanding of Large Language Models, empowering them to harness these tools responsibly and effectively. Join us for an engaging session filled with insights, interactive discussions, and forward-thinking perspectives on one of today's most groundbreaking technological advancements.
+
+  [Workshop Slide Deck](https://cognitiveinheritance.com/Presentations/Workshop/LLMsUnderTheHood/index.html)
 
 ***
 
@@ -116,19 +120,21 @@ I have the following talks on topics of interest to Enterprise Developers that I
   
   Attendees will leave with a deeper understanding of the mathematical underpinnings of embeddings, practical knowledge of how to use them, and an appreciation for their value in our applications. This session is ideal for developers, data scientists, and anyone interested in the mathematical underpinnings of machine learning and natural language processing.
 
-    [Latest Slide Deck](https://introtoembeddings.azurewebsites.net)
+    [Latest Slide Deck](https://cognitiveinheritance.com/Presentations/Session/GPTEmbeddings/index.html)
 
 ***
 
 * **Amazing Algorithms for Solving Problems in Software** - Sure neural networks are cool but have you ever used a Firefly Algorithm to find the solution to a problem? How about an Ant Colony algorithm or one of  the many other algorithms inspired by nature?  In this talk we will see examples of a number of awesome bio-inspired algorithms that can be used to solve problems in software. We'll see how each one works, analyze its strengths and weaknesses, and determine when it is best used. You'll leave with the knowledge you need to solve problems using these algorithms in your language of choice.
 
-  [Latest Slide Deck](https://amazingalgorithms.azurewebsites.net) | [Video: Code on the Beach - Atlantic Beach FL USA - July 2022](https://youtu.be/Ge_aChdwdtE)
+  [Workshop Slide Deck](https://cognitiveinheritance.com/Presentations/ShortWorkshop/AmazingAlgorithms/index.html) | [Video: Code on the Beach - Atlantic Beach FL USA - July 2022](https://youtu.be/Ge_aChdwdtE)
 
 ***
 
 * **Crafting AI: A Developer's Guide to Machine Learning** - With Machine Learning (ML) making huge impacts across the software industry, it has become almost imperative for developers to understand its principles and applications. Unfortunately, the complexity of some ML models and the mathematical rigor of its algorithms can be intimidating. This talk aims to bridge this gap, making ML understandable and engaging for developers eager to learn this technology from the ground up.
 
   In this session, attendees will learn the foundational concepts of ML by coding their own models from scratch, without relying on pre-trained models like GPT. We'll start with a simple linear regression, a foundational tool to gain understanding of ML's error minimization and training processes. We'll then explain neural networks with a binary classification example. By the end, participants will not only grasp fundamental ML concepts but will also walk away with their own code implementing one of these models. This talk is designed to equip developers with the knowledge and confidence to use Machine Learning in their projects.
+
+  [Latest Slide Deck](https://cognitiveinheritance.com/Presentations/Workshop/CraftingAI/index.html)
 
 ***
 
