@@ -38,6 +38,7 @@ Any physical (hard or soft cover) book by Cory Doctorow is great. If I already h
 * [Thinking in Systems - Donella H Meadows](https://bookshop.org/p/books/thinking-in-systems-international-bestseller-donella-meadows/fea83b2e43c07e9a?ean=9781603580557&next=t)
 * [Residues: Time, Uncertainty and Change in Software Architecture - Barry O'Reilly](https://leanpub.com/residuality)
 * [Zen and the Art of Motorcycle Maintenance - Robert M Pirsig](https://bookshop.org/p/books/zen-and-the-art-of-motorcycle-maintenance-50th-anniversary-edition-an-inquiry-into-values-robert-m-pirsig/7c2488e3b7642612?ean=9780063342330&next=t)
+* [Notes on Complexity - Neil Theise](https://bookshop.org/p/books/notes-on-complexity-a-scientific-theory-of-connection-consciousness-and-being-neil-theise/913d94ca3e69e40d?ean=9781954118256&next=t&next=t)
 
 #### Fiction
 
