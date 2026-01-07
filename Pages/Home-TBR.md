@@ -25,6 +25,13 @@ categories: []
 * [On Liberty - John Stuart Mill](https://bookshop.org/p/books/on-liberty-john-stuart-mill-john-stuart-mill/6d83771a29c3cfeb?ean=9781542500135&next=t)
 * Science and the Paranormal, Abell & Singer, eds. (Scribner, 1981) (Out of Print?)
 
+### Cognitive Psychology
+
+* [May Contain Lies: How stories, statistics, and studies exploit our biases -- and what we can do about it - Alex Edmans](https://bookshop.org/p/books/may-contain-lies-how-stories-statistics-and-studies-exploit-our-biases-and-what-we-can-do-about-it-alex-edmans/c910b24f18c04b46?ean=9780520403932&next=t)
+* [You Are Not So Smarty - David McRaney](https://bookshop.org/p/books/you-are-not-so-smart-why-you-have-too-many-friends-on-facebook-why-your-memory-is-mostly-fiction-and-46-other-ways-you-re-deluding-yourself-david-mc/c0769fdd11c184c0?ean=9781592407361&next=t)
+* [You Are Now Less Dumb - David McRaney](https://bookshop.org/p/books/you-are-now-less-dumb-how-to-conquer-mob-mentality-how-to-buy-happiness-and-all-the-other-ways-to-ou-tsmart-yourself-david-mcraney/7787259?ean=9781592408795&next=t)
+* [How Minds Change - David McRaney](https://bookshop.org/p/books/how-minds-change-the-surprising-science-of-belief-opinion-and-persuasion-david-mcraney/031f155ef89e95e8?ean=9780593190296&next=t)
+
 ### News & Politics
 
 * [Responding to the Right: Replies to 25 "Conservative" Arguments](https://pluralistic.net/2023/02/14/nathan-robinson/#arguendo)
