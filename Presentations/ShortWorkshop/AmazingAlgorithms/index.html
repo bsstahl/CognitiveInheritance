@@ -976,20 +976,57 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 
 
 <section data-transition="slide-in slide-out">
+<a id="8ae9f258-6e8a-4821-9517-85ad866b421f"><h1>Determine Our Game Strategy</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:4fa961cf-d1ef-46fb-ad50-8d4862cea3d2 -->
+<!-- ContentItem:ac2956de-585d-4e52-acad-ceb574de9071 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>We need a strategy that will tell us where we</p>
+<p>should move to next, given:</p>
+<ul>
+<li>Our location on the board</li>
+<li>The result of our spin</li>
+<li>The location of our opponents (opt)</li>
+<li>Our player number (opt)</li>
+</ul>
+</li>
+<li><p>Example: If we are on square 45 and spin a:</p>
+<ul>
+<li>1 - 46 (no choice)</li>
+<li>2 - 47 (no choice)</li>
+<li>3 - 48 or 26</li>
+<li>4 - 49 or 27</li>
+<li>5 - 50, 11 or 28</li>
+<li>6 - 51, 12, 29 or 84</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/ac2956de-585d-4e52-acad-ceb574de9071.gif" alt="Chutes and Ladders 3.gif" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
 
 <a id="3af357e5-e9df-4cad-ae61-d7e32d64c651"><h1>Step 1 - Define DNA</h1></a>
 <!-- Layout:FullPage -->
 <!-- ContentItem:e7ed2b75-f5d5-458a-bc3a-d34c530ed864 -->
 <ul>
-<li>The DNA represents all of the possible decisions to be made</li>
-<li>Each chromosome represents a decision point
+<li><p>A chromosome represents all of the possible decisions that can be made</p>
+</li>
+<li><p>Each gene represents a decision</p>
 <ul>
-<li>Ideally a chromosome fully describes a single game state</li>
+<li>Ideally a gene fully describes a single game state</li>
+<li>If no decision is possible for a state, there is no gene for that state</li>
 </ul>
 </li>
-<li>Each gene is an option for that decision
+<li><p>An allele is an option for that decision</p>
 <ul>
-<li>If there are 3 options for a given state there will be 3 possible neuclotides for that chromosome</li>
+<li>If there are 3 options for a given state there will be 3 possible alleles for that gene</li>
 </ul>
 </li>
 </ul>
@@ -1046,7 +1083,7 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 <ul class="fragment">
 <li>Error (misspelling) rate
 <ul>
-<li>Controls how frequently chromosomes change neucleotides during the evolutionary process</li>
+<li>Controls how frequently genes change allele's during the evolutionary process</li>
 <li>Higher rates cause greater variations from generation to generation</li>
 </ul>
 </li>
@@ -1097,23 +1134,341 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 <!-- Layout:FullPage -->
 <!-- ContentItem:298b5783-a21e-476d-aa65-e976f7722f8b -->
 <ul>
-<li>Implement in your preferred language
+<li><p>Implement in your preferred language</p>
 <ul>
 <li>C# implementation is on GitHub</li>
 </ul>
 </li>
-<li>Augment to include what <em>place</em> the player is in
+<li><p>Augment to include what <em>place</em> the player is in</p>
 <ul>
-<li>i.e. Might make different decisions if in 1<sup>st</sup> vs in 6<sup>th</sup> place</li>
+<li>i.e. Might make different decisions if started 1<sup>st</sup> vs 6<sup>th</sup></li>
 </ul>
 </li>
-<li>Define the DNA of another game
+<li><p>Augment to include opponent locations</p>
+<ul>
+<li>i.e. Might make different decisions if opponents are close to the end</li>
+</ul>
+</li>
+<li><p>Define the DNA of another game</p>
 <ul>
 <li>Recommendation - stick with simpler games to start</li>
 <li>Avoid games like chess with massive complexity</li>
 </ul>
 </li>
 </ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>I want to give you a non-game example. This is an actual problem I am reasearching.</p>
+<hr />
+<p>Image Created by Microsoft Designer 2026-01-08</p>
+</aside>
+<a id="e9e5140e-f884-4988-b19b-19815e31531a"><h1>Problem 2 - Semantic Distance</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:8b91f3b7-8986-4827-b10d-c062d25fcdf5 -->
+<img alt="semantic-dna-surreal 800x800.jpeg" src="img/8b91f3b7-8986-4827-b10d-c062d25fcdf5.jpeg" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="54851746-90a1-45fa-980d-9cdcc12953cc"><h1>Embeddings</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:8c297a4c-5130-4206-ae37-995649e7d962 -->
+<!-- ContentItem:0e0658fb-5565-43c7-a9fc-3de3155352f3 -->
+<aside class="notes"><p>There are many other embedding models, some are optimized for different purposes. You should consider what model might work best for your use-case. This presentation uses the same model used by GPT-3 and GPT-4.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>A point in multi-dimensional space</li>
+<li>Mathematical representation of a word or phrase</li>
+<li>Encode both <strong>semantic</strong> and <strong>contextual</strong> information</li>
+</ul>
+<hr />
+<ul>
+<li>Model: <code>text-embedding-ada-002</code></li>
+<li>Vectors normalized to unit length</li>
+<li>Use 1536 dimensions</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/0e0658fb-5565-43c7-a9fc-3de3155352f3.jpg" alt="Embeddings - Cosmic Desert 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>It is not possible for us to reason on space greater than 3D without doing some form of projection.</p>
+<p>Image Source: WikiMedia</p>
+</aside>
+<a id="affc18de-26dd-4bed-acbe-99beddf497f4"><h1>3-D Space Projected into 2-D</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:8738d954-63a2-40f5-aa5e-deeb431d5f52 -->
+<img alt="Necker_cube_with_background.png" src="img/8738d954-63a2-40f5-aa5e-deeb431d5f52.png" />
+</section>
+
+
+<section data-transition="slide-in none-out">
+<aside class="notes"><p>I used a T-SNE (T-distributed Stochastic Neighbor Embedding) transformation to perform this dimensionality reduction</p>
+</aside>
+<a id="9ec34ef5-afab-43e9-abf1-010e746b7af4">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:2313fe54-9904-4e1c-b5de-3c29c297fdc7 -->
+<img alt="Ram - Just Statements.png" src="img/2313fe54-9904-4e1c-b5de-3c29c297fdc7.png" />
+</section>
+
+
+<section data-transition="none-in slide-out">
+<aside class="notes"><p>The key to understanding embeddings is to remember that they are a way to represent a word or phrase in a multi-dimensional space.  The distance between two embeddings can be used to determine how similar the words or phrases they represent are to each other.</p>
+</aside>
+<a id="3714c934-4902-45a1-9948-3b31c7f02bba">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:43926256-864d-4a0a-aad0-b7ea6fa5b74e -->
+<img alt="Ram - With Clusters.png" src="img/43926256-864d-4a0a-aad0-b7ea6fa5b74e.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="72e0090e-a40f-4410-91e0-919b3ed09004"><h1>Cosine Similarity &amp; Distance</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:89b66910-a26e-4116-b41d-3ada3f74c92b -->
+<!-- ContentItem:d44bda2e-06bd-4064-9c06-12d564a6f5cf -->
+<aside class="notes"><p>Since GPT vectors are normalized to unit length, Cosine similarity and dot-product calculations will produce the same result.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Relate vectors based on the angle between them</p>
+</blockquote>
+<ul>
+<li><p><em>Cosine Similarity</em> ranges from -1 to 1, where:</p>
+<ul>
+<li>+1 indicates that the vectors represent similar semantics &amp; context</li>
+<li>0 indicates that the vectors are orthogonal (no similarity)</li>
+<li>-1 indicates that the vectors have opposing semantics &amp; context</li>
+</ul>
+</li>
+<li><p><em>Cosine Distance</em> is defined as <strong>1 - cosine similarity</strong> where:</p>
+<ul>
+<li>0 = Synonymous</li>
+<li>1 = Orthogonal</li>
+<li>2 = Antonymous</li>
+</ul>
+</li>
+</ul>
+<p>Note: For normalized vectors, cosine similarity is the same as the dot-product</p>
+
+</td>
+<td style="vertical-align:top;">
+<img alt="Cosine Unit Circle - Enhanced.jpg" src="img/d44bda2e-06bd-4064-9c06-12d564a6f5cf.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="0e2a1080-2694-447d-85ec-30f6863051de"><h1>Cosine Distance</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:1c9aab67-70df-45a0-b05d-4aae3c3a20c5 -->
+<img alt="Cosine Distance 989x600.png" src="img/1c9aab67-70df-45a0-b05d-4aae3c3a20c5.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>I added additional context here: i.e. &quot;Sheep&quot; =&gt; &quot;Bighorn Sheep&quot;, to make the distances more visible.</p>
+</aside>
+<a id="952e53c0-3883-490e-a43f-c3f86853fc08"><h1>Cosine Distance</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:b079c831-8d8c-425b-8e49-c8674d0b3ec6 -->
+<img alt="Angles2.svg" src="img/b079c831-8d8c-425b-8e49-c8674d0b3ec6.svg" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Embeddings encode many facets of a word or phrase, including language spoken, idioms, sarcasm, and figurative language</p>
+</aside>
+<a id="b1b27a07-42ee-481c-92f4-6791f7204828"><h1>Embedding Distance</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:fcee17b4-8b97-487e-9644-0c45033c1ff3 -->
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Synonym</td>
+<td>&quot;Happy&quot; is closer to &quot;Joyful&quot; than to &quot;Sad&quot;</td>
+</tr>
+<tr>
+<td>Language</td>
+<td>&quot;The Queen&quot; is very close to &quot;La Reina&quot;</td>
+</tr>
+<tr>
+<td>Idiom</td>
+<td>&quot;He kicked the bucket&quot; is closer to &quot;He died&quot; than to &quot;He kicked the ball&quot;</td>
+</tr>
+<tr>
+<td>Sarcasm</td>
+<td>&quot;Well, look who's on time&quot; is closer to &quot;Actually Late&quot; than &quot;Actually Early&quot;</td>
+</tr>
+<tr>
+<td>Homonym</td>
+<td>&quot;Bark&quot; (dog sound) is closer to &quot;Howl&quot; than to &quot;Bark&quot; (tree layer)</td>
+</tr>
+<tr>
+<td>Collocation</td>
+<td>&quot;Fast food&quot; is closer to &quot;Junk food&quot; than to &quot;Fast car&quot;</td>
+</tr>
+<tr>
+<td>Proverb</td>
+<td>&quot;The early bird catches the worm&quot; is closer to &quot;Success comes to those who prepare well and put in effort&quot; than to &quot;A bird in the hand is worth two in the bush&quot;</td>
+</tr>
+<tr>
+<td>Metaphor</td>
+<td>&quot;Time is money&quot; is closer to &quot;Don't waste your time&quot; than to &quot;Time flies&quot;</td>
+</tr>
+<tr>
+<td>Simile</td>
+<td>&quot;He is as brave as a lion&quot; is closer to &quot;He is very courageous&quot; than to &quot;He is a lion&quot;</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="db0d9f0b-9fb8-41bf-b2ab-df18df025b0d"><h1>Modeling Exercise</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:cce03cd3-1b6d-4267-8ff1-aced98e41fb2 -->
+<h3 id="design-a-system-to-find-wordsphrases-that-are-far-apart-semantically-different-in-the-embedding-space">Design a system to find words/phrases that are far apart (semantically different) in the embedding space?</h3>
+<ul>
+<li><p>Assumptions</p>
+<ul>
+<li>No db of embeddings available to search</li>
+<li>Limited understanding of the features of the embedding space
+<ul>
+<li>i.e. changing language changes nearly every dimension</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>What type of models might work?</p>
+<ul>
+<li>Can we do it logically?</li>
+<li>Can we brute-force it?</li>
+<li>Are there hybrid approaches?</li>
+</ul>
+</li>
+<li><p>What are the features of each model?</p>
+</li>
+<li><p>How do we execute the model(s)?</p>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Take a break</p>
+</aside>
+<a id="75d96ac4-23d2-40b8-858e-38fd7a6fdf88">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:23df6abb-abad-4335-9cdc-f73797ba10df -->
+<img alt="brainbreaks.png" src="img/23df6abb-abad-4335-9cdc-f73797ba10df.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="aed070ac-2fc4-4c87-bcf1-2b4b60a5670e"><h1>Possible Genes</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:5e315f98-372b-40c7-8ed8-64dc70d2a3b2 -->
+<ul>
+<li><p>Categorical</p>
+<ul>
+<li>Part of Speech (noun, verb, etc)</li>
+<li>Register (formal, slang, technical, etc)</li>
+<li>Morphology (root, compound, phrase)</li>
+<li>Animacy (inanimate, animate, agentic, collaborative)</li>
+<li>Scientific Discipline (biology, physical, life/health, etc)</li>
+</ul>
+</li>
+<li><p>Continuous</p>
+<ul>
+<li>Polarity (negative -&gt; positive)</li>
+<li>Idiomacity (literal -&gt; idiomatic)</li>
+<li>Concreteness (abstract -&gt; concrete)</li>
+</ul>
+</li>
+<li><p>Other Options</p>
+<ul>
+<li>Language</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="18f1062c-a34b-4a98-a208-3b16e2ded944"><h1>Linguistic Agent - System Prompt</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:43a8d69d-7c93-4c33-8ffc-e6faa7bd79ea -->
+<p>You are a simulation of a great linguist. You classify words/phrases within the following categories:</p>
+<ul>
+<li>Part of Speech (noun, verb, etc)</li>
+<li>Register (formal, slang, technical, etc)</li>
+<li>Scientific Discipline (biology, physical, life/health, etc)</li>
+<li>Morphology (root, compound, phrase)</li>
+<li>Animacy (inanimate, animate, agentic, collaborative)</li>
+<li>Polarity (highly negative, negative, neutral, positive, highly positive)</li>
+<li>Idiomacity (highly literal, literal, idiomatic, highly idiomatic)</li>
+<li>Concreteness (highly abstract, abstract, concrete, highly concrete)</li>
+</ul>
+<p>Your job is to identify words/phrases that meet the requested characteristics. You respond only with the requested word or phrase in lower case.</p>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="c0c3d3c6-caac-489d-b986-f7f2830cc856"><h1>Linguistic Agent - User Prompt</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:c427dc7c-a68f-49f9-8108-a6ae23d33926 -->
+<p>Give me a word or phrase with the following characteristics:</p>
+<ul>
+<li>Primary part of speech is <strong>verb</strong></li>
+<li>Register is <strong>technical</strong></li>
+<li>Morphology is <strong>phrase</strong></li>
+<li>Animacy is <strong>collaborative</strong></li>
+<li>Scientific Discipline is <strong>biology</strong></li>
+<li>Polarity is <strong>highly negative</strong></li>
+<li>Idiomacity <strong>idiomatic</strong></li>
+<li>Concreteness <strong>highly concrete</strong></li>
+</ul>
+<p>and is not in the following list: &quot;prime genius&quot;, &quot;engineer a cooperative symbiosis&quot;.</p>
+<p>Be sure to only respond with the selected word or phrase, no ceremony.</p>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>They both have a huge solution space and no obvious (logical?) strategy to determine best action</p>
+</aside>
+<a id="a9a2e173-067e-4060-bcb5-b1faf078f06e"><h1>Commonalities</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:60195f08-d94f-457c-88e9-9ebcfd6df7a2 -->
+<p>We discussed 2 problems:</p>
+<ul>
+<li>Game strategy - what's the best move given game state?</li>
+<li>Semantic Distance - what word should I test next?</li>
+</ul>
+<p>what do they have in common? What makes them good candidates for genetic algorithms?</p>
 
 </section>
 
@@ -1154,16 +1509,6 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 </li>
 </ul>
 
-</section>
-
-
-<section data-transition="slide-in slide-out">
-<aside class="notes"><p>Take a break</p>
-</aside>
-<a id="75d96ac4-23d2-40b8-858e-38fd7a6fdf88">&nbsp;</a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:23df6abb-abad-4335-9cdc-f73797ba10df -->
-<img alt="brainbreaks.png" src="img/23df6abb-abad-4335-9cdc-f73797ba10df.png" />
 </section>
 
 
