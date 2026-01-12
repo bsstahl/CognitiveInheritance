@@ -28,6 +28,10 @@ categories: []
 
 * **[Codestock 2026](https://www.codestock.org/)** - 4/9/2026 - 4/10/2026 - "Inside Model Reasoning: Fine-Tuning in Action" & "Crafting AI: A Developer's Guide to Machine Learning"
 
+* **[NDC Toronto 2026](https://ndctoronto.com/speakers/barry-stahl)** - 5/5/2026 - 5/8/2026 - "The Future of Information Retrieval: A Deep-Dive into RAG"
+
+* **[MLcon San Diego 2026](https://mlconference.ai/speaker/barry-stahl/)** - 6/1/2026 - 6/5/2026 - "LLMs Under the Hood - Workshop"
+
 ***
 
 ### Available Talks
