@@ -26,7 +26,7 @@ categories: []
 
 * **[MLcon San Diego 2026](https://mlconference.ai/speaker/barry-stahl/)** - 6/1/2026 - 6/2/2026 - "LLMs Under the Hood - Workshop"
 
-* **[Craft Conf Budapest 2026](https://craft-conf.com/2026/speaker/bstahl) - 6/4/2026 - 6/5/2026 - "TDD in the AI Era (workshop)" & "Solutions That Evolve: Building Self-Improving Systems with Genetic Algorithms"
+* **[Craft Conf Budapest 2026](https://craft-conf.com/2026/speaker/bstahl)** - 6/4/2026 - 6/5/2026 - "TDD in the AI Era (workshop)" & "Solutions That Evolve: Building Self-Improving Systems with Genetic Algorithms"
 
 ### Available Talks
 
@@ -194,8 +194,8 @@ I have the following talks on topics of interest to Enterprise Developers that I
 * **[NDC London 2026](https://ndclondon.com/speakers/barry-stahl)** - 1/26/2026 - 1/30/2026 - "Solutions That Evolve: Building Self-Improving Systems with Genetic Algorithms"
 * **[The Valley's .NET User Groups](https://www.meetup.com/nwvdnug/events/311139089/)** - 1/20/2026 - ".NET Aspire Accelerator: Fast Track to Cloud-Native Development" (co-presented with Rob Richardson)
 * **[CodeMash 2026](https://events.codemash.org/2026CodeMashConference#/acceptedSpeakers)** (Sandusky, OH) - 1/13/2025 - 1/16/2025 - "Amazing Algorithms Workshop" & "LLMs Under the Hood Workshop"
-* **Hot Topics Developer Group** (San Diego CA) - 12/02/2025 - "The Future of Information Retrieval: A Deep-Dive into RAG"
-* **NDC Porto 2025** - 10/20/2025 - 10/24/2025 - "LLMs Under the Hood" (workshop), "Amazing Algorithms for Solving Problems in Software" (workshop) and ".NET Aspire Accelerator: Fast Track to Cloud-Native Development" (workshop with Rob Richardson)
+* **[Hot Topics Developer Group](https://www.meetup.com/hot-topics-developer-group/events/312133235/)** (San Diego CA) - 12/02/2025 - "The Future of Information Retrieval: A Deep-Dive into RAG"
+* **[NDC Porto 2025](https://ndcporto.com/speakers/barry-stahl)** - 10/20/2025 - 10/24/2025 - "LLMs Under the Hood" (workshop), "Amazing Algorithms for Solving Problems in Software" (workshop) and ".NET Aspire Accelerator: Fast Track to Cloud-Native Development" (workshop with Rob Richardson)
 * **ML Con New York 2025** - 9/29/2025 - 10/3/2025 - "LLM Embeddings: Not Magic, Just Math"
 * **Combined .NET User Groups** (Salt Lake City UT, Provo UT, SE Valley AZ, NW Valley AZ) - 7/10/2025 - "The Future of Information Retrieval: A Deep-Dive into RAG"
 * **ConFoo 2025** - 2/26/2025 - 2/28/2025 - "Crafting AI: A Developer's Guide to Machine Learning" and "The Future of Information Retrieval: A Deep-Dive into RAG"
