@@ -18,17 +18,15 @@ categories: []
 
 <!-- I currently have no talks scheduled. {ContactPageLink:Contact me} to arrange to have me speak at your event. -->
 
-* **[NDC London 2026](https://ndclondon.com/speakers/barry-stahl)** - 1/26/2026 - 1/30/2026 - "Solutions That Evolve: Building Self-Improving Systems with Genetic Algorithms"
-
-* **[Albuquerque Dot Net Users Group](https://www.meetup.com/albuquerque-net-users-group/)** - 2/25/2026 - Topic TBD
+* **[Albuquerque Dot Net Users Group](https://www.meetup.com/albuquerque-net-users-group/)** - 2/25/2026 - "Inside Model Reasoning: Fine-Tuning in Action"
 
 * **[Codestock 2026](https://www.codestock.org/)** - 4/9/2026 - 4/10/2026 - "Inside Model Reasoning: Fine-Tuning in Action" & "Crafting AI: A Developer's Guide to Machine Learning"
 
 * **[NDC Toronto 2026](https://ndctoronto.com/speakers/barry-stahl)** - 5/5/2026 - 5/8/2026 - "The Future of Information Retrieval: A Deep-Dive into RAG"
 
-* **[MLcon San Diego 2026](https://mlconference.ai/speaker/barry-stahl/)** - 6/1/2026 - 6/5/2026 - "LLMs Under the Hood - Workshop"
+* **[MLcon San Diego 2026](https://mlconference.ai/speaker/barry-stahl/)** - 6/1/2026 - 6/2/2026 - "LLMs Under the Hood - Workshop"
 
-***
+* **[Craft Conf Budapest 2026](https://craft-conf.com/2026/speaker/bstahl) - 6/4/2026 - 6/5/2026 - "TDD in the AI Era (workshop)" & "Solutions That Evolve: Building Self-Improving Systems with Genetic Algorithms"
 
 ### Available Talks
 
@@ -78,7 +76,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ***
 
-* **TDD in the AI Era: No Vibing, Just Velocity** - Test-Driven Development (TDD) has been a stalwart of software engineering for years, delivering reliable, modular code that stands the test of time. As we now find ourselves in the early days of the AI era, TDD isn't just enduring, it's evolving. AI-powered tools are supercharging TDD, turning it into a faster, smarter process that builds on its original strengths. More than just an improvement, the utilization of AI means that TDD isn't only more powerful, but also more vital than ever. As we become more dependent on AI-accelerated workflows, the demand for thorough, rigorous testing practices is increasing, underlining the ever-growing importance of TDD in today's software development landscape.
+* **TDD in the AI Era: No Vibes, Just Velocity** - Test-Driven Development (TDD) has been a stalwart of software engineering for years, delivering reliable, modular code that stands the test of time. As we now find ourselves in the early days of the AI era, TDD isn't just enduring, it's evolving. AI-powered tools are supercharging TDD, turning it into a faster, smarter process that builds on its original strengths. More than just an improvement, the utilization of AI means that TDD isn't only more powerful, but also more vital than ever. As we become more dependent on AI-accelerated workflows, the demand for thorough, rigorous testing practices is increasing, underlining the ever-growing importance of TDD in today's software development landscape.
 
   In this talk, we explore how AI enhances the TDD process, making it easier to generate comprehensive test cases, uncover edge cases, and refactor code with confidence. Through automation and intelligent analysis, AI reduces the effort required for manual test creation and debugging, freeing developers to focus on innovation and problem-solving. The result? Higher-quality software delivered in less time.
 
@@ -156,6 +154,12 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ***
 
+* **Solutions that Evolve: Building Self-Improving Systems with Genetic Algorithms** - Genetic algorithms "learn" to make better decisions by making continuous improvements in strategy based the fitness of that solution for survival. These algorithms, modeled after Darwinian evolution, can solve complex optimization problems across many domains - from resource allocation to network design to automated testing.
+
+  In this talk we'll define the DNA of our solutions, explore how to represent different types of problems in genetic terms, and examine the parameters that control how solutions evolve and improve. You'll leave with practical knowledge of how to apply these powerful techniques to your own challenging problems.
+
+***
+
 * **Game-Changing Algorithms: Sports Strategy Meets Software Optimization** - Championship teams don't just rely on talent—they use sophisticated strategies to optimize player positions, manage resources, and adapt to changing conditions. Similarly, combinatorial optimization transforms problem solving in software by enabling systems to find optimal solutions among countless possibilities.
 
   Consider team sports strategy as an optimization problem:
@@ -187,6 +191,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ### Past engagements
 
+* **[NDC London 2026](https://ndclondon.com/speakers/barry-stahl)** - 1/26/2026 - 1/30/2026 - "Solutions That Evolve: Building Self-Improving Systems with Genetic Algorithms"
 * **[The Valley's .NET User Groups](https://www.meetup.com/nwvdnug/events/311139089/)** - 1/20/2026 - ".NET Aspire Accelerator: Fast Track to Cloud-Native Development" (co-presented with Rob Richardson)
 * **[CodeMash 2026](https://events.codemash.org/2026CodeMashConference#/acceptedSpeakers)** (Sandusky, OH) - 1/13/2025 - 1/16/2025 - "Amazing Algorithms Workshop" & "LLMs Under the Hood Workshop"
 * **Hot Topics Developer Group** (San Diego CA) - 12/02/2025 - "The Future of Information Retrieval: A Deep-Dive into RAG"
