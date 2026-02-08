@@ -160,7 +160,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ***
 
-* **Game-Changing Algorithms: Sports Strategy Meets Software Optimization** - Championship teams don't just rely on talent—they use sophisticated strategies to optimize player positions, manage resources, and adapt to changing conditions. Similarly, combinatorial optimization transforms problem solving in software by enabling systems to find optimal solutions among countless possibilities.
+* **Game‑Changing Algorithms: Sports Strategy as a Blueprint for AI‑Driven Optimization** - Championship teams don't just rely on talent—they use sophisticated strategies to optimize player positions, manage resources, and adapt to changing conditions. Similarly, combinatorial optimization transforms problem solving in software by enabling systems to find optimal solutions among countless possibilities.
 
   Consider team sports strategy as an optimization problem:
 
@@ -185,7 +185,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
   **Note**: An early version of this presentation, then called "Building AI Solutions Using Combinatorial Solvers" was presented at NDC Sydney in 2017, as well as several domestic code camps in 2017 and 2018. It was very well received and has since been fully updated to use a popular sports metaphor to help establish the foundations of the process, making the experience even better for the attendees.
 
-  [Early Version Video: NDC Sydney - Sydney Australia - August 2017](https://www.youtube.com/watch?v=zZAobExOMB0&list=FLq-iLd7rfmqSIFiujBGIRSw&index=2)
+  [Early Version Video (before the sports metaphor): NDC Sydney - Sydney Australia - August 2017](https://www.youtube.com/watch?v=zZAobExOMB0&list=FLq-iLd7rfmqSIFiujBGIRSw&index=2)
 
 ***
 
