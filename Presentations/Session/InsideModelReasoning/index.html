@@ -1,0 +1,962 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Inside Model Reasoning</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-transition="slide-in slide-out" data-background='img/67d12619-e693-4d01-83d1-9c2251749c41.png'>
+<a id="41f64624-3bfc-491d-9905-3992e82c4f0f">&nbsp;</a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:89c57881-3fc3-424a-90af-fb56a51b973b -->
+<!-- ContentItem:e534a6f0-97cd-4d58-a2f8-ba7f9ec98d8b -->
+
+<table><tr><td style="vertical-align:top;">
+<h2 id="inside-model-reasoning">Inside Model Reasoning</h2>
+<h4 id="fine-tuning-in-action">Fine-Tuning in Action</h4>
+<hr />
+<h4 id="barry-s.stahl">Barry S. Stahl</h4>
+<h4 id="solution-architect-developer">Solution Architect &amp; Developer</h4>
+<h4 id="bsstahlcognitiveinheritance.com"><a href="https://fosstodon.org/@Bsstahl">@bsstahl@cognitiveinheritance.com</a></h4>
+<h4 id="httpscognitiveinheritance.com"><a href="https://cognitiveinheritance.com">https://CognitiveInheritance.com</a></h4>
+
+</td>
+<td style="text-align: left;">
+<img src="img/e534a6f0-97cd-4d58-a2f8-ba7f9ec98d8b.png" alt="Transparent Half Width Image 960x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="636059f9-aa9d-4444-b4ec-dd7f62badd98"><h1>Favorite Physicists & Mathematicians</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:30f7e9d2-b154-4895-bed7-2765f7bdc6fe -->
+<!-- ContentItem:8a83be06-76e9-4028-9630-c6a7de92ae99 -->
+<aside class="notes"><p>An up-to-date list is available on <a href="https://cognitiveinheritance.com/Pages/Favorites.html">my blog at https://cognitiveinheritance.com/Pages/Favorites.html</a>
+Please ping me on Mastodon to tell me where I messed-up with this list, or this presentation for that matter. 😉</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<h4 id="favorite-physicists">Favorite Physicists</h4>
+<ol>
+<li>Harold &quot;Hal&quot; Stahl</li>
+<li>Carl Sagan</li>
+<li>Richard Feynman</li>
+<li>Marie Curie</li>
+<li>Nikola Tesla</li>
+<li>Albert Einstein</li>
+<li>Neil Degrasse Tyson</li>
+<li>Niels Bohr</li>
+<li>Galileo Galilei</li>
+<li>Michael Faraday</li>
+</ol>
+<p><em>Other notables</em>: Stephen Hawking, Edwin Hubble, Leonard Susskind, Christiaan Huygens</p>
+
+</td>
+<td style="vertical-align:top;">
+<h4 id="favorite-mathematicians">Favorite Mathematicians</h4>
+<ol>
+<li>Ada Lovelace</li>
+<li>Alan Turing</li>
+<li>Johannes Kepler</li>
+<li>Rene Descartes</li>
+<li>Isaac Newton</li>
+<li>Emmy Noether</li>
+<li>George Boole</li>
+<li>Blaise Pascal</li>
+<li>Johann Gauss</li>
+<li>Grace Hopper</li>
+</ol>
+<p><em>Other notables</em>: Daphne Koller, Grady Booch, Leonardo Fibonacci, Evelyn Berezin, Benoit Mandelbrot</p>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="a1e2eaad-5633-41dc-9e1b-c724e30ac85f"><h1>Fediverse Supporter</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f48757bb-8e16-418d-857d-26908de5ef1e -->
+<!-- ContentItem:a937ed96-7c15-4ede-a3d0-09dc382590eb -->
+<aside class="notes"><p>It is now more important than ever that we create networks that are not  controlled by corporate entities or petulant oligarchs</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>See my presentation from CodeMash 2025: <a href="https://www.youtube.com/watch?v=FdlJVG2GjLY">How the Fediverse Could Save Democracy &amp; Why It Probably Won't</a></p>
+</li>
+<li><p>Hear my thoughts on why a thriving Fediverse is so critical on David Giard's <a href="https://davidgiard.com/barry-stahl-on-the-fediverse">Technology and Friends</a> show.</p>
+</li>
+<li><p>Learn more about the Fediverse at <a href="https://fediverse.party/en/fediverse">fediverse.party</a>.</p>
+</li>
+<li><p>Get your own Mastodon account at <a href="https://joinmastodon.org/">Join Mastodon</a>.</p>
+<ul>
+<li>Don't stress on what server to use, just pick one and go.  You can always move later.</li>
+</ul>
+</li>
+<li><p>Follow me on Mastodon at <a href="https://fosstodon.org/@bsstahl">@bsstahl@CognitiveInheritance.com</a>.</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/a937ed96-7c15-4ede-a3d0-09dc382590eb.png" alt="Logos.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Liquid Victor was used to create this slide deck</p>
+</aside>
+<a id="23528a73-7bc1-4e39-9f2f-c8b9e2cff982"><h1>Some OSS Projects I Run</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:f8cbcb81-15f7-48e0-bc29-b348732f6f05 -->
+<ol>
+<li><a href="https://github.com/bsstahl/liquidvictor">Liquid Victor</a> : Media tracking and aggregation [used to assemble this presentation]</li>
+<li><a href="https://github.com/bsstahl/pptail">Prehensile Pony-Tail</a> : A static site generator built in c#</li>
+<li><a href="https://github.com/bsstahl/testhelperextensions">TestHelperExtensions</a> : A set of extension methods helpful when building unit tests</li>
+<li><a href="https://github.com/bsstahl/conferencescheduler">Conference Scheduler</a> : A conference schedule optimizer</li>
+<li><a href="https://github.com/bsstahl/intentbot">IntentBot</a> : A microservices framework for creating conversational bots on top of Bot Framework</li>
+<li><a href="https://github.com/bsstahl/liquidnun">LiquidNun</a> : Library of abstractions and implementations for loosely-coupled applications</li>
+<li><a href="https://github.com/bsstahl/toastmastersagenda">Toastmasters Agenda</a> : A c# library and website for generating agenda's for Toastmasters meetings</li>
+<li><a href="https://github.com/bsstahl/PDM">ProtoBuf Data Mapper</a> : A c# library for mapping and transforming ProtoBuf messages</li>
+</ol>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>I am proud to be one of the founders of AZGiveCamp.
+GiveCamps are weekend events where we put a bunch of software creators in a room with a bunch of great local charities, and through the course of the weekend, we create software to help them further their mission</p>
+</aside>
+<a id="3129a405-82a7-432c-ae55-6f9d2335ab17"><h1>http://GiveCamp.org</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:2ca346de-d62c-4c6b-834d-7ccab290a6ab -->
+<img alt="GiveCamp.png" src="img/2ca346de-d62c-4c6b-834d-7ccab290a6ab.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>July 25, 2022 was my 100th public talk. Thank you for allowing me to participate in your community over these past few decades!</p>
+</aside>
+<a id="39c6410c-3913-410b-abab-984014a15d84"><h1>Achievement Unlocked</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a042b106-4bab-4403-b5b6-0d7b414ef789 -->
+<img alt="bss-100-achievement-unlocked-1024x250.png" src="img/a042b106-4bab-4403-b5b6-0d7b414ef789.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/0c07ec13-c738-4206-b8e4-33e9e34b2e44.jpg'>
+<a id="6621d1d3-0bd0-45b2-8f4a-945a320b2f0a"><h1>Special thanks to René Magritte</h1></a>
+<!-- Layout:ImageWithCaption -->
+<!-- ContentItem:998811c8-319c-4d43-8ed5-14c5ae59d104 -->
+<!-- ContentItem:9c76653e-c26e-4ab7-ae35-ec0ddc9c4b7c -->
+<aside class="notes"><p>With special thanks to René Magritte for reminding us that representations are not reality</p>
+</aside>
+<img alt="TransparentImage-1600x800.png" src="img/998811c8-319c-4d43-8ed5-14c5ae59d104.png" />
+<h2><p>For reminding us that representations are not reality</p>
+</h2>
+</section>
+
+<section data-transition="slide-in slide-out" data-background='img/eb33ca8d-96c5-4439-8a17-a23b4e5b6125.png'>
+<aside class="notes"><p>Fantasy Baseball - Base Model</p>
+</aside>
+<a id="57eaec4d-f01e-46b2-a5e7-8eca3cc1a2ca"><h1>Fantasy Baseball - Base Model</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:998811c8-319c-4d43-8ed5-14c5ae59d104 -->
+<img alt="TransparentImage-1600x800.png" src="img/998811c8-319c-4d43-8ed5-14c5ae59d104.png" />
+</section>
+
+
+<section data-transition="slide-in fade-out" data-background='img/865fff4d-1009-40bb-bc8c-14da46ac6983.png'>
+<aside class="notes"><p>Not Highlighted</p>
+</aside>
+<a id="2ffdcdf9-7380-4289-8ee3-664bdef031f2"><h1>Fantasy Baseball - Fine-Tuned</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:998811c8-319c-4d43-8ed5-14c5ae59d104 -->
+<img alt="TransparentImage-1600x800.png" src="img/998811c8-319c-4d43-8ed5-14c5ae59d104.png" />
+</section>
+
+
+<section data-transition="fade-in slide-out" data-background='img/df36187e-8665-4652-a868-700c42efc080.png'>
+<aside class="notes"><p>Key text is highlighted to show the improvement from fine-tuning</p>
+</aside>
+<a id="603018a4-108a-43bf-8245-1ed44b99aa75"><h1>Fantasy Baseball - Fine-Tuned</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:998811c8-319c-4d43-8ed5-14c5ae59d104 -->
+<img alt="TransparentImage-1600x800.png" src="img/998811c8-319c-4d43-8ed5-14c5ae59d104.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Simpsons - Season 7 Episode 8</p>
+</aside>
+<a id="133189d0-874c-4c31-a3ae-d2c20c71f46d"><h1>The Simpsons - S7 E8</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:4a32639f-abfb-40d8-b5ee-02e9dac8bf38 -->
+<img alt="Wikipedia-Simpsons-Season7-Episode8-Synopsis.png" src="img/4a32639f-abfb-40d8-b5ee-02e9dac8bf38.png" />
+</section>
+
+
+<section data-transition="slide-in fade-out" data-background='img/94f49926-77ba-49a1-93fd-10a77073d8f1.png'>
+<aside class="notes"><p>Last Week - Base Model</p>
+</aside>
+<a id="11930935-ce07-4000-a130-deeef48a6e74"><h1>Last Week on Job - Base Model</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:998811c8-319c-4d43-8ed5-14c5ae59d104 -->
+<img alt="TransparentImage-1600x800.png" src="img/998811c8-319c-4d43-8ed5-14c5ae59d104.png" />
+</section>
+
+
+<section data-transition="fade-in slide-out" data-background='img/7ae882bc-9551-4cf0-aa01-7603bbf69503.png'>
+<aside class="notes"><p>Last Week - Fine-Tuned</p>
+</aside>
+<a id="f5b1579b-0000-47fc-b653-cda57c7f5230"><h1>Last Week on Job - Fine-Tuned Model</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:998811c8-319c-4d43-8ed5-14c5ae59d104 -->
+<img alt="TransparentImage-1600x800.png" src="img/998811c8-319c-4d43-8ed5-14c5ae59d104.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="8b18858d-561d-4dba-b8a2-82b98cade4ab"><h1>Questions to be Answered</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:a6179790-0bee-4164-978b-da7594ff2cdc -->
+<!-- ContentItem:312641bd-a355-421c-9466-c2f6f2f772b9 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>What does fine-tuning do?</li>
+<li>What problems does it solve?</li>
+<li>What problems doesn't it solve?</li>
+<li>What other methods are there?</li>
+<li>When should we use each?</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/312641bd-a355-421c-9466-c2f6f2f772b9.png" alt="Five Doors 800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="7d2ed64d-f3dd-4077-a60f-e04ab59d4a6f"><h1>What did our Fine-Tuning Do?</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:67747da6-f2d1-46ac-a7d8-c0b062322f11 -->
+<!-- ContentItem:d61b04c5-f240-4705-886d-00335de3dbb3 -->
+<aside class="notes"><p>If you want your model to act predictably, speak in a consistent voice, or follow a reasoning pattern — fine‑tuning is the right tool.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Same Knowledge, Different Behavior
+<ul>
+<li>We didn't add facts here</li>
+<li>We added a pattern of behavior</li>
+</ul>
+</li>
+<li>Other patterns we could tune for
+<ul>
+<li>Responses are in JSON format</li>
+<li>Responses use our brand voice</li>
+<li>Responses list options before answering</li>
+<li>Responses are a label from a list</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/d61b04c5-f240-4705-886d-00335de3dbb3.png" alt="BehavioralChange-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="7aa154db-8976-4a95-b8fa-eff9dff0865a"><h1>Transformer Architectures</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:2416b2f3-14c0-4d6c-99a5-00376fe32b45 -->
+<!-- ContentItem:237d52d6-2283-42c9-a4b8-f446a858d874 -->
+<aside class="notes"><p>All the learnings prior resulted in the public release of GPT-3 in June 2020, which demonstrated the power of transformer architectures to non-technical audiences</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>A neural network architecture that has enabled the recent advancements in NLP</p>
+</blockquote>
+<ul>
+<li><p>Based on the 2017 Google paper <a href="https://arxiv.org/abs/1706.03762">Attention is All You Need</a></p>
+</li>
+<li><p>Key Breakthrough: The Self-Attention Mechanism</p>
+<ul>
+<li>Focus on most relevant tokens</li>
+<li>Add context even at a distance</li>
+</ul>
+</li>
+<li><p>Enables Processing of Entire Sequences in Parallel</p>
+<ul>
+<li>Unlike traditional RNNs that process data sequentially</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/237d52d6-2283-42c9-a4b8-f446a858d874.jpg" alt="Self Attention 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="641c55c3-7953-4b54-8e5f-5a9da54beaf9"><h1>Transformer (Simplified)</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:782f2af6-5beb-4c69-8380-b2bd40f5d639 -->
+<img alt="Transformer Architectures - 938x800.png" src="img/782f2af6-5beb-4c69-8380-b2bd40f5d639.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="da95e918-79d8-4565-9aaf-1322ce8f58e3"><h1>Attention Blocks</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:0e727dad-172f-4208-a0c3-f3eba69b3820 -->
+<img alt="Transformer Architectures - Attention - 938x800.png" src="img/0e727dad-172f-4208-a0c3-f3eba69b3820.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="5d303398-8de8-4a41-8e13-40edac6020e1"><h1>Model Differences</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:8e99f13f-5084-49b2-a5fb-44df29d4b75d -->
+<!-- ContentItem:dcdfbe5e-e462-49a9-8fce-3d64c3dacfe2 -->
+<aside class="notes"><p>Fine‑tuning adjusts the whole model, but the effect shows up in the decoder — it changes how the model predicts tokens, not the knowledge it was trained on.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Base Models</p>
+<ul>
+<li>Predict from the full training corpus</li>
+<li>Provide a single response quickly</li>
+<li>Only &quot;consider&quot; the most-likely response</li>
+</ul>
+</li>
+<li><p>Fine-Tuned Models</p>
+<ul>
+<li>Follow fine-tuned patterns</li>
+<li>Can respond with multiple options initially</li>
+<li>Then predict based on those options</li>
+</ul>
+</li>
+<li><p>Reasoning Models</p>
+<ul>
+<li>Pre-trained to follow reasoning patterns</li>
+<li>May also have other tweaks</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/dcdfbe5e-e462-49a9-8fce-3d64c3dacfe2.png" alt="SelectFromOptions-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="6e9ffcbd-20ca-47e2-b7bb-fe5b3f40b7fb"><h1>The Pattern Simulates thinking</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:dae93f98-ab51-48cf-ba6b-fb5c356edeae -->
+<!-- ContentItem:87895a9e-087c-427a-a454-8d8682b13607 -->
+<aside class="notes"><p>It is this pattern, in combination with the fact that the model includes previously predicted tokens when predicting the  next token, that allows the model to simulate thinking and reasoning. The model is not actually thinking or reasoning,  but it is generating text in a way that mimics the patterns of human thought and reasoning.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>The pattern can simulate multiple prompts</li>
+<li>Think first, then act</li>
+<li>Allows for multiple possibilities</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/87895a9e-087c-427a-a454-8d8682b13607.png" alt="ThePatternSimulatesThinking-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background='img/da0dd8cf-516b-46f3-b72f-6bfca10b54a0.png'>
+
+<a id="56a5b320-4bca-4d4e-87ec-a284b0a6360b"><h1>Postponement - Base Model</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:998811c8-319c-4d43-8ed5-14c5ae59d104 -->
+<img alt="TransparentImage-1600x800.png" src="img/998811c8-319c-4d43-8ed5-14c5ae59d104.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/cbb7e315-0eae-4a4c-891a-01d01d1e2a65.png'>
+
+<a id="cf1f0225-2d96-4abe-8cc2-a1f8804ce208"><h1>Postponement - Reasoning Model</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:998811c8-319c-4d43-8ed5-14c5ae59d104 -->
+<img alt="TransparentImage-1600x800.png" src="img/998811c8-319c-4d43-8ed5-14c5ae59d104.png" />
+</section>
+
+
+<section data-transition="slide-in fade-out" data-background='img/25bb9e71-ade1-4a79-87a0-011e7bcd5dd9.png'>
+<aside class="notes"><p>Theory of Mind is the ability to represent what someone else believes, wants, or knows — even when those beliefs are false or different from reality.</p>
+</aside>
+<a id="4cf90667-31b6-488d-9a4b-83869fb05598"><h1>Theory of Mind - Base Model</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:998811c8-319c-4d43-8ed5-14c5ae59d104 -->
+<img alt="TransparentImage-1600x800.png" src="img/998811c8-319c-4d43-8ed5-14c5ae59d104.png" />
+</section>
+
+
+<section data-transition="fade-in slide-out" data-background='img/8332f896-0f6b-4e64-b624-e39d835249c4.png'>
+<aside class="notes"><p>Theory of Mind originated in developmental psychology in the late 1970s and early 1980s. It was developed by researchers such as John Flavell, Henry Wellman, Alison Gopnik, Josef Perner, Alan Leslie, and Janet Astington. The breakthrough came with the 1983 false‑belief task (where does the child look for the chocolate), which made  ToM experimentally measurable.</p>
+</aside>
+<a id="13f7238b-86e5-4fa3-8740-04345cb541e1"><h1>Theory of Mind - Reasoning Model</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:998811c8-319c-4d43-8ed5-14c5ae59d104 -->
+<img alt="TransparentImage-1600x800.png" src="img/998811c8-319c-4d43-8ed5-14c5ae59d104.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Segment of a JSONL training data file</p>
+</aside>
+<a id="7f71d3a0-7d5b-4d6a-b6a6-256249911e97"><h1>Fine-Tuning Data</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:987255bf-cfbf-4200-852b-ebf883889d1b -->
+<img alt="FineTuningData-JsonL.png" src="img/987255bf-cfbf-4200-852b-ebf883889d1b.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/3eead9cd-6fa7-49a9-bc0d-4c510d1c741b.png'>
+<aside class="notes"><p>One entry in a fine-tuning data set. The full data set would be in a jsonl file which would have many of these types of entries in a cr/lf separated file</p>
+</aside>
+<a id="cd17ddac-fc14-4089-8f38-383bb255c782">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>If we summarized the plots of episodes for fine-tuning, we would be reinforcing the pattern of how to write a synopsis,  not the actual information about the episode. The model would learn the format well, but the content would only be learned superficially and most detail wouldn't be there at all.</p>
+</aside>
+<a id="0d1d6464-8551-4f68-9706-556ea4082fc8"><h1>The Data is Not Reinforced</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:ab08b9fb-ca4e-4f8c-bed6-ffc401525ee2 -->
+<img alt="FineTuningData-SingleEntry-PlotSynopsis.png" src="img/ab08b9fb-ca4e-4f8c-bed6-ffc401525ee2.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="62705083-9a39-450b-8ccf-d1c474700359"><h1>When to Fine-Tune Data</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:6d41223b-e475-4bc3-b5f4-f187e81736b3 -->
+<!-- ContentItem:0a8c1649-c327-4047-8a23-b0cbf989efd1 -->
+<aside class="notes"><p>Extremely simple facts like &quot;the company was founded in 1998&quot; are also ok, but are more succeptable to hallucination.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Fine-tune data into the model when the &quot;knowledge&quot; is a pattern of static associations</p>
+</blockquote>
+<ul>
+<li>The information must be
+<ul>
+<li>Small - few facts</li>
+<li>Stable &amp; Unchanging</li>
+<li>Closed-domain (won't expand)</li>
+<li>Unlikely to conflict with future facts</li>
+</ul>
+</li>
+<li>Examples
+<ul>
+<li>Error 123 indicates X</li>
+<li>Status 234 indicates Y</li>
+<li>This Acronym means Z</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/0a8c1649-c327-4047-8a23-b0cbf989efd1.png" alt="FineTunedData 800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="c4403ff4-bc65-4cf8-a6aa-9b24049098ab"><h1>Fine-Tuning Is for Behavior</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:016bee27-84d3-4922-844d-24f8f831195a -->
+<!-- ContentItem:6ff6faee-5114-4530-8378-c88bfe6bc346 -->
+<aside class="notes"><p>We'll discuss ways to update the model's data later. For now, let's look at a use-case for fine tuning.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Fine-Tuning Changes Response Patterns</p>
+</blockquote>
+<ul>
+<li>Best for teaching the model how to respond</li>
+<li>Not for changing what the model should respond with</li>
+</ul>
+<p>We'll look at better ways to adjust the model's knowledge later in this session</p>
+
+</td>
+<td style="text-align: left;">
+<img src="img/6ff6faee-5114-4530-8378-c88bfe6bc346.png" alt="ImpossibleGeometry-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="52372c6f-ed8f-41b8-a494-996ffe34c40f"><h1>Use Case - IntentBot</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:a127a716-e300-47af-acc2-72b77da0458f -->
+<!-- ContentItem:ad184b3b-c17f-4c01-95c0-06b80a13db1c -->
+
+<table><tr><td style="vertical-align:top;">
+<p><a href="https://github.com/bsstahl/IntentBot">IntentBot on GitHub</a></p>
+<ul>
+<li>An OSS agentic framework
+<ul>
+<li>Modular</li>
+<li>Microservices‑based</li>
+<li>Designed before LLMs existed</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/ad184b3b-c17f-4c01-95c0-06b80a13db1c.png" alt="IntentBot-Github.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="7ae582d6-9945-4c88-bda9-bb38918f21df"><h1>Use Case - IntentBot</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:4cce33be-31f8-4ffb-95e0-3d99411bedfa -->
+<!-- ContentItem:afbb9e24-69eb-4181-8ee0-a016b44262ed -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>All components are pluggable
+<ul>
+<li>Intent determination</li>
+<li>Intent-based Routing</li>
+<li>Fulfillment Services</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/afbb9e24-69eb-4181-8ee0-a016b44262ed.png" alt="IntentBot-Flow.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="209b2137-3455-466a-8031-7b1de3179031"><h1>Classifying Utterances</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:26941006-c204-494e-b453-9fe89fe821b2 -->
+<ul>
+<li><p><strong>User</strong>: Set the office lights to 40 percent and make them warm white</p>
+<ul>
+<li><strong>Intent</strong>: AdjustLighting</li>
+</ul>
+</li>
+<li><p><strong>User</strong>: It's too cold in here, bump the temperature up a couple degrees</p>
+<ul>
+<li><strong>Intent</strong>: AdjustClimate</li>
+</ul>
+</li>
+<li><p><strong>User</strong>: What is my current Azure spend for the month?</p>
+<ul>
+<li><strong>Intent</strong>: QueryAzureSubscription</li>
+</ul>
+</li>
+<li><p><strong>User</strong>: Mark messages from <code>marketing@spammer.biz</code> as spam</p>
+<ul>
+<li><strong>Intent</strong>: ManageEmail</li>
+</ul>
+</li>
+<li><p><strong>User</strong>: Create a placeholder for a blog post called <code>Fine-Tuning AI Models with Microsoft Foundry</code></p>
+<ul>
+<li><strong>Intent</strong>: ManageBlog</li>
+</ul>
+</li>
+<li><p><strong>User</strong>: Add an A record for <code>api.cuyahogapress.com</code> pointing to 192.168.0.0 with a 300‑second TTL</p>
+<ul>
+<li><strong>Intent</strong>: ManageDns</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>All of these utterances should be classified as the AdjustLighting intent. However this alone is not enough in this case.</p>
+</aside>
+<a id="aa4397f8-79e4-49de-b965-152692cd8af7"><h1>Adjust Lighting Intent</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:7a9cd437-a615-4ddb-8e54-b2aeb9e4d46e -->
+<img alt="AdjustLightingIntent-TrainingData.png" src="img/7a9cd437-a615-4ddb-8e54-b2aeb9e4d46e.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="5f5d9c10-e8b1-491f-a37e-b0c3aa0a27bc"><h1>Adjust Lighting - Guest Room</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a9f29d6b-414c-4b39-85a1-4070b0a1793e -->
+<img alt="AdjustLightingIntent-TrainingData-GuestRoomLights.png" src="img/a9f29d6b-414c-4b39-85a1-4070b0a1793e.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="488f8625-731a-4737-bdcb-227710ada0d5"><h1>What If?</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:b8f6083b-fad9-43be-ae72-2dbcf93da070 -->
+<!-- ContentItem:6d43137d-c6e3-4741-9192-8788820a760d -->
+<aside class="notes"><p>Example: What if we told it to adjust the Flux Capacitor to keep the Nuclear Power Plant from melting down? Even if we fine-tune it with an <code>UnknownIntent</code>, we cannot <em>constrain</em> it to return that without additional guardrails.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<p>What if we give the model an utterance that it hasn't been fine-tuned to handle?</p>
+<p>Will it:</p>
+<ul>
+<li>Throw an error?</li>
+<li>Fall-back to <code>UnknownIntent</code>?</li>
+<li>Make something up?</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/6d43137d-c6e3-4741-9192-8788820a760d.png" alt="UnexpectedPath (800x800).png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="6eb19c46-0ebd-40f8-a374-56128709ea9a"><h1>Ways to Control Model Output</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:0f1c7cac-7db2-4d73-b8cf-7b69c85b77d9 -->
+<!-- ContentItem:937e3fa0-358e-4dc1-b1ac-43f546d2f515 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Static Context Engineering
+<ul>
+<li>Add tokens to the designed prompt</li>
+</ul>
+</li>
+<li>Dynamic Context Engineering
+<ul>
+<li>Add tokens at runtime</li>
+</ul>
+</li>
+<li>Fine‑Tuning
+<ul>
+<li>Modify the model’s behavioral priors</li>
+</ul>
+</li>
+<li>Constrained Decoding
+<ul>
+<li>Restrict what tokens the model can produce</li>
+</ul>
+</li>
+<li>Post‑Generation Validation
+<ul>
+<li>Reject or correct the output after it’s produced</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/937e3fa0-358e-4dc1-b1ac-43f546d2f515.png" alt="MeansOfControl (800x800).png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="18a23c00-83b8-4370-9304-594f08350e31"><h1>Static Context Engineering</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:4133b4ec-f142-40a0-a66d-c1169e40d07c -->
+<!-- ContentItem:b6243f73-d7c1-49e0-b853-b55808e29131 -->
+
+<table><tr><td style="vertical-align:top;">
+<p>Add tokens to the designed prompt</p>
+<ul>
+<li>System prompts</li>
+<li>Instructions</li>
+<li>One-shot or few‑shot examples</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/b6243f73-d7c1-49e0-b853-b55808e29131.png" alt="StaticContextEngineering (800x800).png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="2337c654-6033-494b-af02-50bf66fd7bcb"><h1>Dynamic Context Engineering</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:a5dac1cb-c786-4d60-988d-702bb9ee7ec7 -->
+<!-- ContentItem:5a09ef85-538f-487f-8684-742fda6ee9de -->
+
+<table><tr><td style="vertical-align:top;">
+<p>Add tokens at runtime</p>
+<ul>
+<li>RAG</li>
+<li>GraphRAG</li>
+<li>Tool outputs</li>
+<li>Memory injection</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/5a09ef85-538f-487f-8684-742fda6ee9de.png" alt="DynamicContextEngineering (800x800).png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="1f4f7101-d0ea-4114-9293-4b420c704043"><h1>Fine-Tuning</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f4660486-8ae1-4b0c-b108-9c93c39e2d72 -->
+<!-- ContentItem:702d2ed6-7edf-420d-9134-e36541636eae -->
+
+<table><tr><td style="vertical-align:top;">
+<p>Modify the model’s behavioral priors</p>
+<ul>
+<li>Classification patterns</li>
+<li>Formatting habits</li>
+<li>Stylistic tendencies</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/702d2ed6-7edf-420d-9134-e36541636eae.png" alt="FineTuning (800x800).png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="4cd424fe-9b9b-4dfc-b964-e0154bd42b83"><h1>Constrained Decoding</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:1c186cac-6ebf-45ec-8d69-8f3727c991a3 -->
+<!-- ContentItem:fc65d097-a772-4f6c-8790-86ed2d6ec5d8 -->
+
+<table><tr><td style="vertical-align:top;">
+<p>Restrict what tokens the model can produce</p>
+<ul>
+<li>JSON schema enforcement</li>
+<li>Grammar constraints</li>
+<li>Token blacklists/whitelists</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/fc65d097-a772-4f6c-8790-86ed2d6ec5d8.png" alt="ConstrainedDecoding (800x800).png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="4450e5c3-daf1-450f-8aa0-5d749d6664b6"><h1>Post-Generation Validation</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:9313a36a-7251-4a64-90d6-99bb0581bb8f -->
+<!-- ContentItem:70f7e52b-0bcc-4f8f-8edc-01f6f9a6b294 -->
+
+<table><tr><td style="vertical-align:top;">
+<p>Reject or correct the output after it's produced</p>
+<ul>
+<li>Intent whitelists</li>
+<li>Schema validation</li>
+<li>Supervisory agents</li>
+<li>Client enforcement</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/70f7e52b-0bcc-4f8f-8edc-01f6f9a6b294.png" alt="PostGenerationValidation (800x800).png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="e6183567-ff45-4168-9c9a-620ce6cb470c"><h1>IntentBot - The Hybrid Approach</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:0b453a08-5535-4aee-bda3-193ba2ab9358 -->
+<!-- ContentItem:05fa2daa-346d-48cc-ba90-bcc17e504333 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Fine-Tuning : Intent Classification</p>
+<ul>
+<li>Teaches the model the response pattern</li>
+</ul>
+</li>
+<li><p>Static Context for Allowed Intents</p>
+<ul>
+<li>System prompt provides the list of valid intents</li>
+</ul>
+</li>
+<li><p>Post-Generation Validation</p>
+<ul>
+<li>Checks that the returned intent is in the allowed set</li>
+<li>If invalid, sends back with corrective feedback</li>
+</ul>
+</li>
+<li><p>Constrained Decoding (Possible)</p>
+<ul>
+<li>If single-token labels, restrict output to those tokens</li>
+<li>Adds mechanical guardrails but also risk</li>
+</ul>
+</li>
+<li><p>Tooling for Service Discovery (Future)</p>
+<ul>
+<li>Query services to confirm an intent is supported</li>
+<li>Resolve borderline user requests</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/05fa2daa-346d-48cc-ba90-bcc17e504333.png" alt="HybridApproach (800x800).png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background='img/5c26fc9d-27fd-450b-8c72-fce6c1ccc761.png'>
+
+<a id="d430b061-1527-4a3e-a5cb-b95e708374e1">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Segment of a JSONL training data file</p>
+</aside>
+<a id="7f71d3a0-7d5b-4d6a-b6a6-256249911e97"><h1>Fine-Tuning Data</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:987255bf-cfbf-4200-852b-ebf883889d1b -->
+<img alt="FineTuningData-JsonL.png" src="img/987255bf-cfbf-4200-852b-ebf883889d1b.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/3eead9cd-6fa7-49a9-bc0d-4c510d1c741b.png'>
+<aside class="notes"><p>One entry in a fine-tuning data set. The full data set would be in a jsonl file which would have many of these types of entries in a cr/lf separated file</p>
+</aside>
+<a id="cd17ddac-fc14-4089-8f38-383bb255c782">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="13458111-2432-49d2-9975-e3b8e7c65532"><h1>Key Takeaways</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:129783ae-d8d1-4f36-ab10-1b33641875f9 -->
+<!-- ContentItem:1dd7b73d-fa5d-4d2a-901e-95dd313c48ac -->
+<aside class="notes"><p>If you can use prompting to get the behavior you want, do that.  If you can use a pre-trained reasoning model do that Some of this can be done by orchestrating multiple calls to the model, or multiple agents</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Fine-tuning → Behavior</p>
+<ul>
+<li>Shapes how the model responds</li>
+<li>Establishes patterns, structure, and consistency</li>
+<li>Does not add facts or enforce hard constraints</li>
+</ul>
+</li>
+<li><p>Context Engineering → Knowledge</p>
+<ul>
+<li>Provides information the model didn't previously have</li>
+<li>Static context = fixed instructions</li>
+<li>Dynamic context (ie RAG) = runtime grounding</li>
+</ul>
+</li>
+<li><p>Hybrid Approaches Are Common and Powerful</p>
+<ul>
+<li>Combine behavior shaping + knowledge injection</li>
+<li>Add constraints and validation for reliability</li>
+<li>Architecture &gt; any single technique</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/1dd7b73d-fa5d-4d2a-901e-95dd313c48ac.png" alt="MeansToControlModelOutput (800x800).png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="0f12d8c9-95ea-45a7-acfc-d6f7b6b7b3a8"><h1>Call to Action</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:084e1ffd-56fd-4ab6-8a80-4784810b2df5 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Start with Prompt Engineering</p>
+<ul>
+<li>Establish clear instructions and structure</li>
+<li>Shape the model’s immediate behavior with minimal effort</li>
+</ul>
+</li>
+<li><p>Move to RAG for More Complex Scenarios</p>
+<ul>
+<li>Bring in external knowledge when prompts aren't enough</li>
+<li>Keep information fresh, grounded, and scalable</li>
+<li>Bring in Documents, Facts, Memory &amp; Tools</li>
+</ul>
+</li>
+<li><p>Fine‑Tune When Behavior Matters</p>
+<ul>
+<li>Lock in consistent behaviors, formatting, and workflows</li>
+<li>Improve reliability for repeated, structured tasks</li>
+</ul>
+</li>
+<li><p>Use Combinations for Best Results</p>
+<ul>
+<li>Real systems blend all of the above</li>
+<li>Architecture beats any single technique</li>
+</ul>
+</li>
+</ul>
+
+</td>
+</tr></table></section>
+
+
+        </div>
+        <div class="footer-left">Inside Model Reasoning</div>
+        <div class="footer-right">Barry S. Stahl - Mastodon:@bsstahl@cognitiveinheritance.com - Blog:http://www.cognitiveinheritance.com</div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <!-- Plugins -->
+    <script src="plugin/highlight/highlight.js"></script> 
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+
+        Reveal.initialize({
+            hash: true,
+			width: 1920,
+			height: 1080,
+            transition: 'slide',
+            showNotes: window.location.search.match(/print-pdf/gi) ? true : false,
+            plugins: [RevealHighlight, RevealMarkdown, RevealSearch, RevealNotes, RevealMath, RevealZoom ]
+        });
+    </script>
+</body>
+</html>
