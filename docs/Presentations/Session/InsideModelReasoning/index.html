@@ -320,6 +320,82 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 
 
 <section data-transition="slide-in slide-out">
+<a id="54851746-90a1-45fa-980d-9cdcc12953cc"><h1>Embeddings</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:8c297a4c-5130-4206-ae37-995649e7d962 -->
+<!-- ContentItem:0e0658fb-5565-43c7-a9fc-3de3155352f3 -->
+<aside class="notes"><p>There are many other embedding models, some are optimized for different purposes. You should consider what model might work best for your use-case. This presentation uses the same model used by GPT-3 and GPT-4.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>A point in multi-dimensional space</li>
+<li>Mathematical representation of a word or phrase</li>
+<li>Encode both <strong>semantic</strong> and <strong>contextual</strong> information</li>
+</ul>
+<hr />
+<ul>
+<li>Model: <code>text-embedding-ada-002</code></li>
+<li>Vectors normalized to unit length</li>
+<li>Use 1536 dimensions</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/0e0658fb-5565-43c7-a9fc-3de3155352f3.jpg" alt="Embeddings - Cosmic Desert 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in none-out">
+<aside class="notes"><p>I used a T-SNE (T-distributed Stochastic Neighbor Embedding) transformation to perform this dimensionality reduction</p>
+</aside>
+<a id="9ec34ef5-afab-43e9-abf1-010e746b7af4">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:2313fe54-9904-4e1c-b5de-3c29c297fdc7 -->
+<img alt="Ram - Just Statements.png" src="img/2313fe54-9904-4e1c-b5de-3c29c297fdc7.png" />
+</section>
+
+
+<section data-transition="none-in slide-out">
+<aside class="notes"><p>The key to understanding embeddings is to remember that they are a way to represent a word or phrase in a multi-dimensional space.  The distance between two embeddings can be used to determine how similar the words or phrases they represent are to each other.</p>
+</aside>
+<a id="3714c934-4902-45a1-9948-3b31c7f02bba">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:43926256-864d-4a0a-aad0-b7ea6fa5b74e -->
+<img alt="Ram - With Clusters.png" src="img/43926256-864d-4a0a-aad0-b7ea6fa5b74e.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="2a4404ba-5f58-4efc-a214-b720b27105d7"><h1>Embedding</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:4e98361e-c44b-4fb0-b524-808cf99d9dbc -->
+<!-- ContentItem:eca91cad-0f7d-40f9-a474-151b769223d1 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Creating Order from Chaos</p>
+</blockquote>
+<ul>
+<li>Unstructured <code>string</code> =&gt; Structured <code>float[]</code></li>
+<li>Allows mathematical operations
+<ul>
+<li>Cosine Similarity &amp; Distance</li>
+<li>Nearest Neighbor Search</li>
+<li>Clustering</li>
+<li>Vector Addition &amp; Subtraction</li>
+<li>Dimensionality Reduction (e.g., PCA)</li>
+<li>Anomaly Detection</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/eca91cad-0f7d-40f9-a474-151b769223d1.jpg" alt="Order from Chaos 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
 
 <a id="da95e918-79d8-4565-9aaf-1322ce8f58e3"><h1>Attention Blocks</h1></a>
 <!-- Layout:FullPage -->
@@ -657,11 +733,6 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 <li>Add tokens at runtime</li>
 </ul>
 </li>
-<li>Fine‑Tuning
-<ul>
-<li>Modify the model’s behavioral priors</li>
-</ul>
-</li>
 <li>Constrained Decoding
 <ul>
 <li>Restrict what tokens the model can produce</li>
@@ -670,6 +741,11 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 <li>Post‑Generation Validation
 <ul>
 <li>Reject or correct the output after it’s produced</li>
+</ul>
+</li>
+<li>Fine-Tuning
+<ul>
+<li>Modify the model's behavioral priors</li>
 </ul>
 </li>
 </ul>
@@ -701,6 +777,23 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
+
+<a id="e7749f2f-59eb-4e45-b3cb-a53d59a76fc2"><h1>Static Context Engineering</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:146ad506-c52d-4446-8301-c30cea34a807 -->
+<blockquote>
+<p>You are a helpful AI Assistant</p>
+</blockquote>
+<p>vs</p>
+<blockquote>
+<p>You are an expert on The Simpsons with deep knowledge of episodes,  character arcs, running gags, and cultural references. Your tone is concise,  confident, and lightly humorous, like a TV historian who has spent decades  cataloging Springfield's finest chaos.
+Your output must always be a single JSONL line in this structure: <code>{ &quot;messages&quot;: [{ &quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;&lt;user query&gt;&quot; },{ &quot;role&quot;: &quot;assistant&quot;, &quot;content&quot;: &quot;&lt;assistant response referencing a real Simpsons episode&gt;&quot; }]}</code></p>
+</blockquote>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
 <a id="2337c654-6033-494b-af02-50bf66fd7bcb"><h1>Dynamic Context Engineering</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:a5dac1cb-c786-4d60-988d-702bb9ee7ec7 -->
@@ -722,22 +815,34 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
-<a id="1f4f7101-d0ea-4114-9293-4b420c704043"><h1>Fine-Tuning</h1></a>
+<a id="f8c3912e-08e3-46e9-b5b9-92f492e5780b"><h1>Retrieval Augmented Generation (RAG)</h1></a>
 <!-- Layout:ImageRight -->
-<!-- ContentItem:f4660486-8ae1-4b0c-b108-9c93c39e2d72 -->
-<!-- ContentItem:702d2ed6-7edf-420d-9134-e36541636eae -->
-
+<!-- ContentItem:7d502157-fe4b-4891-9ddb-90d231368958 -->
+<!-- ContentItem:77d9dede-033f-4a7a-9f4f-e56b4632a73e -->
+<aside class="notes"><p>If we are not augmenting the model with our own data, we are just hoping the model  happens to be trained on the right things for our use-case.
+Today we focus just on &quot;dense&quot; (semantic) RAG, vs other types like GraphRAG.</p>
+</aside>
 <table><tr><td style="vertical-align:top;">
-<p>Modify the model’s behavioral priors</p>
 <ul>
-<li>Classification patterns</li>
-<li>Formatting habits</li>
-<li>Stylistic tendencies</li>
+<li><p>Combines the benefits of retrieval-based and generative models</p>
+</li>
+<li><p>Identify and retrieve relevant information</p>
+<ul>
+<li>Agument context of the generative models</li>
+<li>Generative responses based on the augmented context</li>
+</ul>
+</li>
+<li><p>Potential uses include</p>
+<ul>
+<li>Explore large documentation sets</li>
+<li>Summarize articles in light of known relevant information</li>
+</ul>
+</li>
 </ul>
 
 </td>
 <td style="text-align: left;">
-<img src="img/702d2ed6-7edf-420d-9134-e36541636eae.png" alt="FineTuning (800x800).png" />
+<img src="img/77d9dede-033f-4a7a-9f4f-e56b4632a73e.jpg" alt="RAG 800x800.jpg" />
 </td>
 </tr></table></section>
 
@@ -779,6 +884,26 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 </td>
 <td style="text-align: left;">
 <img src="img/70f7e52b-0bcc-4f8f-8edc-01f6f9a6b294.png" alt="PostGenerationValidation (800x800).png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="1f4f7101-d0ea-4114-9293-4b420c704043"><h1>Fine-Tuning</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f4660486-8ae1-4b0c-b108-9c93c39e2d72 -->
+<!-- ContentItem:702d2ed6-7edf-420d-9134-e36541636eae -->
+
+<table><tr><td style="vertical-align:top;">
+<p>Modify the model’s behavioral priors</p>
+<ul>
+<li>Classification patterns</li>
+<li>Formatting habits</li>
+<li>Stylistic tendencies</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/702d2ed6-7edf-420d-9134-e36541636eae.png" alt="FineTuning (800x800).png" />
 </td>
 </tr></table></section>
 
@@ -945,6 +1070,7 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 <li><a href="https://cognitiveinheritance.com/Search/ai.html">AI Articles</a></li>
 <li><a href="https://github.com/bsstahl/AIDemos">Code Samples</a></li>
 <li><a href="https://github.com/bsstahl/intentbot">IntentBot on GitHub</a></li>
+<li><a href="https://cognitiveinheritance.com/Presentations/Session/GPTEmbeddings/index.html">LLM Embeddings: Not Magic, Just Math</a></li>
 <li><a href="https://cognitiveinheritance.com/Presentations/Session/RAGDeepDive/index.html">Future of Information Retrieval: A Deep Dive into RAG</a></li>
 </ul>
 </li>
