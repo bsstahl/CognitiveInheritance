@@ -18,8 +18,6 @@ categories: []
 
 <!-- I currently have no talks scheduled. {ContactPageLink:Contact me} to arrange to have me speak at your event. -->
 
-* **[Albuquerque Dot Net Users Group](https://www.meetup.com/albuquerque-net-users-group/)** - 2/25/2026 - "Inside Model Reasoning: Fine-Tuning in Action"
-
 * **[Codestock 2026](https://www.codestock.org/)** - 4/9/2026 - 4/10/2026 - "Inside Model Reasoning: Fine-Tuning in Action" & "Crafting AI: A Developer's Guide to Machine Learning"
 
 * **[NDC Toronto 2026](https://ndctoronto.com/speakers/barry-stahl)** - 5/5/2026 - 5/8/2026 - "The Future of Information Retrieval: A Deep-Dive into RAG"
@@ -193,14 +191,15 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ### Past engagements
 
-* **[NDC London 2026](https://ndclondon.com/speakers/barry-stahl)** - 1/26/2026 - 1/30/2026 - "Solutions That Evolve: Building Self-Improving Systems with Genetic Algorithms"
-* **[The Valley's .NET User Groups](https://www.meetup.com/nwvdnug/events/311139089/)** - 1/20/2026 - ".NET Aspire Accelerator: Fast Track to Cloud-Native Development" (co-presented with Rob Richardson)
-* **[CodeMash 2026](https://events.codemash.org/2026CodeMashConference#/acceptedSpeakers)** (Sandusky, OH) - 1/13/2025 - 1/16/2025 - "Amazing Algorithms Workshop" & "LLMs Under the Hood Workshop"
-* **[Hot Topics Developer Group](https://www.meetup.com/hot-topics-developer-group/events/312133235/)** (San Diego CA) - 12/02/2025 - "The Future of Information Retrieval: A Deep-Dive into RAG"
-* **[NDC Porto 2025](https://ndcporto.com/speakers/barry-stahl)** - 10/20/2025 - 10/24/2025 - "LLMs Under the Hood" (workshop), "Amazing Algorithms for Solving Problems in Software" (workshop) and ".NET Aspire Accelerator: Fast Track to Cloud-Native Development" (workshop with Rob Richardson)
-* **ML Con New York 2025** - 9/29/2025 - 10/3/2025 - "LLM Embeddings: Not Magic, Just Math"
-* **Combined .NET User Groups** (Salt Lake City UT, Provo UT, SE Valley AZ, NW Valley AZ) - 7/10/2025 - "The Future of Information Retrieval: A Deep-Dive into RAG"
-* **ConFoo 2025** - 2/26/2025 - 2/28/2025 - "Crafting AI: A Developer's Guide to Machine Learning" and "The Future of Information Retrieval: A Deep-Dive into RAG"
+* **[Albuquerque Dot Net Users Group](https://web.archive.org/web/20260226213644/https://www.meetup.com/albuquerque-net-users-group/events/312740517/)** - 2/25/2026 - "Inside Model Reasoning: Fine-Tuning in Action"
+* **[NDC London 2026](https://web.archive.org/web/20260226213915/https://ndclondon.com/speakers/barry-stahl)** - 1/26/2026 - 1/30/2026 - "Solutions That Evolve: Building Self-Improving Systems with Genetic Algorithms"
+* **[The Valley's .NET User Groups](https://web.archive.org/web/20260102205531/https://www.meetup.com/nwvdnug/events/311139089/)** - 1/20/2026 - ".NET Aspire Accelerator: Fast Track to Cloud-Native Development" (co-presented with Rob Richardson)
+* **[CodeMash 2026](https://web.archive.org/web/20260118081630/https://events.codemash.org/2026CodeMashConference#/acceptedSpeakers)** (Sandusky, OH) - 1/13/2025 - 1/16/2025 - "Amazing Algorithms Workshop" & "LLMs Under the Hood Workshop"
+* **[Hot Topics Developer Group](https://web.archive.org/web/20251127021711/https://www.meetup.com/hot-topics-developer-group/events/312133235/)** (San Diego CA) - 12/02/2025 - "The Future of Information Retrieval: A Deep-Dive into RAG"
+* **[NDC Porto 2025](https://web.archive.org/web/20250915215347/https://ndcporto.com/speakers/barry-stahl)** - 10/20/2025 - 10/24/2025 - "LLMs Under the Hood" (workshop), "Amazing Algorithms for Solving Problems in Software" (workshop) and ".NET Aspire Accelerator: Fast Track to Cloud-Native Development" (workshop with Rob Richardson)
+* **[ML Con New York 2025](https://web.archive.org/web/20260226215433/https://mlconference.ai/speaker/barry-stahl/)** - 9/29/2025 - 10/3/2025 - "LLM Embeddings: Not Magic, Just Math"
+* **[Combined .NET User Groups](https://web.archive.org/web/20260226220828/https://www.meetup.com/sevdnug/events/308656896/)** (Salt Lake City UT, Provo UT, SE Valley AZ, NW Valley AZ) - 7/10/2025 - "The Future of Information Retrieval: A Deep-Dive into RAG"
+* **[ConFoo 2025](https://web.archive.org/web/20250218185425/https://www.confoo.ca/en/speaker/barry-stahl)** - 2/26/2025 - 2/28/2025 - "Crafting AI: A Developer's Guide to Machine Learning" and "The Future of Information Retrieval: A Deep-Dive into RAG"
 * **CodeMash 2025** - 1/14/2025 - 1/17/2025  - "Crafting AI: A Developer's Guide to Machine Learning"
 * **Techorama Netherlands** - 10/7/2024 - 10/9/2024 - "Amazing Algorithms for Solving Problems in Software" and "The Future of Information Retrieval: A Deep-Dive into RAG"
 * **Beer City Code 2024** - 8/3/2024 - "GPT Embeddings: Not Magic, Just Math" and "Amazing Algorithms for Solving Problems in Software"
