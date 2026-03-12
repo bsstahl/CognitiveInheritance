@@ -28,6 +28,8 @@ categories: []
 
 * **[Nebraska.Code() 2026](https://nebraskacode.amegala.com/)** - 7/22/2026 - 7/24/2026 - "Amazing Algorithms for Solving Problems in Software" (workshop), "Solutions that Evolve, Building Self-Improving Systems with Genetic Algorithms" & "How the Fediverse Could Save Democracy & Why Developers Hold the Key"
 
+* **[Beer City Code 2026](https://www.beercitycode.com/#speakers)** - 8/14/2026 - 8/15/2026 - "LLMs Under the Hood" (workshop) and "Solutions That Evolve: Building Self-Improving Systems with Genetic Algorithms"
+
 ### Available Talks
 
 [Cloud-Native and Event-Driven Architectures](#microservices-talks) | [Software Engineering Patterns and Practices](#pnp-talks) | [Artificial Intelligence and Algorithms](#ai-talks)
