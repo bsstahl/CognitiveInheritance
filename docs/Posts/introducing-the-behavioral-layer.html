@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang="en">
     <head>
-        <!-- Template: Content Page -->
+        <!-- Template: Post Page -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     
-        <meta name="description" content="All posts that are Work-in-Progress">
+        <meta name="description" content="Introducing the Behavioral Layer, an article on Cognitive Inheritance.">
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -67,27 +67,106 @@
 
             <div class="row">
                 <main class="col-lg-9 col-xl-10 content-main">
-                    <h1>Unpublished Posts</h1>
-                    <ul>
-<li><a href="../Posts/80-percent-of-implementations-should-be-using-microservices.html">80% of Implementations Should be Using Microservices</a></li>
-<li><a href="../Posts/conceptual-associations-without-understanding.html">Conceptual Associations Without Understanding</a></li>
-<li><a href="../Posts/designing-event-driven-architectures.html">Designing Event Driven Architectures</a></li>
-<li><a href="../Posts/developing-with-csharp-using-html5-and-css.html">Developing with C# using HTML5 and CSS</a></li>
-<li><a href="../Posts/introducing-the-behavioral-layer.html">Introducing the Behavioral Layer</a></li>
-<li><a href="../Posts/llms-are-hybrid-models.html">Beyond ML: LLMs are Hybrid Systems</a></li>
-<li><a href="../Posts/llms-are-like-tdd.html">LLMs can be to writing what TDD is to coding</a></li>
-<li><a href="../Posts/aspnet-middleware-is-underused.html">ASP.NET Middleware: Underused, Understood</a></li>
-<li><a href="../Posts/minimizing-support-burden.html">Minimizing Support Burden - A Comparison of Three Architectures</a></li>
-<li><a href="../Posts/most-sdks-are-just-ctp-implementations.html">Most SDKs are CTP: The Unifying Pattern Behind Our APIs</a></li>
-<li><a href="../Posts/reducing-order-dependency-with-event-sourcing.html">Reducing Order Dependency with Event Sourcing</a></li>
-<li><a href="../Posts/teaching-computers-context.html">Teaching Computers Context: An Introduction to Word Embeddings</a></li>
-<li><a href="../Posts/the-concurrency-conundrum-letting-tools-shoulder-the-complexity.html">The Concurrency Conundrum: Letting Tools Shoulder the Complexity</a></li>
-<li><a href="../Posts/understanding-gpt-tokenization.html">Understanding GPT Tokenization</a></li>
-<li><a href="../Posts/unmasking-complexity.html">Unmasking Complexity - Real Strategies for Managing Complexity in Software Systems</a></li>
-<li><a href="../Posts/using-uris-as-globally-unique-ids.html">Using URIs as Globally Unique Identifiers</a></li>
-<li><a href="../Posts/when-code-coverage-catches-bugs.html">When Code Coverage Catches Bugs - A Case for Complete Coverage</a></li>
+                    <h3>Introducing the Behavioral Layer</h3>
+                    <h5>Posted by bsstahl on 2026-03-14 and Filed Under: </h5>
+                    <share-on-mastodon 
+                        share_title="Check out this post on Cognitive Inheritance: 'Introducing the Behavioral Layer'"
+                        share_description="&quot;Introduction to the Behavioral Layer, an architectural boundary that interprets ambiguous, human‑ or AI‑generated inputs before they reach the ACL or domain layer. It explains why modern systems need this layer, how it works, and how it differs from a traditional Anti‑Corruption Layer.&quot;"
+                        hashtags="#architecture #ddd #responsibility #pattern"
+                        author="@bsstahl@cognitiveinheritance.com"
+                        default_url="https://fosstodon.org">
+                    </share-on-mastodon>
+                    <br/><br/>
+                    <p>The next breaking change in your system will not come from another system. It will come from a human or from a machine producing human-like inputs through a language model. A user types a free-form request. A webhook posts a payload with optional fields and inconsistent casing. A system you do not control sends data that almost, but not quite, matches your expectations. These are not the structured, predictable inputs that a traditional Anti-Corruption Layer is designed to translate. They are ambiguous inputs that must be interpreted before any ACL or domain logic can safely engage.</p>
+<p>That is the purpose of the Behavioral Layer.</p>
+<h2>What the Behavioral Layer Does</h2>
+<p>The Behavioral Layer is responsible for taking unstructured or highly variable inputs, such as those produced by a person or a language model, and producing a clean, normalized, and predictable shape that the rest of the system can trust. It is the architectural boundary where ambiguity becomes structure.</p>
+<p>At a high level, the Behavioral Layer:</p>
+<ul>
+<li>Interprets what the sender is trying to do</li>
+<li>Normalizes inconsistent or incomplete inputs</li>
+<li>Detects structural and behavioral anomalies</li>
+<li>Enriches the data with derived or inferred attributes</li>
+<li>Produces a stable output object that downstream components can rely on</li>
 </ul>
+<p>The Behavioral Layer is defined by its responsibilities, not by any specific technology. You can implement it with deterministic rules, heuristics, or fine-tuned models. The architecture stays the same regardless of the tools you choose.</p>
+<h2>How It Works</h2>
+<p>The Behavioral Layer sits between the raw input and the ACL or domain layer. It receives whatever the outside world provides and applies a series of transformations that gradually reduce uncertainty.</p>
+<p>A typical flow looks like this:</p>
+<ol>
+<li>Receive the raw input exactly as it arrived.</li>
+<li>Perform structural checks to understand what type of thing it might be.</li>
+<li>Apply behavioral checks to understand what the sender is trying to accomplish.</li>
+<li>Normalize fields, resolve aliases, and fill in missing but inferable information.</li>
+<li>Detect suspicious or incoherent combinations of attributes.</li>
+<li>Produce a Behavioral Output object that expresses the input in a clean, predictable shape.</li>
+</ol>
+<p>Neither the ACL nor the domain layer ever sees the raw input. They only see the Behavioral Output, which keeps both layers small, deterministic, and easy to reason about.</p>
+<h2>How It Differs From a Traditional ACL</h2>
+<p>A traditional Anti-Corruption Layer protects the domain from other systems. It translates external models into internal ones, isolates upstream changes, and ensures that foreign concepts do not leak into the domain.</p>
+<p>The Behavioral Layer protects the domain from ambiguous inputs. It resolves uncertainty, interprets intent, and produces a coherent behavioral shape before any translation or invariant enforcement occurs.</p>
+<p>You can think of the responsibilities like this:</p>
+<ul>
+<li>Behavioral Layer: coherence</li>
+<li>ACL: translation and isolation</li>
+<li>Domain: correctness and invariants</li>
+</ul>
+<p>The Behavioral Layer is not a variant of an ACL and not a replacement for one. It is a complementary layer that handles a different class of problems. The ACL expects structured, well-formed inputs. The Behavioral Layer exists precisely because real-world inputs often are not.</p>
+<h2>Why is it Called the <strong>Behavioral</strong> Layer</h2>
+<p>The name comes from the nature of the inputs it handles. At this boundary, the system is not reacting to a schema. It is reacting to behavior. A person behaves unpredictably when typing a request. A language model behaves unpredictably when generating a response. A third-party system behaves unpredictably when sending a payload that almost matches your expectations.</p>
+<p>The Behavioral Layer exists to interpret that behavior.</p>
+<p>It focuses on what the sender is trying to do, not how the sender structures the data. It resolves intent, ambiguity, and variability before any translation or invariant enforcement occurs. The name fits because it describes the responsibility: making sense of behavior so the rest of the system does not have to.</p>
+<h2>Implementation Options</h2>
+<p>You can build a Behavioral Layer using several strategies, depending on your constraints and the variability of your inputs.</p>
+<h3>Deterministic Rules</h3>
+<p>This is the simplest approach. You define explicit rules for classification, normalization, and enrichment. It works well when the input space is small and predictable.</p>
+<ul>
+<li>Pros: transparent, easy to test, easy to reason about</li>
+<li>Cons: brittle when inputs vary widely or evolve over time</li>
+</ul>
+<h3>Heuristics and Pattern Matching</h3>
+<p>This approach uses scoring, thresholds, and pattern recognition to handle more variability without committing to full machine learning.</p>
+<ul>
+<li>Pros: flexible, adaptable, still deterministic</li>
+<li>Cons: harder to maintain, can drift into complexity</li>
+</ul>
+<h3>Fine-Tuned Language Models</h3>
+<p>A small, purpose-built model can classify intent, normalize fields, and map ambiguous inputs into structured forms with far more reliability than hand-written rules.</p>
+<ul>
+<li>Pros: handles real-world variability, reduces rule complexity, improves resilience</li>
+<li>Cons: requires training data, monitoring, and versioning discipline</li>
+</ul>
+<p>The Behavioral Layer does not require an LLM. LLMs simply make it easier to implement the layer when the input space becomes too variable for deterministic approaches.</p>
+<h2>A Simple Use Case</h2>
+<p>Imagine a system that receives inbound messages from users who want to update their account information. The messages can arrive through email, chat, or a mobile app. Users may not follow a template. They may combine multiple requests in one message. They may use synonyms, shorthand, or incomplete phrasing.</p>
+<p>A raw message might look like:</p>
+<p>&quot;Hey, can you change my address to the new one on file and also switch my plan to the premium thing&quot;</p>
+<p>The Behavioral Layer would:</p>
+<ul>
+<li>Identify the sender and confirm identity coherence</li>
+<li>Detect that the message contains two distinct intents</li>
+<li>Normalize &quot;premium thing&quot; into a known plan identifier</li>
+<li>Extract the address reference and map it to the stored address record</li>
+</ul>
+<p>This layer might produce an output object similar to the one shown below:</p>
+<div class="lang-json editor-colors"><div style="color:Black;background-color:White;"><pre>
+{
+  senderId: 12345,
+  intents: [
+    { type: <span style="color:#A31515;">&quot;UpdateAddress&quot;</span>, addressId: <span style="color:#A31515;">&quot;home&quot;</span> },
+    { type: <span style="color:#A31515;">&quot;ChangePlan&quot;</span>, plan: <span style="color:#A31515;">&quot;Premium&quot;</span> }
+  ],
+  confidence: <span style="color:#A31515;">&quot;High&quot;</span>,
+  anomalies: []
+}
+</pre></div>
+</div>
+<p>The ACL or domain layer now has a clean, predictable structure to work with. It does not need to parse free‑form text or guess what the user meant. The Behavioral Layer has already done that work.</p>
+<h2>What Comes Next</h2>
+<p>This post introduces the Behavioral Layer as an architectural concept and distinguishes it from a traditional ACL. In the next article, we will look at how fine‑tuned language models can assist with the transformations inside the layer. We will walk through how to build small, purpose‑built models using Microsoft Foundry, how to train them on your domain, and how to integrate them into a reliability‑first architecture.</p>
 
+                    <h5>Tags: <a title="Tag: architecture" class="small" href="../Search/architecture.html">architecture</a>&nbsp;<a title="Tag: ddd" class="small" href="../Search/ddd.html">ddd</a>&nbsp;<a title="Tag: responsibility" class="small" href="../Search/responsibility.html">responsibility</a>&nbsp;<a title="Tag: pattern" class="small" href="../Search/pattern.html">pattern</a>&nbsp;</h5>
+                    <div class="share"><a href="../Permalinks/18cf98fe-ad5e-43a5-91ee-55f0a90478c8.html" rel="bookmark">Permalink</a></div>
                 </main>
                 <aside class="col-lg-3 col-xl-2 sidebar">
                     <div class="widgetzone"><div class="widget textbox"><h4>About the Author</h4><div class="content"><p><img style="float: left; padding: 0px 3px 0px 0px;" src="../Pics/bsstahl_left.gif" alt="Barry S. Stahl" width="95" /><strong>Barry S. Stahl</strong> (he/him/his) - Barry is a .NET Software Engineer who has been creating business solutions for enterprise customers since the mid 1980s. Barry is also an Election Integrity Activist, baseball and hockey fan, husband of one genius and father of another, and a 40 year resident of Phoenix Arizona USA. When Barry is not traveling around the world to speak at Conferences, Code Camps and User Groups or to participate in GiveCamp events, he spends his days as the Principal Engineer for AZNerds.net in Phoenix AZ and his nights thinking about the next AZGiveCamp event where software creators come together to build websites and apps for some great non-profit organizations.</p>
@@ -130,7 +209,7 @@
                 </aside>
             </div>
         </div>
-    
+
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
@@ -139,7 +218,5 @@
         <!-- 100% privacy-first analytics -->
         <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
         <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true" alt="" referrerpolicy="no-referrer-when-downgrade"/></noscript>
-
     </body>
-
 </html>
