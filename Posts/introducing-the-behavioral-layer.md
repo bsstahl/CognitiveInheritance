@@ -19,9 +19,7 @@ categories:
 - development
 
 ---
-The next breaking change in your system will not come from another system. It will come from a human or from a machine producing human-like inputs through a language model. A user types a free-form request. A webhook posts a payload with optional fields and inconsistent casing. A system you do not control sends data that almost, but not quite, matches your expectations. These are not the structured, predictable inputs that a traditional Anti-Corruption Layer is designed to translate. They are ambiguous inputs that must be interpreted before any ACL or domain logic can safely engage.
-
-That is the purpose of the Behavioral Layer.
+The next breaking change in your system will not come from another system. It will come from a human or from a machine producing human-like inputs through a language model. A user types a free-form request. A webhook posts a payload with optional fields and inconsistent casing. A system you do not control sends data that almost, but not quite, matches your expectations. These are not the structured, predictable inputs that a traditional Anti-Corruption Layer is designed to translate. They are ambiguous inputs that must be interpreted before any ACL or domain logic can safely engage. This is the realm of the Behavioral Layer.
 
 ## What the Behavioral Layer Does
 
