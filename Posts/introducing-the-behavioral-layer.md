@@ -112,10 +112,11 @@ The Behavioral Layer would:
 * Translate the sender information into discrete fields
 * Detect that the message contains two distinct intents
 * Normalize "premium thing" into a known plan identifier
-* Indicate that "premium thing" is not an exact match to a known plan
 * Extract the address reference and map it to the stored address record
 
-This layer might produce an output object similar to the one shown below:
+As shown below, this layer might also interpret normalized data that it has access to. For example, if the list of plans is accessible to the Behavioral Layer, it might add an indication that "premium thing" is not an exact match to a known plan. This is one of the places however where some judgement is required because, depending on the circumstances, that functionality might be better left to an ACL or the Domain.
+
+The Behavioral layer would consider the input above along with the email metadata and might produce an output object similar to the one shown below:
 
 ```json
 {
