@@ -20,7 +20,7 @@ categories:
 - Tools
 
 ---
-I still have the first camera I ever used - a 126 box camera that was basically a toy even in its own era. It shot black‑and‑white film because that’s what a kid could afford, and it produced the kind of photos you’d expect from a plastic lens and a shutter that felt like it was powered by hope. One of those photos captured Thurman Munson, the Yankees catcher who would later die in a plane crash. It’s not a great photo. It’s grainy, off‑center, and full of the accidental foreground clutter you get when you’re small, excited, and holding a camera that doesn’t care about your artistic intent.
+I still have the first camera I ever used - a 126 box camera, similar to a [Hawekeye II](https://web.archive.org/web/20251216145350/https://historiccamera.com/cgi-bin/librarium2/pm.cgi?action=app_display&app=datasheet&app_id=3988), that was basically a toy even in its own era. I shot with black‑and‑white film because that’s what a kid could afford, and it produced the kind of photos you’d expect from a plastic lens and a shutter that felt like it was powered by hope. One of those photos captured Thurman Munson, the Yankees catcher who would later die in a plane crash. It’s not a great photo. It’s grainy, off‑center, and full of the accidental foreground clutter you get when you’re small, excited, and holding a camera that doesn’t care about your artistic intent.
 
 Recently, I ended up with three versions of that same moment:
 
@@ -93,6 +93,6 @@ Sharpening, noise reduction, auto‑contrast, white‑balance correction, lens�
 
 So the question can’t be "Was AI used?"  The questions must be more akin to **"What kind of AI, used how, and to what effect?"** And these questions need to be answered in the full context of the situation.
 
-If we can’t cleanly categorize three versions of a childhood photo, we definitely can’t build policy around a binary definition of "AI‑generated." We need rules that focus on **intent**, **impact**, and **what claims are being made**, not on whether a model was somewhere in the toolchain. Because the truth of this photo is simple, AI didn’t create it, **it actually happened**. The tools just helped me see it more clearly, and they can just as easily help someone else see something that was never there.
+If we can’t cleanly categorize these three versions of a childhood photo as "AI-Generated" or not, we definitely can’t build policy around such a binary definition. We need rules that focus on **intent**, **impact**, and **what claims are being made**, not on whether a model was somewhere in the toolchain. Because the truth of this photo is simple, AI didn’t create it, **it actually happened**. The tools just helped me see it more clearly, and they can just as easily help someone else see something that was never there.
 
-Outside of this one childhood snapshot, it’s rarely that simple.
+Outside of this one childhood snapshot, it’s rarely even *that* simple.
