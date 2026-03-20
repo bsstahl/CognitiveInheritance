@@ -20,7 +20,7 @@ categories:
 - Tools
 
 ---
-I still have the first camera I ever used - a 126 box camera, similar to a [Hawekeye II](https://web.archive.org/web/20251216145350/https://historiccamera.com/cgi-bin/librarium2/pm.cgi?action=app_display&app=datasheet&app_id=3988), that was basically a toy even in its own era. I shot with black‑and‑white film because that’s what a kid could afford, and it produced the kind of photos you’d expect from a plastic lens and a shutter that felt like it was powered by hope. One of those photos captured Thurman Munson, the Yankees catcher who would later die in a plane crash. It’s not a great photo. It’s grainy, off‑center, and full of the accidental foreground clutter you get when you’re small, excited, and holding a camera that doesn’t care about your artistic intent.
+I still have the first camera I ever used - a 126 box camera, similar to a [Hawekeye II](https://web.archive.org/web/20251216145350/https://historiccamera.com/cgi-bin/librarium2/pm.cgi?action=app_display&app=datasheet&app_id=3988), that was basically a toy even in its own era. I shot with black‑and‑white film because that’s what a kid could afford, and it produced the kind of photos you’d expect from a plastic lens and a shutter that felt like it was powered by hope. One of those photos captured Thurman Munson, the Yankees catcher who would later die in a plane crash, making him something of a larger-than-life figure in my experience. It’s not a great photo. It’s grainy, off‑center, and full of the accidental foreground clutter you get when you’re small, excited, and holding a camera that doesn’t care about your artistic intent.
 
 Recently, I ended up with three versions of that same moment:
 
@@ -36,9 +36,9 @@ Unfortunately, that question really can't be answered without a lot more informa
 
 The cleaned‑up version of this photo didn’t invent anything. It didn’t fabricate Munson’s face or change the moment. It just did what darkroom techniques, Photoshop, and restoration tools have always done. The colorized version added something new, but colorization has existed for more than a century. The only difference is that a machine did the brushwork instead of a human. And the original? It’s still the moment I captured as a kid with a toy camera. The digital version may have passed through modern software on its way to the screen, but the composition, the light, the instant in time - that’s all intact.
 
-## But even true photos can mislead, with or without AI
+## Even "true" photos can mislead, with or without AI
 
-This is where things get tricky. Any still or, to a lesser-degree, moving image can create false impressions with the viewer. Strange lighting, unusual shadows, a frozen instant in time that doesn't really capture the essence of the situation. All of these things happen, and we've experienced them. How many times have you taken a photo of someone who was happy, but looked sad or angry in the shot? Was [the dress](https://en.wikipedia.org/wiki/The_dress) blue or gold?
+This is where things get tricky. Any still or moving image can create false impressions with the viewer. Strange lighting, unusual shadows, a frozen instant in time that doesn't really capture the essence of the situation. All of these things happen, and we've experienced them. How many times have you taken a photo of someone who was happy, but looked sad or angry in the shot? Was [the dress](https://en.wikipedia.org/wiki/The_dress) blue or gold?
 
 In my three images above, the event happened nearly entirely as presented in those photos. Despite that, the AI‑assisted versions can still create false impressions, sometimes similar to the ones created by a pure "unretouched" photograph.
 
@@ -98,14 +98,14 @@ All of which suggests that the editing of images, the part that can be done usin
 
 ## Here’s the part we can’t ignore
 
-AI, in some form, is *always* involved now.
+AI, in some form, is nearly *always* involved now.
 
-Not necessarily the generative models people are worried about. Not the headline‑grabbing systems that synthesize faces or fabricate events, but the quiet, invisible AI that lives inside scanners, cameras, phones, photo apps, and operating systems, the kind nobody thinks about because it doesn’t feel like "AI".
+Not necessarily the generative models people are worried about, though those can certainly be used in perfectly legitimate ways. Not the headline‑grabbing systems that synthesize faces or fabricate events, but the quiet, invisible AI that lives inside scanners, cameras, phones, photo apps, and operating systems, the kind nobody thinks about because it doesn’t feel like "AI".
 
-Sharpening, noise reduction, auto‑contrast, white‑balance correction, lens‑distortion fixes, de‑mosaicing, compression artifacts being smoothed away; as well as autocorrect, predictive-text, grammar correction, spellcheck, voice-to-text, spam filtering, recommendation systems. These are all machine‑learning (ML) systems doing work behind the scenes.
+Sharpening, noise reduction, auto‑contrast, white‑balance correction, lens‑distortion fixes, de‑mosaicing, compression artifacts being smoothed away. Other domains have similar tools in autocorrect, predictive-text, grammar correction, spellcheck, voice-to-text, spam filtering and recommendation systems. These are all machine‑learning (ML) systems doing work behind the scenes.
 
 So the question can’t be "Was AI used?"  The questions must be more akin to **"What kind of AI, used how, and to what effect?"** And these questions need to be answered in the full context of the situation.
 
-If we can’t cleanly categorize these three versions of a childhood photo as "AI-Generated" or not, we definitely can’t build policy around such a binary definition. We need rules that focus on **intent**, **impact**, and **what claims are being made**, not on whether a model was somewhere in the toolchain. Because the truth of this photo is simple, AI didn’t create it, **it actually happened**. The tools just helped me see it more clearly, and they can just as easily help someone else see something that was never there.
+If we have difficulty categorize these three versions of a childhood photo as "AI-Generated" or not, we definitely can’t build policy around such a binary definition. We need rules that focus on **intent**, **impact**, and **what claims are being made**, not on whether a model was somewhere in the toolchain. Because the truth of this photo is simple, AI didn’t create it, **it actually happened**. The tools just helped me see it more clearly, and they can also help someone else see something that was never there.
 
 Outside of this one childhood snapshot, it’s rarely even *that* simple.
