@@ -98,14 +98,10 @@ All of which suggests that the editing of images, the part that can be done usin
 
 ## Here’s the part we can’t ignore
 
-AI, in some form, is nearly *always* involved now.
-
-Not necessarily the generative models people are worried about, though those can certainly be used in perfectly legitimate ways. Not the headline‑grabbing systems that synthesize faces or fabricate events, but the quiet, invisible AI that lives inside scanners, cameras, phones, photo apps, and operating systems, the kind nobody thinks about because it doesn’t feel like "AI".
-
-Sharpening, noise reduction, auto‑contrast, white‑balance correction, lens‑distortion fixes, de‑mosaicing, compression artifacts being smoothed away. Other domains have similar tools in autocorrect, predictive-text, grammar correction, spellcheck, voice-to-text, spam filtering and recommendation systems. These are all machine‑learning (ML) systems doing work behind the scenes.
+AI, in some form, is nearly *always* involved now. Not the headline‑grabbing generative models that synthesize faces or fabricate events, but the quiet, invisible systems inside scanners, cameras, phones, and photo apps, the ones nobody notices because they don’t feel like "AI" like sharpening, noise reduction, auto‑contrast, white‑balance correction, lens‑distortion fixes and de‑mosaicing filters. Other domains have similar tools in autocorrect, predictive-text, grammar correction, spellcheck, voice-to-text, spam filtering and recommendation systems. These are all machine‑learning (ML) systems doing work behind the scenes.
 
 So the question can’t be "Was AI used?"  The questions must be more akin to **"What kind of AI, used how, and to what effect?"** And these questions need to be answered in the full context of the situation.
 
-If we have difficulty categorize these three versions of a childhood photo as "AI-Generated" or not, we definitely can’t build policy around such a binary definition. We need rules that focus on **intent**, **impact**, and **what claims are being made**, not on whether a model was somewhere in the toolchain. Because the truth of this photo is simple, AI didn’t create it, **it actually happened**. The tools just helped me see it more clearly, and they can also help someone else see something that was never there.
+Seeing the difficulty in categorizing these three versions of a childhood photo as "AI-Generated" or not, it is obvious that we can’t build policy around such a binary definition. We need rules that focus on **intent**, **impact**, and **what claims are being made**, not on whether a model was somewhere in the toolchain. Because the truth of this photo is simple, AI didn’t create it, **it actually happened**. The tools just helped me see it more clearly, but they can also help someone else see something that was never there.
 
 Outside of this one childhood snapshot, it’s rarely even *that* simple.
