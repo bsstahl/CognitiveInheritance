@@ -100,7 +100,7 @@ All of which suggests that the editing of images, the part that can be done usin
 
 ## Here’s the part we can’t ignore
 
-AI, in some form, is nearly *always* involved now. Not the headline‑grabbing generative models that synthesize faces or fabricate events, but the quiet, invisible systems inside scanners, cameras, phones, and photo apps, the ones nobody notices because they don’t feel like "AI" like sharpening, noise reduction, auto‑contrast, white‑balance correction, lens‑distortion fixes and de‑mosaicing filters. Other domains have similar tools in autocorrect, predictive-text, grammar correction, spellcheck, voice-to-text, spam filtering and recommendation systems. These are all machine‑learning (ML) systems doing work behind the scenes.
+AI, in some form, is nearly *always* involved now. Not the headline‑grabbing generative models that synthesize faces or fabricate events, but the quiet, invisible systems inside scanners, cameras, phones, and photo apps, the ones nobody notices because they don’t feel like "AI". Processes like sharpening, noise reduction, auto‑contrast, white‑balance correction, lens‑distortion fixes and de‑mosaicing filters are all part of many of the image capture mechanisms we use every day. Other domains have similar tools used for autocorrect, predictive-text, grammar correction, spellcheck, voice-to-text, spam filtering and recommendations. These are all machine‑learning (ML) systems doing work behind the scenes.
 
 So the question can’t be "Was AI used?"  The questions must be more akin to **"What kind of AI, used how, and to what effect?"** And these questions need to be answered in the full context of the situation.
 
