@@ -67,7 +67,7 @@ These aren’t footnotes. They’re large, unresolved questions that deserve the
 
 ## The Hard Part Is Defining What Matters
 
-This is why blanket rules about "AI‑generated content" fall apart. The line between "generated," "assisted," "enhanced," and "restored" isn’t a line at all, it’s a gradient. That doesn’t mean we shouldn’t regulate AI‑involved media. It means **we need to regulate AI with language and intent that actually matches reality, and solves the real problems**.
+The reasons why blanket rules about "AI‑generated content" fall apart are complicated. The line between "generated," "assisted," "enhanced," and "restored" isn’t a line at all, it’s a gradient. That doesn’t mean we shouldn’t regulate AI‑involved media. It means **we need to regulate AI with language and intent that actually matches reality, and solves the real problems**.
 
 There *are* cases where labeling is essential, but most of it is context specific. If I am posting a picture of a conference talk I gave, I wouldn't feel right adding fake participants in the crowd, but I'd often be fine with editing someone out who asked me to, depending on the reason for doing so. I might not feel the same way if the photograph was being published as part of a story in the news. However, there are some things that should probably always be disclosed:
 
