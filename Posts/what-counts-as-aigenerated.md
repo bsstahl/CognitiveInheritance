@@ -34,7 +34,7 @@ All three images are real in the sense that they correspond to something that ac
 
 Unfortunately, that question really can't be answered without a lot more context. All 3 images **used AI** as part of the pipeline in some form or another, because depending on how you define AI, even the act of scanning the original likely used a model. The question we really need to answer is: **what do we mean when we say something is "AI‑generated"?**
 
-The cleaned‑up version of this photo didn’t invent anything. It didn’t fabricate Munson’s face or change the moment. It just did what darkroom techniques, Photoshop, and restoration tools have always done. The colorized version added something new, but colorization has existed for more than a century. The only difference is that a machine did the brushwork instead of a human. And the original? It’s still the moment I captured as a kid with a toy camera. The digital version may have passed through modern software on its way to the screen, but the composition, the light, the instant in time - that’s all intact.
+The cleaned‑up version of this photo didn’t invent anything. It didn’t fabricate Munson’s face or change the moment. It just did what darkroom techniques, Photoshop, and restoration tools have always done. The colorized version added something new, but colorization has existed for more than a century. The only difference is that a machine did the brushwork instead of a human. And the original? It’s still the moment I captured as a kid with a toy camera. The digital version may have passed through modern software on its way to the screen, but the instant in time remains intact.
 
 ## Even "true" photos can mislead, with or without AI
 
