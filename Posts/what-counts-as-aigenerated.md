@@ -65,7 +65,7 @@ Questions like:
 
 These aren’t footnotes. They’re large, unresolved questions that deserve their own analysis and probably their own regulatory framework. Mixing them into the "AI‑generated vs. not" debate only makes everything muddier. So for this post, I’m deliberately setting copyright aside; not because it’s unimportant, but because it’s *too* important to treat as a parenthetical.
 
-## The Hard Part Is Defining What Counts
+## The Hard Part Is Defining What Matters
 
 This is why blanket rules about "AI‑generated content" fall apart. The line between "generated," "assisted," "enhanced," and "restored" isn’t a line at all, it’s a gradient. That doesn’t mean we shouldn’t regulate AI‑involved media. It means **we need to regulate AI with language and intent that actually matches reality, and solves the real problems**.
 
@@ -76,13 +76,15 @@ There *are* cases where labeling is essential, but most of it is context specifi
 * **Synthetic people, synthetic events, synthetic evidence** absolutely require clear disclosure.
 * **AI‑assisted reconstructions that add plausible but invented details** should be labeled so viewers understand what’s real and what’s inferred.
 
-Those distinctions matter because they speak to truth, provenance, and the potential for harm.
+Those distinctions matter because they speak to truth, provenance, and the potential for harm, and they remain just as important whether AI is part of the process or not.
 
-But my three images of Thurman Munson? They’re all the same moment, they differ only in the tools used to reveal it, and in the risks those tools introduce if we’re not transparent about what changed.
+But my three images of Thurman Munson? They’re all the same moment, they differ only in the tools used to reveal it. In most contexts, there is no meaningful change made by these manipulations.
 
 There are already existing sets of rules we can lean on here. The The National Press Photographers Association has a [Code of Ethics](https://web.archive.org/web/20260315211924/https://nppa.org/resources/code-ethics) for visual journalists that includes the following:
 
 > Editing should maintain the integrity of the photographic image's content and context. Do not manipulate images or add or alter sound in any way that can mislead viewers or misrepresent subjects.
+
+I would ask you: "Does my manipulation of this image mislead viewers or misrepresent subjects".
 
 These directives also include composition and subject matter rules such as:
 
