@@ -28,11 +28,11 @@ Recently, I ended up with three versions of that same moment:
 * **A cleaned‑up version** - run through an AI tool that removed some shadows, centered Munson, and erased the stray arms of the people next to me.  
 * **A colorized version** - also AI‑assisted, adding color to a scene that never existed in color on film.
 
-All three images are real in the sense that they correspond to something that actually happened. And all three are altered in the sense that every photograph is shaped by the tools available at the time. So the question I could be asked when I show these images is, **Which of these are "AI‑generated"?**
+All three images are real in the sense that they correspond to something that actually happened. And all three are altered in the sense that every photograph is shaped by the tools available at the time. So the question I could be asked when I show any version of these images is, **Is it "AI‑generated"?**
 
 [![3 Images of a man wearing a NY Yankees baseball uniform in the outfield of a ballpark, shot from a few feet above him](../Images/ThreeMunsonPhotos-800x276.png)](../Images/ThreeMunsonPhotos.png)
 
-Unfortunately, that question really can't be answered without a lot more information. All 3 images **used AI** as part of the pipeline in some form or another, because depending on how you define AI, even the act of scanning the original likely used a model. The question we need to answer is: **what do we mean when we say something is "AI‑generated"?**
+Unfortunately, that question really can't be answered without a lot more context. All 3 images **used AI** as part of the pipeline in some form or another, because depending on how you define AI, even the act of scanning the original likely used a model. The question we really need to answer is: **what do we mean when we say something is "AI‑generated"?**
 
 The cleaned‑up version of this photo didn’t invent anything. It didn’t fabricate Munson’s face or change the moment. It just did what darkroom techniques, Photoshop, and restoration tools have always done. The colorized version added something new, but colorization has existed for more than a century. The only difference is that a machine did the brushwork instead of a human. And the original? It’s still the moment I captured as a kid with a toy camera. The digital version may have passed through modern software on its way to the screen, but the composition, the light, the instant in time - that’s all intact.
 
@@ -40,17 +40,19 @@ The cleaned‑up version of this photo didn’t invent anything. It didn’t fab
 
 This is where things get tricky. Any still or moving image can create false impressions with the viewer. Strange lighting, unusual shadows, a frozen instant in time that doesn't really capture the essence of the situation. All of these things happen, and we've experienced them. How many times have you taken a photo of someone who was happy, but looked sad or angry in the shot? Was [the dress](https://en.wikipedia.org/wiki/The_dress) blue or gold?
 
-In my three images above, the event happened nearly entirely as presented in those photos. Despite that, the AI‑assisted versions can still create false impressions, sometimes similar to the ones created by a pure "unretouched" photograph.
+In my three images above, the event happened nearly entirely as presented in those photos. Despite that, any of these versions can still create false impressions in the mind of the viewer.
 
 For example:
 
-* The colorized version might imply the grass at Yankee Stadium looked a certain way that day - when the original black‑and‑white film simply didn’t capture that information.  
-* It might suggest Munson wore an undershirt of a particular color - a detail the model had to invent.  
+* It is possible that Munson is talking to someone, or perhaps yelling at them in a way not captured by this frame.
+* When I took the picture, there may have been one or more other people just outside the frame, changing the context.
 * The cleaned‑up version might imply the scene was less crowded than it really was, because the tool removed the arms of the people next to me.
+* The colorized version might imply the grass at Yankee Stadium looked a certain way that day, when the original didn’t capture that detail.
+* The colorization might suggest Munson wore an undershirt of a particular shade, a detail the model had to invent.
 
-None of these changes alter the *event*, but they absolutely can alter the *interpretation*. AI can introduce confident, plausible details that were never in evidence. Not *necessarily* maliciously or deceptively, just quietly.
+None of these facts are necessarily germane to the image, but they absolutely can alter its *interpretation*. Still images can present scenes in a framing that doesn't completely do it justice, while AI can introduce confident, plausible details that were never in evidence, whether done maliciously or not.
 
-This is why labeling matters. Not because AI involvement is inherently bad, but because, in most cases, viewers deserve to know which parts of an image are grounded in reality and which parts were reconstructed, inferred, or imagined.
+This is why labeling matters. Not because AI involvement is inherently bad, but because, in most cases, viewers deserve to know which parts of an image are grounded in reality and which parts were reconstructed, inferred, or imagined. However, defining those rules is an area where a poor definition could let some people get away with anything while the rest of us end up having to tag everything as AI generated, turning the label into just more noise.
 
 ## This isn’t even touching the copyright issues
 
