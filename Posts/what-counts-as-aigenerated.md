@@ -13,8 +13,8 @@ description: A childhood photo of a baseball player becomes a case study in why 
 ispublished: false
 buildifnotpublished: true
 showinlist: false
-publicationdate: 2026-03-19T10:19:40.000+00:00
-lastmodificationdate: 2026-03-19T10:19:40.000+00:00
+publicationdate: 2026-03-21T10:19:40.000+00:00
+lastmodificationdate: 2026-03-21T10:19:40.000+00:00
 slug: what-counts-as-aigenerated
 categories:
 - Tools
@@ -28,20 +28,19 @@ Recently, I ended up with three versions of that same moment:
 * **A cleaned‑up version** - run through an AI tool that removed some shadows, centered Munson, and erased the stray arms of the people next to me.  
 * **A colorized version** - also AI‑assisted, adding color to a scene that never existed in color on film.
 
-All three images are real in the sense that they correspond to something that actually happened. And all three are altered in the sense that every photograph is shaped by the tools available at the time. So the question I want to ask when I show these images side‑by‑side is, **Which of these are "AI‑generated"?**
-
-Not "which one *looks* AI‑generated" - that’s obvious from the current context.  
-Not "which one used AI" - because depending on how you define it, even the act of scanning the original likely used a model.
-
-The real question is: **what do we mean when we say "AI‑generated" in the first place?**
+All three images are real in the sense that they correspond to something that actually happened. And all three are altered in the sense that every photograph is shaped by the tools available at the time. So the question I could be asked when I show these images is, **Which of these are "AI‑generated"?**
 
 [![3 Images of a man wearing a NY Yankees baseball uniform in the outfield of a ballpark, shot from a few feet above him](../Images/ThreeMunsonPhotos-800x276.png)](../Images/ThreeMunsonPhotos.png)
 
-The cleaned‑up version didn’t invent anything. It didn’t fabricate Munson’s face or change the moment. It just did what darkroom techniques, Photoshop, and restoration tools have always done - only faster. The colorized version added something new, but colorization has existed for more than a century. The only difference is that a machine did the brushwork instead of a human. And the original? It’s still the moment I captured as a kid with a toy camera. The digital version may have passed through modern software on its way to the screen, but the composition, the light, the instant in time - that’s all intact.
+Unfortunately, that question really can't be answered without a lot more information. All 3 images **used AI** as part of the pipeline in some form or another, because depending on how you define AI, even the act of scanning the original likely used a model. The question we need to answer is: **what do we mean when we say something is "AI‑generated"?**
 
-## But even true photos can mislead once AI enters the pipeline
+The cleaned‑up version of this photo didn’t invent anything. It didn’t fabricate Munson’s face or change the moment. It just did what darkroom techniques, Photoshop, and restoration tools have always done. The colorized version added something new, but colorization has existed for more than a century. The only difference is that a machine did the brushwork instead of a human. And the original? It’s still the moment I captured as a kid with a toy camera. The digital version may have passed through modern software on its way to the screen, but the composition, the light, the instant in time - that’s all intact.
 
-This is where things get tricky. Even though all three images depict something that actually happened, the AI‑assisted versions can still create *false* impressions.
+## But even true photos can mislead, with or without AI
+
+This is where things get tricky. Any still or, to a lesser-degree, moving image can create false impressions with the viewer. Strange lighting, unusual shadows, a frozen instant in time that doesn't really capture the essence of the situation. All of these things happen, and we've experienced them. How many times have you taken a photo of someone who was happy, but looked sad or angry in the shot? Was [the dress](https://en.wikipedia.org/wiki/The_dress) blue or gold?
+
+In my three images above, the event happened nearly entirely as presented in those photos. Despite that, the AI‑assisted versions can still create false impressions, sometimes similar to the ones created by a pure "unretouched" photograph.
 
 For example:
 
@@ -49,11 +48,9 @@ For example:
 * It might suggest Munson wore an undershirt of a particular color - a detail the model had to invent.  
 * The cleaned‑up version might imply the scene was less crowded than it really was, because the tool removed the arms of the people next to me.
 
-None of these changes alter the *event*, but they absolutely can alter the *interpretation*.
+None of these changes alter the *event*, but they absolutely can alter the *interpretation*. AI can introduce confident, plausible details that were never in evidence. Not *necessarily* maliciously or deceptively, just quietly.
 
-And that’s the point: AI can introduce confident, plausible details that were never in evidence. Not necessarily maliciously or deceptively, just quietly.
-
-This is why labeling matters. Not because AI involvement is inherently bad, but because viewers deserve to know which parts of an image are grounded in reality and which parts were reconstructed, inferred, or imagined.
+This is why labeling matters. Not because AI involvement is inherently bad, but because, in most cases, viewers deserve to know which parts of an image are grounded in reality and which parts were reconstructed, inferred, or imagined.
 
 ## This isn’t even touching the copyright issues
 
@@ -61,7 +58,7 @@ Everything above is about *truth*: what happened, what didn’t, and what an ima
 
 Questions like:
 
-* What training data was used?  
+* What training data was used to create the model?  
 * Who owns the derivative works?  
 * When does enhancement become transformation?  
 * What rights do I retain over my own childhood photo once an AI model has touched it?  
@@ -72,7 +69,7 @@ These aren’t footnotes. They’re large, unresolved questions that deserve the
 
 This is why blanket rules about "AI‑generated content" fall apart. The line between "generated," "assisted," "enhanced," and "restored" isn’t a line at all, it’s a gradient. That doesn’t mean we shouldn’t regulate AI‑involved media. It means **we need to regulate AI with language and intent that actually matches reality, and solves the real problems**.
 
-There *are* cases where labeling is essential:
+There *are* cases where labeling is essential, but most of it is context specific. If I am posting a picture of a conference talk I gave, I wouldn't feel right adding fake participants in the crowd, but I'd often be fine with editing someone out who asked me to, depending on the reason for doing so. I might not feel the same way if the photograph was being published as part of a story in the news. However, there are some things that should probably always be disclosed:
 
 * **Images of things that never happened** should be labeled as such.
 * **Images recreated from text descriptions after the fact** should be labeled as such.
@@ -82,6 +79,20 @@ There *are* cases where labeling is essential:
 Those distinctions matter because they speak to truth, provenance, and the potential for harm.
 
 But my three images of Thurman Munson? They’re all the same moment, they differ only in the tools used to reveal it, and in the risks those tools introduce if we’re not transparent about what changed.
+
+There are already existing sets of rules we can lean on here. The The National Press Photographers Association has a [Code of Ethics](https://web.archive.org/web/20260315211924/https://nppa.org/resources/code-ethics) for visual journalists that includes the following:
+
+> Editing should maintain the integrity of the photographic image's content and context. Do not manipulate images or add or alter sound in any way that can mislead viewers or misrepresent subjects.
+
+These directives also include composition and subject matter rules such as:
+
+* Resist being manipulated by staged photo opportunities
+* Be complete and provide context when photographing or recording subjects
+* While photographing subjects, do not intentionally contribute to, alter, or seek to alter or influence events
+* Do not pay sources or subjects or reward them materially for information or participation
+* Do not accept gifts, favors, or compensation from those who might seek to influence coverage
+
+All of which suggests that the editing of images, the part that can be done using AI, is just a small part of the harm that can be done through visual means, albeit one that scales better than most.
 
 ## Here’s the part we can’t ignore
 
