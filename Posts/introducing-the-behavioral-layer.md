@@ -35,6 +35,50 @@ At a high level, the Behavioral Layer:
 
 The Behavioral Layer is defined by its responsibilities, not by any specific technology. You can implement it with deterministic rules, heuristics, or fine-tuned models. The architecture stays the same regardless of the tools you choose.
 
+## A Machine to Machine Example
+
+To ground this in something concrete, consider a service that exposes an OpenAI‑compatible API for the purpose of intent determination and routing. This service is designed to accept natural language inside a structured request, classify the intent, and direct the call to the correct downstream system. Even in a machine to machine scenario, the request still contains unstructured text because the caller may be a human, a script, or an upstream LLM.
+
+Here is an example of the kind of request this router might receive:
+
+```json
+{
+  "model": "gpt-4o-mini",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a plan selection assistant."
+    },
+    {
+      "role": "user",
+      "content": "please switch the user to the premium plan with the extras"
+    }
+  ],
+  "user": "8821",
+  "source": "recommendation-service"
+}
+```
+
+The outer structure is predictable, but the content is not. The router cannot forward this request until it determines what the caller is trying to do. The phrase premium plan with the extras is natural language, not an instruction the domain layer can act on. The router must identify the intent so it can send the request to the correct downstream service, which in this case is probably a plan or user service.
+
+A Behavioral Layer implementation might produce something like this.
+
+```json
+{
+  "userId": "8821",
+  "source": "recommendation-service",
+  "intent": "changePlan",
+  "confidence": "high",
+  "notes": [
+    {
+      "message": "The request refers to 'premium plan with the extras'."
+    }
+  ]
+}
+```
+
+The business logic within the router may take this input, determine which service is best suited to handle it, and route the original request to that service. The Behavioral Layer has taken a natural language request and expressed the sender's behavior in a structured form. It has identified what the caller is trying to do, surfaced any uncertainty, and produced a stable intent that the rest of the system can trust. Nothing about this output depends on domain rules or specific plan identifiers. The Behavioral Layer simply interprets the behavior contained in the text and turns it into a predictable shape that downstream components can build on. It has NOT concerned itself with mapping to the domain language, since this layer is not responsible for that. If additional mapping is required into the language of the domain, an anti-corruption or other mapping layer should be used to maintain the separation of concerns.
+
 ## How It Works
 
 The Behavioral Layer sits between the raw input and the ACL or domain layer. It receives whatever the outside world provides and applies a series of transformations that gradually reduce uncertainty.
@@ -62,7 +106,9 @@ You can think of the responsibilities like this:
 * ACL: translation and isolation
 * Domain: correctness and invariants
 
-The Behavioral Layer is not a variant of an ACL and not a replacement for one. It is a complementary layer that handles a different class of problems. The ACL expects structured, well-formed inputs. The Behavioral Layer exists precisely because real-world inputs often are not structured or well-formed.
+The Behavioral Layer is not a variant of an ACL and not a replacement for one. It is a complementary layer that handles a different class of problems. The ACL expects structured, well-formed inputs. The Behavioral Layer exists precisely because real-world inputs often are not fully structured.
+
+If you are building a "modular monolith", where all functionality is crammed into a single deployment unit, you can manage both sets of fuctionality (translation and behavioral) in a single place, however you probably don't want to mash them together so they can be more completely separated if it becomes appropriate.
 
 ## Why is it Called the **Behavioral** Layer
 
@@ -99,9 +145,11 @@ A small, purpose-built model can classify intent, normalize fields, and map ambi
 
 The Behavioral Layer does not require a language model. LLMs and other probabilistic models simply make it easier to implement the layer when the input space becomes too variable for deterministic approaches.
 
-## A Simple Use Case
+## Use Case 2: Human Input
 
-Imagine a system that receives inbound messages from users who want to update their account information. The messages can arrive through email, chat, or a mobile app. Users may not follow a template. They may combine multiple requests in one message. They may use synonyms, shorthand, or incomplete phrasing.
+The earlier example showed how a machine to machine request can contain natural language inside a structured API call. The same problem appears when a human interacts with the system. A user may type a request in their own words, combine multiple actions in a single message, or omit details that downstream components require. The Behavioral Layer handles this variability by interpreting what the user is trying to do and expressing that behavior in a predictable shape.
+
+Imagine a system that receives inbound support messages from users. The messages can arrive through email, chat, or a mobile app. Users may not follow a template. They may combine multiple requests in one message. They may use synonyms, shorthand, or incomplete phrasing.
 
 A raw message might look like:
 
