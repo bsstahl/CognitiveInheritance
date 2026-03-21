@@ -69,6 +69,155 @@
                 <main class="col-lg-9 col-xl-10 content-main">
                     <h1>Tag: pattern</h1>
                     <div>
+    <h3>Introducing the Behavioral Layer</h3>
+    <h5>Posted by bsstahl on 2026-03-14 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'Introducing the Behavioral Layer'"
+        share_description="&quot;Introduction to the Behavioral Layer, an architectural boundary that interprets ambiguous, human‑ or AI‑generated inputs before they reach the ACL or domain layer. It explains why modern systems need this layer, how it works, and how it differs from a traditional Anti‑Corruption Layer.&quot;"
+        target_url="https://CognitiveInheritance.com/../Permalinks/18cf98fe-ad5e-43a5-91ee-55f0a90478c8.html"
+        hashtags="#architecture #ddd #responsibility #pattern"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <br/><br/>
+    <p>Modern systems increasingly receive free‑text input, either from humans or from language models. These inputs can be ambiguous, incomplete, or phrased in ways the domain layer cannot act on directly. They are not the predictable, schema‑bound shapes that a traditional Anti‑Corruption Layer (ACL) is designed to translate. They require interpretation before any downstream component can reason about them. This is the realm of the Behavioral Layer.</p>
+<h2>What the Behavioral Layer Does</h2>
+<p>The Behavioral Layer is responsible for taking unstructured or highly variable inputs, such as those produced by a person or a language model, and producing a clean, normalized, and predictable shape that the rest of the system can trust. It is the architectural boundary where the system interprets intent before any downstream components have to reason about structure.</p>
+<p>At a high level, the Behavioral Layer:</p>
+<ul>
+<li>Interprets what behavior the sender is attempting to invoke</li>
+<li>Normalizes inconsistently presented or incomplete inputs</li>
+<li>Detects structural and behavioral anomalies in the message</li>
+<li>Enriches the data with derived or inferred attributes</li>
+<li>Produces a stable output object that downstream components can rely on</li>
+</ul>
+<p>The Behavioral Layer is defined by its responsibilities, not by any specific technology. You can implement it with deterministic rules, heuristics, or fine-tuned models. The architecture stays the same regardless of the tools you choose.</p>
+<h2>A Machine to Machine Example</h2>
+<p>To ground this in something concrete, consider a service that exposes an OpenAI‑compatible API for the purpose of intent determination and routing. This service is designed to accept natural language inside a structured request, classify the intent, and direct the call to the correct downstream system. Even in a machine to machine scenario, the request still contains unstructured text because the caller may be a human, a script, or an upstream LLM.</p>
+<p>Here is an example of the kind of request this router might receive:</p>
+<div class="lang-json editor-colors"><div style="color:Black;background-color:White;"><pre>
+{
+  <span style="color:#A31515;">&quot;model&quot;</span>: <span style="color:#A31515;">&quot;gpt-4o-mini&quot;</span>,
+  <span style="color:#A31515;">&quot;messages&quot;</span>: [
+    {
+      <span style="color:#A31515;">&quot;role&quot;</span>: <span style="color:#A31515;">&quot;system&quot;</span>,
+      <span style="color:#A31515;">&quot;content&quot;</span>: <span style="color:#A31515;">&quot;You are a plan selection assistant.&quot;</span>
+    },
+    {
+      <span style="color:#A31515;">&quot;role&quot;</span>: <span style="color:#A31515;">&quot;user&quot;</span>,
+      <span style="color:#A31515;">&quot;content&quot;</span>: <span style="color:#A31515;">&quot;please switch the user to the premium plan with the extras&quot;</span>
+    }
+  ],
+  <span style="color:#A31515;">&quot;user&quot;</span>: <span style="color:#A31515;">&quot;8821&quot;</span>,
+  <span style="color:#A31515;">&quot;source&quot;</span>: <span style="color:#A31515;">&quot;recommendation-service&quot;</span>
+}
+</pre></div>
+</div>
+<p>The outer structure is predictable, but the content is not. The router cannot forward this request until it determines what the caller is trying to do. The phrase premium plan with the extras is natural language, not an instruction the domain layer can act on. The router must identify the intent so it can send the request to the correct downstream service, which in this case is probably a plan or user service.</p>
+<p>A Behavioral Layer implementation might produce something like this.</p>
+<div class="lang-json editor-colors"><div style="color:Black;background-color:White;"><pre>
+{
+  <span style="color:#A31515;">&quot;userId&quot;</span>: <span style="color:#A31515;">&quot;8821&quot;</span>,
+  <span style="color:#A31515;">&quot;source&quot;</span>: <span style="color:#A31515;">&quot;recommendation-service&quot;</span>,
+  <span style="color:#A31515;">&quot;intent&quot;</span>: <span style="color:#A31515;">&quot;changePlan&quot;</span>,
+  <span style="color:#A31515;">&quot;confidence&quot;</span>: <span style="color:#A31515;">&quot;high&quot;</span>,
+  <span style="color:#A31515;">&quot;notes&quot;</span>: [
+    {
+      <span style="color:#A31515;">&quot;message&quot;</span>: <span style="color:#A31515;">&quot;The request refers to &#39;premium plan with the extras&#39;.&quot;</span>
+    }
+  ]
+}
+</pre></div>
+</div>
+<p>The business logic within the router may take this input, determine which service is best suited to handle it, and route the original request to that service. The Behavioral Layer has taken a natural language request and expressed the sender's behavior in a structured form. It has identified what the caller is trying to do, surfaced any uncertainty, and produced a stable intent that the rest of the system can trust. Nothing about this output depends on domain rules or specific plan identifiers. The Behavioral Layer simply interprets the behavior contained in the text and turns it into a predictable shape that downstream components can build on. It has NOT concerned itself with mapping to the domain language, since this layer is not responsible for that. If additional mapping is required into the language of the domain, an anti-corruption or other mapping layer should be used to maintain the separation of concerns.</p>
+<h2>How It Works</h2>
+<p>The Behavioral Layer sits between the raw input and the ACL or domain layer. It receives whatever the outside world provides and applies a series of transformations that gradually reduce uncertainty.</p>
+<p>A typical flow looks like this:</p>
+<ol>
+<li>Receive the raw input exactly as it arrived.</li>
+<li>Perform structural checks to understand what type of thing it might be.</li>
+<li>Apply behavioral checks to understand what the sender is trying to accomplish.</li>
+<li>Normalize fields, resolve aliases, and fill in missing but inferable information.</li>
+<li>Detect suspicious or incoherent combinations of attributes.</li>
+<li>Produce a Behavioral Output object that expresses the input in a clean, predictable shape.</li>
+</ol>
+<p>Neither the ACL nor the domain layer ever sees the raw input. They only see the Behavioral Output, which keeps both layers small, deterministic, and easy to reason about.</p>
+<h2>How It Differs From a Traditional ACL</h2>
+<p>A traditional Anti-Corruption Layer protects the domain from other systems. It translates external models into internal ones, isolates upstream changes, and ensures that foreign concepts do not leak into the domain.</p>
+<p>The Behavioral Layer protects the domain from ambiguous inputs. It resolves uncertainty, interprets intent, and produces a coherent behavioral shape before any translation or invariant enforcement occurs.</p>
+<p>You can think of the responsibilities like this:</p>
+<ul>
+<li>Behavioral Layer: coherence</li>
+<li>ACL: translation and isolation</li>
+<li>Domain: correctness and invariants</li>
+</ul>
+<p>The Behavioral Layer is not a variant of an ACL and not a replacement for one. It is a complementary layer that handles a different class of problems. The ACL expects structured, well-formed inputs. The Behavioral Layer exists precisely because real-world inputs often are not fully structured.</p>
+<p>If you are building a &quot;modular monolith&quot;, where all functionality is crammed into a single deployment unit, you can manage both sets of fuctionality (translation and behavioral) in a single place, however you probably don't want to mash them together so they can be more completely separated if it becomes appropriate.</p>
+<h2>Why is it Called the <strong>Behavioral</strong> Layer</h2>
+<p>The name comes from the nature of the inputs it handles. At this boundary, the system is not reacting to a schema. It is reacting to behavior. A person behaves unpredictably when typing a request. A language model behaves unpredictably when generating a response. A third-party system behaves unpredictably when sending a payload that almost matches your expectations.</p>
+<p>The Behavioral Layer exists to interpret that behavior.</p>
+<p>It focuses on what the sender is trying to do, not how the sender structures the data. It resolves intent, ambiguity, and variability before any translation or invariant enforcement occurs. The name fits because it describes the responsibility: making sense of behavior so the rest of the system does not have to.</p>
+<h2>Implementation Options</h2>
+<p>You can build a Behavioral Layer using several strategies, depending on your constraints and the variability of your inputs.</p>
+<h3>Deterministic Rules</h3>
+<p>This is the simplest approach. You define explicit rules for classification, normalization, and enrichment. It works well when the input space is small and predictable. It may work in more complex spaces with the help of a rules-engine or similar logic framework.</p>
+<ul>
+<li>Pros: transparent, easy to test, easy to reason about</li>
+<li>Cons: brittle when inputs vary widely or evolve over time</li>
+</ul>
+<h3>Heuristics and Pattern Matching</h3>
+<p>This approach uses scoring, thresholds, and pattern recognition to handle more variability without committing to full machine learning.</p>
+<ul>
+<li>Pros: flexible, adaptable, still deterministic</li>
+<li>Cons: harder to maintain, can drift into complexity</li>
+</ul>
+<h3>Fine-Tuned Language Models</h3>
+<p>A small, purpose-built model can classify intent, normalize fields, and map ambiguous inputs into structured forms with far more reliability than hand-written rules.</p>
+<ul>
+<li>Pros: handles real-world variability, reduces rule complexity, improves resilience</li>
+<li>Cons: requires training data, monitoring, and versioning discipline</li>
+</ul>
+<p>The Behavioral Layer does not require a language model. LLMs and other probabilistic models simply make it easier to implement the layer when the input space becomes too variable for deterministic approaches.</p>
+<h2>Use Case 2: Human Input</h2>
+<p>The earlier example showed how a machine to machine request can contain natural language inside a structured API call. The same problem appears when a human interacts with the system. A user may type a request in their own words, combine multiple actions in a single message, or omit details that downstream components require. The Behavioral Layer handles this variability by interpreting what the user is trying to do and expressing that behavior in a predictable shape.</p>
+<p>Imagine a system that receives inbound support messages from users. The messages can arrive through email, chat, or a mobile app. Users may not follow a template. They may combine multiple requests in one message. They may use synonyms, shorthand, or incomplete phrasing.</p>
+<p>A raw message might look like:</p>
+<p>&quot;Hey, can you change my home address to the new one on file and also switch my plan to the premium thing&quot;</p>
+<p>The Behavioral Layer would:</p>
+<ul>
+<li>Translate the sender information into discrete fields</li>
+<li>Detect that the message contains two distinct intents</li>
+<li>Normalize &quot;premium thing&quot; into a known plan identifier</li>
+<li>Extract the address reference and map it to the stored address record</li>
+</ul>
+<p>As shown below, this layer might also interpret normalized data that it has access to. For example, if the list of plans is accessible to the Behavioral Layer, it might add an indication that &quot;premium thing&quot; is not an exact match to a known plan. This is one of the places however where some judgement is required because, depending on the circumstances, that functionality might be better left to an ACL or the Domain.</p>
+<p>The Behavioral layer would consider the input above along with the email metadata and might produce an output object similar to the one shown below:</p>
+<div class="lang-json editor-colors"><div style="color:Black;background-color:White;"><pre>
+{
+  userIds: [
+    <span style="color:#A31515;">&quot;email&quot;</span>: <span style="color:#A31515;">&quot;sampleuser@cognitiveinheritance.com&quot;</span>,
+    <span style="color:#A31515;">&quot;eMailName&quot;</span>: <span style="color:#A31515;">&quot;Sample User&quot;</span>,
+    <span style="color:#A31515;">&quot;dkimDomain&quot;</span>: <span style="color:#A31515;">&quot;cognitiveinheritance.com&quot;</span>,
+    <span style="color:#A31515;">&quot;spfDomain&quot;</span>: <span style="color:#A31515;">&quot;sendgrid.net&quot;</span>
+  ],
+  intents: [
+    { type: <span style="color:#A31515;">&quot;updateAddress&quot;</span>, addressId: <span style="color:#A31515;">&quot;home&quot;</span> },
+    { type: <span style="color:#A31515;">&quot;changePlan&quot;</span>, planId: <span style="color:#A31515;">&quot;premiumPlan&quot;</span> }
+  ],
+  confidence: <span style="color:#A31515;">&quot;high&quot;</span>,
+  anomalies: [
+    { <span style="color:#A31515;">&quot;fieldName&quot;</span>: <span style="color:#A31515;">&quot;planId&quot;</span>, <span style="color:#A31515;">&quot;value&quot;</span>: <span style="color:#A31515;">&quot;&#39;premium thing&#39; not an exact match to plan name&quot;</span> }
+  ]
+}
+</pre></div>
+</div>
+<p>The ACL or domain layer now has a clean, predictable structure to work with. It does not need to parse free‑form text or guess what the user meant. The Behavioral Layer has already done that work.</p>
+<h2>What Comes Next</h2>
+<p>This post introduces the Behavioral Layer as an architectural concept and distinguishes it from a traditional ACL. In the next article, we will look at how fine‑tuned language models can assist with the transformations inside the layer. We will walk through how to build small, purpose‑built models using Microsoft Foundry, how to train them on your domain, and how to integrate them into a reliability‑first architecture.</p>
+
+    <h5>Tags: <a title="Tag: architecture" class="small" href="../Search/architecture.html">architecture</a>&nbsp;<a title="Tag: ddd" class="small" href="../Search/ddd.html">ddd</a>&nbsp;<a title="Tag: responsibility" class="small" href="../Search/responsibility.html">responsibility</a>&nbsp;<a title="Tag: pattern" class="small" href="../Search/pattern.html">pattern</a>&nbsp;</h5>
+    <div class="share"><a href="../Permalinks/18cf98fe-ad5e-43a5-91ee-55f0a90478c8.html" rel="bookmark">Permalink</a></div>
+</div><hr/><div>
     <h3>You Got Your Policy in my Redis</h3>
     <h5>Posted by bsstahl on 2021-04-22 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
