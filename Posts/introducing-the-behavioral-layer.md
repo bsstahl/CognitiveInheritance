@@ -9,7 +9,7 @@ id: 18cf98fe-ad5e-43a5-91ee-55f0a90478c8
 author: bsstahl
 title: Introducing the Behavioral Layer
 description: Introduction to the Behavioral Layer, an architectural boundary that interprets ambiguous, human‑ or AI‑generated inputs before they reach the ACL or domain layer. It explains why modern systems need this layer, how it works, and how it differs from a traditional Anti‑Corruption Layer.
-ispublished: false
+ispublished: true
 buildifnotpublished: true
 showinlist: false
 publicationdate: 2026-03-14T17:13:00.000+00:00
