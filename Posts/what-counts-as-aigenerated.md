@@ -28,13 +28,13 @@ Recently, I ended up with three versions of that same moment:
 * **A cleaned‑up version** - run through an AI tool that removed some shadows, centered Munson, and erased the stray arms of the people next to me.  
 * **A colorized version** - also AI‑assisted, adding color to a scene that never existed in color on film.
 
-All three images are real in the sense that they correspond to something that actually happened. And all three are altered in the sense that every photograph is shaped by the tools available at the time. So the question I could be asked when I show any version of these images is, **Is it "AI‑generated"?**
+All three images are real in the sense that they correspond to something that actually happened, and all three are altered in the sense that every photograph is shaped by the tools available at the time. When I show any version of these images, I could be asked, **Is it "AI‑generated"?**
 
 [![3 Images of a man wearing a NY Yankees baseball uniform in the outfield of a ballpark, shot from a few feet above him](../Images/ThreeMunsonPhotos-800x276.png)](../Images/ThreeMunsonPhotos.png)
 
 Unfortunately, that question really can't be answered without a lot more context. All 3 images **used AI** as part of the pipeline in some form or another, because depending on how you define AI, even the act of scanning the original likely used a model. The question we really need to answer is: **what do we mean when we say something is "AI‑generated"?**
 
-The cleaned‑up version of this photo didn't invent anything. It didn't fabricate Munson's face or change the moment. It just did what darkroom techniques, Photoshop, and restoration tools have always done. The colorized version added something new, but colorization has existed for more than a century. The only difference is that a machine did the brushwork instead of a human. And the original? It's still the moment I captured as a kid with a toy camera. The digital version may have passed through modern software on its way to the screen, but the instant in time remains intact.
+The cleaned‑up version of this photo didn't invent anything. It didn't fabricate Munson's face or change the moment. It just did what darkroom techniques, Photoshop, and restoration tools have always done. The colorized version added something new, but colorization has existed for more than a century. The only difference is that a machine did the brushwork instead of a human. What about the original? It's still the moment I captured as a kid with a box camera. The digital version may have passed through modern software on its way to the screen, but the instant in time remains intact.
 
 ## Even "true" photos can mislead, with or without AI
 
@@ -76,19 +76,19 @@ There *are* cases where labeling is essential, but most of it is context specifi
 * **Images of things that never happened** should be labeled as such.
 * **Images recreated from text descriptions after the fact** should be labeled as such.
 * **Synthetic people, synthetic events, synthetic evidence** absolutely require clear disclosure.
-* **AI‑assisted reconstructions that add plausible but invented details** should be labeled so viewers understand what's real and what's inferred.
+* **AI‑assisted reconstructions that add plausible but invented details** should be labeled so viewers understand what's real and what's assumed.
 
 Those distinctions matter because they speak to truth, provenance, and the potential for harm, and they remain just as important whether AI is part of the process or not.
 
 But my three images of Thurman Munson? They're all the same moment, they differ only in the tools used to reveal it. In most contexts, there is no meaningful change made by these manipulations.
 
-There are already existing sets of rules we can lean on here. The The National Press Photographers Association has a [Code of Ethics](https://web.archive.org/web/20260315211924/https://nppa.org/resources/code-ethics) for visual journalists that includes the following:
+There are already existing sets of rules we can lean on here. The National Press Photographers Association has a [Code of Ethics](https://web.archive.org/web/20260315211924/https://nppa.org/resources/code-ethics) for visual journalists that includes the following:
 
 > Editing should maintain the integrity of the photographic image's content and context. Do not manipulate images or add or alter sound in any way that can mislead viewers or misrepresent subjects.
 
-I would ask you: "Does my manipulation of this image mislead viewers or misrepresent subjects".
+I would ask you, "Does my manipulation of this image mislead viewers or misrepresent subjects?"
 
-These directives also include composition and subject matter rules such as:
+This Code of Ethics also includes composition and subject matter rules such as:
 
 * Resist being manipulated by staged photo opportunities
 * Be complete and provide context when photographing or recording subjects
@@ -100,10 +100,8 @@ All of which suggests that the editing of images, the part that can be done usin
 
 ## Here's the part we can't ignore
 
-AI, in some form, is nearly *always* involved now. Not the headline‑grabbing generative models that synthesize faces or fabricate events, but the quiet, invisible systems inside scanners, cameras, phones, and photo apps, the ones nobody notices because they don't feel like "AI". Processes like sharpening, noise reduction, auto‑contrast, white‑balance correction, lens‑distortion fixes and de‑mosaicing filters are all part of many of the image capture mechanisms we use every day. Other domains have similar tools used for autocorrect, predictive-text, grammar correction, spellcheck, voice-to-text, spam filtering and recommendations. These are all machine‑learning (ML) systems doing work behind the scenes.
+AI, in some form, is nearly *always* involved now. Not the headline‑grabbing generative models that synthesize faces or fabricate events, but the quiet, invisible systems inside scanners, cameras, phones, and photo apps, the ones nobody notices because they don't feel like AI. Processes like sharpening, noise reduction, auto‑contrast, white‑balance correction, lens‑distortion fixes and de‑mosaicing filters are all part of many of the image capture mechanisms we use every day. Other domains have similar tools used for autocorrect, predictive-text, grammar correction, spellcheck, voice-to-text, spam filtering and recommendations. These are all machine‑learning (ML) systems doing work behind the scenes.
 
-So the question can't be "Was AI used?"  The questions must be more akin to **"What kind of AI, used how, and to what effect?"** And these questions need to be answered in the full context of the situation.
+So the question can't be "Was AI used?"  The questions must be more akin to **"What kind of AI was used, how was it used, and to what effect?"**. These questions need to be answered in the full context of the situation, because the truth of this photo is simple, AI didn't create it, **it actually happened**. The tools just helped me see it more clearly, but they can also help someone else see something that was never there. Outside of this one childhood snapshot, it's rarely even *that* simple.
 
-Seeing the difficulty in categorizing these three versions of a childhood photo as "AI-Generated" or not, it is obvious that we can't build policy around such a binary definition. We need rules that focus on **intent**, **impact**, and **what claims are being made**, not on whether a model was somewhere in the toolchain. Because the truth of this photo is simple, AI didn't create it, **it actually happened**. The tools just helped me see it more clearly, but they can also help someone else see something that was never there.
-
-Outside of this one childhood snapshot, it's rarely even *that* simple.
+Knowing the difficulty in categorizing these three versions of a childhood photo as `AI-generated` or not, it is obvious that we can't build policy around such a binary definition. We need rules that focus on **intent**, **impact**, and **what claims are being made**, not on whether a model was somewhere in the toolchain. We will drill into more detail on how we can craft regulations that take these items into account in future posts.
