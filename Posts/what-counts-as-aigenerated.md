@@ -10,11 +10,11 @@ id: 8a03e594-887c-4412-ae36-23fa3d2cf0c2
 author: bsstahl
 title: What Counts as AI‑Generated?
 description: A childhood photo of a baseball player becomes a case study in why "AI‑generated" isn't a simple label and why context matters far more than toolchains.
-ispublished: false
+ispublished: true
 buildifnotpublished: true
 showinlist: false
-publicationdate: 2026-03-21T10:19:40.000+00:00
-lastmodificationdate: 2026-03-21T10:19:40.000+00:00
+publicationdate: 2026-03-28T10:19:40.000+00:00
+lastmodificationdate: 2026-03-28T10:19:40.000+00:00
 slug: what-counts-as-aigenerated
 categories:
 - Tools
