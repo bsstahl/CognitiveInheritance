@@ -14,7 +14,7 @@ ispublished: true
 buildifnotpublished: true
 showinlist: false
 publicationdate: 2026-03-28T10:19:40.000+00:00
-lastmodificationdate: 2026-03-28T10:19:40.000+00:00
+lastmodificationdate: 2026-03-29T13:55:40.000+00:00
 slug: what-counts-as-aigenerated
 categories:
 - Tools
@@ -74,9 +74,9 @@ The reasons why blanket rules about "AI‑generated content" fall apart are comp
 There *are* cases where labeling is essential, but most of it is context specific. If I am posting a picture of a conference talk I gave, I wouldn't feel right adding fake participants in the crowd, but I'd often be fine with editing someone out who asked me to, depending on the reason for doing so. I might not feel the same way if the photograph was being published as part of a story in the news. However, there are some things that should probably always be disclosed:
 
 * **Images of things that never happened** should be labeled as such.
-* **Images recreated from text descriptions after the fact** should be labeled as such.
-* **Synthetic people, synthetic events, synthetic evidence** absolutely require clear disclosure.
-* **AI‑assisted reconstructions that add plausible but invented details** should be labeled so viewers understand what's real and what's assumed.
+* **Images containing people that don't exist** must be disclosed.
+* **Images where people or evidence is added** absolutely require clear disclosure, even if they are believed to be 'real'.
+* **AI‑assisted reconstructions**, such as those built from text descriptions after the fact, should be labeled in way that allows viewers understand what's real and what's assumed.
 
 Those distinctions matter because they speak to truth, provenance, and the potential for harm, and they remain just as important whether AI is part of the process or not.
 
@@ -104,4 +104,4 @@ AI, in some form, is nearly *always* involved now. Not the headline‑grabbing g
 
 So the question can't be "Was AI used?"  The questions must be more akin to **"What kind of AI was used, how was it used, and to what effect?"**. These questions need to be answered in the full context of the situation, because the truth of this photo is simple, AI didn't create it, **it actually happened**. The tools just helped me see it more clearly, but they can also help someone else see something that was never there. Outside of this one childhood snapshot, it's rarely even *that* simple.
 
-Knowing the difficulty in categorizing these three versions of a childhood photo as `AI-generated` or not, it is obvious that we can't build policy around such a binary definition. We need rules that focus on **intent**, **impact**, and **what claims are being made**, not on whether a model was somewhere in the toolchain. We will drill into more detail on how we can craft regulations that take these items into account in future posts.
+Knowing the difficulty in categorizing these three versions of a childhood photo as '*AI-generated*' or not, it is obvious that we can't build policy around such a binary definition. We need rules that focus on **intent**, **impact**, and **what claims are being made**, not on whether a model was somewhere in the toolchain. We will drill into more detail on how we can craft regulations that take these items into account in future posts.
