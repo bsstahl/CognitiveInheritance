@@ -9,6 +9,76 @@
     <language>en-US</language>
     <atom:link href="https://cognitiveinheritance.com/syndication.xml" rel="self" type="application/rss+xml" />	
     <item>
+  <title>What Counts as AI‑Generated?</title>
+  <description>&lt;p&gt;I still have the first camera I ever used - a 126 box camera, similar to a &lt;a href=&quot;https://web.archive.org/web/20251216145350/https://historiccamera.com/cgi-bin/librarium2/pm.cgi?action=app_display&amp;amp;app=datasheet&amp;amp;app_id=3988&quot;&gt;Hawekeye II&lt;/a&gt;, that was basically a toy even in its own era. I shot with black‑and‑white film because that&apos;s what a kid could afford, and it produced the kind of photos you&apos;d expect from a plastic lens and a shutter that felt like it was powered by hope. One of those photos captured Thurman Munson, the Yankees catcher who would later die in a plane crash, making him something of a larger-than-life figure in my experience. It&apos;s not a great photo. It&apos;s grainy, off‑center, and full of the accidental foreground clutter you get when you&apos;re small, excited, and holding a camera that doesn&apos;t care about your artistic intent.&lt;/p&gt;
+&lt;p&gt;Recently, I ended up with three versions of that same moment:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The original&lt;/strong&gt; - a scan of the actual frame I shot as a kid.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A cleaned‑up version&lt;/strong&gt; - run through an AI tool that removed some shadows, centered Munson, and erased the stray arms of the people next to me.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A colorized version&lt;/strong&gt; - also AI‑assisted, adding color to a scene that never existed in color on film.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All three images are real in the sense that they correspond to something that actually happened, and all three are altered in the sense that every photograph is shaped by the tools available at the time. When I show any version of these images, I could be asked, &lt;strong&gt;Is it &amp;quot;AI‑generated&amp;quot;?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;../Images/ThreeMunsonPhotos.png&quot;&gt;&lt;img src=&quot;../Images/ThreeMunsonPhotos-800x276.png&quot; alt=&quot;3 Images of a man wearing a NY Yankees baseball uniform in the outfield of a ballpark, shot from a few feet above him&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Unfortunately, that question really can&apos;t be answered without a lot more context. All 3 images &lt;strong&gt;used AI&lt;/strong&gt; as part of the pipeline in some form or another, because depending on how you define AI, even the act of scanning the original likely used a model. The question we really need to answer is: &lt;strong&gt;what do we mean when we say something is &amp;quot;AI‑generated&amp;quot;?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The cleaned‑up version of this photo didn&apos;t invent anything. It didn&apos;t fabricate Munson&apos;s face or change the moment. It just did what darkroom techniques, Photoshop, and restoration tools have always done. The colorized version added something new, but colorization has existed for more than a century. The only difference is that a machine did the brushwork instead of a human. What about the original? It&apos;s still the moment I captured as a kid with a box camera. The digital version may have passed through modern software on its way to the screen, but the instant in time remains intact.&lt;/p&gt;
+&lt;h2&gt;Even &amp;quot;true&amp;quot; photos can mislead, with or without AI&lt;/h2&gt;
+&lt;p&gt;This is where things get tricky. Any still or moving image can create false impressions with the viewer. Strange lighting, unusual shadows, a frozen instant in time that doesn&apos;t really capture the essence of the situation. All of these things happen, and we&apos;ve experienced them. How many times have you taken a photo of someone who was happy, but looked sad or angry in the shot? Was &lt;a href=&quot;https://en.wikipedia.org/wiki/The_dress&quot;&gt;the dress&lt;/a&gt; blue or gold?&lt;/p&gt;
+&lt;p&gt;In my three images above, the event happened nearly entirely as presented in those photos. Despite that, any of these versions can still create false impressions in the mind of the viewer.&lt;/p&gt;
+&lt;p&gt;For example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It is possible that Munson is talking to someone, or perhaps yelling at them in a way not captured by this frame.&lt;/li&gt;
+&lt;li&gt;When I took the picture, there may have been one or more other people just outside the frame, changing the context.&lt;/li&gt;
+&lt;li&gt;The cleaned‑up version might imply the scene was less crowded than it really was, because the tool removed the arms of the people next to me.&lt;/li&gt;
+&lt;li&gt;The colorized version might imply the grass at Yankee Stadium looked a certain way that day, when the original didn&apos;t capture that detail.&lt;/li&gt;
+&lt;li&gt;The colorization might suggest Munson wore an undershirt of a particular shade, a detail the model had to invent.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;None of these facts are necessarily germane to the image, but they absolutely can alter its &lt;em&gt;interpretation&lt;/em&gt;. Still images can present scenes in a framing that doesn&apos;t completely do it justice, while AI can introduce confident, plausible details that were never in evidence, whether done maliciously or not.&lt;/p&gt;
+&lt;p&gt;This is why labeling matters. Not because AI involvement is inherently bad, but because, in most cases, viewers deserve to know which parts of an image are grounded in reality and which parts were reconstructed, inferred, or imagined. However, defining those rules is an area where a poor definition could let some people get away with anything while the rest of us end up having to tag everything as AI generated, turning the label into just more noise.&lt;/p&gt;
+&lt;h2&gt;This isn&apos;t even touching the copyright issues&lt;/h2&gt;
+&lt;p&gt;Everything above is about &lt;em&gt;truth&lt;/em&gt;: what happened, what didn&apos;t, and what an image implies, but there&apos;s a whole separate dimension we haven&apos;t entered: &lt;strong&gt;copyright&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Questions like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What training data was used to create the model?&lt;/li&gt;
+&lt;li&gt;Who owns the derivative works?&lt;/li&gt;
+&lt;li&gt;When does enhancement become transformation?&lt;/li&gt;
+&lt;li&gt;What rights do I retain over my own childhood photo once an AI model has touched it?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These aren&apos;t footnotes. They&apos;re large, unresolved questions that deserve their own analysis and probably their own regulatory framework. Mixing them into the &amp;quot;AI‑generated vs. not&amp;quot; debate only makes everything muddier. So for this post, I&apos;m deliberately setting copyright aside; not because it&apos;s unimportant, but because it&apos;s &lt;em&gt;too&lt;/em&gt; important to treat as a parenthetical.&lt;/p&gt;
+&lt;h2&gt;The Hard Part Is Defining What Matters&lt;/h2&gt;
+&lt;p&gt;The reasons why blanket rules about &amp;quot;AI‑generated content&amp;quot; fall apart are complicated. The line between &amp;quot;generated,&amp;quot; &amp;quot;assisted,&amp;quot; &amp;quot;enhanced,&amp;quot; and &amp;quot;restored&amp;quot; isn&apos;t a line at all, it&apos;s a gradient. That doesn&apos;t mean we shouldn&apos;t regulate AI‑involved media. It means &lt;strong&gt;we need to regulate AI with language and intent that actually matches reality, and solves the real problems&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;There &lt;em&gt;are&lt;/em&gt; cases where labeling is essential, but most of it is context specific. If I am posting a picture of a conference talk I gave, I wouldn&apos;t feel right adding fake participants in the crowd, but I&apos;d often be fine with editing someone out who asked me to, depending on the reason for doing so. I might not feel the same way if the photograph was being published as part of a story in the news. However, there are some things that should probably always be disclosed:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Images of things that never happened&lt;/strong&gt; should be labeled as such.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Images recreated from text descriptions after the fact&lt;/strong&gt; should be labeled as such.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Synthetic people, synthetic events, synthetic evidence&lt;/strong&gt; absolutely require clear disclosure.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AI‑assisted reconstructions that add plausible but invented details&lt;/strong&gt; should be labeled so viewers understand what&apos;s real and what&apos;s assumed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Those distinctions matter because they speak to truth, provenance, and the potential for harm, and they remain just as important whether AI is part of the process or not.&lt;/p&gt;
+&lt;p&gt;But my three images of Thurman Munson? They&apos;re all the same moment, they differ only in the tools used to reveal it. In most contexts, there is no meaningful change made by these manipulations.&lt;/p&gt;
+&lt;p&gt;There are already existing sets of rules we can lean on here. The National Press Photographers Association has a &lt;a href=&quot;https://web.archive.org/web/20260315211924/https://nppa.org/resources/code-ethics&quot;&gt;Code of Ethics&lt;/a&gt; for visual journalists that includes the following:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Editing should maintain the integrity of the photographic image&apos;s content and context. Do not manipulate images or add or alter sound in any way that can mislead viewers or misrepresent subjects.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I would ask you, &amp;quot;Does my manipulation of this image mislead viewers or misrepresent subjects?&amp;quot;&lt;/p&gt;
+&lt;p&gt;This Code of Ethics also includes composition and subject matter rules such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Resist being manipulated by staged photo opportunities&lt;/li&gt;
+&lt;li&gt;Be complete and provide context when photographing or recording subjects&lt;/li&gt;
+&lt;li&gt;While photographing subjects, do not intentionally contribute to, alter, or seek to alter or influence events&lt;/li&gt;
+&lt;li&gt;Do not pay sources or subjects or reward them materially for information or participation&lt;/li&gt;
+&lt;li&gt;Do not accept gifts, favors, or compensation from those who might seek to influence coverage&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All of which suggests that the editing of images, the part that can be done using AI, is just a small part of the harm that can be done through visual means, albeit one that scales better than most.&lt;/p&gt;
+&lt;h2&gt;Here&apos;s the part we can&apos;t ignore&lt;/h2&gt;
+&lt;p&gt;AI, in some form, is nearly &lt;em&gt;always&lt;/em&gt; involved now. Not the headline‑grabbing generative models that synthesize faces or fabricate events, but the quiet, invisible systems inside scanners, cameras, phones, and photo apps, the ones nobody notices because they don&apos;t feel like AI. Processes like sharpening, noise reduction, auto‑contrast, white‑balance correction, lens‑distortion fixes and de‑mosaicing filters are all part of many of the image capture mechanisms we use every day. Other domains have similar tools used for autocorrect, predictive-text, grammar correction, spellcheck, voice-to-text, spam filtering and recommendations. These are all machine‑learning (ML) systems doing work behind the scenes.&lt;/p&gt;
+&lt;p&gt;So the question can&apos;t be &amp;quot;Was AI used?&amp;quot;  The questions must be more akin to &lt;strong&gt;&amp;quot;What kind of AI was used, how was it used, and to what effect?&amp;quot;&lt;/strong&gt;. These questions need to be answered in the full context of the situation, because the truth of this photo is simple, AI didn&apos;t create it, &lt;strong&gt;it actually happened&lt;/strong&gt;. The tools just helped me see it more clearly, but they can also help someone else see something that was never there. Outside of this one childhood snapshot, it&apos;s rarely even &lt;em&gt;that&lt;/em&gt; simple.&lt;/p&gt;
+&lt;p&gt;Knowing the difficulty in categorizing these three versions of a childhood photo as &lt;code&gt;AI-generated&lt;/code&gt; or not, it is obvious that we can&apos;t build policy around such a binary definition. We need rules that focus on &lt;strong&gt;intent&lt;/strong&gt;, &lt;strong&gt;impact&lt;/strong&gt;, and &lt;strong&gt;what claims are being made&lt;/strong&gt;, not on whether a model was somewhere in the toolchain. We will drill into more detail on how we can craft regulations that take these items into account in future posts.&lt;/p&gt;
+</description>
+  <link>https://www.cognitiveinheritance.com/Posts/what-counts-as-aigenerated.html</link>
+  <author>aa94bef8-9a1d-4486-8024-e38b3f45e8e4@bsstahl.com (Barry S. Stahl)</author>
+  <guid>https://www.cognitiveinheritance.com/Permalinks/8a03e594-887c-4412-ae36-23fa3d2cf0c2.html</guid>
+  <pubDate>Sat, 28 Mar 2026 10:19:40 GMT</pubDate>
+</item><item>
   <title>Introducing the Behavioral Layer</title>
   <description>&lt;p&gt;Modern systems increasingly receive free‑text input, either from humans or from language models. These inputs can be ambiguous, incomplete, or phrased in ways the domain layer cannot act on directly. They are not the predictable, schema‑bound shapes that a traditional Anti‑Corruption Layer (ACL) is designed to translate. They require interpretation before any downstream component can reason about them. This is the realm of the Behavioral Layer.&lt;/p&gt;
 &lt;h2&gt;What the Behavioral Layer Does&lt;/h2&gt;
@@ -567,87 +637,6 @@ Phoenix AZ&lt;br/&gt;
   <author>aa94bef8-9a1d-4486-8024-e38b3f45e8e4@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/e47eddf9-fcda-4382-a7c8-e498026fbfee.html</guid>
   <pubDate>Tue, 03 Oct 2023 07:00:00 GMT</pubDate>
-</item><item>
-  <title>Feature Flags&#58; Don&apos;t Roll Your Own</title>
-  <description>&lt;p&gt;In my &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/consider-quality-before-cost.html&quot;&gt;previous post&lt;/a&gt;, I discussed situations where we tend to overvalue visible costs and undervalue more hidden costs. One example of this dynamic is the tendency to want to roll-your-own feature-flagging system.&lt;/p&gt;
-&lt;p&gt;Feature flags are a powerful tool for controlling the availability and behavior of features in your software. They allow you to turn features on or off at runtime, without deploying new code, and target specific segments of users with different variations of your features. This enables you to experiment, test, and release features faster and safer than ever before.&lt;/p&gt;
-&lt;p&gt;But feature flags are not something you should implement yourself. Rolling your own feature flags may seem like a simple and cost-effective solution, but it comes with many hidden pitfalls and risks that can undermine your software quality, performance, security, and maintainability. Ultimately, rolling your own feature flag system may end up costing you much more than using an existing product.&lt;/p&gt;
-&lt;p&gt;We should always have a strong bias against building anything that falls outside of our team&apos;s &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-5of6-competencies.html&quot;&gt;core competencies&lt;/a&gt;, but feature flags in particular have their own special set of concerns, especially since, on the surface, it seems like such a simple problem.&lt;/p&gt;
-&lt;p&gt;Here are some of the specific reasons why you should avoid rolling your own feature flags:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Complexity&lt;/strong&gt;: Implementing feature flags requires more than just adding some if statements to your code. You need to design a robust system for managing, storing, updating, evaluating, and auditing your feature flags across different environments, platforms, services, and teams. You also need to handle edge cases such as flag dependencies, conflicts, defaults, fallbacks, rollbacks, etc. This adds a lot of complexity and overhead to your codebase that can introduce bugs, errors, inconsistencies, and technical debt.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Performance&lt;/strong&gt;: Evaluating feature flags at runtime can have a significant impact on your application&apos;s performance if not done properly. You need to ensure that your feature flag system is fast, scalable, reliable, resilient, and secure. You also need to optimize your flag evaluation logic for minimal latency and resource consumption. If you roll your own feature flags without proper performance testing and monitoring tools, you may end up slowing down or crashing your application due to excessive network calls, database queries, memory usage, or CPU cycles.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Security&lt;/strong&gt;: Feature flags can expose sensitive information or functionality that should not be accessible by unauthorized users or attackers. You need to ensure that your feature flag system is secure from both internal and external threats. You also need to comply with any regulatory or legal requirements for data privacy and protection. If you roll your own feature flags without proper security measures and best practices, you may end up leaking confidential data or compromising your application&apos;s integrity.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Maintainability&lt;/strong&gt;: Feature flags are meant to be temporary switches that enable or disable features until they are ready for full release or removal. However, if you roll your own feature flags without proper management tools and processes, you may end up with a large number of stale or unused flags that clutter or pollute your codebase. This makes it harder to understand or modify your code, increases the risk of errors or conflicts, and reduces the readability or testability of your code.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;As you can see, rolling your own feature flags is not as easy as it sounds. It requires a lot of time, effort, skill, and discipline to do it well. And even if you manage that nebulous challenge at rollout, you still have to maintain and extend the system for the life of the products that use it.&lt;/p&gt;
-&lt;p&gt;That&apos;s why you should use a feature flag management platform instead. A feature flag management platform provides you with all the tools and services you need to implement and manage feature flags effectively and efficiently.&lt;/p&gt;
-&lt;p&gt;With a feature flag management platform:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;You can create and update feature flags easily using a user-friendly interface or API.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;You can target specific segments of users based on various criteria such as location, device type, user behavior, etc.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;You can monitor and measure the impact of your features on key metrics such as conversion rates, engagement levels, error rates, etc.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;You can control the rollout speed and strategy of your features using various methods such as percentage-based splits, canary releases, blue-green deployments, etc.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;You can integrate with various tools such as CI/CD pipelines, testing frameworks, analytics platforms, etc. to streamline your development and delivery workflows.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;You can ensure the performance, security, reliability, scalability, of your feature flag system using advanced techniques such as caching, encryption, failover mechanisms, load balancing, etc.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;You can manage the lifecycle of your feature flags using best practices such as naming conventions, documentation, flag retirement policies, etc.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;A feature flag management platform takes care of all these aspects for you, so you can focus on building and delivering great features for your customers.&lt;/p&gt;
-&lt;p&gt;There are many feature flag management platforms available in the market, such as LaunchDarkly, Split, Optimizely, Taplytics, etc. Each platform has its own features, pricing, and integrations that you can compare and choose from based on your needs and preferences.&lt;/p&gt;
-&lt;p&gt;However, regardless of which platform you use, there are some best practices that you should follow when using feature flags. These best practices will help you avoid common pitfalls and maximize the benefits of feature flags for your software development and delivery process.&lt;/p&gt;
-&lt;p&gt;Here are some of the best practices that you should know:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Use a consistent system for feature flag management&lt;/strong&gt;: It doesn&apos;t matter if you use a feature flag management tool or a custom solution, as long as you have a consistent system for creating, updating, and deleting your feature flags. You should also have a clear ownership and accountability model for each flag, so that you know who is responsible for what.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Set naming conventions for different types of feature flags&lt;/strong&gt;: You can implement feature flags to achieve many different goals, such as testing, experimenting, releasing, or hiding features. You should use descriptive and meaningful names for your flags that indicate their purpose and scope. You should also use prefixes or suffixes to distinguish between different types of flags, such as release flags, experiment flags, kill switches, etc.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Make it easy to switch a flag on/off&lt;/strong&gt;: You should be able to turn a feature flag on or off with minimal effort and delay. You should also be able to override or modify a flag&apos;s settings at any time without redeploying your code. This will allow you to react quickly and flexibly to any changes or issues that may arise during your feature development or delivery cycle.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Make feature flag settings visible&lt;/strong&gt;: You should be able to see and monitor the current state and configuration of each feature flag at any given time. You should also be able to track and audit the history and usage of each flag across different environments, platforms, services, and teams. This will help you ensure transparency and traceability of your feature development and delivery process.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Clean up obsolete flags&lt;/strong&gt;: You should remove any feature flags that are no longer needed or used as soon as possible. This will prevent cluttering or polluting your codebase with unnecessary or outdated code paths that can increase complexity or introduce errors or conflicts¹⁶.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Some additional recommendations are:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Avoid dependencies between flags&lt;/strong&gt;: You should avoid creating complex dependencies or interactions between different feature flags that can make it hard to understand or predict their behavior or impact. You should also avoid nesting or chaining multiple flags within each other that can increase latency or resource consumption.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Use feature switches to avoid code branches&lt;/strong&gt;: You should use simple boolean expressions to evaluate your feature flags rather than creating multiple code branches with if/else statements. This will reduce code duplication and improve readability and testability of your code.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Use feature flags for small test releases&lt;/strong&gt;: You should use feature flags to release small batches of features incrementally rather than releasing large groups of features altogether. This will allow you to test and validate your features with real users in production without affecting everyone at once. It will also enable you to roll back or fix any issues quickly if something goes wrong.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;By following these best practices, you can leverage the power of feature flags without compromising on quality, performance, security, or maintainability.&lt;/p&gt;
-&lt;h4&gt;Some Open Source Feature Flag Systems&lt;/h4&gt;
-&lt;p&gt;Yes, there are some open source projects that support feature flag management. For example:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/growthbook/growthbook&quot;&gt;GrowthBook&lt;/a&gt;: GrowthBook is an open source feature management and experimentation platform that helps your engineering team adopt an experimentation culture. It enables you to create gradual or canary releases with user targeting, run A/B tests, track key metrics, and integrate with various data sources.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/Flagsmith/flagsmithhttps://github.com/Flagsmith/flagsmith&quot;&gt;Flagsmith&lt;/a&gt;: Flagsmith is an open source feature flag and remote config service that makes it easy to create and manage features flags across web, mobile, and server side applications. It allows you to control feature access, segment users, toggle features on/off, and customize your app behavior without redeploying your code.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/Unleash/unleash&quot;&gt;Unleash&lt;/a&gt;: Unleash is an open source feature flag management system that helps you deploy new features at high speed. It lets you decouple deployment from release, run experiments easily, scale as your business grows, and integrate with various tools and platforms.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;These are just some examples of open source feature flag management projects. There may be others that suit your needs better.&lt;/p&gt;
-&lt;p&gt;Feature flags are an essential tool for modern software development and delivery. They enable you to deliver faster, safer, and better features for your customers while reducing risk and cost. But don&apos;t try to roll your own feature flags unless you have a good reason and enough resources to do so. Instead, use a professional feature flag management platform that provides you with all the tools and services you need to implement and manage feature  flags effectively  and efficiently.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;Disclaimer: My teams use &lt;em&gt;LaunchDarkly&lt;/em&gt; for feature-flagging but I am not affiliated with that product or company in any way. I am also not associated with any similar product or company that makes such a product and have not received, nor will I receive, any compensation of any type, either direct or indirect, for this article.&lt;/p&gt;
-</description>
-  <link>https://www.cognitiveinheritance.com/Posts/feature-flags-do-not-roll-your-own.html</link>
-  <author>aa94bef8-9a1d-4486-8024-e38b3f45e8e4@bsstahl.com (Barry S. Stahl)</author>
-  <guid>https://www.cognitiveinheritance.com/Permalinks/c41a49df-5394-44ff-93a9-62f8c87e89b4.html</guid>
-  <pubDate>Mon, 14 Aug 2023 07:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
