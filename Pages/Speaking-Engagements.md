@@ -26,6 +26,8 @@ categories: []
 
 * **[Craft Conf Budapest 2026](https://craft-conf.com/2026/speaker/bstahl)** - 6/4/2026 - 6/5/2026 - "TDD in the AI Era" (workshop) & "Solutions That Evolve: Building Self-Improving Systems with Genetic Algorithms"
 
+* **[Devoxx Poland](https://devoxx.pl/speakers/)** - 6/17/2026 - 6/19/2026 - "Amazing Algorithms for Solving Problems in Software"
+
 * **[Nebraska.Code() 2026](https://nebraskacode.amegala.com/)** - 7/22/2026 - 7/24/2026 - "Amazing Algorithms for Solving Problems in Software" (workshop), "Solutions that Evolve, Building Self-Improving Systems with Genetic Algorithms" & "How the Fediverse Could Save Democracy & Why Developers Hold the Key"
 
 * **[Beer City Code 2026](https://www.beercitycode.com/#speakers)** - 8/14/2026 - 8/15/2026 - "LLMs Under the Hood" (workshop) and "Solutions That Evolve: Building Self-Improving Systems with Genetic Algorithms"
