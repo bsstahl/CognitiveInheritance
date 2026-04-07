@@ -1,0 +1,1066 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Crafting AI</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-transition="slide-in slide-out" data-background='img/c21d06e5-4469-4358-893f-140a5e800278.png'>
+<a id="8fd89511-3e7c-42e3-b7cc-1f57990eb5c2">&nbsp;</a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:9f3ea2af-cc8f-4abf-acd6-42bfc30e90b5 -->
+<!-- ContentItem:e534a6f0-97cd-4d58-a2f8-ba7f9ec98d8b -->
+
+<table><tr><td style="vertical-align:top;">
+<h2 id="crafting-ai">Crafting AI</h2>
+<h4 id="a-developers-guide-to-machine-learning">A Developer's Guide to Machine Learning</h4>
+<hr />
+<h3 id="barry-s.stahl">Barry S. Stahl</h3>
+<h3 id="principle-engineer">Principle Engineer</h3>
+<h3 id="aznerds.net"><a href="https://aznerds.net">AZNerds.net</a></h3>
+<h3 id="bsstahlcognitiveinheritance.com"><a href="https://fosstodon.org/@Bsstahl">@bsstahl@cognitiveinheritance.com</a></h3>
+<h3 id="httpscognitiveinheritance.com"><a href="https://cognitiveinheritance.com">https://CognitiveInheritance.com</a></h3>
+
+</td>
+<td style="text-align: left;">
+<img src="img/e534a6f0-97cd-4d58-a2f8-ba7f9ec98d8b.png" alt="Transparent Half Width Image 960x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="636059f9-aa9d-4444-b4ec-dd7f62badd98"><h1>Favorite Physicists & Mathematicians</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:30f7e9d2-b154-4895-bed7-2765f7bdc6fe -->
+<!-- ContentItem:8a83be06-76e9-4028-9630-c6a7de92ae99 -->
+<aside class="notes"><p>An up-to-date list is available on <a href="https://cognitiveinheritance.com/Pages/Favorites.html">my blog at https://cognitiveinheritance.com/Pages/Favorites.html</a>
+Please ping me on Mastodon to tell me where I messed-up with this list, or this presentation for that matter. 😉</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<h4 id="favorite-physicists">Favorite Physicists</h4>
+<ol>
+<li>Harold &quot;Hal&quot; Stahl</li>
+<li>Carl Sagan</li>
+<li>Richard Feynman</li>
+<li>Marie Curie</li>
+<li>Nikola Tesla</li>
+<li>Albert Einstein</li>
+<li>Neil Degrasse Tyson</li>
+<li>Niels Bohr</li>
+<li>Galileo Galilei</li>
+<li>Michael Faraday</li>
+</ol>
+<p><em>Other notables</em>: Stephen Hawking, Edwin Hubble, Leonard Susskind, Christiaan Huygens</p>
+
+</td>
+<td style="vertical-align:top;">
+<h4 id="favorite-mathematicians">Favorite Mathematicians</h4>
+<ol>
+<li>Ada Lovelace</li>
+<li>Alan Turing</li>
+<li>Johannes Kepler</li>
+<li>Rene Descartes</li>
+<li>Isaac Newton</li>
+<li>Emmy Noether</li>
+<li>George Boole</li>
+<li>Blaise Pascal</li>
+<li>Johann Gauss</li>
+<li>Grace Hopper</li>
+</ol>
+<p><em>Other notables</em>: Daphne Koller, Grady Booch, Leonardo Fibonacci, Evelyn Berezin, Benoit Mandelbrot</p>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="a1e2eaad-5633-41dc-9e1b-c724e30ac85f"><h1>Fediverse Supporter</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f48757bb-8e16-418d-857d-26908de5ef1e -->
+<!-- ContentItem:a937ed96-7c15-4ede-a3d0-09dc382590eb -->
+<aside class="notes"><p>It is now more important than ever that we create networks that are not  controlled by corporate entities or petulant oligarchs</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>See my presentation from CodeMash 2025: <a href="https://www.youtube.com/watch?v=FdlJVG2GjLY">How the Fediverse Could Save Democracy &amp; Why It Probably Won't</a></p>
+</li>
+<li><p>Hear my thoughts on why a thriving Fediverse is so critical on David Giard's <a href="https://davidgiard.com/barry-stahl-on-the-fediverse">Technology and Friends</a> show.</p>
+</li>
+<li><p>Learn more about the Fediverse at <a href="https://fediverse.party/en/fediverse">fediverse.party</a>.</p>
+</li>
+<li><p>Get your own Mastodon account at <a href="https://joinmastodon.org/">Join Mastodon</a>.</p>
+<ul>
+<li>Don't stress on what server to use, just pick one and go.  You can always move later.</li>
+</ul>
+</li>
+<li><p>Follow me on Mastodon at <a href="https://fosstodon.org/@bsstahl">@bsstahl@CognitiveInheritance.com</a>.</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/a937ed96-7c15-4ede-a3d0-09dc382590eb.png" alt="Logos.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Liquid Victor was used to create this slide deck</p>
+</aside>
+<a id="23528a73-7bc1-4e39-9f2f-c8b9e2cff982"><h1>Some OSS Projects I Run</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:f8cbcb81-15f7-48e0-bc29-b348732f6f05 -->
+<ol>
+<li><a href="https://github.com/bsstahl/liquidvictor">Liquid Victor</a> : Media tracking and aggregation [used to assemble this presentation]</li>
+<li><a href="https://github.com/bsstahl/pptail">Prehensile Pony-Tail</a> : A static site generator built in c#</li>
+<li><a href="https://github.com/bsstahl/testhelperextensions">TestHelperExtensions</a> : A set of extension methods helpful when building unit tests</li>
+<li><a href="https://github.com/bsstahl/conferencescheduler">Conference Scheduler</a> : A conference schedule optimizer</li>
+<li><a href="https://github.com/bsstahl/intentbot">IntentBot</a> : A microservices framework for creating conversational bots on top of Bot Framework</li>
+<li><a href="https://github.com/bsstahl/liquidnun">LiquidNun</a> : Library of abstractions and implementations for loosely-coupled applications</li>
+<li><a href="https://github.com/bsstahl/toastmastersagenda">Toastmasters Agenda</a> : A c# library and website for generating agenda's for Toastmasters meetings</li>
+<li><a href="https://github.com/bsstahl/PDM">ProtoBuf Data Mapper</a> : A c# library for mapping and transforming ProtoBuf messages</li>
+</ol>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>I am proud to be one of the founders of AZGiveCamp.
+GiveCamps are weekend events where we put a bunch of software creators in a room with a bunch of great local charities, and through the course of the weekend, we create software to help them further their mission</p>
+</aside>
+<a id="3129a405-82a7-432c-ae55-6f9d2335ab17"><h1>http://GiveCamp.org</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:2ca346de-d62c-4c6b-834d-7ccab290a6ab -->
+<img alt="GiveCamp.png" src="img/2ca346de-d62c-4c6b-834d-7ccab290a6ab.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>July 25, 2022 was my 100th public talk. Thank you for allowing me to participate in your community over these past few decades!</p>
+</aside>
+<a id="39c6410c-3913-410b-abab-984014a15d84"><h1>Achievement Unlocked</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a042b106-4bab-4403-b5b6-0d7b414ef789 -->
+<img alt="bss-100-achievement-unlocked-1024x250.png" src="img/a042b106-4bab-4403-b5b6-0d7b414ef789.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>I learn by building. This workshop is an opportunity for us to learn AI better by building some.
+We will start with a simple linear regression model and build on that to create a more complex model.</p>
+<p>What you see here is a representation of the training process for a linear regression model. By the end of this workshop, you will understand how this process works and be able to build your own models using these tools.</p>
+</aside>
+<a id="5fe2e0b4-4d82-4cd0-a4aa-6ed7a41ea871"><h1>Minimizing Error</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:3d890146-5e25-4c62-ab36-2b0c82dbd984 -->
+<img alt="training_animation.gif" src="img/3d890146-5e25-4c62-ab36-2b0c82dbd984.gif" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>This is the foundation for all of AI. Every model is built on different ways of combining this simple transformation with others like it, and simple non-linear activations. We will  understand this concept, and then start expanding it to more complex models.</p>
+</aside>
+<a id="3b388ff1-74da-425a-a00a-19666eb34660"><h1>Simple Linear Model</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:d19223dc-ec19-4348-801e-4a05333f33a3 -->
+<img alt="AI Models - Single Input Linear - 1280x720.png" src="img/d19223dc-ec19-4348-801e-4a05333f33a3.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>We'll expand our model to add a 2nd input</p>
+</aside>
+<a id="c772c942-0239-450e-ac5a-a310d9d73645"><h1>2-Input Linear Model</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:cbd49e86-bf3f-463a-99b5-e3a04662f97e -->
+<img alt="AI Models - 2 Input Linear - 1280x720.png" src="img/cbd49e86-bf3f-463a-99b5-e3a04662f97e.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>And then expand that out to 16 inputs.  We'll then add non-linearity to that model before moving on to the final example for the day.</p>
+</aside>
+<a id="64fc87a5-e0ed-40d0-a3cc-c35ef11802f1"><h1>Multiple-Input Linear Model</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a2713a54-f612-436b-a542-bbaa45c09e85 -->
+<img alt="AI Models - Multiple Input Linear - 1280x720.png" src="img/a2713a54-f612-436b-a542-bbaa45c09e85.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>A model you will build yourselves that demonstrates everything you need to  know when creating a neural network to make predictions.</p>
+</aside>
+<a id="4de24609-d717-49f2-81ff-70d2336962b2"><h1>Multi-Layer Perceptron</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:95957cec-51ca-4c43-b6ca-f432c45aee71 -->
+<img alt="AI Models - MultiLayer Perceptron - 1280x720.png" src="img/95957cec-51ca-4c43-b6ca-f432c45aee71.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>2 parts to building AI Models: Model Design &amp; Model Training</p>
+<ul>
+<li>Design: Must be done regardless of implementation</li>
+<li>Training: Can be done using a variety of tools - we start here</li>
+</ul>
+<p>Once you understand the key concepts, you can implement them with any ML suite. Our goal is to provide  the intution so that we understand what is happening under the hood and can fix problems when they occur regardless of the tooling we choose.</p>
+</aside>
+<a id="b71e25da-cc78-4dd2-9330-c0bf31fee60e"><h1>Crafting AI Models</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:d68b6230-4322-49b2-a017-e215faea7c06 -->
+<ul>
+<li>Designing the Model Structure
+<ul>
+<li>Define Inputs and Outputs</li>
+<li>Determine Layers and Neurons</li>
+<li>Select Activation Function</li>
+</ul>
+</li>
+<li>Training the Model
+<ul>
+<li>Cost Function (Mean Squared Error)</li>
+<li>Gradient Descent Optimization</li>
+<li>Adjust Hyperparameters (e.g. learning rate)</li>
+</ul>
+</li>
+<li>These are the critical concepts for all ML tooling
+<ul>
+<li>TensorFlow, Keras, ML.Net, etc.</li>
+<li>Master these concepts to harness any ML tool suite effectively</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="b554e246-f939-4c90-90be-74e069b9c284"><h1>Linear Model</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:a8363ac9-93bf-43c0-a9f7-9c29445905f8 -->
+<!-- ContentItem:d19223dc-ec19-4348-801e-4a05333f33a3 -->
+<aside class="notes"><ul>
+<li>Input = Independent Variable</li>
+<li>Output = Dependent Variable</li>
+<li>Weight and Bias are Parameters of the Model</li>
+<li>MSE = Mean Squared Errror</li>
+<li>Cost Function (Loss Function) determines how well the predictions match reality</li>
+</ul>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Input Variable</td>
+<td>X</td>
+</tr>
+<tr>
+<td>Output Variable</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Weight Parameter</td>
+<td>M</td>
+</tr>
+<tr>
+<td>Bias Parameter</td>
+<td>B</td>
+</tr>
+<tr>
+<td>Linear Equation</td>
+<td>Y=mX+b</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+<td style="text-align: left;">
+<img src="img/d19223dc-ec19-4348-801e-4a05333f33a3.png" alt="AI Models - Single Input Linear - 1280x720.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="1a894f9a-6d1f-4511-aabf-e397d1b1b52a"><h1>ML's Linear Linchpin</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:758cceee-24e1-482f-9d1a-1f3d345d4e96 -->
+<!-- ContentItem:9ea2e21a-1d4c-4e64-b450-cf13291630b2 -->
+<aside class="notes"><p>The power of AI is based primarily on 8th grade mathematics!</p>
+<p>We'll discuss more about linear-separability when we get to model design.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Y = mX + B</p>
+</blockquote>
+<ul>
+<li><p>Every neuron gets its value from a linear transformation</p>
+</li>
+<li><p>Multiple inputs result in a sum of the linear transformations</p>
+<ul>
+<li>The sum of a linear transformation is linear</li>
+</ul>
+</li>
+<li><p>Only linearly-separable functions can be modeled without a non-linear activation</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/9ea2e21a-1d4c-4e64-b450-cf13291630b2.png" alt="AI Models - Annotated Single Input Linear - 640x360.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="71736eb2-51f0-4371-962c-e811c5aad331"><h1>Mathematics</h1></a>
+<!-- Layout:ImageWithCaption -->
+<!-- ContentItem:05de858d-cebf-4e43-a9ee-74419ce774f6 -->
+<!-- ContentItem:6d11eeb3-f927-4347-867a-e20b89d32799 -->
+<aside class="notes"><p>The use of Linear Algebra and matrix multiplication in machine learning models serves  as a mathematical optimization that enhances computational efficiency and scalability.  This approach allows for parallel processing of multiple variables, making it faster and  more efficient than traditional loop-based methods. The same results can be achieved, however, through  traditional methods, as long as you have a few million years to train a large model.</p>
+</aside>
+<img alt="Feynman - QED - 600x400.png" src="img/6d11eeb3-f927-4347-867a-e20b89d32799.png" />
+<h2><p><small>...we've invented a fantastic array of tricks and gimmicks for putting together the numbers, without  actually doing it. We don't actually [apply Y = Mx+B for every neuron] We do it by the tricks of  mathematics, and that's all. So, we're not going to worry about that. You don't have to know about  [Linear Algebra]. All you have to know is what it is, tricky ways of doing something which would be  laborious otherwise.</small></p>
+<hr />
+<p><small>With apologies to Professor Feynman, who was talking about the tricks of Calculus as applied
+to Physics, not the tricks of Linear Algebra as applied to Machine Learning.</small></p>
+</h2>
+</section>
+
+<section data-transition="slide-in slide-out">
+<a id="30f35e81-4658-4b72-aefe-2574e78f0d30"><h1>Model Parameters</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:25c0b05e-b191-4c07-8f01-bcf81f611551 -->
+<!-- ContentItem:0961b3c9-8c97-499d-bb1c-71734b5b089f -->
+<aside class="notes"><p>The goal of the training process is to find the values of our parameters that best predict the output</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p><strong>Parameters</strong>: Internal values learned during training</p>
+<ul>
+<li><p>Define the relationship between input and output</p>
+</li>
+<li><p>Adjusted to minimize prediction error</p>
+</li>
+</ul>
+</li>
+<li><p>In Linear Regression: <code>Y = mX + b</code></p>
+<ul>
+<li><p><strong>m</strong>: Slope (Weight) - The influence of X on Y</p>
+</li>
+<li><p><strong>b</strong>: Intercept (Bias) - Shifts the output vertically</p>
+</li>
+</ul>
+</li>
+<li><p>In more complex models:</p>
+<ul>
+<li><p>Counts include weights/biases across layers</p>
+</li>
+<li><p>Can capture non-linear relationships</p>
+</li>
+<li><p>Parameter counts are a proxy for complexity</p>
+</li>
+<li><p>GPT-4 uses roughly 1.8 trillion parameters</p>
+</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/0961b3c9-8c97-499d-bb1c-71734b5b089f.png" alt="Model Parameters.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="07ebe50d-c195-4031-837a-7a73e9859297"><h1>Error Function</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:4cca160f-5d25-4474-b017-cd31e409d2cb -->
+<!-- ContentItem:92ba6edf-733d-4056-931a-41ff30733ff0 -->
+<aside class="notes"><ul>
+<li><p>It may be difficult to see, but the bias does also contribute to the error, just by  far less that the weight.</p>
+</li>
+<li><p>This makes sense because the weight is multiplied by the input, the bias is just added.</p>
+</li>
+<li><p>Think about what happens if the slope is perpendicular to the expected line.</p>
+<ul>
+<li>The error for every point will be large, except for the area near where the lines cross.</li>
+</ul>
+</li>
+</ul>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>X-Axis: The value of the weight (m)</li>
+<li>Y-Axis: The value of the bias (b)</li>
+<li>Z-Axis: The size of the error</li>
+</ul>
+<p>The weight (m) often has a greater effect on the error than the bias (b)</p>
+
+</td>
+<td style="text-align: left;">
+<img src="img/92ba6edf-733d-4056-931a-41ff30733ff0.png" alt="Linear Regression - Error Function Plot - Smaller.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="6e18bf42-6365-4ff9-9968-54e9f04f7ea5"><h1>Training the Model</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:51aea5b9-beab-4a8c-80ed-28b2297bb8d0 -->
+<!-- ContentItem:3d890146-5e25-4c62-ab36-2b0c82dbd984 -->
+<aside class="notes"><p>We could use any optimization algorithm to train the model. In fact, I have a demo where I use Amoeba Optimization to train a model. However, the most common optimization algorithm used in training neural networks is Gradient Descent.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Objective: Minimize the error
+<ul>
+<li>Error: The difference between the predicted value and the actual value</li>
+<li>MSE: Mean Squared Error - Avg of the squared differences between predicted and actual</li>
+</ul>
+</li>
+<li>Means: Gradient Descent Optimization
+<ul>
+<li>Nearly any Optimization algorithm can be used</li>
+<li>Gradient Descent is the most common/suited</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/3d890146-5e25-4c62-ab36-2b0c82dbd984.gif" alt="training_animation.gif" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="ae9400c6-295c-4eac-a452-f29b46414c3c"><h1>Gradient Descent</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:2efb79ef-f83f-4e01-af5c-a8995f355d62 -->
+<!-- ContentItem:b14eaae1-4711-4ca2-960b-ba7d75667230 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Optimization algorithm used to minimize the cost function of a model</p>
+</blockquote>
+<ul>
+<li><p>Shifts the parameters in the opposite direction of the cost gradient</p>
+<ul>
+<li><p>The 1st derivative of the cost function</p>
+</li>
+<li><p>Represents the slope of that function</p>
+</li>
+</ul>
+</li>
+<li><p>Hyperparameters include:</p>
+<ul>
+<li><p>Number of iterations</p>
+</li>
+<li><p>Learning rate</p>
+</li>
+<li><p>Convergence criteria</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Stochastic</strong> Gradient Descent</p>
+<ul>
+<li>Updates parameters using a subset of data each cycle</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
+<img alt="AI Models - Gradient Descent - 400x800.png" src="img/b14eaae1-4711-4ca2-960b-ba7d75667230.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in fade-out" data-background='img/2c292b6c-c30a-434c-bda9-bafdaa9fe689.png'>
+<aside class="notes"><p>This data has obviously been cleaned. There are no major outliers and data appears fairly consistent.
+In this case, it represents the distance travelled on a train between stations at various points in time.</p>
+</aside>
+<a id="7d843486-629e-4172-9476-76197d6547b7">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="fade-in slide-out" data-background='img/a3a2b6ff-8588-4925-8d50-c6af8d86635f.png'>
+<aside class="notes"><p>It is also clearly linear so we can easily add a best fit line to the data</p>
+</aside>
+<a id="7f8d5089-c696-446a-b353-90e3a67ba020">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Of course, there are simpler ways to do this type of linear regression. We are using this example  to demonstrate the process of training a model, not to show the simplest way to solve this problem.</p>
+</aside>
+<a id="50bc745b-52ef-4ff2-a094-3f4b4860d1a6"><h1>Railroad Times Model</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:d19223dc-ec19-4348-801e-4a05333f33a3 -->
+<img alt="AI Models - Single Input Linear - 1280x720.png" src="img/d19223dc-ec19-4348-801e-4a05333f33a3.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Shown here are just 4 of the 1000 records in our data set. Above that, is the top-level Code to perform the train/test cycle.</p>
+</aside>
+<a id="7ec0327a-31f1-4a3b-9c9a-f1a4ba0506f3"><h1>Train & Test Cycle</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:b7bc5109-1b1e-46d6-8030-180af857319c -->
+<img alt="Train and Test Cycle.png" src="img/b7bc5109-1b1e-46d6-8030-180af857319c.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/007e403c-08f0-499a-add9-12cff2e7906b.png'>
+
+<a id="0ff74b67-83cb-4fbf-8408-92f8705264b0">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/afa44898-9f31-4011-a457-e59ddafb887a.png'>
+
+<a id="b32cd581-b58a-46a3-ac0d-86368d67b189">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/f96d34f6-c5b2-4a6a-95a1-e793245afbcd.png'>
+
+<a id="338cad77-48d6-40df-9ddc-886fc1942ce8">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/3b769de0-18d7-48ce-b508-659f40b54da4.png'>
+
+<a id="e8201835-9fbc-41b9-99c5-f178e22b86ff">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/3dc6b32d-7df4-469a-995e-8eb7781e5115.png'>
+
+<a id="bf1d635d-c34f-4b89-afa9-881b62b05470">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/01923bec-dc28-4de5-b40a-70791b182886.png'>
+
+<a id="3eff8033-459e-49e1-894b-e2fb5f741b79">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/a60ec9d0-8588-48ee-a9e6-48ad3e3a7500.png'>
+
+<a id="9aa6a523-cae0-4324-bf91-ee9704169138">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/b61618cd-de4d-461d-aa36-9ce3b082653b.png'>
+
+<a id="0856338a-493b-4069-96d2-1984a46011ef">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="007b9ad8-51d1-495e-bd58-f4cbf527c5d8"><h1>Voting Dataset</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:15aa309a-7d45-49d2-a476-f165758f9a18 -->
+<img alt="Congressional Voting Dataset 1280x720.png" src="img/15aa309a-7d45-49d2-a476-f165758f9a18.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="15dbfd0f-028e-4d68-a1a2-6a535d1dff93"><h1>Voting Data</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:ea0bd9c3-058f-4aa2-a20c-932b57a7ff97 -->
+<img alt="Excel - Voting Dataset 1280x720.png" src="img/ea0bd9c3-058f-4aa2-a20c-932b57a7ff97.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>This model won't work without a little something more. The voting data we are working with is NOT linearly  separable. That means we need to do something more than just a straight linear transformation.</p>
+</aside>
+<a id="ebf12f89-6014-4ba9-8775-c2d4dcbee242"><h1>Voting Model</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:4209462e-7f67-40c8-beea-33bbf31c969a -->
+<img alt="AI Models - SingleLayer Voter Model - 1280x720.png" src="img/4209462e-7f67-40c8-beea-33bbf31c969a.png" />
+</section>
+
+
+<section data-transition="slide-in fade-out">
+<aside class="notes"><p>All of the problems we've looked at so far are linearly separable. If you want to prove that to yourself just draw a 3D graph of the AND gate data with 1 input on the X axis, the other on the Y axis, and the output on the Z axis. You'll see that a plane can be drawn at Z=0.5 that separates the data into two distinct regions.</p>
+</aside>
+<a id="df29a9e8-a98d-4397-8f06-5bfdec5a2fe7"><h1>Linear Separability</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:e91e1b70-5571-4dfb-a3a5-9a4b5472b147 -->
+<img alt="LinearSeparability.png" src="img/e91e1b70-5571-4dfb-a3a5-9a4b5472b147.png" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="c2f73941-9061-49ab-948c-4b7a120a36d5"><h1>Linear Separability</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:729efb18-b698-4d28-9a4c-c698c18764f6 -->
+<img alt="LinearSeparability-WithLine.png" src="img/729efb18-b698-4d28-9a4c-c698c18764f6.png" />
+</section>
+
+
+<section data-transition="fade-in slide-out">
+<aside class="notes"><p>Our voting data is more along these lines. We can't draw a straight line or even a hyperplane to separate the data into two groups. We need more than just a linear transformation to model this.</p>
+</aside>
+<a id="adaf8d4b-eb3d-4aa2-bf29-72d21637fb86"><h1>Not Linearly Separable</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:9ad8b06e-963c-4d4e-bcc9-2b0d77b1eea2 -->
+<img alt="NotLinearlySeparable.png" src="img/9ad8b06e-963c-4d4e-bcc9-2b0d77b1eea2.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="dfa89dda-5578-4bc4-b793-887e4c69e9b3"><h1>Activation</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:3d9fd9d6-9953-4b23-aea4-3bbc7da806ac -->
+<!-- ContentItem:d71b9c37-4656-449d-8471-7e888ba6b7da -->
+<aside class="notes"><p>Allow the network to learn complex mappings between the inputs and outputs.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Functions applied to the output to introduce non-linearity</p>
+</blockquote>
+<ul>
+<li><p>The sum of linear functions is linear</p>
+<ul>
+<li>i.e. multiple variables in a layer</li>
+<li><code>Y = M1*X1 + M2*X2 + ... + Mn*Xn + B</code></li>
+<li>Hyperplane in n-dimensional space</li>
+</ul>
+</li>
+<li><p>Composition of linear functions is linear</p>
+<ul>
+<li>i.e. multiple layers</li>
+<li><code>Y = M1*(M2*X1 + ... + Mn*Xn + B2) + B1</code></li>
+<li>Hyperplane in n-dimensional space</li>
+</ul>
+</li>
+<li><p>Composition of linear and non-linear is non-linear</p>
+<ul>
+<li>i.e. Activation functions</li>
+<li>Non-linear</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/d71b9c37-4656-449d-8471-7e888ba6b7da.png" alt="Activation.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>For our discussions today, we will be focused only on the Sigmoid activation function as one of the most common and most flexible activations. You should experiment with many to determine which works better for your problem.</p>
+</aside>
+<a id="81d9e46f-b176-4ec7-8037-93cf97ff88f3">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a8be0761-428c-420e-9ea5-b68b6cfe29cb -->
+<img alt="Sigmoid Function.png" src="img/a8be0761-428c-420e-9ea5-b68b6cfe29cb.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/8369f4d3-269d-43b4-8a27-cdce7d46390e.png'>
+
+<a id="15c7e373-4a13-45d3-9ab8-ecc783a65dfe">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/8df88f3f-0c6f-41d0-a962-0e2d99528989.png'>
+
+<a id="2e80c1d0-d549-43f4-a060-feb45bd4e89f">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/59a4fa08-888e-4040-bdb0-40d15b9ba8d5.png'>
+<aside class="notes"><p>The <code>Math.Exp(x)</code> function is used to calculate the exponential  of a given number ( x ). Specifically, it returns the value of  ( e^x ), where ( e ) is Euler's number, approximately equal to  2.71828</p>
+</aside>
+<a id="eb810c4b-6198-42b4-b513-50fc73971bb8">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/e70371ac-0080-4c2e-a2e3-3bef8603b95f.png'>
+
+<a id="8db88db3-05b2-4508-9329-7a27fd12faa5">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/409efbf3-4b07-4e0d-988b-e037003dfd63.png'>
+
+<a id="0af98dbb-137f-4963-a7f2-b27d18e34245">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/735e9d27-6864-4166-9b4a-7a9a26a3e4d3.png'>
+
+<a id="25aea681-7c68-4652-9646-5314ea5b36e0">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="6edc47cf-c854-45e3-b429-c38114380b99"><h1>Feature Analysis</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:d59f515f-3d1e-4596-97aa-a5a2d1dd0321 -->
+<!-- ContentItem:c9cc5525-2ffb-4dfc-b88c-8fb41a3bdc35 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Weights represent the influence of an input feature</p>
+</li>
+<li><p>The 13th weight is the smallest - least influential</p>
+<ul>
+<li>Least partisan: <code>Superfund Right to Sue</code></li>
+</ul>
+</li>
+<li><p>The 4th weight is the largest - most influential</p>
+<ul>
+<li>Most partisan: <code>Physician Fee Freeze</code></li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/c9cc5525-2ffb-4dfc-b88c-8fb41a3bdc35.png" alt="Trained Model Parameters - Voting Model - 800x800 - With Highlights.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="5d9c98bb-120b-4d61-9eba-53caa250d2ee"><h1>Feature Engineering</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:97b075f4-e20f-4bb9-a830-b116b881c6f5 -->
+<!-- ContentItem:8738d954-63a2-40f5-aa5e-deeb431d5f52 -->
+<aside class="notes"><p>The better we understand the problem we are trying to solve, the better we can describe it in a model that can be solved by a computer. This is the essence of feature engineering.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>The process of identifying, selecting, and combining key attributes of a problem to help a model make better predictions</p>
+</blockquote>
+<ul>
+<li>Choice and quality of features are critical
+<ul>
+<li>Directly impact the model's ability to learn and make accurate predictions</li>
+</ul>
+</li>
+<li>Hierarchical layers enable complex feature extraction, capturing non-linear relationships</li>
+<li>Techniques like <em>Dimensionality Reduction</em> help reduce the number of features while preserving key information
+<ul>
+<li>Example: Combine length and width to create a single feature representing area</li>
+</ul>
+</li>
+<li>Requires experimentation and iteration to find the best feature set for a given problem</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/8738d954-63a2-40f5-aa5e-deeb431d5f52.png" alt="Necker_cube_with_background.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="ec957a36-508d-4a7b-a0ac-e29d1b75e39e"><h1>Features of the Voting Model</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:de42d810-da0a-4f3c-91a8-e7100b16a6c7 -->
+<!-- ContentItem:4209462e-7f67-40c8-beea-33bbf31c969a -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Current Model</p>
+<ul>
+<li><p><strong>Inputs</strong>: 16 Features</p>
+</li>
+<li><p><strong>Output</strong>: 1 Neuron</p>
+</li>
+<li><p><strong>Architecture</strong>: Linear Perceptron</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Hypothesis</strong>: Existence of factions within parties</p>
+<ul>
+<li>Single-layer model may not capture this non-linear feature</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/4209462e-7f67-40c8-beea-33bbf31c969a.png" alt="AI Models - SingleLayer Voter Model - 1280x720.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="76978ea6-11e4-4c8c-b0c5-2f88fc055cd1"><h1>Enhancing the Voting Model</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:a1039217-9ef1-4e6f-8e00-3b4898eb5cba -->
+<!-- ContentItem:6d34b87a-8248-484b-b71c-68004f63a4a9 -->
+<aside class="notes"><p>Notice that we have had a bit of an explosion in parameter count. We now have <code>(16x3)+3+(3*1)+1=55</code> parameters.  But we also have another problem in that during training, we have no idea what the output of the 1st layer should be.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Solution: Hidden Layer</p>
+</li>
+<li><p>Expected Outcome</p>
+<ul>
+<li><p>Better insight into party dynamics</p>
+</li>
+<li><p>Improved accuracy</p>
+</li>
+</ul>
+</li>
+<li><p>New Model</p>
+<ul>
+<li><p><strong>Inputs</strong>: 16 Features</p>
+</li>
+<li><p><strong>Hidden Layer</strong>: 3 Neurons</p>
+</li>
+<li><p><strong>Output</strong>: 1 Neuron</p>
+</li>
+<li><p><strong>Architecture</strong>: Multi-layer Perceptron</p>
+</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/6d34b87a-8248-484b-b71c-68004f63a4a9.png" alt="AI Models - MultiLayer Voter Model - 1280x720.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="5566c84d-a3e0-4b57-8b8e-2e5dd11ff349"><h1>BackPropagation</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:8ebc7fce-f2e0-4370-87d7-7989abfa6fff -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>A mechanism to train multi-layer perceptrons by determining the appropriate outputs for hidden layers during training</p>
+</blockquote>
+<ul>
+<li><p>Create a feed-forward prediction</p>
+</li>
+<li><p>Calculate error at the output layer</p>
+</li>
+<li><p>Compute error gradient using the <a href="#3304b85c-094c-4353-be51-8339ebe4d55c">chain rule</a></p>
+</li>
+<li><p>Update Parameters using gradients</p>
+<ul>
+<li><p>Start from output layer, move backwards through network.</p>
+</li>
+<li><p>Adjustments to weights are weighted by the input values</p>
+</li>
+<li><p>Adjustments to biases are not weighted</p>
+</li>
+</ul>
+</li>
+<li><p>No need to recalculate gradient after each update during an iteration</p>
+</li>
+</ul>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background='img/0d4cd05c-0bf4-472a-9f68-906607e9e2c5.png'>
+
+<a id="db56d525-9fd2-4da8-8316-486593e87f2d">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/3b7896bb-7ab7-4e20-bd8e-8a7be3bac912.png'>
+<aside class="notes"><p>The method on top is used for linear Models, the one on the bottom is used for non-linear models  that are activated with the Sigmoid function</p>
+</aside>
+<a id="21cbd034-a298-452b-bac6-f8eefaf514f4">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="25046a74-cf36-4103-8055-4520783693ca"><h1>Resources</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:8136cce7-014e-4809-b419-8b2d1aed0d48 -->
+<!-- ContentItem:5b0df670-4e65-44fa-a175-5c4407ff8a88 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><a href="https://cognitiveinheritance.com/Presentations/Workshop/CraftingAI/index.html">This slide deck</a></li>
+<li><a href="http://www.CognitiveInheritance.com">My Blog</a></li>
+<li><a href="https://www.youtube.com/watch?v=zZAobExOMB0&amp;list=FLq-iLd7rfmqSIFiujBGIRSw&amp;index=2">Building AI Solutions with Google OR-Tools</a></li>
+<li><a href="https://github.com/TheAlgorithms">The Algorithms Repo</a></li>
+<li><a href="https://github.com/bsstahl/AIDemos">My AI Demos</a></li>
+<li><a href="https://archive.ics.uci.edu/dataset/105/congressional+voting+records">Congressional Voting Data - UC Irvine</a></li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/5b0df670-4e65-44fa-a175-5c4407ff8a88.png" alt="CraftingAI-Session-QR-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="3304b85c-094c-4353-be51-8339ebe4d55c"><h1>Chain Rule of Calculus</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:21e6277a-2d21-43bd-ae52-1416e5cba08a -->
+<blockquote>
+<p>To find the derivative of a composite function <code>h(x) = f(g(x))</code>, you take the derivative of the outer function <code>f</code> with respect to the inner function <code>g</code>, and multiply it by the derivative of the inner function <code>g</code> with respect to  <code>x</code></p>
+</blockquote>
+<ul>
+<li><p>If <code>h(x)</code> = <code>f(g(x))</code>, then:</p>
+<ul>
+<li><code>dh/dx</code> = <code>df/dg</code> * <code>dg/dx</code></li>
+</ul>
+</li>
+<li><p>How changes in <code>x</code> affect the output <code>h</code> by accounting for how <code>x</code> influences <code>g</code> and how <code>g</code> influences <code>f</code></p>
+</li>
+<li><p>Enables calculation of gradients for each layer by propagating errors backward through the network</p>
+</li>
+<li><p>Essential for training deep networks, as it helps adjust weights and biases to minimize prediction error</p>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="0fcbd3ff-f477-4d53-aed1-bfd48944e967"><h1>Overfitting</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:0d71d819-45e2-4da5-9eb2-3613eb30f805 -->
+<blockquote>
+<p>When a neural network learns the training data too well, capturing noise rather than the underlying pattern</p>
+</blockquote>
+<ul>
+<li>Produces a model that performs well on training data but poorly on other data</li>
+<li>Can happen when the model is too complex relative to the dataset
+<ul>
+<li>Excessive parameters allow it to fit even noise within the data</li>
+</ul>
+</li>
+<li>Solutions include:
+<ul>
+<li>Regularization: Add a penalty to the loss function
+<ul>
+<li>L1 (Lasso): Performs feature selection by setting some coefficients to zero</li>
+<li>L2 (Ridge): Disperses the weights across all features</li>
+</ul>
+</li>
+<li>Dropout: Randomly drop neurons during training to force the network to learn more robust features</li>
+<li>Early stopping: Stop training when performance on a validation set starts to degrade</li>
+<li>Data augmentation: Diversify the training set by applying transformations to the input data</li>
+<li>Weight initialization: Better initialization to avoid configurations that lead to overfitting</li>
+<li>Batch normalization: Normalize inputs on mini-batches to reduce fluctuations</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="a3c4f31c-30da-4144-a3e5-76d9b471075e"><h1>Xavier/Glorot Initialization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:ded01e5f-adf3-4e1b-85d5-7bd0c3c1f655 -->
+<blockquote>
+<p>Helps prevent gradients from becoming too small or large, aiding convergence</p>
+</blockquote>
+<pre><code class="language-csharp">  // Xavier/Glorot initialization for better gradient flow
+  int inputWeightCount = inputCount * hiddenLayerNodes;
+  int totalWeightCount = inputWeightCount + hiddenLayerNodes;
+  var weightScale = Math.Sqrt(2.0 / inputWeightCount);
+  startingWeights = new double[totalWeightCount];
+  for (int i = 0; i &lt; startingWeights.Length; i++)
+    startingWeights[i] = _random.GetRandomDouble(-weightScale, weightScale);
+</code></pre>
+<ul>
+<li>Balances the signal through layers</li>
+<li>Prevents activation function saturation</li>
+<li>Ideal for symmetric activations (e.g., sigmoid or hyperbolic tangent)</li>
+</ul>
+
+</section>
+
+
+
+        </div>
+        <div class="footer-left">Crafting AI</div>
+        <div class="footer-right">Barry S. Stahl - Mastodon:@bsstahl@cognitiveinheritance.com - Blog:http://www.cognitiveinheritance.com</div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <!-- Plugins -->
+    <script src="plugin/highlight/highlight.js"></script> 
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+
+        Reveal.initialize({
+            hash: true,
+			width: 1920,
+			height: 1080,
+            transition: 'slide',
+            showNotes: window.location.search.match(/print-pdf/gi) ? true : false,
+            plugins: [RevealHighlight, RevealMarkdown, RevealSearch, RevealNotes, RevealMath, RevealZoom ]
+        });
+    </script>
+</body>
+</html>
