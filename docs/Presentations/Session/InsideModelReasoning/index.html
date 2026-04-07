@@ -153,18 +153,6 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 </section>
 
 
-<section data-transition="slide-in slide-out" data-background='img/0c07ec13-c738-4206-b8e4-33e9e34b2e44.jpg'>
-<a id="6621d1d3-0bd0-45b2-8f4a-945a320b2f0a"><h1>Special thanks to René Magritte</h1></a>
-<!-- Layout:ImageWithCaption -->
-<!-- ContentItem:998811c8-319c-4d43-8ed5-14c5ae59d104 -->
-<!-- ContentItem:9c76653e-c26e-4ab7-ae35-ec0ddc9c4b7c -->
-<aside class="notes"><p>With special thanks to René Magritte for reminding us that representations are not reality</p>
-</aside>
-<img alt="TransparentImage-1600x800.png" src="img/998811c8-319c-4d43-8ed5-14c5ae59d104.png" />
-<h2><p>For reminding us that representations are not reality</p>
-</h2>
-</section>
-
 <section data-transition="slide-in slide-out" data-background='img/eb33ca8d-96c5-4439-8a17-a23b4e5b6125.png'>
 <aside class="notes"><p>Fantasy Baseball - Base Model</p>
 </aside>
@@ -323,7 +311,7 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 <a id="54851746-90a1-45fa-980d-9cdcc12953cc"><h1>Embeddings</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:8c297a4c-5130-4206-ae37-995649e7d962 -->
-<!-- ContentItem:0e0658fb-5565-43c7-a9fc-3de3155352f3 -->
+<!-- ContentItem:5909b0e1-0387-4d73-8a23-5282d3ed6300 -->
 <aside class="notes"><p>There are many other embedding models, some are optimized for different purposes. You should consider what model might work best for your use-case. This presentation uses the same model used by GPT-3 and GPT-4.</p>
 </aside>
 <table><tr><td style="vertical-align:top;">
@@ -341,7 +329,7 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 
 </td>
 <td style="text-align: left;">
-<img src="img/0e0658fb-5565-43c7-a9fc-3de3155352f3.jpg" alt="Embeddings - Cosmic Desert 800x800.jpg" />
+<img src="img/5909b0e1-0387-4d73-8a23-5282d3ed6300.png" alt="VectorSpace3D.png" />
 </td>
 </tr></table></section>
 
@@ -369,8 +357,9 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 <a id="2a4404ba-5f58-4efc-a214-b720b27105d7"><h1>Embedding</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:4e98361e-c44b-4fb0-b524-808cf99d9dbc -->
-<!-- ContentItem:eca91cad-0f7d-40f9-a474-151b769223d1 -->
-
+<!-- ContentItem:dc3343ec-ac35-4cbe-be23-0abf2232a8c6 -->
+<aside class="notes"><p>Man is to Woman as King is to Queen. AKA: If you subtract the vector for woman from the vector for queen,  then add the vector for man, you get something very close to the vector for king.</p>
+</aside>
 <table><tr><td style="vertical-align:top;">
 <blockquote>
 <p>Creating Order from Chaos</p>
@@ -391,7 +380,7 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 
 </td>
 <td style="text-align: left;">
-<img src="img/eca91cad-0f7d-40f9-a474-151b769223d1.jpg" alt="Order from Chaos 800x800.jpg" />
+<img src="img/dc3343ec-ac35-4cbe-be23-0abf2232a8c6.png" alt="VectorRelationships-QueenToKing-WomanToMan.png" />
 </td>
 </tr></table></section>
 
@@ -819,8 +808,11 @@ Your output must always be a single JSONL line in this structure: <code>{ &quot;
 <!-- Layout:ImageRight -->
 <!-- ContentItem:7d502157-fe4b-4891-9ddb-90d231368958 -->
 <!-- ContentItem:77d9dede-033f-4a7a-9f4f-e56b4632a73e -->
-<aside class="notes"><p>If we are not augmenting the model with our own data, we are just hoping the model  happens to be trained on the right things for our use-case.
-Today we focus just on &quot;dense&quot; (semantic) RAG, vs other types like GraphRAG.</p>
+<aside class="notes"><ul>
+<li>If we are not augmenting the model with our own data, we are just hoping the model  happens to be trained on the right things for our use-case.</li>
+<li>Today we focus just on &quot;dense&quot; (semantic) RAG, vs other types like GraphRAG.</li>
+<li>LM Studio is a good open-source tool for experimenting with RAG and fine-tuning.</li>
+</ul>
 </aside>
 <table><tr><td style="vertical-align:top;">
 <ul>
@@ -850,8 +842,9 @@ Today we focus just on &quot;dense&quot; (semantic) RAG, vs other types like Gra
 <a id="4cd424fe-9b9b-4dfc-b964-e0154bd42b83"><h1>Constrained Decoding</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:1c186cac-6ebf-45ec-8d69-8f3727c991a3 -->
-<!-- ContentItem:fc65d097-a772-4f6c-8790-86ed2d6ec5d8 -->
-
+<!-- ContentItem:fce5eb30-d658-4386-bf47-3dfa4453ca90 -->
+<aside class="notes"><p>Remembering that what the model does is predict tokens, if we restrict what  tokens it can predict at each step, we can control the output.</p>
+</aside>
 <table><tr><td style="vertical-align:top;">
 <p>Restrict what tokens the model can produce</p>
 <ul>
@@ -862,16 +855,27 @@ Today we focus just on &quot;dense&quot; (semantic) RAG, vs other types like Gra
 
 </td>
 <td style="text-align: left;">
-<img src="img/fc65d097-a772-4f6c-8790-86ed2d6ec5d8.png" alt="ConstrainedDecoding (800x800).png" />
+<img src="img/fce5eb30-d658-4386-bf47-3dfa4453ca90.png" alt="cl100k-tokens.png" />
 </td>
 </tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>By restricting the model to only be able to output only certain token, we can  force it to give us back a single English word. However, we have to be careful not to end up with repeated on multiple tokens from the list, i.e. &quot;prior wish&quot;.</p>
+</aside>
+<a id="4d888861-e420-4b7b-890a-438dceb1ea46"><h1>Some Single Token Words</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:bf43449b-6762-4585-b27b-cdf56fa5c934 -->
+<img alt="SingleToken-EndOfExcelTable.png" src="img/bf43449b-6762-4585-b27b-cdf56fa5c934.png" />
+</section>
+
 
 <section data-transition="slide-in slide-out">
 <a id="4450e5c3-daf1-450f-8aa0-5d749d6664b6"><h1>Post-Generation Validation</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:9313a36a-7251-4a64-90d6-99bb0581bb8f -->
 <!-- ContentItem:70f7e52b-0bcc-4f8f-8edc-01f6f9a6b294 -->
-
+<aside class="notes"><p>This is the least-efficient mechanism we've discussed because it only evaluates after-the-fact, but it is also the most flexible because it allows us to use any logic.</p>
+</aside>
 <table><tr><td style="vertical-align:top;">
 <p>Reject or correct the output after it's produced</p>
 <ul>
