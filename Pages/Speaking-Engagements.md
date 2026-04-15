@@ -18,8 +18,6 @@ categories: []
 
 <!-- I currently have no talks scheduled. {ContactPageLink:Contact me} to arrange to have me speak at your event. -->
 
-* **[Codestock 2026](https://www.codestock.org/)** - 4/9/2026 - 4/10/2026 - "Inside Model Reasoning: Fine-Tuning in Action" & "Crafting AI: A Developer's Guide to Machine Learning"
-
 * **[NDC Toronto 2026](https://ndctoronto.com/speakers/barry-stahl)** - 5/5/2026 - 5/8/2026 - "The Future of Information Retrieval: A Deep-Dive into RAG"
 
 * **[MLcon San Diego 2026](https://mlconference.ai/speaker/barry-stahl/)** - 6/1/2026 - 6/2/2026 - "LLMs Under the Hood - Workshop"
@@ -31,6 +29,8 @@ categories: []
 * **[Nebraska.Code() 2026](https://nebraskacode.amegala.com/)** - 7/22/2026 - 7/24/2026 - "Amazing Algorithms for Solving Problems in Software" (workshop), "Solutions that Evolve, Building Self-Improving Systems with Genetic Algorithms" & "How the Fediverse Could Save Democracy & Why Developers Hold the Key"
 
 * **[Beer City Code 2026](https://www.beercitycode.com/#speakers)** - 8/14/2026 - 8/15/2026 - "LLMs Under the Hood" (workshop) and "Solutions That Evolve: Building Self-Improving Systems with Genetic Algorithms"
+
+* **[KCDC 2026](https://www.kcdc.info/)** - 9/9/2026 - 9/11/2026 - "Architecting for Reliability: Eliminating Hidden Failure Modes"
 
 ### Available Talks
 
@@ -195,6 +195,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 ### Past engagements
 
+* **[Codestock 2026](https://web.archive.org/web/20260415164726/https://www.codestock.org/2026-speakers)** - 4/9/2026 - 4/10/2026 - "Inside Model Reasoning: Fine-Tuning in Action" & "Crafting AI: A Developer's Guide to Machine Learning"
 * **[Albuquerque Dot Net Users Group](https://web.archive.org/web/20260226213644/https://www.meetup.com/albuquerque-net-users-group/events/312740517/)** - 2/25/2026 - "Inside Model Reasoning: Fine-Tuning in Action"
 * **[NDC London 2026](https://web.archive.org/web/20260226213915/https://ndclondon.com/speakers/barry-stahl)** - 1/26/2026 - 1/30/2026 - "Solutions That Evolve: Building Self-Improving Systems with Genetic Algorithms"
 * **[The Valley's .NET User Groups](https://web.archive.org/web/20260102205531/https://www.meetup.com/nwvdnug/events/311139089/)** - 1/20/2026 - ".NET Aspire Accelerator: Fast Track to Cloud-Native Development" (co-presented with Rob Richardson)
