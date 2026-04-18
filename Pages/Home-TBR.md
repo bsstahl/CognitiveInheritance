@@ -19,6 +19,7 @@ categories: []
 
 * [Marooned in Realtime - Vernor Vinge](https://bookshop.org/p/books/marooned-in-realtime-vernor-vinge/6b890d67ab1359f1?ean=9781429915120&next=t)
 * [Zen and the Art of Motorcycle Maintenance - Robert M Pirsig](https://bookshop.org/p/books/zen-and-the-art-of-motorcycle-maintenance-50th-anniversary-edition-an-inquiry-into-values-robert-m-pirsig/7c2488e3b7642612?ean=9780063342330&next=t)
+* [The Collected Stories of Arthur C. Clarke](https://bookshop.org/p/books/the-collected-stories-of-arthur-c-clarke-arthur-c-clarke/d30e2e19cf298a49?ean=9780312878603&next=t) - including "The Nine Billion Names of God"
 
 #### From Carl Sagan's Astronomy 409 Reading List
 
