@@ -24,7 +24,11 @@ categories: []
 #### From Carl Sagan's Astronomy 409 Reading List
 
 * [On Liberty - John Stuart Mill](https://bookshop.org/p/books/on-liberty-john-stuart-mill-john-stuart-mill/6d83771a29c3cfeb?ean=9781542500135&next=t)
-* Science and the Paranormal, Abell & Singer, eds. (Scribner, 1981) (Out of Print?)
+* [Science and Unreason - Radner & Radner](https://archive.org/details/scienceunreason00dais)
+* [Extroaordinary Popular Delusions and the Madness of Crowds - Charles MacKay](https://bookshop.org/p/books/extraordinary-popular-delusions-and-the-madness-of-crowds-all-volumes-complete-and-unabridged-charles-mackay/ad8bbba8d4674f83?ean=9781387890408&next=t)
+* [Attacking Faulty Reasoning: A Practical Guide to Fallacy-Free Arguments - T. Edward Damer](https://www.thriftbooks.com/w/attacking-faulty-reasoning-a-practical-guide-to-fallacy-free-arguments_t-edward-damer/307811/?resultid=973f1220-72b1-4fb8-b942-15fa0fcc40ca#edition=3400877&idiq=2505546)
+* [Science and the Paranormal - Abell & Singer, eds.](https://www.thriftbooks.com/w/science-and-paranormal/979806/?resultid=1ba69264-4468-4b15-b052-134c60cf9960#edition=4241544&idiq=8427828)
+* [Flim-Flam: Psychics, ESP, Unicorns and other Delusions](https://bookshop.org/p/books/flim-flam-psychics-esp-unicorns-and-other-delusions-james-randi-founder-of-the-james-rand/ddf8194ba51cca17?ean=9781633888586&next=t)
 
 ### Cognitive Psychology
 
