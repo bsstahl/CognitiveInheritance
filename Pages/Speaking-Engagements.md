@@ -20,7 +20,7 @@ categories: []
 
 * **[NDC Toronto 2026](https://ndctoronto.com/speakers/barry-stahl)** - 5/5/2026 - 5/8/2026 - "The Future of Information Retrieval: A Deep-Dive into RAG"
 
-* **[MLcon San Diego 2026](https://mlconference.ai/speaker/barry-stahl/)** - 6/1/2026 - 6/2/2026 - "LLMs Under the Hood - Workshop"
+* **[MLcon San Diego 2026](https://mlconference.ai/speaker/barry-stahl/)** - 6/1/2026 - 6/2/2026 - "LLMs Under the Hood - Workshop" & "Inside Model Reasoning: Fine-Tuning in Action"
 
 * **[Craft Conf Budapest 2026](https://craft-conf.com/2026/speaker/bstahl)** - 6/4/2026 - 6/5/2026 - "TDD in the AI Era" (workshop) & "Solutions That Evolve: Building Self-Improving Systems with Genetic Algorithms"
 
