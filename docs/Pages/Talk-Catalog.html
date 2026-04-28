@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang=en>
     <head>
-        <!-- Template: Post Page -->
+        <!-- Template: Content Page -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     
-        <meta name="description" content="The Critical C's of Microservices - Coalescence, an article on Cognitive Inheritance.">
+        <meta name="description" content="Technical presentations given by Barry S. Stahl.">
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -70,57 +70,151 @@
 
             <div class="row">
                 <main class="col-lg-9 col-xl-10 content-main">
-                    <h3>The Critical C's of Microservices - Coalescence</h3>
-                    <h5>Posted by bsstahl on 2023-01-16 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
-                    <share-on-mastodon 
-                        share_title="Check out this post on Cognitive Inheritance: 'The Critical C's of Microservices - Coalescence'"
-                        share_description="&quot;A series of conversations that development teams should have around building event driven or microservice architectures&quot;"
-                        hashtags="#agile #antipattern #apache-kafka #api #apps #architecture #aspdotnet #ci_cd #coding-practices #coupling #event-driven #microservices #soa"
-                        author="@bsstahl@cognitiveinheritance.com"
-                        default_url="https://fosstodon.org">
-                    </share-on-mastodon>
-                    <br/><br/>
-                    <p>&quot;<strong>The Critical C's of Microservices</strong>&quot; are a series of conversations that development teams should have around building event-driven or other microservice based architectures. These topics will help teams determine which architectural patterns are best for them, and assist in building their systems and processes in a reliable and supportable way.</p>
-<p>The &quot;Critical C's&quot; are: <strong>Context</strong>, <strong>Consistency</strong>, <strong>Contract</strong>, <strong>Chaos</strong>, <strong>Competencies</strong> and <strong>Coalescence</strong>. Each of these topics has been covered in detail in this series of 6 articles. The first article of the 6 was on the subject of <a href="../Posts/critical-cs-of-microservices-1of6-context.html">Context</a>. This is the final article in the series, and covers the topic of <strong>Coalescence</strong>.</p>
-<h4>Coalescence</h4>
-<p>The use of Microservices reduces the complexity of our services in many ways, however it also adds complexity when it comes to deployment and operations. More services mean more deployments, even as each of those deployments is smaller and more isolated. Additionally, they can be harder on operations and support teams since there can be many more places to go when you need to find information. Ideally, we would coalesce all of the necessary information to operate and troubleshoot our systems in a single pane-of-glass so that our operations and support engineers don't have to search for information in a crisis.</p>
-<p>Deployment and system verification testing can help us identify when there are problems at any point in our system and give us insight into what the problems might be and what caused them. Tests run immediately after any deployment can help identify when a particular deployment has caused a problem so it can be addressed quickly. Likewise, ongoing system verification tests can give early indications of problems irrespective of the cause. Getting information about the results of these tests quickly and easily into the hands of the engineers that can act on them can reduce costs and prevent outages.</p>
-<p>Logging and traceability is generally considered a solved problem, so long as it is used effectively. We need to setup our systems to make the best use of our distributed logging systems. This often means adding a correlation identifier alongside various request and causation ids to make it easy to trace requests through the system. We also need to be able to monitor and surface our logs so that unusual activity can be recognized and acted on as quickly as possible.</p>
-<p>Service Level Indicators (SLIs) and other metrics can provide key insights into the operations of our systems, even if no unusual activity is seen within our logs. Knowing what operational metrics suggest there might be problems within our systems, and monitoring changes to those metrics for both our services and our dependencies can help identify, troubleshoot and even prevent outages. Surfacing those metrics for easy access can give our support and operations engineers the tools they need to do their jobs effectively.</p>
-<h4>Goals of the Conversation</h4>
-<p>Development teams should have conversations around <strong>Coalescence</strong> that are primarily focused around brining critical information about the operation of our systems together for easy access. These conversations should include answering questions like:</p>
+                    <h1>Talk Catalog</h1>
+                    <blockquote>
+<p>My upcoming and past <a href="../Pages/Speaking-Engagements.html">speaking engagements</a> have moved to a separate page</p>
+</blockquote>
+<p><a href="#microservices-talks">Cloud-Native and Event-Driven Architectures</a> | <a href="#pnp-talks">Software Engineering Patterns and Practices</a> | <a href="#ai-talks">Artificial Intelligence and Algorithms</a></p>
+<p>I have the following talks on topics of interest to Enterprise Developers that I can deliver at your user group or conference. You can submit a request for me to speak by <a href="../contact.html">contacting me</a>.</p>
+<h4 id="microservices-talks"> Cloud-Native and Event-Driven Architectures</h4>
 <ul>
-<li>What is our mechanism for deployment and system verification?
-<ul>
-<li>How will we identify, as quickly as possible, when a deployment has had a negative impact on our system?</li>
-<li>Are there tests that can validate the operation of the system end-to-end?</li>
-<li>How will we surface the status of any deployment and system verification tests?</li>
-</ul>
-</li>
-<li>What is our mechanism for logging/traceability within our system?
-<ul>
-<li>How will we coalesce our logs from the various services within the system?</li>
-<li>How will we know if there are anomalies in our logs?</li>
-<li>Are there additional identifiers we need to add to allow traceability?</li>
-<li>Are there log queries that, if enabled, might provide additional support during an outage?</li>
-<li>Are there ways to increase the level of logging when needed to provide additional information and can this be done wholistically on the system?</li>
-</ul>
-</li>
-<li>How will we expose SLIs and other metrics so they are available when needed?</li>
-<li>How will we know when there are anomalies in our metrics?</li>
-<li>What are the metrics that would be needed in an outage and how will we surface those for easy access?</li>
-<li>Are there additional metrics that, if enabled, might provide additional support during an outage?</li>
-<li>Are there ways to perform ad-hoc queries against SLIs and metrics to provide additional insight in an outage?</li>
-<li>How will we identify the status of dependencies so we can understand when our systems are reacting to downstream anomalies?
-<ul>
-<li>How will we surface dependency status for easy access during an outage?</li>
-<li>Are there metrics we can surface for our dependencies that might help during an outage?</li>
-</ul>
+<li><p><strong>Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems</strong> - There is a danger lurking in every system that hasn't taken explicit steps to eliminate it. This under-recognized data killer can cause intermittent inconsistencies in your data which can be as difficult to find as they are to correct. Fortunately, recognizing this monster is easy, and there are a number of great techniques you can use to keep it away for good. In this talk, we will learn about the Dual-Writes anti-pattern: how to spot it, and what to do to avoid it. In doing so, we'll discuss the 4 primary patterns for keeping data consistent in modern software systems, so you can spend less time supporting your applications. We'll see examples in C# of each pattern, including demonstrations using SQL Server, Cosmos DB and Redis.</p>
+<p><a href="https://avoidingdualwrites.azurewebsites.net">Latest Slide Deck</a> | <a href="https://youtu.be/g6tnRWN9vy0?si=rCTluKDKN899Shrw">Long-Form Video - 2021-07-22</a></p>
 </li>
 </ul>
+<hr />
+<ul>
+<li><p><strong>Intentional Architecture: Six Conversations for a Solid Foundation</strong> - Too often, architectural decisions are made in isolation, postponed until they constrain future work, or simply ignored--often resulting in a sub-optimal architecture. This talk explores a framework consisting of six conversations that surface architectural decisions as they become relevant, equipping teams to make deliberate, auditable choices at the right moments. The framework centers on 6 &quot;Critical-Cs&quot;: Context, Coordination, Contracts, Chaos, Competencies, and Coalescence, and guides teams in evaluating whether microservices fit the project, or if a modular monolith might serve the project better.</p>
+<p><a href="https://criticalcs.azurewebsites.net/">Critical &quot;C's&quot; Website</a></p>
+</li>
+</ul>
+<hr />
+<h4 id="pnp-talks"> Software Engineering Patterns and Practices</h4>
+<ul>
+<li><strong>Simplify Your API: Creating Maintainable and Discoverable Code in .NET</strong> - Developers don't read documentation, this is a fact. It is also a fact that an API that  depends on its documentation to get developers to understand and discover its features is at a huge disadvantage in the marketplace. Fortunately, there are some simple, easy-to-use mechanisms for wrapping complex APIs and making their functionality both easy to use, and highly discoverable. Imagine being able to use tools like IntelliSense that the Visual Studio IDE already provides as a way to expose the functionality of your service or library. In this session we will build a fluent Domain Specific Language interface over an existing API to create an interface that is easy to use and discoverable through IntelliSense.</li>
+</ul>
+<hr />
+<ul>
+<li><p><strong>Design Patterns for Loosely Coupled Applications</strong> - Building our applications so that their components are loosely coupled is a critical measure in creating solutions that are testable, maintainable and extensible. In this session we will explore several design patterns that are key to building applications that maintain loose coupling. We start by reviewing a tightly coupled application. Then, we explore several design patterns by using them to convert the application into a maintainable and extensible solution that can be validated using unit tests.</p>
+<p><a href="https://DesignPatternsForLooseCoupling.azurewebsites.net">Latest Slide Deck</a> | <a href="https://www.youtube.com/watch?v=mE3zKWO6qQE&amp;list=FLq-iLd7rfmqSIFiujBGIRSw&amp;index=1">Video: Craft Conference 2019 - Budapest, Hungary - May 2019</a></p>
+</li>
+</ul>
+<hr />
+<ul>
+<li><p><strong>Defining the Business Domain using Event Storming</strong> - Event storming is a process for modeling a business domain from the perspective of the business experts. It comes out of the Domain Driven Design world and has been used by many with great success. Event Storming can help your team:</p>
+<ul>
+<li>Build an understanding of a domain</li>
+<li>Define the scopes and interactions of the components of a system</li>
+<li>Rapidly discover unknown-unknowns</li>
+<li>Expose the intricacies of the business domain</li>
+<li>Identify the areas of greatest risk</li>
+</ul>
+<p>The artifacts produced in this process are useful to both the business experts, to help document their domain, and the engineers building systems for that domain, and are completely implementation agnostic.</p>
+<p>In this session, we will explore the process of Event Storming. We will define the goals and expected outputs of the process, and walk through a simple example so that you are ready to bring this important practice into your organization.</p>
+<p><a href="https://introtoeventstorming.azurewebsites.net">Latest Slide Deck</a> | <a href="https://www.youtube.com/watch?v=6DgGhQQbfDE&amp;list=PLCo2TFzFXPTQ5qIZTbbzFNcJL348fl6uO&amp;index=4">Lighning Talk Version Video</a></p>
+</li>
+</ul>
+<hr />
+<ul>
+<li><p><strong>TDD in the AI Era: No Vibes, Just Velocity</strong> - Test-Driven Development (TDD) has been a stalwart of software engineering for years, delivering reliable, modular code that stands the test of time. As we now find ourselves in the early days of the AI era, TDD isn't just enduring, it's evolving. AI-powered tools are supercharging TDD, turning it into a faster, smarter process that builds on its original strengths. More than just an improvement, the utilization of AI means that TDD isn't only more powerful, but also more vital than ever. As we become more dependent on AI-accelerated workflows, the demand for thorough, rigorous testing practices is increasing, underlining the ever-growing importance of TDD in today's software development landscape.</p>
+<p>In this talk, we explore how AI enhances the TDD process, making it easier to generate comprehensive test cases, uncover edge cases, and refactor code with confidence. Through automation and intelligent analysis, AI reduces the effort required for manual test creation and debugging, freeing developers to focus on innovation and problem-solving. The result? Higher-quality software delivered in less time.</p>
+<p>Whether you’re new to TDD or an experienced practitioner looking to adapt to the AI revolution, this talk will offer insights, strategies, and practical examples to help you navigate this transformative moment in software development.</p>
+</li>
+</ul>
+<hr />
+<ul>
+<li><p><strong>Things Your Dev Team Hopes You Know</strong> - Managing a development team or project can be one of the most challenging jobs in any industry. Balancing the needs of the developers, the organization and the users to maximize value for the customers while minimizing costs can be a daunting prospect for even the most experienced executive.  How can we produce quality software in a timely and cost-effective manner when the needs of the development team are so different from the needs of the customers, the organization and its managers?</p>
+<p>In this talk Barry leverages his more than 30 years of experience as a Developer and Solution Architect to remind us that how we leverage Agile ceremonies, how we use our tooling, and how we utilize metrics can have both positive and negative impacts on our teams.  He reviews many of the elements of our Agile processes and identifies their impacts, particularly on the developers and their managers. This talk challenges us to create environments for our development teams that enable them to exceed the expectations of both our users and our organizations.</p>
+<p><a href="https://devteamdreams.azurewebsites.net">Latest Slide Deck</a></p>
+</li>
+</ul>
+<hr />
+<h4 id="ai-talks">Artificial Intelligence and Algorithms</h4>
+<ul>
+<li><p><strong>The Future of Information Retrieval: A Deep-Dive into RAG</strong> - Retrieval Augmented Generation (RAG) may be the most important new software technology for business applications in a generation. RAG is revolutionizing the way we approach documentation and other information retrieval tasks. By combining the pre-training of large language models with your own data, RAG systems can help generate insights and ideas you might have never considered, enhancing real-world applications from question answering systems to content creation. Of course, these tools are not without their challenges. Systems built using any probabilistic model must be able to manage the size and complexity of requests and responses, ensure accurate and relevant retrieval, handle the biases inherent in the models, and identify if inaccuracies occur in responses.</p>
+<p>In this session, we will empower you to harness the full potential of RAG. We will provide a detailed walkthrough of RAG implementation, offering practical insights and strategies to overcome the most common challenges associated with the use of language models. By the end of this session, you will understand how to build effective RAG systems that address many of the concerns with using these types of tools. Since we will be focusing on business operations tasks, our code samples will be in C# and leverage the Microsoft OpenAI Client and Semantic Kernel.</p>
+<p><a href="https://cognitiveinheritance.com/Presentations/Session/RAGDeepDive/index.html">Latest Slide Deck</a> | <a href="https://www.youtube.com/watch?v=PsdkqNzVIw4&amp;list=PLCo2TFzFXPTQ5qIZTbbzFNcJL348fl6uO">Video</a></p>
+</li>
+</ul>
+<hr />
+<ul>
+<li><p><strong>LLMs Under the Hood</strong> - Large Language Models (LLMs) have revolutionized the field of natural language processing, enabling machines to generate human-like text with remarkable coherence. This presentation delves into the intricacies of LLMs, shedding light on the underlying mechanisms that enable these tools to predict tokens and generate text. We will unravel the architecture of these models, from embedding layers to attention mechanisms, and provide a clear understanding of the processes that contribute to the model's performance.</p>
+<p>Beyond the technical deep dive, we will explore practical applications, discussing valid use-cases where LLMs excel, such as chatbots, content creation, and language translation. We will also critically evaluate scenarios where they may fall short or prove unsuitable, addressing common myths and misconceptions.</p>
+<p>By bridging technical expertise with real-world application, this talk aims to equip programmers and other software creators with a nuanced understanding of Large Language Models, empowering them to harness these tools responsibly and effectively. Join us for an engaging session filled with insights, interactive discussions, and forward-thinking perspectives on one of today's most groundbreaking technological advancements.</p>
+<p><a href="https://cognitiveinheritance.com/Presentations/Workshop/LLMsUnderTheHood/index.html">Workshop Slide Deck</a></p>
+</li>
+</ul>
+<hr />
+<ul>
+<li><p><strong>LLM Embeddings: Not Magic, Just Math</strong> - Embeddings may be the least understood yet most valuable tool to come out of the world of Large Language Models. In this presentation, we will unravel the mystery of embeddings, emphasizing their mathematical foundations and practical applications.</p>
+<p>We'll start by discussing what embeddings are, and what they represent. Then we'll delve into the variety of tools we have to compare and contrast them, including Cosine similarity and distance, as well as clustering. Then we'll put those tools to use creating powerful applications that go beyond just typical chat and analytics use-cases. Because we'll be focusing on operational use-cases, code demos will be done using C#.</p>
+<p>Attendees will leave with a deeper understanding of the mathematical underpinnings of embeddings, practical knowledge of how to use them, and an appreciation for their value in our applications. This session is ideal for developers, data scientists, and anyone interested in the mathematical underpinnings of machine learning and natural language processing.</p>
+<p><a href="https://cognitiveinheritance.com/Presentations/Session/GPTEmbeddings/index.html">Latest Slide Deck</a></p>
+</li>
+</ul>
+<hr />
+<ul>
+<li><p><strong>Amazing Algorithms for Solving Problems in Software</strong> - Sure neural networks are cool but have you ever used a Firefly Algorithm to find the solution to a problem? How about an Ant Colony algorithm or one of  the many other algorithms inspired by nature?  In this talk we will see examples of a number of awesome bio-inspired algorithms that can be used to solve problems in software. We'll see how each one works, analyze its strengths and weaknesses, and determine when it is best used. You'll leave with the knowledge you need to solve problems using these algorithms in your language of choice.</p>
+<p><a href="https://cognitiveinheritance.com/Presentations/ShortWorkshop/AmazingAlgorithms/index.html">Workshop Slide Deck</a> | <a href="https://youtu.be/Ge_aChdwdtE">Video: Code on the Beach - Atlantic Beach FL USA - July 2022</a></p>
+</li>
+</ul>
+<hr />
+<ul>
+<li><p><strong>Crafting AI: A Developer's Guide to Machine Learning</strong> - With Machine Learning (ML) making huge impacts across the software industry, it has become almost imperative for developers to understand its principles and applications. Unfortunately, the complexity of some ML models and the mathematical rigor of its algorithms can be intimidating. This talk aims to bridge this gap, making ML understandable and engaging for developers eager to learn this technology from the ground up.</p>
+<p>In this session, attendees will learn the foundational concepts of ML by coding their own models from scratch, without relying on pre-trained models like GPT. We'll start with a simple linear regression, a foundational tool to gain understanding of ML's error minimization and training processes. We'll then explain neural networks with a binary classification example. By the end, participants will not only grasp fundamental ML concepts but will also walk away with their own code implementing one of these models. This talk is designed to equip developers with the knowledge and confidence to use Machine Learning in their projects.</p>
+<p><a href="https://cognitiveinheritance.com/Presentations/Workshop/CraftingAI/index.html">Latest Slide Deck</a></p>
+</li>
+</ul>
+<hr />
+<ul>
+<li><p><strong>Inside Model Reasoning: Fine-Tuning in Action</strong> - What if I told you that advanced &quot;thinking&quot; AI models are just regular models that learned a new trick? In this session, we'll use Azure Foundry to demonstrate the transformative power of fine-tuning.</p>
+<p>We'll explore how chain-of-thought models, those that generate visible reasoning in <strong>&lt;think&gt;</strong> tags, are simply fine-tuned versions of standard transformers. This elegant example teaches us two critical concepts: how transformers use their own output tokens as input for subsequent predictions, and how fine-tuning can create entirely new model behaviors without architectural changes, and without requiring huge datasets.</p>
+</li>
+</ul>
+<hr />
+<ul>
+<li><p><strong>A Developer's Introduction to Artificial Intelligences</strong> (also available as a half-day or full-day workshop) - There are a number of ways that developers can build systems that make decisions on our behalf. In this introductory course specifically for software developers, we explore various AI methodologies with a focus on two major categories: Search &amp; Optimization techniques (including Dynamic Programming and Linear Programming) and Probabilistic/Learning models (including Neural Networks, Genetic Algorithms, and LLMs). Using demo code written in C#, we'll examine each methodology, understand its strengths and limitations, and identify when each is best utilized. You'll learn how to implement several of these models and gain practical insights into selecting the right AI approach for different problem domains.</p>
+<p><a href="https://ADevsIntroToAI.azurewebsites.net">Latest Slide Deck</a></p>
+</li>
+</ul>
+<hr />
+<ul>
+<li><p><strong>One AI Algorithm All Programmers Should Know</strong> - This simple technique that every programmer should know can simplify certain types of problems tremendously, allowing us to find an optimal solution to difficult problems quickly and easily using a mathematical process called Dynamic Programming (not to be confused with Dynamic Languages or Functional Programming). In this session, we will run through examples of using this technique to solve several problems, both &quot;on paper&quot; and in code and apply that knowledge to build artificial intelligences that can make decisions on our behalf.</p>
+<p><a href="https://OneAIAlgorithm.azurewebsites.net">Latest Slide Deck</a></p>
+</li>
+</ul>
+<hr />
+<ul>
+<li><p><strong>Solutions that Evolve: Building Self-Improving Systems with Genetic Algorithms</strong> - Genetic algorithms &quot;learn&quot; to make better decisions by making continuous improvements in strategy based the fitness of that solution for survival. These algorithms, modeled after Darwinian evolution, can solve complex optimization problems across many domains - from resource allocation to network design to automated testing.</p>
+<p>In this talk we'll define the DNA of our solutions, explore how to represent different types of problems in genetic terms, and examine the parameters that control how solutions evolve and improve. You'll leave with practical knowledge of how to apply these powerful techniques to your own challenging problems.</p>
+</li>
+</ul>
+<hr />
+<ul>
+<li><p><strong>Game‑Changing Algorithms: Sports Strategy as a Blueprint for AI‑Driven Optimization</strong> - Championship teams don't just rely on talent—they use sophisticated strategies to optimize player positions, manage resources, and adapt to changing conditions. Similarly, combinatorial optimization transforms problem solving in software by enabling systems to find optimal solutions among countless possibilities.</p>
+<p>Consider team sports strategy as an optimization problem:</p>
+<ul>
+<li>Objective: Maximize wins across a season</li>
+<li>Constraints: Player abilities, fatigue levels, and positional requirements</li>
+<li>Variables: Which players to field, in what positions, and when to substitute</li>
+<li>Solution: A dynamic system that adapts to game conditions for optimal performance</li>
+</ul>
+<p>This representation of sports strategy illustrates the core of combinatorial optimization: finding the best arrangement of resources under constraints. From this foundation, we'll dive into software problems across various domains:</p>
+<ul>
+<li>Resource allocation in distributed systems</li>
+<li>Constraint satisfaction in scheduling applications</li>
+<li>Multi-objective optimization in logistics</li>
+<li>Configuration optimization in system design</li>
+<li>Real-time solving techniques for responsive applications</li>
+</ul>
+<p>Through code-focused demonstrations using industry tools like the open-source Google OR-Tools, you'll learn to implement these techniques without needing an advanced mathematics background. You'll walk away with immediately applicable strategies to solve seemingly impossible problems, optimize resource usage, and deliver more intelligent solutions with less code.</p>
+<p>Whether you're building scheduling systems, logistics applications, or any software that needs to make complex decisions, this session will equip you with powerful combinatorial optimization techniques that can be applied to a wide range of real-world problems.</p>
+<p><strong>Note</strong>: An early version of this presentation, then called &quot;Building AI Solutions Using Combinatorial Solvers&quot; was presented at NDC Sydney in 2017, as well as several domestic code camps in 2017 and 2018. It was very well received and has since been fully updated to use a popular sports metaphor to help establish the foundations of the process, making the experience even better for the attendees.</p>
+<p><a href="https://www.youtube.com/watch?v=zZAobExOMB0&amp;list=FLq-iLd7rfmqSIFiujBGIRSw&amp;index=2">Early Version Video (before the sports metaphor): NDC Sydney - Sydney Australia - August 2017</a></p>
+</li>
+</ul>
+<p><a href="#microservices-talks">Cloud-Native and Event-Driven Architectures</a> | <a href="#pnp-talks">Software Engineering Patterns and Practices</a> | <a href="#ai-talks">Artificial Intelligence and Algorithms</a></p>
 
-                    <h5>Tags: <a title="Tag: agile" class="small" href="../Search/agile.html">agile</a>&nbsp;<a title="Tag: antipattern" class="small" href="../Search/antipattern.html">antipattern</a>&nbsp;<a title="Tag: apache-kafka" class="small" href="../Search/apache-kafka.html">apache-kafka</a>&nbsp;<a title="Tag: api" class="small" href="../Search/api.html">api</a>&nbsp;<a title="Tag: apps" class="small" href="../Search/apps.html">apps</a>&nbsp;<a title="Tag: architecture" class="small" href="../Search/architecture.html">architecture</a>&nbsp;<a title="Tag: aspdotnet" class="small" href="../Search/aspdotnet.html">aspdotnet</a>&nbsp;<a title="Tag: ci_cd" class="small" href="../Search/ci_cd.html">ci_cd</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;<a title="Tag: coupling" class="small" href="../Search/coupling.html">coupling</a>&nbsp;<a title="Tag: event-driven" class="small" href="../Search/event-driven.html">event-driven</a>&nbsp;<a title="Tag: microservices" class="small" href="../Search/microservices.html">microservices</a>&nbsp;<a title="Tag: soa" class="small" href="../Search/soa.html">soa</a>&nbsp;</h5>
-                    <div class="share"><a href="../Permalinks/a0280db3-6d32-4c89-81c4-10ce2cd3522d.html" rel="bookmark">Permalink</a></div>
                 </main>
                 <aside class="col-lg-3 col-xl-2 sidebar">
                     <div class="widgetzone"><div class="widget textbox"><h4>About the Author</h4><div class="content"><p><img style="float: left; padding: 0px 3px 0px 0px;" src="../Pics/bsstahl_left.gif" alt="Barry S. Stahl" width="95" /><strong>Barry S. Stahl</strong> (he/him/his) - Barry is a .NET Software Engineer who has been creating business solutions for enterprise customers since the mid 1980s. Barry is also an Election Integrity Activist, baseball and hockey fan, husband of one genius and father of another, and a 40 year resident of Phoenix Arizona USA. When Barry is not traveling around the world to speak at Conferences, Code Camps and User Groups or to participate in GiveCamp events, he spends his days as the Principal Engineer for AZNerds.net in Phoenix AZ and his nights thinking about the next AZGiveCamp event where software creators come together to build websites and apps for some great non-profit organizations.</p>
@@ -163,7 +257,7 @@
                 </aside>
             </div>
         </div>
-
+    
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
@@ -172,5 +266,7 @@
         <!-- 100% privacy-first analytics -->
         <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
         <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true" alt="" referrerpolicy="no-referrer-when-downgrade"/></noscript>
+
     </body>
+
 </html>
