@@ -8,11 +8,13 @@ description: Technical presentations given by Barry S. Stahl.
 ispublished: true
 showinlist: true
 publicationdate: 2009-08-01T00:00:00.000+00:00
-lastmodificationdate: 2024-10-15T00:00:00.000+00:00
+lastmodificationdate: 2026-04-28T00:00:00.000+00:00
 slug: Speaking-Engagements
 categories: []
 
 ---
+
+> My current {PageLink:Talk-Catalog|catalog of talks} has moved to its own page
 
 ### Upcoming Talks
 
@@ -34,167 +36,6 @@ categories: []
 
 * **[MLcon New York 2026](https://mlconference.ai/speaker/barry-stahl/)** - 9/28/2026 - 10/2/2026 - "LLMs Under the Hood - Workshop", "The Future of Information Retrieval: A Deep-Dive into RAG" & "When you Don't Need an LLM: Deterministic Intelligence for Real World Apps"
 
-### Available Talks
-
-[Cloud-Native and Event-Driven Architectures](#microservices-talks) | [Software Engineering Patterns and Practices](#pnp-talks) | [Artificial Intelligence and Algorithms](#ai-talks)
-
-I have the following talks on topics of interest to Enterprise Developers that I can deliver at your user group or conference. You can submit a request for me to speak by {ContactPageLink:contacting me}.
-
-<h4 id="microservices-talks"> Cloud-Native and Event-Driven Architectures</h4>
-
-* **Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems** - There is a danger lurking in every system that hasn't taken explicit steps to eliminate it. This under-recognized data killer can cause intermittent inconsistencies in your data which can be as difficult to find as they are to correct. Fortunately, recognizing this monster is easy, and there are a number of great techniques you can use to keep it away for good. In this talk, we will learn about the Dual-Writes anti-pattern: how to spot it, and what to do to avoid it. In doing so, we'll discuss the 4 primary patterns for keeping data consistent in modern software systems, so you can spend less time supporting your applications. We'll see examples in C# of each pattern, including demonstrations using SQL Server, Cosmos DB and Redis.
-
-  [Latest Slide Deck](https://avoidingdualwrites.azurewebsites.net) | [Long-Form Video - 2021-07-22](https://youtu.be/g6tnRWN9vy0?si=rCTluKDKN899Shrw)
-
-***
-
-* **Intentional Architecture: Six Conversations for a Solid Foundation** - Too often, architectural decisions are made in isolation, postponed until they constrain future work, or simply ignored--often resulting in a sub-optimal architecture. This talk explores a framework consisting of six conversations that surface architectural decisions as they become relevant, equipping teams to make deliberate, auditable choices at the right moments. The framework centers on 6 "Critical-Cs": Context, Coordination, Contracts, Chaos, Competencies, and Coalescence, and guides teams in evaluating whether microservices fit the project, or if a modular monolith might serve the project better.
-
-  [Critical &quot;C's&quot; Website](https://criticalcs.azurewebsites.net/)
-
-***
-
-<h4 id="pnp-talks"> Software Engineering Patterns and Practices</h4>
-
-* **Simplify Your API: Creating Maintainable and Discoverable Code in .NET** - Developers don't read documentation, this is a fact. It is also a fact that an API that  depends on its documentation to get developers to understand and discover its features is at a huge disadvantage in the marketplace. Fortunately, there are some simple, easy-to-use mechanisms for wrapping complex APIs and making their functionality both easy to use, and highly discoverable. Imagine being able to use tools like IntelliSense that the Visual Studio IDE already provides as a way to expose the functionality of your service or library. In this session we will build a fluent Domain Specific Language interface over an existing API to create an interface that is easy to use and discoverable through IntelliSense.
-
-***
-
-* **Design Patterns for Loosely Coupled Applications** - Building our applications so that their components are loosely coupled is a critical measure in creating solutions that are testable, maintainable and extensible. In this session we will explore several design patterns that are key to building applications that maintain loose coupling. We start by reviewing a tightly coupled application. Then, we explore several design patterns by using them to convert the application into a maintainable and extensible solution that can be validated using unit tests.
-
-  [Latest Slide Deck](https://DesignPatternsForLooseCoupling.azurewebsites.net) | [Video: Craft Conference 2019 - Budapest, Hungary - May 2019](https://www.youtube.com/watch?v=mE3zKWO6qQE&list=FLq-iLd7rfmqSIFiujBGIRSw&index=1)
-
-***
-
-* **Defining the Business Domain using Event Storming** - Event storming is a process for modeling a business domain from the perspective of the business experts. It comes out of the Domain Driven Design world and has been used by many with great success. Event Storming can help your team:
-
-  * Build an understanding of a domain
-  * Define the scopes and interactions of the components of a system
-  * Rapidly discover unknown-unknowns
-  * Expose the intricacies of the business domain
-  * Identify the areas of greatest risk
-  
-  The artifacts produced in this process are useful to both the business experts, to help document their domain, and the engineers building systems for that domain, and are completely implementation agnostic.
-
-  In this session, we will explore the process of Event Storming. We will define the goals and expected outputs of the process, and walk through a simple example so that you are ready to bring this important practice into your organization.
-
-  [Latest Slide Deck](https://introtoeventstorming.azurewebsites.net) | [Lighning Talk Version Video](https://www.youtube.com/watch?v=6DgGhQQbfDE&list=PLCo2TFzFXPTQ5qIZTbbzFNcJL348fl6uO&index=4)
-
-***
-
-* **TDD in the AI Era: No Vibes, Just Velocity** - Test-Driven Development (TDD) has been a stalwart of software engineering for years, delivering reliable, modular code that stands the test of time. As we now find ourselves in the early days of the AI era, TDD isn't just enduring, it's evolving. AI-powered tools are supercharging TDD, turning it into a faster, smarter process that builds on its original strengths. More than just an improvement, the utilization of AI means that TDD isn't only more powerful, but also more vital than ever. As we become more dependent on AI-accelerated workflows, the demand for thorough, rigorous testing practices is increasing, underlining the ever-growing importance of TDD in today's software development landscape.
-
-  In this talk, we explore how AI enhances the TDD process, making it easier to generate comprehensive test cases, uncover edge cases, and refactor code with confidence. Through automation and intelligent analysis, AI reduces the effort required for manual test creation and debugging, freeing developers to focus on innovation and problem-solving. The result? Higher-quality software delivered in less time.
-
-  Whether you’re new to TDD or an experienced practitioner looking to adapt to the AI revolution, this talk will offer insights, strategies, and practical examples to help you navigate this transformative moment in software development.
-
-***
-
-* **Things Your Dev Team Hopes You Know** - Managing a development team or project can be one of the most challenging jobs in any industry. Balancing the needs of the developers, the organization and the users to maximize value for the customers while minimizing costs can be a daunting prospect for even the most experienced executive.  How can we produce quality software in a timely and cost-effective manner when the needs of the development team are so different from the needs of the customers, the organization and its managers?
-
-  In this talk Barry leverages his more than 30 years of experience as a Developer and Solution Architect to remind us that how we leverage Agile ceremonies, how we use our tooling, and how we utilize metrics can have both positive and negative impacts on our teams.  He reviews many of the elements of our Agile processes and identifies their impacts, particularly on the developers and their managers. This talk challenges us to create environments for our development teams that enable them to exceed the expectations of both our users and our organizations.
-
-  [Latest Slide Deck](https://devteamdreams.azurewebsites.net)
-
-***
-
-<h4 id="ai-talks">Artificial Intelligence and Algorithms</h4>
-
-* **The Future of Information Retrieval: A Deep-Dive into RAG** - Retrieval Augmented Generation (RAG) may be the most important new software technology for business applications in a generation. RAG is revolutionizing the way we approach documentation and other information retrieval tasks. By combining the pre-training of large language models with your own data, RAG systems can help generate insights and ideas you might have never considered, enhancing real-world applications from question answering systems to content creation. Of course, these tools are not without their challenges. Systems built using any probabilistic model must be able to manage the size and complexity of requests and responses, ensure accurate and relevant retrieval, handle the biases inherent in the models, and identify if inaccuracies occur in responses.
-
-  In this session, we will empower you to harness the full potential of RAG. We will provide a detailed walkthrough of RAG implementation, offering practical insights and strategies to overcome the most common challenges associated with the use of language models. By the end of this session, you will understand how to build effective RAG systems that address many of the concerns with using these types of tools. Since we will be focusing on business operations tasks, our code samples will be in C# and leverage the Microsoft OpenAI Client and Semantic Kernel.
-
-  [Latest Slide Deck](https://cognitiveinheritance.com/Presentations/Session/RAGDeepDive/index.html) | [Video](https://www.youtube.com/watch?v=PsdkqNzVIw4&list=PLCo2TFzFXPTQ5qIZTbbzFNcJL348fl6uO)
-
-***
-
-* **LLMs Under the Hood** - Large Language Models (LLMs) have revolutionized the field of natural language processing, enabling machines to generate human-like text with remarkable coherence. This presentation delves into the intricacies of LLMs, shedding light on the underlying mechanisms that enable these tools to predict tokens and generate text. We will unravel the architecture of these models, from embedding layers to attention mechanisms, and provide a clear understanding of the processes that contribute to the model's performance.
-
-  Beyond the technical deep dive, we will explore practical applications, discussing valid use-cases where LLMs excel, such as chatbots, content creation, and language translation. We will also critically evaluate scenarios where they may fall short or prove unsuitable, addressing common myths and misconceptions.
-  
-  By bridging technical expertise with real-world application, this talk aims to equip programmers and other software creators with a nuanced understanding of Large Language Models, empowering them to harness these tools responsibly and effectively. Join us for an engaging session filled with insights, interactive discussions, and forward-thinking perspectives on one of today's most groundbreaking technological advancements.
-
-  [Workshop Slide Deck](https://cognitiveinheritance.com/Presentations/Workshop/LLMsUnderTheHood/index.html)
-
-***
-
-* **LLM Embeddings: Not Magic, Just Math** - Embeddings may be the least understood yet most valuable tool to come out of the world of Large Language Models. In this presentation, we will unravel the mystery of embeddings, emphasizing their mathematical foundations and practical applications.
-
-  We'll start by discussing what embeddings are, and what they represent. Then we'll delve into the variety of tools we have to compare and contrast them, including Cosine similarity and distance, as well as clustering. Then we'll put those tools to use creating powerful applications that go beyond just typical chat and analytics use-cases. Because we'll be focusing on operational use-cases, code demos will be done using C#.
-  
-  Attendees will leave with a deeper understanding of the mathematical underpinnings of embeddings, practical knowledge of how to use them, and an appreciation for their value in our applications. This session is ideal for developers, data scientists, and anyone interested in the mathematical underpinnings of machine learning and natural language processing.
-
-    [Latest Slide Deck](https://cognitiveinheritance.com/Presentations/Session/GPTEmbeddings/index.html)
-
-***
-
-* **Amazing Algorithms for Solving Problems in Software** - Sure neural networks are cool but have you ever used a Firefly Algorithm to find the solution to a problem? How about an Ant Colony algorithm or one of  the many other algorithms inspired by nature?  In this talk we will see examples of a number of awesome bio-inspired algorithms that can be used to solve problems in software. We'll see how each one works, analyze its strengths and weaknesses, and determine when it is best used. You'll leave with the knowledge you need to solve problems using these algorithms in your language of choice.
-
-  [Workshop Slide Deck](https://cognitiveinheritance.com/Presentations/ShortWorkshop/AmazingAlgorithms/index.html) | [Video: Code on the Beach - Atlantic Beach FL USA - July 2022](https://youtu.be/Ge_aChdwdtE)
-
-***
-
-* **Crafting AI: A Developer's Guide to Machine Learning** - With Machine Learning (ML) making huge impacts across the software industry, it has become almost imperative for developers to understand its principles and applications. Unfortunately, the complexity of some ML models and the mathematical rigor of its algorithms can be intimidating. This talk aims to bridge this gap, making ML understandable and engaging for developers eager to learn this technology from the ground up.
-
-  In this session, attendees will learn the foundational concepts of ML by coding their own models from scratch, without relying on pre-trained models like GPT. We'll start with a simple linear regression, a foundational tool to gain understanding of ML's error minimization and training processes. We'll then explain neural networks with a binary classification example. By the end, participants will not only grasp fundamental ML concepts but will also walk away with their own code implementing one of these models. This talk is designed to equip developers with the knowledge and confidence to use Machine Learning in their projects.
-
-  [Latest Slide Deck](https://cognitiveinheritance.com/Presentations/Workshop/CraftingAI/index.html)
-
-***
-
-* **Inside Model Reasoning: Fine-Tuning in Action** - What if I told you that advanced "thinking" AI models are just regular models that learned a new trick? In this session, we'll use Azure Foundry to demonstrate the transformative power of fine-tuning.
-
-  We'll explore how chain-of-thought models, those that generate visible reasoning in **&lt;think&gt;** tags, are simply fine-tuned versions of standard transformers. This elegant example teaches us two critical concepts: how transformers use their own output tokens as input for subsequent predictions, and how fine-tuning can create entirely new model behaviors without architectural changes, and without requiring huge datasets.
-
-***
-
-* **A Developer's Introduction to Artificial Intelligences** (also available as a half-day or full-day workshop) - There are a number of ways that developers can build systems that make decisions on our behalf. In this introductory course specifically for software developers, we explore various AI methodologies with a focus on two major categories: Search & Optimization techniques (including Dynamic Programming and Linear Programming) and Probabilistic/Learning models (including Neural Networks, Genetic Algorithms, and LLMs). Using demo code written in C#, we'll examine each methodology, understand its strengths and limitations, and identify when each is best utilized. You'll learn how to implement several of these models and gain practical insights into selecting the right AI approach for different problem domains.
-
-  [Latest Slide Deck](https://ADevsIntroToAI.azurewebsites.net)
-
-***
-
-* **One AI Algorithm All Programmers Should Know** - This simple technique that every programmer should know can simplify certain types of problems tremendously, allowing us to find an optimal solution to difficult problems quickly and easily using a mathematical process called Dynamic Programming (not to be confused with Dynamic Languages or Functional Programming). In this session, we will run through examples of using this technique to solve several problems, both "on paper" and in code and apply that knowledge to build artificial intelligences that can make decisions on our behalf.
-
-  [Latest Slide Deck](https://OneAIAlgorithm.azurewebsites.net)
-
-***
-
-* **Solutions that Evolve: Building Self-Improving Systems with Genetic Algorithms** - Genetic algorithms "learn" to make better decisions by making continuous improvements in strategy based the fitness of that solution for survival. These algorithms, modeled after Darwinian evolution, can solve complex optimization problems across many domains - from resource allocation to network design to automated testing.
-
-  In this talk we'll define the DNA of our solutions, explore how to represent different types of problems in genetic terms, and examine the parameters that control how solutions evolve and improve. You'll leave with practical knowledge of how to apply these powerful techniques to your own challenging problems.
-
-***
-
-* **Game‑Changing Algorithms: Sports Strategy as a Blueprint for AI‑Driven Optimization** - Championship teams don't just rely on talent—they use sophisticated strategies to optimize player positions, manage resources, and adapt to changing conditions. Similarly, combinatorial optimization transforms problem solving in software by enabling systems to find optimal solutions among countless possibilities.
-
-  Consider team sports strategy as an optimization problem:
-
-  * Objective: Maximize wins across a season
-  * Constraints: Player abilities, fatigue levels, and positional requirements
-  * Variables: Which players to field, in what positions, and when to substitute
-  * Solution: A dynamic system that adapts to game conditions for optimal performance
-
-
-  This representation of sports strategy illustrates the core of combinatorial optimization: finding the best arrangement of resources under constraints. From this foundation, we'll dive into software problems across various domains:
-
-  * Resource allocation in distributed systems
-  * Constraint satisfaction in scheduling applications
-  * Multi-objective optimization in logistics
-  * Configuration optimization in system design
-  * Real-time solving techniques for responsive applications
-
-
-  Through code-focused demonstrations using industry tools like the open-source Google OR-Tools, you'll learn to implement these techniques without needing an advanced mathematics background. You'll walk away with immediately applicable strategies to solve seemingly impossible problems, optimize resource usage, and deliver more intelligent solutions with less code.
-
-  Whether you're building scheduling systems, logistics applications, or any software that needs to make complex decisions, this session will equip you with powerful combinatorial optimization techniques that can be applied to a wide range of real-world problems.
-
-  **Note**: An early version of this presentation, then called "Building AI Solutions Using Combinatorial Solvers" was presented at NDC Sydney in 2017, as well as several domestic code camps in 2017 and 2018. It was very well received and has since been fully updated to use a popular sports metaphor to help establish the foundations of the process, making the experience even better for the attendees.
-
-  [Early Version Video (before the sports metaphor): NDC Sydney - Sydney Australia - August 2017](https://www.youtube.com/watch?v=zZAobExOMB0&list=FLq-iLd7rfmqSIFiujBGIRSw&index=2)
-
-***
-
 ### Past engagements
 
 * **[Codestock 2026](https://web.archive.org/web/20260415164726/https://www.codestock.org/2026-speakers)** - 4/9/2026 - 4/10/2026 - "Inside Model Reasoning: Fine-Tuning in Action" & "Crafting AI: A Developer's Guide to Machine Learning"
@@ -207,8 +48,8 @@ I have the following talks on topics of interest to Enterprise Developers that I
 * **[ML Con New York 2025](https://mlconference.ai/speaker/barry-stahl/)** - 9/29/2025 - 10/3/2025 - "LLM Embeddings: Not Magic, Just Math"
 * **[Combined .NET User Groups](https://web.archive.org/web/20260226220828/https://www.meetup.com/sevdnug/events/308656896/)** (Salt Lake City UT, Provo UT, SE Valley AZ, NW Valley AZ) - 7/10/2025 - "The Future of Information Retrieval: A Deep-Dive into RAG" ([video](https://youtu.be/PsdkqNzVIw4?si=BRL0_iCZ-0uioIko))
 * **[ConFoo 2025](https://web.archive.org/web/20250218185425/https://www.confoo.ca/en/speaker/barry-stahl)** - 2/26/2025 - 2/28/2025 - "Crafting AI: A Developer's Guide to Machine Learning" and "The Future of Information Retrieval: A Deep-Dive into RAG"
-* **CodeMash 2025** - 1/14/2025 - 1/17/2025  - "Crafting AI: A Developer's Guide to Machine Learning"
-* **Techorama Netherlands** - 10/7/2024 - 10/9/2024 - "Amazing Algorithms for Solving Problems in Software" and "The Future of Information Retrieval: A Deep-Dive into RAG"
+* **[CodeMash 2025](https://web.archive.org/web/20240529054152/https://codemash.org/speaker-details/?id=1aeeb749-1d7f-4bf8-be80-6c78ab20429a)** - 1/14/2025 - 1/17/2025  - "Crafting AI: A Developer's Guide to Machine Learning"
+* **[Techorama Netherlands](https://web.archive.org/web/20241001010513/https://techorama.nl/)** - 10/7/2024 - 10/9/2024 - "Amazing Algorithms for Solving Problems in Software" and "The Future of Information Retrieval: A Deep-Dive into RAG"
 * **Beer City Code 2024** - 8/3/2024 - "GPT Embeddings: Not Magic, Just Math" and "Amazing Algorithms for Solving Problems in Software"
 * **THATConference Wisconsin** - 7/31/2024 - "GPT Under the Covers"
 * **Cincy Deliver 2024** - 7/26/2024 - "Success with Microservices: The Critical 'Cs'"
