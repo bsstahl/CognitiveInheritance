@@ -14,11 +14,11 @@ categories: []
 
 ---
 
+I have the following talks on topics of interest to Enterprise Developers that I can deliver at your user group or conference. You can submit a request for me to speak by {ContactPageLink:contacting me}.
+
 > My upcoming and past {PageLink:Speaking-Engagements|speaking engagements} have moved to a separate page
 
 [Cloud-Native and Event-Driven Architectures](#microservices-talks) | [Software Engineering Patterns and Practices](#pnp-talks) | [Artificial Intelligence and Algorithms](#ai-talks)
-
-I have the following talks on topics of interest to Enterprise Developers that I can deliver at your user group or conference. You can submit a request for me to speak by {ContactPageLink:contacting me}.
 
 <h4 id="microservices-talks"> Cloud-Native and Event-Driven Architectures</h4>
 
