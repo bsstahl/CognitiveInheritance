@@ -152,5 +152,3 @@ categories: []
 * **Desert Code Camp 2011.1** - 4/2/2011 - "Building Enterprise Quality Apps using EF4"
 * **Developer Ignite II** - 11/11/2009 - "AZGiveCamp, Geeks Giving Back to the Community"
 * **Developer Ignite** - 7/22/2009 - "Simplicity Through Abstraction"
-
-[Cloud-Native and Event-Driven Architectures](#microservices-talks) | [Software Engineering Patterns and Practices](#pnp-talks) | [Artificial Intelligence and Algorithms](#ai-talks)
