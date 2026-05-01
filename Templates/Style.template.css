@@ -546,11 +546,16 @@ table tr .pubdate {
 }
 
 /* Override the blog link mechanism for standard inline links */
-.widget .content a .inline-link {
-    background: none;
-    padding: 0;
-    border: none;
-    display: inline;
-    color: inherit; /* or a specific color if you prefer */
-    text-decoration: underline; /* optional */
+.widget .content a.inline-link {
+    all: unset;
+    cursor: pointer;
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
+.inline-link {
+    all: unset;
+    cursor: pointer;
+    color: var(--text-color);
+    text-decoration: underline;
 }
