@@ -11,7 +11,7 @@ orderindex: 5
 
 Barry works as Principal Engineer for <a class="inline-link" href="https://aznerds.net">AZNerds</a> in Phoenix, Arizona, where he has lived for more than 40 years. He co‑founded <a class="inline-link" href="https://www.azgivecamp.org">AZGiveCamp</a>, a non‑profit that brings volunteer developers together to build websites and apps for regional charities. He is also an Election Integrity Activist, a baseball and hockey fan, husband of one genius and father of another, and a long‑time contributor to the developer community. When he is not speaking or organizing community events, Barry writes about software engineering and intelligent systems on his blog, Cognitive Inheritance, and can be found in the Fediverse on Mastodon.
 
-<a class="inline-link" href="https://mvp.microsoft.com/en-US/MVP/profile/bc427470-04a1-4f28-886b-3e0061549716"><img width="100%" src="https://mvp.microsoft.com/Assets/UserProfile/MVP/Badge.svg"></a>
+<a class="inline-link" href="https://mvp.microsoft.com/en-US/MVP/profile/bc427470-04a1-4f28-886b-3e0061549716"><img src="https://mvp.microsoft.com/Assets/UserProfile/MVP/Badge.svg"></a>
 
 For more information, see: {PageLink:AboutMe|About Barry}
 {ContactPageLink:Contact Barry}
