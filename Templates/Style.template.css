@@ -546,7 +546,7 @@ table tr .pubdate {
 }
 
 /* Override the blog link mechanism for standard inline links */
-.inline-link {
+.widget .content a .inline-link {
     background: none;
     padding: 0;
     border: none;
