@@ -545,7 +545,7 @@ table tr .pubdate {
     color: rgba(255,255,255,.8);
 }
 
-/* Override the blog link mechanism for standard inline links */
+/* Override the widget mechanism for standard inline links */
 .widget .content a.inline-link {
     all: unset;
     cursor: pointer;
@@ -558,4 +558,13 @@ table tr .pubdate {
     cursor: pointer;
     color: var(--text-color);
     text-decoration: underline;
+}
+
+/* Override the widget mechanism for standard images */
+.widget .content a.inline-link img {
+    all: unset;
+    cursor: pointer;
+    color: var(--text-color);
+    text-decoration: underline;
+	width: 100%
 }
