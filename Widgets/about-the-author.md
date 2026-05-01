@@ -7,11 +7,13 @@ showinsidebar: true
 orderindex: 5
 
 ---
-<img style="float: left; padding: 0px 3px 0px 0px;" src="{PathToRoot}Pics/bsstahl_left.gif" alt="Barry S. Stahl" width="95" /><strong>Barry S. Stahl</strong> (he/him/his) - Barry is a .NET Software Engineer who has been creating business solutions for enterprise customers since the mid 1980s. Barry is also an Election Integrity Activist, baseball and hockey fan, husband of one genius and father of another, and a 40 year resident of Phoenix Arizona USA. When Barry is not traveling around the world to speak at Conferences, Code Camps and User Groups or to participate in GiveCamp events, he spends his days as the Principal Engineer for AZNerds.net in Phoenix AZ and his nights thinking about the next AZGiveCamp event where software creators come together to build websites and apps for some great non-profit organizations.
+<img style="float: left; padding: 0px 3px 0px 0px;" src="{PathToRoot}Pics/bsstahl_left.gif" alt="Barry S. Stahl" width="95" /><strong>Barry S. Stahl</strong> (he/him) - Barry Stahl is an Architect and Developer and a Microsoft .NET MVP with more than four decades of experience building reliable, scalable systems on .NET and other Microsoft technologies. He has delivered hundreds of sessions at conferences, code camps, and user groups across North America, Europe, and Australia, including NDC Oslo, NDC Sydney, Craft Conference Budapest, Techorama Netherlands, and ConFoo Montreal. Barry is known for making complex topics clear, actionable, and grounded in real‑world engineering practice, with talks that span architecture, problem‑solving modalities, artificial intelligence, optimization algorithms, and the practical mechanics of building resilient and self‑healing systems.
+
+Barry works as Principal Engineer for [AZNerds](https://aznerds.net) in Phoenix, Arizona, where he has lived for more than 40 years. He co‑founded AZGiveCamp, a non‑profit that brings volunteer developers together to build websites and apps for regional charities. He is also an Election Integrity Activist, a baseball and hockey fan, husband of one genius and father of another, and a long‑time contributor to the developer community. When he is not speaking or organizing community events, Barry writes about software engineering and intelligent systems on his blog, Cognitive Inheritance, and can be found in the Fediverse on Mastodon.
 
 For more information, see: {PageLink:AboutMe|About Barry}.
 
-> Barry has started delivering in-person talks again now that numerous mechanisms for protecting our communities from Covid-19 are available. He will, of course, still entertain opportunities to speak online. Please  him if you would like him to deliver one of his talks at your event, either online or in-person.
+[![.NET MVP](https://mvp.microsoft.com/Assets/UserProfile/MVP/Badge.svg)](https://mvp.microsoft.com/en-US/MVP/profile/bc427470-04a1-4f28-886b-3e0061549716)
 
 {ContactPageLink:Contact Barry}
 {PageLink:Speaking-Engagements|Barry's Community Speaker page}

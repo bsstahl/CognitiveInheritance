@@ -11,7 +11,9 @@ orderindex: 13
     (function() {
         const now = new Date();
 
-        // Set the target date to April 2nd, 2027
+        // Set the target date to April 2nd, 2034 - my 67th birthday
+        // Which is Full Retirement Age (FRA) for those born after 1960
+        // https://www.ssa.gov/benefits/retirement/planner/1960.html
         const targetDate = new Date('2034-10-02');
 
         // Calculate the difference in time
