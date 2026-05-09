@@ -20,8 +20,6 @@ categories: []
 
 <!-- I currently have no talks scheduled. {ContactPageLink:Contact me} to arrange to have me speak at your event. -->
 
-* **[NDC Toronto 2026](https://ndctoronto.com/speakers/barry-stahl)** - 5/5/2026 - 5/8/2026 - "The Future of Information Retrieval: A Deep-Dive into RAG"
-
 * **[MLcon San Diego 2026](https://mlconference.ai/speaker/barry-stahl/)** - 6/1/2026 - 6/2/2026 - "LLMs Under the Hood - Workshop" & "Inside Model Reasoning: Fine-Tuning in Action"
 
 * **[Craft Conf Budapest 2026](https://craft-conf.com/2026/speaker/bstahl)** - 6/4/2026 - 6/5/2026 - "TDD in the AI Era" (workshop) & "Solutions That Evolve: Building Self-Improving Systems with Genetic Algorithms"
@@ -38,6 +36,7 @@ categories: []
 
 ### Past engagements
 
+* **[NDC Toronto 2026](https://ndctoronto.com/speakers/barry-stahl)** - 5/5/2026 - 5/8/2026 - "The Future of Information Retrieval: A Deep-Dive into RAG"
 * **[Codestock 2026](https://web.archive.org/web/20260415164726/https://www.codestock.org/2026-speakers)** - 4/9/2026 - 4/10/2026 - "Inside Model Reasoning: Fine-Tuning in Action" & "Crafting AI: A Developer's Guide to Machine Learning"
 * **[Albuquerque Dot Net Users Group](https://web.archive.org/web/20260226213644/https://www.meetup.com/albuquerque-net-users-group/events/312740517/)** - 2/25/2026 - "Inside Model Reasoning: Fine-Tuning in Action"
 * **[NDC London 2026](https://web.archive.org/web/20260226213915/https://ndclondon.com/speakers/barry-stahl)** - 1/26/2026 - 1/30/2026 - "Solutions That Evolve: Building Self-Improving Systems with Genetic Algorithms"
