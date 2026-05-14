@@ -6,43 +6,34 @@
 
     <title>GPT Under the Hood</title>
 
-    <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/carvana.css">
-    <link rel="stylesheet" href="css/headers.css">
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/carvana.css">
 
     <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
 
-    <!-- Printing and PDF exports -->
-    <script>
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
-        document.getElementsByTagName('head')[0].appendChild(link);
-    </script>
 </head>
 <body>
     <div class="reveal">
         <div class="slides">
-            <section data-transition="slide-in slide-out" data-background='img/19ae31f8-078b-4bd3-8411-0222b6a09c25.jpg'>
+            <section data-transition="slide-in slide-out" data-background='img/130388b7-e1f8-4696-851f-49ec167ba0c0.png'>
 <a id="c7355d4f-f3fa-468d-be7c-3e3a435e9cac">&nbsp;</a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:dee3516f-4359-4f28-898e-6effc7981e56 -->
-<!-- ContentItem:685060d8-4205-4db9-b44d-9610a7729e7d -->
+<!-- ContentItem:2f2cf6b5-5644-4a88-9520-c6401b4ecb23 -->
 
 <table><tr><td style="vertical-align:top;">
-<h2 id="gpt-under-the-hood">GPT Under the Hood</h2>
-<h4 id="section"></h4>
+<h2 id="llms-under-the-hood">LLMs Under the Hood</h2>
 <hr />
 <h3 id="barry-s.stahl">Barry S. Stahl</h3>
-<h3 id="solution-architect-developer">Solution Architect &amp; Developer</h3>
-<h3 id="bsstahlcognitiveinheritance.com"><a href="https://fosstodon.org/@Bsstahl">@bsstahl@cognitiveinheritance.com</a></h3>
-<h3 id="httpscognitiveinheritance.com"><a href="https://cognitiveinheritance.com">https://CognitiveInheritance.com</a></h3>
+<h4 id="principal-engineer-aznerds.net">Principal Engineer - AZNerds.net</h4>
+<h4 id="bsstahlcognitiveinheritance.com"><a href="https://fosstodon.org/@Bsstahl">@bsstahl@cognitiveinheritance.com</a></h4>
+<h4 id="httpscognitiveinheritance.com"><a href="https://cognitiveinheritance.com">https://CognitiveInheritance.com</a></h4>
 
 </td>
 <td style="text-align: left;">
-<img src="img/685060d8-4205-4db9-b44d-9610a7729e7d.png" alt="Transparent Half Width Image 720x800.png" />
+<img src="img/2f2cf6b5-5644-4a88-9520-c6401b4ecb23.png" alt="Transparent Half Width Image 800x800.png" />
 </td>
 </tr></table></section>
 
@@ -68,7 +59,7 @@ Please ping me on Mastodon to tell me where I messed-up with this list, or this 
 <li>Galileo Galilei</li>
 <li>Michael Faraday</li>
 </ol>
-<p><em>Other notables</em>: Stephen Hawking, Edwin Hubble</p>
+<p><em>Other notables</em>: Stephen Hawking, Edwin Hubble, Leonard Susskind, Christiaan Huygens</p>
 
 </td>
 <td style="vertical-align:top;">
@@ -91,6 +82,36 @@ Please ping me on Mastodon to tell me where I messed-up with this list, or this 
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
+<a id="a1e2eaad-5633-41dc-9e1b-c724e30ac85f"><h1>Fediverse Supporter</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f48757bb-8e16-418d-857d-26908de5ef1e -->
+<!-- ContentItem:a937ed96-7c15-4ede-a3d0-09dc382590eb -->
+<aside class="notes"><p>It is now more important than ever that we create networks that are not  controlled by corporate entities or petulant oligarchs</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>See my presentation from CodeMash 2025: <a href="https://www.youtube.com/watch?v=FdlJVG2GjLY">How the Fediverse Could Save Democracy &amp; Why It Probably Won't</a></p>
+</li>
+<li><p>Hear my thoughts on why a thriving Fediverse is so critical on David Giard's <a href="https://davidgiard.com/barry-stahl-on-the-fediverse">Technology and Friends</a> show.</p>
+</li>
+<li><p>Learn more about the Fediverse at <a href="https://fediverse.party/en/fediverse">fediverse.party</a>.</p>
+</li>
+<li><p>Get your own Mastodon account at <a href="https://joinmastodon.org/">Join Mastodon</a>.</p>
+<ul>
+<li>Don't stress on what server to use, just pick one and go.  You can always move later.</li>
+</ul>
+</li>
+<li><p>Follow me on Mastodon at <a href="https://fosstodon.org/@bsstahl">@bsstahl@CognitiveInheritance.com</a>.</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/a937ed96-7c15-4ede-a3d0-09dc382590eb.png" alt="Logos.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
 <aside class="notes"><p>Liquid Victor was used to create this slide deck</p>
 </aside>
 <a id="23528a73-7bc1-4e39-9f2f-c8b9e2cff982"><h1>Some OSS Projects I Run</h1></a>
@@ -109,18 +130,6 @@ Please ping me on Mastodon to tell me where I messed-up with this list, or this 
 
 </section>
 
-
-<section data-transition="slide-in slide-out">
-<a id="a1e2eaad-5633-41dc-9e1b-c724e30ac85f"><h1>Fediverse Supporter</h1></a>
-<!-- Layout:ImageRight -->
-<!-- ContentItem:a937ed96-7c15-4ede-a3d0-09dc382590eb -->
-
-<table><tr><td style="vertical-align:top;">
-</td>
-<td style="text-align: left;">
-<img src="img/a937ed96-7c15-4ede-a3d0-09dc382590eb.png" alt="Logos.png" />
-</td>
-</tr></table></section>
 
 <section data-transition="slide-in slide-out">
 <aside class="notes"><p>I am proud to be one of the founders of AZGiveCamp.
@@ -230,22 +239,23 @@ Armando_Castro_8: 0.166799</p>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:2416b2f3-14c0-4d6c-99a5-00376fe32b45 -->
 <!-- ContentItem:237d52d6-2283-42c9-a4b8-f446a858d874 -->
-
+<aside class="notes"><p>All the learnings prior resulted in the public release of GPT-3 in June 2020, which demonstrated the power of transformer architectures to non-technical audiences</p>
+</aside>
 <table><tr><td style="vertical-align:top;">
 <blockquote>
 <p>A neural network architecture that has enabled the recent advancements in NLP</p>
 </blockquote>
 <ul>
-<li>Based on the 2017 Google paper <a href="https://arxiv.org/abs/1706.03762">Attention is All You Need</a> by Vaswani et al.</li>
-<li>Key Breakthrough: The Self-Attention Mechanism
+<li><p>Based on the 2017 Google paper <a href="https://arxiv.org/abs/1706.03762">Attention is All You Need</a></p>
+</li>
+<li><p>Key Breakthrough: The Self-Attention Mechanism</p>
 <ul>
-<li>Focus on most relevant words</li>
-<li>Add critical context even at a distance</li>
+<li>Focus on most relevant tokens</li>
+<li>Add context even at a distance</li>
 </ul>
 </li>
-<li>Enables Parallel Processing
+<li><p>Enables Processing of Entire Sequences in Parallel</p>
 <ul>
-<li>Process all words in a sentence simultaneously</li>
 <li>Unlike traditional RNNs that process data sequentially</li>
 </ul>
 </li>
@@ -377,30 +387,25 @@ Armando_Castro_8: 0.166799</p>
 <!-- ContentItem:017d4a5a-68a3-4ff4-b571-3535d12a9f02 -->
 
 <table><tr><td style="vertical-align:top;">
-<blockquote>
 <p>GPT-3 and beyond use the <code>cl100K</code> tokenization model</p>
-</blockquote>
 <ul>
 <li>Defines 100,256 tokens
 <ul>
-<li>Word</li>
-<li>Word part</li>
+<li>Word or Word part</li>
+<li>Character or Character part</li>
 <li>Character combination</li>
-<li>Character</li>
-<li>Character part</li>
 </ul>
 </li>
 <li>Efficiently reprepresent language numerically
 <ul>
 <li>Minimize token usage</li>
-<li>More compact than Unicode</li>
-<li>More flexible than ASCII</li>
+<li>More compact &amp; flexible than Unicode/ASCII</li>
 <li>Large vocabulary
 <ul>
 <li>All Unicode characters available</li>
+<li>The most-common combinations</li>
 </ul>
 </li>
-<li>The most-common combinations</li>
 </ul>
 </li>
 </ul>
@@ -469,7 +474,7 @@ Armando_Castro_8: 0.166799</p>
 <a id="54851746-90a1-45fa-980d-9cdcc12953cc"><h1>Embeddings</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:8c297a4c-5130-4206-ae37-995649e7d962 -->
-<!-- ContentItem:0e0658fb-5565-43c7-a9fc-3de3155352f3 -->
+<!-- ContentItem:5909b0e1-0387-4d73-8a23-5282d3ed6300 -->
 <aside class="notes"><p>There are many other embedding models, some are optimized for different purposes. You should consider what model might work best for your use-case. This presentation uses the same model used by GPT-3 and GPT-4.</p>
 </aside>
 <table><tr><td style="vertical-align:top;">
@@ -487,7 +492,7 @@ Armando_Castro_8: 0.166799</p>
 
 </td>
 <td style="text-align: left;">
-<img src="img/0e0658fb-5565-43c7-a9fc-3de3155352f3.jpg" alt="Embeddings - Cosmic Desert 800x800.jpg" />
+<img src="img/5909b0e1-0387-4d73-8a23-5282d3ed6300.png" alt="VectorSpace3D.png" />
 </td>
 </tr></table></section>
 
@@ -628,9 +633,7 @@ Armando_Castro_8: 0.166799</p>
 <!-- ContentItem:48268ace-db06-4a45-8bf0-b3f623e08868 -->
 
 <table><tr><td style="vertical-align:top;">
-<blockquote>
 <p>Embeddings can be used directly, or as an input to other models</p>
-</blockquote>
 <ul>
 <li>Direct Usage
 <ul>
@@ -650,11 +653,7 @@ Armando_Castro_8: 0.166799</p>
 </li>
 <li>Indirect Usage
 <ul>
-<li>Feature Vectors for Machine Learning
-<ul>
 <li>Inputs to traditional ML models</li>
-</ul>
-</li>
 <li>Input to Transformer Attention Mechanisms
 <ul>
 <li>Dynamically adjusted by attention blocks</li>
@@ -713,7 +712,14 @@ Armando_Castro_8: 0.166799</p>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out">
-<aside class="notes"><p>The details of positional encoding are not critical to understanding these models, but they are interesting, and they are a good reminder that these are not purely iterative processes. During matrix operations, there is no way to stop and ask &quot;what index am I currently at?&quot; because it is all done in parallel. This process also likely creates a loss of fidelity since we are adding information without adding additonal storage.</p>
+<aside class="notes"><ul>
+<li>Allows disambiguation by position
+<ul>
+<li>i.e. &quot;The dog chased the cat&quot; vs &quot;The cat chased the dog&quot;</li>
+</ul>
+</li>
+</ul>
+<p>During matrix operations, there is no way to stop  and ask &quot;what index am I currently at?&quot; because it  is all done in parallel. This process also likely creates a  loss of fidelity since we are adding information without  adding additonal storage.</p>
 </aside>
 <a id="3b1e19ff-dfed-43c8-9226-49b8515948a3"><h1>Positional Encoding</h1></a>
 <!-- Layout:FullPage -->
@@ -729,9 +735,7 @@ Armando_Castro_8: 0.166799</p>
 <!-- ContentItem:1fc5e96b-9d7d-4451-8d03-2ccead779ed9 -->
 
 <table><tr><td style="vertical-align:top;">
-<blockquote>
 <p>The 3 matrices that are learned in training of the attention mechanism</p>
-</blockquote>
 <ul>
 <li>Query (Q)
 <ul>
@@ -749,7 +753,7 @@ Armando_Castro_8: 0.166799</p>
 </ul>
 </li>
 </ul>
-<p>When these 3 matrices are applied to the positionalized input, it results in the model adding appropriate context to each token.</p>
+<p>Multiplying these matrices by the positionalized input adds the  appropriate context to each token</p>
 
 </td>
 <td style="text-align: left;">
@@ -775,22 +779,13 @@ Armando_Castro_8: 0.166799</p>
 
 <table><tr><td style="vertical-align:top;">
 <blockquote>
-<p>The Feature layers allow the Transformer to understand and generate complex language patterns through deep learning from the structure of the input data</p>
+<p>The Feature layers allow the Transformer to understand and generate  complex language patterns through deep learning from the structure of  the input data</p>
 </blockquote>
 <ul>
-<li>Each layer acts as a mini neural network</li>
-<li>In the Encoder:
-<ul>
-<li>Complex Feature Extraction from the input data</li>
+<li><strong>Encoder</strong>: Perform Feature Extraction from the input data</li>
+<li><strong>Decoder</strong>: Process encoder output with previous decoder outputs</li>
+<li>Deeper learning capabilities achieved by stacking multiple layers</li>
 </ul>
-</li>
-<li>In the Decoder
-<ul>
-<li>Refines the model's predictions by processing the encoder's output alongside previous decoder outputs</li>
-</ul>
-</li>
-</ul>
-<p>By stacking multiple Feature between Attention layers, GPT models achieve deeper learning capabilities, allowing for more nuanced understanding and generation of text</p>
 
 </td>
 <td style="text-align: left;">
@@ -892,7 +887,7 @@ Armando_Castro_8: 0.166799</p>
 </li>
 <li>Cultural Similarities
 <ul>
-<li>USA and UK - shared media, literature, entertainment, and educational exchanges including TV, movies, music, and news</li>
+<li>USA and UK - shared media, literature, entertainment, etc.</li>
 </ul>
 </li>
 <li>Political Systems
@@ -1013,26 +1008,10 @@ Remember: &quot;CAN&quot; does not mean &quot;SHOULD&quot;.</p>
 <li>Be careful with attention over long input</li>
 </ul>
 </li>
-<li>Local Context Priority
-<ul>
-<li>Transformers excel at global dependencies</li>
-<li>Less efficient focusing on local context</li>
-</ul>
-</li>
-<li>Irrelevant Data
-<ul>
-<li>Attention may overvalue irrelevant inputs</li>
-<li>Especially in noisy, unstructured or sparce data</li>
-</ul>
-</li>
 <li>Resource Constraints
 <ul>
 <li>Resource constrained devices may not be able to handle Attention</li>
-</ul>
-</li>
-<li>Low-Resource Domains
-<ul>
-<li>Transformers require a large training corpus</li>
+<li>Transformers require lots of training data</li>
 <li>Limited data yields poor attention performance</li>
 </ul>
 </li>
@@ -1156,26 +1135,26 @@ Old image: 59bf56c7-2e3d-4a25-b78e-ade863990440</p>
 <a id="d9b791a9-5f3f-4814-b9f7-97440072c5e2"><h1>Model Privacy Concerns</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:9bf6a8a2-3524-4110-b681-b6e214f9bf38 -->
-<!-- ContentItem:fe1ec9e9-e30e-4502-9b09-ad752f02553e -->
+<!-- ContentItem:eb5dc936-63a0-4be8-9d12-c06be01f9a7e -->
 
 <table><tr><td style="vertical-align:top;">
 <ul>
-<li>Massive amounts of private data were likely gathered
+<li><p>Massive amounts of private data were likely gathered</p>
 <ul>
 <li>What are the odds that all of it was caught?</li>
 <li>Even anonymized data may be de-anonymized</li>
 </ul>
 </li>
-<li>Take great care in what you send to the Model
+<li><p>Take great care in what you send to the Model</p>
 <ul>
-<li>See <em>Microsoft AI Recall</em> for a recent example</li>
+<li><a href="https://www.edpb.europa.eu/our-work-tools/our-documents/support-pool-experts-projects/ai-privacy-risks-mitigations-large_en">EU Data Protection Board - Privacy Risks for LLMs</a></li>
 </ul>
 </li>
 </ul>
 
 </td>
 <td style="text-align: left;">
-<img src="img/fe1ec9e9-e30e-4502-9b09-ad752f02553e.png" alt="Microsoft Copilot 800x800.png" />
+<img src="img/eb5dc936-63a0-4be8-9d12-c06be01f9a7e.jpg" alt="Privacy 800x800.jpg" />
 </td>
 </tr></table></section>
 
@@ -1410,27 +1389,28 @@ Old image: 59bf56c7-2e3d-4a25-b78e-ade863990440</p>
         <div class="footer-right">Barry S. Stahl - Mastodon:@bsstahl@cognitiveinheritance.com - Blog:http://www.cognitiveinheritance.com</div>
     </div>
 
-    <script src="lib/js/head.min.js"></script>
-    <script src="js/reveal.js"></script>
+    <script src="dist/reveal.js"></script>
+
+    <!-- Plugins -->
+    <script src="plugin/highlight/highlight.js"></script> 
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
 
     <script>
-        // More info about config & dependencies:
-        // - https://github.com/hakimel/reveal.js#configuration
-        // - https://github.com/hakimel/reveal.js#dependencies
-
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
 
         Reveal.initialize({
+            hash: true,
 			width: 1920,
 			height: 1080,
             transition: 'slide',
             showNotes: window.location.search.match(/print-pdf/gi) ? true : false,
-            dependencies: [
-                { src: 'plugin/markdown/marked.js' },
-                { src: 'plugin/markdown/markdown.js' },
-                { src: 'plugin/notes/notes.js', async: true },
-				{ src: 'plugin/zoom-js/zoom.js', async: true },
-                { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
-            ]
+            plugins: [RevealHighlight, RevealMarkdown, RevealSearch, RevealNotes, RevealMath, RevealZoom ]
         });
     </script>
 </body>
