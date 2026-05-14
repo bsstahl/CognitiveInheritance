@@ -6,26 +6,18 @@
 
     <title>Success With Microservices</title>
 
-    <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/carvana.css">
-    <link rel="stylesheet" href="css/headers.css">
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/carvana.css">
 
     <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
 
-    <!-- Printing and PDF exports -->
-    <script>
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
-        document.getElementsByTagName('head')[0].appendChild(link);
-    </script>
 </head>
 <body>
     <div class="reveal">
         <div class="slides">
-            <section data-transition="slide-in slide-out" data-background='img/19ae31f8-078b-4bd3-8411-0222b6a09c25.jpg'>
+            <section data-transition="slide-in slide-out" data-background='img/130388b7-e1f8-4696-851f-49ec167ba0c0.png'>
 <a id="91c584ee-8a56-44ae-bdb1-80de69f46f60">&nbsp;</a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:ebc67800-7a56-421a-bab6-7f3f0feafc99 -->
@@ -51,7 +43,8 @@
 <!-- Layout:MultiColumn -->
 <!-- ContentItem:30f7e9d2-b154-4895-bed7-2765f7bdc6fe -->
 <!-- ContentItem:8a83be06-76e9-4028-9630-c6a7de92ae99 -->
-<aside class="notes"><p>An up-to-date list is available on my blog at <a href="https://cognitiveinheritance.com/Pages/Favorites.html">https://cognitiveinheritance.com/Pages/Favorites.html</a></p>
+<aside class="notes"><p>An up-to-date list is available on <a href="https://cognitiveinheritance.com/Pages/Favorites.html">my blog at https://cognitiveinheritance.com/Pages/Favorites.html</a>
+Please ping me on Mastodon to tell me where I messed-up with this list, or this presentation for that matter. 😉</p>
 </aside>
 <table><tr><td style="vertical-align:top;">
 <h4 id="favorite-physicists">Favorite Physicists</h4>
@@ -67,7 +60,7 @@
 <li>Galileo Galilei</li>
 <li>Michael Faraday</li>
 </ol>
-<p><em>Other notables</em>: Stephen Hawking, Edwin Hubble</p>
+<p><em>Other notables</em>: Stephen Hawking, Edwin Hubble, Leonard Susskind, Christiaan Huygens</p>
 
 </td>
 <td style="vertical-align:top;">
@@ -78,44 +71,16 @@
 <li>Johannes Kepler</li>
 <li>Rene Descartes</li>
 <li>Isaac Newton</li>
-<li>Leonardo Fibonacci</li>
+<li>Emmy Noether</li>
 <li>George Boole</li>
 <li>Blaise Pascal</li>
 <li>Johann Gauss</li>
 <li>Grace Hopper</li>
 </ol>
-<p><em>Other notables</em>: Daphne Koller, Grady Booch, Evelyn Berezin</p>
+<p><em>Other notables</em>: Daphne Koller, Grady Booch, Leonardo Fibonacci, Evelyn Berezin, Benoit Mandelbrot</p>
 
 </td>
 </tr></table></section>
-
-<section data-transition="slide-in slide-out">
-
-<a id="23528a73-7bc1-4e39-9f2f-c8b9e2cff982"><h1>Some OSS Projects I Run</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:f8cbcb81-15f7-48e0-bc29-b348732f6f05 -->
-<ol>
-<li><a href="https://github.com/bsstahl/liquidvictor">Liquid Victor</a> : Media tracking and aggregation [used to assemble this presentation]</li>
-<li><a href="https://github.com/bsstahl/pptail">Prehensile Pony-Tail</a> : A static site generator built in c#</li>
-<li><a href="https://github.com/bsstahl/testhelperextensions">TestHelperExtensions</a> : A set of extension methods helpful when building unit tests</li>
-<li><a href="https://github.com/bsstahl/conferencescheduler">Conference Scheduler</a> : A conference schedule optimizer</li>
-<li><a href="https://github.com/bsstahl/intentbot">IntentBot</a> : A microservices framework for creating conversational bots on top of Bot Framework</li>
-<li><a href="https://github.com/bsstahl/liquidnun">LiquidNun</a> : Library of abstractions and implementations for loosely-coupled applications</li>
-<li><a href="https://github.com/bsstahl/toastmastersagenda">Toastmasters Agenda</a> : A c# library and website for generating agenda's for Toastmasters meetings</li>
-<li><a href="https://github.com/bsstahl/PDM">ProtoBuf Data Mapper</a> : A c# library for mapping and transforming ProtoBuf messages</li>
-</ol>
-
-</section>
-
-
-<section data-transition="slide-in slide-out">
-
-<a id="3129a405-82a7-432c-ae55-6f9d2335ab17"><h1>http://GiveCamp.org</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:2ca346de-d62c-4c6b-834d-7ccab290a6ab -->
-<img alt="GiveCamp.png" src="img/2ca346de-d62c-4c6b-834d-7ccab290a6ab.png" />
-</section>
-
 
 <section data-transition="slide-in slide-out">
 <a id="fb2483e5-5371-49f1-a5e0-c8d579bdd9d3"><h1>The Critical C's of Microservices</h1></a>
@@ -579,6 +544,7 @@
 <a id="1d3765b6-fb46-4bf9-b16b-0b9618427a22"><h1>Resources</h1></a>
 <!-- Layout:MultiColumn -->
 <!-- ContentItem:cd4cfe61-07ac-4b95-b7b0-3122358bf1f6 -->
+<!-- ContentItem:9cb31842-a089-4bbd-a312-9fff20be7b98 -->
 
 <table><tr><td style="vertical-align:top;">
 <ul>
@@ -591,6 +557,9 @@
 <li>Video: <a href="https://www.youtube.com/watch?v=g6tnRWN9vy0&amp;list=PLCo2TFzFXPTQ5qIZTbbzFNcJL348fl6uO&amp;index=6&amp;t=1996s">Eliminating Hidden Dangers to your Applications: Patterns for Reliable Systems</a></li>
 </ul>
 
+</td>
+<td style="vertical-align:top;">
+<img alt="SuccessWithMicroservices_QR.png" src="img/9cb31842-a089-4bbd-a312-9fff20be7b98.png" />
 </td>
 </tr></table></section>
 
@@ -663,27 +632,28 @@
         <div class="footer-right">Barry S. Stahl - Mastodon:@bsstahl@cognitiveinheritance.com - Blog:http://www.cognitiveinheritance.com</div>
     </div>
 
-    <script src="lib/js/head.min.js"></script>
-    <script src="js/reveal.js"></script>
+    <script src="dist/reveal.js"></script>
+
+    <!-- Plugins -->
+    <script src="plugin/highlight/highlight.js"></script> 
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
 
     <script>
-        // More info about config & dependencies:
-        // - https://github.com/hakimel/reveal.js#configuration
-        // - https://github.com/hakimel/reveal.js#dependencies
-
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
 
         Reveal.initialize({
+            hash: true,
 			width: 1920,
 			height: 1080,
             transition: 'slide',
             showNotes: window.location.search.match(/print-pdf/gi) ? true : false,
-            dependencies: [
-                { src: 'plugin/markdown/marked.js' },
-                { src: 'plugin/markdown/markdown.js' },
-                { src: 'plugin/notes/notes.js', async: true },
-				{ src: 'plugin/zoom-js/zoom.js', async: true },
-                { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
-            ]
+            plugins: [RevealHighlight, RevealMarkdown, RevealSearch, RevealNotes, RevealMath, RevealZoom ]
         });
     </script>
 </body>

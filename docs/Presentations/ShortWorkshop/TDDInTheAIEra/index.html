@@ -17,24 +17,25 @@
 <body>
     <div class="reveal">
         <div class="slides">
-            <section data-transition="slide-in slide-out" data-background='img/19ae31f8-078b-4bd3-8411-0222b6a09c25.jpg'>
+            <section data-transition="slide-in slide-out" data-background='img/130388b7-e1f8-4696-851f-49ec167ba0c0.png'>
 <a id="9acfa057-fc1f-40ae-a237-359ed3fcd7ce">&nbsp;</a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:cc990f9b-a685-4540-b76f-1740aaba937b -->
-<!-- ContentItem:685060d8-4205-4db9-b44d-9610a7729e7d -->
+<!-- ContentItem:e534a6f0-97cd-4d58-a2f8-ba7f9ec98d8b -->
 
 <table><tr><td style="vertical-align:top;">
-<h2 id="tdd-in-the-ai-era">TDD in the AI Era</h2>
-<h4 id="section"></h4>
+<h3 id="tdd-in-the-ai-era">TDD in the AI Era</h3>
 <hr />
-<h3 id="barry-s.stahl">Barry S. Stahl</h3>
-<h3 id="solution-architect-developer">Solution Architect &amp; Developer</h3>
-<h3 id="bsstahlcognitiveinheritance.com"><a href="https://fosstodon.org/@Bsstahl">@bsstahl@cognitiveinheritance.com</a></h3>
-<h3 id="httpscognitiveinheritance.com"><a href="https://cognitiveinheritance.com">https://CognitiveInheritance.com</a></h3>
+<h4 id="barry-s.stahl">Barry S. Stahl</h4>
+<h4 id="solution-architect-developer">Solution Architect &amp; Developer</h4>
+<h4 id="microsoft.net-mvp">Microsoft .NET MVP</h4>
+<h4 id="physics-math-nerd">Physics &amp; Math Nerd</h4>
+<h4 id="bsstahlcognitiveinheritance.com"><a href="https://fosstodon.org/@Bsstahl">@bsstahl@cognitiveinheritance.com</a></h4>
+<h4 id="httpscognitiveinheritance.com"><a href="https://cognitiveinheritance.com">https://CognitiveInheritance.com</a></h4>
 
 </td>
 <td style="text-align: left;">
-<img src="img/685060d8-4205-4db9-b44d-9610a7729e7d.png" alt="Transparent Half Width Image 720x800.png" />
+<img src="img/e534a6f0-97cd-4d58-a2f8-ba7f9ec98d8b.png" alt="Transparent Half Width Image 960x800.png" />
 </td>
 </tr></table></section>
 
@@ -152,6 +153,365 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 <img alt="bss-100-achievement-unlocked-1024x250.png" src="img/a042b106-4bab-4403-b5b6-0d7b414ef789.png" />
 </section>
 
+
+<section data-transition="slide-in slide-out">
+<a id="af61f720-e6ea-4b03-99d5-220b7ccd8095"><h1>The Abstraction Ladder</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:1c8d31f7-5a46-453d-b286-ee0fcc9268a1 -->
+<!-- ContentItem:58606eae-8efa-495e-a847-7a949f1a7c23 -->
+<aside class="notes"><p>Our job has always been to describe solutions in a form the machine can understand.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><strong>Machine code</strong>
+<ul>
+<li>Exact instructions the hardware executes.
+<ul>
+<li>Maximum precision</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>High-level languages</strong>
+<ul>
+<li>Express logic in readable source code.
+<ul>
+<li>Explicit control flow &amp; data structures</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Frameworks and libraries</strong>
+<ul>
+<li>Reusable abstractions and patterns.
+<ul>
+<li>Accelerate implementation and consistency.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>AI-assisted intent</strong>
+<ul>
+<li>Describe outcomes, constraints, &amp; behavior.
+<ul>
+<li>Tools synthesize structure.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/58606eae-8efa-495e-a847-7a949f1a7c23.png" alt="Abstraction-Ladder-Steps.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="d92dd90b-dee2-46cf-b2a6-443891d3e2a8"><h1>Raised Abstraction Requires Judgment</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f45f8cad-d9fd-400d-946a-22edabea7c2f -->
+<!-- ContentItem:6ab89dfd-c929-441c-9752-10bb208756fb -->
+<aside class="notes"><p>We now can hand a spec directly to AI and get working code, but we should only do that when humans truly do not need to understand or evolve the implementation.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><strong>We can delegate implementation now</strong>
+<ul>
+<li>A strong spec can be thrown over the wall and AI may produce plausible code.</li>
+</ul>
+</li>
+<li><strong>Capability is not permission</strong>
+<ul>
+<li>The decision is not &quot;can we&quot;; it is &quot;should we in this context&quot;.</li>
+</ul>
+</li>
+<li><strong>Use over-the-wall only with strict boundaries</strong>
+<ul>
+<li>Disposable code or permanently black-boxed services with stable contracts.</li>
+</ul>
+</li>
+<li><strong>Otherwise keep humans in the loop</strong>
+<ul>
+<li>Shared, long-lived, or high-risk code needs human-readable intent and design.</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/6ab89dfd-c929-441c-9752-10bb208756fb.png" alt="Spec-Over-Wall-Caution.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="e047464c-c449-49d9-b490-0d5f905b9f99"><h1>Principle - Simplest Thing First</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:79db6928-3859-4f1b-9517-698bd1ff6651 -->
+<!-- ContentItem:f88447af-050b-4680-a4ce-f2451ca3fbd6 -->
+<aside class="notes"><p>Before applying this idea to AI workflow, ground it in core TDD: start with the smallest step that can validate direction, then grow safely.
+Photo source: Ward Cunningham - Commons-1.jpg by Carrigg Photography for the Wikimedia Foundation, licensed CC BY-SA 3.0, via Wikimedia Commons. Composite image includes quote overlay added for this slide.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><strong>Start with the smallest meaningful step</strong>
+<ul>
+<li>Write the minimum failing test that proves you are solving
+the right problem.</li>
+</ul>
+</li>
+<li><strong>Then evolve safely</strong>
+<ul>
+<li>Make it pass, then refactor after behavior is protected by tests.</li>
+</ul>
+</li>
+<li><strong>Principle, not recipe</strong>
+<ul>
+<li>This is the same mindset we apply to evolving AI-assisted workflow.</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
+<img alt="Ward-Cunningham-Quote-Overlay.png" src="img/f88447af-050b-4680-a4ce-f2451ca3fbd6.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="93b6c227-6d08-4f96-85b3-881e5fb98eca"><h1>The Simplest Thing, Then Refactor</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:20f2fc28-1633-404b-a2ab-e88da79739a9 -->
+<!-- ContentItem:81d150cc-c86e-4fd2-a3dc-71d1b80b3764 -->
+<aside class="notes"><p>Start with the smallest workable AI-assisted loop, then refactor both code and workflow as confidence grows.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><strong>Simplest thing first</strong>
+<ul>
+<li>Fast feedback and comprehension.</li>
+</ul>
+</li>
+<li><strong>Start with lightweight AI support</strong>
+<ul>
+<li>Begin with Copilot outside the IDE.</li>
+<li>Learn what adds value in your context.</li>
+</ul>
+</li>
+<li><strong>Then refactor the workflow</strong>
+<ul>
+<li>Move to richer tools and techniques as needs become clearer.</li>
+<li>Increase sophistication once earned.</li>
+</ul>
+</li>
+<li><strong>No one-size-fits-all process</strong>
+<ul>
+<li>Use this principle to guide experiments.</li>
+<li>Keep adapting to context, risk, and constraints.</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/81d150cc-c86e-4fd2-a3dc-71d1b80b3764.png" alt="TDD-Workflow-Evolution.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="7ddb16d7-2003-467d-87fb-2441fd3ac0e6"><h1>Theory of Constraints</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:8954aa70-5eb0-4710-a863-2d4f899cbc22 -->
+<!-- ContentItem:0fcdcd3b-605b-4e47-b8df-8b86c6a9d62d -->
+<aside class="notes"><p>Theory of Constraints says throughput is set by the slowest step, and in AI-assisted TDD that bottleneck is usually comprehension, decomposition, or verification rather than typing.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><strong>Typing is no longer the main bottleneck</strong>
+<ul>
+<li>We produce code faster than we can understand it.</li>
+</ul>
+</li>
+<li><strong>Understanding the problem dominates</strong>
+<ul>
+<li>This is now the constraint.</li>
+<li>Spec quality and architectural choices limit progress.</li>
+<li>Architect for ability to reason about the system.</li>
+</ul>
+</li>
+<li><strong>Decomposition still matters</strong>
+<ul>
+<li>Large problems need careful slicing.</li>
+</ul>
+</li>
+<li><strong>Verification is the safety valve</strong>
+<ul>
+<li>Confidence costs (time &amp; money).</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/0fcdcd3b-605b-4e47-b8df-8b86c6a9d62d.png" alt="Theory-of-Constraints-General-Flow.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="29af40ad-a95c-4203-be93-2dd751a9968a"><h1>Human-AI Adoption Patterns</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:8b1daf1e-9b77-4441-8973-651e43c94ae6 -->
+<!-- ContentItem:312641bd-a355-421c-9466-c2f6f2f772b9 -->
+<aside class="notes"><p>Research on AI-assisted development supports an incremental adoption model: start with constrained uses, build calibration and review habits, and expand tooling as confidence and verification practices mature.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><strong>Start narrow, then iterate</strong>
+<ul>
+<li>Strong adopters begin with constrained use and expand as confidence grows.</li>
+</ul>
+</li>
+<li><strong>Speed gains do not remove human responsibility</strong>
+<ul>
+<li>AI helps with implementation throughput.</li>
+<li>Humans still own decomposition, design judgment, and verification.</li>
+</ul>
+</li>
+<li><strong>Calibration beats novelty</strong>
+<ul>
+<li>Teams improve by repeatedly reviewing outputs and tightening tests.</li>
+</ul>
+</li>
+<li><strong>TDD-aligned takeaway</strong>
+<ul>
+<li>Begin with the simplest safe loop, then refactor workflow and tooling.</li>
+</ul>
+</li>
+</ul>
+<p><em>Research: Barke et al. (2023); Nair et al. (2023); Chen et al. (2021).</em></p>
+
+</td>
+<td style="text-align: left;">
+<img src="img/312641bd-a355-421c-9466-c2f6f2f772b9.png" alt="Five Doors 800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="872aec33-f3ee-4bcc-a11f-0e49f52f4c95"><h1>Red-Green-Refactor Defines AI Scope</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:1eaddf8f-dd2a-45f9-a45d-e9e40dc29486 -->
+<!-- ContentItem:d36baffe-da9f-4a64-a1bb-c1178c5559fe -->
+<aside class="notes"><p>We keep AI inside a human-defined loop boundary: the failing test defines intent and constraints, AI implements within that scope, and humans validate before expanding scope again.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><strong>Use the loop as the decomposition boundary</strong>
+<ul>
+<li>Red-Green-Refactor is the unit of delegation, not the whole feature.</li>
+</ul>
+</li>
+<li><strong>Red defines control</strong>
+<ul>
+<li>The failing test captures intent, constraints, and what &quot;done&quot; means for this pass.</li>
+</ul>
+</li>
+<li><strong>Green uses AI for bounded implementation</strong>
+<ul>
+<li>AI can generate plausible code, but only inside the current test-defined scope.</li>
+</ul>
+</li>
+<li><strong>Refactor restores clarity before expansion</strong>
+<ul>
+<li>Human review, validation, and cleanup happen before asking AI for more.</li>
+</ul>
+</li>
+<li><strong>Result: speed without loss of accountability</strong>
+<ul>
+<li>We gain throughput while preserving human ownership of correctness and design.</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/d36baffe-da9f-4a64-a1bb-c1178c5559fe.png" alt="RGR-Human-Scoped-Loop.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="e31f78eb-c0eb-476b-b7d4-43f3bb85c0b3"><h1>AI as a Pairing Partner</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:b1d44084-7cb8-46ec-a61c-01b22fa542ae -->
+<!-- ContentItem:4bda6aa5-957a-432f-98d7-15e41a5c023c -->
+<aside class="notes"><p>AI tools can function as collaborative partners in development, combining their capability  to generate options with your judgment about direction and quality. Unlike human junior  developers, they offer infinite patience and immediate adaptation to feedback.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><strong>Mutual learning relationship</strong>
+<ul>
+<li>You learn from their approaches and methods.</li>
+<li>They learn and remember your patterns &amp; preferences.</li>
+</ul>
+</li>
+<li><strong>Dialogue and refinement</strong>
+<ul>
+<li>Have conversations with AIs about approaches.</li>
+<li>You guide direction; they generate options.</li>
+</ul>
+</li>
+<li><strong>Key difference from junior developers</strong>
+<ul>
+<li>No ego or defensiveness; they adapt to your feedback.</li>
+<li>Consistent availability and tireless iteration.</li>
+<li>Stop anytime and pick up where you left off.</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/4bda6aa5-957a-432f-98d7-15e41a5c023c.jpg" alt="Split Brain 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="f7c2e8b1-4a9f-4d2c-8e5b-9c3f1a2b4d6e"><h1>Tests Matter More Than the Code</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:a5d2f1c8-7b3e-4c9f-2a1d-5e8c6b9f3a2d -->
+<!-- ContentItem:a38df767-f62f-44dd-ad9c-d3d16e0bf0d3 -->
+<aside class="notes"><p>Tests define what the system must do, making intent readable by both humans and machines. They guarantee correctness and allow refactoring with confidence. Tests outlive implementations—code is temporary, behavior is durable.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><strong>Define what the system must do</strong>
+<ul>
+<li>Any agent (human or machine) can read the test to understand intent</li>
+</ul>
+</li>
+<li><strong>Guarantee correctness</strong>
+<ul>
+<li>Visible to both machines and humans</li>
+</ul>
+</li>
+<li><strong>Make implementation safely changeable</strong>
+<ul>
+<li>Any agent (human or machine) can refactor ruthlessly</li>
+</ul>
+</li>
+<li><strong>Tests outlive implementations</strong>
+<ul>
+<li>Code is temporary; behavior is durable</li>
+<li>Tests preserve the behavior</li>
+</ul>
+</li>
+</ul>
+<p><em>Key takeaways</em> - If the tests are right, the code can be anything - If the tests are wrong or missing, the code can't be trusted</p>
+
+</td>
+<td style="text-align: left;">
+<img src="img/a38df767-f62f-44dd-ad9c-d3d16e0bf0d3.jpg" alt="Contract 800x800.jpg" />
+</td>
+</tr></table></section>
 
 
         </div>
