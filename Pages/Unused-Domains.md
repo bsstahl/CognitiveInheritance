@@ -52,7 +52,6 @@ The following domains are available to be assigned to projects:
 * mrnovember.com
 * publicwebservices.com
 * publicwebservices.net
-* redbrim.com
 * relaxedandgroovy.com
 * ssv1site.com
 * toprotectandtosermon.com
