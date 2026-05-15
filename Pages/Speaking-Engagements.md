@@ -34,6 +34,8 @@ categories: []
 
 * **[MLcon New York 2026](https://mlconference.ai/speaker/barry-stahl/)** - 9/28/2026 - 10/2/2026 - "LLMs Under the Hood - Workshop", "The Future of Information Retrieval: A Deep-Dive into RAG" & "When you Don't Need an LLM: Deterministic Intelligence for Real World Apps"
 
+* **[TechBash 2026](https://www.techbash.com/)** - 10/13/2026 - 10/16/2026 - "Beyond Procedural Logic: Solving Problems Outside the Query" & "Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems"
+
 ### Past engagements
 
 * **[NDC Toronto 2026](https://ndctoronto.com/speakers/barry-stahl)** - 5/5/2026 - 5/8/2026 - "The Future of Information Retrieval: A Deep-Dive into RAG"
