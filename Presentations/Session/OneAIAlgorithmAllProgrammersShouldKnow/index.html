@@ -1,0 +1,765 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>One AI Algorithm</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/confoo.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-transition="slide-in slide-out" data-background='img/130388b7-e1f8-4696-851f-49ec167ba0c0.png'>
+<a id="e31d1a74-6f73-4de4-bfe8-d4243831a9ac">&nbsp;</a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:bf651247-902f-4a8c-91e9-5de0bdbd2f34 -->
+<!-- ContentItem:2f2cf6b5-5644-4a88-9520-c6401b4ecb23 -->
+
+<table><tr><td style="vertical-align:top;">
+<h2 id="one-ai-algorithm">One AI Algorithm</h2>
+<h3 id="all-programmers-should-know">All Programmers Should Know</h3>
+<hr />
+<h4 id="barry-s.stahl">Barry S. Stahl</h4>
+<h4 id="solution-architect-developer">Solution Architect &amp; Developer</h4>
+<h4 id="microsoft.net-mvp">Microsoft .NET MVP</h4>
+<h4 id="physics-math-nerd">Physics &amp; Math Nerd</h4>
+<h4 id="bsstahlcognitiveinheritance.com"><a href="https://fosstodon.org/@Bsstahl">@bsstahl@cognitiveinheritance.com</a></h4>
+<h4 id="httpscognitiveinheritance.com"><a href="https://cognitiveinheritance.com">https://CognitiveInheritance.com</a></h4>
+
+</td>
+<td style="text-align: left;">
+<img src="img/2f2cf6b5-5644-4a88-9520-c6401b4ecb23.png" alt="Transparent Half Width Image 800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="636059f9-aa9d-4444-b4ec-dd7f62badd98"><h1>Favorite Physicists & Mathematicians</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:30f7e9d2-b154-4895-bed7-2765f7bdc6fe -->
+<!-- ContentItem:8a83be06-76e9-4028-9630-c6a7de92ae99 -->
+<aside class="notes"><p>An up-to-date list is available on <a href="https://cognitiveinheritance.com/Pages/Favorites.html">my blog at https://cognitiveinheritance.com/Pages/Favorites.html</a>
+Please ping me on Mastodon to tell me where I messed-up with this list, or this presentation for that matter. 😉</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<h4 id="favorite-physicists">Favorite Physicists</h4>
+<ol>
+<li>Harold &quot;Hal&quot; Stahl</li>
+<li>Carl Sagan</li>
+<li>Richard Feynman</li>
+<li>Marie Curie</li>
+<li>Nikola Tesla</li>
+<li>Albert Einstein</li>
+<li>Neil Degrasse Tyson</li>
+<li>Niels Bohr</li>
+<li>Galileo Galilei</li>
+<li>Michael Faraday</li>
+</ol>
+<p><em>Other notables</em>: Stephen Hawking, Edwin Hubble, Leonard Susskind, Christiaan Huygens</p>
+
+</td>
+<td style="vertical-align:top;">
+<h4 id="favorite-mathematicians">Favorite Mathematicians</h4>
+<ol>
+<li>Ada Lovelace</li>
+<li>Alan Turing</li>
+<li>Johannes Kepler</li>
+<li>Rene Descartes</li>
+<li>Isaac Newton</li>
+<li>Emmy Noether</li>
+<li>George Boole</li>
+<li>Blaise Pascal</li>
+<li>Johann Gauss</li>
+<li>Grace Hopper</li>
+</ol>
+<p><em>Other notables</em>: Daphne Koller, Grady Booch, Leonardo Fibonacci, Evelyn Berezin, Benoit Mandelbrot</p>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="a1e2eaad-5633-41dc-9e1b-c724e30ac85f"><h1>Fediverse Supporter</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f48757bb-8e16-418d-857d-26908de5ef1e -->
+<!-- ContentItem:a937ed96-7c15-4ede-a3d0-09dc382590eb -->
+<aside class="notes"><p>It is now more important than ever that we create networks that are not  controlled by corporate entities or petulant oligarchs</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>See my presentation from CodeMash 2025: <a href="https://www.youtube.com/watch?v=FdlJVG2GjLY">How the Fediverse Could Save Democracy &amp; Why It Probably Won't</a></p>
+</li>
+<li><p>Hear my thoughts on why a thriving Fediverse is so critical on David Giard's <a href="https://davidgiard.com/barry-stahl-on-the-fediverse">Technology and Friends</a> show.</p>
+</li>
+<li><p>Learn more about the Fediverse at <a href="https://fediverse.party/en/fediverse">fediverse.party</a>.</p>
+</li>
+<li><p>Get your own Mastodon account at <a href="https://joinmastodon.org/">Join Mastodon</a>.</p>
+<ul>
+<li>Don't stress on what server to use, just pick one and go.  You can always move later.</li>
+</ul>
+</li>
+<li><p>Follow me on Mastodon at <a href="https://fosstodon.org/@bsstahl">@bsstahl@CognitiveInheritance.com</a>.</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/a937ed96-7c15-4ede-a3d0-09dc382590eb.png" alt="Logos.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Liquid Victor was used to create this slide deck</p>
+</aside>
+<a id="23528a73-7bc1-4e39-9f2f-c8b9e2cff982"><h1>Some OSS Projects I Run</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:f8cbcb81-15f7-48e0-bc29-b348732f6f05 -->
+<ol>
+<li><a href="https://github.com/bsstahl/liquidvictor">Liquid Victor</a> : Media tracking and aggregation [used to assemble this presentation]</li>
+<li><a href="https://github.com/bsstahl/pptail">Prehensile Pony-Tail</a> : A static site generator built in c#</li>
+<li><a href="https://github.com/bsstahl/testhelperextensions">TestHelperExtensions</a> : A set of extension methods helpful when building unit tests</li>
+<li><a href="https://github.com/bsstahl/conferencescheduler">Conference Scheduler</a> : A conference schedule optimizer</li>
+<li><a href="https://github.com/bsstahl/intentbot">IntentBot</a> : A microservices framework for creating conversational bots on top of Bot Framework</li>
+<li><a href="https://github.com/bsstahl/liquidnun">LiquidNun</a> : Library of abstractions and implementations for loosely-coupled applications</li>
+<li><a href="https://github.com/bsstahl/toastmastersagenda">Toastmasters Agenda</a> : A c# library and website for generating agenda's for Toastmasters meetings</li>
+<li><a href="https://github.com/bsstahl/PDM">ProtoBuf Data Mapper</a> : A c# library for mapping and transforming ProtoBuf messages</li>
+</ol>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>I am proud to be one of the founders of AZGiveCamp.
+GiveCamps are weekend events where we put a bunch of software creators in a room with a bunch of great local charities, and through the course of the weekend, we create software to help them further their mission</p>
+</aside>
+<a id="3129a405-82a7-432c-ae55-6f9d2335ab17"><h1>http://GiveCamp.org</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:2ca346de-d62c-4c6b-834d-7ccab290a6ab -->
+<img alt="GiveCamp.png" src="img/2ca346de-d62c-4c6b-834d-7ccab290a6ab.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>July 25, 2022 was my 100th public talk. Thank you for allowing me to participate in your community over these past few decades!</p>
+</aside>
+<a id="39c6410c-3913-410b-abab-984014a15d84"><h1>Achievement Unlocked</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a042b106-4bab-4403-b5b6-0d7b414ef789 -->
+<img alt="bss-100-achievement-unlocked-1024x250.png" src="img/a042b106-4bab-4403-b5b6-0d7b414ef789.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="16143411-df38-458d-a017-7f0007180bc1"><h1>Artificial Intelligence</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:e91d8a4d-5a26-4639-b0d9-6fe6370edb9d -->
+<h2 id="a-computational-system-that-behaves-rationally">A Computational System that Behaves Rationally</h2>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="e0b7b691-35ef-4167-b2cd-1f37065bca8a"><h1>Rationality</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:dde3bd29-4b29-4337-b652-8b1d4a31cd80 -->
+<h3 id="a-system-is-rational-if-it-attempts-to-make-the-best-possible-decision-based-on-the-best-available-understanding-of-the-problem-model-and-of-the-state-of-the-domain-data">A system is rational if it attempts to make the best possible decision​ based on the best available understanding of the problem (model)​ and of the state of the domain (data)​.</h3>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="ddc19db3-8e66-4872-9921-f7424abb84f2"><h1>Intelligent Agents</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:e6cfa6aa-792b-4f0f-9111-b37256f00fe0 -->
+<img alt="Intelligent Agents.png" src="img/e6cfa6aa-792b-4f0f-9111-b37256f00fe0.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>We'll start by solving this toy problem using CP, then, once we understand how CP works, we'll explore why it is a good fit for solving knapsack problems.</p>
+</aside>
+<a id="9a8cdfed-b24a-4a40-8602-dfdf074aaed5"><h1>Canonical Knapsack Problem</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a79e1eb4-8014-4281-ad0e-193c15812972 -->
+<img alt="Knapsack Problem.png" src="img/a79e1eb4-8014-4281-ad0e-193c15812972.png" />
+</section>
+
+
+<section data-transition="slide-in fade-out">
+
+<a id="d8939e5a-ea82-423d-8208-ae6367d64b3a"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:7e180539-8714-4e43-b537-33ab6dfae457 -->
+<img alt="Slide7_1200x600.jpg" src="img/7e180539-8714-4e43-b537-33ab6dfae457.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="44894665-4675-4621-80a6-f53220a5a476"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:6bdb132e-ad01-4109-9ac6-f50a350bcd4a -->
+<img alt="Slide8_1200x600.jpg" src="img/6bdb132e-ad01-4109-9ac6-f50a350bcd4a.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="5c665d08-949f-40dd-8439-f1a91b38be33"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:57cd6f9b-f6c4-4cbc-beb1-9c24116ba44c -->
+<img alt="Slide9_1200x600.jpg" src="img/57cd6f9b-f6c4-4cbc-beb1-9c24116ba44c.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="05cc403a-9c04-489f-a0e3-726604ba23ea"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:8418d8c7-df87-4548-890a-b418101820c6 -->
+<img alt="Slide10_1200x600.jpg" src="img/8418d8c7-df87-4548-890a-b418101820c6.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="79bc9cc0-0440-4f5e-b76b-54897751e41d"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:75251b14-18c9-4530-a849-5e1d789065c9 -->
+<img alt="Slide11_1200x600.jpg" src="img/75251b14-18c9-4530-a849-5e1d789065c9.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="47d6be0c-378b-41d6-bb05-1454b0acfeaa"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:ba4fc1c8-3eb4-4d37-906f-9dc7de377e9a -->
+<img alt="Slide12_1200x600.jpg" src="img/ba4fc1c8-3eb4-4d37-906f-9dc7de377e9a.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="1d7d041a-e1c6-4b52-8501-4fccb0563e91"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a8b02119-64b3-439f-b470-418f72f89add -->
+<img alt="Slide13_1200x600.jpg" src="img/a8b02119-64b3-439f-b470-418f72f89add.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="13dc99a2-d806-427d-9227-dcdd3c3470ac"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:2c19ef71-d81b-4f5c-a57b-eb5ab9aefdd0 -->
+<img alt="Slide14_1200x600.jpg" src="img/2c19ef71-d81b-4f5c-a57b-eb5ab9aefdd0.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="d63a5e2b-0199-46cd-8d87-1b0742da8ed4"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:13edccac-b88f-4bed-98dc-374506caa698 -->
+<img alt="Slide15_1200x600.jpg" src="img/13edccac-b88f-4bed-98dc-374506caa698.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="8b5a925e-88b6-4741-8433-90ab5f385de2"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:9dfdd197-a092-4925-b3b3-171a581eea60 -->
+<img alt="Slide16_1200x600.jpg" src="img/9dfdd197-a092-4925-b3b3-171a581eea60.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="87acab75-f70f-4907-9f83-eb91cf5015fb"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:3a6b55b2-116a-4f9d-8f92-be5f1a289e64 -->
+<img alt="Slide17_1200x600.jpg" src="img/3a6b55b2-116a-4f9d-8f92-be5f1a289e64.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="ce768506-a612-450f-ad19-d45d3c660725"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:053887ad-058f-4758-989c-2a660e6ab75a -->
+<img alt="Slide18_1200x600.jpg" src="img/053887ad-058f-4758-989c-2a660e6ab75a.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="c46b01d8-71f5-4171-9c54-ad8713b97412"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:5dd782a7-ca7d-45a4-aff0-759dcac6bdc3 -->
+<img alt="Slide19_1200x600.jpg" src="img/5dd782a7-ca7d-45a4-aff0-759dcac6bdc3.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="af553b10-a5eb-40f9-af45-b984d03178ed"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:7f3922ba-cecf-4382-8f4a-3c499db58852 -->
+<img alt="Slide20_1200x600.jpg" src="img/7f3922ba-cecf-4382-8f4a-3c499db58852.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="3cd03684-a557-4f83-9f38-5d714a3a5a95"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:290d1bf9-fcf5-4a5c-85ad-0d14426a9a9d -->
+<img alt="Slide21_1200x600.jpg" src="img/290d1bf9-fcf5-4a5c-85ad-0d14426a9a9d.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="05171e4a-7ec3-4593-970f-64fefd78ab63"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:2c6212f8-2439-4a0f-8ea4-8e71ab36c0bb -->
+<img alt="Slide22_1200x600.jpg" src="img/2c6212f8-2439-4a0f-8ea4-8e71ab36c0bb.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="fc319834-7116-4c27-860f-ff6097b1d19a"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:0ee7f0ca-97d2-4b5c-b49e-f189d169346f -->
+<img alt="Slide23_1200x600.jpg" src="img/0ee7f0ca-97d2-4b5c-b49e-f189d169346f.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="246ebf5d-415b-47bc-a86b-7457486bf523"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:aa2aeeea-9d39-4f6c-9f8d-9ed29f35ccc0 -->
+<img alt="Slide24_1200x600.jpg" src="img/aa2aeeea-9d39-4f6c-9f8d-9ed29f35ccc0.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="6399ac55-1692-41a6-9c3f-fbcf42f5bb3d"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:9a387bed-a5b2-4bc4-92c7-be5fa1c28065 -->
+<img alt="Slide25_1200x600.jpg" src="img/9a387bed-a5b2-4bc4-92c7-be5fa1c28065.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="75c768ad-2fae-4c6f-b5c3-a8a2473c3c5d"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:1553f666-f8d7-4bcc-ad4f-05561f7bde56 -->
+<img alt="Slide26_1200x600.jpg" src="img/1553f666-f8d7-4bcc-ad4f-05561f7bde56.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="c83dbdb2-63a5-4892-ac59-db43be5c8048"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:7838e263-951a-435e-91e3-695a968d8d32 -->
+<img alt="Slide27_1200x600.jpg" src="img/7838e263-951a-435e-91e3-695a968d8d32.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="331d3fb8-8bbb-4b83-806e-abfe80f366c2"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:e1acee94-8d36-48d6-85d3-da07b4915406 -->
+<img alt="Slide28_1200x600.jpg" src="img/e1acee94-8d36-48d6-85d3-da07b4915406.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="c8e6cebb-ab94-497a-99c7-6c12435a8f0e"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:6297aacb-8e6e-4dce-9367-65abd32f4fc3 -->
+<img alt="Slide29_1200x600.jpg" src="img/6297aacb-8e6e-4dce-9367-65abd32f4fc3.jpg" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="8b18b779-4e34-42b6-8e90-96d402d554d0"><h1>Dynamic Programming</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:ae61c1c4-838d-455f-92aa-28951acc563a -->
+<h3 id="a-mathematical-optimization-technique">A mathematical optimization technique</h3>
+<ul>
+<li>Best for solving problems that can be described recursively</li>
+<li>Breaks the problem into smaller sub-problems​</li>
+<li>Solves each small problem only once​</li>
+<li>Guarantees an optimal solution​</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><ul>
+<li>Examples: Scheduling, Routing</li>
+<li>This will become very important later</li>
+</ul>
+</aside>
+<a id="0a7859bd-d578-4e82-852a-8512083742df"><h1>Optimization Problems</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:4285373f-edd6-4559-a1dd-3a6ff008bbca -->
+<ul>
+<li>Find the best values for a set of decision variables that​
+<ul>
+<li>Satisfies all constraints</li>
+<li>Maximizes the features we want​</li>
+<li>Minimizes the features we don’t want</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="2918edda-6864-46f6-a67f-9ade9ebf0621"><h1>Simple Example - Chutes and Ladders</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:ac2956de-585d-4e52-acad-ceb574de9071 -->
+<!-- ContentItem:1b49b56c-9ae2-42e6-824c-1ef4c13ad68e -->
+<img alt="Chutes and Ladders 3.gif" src="img/ac2956de-585d-4e52-acad-ceb574de9071.gif" />
+<img alt="Linear Array.jpg" src="img/1b49b56c-9ae2-42e6-824c-1ef4c13ad68e.jpg" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="35a5d5eb-5ca8-46b6-ad52-f165c452feea"><h1>Chutes and Ladders - Greedy Algorithm</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:0462237e-6157-4ca5-942e-41a807556391 -->
+<!-- ContentItem:9fd672c5-88f1-4410-b157-eb8bc17ae2ea -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Start at the 1st space on the board​</li>
+<li>While we haven't reached the last space​
+<ul>
+<li>Add the space to the current path​</li>
+<li>If the current space has a ladder​
+<ul>
+<li>Add the end of the ladder to the path​</li>
+<li>Make that space the current space​</li>
+</ul>
+</li>
+<li>Move to the next space on the board​</li>
+</ul>
+</li>
+<li>Return the completed path through the board</li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
+<img alt="Greedy Algorithm.jpg" src="img/9fd672c5-88f1-4410-b157-eb8bc17ae2ea.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="fd1e230a-511d-4d64-8b83-06240b612c09"><h1>Dynamic Programming - Step 1</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:7a7b1b5f-be64-4b71-9213-7e9129dc9bee -->
+<!-- ContentItem:bb573326-303a-4bf0-b131-818b43ae3d67 -->
+
+<table><tr><td style="vertical-align:top;">
+<h3 id="determinedistancesd">DetermineDistance(s,d)</h3>
+<ul>
+<li>Call <code>DetermineDistance(space[0], 0)</code></li>
+<li>If shorter​ than previously found
+<ul>
+<li>Set DistanceFromStart property</li>
+<li>If this space starts a chute or ladder​
+<ul>
+<li><code>DetermineDistance(endOfNavigation, distanceFromStart+1​)</code></li>
+</ul>
+</li>
+<li>If not at the end of board​
+<ul>
+<li><code>DetermineDistance(nextSpace, distanceFromStart+1)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Return all spaces with their DistanceFromStart property populated</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/bb573326-303a-4bf0-b131-818b43ae3d67.png" alt="Determine Distance from Start.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="0dccfbdf-8ff7-4019-960a-a8e224ad3567"><h1>Dynamic Programming - Step 2</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:3b82378d-4df0-4274-b11b-f8012518009e -->
+<!-- ContentItem:1a138932-ef64-4f30-8e2d-42d643e7f767 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Start at the last space on the board​</li>
+<li>While we are still on the board​
+<ul>
+<li>Add the current space to the path​</li>
+<li>Set the current space to a space that is a neighbor of the current space and whose DistanceFromStart is space.DistanceFromStart-1​</li>
+</ul>
+</li>
+<li>Reverse the direction of the path​</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/1a138932-ef64-4f30-8e2d-42d643e7f767.png" alt="Retrace Path - Smaller.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+
+<a id="f96b3651-1a05-4f5c-9a9d-a74a71d2b11f"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:50185bdb-927d-43ae-9739-be7b2795fdb4 -->
+<img alt="Memoization.gif" src="img/50185bdb-927d-43ae-9739-be7b2795fdb4.gif" />
+</section>
+
+
+<section data-transition="slide-in fade-out">
+
+<a id="ced234f8-ba00-4592-84fa-aaac8f99f909"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:84e31f8d-ddc8-4e1e-abb7-e174757324c6 -->
+<img alt="Slide79_1000x475.jpg" src="img/84e31f8d-ddc8-4e1e-abb7-e174757324c6.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="14ad7926-8ba5-4e9c-9e73-d2cbdcd99d66"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:4d2a8561-f700-4b62-8ea1-c5ea847e82b3 -->
+<img alt="Slide80_1000x475.jpg" src="img/4d2a8561-f700-4b62-8ea1-c5ea847e82b3.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="1e310437-2b44-450d-84bd-4a116a4448ec"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:7ba6edc3-693b-4fd2-94ee-1a0d6a89759d -->
+<img alt="Slide81_1000x475.jpg" src="img/7ba6edc3-693b-4fd2-94ee-1a0d6a89759d.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="f7f5f355-91a9-414c-858a-411d99ae5288"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:8de61654-74b4-4129-9724-ee9fab940381 -->
+<img alt="Slide82_1000x475.jpg" src="img/8de61654-74b4-4129-9724-ee9fab940381.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="29837c67-a5cb-43ac-b4f7-ecfb54e19698"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:d687db61-c883-4ae8-9309-576070e18c79 -->
+<img alt="Slide83_1000x475.jpg" src="img/d687db61-c883-4ae8-9309-576070e18c79.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="0033e17b-8417-4d09-9419-9c2f80e27c88"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:899cdfdb-c174-4751-9767-83ea8a596b96 -->
+<img alt="Slide84_1000x475.jpg" src="img/899cdfdb-c174-4751-9767-83ea8a596b96.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="e0697a92-d31e-49dc-8783-0667770432ae"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:7854676c-ff27-4d88-a803-9664960e7281 -->
+<img alt="Slide85_1000x475.jpg" src="img/7854676c-ff27-4d88-a803-9664960e7281.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="e43b6a01-5cd3-4b96-823b-5d0f12d16d97"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:6b2d0ed1-8105-4978-91a4-87a85e6fe9f4 -->
+<img alt="Slide86_1000x475.jpg" src="img/6b2d0ed1-8105-4978-91a4-87a85e6fe9f4.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="610c14c0-68b8-4cca-8906-04f0fdc69f34"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:ba70b51b-d706-48c6-9844-dba3f27da842 -->
+<img alt="Slide87_1000x475.jpg" src="img/ba70b51b-d706-48c6-9844-dba3f27da842.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="7c5cd43e-9284-4315-bbaf-62b769960992"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:39944679-28ce-426b-b1f7-9fff6a8871d0 -->
+<img alt="Slide88_1000x475.jpg" src="img/39944679-28ce-426b-b1f7-9fff6a8871d0.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="e0b7bfa9-fce1-4258-9a7b-78e7d68d26b4"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:1ab3927d-28f1-44bb-aa08-313d62ff830f -->
+<img alt="Slide89_1000x475.jpg" src="img/1ab3927d-28f1-44bb-aa08-313d62ff830f.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out">
+
+<a id="caf70f51-1ed6-4808-8d3f-5899a4be9633"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:22366ffb-7a28-47b5-87e1-355c59e8fc24 -->
+<img alt="Slide90_1000x475.jpg" src="img/22366ffb-7a28-47b5-87e1-355c59e8fc24.jpg" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="73bd6011-e0fd-4837-bb86-d75703d379ef"><h1>Summary - Dynamic Programming</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:d34d27d4-f1ad-4c81-b64d-a43f77cb3639 -->
+<ul>
+<li>Populate the cache​
+<ul>
+<li>Simple calculations​</li>
+<li>Build from the ground-up​</li>
+</ul>
+</li>
+<li>Use the cached data to determine the answer(s)​
+<ul>
+<li>Work backwards through the cache​</li>
+</ul>
+</li>
+<li>Guaranteed Optimality​
+<ul>
+<li>A fully populated cache means all options are explored​</li>
+<li>Works in any number of dimensions​</li>
+</ul>
+</li>
+<li>Works with any graph (nodes &amp; edges)​
+<ul>
+<li>Works best when​
+<ul>
+<li>Problems can be described recursively​</li>
+<li>1 or more axis are limited in scope</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="7c78c74e-1dd5-47b2-901d-5db4b8c9f74e"><h1>Resources</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:75ac44aa-bbd7-4c27-8a87-1172137f87ec -->
+<ul>
+<li>This Presentation
+<ul>
+<li><a href="https://CognitiveInheritance.com/Presentations/Session/OneAIAlgorithmAllProgrammersShouldKnow/">Slides</a> | <a href="https://github.com/bsstahl/DPDemo/">Code Samples</a></li>
+<li><a href="https://github.com/bsstahl/AIDemos">Other AI Demos</a></li>
+</ul>
+</li>
+<li>More Information
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Dynamic_programming">Dynamic Programming on Wikipedia</a></li>
+<li><a href="https://www.coursera.org/learn/discrete-optimization">Optimization - Coursera Course</a></li>
+</ul>
+</li>
+<li>Practice Examples​
+<ul>
+<li><a href="http://people.cs.clemson.edu/%7Ebcdean/dp_practice/">Clemson University</a></li>
+</ul>
+</li>
+<li>My Blog​
+<ul>
+<li><a href="http://www.CognitiveInheritance.com">Cognitive Inheritance</a></li>
+</ul>
+</li>
+<li>Complete Code Sample​
+<ul>
+<li><a href="https://github.com/bsstahl/DPDemo">DPDemo on GitHub</a></li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+
+        </div>
+        <div class="footer-left">One AI Algorithm</div>
+        <div class="footer-right">Barry S. Stahl - Mastodon:@bsstahl@cognitiveinheritance.com - Blog:http://www.cognitiveinheritance.com</div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <!-- Plugins -->
+    <script src="plugin/highlight/highlight.js"></script> 
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+
+        Reveal.initialize({
+            hash: true,
+			width: 1920,
+			height: 1080,
+            transition: 'slide',
+            showNotes: window.location.search.match(/print-pdf/gi) ? true : false,
+            plugins: [RevealHighlight, RevealMarkdown, RevealSearch, RevealNotes, RevealMath, RevealZoom ]
+        });
+    </script>
+</body>
+</html>

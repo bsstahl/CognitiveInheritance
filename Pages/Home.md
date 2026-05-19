@@ -30,13 +30,19 @@ categories: []
 ### Remotely Hosted Presentations
 
 * [A Devs Intro to AI](https://adevsintrotoai.azurewebsites.net/)
-* [Amazing Algorithms](https://amazingalgorithms.azurewebsites.net/)
 * [Avoiding Dual Writes](https://avoidingdualwrites.azurewebsites.net/)
-* [Design Patterns for Loose Coupling](http://designpatternsforloosecoupling.azurewebsites.net/)
 * [Dev Team Dreams](https://devteamdreams.azurewebsites.net/)
-* [Genetic Algorithms](http://geneticalgorithmsforai.azurewebsites.net/)
 * [Intro to Event Storming](http://introtoeventstorming.azurewebsites.net/)
 * [Introduction to Microservices](https://introtomicroservices.azurewebsites.net/)
+
+### Azure Redirects
+
+The following presentations redirect from Azure to CognitiveInheritance:
+
+* [Amazing Algorithms](https://amazingalgorithms.azurewebsites.net/)
+* [Design Patterns for Loose Coupling](http://designpatternsforloosecoupling.azurewebsites.net/)
+* [Genetic Algorithms](http://geneticalgorithmsforai.azurewebsites.net/)
+* [Intro to Embeddings](http://introtoembeddings.azurewebsites.net/)
 * [One AI Algorithm](https://oneaialgorithm.azurewebsites.net/)
 
 ## Other Link Groups
