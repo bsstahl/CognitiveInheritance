@@ -1,0 +1,897 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Design Patterns</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/bsstahl.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-transition="slide-in slide-out" data-background='img/130388b7-e1f8-4696-851f-49ec167ba0c0.png'>
+<a id="411ef8b3-8808-41a9-a17b-288643b88a6c">&nbsp;</a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:ee415499-bc96-4c9d-af41-f4a8b098ca9d -->
+<!-- ContentItem:2f2cf6b5-5644-4a88-9520-c6401b4ecb23 -->
+
+<table><tr><td style="vertical-align:top;">
+<h2 id="design-patterns">Design Patterns</h2>
+<h3 id="for-loosely-coupled-applications">for Loosely Coupled Applications</h3>
+<hr />
+<h4 id="barry-s.stahl">Barry S. Stahl</h4>
+<h4 id="microsoft.net-mvp">Microsoft .NET MVP</h4>
+<h4 id="physics-math-nerd">Physics &amp; Math Nerd</h4>
+<h4 id="bsstahlcognitiveinheritance.com"><a href="https://fosstodon.org/@Bsstahl">@bsstahl@cognitiveinheritance.com</a></h4>
+<h4 id="httpscognitiveinheritance.com"><a href="https://cognitiveinheritance.com">https://CognitiveInheritance.com</a></h4>
+
+</td>
+<td style="text-align: left;">
+<img src="img/2f2cf6b5-5644-4a88-9520-c6401b4ecb23.png" alt="Transparent Half Width Image 800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="636059f9-aa9d-4444-b4ec-dd7f62badd98"><h1>Favorite Physicists & Mathematicians</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:30f7e9d2-b154-4895-bed7-2765f7bdc6fe -->
+<!-- ContentItem:8a83be06-76e9-4028-9630-c6a7de92ae99 -->
+<aside class="notes"><p>An up-to-date list is available on <a href="https://cognitiveinheritance.com/Pages/Favorites.html">my blog at https://cognitiveinheritance.com/Pages/Favorites.html</a>
+Please ping me on Mastodon to tell me where I messed-up with this list, or this presentation for that matter. 😉</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<h4 id="favorite-physicists">Favorite Physicists</h4>
+<ol>
+<li>Harold &quot;Hal&quot; Stahl</li>
+<li>Carl Sagan</li>
+<li>Richard Feynman</li>
+<li>Marie Curie</li>
+<li>Nikola Tesla</li>
+<li>Albert Einstein</li>
+<li>Neil Degrasse Tyson</li>
+<li>Niels Bohr</li>
+<li>Galileo Galilei</li>
+<li>Michael Faraday</li>
+</ol>
+<p><em>Other notables</em>: Stephen Hawking, Edwin Hubble, Leonard Susskind, Christiaan Huygens</p>
+
+</td>
+<td style="vertical-align:top;">
+<h4 id="favorite-mathematicians">Favorite Mathematicians</h4>
+<ol>
+<li>Ada Lovelace</li>
+<li>Alan Turing</li>
+<li>Johannes Kepler</li>
+<li>Rene Descartes</li>
+<li>Isaac Newton</li>
+<li>Emmy Noether</li>
+<li>George Boole</li>
+<li>Blaise Pascal</li>
+<li>Johann Gauss</li>
+<li>Grace Hopper</li>
+</ol>
+<p><em>Other notables</em>: Daphne Koller, Grady Booch, Leonardo Fibonacci, Evelyn Berezin, Benoit Mandelbrot</p>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="a1e2eaad-5633-41dc-9e1b-c724e30ac85f"><h1>Fediverse Supporter</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f48757bb-8e16-418d-857d-26908de5ef1e -->
+<!-- ContentItem:a937ed96-7c15-4ede-a3d0-09dc382590eb -->
+<aside class="notes"><p>It is now more important than ever that we create networks that are not  controlled by corporate entities or petulant oligarchs</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>See my presentation from CodeMash 2025: <a href="https://www.youtube.com/watch?v=FdlJVG2GjLY">How the Fediverse Could Save Democracy &amp; Why It Probably Won't</a></p>
+</li>
+<li><p>Hear my thoughts on why a thriving Fediverse is so critical on David Giard's <a href="https://davidgiard.com/barry-stahl-on-the-fediverse">Technology and Friends</a> show.</p>
+</li>
+<li><p>Learn more about the Fediverse at <a href="https://fediverse.party/en/fediverse">fediverse.party</a>.</p>
+</li>
+<li><p>Get your own Mastodon account at <a href="https://joinmastodon.org/">Join Mastodon</a>.</p>
+<ul>
+<li>Don't stress on what server to use, just pick one and go.  You can always move later.</li>
+</ul>
+</li>
+<li><p>Follow me on Mastodon at <a href="https://fosstodon.org/@bsstahl">@bsstahl@CognitiveInheritance.com</a>.</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/a937ed96-7c15-4ede-a3d0-09dc382590eb.png" alt="Logos.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Liquid Victor was used to create this slide deck</p>
+</aside>
+<a id="23528a73-7bc1-4e39-9f2f-c8b9e2cff982"><h1>Some OSS Projects I Run</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:f8cbcb81-15f7-48e0-bc29-b348732f6f05 -->
+<ol>
+<li><a href="https://github.com/bsstahl/liquidvictor">Liquid Victor</a> : Media tracking and aggregation [used to assemble this presentation]</li>
+<li><a href="https://github.com/bsstahl/pptail">Prehensile Pony-Tail</a> : A static site generator built in c#</li>
+<li><a href="https://github.com/bsstahl/testhelperextensions">TestHelperExtensions</a> : A set of extension methods helpful when building unit tests</li>
+<li><a href="https://github.com/bsstahl/conferencescheduler">Conference Scheduler</a> : A conference schedule optimizer</li>
+<li><a href="https://github.com/bsstahl/intentbot">IntentBot</a> : A microservices framework for creating conversational bots on top of Bot Framework</li>
+<li><a href="https://github.com/bsstahl/liquidnun">LiquidNun</a> : Library of abstractions and implementations for loosely-coupled applications</li>
+<li><a href="https://github.com/bsstahl/toastmastersagenda">Toastmasters Agenda</a> : A c# library and website for generating agenda's for Toastmasters meetings</li>
+<li><a href="https://github.com/bsstahl/PDM">ProtoBuf Data Mapper</a> : A c# library for mapping and transforming ProtoBuf messages</li>
+</ol>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>I am proud to be one of the founders of AZGiveCamp.
+GiveCamps are weekend events where we put a bunch of software creators in a room with a bunch of great local charities, and through the course of the weekend, we create software to help them further their mission</p>
+</aside>
+<a id="3129a405-82a7-432c-ae55-6f9d2335ab17"><h1>http://GiveCamp.org</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:2ca346de-d62c-4c6b-834d-7ccab290a6ab -->
+<img alt="GiveCamp.png" src="img/2ca346de-d62c-4c6b-834d-7ccab290a6ab.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>July 25, 2022 was my 100th public talk. Thank you for allowing me to participate in your community over these past few decades!</p>
+</aside>
+<a id="39c6410c-3913-410b-abab-984014a15d84"><h1>Achievement Unlocked</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a042b106-4bab-4403-b5b6-0d7b414ef789 -->
+<img alt="bss-100-achievement-unlocked-1024x250.png" src="img/a042b106-4bab-4403-b5b6-0d7b414ef789.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>What makes loose coupling so important that we should spend an hour discussing design patterns that help us achieve this goal?</p>
+</aside>
+<a id="c0b22795-92ae-4146-bd31-6042bbf589c0"><h1>Why Loose Coupling</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:93650930-5dcc-413d-a302-4f360cbe1328 -->
+<img alt="why-medium.jpg" src="img/93650930-5dcc-413d-a302-4f360cbe1328.jpg" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="e685c7b7-1930-4690-bbb1-d0988458fa15"><h1>Application TCO</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:54f763c8-4c9f-43fc-a2b3-a7bcf8c25435 -->
+<!-- ContentItem:0171eb43-1291-47db-9706-58bca08a6191 -->
+<aside class="notes"><p>The vast majority of the cost of a typical enterprise application comes from Maintenance &amp; Extension.  For us to do our jobs efficiently, we must focus on minimizing Maintenance &amp; Extension costs.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>The Total Cost of Ownership of an application is the sum of all the costs of the application throughout its life-cycle.</p>
+</li>
+<li><p>These costs include creating, deploying, extending, maintaining and decommissioning the application.</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/54f763c8-4c9f-43fc-a2b3-a7bcf8c25435.png" alt="TCO Breakdown.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="e02dff58-762f-404e-bfe4-afd1ba595b8d"><h1>Loose Coupling Reduces TCO</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:032867b3-ce4f-4e08-b0aa-39c7c53387a7 -->
+<!-- ContentItem:2527cb4e-a931-4d08-a708-29a41bf1f3bd -->
+<aside class="notes"><p>Have you ever tried to convert an app from a file data source to a relational data source? It can often be very tricky because developers have a tendency to scatter awareness of the file throughout the application, mixing the data retrieval rules with the business rules.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Tight coupling makes it more difficult to modify one concern of the application without impacting others.</p>
+</li>
+<li><p>Maintenance &amp; Extension : more difficult == more expensive</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/032867b3-ce4f-4e08-b0aa-39c7c53387a7.png" alt="Loose vs Tight Coupling.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in fade-out">
+<aside class="notes"><p>The 1st 5 principles outlined by Robert C. Martin in his groundbreaking &quot;Principles of Object Oriented Design&quot;</p>
+</aside>
+<a id="3fad2d98-92e3-4e63-8d89-f070084eff9a"><h1>The SOLID Principles</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:743683c6-545c-4483-b13c-636aeee83c1c -->
+<ul>
+<li><em>S</em> - Single Responsibility Principle</li>
+<li><em>O</em> - Open/Closed Principle</li>
+<li><em>L</em> - Liskov Substitution Principle</li>
+<li><em>I</em> - Interface Segregation Principle</li>
+<li><em>D</em> - Dependency Inversion Principle</li>
+</ul>
+
+</section>
+
+
+<section data-transition="fade-in slide-out">
+<aside class="notes"><p>Two of these principles relate directly to the coupling of an application.</p>
+</aside>
+<a id="3fadec0c-a521-4e04-b9ad-d725ffb6302e"><h1>The SOLID Principles</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:7436c345-e1fb-4cba-9d8a-c02da358fa0a -->
+<ul>
+<li><em>S</em> - Single Responsibility Principle</li>
+<li><del><em>O</em> - Open/Closed Principle</del></li>
+<li><del><em>L</em> - Liskov Substitution Principle</del></li>
+<li><del><em>I</em> - Interface Segregation Principle</del></li>
+<li><em>D</em> - Dependency Inversion Principle</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="4e3698be-e053-45d6-a33d-22b0d7cce686"><h1>Agenda</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:77a83672-849a-4b2e-8228-36aa553195b9 -->
+<ul>
+<li><p>Design Principles</p>
+<ul>
+<li>The Single Responsibility Principle</li>
+<li>The Dependency Inversion Principle</li>
+</ul>
+</li>
+<li><p>A Sample Tightly-Coupled Application</p>
+</li>
+<li><p>Design Patterns</p>
+<ul>
+<li><em>Data Abstraction</em> using the <strong>Repository Pattern</strong></li>
+<li><em>Dependency Inversion</em> using the <strong>Dependency Injection Pattern</strong></li>
+<li><em>Logic Abstraction</em> using the <strong>Strategy Pattern</strong></li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>If there are 2 reasons for a class to change, those 2 aspects of the application are coupled together making it difficult to change one without impacting the other.</p>
+<p>Remember that a <strong>class</strong> means the source code. An <strong>object</strong> is an instance of a class. We are talking about the code for an object needing to change, <strong>not</strong> the object's state.</p>
+</aside>
+<a id="53d48790-ae52-443f-9b6a-26999c6245d9"><h1>The Single Responsibility Principle</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:4709cf9c-1244-4451-81c4-6f8dada0813b -->
+<blockquote>
+<p>A <strong>class</strong> should have only one reason to change</p>
+</blockquote>
+<ul>
+<li>A class should have 1 and only 1 <em>role</em></li>
+<li>A class should represent 1 and only 1 <em>abstraction</em></li>
+</ul>
+<p><strong>Also applies to modules and methods</strong></p>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Be on the lookout for anytime there might be 2 different reasons for the code in a class to have to change</p>
+</aside>
+<a id="25e1ff00-9c0e-44a9-a1f4-7020df20da46"><h1>SRP - Code Smells</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:6c2c2b87-5b2b-4912-a73d-62b55518a04c -->
+<h3 id="bolo-for-when-an-objects-code-has-to-be-changed-for-more-than-one-reason">BOLO for when an object's code has to be changed for more than one reason</h3>
+<ul>
+<li>database field name AND business rule</li>
+<li>business rule AND presentation logic</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="f3a65e14-4b3a-4a55-8ec7-851c22d3c58e"><h1>The Dependency Inversion Principle</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:6185fdac-1169-470f-80e4-a54f40ceda0f -->
+<blockquote>
+<p>Entities should depend on abstractions, not on concrete implementations</p>
+</blockquote>
+<ul>
+<li>A class should <strong>not</strong> have knowledge of its dependencies</li>
+<li>A class should <strong>only</strong> have knowledge of the capabilities its dependencies provide</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Be on the lookout for anytime there are details specific to an implementation known to other areas of the application.</p>
+<p>If validation rules must be available to multiple layers, be sure they are abstracted into a common library.</p>
+</aside>
+<a id="3d8be15f-df4c-44d1-83f4-d6f3352622cb"><h1>DIP - Code Smells</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:755dbf45-2b1d-4de9-bc49-8d1dbde7587e -->
+<h3 id="bolo-for-when-an-object-needs-to-know-details-of-its-dependencies">BOLO for when an object needs to know details of its dependencies</h3>
+<ul>
+<li>Business rules are aware of storage details</li>
+<li>UI logic knows specifics of business rules
+<ul>
+<li>Validation is a common exception</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Our application gets its data from the meeting system, processes it to determine what meetings need catering, then sends the appropriate catering information to the catering system</p>
+</aside>
+<a id="1042ee31-39ef-4029-bff9-99ae50ac428b"><h1>Our Demo Application</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:9c4e9860-a668-4dee-b5b7-c942165dc462 -->
+<img alt="DemoApplication.png" src="img/9c4e9860-a668-4dee-b5b7-c942165dc462.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Image: Danny Kaye and Sylvia Fine in formal dress at premiere of Five Pennies, 1959</p>
+</aside>
+<a id="1578b1d1-8677-49a6-aa33-cac733616ea7"><h1>Demo - A Tightly Coupled Application</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a41249bb-4e23-441d-96cc-c844cec1e025 -->
+<img alt="Danny Kaye and Sylvia Fine - Coupling.png" src="img/a41249bb-4e23-441d-96cc-c844cec1e025.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Violations of the Single Responsibility Principle and the Dependency Inversion Principle cause our application to be tightly-coupled and may cause problems for us during maintenance and extension</p>
+</aside>
+<a id="dc06b196-1e36-4b44-9b6c-3d3b1432c3cd"><h1>A Tightly Coupled Application</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a76ee9e7-f089-4a2e-b98f-0a948c6f7507 -->
+<ul>
+<li><p>Our App Violates <strong>SRP</strong></p>
+<ul>
+<li>Adding a field in the input file requires changes to the business-rule classes</li>
+<li>Changing the order of fields in the output file requires changes to the business-rule classes</li>
+<li>The <strong>Month</strong> and <strong>Meeting</strong> classes have multiple reasons to change</li>
+</ul>
+</li>
+<li><p>Our App Violates <strong>DIP</strong></p>
+<ul>
+<li>Knowledge of the input stream is required to process the data</li>
+<li>Knowledge of the output stream is required to produce the results</li>
+</ul>
+</li>
+<li><p>The 3 primary aspects of this application, the <strong>input</strong>, <strong>output</strong> &amp; <strong>business-rules</strong> are <em>tightly coupled</em></p>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="7520127d-00c2-47c4-a46f-5832d50d1547"><h1>Design Patterns</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:294b8a05-e1f5-405f-9a34-87522b1d171c -->
+<blockquote>
+<p>An abstract solution to a well known problem</p>
+</blockquote>
+<ul>
+<li>Design Patterns can help implement this architecture
+<ul>
+<li>Provide a prototype to follow for implementation</li>
+<li>Provide a common language to understand the solution</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="8e986966-7570-46c5-b2aa-48e0937cebc9"><h1>The Facade Pattern</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:03cfe43a-7646-4521-a9b3-a4dc043c6668 -->
+<blockquote>
+<p>Facade - A simplified view of an API that fronts a more complicated interface</p>
+</blockquote>
+<ul>
+<li>Goals of a Facade
+<ul>
+<li>Abstract the caller from the underlying implementation</li>
+<li>Simplify the API for the caller</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>The goals of a repository are the same as that of a facade, just specific to data storage concerns</p>
+</aside>
+<a id="37842094-4b45-4610-9afc-107da681dc20"><h1>The Repository Pattern</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:2013d55e-9fe5-41e5-abd0-6f373b1160fd -->
+<blockquote>
+<p>Repository - A somewhat standardized facade that fronts a data-store</p>
+</blockquote>
+<ul>
+<li><p>Goals of a Repository</p>
+<ul>
+<li>Abstract the caller from the underlying implementation</li>
+<li>Simplify the API for the caller</li>
+</ul>
+</li>
+<li><p>Differences from other Facades</p>
+<ul>
+<li>Specific to data stores</li>
+<li>Have a generally accepted basic structure</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>It is generally considered best-practice to limit a repository to one specific top-level entity</p>
+</aside>
+<a id="bf8342ed-0498-44e4-b9d0-11da33a803c0"><h1>Read Repository</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:0d282580-c3a2-4a93-860c-2a5f288ef732 -->
+<ul>
+<li>IMeetingReadRepository
+<ul>
+<li>GetAllMeetings()</li>
+<li>GetMeetingById(Id)</li>
+<li>GetMeetingsByDateRange(startDate, endDate)</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>It is best to separate the interfaces into read/write (Interface Segregation Principle) but the implementation may be done using one object that implements both interfaces</p>
+</aside>
+<a id="6b67c582-f5cc-4a79-ad33-db126342e35f"><h1>Write Repository</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:0b252d54-9d00-4cb1-acd4-050bbd0ee18b -->
+<ul>
+<li>IMeetingWriteRepository
+<ul>
+<li>SaveMeeting(meeting)</li>
+<li>SaveMeeting(Id, property1, property2, ...)</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>The fact is, we change our data sources every time we unit test (if we are testing in isolation). We also change the underlying stores of an application far more often than we’d like to admit</p>
+</aside>
+<a id="67ab6d55-faaf-4f90-98c0-1b3cb2232810"><h1>We Really Do Change Data Stores</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:fcd1e293-f38f-4628-8e90-6e3a5c67bced -->
+<ul>
+<li>You have changed data stores if:
+<ul>
+<li>You tested middle-tier logic in isolation (without testing the DB)</li>
+<li>You changed from a file-source to a relational store or web-service</li>
+<li>You added an API layer in front of an existing DB</li>
+<li>You added a caching layer in front of a data source</li>
+<li>You moved from a local DB to a cloud implementation</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>The interface should be generic to all implementations.</p>
+<p>Details specific to the implementation should be passed-in on the constructor.</p>
+</aside>
+<a id="262b86fe-12d4-4065-8ab9-82aba0036d25"><h1>Implementing an Abstraction</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:ebab68bc-2356-4f12-afb1-6e766ee207fa -->
+<pre><code>public interface IMeetingReadRepository { IEnumerable&lt;Meeting&gt; GetAllMeetings(); }
+</code></pre>
+<pre><code>public class FileMeetingReadRepository : IMeetingReadRepository
+    {
+        private Path _sourceFilePath;
+        public FileMeetingReader(Path sourcePath)
+        {
+            _sourceFilePath = sourceFilePath;
+        }
+
+        public IEnumerable&lt;Meeting&gt; GetMeetings()
+        {
+            // Load the meetings from the file
+        }
+    }
+</code></pre>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>We no longer have to change data-source and business-logic together, but the implementation is still known to the orchestrator</p>
+</aside>
+<a id="dc060e13-45de-4943-b5af-0b76becc8efe"><h1>A Less Tightly Coupled Application</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a76e5c3d-fd07-4d1f-91e0-1bb099740c03 -->
+<ul>
+<li><p><del>Our App Violates <strong>SRP</strong></del></p>
+<ul>
+<li>Business logic and data storage can change details independently</li>
+</ul>
+</li>
+<li><p>Our App <em>Still</em> Violates <strong>DIP</strong></p>
+<ul>
+<li>Knowledge of the data source is required to access the input data</li>
+<li>Knowledge of the input implementation is required to create the output</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>You'll recall that the DI Principle states that Entities should depend on abstractions, not on concrete implementations.</p>
+</aside>
+<a id="acfc1b81-ca7a-4113-9c10-c03dec3bed5b"><h1>Dependency Injection</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:13d66b9f-168a-41ea-a703-b2cab58db5b6 -->
+<blockquote>
+<p>An implementation of the Dependency Inversion Principle that provides the concrete implementations of abstract dependencies to client objects</p>
+</blockquote>
+<ul>
+<li>Goals of Dependency Injection
+<ul>
+<li>Abstract the caller from knowledge of implementation details</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Another method of implementing DI is <em>The Factory Pattern</em></p>
+</aside>
+<a id="4e5c177f-5688-4e43-a746-52e1a10c0a5f"><h1>Dependency Injection Frameworks</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:2ba025cf-3978-4796-9ffb-1af0f06f7618 -->
+<blockquote>
+<p>Tools for implementing Dependency Injection - Configured to hold the concrete implementations of dependencies</p>
+</blockquote>
+<ul>
+<li><p>Goals of DI Frameworks</p>
+<ul>
+<li>Abstract the caller from knowledge of implementation details</li>
+<li>Provide a well-known interface for <em>Service Location</em></li>
+</ul>
+</li>
+<li><p>Usage</p>
+<ul>
+<li>Can be &quot;wired-up&quot; to automate dependency resolution</li>
+<li>Can often be queried for a dependency by interface</li>
+<li>Some containers will also manage the life-cycle of the dependencies</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="d367dd80-e721-499f-87ee-6340b7a8cffb"><h1>Loose Coupling with DI</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:46c16ce0-30e6-4eb4-aee2-b0c46868704c -->
+<img alt="Loose Coupling with DI.png" src="img/46c16ce0-30e6-4eb4-aee2-b0c46868704c.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="6712313e-eb09-44e9-bdc4-ce4838599a9f"><h1>Querying for a Dependency</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:91861efa-1ffd-4f43-9c51-37092a3e7966 -->
+<blockquote>
+<p>A DI Framework can be queried for a dependency if the container is passed to the client which requests the dependency by its interface.</p>
+</blockquote>
+<pre><code>IServiceProvider _container;
+
+public Engine(IServiceProvider container)
+{
+    _container = container;
+}
+
+public void CreateData()
+{
+    IMeetingRepository repo = _container.GetService&lt;IMeetingRepository&gt;();
+    // Additional functionality here
+}
+</code></pre>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Frameworks like MOQ support creating mock objects that are very helpful testing interactions in isolation.</p>
+</aside>
+<a id="34805326-cac8-46a3-aacd-b27763ea2d9b"><h1>DI Supports Testability</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:e0cfa98d-d1c1-4c1b-8e61-147363b452c0 -->
+<blockquote>
+<p>Using DI, dependencies can be substituted with Fakes or Mocks for testing.</p>
+</blockquote>
+<pre><code>public void ShouldReturnFalseIfMeetingIsOverBeforeNoon()
+{
+    // Arrange - Add mock repo to container
+    IMeetingRepository repo = Mock.Of&lt;IMeetingRepository&gt;();
+    container.AddSingleton&lt;IMeetingRepository&gt;(repo);
+
+    // Act - Run the test in isolation
+    var target = new Engine(container);
+    target.Process(myMeeting);
+
+    // Assert - Add asserts here
+}
+</code></pre>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Our business-logic, at this point, is still tightly-coupled to the flow-of-control logic. This means we still have some violation of the SRP.</p>
+</aside>
+<a id="6df0ab50-2195-42e1-a990-1ae57bea3d03"><h1>A Fairly Loosely Coupled Application</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:cdbd0267-c2ab-45b5-8a98-15bc27a6e73a -->
+<ul>
+<li><p><del>Our App Violates <strong>SRP</strong></del></p>
+<ul>
+<li>Business logic and data storage can change independently</li>
+</ul>
+</li>
+<li><p><del>Our App Violates <strong>DIP</strong></del></p>
+<ul>
+<li>No knowledge of how data is stored is required to access the data</li>
+</ul>
+</li>
+<li><p>We now have a new set of mixed concerns (SRP violation)</p>
+<ul>
+<li>Our business logic is mixed-in with our orchestration logic</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>In many architectures, flow-of-control logic and business logic are inseparable.</p>
+</aside>
+<a id="ef330ffc-9357-4af4-a397-6620c9bd732a"><h1>A Traditional Architecture</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:23d87308-e4e6-4413-8857-72af5b100265 -->
+<img alt="Traditional Thinking.png" src="img/23d87308-e4e6-4413-8857-72af5b100265.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>An application with the flow from the previous slide can be architected as an orchestration with 3 dependencies, one for each aspect of the application. This separates business logic from the orchestration logic.</p>
+</aside>
+<a id="50224561-d8cd-4185-a51c-7c789082c1ee"><h1>Business vs Orchestration Logic</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:95ae6877-7717-4dab-9afc-753ba591138c -->
+<img alt="Loosely Coupled Thinking.png" src="img/95ae6877-7717-4dab-9afc-753ba591138c.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="8717f2e6-d376-44d6-b07d-0d34dbed8544"><h1>The Strategy Pattern</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:fd836a1a-12d2-4cbe-9cb2-bb4528d82c50 -->
+<blockquote>
+<p>An implementation of a facade that fronts an algorithm or other logic</p>
+</blockquote>
+<ul>
+<li><p>Goals of a Strategy</p>
+<ul>
+<li>Abstract the caller from the underlying implementation</li>
+<li>Simplify the API for the caller</li>
+</ul>
+</li>
+<li><p>Differences from other Facades</p>
+<ul>
+<li>Specific to logic</li>
+<li>Are less likely to contain side-effects (more functional)</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+
+<a id="b815e54b-d25e-4398-951f-128e8aa5ad6b"><h1>The Strategy Pattern Analogy</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:d7b7005a-c448-4de3-a575-f87be31ce4eb -->
+<img alt="Strategy Pattern Tweet.png" src="img/d7b7005a-c448-4de3-a575-f87be31ce4eb.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>If we have different logic for a manager than a salesperson, perhaps we have different strategies depending on who scheduled the meeting.</p>
+</aside>
+<a id="7cefed30-52de-454e-adae-f675726883d2"><h1>Implementing a Strategy</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:00a04b9d-0c49-4440-beab-c706254a5c78 -->
+<blockquote>
+<p>Using the Strategy's abstract interface any number of different strategies can be used to act on the data and can be easily swapped.</p>
+</blockquote>
+<pre><code>public interface ICateringStrategy { bool ShouldMeetingBeCatered(start, len) }
+</code></pre>
+<pre><code>public class CateringStrategyEngine: ICateringStrategy
+    {
+        public bool ShouldMeetingBeCatered(start,len)
+        {
+             // Logic here
+             return result;
+        }
+    }
+</code></pre>
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p>Image: Danny Kaye mock-fighting surrounded by men - scene from 'Knock on Wood', 1953</p>
+</aside>
+<a id="ba2ba896-9587-40f5-9b58-9f5f5e5fba2f"><h1>Demo - A Loosely Coupled App</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:19f0be15-0179-40a6-8908-7b0ed688e9d3 -->
+<img alt="Danny Kaye - Strategy.png" src="img/19f0be15-0179-40a6-8908-7b0ed688e9d3.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="80f2048d-f2f5-4689-a961-196021e317fd"><h1>What Have We Done?</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:853cb1ba-2ed6-4e73-8d59-e0f51e35c97e -->
+<!-- ContentItem:6152e2d7-7d4c-4e22-bc80-ec60b3c70771 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Data Source =&gt; Repository Pattern</p>
+</li>
+<li><p>Business Rules =&gt; Strategy Pattern</p>
+</li>
+<li><p>Abstractions =&gt; Dependency Injection</p>
+</li>
+<li><p>What about the Data Target?</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/853cb1ba-2ed6-4e73-8d59-e0f51e35c97e.png" alt="Loosely Coupled Activity.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="80f26461-6a5c-491d-a48e-d6fea81208de"><h1>Your Mission</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:853cb1ba-2ed6-4e73-8d59-e0f51e35c97e -->
+<!-- ContentItem:b85ff1be-8d6f-42eb-b083-3b92b475eca7 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Implement a target data store using the Repository and Dependency Injection patterns</p>
+</blockquote>
+<ul>
+<li>You can implement using:
+<ul>
+<li>File-system output</li>
+<li>A relational database</li>
+<li>A web-service</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/853cb1ba-2ed6-4e73-8d59-e0f51e35c97e.png" alt="Loosely Coupled Activity.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<aside class="notes"><p><strong>Master</strong> branch holds the completed code to this point (you can start here). <strong>DemoStartingPoint</strong> branch starts where we started today if you want to build it all yourself</p>
+</aside>
+<a id="90a92dc3-2a2e-47b2-aefd-e0faf128df66"><h1>Resources</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:aa2ca97f-a1e9-4ba4-b51f-6ba381af1dc0 -->
+<ul>
+<li><p>Demos &amp; Articles</p>
+<ul>
+<li>This Slide Deck: <a href="https://DesignPatternsForLooseCoupling.AzureWebsites.net">https://DesignPatternsForLooseCoupling.AzureWebsites.net</a></li>
+<li>My Blog: <a href="https://www.CognitiveInheritance.com">https://www.CognitiveInheritance.com</a></li>
+<li>Code Samples: <a href="https://www.github.com/bsstahl/DesignPatternsForLooseCoupling">https://www.github.com/bsstahl/DesignPatternsForLooseCoupling</a></li>
+</ul>
+</li>
+<li><p>Patterns</p>
+<ul>
+<li>DI: <a href="https://msdn.microsoft.com/en-us/library/hh323705(v=vs.100).aspx">https://msdn.microsoft.com/en-us/library/hh323705(v=vs.100).aspx</a></li>
+<li>Repository: <a href="https://msdn.microsoft.com/en-us/library/ff649690.aspx">https://msdn.microsoft.com/en-us/library/ff649690.aspx</a></li>
+</ul>
+</li>
+<li><p>Tooling</p>
+<ul>
+<li>MS DI: <a href="https://www.nuget.org/packages/Microsoft.Framework.DependencyInjection/">https://www.nuget.org/packages/Microsoft.Framework.DependencyInjection/</a></li>
+<li>MOQ: <a href="https://github.com/Moq/moq4/wiki/Quickstart">https://github.com/Moq/moq4/wiki/Quickstart</a></li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+
+        </div>
+        <div class="footer-left">Design Patterns</div>
+        <div class="footer-right">Barry S. Stahl - Mastodon:@bsstahl@cognitiveinheritance.com - Blog:http://www.cognitiveinheritance.com</div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <!-- Plugins -->
+    <script src="plugin/highlight/highlight.js"></script> 
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+
+        Reveal.initialize({
+            hash: true,
+			width: 1920,
+			height: 1080,
+            transition: 'slide',
+            showNotes: window.location.search.match(/print-pdf/gi) ? true : false,
+            plugins: [RevealHighlight, RevealMarkdown, RevealSearch, RevealNotes, RevealMath, RevealZoom ]
+        });
+    </script>
+</body>
+</html>
