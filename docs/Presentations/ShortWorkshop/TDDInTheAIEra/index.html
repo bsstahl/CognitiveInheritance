@@ -474,6 +474,96 @@ the right problem.</li>
 </td>
 </tr></table></section>
 
+<section data-transition="slide-in slide-out" data-background='img/0006ea33-25c8-4e2f-96fb-56f878474c65.png'>
+<aside class="notes"><p>On 2026-05-17, I asked GitHub Copilot to help set up code coverage and requested exclusion of test classes. It excluded at the assembly level instead of the class-level approach I usually use. That was a useful reminder: avoid prescribing the how unless the how is essential to the outcome.</p>
+</aside>
+<a id="7b7f34f1-a25c-406a-8a2a-3cce63924db8">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background='img/de09623e-00f3-4677-90da-42df945c8d9a.png'>
+<aside class="notes"><p>Another example: the agent fixed a Markdown rendering issue by switching
+to the &quot;literal block&quot; style (pipe dash) that keeps every line break exactly as I wrote it.
+I didn't realize YAML had different block styles. It turns out the &quot;literal&quot; version
+preserves my formatting, while the &quot;folded&quot; (greater-than dash) version silently turns line
+breaks into spaces.</p>
+</aside>
+<a id="11197c91-c81c-45d4-a820-24b4adbe8315">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out">
+<a id="33167be1-bd25-4597-9e59-fa9b85c70346"><h1>Coupling and Cohesion</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:77ddf851-373c-4ea0-bac5-7152d62fff57 -->
+<!-- ContentItem:032867b3-ce4f-4e08-b0aa-39c7c53387a7 -->
+<aside class="notes"><p>Coupling and cohesion are the design pressure gauges for refactoring. TDD keeps changes small so we can lower coupling and raise cohesion without losing behavioral confidence. Lower coupling tends to support stronger local cohesion because each unit owns a narrower, clearer responsibility.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Coupling: dependency load between units
+<ul>
+<li>Tighter coupling means 1 change forces many edits</li>
+<li>Increases complexity and raises risk</li>
+</ul>
+</li>
+<li>Cohesion: focus within a unit
+<ul>
+<li>High cohesion means modules have 1 reason to change</li>
+<li>Changes are isolated to a single module</li>
+</ul>
+</li>
+<li>The TDD loop exposes design friction
+<ul>
+<li>Red reveals setup and dependency pain</li>
+<li>Green shows overreach pressure</li>
+<li>Refactor makes unclear responsibilities obvious</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/032867b3-ce4f-4e08-b0aa-39c7c53387a7.png" alt="Loose vs Tight Coupling.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="fbcd54bd-8754-42f9-8f93-f5617790c7bb"><h1>The Facade Family of Patterns</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:a819c70d-9056-411a-950d-45a2dbc00d15 -->
+<!-- ContentItem:2b966f1a-ec00-48c5-8708-eeb172a6a3aa -->
+<aside class="notes"><p>Facade-style patterns create explicit seams that keep unit tests focused and dependencies replaceable. Repository and Strategy are specialized facade forms that reduce coupling pressure while increasing local cohesion, which makes Red-Green-Refactor loops safer and faster.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Facade creates a stable test seam
+<ul>
+<li>Callers get a small, stable surface area</li>
+</ul>
+</li>
+<li>Repository is facade for data access
+<ul>
+<li>Tests can isolate persistence with fakes/mocks</li>
+</ul>
+</li>
+<li>Strategy is facade for business logic
+<ul>
+<li>Behavior can be tested independent of algorithm</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/2b966f1a-ec00-48c5-8708-eeb172a6a3aa.png" alt="Repository Sample 1466x800.png" />
+</td>
+</tr></table></section>
+
 <section data-transition="slide-in slide-out">
 <a id="f7c2e8b1-4a9f-4d2c-8e5b-9c3f1a2b4d6e"><h1>Tests Matter More Than the Code</h1></a>
 <!-- Layout:ImageRight -->
@@ -510,6 +600,151 @@ the right problem.</li>
 </td>
 <td style="text-align: left;">
 <img src="img/a38df767-f62f-44dd-ad9c-d3d16e0bf0d3.jpg" alt="Contract 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="1d08ec2d-23fa-4cca-be9d-688d53593a75"><h1>Validate Tests with Mutations</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f3649671-09aa-4cfc-a40c-366169b0f540 -->
+<!-- ContentItem:be3ad736-48a5-4c52-92e8-85361b5bcd2b -->
+<aside class="notes"><p>One of the ways we have to validate our tests is mutation testing,  which intentionally changes production code in small ways to check whether tests fail appropriately. AI agents now make this practical much earlier and much more frequently inside normal loops.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Mutate code intentionally
+<ul>
+<li>Mimic realistic defects</li>
+</ul>
+</li>
+<li>Run existing tests against each mutant</li>
+<li>Killed mutants - Tests fail as expected
+<ul>
+<li>Validates tests detect incorrect behavior</li>
+</ul>
+</li>
+<li>Surviving mutants - Tests still pass
+<ul>
+<li>Expose weak assertions or missing cases</li>
+</ul>
+</li>
+<li>AI agents automate the loop
+<ul>
+<li>Mutations can be run early and often</li>
+<li>Used to be too dificult for regular use</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/be3ad736-48a5-4c52-92e8-85361b5bcd2b.png" alt="WhatIsMutationTesting-ConceptDiagram-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="c953caab-2709-4bc7-8242-1611708354fb"><h1>Mutation Testing in the AI Era</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:7d21e509-d651-4cbf-80ad-a16612292db4 -->
+<!-- ContentItem:d7cc0e2e-b16a-4830-a123-a2ca683ca138 -->
+<aside class="notes"><p>Mutation testing can now be part of the day-to-day loop instead of a rare, expensive exercise. AI-assisted workflows make it practical to run early, run often, and strengthen tests when mutants survive.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><strong>Run mutation tests early and often</strong>
+<ul>
+<li>Validate that tests catch real defects, not just happy paths.</li>
+</ul>
+</li>
+<li><strong>Treat surviving mutants as feedback</strong>
+<ul>
+<li>Strengthen assertions, add missing cases, or tighten boundaries.</li>
+</ul>
+</li>
+<li><strong>AI changes the economics</strong>
+<ul>
+<li>What used to be costly and slow is now practical inside normal loops.</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/d7cc0e2e-b16a-4830-a123-a2ca683ca138.png" alt="MutationTesting-TDD-Flowchart-800x800-labeled-v2-transparent.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="3a83d89e-18ea-4396-a2ff-f69912396796"><h1>Some Types of Mutations</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:b86e4994-a246-43d7-a1e6-3471dbc8dd5c -->
+<!-- ContentItem:26903239-fbe6-4e54-bac8-4f8677fa234f -->
+<aside class="notes"><p>Use this slide to name mutation families only. Keep it focused and visual so the audience can scan the categories quickly before introducing prompt strategies on the next slide.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Boundary conditions</p>
+<ul>
+<li><strong>Original:</strong> <code>if (count &lt; max)</code></li>
+<li><strong>Mutated:</strong> <code>if (count &lt;= max)</code></li>
+</ul>
+</li>
+<li><p>Arithmetic operators</p>
+<ul>
+<li><strong>Original:</strong> <code>total + fee</code></li>
+<li><strong>Mutated:</strong> <code>total - fee</code></li>
+</ul>
+</li>
+<li><p>Null / optional paths</p>
+<ul>
+<li><strong>Original:</strong> <code>user?.email</code> handling</li>
+<li><strong>Mutated:</strong> force null branch behavior</li>
+</ul>
+</li>
+<li><p>Return / exception behavior</p>
+<ul>
+<li><strong>Original:</strong> <code>return Success</code></li>
+<li><strong>Mutated:</strong> <code>throw ValidationException</code></li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/26903239-fbe6-4e54-bac8-4f8677fa234f.png" alt="MutationTestTypes-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out">
+<a id="69459207-b5a4-4f9c-a3e9-e60531c4b563"><h1>Mutation Test Prompts</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:1b399ad7-dd43-4be8-8094-d6829e68f1b4 -->
+<!-- ContentItem:363678cf-e9b9-45b0-92f9-d37f687e8f4a -->
+<aside class="notes"><p>Keep prompts generic and scenario-aware. Ask the model to propose appropriate mutations for the current code context, then tighten tests based on surviving mutants.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p><strong>Select candidates + run tests</strong></p>
+<ul>
+<li>&quot;Knowing this feature and tests, create code mutations likely to
+expose gaps in the tests, and run the tests with them in place.&quot;</li>
+</ul>
+</li>
+<li><p><strong>Improve tests</strong></p>
+<ul>
+<li>&quot;For surviving mutants, implement stronger tests and assertions. Do not modify production code.&quot;</li>
+</ul>
+</li>
+<li><p><strong>Iterate</strong></p>
+<ul>
+<li>Repeat until survivors are equivalent or out of scope. When complete, remove the mutations.</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/363678cf-e9b9-45b0-92f9-d37f687e8f4a.png" alt="MutationTestPrompts-GenericLoop-800x800.png" />
 </td>
 </tr></table></section>
 
