@@ -40,8 +40,6 @@ The following domains are available to be assigned to projects:
 * aztaxis.com
 * aztechnical.com
 * azticket.com
-* bienoblige.com
-* bonaenotae.com
 * buildingblockservices.com
 * buildingblockservices.net
 * chadfight.com
@@ -55,6 +53,5 @@ The following domains are available to be assigned to projects:
 * relaxedandgroovy.com
 * ssv1site.com
 * toprotectandtosermon.com
-* uofahole.com
 * utilityguy.com
 * webadmincentral.com
