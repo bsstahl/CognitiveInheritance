@@ -17,7 +17,7 @@
 <body>
     <div class="reveal">
         <div class="slides">
-            <section data-transition="slide-in slide-out" data-background='img/130388b7-e1f8-4696-851f-49ec167ba0c0.png'>
+            <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/130388b7-e1f8-4696-851f-49ec167ba0c0.png'>
 <a id="9acfa057-fc1f-40ae-a237-359ed3fcd7ce">&nbsp;</a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:cc990f9b-a685-4540-b76f-1740aaba937b -->
@@ -39,7 +39,7 @@
 </td>
 </tr></table></section>
 
-<section data-transition="slide-in slide-out">
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
 <a id="636059f9-aa9d-4444-b4ec-dd7f62badd98"><h1>Favorite Physicists & Mathematicians</h1></a>
 <!-- Layout:MultiColumn -->
 <!-- ContentItem:30f7e9d2-b154-4895-bed7-2765f7bdc6fe -->
@@ -83,7 +83,7 @@ Please ping me on Mastodon to tell me where I messed-up with this list, or this 
 </td>
 </tr></table></section>
 
-<section data-transition="slide-in slide-out">
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
 <a id="a1e2eaad-5633-41dc-9e1b-c724e30ac85f"><h1>Fediverse Supporter</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:f48757bb-8e16-418d-857d-26908de5ef1e -->
@@ -113,7 +113,7 @@ Please ping me on Mastodon to tell me where I messed-up with this list, or this 
 </td>
 </tr></table></section>
 
-<section data-transition="slide-in slide-out">
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
 <aside class="notes"><p>Liquid Victor was used to create this slide deck</p>
 </aside>
 <a id="23528a73-7bc1-4e39-9f2f-c8b9e2cff982"><h1>Some OSS Projects I Run</h1></a>
@@ -133,7 +133,7 @@ Please ping me on Mastodon to tell me where I messed-up with this list, or this 
 </section>
 
 
-<section data-transition="slide-in slide-out">
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
 <aside class="notes"><p>I am proud to be one of the founders of AZGiveCamp.
 GiveCamps are weekend events where we put a bunch of software creators in a room with a bunch of great local charities, and through the course of the weekend, we create software to help them further their mission</p>
 </aside>
@@ -144,7 +144,7 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 </section>
 
 
-<section data-transition="slide-in slide-out">
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
 <aside class="notes"><p>July 25, 2022 was my 100th public talk. Thank you for allowing me to participate in your community over these past few decades!</p>
 </aside>
 <a id="39c6410c-3913-410b-abab-984014a15d84"><h1>Achievement Unlocked</h1></a>
@@ -154,7 +154,7 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 </section>
 
 
-<section data-transition="slide-in slide-out">
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
 <a id="af61f720-e6ea-4b03-99d5-220b7ccd8095"><h1>The Abstraction Ladder</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:1c8d31f7-5a46-453d-b286-ee0fcc9268a1 -->
@@ -207,8 +207,8 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 </td>
 </tr></table></section>
 
-<section data-transition="slide-in slide-out">
-<a id="d92dd90b-dee2-46cf-b2a6-443891d3e2a8"><h1>Raised Abstraction Requires Judgment</h1></a>
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="d92dd90b-dee2-46cf-b2a6-443891d3e2a8"><h1>Judgement Required</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:f45f8cad-d9fd-400d-946a-22edabea7c2f -->
 <!-- ContentItem:6ab89dfd-c929-441c-9752-10bb208756fb -->
@@ -216,22 +216,22 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 </aside>
 <table><tr><td style="vertical-align:top;">
 <ul>
-<li><strong>We can delegate implementation now</strong>
+<li>We can delegate implementation now
 <ul>
 <li>A strong spec can be thrown over the wall and AI may produce plausible code.</li>
 </ul>
 </li>
-<li><strong>Capability is not permission</strong>
+<li>Capability is not permission
 <ul>
 <li>The decision is not &quot;can we&quot;; it is &quot;should we in this context&quot;.</li>
 </ul>
 </li>
-<li><strong>Use over-the-wall only with strict boundaries</strong>
+<li>Use over-the-wall only with strict boundaries
 <ul>
 <li>Disposable code or permanently black-boxed services with stable contracts.</li>
 </ul>
 </li>
-<li><strong>Otherwise keep humans in the loop</strong>
+<li>Otherwise keep humans in the loop
 <ul>
 <li>Shared, long-lived, or high-risk code needs human-readable intent and design.</li>
 </ul>
@@ -244,81 +244,7 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 </td>
 </tr></table></section>
 
-<section data-transition="slide-in slide-out">
-<a id="e047464c-c449-49d9-b490-0d5f905b9f99"><h1>Principle - Simplest Thing First</h1></a>
-<!-- Layout:MultiColumn -->
-<!-- ContentItem:79db6928-3859-4f1b-9517-698bd1ff6651 -->
-<!-- ContentItem:f88447af-050b-4680-a4ce-f2451ca3fbd6 -->
-<aside class="notes"><p>Before applying this idea to AI workflow, ground it in core TDD: start with the smallest step that can validate direction, then grow safely.
-Photo source: Ward Cunningham - Commons-1.jpg by Carrigg Photography for the Wikimedia Foundation, licensed CC BY-SA 3.0, via Wikimedia Commons. Composite image includes quote overlay added for this slide.</p>
-</aside>
-<table><tr><td style="vertical-align:top;">
-<ul>
-<li><strong>Start with the smallest meaningful step</strong>
-<ul>
-<li>Write the minimum failing test that proves you are solving
-the right problem.</li>
-</ul>
-</li>
-<li><strong>Then evolve safely</strong>
-<ul>
-<li>Make it pass, then refactor after behavior is protected by tests.</li>
-</ul>
-</li>
-<li><strong>Principle, not recipe</strong>
-<ul>
-<li>This is the same mindset we apply to evolving AI-assisted workflow.</li>
-</ul>
-</li>
-</ul>
-
-</td>
-<td style="vertical-align:top;">
-<img alt="Ward-Cunningham-Quote-Overlay.png" src="img/f88447af-050b-4680-a4ce-f2451ca3fbd6.png" />
-</td>
-</tr></table></section>
-
-<section data-transition="slide-in slide-out">
-<a id="93b6c227-6d08-4f96-85b3-881e5fb98eca"><h1>The Simplest Thing, Then Refactor</h1></a>
-<!-- Layout:ImageRight -->
-<!-- ContentItem:20f2fc28-1633-404b-a2ab-e88da79739a9 -->
-<!-- ContentItem:81d150cc-c86e-4fd2-a3dc-71d1b80b3764 -->
-<aside class="notes"><p>Start with the smallest workable AI-assisted loop, then refactor both code and workflow as confidence grows.</p>
-</aside>
-<table><tr><td style="vertical-align:top;">
-<ul>
-<li><strong>Simplest thing first</strong>
-<ul>
-<li>Fast feedback and comprehension.</li>
-</ul>
-</li>
-<li><strong>Start with lightweight AI support</strong>
-<ul>
-<li>Begin with Copilot outside the IDE.</li>
-<li>Learn what adds value in your context.</li>
-</ul>
-</li>
-<li><strong>Then refactor the workflow</strong>
-<ul>
-<li>Move to richer tools and techniques as needs become clearer.</li>
-<li>Increase sophistication once earned.</li>
-</ul>
-</li>
-<li><strong>No one-size-fits-all process</strong>
-<ul>
-<li>Use this principle to guide experiments.</li>
-<li>Keep adapting to context, risk, and constraints.</li>
-</ul>
-</li>
-</ul>
-
-</td>
-<td style="text-align: left;">
-<img src="img/81d150cc-c86e-4fd2-a3dc-71d1b80b3764.png" alt="TDD-Workflow-Evolution.png" />
-</td>
-</tr></table></section>
-
-<section data-transition="slide-in slide-out">
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
 <a id="7ddb16d7-2003-467d-87fb-2441fd3ac0e6"><h1>Theory of Constraints</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:8954aa70-5eb0-4710-a863-2d4f899cbc22 -->
@@ -357,214 +283,105 @@ the right problem.</li>
 </td>
 </tr></table></section>
 
-<section data-transition="slide-in slide-out">
-<a id="29af40ad-a95c-4203-be93-2dd751a9968a"><h1>Human-AI Adoption Patterns</h1></a>
-<!-- Layout:ImageRight -->
-<!-- ContentItem:8b1daf1e-9b77-4441-8973-651e43c94ae6 -->
-<!-- ContentItem:312641bd-a355-421c-9466-c2f6f2f772b9 -->
-<aside class="notes"><p>Research on AI-assisted development supports an incremental adoption model: start with constrained uses, build calibration and review habits, and expand tooling as confidence and verification practices mature.</p>
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="e047464c-c449-49d9-b490-0d5f905b9f99"><h1>Principle - Simplest Thing First</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:79db6928-3859-4f1b-9517-698bd1ff6651 -->
+<!-- ContentItem:f88447af-050b-4680-a4ce-f2451ca3fbd6 -->
+<aside class="notes"><p>Before applying this idea to AI workflow, ground it in core TDD: start with the smallest step that can validate direction, then grow safely.
+Photo source: Ward Cunningham - Commons-1.jpg by Carrigg Photography for the Wikimedia Foundation, licensed CC BY-SA 3.0, via Wikimedia Commons. Composite image includes quote overlay added for this slide.</p>
 </aside>
 <table><tr><td style="vertical-align:top;">
 <ul>
-<li><strong>Start narrow, then iterate</strong>
+<li><strong>Start with the smallest meaningful step</strong>
 <ul>
-<li>Strong adopters begin with constrained use and expand as confidence grows.</li>
+<li>Write the minimum failing test that proves you are solving
+the right problem.</li>
 </ul>
 </li>
-<li><strong>Speed gains do not remove human responsibility</strong>
+<li><strong>Then evolve safely</strong>
 <ul>
-<li>AI helps with implementation throughput.</li>
-<li>Humans still own decomposition, design judgment, and verification.</li>
+<li>Make it pass, then refactor after behavior is protected by tests.</li>
 </ul>
 </li>
-<li><strong>Calibration beats novelty</strong>
+<li><strong>Principle, not recipe</strong>
 <ul>
-<li>Teams improve by repeatedly reviewing outputs and tightening tests.</li>
-</ul>
-</li>
-<li><strong>TDD-aligned takeaway</strong>
-<ul>
-<li>Begin with the simplest safe loop, then refactor workflow and tooling.</li>
+<li>This is the same mindset we apply to evolving AI-assisted workflow.</li>
 </ul>
 </li>
 </ul>
-<p><em>Research: Barke et al. (2023); Nair et al. (2023); Chen et al. (2021).</em></p>
 
 </td>
-<td style="text-align: left;">
-<img src="img/312641bd-a355-421c-9466-c2f6f2f772b9.png" alt="Five Doors 800x800.png" />
+<td style="vertical-align:top;">
+<img alt="Ward-Cunningham-Quote-Overlay.png" src="img/f88447af-050b-4680-a4ce-f2451ca3fbd6.png" />
 </td>
 </tr></table></section>
 
-<section data-transition="slide-in slide-out">
-<a id="872aec33-f3ee-4bcc-a11f-0e49f52f4c95"><h1>Red-Green-Refactor Defines AI Scope</h1></a>
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="872aec33-f3ee-4bcc-a11f-0e49f52f4c95"><h1>Red-Green-Refactor Defines Scope</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:1eaddf8f-dd2a-45f9-a45d-e9e40dc29486 -->
-<!-- ContentItem:d36baffe-da9f-4a64-a1bb-c1178c5559fe -->
-<aside class="notes"><p>We keep AI inside a human-defined loop boundary: the failing test defines intent and constraints, AI implements within that scope, and humans validate before expanding scope again.</p>
+<!-- ContentItem:f06d1584-b8b9-4787-bd02-267b8ecaf0d3 -->
+<aside class="notes"><p>We keep implementation inside a controlled loop boundary: the failing test defines intent and constraints, implementation stays within that scope, and every change is validated before expanding scope again.</p>
 </aside>
 <table><tr><td style="vertical-align:top;">
 <ul>
-<li><strong>Use the loop as the decomposition boundary</strong>
+<li>Use the loop as the decomposition boundary
 <ul>
-<li>Red-Green-Refactor is the unit of delegation, not the whole feature.</li>
+<li>Each step is a bounded implementation unit.</li>
 </ul>
 </li>
-<li><strong>Red defines control</strong>
+<li>Red defines control
 <ul>
-<li>The failing test captures intent, constraints, and what &quot;done&quot; means for this pass.</li>
+<li>Failing tests represent our definition of done.</li>
 </ul>
 </li>
-<li><strong>Green uses AI for bounded implementation</strong>
+<li>Green uses minimal bounded implementation
 <ul>
-<li>AI can generate plausible code, but only inside the current test-defined scope.</li>
+<li>Implement only what is needed and in-scope.</li>
 </ul>
 </li>
-<li><strong>Refactor restores clarity before expansion</strong>
+<li>Refactor restores clarity before expansion
 <ul>
-<li>Human review, validation, and cleanup happen before asking AI for more.</li>
+<li>Review, validate, and clean up before moving on.</li>
 </ul>
 </li>
-<li><strong>Result: speed without loss of accountability</strong>
+<li>Result: speed without loss of accountability
 <ul>
-<li>We gain throughput while preserving human ownership of correctness and design.</li>
+<li>Controlled implementation in a logical process.</li>
 </ul>
 </li>
 </ul>
 
 </td>
 <td style="text-align: left;">
-<img src="img/d36baffe-da9f-4a64-a1bb-c1178c5559fe.png" alt="RGR-Human-Scoped-Loop.png" />
+<img src="img/f06d1584-b8b9-4787-bd02-267b8ecaf0d3.png" alt="classic-tdd-baseline-loop-vertical.png" />
 </td>
 </tr></table></section>
 
-<section data-transition="slide-in slide-out">
-<a id="e31f78eb-c0eb-476b-b7d4-43f3bb85c0b3"><h1>AI as a Pairing Partner</h1></a>
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="b1fbdf11-9ef3-48f6-b6e4-e559b556e623"><h1>TDD Helps Keep Scope In-Check</h1></a>
 <!-- Layout:ImageRight -->
-<!-- ContentItem:b1d44084-7cb8-46ec-a61c-01b22fa542ae -->
-<!-- ContentItem:4bda6aa5-957a-432f-98d7-15e41a5c023c -->
-<aside class="notes"><p>AI tools can function as collaborative partners in development, combining their capability  to generate options with your judgment about direction and quality. Unlike human junior  developers, they offer infinite patience and immediate adaptation to feedback.</p>
+<!-- ContentItem:9e1bfa02-2b94-4d36-a263-10e1a231e838 -->
+<!-- ContentItem:142d7e85-bcd1-4571-b898-936a96579dc8 -->
+<aside class="notes"><p>TDD disciplines us to change code in small, understandable increments. This reduces cognitive burden, keeps complexity manageable, and clarifies intent. Every Red-Green-Refactor loop should target one behavior and make sure refactoring happens only with full test coverage.</p>
 </aside>
 <table><tr><td style="vertical-align:top;">
 <ul>
-<li><strong>Mutual learning relationship</strong>
-<ul>
-<li>You learn from their approaches and methods.</li>
-<li>They learn and remember your patterns &amp; preferences.</li>
-</ul>
-</li>
-<li><strong>Dialogue and refinement</strong>
-<ul>
-<li>Have conversations with AIs about approaches.</li>
-<li>You guide direction; they generate options.</li>
-</ul>
-</li>
-<li><strong>Key difference from junior developers</strong>
-<ul>
-<li>No ego or defensiveness; they adapt to your feedback.</li>
-<li>Consistent availability and tireless iteration.</li>
-<li>Stop anytime and pick up where you left off.</li>
-</ul>
-</li>
+<li>TDD breaks work into manageable chunks</li>
+<li>Each loop covers a single behavior</li>
+<li>Small steps reduce cognitive load and risk</li>
+<li>Focused tests clarify intent and boundaries</li>
+<li>Confident refactoring possible with narrow scope</li>
 </ul>
 
 </td>
 <td style="text-align: left;">
-<img src="img/4bda6aa5-957a-432f-98d7-15e41a5c023c.jpg" alt="Split Brain 800x800.jpg" />
+<img src="img/142d7e85-bcd1-4571-b898-936a96579dc8.png" alt="tdd-pr-of-doom.png" />
 </td>
 </tr></table></section>
 
-<section data-transition="slide-in slide-out" data-background='img/0006ea33-25c8-4e2f-96fb-56f878474c65.png'>
-<aside class="notes"><p>On 2026-05-17, I asked GitHub Copilot to help set up code coverage and requested exclusion of test classes. It excluded at the assembly level instead of the class-level approach I usually use. That was a useful reminder: avoid prescribing the how unless the how is essential to the outcome.</p>
-</aside>
-<a id="7b7f34f1-a25c-406a-8a2a-3cce63924db8">&nbsp;</a>
-<!-- Layout:FullPage -->
-
-</section>
-
-
-<section data-transition="slide-in slide-out" data-background='img/de09623e-00f3-4677-90da-42df945c8d9a.png'>
-<aside class="notes"><p>Another example: the agent fixed a Markdown rendering issue by switching
-to the &quot;literal block&quot; style (pipe dash) that keeps every line break exactly as I wrote it.
-I didn't realize YAML had different block styles. It turns out the &quot;literal&quot; version
-preserves my formatting, while the &quot;folded&quot; (greater-than dash) version silently turns line
-breaks into spaces.</p>
-</aside>
-<a id="11197c91-c81c-45d4-a820-24b4adbe8315">&nbsp;</a>
-<!-- Layout:FullPage -->
-
-</section>
-
-
-<section data-transition="slide-in slide-out">
-<a id="33167be1-bd25-4597-9e59-fa9b85c70346"><h1>Coupling and Cohesion</h1></a>
-<!-- Layout:ImageRight -->
-<!-- ContentItem:77ddf851-373c-4ea0-bac5-7152d62fff57 -->
-<!-- ContentItem:032867b3-ce4f-4e08-b0aa-39c7c53387a7 -->
-<aside class="notes"><p>Coupling and cohesion are the design pressure gauges for refactoring. TDD keeps changes small so we can lower coupling and raise cohesion without losing behavioral confidence. Lower coupling tends to support stronger local cohesion because each unit owns a narrower, clearer responsibility.</p>
-</aside>
-<table><tr><td style="vertical-align:top;">
-<ul>
-<li>Coupling: dependency load between units
-<ul>
-<li>Tighter coupling means 1 change forces many edits</li>
-<li>Increases complexity and raises risk</li>
-</ul>
-</li>
-<li>Cohesion: focus within a unit
-<ul>
-<li>High cohesion means modules have 1 reason to change</li>
-<li>Changes are isolated to a single module</li>
-</ul>
-</li>
-<li>The TDD loop exposes design friction
-<ul>
-<li>Red reveals setup and dependency pain</li>
-<li>Green shows overreach pressure</li>
-<li>Refactor makes unclear responsibilities obvious</li>
-</ul>
-</li>
-</ul>
-
-</td>
-<td style="text-align: left;">
-<img src="img/032867b3-ce4f-4e08-b0aa-39c7c53387a7.png" alt="Loose vs Tight Coupling.png" />
-</td>
-</tr></table></section>
-
-<section data-transition="slide-in slide-out">
-<a id="fbcd54bd-8754-42f9-8f93-f5617790c7bb"><h1>The Facade Family of Patterns</h1></a>
-<!-- Layout:ImageRight -->
-<!-- ContentItem:a819c70d-9056-411a-950d-45a2dbc00d15 -->
-<!-- ContentItem:2b966f1a-ec00-48c5-8708-eeb172a6a3aa -->
-<aside class="notes"><p>Facade-style patterns create explicit seams that keep unit tests focused and dependencies replaceable. Repository and Strategy are specialized facade forms that reduce coupling pressure while increasing local cohesion, which makes Red-Green-Refactor loops safer and faster.</p>
-</aside>
-<table><tr><td style="vertical-align:top;">
-<ul>
-<li>Facade creates a stable test seam
-<ul>
-<li>Callers get a small, stable surface area</li>
-</ul>
-</li>
-<li>Repository is facade for data access
-<ul>
-<li>Tests can isolate persistence with fakes/mocks</li>
-</ul>
-</li>
-<li>Strategy is facade for business logic
-<ul>
-<li>Behavior can be tested independent of algorithm</li>
-</ul>
-</li>
-</ul>
-
-</td>
-<td style="text-align: left;">
-<img src="img/2b966f1a-ec00-48c5-8708-eeb172a6a3aa.png" alt="Repository Sample 1466x800.png" />
-</td>
-</tr></table></section>
-
-<section data-transition="slide-in slide-out">
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
 <a id="f7c2e8b1-4a9f-4d2c-8e5b-9c3f1a2b4d6e"><h1>Tests Matter More Than the Code</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:a5d2f1c8-7b3e-4c9f-2a1d-5e8c6b9f3a2d -->
@@ -603,7 +420,873 @@ breaks into spaces.</p>
 </td>
 </tr></table></section>
 
-<section data-transition="slide-in slide-out">
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="33167be1-bd25-4597-9e59-fa9b85c70346"><h1>Coupling and Cohesion</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:77ddf851-373c-4ea0-bac5-7152d62fff57 -->
+<!-- ContentItem:032867b3-ce4f-4e08-b0aa-39c7c53387a7 -->
+<aside class="notes"><p>Coupling and cohesion are the design pressure gauges for refactoring. TDD keeps changes small so we can lower coupling and raise cohesion without losing behavioral confidence. Lower coupling tends to support stronger local cohesion because each unit owns a narrower, clearer responsibility.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Coupling: dependency load between units
+<ul>
+<li>Tighter coupling means 1 change forces many edits</li>
+<li>Increases complexity and raises risk</li>
+</ul>
+</li>
+<li>Cohesion: focus within a unit
+<ul>
+<li>High cohesion means modules have 1 reason to change</li>
+<li>Changes are isolated to a single module</li>
+</ul>
+</li>
+<li>The TDD loop exposes design friction
+<ul>
+<li>Red reveals setup and dependency pain</li>
+<li>Green shows overreach pressure</li>
+<li>Refactor makes unclear responsibilities obvious</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/032867b3-ce4f-4e08-b0aa-39c7c53387a7.png" alt="Loose vs Tight Coupling.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="fbcd54bd-8754-42f9-8f93-f5617790c7bb"><h1>The Facade Family of Patterns</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:a819c70d-9056-411a-950d-45a2dbc00d15 -->
+<!-- ContentItem:2b966f1a-ec00-48c5-8708-eeb172a6a3aa -->
+<aside class="notes"><p>Facade-style patterns create explicit seams that keep unit tests focused and dependencies replaceable. Repository and Strategy are specialized facade forms that reduce coupling pressure while increasing local cohesion, which makes Red-Green-Refactor loops safer and faster.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Facade creates a stable test seam
+<ul>
+<li>Callers get a small, stable surface area</li>
+</ul>
+</li>
+<li>Repository is facade for data access
+<ul>
+<li>Tests can isolate persistence with fakes/mocks</li>
+</ul>
+</li>
+<li>Strategy is facade for business logic
+<ul>
+<li>Behavior can be tested independent of algorithm</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/2b966f1a-ec00-48c5-8708-eeb172a6a3aa.png" alt="Repository Sample 1466x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="9e8d1b8d-e1eb-4a60-939c-544ded893c0c"><h1>What Do We Need to Test?</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f69cc0a0-9e12-4671-a6fe-ed47aea2c6f7 -->
+<!-- ContentItem:8f4bef8c-672a-4cd9-a95e-0766597ee0db -->
+<aside class="notes"><p>Jeremy Clark asked me this question in South Florida in 2015. I had a good answer for him because I had been thinking about it a lot at the time.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Do we need 100% test coverage?</li>
+<li>What is &quot;too trivial&quot; to test?</li>
+<li>Should we test infrastructure code like logging?</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/8f4bef8c-672a-4cd9-a95e-0766597ee0db.png" alt="WhatToTest-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><ul>
+<li>Do we need 100% test coverage? - If we test everything important to our users, and we don't
+build anything our users don't care about, we're going to get ~100% coverage.</li>
+<li>What is &quot;too trivial&quot; to test? - Nothing that the users care about is too trivial to test.</li>
+<li>Should we test infrastructure code like logging? - The users don't care about logging, but they
+do care that we can support the application when needed. How we support it, and how we ensure that
+is going to be very specific to the application.</li>
+</ul>
+<p>Note: We don't want to chase 100% coverage for the sake of having 100%. Some single blocks aren't
+worth the effort, and are often unreachable due to guardrails anyway.</p>
+</aside>
+<a id="883b8aae-e00f-461d-aafd-311d34d3e999"><h1>What Do We Need to Test?</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:4c20e93b-ac3f-4766-82d7-cd46e00a64b6 -->
+<!-- ContentItem:6ce24f1e-9e7a-4c85-8b17-20ced49d7995 -->
+<img alt="TheStahlStandard.png" src="img/4c20e93b-ac3f-4766-82d7-cd46e00a64b6.png" />
+<ul>
+<li>Image Source: Jeremy Clark (2015),
+<a href="http://jeremybytes.com/Downloads/Slides-UnitTestingMakesMeFaster.pdf">Unit Testing Makes me Faster</a></li>
+<li>Jeremy's article:
+<a href="https://jeremybytes.blogspot.com/2015/02/unit-test-coverage-what-parts-of-your.html">Unit Test Coverage: What Parts of Your Application Do Your Users <em>Not</em> Care About?</a></li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="5e422085-2eab-4111-aa39-67e42ae61f09"><h1>Testing In Isolation</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:e5f270bd-e42e-4ca8-bda8-8cd5133bd9a1 -->
+<!-- ContentItem:d9562b82-479e-47cc-9074-3abaae05babd -->
+<aside class="notes"><p>How do we test things so that we are properly exercising the code being tested
+without retesting everyting that it depends on? This is a question of testing in isolation.
+There are 2 well-known schools of thought here.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>London School — Interaction-Driven</p>
+<ul>
+<li>Steve Freeman &amp; Nat Pryce
+<ul>
+<li><a href="https://www.growing-object-oriented-software.com/">Growing Object-Oriented Software, Guided by Tests</a></li>
+</ul>
+</li>
+<li>Unit = a single class  (collaborators mocked)</li>
+<li>Tests assert interactions</li>
+<li>Pros: strict boundaries, explicit roles</li>
+<li>Cons: brittle tests tied to internals</li>
+</ul>
+</li>
+<li><p>Detroit School — Behavior-Driven</p>
+<ul>
+<li>Kent Beck &amp; Martin Fowler
+<ul>
+<li><a href="https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530">Test-Driven Development: By Example</a></li>
+</ul>
+</li>
+<li>Unit = a behavior across objects (few mocks)</li>
+<li>Tests assert outcomes</li>
+<li>Pros: resilient tests, refactoring freedom</li>
+<li>Cons: harder to isolate business rules</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/d9562b82-479e-47cc-9074-3abaae05babd.jpg" alt="Embedding Differences - USA UK Argentina - 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="cd38a434-ccf1-43ca-ba9a-c4205e7513b9"><h1>Recommended Approach</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:5dceee63-176c-41f1-a143-b2948e42e4dc -->
+<!-- ContentItem:71f94e39-7d6b-4f9f-8f9e-94b1fa090f10 -->
+<aside class="notes"><p>I suggest starting with the Detroit philosophy and then evolving
+it as needed over time to best fit your workflow.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Detroit Philosophy at the Core</p>
+<ul>
+<li>Test behavior, not interactions</li>
+<li>Use real collaborators within a layer</li>
+<li>Keep tests stable under refactoring</li>
+</ul>
+</li>
+<li><p>Guiding Principle</p>
+<ul>
+<li>Define layer boundaries using SRP</li>
+<li>Mock/Fake boundaries, not objects</li>
+<li>Test behaviors, not collaborations</li>
+<li>Examples: data stores, external services, etc.</li>
+</ul>
+</li>
+<li><p>Why This Works</p>
+<ul>
+<li>Invariants tested in full isolation</li>
+<li>Internal object graph can evolve freely</li>
+<li>Clear seams for integration, observability, and resilience</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/71f94e39-7d6b-4f9f-8f9e-94b1fa090f10.jpg" alt="RoadToSuccess.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="72bf85fe-7398-4262-a575-3124253e1ed1"><h1>TDD Before AI</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f75bb9d2-91c2-4236-ac1f-e2c67bbdc3d2 -->
+<!-- ContentItem:f06d1584-b8b9-4787-bd02-267b8ecaf0d3 -->
+<aside class="notes"><p>Establish the historical baseline: Analyze -&gt; Red -&gt; Green -&gt; Refactor, with manual implementation as the primary bottleneck.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Red: write one failing test.
+<ul>
+<li>Describe intent and any boundaries.</li>
+<li>Tools might help stub the tests.</li>
+</ul>
+</li>
+<li>Green: Write the minimum code for tests to pass.
+<ul>
+<li>Most manual typing happened here.</li>
+<li>Don't create structure, just get to green.</li>
+</ul>
+</li>
+<li>Refactor.
+<ul>
+<li>Clean up names and logic.</li>
+<li>Improve structure and design.</li>
+<li>Run full test suite to prevent regressions.</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/f06d1584-b8b9-4787-bd02-267b8ecaf0d3.png" alt="classic-tdd-baseline-loop-vertical.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="7e265846-41da-4631-a939-b6a8b75ac8dd"><h1>Tests Drive the Next Action</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:f79e6e64-6d47-44a9-b875-0f9572976e19 -->
+<!-- ContentItem:0ed0613e-c204-4ece-911e-608575ce53eb -->
+<aside class="notes"><p>Use one implementation rule at a time to show that each failing
+test selects the next smallest implementation step.</p>
+<p>We'll start by stubbing the method using our language of choice's
+&quot;not implemented&quot; placeholder, then create the test against it.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<h3 id="change-password-service">Change Password service</h3>
+<ul>
+<li>Invariants
+<ul>
+<li><code>newPassword</code> must meet criteria</li>
+<li><code>oldPassword</code> must match current password</li>
+</ul>
+</li>
+<li>If invariants are satisfied, password is updated
+<ul>
+<li>Change is successful → return <code>true</code></li>
+<li>Return <code>false</code> otherwise</li>
+</ul>
+</li>
+<li>Start with Test 1: minimum length check
+<ul>
+<li>Stub the function</li>
+<li>Create the test</li>
+<li>See the test fail <u>appropriately</u></li>
+</ul>
+</li>
+<li>Questions:
+<ul>
+<li>Method signature (input/output)</li>
+<li>API Surface location</li>
+<li>Criteria for password strength</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
+<h3 id="test-cases">Test Cases:</h3>
+<p>[*] &lt;<code>n</code> chars → false</p>
+<p>[ ] old &lt;&gt; current → false</p>
+<p>[ ] All rules satisfied → true</p>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>&quot;Not implemented&quot; placeholders are language-specific in syntax but identical in intent. Regardless of language,  the meaning is clear.</p>
+</aside>
+<a id="b9822b58-a180-40f5-9034-c05f201218a1"><h1>Method Stubs</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:ac28d18c-f3e2-4913-91bb-2c68fd8d3866 -->
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Canonical Stub Mechanism</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://learn.microsoft.com/dotnet/api/system.notimplementedexception">C#</a></td>
+<td><code>throw new NotImplementedException();</code></td>
+</tr>
+<tr>
+<td><a href="https://en.cppreference.com/w/cpp/error/logic_error">C++</a></td>
+<td><code>throw std::logic_error(&quot;Not implemented&quot;);</code></td>
+</tr>
+<tr>
+<td><a href="https://hexdocs.pm/elixir/Kernel.html#raise/1">Elixir</a></td>
+<td><code>raise &quot;not implemented&quot;</code></td>
+</tr>
+<tr>
+<td><a href="https://go.dev/ref/spec#Handling_panics">Go</a></td>
+<td><code>panic(&quot;not implemented&quot;)</code></td>
+</tr>
+<tr>
+<td><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/UnsupportedOperationException.html">Java</a></td>
+<td><code>throw new UnsupportedOperationException(&quot;Not implemented&quot;);</code></td>
+</tr>
+<tr>
+<td><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">JavaScript / TypeScript</a></td>
+<td><code>throw new Error(&quot;Not implemented&quot;);</code></td>
+</tr>
+<tr>
+<td><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/TODO.html">Kotlin</a></td>
+<td><code>TODO(&quot;Not implemented&quot;)</code></td>
+</tr>
+<tr>
+<td><a href="https://www.php.net/manual/en/class.badmethodcallexception.php">PHP</a></td>
+<td><code>throw new \BadMethodCallException(&quot;Not implemented&quot;);</code></td>
+</tr>
+<tr>
+<td><a href="https://docs.python.org/3/library/exceptions.html#NotImplementedError">Python</a></td>
+<td><code>raise NotImplementedError(&quot;Not implemented&quot;)</code></td>
+</tr>
+<tr>
+<td><a href="https://ruby-doc.org/core/NotImplementedError.html">Ruby</a></td>
+<td><code>raise NotImplementedError, &quot;Not implemented&quot;</code></td>
+</tr>
+<tr>
+<td><a href="https://doc.rust-lang.org/std/macro.todo.html">Rust</a></td>
+<td><code>todo!()</code></td>
+</tr>
+<tr>
+<td><a href="https://developer.apple.com/documentation/swift/1539476-fatalerror">Swift</a></td>
+<td><code>fatalError(&quot;Not implemented&quot;)</code></td>
+</tr>
+</tbody>
+</table>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="9fc93023-b00b-4e1b-bcb5-79e8ba7edb8f"><h1>Stub the API Surface</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:b17d09b2-ac69-4cd1-93bb-353616d17486 -->
+<img alt="PasswordService_Change_Stub-1280x720.png" src="img/b17d09b2-ac69-4cd1-93bb-353616d17486.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>We don't care <u>how</u> the length is determined (inline or separate service).
+All we care about right now is that, if it is too short, we get a false result.</p>
+<p>What is the simplest thing we can do to make this test pass?</p>
+</aside>
+<a id="e122d688-cf5b-4703-a25e-d51a39702407"><h1>Min Length Test</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:84338c1e-afea-4fbb-8b8c-272d53134126 -->
+<img alt="PasswordService_Change_MinLengthTest-1280x720.png" src="img/84338c1e-afea-4fbb-8b8c-272d53134126.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="5c5c1120-21b8-421e-87e1-d2a89ae6a1b9"><h1>Tests Must Fail Properly</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:8b636d86-8b59-4ab9-862a-6ffebe6f0043 -->
+<img alt="PasswordService_Change_MinLengthTest-FailureMessage-1280x720.png" src="img/8b636d86-8b59-4ab9-862a-6ffebe6f0043.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="b0b0c34b-a295-4132-a65c-7ddd7e1a9b21"><h1>Do the Simplest Thing</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:54c44ef3-cc48-49ce-946a-6c8490b0019b -->
+<img alt="PasswordService_Change_SimplestThing-1280x720.png" src="img/54c44ef3-cc48-49ce-946a-6c8490b0019b.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="6f73c0be-7a1a-4f21-842d-e4ef1d7994ab"><h1>Refactor-Now Signals</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:c4f7da5e-aa9d-4f0d-a8c2-9b2ea4b2eb80 -->
+<!-- ContentItem:5b2d71cc-fc5e-42d6-a7bb-0b09b510c26d -->
+<aside class="notes"><p>This slide identifies concrete smells that suggest we should refactor now, before adding the next behavior. Keep the changes small and tied to specific pain in the current code.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><strong>Duplication is growing</strong>
+<ul>
+<li>Similar logic appears in multiple places.</li>
+</ul>
+</li>
+<li><strong>Responsibilities are blurred</strong>
+<ul>
+<li>Single Responsibility Principle (SRP) is violated.</li>
+</ul>
+</li>
+<li><strong>Naming no longer matches intent</strong>
+<ul>
+<li>Tests pass, but names and structure obscure the behavior.</li>
+</ul>
+</li>
+<li><strong>Change impact is widening</strong>
+<ul>
+<li>Behavior updates require touching many files or call sites.</li>
+</ul>
+</li>
+<li><strong>Tests are brittle or hard to write</strong>
+<ul>
+<li>Setup is heavy, seams are unclear, or assertions over-specify implementation details.</li>
+</ul>
+</li>
+<li><strong>Invariants are scattered</strong>
+<ul>
+<li>Critical rules are enforced in several locations instead of one clear boundary.</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/5b2d71cc-fc5e-42d6-a7bb-0b09b510c26d.png" alt="Copilot_20260525_184617.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="784051a9-21ce-4cbe-9e81-faab00148745"><h1>Next Test Decision</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:e263821c-7a53-46d5-aea9-d239a062aeda -->
+<!-- ContentItem:bba49171-d368-4914-b743-6660e55bc855 -->
+<aside class="notes"><p>Evaluation criteria:</p>
+<ul>
+<li>smallest change now</li>
+<li>fastest trustworthy feedback</li>
+<li>lowest coupling increase</li>
+<li>safest future refactor path.</li>
+</ul>
+<p>Discussion prompt: Which option would you implement here, and why?</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><strong>Next behavior to add</strong>
+<ul>
+<li>Reject the password change when the supplied current password does not match the stored password.</li>
+</ul>
+</li>
+<li><strong>New pressure introduced</strong>
+<ul>
+<li>The test needs current-credential context that likely comes from storage.</li>
+</ul>
+</li>
+<li><strong>Constraint to preserve</strong>
+<ul>
+<li>Keep scope small and feedback fast while protecting design boundaries.</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
+<ul>
+<li><strong>Option 1: Compare in method</strong>
+<ul>
+<li>Repository returns credential data; matching rule stays local.</li>
+</ul>
+</li>
+<li><strong>Option 2: Compare via in-process service</strong>
+<ul>
+<li>A domain service inside this app owns behavior.</li>
+</ul>
+</li>
+<li><strong>Option 3: Delegate to external auth</strong>
+<ul>
+<li>Use an external authority and consume the result.</li>
+</ul>
+</li>
+</ul>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="40503cdc-0a61-4eda-8345-8014e193663c"><h1>Same Discipline-New Pairing</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:c70c1db2-b4d6-43cd-b22b-02274222b3ae -->
+<!-- ContentItem:f29eda57-48eb-472f-bfd3-15c512576657 -->
+<aside class="notes"><p>Bridge slide that preserves continuity between baseline TDD and AI-assisted TDD. Reinforce invariants first, then contrast shifted bottlenecks and verification demands before introducing AI as a pairing partner.
+Same control system, different throughput and failure modes.
+Let's look at AI as the pairing partner in this same loop.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p><strong>What stays the same</strong></p>
+<ul>
+<li>Red-Green-Refactor remains the control loop.</li>
+<li>Tests still define intent and verify correctness.</li>
+<li>Human judgment still owns architecture, boundaries, and acceptance criteria.</li>
+</ul>
+</li>
+<li><p><strong>What changes with AI pairing</strong></p>
+<ul>
+<li>Idea/prototype throughput increases.</li>
+<li>Prompting and decomposition quality become bottlenecks.</li>
+<li>Verification rigor must increase because plausible output is cheap.</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
+<img alt="Same-Discipine-New-Pairing.png" src="img/f29eda57-48eb-472f-bfd3-15c512576657.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="e31f78eb-c0eb-476b-b7d4-43f3bb85c0b3"><h1>AI as a Pairing Partner</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:b1d44084-7cb8-46ec-a61c-01b22fa542ae -->
+<!-- ContentItem:4bda6aa5-957a-432f-98d7-15e41a5c023c -->
+<aside class="notes"><p>AI tools can function as collaborative partners in development, combining their capability  to generate options with your judgment about direction and quality. Unlike human junior  developers, they offer infinite patience and immediate adaptation to feedback.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><strong>Mutual learning relationship</strong>
+<ul>
+<li>You learn from their approaches and methods.</li>
+<li>They learn and remember your patterns &amp; preferences.</li>
+</ul>
+</li>
+<li><strong>Dialogue and refinement</strong>
+<ul>
+<li>Have conversations with AIs about approaches.</li>
+<li>You guide direction; they generate options.</li>
+</ul>
+</li>
+<li><strong>Key difference from junior developers</strong>
+<ul>
+<li>No ego or defensiveness; they adapt to your feedback.</li>
+<li>Consistent availability and tireless iteration.</li>
+<li>Stop anytime and pick up where you left off.</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/4bda6aa5-957a-432f-98d7-15e41a5c023c.jpg" alt="Split Brain 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/0006ea33-25c8-4e2f-96fb-56f878474c65.png'>
+<aside class="notes"><p>On 2026-05-17, I asked GitHub Copilot to help set up code coverage and requested exclusion of test classes. It excluded at the assembly level instead of the class-level approach I usually use. That was a useful reminder: avoid prescribing the how unless the how is essential to the outcome.</p>
+</aside>
+<a id="7b7f34f1-a25c-406a-8a2a-3cce63924db8">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/de09623e-00f3-4677-90da-42df945c8d9a.png'>
+<aside class="notes"><p>Another example: the agent fixed a Markdown rendering issue by switching
+to the &quot;literal block&quot; style (pipe dash) that keeps every line break exactly as I wrote it.
+I didn't realize YAML had different block styles. It turns out the &quot;literal&quot; version
+preserves my formatting, while the &quot;folded&quot; (greater-than dash) version silently turns line
+breaks into spaces.</p>
+</aside>
+<a id="11197c91-c81c-45d4-a820-24b4adbe8315">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="8fcd4fdf-bcad-4cdd-8565-f9e943f49796"><h1>TDD with AI Coding Agents</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:0fd95508-c539-45e8-b42b-a2e1805b7ad0 -->
+<!-- ContentItem:2c145f5b-1632-4b8d-8ee8-0ff32eba7dda -->
+<aside class="notes"><p>Contrast with the classic loop: fold alignment into Red, keep Green focused on implementation and docs, and make Refactor the place for structure, DSL shaping, and mutation testing.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Red: compact context and discuss scope with AI.
+<ul>
+<li>Architecture constraints, done criteria, and test strategy.</li>
+<li>Externalize assumptions before the first failing test.</li>
+</ul>
+</li>
+<li>Green: generate code and supporting docs.
+<ul>
+<li>AI proposes implementation options.</li>
+<li>Human forces limitation to &quot;Simplest thing...&quot;.</li>
+<li>Keep documentation aligned with the implementation.</li>
+</ul>
+</li>
+<li>Refactor: clean up structure and improve.
+<ul>
+<li>Better naming, shape, and reuse.</li>
+<li>Push toward a DSL whenever reasonable.</li>
+<li>Use mutation testing to validate the test suite.</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/2c145f5b-1632-4b8d-8ee8-0ff32eba7dda.png" alt="ai-assisted-tdd-loop-vertical.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="882cb594-aa3e-443e-83a0-145de7f2eaf0"><h1>Red Step: Establish Constraints</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:0b3e387e-2224-4f8f-902e-17ff0ccc2545 -->
+<!-- ContentItem:714e959a-722d-4e54-b2c4-014a8fe11007 -->
+<aside class="notes"><p>Make the Red step explicit for AI-assisted work: lock inputs, outputs, invariants, side effects, failures, and non-goals before writing the first failing test.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Setup
+<ul>
+<li>Compact context if needed.</li>
+<li>Discuss scope and strategy.</li>
+</ul>
+</li>
+<li>Define inputs and outputs.
+<ul>
+<li>Data shape, required/optional fields.</li>
+<li>Validations and state changes.</li>
+<li>Emitted events and visible behavior.</li>
+</ul>
+</li>
+<li>Define constraints and done criteria.
+<ul>
+<li>Feature Invariants.</li>
+<li>Allowed external calls and dependencies.</li>
+<li>Idempotency, and ordering.</li>
+<li>Errors and retries that are in-scope.</li>
+<li>What is explicitly out-of-scope.</li>
+</ul>
+</li>
+<li>Add failing test(s) that enforces scope.
+<ul>
+<li>More than 1-2 tests to start is a scope smell.</li>
+<li>Prompt pattern: &quot;Strict TDD mode; no behavior yet.&quot;</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/714e959a-722d-4e54-b2c4-014a8fe11007.png" alt="ai-assisted-tdd-loop-vertical-red-highlight.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="fd79e20f-a1fe-4c66-81f4-5815bfbe5bbd"><h1>Green Step: Implement Minimal Pass</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:48197939-7557-4e4a-9351-4f8db1c4f496 -->
+<!-- ContentItem:1dd2730d-8b28-464d-991f-56cdddf88b63 -->
+<aside class="notes"><p>Make the Green step explicit for AI-assisted work: implement the smallest behavior that satisfies the failing tests while honoring Red-step constraints. Defer deeper design to Refactor.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Implement the minimum behavior to make tests pass.
+<ul>
+<li>Lock scope to Red-step constraints.</li>
+</ul>
+</li>
+<li>Propose implementation options.
+<ul>
+<li>Only what is required to make the tests pass.</li>
+</ul>
+</li>
+<li>Determine tools/frameworks only when required.
+<ul>
+<li>Refactor toward preferred patterns later.</li>
+<li>Do not build object graphs yet.</li>
+</ul>
+</li>
+<li>Keep documentation aligned with implementation.
+<ul>
+<li>Update or create docs to reflect behavior and constraints.</li>
+</ul>
+</li>
+<li>Run tests and confirm the suite is green.
+<ul>
+<li>Prompt pattern: &quot;Strict TDD mode; satisfy tests only.&quot;</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/1dd2730d-8b28-464d-991f-56cdddf88b63.png" alt="ai-assisted-tdd-loop-vertical-green-highlight.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="b239111c-1f3a-4216-b702-629b50afd6cd"><h1>Refactor Step: Prove and Improve</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:71bbac10-9caa-4fc9-b9a6-e36d21ed7e7d -->
+<!-- ContentItem:7d6d7c54-8efc-4476-8d98-4967cb4221ee -->
+<aside class="notes"><p>Make Refactor explicit for AI-assisted workflows: verify behavior is protected,
+then improve code and tests for clarity and maintainability. Use coverage and
+mutation testing to increase confidence before moving on.</p>
+<p>There is a real tension here between keeping tests stable to protect behavior and refactoring them to improve
+structure and clarity. In practice, some refactorings will require touching production code, and some
+will require touching tests. The key is to keep the scope of each refactor batch manageable and to
+run the full suite frequently to catch any unintended changes in behavior as early as possible.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Refactor for clarity without changing behavior.
+<ul>
+<li>Improve names, decomposition, and reuse.</li>
+<li>Create object graphs and add frameworks as needed.</li>
+<li>Refactor both tests and production code if appropriate.
+<ul>
+<li>Be sure tests are stable before touching production code.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Strengthen confidence in the suite.
+<ul>
+<li>Run full tests after each meaningful refactor batch.</li>
+<li>Run coverage and inspect uncovered paths.</li>
+<li>Use mutation testing to expose weak assertions.</li>
+</ul>
+</li>
+<li>Squash here if appropriate to keep history clean.</li>
+<li>Prompt pattern: &quot;Strict TDD mode; refactor only; preserve behavior.&quot;</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/7d6d7c54-8efc-4476-8d98-4967cb4221ee.png" alt="Refactor_e3cf6867-1466-40a8-ad47-c91d78c6cc46.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="6de77943-bb77-41c0-a41b-13cc7551d0b0"><h1>More &amp; Better Refactorings</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f19a46c8-1812-4fcb-8675-806e83e18a84 -->
+<!-- ContentItem:a516551e-9139-4a00-bbf6-6d4c00691fa2 -->
+<aside class="notes"><p>Keep prompts generic and scenario-aware. Ask the model to propose appropriate mutations for the current code context, then tighten tests based on surviving mutants.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Use builders setup data more maintainably
+<ul>
+<li>For both tests and production code</li>
+</ul>
+</li>
+<li>Extract methods to improve readability
+<ul>
+<li>Make liberal use of Extension methods or equivalents</li>
+</ul>
+</li>
+<li>Create tests that are as declarative as possible
+<ul>
+<li>The test's intent should be directly readable in the test</li>
+<li>Readable tests matter more than clean prod code</li>
+<li>Clean Code -- But for Tests!</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/a516551e-9139-4a00-bbf6-6d4c00691fa2.png" alt="RefactorToDSL_800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="711d2288-6a1d-4fb6-ad1d-99c6527e85a4"><h1>Validate Using Coverage</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:77c1d673-5c8c-4e3a-8e25-45c41583598e -->
+<!-- ContentItem:8d3907a7-cbaa-431c-80f8-c2742e3e0dcb -->
+<aside class="notes"><p>Coverage is a confidence gate, not a trophy metric. Review uncovered code to decide whether behavior is intentionally out of scope or missing a test. Proceed only when test intent and implemented behavior are aligned.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><strong>Did we test what we built?</strong>
+<ul>
+<li>Verify expected and edge behaviors have explicit assertions.</li>
+</ul>
+</li>
+<li><strong>Missing coverage is a critical signal</strong>
+<ul>
+<li>Uncovered paths may indicate code is not acting as expected.</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
+<ul>
+<li><strong>Did we build what we tested?</strong>
+<ul>
+<li>Confirm implementation still matches test intent after refactor.</li>
+</ul>
+</li>
+<li><strong>Missing coverage is a critical signal</strong>
+<ul>
+<li>Uncovered paths may mean we coded ahead of the test.</li>
+</ul>
+</li>
+</ul>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="ef6a8da5-5e65-4580-a30a-abd0da83c59b"><h1>Coverage Decision Gate</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:39b4a1e4-cbe2-49dc-b091-c1839146f110 -->
+<!-- ContentItem:095cd059-6b4f-4fc1-8be6-1cb9e0d16e04 -->
+<aside class="notes"><p>Treat uncovered code as a decision signal. Classify each gap, then choose
+whether to proceed now or tighten tests first based on behavior risk.</p>
+<p>If we aren't confident, we now have many more tools at our disposal
+to help us understand the behavior and its risks before we move forward.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><strong>Question every gap</strong>
+<ul>
+<li>Missing test?</li>
+<li>Poorly behaving code?</li>
+<li>intentional scope boundary?</li>
+</ul>
+</li>
+<li><strong>Decision before proceeding</strong>
+<ul>
+<li>If alignment is unclear, pause and strengthen tests before moving on.</li>
+</ul>
+</li>
+<li><strong>Proceed rule</strong>
+<ul>
+<li>Move forward when confidence is behavior-based, not percentage-based.</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/095cd059-6b4f-4fc1-8be6-1cb9e0d16e04.png" alt="Pause-Sign-2.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
 <a id="1d08ec2d-23fa-4cca-be9d-688d53593a75"><h1>Validate Tests with Mutations</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:f3649671-09aa-4cfc-a40c-366169b0f540 -->
@@ -642,7 +1325,7 @@ breaks into spaces.</p>
 </td>
 </tr></table></section>
 
-<section data-transition="slide-in slide-out">
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
 <a id="c953caab-2709-4bc7-8242-1611708354fb"><h1>Mutation Testing in the AI Era</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:7d21e509-d651-4cbf-80ad-a16612292db4 -->
@@ -674,7 +1357,7 @@ breaks into spaces.</p>
 </td>
 </tr></table></section>
 
-<section data-transition="slide-in slide-out">
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
 <a id="3a83d89e-18ea-4396-a2ff-f69912396796"><h1>Some Types of Mutations</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:b86e4994-a246-43d7-a1e6-3471dbc8dd5c -->
@@ -715,7 +1398,7 @@ breaks into spaces.</p>
 </td>
 </tr></table></section>
 
-<section data-transition="slide-in slide-out">
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
 <a id="69459207-b5a4-4f9c-a3e9-e60531c4b563"><h1>Mutation Test Prompts</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:1b399ad7-dd43-4be8-8094-d6829e68f1b4 -->
@@ -748,6 +1431,594 @@ expose gaps in the tests, and run the tests with them in place.&quot;</li>
 </td>
 </tr></table></section>
 
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="50e05b06-5329-4dfe-8d90-7367a26c495d"><h1>Optional Amplifiers, Core Workflow</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:55b83087-ac93-4505-9282-4efd68c95127 -->
+<!-- ContentItem:c5e02932-9ba4-48e7-be21-032125a8ccba -->
+<aside class="notes"><p>Now that we've separated optional accelerators from the fundamentals, let's define the starting-point for your own workflow.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><strong>Refactoring prompts and mutation testing</strong>
+<ul>
+<li>Increase confidence, speed, and signal quality.</li>
+</ul>
+</li>
+<li><strong>Capability amplifiers</strong>
+<ul>
+<li>These are optional power-ups, not entry requirements.</li>
+</ul>
+</li>
+<li><strong>Use when risk is high</strong>
+<ul>
+<li>Apply them when complexity or cost of change increases.</li>
+</ul>
+</li>
+<li><strong>Skip when loop is already crisp</strong>
+<ul>
+<li>If feedback is clear and fast, keep the cycle lean.</li>
+</ul>
+</li>
+<li><strong>Baseline stays constant</strong>
+<ul>
+<li>Red-Green-Refactor remains the control system.</li>
+</ul>
+</li>
+<li><strong>Next step</strong>
+<ul>
+<li>Define the default workflow teams can run consistently first.</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/c5e02932-9ba4-48e7-be21-032125a8ccba.png" alt="Tools-for-your-workflow.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="29af40ad-a95c-4203-be93-2dd751a9968a"><h1>Human-AI Adoption Patterns</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:8b1daf1e-9b77-4441-8973-651e43c94ae6 -->
+<!-- ContentItem:312641bd-a355-421c-9466-c2f6f2f772b9 -->
+<aside class="notes"><p>Research on AI-assisted development supports an incremental adoption model: start with constrained uses, build calibration and review habits, and expand tooling as confidence and verification practices mature.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Start narrow, then iterate
+<ul>
+<li>Strong adopters begin with constrained use and expand as confidence grows.</li>
+</ul>
+</li>
+<li>Speed gains do not remove human responsibility
+<ul>
+<li>AI helps with implementation throughput.</li>
+<li>Humans still own decomposition, design judgment, and verification.</li>
+</ul>
+</li>
+<li>Calibration beats novelty
+<ul>
+<li>Teams improve by iterating on outputs.</li>
+</ul>
+</li>
+<li>TDD-aligned takeaway
+<ul>
+<li>Begin with the simplest safe loop, then refactor</li>
+</ul>
+</li>
+</ul>
+<p><em>Research: Barke et al. (2023); Nair et al. (2023); Chen et al. (2021).</em></p>
+
+</td>
+<td style="text-align: left;">
+<img src="img/312641bd-a355-421c-9466-c2f6f2f772b9.png" alt="Five Doors 800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/9769cc1b-756b-4935-8aec-53911dbac40e.png'>
+<aside class="notes"><ul>
+<li><p>The simplest workflow requires no tooling.
+This image is used in an <em>incognito</em> browser, not logged-in.
+Everyone has these tools available. No IDE plugin or CLI agent needed.</p>
+</li>
+<li><p>Copilot on the web (or ChatGPT, Gemini, etc)</p>
+<ul>
+<li>Discuss the project</li>
+<li>Generate code</li>
+<li>Copy the generated code</li>
+<li>Follow the red-green-refactor loop</li>
+</ul>
+</li>
+</ul>
+</aside>
+<a id="5bbefce8-44e0-480c-b5aa-4a66226a704b">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="a6db8a0f-aca5-45c4-90e5-fa2d268248f2"><h1>Types of tools Available</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:ebaf6408-52d4-4214-9e28-30bfd38bc590 -->
+<!-- ContentItem:e4d8768f-6b40-4e17-9847-c3fa099eb5a4 -->
+<aside class="notes"><p>There are a number of tools that can really help us with this workflow.
+Unfortunately, <code>Tool</code> is an overloaded term. Here, I mean it in the sense  of any development utility. Keep that separate from the tools used by agents to do their work autonomously.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><strong>By host</strong>
+<ul>
+<li>In the browser</li>
+<li>In the terminal</li>
+<li>In the IDE</li>
+</ul>
+</li>
+<li><strong>By purpose</strong>
+<ul>
+<li>Code generation</li>
+<li>Specification generators</li>
+<li>Workflow orchestrators</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/e4d8768f-6b40-4e17-9847-c3fa099eb5a4.png" alt="Workshop-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="cfae3771-88a9-40c9-ac41-b8f9180db964"><h1>Code Generation Tools</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:291f8270-7669-4f0e-a3b2-7ef857bb2bab -->
+<!-- ContentItem:b9bfe094-fe46-49ea-acbe-431a5880804e -->
+<aside class="notes"><p>Since all of these tools tend to produce code, they can be difficult to distinguish. Most tools
+have code generation features, but some do much much more. Some tools are primarily about
+creating code, including tests. How they gather requirements is what tends to differ.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><strong>What they do</strong>
+<ul>
+<li>Generate code, tests, and refactor suggestions.</li>
+</ul>
+</li>
+<li><strong>How they fit TDD</strong>
+<ul>
+<li>Used inside each red-green-refactor step.</li>
+<li>Verify with test suite before accepting output.</li>
+</ul>
+</li>
+<li><strong>Why they help</strong>
+<ul>
+<li>Reduce time spent on syntax and boilerplate.</li>
+<li>Humans focus on correctness and risk decisions.</li>
+</ul>
+</li>
+<li><strong>Practical guardrails</strong>
+<ul>
+<li>Small prompts, short diffs, and frequent test runs</li>
+<li>Review generated code as if from a new teammate.</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/b9bfe094-fe46-49ea-acbe-431a5880804e.png" alt="Copilot-Web-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="4ff86aeb-7119-4f75-b22a-377ca2b93194"><h1>Specification Generation Tools</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:452869a0-0a5a-40ae-8c06-ca65ef94d858 -->
+<!-- ContentItem:91c3f69e-bd40-4e0f-bf9f-e5738c7e0ed7 -->
+<aside class="notes"><p>Some tools focus on creating specifications and other artifacts that can be handed-off to code generators to provide the input to create code &amp; tests</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><strong>What they Produce</strong>
+<ul>
+<li>Structured requirements</li>
+<li>Constraints</li>
+<li>Acceptance criteria</li>
+</ul>
+</li>
+<li><strong>How they fit TDD</strong>
+<ul>
+<li>First, create a specification</li>
+<li>Then derive tests from it</li>
+<li>Finally, implement only what is needed.</li>
+</ul>
+</li>
+<li><strong>Why they help</strong>
+<ul>
+<li>Reduces churn</li>
+<li>Catches requirement gaps</li>
+<li>Keeps test intent aligned with behavior</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/91c3f69e-bd40-4e0f-bf9f-e5738c7e0ed7.png" alt="Kiro-Spec-680x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="cae254aa-14e2-4451-88f4-973cab39aeee"><h1>Workflow Tools</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:aa239fb5-8ff4-4a86-ad53-7c643e5a4c1d -->
+<!-- ContentItem:b9cbf0d2-f6e4-4068-9e8e-41fc142b5ba0 -->
+<aside class="notes"><p>Workflow orchestrators are primarily about controlling the loop. They automate many of the processes, sometimes to a dangerous degree. In order to maintain our human-in-the-loop control, we need to be thoughtful when adding these tools and very careful about adding guardrails.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><strong>What they do</strong>
+<ul>
+<li>Coordinate multi-step tasks.</li>
+<li>Bridges tools, repositories, and prompts.</li>
+<li>Includes state, retries, and handoffs.</li>
+</ul>
+</li>
+<li><strong>How they fit TDD</strong>
+<ul>
+<li>Automate repetitive workflow segments.</li>
+<li>Preserve human checkpoints.</li>
+</ul>
+</li>
+<li><strong>Where to add guardrails</strong>
+<ul>
+<li>Require plan approval</li>
+<li>Enforce test pass gates</li>
+<li>Cap diff size</li>
+<li>Require explicit review before merge</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/b9cbf0d2-f6e4-4068-9e8e-41fc142b5ba0.png" alt="Openclaw-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>This is just a small subset of tools in a rapidly evolving ecosystem.
+Use this matrix as an orientation map, then choose a minimal starting stack that matches team constraints and verification requirements.
+I've noticed that:</p>
+<ul>
+<li>Copilot does a better job of falling-back gracefully when it lacks a native capability
+<ul>
+<li>It reliably synthesizes a script or command</li>
+<li>More consistent than Cline/Roo in my experience</li>
+</ul>
+</li>
+<li>I'm most comfortable within the IDE
+<ul>
+<li>VS Code seems to have better integration (still) than Visual Studio</li>
+<li>JetBrains IDEs are still on my radar for investigation</li>
+</ul>
+</li>
+</ul>
+</aside>
+<a id="24c1751e-6294-43d0-8e5e-7fa8ea34fa21"><h1>Tool Matrix by Purpose</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:7cfbef40-a477-4142-a5c7-dc380c1e3178 -->
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Code Gen</th>
+<th>Spec Gen</th>
+<th>Workflow</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude</td>
+<td>Primary</td>
+<td>Supported</td>
+<td>Supported</td>
+<td><a href="https://docs.anthropic.com/en/docs/claude-code/overview">Claude Code Docs</a></td>
+</tr>
+<tr>
+<td>Cline/Roo</td>
+<td>Primary</td>
+<td>Supported</td>
+<td>Supported</td>
+<td><a href="https://docs.cline.bot/">Cline Docs</a> &amp; <a href="https://docs.roocode.com/">Roo Docs</a></td>
+</tr>
+<tr>
+<td>Copilot Chat</td>
+<td>Primary</td>
+<td>Supported</td>
+<td>Supported</td>
+<td><a href="https://code.visualstudio.com/docs/copilot/chat/copilot-chat">Copilot Chat Docs</a></td>
+</tr>
+<tr>
+<td>Copilot CLI</td>
+<td>Primary</td>
+<td>Supported</td>
+<td>Supported</td>
+<td><a href="https://docs.github.com/en/copilot/how-tos/use-copilot-with-the-command-line/use-github-copilot-in-the-command-line">Copilot CLI Docs</a></td>
+</tr>
+<tr>
+<td>Cursor</td>
+<td>Primary</td>
+<td>Supported</td>
+<td>Supported</td>
+<td><a href="https://docs.cursor.com/">Cursor Docs</a></td>
+</tr>
+<tr>
+<td>Kiro</td>
+<td>Supported</td>
+<td>Primary</td>
+<td>Supported</td>
+<td><a href="https://kiro.dev/">Kiro Docs</a></td>
+</tr>
+<tr>
+<td>OpenClaw</td>
+<td>Supported</td>
+<td>Supported</td>
+<td>Primary</td>
+<td><a href="https://github.com/search?q=OpenClaw&amp;type=repositories">OpenClaw Repos</a></td>
+</tr>
+<tr>
+<td>OpenCode</td>
+<td>Primary</td>
+<td>Supported</td>
+<td>Supported</td>
+<td><a href="https://github.com/search?q=OpenCode&amp;type=repositories">OpenCode Repos</a></td>
+</tr>
+<tr>
+<td>OpenSpec</td>
+<td>Supported</td>
+<td>Primary</td>
+<td>Supported</td>
+<td><a href="https://github.com/search?q=OpenSpec&amp;type=repositories">OpenSpec Repos</a></td>
+</tr>
+<tr>
+<td>SpecKit</td>
+<td>Supported</td>
+<td>Primary</td>
+<td>Supported</td>
+<td><a href="https://github.com/github/spec-kit">SpecKit Repo</a></td>
+</tr>
+<tr>
+<td>Squad/Ralph</td>
+<td>Supported</td>
+<td>Supported</td>
+<td>Primary</td>
+<td><a href="https://github.com/search?q=Squad+AI+coding&amp;type=repositories">Squad Repos</a></td>
+</tr>
+</tbody>
+</table>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="f07ed636-b301-45a7-b79e-039a025caa4a"><h1>AI Coach</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:0ab708b9-f9ac-481f-9a7a-f2afa779f3db -->
+<!-- ContentItem:7a088e10-70c1-4747-9d9a-a8e183f92321 -->
+<aside class="notes"><p>One tool is different from all the others. This one doesn't use the AI to produce anything other than insights about how you are using the other tools.  In particular, the <strong>Skill Finder</strong> seems extremely valuable when creating your workflow.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><strong>What AI Engineer Coach is</strong>
+<ul>
+<li>VS Code extension to analyze coding session logs.</li>
+<li>Turns usage details into coaching insights.</li>
+<li>Helps improve how your team uses those tools.</li>
+</ul>
+</li>
+<li><strong>What it provides</strong>
+<ul>
+<li>Anti-pattern detection</li>
+<li>Skill discovery</li>
+<li>Lots more now and in the future</li>
+</ul>
+</li>
+<li><strong>Reference</strong>
+<ul>
+<li><a href="https://github.com/microsoft/ai-engineering-coach">AI Engineer Coach</a></li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/7a088e10-70c1-4747-9d9a-a8e183f92321.png" alt="AIEngineerCoach-783x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="142f164d-eb23-41cf-ba83-df89424abdc3"><h1>Who Succeeds in the AI Era</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:ea7e70b6-fb09-430c-9d43-7769e27f6c25 -->
+<!-- ContentItem:521d7ef7-980b-4cc1-b488-b54001f8dae8 -->
+<aside class="notes"><p>The winning profile is not tool-brand loyalty. It is the ability to define constraints, evaluate architecture choices, verify outputs, and evolve the workflow deliberately. This is solution-architect behavior.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><strong>Define the problem and constraints clearly</strong>
+<ul>
+<li>Give the model bounded, testable targets.</li>
+</ul>
+</li>
+<li><strong>Recognize good architecture and tool choices</strong>
+<ul>
+<li>Match patterns and tools to the scenario.</li>
+</ul>
+</li>
+<li><strong>Verify output with tests and quality gates</strong>
+<ul>
+<li>Treat model output as a draft, not a guarantee.</li>
+</ul>
+</li>
+<li><strong>Evolve workflows and tools as confidence changes</strong>
+<ul>
+<li>Start simple, then increase capability deliberately.</li>
+</ul>
+</li>
+<li><strong>Delegate effectively to people and agents</strong>
+<ul>
+<li>Orchestrate grunt-work.</li>
+<li>Keep accountability human.</li>
+</ul>
+</li>
+<li><strong>In short: think like a solution architect</strong>
+<ul>
+<li>Own outcomes, tradeoffs, and verification.</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/521d7ef7-980b-4cc1-b488-b54001f8dae8.png" alt="SolutionArchitect-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="f687d6a6-104e-4459-bce5-d3d51d497c56"><h1>Start Where You Are</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f8ada7f6-1fbc-4f0b-bbc6-839178cfd905 -->
+<!-- ContentItem:16b9e3fe-810c-4f24-a352-cd8832efab0b -->
+<aside class="notes"><p>Start with the tools already available in your environment, then expand only when your current constraints prove you need more capability.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><strong>If you already have Copilot in VS Code</strong>
+<ul>
+<li>Start there and keep your loop tight.</li>
+</ul>
+</li>
+<li><strong>If you already have Claude Code or OpenCode</strong>
+<ul>
+<li>Start there and apply the same TDD gates.</li>
+</ul>
+</li>
+<li><strong>If you are new to these tools</strong>
+<ul>
+<li>Start with Copilot or Gemini in the browser.</li>
+<li>Learn the prompts and review habits before adding complexity.</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/16b9e3fe-810c-4f24-a352-cd8832efab0b.png" alt="StartWhereYouAre-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="47fbe12b-6130-46eb-ab64-e306049de5ac"><h1>Pick a Project You Know</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:a7926400-2181-49e5-bdb6-67d4d57b4d99 -->
+<!-- ContentItem:6237add4-70aa-4589-a0b0-227aecc0d3c9 -->
+<aside class="notes"><p>Ask attendees to choose a project they are comfortable with so they can focus on applying AI-assisted TDD discipline instead of learning a new domain. If they do not want to use their own project, direct them to the guided options on the next slide.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><strong>Pick a project you already understand</strong>
+<ul>
+<li>Real constraints make the exercise more valuable.</li>
+<li>Familiar domains keeps focus on workflow.</li>
+</ul>
+</li>
+<li><strong>Greenfield or Brownfield</strong>
+<ul>
+<li>Create that new project you've been thinking about.</li>
+<li>Or add features to an existing codebase.</li>
+</ul>
+</li>
+<li><strong>Start with a small, testable slice</strong>
+<ul>
+<li>Keep scope tight so loop stays observable.</li>
+<li>Work in a new branch for safety.</li>
+</ul>
+</li>
+<li><strong>If you prefer a safer sandbox</strong>
+<ul>
+<li>Use one of the packaged options on the next slide.</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/6237add4-70aa-4589-a0b0-227aecc0d3c9.png" alt="PostPublisher-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="02919db1-b055-4496-84d7-3c2387ff7e1a"><h1>Experimentation Options</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:3ae64637-8da7-482b-93bd-6599d4821a6f -->
+<!-- ContentItem:9c4e9860-a668-4dee-b5b7-c942165dc462 -->
+<aside class="notes"><p>Offer attendees multiple paths so they can choose a project style that matches their confidence and constraints. Encourage them to optimize for rapid learning and disciplined verification.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><strong>Greenfield: Scheduled post publisher</strong>
+<ul>
+<li>Build a new, small system end-to-end with tests from the start.</li>
+<li>Define the domain and constraints yourself.</li>
+</ul>
+</li>
+<li><strong>Brownfield: Meeting scheduling system</strong>
+<ul>
+<li>Refactor a tightly-coupled file-based system.</li>
+<li>Leverage the <a href="https://www.github.com/bsstahl/DesignPatternsForLooseCoupling">architecture diagram and starter code</a>.</li>
+</ul>
+</li>
+<li><strong>Choose by comfort level</strong>
+<ul>
+<li>Favor the option where you can focus on workflow discipline, not domain discovery.</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/9c4e9860-a668-4dee-b5b7-c942165dc462.png" alt="DemoApplication.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="38751527-587a-47cc-96d5-587d5277cb71"><h1>References</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:e36ee411-5c2b-4bf0-bac9-96df1c9d924b -->
+<!-- ContentItem:e7d5a657-d5cd-44a4-a358-caf1fd450645 -->
+<aside class="notes"><p>Close with a single references slide so attendees can revisit the deck, sample code, supporting articles, and tool list after the workshop.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><a href="https://www.cognitiveinheritance.com/Presentations/ShortWorkshop/TDDInTheAIEra/index.html">This Slide Deck</a></li>
+<li><a href="https://www.github.com/bsstahl/DesignPatternsForLooseCoupling">Design Patterns for Loose Coupling</a></li>
+<li><a href="https://www.google.com/search?q=site%3Acognitiveinheritance.com+%22TDD+FAQ%22">TDD FAQ on CognitiveInheritance</a></li>
+<li><a href="https://cognitiveinheritance.com/Search/tdd.html">My TDD Articles</a></li>
+<li><a href="https://learn.microsoft.com/en-us/previous-versions/msp-n-p/ff649690(v=pandp.10)">Repository Pattern on Microsoft Architecture guidance</a></li>
+<li><a href="index.html#/50">Tools for AI Assisted Development</a></li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/e7d5a657-d5cd-44a4-a358-caf1fd450645.png" alt="QR-TDDinTheAIEra-600x600.png" />
+</td>
+</tr></table></section>
+
 
         </div>
         <div class="footer-left">TDD in the AI Era</div>
@@ -774,6 +2045,7 @@ expose gaps in the tests, and run the tests with them in place.&quot;</li>
 			width: 1920,
 			height: 1080,
             transition: 'slide',
+            backgroundTransition: 'fade',
             showNotes: window.location.search.match(/print-pdf/gi) ? true : false,
             plugins: [RevealHighlight, RevealMarkdown, RevealSearch, RevealNotes, RevealMath, RevealZoom ]
         });
