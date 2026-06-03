@@ -22,7 +22,7 @@ categories:
 
 ---
 
-AI-assisted development tools are changing the way we write software. What they are not changing is what good software development looks like. The discipline of Test-Driven Development, the Red, Green, Refactor loop, is not obsoleted by AI. It is validated by it, and in several important ways it becomes more valuable.
+AI-assisted development tools are changing the way we write software. What they are not changing is what good software development looks like. The discipline of Test-Driven Development, the Red-Green-Refactor loop, is not obsoleted by AI, it is validated by it. In several important ways it makes this TDD loop much more valuable.
 
 This post is grounded in the ideas I explore in my workshop, [TDD in the AI Era]({PathToRoot}/Presentations/ShortWorkshop/TDDInTheAIEra/index.html). It is also the extended version of the answer to the AI-related question in my {PageLink:Unit-Testing-and-TDD-FAQ|TDD FAQ}.
 
@@ -32,10 +32,10 @@ Before AI-assisted tooling, implementation throughput was often constrained by t
 
 From a Theory of Constraints perspective, this was predictable: when one bottleneck is removed, the next constraint becomes visible. In AI-assisted delivery, the constraints that dominate are now:
 
-- **Problem framing and decomposition** — The quality of your specification, plus your ability to partition behavior into small testable units, now matters more than raw implementation speed.
-  - **Verification** — Plausible output is cheap; trustworthy output is not. The cost of confidence has not declined at the same rate as the cost of generation.
-  - **Decomposition** — Large concerns must still be split into coherent units with explicit boundaries and a clear execution context.
-  - **Comprehension** — Fast generation can outpace human understanding. Reconstructing a lost mental model is expensive, especially in distributed systems with asynchronous flows.
+- **Problem framing and decomposition**: The quality of your specification, plus your ability to partition behavior into small testable units, now matters more than raw implementation speed.
+  - **Verification**: Plausible output is cheap; trustworthy output is not. The cost of confidence has not declined at the same rate as the cost of generation.
+  - **Decomposition**: Large concerns must still be split into coherent units with explicit boundaries and a clear execution context.
+  - **Comprehension**: Fast generation can outpace human understanding. Reconstructing a lost mental model is expensive, especially in distributed systems with asynchronous flows.
 
 TDD is one of the few practices that directly addresses all three.
 
