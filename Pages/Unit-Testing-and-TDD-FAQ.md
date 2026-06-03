@@ -94,7 +94,7 @@ It should be noted that not all testing can be done with black box methods. Ther
 
 * * *
 
-#### Q: How does AI-assisted development (GitHub Copilot, etc.) change TDD?
+#### Q: How does AI-assisted development change TDD?
 
 A: AI makes TDD more important, not less. As AI removes implementation bottlenecks, new ones emerge: understanding the problem, verifying the result, and — perhaps most critically — maintaining human comprehension of the system being built. When AI generates code quickly, it is easy to end up with a codebase that works but that no one fully understands. The TDD gates are what keep developers engaged at each step, producing tests that serve as comprehension artifacts long after the implementation is forgotten.
 
