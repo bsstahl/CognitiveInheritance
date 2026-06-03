@@ -127,10 +127,10 @@
 <p>Use coverage as a diagnostic signal, not a vanity metric. Uncovered paths after green are questions to answer: missing test, unintended behavior, or intentional boundary.</p>
 <h2>What AI Should Not Do</h2>
 <p>A few patterns are worth watching for and avoiding:</p>
-<p><strong>AI-authored tests accepted without a genuine red phase.</strong> If tests are synthesized from existing implementation, they usually encode current behavior rather than intended behavior. That is test-after-development with a different label.</p>
+<p><strong>AI-authored tests accepted without a genuine red phase.</strong> If tests are synthesized from existing implementation, they usually encode current behavior rather than intended behavior. If you need to generate tests after implementation, it is a good idea to comment-out all functionality in favor of the standard &quot;Not Implemented&quot; mechanism for the programming environment, and then restore functionality 1 test at a time. Mutation testing is also a key to success here.</p>
 <p><strong>Scope creep through cheap generation.</strong> When implementation cost approaches zero, overbuilding risk increases. TDD provides the governor: no test, no feature.</p>
 <p><strong>Implementation-coupled white-box tests.</strong> AI frequently mirrors internals in test shape. Those tests are brittle and break during valid refactors. Prefer behavior-based assertions at boundaries.</p>
-<p><strong>Throughput beyond comprehension.</strong> Shipping code faster than humans can understand it creates latent operational risk. TDD gates are forced-comprehension checkpoints that keep teams from accumulating opaque behavior.</p>
+<p><strong>Throughput beyond comprehension.</strong> Shipping code faster than humans can understand it creates latent operational risk. TDD gates are comprehension checkpoints that keep teams from accumulating opaque behavior, and moderate the size of pull-requests to keep validation steps practical.</p>
 <h2>Starting Your Own Workflow</h2>
 <p>The simplest AI-assisted TDD workflow needs no special tooling beyond the AI chat tool you already have. You can start immediately:</p>
 <ol>
