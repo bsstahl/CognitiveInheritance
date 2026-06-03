@@ -80,17 +80,17 @@
                         default_url="https://fosstodon.org">
                     </share-on-mastodon>
                     <br/><br/>
-                    <p>AI-assisted development tools are changing the way we write software. What they are not changing is what good software development looks like. The discipline of Test-Driven Development, the Red, Green, Refactor loop, is not obsoleted by AI. It is validated by it, and in several important ways it becomes more valuable.</p>
+                    <p>AI-assisted development tools are changing the way we write software. What they are not changing is what good software development looks like. The discipline of Test-Driven Development, the Red-Green-Refactor loop, is not obsoleted by AI, it is validated by it. In several important ways it makes this TDD loop much more valuable.</p>
 <p>This post is grounded in the ideas I explore in my workshop, <a href="../Presentations/ShortWorkshop/TDDInTheAIEra/index.html">TDD in the AI Era</a>. It is also the extended version of the answer to the AI-related question in my <a href="../Pages/Unit-Testing-and-TDD-FAQ.html">TDD FAQ</a>.</p>
 <h2>The Bottleneck Has Moved</h2>
 <p>Before AI-assisted tooling, implementation throughput was often constrained by typing speed and mechanical coding effort. We understood the requirement, translated intent into code, and paid the time cost at the keyboard. With modern LLM-based tooling, that constraint has been drastically reduced. Work that previously took hours to type can be generated in seconds.</p>
 <p>From a Theory of Constraints perspective, this was predictable: when one bottleneck is removed, the next constraint becomes visible. In AI-assisted delivery, the constraints that dominate are now:</p>
 <ul>
-<li><strong>Problem framing and decomposition</strong> — The quality of your specification, plus your ability to partition behavior into small testable units, now matters more than raw implementation speed.
+<li><strong>Problem framing and decomposition</strong>: The quality of your specification, plus your ability to partition behavior into small testable units, now matters more than raw implementation speed.
 <ul>
-<li><strong>Verification</strong> — Plausible output is cheap; trustworthy output is not. The cost of confidence has not declined at the same rate as the cost of generation.</li>
-<li><strong>Decomposition</strong> — Large concerns must still be split into coherent units with explicit boundaries and a clear execution context.</li>
-<li><strong>Comprehension</strong> — Fast generation can outpace human understanding. Reconstructing a lost mental model is expensive, especially in distributed systems with asynchronous flows.</li>
+<li><strong>Verification</strong>: Plausible output is cheap; trustworthy output is not. The cost of confidence has not declined at the same rate as the cost of generation.</li>
+<li><strong>Decomposition</strong>: Large concerns must still be split into coherent units with explicit boundaries and a clear execution context.</li>
+<li><strong>Comprehension</strong>: Fast generation can outpace human understanding. Reconstructing a lost mental model is expensive, especially in distributed systems with asynchronous flows.</li>
 </ul>
 </li>
 </ul>
