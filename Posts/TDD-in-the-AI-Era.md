@@ -35,7 +35,7 @@ But according to the Theory of Constraints, removing one bottleneck simply revea
 - **Understanding the problem** — Spec quality and the ability to decompose large problems into testable units now drive progress more than implementation speed. While this has *always* been a key constraint in our processes, it is now, by far, the primary concern. This includes:
   - **Verification** — Plausible output is cheap. Trustworthy output is not. The cost of confidence has not gone down just because the cost of generation has.
   - **Decomposition** — Large problems still need to be sliced carefully into units small enough to reason about, test, and hand to an AI with a crisp boundary.
-- **Comprehension** — When code generation is fast, it is easy to produce more code than any developer fully understands. Maintaining a clear mental model of how a system works — and recovering it when it is lost — is expensive. The larger and faster a codebase grows, the harder this becomes.
+  - **Comprehension** — When code generation is fast, it is easy to produce more code than any developer fully understands. Maintaining a clear mental model of how a system works — and recovering it when it is lost — is expensive. The larger and faster a codebase grows, the harder this becomes.
 
 TDD addresses these issues directly.
 
