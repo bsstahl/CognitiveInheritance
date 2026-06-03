@@ -103,13 +103,13 @@ Use coverage as a diagnostic signal, not a vanity metric. Uncovered paths after 
 
 A few patterns are worth watching for and avoiding:
 
-**AI-authored tests accepted without a genuine red phase.** If tests are synthesized from existing implementation, they usually encode current behavior rather than intended behavior. That is test-after-development with a different label.
+**AI-authored tests accepted without a genuine red phase.** If tests are synthesized from existing implementation, they usually encode current behavior rather than intended behavior. If you need to generate tests after implementation, it is a good idea to comment-out all functionality in favor of the standard "Not Implemented" mechanism for the programming environment, and then restore functionality 1 test at a time. Mutation testing is also a key to success here.
 
 **Scope creep through cheap generation.** When implementation cost approaches zero, overbuilding risk increases. TDD provides the governor: no test, no feature.
 
 **Implementation-coupled white-box tests.** AI frequently mirrors internals in test shape. Those tests are brittle and break during valid refactors. Prefer behavior-based assertions at boundaries.
 
-**Throughput beyond comprehension.** Shipping code faster than humans can understand it creates latent operational risk. TDD gates are forced-comprehension checkpoints that keep teams from accumulating opaque behavior.
+**Throughput beyond comprehension.** Shipping code faster than humans can understand it creates latent operational risk. TDD gates are comprehension checkpoints that keep teams from accumulating opaque behavior, and moderate the size of pull-requests to keep validation steps practical.
 
 ## Starting Your Own Workflow
 
