@@ -96,7 +96,7 @@ It should be noted that not all testing can be done with black box methods. Ther
 
 #### Q: How does AI-assisted development (GitHub Copilot, etc.) change TDD?
 
-A: AI makes TDD more important, not less. The bottleneck in development has shifted from typing to understanding, decomposition, and verification — exactly the areas TDD strengthens. The Red-Green-Refactor loop is unchanged, but what happens inside each step evolves when an AI is your pairing partner. Tests matter more than ever because implementations are now cheap and disposable, while a trustworthy test suite is not.
+A: AI makes TDD more important, not less. As AI removes implementation bottlenecks, new ones emerge: understanding the problem, verifying the result, and — perhaps most critically — maintaining human comprehension of the system being built. When AI generates code quickly, it is easy to end up with a codebase that works but that no one fully understands. The TDD gates are what keep developers engaged at each step, producing tests that serve as comprehension artifacts long after the implementation is forgotten.
 
 For a thorough look at how the workflow changes — including prompt patterns, scope discipline, mutation testing, and when to let AI generate freely vs. when to keep humans in the loop — see {PostLink:TDD-in-the-AI-Era|TDD in the AI Era}.
 

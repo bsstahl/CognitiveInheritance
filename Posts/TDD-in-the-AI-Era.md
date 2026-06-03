@@ -1,4 +1,4 @@
----
+﻿---
 tags:
 - ai
 - tdd
@@ -11,7 +11,7 @@ id: 3199ad7e-cd0f-440e-8cd1-e00081770c4f
 author: bsstahl
 title: TDD in the AI Era
 description: AI changes where the hard work happens in software development, but it does not change the Red-Green-Refactor discipline. If anything, TDD becomes more important — and the loop becomes a more powerful tool — when an AI is your pairing partner.
-ispublished: true
+ispublished: false
 showinlist: false
 buildifnotpublished: true
 publicationdate: 2026-06-03T00:00:00.000+00:00
@@ -28,15 +28,16 @@ This post is grounded in the ideas I explore in my workshop, [TDD in the AI Era]
 
 ## The Bottleneck Has Moved
 
-Before AI-assisted tools, typing was often the rate-limiting step. We understood the problem, we knew what to write, and we sat down and typed it. AI has largely eliminated that bottleneck. Code that used to take hours to produce can now be generated in seconds.
+Before AI-assisted tools, typing was often the rate-limiting step, or at least, a significant bottleneck. We understood the problem, we knew what to write, and we sat down and typed it. AI has largely eliminated that chokepoint. Code that used to take hours to produce can now be generated in seconds.
 
 But according to the Theory of Constraints, removing one bottleneck simply reveals the next one. The new bottlenecks are:
 
-- **Understanding the problem** — Spec quality and the ability to decompose large problems into testable units now drive progress more than implementation speed.
-- **Verification** — Plausible output is cheap. Trustworthy output is not. The cost of confidence has not gone down just because the cost of generation has.
-- **Decomposition** — Large problems still need to be sliced carefully into units small enough to reason about, test, and hand to an AI with a crisp boundary.
+- **Understanding the problem** — Spec quality and the ability to decompose large problems into testable units now drive progress more than implementation speed. While this has *always* been a key constraint in our processes, it is now, by far, the primary concern. This includes:
+  - **Verification** — Plausible output is cheap. Trustworthy output is not. The cost of confidence has not gone down just because the cost of generation has.
+  - **Decomposition** — Large problems still need to be sliced carefully into units small enough to reason about, test, and hand to an AI with a crisp boundary.
+- **Comprehension** — When code generation is fast, it is easy to produce more code than any developer fully understands. Maintaining a clear mental model of how a system works — and recovering it when it is lost — is expensive. The larger and faster a codebase grows, the harder this becomes.
 
-TDD addresses all three of these directly.
+TDD addresses these issues directly.
 
 ## Capability Is Not Permission
 
@@ -53,6 +54,8 @@ This is the most important shift in mindset for AI-assisted development: **imple
 A correct test suite means any agent — human or AI — can refactor or replace the implementation ruthlessly and know immediately whether behavior was preserved. If the tests are right, the code can be anything. If the tests are wrong or missing, the code cannot be trusted regardless of how it was generated.
 
 This is not a new insight. It has always been true. But AI makes it urgent in a way it wasn't before, because the cost of throwing away and regenerating an implementation is now nearly zero. The tests are the specification that survives. Any agent reading them — human or machine — can understand what the system is supposed to do and verify that it actually does it.
+
+This also makes tests the primary comprehension artifact of the system. When AI generates hundreds of lines in seconds, the tests — written by a human, grounded in intent, and validated by watching them fail before they pass — are what allow any future reader to reconstruct a true understanding of what the system does and why. Code describes *how*. Tests describe *what* and *why*. In an AI-assisted workflow, the *how* is cheap and disposable. The *what* and *why* are not.
 
 ## AI as a Pairing Partner
 
@@ -107,6 +110,8 @@ A few patterns to watch for and avoid:
 
 **White-box, implementation-coupled tests.** AI tends to generate tests that mirror the structure of the implementation it just wrote. Those tests are brittle. They will break during refactoring even when behavior is preserved. Favor behavior-level assertions through interfaces and boundaries, not structural assertions about internals.
 
+**Generating faster than you can comprehend.** When AI produces code at high speed and developers accept it wholesale, the result can be a system that works but that no one on the team fully understands. That understanding is expensive to recover — often more expensive than the time saved by generating quickly in the first place. Each TDD gate — writing the test, watching it fail, watching it pass, refactoring — is a forced comprehension checkpoint. It ensures that someone understood the behavior well enough to specify it before the implementation existed. Bypass enough of these gates and the codebase becomes, in practice, as opaque as a black box you didn't write yourself.
+
 ## Starting Your Own Workflow
 
 The simplest AI-assisted TDD workflow requires no special tooling beyond whatever AI chat tool you have access to. You can start right now:
@@ -121,6 +126,8 @@ From there, you can layer in IDE-integrated tools, agent-based workflows, and mu
 
 ## The Discipline Is the Point
 
-AI lowers the cost of generating code. It does not lower the cost of generating *correct* code. The Red-Green-Refactor loop exists precisely to distinguish those two things. It forces you to define what correct means before you produce anything, and it gives you an automated, repeatable way to verify that what you produced is actually correct.
+AI lowers the cost of generating code. It does not lower the cost of generating *correct* code, and it does not preserve your understanding of the system you are building. The Red-Green-Refactor loop addresses both. It forces you to define what correct means before you produce anything, gives you an automated, repeatable way to verify that what you produced is actually correct, and — critically — it keeps you engaged with the system at each step, maintaining the comprehension that makes confident change possible.
 
-That discipline has always mattered. In an era when plausible output is cheap and abundant, it matters more than ever.
+Comprehension is not a soft concern. A codebase that no one fully understands is a liability regardless of how well it performs today. A codebase where the tests were written by humans before the implementation existed — where every behavior was specified before it was built — is a codebase that any developer, or any AI, can reason about, extend, and improve with confidence.
+
+That discipline has always mattered. In an era when the temptation to generate first and understand later has never been stronger, it matters more than ever.
