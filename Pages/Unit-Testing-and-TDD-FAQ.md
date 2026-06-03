@@ -1,4 +1,4 @@
----
+﻿---
 tags: []
 menuorder: 15
 id: f4d1c45a-7853-461e-a3a7-1c4405a647fc
@@ -45,9 +45,9 @@ A: This answer is quite simple: you don't need to test the parts of the applicat
 
 A: Some of the pitfalls I have discovered over the years are listed below along with some suggestions for avoiding or overcoming them:
 
-1. **Brittle tests** – It is easy to create tests that break when later functionality is added. Newer versions of mocking frameworks have helped with this problem by introducing mock types that demand that stated expectations are met on mocked dependencies, but don’t fail when additional interactions with those dependencies occur. As an example, in Rhino Mocks, you should use a DynamicMock object when it makes sense, rather than a StrictMock because the tests created with a DynamicMock are less brittle.
+1. **Brittle tests** – It is easy to create tests that break when later functionality is added. Modern mocking frameworks have helped with this problem by introducing mock types that demand that stated expectations are met on mocked dependencies, but don’t fail when additional interactions with those dependencies occur. For example, in Moq, the default (`MockBehavior.Loose`) only verifies what you explicitly set up or assert, making tests less brittle than using `MockBehavior.Strict`. NSubstitute follows the same loose-by-default philosophy. Note: Rhino Mocks, which was referenced in earlier versions of this FAQ, is no longer maintained and is incompatible with modern .NET — migrate to Moq or NSubstitute if you are still using it.
 2. **Missed features** – I highly recommend creating a specific test for each feature, even if the test is an exact duplicate of another test. The reason for this is that, in the future, those features may evolve independently, and it is likely that the one test shared by both will be modified to fit the first feature that changes, leaving the second untested.
-3. **DateTimes don’t validate well** – When comparing DateTime types, it is often difficult to get accurate results due to the rapid change in the current time and the varying degrees of precision of different time types. I have found it best to use a tolerance wherever possible in my DateTime testing. For example, I have created a custom Constraint for Rhino Mocks called a DateTimeConstraint that allows me to specify the tolerance that I will allow in my tests. That tolerance could be to the millisecond, the second, the minute, or whatever makes sense for that test.
+3. **DateTimes don’t validate well** – When comparing DateTime types, it is often difficult to get accurate results due to the rapid change in the current time and the varying degrees of precision of different time types. I have found it best to use a tolerance wherever possible in my DateTime testing. Modern assertion libraries such as FluentAssertions provide built-in approximate time comparison (e.g., `BeCloseTo()`) that handle this gracefully. Better still, .NET 8 introduced `TimeProvider` and `FakeTimeProvider`, which allow you to inject and fully control time in your code under test, eliminating the need for tolerance-based comparisons in most cases.
 4. **Type specific values don’t compare well** – An Int32 with a value of 12345 is not the same as an Int64 with the same value. Be careful when comparing data types, even if the value in those types should be the same. It is often best to cast or convert the value with the lesser precision, to the other type.
 5. **Testing using shared resources is difficult** – While there is much discussion about what you call a test that touches the database, or another external resource such as a message queue, there is no doubt that interactions with those types of resources must still be tested. If the database or queue you are using is shared, it is possible that data can be manipulated during your tests, making these tests imprecise at best. Whenever possible, you should isolate these tests by using local resources if possible, or by creating the resources specifically for the test. That is, if in your test you create a message queue using a GUID defined in your test as the name of the queue, then use that for your tests and destroy the queue at the end of the test, you can be reasonably confident that no other user will be manipulating the data in that queue during the test.
 
@@ -91,6 +91,14 @@ A: Writing black-box style tests can help to reduce the brittleness of unit test
 There are some abstraction patterns that I find particularly helpful in building code that is testable using black-box methods.     The *Repository* pattern is a great way to abstract a data store from its implementation. Likewise, the *Strategy* pattern is an equivalent abstraction for algorithms.  When combined with a *Service Locator* methodology such as *Dependency Injection*,     these patterns can allow more of the testing to be done without knowledge of anything but the interfaces of the object under test.
 
 It should be noted that not all testing can be done with black box methods. There are some use-cases which require knowledge of the      implementation to validate the test.  Data storage and retrieval is one such situation.  In these cases it is important to do as much     of the testing as possible using abstractions and then only validate the implementation using white-box testing as close to the metal     of the implementation as possible.
+
+* * *
+
+#### Q: How does AI-assisted development (GitHub Copilot, etc.) change TDD?
+
+A: AI makes TDD more important, not less. As AI removes implementation bottlenecks, new ones emerge: understanding the problem, verifying the result, and — perhaps most critically — maintaining human comprehension of the system being built. When AI generates code quickly, it is easy to end up with a codebase that works but that no one fully understands. The TDD gates are what keep developers engaged at each step, producing tests that serve as comprehension artifacts long after the implementation is forgotten.
+
+For a thorough look at how the workflow changes — including prompt patterns, scope discipline, mutation testing, and when to let AI generate freely vs. when to keep humans in the loop — see {PostLink:TDD-in-the-AI-Era|TDD in the AI Era}.
 
 * * *
 
