@@ -37,7 +37,7 @@ A: I can think of five main advantages to doing test-driven development over “
 
 #### Q: What part of my application do I NOT need to test?
 
-A: This answer is quite simple: you don't need to test the parts of the application that your users DON'T care about.  Of course, since we [remove all code that our users don't care about](../Posts/Remove-Any-Code-Your-Users-Dont-Care-About.html) from our applications,  what we are really saying here is that we should be testing all of our application, and therefore approach 100% code coverage in our apps (although we should never be using code coverage as a metric, just as an indicator). On a fun note, the rule that you don't need to test the parts of your appliations that your user's don't care about was eponymously named "The Stahl Standard" by my friend, [Jeremy Clark](http://jeremybytes.blogspot.com/2015/02/unit-test-coverage-what-parts-of-your.html)
+A: This answer is quite simple: you don't need to test the parts of the application that your users DON'T care about. Of course, since we [remove all code that our users don't care about](../Posts/Remove-Any-Code-Your-Users-Dont-Care-About.html) from our applications, what we are really saying here is that we should be testing all of our application, and therefore approach 100% code coverage in our apps (although we should never be using code coverage as a metric, just as an indicator). On a fun note, the rule that you don't need to test the parts of your appliations that your user's don't care about was eponymously named "The Stahl Standard" by my friend, [Jeremy Clark](http://jeremybytes.blogspot.com/2015/02/unit-test-coverage-what-parts-of-your.html)
 
 * * *
 
@@ -86,23 +86,23 @@ Note: Remember, all .NET CLR objects expose an interface, but not all of them ma
 
 #### Q: Whenever I change anything in my code I break my tests. Is there a way to make my unit tests less brittle?
 
-A: Writing black-box style tests can help to reduce the brittleness of unit tests. Since there is no need for the test to have     any awareness of the structure or implementation of the code when black-box testing, the tests are less likely to break when     a change to the code structure or implementation is made.
+A: Writing black-box style tests can help to reduce the brittleness of unit tests. Since there is no need for the test to have any awareness of the structure or implementation of the code when black-box testing, the tests are less likely to break when a change to the code structure or implementation is made.
 
-There are some abstraction patterns that I find particularly helpful in building code that is testable using black-box methods.     The *Repository* pattern is a great way to abstract a data store from its implementation. Likewise, the *Strategy* pattern is an equivalent abstraction for algorithms.  When combined with a *Service Locator* methodology such as *Dependency Injection*,     these patterns can allow more of the testing to be done without knowledge of anything but the interfaces of the object under test.
+There are some abstraction patterns that I find particularly helpful in building code that is testable using black-box methods. The *Repository* pattern is a great way to abstract a data store from its implementation. Likewise, the *Strategy* pattern is an equivalent abstraction for algorithms. When combined with a *Service Locator* methodology such as *Dependency Injection*, these patterns can allow more of the testing to be done without knowledge of anything but the interfaces of the object under test.
 
-It should be noted that not all testing can be done with black box methods. There are some use-cases which require knowledge of the      implementation to validate the test.  Data storage and retrieval is one such situation.  In these cases it is important to do as much     of the testing as possible using abstractions and then only validate the implementation using white-box testing as close to the metal     of the implementation as possible.
+It should be noted that not all testing can be done with black box methods. There are some use-cases which require knowledge of the implementation to validate the test. Data storage and retrieval is one such situation. In these cases it is important to do as much of the testing as possible using abstractions and then only validate the implementation using white-box testing as close to the metal of the implementation as possible.
 
 * * *
 
 #### Q: How does AI-assisted development change TDD?
 
-A: AI makes TDD more important, not less. As AI removes implementation bottlenecks, new ones emerge: understanding the problem, verifying the result, and — perhaps most critically — maintaining human comprehension of the system being built. When AI generates code quickly, it is easy to end up with a codebase that works but that no one fully understands. The TDD gates are what keep developers engaged at each step, producing tests that serve as comprehension artifacts long after the implementation is forgotten.
+A: AI makes the TDD gates even more important. As AI removes implementation bottlenecks, new ones emerge: understanding the problem, verifying the result and, perhaps most critically, maintaining human comprehension of the system being built. When AI generates code quickly, it is easy to end up with a codebase that works but that no one fully understands. The TDD process is what keep developers engaged at each step, producing tests that serve as comprehension artifacts long after the implementation is forgotten.
 
-For a thorough look at how the workflow changes — including prompt patterns, scope discipline, mutation testing, and when to let AI generate freely vs. when to keep humans in the loop — see {PostLink:TDD-in-the-AI-Era|TDD in the AI Era}.
+For a thorough look at how the workflow changes, including prompt patterns, scope discipline, mutation testing, and when to let AI generate freely vs. when to keep humans in the loop, see {PostLink:TDD-in-the-AI-Era|TDD in the AI Era}.
 
 * * *
 
 #### Q: In one of your talks, you showed some demo code with helper extension methods that made testing a lot easier, can I have access to that code?
 
-A: The TestHelperExtensions have been released as a Free, Open-Source tool on      [NuGet](https://www.nuget.org/packages/TestHelperExtensions) and      [GitHub](https://github.com/bsstahl/TestHelperExtensions).      Documentation for its use can be found [here](http://testhelperextensions.cognitiveinheritance.com).
+A: The TestHelperExtensions have been released as a Free, Open-Source tool on [NuGet](https://www.nuget.org/packages/TestHelperExtensions) and [GitHub](https://github.com/bsstahl/TestHelperExtensions). Documentation for its use can be found [here](http://testhelperextensions.cognitiveinheritance.com).
 

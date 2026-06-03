@@ -22,7 +22,7 @@ categories:
 
 ---
 
-AI-assisted development tools are changing the way we write software. What they are not changing is what good software development looks like. The discipline of Test-Driven Development — Red, Green, Refactor — is not obsoleted by AI. It is validated by it, and in several important ways it becomes more valuable.
+AI-assisted development tools are changing the way we write software. What they are not changing is what good software development looks like. The discipline of Test-Driven Development, the Red, Green, Refactor loop, is not obsoleted by AI. It is validated by it, and in several important ways it becomes more valuable.
 
 This post is grounded in the ideas I explore in my workshop, [TDD in the AI Era]({PathToRoot}/Presentations/ShortWorkshop/TDDInTheAIEra/index.html). It is also the extended version of the answer to the AI-related question in my {PageLink:Unit-Testing-and-TDD-FAQ|TDD FAQ}.
 
@@ -124,11 +124,11 @@ The simplest AI-assisted TDD workflow requires no special tooling beyond whateve
 4. Verify green, then refactor for clarity and maintainability.
 5. Repeat with the next behavior.
 
-From there, layer in richer workflows as needed: IDE agents, mutation pipelines, coverage gates, and architecture checks. The foundation does not change. Human judgment owns test intent and boundary decisions; AI amplifies execution.
+From there, layer in richer workflows as you identify new bottlenecks and pain-points. Additions to the workflow might include IDE agents, mutation pipelines, coverage gates, and architecture checks. The foundation does not change. Human judgment owns test intent and boundary decisions; AI just amplifies execution.
 
 ## The Discipline Is the Point
 
-AI reduces the marginal cost of producing code. It does not reduce the cost of producing correct, maintainable, comprehensible systems. Red-Green-Refactor addresses that gap directly by enforcing pre-implementation intent, executable verification, and continuous design improvement.
+AI reduces the marginal cost of producing code. It does not eliminate the cost of producing correct, maintainable, comprehensible systems. Red-Green-Refactor addresses that gap directly by enforcing pre-implementation intent, executable verification, and continuous design improvement.
 
 Comprehension is not optional polish. It is an engineering control. A codebase that "works" but cannot be reasoned about is operational debt waiting to mature.
 
