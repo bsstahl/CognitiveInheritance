@@ -80,7 +80,7 @@
                         default_url="https://fosstodon.org">
                     </share-on-mastodon>
                     <br/><br/>
-                    <p>AI-assisted development tools are changing the way we write software. What they are not changing is what good software development looks like. The discipline of Test-Driven Development — Red, Green, Refactor — is not obsoleted by AI. It is validated by it, and in several important ways it becomes more valuable.</p>
+                    <p>AI-assisted development tools are changing the way we write software. What they are not changing is what good software development looks like. The discipline of Test-Driven Development, the Red, Green, Refactor loop, is not obsoleted by AI. It is validated by it, and in several important ways it becomes more valuable.</p>
 <p>This post is grounded in the ideas I explore in my workshop, <a href="../Presentations/ShortWorkshop/TDDInTheAIEra/index.html">TDD in the AI Era</a>. It is also the extended version of the answer to the AI-related question in my <a href="../Pages/Unit-Testing-and-TDD-FAQ.html">TDD FAQ</a>.</p>
 <h2>The Bottleneck Has Moved</h2>
 <p>Before AI-assisted tooling, implementation throughput was often constrained by typing speed and mechanical coding effort. We understood the requirement, translated intent into code, and paid the time cost at the keyboard. With modern LLM-based tooling, that constraint has been drastically reduced. Work that previously took hours to type can be generated in seconds.</p>
@@ -145,9 +145,9 @@
 <li>Verify green, then refactor for clarity and maintainability.</li>
 <li>Repeat with the next behavior.</li>
 </ol>
-<p>From there, layer in richer workflows as needed: IDE agents, mutation pipelines, coverage gates, and architecture checks. The foundation does not change. Human judgment owns test intent and boundary decisions; AI amplifies execution.</p>
+<p>From there, layer in richer workflows as you identify new bottlenecks and pain-points. Additions to the workflow might include IDE agents, mutation pipelines, coverage gates, and architecture checks. The foundation does not change. Human judgment owns test intent and boundary decisions; AI just amplifies execution.</p>
 <h2>The Discipline Is the Point</h2>
-<p>AI reduces the marginal cost of producing code. It does not reduce the cost of producing correct, maintainable, comprehensible systems. Red-Green-Refactor addresses that gap directly by enforcing pre-implementation intent, executable verification, and continuous design improvement.</p>
+<p>AI reduces the marginal cost of producing code. It does not eliminate the cost of producing correct, maintainable, comprehensible systems. Red-Green-Refactor addresses that gap directly by enforcing pre-implementation intent, executable verification, and continuous design improvement.</p>
 <p>Comprehension is not optional polish. It is an engineering control. A codebase that &quot;works&quot; but cannot be reasoned about is operational debt waiting to mature.</p>
 <p>A codebase where behavior is specified through tests before implementation exists is different. It is explainable, evolvable, and safer to change. That was true before AI. In an era of near-zero generation cost, it is even more true now.</p>
 
