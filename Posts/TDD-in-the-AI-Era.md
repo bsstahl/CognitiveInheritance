@@ -22,7 +22,7 @@ categories:
 
 ---
 
-AI-assisted development tools are changing how we produce software. They are not changing what good software engineering requires. Test-Driven Development, the Red-Green-Refactor loop, is not made obsolete by AI; in practice, AI reinforces why the loop works. In several ways, it increases the value of practicing TDD with discipline.
+AI has radically increased how quickly we can generate implementations, but it has not changed the fundamentals of software quality. Test-Driven Development still provides the core feedback loop we rely on: define behavior first, verify it with executable checks, then improve design through refactoring with confidence. If anything, Red-Green-Refactor is even more critical in the AI era, because speed without discipline does not remove risk; it compounds it.
 
 This post is grounded in the ideas I cover in my workshop, [TDD in the AI Era]({PathToRoot}/Presentations/ShortWorkshop/TDDInTheAIEra/index.html). It is also the extended version of my answer to the AI-related question in my {PageLink:Unit-Testing-and-TDD-FAQ|TDD FAQ}.
 
