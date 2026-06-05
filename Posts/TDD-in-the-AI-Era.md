@@ -22,7 +22,7 @@ categories:
 
 ---
 
-AI has radically increased how quickly we can generate implementations, so much so, that our tools' abilities to generate plausible solutions outpaces our ability to understand and reason on these solutions. We have to depend more than ever on our processes for understanding and gating development. Test-Driven Development (TDD) still provides a core feedback loop we can rely on: define behavior first, verify it with executable checks, then improve design through refactoring with confidence. This Red-Green-Refactor loop is even more critical in the AI era, because speed without discipline creates tremendous risk for all but the most trivial of codebases.
+AI has increased the speed with which we can generate solutions. These tools are so much faster at generating code than development processes have been in the past that it has outpaceed our ability to understand and reason on these solutions. We have to depend more than ever on our processes for understanding and gating development. Test-Driven Development (TDD) still provides a core feedback loop we can rely on: define behavior first, verify it with executable checks, then improve design through refactoring with confidence. This Red-Green-Refactor loop is even more critical in the AI era, because speed without discipline creates tremendous risk for all but the most trivial of codebases.
 
 This post is grounded in the ideas I cover in my workshop, [TDD in the AI Era]({PathToRoot}/Presentations/ShortWorkshop/TDDInTheAIEra/index.html). It is also the extended version of my answer to the AI-related question in my {PageLink:Unit-Testing-and-TDD-FAQ|TDD FAQ}.
 
