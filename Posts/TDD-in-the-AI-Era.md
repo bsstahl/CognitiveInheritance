@@ -22,7 +22,7 @@ categories:
 
 ---
 
-AI has radically increased how quickly we can generate implementations, but it has not changed the fundamentals of software quality. Test-Driven Development still provides the core feedback loop we rely on: define behavior first, verify it with executable checks, then improve design through refactoring with confidence. If anything, Red-Green-Refactor is even more critical in the AI era, because speed without discipline does not remove risk; it compounds it.
+AI has radically increased how quickly we can generate implementations, so much so, that our tools' abilities to generate plausible solutions outpaces our ability to understand and reason on these solutions. We have to depend more than ever on our processes for understanding and gating development. Test-Driven Development (TDD) still provides a core feedback loop we can rely on: define behavior first, verify it with executable checks, then improve design through refactoring with confidence. This Red-Green-Refactor loop is even more critical in the AI era, because speed without discipline creates tremendous risk for all but the most trivial of codebases.
 
 This post is grounded in the ideas I cover in my workshop, [TDD in the AI Era]({PathToRoot}/Presentations/ShortWorkshop/TDDInTheAIEra/index.html). It is also the extended version of my answer to the AI-related question in my {PageLink:Unit-Testing-and-TDD-FAQ|TDD FAQ}.
 
@@ -54,7 +54,7 @@ If your tests are sound, any contributor, human or AI, can refactor aggressively
 
 None of that is new in principle. What has changed is urgency. In the AI era, regeneration is nearly free, so the artifact that persists is the behavioral contract encoded in tests. Future engineers depend on that contract to reason about change, prevent regressions, and avoid accidental dual-writes across boundaries.
 
-In practice, tests also become your best comprehension artifact. Generated code explains one possible *how*. Well-designed tests, written by humans from intent, explain *what* and *why*. In fast-moving systems, that distinction is not academic; it is operational.
+In practice, tests also become your best comprehension artifact. Generated code explains one possible *how*. Well-designed tests, designed and validated by humans from intent, explain *what* and *why*. In fast-moving systems, that distinction is not academic; it is operational.
 
 ## AI as a Pairing Partner
 
