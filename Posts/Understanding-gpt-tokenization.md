@@ -20,7 +20,7 @@ slug: understanding-gpt-tokenization
 ---
 ## Introduction
 
-[TODO: Why are we here?]
+If you work with GPT models, tokenization quickly becomes an engineering concern, not just a billing detail. It affects prompt budgets, context limits, and sometimes why model behavior looks surprising. This article explains how the *cl100k* tokenizer converts UTF-8 text into token IDs and back again, using a clarity-first *C#* implementation instead of a speed-optimized one. We will cover the core replacement data, walk through the `Encode` and `Decode` flow, and then look at a few findings that show how tokenization reflects usage patterns in real data.
 
 ## BPE Tokenization in natural language processing (NLP)
 
@@ -28,35 +28,56 @@ BPE (Byte-Pair Encoding) Tokenization is the process of converting text input in
 
 ### Why Tokenization?
 
-NLP models utilize tokenization over direct UTF-8 byte representation because tokens offer linguistic units that more meaningfully align with the way language is structured and understood. Tokens abstract text into discrete elements that capture semantics, enable better generalization, and facilitate sequence processing. This approach simplifies the complexity inherent in multi-byte characters and enhances model efficiency by reducing the input space. Consequently, tokenization leads to more compact, contextually aware, and semantically rich representations that are useful for the pattern recognition tasks required in NLP.
+NLP models use tokenization instead of working directly on raw UTF-8 bytes because tokens better match how language is used. Tokens group text into units that carry meaning, generalize better, and support sequence modeling. This reduces the effective input space and helps models process text more efficiently, especially when multi-byte characters are involved.
 
 ### The *cl100k* Tokenization Model
 
-The *cl100k* tokenization model is the encoding scheme employed by OpenAI's GPT (Generative Pre-trained Transformer) models. This encoding is built to parse input text into 100,256 (100k) different tokens, efficiently representing a vast range of linguistic elements from individual characters to full words and phrases in numerous languages and alphabets. This approach allows GPT models to grasp the nuances of language, handle a variety of linguistic tasks, and generate coherent, contextually relevant text based on the input they receive. The *cl100k* tokenizer is an integral part of how GPT models manage to achieve their impressive performance in generating human-like text.
+The *cl100k* tokenization model is the encoding scheme used by OpenAI's GPT (Generative Pre-trained Transformer) models. It maps input text into 100,256 token values, representing everything from individual characters to common words and phrases across multiple languages. This tokenizer is a core part of GPT model performance.
 
 ## The *cl100k* Tokenizer Sample Code
 
-I found it difficult to understand the tokenization process from looking at the code for some of the standard implementations. There is a simple reason for this -- those implementations are optimized for speed and efficiency, not for clarity and understanding. To solve this problem, and help my understanding of this process, I created a new implementation using an object-oriented approach. This implementation prioritizes clarity over performance, making the concepts of encoding and decoding with *cl100k* far more accessible for educational purposes. This approach allows learners to investigate the nuances of tokenization without getting lost in the weeds of complex array operations. The code is written in *C#* and is available on [GitHub](https://github.com/bsstahl/AIDemos/tree/master/Tokenizer).
+I found it difficult to learn this process from standard implementations. Those implementations are optimized for speed and efficiency, not for readability. To make the mechanics easier to follow, I created an object-oriented implementation that prioritizes clarity over performance. The goal is educational: make `Encode` and `Decode` easy to inspect without getting lost in low-level optimizations. The code is written in *C#* and is available on [GitHub](https://github.com/bsstahl/AIDemos/tree/master/Tokenizer).
 
 ### *cl100k* Tokenization Replacements
 
 The key to the tokenization process using *cl100k* is the replacements data, found in the [cl100k_base.tiktoken file](https://github.com/bsstahl/AIDemos/blob/master/Tokenizer/Tokenizer/data/cl100k_base.tiktoken) in the code sample. This file contains a list of Base-64 encoded strings, and the token that each string represents. A decoded version of this file can be found in {PageLink:cl100k-token-replacements|this table}.
 
-[TODO: Walk throught the sample code, explaining how the Encode and Decode methods work]
+### How `Encode` and `Decode` Work in the Sample
+
+At a high level, the replacements file is the source of truth for both directions. `Encode` starts with text and produces token IDs. `Decode` starts with token IDs and reconstructs text.
+
+`Encode` follows this flow:
+
+1. Convert the input string to UTF-8 bytes.
+2. Scan those bytes from left to right.
+3. At each position, find the best matching byte sequence from the replacements table.
+4. Emit the corresponding token ID.
+5. Advance the cursor and repeat until all input bytes are consumed.
+
+`Decode` performs the inverse operation:
+
+1. Read each token ID in sequence.
+2. Look up the byte sequence for that token.
+3. Append those bytes to a buffer.
+4. Decode the final byte array as UTF-8 text.
+
+Because both methods use the same replacement mappings in opposite directions, a valid input should round-trip cleanly: text -> tokens -> text.
 
 ### Invalid UTF-8 Sequences
 
-One of the things that concerned me when learning about this process was the fact that a number of tokens translated to invalid UTF-8 sequences. This didn't seem right since all input text is encoded as UTF-8 characters. One thing I've learned as an Engineer, if something seems off or doesn't make sense, it means there is a much greater liklihood of something being actually wrong, either in my implementation or my understanding of the process.
+One of the things that concerned me when learning about this process was the fact that a number of tokens translated to invalid UTF-8 sequences. This seemed wrong at first because all input text is encoded as UTF-8 characters. One thing I have learned as an engineer is that if something seems off, there is a good chance either the implementation or the mental model needs correction.
 
-Fortunately this particular oddity is not actually indicative a problem, but is instead an artifact of the training and encoding processes that generally only occurs during the use of characters other than those typically used in English.
+Fortunately, this oddity is not actually indicative of a problem. It is an artifact of training and encoding that generally appears with characters outside the subset most common in English.
 
 I will explain with an example using token *1717*. This token is replaced by the byte sequence *0x20 0xC3*, which is a space character followed by a byte that does not represent valid UTF-8 on its own. This would be a problem if this token were ever used by itself or at the end of a sequence of tokens since that would leave a byte hanging that couldn't be translated into UTF-8. However, there is no way for a token like this to be used by itself or at the end of a sequence as long as the text it is representing has been properly encoded as UTF-8. Instead, such a token is always followed by at least one additional token, which will result in one or more valid UTF-8 characters.
 
 If for our example, the *1717* token is followed by token *104* (*0xAB* -- also invalid on its own), it combines with the *0xC3* left over from the *1717* token, forming the sequence *0xC3 0xAB*, which is the UTF-8 character "ë". Similarly, if *1717* were combined with token *109* (*0xB1* -- again invalid Unicode), we'd get the sequence *0xC3 0xB1*, the Spanish character "ñ".
 
-This means that if we encode the Spanish exclamation "Vaya, ñu" ("Wow, wildebeest") into tokens, we would get the sequence *[53,12874,11,1717,109,84]*. Note the *1717,109* combination towards the end of the squence. These integers represent a set of UTF-8 characters that are encoded into tokens where the tokens can't all be translated to valid UTF-8 characters individually.
+This means that if we encode the Spanish exclamation "Vaya, ñu" ("Wow, wildebeest") into tokens, we would get the sequence *[53,12874,11,1717,109,84]*. Note the *1717,109* combination toward the end of the sequence. These integers represent UTF-8 bytes encoded into tokens where some individual token values are not valid UTF-8 on their own, but are valid in the full sequence.
 
 ## Intriguing Token Findings
+
+Once the mechanics are clear, the replacement table becomes an interesting lens into what text patterns appear often enough to become single tokens.
 
 * Longest Value Tokens
   * Discussion on the longest value (128 spaces) and its significance
@@ -73,7 +94,7 @@ This means that if we encode the Spanish exclamation "Vaya, ñu" ("Wow, wildebee
 
 ### The Tokenization of US Presidents Last Names
 
-The tokenization of the names of US presidents within the *cl100k* model presents a fascinating case study in how natural language processing deals with proper nouns, particularly those with high cultural and historical significance. The way these names are broken down into tokens can reveal patterns in the dataset's composition and the model's efficiency at encoding information. For instance, some presidential last names require multiple tokens to represent, while others can be captured in a single token, often depending on their frequency in the training data or their commonality in the English language. The variation in tokenization—from 'Ford' having multiple representations due to its regular appearance as a common noun or brand name, to more unique surnames—highlights the intricate balance between context, frequency, and the distinctiveness of proper nouns in the realm of machine learning. Understanding this can provide insights into the model's linguistic comprehension and its potential biases or strengths in recognizing and processing culturally relevant names.
+The tokenization of US presidents' last names is a useful example of how the model handles proper nouns. Some names are represented by a single token, while others require multiple tokens. In general, names that appear more frequently in training data are more likely to have single-token forms. Names that are less frequent, or less likely to appear outside historical contexts, are more likely to require multiple tokens.
 
 Of the 40 distinct last names of US Presidents:
 
@@ -100,167 +121,168 @@ Meanwhile, names like Washington, Jefferson, and Johnson, which are more common 
     <tr>
       <td style="text-align:left">Adams</td>
       <td style="text-align:left">27329 (' Adams')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Arthur</td>
       <td style="text-align:left">28686 (' Arthur'), 60762 ('Arthur')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Biden</td>
       <td style="text-align:left">38180 (' Biden')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Buchanan</td>
       <td style="text-align:left">85290 (' Buchanan')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Bush</td>
       <td style="text-align:left">14409 (' Bush'), 30773 (' bush'), 100175 ('Bush')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Carter</td>
       <td style="text-align:left">25581 (' Carter')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Cleveland</td>
       <td style="text-align:left">24372 (' Cleveland')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Clinton</td>
       <td style="text-align:left">8283 (' Clinton'), 51308 ('Clinton')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Coolidge</td>
       <td style="text-align:left"></td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Eisenhower</td>
       <td style="text-align:left">89181 (' Eisenhower')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Fillmore</td>
       <td style="text-align:left"></td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Ford</td>
       <td style="text-align:left">8350 ('ford'), 14337 (' Ford'), 45728 (' ford'), 59663 ('Ford')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Garfield</td>
       <td style="text-align:left"></td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Grant</td>
       <td style="text-align:left">13500 (' grant'), 24668 (' Grant'), 52727 ('grant'), 69071 ('Grant')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Harding</td>
       <td style="text-align:left">97593 (' Harding')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Harrison</td>
       <td style="text-align:left">36627 (' Harrison')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Hayes</td>
       <td style="text-align:left">53522 (' Hayes')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Hoover</td>
       <td style="text-align:left">73409 (' Hoover')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Jackson</td>
       <td style="text-align:left">13972 (' Jackson'), 62382 ('Jackson')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Jefferson</td>
       <td style="text-align:left">34644 (' Jefferson')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Johnson</td>
       <td style="text-align:left">11605 (' Johnson'), 63760 ('Johnson')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Kennedy</td>
       <td style="text-align:left">24573 (' Kennedy')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Lincoln</td>
       <td style="text-align:left">25379 (' Lincoln')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Madison</td>
       <td style="text-align:left">31015 (' Madison')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">McKinley</td>
       <td style="text-align:left"></td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Monroe</td>
       <td style="text-align:left">50887 (' Monroe')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Nixon</td>
       <td style="text-align:left">42726 (' Nixon')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Obama</td>
       <td style="text-align:left">7250 (' Obama'), 45437 ('Obama')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Pierce</td>
       <td style="text-align:left">50930 (' Pierce')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Polk</td>
       <td style="text-align:left"></td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Reagan</td>
       <td style="text-align:left">35226 (' Reagan')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Roosevelt</td>
       <td style="text-align:left">47042 (' Roosevelt')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Taft</td>
       <td style="text-align:left"></td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Taylor</td>
       <td style="text-align:left">16844 (' Taylor'), 68236 ('Taylor')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Truman</td>
       <td style="text-align:left">80936 (' Truman')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Trump</td>
       <td style="text-align:left">3420 (' Trump'), 16509 ('Trump'), 39155 (' trump')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Tyler</td>
       <td style="text-align:left">32320 (' Tyler'), 100224 ('Tyler')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Van Buren</td>
       <td style="text-align:left"></td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Washington</td>
       <td style="text-align:left">6652 (' Washington'), 39231 ('Washington'), 94771 (' washington')</td>
-    <tr>
+    </tr>
     <tr>
       <td style="text-align:left">Wilson</td>
       <td style="text-align:left">17882 (' Wilson'), 92493 ('Wilson')</td>
-    <tr>
+    </tr>
   </tbody>
 </table>
-<br/>
 
 ## Conclusion
 
-[TODO: Add conclusion]
+Tokenization in *cl100k* is best understood as a byte-sequence mapping layer between text and model input, not a simple word splitter. Once that model is clear, behavior that looks strange at first, such as token values that contain incomplete UTF-8 fragments, becomes expected and understandable in sequence context.
+
+The practical takeaway is that tokenizer awareness improves engineering decisions. It helps with prompt design, token budgeting, multilingual handling, and debugging surprising model output. If you step through `Encode` and `Decode` with your own examples, the mechanics become intuitive very quickly.
