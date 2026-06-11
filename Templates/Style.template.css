@@ -431,11 +431,21 @@ blockquote {
     color: var(--text-color);
 }
 
-code {
+.code, code .csharpcode {
     font-family: 'Fira Code', 'Consolas', monospace;
     background-color: var(--code-bg);
-    padding: 1rem;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 0.875em;
+}
+
+pre {
     margin: 1rem 0;
+}
+
+pre code.hljs {
+    padding: 1rem;
+    margin: 0;
     display: block;
     border-radius: 6px;
     border: 1px solid #e9ecef;
@@ -443,6 +453,7 @@ code {
     font-size: 0.875rem;
     line-height: 1.5;
     overflow-x: auto;
+    background-color: var(--code-bg);
 }
 
 table {
@@ -450,20 +461,28 @@ table {
     margin-bottom: 1rem;
     background-color: transparent;
     border-collapse: collapse;
-}
-
-table th {
-    border-bottom: 2px solid var(--secondary-color);
-    border-top: none;
-    color: var(--primary-color);
-    font-weight: 600;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 table th,
 table td {
     padding: 0.75rem;
     vertical-align: top;
-    border-top: 1px solid #dee2e6;
+    border: 1px solid #dee2e6;
+}
+
+table th {
+    background-color: var(--code-bg);
+    border-bottom: 2px solid var(--secondary-color);
+    border-top: none;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+table tr:nth-child(even) {
+    background-color: var(--accent-soft);
 }
 
 table tr:hover {
