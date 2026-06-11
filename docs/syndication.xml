@@ -95,40 +95,36 @@
 &lt;h2&gt;A Machine to Machine Example&lt;/h2&gt;
 &lt;p&gt;To ground this in something concrete, consider a service that exposes an OpenAI‑compatible API for the purpose of intent determination and routing. This service is designed to accept natural language inside a structured request, classify the intent, and direct the call to the correct downstream system. Even in a machine to machine scenario, the request still contains unstructured text because the caller may be a human, a script, or an upstream LLM.&lt;/p&gt;
 &lt;p&gt;Here is an example of the kind of request this router might receive:&lt;/p&gt;
-&lt;div class=&quot;lang-json editor-colors&quot;&gt;&lt;div style=&quot;color:Black;background-color:White;&quot;&gt;&lt;pre&gt;
-{
-  &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;model&amp;quot;&lt;/span&gt;: &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;gpt-4o-mini&amp;quot;&lt;/span&gt;,
-  &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;messages&amp;quot;&lt;/span&gt;: [
+&lt;pre&gt;&lt;code class=&quot;language-json&quot;&gt;{
+  &amp;quot;model&amp;quot;: &amp;quot;gpt-4o-mini&amp;quot;,
+  &amp;quot;messages&amp;quot;: [
     {
-      &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;role&amp;quot;&lt;/span&gt;: &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;system&amp;quot;&lt;/span&gt;,
-      &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;content&amp;quot;&lt;/span&gt;: &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;You are a plan selection assistant.&amp;quot;&lt;/span&gt;
+      &amp;quot;role&amp;quot;: &amp;quot;system&amp;quot;,
+      &amp;quot;content&amp;quot;: &amp;quot;You are a plan selection assistant.&amp;quot;
     },
     {
-      &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;role&amp;quot;&lt;/span&gt;: &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;user&amp;quot;&lt;/span&gt;,
-      &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;content&amp;quot;&lt;/span&gt;: &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;please switch the user to the premium plan with the extras&amp;quot;&lt;/span&gt;
+      &amp;quot;role&amp;quot;: &amp;quot;user&amp;quot;,
+      &amp;quot;content&amp;quot;: &amp;quot;please switch the user to the premium plan with the extras&amp;quot;
     }
   ],
-  &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;user&amp;quot;&lt;/span&gt;: &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;8821&amp;quot;&lt;/span&gt;,
-  &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;source&amp;quot;&lt;/span&gt;: &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;recommendation-service&amp;quot;&lt;/span&gt;
+  &amp;quot;user&amp;quot;: &amp;quot;8821&amp;quot;,
+  &amp;quot;source&amp;quot;: &amp;quot;recommendation-service&amp;quot;
 }
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The outer structure is predictable, but the content is not. The router cannot forward this request until it determines what the caller is trying to do. The phrase premium plan with the extras is natural language, not an instruction the domain layer can act on. The router must identify the intent so it can send the request to the correct downstream service, which in this case is probably a plan or user service.&lt;/p&gt;
 &lt;p&gt;A Behavioral Layer implementation might produce something like this.&lt;/p&gt;
-&lt;div class=&quot;lang-json editor-colors&quot;&gt;&lt;div style=&quot;color:Black;background-color:White;&quot;&gt;&lt;pre&gt;
-{
-  &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;userId&amp;quot;&lt;/span&gt;: &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;8821&amp;quot;&lt;/span&gt;,
-  &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;source&amp;quot;&lt;/span&gt;: &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;recommendation-service&amp;quot;&lt;/span&gt;,
-  &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;intent&amp;quot;&lt;/span&gt;: &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;changePlan&amp;quot;&lt;/span&gt;,
-  &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;confidence&amp;quot;&lt;/span&gt;: &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;high&amp;quot;&lt;/span&gt;,
-  &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;notes&amp;quot;&lt;/span&gt;: [
+&lt;pre&gt;&lt;code class=&quot;language-json&quot;&gt;{
+  &amp;quot;userId&amp;quot;: &amp;quot;8821&amp;quot;,
+  &amp;quot;source&amp;quot;: &amp;quot;recommendation-service&amp;quot;,
+  &amp;quot;intent&amp;quot;: &amp;quot;changePlan&amp;quot;,
+  &amp;quot;confidence&amp;quot;: &amp;quot;high&amp;quot;,
+  &amp;quot;notes&amp;quot;: [
     {
-      &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;message&amp;quot;&lt;/span&gt;: &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;The request refers to &amp;#39;premium plan with the extras&amp;#39;.&amp;quot;&lt;/span&gt;
+      &amp;quot;message&amp;quot;: &amp;quot;The request refers to &apos;premium plan with the extras&apos;.&amp;quot;
     }
   ]
 }
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The business logic within the router may take this input, determine which service is best suited to handle it, and route the original request to that service. The Behavioral Layer has taken a natural language request and expressed the sender&apos;s behavior in a structured form. It has identified what the caller is trying to do, surfaced any uncertainty, and produced a stable intent that the rest of the system can trust. Nothing about this output depends on domain rules or specific plan identifiers. The Behavioral Layer simply interprets the behavior contained in the text and turns it into a predictable shape that downstream components can build on. It has NOT concerned itself with mapping to the domain language, since this layer is not responsible for that. If additional mapping is required into the language of the domain, an anti-corruption or other mapping layer should be used to maintain the separation of concerns.&lt;/p&gt;
 &lt;h2&gt;How It Works&lt;/h2&gt;
 &lt;p&gt;The Behavioral Layer sits between the raw input and the ACL or domain layer. It receives whatever the outside world provides and applies a series of transformations that gradually reduce uncertainty.&lt;/p&gt;
@@ -192,25 +188,23 @@
 &lt;/ul&gt;
 &lt;p&gt;As shown below, this layer might also interpret normalized data that it has access to. For example, if the list of plans is accessible to the Behavioral Layer, it might add an indication that &amp;quot;premium thing&amp;quot; is not an exact match to a known plan. This is one of the places however where some judgement is required because, depending on the circumstances, that functionality might be better left to an ACL or the Domain.&lt;/p&gt;
 &lt;p&gt;The Behavioral layer would consider the input above along with the email metadata and might produce an output object similar to the one shown below:&lt;/p&gt;
-&lt;div class=&quot;lang-json editor-colors&quot;&gt;&lt;div style=&quot;color:Black;background-color:White;&quot;&gt;&lt;pre&gt;
-{
+&lt;pre&gt;&lt;code class=&quot;language-json&quot;&gt;{
   userIds: [
-    &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;email&amp;quot;&lt;/span&gt;: &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;sampleuser@cognitiveinheritance.com&amp;quot;&lt;/span&gt;,
-    &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;eMailName&amp;quot;&lt;/span&gt;: &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;Sample User&amp;quot;&lt;/span&gt;,
-    &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;dkimDomain&amp;quot;&lt;/span&gt;: &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;cognitiveinheritance.com&amp;quot;&lt;/span&gt;,
-    &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;spfDomain&amp;quot;&lt;/span&gt;: &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;sendgrid.net&amp;quot;&lt;/span&gt;
+    &amp;quot;email&amp;quot;: &amp;quot;sampleuser@cognitiveinheritance.com&amp;quot;,
+    &amp;quot;eMailName&amp;quot;: &amp;quot;Sample User&amp;quot;,
+    &amp;quot;dkimDomain&amp;quot;: &amp;quot;cognitiveinheritance.com&amp;quot;,
+    &amp;quot;spfDomain&amp;quot;: &amp;quot;sendgrid.net&amp;quot;
   ],
   intents: [
-    { type: &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;updateAddress&amp;quot;&lt;/span&gt;, addressId: &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;home&amp;quot;&lt;/span&gt; },
-    { type: &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;changePlan&amp;quot;&lt;/span&gt;, planId: &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;premiumPlan&amp;quot;&lt;/span&gt; }
+    { type: &amp;quot;updateAddress&amp;quot;, addressId: &amp;quot;home&amp;quot; },
+    { type: &amp;quot;changePlan&amp;quot;, planId: &amp;quot;premiumPlan&amp;quot; }
   ],
-  confidence: &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;high&amp;quot;&lt;/span&gt;,
+  confidence: &amp;quot;high&amp;quot;,
   anomalies: [
-    { &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;fieldName&amp;quot;&lt;/span&gt;: &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;planId&amp;quot;&lt;/span&gt;, &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;value&amp;quot;&lt;/span&gt;: &lt;span style=&quot;color:#A31515;&quot;&gt;&amp;quot;&amp;#39;premium thing&amp;#39; not an exact match to plan name&amp;quot;&lt;/span&gt; }
+    { &amp;quot;fieldName&amp;quot;: &amp;quot;planId&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;&apos;premium thing&apos; not an exact match to plan name&amp;quot; }
   ]
 }
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The ACL or domain layer now has a clean, predictable structure to work with. It does not need to parse free‑form text or guess what the user meant. The Behavioral Layer has already done that work.&lt;/p&gt;
 &lt;h2&gt;What Comes Next&lt;/h2&gt;
 &lt;p&gt;This post introduces the Behavioral Layer as an architectural concept and distinguishes it from a traditional ACL. In the next article, we will look at how fine‑tuned language models can assist with the transformations inside the layer. We will walk through how to build small, purpose‑built models using Microsoft Foundry, how to train them on your domain, and how to integrate them into a reliability‑first architecture.&lt;/p&gt;

@@ -12,7 +12,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link rel="stylesheet" href="../Style.css" type="text/css" />
         <link rel="alternate" type="application/rss+xml" title="RSS" href="../syndication.xml" />
-        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css" />
+
         <title>Cognitive Inheritance - The Application Development Experiences of an Enterprise Engineer</title>
     </head>
     <body>
@@ -169,12 +170,10 @@
     <br/><br/>
     <p>I often hail code coverage as a great tool to help improve your code base.  Today, my use of Code Coverage taught me something about the new .NET Core tooling, and helped protect me from having to support useless code for the lifespan of my project.</p>
 <p>In the code below, I used a common dependency injection pattern. That is, an IServiceProvider object holding my dependencies is passed-in to my object and stored as a member variable.  When a dependency is needed, I retrieve that dependency from the service provider, and then take action on it.  Since there is no guarantee that the dependency I need will have been placed in the container, I use some common guard logic to protect my code.</p>
-<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
-templates = _serviceProvider.GetService&lt;IEnumerable&lt;Template&gt;&gt;();
-<span style="color:Blue;">if</span> ((templates==<span style="color:Blue;">null</span>) || (!templates.Any(s =&gt; s.TemplateType==ContactPage)))
-     <span style="color:Blue;">throw</span> <span style="color:Blue;">new</span> TemplateNotFoundException(TemplateType.ContactPage, <span style="color:Blue;">string</span>.Empty);
-</pre></div>
-</div>
+<pre><code class="language-csharp">templates = _serviceProvider.GetService&lt;IEnumerable&lt;Template&gt;&gt;();
+if ((templates==null) || (!templates.Any(s =&gt; s.TemplateType==ContactPage)))
+     throw new TemplateNotFoundException(TemplateType.ContactPage, string.Empty);
+</code></pre>
 <p>In this code, I first test that I was able to retrieve a collection of Template objects from the service provider, then verify that the type of Template I need is present in the collection.  If either is not the case, an exception is thrown.</p>
 <p>I had two tests that covered this section of code, one where the collection was not added to the service provider, the other where an empty collection was added.  Both tests passed, however, it wasn't until I looked at the results of the Code Coverage that I realized that the 1st test wasn't doing what I thought it was doing.  It turns out that there is actually no way to get a null collection object out of the Microsoft.Extensions.DependencyInjection.ServiceProvider object I am using for my .NET Core apps. That provider simply returns an empty collection if there isn't one in the container.  Thus, my check for null was never matched and that branch of code was never executed.</p>
 <p>Based on this new knowledge of the behavior of the IServiceProvider, I had a few options.  I could:</p>
@@ -204,11 +203,9 @@ templates = _serviceProvider.GetService&lt;IEnumerable&lt;Template&gt;&gt;();
     <p>I don't create collection objects anymore.</p>
 <p>I know, I know. I was they guy always preaching that every entity that was being collected had to have its own collection object. It was the right thing at the time; if you needed to take an action on an enumeration or list of objects, those actions needed to be done within a strongly-typed collection object to maintain encapsulation. Even if all that was happening was that an inherited <em>List&lt;T&gt;</em> function was being called, that functionality needed to be called on the <em>TCollection</em> object because, if it wasn't, it was likely that the next time logic needed to be performed on the collection, there wouldn't be a place to put it. Collection logic would end up being spread-out around your code rather than encapsulated in the collection. It was also possible that the implementation might change and need to be updated everywhere, instead of in one place.</p>
 <p>Today however, that has all changed. Extension methods now allow us, at any time, to add functionality to <em>ICollection&lt;T&gt;</em>, <em>IList&lt;T&gt;</em>, <em>IEnumerable&lt;T&gt;</em> or any other interface or class. We can attach our list or enumeration based actions directly to the list or enumeration class, and do so at any time, since the methods appear the same to the developer as methods directly on the collection type. Thus, the &quot;no place to put it&quot; fear no longer exists. I've even started using this technique for my factory methods to make it clear that what I am creating is, in fact, an <em>IEnumerable&lt;T&gt;</em>, as in this example.</p>
-<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
-<span style="color:Blue;">var</span> stations = (<span style="color:Blue;">null</span> <span style="color:Blue;">as</span> IEnumerable&lt;Station&gt;).Create();
-<span style="color:Blue;">var</span> localStations = stations.GetNearby(currentLocation);
-</pre></div>
-</div>
+<pre><code class="language-csharp">var stations = (null as IEnumerable&lt;Station&gt;).Create();
+var localStations = stations.GetNearby(currentLocation);
+</code></pre>
 <p>In this example, both the <strong>Create</strong> and <strong>GetNearby</strong> methods are extension methods found in a static class called <strong>StationExtensions</strong>.</p>
 <p>So, the big advantage here is that these methods can be added anytime, meaning we don't need to create an object that we MAY need in the future. This is better adherence to the <a href="../Search/yagni.html">YAGNI</a> principle so it is a better pattern to follow. But what about disadvantages? Does it hurt us in any way to perform our collection actions this way? I'm not comfortable answering that question with an absolute &quot;no&quot; yet because I don't think I've been using this technique long enough to have covered enough ground with it, but I can certainly say that I haven't found any disadvantages yet. It seems like these extension methods are basically perfect for this type of activity. These methods do everything that the methods of a collection object do, can (and should) be put in a separate module to keep the code together, can be navigated to by Visual Studio in the same way as other methods, and have the same access (<em>private</em>, <em>internal</em>, <em>public</em>) restrictions that collection objects have. About the only thing I can say that is not 100% positive about using these techniques is that the <em>(null as IEnumerable&lt;T&gt;)</em> syntax to create a local variable instance to call the class factory from is not quite as elegant as I'd like it to be.</p>
 <p>So you tell me, do you still create collection objects? Have you found any reason why using extension methods in this way is not as good as putting those methods into a strongly-typed collection? Sound off in the Fediverse <a rel="me" href="https://fosstodon.org/@Bsstahl" title="@bsstahl@cognitiveinheritance.com">@bsstahl</a> and let's talk about it.</p>
@@ -411,11 +408,9 @@ templates = _serviceProvider.GetService&lt;IEnumerable&lt;Template&gt;&gt;();
     </share-on-mastodon>
     <br/><br/>
     <p>The following statement builds a C# string containing an Oracle SQL query that uses a DateTime specified in the .NET code.  It uses the Oracle TO_DATE function to convert the string date to an oracle date object and specifies the format of the string date for both the C# output and the Oracle input. Using this statement, there can never be a date format mismatch since the same format is specified at both ends.</p>
-<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
-<span style="color:Blue;">string</span> sql = <span style="color:Blue;">string</span>.Format(&quot;<span style="color:Blue;">select</span> \* <span style="color:Blue;">from</span> MyDB.MyTable t <span style="color:Blue;">where</span> t.MyDate &amp;gt;
-&#160;&#160;&#160;&#160; TO\_DATE(<span style="color:#A31515;">&#39;{0:MM/dd/yyyy hh:mm}&#39;</span>, <span style="color:#A31515;">&#39;MM/dd/yyyy HH24:mi&#39;</span>)&quot;, DateTime.Now);
-</pre></div>
-</div>
+<pre><code class="language-csharp">string sql = string.Format(&quot;select \* from MyDB.MyTable t where t.MyDate &amp;gt;
+     TO\_DATE('{0:MM/dd/yyyy hh:mm}', 'MM/dd/yyyy HH24:mi')&quot;, DateTime.Now);
+</code></pre>
 <p>I have found myself using this type of statement fairly often to create tools that help me do my job.  For what it's worth, I wouldn't put this type of code in production since you rarely want to execute a query from a string in a production environment.</p>
 
     <h5>Tags: <a title="Tag: csharp" class="small" href="../Search/csharp.html">csharp</a>&nbsp;<a title="Tag: oracle" class="small" href="../Search/oracle.html">oracle</a>&nbsp;<a title="Tag: sql" class="small" href="../Search/sql.html">sql</a>&nbsp;<a title="Tag: datetime" class="small" href="../Search/datetime.html">datetime</a>&nbsp;<a title="Tag: dotnet" class="small" href="../Search/dotnet.html">dotnet</a>&nbsp;</h5>
@@ -594,6 +589,10 @@ templates = _serviceProvider.GetService&lt;IEnumerable&lt;Template&gt;&gt;();
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
         <script defer type="module" src="..//Modules/share-on-mastodon.js"></script>
+
+        <!-- Code Coloring -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+        <script>if (window.hljs) { document.querySelectorAll("pre code, code[class^=\"language-\"], code[class*=\" language-\"]").forEach(el => hljs.highlightElement(el)); }</script>
 
         <!-- 100% privacy-first analytics -->
         <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>

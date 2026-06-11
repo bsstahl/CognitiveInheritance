@@ -12,7 +12,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link rel="stylesheet" href="../Style.css" type="text/css" />
         <link rel="alternate" type="application/rss+xml" title="RSS" href="../syndication.xml" />
-        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css" />
+
         <title>Cognitive Inheritance - The Application Development Experiences of an Enterprise Engineer</title>
     </head>
     <body>
@@ -98,40 +99,36 @@
 <h2>A Machine to Machine Example</h2>
 <p>To ground this in something concrete, consider a service that exposes an OpenAI‑compatible API for the purpose of intent determination and routing. This service is designed to accept natural language inside a structured request, classify the intent, and direct the call to the correct downstream system. Even in a machine to machine scenario, the request still contains unstructured text because the caller may be a human, a script, or an upstream LLM.</p>
 <p>Here is an example of the kind of request this router might receive:</p>
-<div class="lang-json editor-colors"><div style="color:Black;background-color:White;"><pre>
-{
-  <span style="color:#A31515;">&quot;model&quot;</span>: <span style="color:#A31515;">&quot;gpt-4o-mini&quot;</span>,
-  <span style="color:#A31515;">&quot;messages&quot;</span>: [
+<pre><code class="language-json">{
+  &quot;model&quot;: &quot;gpt-4o-mini&quot;,
+  &quot;messages&quot;: [
     {
-      <span style="color:#A31515;">&quot;role&quot;</span>: <span style="color:#A31515;">&quot;system&quot;</span>,
-      <span style="color:#A31515;">&quot;content&quot;</span>: <span style="color:#A31515;">&quot;You are a plan selection assistant.&quot;</span>
+      &quot;role&quot;: &quot;system&quot;,
+      &quot;content&quot;: &quot;You are a plan selection assistant.&quot;
     },
     {
-      <span style="color:#A31515;">&quot;role&quot;</span>: <span style="color:#A31515;">&quot;user&quot;</span>,
-      <span style="color:#A31515;">&quot;content&quot;</span>: <span style="color:#A31515;">&quot;please switch the user to the premium plan with the extras&quot;</span>
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;please switch the user to the premium plan with the extras&quot;
     }
   ],
-  <span style="color:#A31515;">&quot;user&quot;</span>: <span style="color:#A31515;">&quot;8821&quot;</span>,
-  <span style="color:#A31515;">&quot;source&quot;</span>: <span style="color:#A31515;">&quot;recommendation-service&quot;</span>
+  &quot;user&quot;: &quot;8821&quot;,
+  &quot;source&quot;: &quot;recommendation-service&quot;
 }
-</pre></div>
-</div>
+</code></pre>
 <p>The outer structure is predictable, but the content is not. The router cannot forward this request until it determines what the caller is trying to do. The phrase premium plan with the extras is natural language, not an instruction the domain layer can act on. The router must identify the intent so it can send the request to the correct downstream service, which in this case is probably a plan or user service.</p>
 <p>A Behavioral Layer implementation might produce something like this.</p>
-<div class="lang-json editor-colors"><div style="color:Black;background-color:White;"><pre>
-{
-  <span style="color:#A31515;">&quot;userId&quot;</span>: <span style="color:#A31515;">&quot;8821&quot;</span>,
-  <span style="color:#A31515;">&quot;source&quot;</span>: <span style="color:#A31515;">&quot;recommendation-service&quot;</span>,
-  <span style="color:#A31515;">&quot;intent&quot;</span>: <span style="color:#A31515;">&quot;changePlan&quot;</span>,
-  <span style="color:#A31515;">&quot;confidence&quot;</span>: <span style="color:#A31515;">&quot;high&quot;</span>,
-  <span style="color:#A31515;">&quot;notes&quot;</span>: [
+<pre><code class="language-json">{
+  &quot;userId&quot;: &quot;8821&quot;,
+  &quot;source&quot;: &quot;recommendation-service&quot;,
+  &quot;intent&quot;: &quot;changePlan&quot;,
+  &quot;confidence&quot;: &quot;high&quot;,
+  &quot;notes&quot;: [
     {
-      <span style="color:#A31515;">&quot;message&quot;</span>: <span style="color:#A31515;">&quot;The request refers to &#39;premium plan with the extras&#39;.&quot;</span>
+      &quot;message&quot;: &quot;The request refers to 'premium plan with the extras'.&quot;
     }
   ]
 }
-</pre></div>
-</div>
+</code></pre>
 <p>The business logic within the router may take this input, determine which service is best suited to handle it, and route the original request to that service. The Behavioral Layer has taken a natural language request and expressed the sender's behavior in a structured form. It has identified what the caller is trying to do, surfaced any uncertainty, and produced a stable intent that the rest of the system can trust. Nothing about this output depends on domain rules or specific plan identifiers. The Behavioral Layer simply interprets the behavior contained in the text and turns it into a predictable shape that downstream components can build on. It has NOT concerned itself with mapping to the domain language, since this layer is not responsible for that. If additional mapping is required into the language of the domain, an anti-corruption or other mapping layer should be used to maintain the separation of concerns.</p>
 <h2>How It Works</h2>
 <p>The Behavioral Layer sits between the raw input and the ACL or domain layer. It receives whatever the outside world provides and applies a series of transformations that gradually reduce uncertainty.</p>
@@ -195,25 +192,23 @@
 </ul>
 <p>As shown below, this layer might also interpret normalized data that it has access to. For example, if the list of plans is accessible to the Behavioral Layer, it might add an indication that &quot;premium thing&quot; is not an exact match to a known plan. This is one of the places however where some judgement is required because, depending on the circumstances, that functionality might be better left to an ACL or the Domain.</p>
 <p>The Behavioral layer would consider the input above along with the email metadata and might produce an output object similar to the one shown below:</p>
-<div class="lang-json editor-colors"><div style="color:Black;background-color:White;"><pre>
-{
+<pre><code class="language-json">{
   userIds: [
-    <span style="color:#A31515;">&quot;email&quot;</span>: <span style="color:#A31515;">&quot;sampleuser@cognitiveinheritance.com&quot;</span>,
-    <span style="color:#A31515;">&quot;eMailName&quot;</span>: <span style="color:#A31515;">&quot;Sample User&quot;</span>,
-    <span style="color:#A31515;">&quot;dkimDomain&quot;</span>: <span style="color:#A31515;">&quot;cognitiveinheritance.com&quot;</span>,
-    <span style="color:#A31515;">&quot;spfDomain&quot;</span>: <span style="color:#A31515;">&quot;sendgrid.net&quot;</span>
+    &quot;email&quot;: &quot;sampleuser@cognitiveinheritance.com&quot;,
+    &quot;eMailName&quot;: &quot;Sample User&quot;,
+    &quot;dkimDomain&quot;: &quot;cognitiveinheritance.com&quot;,
+    &quot;spfDomain&quot;: &quot;sendgrid.net&quot;
   ],
   intents: [
-    { type: <span style="color:#A31515;">&quot;updateAddress&quot;</span>, addressId: <span style="color:#A31515;">&quot;home&quot;</span> },
-    { type: <span style="color:#A31515;">&quot;changePlan&quot;</span>, planId: <span style="color:#A31515;">&quot;premiumPlan&quot;</span> }
+    { type: &quot;updateAddress&quot;, addressId: &quot;home&quot; },
+    { type: &quot;changePlan&quot;, planId: &quot;premiumPlan&quot; }
   ],
-  confidence: <span style="color:#A31515;">&quot;high&quot;</span>,
+  confidence: &quot;high&quot;,
   anomalies: [
-    { <span style="color:#A31515;">&quot;fieldName&quot;</span>: <span style="color:#A31515;">&quot;planId&quot;</span>, <span style="color:#A31515;">&quot;value&quot;</span>: <span style="color:#A31515;">&quot;&#39;premium thing&#39; not an exact match to plan name&quot;</span> }
+    { &quot;fieldName&quot;: &quot;planId&quot;, &quot;value&quot;: &quot;'premium thing' not an exact match to plan name&quot; }
   ]
 }
-</pre></div>
-</div>
+</code></pre>
 <p>The ACL or domain layer now has a clean, predictable structure to work with. It does not need to parse free‑form text or guess what the user meant. The Behavioral Layer has already done that work.</p>
 <h2>What Comes Next</h2>
 <p>This post introduces the Behavioral Layer as an architectural concept and distinguishes it from a traditional ACL. In the next article, we will look at how fine‑tuned language models can assist with the transformations inside the layer. We will walk through how to build small, purpose‑built models using Microsoft Foundry, how to train them on your domain, and how to integrate them into a reliability‑first architecture.</p>
@@ -1047,6 +1042,10 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
         <script defer type="module" src="..//Modules/share-on-mastodon.js"></script>
+
+        <!-- Code Coloring -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+        <script>if (window.hljs) { document.querySelectorAll("pre code, code[class^=\"language-\"], code[class*=\" language-\"]").forEach(el => hljs.highlightElement(el)); }</script>
 
         <!-- 100% privacy-first analytics -->
         <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>

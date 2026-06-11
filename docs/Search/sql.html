@@ -12,7 +12,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link rel="stylesheet" href="../Style.css" type="text/css" />
         <link rel="alternate" type="application/rss+xml" title="RSS" href="../syndication.xml" />
-        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css" />
+
         <title>Cognitive Inheritance - The Application Development Experiences of an Enterprise Engineer</title>
     </head>
     <body>
@@ -84,11 +85,9 @@
     </share-on-mastodon>
     <br/><br/>
     <p>The following statement builds a C# string containing an Oracle SQL query that uses a DateTime specified in the .NET code.  It uses the Oracle TO_DATE function to convert the string date to an oracle date object and specifies the format of the string date for both the C# output and the Oracle input. Using this statement, there can never be a date format mismatch since the same format is specified at both ends.</p>
-<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
-<span style="color:Blue;">string</span> sql = <span style="color:Blue;">string</span>.Format(&quot;<span style="color:Blue;">select</span> \* <span style="color:Blue;">from</span> MyDB.MyTable t <span style="color:Blue;">where</span> t.MyDate &amp;gt;
-&#160;&#160;&#160;&#160; TO\_DATE(<span style="color:#A31515;">&#39;{0:MM/dd/yyyy hh:mm}&#39;</span>, <span style="color:#A31515;">&#39;MM/dd/yyyy HH24:mi&#39;</span>)&quot;, DateTime.Now);
-</pre></div>
-</div>
+<pre><code class="language-csharp">string sql = string.Format(&quot;select \* from MyDB.MyTable t where t.MyDate &amp;gt;
+     TO\_DATE('{0:MM/dd/yyyy hh:mm}', 'MM/dd/yyyy HH24:mi')&quot;, DateTime.Now);
+</code></pre>
 <p>I have found myself using this type of statement fairly often to create tools that help me do my job.  For what it's worth, I wouldn't put this type of code in production since you rarely want to execute a query from a string in a production environment.</p>
 
     <h5>Tags: <a title="Tag: csharp" class="small" href="../Search/csharp.html">csharp</a>&nbsp;<a title="Tag: oracle" class="small" href="../Search/oracle.html">oracle</a>&nbsp;<a title="Tag: sql" class="small" href="../Search/sql.html">sql</a>&nbsp;<a title="Tag: datetime" class="small" href="../Search/datetime.html">datetime</a>&nbsp;<a title="Tag: dotnet" class="small" href="../Search/dotnet.html">dotnet</a>&nbsp;</h5>
@@ -122,9 +121,8 @@
     </share-on-mastodon>
     <br/><br/>
     <p>Here are some Sample SQL 2000 XML Queries.</p>
-<div class="lang-sql editor-colors"><div style="color:Black;background-color:White;"><pre>
-<span style="color:Blue;">DECLARE</span> @sxml <span style="color:Blue;">varchar</span>(8000)  
- <span style="color:Blue;">SET</span> @sxml = <span style="color:#A31515;">&#39;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;  
+<pre><code class="language-sql">DECLARE @sxml varchar(8000)  
+ SET @sxml = '&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;  
  &amp;lt;Change xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; Version=&quot;1.0&quot;&amp;gt;  
  &amp;lt;SourceApplication&amp;gt;&amp;lt;Name&amp;gt;Intranet&amp;lt;/Name&amp;gt;&amp;lt;/SourceApplication&amp;gt;  
  &amp;lt;DestinationApplication&amp;gt;&amp;lt;Name&amp;gt;FundsDB&amp;lt;/Name&amp;gt;&amp;lt;/DestinationApplication&amp;gt;  
@@ -135,45 +133,44 @@
  &amp;lt;ChangeItem&amp;gt;&amp;lt;OriginalData&amp;gt;Type A&amp;lt;/OriginalData&amp;gt;&amp;lt;NewData&amp;gt;Type B&amp;lt;/NewData&amp;gt;  
  &amp;lt;DataID&amp;gt;5&amp;lt;/DataID&amp;gt;&amp;lt;Field&amp;gt;&amp;lt;Name&amp;gt;Type&amp;lt;/Name&amp;gt;&amp;lt;/Field&amp;gt;&amp;lt;/ChangeItem&amp;gt;  
  &amp;lt;/ChangeItems&amp;gt;&amp;lt;ChangeDate&amp;gt;2004-10-12T12:57:00-07:00&amp;lt;/ChangeDate&amp;gt;  
- &amp;lt;CommandText&amp;gt;s\_SaveFund&amp;lt;/CommandText&amp;gt;&amp;lt;/Change&amp;gt;&#39;</span>  
+ &amp;lt;CommandText&amp;gt;s\_SaveFund&amp;lt;/CommandText&amp;gt;&amp;lt;/Change&amp;gt;'  
   
- <span style="color:Green;">--- ----- -----   </span>
+ --- ----- -----   
   
- <span style="color:Blue;">DECLARE</span> @ixml <span style="color:Blue;">int</span>  
+ DECLARE @ixml int  
   
- <span style="color:Green;">--- ----- -----   </span>
+ --- ----- -----   
   
- <span style="color:Blue;">EXEC</span> dbo.sp\_xml\_preparedocument @ixml <span style="color:Blue;">OUTPUT</span>, @sxml  
+ EXEC dbo.sp\_xml\_preparedocument @ixml OUTPUT, @sxml  
   
- <span style="color:Green;">--- ----- -----   </span>
+ --- ----- -----   
   
- <span style="color:Blue;">SELECT</span> x.\*  
- <span style="color:Blue;">FROM</span> <span style="color:Blue;">OPENXML</span>( @ixml, <span style="color:#A31515;">&#39;/Change&#39;</span>, 1)  
- <span style="color:Blue;">WITH</span> ( SourceApplication <span style="color:Blue;">varchar</span>(64) <span style="color:#A31515;">&#39;SourceApplication/Name&#39;</span>,  
- DestinationApplication <span style="color:Blue;">varchar</span>(64) <span style="color:#A31515;">&#39;DestinationApplication/Name&#39;</span>,  
- UserName <span style="color:Blue;">varchar</span>(64) <span style="color:#A31515;">&#39;UserName&#39;</span>,  
- IPAddress <span style="color:Blue;">varchar</span>(23) <span style="color:#A31515;">&#39;IPAddress&#39;</span>,   
- BusinessEntity <span style="color:Blue;">varchar</span>(64) <span style="color:#A31515;">&#39;BusinessEntity/Name&#39;</span>,  
- ChangeDate <span style="color:Blue;">varchar</span>(16) <span style="color:#A31515;">&#39;ChangeDate&#39;</span>,  
- CommandText <span style="color:Blue;">varchar</span>(128) <span style="color:#A31515;">&#39;CommandText&#39;</span> ) x  
+ SELECT x.\*  
+ FROM OPENXML( @ixml, '/Change', 1)  
+ WITH ( SourceApplication varchar(64) 'SourceApplication/Name',  
+ DestinationApplication varchar(64) 'DestinationApplication/Name',  
+ UserName varchar(64) 'UserName',  
+ IPAddress varchar(23) 'IPAddress',   
+ BusinessEntity varchar(64) 'BusinessEntity/Name',  
+ ChangeDate varchar(16) 'ChangeDate',  
+ CommandText varchar(128) 'CommandText' ) x  
   
- <span style="color:Green;">--- ----- -----   </span>
+ --- ----- -----   
   
- <span style="color:Blue;">SELECT</span> x.\*  
- <span style="color:Blue;">FROM</span> <span style="color:Blue;">OPENXML</span>( @ixml, <span style="color:#A31515;">&#39;/Change/ChangeItems/ChangeItem&#39;</span>, 1)  
- <span style="color:Blue;">WITH</span> ( OriginalData <span style="color:Blue;">varchar</span>(2000) <span style="color:#A31515;">&#39;OriginalData&#39;</span>,  
- NewData <span style="color:Blue;">varchar</span>(2000) <span style="color:#A31515;">&#39;NewData&#39;</span>,  
- DataID <span style="color:Blue;">varchar</span>(32) <span style="color:#A31515;">&#39;DataID&#39;</span>,  
- Field <span style="color:Blue;">sysname</span> <span style="color:#A31515;">&#39;Field/Name&#39;</span> ) x  
+ SELECT x.\*  
+ FROM OPENXML( @ixml, '/Change/ChangeItems/ChangeItem', 1)  
+ WITH ( OriginalData varchar(2000) 'OriginalData',  
+ NewData varchar(2000) 'NewData',  
+ DataID varchar(32) 'DataID',  
+ Field sysname 'Field/Name' ) x  
   
- <span style="color:Green;">--- ----- -----   </span>
+ --- ----- -----   
   
- <span style="color:Blue;">EXEC</span> dbo.sp\_xml\_removedocument @ixml  
+ EXEC dbo.sp\_xml\_removedocument @ixml  
   
- <span style="color:Green;">--- ----- -----</span>
+ --- ----- -----
 
-</pre></div>
-</div>
+</code></pre>
 
     <h5>Tags: <a title="Tag: xml" class="small" href="../Search/xml.html">xml</a>&nbsp;<a title="Tag: sql" class="small" href="../Search/sql.html">sql</a>&nbsp;<a title="Tag: code sample" class="small" href="../Search/code-sample.html">code sample</a>&nbsp;</h5>
     <div class="share"><a href="../Permalinks/ebfc5816-e855-47dd-898b-8163932d85ef.html" rel="bookmark">Permalink</a></div>
@@ -279,6 +276,10 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
         <script defer type="module" src="..//Modules/share-on-mastodon.js"></script>
+
+        <!-- Code Coloring -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+        <script>if (window.hljs) { document.querySelectorAll("pre code, code[class^=\"language-\"], code[class*=\" language-\"]").forEach(el => hljs.highlightElement(el)); }</script>
 
         <!-- 100% privacy-first analytics -->
         <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>

@@ -12,7 +12,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link rel="stylesheet" href="../Style.css" type="text/css" />
         <link rel="alternate" type="application/rss+xml" title="RSS" href="../syndication.xml" />
-        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css" />
+
         <title>Cognitive Inheritance - The Application Development Experiences of an Enterprise Engineer</title>
     </head>
     <body>
@@ -98,40 +99,36 @@
 <h2>A Machine to Machine Example</h2>
 <p>To ground this in something concrete, consider a service that exposes an OpenAI‑compatible API for the purpose of intent determination and routing. This service is designed to accept natural language inside a structured request, classify the intent, and direct the call to the correct downstream system. Even in a machine to machine scenario, the request still contains unstructured text because the caller may be a human, a script, or an upstream LLM.</p>
 <p>Here is an example of the kind of request this router might receive:</p>
-<div class="lang-json editor-colors"><div style="color:Black;background-color:White;"><pre>
-{
-  <span style="color:#A31515;">&quot;model&quot;</span>: <span style="color:#A31515;">&quot;gpt-4o-mini&quot;</span>,
-  <span style="color:#A31515;">&quot;messages&quot;</span>: [
+<pre><code class="language-json">{
+  &quot;model&quot;: &quot;gpt-4o-mini&quot;,
+  &quot;messages&quot;: [
     {
-      <span style="color:#A31515;">&quot;role&quot;</span>: <span style="color:#A31515;">&quot;system&quot;</span>,
-      <span style="color:#A31515;">&quot;content&quot;</span>: <span style="color:#A31515;">&quot;You are a plan selection assistant.&quot;</span>
+      &quot;role&quot;: &quot;system&quot;,
+      &quot;content&quot;: &quot;You are a plan selection assistant.&quot;
     },
     {
-      <span style="color:#A31515;">&quot;role&quot;</span>: <span style="color:#A31515;">&quot;user&quot;</span>,
-      <span style="color:#A31515;">&quot;content&quot;</span>: <span style="color:#A31515;">&quot;please switch the user to the premium plan with the extras&quot;</span>
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;please switch the user to the premium plan with the extras&quot;
     }
   ],
-  <span style="color:#A31515;">&quot;user&quot;</span>: <span style="color:#A31515;">&quot;8821&quot;</span>,
-  <span style="color:#A31515;">&quot;source&quot;</span>: <span style="color:#A31515;">&quot;recommendation-service&quot;</span>
+  &quot;user&quot;: &quot;8821&quot;,
+  &quot;source&quot;: &quot;recommendation-service&quot;
 }
-</pre></div>
-</div>
+</code></pre>
 <p>The outer structure is predictable, but the content is not. The router cannot forward this request until it determines what the caller is trying to do. The phrase premium plan with the extras is natural language, not an instruction the domain layer can act on. The router must identify the intent so it can send the request to the correct downstream service, which in this case is probably a plan or user service.</p>
 <p>A Behavioral Layer implementation might produce something like this.</p>
-<div class="lang-json editor-colors"><div style="color:Black;background-color:White;"><pre>
-{
-  <span style="color:#A31515;">&quot;userId&quot;</span>: <span style="color:#A31515;">&quot;8821&quot;</span>,
-  <span style="color:#A31515;">&quot;source&quot;</span>: <span style="color:#A31515;">&quot;recommendation-service&quot;</span>,
-  <span style="color:#A31515;">&quot;intent&quot;</span>: <span style="color:#A31515;">&quot;changePlan&quot;</span>,
-  <span style="color:#A31515;">&quot;confidence&quot;</span>: <span style="color:#A31515;">&quot;high&quot;</span>,
-  <span style="color:#A31515;">&quot;notes&quot;</span>: [
+<pre><code class="language-json">{
+  &quot;userId&quot;: &quot;8821&quot;,
+  &quot;source&quot;: &quot;recommendation-service&quot;,
+  &quot;intent&quot;: &quot;changePlan&quot;,
+  &quot;confidence&quot;: &quot;high&quot;,
+  &quot;notes&quot;: [
     {
-      <span style="color:#A31515;">&quot;message&quot;</span>: <span style="color:#A31515;">&quot;The request refers to &#39;premium plan with the extras&#39;.&quot;</span>
+      &quot;message&quot;: &quot;The request refers to 'premium plan with the extras'.&quot;
     }
   ]
 }
-</pre></div>
-</div>
+</code></pre>
 <p>The business logic within the router may take this input, determine which service is best suited to handle it, and route the original request to that service. The Behavioral Layer has taken a natural language request and expressed the sender's behavior in a structured form. It has identified what the caller is trying to do, surfaced any uncertainty, and produced a stable intent that the rest of the system can trust. Nothing about this output depends on domain rules or specific plan identifiers. The Behavioral Layer simply interprets the behavior contained in the text and turns it into a predictable shape that downstream components can build on. It has NOT concerned itself with mapping to the domain language, since this layer is not responsible for that. If additional mapping is required into the language of the domain, an anti-corruption or other mapping layer should be used to maintain the separation of concerns.</p>
 <h2>How It Works</h2>
 <p>The Behavioral Layer sits between the raw input and the ACL or domain layer. It receives whatever the outside world provides and applies a series of transformations that gradually reduce uncertainty.</p>
@@ -195,25 +192,23 @@
 </ul>
 <p>As shown below, this layer might also interpret normalized data that it has access to. For example, if the list of plans is accessible to the Behavioral Layer, it might add an indication that &quot;premium thing&quot; is not an exact match to a known plan. This is one of the places however where some judgement is required because, depending on the circumstances, that functionality might be better left to an ACL or the Domain.</p>
 <p>The Behavioral layer would consider the input above along with the email metadata and might produce an output object similar to the one shown below:</p>
-<div class="lang-json editor-colors"><div style="color:Black;background-color:White;"><pre>
-{
+<pre><code class="language-json">{
   userIds: [
-    <span style="color:#A31515;">&quot;email&quot;</span>: <span style="color:#A31515;">&quot;sampleuser@cognitiveinheritance.com&quot;</span>,
-    <span style="color:#A31515;">&quot;eMailName&quot;</span>: <span style="color:#A31515;">&quot;Sample User&quot;</span>,
-    <span style="color:#A31515;">&quot;dkimDomain&quot;</span>: <span style="color:#A31515;">&quot;cognitiveinheritance.com&quot;</span>,
-    <span style="color:#A31515;">&quot;spfDomain&quot;</span>: <span style="color:#A31515;">&quot;sendgrid.net&quot;</span>
+    &quot;email&quot;: &quot;sampleuser@cognitiveinheritance.com&quot;,
+    &quot;eMailName&quot;: &quot;Sample User&quot;,
+    &quot;dkimDomain&quot;: &quot;cognitiveinheritance.com&quot;,
+    &quot;spfDomain&quot;: &quot;sendgrid.net&quot;
   ],
   intents: [
-    { type: <span style="color:#A31515;">&quot;updateAddress&quot;</span>, addressId: <span style="color:#A31515;">&quot;home&quot;</span> },
-    { type: <span style="color:#A31515;">&quot;changePlan&quot;</span>, planId: <span style="color:#A31515;">&quot;premiumPlan&quot;</span> }
+    { type: &quot;updateAddress&quot;, addressId: &quot;home&quot; },
+    { type: &quot;changePlan&quot;, planId: &quot;premiumPlan&quot; }
   ],
-  confidence: <span style="color:#A31515;">&quot;high&quot;</span>,
+  confidence: &quot;high&quot;,
   anomalies: [
-    { <span style="color:#A31515;">&quot;fieldName&quot;</span>: <span style="color:#A31515;">&quot;planId&quot;</span>, <span style="color:#A31515;">&quot;value&quot;</span>: <span style="color:#A31515;">&quot;&#39;premium thing&#39; not an exact match to plan name&quot;</span> }
+    { &quot;fieldName&quot;: &quot;planId&quot;, &quot;value&quot;: &quot;'premium thing' not an exact match to plan name&quot; }
   ]
 }
-</pre></div>
-</div>
+</code></pre>
 <p>The ACL or domain layer now has a clean, predictable structure to work with. It does not need to parse free‑form text or guess what the user meant. The Behavioral Layer has already done that work.</p>
 <h2>What Comes Next</h2>
 <p>This post introduces the Behavioral Layer as an architectural concept and distinguishes it from a traditional ACL. In the next article, we will look at how fine‑tuned language models can assist with the transformations inside the layer. We will walk through how to build small, purpose‑built models using Microsoft Foundry, how to train them on your domain, and how to integrate them into a reliability‑first architecture.</p>
@@ -1518,49 +1513,41 @@
 <p>When we look at the abstractions in our applications, we should see a description of the capabilities of our applications, not the capabilities of the abstraction</p>
 </blockquote>
 <p>Let’s start this discussion by looking at an example of a simple repository.</p>
-<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
-<span style="color:Blue;">public</span> <span style="color:Blue;">interface</span> IMeetingReadRepository
+<pre><code class="language-csharp">public interface IMeetingReadRepository
 {
     IEnumerable&lt;Meeting&gt; GetMeetings(DateTime start, DateTime end);
 }
-</pre></div>
-</div>
+</code></pre>
 <p>It is easy to see the capability being described by this abstraction – any implementation of this interface will have the ability to load a collection of Meeting objects that occur within a given timeframe. There are still some unknown details of the implementation, but the capabilities are described reasonably well.</p>
 <p>Now let’s look at a different implementation of the Repository pattern.</p>
-<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
-<span style="color:Blue;">public</span> <span style="color:Blue;">interface</span> IReadRepository&lt;T&gt;
+<pre><code class="language-csharp">public interface IReadRepository&lt;T&gt;
 {
-    IEnumerable&lt;T&gt; Get(Func&lt;T, <span style="color:Blue;">bool</span>&gt; predicate);
+    IEnumerable&lt;T&gt; Get(Func&lt;T, bool&gt; predicate);
 }
-</pre></div>
-</div>
+</code></pre>
 <p>We can still see that something is going to be loaded using this abstraction, we just don’t know what, and we don’t know what criteria will be used.</p>
 <p>This 2nd implementation is a more flexible interface. That is, we can use this interface to describe many different repositories that do many different things. All we have described in this interface is that we have the ability to create something that will load an entity. In other words, we have described our abstraction but said very little about the capabilities of the application itself. In this case, we have to look at a specific implementation to see what it loads, but we still have no idea what criteria can be used to load it.</p>
-<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
-<span style="color:Blue;">public</span> <span style="color:Blue;">class</span> MeetingReadRepository : IReadRepository&lt;Meeting&gt;
+<pre><code class="language-csharp">public class MeetingReadRepository : IReadRepository&lt;Meeting&gt;
 {
-    IEnumerable&lt;Meeting&gt; Get(Func&lt;Meeting, <span style="color:Blue;">bool</span>&gt; predicate);
+    IEnumerable&lt;Meeting&gt; Get(Func&lt;Meeting, bool&gt; predicate);
 }
-</pre></div>
-</div>
+</code></pre>
 <p>We could extend this class with a method that specifically loads meetings by start and end date, but then that method is not on the abstraction so it cannot be used without leaking the details of the implementation to the application.  The only way to implement this pattern in a way that uses the generic interface, but still fully describes the capabilities of the application is to use both methods described above. That is, we implement the specific repository, using the generic repository – layering abstraction on top of abstraction, as shown below.</p>
-<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
-<span style="color:Blue;">public</span> <span style="color:Blue;">interface</span> IMeetingReadRepository : IReadRepository&lt;Meeting&gt;
+<pre><code class="language-csharp">public interface IMeetingReadRepository : IReadRepository&lt;Meeting&gt;
 {
     IEnumerable&lt;Meeting&gt; GetMeetings(DateTime start, DateTime end);
 }
 
-<span style="color:Blue;">public</span> <span style="color:Blue;">class</span> MeetingReadRepository : IMeetingReadRepository
+public class MeetingReadRepository : IMeetingReadRepository
 {
     IEnumerable&lt;Meeting&gt; GetMeetings(DateTime start, DateTime end)
         =&gt; Get(m =&gt; m.Start &gt;= start &amp;&amp; m.Start &lt; end)
 
-    <span style="color:Green;">// TODO: Implement</span>
-    IEnumerable&lt;Meeting&gt; Get(Func&lt;Meeting, <span style="color:Blue;">bool</span>&gt; predicate)
-        =&gt; <span style="color:Blue;">throw</span> <span style="color:Blue;">new</span> NotImplementedException();
+    // TODO: Implement
+    IEnumerable&lt;Meeting&gt; Get(Func&lt;Meeting, bool&gt; predicate)
+        =&gt; throw new NotImplementedException();
 }
-</pre></div>
-</div>
+</code></pre>
 <p>Is this worth the added complexity? It seems to me that as application developers we should be concerned about describing and building our applications in the simplest, most maintainable and extensible way possible. To do so, we need seams in our applications in the form of abstractions. However, we generally do not need to build frameworks on which we build those abstractions. Framework creation is an entirely other topic with an entirely different set of concerns.</p>
 <p>I think it is easy to see how quickly things can get overly-complex when we start building abstractions on top of our own abstractions in our applications. Using Microsoft or 3rd party frameworks is fine when appropriate, but there is generally no need to build your own frameworks, especially within your applications. In the vast majority of cases, <a href="../Search/yagni.html">YAGNI</a>.</p>
 <p>Did I miss something here? Do you have a situation where you feel it is worth it to build a framework, or even part of a framework, within your applications. Please let me know about it <a rel="me" href="https://fosstodon.org/@Bsstahl" title="@bsstahl@cognitiveinheritance.com">@bsstahl</a>.</p>
@@ -2108,12 +2095,10 @@
     <br/><br/>
     <p>I often hail code coverage as a great tool to help improve your code base.  Today, my use of Code Coverage taught me something about the new .NET Core tooling, and helped protect me from having to support useless code for the lifespan of my project.</p>
 <p>In the code below, I used a common dependency injection pattern. That is, an IServiceProvider object holding my dependencies is passed-in to my object and stored as a member variable.  When a dependency is needed, I retrieve that dependency from the service provider, and then take action on it.  Since there is no guarantee that the dependency I need will have been placed in the container, I use some common guard logic to protect my code.</p>
-<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
-templates = _serviceProvider.GetService&lt;IEnumerable&lt;Template&gt;&gt;();
-<span style="color:Blue;">if</span> ((templates==<span style="color:Blue;">null</span>) || (!templates.Any(s =&gt; s.TemplateType==ContactPage)))
-     <span style="color:Blue;">throw</span> <span style="color:Blue;">new</span> TemplateNotFoundException(TemplateType.ContactPage, <span style="color:Blue;">string</span>.Empty);
-</pre></div>
-</div>
+<pre><code class="language-csharp">templates = _serviceProvider.GetService&lt;IEnumerable&lt;Template&gt;&gt;();
+if ((templates==null) || (!templates.Any(s =&gt; s.TemplateType==ContactPage)))
+     throw new TemplateNotFoundException(TemplateType.ContactPage, string.Empty);
+</code></pre>
 <p>In this code, I first test that I was able to retrieve a collection of Template objects from the service provider, then verify that the type of Template I need is present in the collection.  If either is not the case, an exception is thrown.</p>
 <p>I had two tests that covered this section of code, one where the collection was not added to the service provider, the other where an empty collection was added.  Both tests passed, however, it wasn't until I looked at the results of the Code Coverage that I realized that the 1st test wasn't doing what I thought it was doing.  It turns out that there is actually no way to get a null collection object out of the Microsoft.Extensions.DependencyInjection.ServiceProvider object I am using for my .NET Core apps. That provider simply returns an empty collection if there isn't one in the container.  Thus, my check for null was never matched and that branch of code was never executed.</p>
 <p>Based on this new knowledge of the behavior of the IServiceProvider, I had a few options.  I could:</p>
@@ -2294,11 +2279,9 @@ templates = _serviceProvider.GetService&lt;IEnumerable&lt;Template&gt;&gt;();
     <p>I don't create collection objects anymore.</p>
 <p>I know, I know. I was they guy always preaching that every entity that was being collected had to have its own collection object. It was the right thing at the time; if you needed to take an action on an enumeration or list of objects, those actions needed to be done within a strongly-typed collection object to maintain encapsulation. Even if all that was happening was that an inherited <em>List&lt;T&gt;</em> function was being called, that functionality needed to be called on the <em>TCollection</em> object because, if it wasn't, it was likely that the next time logic needed to be performed on the collection, there wouldn't be a place to put it. Collection logic would end up being spread-out around your code rather than encapsulated in the collection. It was also possible that the implementation might change and need to be updated everywhere, instead of in one place.</p>
 <p>Today however, that has all changed. Extension methods now allow us, at any time, to add functionality to <em>ICollection&lt;T&gt;</em>, <em>IList&lt;T&gt;</em>, <em>IEnumerable&lt;T&gt;</em> or any other interface or class. We can attach our list or enumeration based actions directly to the list or enumeration class, and do so at any time, since the methods appear the same to the developer as methods directly on the collection type. Thus, the &quot;no place to put it&quot; fear no longer exists. I've even started using this technique for my factory methods to make it clear that what I am creating is, in fact, an <em>IEnumerable&lt;T&gt;</em>, as in this example.</p>
-<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
-<span style="color:Blue;">var</span> stations = (<span style="color:Blue;">null</span> <span style="color:Blue;">as</span> IEnumerable&lt;Station&gt;).Create();
-<span style="color:Blue;">var</span> localStations = stations.GetNearby(currentLocation);
-</pre></div>
-</div>
+<pre><code class="language-csharp">var stations = (null as IEnumerable&lt;Station&gt;).Create();
+var localStations = stations.GetNearby(currentLocation);
+</code></pre>
 <p>In this example, both the <strong>Create</strong> and <strong>GetNearby</strong> methods are extension methods found in a static class called <strong>StationExtensions</strong>.</p>
 <p>So, the big advantage here is that these methods can be added anytime, meaning we don't need to create an object that we MAY need in the future. This is better adherence to the <a href="../Search/yagni.html">YAGNI</a> principle so it is a better pattern to follow. But what about disadvantages? Does it hurt us in any way to perform our collection actions this way? I'm not comfortable answering that question with an absolute &quot;no&quot; yet because I don't think I've been using this technique long enough to have covered enough ground with it, but I can certainly say that I haven't found any disadvantages yet. It seems like these extension methods are basically perfect for this type of activity. These methods do everything that the methods of a collection object do, can (and should) be put in a separate module to keep the code together, can be navigated to by Visual Studio in the same way as other methods, and have the same access (<em>private</em>, <em>internal</em>, <em>public</em>) restrictions that collection objects have. About the only thing I can say that is not 100% positive about using these techniques is that the <em>(null as IEnumerable&lt;T&gt;)</em> syntax to create a local variable instance to call the class factory from is not quite as elegant as I'd like it to be.</p>
 <p>So you tell me, do you still create collection objects? Have you found any reason why using extension methods in this way is not as good as putting those methods into a strongly-typed collection? Sound off in the Fediverse <a rel="me" href="https://fosstodon.org/@Bsstahl" title="@bsstahl@cognitiveinheritance.com">@bsstahl</a> and let's talk about it.</p>
@@ -3246,11 +3229,9 @@ An empty catch block, no tracing, not even a comment. No attempt to resolve the 
     </share-on-mastodon>
     <br/><br/>
     <p>The following statement builds a C# string containing an Oracle SQL query that uses a DateTime specified in the .NET code.  It uses the Oracle TO_DATE function to convert the string date to an oracle date object and specifies the format of the string date for both the C# output and the Oracle input. Using this statement, there can never be a date format mismatch since the same format is specified at both ends.</p>
-<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
-<span style="color:Blue;">string</span> sql = <span style="color:Blue;">string</span>.Format(&quot;<span style="color:Blue;">select</span> \* <span style="color:Blue;">from</span> MyDB.MyTable t <span style="color:Blue;">where</span> t.MyDate &amp;gt;
-&#160;&#160;&#160;&#160; TO\_DATE(<span style="color:#A31515;">&#39;{0:MM/dd/yyyy hh:mm}&#39;</span>, <span style="color:#A31515;">&#39;MM/dd/yyyy HH24:mi&#39;</span>)&quot;, DateTime.Now);
-</pre></div>
-</div>
+<pre><code class="language-csharp">string sql = string.Format(&quot;select \* from MyDB.MyTable t where t.MyDate &amp;gt;
+     TO\_DATE('{0:MM/dd/yyyy hh:mm}', 'MM/dd/yyyy HH24:mi')&quot;, DateTime.Now);
+</code></pre>
 <p>I have found myself using this type of statement fairly often to create tools that help me do my job.  For what it's worth, I wouldn't put this type of code in production since you rarely want to execute a query from a string in a production environment.</p>
 
     <h5>Tags: <a title="Tag: csharp" class="small" href="../Search/csharp.html">csharp</a>&nbsp;<a title="Tag: oracle" class="small" href="../Search/oracle.html">oracle</a>&nbsp;<a title="Tag: sql" class="small" href="../Search/sql.html">sql</a>&nbsp;<a title="Tag: datetime" class="small" href="../Search/datetime.html">datetime</a>&nbsp;<a title="Tag: dotnet" class="small" href="../Search/dotnet.html">dotnet</a>&nbsp;</h5>
@@ -3684,9 +3665,8 @@ objProperties.Add(objPropertyValue)</p>
     </share-on-mastodon>
     <br/><br/>
     <p>Here are some Sample SQL 2000 XML Queries.</p>
-<div class="lang-sql editor-colors"><div style="color:Black;background-color:White;"><pre>
-<span style="color:Blue;">DECLARE</span> @sxml <span style="color:Blue;">varchar</span>(8000)  
- <span style="color:Blue;">SET</span> @sxml = <span style="color:#A31515;">&#39;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;  
+<pre><code class="language-sql">DECLARE @sxml varchar(8000)  
+ SET @sxml = '&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;  
  &amp;lt;Change xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; Version=&quot;1.0&quot;&amp;gt;  
  &amp;lt;SourceApplication&amp;gt;&amp;lt;Name&amp;gt;Intranet&amp;lt;/Name&amp;gt;&amp;lt;/SourceApplication&amp;gt;  
  &amp;lt;DestinationApplication&amp;gt;&amp;lt;Name&amp;gt;FundsDB&amp;lt;/Name&amp;gt;&amp;lt;/DestinationApplication&amp;gt;  
@@ -3697,45 +3677,44 @@ objProperties.Add(objPropertyValue)</p>
  &amp;lt;ChangeItem&amp;gt;&amp;lt;OriginalData&amp;gt;Type A&amp;lt;/OriginalData&amp;gt;&amp;lt;NewData&amp;gt;Type B&amp;lt;/NewData&amp;gt;  
  &amp;lt;DataID&amp;gt;5&amp;lt;/DataID&amp;gt;&amp;lt;Field&amp;gt;&amp;lt;Name&amp;gt;Type&amp;lt;/Name&amp;gt;&amp;lt;/Field&amp;gt;&amp;lt;/ChangeItem&amp;gt;  
  &amp;lt;/ChangeItems&amp;gt;&amp;lt;ChangeDate&amp;gt;2004-10-12T12:57:00-07:00&amp;lt;/ChangeDate&amp;gt;  
- &amp;lt;CommandText&amp;gt;s\_SaveFund&amp;lt;/CommandText&amp;gt;&amp;lt;/Change&amp;gt;&#39;</span>  
+ &amp;lt;CommandText&amp;gt;s\_SaveFund&amp;lt;/CommandText&amp;gt;&amp;lt;/Change&amp;gt;'  
   
- <span style="color:Green;">--- ----- -----   </span>
+ --- ----- -----   
   
- <span style="color:Blue;">DECLARE</span> @ixml <span style="color:Blue;">int</span>  
+ DECLARE @ixml int  
   
- <span style="color:Green;">--- ----- -----   </span>
+ --- ----- -----   
   
- <span style="color:Blue;">EXEC</span> dbo.sp\_xml\_preparedocument @ixml <span style="color:Blue;">OUTPUT</span>, @sxml  
+ EXEC dbo.sp\_xml\_preparedocument @ixml OUTPUT, @sxml  
   
- <span style="color:Green;">--- ----- -----   </span>
+ --- ----- -----   
   
- <span style="color:Blue;">SELECT</span> x.\*  
- <span style="color:Blue;">FROM</span> <span style="color:Blue;">OPENXML</span>( @ixml, <span style="color:#A31515;">&#39;/Change&#39;</span>, 1)  
- <span style="color:Blue;">WITH</span> ( SourceApplication <span style="color:Blue;">varchar</span>(64) <span style="color:#A31515;">&#39;SourceApplication/Name&#39;</span>,  
- DestinationApplication <span style="color:Blue;">varchar</span>(64) <span style="color:#A31515;">&#39;DestinationApplication/Name&#39;</span>,  
- UserName <span style="color:Blue;">varchar</span>(64) <span style="color:#A31515;">&#39;UserName&#39;</span>,  
- IPAddress <span style="color:Blue;">varchar</span>(23) <span style="color:#A31515;">&#39;IPAddress&#39;</span>,   
- BusinessEntity <span style="color:Blue;">varchar</span>(64) <span style="color:#A31515;">&#39;BusinessEntity/Name&#39;</span>,  
- ChangeDate <span style="color:Blue;">varchar</span>(16) <span style="color:#A31515;">&#39;ChangeDate&#39;</span>,  
- CommandText <span style="color:Blue;">varchar</span>(128) <span style="color:#A31515;">&#39;CommandText&#39;</span> ) x  
+ SELECT x.\*  
+ FROM OPENXML( @ixml, '/Change', 1)  
+ WITH ( SourceApplication varchar(64) 'SourceApplication/Name',  
+ DestinationApplication varchar(64) 'DestinationApplication/Name',  
+ UserName varchar(64) 'UserName',  
+ IPAddress varchar(23) 'IPAddress',   
+ BusinessEntity varchar(64) 'BusinessEntity/Name',  
+ ChangeDate varchar(16) 'ChangeDate',  
+ CommandText varchar(128) 'CommandText' ) x  
   
- <span style="color:Green;">--- ----- -----   </span>
+ --- ----- -----   
   
- <span style="color:Blue;">SELECT</span> x.\*  
- <span style="color:Blue;">FROM</span> <span style="color:Blue;">OPENXML</span>( @ixml, <span style="color:#A31515;">&#39;/Change/ChangeItems/ChangeItem&#39;</span>, 1)  
- <span style="color:Blue;">WITH</span> ( OriginalData <span style="color:Blue;">varchar</span>(2000) <span style="color:#A31515;">&#39;OriginalData&#39;</span>,  
- NewData <span style="color:Blue;">varchar</span>(2000) <span style="color:#A31515;">&#39;NewData&#39;</span>,  
- DataID <span style="color:Blue;">varchar</span>(32) <span style="color:#A31515;">&#39;DataID&#39;</span>,  
- Field <span style="color:Blue;">sysname</span> <span style="color:#A31515;">&#39;Field/Name&#39;</span> ) x  
+ SELECT x.\*  
+ FROM OPENXML( @ixml, '/Change/ChangeItems/ChangeItem', 1)  
+ WITH ( OriginalData varchar(2000) 'OriginalData',  
+ NewData varchar(2000) 'NewData',  
+ DataID varchar(32) 'DataID',  
+ Field sysname 'Field/Name' ) x  
   
- <span style="color:Green;">--- ----- -----   </span>
+ --- ----- -----   
   
- <span style="color:Blue;">EXEC</span> dbo.sp\_xml\_removedocument @ixml  
+ EXEC dbo.sp\_xml\_removedocument @ixml  
   
- <span style="color:Green;">--- ----- -----</span>
+ --- ----- -----
 
-</pre></div>
-</div>
+</code></pre>
 
     <h5>Tags: <a title="Tag: xml" class="small" href="../Search/xml.html">xml</a>&nbsp;<a title="Tag: sql" class="small" href="../Search/sql.html">sql</a>&nbsp;<a title="Tag: code sample" class="small" href="../Search/code-sample.html">code sample</a>&nbsp;</h5>
     <div class="share"><a href="../Permalinks/ebfc5816-e855-47dd-898b-8163932d85ef.html" rel="bookmark">Permalink</a></div>
@@ -3954,16 +3933,14 @@ when an appropriate exception doesn't already exist To add discreet handling To 
     </share-on-mastodon>
     <br/><br/>
     <p>For future reference, here is a sample using statement in VB.NET 2005.</p>
-<div class="lang-vb editor-colors"><div style="color:Black;background-color:White;"><pre>
-<span style="color:Blue;">Using</span> wsBlogService <span style="color:Blue;">As</span> <span style="color:Blue;">New</span> BlogService.Blog  
- &#160;&#160;&#160;&#160;&#160;<span style="color:Blue;">Try</span>  
- &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="color:Blue;">Me</span>.Text = wsBlogService.DisplayBlog(<span style="color:#A31515;">&quot;BlogName&quot;</span>, 0)  
- &#160;&#160;&#160;&#160;&#160;<span style="color:Blue;">Catch</span> objException <span style="color:Blue;">As</span> System.Exception  
- &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="color:Blue;">Me</span>.Text = <span style="color:Blue;">String</span>.Format(<span style="color:#A31515;">&quot;&quot;</span>, objException.Message, wsBlogService.url)  
- &#160;&#160;&#160;&#160;&#160;<span style="color:Blue;">End</span> <span style="color:Blue;">Try</span>  
- <span style="color:Blue;">End</span> <span style="color:Blue;">Using</span>
-</pre></div>
-</div>
+<pre><code class="language-vb">Using wsBlogService As New BlogService.Blog  
+      Try  
+           Me.Text = wsBlogService.DisplayBlog(&quot;BlogName&quot;, 0)  
+      Catch objException As System.Exception  
+           Me.Text = String.Format(&quot;&quot;, objException.Message, wsBlogService.url)  
+      End Try  
+ End Using
+</code></pre>
 
     <h5>Tags: <a title="Tag: vb.net" class="small" href="../Search/vbdotnet.html">vb.net</a>&nbsp;<a title="Tag: code sample" class="small" href="../Search/code-sample.html">code sample</a>&nbsp;</h5>
     <div class="share"><a href="../Permalinks/12361edd-560a-4532-bec9-53b11dc3767e.html" rel="bookmark">Permalink</a></div>
@@ -4044,6 +4021,10 @@ when an appropriate exception doesn't already exist To add discreet handling To 
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
         <script defer type="module" src="..//Modules/share-on-mastodon.js"></script>
+
+        <!-- Code Coloring -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+        <script>if (window.hljs) { document.querySelectorAll("pre code, code[class^=\"language-\"], code[class*=\" language-\"]").forEach(el => hljs.highlightElement(el)); }</script>
 
         <!-- 100% privacy-first analytics -->
         <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>

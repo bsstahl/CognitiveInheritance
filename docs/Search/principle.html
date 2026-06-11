@@ -12,7 +12,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link rel="stylesheet" href="../Style.css" type="text/css" />
         <link rel="alternate" type="application/rss+xml" title="RSS" href="../syndication.xml" />
-        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css" />
+
         <title>Cognitive Inheritance - The Application Development Experiences of an Enterprise Engineer</title>
     </head>
     <body>
@@ -183,49 +184,41 @@
 <p>When we look at the abstractions in our applications, we should see a description of the capabilities of our applications, not the capabilities of the abstraction</p>
 </blockquote>
 <p>Let’s start this discussion by looking at an example of a simple repository.</p>
-<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
-<span style="color:Blue;">public</span> <span style="color:Blue;">interface</span> IMeetingReadRepository
+<pre><code class="language-csharp">public interface IMeetingReadRepository
 {
     IEnumerable&lt;Meeting&gt; GetMeetings(DateTime start, DateTime end);
 }
-</pre></div>
-</div>
+</code></pre>
 <p>It is easy to see the capability being described by this abstraction – any implementation of this interface will have the ability to load a collection of Meeting objects that occur within a given timeframe. There are still some unknown details of the implementation, but the capabilities are described reasonably well.</p>
 <p>Now let’s look at a different implementation of the Repository pattern.</p>
-<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
-<span style="color:Blue;">public</span> <span style="color:Blue;">interface</span> IReadRepository&lt;T&gt;
+<pre><code class="language-csharp">public interface IReadRepository&lt;T&gt;
 {
-    IEnumerable&lt;T&gt; Get(Func&lt;T, <span style="color:Blue;">bool</span>&gt; predicate);
+    IEnumerable&lt;T&gt; Get(Func&lt;T, bool&gt; predicate);
 }
-</pre></div>
-</div>
+</code></pre>
 <p>We can still see that something is going to be loaded using this abstraction, we just don’t know what, and we don’t know what criteria will be used.</p>
 <p>This 2nd implementation is a more flexible interface. That is, we can use this interface to describe many different repositories that do many different things. All we have described in this interface is that we have the ability to create something that will load an entity. In other words, we have described our abstraction but said very little about the capabilities of the application itself. In this case, we have to look at a specific implementation to see what it loads, but we still have no idea what criteria can be used to load it.</p>
-<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
-<span style="color:Blue;">public</span> <span style="color:Blue;">class</span> MeetingReadRepository : IReadRepository&lt;Meeting&gt;
+<pre><code class="language-csharp">public class MeetingReadRepository : IReadRepository&lt;Meeting&gt;
 {
-    IEnumerable&lt;Meeting&gt; Get(Func&lt;Meeting, <span style="color:Blue;">bool</span>&gt; predicate);
+    IEnumerable&lt;Meeting&gt; Get(Func&lt;Meeting, bool&gt; predicate);
 }
-</pre></div>
-</div>
+</code></pre>
 <p>We could extend this class with a method that specifically loads meetings by start and end date, but then that method is not on the abstraction so it cannot be used without leaking the details of the implementation to the application.  The only way to implement this pattern in a way that uses the generic interface, but still fully describes the capabilities of the application is to use both methods described above. That is, we implement the specific repository, using the generic repository – layering abstraction on top of abstraction, as shown below.</p>
-<div class="lang-csharp editor-colors"><div style="color:Black;background-color:White;"><pre>
-<span style="color:Blue;">public</span> <span style="color:Blue;">interface</span> IMeetingReadRepository : IReadRepository&lt;Meeting&gt;
+<pre><code class="language-csharp">public interface IMeetingReadRepository : IReadRepository&lt;Meeting&gt;
 {
     IEnumerable&lt;Meeting&gt; GetMeetings(DateTime start, DateTime end);
 }
 
-<span style="color:Blue;">public</span> <span style="color:Blue;">class</span> MeetingReadRepository : IMeetingReadRepository
+public class MeetingReadRepository : IMeetingReadRepository
 {
     IEnumerable&lt;Meeting&gt; GetMeetings(DateTime start, DateTime end)
         =&gt; Get(m =&gt; m.Start &gt;= start &amp;&amp; m.Start &lt; end)
 
-    <span style="color:Green;">// TODO: Implement</span>
-    IEnumerable&lt;Meeting&gt; Get(Func&lt;Meeting, <span style="color:Blue;">bool</span>&gt; predicate)
-        =&gt; <span style="color:Blue;">throw</span> <span style="color:Blue;">new</span> NotImplementedException();
+    // TODO: Implement
+    IEnumerable&lt;Meeting&gt; Get(Func&lt;Meeting, bool&gt; predicate)
+        =&gt; throw new NotImplementedException();
 }
-</pre></div>
-</div>
+</code></pre>
 <p>Is this worth the added complexity? It seems to me that as application developers we should be concerned about describing and building our applications in the simplest, most maintainable and extensible way possible. To do so, we need seams in our applications in the form of abstractions. However, we generally do not need to build frameworks on which we build those abstractions. Framework creation is an entirely other topic with an entirely different set of concerns.</p>
 <p>I think it is easy to see how quickly things can get overly-complex when we start building abstractions on top of our own abstractions in our applications. Using Microsoft or 3rd party frameworks is fine when appropriate, but there is generally no need to build your own frameworks, especially within your applications. In the vast majority of cases, <a href="../Search/yagni.html">YAGNI</a>.</p>
 <p>Did I miss something here? Do you have a situation where you feel it is worth it to build a framework, or even part of a framework, within your applications. Please let me know about it <a rel="me" href="https://fosstodon.org/@Bsstahl" title="@bsstahl@cognitiveinheritance.com">@bsstahl</a>.</p>
@@ -319,6 +312,10 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
         <script defer type="module" src="..//Modules/share-on-mastodon.js"></script>
+
+        <!-- Code Coloring -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+        <script>if (window.hljs) { document.querySelectorAll("pre code, code[class^=\"language-\"], code[class*=\" language-\"]").forEach(el => hljs.highlightElement(el)); }</script>
 
         <!-- 100% privacy-first analytics -->
         <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>

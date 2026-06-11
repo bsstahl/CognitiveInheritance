@@ -12,7 +12,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link rel="stylesheet" href="../Style.css" type="text/css" />
         <link rel="alternate" type="application/rss+xml" title="RSS" href="../syndication.xml" />
-        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css" />
+
         <title>Cognitive Inheritance - The Application Development Experiences of an Enterprise Engineer</title>
     </head>
     <body>
@@ -114,16 +115,14 @@
     </share-on-mastodon>
     <br/><br/>
     <p>For future reference, here is a sample using statement in VB.NET 2005.</p>
-<div class="lang-vb editor-colors"><div style="color:Black;background-color:White;"><pre>
-<span style="color:Blue;">Using</span> wsBlogService <span style="color:Blue;">As</span> <span style="color:Blue;">New</span> BlogService.Blog  
- &#160;&#160;&#160;&#160;&#160;<span style="color:Blue;">Try</span>  
- &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="color:Blue;">Me</span>.Text = wsBlogService.DisplayBlog(<span style="color:#A31515;">&quot;BlogName&quot;</span>, 0)  
- &#160;&#160;&#160;&#160;&#160;<span style="color:Blue;">Catch</span> objException <span style="color:Blue;">As</span> System.Exception  
- &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="color:Blue;">Me</span>.Text = <span style="color:Blue;">String</span>.Format(<span style="color:#A31515;">&quot;&quot;</span>, objException.Message, wsBlogService.url)  
- &#160;&#160;&#160;&#160;&#160;<span style="color:Blue;">End</span> <span style="color:Blue;">Try</span>  
- <span style="color:Blue;">End</span> <span style="color:Blue;">Using</span>
-</pre></div>
-</div>
+<pre><code class="language-vb">Using wsBlogService As New BlogService.Blog  
+      Try  
+           Me.Text = wsBlogService.DisplayBlog(&quot;BlogName&quot;, 0)  
+      Catch objException As System.Exception  
+           Me.Text = String.Format(&quot;&quot;, objException.Message, wsBlogService.url)  
+      End Try  
+ End Using
+</code></pre>
 
     <h5>Tags: <a title="Tag: vb.net" class="small" href="../Search/vbdotnet.html">vb.net</a>&nbsp;<a title="Tag: code sample" class="small" href="../Search/code-sample.html">code sample</a>&nbsp;</h5>
     <div class="share"><a href="../Permalinks/12361edd-560a-4532-bec9-53b11dc3767e.html" rel="bookmark">Permalink</a></div>
@@ -178,6 +177,10 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
         <script defer type="module" src="..//Modules/share-on-mastodon.js"></script>
+
+        <!-- Code Coloring -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+        <script>if (window.hljs) { document.querySelectorAll("pre code, code[class^=\"language-\"], code[class*=\" language-\"]").forEach(el => hljs.highlightElement(el)); }</script>
 
         <!-- 100% privacy-first analytics -->
         <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
