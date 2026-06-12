@@ -42,7 +42,9 @@ The implementation is object-oriented and written in *C#*, structured so that `E
 
 ### *cl100k* Tokenization Replacements
 
-The key to the tokenization process using *cl100k* is the replacements data, found in the [cl100k_base.tiktoken file](https://github.com/bsstahl/AIDemos/blob/master/Tokenizer/Tokenizer/data/cl100k_base.tiktoken) in the code sample. This file contains a list of Base-64 encoded strings, and the token that each string represents. A decoded version of this file can be found in {PageLink:cl100k-token-replacements|this table}.
+The key to the tokenization process using *cl100k* is the replacements data, found in the [cl100k_base.tiktoken](https://github.com/bsstahl/AIDemos/blob/master/Tokenizer/Tokenizer/data/cl100k_base.tiktoken) file in the code sample. This file contains a list of Base-64 encoded strings, and the token that each string represents.
+
+While the official replacements file lists the token byte sequences, it can be difficult to tell the practical meaning of each token—especially for whitespace, control characters, or unprintable bytes. For a fully decoded, human-readable table showing what each *cl100k* token actually represents (including both printable and non-printable tokens), see {PageLink:cl100k-token-replacements|this table}.
 
 ### How `Encode` and `Decode` Work in the Sample
 
