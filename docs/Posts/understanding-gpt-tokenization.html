@@ -76,7 +76,7 @@
                     <share-on-mastodon 
                         share_title="Check out this post on Cognitive Inheritance: 'Understanding GPT Tokenization'"
                         share_description="&quot;&quot;"
-                        hashtags="#development #ai"
+                        hashtags="#ai #algorithms #csharp #code-sample #development #chatgpt #coding-practices"
                         author="@bsstahl@cognitiveinheritance.com"
                         default_url="https://fosstodon.org">
                     </share-on-mastodon>
@@ -115,8 +115,7 @@
 </ol>
 <p>Because both methods use the same replacement mappings in opposite directions, a valid input should round-trip cleanly: text → tokens → text.</p>
 <h3>Invalid UTF-8 Sequences</h3>
-<p>One of the things that concerned me when learning about this process was the fact that a number of tokens translated to invalid UTF-8 sequences. This seemed wrong at first because all input text is encoded as UTF-8 characters. One thing I have learned as an engineer is that if something seems off, there is a good chance either the implementation or the mental model needs correction.</p>
-<p>Fortunately, this oddity is not actually indicative of a problem. It is an artifact of training and encoding that generally appears with characters outside the subset most common in English.</p>
+<p>One of the things that concerned me when learning about this process was the fact that a number of tokens translated to invalid UTF-8 sequences. This seemed wrong at first because all input text is encoded as UTF-8 characters. One thing I have found as an engineer is that when something that I know works, doesn't smell quite right, there is a good chance I can learn something by exploring it. In this case, the &quot;smell&quot; is an artifact of training and encoding that generally appears with characters outside the subset most common in English.</p>
 <p>I will explain with an example using token <em>1717</em>. This token is replaced by the byte sequence <em>0x20 0xC3</em>, which is a space character followed by a byte that does not represent valid UTF-8 on its own. This would be a problem if this token were ever used by itself or at the end of a sequence of tokens since that would leave a byte hanging that couldn't be translated into UTF-8. However, there is no way for a token like this to be used by itself or at the end of a sequence as long as the text it is representing has been properly encoded as UTF-8. Instead, such a token is always followed by at least one additional token, which will result in one or more valid UTF-8 characters.</p>
 <p>If for our example, the <em>1717</em> token is followed by token <em>104</em> (<em>0xAB</em> -- also invalid on its own), it combines with the <em>0xC3</em> left over from the <em>1717</em> token, forming the sequence <em>0xC3 0xAB</em>, which is the UTF-8 character <code>ë</code>. Similarly, if <em>1717</em> were combined with token <em>109</em> (<em>0xB1</em> -- again invalid Unicode), we'd get the sequence <em>0xC3 0xB1</em>, the Spanish character <code>ñ</code>.</p>
 <p>This means that if we encode the Spanish exclamation <code>Vaya, ñu</code> (&quot;Wow, wildebeest&quot;) into tokens, we would get the sequence <em>[53,12874,11,1717,109,84]</em>. Note the <em>1717,109</em> combination toward the end of the sequence. These integers represent UTF-8 bytes encoded into tokens where some individual token values are not valid UTF-8 on their own, but are valid in the full sequence.</p>
@@ -323,7 +322,7 @@
 <p>Tokenization in <em>cl100k</em> is best understood as a byte-sequence mapping layer between text and model input, not a simple word splitter. Once that model is clear, behavior that looks strange at first, such as token values that contain incomplete UTF-8 fragments, becomes expected and understandable in sequence context.</p>
 <p>The practical takeaway is that tokenizer awareness improves engineering decisions. It helps with prompt design, token budgeting, multilingual handling, and debugging surprising model output. If you step through <code>Encode</code> and <code>Decode</code> with your own examples, the mechanics become intuitive very quickly. To achieve this understanding, the <a href="https://github.com/bsstahl/AIDemos/tree/master/Tokenizer">sample code on GitHub</a> is a good place to start.</p>
 
-                    <h5>Tags: <a title="Tag: development" class="small" href="../Search/development.html">development</a>&nbsp;<a title="Tag: ai" class="small" href="../Search/ai.html">ai</a>&nbsp;</h5>
+                    <h5>Tags: <a title="Tag: ai" class="small" href="../Search/ai.html">ai</a>&nbsp;<a title="Tag: algorithms" class="small" href="../Search/algorithms.html">algorithms</a>&nbsp;<a title="Tag: csharp" class="small" href="../Search/csharp.html">csharp</a>&nbsp;<a title="Tag: code-sample" class="small" href="../Search/code-sample.html">code-sample</a>&nbsp;<a title="Tag: development" class="small" href="../Search/development.html">development</a>&nbsp;<a title="Tag: chatgpt" class="small" href="../Search/chatgpt.html">chatgpt</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;</h5>
                     <div class="share"><a href="../Permalinks/802ad127-19a0-4a19-9bc7-a753e64d3124.html" rel="bookmark">Permalink</a></div>
                 </main>
                 <aside class="col-lg-3 col-xl-2 sidebar">
