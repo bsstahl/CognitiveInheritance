@@ -1,13 +1,13 @@
 ---
 author: bsstahl
 tags:
-* ai
-* algorithms
-* csharp
-* code-sample
-* development
-* chatgpt
-* coding-practices
+- ai
+- algorithms
+- csharp
+- code-sample
+- development
+- chatgpt
+- coding-practices
 categories:
 - Tools
 menuorder: 0
