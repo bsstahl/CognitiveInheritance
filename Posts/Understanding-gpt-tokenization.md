@@ -20,9 +20,9 @@ slug: understanding-gpt-tokenization
 ---
 ## Introduction
 
-Tokenization isn't just a billing detail — it shapes prompt budgets, context limits, and is often a key reason behind a model's surprising behavior. If you're building production systems or wrangling LLMs in real-world code, understanding how tokenization actually works isn't optional — it's engineering hygiene. Ever struggled with a model answer that gets mysteriously cut off, or wondered why your prompt "should fit" but doesn't? That's likely to be tokenization at work.
+Tokenization isn't just a billing detail when using Large Language Models (LLMs), it shapes prompt budgets, context limits, and is often a key reason behind a model's surprising behavior. If you're building production systems or wrangling LLMs in real-world code, understanding how tokenization actually works isn't optional, it's engineering hygiene. Ever struggled with a model answer that gets mysteriously cut off, or wondered why your prompt "should fit" but doesn't? That's likely to be tokenization at work.
 
-When I reached that point of needed to understand this process better, I turned to the standard implementations to learn the mechanics, and found them nearly impenetrable. Tokenization tools are optimized for speed and efficiency, and the structure that makes them fast also makes them hard to follow. So I built a clarity-first *C#* implementation instead — one designed to make the `Encode` and `Decode` flow easy to inspect, not fast to run. This article walks through that implementation, covering the core replacement data, the encoding and decoding flow, and a few findings that show how tokenization reflects usage patterns in real data.
+When I reached that point of needed to understand this process better, I turned to the standard tokenization implementations to learn the mechanics, and found them nearly impenetrable. Tokenization tools are optimized for speed and efficiency, and the structure that makes them fast also makes them hard to follow. So I built a clarity-first *C#* implementation, one designed to make the `Encode` and `Decode` flow easy to inspect, not fast to run. This article walks through that implementation, covering the core replacement data, the encoding and decoding flow, and a few findings that show how tokenization reflects usage patterns in real data.
 
 ## BPE Tokenization in natural language processing (NLP)
 
@@ -32,7 +32,7 @@ NLP models use tokenization instead of working directly on raw UTF-8 bytes becau
 
 BPE (Byte-Pair Encoding) Tokenization is the process of converting text input into a numeric form that machine learning models can interpret. During this process, text strings are broken into segments, usually words or word-segments; and then segments are iteratively merged with the following segments based on the commonality of their usage. Eventually, these merged segments are mapped to one or more unique integer values called tokens. This numerical representation allows algorithms to perform operations on textual data since the models require quantitative inputs.
 
-Token boundaries follow frequency, not human intuition about what counts as a "word." To make this concrete: a less common presidential name like `Coolidge` has no single-token form at all — it requires multiple tokens to represent, because it simply did not appear often enough in the training data to earn one. At the other end of the spectrum, `Taylor` maps to not one but two tokens — ID 16844 with a leading space, and ID 68236 without — because it appears frequently enough in both forms to each earn a dedicated entry. And the pattern is not limited to English: the Russian word ` размер` (meaning "size" or "dimension", with a leading space) is token ID 100147, captured because Russian-language content appeared frequently enough in the training data to earn it a place in the table alongside common English words.
+Token boundaries follow frequency, not human intuition about what counts as a "word." To make this concrete: a less common presidential name like `Coolidge` has no single-token form at all. This name, like many others, requires multiple tokens to represent, because it simply did not appear often enough in the training data to earn one. At the other end of the spectrum, `Taylor` maps to not one but two tokens: ID 16844 with a leading space, and ID 68236 without a space, because it appears frequently enough in both forms to each earn a dedicated entry. And the pattern is not limited to English: the Russian word ` размер` (meaning "size" or "dimension", with a leading space) is token ID 100147, captured because Russian-language content appeared frequently enough in the training data to earn it a place in the table alongside common English words.
 
 ### The *cl100k* Tokenization Model
 
@@ -46,7 +46,7 @@ The clarity-first, object-oriented implementation of a Tokenizer in written in *
 
 The key to the tokenization process using *cl100k* is the replacements data, found in the [cl100k_base.tiktoken](https://github.com/bsstahl/AIDemos/blob/master/Tokenizer/Tokenizer/data/cl100k_base.tiktoken) file in the code sample. This file contains a list of Base-64 encoded strings, and the token that each string represents.
 
-While the official replacements file lists the token byte sequences, it can be difficult to tell the practical meaning of each token—especially for whitespace, control characters, or unprintable bytes. For a fully decoded, human-readable table showing what each *cl100k* token actually represents (including both printable and non-printable tokens), see {PageLink:cl100k-token-replacements|this table}.
+While the official replacements file lists the token byte sequences, it can be difficult to tell the practical meaning of each token. This is especially true for whitespace, control characters, or unprintable bytes. For a fully decoded, human-readable table showing what each *cl100k* token actually represents (including both printable and non-printable tokens), see {PageLink:cl100k-token-replacements|this table}.
 
 ### How `Encode` and `Decode` Work in the Sample
 
@@ -87,31 +87,31 @@ Once the mechanics are clear, the replacement table becomes an interesting lens 
 
 ### Long Tokens
 
-The longest token in the *cl100k* table is a sequence of 128 consecutive spaces — token ID 58040. That a string of whitespace this long earned its own entry suggests it appeared with remarkable frequency in the training data, likely from code formatting, markdown rendering, or structured document output. It is not alone: several other tokens exceed 42 characters in length, each a testament to how often that exact byte sequence appeared in the corpus.
+The longest token in the *cl100k* table is a sequence of 128 consecutive spaces (token ID 58040). That a string of whitespace this long earned its own entry suggests it appeared with remarkable frequency in the training data, likely from code formatting, markdown rendering, or structured document output. It is not alone: several other tokens exceed 42 characters in length, each a testament to how often that exact byte sequence appeared in the corpus.
 
 ### Tokens Beyond Programming
 
-The longest readable single token is the Objective-C method name `.translatesAutoresizingMaskIntoConstraints` — token ID 63570. At 42 characters, it's a single token for one simple reason: the training data was saturated with Apple's developer docs and implementations that use that method call. This is a good reminder that the tokenizer does not know what a "word" is — only what appears together, and how often.
+The longest readable single token is the Objective-C method name `.translatesAutoresizingMaskIntoConstraints` (token ID 63570). At 42 characters, it's a single token for one simple reason: the training data was saturated with Apple's developer docs and implementations that use that method call. This is a good reminder that the tokenizer does not know what a "word" is; only what appears together, and how often.
 
 ### Alphabet as a Token
 
-The string `abcdefghijklmnopqrstuvwxyz` — the complete lowercase English alphabet in order — is token ID 68612. That this specific sequence appears often enough to earn a dedicated entry reveals something about the corpus: tutorials, coding examples, password documentation, and educational content all tend to produce it. The tokenizer captured an artifact of how people teach.
+The string `abcdefghijklmnopqrstuvwxyz`, the complete lowercase English alphabet in order, is token ID 68612. That this specific sequence appears often enough to earn a dedicated entry reveals something about the corpus: tutorials, coding examples, password documentation, and educational content all tend to produce it. The tokenizer captured an artifact of how people teach.
 
 ### The Weight of Common Words
 
-The longest single-token word that is not specifically programming-related is ` responsibilities` with a leading space — token ID 28423. Seventeen total characters, yet common enough in formal writing, corporate communication, and political text to be encoded as a single unit. Its presence reflects the weight of that particular kind of language in the training data.
+The longest single-token word that is not specifically programming-related is ` responsibilities` with a leading space (token ID 28423). Seventeen total characters, yet common enough in formal writing, corporate communication, and political text to be encoded as a single unit. Its presence reflects the weight of that particular kind of language in the training data.
 
 ### Social Media's Fingerprint
 
-The word ` unconstitutional` with a leading space — token ID 53925 — is a single token for a 17 character sequence. Its inclusion tells us something concrete about what dominated the training corpus: high-volume political discourse on the internet. The tokenizer does not have opinions, but it does reflect the conversations that shaped it.
+The word ` unconstitutional` with a leading space (token ID 53925) is a single token for a 17 character sequence. Its inclusion tells us something concrete about what dominated the training corpus: high-volume political discourse on the internet. The tokenizer does not have opinions, but it does reflect the conversations that shaped it.
 
 ### Notable Tokens
 
-Some tokens are notable not for their length but for what they suggest. The sequence `-m` (token ID 1474) is a fragment that appears constantly in command-line flags and markdown list items. `mary` (token ID 1563) — lowercase, no leading space — suggests it appeared frequently enough as a standalone common noun or name to earn its own entry, while `事` (token ID 30926), the Japanese kanji meaning "case" or "circumstance," confirms that the model's vocabulary extends meaningfully into non-Latin scripts, not just as byte fragments but as whole semantic units.
+Some tokens are notable not for their length but for what they suggest. The sequence `-m` (token ID 1474) is a fragment that appears constantly in command-line flags and markdown list items. On the other hand, `mary` (token ID 1563) in lowercase with no leading space, suggests it appeared frequently enough as a standalone common noun or name to earn its own entry, while `事` (token ID 30926), the Japanese kanji meaning "case" or "circumstance," confirms that the model's vocabulary extends meaningfully into non-Latin scripts, not just as byte fragments but as whole semantic units.
 
 ### Redacted
 
-Interestingly, ` █████` with a leading space — token ID 93429. A group of block characters used to represent redacted text is a single token. It appeared so frequently in legal documents, government releases, and journalism that the model treats it as a unit of meaning. There is something both darkly funny and genuinely informative about that: the tokenizer has learned that some things are meant not to be read.
+Interestingly, ` █████` with a leading space (token ID 93429). A group of block characters used to represent redacted text is a single token. It appeared so frequently in legal documents, government releases, and journalism that the model treats it as a unit of meaning. There is something both darkly funny and genuinely informative about that: the tokenizer has learned that some things are meant not to be read.
 
 ### The Tokenization of US Presidents Last Names
 
@@ -178,4 +178,4 @@ Meanwhile, names like Washington, Jefferson, and Johnson, which are more common 
 
 Tokenization in *cl100k* is best understood as a byte-sequence mapping layer between text and model input, not a simple word splitter. Once that model is clear, behavior that looks strange at first, such as token values that contain incomplete UTF-8 fragments, becomes expected and understandable in sequence context.
 
-The practical takeaway is that tokenizer awareness improves engineering decisions. It helps with prompt design, token budgeting, multilingual handling, and debugging surprising model output. If you step through `Encode` and `Decode` with your own examples, the mechanics become intuitive very quickly — the [sample code on GitHub](https://github.com/bsstahl/AIDemos/tree/master/Tokenizer) is a good place to start.
+The practical takeaway is that tokenizer awareness improves engineering decisions. It helps with prompt design, token budgeting, multilingual handling, and debugging surprising model output. If you step through `Encode` and `Decode` with your own examples, the mechanics become intuitive very quickly. To achieve this understanding, the [sample code on GitHub](https://github.com/bsstahl/AIDemos/tree/master/Tokenizer) is a good place to start.
