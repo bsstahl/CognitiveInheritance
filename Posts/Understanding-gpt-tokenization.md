@@ -1,8 +1,13 @@
 ---
 author: bsstahl
 tags:
-- development
-- ai
+* ai
+* algorithms
+* csharp
+* code-sample
+* development
+* chatgpt
+* coding-practices
 categories:
 - Tools
 menuorder: 0
@@ -71,9 +76,7 @@ Because both methods use the same replacement mappings in opposite directions, a
 
 ### Invalid UTF-8 Sequences
 
-One of the things that concerned me when learning about this process was the fact that a number of tokens translated to invalid UTF-8 sequences. This seemed wrong at first because all input text is encoded as UTF-8 characters. One thing I have learned as an engineer is that if something seems off, there is a good chance either the implementation or the mental model needs correction.
-
-Fortunately, this oddity is not actually indicative of a problem. It is an artifact of training and encoding that generally appears with characters outside the subset most common in English.
+One of the things that concerned me when learning about this process was the fact that a number of tokens translated to invalid UTF-8 sequences. This seemed wrong at first because all input text is encoded as UTF-8 characters. One thing I have found as an engineer is that when something that I know works, doesn't smell quite right, there is a good chance I can learn something by exploring it. In this case, the "smell" is an artifact of training and encoding that generally appears with characters outside the subset most common in English.
 
 I will explain with an example using token *1717*. This token is replaced by the byte sequence *0x20 0xC3*, which is a space character followed by a byte that does not represent valid UTF-8 on its own. This would be a problem if this token were ever used by itself or at the end of a sequence of tokens since that would leave a byte hanging that couldn't be translated into UTF-8. However, there is no way for a token like this to be used by itself or at the end of a sequence as long as the text it is representing has been properly encoded as UTF-8. Instead, such a token is always followed by at least one additional token, which will result in one or more valid UTF-8 characters.
 
