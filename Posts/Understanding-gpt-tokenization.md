@@ -103,11 +103,11 @@ The word ` unconstitutional` with a leading space — token ID 53925 — is a si
 
 ### Notable Tokens
 
-Some tokens are notable not for their length but for what they suggest. The sequence `-m` (token ID 1474) is a fragment that appears constantly in command-line flags and markdown list items. `mary` (token ID 1563) — lowercase, no leading space — suggests it appeared frequently enough as a standalone common noun or name to earn its own entry. And ` значения` with a leading space (token ID 88612), the Russian word for "values" or "meanings," confirms that the model's vocabulary extends meaningfully into Cyrillic text, not just as byte fragments but as whole semantic units.
+Some tokens are notable not for their length but for what they suggest. The sequence `-m` (token ID 1474) is a fragment that appears constantly in command-line flags and markdown list items. `mary` (token ID 1563) — lowercase, no leading space — suggests it appeared frequently enough as a standalone common noun or name to earn its own entry, while `事` (token ID 30926), the Japanese kanji meaning "case" or "circumstance," confirms that the model's vocabulary extends meaningfully into non-Latin scripts, not just as byte fragments but as whole semantic units.
 
 ### Redacted
 
-Finally, ` █████` with a leading space — token ID 93429. A group of block characters used to represent redacted text is a single token. It appeared so frequently in legal documents, government releases, and journalism that the model treats it as a unit of meaning. There is something both darkly funny and genuinely informative about that: the tokenizer has learned that some things are meant not to be read.
+Interestingly, ` █████` with a leading space — token ID 93429. A group of block characters used to represent redacted text is a single token. It appeared so frequently in legal documents, government releases, and journalism that the model treats it as a unit of meaning. There is something both darkly funny and genuinely informative about that: the tokenizer has learned that some things are meant not to be read.
 
 ### The Tokenization of US Presidents Last Names
 
