@@ -20,7 +20,7 @@ slug: understanding-gpt-tokenization
 ---
 ## Introduction
 
-Tokenization is not just a billing detail — it shapes prompt budgets, context limits, and can explain why a model behaves unexpectedly. If you work with GPT models seriously, understanding how tokenization actually works becomes an engineering necessity. When I reached that point, I turned to the standard implementations to learn the mechanics, and found them nearly impenetrable. They are optimized for speed and efficiency, which means the structure that makes them fast is exactly what makes them hard to follow. So I built a clarity-first *C#* implementation instead — one designed to make the `Encode` and `Decode` flow easy to inspect, not fast to run. This article walks through that implementation, covering the core replacement data, the encoding and decoding flow, and a few findings that show how tokenization reflects usage patterns in real data.
+Tokenization is not just a billing detail — it shapes prompt budgets, context limits, and can explain why a model behaves unexpectedly. If you work with GPT models seriously, understanding how tokenization actually works becomes an engineering necessity. When I reached that point, I turned to the standard implementations to learn the mechanics, and found them nearly impenetrable. These tools are optimized for speed and efficiency, which means the structure that makes them fast is exactly what makes them hard to follow. So I built a clarity-first *C#* implementation instead — one designed to make the `Encode` and `Decode` flow easy to inspect, not fast to run. This article walks through that implementation, covering the core replacement data, the encoding and decoding flow, and a few findings that show how tokenization reflects usage patterns in real data.
 
 ## BPE Tokenization in natural language processing (NLP)
 
@@ -30,7 +30,7 @@ NLP models use tokenization instead of working directly on raw UTF-8 bytes becau
 
 BPE (Byte-Pair Encoding) Tokenization is the process of converting text input into a numeric form that machine learning models can interpret. During this process, text strings are broken into segments, usually words or word-segments; and then segments are iteratively merged with the following segments based on the commonality of their usage. Eventually, these merged segments are mapped to one or more unique integer values called tokens. This numerical representation allows algorithms to perform operations on textual data since the models require quantitative inputs.
 
-To make this concrete: the word "Taylor" maps to not one but two tokens — ID 16844 with a leading space, and ID 68236 without — because it appears frequently enough in the training data in both contexts (as a name, a surname, a common word) to earn multiple entries. A less common presidential name like "Coolidge" has no single-token form at all; it requires multiple tokens to represent. At the other extreme, the Russian word ` размер` (meaning "size" or "dimension", with a leading space) is token ID 100147 — a single token for a non-English word, captured because Russian-language content appeared frequently enough in the training data to earn it a dedicated entry. Token boundaries follow frequency, not human intuition about what counts as a "word."
+Token boundaries follow frequency, not human intuition about what counts as a "word." To make this concrete: a less common presidential name like `Coolidge` has no single-token form at all — it requires multiple tokens to represent, because it simply did not appear often enough in the training data to earn one. At the other end of the spectrum, `Taylor` maps to not one but two tokens — ID 16844 with a leading space, and ID 68236 without — because it appears frequently enough in both forms to each earn a dedicated entry. And the pattern is not limited to English: the Russian word ` размер` (meaning "size" or "dimension", with a leading space) is token ID 100147, captured because Russian-language content appeared frequently enough in the training data to earn it a place in the table alongside common English words.
 
 ### The *cl100k* Tokenization Model
 
@@ -73,9 +73,9 @@ Fortunately, this oddity is not actually indicative of a problem. It is an artif
 
 I will explain with an example using token *1717*. This token is replaced by the byte sequence *0x20 0xC3*, which is a space character followed by a byte that does not represent valid UTF-8 on its own. This would be a problem if this token were ever used by itself or at the end of a sequence of tokens since that would leave a byte hanging that couldn't be translated into UTF-8. However, there is no way for a token like this to be used by itself or at the end of a sequence as long as the text it is representing has been properly encoded as UTF-8. Instead, such a token is always followed by at least one additional token, which will result in one or more valid UTF-8 characters.
 
-If for our example, the *1717* token is followed by token *104* (*0xAB* -- also invalid on its own), it combines with the *0xC3* left over from the *1717* token, forming the sequence *0xC3 0xAB*, which is the UTF-8 character "ë". Similarly, if *1717* were combined with token *109* (*0xB1* -- again invalid Unicode), we'd get the sequence *0xC3 0xB1*, the Spanish character "ñ".
+If for our example, the *1717* token is followed by token *104* (*0xAB* -- also invalid on its own), it combines with the *0xC3* left over from the *1717* token, forming the sequence *0xC3 0xAB*, which is the UTF-8 character `ë`. Similarly, if *1717* were combined with token *109* (*0xB1* -- again invalid Unicode), we'd get the sequence *0xC3 0xB1*, the Spanish character `ñ`.
 
-This means that if we encode the Spanish exclamation "Vaya, ñu" ("Wow, wildebeest") into tokens, we would get the sequence *[53,12874,11,1717,109,84]*. Note the *1717,109* combination toward the end of the sequence. These integers represent UTF-8 bytes encoded into tokens where some individual token values are not valid UTF-8 on their own, but are valid in the full sequence.
+This means that if we encode the Spanish exclamation `Vaya, ñu` ("Wow, wildebeest") into tokens, we would get the sequence *[53,12874,11,1717,109,84]*. Note the *1717,109* combination toward the end of the sequence. These integers represent UTF-8 bytes encoded into tokens where some individual token values are not valid UTF-8 on their own, but are valid in the full sequence.
 
 ## Intriguing Token Findings
 
@@ -125,7 +125,7 @@ The fact that Ford and Grant have the most ways to represent their names makes s
 
 Meanwhile, names like Washington, Jefferson, and Johnson, which are more common in the English language, have multiple representations in a single token. This is likely due to the frequency of these names in the US population, which in itself is a nod to the historical and cultural significance of the Presidents themselves.
 
-**Note: Derivatives of these names that are not actually the name of the President are not included here. For example: "Obamacare". Empty cells indicate names that have no single-token representation.**
+**Note: Derivatives of these names that are not actually the name of the President are not included here. For example: `Obamacare`. Empty cells indicate names that have no single-token representation.**
 
 | President | Tokens |
 |:----------|:-------|
