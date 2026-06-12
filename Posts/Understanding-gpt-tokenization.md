@@ -20,15 +20,17 @@ slug: understanding-gpt-tokenization
 ---
 ## Introduction
 
-If you work with GPT models, tokenization quickly becomes an engineering concern, not just a billing detail. It affects prompt budgets, context limits, and sometimes why model behavior looks surprising. This article explains how the *cl100k* tokenizer converts UTF-8 text into token IDs and back again, using a clarity-first *C#* implementation instead of a speed-optimized one. We will cover the core replacement data, walk through the `Encode` and `Decode` flow, and then look at a few findings that show how tokenization reflects usage patterns in real data.
+Tokenization is not just a billing detail — it shapes prompt budgets, context limits, and can explain why a model behaves unexpectedly. If you work with GPT models seriously, understanding how tokenization actually works becomes an engineering necessity. When I reached that point, I turned to the standard implementations to learn the mechanics, and found them nearly impenetrable. They are optimized for speed and efficiency, which means the structure that makes them fast is exactly what makes them hard to follow. So I built a clarity-first *C#* implementation instead — one designed to make the `Encode` and `Decode` flow easy to inspect, not fast to run. This article walks through that implementation, covering the core replacement data, the encoding and decoding flow, and a few findings that show how tokenization reflects usage patterns in real data.
 
 ## BPE Tokenization in natural language processing (NLP)
-
-BPE (Byte-Pair Encoding) Tokenization is the process of converting text input into a numeric form that machine learning models can interpret. During this process, text strings are broken into segments, usually words or word-segments; and then segments are iteratively merged with the following segments based on the commonality of their usage. Eventually, these merged segments are mapped to one or more unique integer values called tokens. This numerical representation allows algorithms to perform operations on textual data since the models require quantitative inputs.
 
 ### Why Tokenization?
 
 NLP models use tokenization instead of working directly on raw UTF-8 bytes because tokens better match how language is used. Tokens group text into units that carry meaning, generalize better, and support sequence modeling. This reduces the effective input space and helps models process text more efficiently, especially when multi-byte characters are involved.
+
+BPE (Byte-Pair Encoding) Tokenization is the process of converting text input into a numeric form that machine learning models can interpret. During this process, text strings are broken into segments, usually words or word-segments; and then segments are iteratively merged with the following segments based on the commonality of their usage. Eventually, these merged segments are mapped to one or more unique integer values called tokens. This numerical representation allows algorithms to perform operations on textual data since the models require quantitative inputs.
+
+To make this concrete: the word "Taylor" maps to not one but two tokens — ID 16844 with a leading space, and ID 68236 without — because it appears frequently enough in the training data in both contexts (as a name, a surname, a common word) to earn multiple entries. A less common presidential name like "Coolidge" has no single-token form at all; it requires multiple tokens to represent. At the other extreme, the Russian word ` размер` (meaning "size" or "dimension", with a leading space) is token ID 100147 — a single token for a non-English word, captured because Russian-language content appeared frequently enough in the training data to earn it a dedicated entry. Token boundaries follow frequency, not human intuition about what counts as a "word."
 
 ### The *cl100k* Tokenization Model
 
@@ -36,7 +38,7 @@ The *cl100k* tokenization model is the encoding scheme used by OpenAI's GPT (Gen
 
 ## The *cl100k* Tokenizer Sample Code
 
-I found it difficult to learn this process from standard implementations. Those implementations are optimized for speed and efficiency, not for readability. To make the mechanics easier to follow, I created an object-oriented implementation that prioritizes clarity over performance. The goal is educational: make `Encode` and `Decode` easy to inspect without getting lost in low-level optimizations. The code is written in *C#* and is available on [GitHub](https://github.com/bsstahl/AIDemos/tree/master/Tokenizer).
+The implementation is object-oriented and written in *C#*, structured so that `Encode` and `Decode` are easy to inspect without getting lost in low-level optimizations. The code is available on [GitHub](https://github.com/bsstahl/AIDemos/tree/master/Tokenizer).
 
 ### *cl100k* Tokenization Replacements
 
@@ -61,7 +63,7 @@ At a high level, the replacements file is the source of truth for both direction
 3. Append those bytes to a buffer.
 4. Decode the final byte array as UTF-8 text.
 
-Because both methods use the same replacement mappings in opposite directions, a valid input should round-trip cleanly: text -> tokens -> text.
+Because both methods use the same replacement mappings in opposite directions, a valid input should round-trip cleanly: text → tokens → text.
 
 ### Invalid UTF-8 Sequences
 
@@ -79,18 +81,33 @@ This means that if we encode the Spanish exclamation "Vaya, ñu" ("Wow, wildebee
 
 Once the mechanics are clear, the replacement table becomes an interesting lens into what text patterns appear often enough to become single tokens.
 
-* Longest Value Tokens
-  * Discussion on the longest value (128 spaces) and its significance
-  * Other tokens beyond 42 characters long
-* Tokens Beyond Programming
-  * Presentation of the longest readable term .translatesAutoresizingMaskIntoConstraints
-  * Exploration of the longest term not programming related: abcdefghijklmnopqrstuvwxyz
-  * Analysis of the longest word not specifically programming related:  responsibilities
-* Social Media's Influence
-  * Examination of the term unconstitutional and its reflection of social media content
-* Notable Tokens
-  * Insights into tokens like -m, mary, and значения
-  * The curious case of redacted text representation with █████
+### Long Tokens
+
+The longest token in the *cl100k* table is a sequence of 128 consecutive spaces — token ID 58040. That a string of whitespace this long earned its own entry suggests it appeared with remarkable frequency in the training data, likely from code formatting, markdown rendering, or structured document output. It is not alone: several other tokens exceed 42 characters in length, each a testament to how often that exact byte sequence appeared in the corpus.
+
+### Tokens Beyond Programming
+
+The longest readable single token is the Objective-C method name `.translatesAutoresizingMaskIntoConstraints` — token ID 63570. At 42 characters, it is a single token because iOS and macOS development documentation flooded the training data with it. It is a reminder that the tokenizer does not know what a "word" is — only what appears together, and how often.
+
+### Alphabet as a Token
+
+The string `abcdefghijklmnopqrstuvwxyz` — the complete lowercase English alphabet in order — is token ID 68612. That this specific sequence appears often enough to earn a dedicated entry reveals something about the corpus: tutorials, coding examples, password documentation, and educational content all tend to produce it. The tokenizer captured an artifact of how people teach.
+
+### The Weight of Common Words
+
+The longest single-token word that is not specifically programming-related is ` responsibilities` with a leading space — token ID 28423. Seventeen total characters, yet common enough in formal writing, corporate communication, and political text to be encoded as a single unit. Its presence reflects the weight of that particular kind of language in the training data.
+
+### Social Media's Fingerprint
+
+The word ` unconstitutional` with a leading space — token ID 53925 — is a single token for a 17 character sequence. Its inclusion tells us something concrete about what dominated the training corpus: high-volume political discourse on the internet. The tokenizer does not have opinions, but it does reflect the conversations that shaped it.
+
+### Notable Tokens
+
+Some tokens are notable not for their length but for what they suggest. The sequence `-m` (token ID 1474) is a fragment that appears constantly in command-line flags and markdown list items. `mary` (token ID 1563) — lowercase, no leading space — suggests it appeared frequently enough as a standalone common noun or name to earn its own entry. And ` значения` with a leading space (token ID 88612), the Russian word for "values" or "meanings," confirms that the model's vocabulary extends meaningfully into Cyrillic text, not just as byte fragments but as whole semantic units.
+
+### Redacted
+
+Finally, ` █████` with a leading space — token ID 93429. A group of block characters used to represent redacted text is a single token. It appeared so frequently in legal documents, government releases, and journalism that the model treats it as a unit of meaning. There is something both darkly funny and genuinely informative about that: the tokenizer has learned that some things are meant not to be read.
 
 ### The Tokenization of US Presidents Last Names
 
@@ -108,181 +125,53 @@ The fact that Ford and Grant have the most ways to represent their names makes s
 
 Meanwhile, names like Washington, Jefferson, and Johnson, which are more common in the English language, have multiple representations in a single token. This is likely due to the frequency of these names in the US population, which in itself is a nod to the historical and cultural significance of the Presidents themselves.
 
-**Note: Derivatives of these names that are not actually the name of the President are not included here. For example: "Obamacare".**
+**Note: Derivatives of these names that are not actually the name of the President are not included here. For example: "Obamacare". Empty cells indicate names that have no single-token representation.**
 
-<table border="2">
-  <thead>
-    <tr>
-      <th>President</th>
-      <th>Tokens</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">Adams</td>
-      <td style="text-align:left">27329 (' Adams')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Arthur</td>
-      <td style="text-align:left">28686 (' Arthur'), 60762 ('Arthur')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Biden</td>
-      <td style="text-align:left">38180 (' Biden')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Buchanan</td>
-      <td style="text-align:left">85290 (' Buchanan')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Bush</td>
-      <td style="text-align:left">14409 (' Bush'), 30773 (' bush'), 100175 ('Bush')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Carter</td>
-      <td style="text-align:left">25581 (' Carter')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Cleveland</td>
-      <td style="text-align:left">24372 (' Cleveland')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Clinton</td>
-      <td style="text-align:left">8283 (' Clinton'), 51308 ('Clinton')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Coolidge</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Eisenhower</td>
-      <td style="text-align:left">89181 (' Eisenhower')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Fillmore</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Ford</td>
-      <td style="text-align:left">8350 ('ford'), 14337 (' Ford'), 45728 (' ford'), 59663 ('Ford')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Garfield</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Grant</td>
-      <td style="text-align:left">13500 (' grant'), 24668 (' Grant'), 52727 ('grant'), 69071 ('Grant')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Harding</td>
-      <td style="text-align:left">97593 (' Harding')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Harrison</td>
-      <td style="text-align:left">36627 (' Harrison')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Hayes</td>
-      <td style="text-align:left">53522 (' Hayes')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Hoover</td>
-      <td style="text-align:left">73409 (' Hoover')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Jackson</td>
-      <td style="text-align:left">13972 (' Jackson'), 62382 ('Jackson')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Jefferson</td>
-      <td style="text-align:left">34644 (' Jefferson')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Johnson</td>
-      <td style="text-align:left">11605 (' Johnson'), 63760 ('Johnson')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Kennedy</td>
-      <td style="text-align:left">24573 (' Kennedy')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Lincoln</td>
-      <td style="text-align:left">25379 (' Lincoln')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Madison</td>
-      <td style="text-align:left">31015 (' Madison')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">McKinley</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Monroe</td>
-      <td style="text-align:left">50887 (' Monroe')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Nixon</td>
-      <td style="text-align:left">42726 (' Nixon')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Obama</td>
-      <td style="text-align:left">7250 (' Obama'), 45437 ('Obama')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Pierce</td>
-      <td style="text-align:left">50930 (' Pierce')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Polk</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Reagan</td>
-      <td style="text-align:left">35226 (' Reagan')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Roosevelt</td>
-      <td style="text-align:left">47042 (' Roosevelt')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Taft</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Taylor</td>
-      <td style="text-align:left">16844 (' Taylor'), 68236 ('Taylor')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Truman</td>
-      <td style="text-align:left">80936 (' Truman')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Trump</td>
-      <td style="text-align:left">3420 (' Trump'), 16509 ('Trump'), 39155 (' trump')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Tyler</td>
-      <td style="text-align:left">32320 (' Tyler'), 100224 ('Tyler')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Van Buren</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Washington</td>
-      <td style="text-align:left">6652 (' Washington'), 39231 ('Washington'), 94771 (' washington')</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Wilson</td>
-      <td style="text-align:left">17882 (' Wilson'), 92493 ('Wilson')</td>
-    </tr>
-  </tbody>
-</table>
+| President | Tokens |
+|:----------|:-------|
+| Adams | 27329 (' Adams') |
+| Arthur | 28686 (' Arthur'), 60762 ('Arthur') |
+| Biden | 38180 (' Biden') |
+| Buchanan | 85290 (' Buchanan') |
+| Bush | 14409 (' Bush'), 30773 (' bush'), 100175 ('Bush') |
+| Carter | 25581 (' Carter') |
+| Cleveland | 24372 (' Cleveland') |
+| Clinton | 8283 (' Clinton'), 51308 ('Clinton') |
+| Coolidge | |
+| Eisenhower | 89181 (' Eisenhower') |
+| Fillmore | |
+| Ford | 8350 ('ford'), 14337 (' Ford'), 45728 (' ford'), 59663 ('Ford') |
+| Garfield | |
+| Grant | 13500 (' grant'), 24668 (' Grant'), 52727 ('grant'), 69071 ('Grant') |
+| Harding | 97593 (' Harding') |
+| Harrison | 36627 (' Harrison') |
+| Hayes | 53522 (' Hayes') |
+| Hoover | 73409 (' Hoover') |
+| Jackson | 13972 (' Jackson'), 62382 ('Jackson') |
+| Jefferson | 34644 (' Jefferson') |
+| Johnson | 11605 (' Johnson'), 63760 ('Johnson') |
+| Kennedy | 24573 (' Kennedy') |
+| Lincoln | 25379 (' Lincoln') |
+| Madison | 31015 (' Madison') |
+| McKinley | |
+| Monroe | 50887 (' Monroe') |
+| Nixon | 42726 (' Nixon') |
+| Obama | 7250 (' Obama'), 45437 ('Obama') |
+| Pierce | 50930 (' Pierce') |
+| Polk | |
+| Reagan | 35226 (' Reagan') |
+| Roosevelt | 47042 (' Roosevelt') |
+| Taft | |
+| Taylor | 16844 (' Taylor'), 68236 ('Taylor') |
+| Truman | 80936 (' Truman') |
+| Trump | 3420 (' Trump'), 16509 ('Trump'), 39155 (' trump') |
+| Tyler | 32320 (' Tyler'), 100224 ('Tyler') |
+| Van Buren | |
+| Washington | 6652 (' Washington'), 39231 ('Washington'), 94771 (' washington') |
+| Wilson | 17882 (' Wilson'), 92493 ('Wilson') |
 
 ## Conclusion
 
 Tokenization in *cl100k* is best understood as a byte-sequence mapping layer between text and model input, not a simple word splitter. Once that model is clear, behavior that looks strange at first, such as token values that contain incomplete UTF-8 fragments, becomes expected and understandable in sequence context.
 
-The practical takeaway is that tokenizer awareness improves engineering decisions. It helps with prompt design, token budgeting, multilingual handling, and debugging surprising model output. If you step through `Encode` and `Decode` with your own examples, the mechanics become intuitive very quickly.
+The practical takeaway is that tokenizer awareness improves engineering decisions. It helps with prompt design, token budgeting, multilingual handling, and debugging surprising model output. If you step through `Encode` and `Decode` with your own examples, the mechanics become intuitive very quickly — the [sample code on GitHub](https://github.com/bsstahl/AIDemos/tree/master/Tokenizer) is a good place to start.
