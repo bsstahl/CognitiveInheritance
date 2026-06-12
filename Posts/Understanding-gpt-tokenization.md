@@ -20,13 +20,15 @@ slug: understanding-gpt-tokenization
 ---
 ## Introduction
 
-Tokenization is not just a billing detail — it shapes prompt budgets, context limits, and can explain why a model behaves unexpectedly. If you work with GPT models seriously, understanding how tokenization actually works becomes an engineering necessity. When I reached that point, I turned to the standard implementations to learn the mechanics, and found them nearly impenetrable. These tools are optimized for speed and efficiency, which means the structure that makes them fast is exactly what makes them hard to follow. So I built a clarity-first *C#* implementation instead — one designed to make the `Encode` and `Decode` flow easy to inspect, not fast to run. This article walks through that implementation, covering the core replacement data, the encoding and decoding flow, and a few findings that show how tokenization reflects usage patterns in real data.
+Tokenization isn't just a billing detail — it shapes prompt budgets, context limits, and is often a key reason behind a model's surprising behavior. If you're building production systems or wrangling LLMs in real-world code, understanding how tokenization actually works isn't optional — it's engineering hygiene. Ever struggled with a model answer that gets mysteriously cut off, or wondered why your prompt "should fit" but doesn't? That's likely to be tokenization at work.
+
+When I reached that point of needed to understand this process better, I turned to the standard implementations to learn the mechanics, and found them nearly impenetrable. Tokenization tools are optimized for speed and efficiency, and the structure that makes them fast also makes them hard to follow. So I built a clarity-first *C#* implementation instead — one designed to make the `Encode` and `Decode` flow easy to inspect, not fast to run. This article walks through that implementation, covering the core replacement data, the encoding and decoding flow, and a few findings that show how tokenization reflects usage patterns in real data.
 
 ## BPE Tokenization in natural language processing (NLP)
 
 ### Why Tokenization?
 
-NLP models use tokenization instead of working directly on raw UTF-8 bytes because tokens better match how language is used. Tokens group text into units that carry meaning, generalize better, and support sequence modeling. This reduces the effective input space and helps models process text more efficiently, especially when multi-byte characters are involved.
+NLP models use tokenization instead of working directly on raw UTF-8 bytes because tokens better match how we, as developers and users, experience language in code and text. Have you ever tried to shoehorn user input from a legacy system into an LLM and wondered why it doesn't behave exactly as you'd expect? That's where understanding tokenization offers an edge.
 
 BPE (Byte-Pair Encoding) Tokenization is the process of converting text input into a numeric form that machine learning models can interpret. During this process, text strings are broken into segments, usually words or word-segments; and then segments are iteratively merged with the following segments based on the commonality of their usage. Eventually, these merged segments are mapped to one or more unique integer values called tokens. This numerical representation allows algorithms to perform operations on textual data since the models require quantitative inputs.
 
@@ -34,11 +36,11 @@ Token boundaries follow frequency, not human intuition about what counts as a "w
 
 ### The *cl100k* Tokenization Model
 
-The *cl100k* tokenization model is the encoding scheme used by OpenAI's GPT (Generative Pre-trained Transformer) models. It maps input text into 100,256 token values, representing everything from individual characters to common words and phrases across multiple languages. This tokenizer is a core part of GPT model performance.
+The *cl100k* tokenization model is the one you'll use if you're building anything on OpenAI's GPT stack. Imagine it as a massive lookup table, translating your handwritten instructions, code comments, and edge-case data straight into numbers the model can reason about. This tokenizer is a core part of GPT model performance.
 
 ## The *cl100k* Tokenizer Sample Code
 
-The implementation is object-oriented and written in *C#*, structured so that `Encode` and `Decode` are easy to inspect without getting lost in low-level optimizations. The code is available on [GitHub](https://github.com/bsstahl/AIDemos/tree/master/Tokenizer).
+The clarity-first, object-oriented implementation of a Tokenizer in written in *C#*, my language of choice. I suspect it will be easy to have it translated into nearly any other programming language if that will make it easier for you to understand. The goal of this implementation isn't speed, it's transparency. You can step through `Encode` and `Decode` and see exactly what's happening. The code is available on [GitHub](https://github.com/bsstahl/AIDemos/tree/master/Tokenizer).
 
 ### *cl100k* Tokenization Replacements
 
@@ -89,7 +91,7 @@ The longest token in the *cl100k* table is a sequence of 128 consecutive spaces 
 
 ### Tokens Beyond Programming
 
-The longest readable single token is the Objective-C method name `.translatesAutoresizingMaskIntoConstraints` — token ID 63570. At 42 characters, it is a single token because iOS and macOS development documentation flooded the training data with it. It is a reminder that the tokenizer does not know what a "word" is — only what appears together, and how often.
+The longest readable single token is the Objective-C method name `.translatesAutoresizingMaskIntoConstraints` — token ID 63570. At 42 characters, it's a single token for one simple reason: the training data was saturated with Apple's developer docs and implementations that use that method call. This is a good reminder that the tokenizer does not know what a "word" is — only what appears together, and how often.
 
 ### Alphabet as a Token
 
