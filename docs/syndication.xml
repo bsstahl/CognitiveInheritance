@@ -16,12 +16,41 @@
 &lt;h2&gt;BPE Tokenization in natural language processing (NLP)&lt;/h2&gt;
 &lt;h3&gt;Why Tokenization?&lt;/h3&gt;
 &lt;p&gt;NLP models use tokenization instead of working directly on raw UTF-8 bytes because tokens better match how we, as developers and users, experience language in code and text. Have you ever tried to shoehorn user input from a legacy system into an LLM and wondered why it doesn&apos;t behave exactly as you&apos;d expect? That&apos;s where understanding tokenization offers an edge.&lt;/p&gt;
-&lt;p&gt;BPE (Byte-Pair Encoding) Tokenization is the process of converting text input into a numeric form that machine learning models can interpret. During this process, text strings are broken into segments, usually words or word-segments; and then segments are iteratively merged with the following segments based on the commonality of their usage. Eventually, these merged segments are mapped to one or more unique integer values called tokens. This numerical representation allows algorithms to perform operations on textual data since the models require quantitative inputs.&lt;/p&gt;
+&lt;p&gt;BPE (Byte-Pair Encoding) Tokenization is the process of converting text input into a numeric form that machine learning models can interpret. During this process, text strings are broken into groups by whitespace. These groups are broken into segments, individual bytes to start, which are then iteratively merged with the following segments in the same group based on the commonality of their usage. Eventually, these merged segments are mapped to one or more unique integer values called tokens. This numerical representation allows algorithms to perform operations on textual data since the models require quantitative inputs.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;flowchart TD
+    A[Input Text] --&amp;gt; B{Split into groups&amp;lt;br&amp;gt;by Whitespace}
+    B --&amp;gt; C[Group 1]
+    B --&amp;gt; D[Group 2]
+    B --&amp;gt; E[... Group N ...]
+    
+    subgraph Parallel_Process_1[&amp;quot;For Each Group (can run in parallel)&amp;quot;]
+        C --&amp;gt; F1[Split into Individual Bytes]
+        F1 --&amp;gt; G1[Merge Segments&amp;lt;br&amp;gt;by Most Common Pairs]
+        G1 --&amp;gt; D1{More merges possible?}
+        D1 -- Yes --&amp;gt; G1
+        D1 -- No --&amp;gt; H1[Map Merged Segments to Token Int IDs]
+        H1 --&amp;gt; I[Output: Sequence of Tokens]
+
+        D --&amp;gt; F2[Split into Individual Bytes]
+        F2 --&amp;gt; G2[Merge Segments&amp;lt;br&amp;gt;by Most Common Pairs]
+        G2 --&amp;gt; D2{More merges possible?}
+        D2 -- Yes --&amp;gt; G2
+        D2 -- No --&amp;gt; H2[Map Merged Segments to Token Int IDs]
+        H2 --&amp;gt; I
+
+        E --&amp;gt; F3[Split into Individual Bytes]
+        F3 --&amp;gt; G3[Merge Segments&amp;lt;br&amp;gt;by Most Common Pairs]
+        G3 --&amp;gt; D3{More merges possible?}
+        D3 -- Yes --&amp;gt; G3
+        D3 -- No --&amp;gt; H3[Map Merged Segments to Token Int IDs]
+        H3 --&amp;gt; I
+    end
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3&gt;The &lt;em&gt;cl100k&lt;/em&gt; Tokenization Model&lt;/h3&gt;
 &lt;p&gt;The &lt;em&gt;cl100k&lt;/em&gt; tokenization model is the one you&apos;ll use if you&apos;re building anything on OpenAI&apos;s GPT stack. Imagine it as a massive lookup table, translating your handwritten instructions, code comments, and edge-case data straight into numbers the model can reason about. This tokenizer is a core part of GPT model performance.&lt;/p&gt;
 &lt;p&gt;Token boundaries follow frequency, not human intuition, about what counts as a &amp;quot;word.&amp;quot; To make this concrete: a less common presidential name like &lt;code&gt;Coolidge&lt;/code&gt; has no single-token form at all in the &lt;em&gt;cl100k&lt;/em&gt; model. This name, like many others, requires multiple tokens to represent, because it simply did not appear often enough in the training data to earn representation as a single token. On the other hand, &lt;code&gt;Taylor&lt;/code&gt; maps to not one but two tokens: ID 16844 with a leading space, and ID 68236 without a space, because it appears frequently enough in both forms to each earn these dedicated entries. And the pattern is not limited to English: the Russian word &lt;code&gt; размер&lt;/code&gt; (meaning &amp;quot;size&amp;quot; or &amp;quot;dimension&amp;quot;, with a leading space) is token ID 100147, captured because Russian-language content appeared frequently enough in the training data to earn it a place in the table alongside common English words.&lt;/p&gt;
 &lt;h2&gt;The &lt;em&gt;cl100k&lt;/em&gt; Tokenizer Sample Code&lt;/h2&gt;
-&lt;p&gt;The clarity-first, object-oriented implementation of a Tokenizer in written in &lt;em&gt;C#&lt;/em&gt;, my language of choice. I suspect it will be easy to have it translated into nearly any other programming language if that will make it easier for you to understand. The goal of this implementation isn&apos;t speed, it&apos;s transparency. You can step through &lt;code&gt;Encode&lt;/code&gt; and &lt;code&gt;Decode&lt;/code&gt; to see exactly what&apos;s happening. The code is available on &lt;a href=&quot;https://github.com/bsstahl/AIDemos/tree/master/Tokenizer&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The clarity-first, object-oriented implementation of a Tokenizer is written in &lt;em&gt;C#&lt;/em&gt;, my language of choice. I suspect it will be easy to have it translated into nearly any other programming language if that will make it easier for you to understand. The goal of this implementation isn&apos;t speed, it&apos;s transparency. You can step through &lt;code&gt;Encode&lt;/code&gt; and &lt;code&gt;Decode&lt;/code&gt; to see exactly what&apos;s happening. The code is available on &lt;a href=&quot;https://github.com/bsstahl/AIDemos/tree/master/Tokenizer&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;&lt;em&gt;cl100k&lt;/em&gt; Tokenization Replacements&lt;/h3&gt;
 &lt;p&gt;The key to the tokenization process using &lt;em&gt;cl100k&lt;/em&gt; is the replacements data, found in the &lt;a href=&quot;https://github.com/bsstahl/AIDemos/blob/master/Tokenizer/Tokenizer/data/cl100k_base.tiktoken&quot;&gt;cl100k_base.tiktoken&lt;/a&gt; file in the code sample. This file contains a list of Base-64 encoded strings, and the token that each string represents.&lt;/p&gt;
 &lt;p&gt;While the official replacements file lists the token byte sequences, it can be difficult to tell the practical meaning of each token. This is especially true for whitespace, control characters, or unprintable bytes. For a fully decoded, human-readable table showing what each &lt;em&gt;cl100k&lt;/em&gt; token actually represents (including both printable and non-printable tokens), see &lt;a href=&quot;https://www.cognitiveinheritance.com/Pages/cl100k-token-replacements.html&quot;&gt;this table&lt;/a&gt;.&lt;/p&gt;

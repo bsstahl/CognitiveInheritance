@@ -87,12 +87,41 @@
 <h2>BPE Tokenization in natural language processing (NLP)</h2>
 <h3>Why Tokenization?</h3>
 <p>NLP models use tokenization instead of working directly on raw UTF-8 bytes because tokens better match how we, as developers and users, experience language in code and text. Have you ever tried to shoehorn user input from a legacy system into an LLM and wondered why it doesn't behave exactly as you'd expect? That's where understanding tokenization offers an edge.</p>
-<p>BPE (Byte-Pair Encoding) Tokenization is the process of converting text input into a numeric form that machine learning models can interpret. During this process, text strings are broken into segments, usually words or word-segments; and then segments are iteratively merged with the following segments based on the commonality of their usage. Eventually, these merged segments are mapped to one or more unique integer values called tokens. This numerical representation allows algorithms to perform operations on textual data since the models require quantitative inputs.</p>
+<p>BPE (Byte-Pair Encoding) Tokenization is the process of converting text input into a numeric form that machine learning models can interpret. During this process, text strings are broken into groups by whitespace. These groups are broken into segments, individual bytes to start, which are then iteratively merged with the following segments in the same group based on the commonality of their usage. Eventually, these merged segments are mapped to one or more unique integer values called tokens. This numerical representation allows algorithms to perform operations on textual data since the models require quantitative inputs.</p>
+<pre><code class="language-mermaid">flowchart TD
+    A[Input Text] --&gt; B{Split into groups&lt;br&gt;by Whitespace}
+    B --&gt; C[Group 1]
+    B --&gt; D[Group 2]
+    B --&gt; E[... Group N ...]
+    
+    subgraph Parallel_Process_1[&quot;For Each Group (can run in parallel)&quot;]
+        C --&gt; F1[Split into Individual Bytes]
+        F1 --&gt; G1[Merge Segments&lt;br&gt;by Most Common Pairs]
+        G1 --&gt; D1{More merges possible?}
+        D1 -- Yes --&gt; G1
+        D1 -- No --&gt; H1[Map Merged Segments to Token Int IDs]
+        H1 --&gt; I[Output: Sequence of Tokens]
+
+        D --&gt; F2[Split into Individual Bytes]
+        F2 --&gt; G2[Merge Segments&lt;br&gt;by Most Common Pairs]
+        G2 --&gt; D2{More merges possible?}
+        D2 -- Yes --&gt; G2
+        D2 -- No --&gt; H2[Map Merged Segments to Token Int IDs]
+        H2 --&gt; I
+
+        E --&gt; F3[Split into Individual Bytes]
+        F3 --&gt; G3[Merge Segments&lt;br&gt;by Most Common Pairs]
+        G3 --&gt; D3{More merges possible?}
+        D3 -- Yes --&gt; G3
+        D3 -- No --&gt; H3[Map Merged Segments to Token Int IDs]
+        H3 --&gt; I
+    end
+</code></pre>
 <h3>The <em>cl100k</em> Tokenization Model</h3>
 <p>The <em>cl100k</em> tokenization model is the one you'll use if you're building anything on OpenAI's GPT stack. Imagine it as a massive lookup table, translating your handwritten instructions, code comments, and edge-case data straight into numbers the model can reason about. This tokenizer is a core part of GPT model performance.</p>
 <p>Token boundaries follow frequency, not human intuition, about what counts as a &quot;word.&quot; To make this concrete: a less common presidential name like <code>Coolidge</code> has no single-token form at all in the <em>cl100k</em> model. This name, like many others, requires multiple tokens to represent, because it simply did not appear often enough in the training data to earn representation as a single token. On the other hand, <code>Taylor</code> maps to not one but two tokens: ID 16844 with a leading space, and ID 68236 without a space, because it appears frequently enough in both forms to each earn these dedicated entries. And the pattern is not limited to English: the Russian word <code> размер</code> (meaning &quot;size&quot; or &quot;dimension&quot;, with a leading space) is token ID 100147, captured because Russian-language content appeared frequently enough in the training data to earn it a place in the table alongside common English words.</p>
 <h2>The <em>cl100k</em> Tokenizer Sample Code</h2>
-<p>The clarity-first, object-oriented implementation of a Tokenizer in written in <em>C#</em>, my language of choice. I suspect it will be easy to have it translated into nearly any other programming language if that will make it easier for you to understand. The goal of this implementation isn't speed, it's transparency. You can step through <code>Encode</code> and <code>Decode</code> to see exactly what's happening. The code is available on <a href="https://github.com/bsstahl/AIDemos/tree/master/Tokenizer">GitHub</a>.</p>
+<p>The clarity-first, object-oriented implementation of a Tokenizer is written in <em>C#</em>, my language of choice. I suspect it will be easy to have it translated into nearly any other programming language if that will make it easier for you to understand. The goal of this implementation isn't speed, it's transparency. You can step through <code>Encode</code> and <code>Decode</code> to see exactly what's happening. The code is available on <a href="https://github.com/bsstahl/AIDemos/tree/master/Tokenizer">GitHub</a>.</p>
 <h3><em>cl100k</em> Tokenization Replacements</h3>
 <p>The key to the tokenization process using <em>cl100k</em> is the replacements data, found in the <a href="https://github.com/bsstahl/AIDemos/blob/master/Tokenizer/Tokenizer/data/cl100k_base.tiktoken">cl100k_base.tiktoken</a> file in the code sample. This file contains a list of Base-64 encoded strings, and the token that each string represents.</p>
 <p>While the official replacements file lists the token byte sequences, it can be difficult to tell the practical meaning of each token. This is especially true for whitespace, control characters, or unprintable bytes. For a fully decoded, human-readable table showing what each <em>cl100k</em> token actually represents (including both printable and non-printable tokens), see <a href="../Pages/cl100k-token-replacements.html">this table</a>.</p>
