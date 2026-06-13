@@ -35,7 +35,7 @@ When I reached the point of needing to understand the Tokenization process bette
 
 NLP models use tokenization instead of working directly on raw UTF-8 bytes because tokens better match how we, as developers and users, experience language in code and text. Have you ever tried to shoehorn user input from a legacy system into an LLM and wondered why it doesn't behave exactly as you'd expect? That's where understanding tokenization offers an edge.
 
-BPE (Byte-Pair Encoding) Tokenization is the process of converting text input into a numeric form that machine learning models can interpret. During this process, text strings are broken into segments, usually words or word-segments; and then segments are iteratively merged with the following segments based on the commonality of their usage. Eventually, these merged segments are mapped to one or more unique integer values called tokens. This numerical representation allows algorithms to perform operations on textual data since the models require quantitative inputs.
+BPE (Byte-Pair Encoding) Tokenization is the process of converting text input into a numeric form that machine learning models can interpret. During this process, text strings are broken into groups by whitespace. These groups are broken into segments, individual bytes to start, which are then iteratively merged with the following segments in the same group based on the commonality of their usage. Eventually, these merged segments are mapped to one or more unique integer values called tokens. This numerical representation allows algorithms to perform operations on textual data since the models require quantitative inputs.
 
 ### The *cl100k* Tokenization Model
 
@@ -45,7 +45,7 @@ Token boundaries follow frequency, not human intuition, about what counts as a "
 
 ## The *cl100k* Tokenizer Sample Code
 
-The clarity-first, object-oriented implementation of a Tokenizer in written in *C#*, my language of choice. I suspect it will be easy to have it translated into nearly any other programming language if that will make it easier for you to understand. The goal of this implementation isn't speed, it's transparency. You can step through `Encode` and `Decode` to see exactly what's happening. The code is available on [GitHub](https://github.com/bsstahl/AIDemos/tree/master/Tokenizer).
+The clarity-first, object-oriented implementation of a Tokenizer is written in *C#*, my language of choice. I suspect it will be easy to have it translated into nearly any other programming language if that will make it easier for you to understand. The goal of this implementation isn't speed, it's transparency. You can step through `Encode` and `Decode` to see exactly what's happening. The code is available on [GitHub](https://github.com/bsstahl/AIDemos/tree/master/Tokenizer).
 
 ### *cl100k* Tokenization Replacements
 
