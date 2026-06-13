@@ -15,7 +15,7 @@ id: 802ad127-19a0-4a19-9bc7-a753e64d3124
 title: Understanding GPT Tokenization
 description: 
 teaser: 
-ispublished: false
+ispublished: true
 showinlist: false
 buildifnotpublished: true
 publicationdate: 2024-03-01T07:00:00Z
@@ -41,11 +41,11 @@ BPE (Byte-Pair Encoding) Tokenization is the process of converting text input in
 
 The *cl100k* tokenization model is the one you'll use if you're building anything on OpenAI's GPT stack. Imagine it as a massive lookup table, translating your handwritten instructions, code comments, and edge-case data straight into numbers the model can reason about. This tokenizer is a core part of GPT model performance.
 
-Token boundaries follow frequency, not human intuition about what counts as a "word." To make this concrete: a less common presidential name like `Coolidge` has no single-token form at all in the *cl100k* model. This name, like many others, requires multiple tokens to represent, because it simply did not appear often enough in the training data to earn representation as a single token. On the other hand, `Taylor` maps to not one but two tokens: ID 16844 with a leading space, and ID 68236 without a space, because it appears frequently enough in both forms to each earn these dedicated entries. And the pattern is not limited to English: the Russian word ` размер` (meaning "size" or "dimension", with a leading space) is token ID 100147, captured because Russian-language content appeared frequently enough in the training data to earn it a place in the table alongside common English words.
+Token boundaries follow frequency, not human intuition, about what counts as a "word." To make this concrete: a less common presidential name like `Coolidge` has no single-token form at all in the *cl100k* model. This name, like many others, requires multiple tokens to represent, because it simply did not appear often enough in the training data to earn representation as a single token. On the other hand, `Taylor` maps to not one but two tokens: ID 16844 with a leading space, and ID 68236 without a space, because it appears frequently enough in both forms to each earn these dedicated entries. And the pattern is not limited to English: the Russian word ` размер` (meaning "size" or "dimension", with a leading space) is token ID 100147, captured because Russian-language content appeared frequently enough in the training data to earn it a place in the table alongside common English words.
 
 ## The *cl100k* Tokenizer Sample Code
 
-The clarity-first, object-oriented implementation of a Tokenizer in written in *C#*, my language of choice. I suspect it will be easy to have it translated into nearly any other programming language if that will make it easier for you to understand. The goal of this implementation isn't speed, it's transparency. You can step through `Encode` and `Decode` and see exactly what's happening. The code is available on [GitHub](https://github.com/bsstahl/AIDemos/tree/master/Tokenizer).
+The clarity-first, object-oriented implementation of a Tokenizer in written in *C#*, my language of choice. I suspect it will be easy to have it translated into nearly any other programming language if that will make it easier for you to understand. The goal of this implementation isn't speed, it's transparency. You can step through `Encode` and `Decode` to see exactly what's happening. The code is available on [GitHub](https://github.com/bsstahl/AIDemos/tree/master/Tokenizer).
 
 ### *cl100k* Tokenization Replacements
 
@@ -82,7 +82,7 @@ I will explain with an example using token *1717*. This token is replaced by the
 
 If for our example, the *1717* token is followed by token *104* (*0xAB* -- also invalid on its own), it combines with the *0xC3* left over from the *1717* token, forming the sequence *0xC3 0xAB*, which is the UTF-8 character `ë`. Similarly, if *1717* were combined with token *109* (*0xB1* -- again invalid Unicode), we'd get the sequence *0xC3 0xB1*, the Spanish character `ñ`.
 
-This means that if we encode the Spanish exclamation `Vaya, ñu` ("Wow, wildebeest") into tokens, we would get the sequence *[53,12874,11,1717,109,84]*. Note the *1717,109* combination toward the end of the sequence. These integers represent UTF-8 bytes encoded into tokens where some individual token values are not valid UTF-8 on their own, but are valid in the full sequence.
+This means that if we encode the Spanish exclamation `Vaya, ñu` ("Wow, wildebeest") into tokens, we would get the sequence *[53,12874,11,1717,109,84]*. Note the *1717,109* combination toward the end of the sequence. These integers represent UTF-8 bytes encoded into tokens. Some individual token values are not valid UTF-8 on their own, but are valid in the full sequence.
 
 ## Intriguing Token Findings
 
@@ -195,4 +195,4 @@ A common heuristic is to assume that English words in typical text cost, on aver
 
 Tokenization in *cl100k* is best understood as a byte-sequence mapping layer between text and model input, not a simple word splitter. Once that model is clear, behavior that looks strange at first, such as token values containing incomplete UTF-8 fragments, becomes expected and understandable in sequence context.
 
-The practical takeaway is that tokenizer awareness improves engineering decisions—it helps with prompt design, token budgeting, multilingual handling, and debugging surprising model output. If you step through `Encode` and `Decode` with your own examples, the mechanics become intuitive very quickly. To achieve this understanding, the [sample code on GitHub](https://github.com/bsstahl/AIDemos/tree/master/Tokenizer) is a good place to start.
+The practical takeaway is that tokenizer awareness improves engineering decisions. Understanding this process helps with prompt design, token budgeting, multilingual handling, and debugging surprising model output. If you step through `Encode` and `Decode` with your own examples, the mechanics become intuitive very quickly. To achieve this understanding, the [sample code on GitHub](https://github.com/bsstahl/AIDemos/tree/master/Tokenizer) is a good place to start.
