@@ -92,9 +92,9 @@ Once the mechanics are clear, the replacement table becomes an interesting lens 
 
 The longest token in the *cl100k* table is a sequence of 128 consecutive spaces (token ID 58040). That a string of whitespace this long earned its own entry suggests it appeared with remarkable frequency in the training data, likely from code formatting, markdown rendering, or structured document output. It is not alone: several other tokens exceed 42 characters in length, each a testament to how often that exact byte sequence appeared in the corpus.
 
-### Tokens Beyond Programming
+### Code is a Significant Contributor
 
-The longest readable single token is the Objective-C method name `.translatesAutoresizingMaskIntoConstraints` (token ID 63570). At 42 characters, it's a single token for one simple reason: the training data was saturated with Apple's developer docs and implementations that use that method call. This is a good reminder that the tokenizer does not know what a "word" is; only what appears together, and how often.
+The longest readable single token is the Objective-C method name `.translatesAutoresizingMaskIntoConstraints` (token ID 63570). At 42 characters, it's a single token for one simple reason: the training data was saturated with Apple's developer docs and implementations that use that method call. This is a good reminder that the tokenizer does not know what a "word" is; only what appears together, and how often. It also explains a lot about why these models can be used to generate code; they've absorbed a lot of it.
 
 ### Alphabet as a Token
 
@@ -108,7 +108,7 @@ The longest single-token word that is not specifically programming-related is ` 
 
 The word ` unconstitutional` with a leading space (token ID 53925) is a single token for a 17 character sequence. Its inclusion tells us something concrete about what dominated the training corpus: high-volume political discourse on the internet. The tokenizer does not have opinions, but it does reflect the conversations that shaped it.
 
-### Notable Tokens
+### Other Notable Tokens
 
 Some tokens are notable not for their length but for what they suggest. The sequence `-m` (token ID 1474) is a fragment that appears constantly in command-line flags and markdown list items. On the other hand, `mary` (token ID 1563) in lowercase with no leading space, suggests it appeared frequently enough as a standalone common noun or name to earn its own entry, while `事` (token ID 30926), the Japanese kanji meaning "case" or "circumstance," confirms that the model's vocabulary extends meaningfully into non-Latin scripts, not just as byte fragments but as whole semantic units.
 
@@ -177,8 +177,22 @@ Meanwhile, names like Washington, Jefferson, and Johnson, which are more common 
 | Washington | 6652 (' Washington'), 39231 ('Washington'), 94771 (' washington') |
 | Wilson | 17882 (' Wilson'), 92493 ('Wilson') |
 
+## Practical Implications for Prompt Design and Debugging
+
+The engineering reality of tokenization emerges when we try to design, debug, or optimize prompts for GPT models. Consider a practical scenario:
+
+Suppose you're designing a prompt for a model with a fixed token budget. You estimate your text should fit easily based on a word count, but your output keeps cutting off. Investigating with a tokenizer, you find that certain whitespace, rare words, or multi-language fragments are converting into many tokens, sometimes two or three times more than expected. For instance, using a phrase like " responsibilities" (which is a single token) is efficient, but a phrase with uncommon names or special symbols may be split into several tokens, reducing your available space for prompts and responses. In multilingual cases, e.g. “¡Bienvenido, размер!”, mixing Spanish and Russian increases token count further because those languages use byte sequences with less efficient mapping.
+
+Knowing this, you can plan your prompts:
+
+* Analyze with the tokenizer to see real token length before submitting text.
+* Avoid language or formatting that explodes token count, especially near prompt limits.
+* Catch why a model output is unexpectedly short; often, it's not your word count, but unseen token inflation.
+
+A common heuristic is to assume that English words in typical text cost, on average, roughly 1⅓ (one and one-third) tokens per word. This means that a phrase consisting of 3 generic English words, could be estimated at 4 tokens. As we've seen however, that is only a reasonably safe assumption using very typical, English language statements. Once we start getting into programming jargon, or involving other languages or character sets, these estimates become far less valuable. As a result, prompt designers, engineers, and anyone working with LLMs should not just count words, they should analyze tokenization directly to make decisions about what fits, what fails, and why.
+
 ## Conclusion
 
-Tokenization in *cl100k* is best understood as a byte-sequence mapping layer between text and model input, not a simple word splitter. Once that model is clear, behavior that looks strange at first, such as token values that contain incomplete UTF-8 fragments, becomes expected and understandable in sequence context.
+Tokenization in *cl100k* is best understood as a byte-sequence mapping layer between text and model input, not a simple word splitter. Once that model is clear, behavior that looks strange at first, such as token values containing incomplete UTF-8 fragments, becomes expected and understandable in sequence context.
 
-The practical takeaway is that tokenizer awareness improves engineering decisions. It helps with prompt design, token budgeting, multilingual handling, and debugging surprising model output. If you step through `Encode` and `Decode` with your own examples, the mechanics become intuitive very quickly. To achieve this understanding, the [sample code on GitHub](https://github.com/bsstahl/AIDemos/tree/master/Tokenizer) is a good place to start.
+The practical takeaway is that tokenizer awareness improves engineering decisions—it helps with prompt design, token budgeting, multilingual handling, and debugging surprising model output. If you step through `Encode` and `Decode` with your own examples, the mechanics become intuitive very quickly. To achieve this understanding, the [sample code on GitHub](https://github.com/bsstahl/AIDemos/tree/master/Tokenizer) is a good place to start.
