@@ -18,8 +18,8 @@ teaser:
 ispublished: true
 showinlist: false
 buildifnotpublished: true
-publicationdate: 2024-03-01T07:00:00Z
-lastmodificationdate: 2024-03-01T08:00:00Z
+publicationdate: 2026-06-12T07:00:00Z
+lastmodificationdate: 2026-06-12T07:00:00Z
 slug: understanding-gpt-tokenization
 
 ---
