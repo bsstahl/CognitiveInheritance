@@ -7,7 +7,7 @@ name:
 - Marie Curie
 - Nikola Tesla
 - Albert Einstein
-- Neil Degrasse Tyson
+- Neil deGrasse Tyson
 - Niels Bohr
 - Galileo Galilei
 - Michael Faraday

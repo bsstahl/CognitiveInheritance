@@ -3,8 +3,9 @@ listname: Favorite Mathematicians
 name:
 - Ada Lovelace
 - Alan Turing
+- Tim Berners-Lee
 - Johannes Kepler
-- Rene Descartes
+- René Descartes
 - Isaac Newton
 - Emmy Noether
 - George Boole
@@ -15,8 +16,8 @@ name:
 - Leonardo Fibonacci
 - Evelyn Berezin
 - Pascal Van Hentenryck
-- Johann Gauss
-- Benoit Mandelbrot
-lastmodificationdate: 2024-12-27T22:05:00.000+00:00
+- Carl Friedrich Gauss
+- Benoît Mandelbrot
+lastmodificationdate: 2026-06-14T14:00:00.000+00:00
 
 ---
