@@ -9,7 +9,7 @@ description: My favorite physicists and favorite mathematicians
 ispublished: true
 showinlist: true
 publicationdate: 2017-06-22T07:00:00
-lastmodificationdate: 2024-12-27T22:05:00
+lastmodificationdate: 2026-06-14T14:00:00
 slug: Favorites
 categories:
 - General
@@ -28,7 +28,7 @@ I like to describe myself as the kind of person who has a list of his favorite p
 1. Marie Curie
 1. Nikola Tesla
 1. Albert Einstein
-1. Neil Degrasse Tyson
+1. Neil deGrasse Tyson
 1. Niels Bohr
 1. Galileo Galilei
 1. Michael Faraday
@@ -41,16 +41,16 @@ I like to describe myself as the kind of person who has a list of his favorite p
 
 1. Ada Lovelace
 1. Alan Turing
-1. Johannes Kepler
-1. Rene Descartes
+1. Tim Berners-Lee
 1. Isaac Newton
 1. Emmy Noether
+1. Johannes Kepler
+1. René Descartes
 1. George Boole
-1. Blaise Pascal
+1. Carl Friedrich Gauss
 1. Grace Hopper
-1. Daphne Koller
 
-* Other notables: Grady Booch, Leonardo Fibonacci, Evelyn Berezin, Pascal Van Hentenryck, Johann Gauss, Benoit Mandelbrot
+* Other notables: Blaise Pascal, Daphne Koller, Grady Booch, Evelyn Berezin, Pascal Van Hentenryck
 
 ---
 
