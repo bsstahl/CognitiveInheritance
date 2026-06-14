@@ -1,0 +1,459 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>How the Fediverse Could Save Democracy</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/130388b7-e1f8-4696-851f-49ec167ba0c0.png'>
+<a id="d76866a9-a672-40e0-8ce0-4a7efb461d31">&nbsp;</a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:b65cd9e9-632f-4e0f-9e55-282326791f58 -->
+<!-- ContentItem:685060d8-4205-4db9-b44d-9610a7729e7d -->
+<aside class="notes"><p>These are the giants on whose shoulders we stand. We can stand on them, because we  have access to the information about their accomplishments. This talk is about the democritization of information and how it can save democracy.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<h2 id="how-the-fediverse-could-save-democracy">How the Fediverse Could Save Democracy</h2>
+<h4 id="why-developers-hold-the-key">&amp; Why Developers Hold the Key</h4>
+<hr />
+<h3 id="barry-s.stahl">Barry S. Stahl</h3>
+<h3 id="solution-architect-developer">Solution Architect &amp; Developer</h3>
+<h3 id="bsstahlcognitiveinheritance.com"><a href="https://fosstodon.org/@Bsstahl">@bsstahl@cognitiveinheritance.com</a></h3>
+<h3 id="httpscognitiveinheritance.com"><a href="https://cognitiveinheritance.com">https://CognitiveInheritance.com</a></h3>
+
+</td>
+<td style="text-align: left;">
+<img src="img/685060d8-4205-4db9-b44d-9610a7729e7d.png" alt="Transparent Half Width Image 720x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="636059f9-aa9d-4444-b4ec-dd7f62badd98"><h1>Favorite Physicists & Mathematicians</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:30f7e9d2-b154-4895-bed7-2765f7bdc6fe -->
+<!-- ContentItem:8a83be06-76e9-4028-9630-c6a7de92ae99 -->
+<aside class="notes"><p>An up-to-date list is available on <a href="https://cognitiveinheritance.com/Pages/Favorites.html">my blog at https://cognitiveinheritance.com/Pages/Favorites.html</a>
+Please ping me on Mastodon to tell me where I messed-up with this list, or this presentation for that matter. 😉</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<h4 id="favorite-physicists">Favorite Physicists</h4>
+<ol>
+<li>Harold &quot;Hal&quot; Stahl</li>
+<li>Carl Sagan</li>
+<li>Richard Feynman</li>
+<li>Marie Curie</li>
+<li>Nikola Tesla</li>
+<li>Albert Einstein</li>
+<li>Neil Degrasse Tyson</li>
+<li>Niels Bohr</li>
+<li>Galileo Galilei</li>
+<li>Michael Faraday</li>
+</ol>
+<p><em>Other notables</em>: Stephen Hawking, Edwin Hubble, Leonard Susskind, Christiaan Huygens</p>
+
+</td>
+<td style="vertical-align:top;">
+<h4 id="favorite-mathematicians">Favorite Mathematicians</h4>
+<ol>
+<li>Ada Lovelace</li>
+<li>Alan Turing</li>
+<li>Tim Berners-Lee</li>
+<li>Isaac Newton</li>
+<li>Emmy Noether</li>
+<li>Johannes Kepler</li>
+<li>René Descartes</li>
+<li>George Boole</li>
+<li>Carl Friedrich Gauss</li>
+<li>Grace Hopper</li>
+</ol>
+<p><em>Other notables</em>: Blaise Pascal, Daphne Koller, Grady Booch, Evelyn Berezin, Pascal Van Hentenryck</p>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="22dae50b-4195-4015-b601-fc5580a0b047"><h1>The Web Was Built To Be Open</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:71fcfc6b-82ad-4e89-a885-00a854e29ba8 -->
+<!-- ContentItem:cc2af5e0-82c8-4d3d-9275-fda6524e6ae5 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Berners-Lee imagined a read-write commons</p>
+<ul>
+<li>Free expression, creativity, and connection</li>
+<li>Share ideas instead of renting attention</li>
+</ul>
+</li>
+<li><p>CERN gifted it the world in 1993</p>
+<ul>
+<li>Open, universal, public infrastructure</li>
+</ul>
+</li>
+<li><p>We let it be rebuilt as walled-gardens</p>
+<ul>
+<li>Ads, surveillance, and extraction</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/cc2af5e0-82c8-4d3d-9275-fda6524e6ae5.png" alt="This is for Everyone 800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="9f8ba8fc-27c9-4bec-a0b0-55f0606296fd"><h1>The Fediverse</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:85599353-7440-437c-832b-6105d1e2d059 -->
+<!-- ContentItem:2e3993ca-237f-4b41-bc1c-68f73d6af97b -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Group of Social apps</p>
+<ul>
+<li>Communicate using the open <strong>ActivityPub</strong> protocol</li>
+</ul>
+</li>
+<li><p>No centralized control</p>
+<ul>
+<li>Many decentralized servers</li>
+</ul>
+</li>
+<li><p>No corporate control</p>
+<ul>
+<li><p>Not at the whim of a &quot;tech-bro&quot;</p>
+</li>
+<li><p>Can't be sold</p>
+</li>
+</ul>
+</li>
+<li><p>&quot;Easy&quot; to change instances</p>
+<ul>
+<li>Your graph and your content are yours to move</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/2e3993ca-237f-4b41-bc1c-68f73d6af97b.jpg" alt="Fediverse_800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="f9bd140d-1cf3-4624-a557-8c1c76e87d59"><h1>ActivityStreams/ActivityPub</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:c86d2ac6-8a4e-450c-b71c-f6bda198055e -->
+<!-- ContentItem:45d808f5-d21c-457e-acb3-77b21e333b58 -->
+<aside class="notes"><p>Addl example: &quot;Barry merged PR 29 to the LiquidVictor project to close issue 21&quot;</p>
+<p>LUMEN = Long-range Unified Microwave Energy Network</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p><strong>[Actor] did [Activity] to [Entity]</strong></p>
+</blockquote>
+<ul>
+<li><p>W3C Standards</p>
+<ul>
+<li>ActivityStreams: Objects and vocabulary</li>
+<li>ActivityPub: API surface and behaviors</li>
+</ul>
+</li>
+<li><p>Communication terms</p>
+<ul>
+<li>Actors</li>
+<li>Entities</li>
+<li>Activities</li>
+</ul>
+</li>
+<li><p>Examples</p>
+<ul>
+<li>Ada sold her Rivian R1T pickup truck to Niels</li>
+<li>René bought 200 shares of MU stock</li>
+<li>Nikola updated the timeline of project LUMEN with an integration milestone</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/45d808f5-d21c-457e-acb3-77b21e333b58.jpg" alt="ActivityPub Octopus 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="aaf95cdc-9f4e-48f0-b7f2-560fafc0fdc7"><h1>Fediverse Services</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:19a33c0a-b3dd-48e5-8369-1a93051a2828 -->
+<!-- ContentItem:a937ed96-7c15-4ede-a3d0-09dc382590eb -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Micro-blogging: <a href="https://joinmastodon.org/">Mastodon</a>
+<ul>
+<li>also <a href="https://writefreely.org/instances">WriteFreely</a>, <a href="https://misskey-hub.net/en/">Misskey</a>, <a href="https://pleroma.social/">Pleroma</a> &amp; <a href="https://gotosocial.org/">GoToSocial</a></li>
+</ul>
+</li>
+<li>Photoblogging: <a href="https://pixelfed.org/">PixelFed</a></li>
+<li>Social Network: <a href="https://friendi.ca/">Friendica</a></li>
+<li>Link Aggregation: <a href="https://join-lemmy.org/">Lemmy</a></li>
+<li>Video Sharing: <a href="https://joinpeertube.org/">PeerTube</a></li>
+<li>Video Streaming: <a href="https://owncast.online/">Owncast</a></li>
+<li>Audio Sharing: <a href="https://www.funkwhale.audio/join/">Funkwhale</a></li>
+<li>Badges: <a href="https://communitycredentials.org/">CommunityCredentials</a></li>
+<li>Other Projects
+<ul>
+<li><a href="https://hubzilla.org/page/info/discover">Hubzilla</a>, <a href="https://kbin.social/">Kbin</a>, <a href="https://joinmobilizon.org/en/">Mobilizon</a></li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/a937ed96-7c15-4ede-a3d0-09dc382590eb.png" alt="Logos.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="1b674add-9c79-4d35-99e7-8db5e6d7ec2e"><h1>Fediverse Adoption</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:3bc14912-6f10-4c88-aa41-5c0883d46072 -->
+<!-- ContentItem:6a210d95-1ea4-43be-a15f-71a517301802 -->
+<aside class="notes"><p>I worry that things might tip to one of the other VC supported solutions where the only way for them to make enough profit to satisfy the shareholders is to sell us, or sell the whole product to someone who wants to use it to control the flow of information.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Most &quot;thought-leaders&quot; have a presence
+<ul>
+<li>Some cross-post, others have migrated completely</li>
+<li>A tipping-point is coming</li>
+</ul>
+</li>
+<li>Tech-heavy at the moment
+<ul>
+<li>Other domains are hit-or-miss</li>
+</ul>
+</li>
+<li>Sanctuary for underserved communities
+<ul>
+<li>Moderation policies vary by instance</li>
+</ul>
+</li>
+<li>Requires some up-front decisions
+<ul>
+<li>More barriers to entry than corp solutions</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/6a210d95-1ea4-43be-a15f-71a517301802.jpg" alt="ThoughtLeader_800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="158df351-177a-4eb8-8410-d1f79e46232d"><h1>Could Save Democracy</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:a02734ed-950f-4e7f-8f72-4ef77d426878 -->
+<!-- ContentItem:8bbc2d8b-c83b-4367-a5ea-e1b327abb87b -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>No algorithm</p>
+<ul>
+<li><p>No incentive to the extremes</p>
+</li>
+<li><p>No advantage to being evil</p>
+</li>
+</ul>
+</li>
+<li><p>Not corporate controlled</p>
+<ul>
+<li><p>No universal policies</p>
+</li>
+<li><p>If your instance changes for the worse-move</p>
+</li>
+<li><p>Lawsuits: still an attack vector</p>
+</li>
+</ul>
+</li>
+<li><p>Less governmental control</p>
+<ul>
+<li><p>There will always be an instance...</p>
+</li>
+<li><p>Support direct action</p>
+</li>
+<li><p>Governmental blocks: still a risk</p>
+</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/8bbc2d8b-c83b-4367-a5ea-e1b327abb87b.jpg" alt="SavingThePlanet_800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="1efb898e-9fa7-4369-8dad-5c6736172c63"><h1>...but needs your help</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:a193b593-e81e-46d2-b850-b6411d2903c1 -->
+<!-- ContentItem:0c39de93-e214-4fd1-8854-7db3cc06e960 -->
+<aside class="notes"><ul>
+<li>No advertising $ spent on the Fediverse</li>
+<li>Pedo Guy's company sabotaged high-speed rail</li>
+<li>Other companies make promises, then renege on them when all other options have been eliminated</li>
+</ul>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Inertia
+<ul>
+<li>Change is a last-resort</li>
+<li>Discovery is hard</li>
+</ul>
+</li>
+<li>Open-Source is often a hobby
+<ul>
+<li>Features may deploy slowly</li>
+<li>Distribution makes changes harder</li>
+<li>Moderation is time-consuming</li>
+</ul>
+</li>
+<li>Active subversion by corps
+<ul>
+<li>Migration away is intentionally hard</li>
+<li>Media &amp; Govt channels</li>
+<li>Predatory activities</li>
+<li>Bait &amp; Switch</li>
+<li>Divide &amp; Conquer</li>
+<li>Adversarial interop</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/0c39de93-e214-4fd1-8854-7db3cc06e960.jpg" alt="Probably wont save the world_800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="912a0ba3-a6bd-4f83-a6ab-b5a5e32a7a81"><h1>Call to Action</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:17b21336-1530-49db-b2e4-4308b2d0cfc3 -->
+<!-- ContentItem:41faff8c-5393-44cf-a049-36d9e044ee9d -->
+<aside class="notes"><ul>
+<li>Just get started
+<ul>
+<li>Follow many, pare-down later</li>
+<li>Follow hashtags</li>
+<li>Use the local &amp; federated timelines</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>The Fediverse offers a path to a more democratic digital world. While challenges exist, we have the  power to shape its future. Let's engage, contribute, and create a digital landscape that aligns with our values.</p>
+</blockquote>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Help build-up the platforms
+<ul>
+<li>Sign up for <a href="https://joinmastodon.org/">Mastodon</a></li>
+<li>Use it even if it seems limited now</li>
+<li>Cross-Post if you must</li>
+</ul>
+</li>
+<li>Encourage Migrations
+<ul>
+<li>Govt comms must not be corp-controlled</li>
+<li>Support media joining the Fediverse</li>
+<li>Push your favorite communities to migrate</li>
+</ul>
+</li>
+<li>Contribute
+<ul>
+<li>Submit Code</li>
+<li>Review Code</li>
+<li>Documentation</li>
+<li>External Tools</li>
+<li>Content Moderation</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/41faff8c-5393-44cf-a049-36d9e044ee9d.jpg" alt="Answer the call_800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="77b1dde3-4314-4b84-a2f6-e04f38a0429a"><h1>An Internet of Our Values</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:90a0be1e-ea2f-4833-ae4b-a1b11d2ceea1 -->
+<!-- ContentItem:4d44b9cd-214e-4c9f-9b6d-6b23ad34c558 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>The Fediverse offers a path to a more democratic digital world.</li>
+<li>Challenges exist but we have the power to shape its future.</li>
+<li>Engage &amp; contribute to create a digital landscape that aligns with our values.</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/4d44b9cd-214e-4c9f-9b6d-6b23ad34c558.png" alt="Fedivers2_QR.png" />
+</td>
+</tr></table></section>
+
+
+        </div>
+        <div class="footer-left">How the Fediverse Could Save Democracy</div>
+        <div class="footer-right">Barry S. Stahl - Mastodon:@bsstahl@cognitiveinheritance.com - Blog:http://www.cognitiveinheritance.com</div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <!-- Plugins -->
+    <script src="plugin/highlight/highlight.js"></script> 
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+
+        Reveal.initialize({
+            hash: true,
+			width: 1920,
+			height: 1080,
+            transition: 'slide',
+            backgroundTransition: 'fade',
+            showNotes: window.location.search.match(/print-pdf/gi) ? true : false,
+            plugins: [RevealHighlight, RevealMarkdown, RevealSearch, RevealNotes, RevealMath, RevealZoom ]
+        });
+    </script>
+</body>
+</html>
