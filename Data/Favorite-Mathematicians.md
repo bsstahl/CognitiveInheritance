@@ -4,20 +4,18 @@ name:
 - Ada Lovelace
 - Alan Turing
 - Tim Berners-Lee
-- Johannes Kepler
-- René Descartes
 - Isaac Newton
 - Emmy Noether
+- Johannes Kepler
+- René Descartes
 - George Boole
-- Blaise Pascal
+- Carl Friedrich Gauss
 - Grace Hopper
+- Blaise Pascal
 - Daphne Koller
 - Grady Booch
-- Leonardo Fibonacci
 - Evelyn Berezin
 - Pascal Van Hentenryck
-- Carl Friedrich Gauss
-- Benoît Mandelbrot
 lastmodificationdate: 2026-06-14T14:00:00.000+00:00
 
 ---
