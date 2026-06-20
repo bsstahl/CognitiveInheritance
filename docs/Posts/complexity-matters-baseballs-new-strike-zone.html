@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang="en">
     <head>
-        <!-- Template: Content Page -->
+        <!-- Template: Post Page -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     
-        <meta name="description" content="All posts that are Work-in-Progress">
+        <meta name="description" content="Complexity Matters - Baseball's New Strike Zone, an article on Cognitive Inheritance.">
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link rel="stylesheet" href="../Style.css" type="text/css" />
         <link rel="alternate" type="application/rss+xml" title="RSS" href="../syndication.xml" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css" />
-        
+
         <title>Cognitive Inheritance - The Application Development Experiences of an Enterprise Engineer</title>
     </head>
     <body>
@@ -71,27 +71,109 @@
 
             <div class="row">
                 <main class="col-lg-9 col-xl-10 content-main">
-                    <h1>Unpublished Posts</h1>
-                    <ul>
-<li><a href="../Posts/80-percent-of-implementations-should-be-using-microservices.html">80% of Implementations Should be Using Microservices</a></li>
-<li><a href="../Posts/complexity-matters-baseballs-new-strike-zone.html">Complexity Matters - Baseball's New Strike Zone</a></li>
-<li><a href="../Posts/conceptual-associations-without-understanding.html">Conceptual Associations Without Understanding</a></li>
-<li><a href="../Posts/designing-event-driven-architectures.html">Designing Event Driven Architectures</a></li>
-<li><a href="../Posts/developing-with-csharp-using-html5-and-css.html">Developing with C# using HTML5 and CSS</a></li>
-<li><a href="../Posts/llms-are-hybrid-models.html">Beyond ML: LLMs are Hybrid Systems</a></li>
-<li><a href="../Posts/llms-are-like-tdd.html">LLMs can be to writing what TDD is to coding</a></li>
-<li><a href="../Posts/aspnet-middleware-is-underused.html">ASP.NET Middleware: Underused, Understood</a></li>
-<li><a href="../Posts/minimizing-support-burden.html">Minimizing Support Burden - A Comparison of Three Architectures</a></li>
-<li><a href="../Posts/most-sdks-are-just-ctp-implementations.html">Most SDKs are CTP: The Unifying Pattern Behind Our APIs</a></li>
-<li><a href="../Posts/reducing-order-dependency-with-event-sourcing.html">Reducing Order Dependency with Event Sourcing</a></li>
-<li><a href="../Posts/TDD-in-the-AI-Era.html">TDD in the AI Era</a></li>
-<li><a href="../Posts/teaching-computers-context.html">Teaching Computers Context: An Introduction to Word Embeddings</a></li>
-<li><a href="../Posts/the-concurrency-conundrum-letting-tools-shoulder-the-complexity.html">The Concurrency Conundrum: Letting Tools Shoulder the Complexity</a></li>
-<li><a href="../Posts/unmasking-complexity.html">Unmasking Complexity - Real Strategies for Managing Complexity in Software Systems</a></li>
-<li><a href="../Posts/using-uris-as-globally-unique-ids.html">Using URIs as Globally Unique Identifiers</a></li>
-<li><a href="../Posts/when-code-coverage-catches-bugs.html">When Code Coverage Catches Bugs - A Case for Complete Coverage</a></li>
+                    <h3>Complexity Matters - Baseball's New Strike Zone</h3>
+                    <h5>Posted by bsstahl on 2026-06-19 and Filed Under: <a title="Category: tools" class="small" href="../Search/tools.html">tools</a>&nbsp;</h5>
+                    <share-on-mastodon 
+                        share_title="Check out this post on Cognitive Inheritance: 'Complexity Matters - Baseball's New Strike Zone'"
+                        share_description="&quot;MLB's new ABS challenge system was supposed to make the strike zone clearer. Instead, it quietly transformed a simple two‑state call into a six‑state decision machine that players, managers, and fans now have to navigate. This post breaks down how that complexity emerged, and why the simplest fix is to stop hybridizing and start simplifying.&quot;"
+                        hashtags="#complexity"
+                        author="@bsstahl@cognitiveinheritance.com"
+                        default_url="https://fosstodon.org">
+                    </share-on-mastodon>
+                    <br/><br/>
+                    <p>For over a century, the outcome of every baseball pitch could be described by a beautifully simple domain model. Each pitch delivered from mound to plate entered a world of just two possible outcomes: ball or strike. There was comfort in that binary call, a decisive moment that everyone on the field and in the stands could immediately understand. When the umpire signaled, there was no ambiguity; the model was straightforward, even when a mistake was made. Fans may have grumbled about a blown call, but no one puzzled over the system itself. Its deterministic clarity demanded almost no mental energy to track and left little room for confusion or debate. This was the baseline: a universe governed by a single, shared understanding: pitch in, call out, a rulebook written in black and white.</p>
+<h2>Technology Arrives, But Only Halfway</h2>
+<p>Major League Baseball, always chasing the ideal of a perfectly called game, eventually turned to technology for help. ABS (Automated Balls/Strikes) an agentic strike zone, offered a vision of greater accuracy and consistency, a modern answer to the age-old drawbacks of human judgment. Yet, rather than fully embracing this leap into automation, MLB charted a middle path. Human umpires still make the call, but now their decisions can be challenged and reviewed by the ABS system, injecting a layer of digital oversight as an optional add-on. On paper, this hybrid promises the best of both worlds. In practice, it’s neither a pure human nor a pure machine solution, but something in between; a compromise disguised as progress. This is MLB’s &quot;call to adventure&quot; but already a tentative, conditional one. As with any hybrid system, this approach carries an underappreciated cost: complexity begins to creep in, often multiplying instead of streamlining the experience.</p>
+<h2>The Six-State Tangle: When a Strike Isn’t Just a Strike</h2>
+<p>Systems are shaped by the states they recognize and the transitions between them. For a hundred years, baseball’s model was elegantly spare—every pitch lived in one of two states: a ball or a strike. Nothing to memorize, nothing to manage. But with the introduction of ABS challenges, things quietly got more complicated. Now, what used to be a simple call must traverse a web of possible verdicts before it’s settled.</p>
+<p>Instead of the old binary, we suddenly have six distinct states: an “unconfirmed” ball or strike (the original umpire call, lingering in limbo); a “confirmed” ball or strike (the human call, validated by the machine); and two overturned results: a strike ruled a ball, or a ball ruled a strike by ABS review. Each is a separate status with its own implications for the game and its participants.</p>
+<p>Here’s the twist: none of this scaffolding exists for the sake of baseball itself. These aren’t states that matter to the nature of pitching or hitting, but layers imposed to manage and rationalize a half-technological, half-human system. What once took a single mental step now takes six, not to deepen the game, but to patch over the seams between old and new.</p>
+<p>To appreciate just how much complexity the ABS system introduces, compare it to the pre-ABS state machine—there were only two possible destinations for every pitch:</p>
+<pre><code class="language-mermaid">stateDiagram-v2
+    [*] --&gt; Ball
+    [*] --&gt; Strike
+    Ball : Final state: Ball
+    Strike : Final state: Strike
+</code></pre>
+<p>Before we move on, consider how many more states and transitions actually exist between pitch and final call. The ABS hybrid system introduces an array of possible intermediate states—calls waiting out the challenge window, calls under review, and ultimately, a return to a simple Ball or Strike. The diagram below illustrates the expanded state machine that now governs the fate of every pitch:</p>
+<pre><code class="language-mermaid">stateDiagram-v2
+    [*] --&gt; Unconfirmed
+    Unconfirmed : Awaiting umpire's call
+
+    Unconfirmed --&gt; ChallengeWindow : Umpire signals Ball/Strike\n(2 second window to challenge)
+    Unconfirmed --&gt; FinalBall : No challenge (Ball called)\nafter window expires
+    Unconfirmed --&gt; FinalStrike : No challenge (Strike called)\nafter window expires
+
+    ChallengeWindow : Challenge window open (2 sec)
+    ChallengeWindow --&gt; InChallenge : Challenge issued
+    ChallengeWindow --&gt; FinalBall : Window expires (Ball stands)
+    ChallengeWindow --&gt; FinalStrike : Window expires (Strike stands)
+
+    InChallenge : Call under ABS review
+    InChallenge --&gt; FinalBall : Overturned to Ball
+    InChallenge --&gt; FinalStrike : Overturned to Strike
+    InChallenge --&gt; FinalBall : Confirmed Ball
+    InChallenge --&gt; FinalStrike : Confirmed Strike
+
+    FinalBall : Final state: Ball
+    FinalStrike : Final state: Strike
+</code></pre>
+<h2><strong>IV. The Descent: Complexity Has a Cost</strong></h2>
+<ul>
+<li>Explain why added states matter in any system:
+<ul>
+<li>More transitions</li>
+<li>More edge cases</li>
+<li>More rules</li>
+<li>More timing considerations</li>
+<li>More opportunities for misalignment between intent and behavior</li>
+</ul>
+</li>
+<li>Connect to software/system design: state explosion is a known source of fragility and user confusion.</li>
+<li>Complexity isn’t neutral — it shapes behavior and attention.</li>
+</ul>
+<h2><strong>V. The Consequence: A Meta‑Game Emerges</strong></h2>
+<ul>
+<li>Show how the six‑state system changes the lived experience:
+<ul>
+<li>Catchers deciding whether to burn a challenge early.</li>
+<li>Hitters signaling for challenges.</li>
+<li>Managers tracking challenge inventory like a resource.</li>
+<li>Fans parsing “confirmed” vs. “overturned” vs. “unconfirmed.”</li>
+</ul>
+</li>
+<li>The game now includes a <strong>state‑management layer</strong> that didn’t exist before.</li>
+<li>This is the “darkest moment” — the realization that the system is now driving the experience.</li>
+</ul>
+<h2><strong>VI. The Return: The Simpler, Better Alternative</strong></h2>
+<ul>
+<li>Present full ABS (no challenges) as the <em>simplest</em> system, not the most technical:
+<ul>
+<li>Two states</li>
+<li>Zero transitions</li>
+<li>No challenge inventory</li>
+<li>No meta‑decisions</li>
+<li>No artificial scaffolding</li>
+</ul>
+</li>
+<li>It’s a deterministic function: <strong>pitch in → call out</strong>.</li>
+<li>The irony: the fully automated system is the least complex and the most predictable.</li>
+</ul>
+<h2><strong>VII. Closing Insight: Complexity Is a Choice</strong></h2>
+<ul>
+<li>Zoom out to the broader systems‑thinking lesson:
+<ul>
+<li>Hybrid solutions often create more complexity than either pure approach.</li>
+<li>Added states introduce friction, cognitive load, and unintended strategy.</li>
+<li>When designing systems — in baseball or in tech — the simplest model that achieves the goal is usually the most resilient.</li>
+</ul>
+</li>
+<li>Close with a crisp takeaway:<br />
+<strong>If the goal is accuracy and consistency, the path with the fewest states wins.</strong></li>
 </ul>
 
+                    <h5>Tags: <a title="Tag: complexity" class="small" href="../Search/complexity.html">complexity</a>&nbsp;</h5>
+                    <div class="share"><a href="../Permalinks/8e95e82d-55ec-44bc-a5a2-573d023274d0.html" rel="bookmark">Permalink</a></div>
                 </main>
                 <aside class="col-lg-3 col-xl-2 sidebar">
                     <div class="widgetzone"><div class="widget textbox"><h4>About the Author</h4><div class="content"><p><img style="float: left; padding: 0px 3px 0px 0px;" src="../Pics/bsstahl_left.gif" alt="Barry S. Stahl" width="95" /><strong>Barry S. Stahl</strong> (he/him) - Barry Stahl is an Architect and Developer and a Microsoft .NET MVP with more than four decades of experience building reliable, scalable systems on .NET and other Microsoft technologies. He has delivered hundreds of sessions at conferences, code camps, and user groups across North America, Europe, and Australia and is known for making complex topics clear, actionable, and grounded in real‑world engineering practice. His talks span architecture, problem‑solving modalities, artificial intelligence, optimization algorithms, and the practical mechanics of building resilient and self‑healing systems.</p>
@@ -137,7 +219,7 @@
                 </aside>
             </div>
         </div>
-    
+
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
@@ -150,7 +232,5 @@
         <!-- 100% privacy-first analytics -->
         <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
         <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true" alt="" referrerpolicy="no-referrer-when-downgrade"/></noscript>
-
     </body>
-
 </html>
