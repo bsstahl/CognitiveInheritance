@@ -3,7 +3,7 @@ author: bsstahl
 tags:
 - complexity
 categories:
-- Tools
+- Development
 menuorder: 0
 id: 8e95e82d-55ec-44bc-a5a2-573d023274d0
 title: Complexity Matters - Baseball's New Strike Zone
