@@ -17,14 +17,13 @@ lastmodificationdate: 2026-06-19T07:00:00Z
 slug: complexity-matters-baseballs-new-strike-zone
 
 ---
-For over a century, the outcome of every baseball pitch could be described by a beautifully simple domain model. Each pitch delivered from mound to plate entered a world of just two possible outcomes: ball or strike. There was comfort in that binary call, a decisive moment that everyone on the field and in the stands could immediately understand. When the umpire signaled, there was no ambiguity; the model was straightforward, even when a mistake was made. Fans may have grumbled about a blown call, but no one puzzled over the system itself. Its deterministic clarity demanded almost no mental energy to track and left little room for confusion or debate. This was the baseline: a universe governed by a single, shared understanding: pitch in, call out, a rulebook written in black and white.
+For over a century, every baseball pitch was governed by a simple model with two possible outcomes: ball or strike. The binary call provided clarity and was understood by everyone on the field and in the stands. When the umpire signaled, the result was unambiguous, even when the call was wrong. Fans might grumble about blown calls, but the system itself was not questioned. Its simplicity required little mental effort to follow and left little room for confusion or debate. That was the baseline: a shared understanding of pitch in, call out, with the rulebook treated as final.
 
 ## Technology Arrives, But Only Halfway
 
-Major League Baseball, always chasing the ideal of a perfectly called game, eventually turned to technology for help. ABS (Automated Balls/Strikes) an agentic strike zone, offered a vision of greater accuracy and consistency, a modern answer to the age-old drawbacks of human judgment. Yet, rather than fully embracing this leap into automation, MLB charted a middle path. Human umpires still make the call, but now their decisions can be challenged and reviewed by the ABS system, injecting a layer of digital oversight as an optional add-on. On paper, this hybrid promises the best of both worlds. In practice, it’s neither a pure human nor a pure machine solution, but something in between; a compromise disguised as progress. This is MLB’s "call to adventure" but already a tentative, conditional one. As with any hybrid system, this approach carries an underappreciated cost: complexity begins to creep in, often multiplying instead of streamlining the experience.
+Major League Baseball, long in pursuit of the perfectly called game, eventually turned to technology for help. Events like Armando Galarraga’s near-perfect game in 2010, along with the apparent success of the replay challenge system, may have made a challenge-based ABS model seem more attractive, even though ABS is a different system with different mechanics and implementation. ABS, or Automated Balls and Strikes, offered a more accurate and consistent strike zone, a modern response to the limits of human judgment. MLB did not fully hand the decision over to automation, however. Instead, it chose a hybrid approach: umpires still make the initial call, and those calls can then be challenged and reviewed by ABS. The result is not simply a better version of the old system; it is a layered process that preserves human involvement while adding machine oversight. That layering may improve accountability, but it also adds complexity, and the challenge step can make the experience harder rather than simpler to follow.
 
-
-## The Six-State Tangle: When a Strike Isn’t Just a Strike
+## The State-Machine Tangle: When a Strike Isn’t Just a Strike
 
 Systems are shaped by the states they recognize and the transitions between them. For a hundred years, baseball’s model was elegantly spare—every pitch lived in one of two states: a ball or a strike. Nothing to memorize, nothing to manage. But with the introduction of ABS challenges, things quietly got more complicated. Now, what used to be a simple call must traverse a web of possible verdicts before it’s settled.
 
@@ -36,36 +35,31 @@ To appreciate just how much complexity the ABS system introduces, compare it to 
 
 ```mermaid
 stateDiagram-v2
-    [*] --> Ball
-    [*] --> Strike
-    Ball : Final state: Ball
-    Strike : Final state: Strike
+    [*] --> Ball: Ump Calls Ball
+    [*] --> Strike: Ump Calls Strike
+
+    Ball : Final_state: Ball
+    Strike : Final_state: Strike
 ```
 
-Before we move on, consider how many more states and transitions actually exist between pitch and final call. The ABS hybrid system introduces an array of possible intermediate states—calls waiting out the challenge window, calls under review, and ultimately, a return to a simple Ball or Strike. The diagram below illustrates the expanded state machine that now governs the fate of every pitch:
+With the new ABS hybrid system, MLB has introduced a set of intermediate states and transitions that eventually result in the same Ball or Strike call. The diagram below illustrates the expanded state machine that now governs the fate of every pitch:
 
 ```mermaid
 stateDiagram-v2
-    [*] --> Unconfirmed
-    Unconfirmed : Awaiting umpire's call
+    [*] --> Unconfirmed_Ball: Ump Calls Ball
+    [*] --> Unconfirmed_Strike: Ump Calls Strike
 
-    Unconfirmed --> ChallengeWindow : Umpire signals Ball/Strike\n(2 second window to challenge)
-    Unconfirmed --> FinalBall : No challenge (Ball called)\nafter window expires
-    Unconfirmed --> FinalStrike : No challenge (Strike called)\nafter window expires
+    Unconfirmed_Ball --> Ball: No challenge<br/>Issued
+    Unconfirmed_Ball --> Ball: Catcher Challenge<br/>Unsuccessful
+    Unconfirmed_Ball --> Strike: Catcher Challenge<br/>Successful
 
-    ChallengeWindow : Challenge window open (2 sec)
-    ChallengeWindow --> InChallenge : Challenge issued
-    ChallengeWindow --> FinalBall : Window expires (Ball stands)
-    ChallengeWindow --> FinalStrike : Window expires (Strike stands)
+    Unconfirmed_Strike --> Strike: No challenge<br/>Issued
+    Unconfirmed_Strike --> Strike: Batter Challenge<br/>Unsuccessful
+    Unconfirmed_Strike --> Ball: Batter Challenge<br/>Successful
 
-    InChallenge : Call under ABS review
-    InChallenge --> FinalBall : Overturned to Ball
-    InChallenge --> FinalStrike : Overturned to Strike
-    InChallenge --> FinalBall : Confirmed Ball
-    InChallenge --> FinalStrike : Confirmed Strike
+    Ball : Final_state: Ball
+    Strike : Final_state: Strike
 
-    FinalBall : Final state: Ball
-    FinalStrike : Final state: Strike
 ```
 
 ## **IV. The Descent: Complexity Has a Cost**
