@@ -1,0 +1,1761 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Building AI Solutions</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/130388b7-e1f8-4696-851f-49ec167ba0c0.png'>
+<a id="47779c95-c97a-4f26-b5b9-ac0b9b52096e">&nbsp;</a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:630b02fb-1acb-4072-b6a0-e475a953f8de -->
+<!-- ContentItem:2f2cf6b5-5644-4a88-9520-c6401b4ecb23 -->
+<aside class="notes"><p>Building AI Solutions with Google OR-Tools</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<h2 id="building-ai-solutions">Building AI Solutions</h2>
+<h3 id="with-google-or-tools">with Google OR-Tools</h3>
+<hr />
+<h3 id="barry-s.stahl">Barry S. Stahl</h3>
+<h4 id="principal-engineer-aznerds.net">Principal Engineer - AZNerds.net</h4>
+<h4 id="bsstahlcognitiveinheritance.com"><a href="https://fosstodon.org/@Bsstahl">@bsstahl@cognitiveinheritance.com</a></h4>
+<h4 id="httpscognitiveinheritance.com"><a href="https://cognitiveinheritance.com">https://CognitiveInheritance.com</a></h4>
+
+</td>
+<td style="text-align: left;">
+<img src="img/2f2cf6b5-5644-4a88-9520-c6401b4ecb23.png" alt="Transparent Half Width Image 800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="636059f9-aa9d-4444-b4ec-dd7f62badd98"><h1>Favorite Physicists & Mathematicians</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:30f7e9d2-b154-4895-bed7-2765f7bdc6fe -->
+<!-- ContentItem:8a83be06-76e9-4028-9630-c6a7de92ae99 -->
+<aside class="notes"><p>An up-to-date list is available on <a href="https://cognitiveinheritance.com/Pages/Favorites.html">my blog at https://cognitiveinheritance.com/Pages/Favorites.html</a>
+Please ping me on Mastodon to tell me where I messed-up with this list, or this presentation for that matter. 😉</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<h4 id="favorite-physicists">Favorite Physicists</h4>
+<ol>
+<li>Harold &quot;Hal&quot; Stahl</li>
+<li>Carl Sagan</li>
+<li>Richard Feynman</li>
+<li>Marie Curie</li>
+<li>Nikola Tesla</li>
+<li>Albert Einstein</li>
+<li>Neil deGrasse Tyson</li>
+<li>Niels Bohr</li>
+<li>Galileo Galilei</li>
+<li>Michael Faraday</li>
+</ol>
+<p><em>Other notables</em>: Stephen Hawking, Edwin Hubble, Leonard Susskind, Christiaan Huygens</p>
+
+</td>
+<td style="vertical-align:top;">
+<h4 id="favorite-mathematicians">Favorite Mathematicians</h4>
+<ol>
+<li>Ada Lovelace</li>
+<li>Alan Turing</li>
+<li>Tim Berners-Lee</li>
+<li>Isaac Newton</li>
+<li>Emmy Noether</li>
+<li>Johannes Kepler</li>
+<li>René Descartes</li>
+<li>George Boole</li>
+<li>Carl Friedrich Gauss</li>
+<li>Grace Hopper</li>
+</ol>
+<p><em>Other notables</em>: Blaise Pascal, Daphne Koller, Grady Booch, Evelyn Berezin, Pascal Van Hentenryck</p>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="a1e2eaad-5633-41dc-9e1b-c724e30ac85f"><h1>Fediverse Supporter</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f48757bb-8e16-418d-857d-26908de5ef1e -->
+<!-- ContentItem:a937ed96-7c15-4ede-a3d0-09dc382590eb -->
+<aside class="notes"><p>It is now more important than ever that we create networks that are not  controlled by corporate entities or petulant oligarchs</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>See my presentation from CodeMash 2025: <a href="https://www.youtube.com/watch?v=FdlJVG2GjLY">How the Fediverse Could Save Democracy &amp; Why It Probably Won't</a></p>
+</li>
+<li><p>Hear my thoughts on why a thriving Fediverse is so critical on David Giard's <a href="https://davidgiard.com/barry-stahl-on-the-fediverse">Technology and Friends</a> show.</p>
+</li>
+<li><p>Learn more about the Fediverse at <a href="https://fediverse.party/en/fediverse">fediverse.party</a>.</p>
+</li>
+<li><p>Get your own Mastodon account at <a href="https://joinmastodon.org/">Join Mastodon</a>.</p>
+<ul>
+<li>Don't stress on what server to use, just pick one and go.  You can always move later.</li>
+</ul>
+</li>
+<li><p>Follow me on Mastodon at <a href="https://fosstodon.org/@bsstahl">@bsstahl@CognitiveInheritance.com</a>.</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/a937ed96-7c15-4ede-a3d0-09dc382590eb.png" alt="Logos.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Liquid Victor was used to create this slide deck</p>
+</aside>
+<a id="23528a73-7bc1-4e39-9f2f-c8b9e2cff982"><h1>Some OSS Projects I Run</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:f8cbcb81-15f7-48e0-bc29-b348732f6f05 -->
+<ol>
+<li><a href="https://github.com/bsstahl/liquidvictor">Liquid Victor</a> : Media tracking and aggregation [used to assemble this presentation]</li>
+<li><a href="https://github.com/bsstahl/pptail">Prehensile Pony-Tail</a> : A static site generator built in c#</li>
+<li><a href="https://github.com/bsstahl/testhelperextensions">TestHelperExtensions</a> : A set of extension methods helpful when building unit tests</li>
+<li><a href="https://github.com/bsstahl/conferencescheduler">Conference Scheduler</a> : A conference schedule optimizer</li>
+<li><a href="https://github.com/bsstahl/intentbot">IntentBot</a> : A microservices framework for creating conversational bots on top of Bot Framework</li>
+<li><a href="https://github.com/bsstahl/liquidnun">LiquidNun</a> : Library of abstractions and implementations for loosely-coupled applications</li>
+<li><a href="https://github.com/bsstahl/toastmastersagenda">Toastmasters Agenda</a> : A c# library and website for generating agenda's for Toastmasters meetings</li>
+<li><a href="https://github.com/bsstahl/PDM">ProtoBuf Data Mapper</a> : A c# library for mapping and transforming ProtoBuf messages</li>
+</ol>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>I am proud to be one of the founders of AZGiveCamp.
+GiveCamps are weekend events where we put a bunch of software creators in a room with a bunch of great local charities, and through the course of the weekend, we create software to help them further their mission</p>
+</aside>
+<a id="3129a405-82a7-432c-ae55-6f9d2335ab17"><h1>http://GiveCamp.org</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:2ca346de-d62c-4c6b-834d-7ccab290a6ab -->
+<img alt="GiveCamp.png" src="img/2ca346de-d62c-4c6b-834d-7ccab290a6ab.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>July 25, 2022 was my 100th public talk. Thank you for allowing me to participate in your community over these past few decades!</p>
+</aside>
+<a id="39c6410c-3913-410b-abab-984014a15d84"><h1>Achievement Unlocked</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a042b106-4bab-4403-b5b6-0d7b414ef789 -->
+<img alt="bss-100-achievement-unlocked-1024x250.png" src="img/a042b106-4bab-4403-b5b6-0d7b414ef789.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="09e3cf0a-2f2c-4ccb-8b50-53c9f7e2f4a1"><h1>AI ≠ ML ≠ LLMs</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:6cab2e0d-1732-4a19-83ee-9b491cf58d2b -->
+<!-- ContentItem:ded20bf7-6fc7-414a-960c-5a130e35fbd2 -->
+<aside class="notes"><p>Let's talk about AI, but not Machine Learning or LLMs. AI is much broader
+than that. So then, how do <strong>I</strong> define AI?</p>
+<p>Image By Xuthoria - Own work, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/w/index.php?curid=164364527">https://commons.wikimedia.org/w/index.php?curid=164364527</a></p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>LLMs are one kind of learning model</li>
+<li>Learning models are one kind of AI model</li>
+<li>Logic, search, optimization, and planning are often AI</li>
+</ul>
+<hr />
+<blockquote>
+<p>Image: Yoshua Bengio by By Xuthoria</p>
+</blockquote>
+
+</td>
+<td style="text-align: left;">
+<img src="img/ded20bf7-6fc7-414a-960c-5a130e35fbd2.jpg" alt="Yoshua_Bengio_663x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="2d84a744-0676-444e-9e8b-bf8d5ed39224"><h1>Simulates A Rational Actor</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f5714ce9-35ea-4b07-8527-87109dab8a7f -->
+<!-- ContentItem:95a214bb-81df-4ff2-b273-94c733f2cac6 -->
+<aside class="notes"><p>This also differs significantly from DSS which are designed to support human decision making.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Attempts to make the best possible decision​ based on the model and the data</p>
+</blockquote>
+<ul>
+<li>Model - Our description of the problem</li>
+<li>Data - Our understanding of the state of the domain</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/95a214bb-81df-4ff2-b273-94c733f2cac6.jpeg" alt="A Rational Actor 800x800.jpeg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="f66e5952-e8ef-4328-b263-e3902ce1957b"><h1>Types of AI Models</h1></a>
+<!-- Layout:FullPageFragments -->
+<!-- ContentItem:84393e34-4936-42ce-a507-362320337c0e -->
+<!-- ContentItem:dd3ef41d-4d77-450a-ad90-cb808087daef -->
+<!-- ContentItem:aef604e0-0a74-41fa-adc7-310a5c0224bc -->
+<table border="0" width="100%">
+<aside class="notes"><p>We are going to focus on the Search/Optimization space in this section.
+Specifically, a few of the Constraint Programming models.</p>
+</aside>
+<tr><td>
+<ul class="fragment">
+<li><strong>Logic​al</strong> - Reducible to conditionals​
+<ul>
+<li>Object Oriented​</li>
+<li>Rules Engine</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+<tr><td>
+<ul class="fragment">
+<li><strong>Search/Optimization</strong> - Reduce and Search the <em>Solution Space</em>
+<ul>
+<li>Dynamic Programming​</li>
+<li>Constraint Programming</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+<tr><td>
+<ul class="fragment">
+<li><strong>Probabilistic/Learning</strong> - Predicts best solution from earlier data
+<ul>
+<li>Neural/Bayesian Networks</li>
+<li>Genetic Algorithms</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+</table></section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="4de47608-61cc-4211-a0be-9201073eb68b"><h1>Optimization</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f1c79c45-0749-4ee6-b9f0-7233826c9017 -->
+<!-- ContentItem:3d890146-5e25-4c62-ab36-2b0c82dbd984 -->
+<aside class="notes"><p>In this animation, we see an optimization that is minimizing the error
+between a linear regression model and the known data points.</p>
+<p>Here, the algorithm used is Gradient Descent, but there are MANY
+other types of optimization algorithms. We'll look at several today.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Finding the best available solution to a problem by minimizing or eliminating undesirable factors and maximizing desirable ones.</p>
+</blockquote>
+
+</td>
+<td style="text-align: left;">
+<img src="img/3d890146-5e25-4c62-ab36-2b0c82dbd984.gif" alt="training_animation.gif" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in fade-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Example: Sudoku</p>
+</aside>
+<a id="5841bd35-5e7d-44f7-a1dc-21ab60c8bb08"><h1>Feasibility Problems</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:3534c8ff-2bcd-4594-bc02-cadde965865a -->
+<ul>
+<li>Find the best values for a set of decision variables that
+<ul>
+<li>Satisfies all constraints</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><ul>
+<li>Examples: Scheduling, Routing</li>
+<li>This will become very important later</li>
+</ul>
+</aside>
+<a id="0a7859bd-d578-4e82-852a-8512083742df"><h1>Optimization Problems</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:4285373f-edd6-4559-a1dd-3a6ff008bbca -->
+<ul>
+<li>Find the best values for a set of decision variables that​
+<ul>
+<li>Satisfies all constraints</li>
+<li>Maximizes the features we want​</li>
+<li>Minimizes the features we don’t want</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/7af70c59-c4f5-4862-a270-7102a38789e4.png'>
+<aside class="notes"><ul>
+<li>If I told you that 7 bowls of mixed-fruit satisfied the problem, you could validate that easily</li>
+<li>What about 1 mixed-fruit, 2 hot wings &amp; 1 sampler plate?</li>
+</ul>
+<p>If either are ok, it is an</p>
+<p><a href="https://xkcd.com/287/">XKCD 287</a></p>
+</aside>
+<a id="20aa78d7-d385-4674-b450-d358053ed98f">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Note: There are other types of CP models, we will focus on these today.</p>
+</aside>
+<a id="3513bc46-870f-4058-b54a-ffcb536ecf1a"><h1>Constraint Programming Models</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:965327bc-e6c5-4223-8f28-b31a96106e3b -->
+<img alt="ConstraintProgrammingTypesPyramid.png" src="img/965327bc-e6c5-4223-8f28-b31a96106e3b.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="016bfc57-3ed0-4bd6-96ee-b95e9232c613"><h1>Feasibility vs Optimization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a0038111-1024-4bd2-8b62-653c6c416a9c -->
+<ul>
+<li>Feasible Solutions
+<ul>
+<li>7 Mixed Fruit</li>
+<li>1 Mixed Fruit , 2 Hot Wings, 1 Sampler Plate</li>
+</ul>
+</li>
+<li>Possible Optimizations
+<ul>
+<li>Minimize # of any single item</li>
+<li>Maximize total # of distinct items</li>
+</ul>
+</li>
+<li>Possible Relaxation
+<ul>
+<li>Offer discount to relax constraint</li>
+<li>Convert = to &gt;= resulting in more feasible solutions</li>
+<li>Maximize Profit</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="81d05b52-2e1b-4c0d-afe6-5a7b0a21ea01"><h1>Constraint: A Required Condition</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:b4e9a1f8-28cd-496d-b9f2-2d120be8deb2 -->
+<ul>
+<li><p>As an entity, constraints do 2 things</p>
+<ul>
+<li>Verify feasibility (is there a solution that satisfies this constraint?)</li>
+<li>Prune the search space (more on this coming up)</li>
+</ul>
+</li>
+<li><p>Infeasibility</p>
+<ul>
+<li>Solution does not satisfy 1 or more constraints
+<ul>
+<li>Previous decisions that led to this point may need to be revisited</li>
+</ul>
+</li>
+<li>Problem has no feasible solutions
+<ul>
+<li>Relaxations may be available to find a “good-enough” solution</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="2f857fc7-cf89-4c30-a246-52a348016e8c"><h1>Types of Constraints</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:9f4a8ea1-7b4e-4632-b534-837c507103e2 -->
+<ul>
+<li>Inequality Constraints
+<ul>
+<li><span class="math">\(X_1 &lt;&gt; 4.5\)</span>  or  <span class="math">\(X_1 + 4X_2 &lt; 24.0\)</span></li>
+</ul>
+</li>
+<li>Integer Constraints
+<ul>
+<li>Counter-intuitively, they can be harder to find solutions for</li>
+<li><span class="math">\(X_1 + 4X_2 &lt; 24 \quad\text{with}\quad X_1, X_2 \in \{1,\dots,n\}\)</span></li>
+</ul>
+</li>
+<li>Global Constraints
+<ul>
+<li>Special “pre-defined” constraints that have a polynomial-time algorithm
+<ul>
+<li>i.e. <strong>AllDifferent</strong> Constraint</li>
+</ul>
+</li>
+<li>There are more than 400 Global Constraints known today</li>
+<li>Defining these constraints using polynomial algorithms is an active research area</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="4ce8a567-d22b-4dbd-8f84-6d19890e9643"><h1>Objective&colon; A Goal for the Solution</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:993fadfb-c3c1-4149-9b88-1b13d1266ea5 -->
+<ul>
+<li><p>Objective Function</p>
+<ul>
+<li>Equation describing how to improve a solution</li>
+<li>Specify what to minimize or maximize to produce the best result</li>
+</ul>
+</li>
+<li><p>Specified as a goal relative to an equation</p>
+<ul>
+<li><span class="math">\(\max 3X_1 + 9X_2 \text { subject to } c_n\)</span></li>
+<li><span class="math">\(\min \sum_{i=1}^{n} A_i X_i\)</span></li>
+</ul>
+</li>
+<li><p>One objective per Model</p>
+<ul>
+<li>Combine features by creating a &quot;score&quot;</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="67b7c83e-86ed-4934-bfd5-7dc3e2a88da4"><h1>Sudoku</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:05358dac-076b-43fa-9c94-9118c59802bb -->
+<!-- ContentItem:a8ff8c92-baa8-4e46-9b40-0ee459623bb9 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>A Combinatorial Puzzle
+<ul>
+<li>9x9 grid</li>
+<li>Each row, column and 3x3 region contains [1 to 9]</li>
+</ul>
+</li>
+<li><strong>AllDifferent</strong> constraints
+<ul>
+<li>With values restricted to integers [1 to 9]</li>
+<li>27 Constraints in total (9 rows, 9 columns, 9 regions)</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/a8ff8c92-baa8-4e46-9b40-0ee459623bb9.png" alt="01 - Sudoku Constraints - 603x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="fbc77450-4af4-423f-8fa3-c8ce0da306d1"><h1>Sudoku Solution Space</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:ff9a64ea-b6bd-4aa1-a9bd-8518aa98e961 -->
+<!-- ContentItem:ee55d9f6-17fd-4650-a1f8-6b703b44b8a7 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Solution Space (aka Search Space or Feasibility Set)</p>
+<ul>
+<li>All values that satisfy the constraint(s)</li>
+</ul>
+</li>
+<li><p>The solution space for a 9x9 grid is inconceivably large</p>
+<ul>
+<li>Roughly <span class="math">\(2 \times 10^{77}\)</span> possible solutions</li>
+<li>At 1 Trillion per second it would take <span class="math">\(6 \times 10^{57}\)</span> years</li>
+</ul>
+</li>
+<li><p>Even with the AllDifferent constraint, its <span class="math">\(6.7 \times 10^{21}\)</span></p>
+<ul>
+<li>Naïve (brute-force) methods are not practical</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/ee55d9f6-17fd-4650-a1f8-6b703b44b8a7.png" alt="02 - Sudoku Solution Space - 603x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="12dff569-8879-4559-8f26-b0d9dc2a656a"><h1>Pruning the Solution Space</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:852fbba2-50f5-4a99-85a5-d2881f07cfcb -->
+<!-- ContentItem:d2a94a65-76bd-4d2c-a3bf-d3ddcf8d1cd5 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Using constraints, we can reduce the possibilities</li>
+<li>Each new learning adds new constraints</li>
+</ul>
+<hr />
+<ul>
+<li><strong>Question</strong>: How do we check for feasibility here?</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/d2a94a65-76bd-4d2c-a3bf-d3ddcf8d1cd5.png" alt="03 - Pruning the Solution Space 01 - 603x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="8e300895-e25a-480b-b9c8-d6894ea6e23a"><h1>Pruning the Solution Space</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:5d0442a0-72ad-4b80-9a16-f1419cf39fbc -->
+<!-- ContentItem:09e265c2-b09f-46f4-a6c4-7fdb673c75c8 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Possible solutions: <span class="math">\(5 \times 10^{73}\)</span></p>
+<ul>
+<li>Search space reduced by 4 orders-of-magnitude</li>
+<li>Roughly 10K Possibilities Eliminated</li>
+</ul>
+</li>
+<li><p>Let's jump ahead</p>
+<ul>
+<li>All of the values we've been given are filled-in</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/09e265c2-b09f-46f4-a6c4-7fdb673c75c8.png" alt="04 - Pruning the Solution Space 02 - 603x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="73cf93d6-fc33-4bf7-9b0b-6efa9193f486"><h1>Pruning the Solution Space</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:7f710ad7-c6c3-401c-8045-97bbbfb314c4 -->
+<!-- ContentItem:16db07fd-a3ff-43eb-a825-6647880b64b2 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>All starting info filled-in
+<ul>
+<li>Search space pruned appropriately</li>
+<li>Possible solutions: <span class="math">\(4 \times 10^{21}\)</span></li>
+<li>Eliminating 56 orders of magnitude</li>
+</ul>
+</li>
+<li>We're not nearly done yet
+<ul>
+<li>Look closely at the remaining options</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/16db07fd-a3ff-43eb-a825-6647880b64b2.png" alt="05 - Pruning the Solution Space 03 - 603x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="17b3cc6a-7936-4072-8fa7-042a79283017"><h1>Pruning the Solution Space</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:e0d87c56-2573-437a-a611-16acefd4dec9 -->
+<!-- ContentItem:47cfef91-bad4-4df2-83f0-f842d4fe46d5 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>The reduction of search options
+<ul>
+<li>&quot;<strong>Fixed</strong>&quot; the value of 4 cells</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/47cfef91-bad4-4df2-83f0-f842d4fe46d5.png" alt="06 - Pruning the Solution Space 04 - 603x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="a7a620a3-5d4c-405e-beaf-b67e619bfcd9"><h1>Propogation of Constraints</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:73d3c265-9af5-4ba8-be31-56343a41995b -->
+<!-- ContentItem:99ee00d0-114b-4068-9b95-3d0332c96f61 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Adding info means we learn even more
+<ul>
+<li>We can reduce the search space further</li>
+</ul>
+</li>
+<li>Possible solutions: <span class="math">\(2 \times 10^{20}\)</span></li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/99ee00d0-114b-4068-9b95-3d0332c96f61.png" alt="07 - Pruning the Solution Space 05 - 603x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="3c882df0-ea54-4747-9c66-066a56bf403a"><h1>Propogation of Constraints</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:674a75d1-401d-4247-b88a-eb8c77d5e829 -->
+<!-- ContentItem:b62fa19b-cd63-4cad-85ea-fb1f9679db8d -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>We now have even more &quot;fixed points&quot;</li>
+<li>We continue to iteratively propagate constraints
+<ul>
+<li>Known as a &quot;<strong>Fixed-Point Algorithm</strong>&quot;</li>
+</ul>
+</li>
+<li>Let's jump ahead to completion of the propagation</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/b62fa19b-cd63-4cad-85ea-fb1f9679db8d.png" alt="08 - Pruning the Solution Space 06 - 603x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="5b67f89d-9e33-4d2a-9772-8c724b7de913"><h1>Propogation of Constraints</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:b7ae4c86-c17f-466b-8547-df9dcd6311a7 -->
+<!-- ContentItem:9a6d4f6a-81a6-4e2f-8cc8-2bc9f8f6fba6 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Possible solutions: 1</li>
+<li>“Guesses” Required: 0
+<ul>
+<li>Only solution was apparent after propagation</li>
+</ul>
+</li>
+<li>CSPs are not always this easy
+<ul>
+<li>Many require some form of search</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/9a6d4f6a-81a6-4e2f-8cc8-2bc9f8f6fba6.png" alt="09 - Pruning the Solution Space 07 - 603x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Summarize the Sudoku constraint-programming example and use it as the bridge into LP and MIP: all three model valid choices with constraints, then differ in how they express the search space and choose among feasible answers.</p>
+</aside>
+<a id="2a6d4f09-5ce3-467f-88dc-7792ef02e51c"><h1>Constraint Programming Pattern</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:e4eac2be-2c9f-4d6f-8a3c-58c47e3119b0 -->
+<ul>
+<li><p>Constraint Programming is about narrowing choices</p>
+<ul>
+<li>Model the valid states of the problem
+<ul>
+<li>Variables, domains, and required conditions</li>
+</ul>
+</li>
+<li>Let constraints prune impossible choices
+<ul>
+<li>Every new constraint removes possible solutions</li>
+</ul>
+</li>
+<li>Search what remains until a feasible answer is found</li>
+</ul>
+</li>
+<li><p>LP and MIP build on the same idea</p>
+<ul>
+<li>Constraints still define the feasible region</li>
+<li>An objective chooses the best feasible answer</li>
+<li>Linear structure gives us specialized algorithms</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="e08f8413-8dbc-42dc-bbd8-f2685417ebff"><h1>Optimization Use-Case</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:29b89a23-6a93-4c5e-b54e-2f1b3eba4030 -->
+<!-- ContentItem:564d7279-deea-4a50-98d2-3fd801a91217 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Determine the ideal production targets for Pete's Pottery Paradise</p>
+</blockquote>
+
+</td>
+<td style="text-align: left;">
+<img src="img/564d7279-deea-4a50-98d2-3fd801a91217.png" alt="PetesPotteryParadise-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="03a27852-4046-4032-80cf-828f7586fb46"><h1>Use Case: Production Targets</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:2f9f6648-d5d4-43dc-91f7-4e529e1b5647 -->
+<!-- ContentItem:faf564a2-6ae3-4c59-9e61-7469f7852a21 -->
+<!-- ContentItem:eb91d467-3cc2-49cc-8c2f-ab4eb87485d5 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Products​
+<ul>
+<li>Small Vase​
+<ul>
+<li>1 oz. clay, 1 oz. glaze​</li>
+<li>Sells for $3.00 each​</li>
+</ul>
+</li>
+<li>Large Vase​
+<ul>
+<li>4 oz. clay, 2 oz. glaze​</li>
+<li>Sells for $9.00 each​</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
+<ul>
+<li>Inventory​
+<ul>
+<li>Clay - 24 oz.​</li>
+<li>Glaze - 16 oz.​</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
+<ul>
+<li>Goal
+<ul>
+<li>Maximize Revenue</li>
+</ul>
+</li>
+</ul>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><ul>
+<li>16oz glaze (1 oz ea) = 16 small</li>
+<li>24oz clay (4 oz ea) = 6 large</li>
+<li>71 feasible values</li>
+<li>What if X and Y are MUCH LARGER?</li>
+</ul>
+</aside>
+<a id="687be335-bef0-40ba-8d6a-1e2064f317b8"><h1>Solution Space</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:cfb07fcd-7c70-4bc6-8d2c-2ba9a3c0815f -->
+<img alt="Solution Space Graph - With Feasible Solutions.png" src="img/cfb07fcd-7c70-4bc6-8d2c-2ba9a3c0815f.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><ul>
+<li>Zeroing out parameters gives us intercepts so we can draw the lines</li>
+</ul>
+</aside>
+<a id="d52678f2-2123-45fa-8ed1-e77f8ca0a7d0"><h1>Constraint Equations</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:257d7165-fe4a-4e12-86cd-d5f5300e27b0 -->
+<ul>
+<li>Clay Constraint
+<ul>
+<li>X + 4Y &lt;= 24 ​
+<ul>
+<li>X &lt;= 24 and Y &lt;= 6​</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Glaze Constraint
+<ul>
+<li>X + 2Y &lt;= 16​
+<ul>
+<li>X &lt;=16 and Y &lt;= 8</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="8497cd1e-f99b-46c6-88a3-07982a61d890"><h1>Feasible Region</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:31d6ce3e-48d0-4147-ad35-7bb9eae9a1ac -->
+<img alt="Solution Space Graph - With Feasible Solutions and Constraint Lines.png" src="img/31d6ce3e-48d0-4147-ad35-7bb9eae9a1ac.png" />
+</section>
+
+
+<section data-transition="fade-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><ul>
+<li>The solution to any linear objective will fall at one of the vertices of this polytope</li>
+</ul>
+</aside>
+<a id="c7ab6842-f508-4896-83f2-027b7137d673"><h1>Linear Programming - Polytope</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:93808660-5f2e-4265-8a71-323b032c8d8f -->
+<img alt="Solution Space Graph - With Polytope.png" src="img/93808660-5f2e-4265-8a71-323b032c8d8f.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><ul>
+<li>Adding clay die, and gilding materials adds 2 constraints shown as 2 new lines on the polytope.</li>
+<li>What if we add another product, like an ashtray or urn?</li>
+</ul>
+</aside>
+<a id="76d80518-023f-4c1d-996b-3ce067db8040"><h1>Additional Constraints</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:f882dd91-6d7d-4f31-86f6-5313ac023534 -->
+<img alt="Solution Space Graph - New Polytope - 1132x645.png" src="img/f882dd91-6d7d-4f31-86f6-5313ac023534.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="a5d93c6e-8351-4e11-a626-1b432f89414b"><h1>The Simplex Algorithm</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:c2b0987d-c0fd-4ccf-96d2-84361608f5de -->
+<!-- ContentItem:bd2382ba-e6ba-425f-a049-6ab3c59116d4 -->
+<aside class="notes"><p>Introduce Simplex as the classic algorithm for linear programming before showing the geometric vertex-walk intuition. Keep this as context, not a biography detour.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Created by George Dantzig in 1947</li>
+<li>Built to solve linear programming problems
+<ul>
+<li>Allocate scarce resources under constraints</li>
+</ul>
+</li>
+<li>Searches the vertices of the feasible region
+<ul>
+<li>Usually far fewer places than every possible solution</li>
+</ul>
+</li>
+<li>Still used inside modern optimization solvers
+<ul>
+<li>Planning, routing, scheduling, logistics, finance</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/bd2382ba-e6ba-425f-a049-6ab3c59116d4.jpg" alt="george-bernard-dantzig.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="5f6f1192-2e6c-48dd-86ee-1f9a4b8f9b1c"><h1>Walk the Vertices</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:78e2293e-dc88-4d09-8041-9d83d5f8b5de -->
+<!-- ContentItem:aed332d7-0e91-4a38-930b-3c1806be09ec -->
+<aside class="notes"><p>Simplex works because a linear objective reaches its best feasible value at a vertex of the feasible region. The algorithm does not search every point; it walks from vertex to neighboring vertex while the objective improves.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Simplex turns optimization into a short guided walk</p>
+</blockquote>
+<ul>
+<li>Start at any feasible vertex
+<ul>
+<li>Determine direction that improves revenue fastest</li>
+<li>Move along an edge until a constraint stops you</li>
+</ul>
+</li>
+<li>Pivot to the new axis
+<ul>
+<li>Repeat from the new vertex</li>
+</ul>
+</li>
+<li>Stop when every neighboring vertex is worse</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/aed332d7-0e91-4a38-930b-3c1806be09ec.png" alt="SimplexAlgorithm.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="df2e448d-e4b9-49e8-b7a7-1e903961a1aa"><h1>One Pivot</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:9d502da7-0caf-42fc-9f7d-bdd952f456e0 -->
+<!-- ContentItem:4dacf320-7f02-414e-be8e-dd63b12322ba -->
+<aside class="notes"><p>A pivot changes which constraints define the current corner. In this example, we first add large vases until clay is exhausted, then trade some large vases for small vases until glaze also becomes tight.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Start: <code>(0 small, 0 large)</code> -&gt; revenue <code>$0</code></li>
+<li>Enter: make large vases first
+<ul>
+<li>They add <code>$9</code> each, so revenue rises quickly</li>
+</ul>
+</li>
+<li>Leave: clay becomes the limiting constraint
+<ul>
+<li><code>24 oz clay / 4 oz per large = 6 large</code></li>
+</ul>
+</li>
+<li>New corner: <code>(0 small, 6 large)</code> -&gt; revenue <code>$54</code></li>
+<li><strong>Pivot</strong>: trade along the clay edge
+<ul>
+<li>Stop at <code>(8 small, 4 large)</code> when glaze also binds</li>
+</ul>
+</li>
+<li>No adjacent corner improves revenue -&gt; optimum <code>$60</code></li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/4dacf320-7f02-414e-be8e-dd63b12322ba.png" alt="Solution Space Graph - With Polytope-800x433.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="c4625c47-7145-430c-9ccf-2771f71b22fd"><h1>Scheduling Use-Case</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:b628b9f0-1bed-4bf8-bfda-5b2ed558e482 -->
+<!-- ContentItem:a7602a09-32f3-4532-bfbb-48580b33b881 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Determine the best schedule for talks at a conference</p>
+</blockquote>
+
+</td>
+<td style="text-align: left;">
+<img src="img/a7602a09-32f3-4532-bfbb-48580b33b881.png" alt="ConferenceScheduling-Photo-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>We need to define the Variables, Constraints and Objective Function for the conference scheduling problem.  The schedule is a table with time slots as rows and rooms as columns.  Each cell in the table represents a session that needs to be scheduled to a room in a time slot.</p>
+</aside>
+<a id="b3774f49-bad5-4b8f-b1ec-1a84f15fd11f"><h1>Conference Schedule</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:60de8f1e-3355-45f1-95f1-579aa1b55d59 -->
+<table>
+<thead>
+<tr>
+<th> </th>
+<th>Room 1</th>
+<th>Room 2</th>
+<th>Room 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Slot 1</strong></td>
+<td>Session 1</td>
+<td>Session 2</td>
+<td>Session 3</td>
+</tr>
+<tr>
+<td><strong>Slot 2</strong></td>
+<td>Session 4</td>
+<td>Session 5</td>
+<td>Session 6</td>
+</tr>
+<tr>
+<td><strong>Slot 3</strong></td>
+<td>Session 7</td>
+<td>Session 8</td>
+<td>Session 9</td>
+</tr>
+<tr>
+<td><strong>Slot 4</strong></td>
+<td>Session 10</td>
+<td>Open</td>
+<td>Open</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>How do we tell the model that each session must be scheduled <strong>exactly once</strong>?
+If we use <strong>AllDifferent</strong>, how do we handle the 2 null values?</p>
+</aside>
+<a id="118473e3-266c-462e-9123-2e609dc1ce2d"><h1>LP Model - Variables</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:60de8f1e-3355-45f1-95f1-579aa1b55d59 -->
+<!-- ContentItem:2442120b-f3f0-47ea-bc76-4b243302c175 -->
+<table>
+<thead>
+<tr>
+<th> </th>
+<th>Room 1</th>
+<th>Room 2</th>
+<th>Room 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Slot 1</strong></td>
+<td>Session 1</td>
+<td>Session 2</td>
+<td>Session 3</td>
+</tr>
+<tr>
+<td><strong>Slot 2</strong></td>
+<td>Session 4</td>
+<td>Session 5</td>
+<td>Session 6</td>
+</tr>
+<tr>
+<td><strong>Slot 3</strong></td>
+<td>Session 7</td>
+<td>Session 8</td>
+<td>Session 9</td>
+</tr>
+<tr>
+<td><strong>Slot 4</strong></td>
+<td>Session 10</td>
+<td>Open</td>
+<td>Open</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+<ul>
+<li><span class="math">\(X_{t,r}\)</span>
+<ul>
+<li><span class="math">\(t\)</span> is the id of the timeslot</li>
+<li><span class="math">\(r\)</span> is the id of the room</li>
+<li><span class="math">\(X_{t,r} \in \mathbb{Z}\)</span> is the session id assigned to timeslot <span class="math">\(t\)</span> in room <span class="math">\(r\)</span>
+<ul>
+<li><span class="math">\(\mathbb{Z}\)</span> is the set of all session ids</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>How do we tell the model that each session must be scheduled <strong>exactly once</strong>?
+There are no <strong>if conditions</strong> and no <strong>search functions</strong> in LP.
+We can only express constraints as linear inequalities.</p>
+</aside>
+<a id="77ec9077-0839-466b-9809-c5a802e1ee5f"><h1>LP Model - Constraints</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:60de8f1e-3355-45f1-95f1-579aa1b55d59 -->
+<!-- ContentItem:f7fb3f8b-3cd9-444e-b0ab-7474670c61aa -->
+<table>
+<thead>
+<tr>
+<th> </th>
+<th>Room 1</th>
+<th>Room 2</th>
+<th>Room 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Slot 1</strong></td>
+<td>Session 1</td>
+<td>Session 2</td>
+<td>Session 3</td>
+</tr>
+<tr>
+<td><strong>Slot 2</strong></td>
+<td>Session 4</td>
+<td>Session 5</td>
+<td>Session 6</td>
+</tr>
+<tr>
+<td><strong>Slot 3</strong></td>
+<td>Session 7</td>
+<td>Session 8</td>
+<td>Session 9</td>
+</tr>
+<tr>
+<td><strong>Slot 4</strong></td>
+<td>Session 10</td>
+<td>Open</td>
+<td>Open</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+<ul>
+<li>Each room/timeslot combination can have no more than 1 session</li>
+<li>Each session must be scheduled exactly once</li>
+<li>What if session 7 &amp; 9 are the same speaker?
+<ul>
+<li>Desired rule: <span class="math">\(slot(7) \ne slot(9)\)</span></li>
+<li>But <span class="math">\(X_{t,r}\)</span> stores a session id, not a timeslot for a session</li>
+<li>This requires a lookup: &quot;where is session 7 scheduled?&quot;</li>
+<li>That lookup is not naturally a linear expression</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Our model now becomes 3 dimensional instead of 2</p>
+</aside>
+<a id="0c64c56a-77c0-4c16-b6c0-b34d2688f020"><h1>MIP Model - Variables</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:be919662-20ea-4b49-b92d-e3689869b3a3 -->
+<table>
+<thead>
+<tr>
+<th>Session 1</th>
+<th>Room 1</th>
+<th>Room 2</th>
+<th>Room 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Slot 1</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 2</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 3</strong></td>
+<td>0</td>
+<td><strong>1</strong></td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 4</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Session 2</th>
+<th>Room 1</th>
+<th>Room 2</th>
+<th>Room 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Slot 1</strong></td>
+<td><strong>1</strong></td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 2</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 3</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 4</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Session 3</th>
+<th>Room 1</th>
+<th>Room 2</th>
+<th>Room 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Slot 1</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="b0524e46-8311-4f30-ae15-463222745eb0"><h1>MIP Model - Variables</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:92d84ce2-f606-4284-88b7-c0f91a3c9a36 -->
+<!-- ContentItem:9ea01fe8-f2f1-4d57-a90a-22a29b304b0a -->
+<table>
+<thead>
+<tr>
+<th>Session 1</th>
+<th>Room 1</th>
+<th>Room 2</th>
+<th>Room 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Slot 1</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 2</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 3</strong></td>
+<td>0</td>
+<td><strong>1</strong></td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 4</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+<ul>
+<li><span class="math">\(X_{t,r,s}\)</span>
+<ul>
+<li><span class="math">\(t\)</span> is the id of the timeslot</li>
+<li><span class="math">\(r\)</span> is the id of the room</li>
+<li><span class="math">\(s\)</span> is the id of the session</li>
+<li><span class="math">\(X_{t,r,s}\)</span> is <span class="math">\(1\)</span> if <span class="math">\(s\)</span> is the session id assigned to timeslot <span class="math">\(t\)</span> in room <span class="math">\(r\)</span></li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><ul>
+<li><span class="math">\(\sum_r X_{t,r,7}\)</span> asks: “Is 7 scheduled in slot <span class="math">\(t\)</span>?”</li>
+<li><span class="math">\(\sum_r X_{t,r,9}\)</span> asks: “Is 9 scheduled in slot <span class="math">\(t\)</span>?”</li>
+<li>Adding them together w/ result <span class="math">\(\le 1\)</span> says: For this slot, at most one of those sessions may appear.</li>
+</ul>
+</aside>
+<a id="e6db7323-5573-41ca-9104-dd5745e6f266"><h1>MIP Model - Constraints</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:92d84ce2-f606-4284-88b7-c0f91a3c9a36 -->
+<!-- ContentItem:421edea0-d4b6-4469-8375-1e7760338ea2 -->
+<table>
+<thead>
+<tr>
+<th>Session 1</th>
+<th>Room 1</th>
+<th>Room 2</th>
+<th>Room 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Slot 1</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 2</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 3</strong></td>
+<td>0</td>
+<td><strong>1</strong></td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 4</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+<ul>
+<li>Each session must be scheduled exactly once
+<ul>
+<li><span class="math">\(\sum_t \sum_r X_{t,r,s} = 1 \quad \forall s\)</span></li>
+</ul>
+</li>
+<li>Each room/timeslot combination can have no more than 1 session
+<ul>
+<li><span class="math">\(\sum_s X_{t,r,s} \le 1 \quad \forall t,r\)</span></li>
+</ul>
+</li>
+<li>Sessions 7 and 9 cannot be scheduled in the same timeslot
+<ul>
+<li><span class="math">\(\sum_r X_{t,r,7} + \sum_r X_{t,r,9} \le 1 \quad \forall t\)</span></li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>If all solutions are equally good, then the objective function is irrelevant.
+But if we want to optimize for some goal, we need to define an objective function.</p>
+</aside>
+<a id="ed22d627-c2b3-4ba0-b79d-4176b48749b9"><h1>MIP Model - Objective</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:92d84ce2-f606-4284-88b7-c0f91a3c9a36 -->
+<!-- ContentItem:e7ecb2ad-1df2-4e7b-b3f4-8849712b88ae -->
+<table>
+<thead>
+<tr>
+<th>Session 1</th>
+<th>Room 1</th>
+<th>Room 2</th>
+<th>Room 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Slot 1</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 2</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 3</strong></td>
+<td>0</td>
+<td><strong>1</strong></td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 4</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+<blockquote>
+<p>Create a score that improves with the desirability of the solution</p>
+</blockquote>
+<ul>
+<li>Factors might include
+<ul>
+<li>Reduce # of different rooms in a track</li>
+<li>Reduce the # of timeslot conflicts between sessions in a track</li>
+<li>Reduce total steps between sessions of a track</li>
+<li>Reduce distance (time &amp; room) between multi-part sessions</li>
+<li>Reduce # of different days a speaker speaks</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>In this case, we want to minimize the room changes participants in a track need to make.
+If we have a track with sessions 2 &amp; 4, we want to put them in the same room if possible.</p>
+</aside>
+<a id="e9fb4344-be5e-4664-86ee-0dc0c31d2faf"><h1>MIP Model - Objective Example</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:92d84ce2-f606-4284-88b7-c0f91a3c9a36 -->
+<!-- ContentItem:4e47fb0f-df59-4562-a654-d98d5efa2321 -->
+<table>
+<thead>
+<tr>
+<th>Session 1</th>
+<th>Room 1</th>
+<th>Room 2</th>
+<th>Room 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Slot 1</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 2</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 3</strong></td>
+<td>0</td>
+<td><strong>1</strong></td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 4</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+<blockquote>
+<p>Maximize # of sessions in the same room with Sessions 2 &amp; 4 (a track)</p>
+</blockquote>
+<ul>
+<li>For each Room:
+<ul>
+<li><span class="math">\(\max \sum_r \left(\sum_t X_{t,r,2}\right)\left(\sum_t X_{t,r,4}\right)\)</span>
+<ul>
+<li>If they are in the same room, the total will be 1</li>
+<li>If they are in different room, the total will be 0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="f98d42b4-9af7-429d-9e94-25dfa805bc0e"><h1>Simplex for MIP</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f7684014-b23f-43fd-9921-30d29367f2e6 -->
+<!-- ContentItem:3f7c4596-ff86-49c4-ba0e-415bb27a0319 -->
+<aside class="notes"><p>Simplex is run iteratively as part of a hybrid search.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Relax the constraints:</p>
+<ul>
+<li>Boolean vars → continuous vars <span class="math">\(\in [0,1]\)</span></li>
+<li>Run Simplex to find a solution in the continuous space</li>
+<li>This becomes a &quot;smooth&quot; estimate of good solution locations</li>
+</ul>
+</li>
+<li><p>Use this to guide a search through nearby boolean options</p>
+</li>
+<li><p>Repeat until the best integral solution is found</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/3f7c4596-ff86-49c4-ba0e-415bb27a0319.png" alt="SimplexForMIP.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>We have talked about Simplex and MIP search so we understand the shape of the work. In real applications, we describe the model and hand it to a solver such as Gurobi or Google OR-Tools.</p>
+</aside>
+<a id="8a601a1c-9f31-4dd0-8e33-75f2de51fd0a"><h1>Solvers</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:1305db2a-51f8-4719-9a62-33d0a2e7f5d1 -->
+<blockquote>
+<p>We don't need to implement Simplex ourselves</p>
+</blockquote>
+<ul>
+<li>A solver takes the model:
+<ul>
+<li>Decision variables</li>
+<li>Constraints</li>
+<li>Objective function</li>
+</ul>
+</li>
+<li>Chooses the algorithms needed</li>
+<li>Searches for the best solution</li>
+<li>Examples:
+<ul>
+<li>Gurobi - Commercial, high-performance optimization solver</li>
+<li>Google OR-Tools - Open-source optimization toolkit</li>
+<li>Others from <a href="https://en.wikipedia.org/wiki/List_of_optimization_software">Wikipedia's list of optimization software</a></li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="15287a22-dd71-4536-94a3-85e305a85365"><h1>Google OR-Tools</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:ca5ac14b-c665-47cd-a04d-638f738b9e2f -->
+<!-- ContentItem:2a0b09b5-a0d1-4332-ae2a-643e5180bb27 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>A Suite of Tools for Solving Combinatorial Optimization Problems</p>
+</blockquote>
+<ul>
+<li>Constraint Solver</li>
+<li>Unified LP &amp; MIP Interface
+<ul>
+<li>GLOP – LP Solver</li>
+<li>CBC – MIP Solver</li>
+<li>Can be built with other solvers, including Gurobi</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/2a0b09b5-a0d1-4332-ae2a-643e5180bb27.png" alt="gdp-800x361.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="62338a82-54dc-493e-ae89-47a4de0457de"><h1>Decision Variables</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:e5312d04-c0a4-4652-9dd3-fe5b7eb619bd -->
+<ul>
+<li><p>Variable Definitions</p>
+<ul>
+<li><span class="math">\(x_S\)</span> – Number of small vases to create</li>
+<li><span class="math">\(x_L\)</span> – Number of large vases to create</li>
+</ul>
+</li>
+<li><p>Implementation</p>
+<ul>
+<li><code>var xS = solver.MakeIntVar(0.0, maxSmall, &quot;xS&quot;);</code></li>
+<li><code>var xL = solver.MakeIntVar(0.0, maxLarge, &quot;xL&quot;);</code></li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="7414ad2f-e51a-47bf-a15e-5c5ecbaf9a30"><h1>Constraints</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:e0803042-f2ac-4911-abcc-b92639343e1b -->
+<ul>
+<li><p>Clay Constraint Definition</p>
+<ul>
+<li><span class="math">\(x_S + 4 x_L \ge 0\)</span></li>
+<li><span class="math">\(x_S + 4 x_L \le claySupply\)</span></li>
+</ul>
+</li>
+<li><p>Similar for Glaze Constraint</p>
+</li>
+<li><p>Implementation</p>
+<ul>
+<li><code>var cClay = solver.MakeConstraint(0.0, claySupply);</code></li>
+<li><code>cClay.SetCoefficient($x_S$, 1);</code></li>
+<li><code>cClay.SetCoefficient($x_L$, 4);</code></li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="7ab2d611-f7cf-4473-b5cd-6585b6672094"><h1>Objective Function</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:6742242f-2f8f-4a14-8dff-79c5fce81123 -->
+<blockquote>
+<p><span class="math">\(\max \; 3 x_S + 9 x_L\)</span></p>
+</blockquote>
+<ul>
+<li><code>var obj = solver.Objective();</code></li>
+<li><code>obj.SetCoefficient($x_S$, 3);</code></li>
+<li><code>obj.SetCoefficient($x_L$, 9);</code></li>
+<li><code>obj.SetMaximization();</code></li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="f8c83904-73cf-4c46-9d50-118e3152f152"><h1>Execute the Model</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a207ef89-ccf8-41c1-b571-153850f1c3f0 -->
+<ul>
+<li><code>int resultStatus = solver.Solve();</code></li>
+<li><code>var xSmall = xS.SolutionValue();</code></li>
+<li><code>var xLarge = xL.SolutionValue();</code></li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="cf227d4a-1d03-454e-8320-763160d4c22e"><h1>Linear and Mixed-Integer Programming</h1></a>
+<!-- Layout:FullPageFragments -->
+<!-- ContentItem:69ad1ff5-9224-4504-b543-e6e8f6eb7f23 -->
+<!-- ContentItem:bf7a2b92-fda2-4847-8460-0a687150e792 -->
+<table border="0" width="100%">
+
+<tr><td>
+<ul class="fragment">
+<li>Define Constraints that the Solution Must Satisfy​
+<ul>
+<li>Use these constraints to limit the search space​
+<ul>
+<li>More constraints = smaller search space
+<ul>
+<li>Solutions that exist are found faster</li>
+<li>May not find a feasible solution</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+<tr><td>
+<ul class="fragment">
+<li>Add an Objective Function to Improve Solutions​
+<ul>
+<li>All constraints must be satisfied first​</li>
+<li>Objectives are a goal relative to an equation​
+<ul>
+<li>i.e. Maximize revenue where <code>r = 3X + 9Y</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+</table></section>
+
+
+
+        </div>
+        <div class="footer-left">Building AI Solutions</div>
+        <div class="footer-right">Barry S. Stahl - Mastodon:@bsstahl@cognitiveinheritance.com - Blog:http://www.cognitiveinheritance.com</div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <!-- Plugins -->
+    <script src="plugin/highlight/highlight.js"></script> 
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+
+        Reveal.initialize({
+            hash: true,
+			width: 1920,
+			height: 1080,
+            transition: 'slide',
+            backgroundTransition: 'fade',
+            showNotes: window.location.search.match(/print-pdf/gi) ? true : false,
+            plugins: [RevealHighlight, RevealMarkdown, RevealSearch, RevealNotes, RevealMath, RevealZoom ]
+        });
+    </script>
+</body>
+</html>
