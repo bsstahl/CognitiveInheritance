@@ -173,7 +173,7 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 </li>
 <li><p>12:15 - 1:15 : Lunch</p>
 </li>
-<li><p>1:15 - 2:45 : Search and Optimization (LP &amp; MIP)</p>
+<li><p>1:15 - 2:45 : Simplex Algorithm (CP, LP &amp; MIP)</p>
 </li>
 <li><p>2:45 - 3:15 : Break</p>
 </li>
@@ -191,7 +191,7 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
-<a id="2d84a744-0676-444e-9e8b-bf8d5ed39224"><h1>Simulates A Rational Actor</h1></a>
+<a id="2d84a744-0676-444e-9e8b-bf8d5ed39224"><h1>AI Simulates A Rational Actor</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:f5714ce9-35ea-4b07-8527-87109dab8a7f -->
 <!-- ContentItem:95a214bb-81df-4ff2-b273-94c733f2cac6 -->
@@ -2255,7 +2255,7 @@ We need to combine metrics with visualizations and domain knowledge to assess cl
 </aside>
 <table><tr><td style="vertical-align:top;">
 <blockquote>
-<p><strong>Goal</strong>: To see unsupervised structure emerge from embeddings</p>
+<p><strong>Goal</strong>: To see unsupervised structure emerge from embeddings using clustering</p>
 </blockquote>
 <ul>
 <li>Download the code for k-Means clustering from <a href="https://github.com/bsstahl/AIDemos/tree/master/Clustering">GitHub</a></li>
@@ -2318,7 +2318,7 @@ than that. So then, how do <strong>I</strong> define AI?</p>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
-<a id="2d84a744-0676-444e-9e8b-bf8d5ed39224"><h1>Simulates A Rational Actor</h1></a>
+<a id="2d84a744-0676-444e-9e8b-bf8d5ed39224"><h1>AI Simulates A Rational Actor</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:f5714ce9-35ea-4b07-8527-87109dab8a7f -->
 <!-- ContentItem:95a214bb-81df-4ff2-b273-94c733f2cac6 -->
@@ -2460,16 +2460,6 @@ other types of optimization algorithms. We'll look at several today.</p>
 
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
-<aside class="notes"><p>Note: There are other types of CP models, we will focus on these today.</p>
-</aside>
-<a id="3513bc46-870f-4058-b54a-ffcb536ecf1a"><h1>Constraint Programming Models</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:965327bc-e6c5-4223-8f28-b31a96106e3b -->
-<img alt="ConstraintProgrammingTypesPyramid.png" src="img/965327bc-e6c5-4223-8f28-b31a96106e3b.png" />
-</section>
-
-
-<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
 
 <a id="016bfc57-3ed0-4bd6-96ee-b95e9232c613"><h1>Feasibility vs Optimization</h1></a>
 <!-- Layout:FullPage -->
@@ -2588,6 +2578,16 @@ other types of optimization algorithms. We'll look at several today.</p>
 </li>
 </ul>
 
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Note: There are other types of CP models, we will focus on these today.</p>
+</aside>
+<a id="3513bc46-870f-4058-b54a-ffcb536ecf1a"><h1>Constraint Programming Models</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:965327bc-e6c5-4223-8f28-b31a96106e3b -->
+<img alt="ConstraintProgrammingTypesPyramid.png" src="img/965327bc-e6c5-4223-8f28-b31a96106e3b.png" />
 </section>
 
 
@@ -2947,22 +2947,14 @@ other types of optimization algorithms. We'll look at several today.</p>
 <!-- Layout:FullPage -->
 <!-- ContentItem:257d7165-fe4a-4e12-86cd-d5f5300e27b0 -->
 <ul>
-<li>Clay Constraint
+<li><p>Clay Constraint</p>
 <ul>
-<li>X + 4Y &lt;= 24 ​
-<ul>
-<li>X &lt;= 24 and Y &lt;= 6​</li>
+<li><span class="math">\(X + 4Y \le 24 \quad \text{with} \quad X \in \{0\dots24\},\; Y \in \{0\dots6\}\)</span></li>
 </ul>
 </li>
-</ul>
-</li>
-<li>Glaze Constraint
+<li><p>Glaze Constraint</p>
 <ul>
-<li>X + 2Y &lt;= 16​
-<ul>
-<li>X &lt;=16 and Y &lt;= 8</li>
-</ul>
-</li>
+<li><span class="math">\(X + 2Y \le 16 \quad \text{with} \quad X \in \{0\dots16\},\; Y \in \{0\dots8\}\)</span></li>
 </ul>
 </li>
 </ul>
