@@ -1,0 +1,644 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Semantic Cartography</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/130388b7-e1f8-4696-851f-49ec167ba0c0.png'>
+<a id="6d8451aa-f811-4fa6-8d57-2ee2e3e9df07">&nbsp;</a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:19d7bc5d-3628-44ff-a573-9650a85fab86 -->
+<!-- ContentItem:2f2cf6b5-5644-4a88-9520-c6401b4ecb23 -->
+<aside class="notes"><p>Semantic Cartography Title</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<h2 id="semantic-cartography">Semantic Cartography</h2>
+<h3 id="algorithms-for-understanding-and-organizing-your-data">Algorithms for Understanding and Organizing Your Data</h3>
+<hr />
+<h3 id="barry-s.stahl">Barry S. Stahl</h3>
+<h4 id="principal-engineer-aznerds.net">Principal Engineer - AZNerds.net</h4>
+<h4 id="bsstahlcognitiveinheritance.com"><a href="https://fosstodon.org/@Bsstahl">@bsstahl@cognitiveinheritance.com</a></h4>
+<h4 id="httpscognitiveinheritance.com"><a href="https://cognitiveinheritance.com">https://CognitiveInheritance.com</a></h4>
+
+</td>
+<td style="text-align: left;">
+<img src="img/2f2cf6b5-5644-4a88-9520-c6401b4ecb23.png" alt="Transparent Half Width Image 800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="636059f9-aa9d-4444-b4ec-dd7f62badd98"><h1>Favorite Physicists & Mathematicians</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:30f7e9d2-b154-4895-bed7-2765f7bdc6fe -->
+<!-- ContentItem:8a83be06-76e9-4028-9630-c6a7de92ae99 -->
+<aside class="notes"><p>An up-to-date list is available on <a href="https://cognitiveinheritance.com/Pages/Favorites.html">my blog at https://cognitiveinheritance.com/Pages/Favorites.html</a>
+Please ping me on Mastodon to tell me where I messed-up with this list, or this presentation for that matter. 😉</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<h4 id="favorite-physicists">Favorite Physicists</h4>
+<ol>
+<li>Harold &quot;Hal&quot; Stahl</li>
+<li>Carl Sagan</li>
+<li>Richard Feynman</li>
+<li>Marie Curie</li>
+<li>Nikola Tesla</li>
+<li>Albert Einstein</li>
+<li>Neil deGrasse Tyson</li>
+<li>Niels Bohr</li>
+<li>Galileo Galilei</li>
+<li>Michael Faraday</li>
+</ol>
+<p><em>Other notables</em>: Stephen Hawking, Edwin Hubble, Leonard Susskind, Christiaan Huygens</p>
+
+</td>
+<td style="vertical-align:top;">
+<h4 id="favorite-mathematicians">Favorite Mathematicians</h4>
+<ol>
+<li>Ada Lovelace</li>
+<li>Alan Turing</li>
+<li>Tim Berners-Lee</li>
+<li>Isaac Newton</li>
+<li>Emmy Noether</li>
+<li>Johannes Kepler</li>
+<li>René Descartes</li>
+<li>George Boole</li>
+<li>Carl Friedrich Gauss</li>
+<li>Grace Hopper</li>
+</ol>
+<p><em>Other notables</em>: Blaise Pascal, Daphne Koller, Grady Booch, Evelyn Berezin, Pascal Van Hentenryck</p>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="a1e2eaad-5633-41dc-9e1b-c724e30ac85f"><h1>Fediverse Supporter</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f48757bb-8e16-418d-857d-26908de5ef1e -->
+<!-- ContentItem:a937ed96-7c15-4ede-a3d0-09dc382590eb -->
+<aside class="notes"><p>It is now more important than ever that we create networks that are not  controlled by corporate entities or petulant oligarchs</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>See my presentation from CodeMash 2025: <a href="https://www.youtube.com/watch?v=FdlJVG2GjLY">How the Fediverse Could Save Democracy &amp; Why It Probably Won't</a></p>
+</li>
+<li><p>Hear my thoughts on why a thriving Fediverse is so critical on David Giard's <a href="https://davidgiard.com/barry-stahl-on-the-fediverse">Technology and Friends</a> show.</p>
+</li>
+<li><p>Learn more about the Fediverse at <a href="https://fediverse.party/en/fediverse">fediverse.party</a>.</p>
+</li>
+<li><p>Get your own Mastodon account at <a href="https://joinmastodon.org/">Join Mastodon</a>.</p>
+<ul>
+<li>Don't stress on what server to use, just pick one and go.  You can always move later.</li>
+</ul>
+</li>
+<li><p>Follow me on Mastodon at <a href="https://fosstodon.org/@bsstahl">@bsstahl@CognitiveInheritance.com</a>.</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/a937ed96-7c15-4ede-a3d0-09dc382590eb.png" alt="Logos.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Liquid Victor was used to create this slide deck</p>
+</aside>
+<a id="23528a73-7bc1-4e39-9f2f-c8b9e2cff982"><h1>Some OSS Projects I Run</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:f8cbcb81-15f7-48e0-bc29-b348732f6f05 -->
+<ol>
+<li><a href="https://github.com/bsstahl/liquidvictor">Liquid Victor</a> : Media tracking and aggregation [used to assemble this presentation]</li>
+<li><a href="https://github.com/bsstahl/pptail">Prehensile Pony-Tail</a> : A static site generator built in c#</li>
+<li><a href="https://github.com/bsstahl/testhelperextensions">TestHelperExtensions</a> : A set of extension methods helpful when building unit tests</li>
+<li><a href="https://github.com/bsstahl/conferencescheduler">Conference Scheduler</a> : A conference schedule optimizer</li>
+<li><a href="https://github.com/bsstahl/intentbot">IntentBot</a> : A microservices framework for creating conversational bots on top of Bot Framework</li>
+<li><a href="https://github.com/bsstahl/liquidnun">LiquidNun</a> : Library of abstractions and implementations for loosely-coupled applications</li>
+<li><a href="https://github.com/bsstahl/toastmastersagenda">Toastmasters Agenda</a> : A c# library and website for generating agenda's for Toastmasters meetings</li>
+<li><a href="https://github.com/bsstahl/PDM">ProtoBuf Data Mapper</a> : A c# library for mapping and transforming ProtoBuf messages</li>
+</ol>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>I am proud to be one of the founders of AZGiveCamp.
+GiveCamps are weekend events where we put a bunch of software creators in a room with a bunch of great local charities, and through the course of the weekend, we create software to help them further their mission</p>
+</aside>
+<a id="3129a405-82a7-432c-ae55-6f9d2335ab17"><h1>http://GiveCamp.org</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:2ca346de-d62c-4c6b-834d-7ccab290a6ab -->
+<img alt="GiveCamp.png" src="img/2ca346de-d62c-4c6b-834d-7ccab290a6ab.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>July 25, 2022 was my 100th public talk. Thank you for allowing me to participate in your community over these past few decades!</p>
+</aside>
+<a id="39c6410c-3913-410b-abab-984014a15d84"><h1>Achievement Unlocked</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a042b106-4bab-4403-b5b6-0d7b414ef789 -->
+<img alt="bss-100-achievement-unlocked-1024x250.png" src="img/a042b106-4bab-4403-b5b6-0d7b414ef789.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="0195afa9-114b-42ae-83a5-0eead5510785"><h1>Classification</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:e9d49de0-6ca2-43fd-a669-1a7c4ba1f9a7 -->
+<!-- ContentItem:780777b8-6e41-43fc-828c-3af33f92cdb6 -->
+<aside class="notes"><ul>
+<li>Classification is for known labels</li>
+<li>Clustering is an unsupervised form of classification.</li>
+</ul>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Grouping data into <strong>known</strong> categories based on features of each item</p>
+</blockquote>
+<ul>
+<li>Can be used for:
+<ul>
+<li>Grouping items with shared properties together</li>
+<li>Identifying which known group a new item belongs to</li>
+<li>Normalization of input/output</li>
+</ul>
+</li>
+<li>Usually based on a <strong>training set</strong> of labeled data
+<ul>
+<li>The model learns the features that define each category</li>
+<li>New items are classified based on learned features</li>
+<li>Classification is a <strong>supervised</strong> learning problem</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/780777b8-6e41-43fc-828c-3af33f92cdb6.png" alt="Classification-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Introduce classification as the supervised-learning problem of assigning an input to one of several known categories. Position it as the cousin of the clustering work that follows: classification starts with labels, while clustering asks whether useful groups can be discovered without them.</p>
+</aside>
+<a id="d660df12-e53d-4ec1-9203-3910d7f1b76e"><h1>Assigning Meaningful Labels</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:6db0f2bd-c79e-42c7-9950-bd46c5cd1fed -->
+<ul>
+<li>Start with known labels:
+<ul>
+<li>Spam or not spam</li>
+<li>Defect or no defect</li>
+<li>Support ticket category</li>
+<li>Image contents</li>
+</ul>
+</li>
+<li>The model is trained from labeled examples</li>
+<li>Then it predicts the best label for new inputs</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>The ingredients to look for in real systems: labeled examples, features, target classes, a training process, and a prediction step.</p>
+</aside>
+<a id="7f22722b-7af3-48d4-923a-a7a105ce8ed9"><h1>Shape of a Classification Problem</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:93dc35bd-1262-48cb-92dc-db486992b0ba -->
+<ul>
+<li><p>Labeled examples show the model what the right answer looks like</p>
+<ul>
+<li>Each example includes input data plus the correct label</li>
+</ul>
+</li>
+<li><p>Features are the details the model is allowed to use</p>
+<ul>
+<li>Measurements, properties, words, pixels, counts, or categories</li>
+<li>Chosen because they may help separate one label from another</li>
+</ul>
+</li>
+<li><p>Target classes are the labels the model is allowed to predict</p>
+<ul>
+<li>The known categories we care about</li>
+<li>The output must be one of these classes</li>
+</ul>
+</li>
+<li><p>Training searches for a pattern from features to target class</p>
+</li>
+<li><p>Prediction applies that pattern to an unlabeled input</p>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="355f047c-dcb6-49a3-8328-271137440c6f"><h1>Decision Boundaries</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f26df907-18a9-460f-8c31-35caa148d3df -->
+<!-- ContentItem:3bc63007-2176-4323-920e-0ba7e65257bb -->
+<aside class="notes"><p>Use the visual to explain that classifiers divide feature space into regions where different labels are predicted. This bridges the workshop's earlier geometry and search ideas into machine-learning style pattern matching.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>A classifier divides feature space into regions</p>
+</li>
+<li><p>Each region predicts a different target class</p>
+</li>
+<li><p>The line between regions is a decision boundary</p>
+</li>
+<li><p>New inputs are classified by where they land</p>
+</li>
+<li><p>Different algorithms draw different kinds of boundaries</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/3bc63007-2176-4323-920e-0ba7e65257bb.png" alt="DecisionBoundaries-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="246f79d0-2648-4f69-852b-19d43438f1fc"><h1>Rule-Based vs Tree-Based</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:1802fbb5-4cb2-4f90-8040-70eac1ad4bed -->
+<!-- ContentItem:18c84268-f516-402d-99e5-268cc13f798d -->
+<aside class="notes"><p>Rule-based classifiers use explicit if/then rules, usually written by people or extracted from domain knowledge. They are easy to inspect because each rule stands alone, but they can become brittle when the data has many interactions or fuzzy exceptions. Tree-based classifiers learn a hierarchy of rules from labeled examples. Each split asks a feature question, each path combines several decisions, and each leaf predicts a target class. A single decision tree remains fairly explainable, while random forests combine many trees to improve generalization at the cost of less direct explanation.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Decision trees are readable classification models</p>
+</li>
+<li><p>Each split asks a question about a feature</p>
+</li>
+<li><p>Each branch narrows the possible class</p>
+</li>
+<li><p>Each leaf predicts a target class</p>
+</li>
+<li><p>Random forests use many trees and combine their votes</p>
+</li>
+<li><p>The tradeoff: less explainable, often better generalization</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/18c84268-f516-402d-99e5-268cc13f798d.png" alt="TreeBasedClassifiers-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="8c6a9f54-2d35-4b2f-91dc-8bb32788d2fe"><h1>Linear Classifiers</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:5a52fd6e-6575-48a0-92f2-9f038c439f7b -->
+<!-- ContentItem:a1ca3243-84f6-4947-a68a-f4b7a52c760f -->
+<aside class="notes"><p>Explain logistic regression and linear support-vector machines as algorithms that try to separate classes with a weighted combination of features. Connect this back to the audience's existing mental model of equations, weights, and boundaries rather than diving into training math.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Linear classifiers separate classes with a weighted feature score</p>
+</li>
+<li><p>Each feature contributes to the final decision</p>
+</li>
+<li><p>The boundary is a line or flat surface in feature space</p>
+</li>
+<li><p>Logistic regression estimates the probability of a class</p>
+</li>
+<li><p>Linear SVMs look for a separating boundary with margin</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/a1ca3243-84f6-4947-a68a-f4b7a52c760f.png" alt="LinearClassifiers-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="a6acb0c0-e2f8-4cfd-8a4d-35fbb1950034"><h1>Instance-Based Classifiers</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:09e3cdd3-4ae1-49d6-bfe5-3689ac35f5ef -->
+<!-- ContentItem:e6d88d0e-2b46-42e6-bf57-65147778744c -->
+<aside class="notes"><p>Introduce k-nearest neighbors as the classifier that predicts from similar known examples nearby. This slide should prepare the audience for the clustering section, where distance and similarity become the central tools.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Instance-based classifiers keep examples instead of learning a compact rule</p>
+</li>
+<li><p>k-nearest neighbors asks: which labeled examples are closest?</p>
+</li>
+<li><p>Nearby examples vote on the label for a new item</p>
+</li>
+<li><p>The core idea is distance or similarity</p>
+</li>
+<li><p>That same idea becomes central in clustering</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/e6d88d0e-2b46-42e6-bf57-65147778744c.png" alt="InstanceBasedClassifiers-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="12ab2e7a-b504-4d82-a8f1-c254a5d4edfb"><h1>Probabilistic Classifiers</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:8415f6f3-0760-47bc-b8a0-ccab3bf63fb4 -->
+<!-- ContentItem:496e6ab2-bacc-4d47-b279-30dccd39fd57 -->
+<aside class="notes"><p>Introduce Naive Bayes as a lightweight classifier that estimates which label is most likely given the observed features. Use it to show that some algorithms produce confidence-like scores, not just a final class name.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Probabilistic classifiers estimate which label is most likely</p>
+</li>
+<li><p>Naive Bayes combines evidence from observed features</p>
+</li>
+<li><p>It is lightweight and useful for text-like signals</p>
+</li>
+<li><p>The output can be a ranked set of class scores</p>
+</li>
+<li><p>The final label is the highest-scoring class</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/496e6ab2-bacc-4d47-b279-30dccd39fd57.png" alt="ProbabilisticClassifiers-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="2c5e4ad4-0efa-4f89-b876-3f41b6b1848c"><h1>Evaluating Classification Results</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:5b72192f-18c6-4776-b0de-730bb263ee69 -->
+<!-- ContentItem:7a3e6d09-84f1-4358-83c6-894bd616f431 -->
+<aside class="notes"><p>Explain that accuracy alone can mislead. Introduce the confusion matrix, precision, recall, and false positives/false negatives as the practical vocabulary for deciding whether a classifier is useful in context.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Accuracy alone can hide important mistakes</p>
+</li>
+<li><p>A confusion matrix shows what was predicted versus what was true</p>
+</li>
+<li><p>False positives and false negatives often have different costs</p>
+</li>
+<li><p>Precision asks whether positive predictions are trustworthy</p>
+</li>
+<li><p>Recall asks whether the important positives were found</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/7a3e6d09-84f1-4358-83c6-894bd616f431.png" alt="ClassificationEvaluation-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="ffb63efc-9df5-4495-90de-2c4c384c50e1"><h1>Classification vs Clustering</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:a2e1338a-2368-4fb8-b6f7-63d17cef0398 -->
+<!-- ContentItem:b020c272-e49f-4c2e-a4a3-034a2fa1ba70 -->
+<aside class="notes"><p>Close the subsection by making the contrast explicit: classification asks which known label fits this item, while clustering asks what groups seem to exist at all. This sets up the upcoming hands-on clustering exercise.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Classification starts with known target classes</p>
+</li>
+<li><p>The question is: which known label fits this item?</p>
+</li>
+<li><p>Clustering starts without those labels</p>
+</li>
+<li><p>The question is: what groups seem to exist?</p>
+</li>
+<li><p>Both use feature space, but they ask different questions</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/b020c272-e49f-4c2e-a4a3-034a2fa1ba70.png" alt="ClassificationToClustering-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="c504d2aa-f3e6-4956-b06c-96ba4a551dfc"><h1>Clustering</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:81fec6ba-5786-4258-b8ac-a742fe19af01 -->
+<!-- ContentItem:a32e7caf-bedc-49cc-ae49-12548ae9b6fb -->
+<aside class="notes"><p>Clusters contains items more similar to each other than to those in other clusters</p>
+<ul>
+<li>Key to use: Experiment</li>
+</ul>
+<p>Source Image: <a href="https://www.bing.com/images/search?view=detailV2&amp;ccid=vNng%2foOs&amp;id=2652F88E274436CB6C8CC623A778D7B9F2475FC9&amp;thid=OIP.vNng_oOsNRHKrlh3pjSAyAHaDw&amp;mediaurl=https%3a%2f%2fi.stack.imgur.com%2fcIDB3.png&amp;cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.bcd9e0fe83ac3511caae5877a63480c8%3frik%3dyV9H8rnXeKcjxg%26pid%3dImgRaw%26r%3d0&amp;exph=517&amp;expw=1017&amp;q=k-means+clustering&amp;simid=608026322933788461&amp;FORM=IRPRST&amp;ck=8E4BDA3E627011B4CADA2B68FB818490&amp;selectedIndex=0&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;ajaxserp=0">https://www.bing.com/images/search?view=detailV2&amp;ccid=vNng%2foOs&amp;id=2652F88E274436CB6C8CC623A778D7B9F2475FC9&amp;thid=OIP.vNng_oOsNRHKrlh3pjSAyAHaDw&amp;mediaurl=https%3a%2f%2fi.stack.imgur.com%2fcIDB3.png&amp;cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.bcd9e0fe83ac3511caae5877a63480c8%3frik%3dyV9H8rnXeKcjxg%26pid%3dImgRaw%26r%3d0&amp;exph=517&amp;expw=1017&amp;q=k-means+clustering&amp;simid=608026322933788461&amp;FORM=IRPRST&amp;ck=8E4BDA3E627011B4CADA2B68FB818490&amp;selectedIndex=0&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;ajaxserp=0</a></p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Unsupervised machine learning technique</li>
+<li>Clusters form around centroids (geometric center)</li>
+<li>Data points are grouped based on their similarity
+<ul>
+<li>Minimize the error (distance from centroid)</li>
+</ul>
+</li>
+<li>Advantages
+<ul>
+<li>No need to define a distance threshold</li>
+</ul>
+</li>
+<li>Disadvantages
+<ul>
+<li>Quality is use-case dependent</li>
+<li>Often requires the number of clusters to be specified</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
+<img alt="Clustering-800x800.png" src="img/a32e7caf-bedc-49cc-ae49-12548ae9b6fb.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="4b7fb7c4-8247-4c52-9e1f-7d8206b52cc8"><h1>K-Means Clustering</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:3be5d924-8ac0-45fe-9e02-285e62f89305 -->
+<!-- ContentItem:44d43526-6cfa-4d6b-98f4-1c05c822631a -->
+<aside class="notes"><p>Explain k-means as an iterative clustering algorithm: choose k, assign each point to the nearest centroid, move the centroids to the middle of their assigned points, and repeat until the assignments stabilize. Keep the focus on the algorithmic loop rather than the distance formula.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>k-means groups points around centroids</p>
+</li>
+<li><p>Start by choosing k, the number of clusters</p>
+</li>
+<li><p>Assign each point to the nearest centroid</p>
+</li>
+<li><p>Move each centroid to the middle of its assigned points</p>
+</li>
+<li><p>Repeat until the assignments stop changing much</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/44d43526-6cfa-4d6b-98f4-1c05c822631a.png" alt="KMeansLoop-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="6e6397b1-13d2-48d2-a16c-7f5f58ae0b37"><h1>Choosing K and Reading the Result</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:59e3f4ef-2b2c-4d56-b14a-99f1ed49b011 -->
+<!-- ContentItem:9c2b0bd6-5a25-467f-9d71-3eeb1bbd89ff -->
+<aside class="notes"><p>Explain that k-means requires the number of clusters up front, so the algorithm is simple but the modeling question is not automatic. Mention that different choices of k tell different stories about the same data.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>k-means needs the number of clusters up front</p>
+</li>
+<li><p>The algorithm can run cleanly even when k is the wrong question</p>
+</li>
+<li><p>Different values of k tell different stories about the same data</p>
+</li>
+<li><p>Use domain context and experimentation to choose a useful grouping</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/9c2b0bd6-5a25-467f-9d71-3eeb1bbd89ff.png" alt="ChoosingK-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="88e2c92e-2f55-44f3-bd2f-7c1277d82942"><h1>Hierarchical Clustering</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:762f0b9f-5424-4f5d-9936-5f8d4ef53f58 -->
+<!-- ContentItem:c0d3fca9-e9ec-4d7f-ae31-a0111592f538 -->
+<aside class="notes"><p>Introduce hierarchical clustering as building a tree of similarity: points merge into small groups, small groups merge into larger groups, and the presenter can choose where to cut the tree. Keep the focus on the algorithmic shape rather than distance-formula details.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Hierarchical clustering builds a tree of similarity</p>
+</li>
+<li><p>Nearby items merge into small groups</p>
+</li>
+<li><p>Small groups merge into larger groups</p>
+</li>
+<li><p>Cutting the tree at different heights gives different cluster counts</p>
+</li>
+<li><p>This is useful when the right number of groups is not obvious</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/c0d3fca9-e9ec-4d7f-ae31-a0111592f538.png" alt="HierarchicalClustering-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="891e7b47-1d48-4f56-9bd0-819043ea4814"><h1>DBSCAN</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:b3f61ef5-4e13-4626-a57b-5527c76b43b7 -->
+<!-- ContentItem:5c50b5ce-10e1-4dd7-9fb9-5e3e717122f8 -->
+<aside class="notes"><p>Introduce DBSCAN as a density-based algorithm that finds crowded regions and treats isolated points as noise. Contrast it with k-means: DBSCAN does not require k up front and can discover irregular cluster shapes.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>DBSCAN finds dense regions in feature space</p>
+</li>
+<li><p>Crowded neighborhoods become clusters</p>
+</li>
+<li><p>Sparse isolated points are treated as noise</p>
+</li>
+<li><p>It does not require k up front</p>
+</li>
+<li><p>It can find irregular shapes that k-means misses</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/5c50b5ce-10e1-4dd7-9fb9-5e3e717122f8.png" alt="DBSCAN-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="d16d9dfc-2c57-442a-a569-ad5d3b0ad4b2"><h1>Evaluating Clustering Results</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f2d4ed6a-7a6e-4e4d-84c7-33fca28f2896 -->
+<!-- ContentItem:a83f0e3e-f56f-4c5c-8ca8-05d9fe095f0d -->
+<aside class="notes"><p>Explain that clustering has no single confusion-matrix equivalent when labels are unknown. Introduce practical evaluation questions: are points inside a cluster similar, are different clusters separated, and does the grouping help the real task?</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Clustering often has no known correct label</p>
+</li>
+<li><p>Evaluation is about whether the grouping is useful</p>
+</li>
+<li><p>Good clusters are cohesive inside</p>
+</li>
+<li><p>Good clusters are separated from each other</p>
+</li>
+<li><p>The final test is whether the grouping helps the real task</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/a83f0e3e-f56f-4c5c-8ca8-05d9fe095f0d.png" alt="ClusteringEvaluation-800x800.png" />
+</td>
+</tr></table></section>
+
+
+        </div>
+        <div class="footer-left">Semantic Cartography</div>
+        <div class="footer-right">Barry S. Stahl - Mastodon:@bsstahl@cognitiveinheritance.com - Blog:http://www.cognitiveinheritance.com</div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <!-- Plugins -->
+    <script src="plugin/highlight/highlight.js"></script> 
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+
+        Reveal.initialize({
+            hash: true,
+			width: 1920,
+			height: 1080,
+            transition: 'slide',
+            backgroundTransition: 'fade',
+            showNotes: window.location.search.match(/print-pdf/gi) ? true : false,
+            plugins: [RevealHighlight, RevealMarkdown, RevealSearch, RevealNotes, RevealMath, RevealZoom ]
+        });
+    </script>
+</body>
+</html>

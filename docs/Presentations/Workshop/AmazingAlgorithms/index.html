@@ -1,0 +1,5001 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Amazing Algorithms</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/130388b7-e1f8-4696-851f-49ec167ba0c0.png'>
+<a id="ac4df666-70fe-4ae5-babc-8129630a10e7">&nbsp;</a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:de5a81f0-efad-4e0b-9707-d9874420665c -->
+<!-- ContentItem:2f2cf6b5-5644-4a88-9520-c6401b4ecb23 -->
+<aside class="notes"><p>Amazing Algorithms Title - was 7fd3b3ea-e301-4f5f-936e-230b5acff6e7</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<h2 id="amazing-algorithms">Amazing Algorithms</h2>
+<h3 id="for-solving-problems-in-software">For Solving Problems in Software</h3>
+<hr />
+<h3 id="barry-s.stahl">Barry S. Stahl</h3>
+<h4 id="principal-engineer-aznerds.net">Principal Engineer - AZNerds.net</h4>
+<h4 id="bsstahlcognitiveinheritance.com"><a href="https://fosstodon.org/@Bsstahl">@bsstahl@cognitiveinheritance.com</a></h4>
+<h4 id="httpscognitiveinheritance.com"><a href="https://cognitiveinheritance.com">https://CognitiveInheritance.com</a></h4>
+
+</td>
+<td style="text-align: left;">
+<img src="img/2f2cf6b5-5644-4a88-9520-c6401b4ecb23.png" alt="Transparent Half Width Image 800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="636059f9-aa9d-4444-b4ec-dd7f62badd98"><h1>Favorite Physicists & Mathematicians</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:30f7e9d2-b154-4895-bed7-2765f7bdc6fe -->
+<!-- ContentItem:8a83be06-76e9-4028-9630-c6a7de92ae99 -->
+<aside class="notes"><p>An up-to-date list is available on <a href="https://cognitiveinheritance.com/Pages/Favorites.html">my blog at https://cognitiveinheritance.com/Pages/Favorites.html</a>
+Please ping me on Mastodon to tell me where I messed-up with this list, or this presentation for that matter. 😉</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<h4 id="favorite-physicists">Favorite Physicists</h4>
+<ol>
+<li>Harold &quot;Hal&quot; Stahl</li>
+<li>Carl Sagan</li>
+<li>Richard Feynman</li>
+<li>Marie Curie</li>
+<li>Nikola Tesla</li>
+<li>Albert Einstein</li>
+<li>Neil deGrasse Tyson</li>
+<li>Niels Bohr</li>
+<li>Galileo Galilei</li>
+<li>Michael Faraday</li>
+</ol>
+<p><em>Other notables</em>: Stephen Hawking, Edwin Hubble, Leonard Susskind, Christiaan Huygens</p>
+
+</td>
+<td style="vertical-align:top;">
+<h4 id="favorite-mathematicians">Favorite Mathematicians</h4>
+<ol>
+<li>Ada Lovelace</li>
+<li>Alan Turing</li>
+<li>Tim Berners-Lee</li>
+<li>Isaac Newton</li>
+<li>Emmy Noether</li>
+<li>Johannes Kepler</li>
+<li>René Descartes</li>
+<li>George Boole</li>
+<li>Carl Friedrich Gauss</li>
+<li>Grace Hopper</li>
+</ol>
+<p><em>Other notables</em>: Blaise Pascal, Daphne Koller, Grady Booch, Evelyn Berezin, Pascal Van Hentenryck</p>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="a1e2eaad-5633-41dc-9e1b-c724e30ac85f"><h1>Fediverse Supporter</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f48757bb-8e16-418d-857d-26908de5ef1e -->
+<!-- ContentItem:a937ed96-7c15-4ede-a3d0-09dc382590eb -->
+<aside class="notes"><p>It is now more important than ever that we create networks that are not  controlled by corporate entities or petulant oligarchs</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>See my presentation from CodeMash 2025: <a href="https://www.youtube.com/watch?v=FdlJVG2GjLY">How the Fediverse Could Save Democracy &amp; Why It Probably Won't</a></p>
+</li>
+<li><p>Hear my thoughts on why a thriving Fediverse is so critical on David Giard's <a href="https://davidgiard.com/barry-stahl-on-the-fediverse">Technology and Friends</a> show.</p>
+</li>
+<li><p>Learn more about the Fediverse at <a href="https://fediverse.party/en/fediverse">fediverse.party</a>.</p>
+</li>
+<li><p>Get your own Mastodon account at <a href="https://joinmastodon.org/">Join Mastodon</a>.</p>
+<ul>
+<li>Don't stress on what server to use, just pick one and go.  You can always move later.</li>
+</ul>
+</li>
+<li><p>Follow me on Mastodon at <a href="https://fosstodon.org/@bsstahl">@bsstahl@CognitiveInheritance.com</a>.</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/a937ed96-7c15-4ede-a3d0-09dc382590eb.png" alt="Logos.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Liquid Victor was used to create this slide deck</p>
+</aside>
+<a id="23528a73-7bc1-4e39-9f2f-c8b9e2cff982"><h1>Some OSS Projects I Run</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:f8cbcb81-15f7-48e0-bc29-b348732f6f05 -->
+<ol>
+<li><a href="https://github.com/bsstahl/liquidvictor">Liquid Victor</a> : Media tracking and aggregation [used to assemble this presentation]</li>
+<li><a href="https://github.com/bsstahl/pptail">Prehensile Pony-Tail</a> : A static site generator built in c#</li>
+<li><a href="https://github.com/bsstahl/testhelperextensions">TestHelperExtensions</a> : A set of extension methods helpful when building unit tests</li>
+<li><a href="https://github.com/bsstahl/conferencescheduler">Conference Scheduler</a> : A conference schedule optimizer</li>
+<li><a href="https://github.com/bsstahl/intentbot">IntentBot</a> : A microservices framework for creating conversational bots on top of Bot Framework</li>
+<li><a href="https://github.com/bsstahl/liquidnun">LiquidNun</a> : Library of abstractions and implementations for loosely-coupled applications</li>
+<li><a href="https://github.com/bsstahl/toastmastersagenda">Toastmasters Agenda</a> : A c# library and website for generating agenda's for Toastmasters meetings</li>
+<li><a href="https://github.com/bsstahl/PDM">ProtoBuf Data Mapper</a> : A c# library for mapping and transforming ProtoBuf messages</li>
+</ol>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>I am proud to be one of the founders of AZGiveCamp.
+GiveCamps are weekend events where we put a bunch of software creators in a room with a bunch of great local charities, and through the course of the weekend, we create software to help them further their mission</p>
+</aside>
+<a id="3129a405-82a7-432c-ae55-6f9d2335ab17"><h1>http://GiveCamp.org</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:2ca346de-d62c-4c6b-834d-7ccab290a6ab -->
+<img alt="GiveCamp.png" src="img/2ca346de-d62c-4c6b-834d-7ccab290a6ab.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>July 25, 2022 was my 100th public talk. Thank you for allowing me to participate in your community over these past few decades!</p>
+</aside>
+<a id="39c6410c-3913-410b-abab-984014a15d84"><h1>Achievement Unlocked</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a042b106-4bab-4403-b5b6-0d7b414ef789 -->
+<img alt="bss-100-achievement-unlocked-1024x250.png" src="img/a042b106-4bab-4403-b5b6-0d7b414ef789.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>CodeMash Lego (2026) Agenda</p>
+</aside>
+<a id="53d36581-7f49-4a1a-be15-5b743465849a"><h1>Agenda</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:c3d18b26-aae3-4133-90a6-8eafb1f8dd6e -->
+<ul>
+<li><p>08:45 - 09:00 : Intro and Modeling</p>
+</li>
+<li><p>09:00 - 10:30 : Dynamic Programming</p>
+</li>
+<li><p>10:30 - 11:00 : Break</p>
+</li>
+<li><p>11:00 - 11:15 : Genetic Algorithms</p>
+</li>
+<li><p>11:15 - 12:15 : Classification &amp; Clustering</p>
+</li>
+<li><p>12:15 - 1:15 : Lunch</p>
+</li>
+<li><p>1:15 - 2:45 : Search and Optimization (LP &amp; MIP)</p>
+</li>
+<li><p>2:45 - 3:15 : Break</p>
+</li>
+<li><p>3:15 - 3:45 : Best-Path Algorithms</p>
+</li>
+<li><p>3:45 - 4:15 : Cost-Minimization Algorithms</p>
+</li>
+<li><p>4:15 - 4:30 : Training Neural Networks</p>
+</li>
+<li><p>4:30 - 4:45 : Q&amp;A and Wrap-up</p>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="2d84a744-0676-444e-9e8b-bf8d5ed39224"><h1>Simulates A Rational Actor</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f5714ce9-35ea-4b07-8527-87109dab8a7f -->
+<!-- ContentItem:95a214bb-81df-4ff2-b273-94c733f2cac6 -->
+<aside class="notes"><p>This also differs significantly from DSS which are designed to support human decision making.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Attempts to make the best possible decision​ based on the model and the data</p>
+</blockquote>
+<ul>
+<li>Model - Our description of the problem</li>
+<li>Data - Our understanding of the state of the domain</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/95a214bb-81df-4ff2-b273-94c733f2cac6.jpeg" alt="A Rational Actor 800x800.jpeg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="6de8d83e-ebbf-466c-9501-91dbe2ac6382"><h1>Models are the Blueprint</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:4e4788fb-5542-49ef-b12d-d4c9460e776e -->
+<!-- ContentItem:dc63e838-d23c-47b0-93f5-197bcf55ba26 -->
+<aside class="notes"><ul>
+<li>The best coder in the world can't solve a problem if they don't understand it.</li>
+<li>The best algorithm in the world can't solve a problem if it isn't modeled well.</li>
+<li>The model is how we describe the problem to the system</li>
+</ul>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<p>The success of a problem-solving algorithm is often determined before the algorithm even runs -- by how the problem is modeled</p>
+
+</td>
+<td style="text-align: left;">
+<img src="img/dc63e838-d23c-47b0-93f5-197bcf55ba26.jpg" alt="Models are the Blueprint 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="0f670a5a-0570-4497-bab7-1c178579a1d6"><h1>Modeling</h1></a>
+<!-- Layout:FullPageFragments -->
+<!-- ContentItem:cb1313d2-948b-4aa5-95e5-d6d6df7395c0 -->
+<!-- ContentItem:79845fb0-2ded-409a-90eb-012795a6ff6d -->
+<!-- ContentItem:0a42324d-d9d2-4c36-9284-a4e8ebb27607 -->
+<table border="0" width="100%">
+<aside class="notes"><p>A traveling salesman problem with only 20 cities has 20! (2x10<sup>18</sup>) possible routes. A brute-force solution that checks each route would take over 77 million years to complete, assuming it could evaluate one route per microsecond.</p>
+</aside>
+<tr><td>
+<ul class="fragment">
+<li>Modeling defines the problem space
+<ul>
+<li>What’s included &amp; what’s ignored</li>
+<li>Poor models lead to irrelevant solutions</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+<tr><td>
+<ul class="fragment">
+<li>Modeling shapes the solution strategy
+<ul>
+<li>Logical models » OOP or Rules Engines</li>
+<li>Graph models » traversal algorithms</li>
+<li>Constraint models » LP or MIP</li>
+<li>Probabilistic models » Neural/Bayesian Networks</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+<tr><td>
+<ul class="fragment">
+<li>Modeling can determine tractability
+<ul>
+<li>Some formulations make problems NP-hard</li>
+<li>Others reveal polynomial-time solutions</li>
+<li>Examples
+<ul>
+<li>Conference Scheduling with LP vs MIP</li>
+<li>Traveling Salesman with OOP</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+</table></section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="c731266d-1cc3-4b6e-96b3-7f74a64d18a0"><h1>Workshop Goals</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:aec93d43-202e-4aea-9578-854677854e42 -->
+<!-- ContentItem:0ba4e0ef-a1b0-4289-bbfb-d42bd0ae40ac -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Describe these algorithms
+<ul>
+<li>Show models that work well with each type of problem</li>
+<li>Describe sample implementations for your use</li>
+<li>Provide intuition as to why they work as they do</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/0ba4e0ef-a1b0-4289-bbfb-d42bd0ae40ac.jpg" alt="Models and Algorithms 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="a751be30-3c3d-4dae-9593-ef56f9802c86"><h1>Knapsack Problems</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:c0b6a284-f3ab-4005-af5e-31446249ee11 -->
+<!-- ContentItem:944d3913-8f61-4faf-9592-5651372da64b -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>A family of combinatorial optimization problems</li>
+<li>Goal
+<ul>
+<li>Select a subset of items from a larger set</li>
+<li>Without exceeding resource constraints</li>
+<li>Such that total value is maximized</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/944d3913-8f61-4faf-9592-5651372da64b.jpeg" alt="Knapsack 800x800.jpeg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="092579ce-5162-494e-80a9-42c5527d6f8d"><h1>Memoization</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:e07521b3-183a-4277-a512-e489325fb554 -->
+<!-- ContentItem:5c2e9928-ddcb-4bda-a2fb-f9f3c22d1ce9 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Store the results of function calls for reuse when the same inputs occur again</p>
+</blockquote>
+<ul>
+<li>Goal: Compute the nth Fibonacci number
+<ul>
+<li>F(n) = F(n-1) + F(n-2)</li>
+</ul>
+</li>
+<li>Naïve Recursion
+<ul>
+<li>Recomputes each subproblem multiple times</li>
+<li>O(2<sup>n</sup>) Problem - Exponential time</li>
+</ul>
+</li>
+<li>With Memoization
+<ul>
+<li>Store results of F(k)</li>
+<li>Reuse stored values</li>
+<li>O(n) Problem - Linear Time</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/5c2e9928-ddcb-4bda-a2fb-f9f3c22d1ce9.jpeg" alt="Memoization 800x800.jpeg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="f638ad49-a80f-4fdb-b5da-4a99771537b5"><h1>Decision Variables</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:ae7a676e-f68d-4fde-8a0d-9a125344d10d -->
+<!-- ContentItem:22b3abee-577c-4758-8862-bd4c2d01fd03 -->
+<aside class="notes"><p>Each item maps to a boolean include-or-exclude decision variable.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>In optimization, decision variables are the values we are solving for</p>
+</blockquote>
+<ul>
+<li><p>In knapsack problems, each candidate item has a boolean decision variable</p>
+<ul>
+<li><span class="math">\(x_i = 1\)</span> means include item <span class="math">\(i\)</span></li>
+<li><span class="math">\(x_i = 0\)</span> means exclude item <span class="math">\(i\)</span></li>
+</ul>
+</li>
+<li><p>The goal is to choose the combination of <span class="math">\(x_1, x_2, ... x_n\)</span> that gives the best valid knapsack</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/22b3abee-577c-4758-8862-bd4c2d01fd03.png" alt="DecisionVars-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Each item has a decision var that is either 0 or 1, where 0
+indicates the item was not selected and 1 indicates the
+item was selected.</p>
+<p>We'll start by solving this toy problem using DP, then, once
+we understand how DP works, we'll explore why it is a good fit for
+solving knapsack problems.</p>
+</aside>
+<a id="9a8cdfed-b24a-4a40-8602-dfdf074aaed5"><h1>Canonical Knapsack Problem</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a79e1eb4-8014-4281-ad0e-193c15812972 -->
+<img alt="Knapsack Problem.png" src="img/a79e1eb4-8014-4281-ad0e-193c15812972.png" />
+</section>
+
+
+<section data-transition="slide-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="d8939e5a-ea82-423d-8208-ae6367d64b3a"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:7e180539-8714-4e43-b537-33ab6dfae457 -->
+<img alt="Slide7_1200x600.jpg" src="img/7e180539-8714-4e43-b537-33ab6dfae457.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="44894665-4675-4621-80a6-f53220a5a476"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:6bdb132e-ad01-4109-9ac6-f50a350bcd4a -->
+<img alt="Slide8_1200x600.jpg" src="img/6bdb132e-ad01-4109-9ac6-f50a350bcd4a.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="5c665d08-949f-40dd-8439-f1a91b38be33"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:57cd6f9b-f6c4-4cbc-beb1-9c24116ba44c -->
+<img alt="Slide9_1200x600.jpg" src="img/57cd6f9b-f6c4-4cbc-beb1-9c24116ba44c.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="05cc403a-9c04-489f-a0e3-726604ba23ea"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:8418d8c7-df87-4548-890a-b418101820c6 -->
+<img alt="Slide10_1200x600.jpg" src="img/8418d8c7-df87-4548-890a-b418101820c6.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="79bc9cc0-0440-4f5e-b76b-54897751e41d"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:75251b14-18c9-4530-a849-5e1d789065c9 -->
+<img alt="Slide11_1200x600.jpg" src="img/75251b14-18c9-4530-a849-5e1d789065c9.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="47d6be0c-378b-41d6-bb05-1454b0acfeaa"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:ba4fc1c8-3eb4-4d37-906f-9dc7de377e9a -->
+<img alt="Slide12_1200x600.jpg" src="img/ba4fc1c8-3eb4-4d37-906f-9dc7de377e9a.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="1d7d041a-e1c6-4b52-8501-4fccb0563e91"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a8b02119-64b3-439f-b470-418f72f89add -->
+<img alt="Slide13_1200x600.jpg" src="img/a8b02119-64b3-439f-b470-418f72f89add.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="13dc99a2-d806-427d-9227-dcdd3c3470ac"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:2c19ef71-d81b-4f5c-a57b-eb5ab9aefdd0 -->
+<img alt="Slide14_1200x600.jpg" src="img/2c19ef71-d81b-4f5c-a57b-eb5ab9aefdd0.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="d63a5e2b-0199-46cd-8d87-1b0742da8ed4"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:13edccac-b88f-4bed-98dc-374506caa698 -->
+<img alt="Slide15_1200x600.jpg" src="img/13edccac-b88f-4bed-98dc-374506caa698.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="8b5a925e-88b6-4741-8433-90ab5f385de2"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:9dfdd197-a092-4925-b3b3-171a581eea60 -->
+<img alt="Slide16_1200x600.jpg" src="img/9dfdd197-a092-4925-b3b3-171a581eea60.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="87acab75-f70f-4907-9f83-eb91cf5015fb"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:3a6b55b2-116a-4f9d-8f92-be5f1a289e64 -->
+<img alt="Slide17_1200x600.jpg" src="img/3a6b55b2-116a-4f9d-8f92-be5f1a289e64.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="ce768506-a612-450f-ad19-d45d3c660725"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:053887ad-058f-4758-989c-2a660e6ab75a -->
+<img alt="Slide18_1200x600.jpg" src="img/053887ad-058f-4758-989c-2a660e6ab75a.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="c46b01d8-71f5-4171-9c54-ad8713b97412"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:5dd782a7-ca7d-45a4-aff0-759dcac6bdc3 -->
+<img alt="Slide19_1200x600.jpg" src="img/5dd782a7-ca7d-45a4-aff0-759dcac6bdc3.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="af553b10-a5eb-40f9-af45-b984d03178ed"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:7f3922ba-cecf-4382-8f4a-3c499db58852 -->
+<img alt="Slide20_1200x600.jpg" src="img/7f3922ba-cecf-4382-8f4a-3c499db58852.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="3cd03684-a557-4f83-9f38-5d714a3a5a95"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:290d1bf9-fcf5-4a5c-85ad-0d14426a9a9d -->
+<img alt="Slide21_1200x600.jpg" src="img/290d1bf9-fcf5-4a5c-85ad-0d14426a9a9d.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="05171e4a-7ec3-4593-970f-64fefd78ab63"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:2c6212f8-2439-4a0f-8ea4-8e71ab36c0bb -->
+<img alt="Slide22_1200x600.jpg" src="img/2c6212f8-2439-4a0f-8ea4-8e71ab36c0bb.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="fc319834-7116-4c27-860f-ff6097b1d19a"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:0ee7f0ca-97d2-4b5c-b49e-f189d169346f -->
+<img alt="Slide23_1200x600.jpg" src="img/0ee7f0ca-97d2-4b5c-b49e-f189d169346f.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="246ebf5d-415b-47bc-a86b-7457486bf523"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:aa2aeeea-9d39-4f6c-9f8d-9ed29f35ccc0 -->
+<img alt="Slide24_1200x600.jpg" src="img/aa2aeeea-9d39-4f6c-9f8d-9ed29f35ccc0.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="6399ac55-1692-41a6-9c3f-fbcf42f5bb3d"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:9a387bed-a5b2-4bc4-92c7-be5fa1c28065 -->
+<img alt="Slide25_1200x600.jpg" src="img/9a387bed-a5b2-4bc4-92c7-be5fa1c28065.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="75c768ad-2fae-4c6f-b5c3-a8a2473c3c5d"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:1553f666-f8d7-4bcc-ad4f-05561f7bde56 -->
+<img alt="Slide26_1200x600.jpg" src="img/1553f666-f8d7-4bcc-ad4f-05561f7bde56.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="c83dbdb2-63a5-4892-ac59-db43be5c8048"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:7838e263-951a-435e-91e3-695a968d8d32 -->
+<img alt="Slide27_1200x600.jpg" src="img/7838e263-951a-435e-91e3-695a968d8d32.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="331d3fb8-8bbb-4b83-806e-abfe80f366c2"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:e1acee94-8d36-48d6-85d3-da07b4915406 -->
+<img alt="Slide28_1200x600.jpg" src="img/e1acee94-8d36-48d6-85d3-da07b4915406.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="c8e6cebb-ab94-497a-99c7-6c12435a8f0e"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:6297aacb-8e6e-4dce-9367-65abd32f4fc3 -->
+<img alt="Slide29_1200x600.jpg" src="img/6297aacb-8e6e-4dce-9367-65abd32f4fc3.jpg" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="8b18b779-4e34-42b6-8e90-96d402d554d0"><h1>Dynamic Programming</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:ae61c1c4-838d-455f-92aa-28951acc563a -->
+<h3 id="a-mathematical-optimization-technique">A mathematical optimization technique</h3>
+<ul>
+<li>Best for solving problems that can be described recursively</li>
+<li>Breaks the problem into smaller sub-problems​</li>
+<li>Solves each small problem only once​</li>
+<li>Guarantees an optimal solution​</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Brute force requires <em>2^n</em> calculations, while memoization avoids  recomputing equivalent subproblems, leaving <em>n</em> x <em>W</em> calculations. Changing our exponential problem <code>O(2ⁿ)</code> into a quadratic one <code>O(n²)</code>.</p>
+</aside>
+<a id="ee8b062f-8304-4773-9276-81f696c6429d"><h1>Combinatorial Explosion</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a5a194bd-d473-46b3-a239-0b07fec1b758 -->
+<table style="border-collapse:collapse;">
+  <tr>
+    <th style="border-left:1px solid #000; border-right:1px solid #000; border-top:none; border-bottom:none; text-align:center;">
+      Items ($n$)
+    </th>
+    <th style="border-right:1px solid #000; border-top:none; border-bottom:none; text-align:center;">
+      DP calculations
+    </th>
+    <th style="border-right:1px solid #000; border-top:none; border-bottom:none; text-align:center;">
+      Brute-force calculations
+    </th>
+  </tr>
+  <tr>
+    <td style="border-left:1px solid #000; border-right:1px solid #000; border-top:none; border-bottom:none; text-align:center;">
+      3
+    </td>
+    <td style="border-right:1px solid #000; border-top:none; border-bottom:none; text-align:center;">
+      27
+    </td>
+    <td style="border-right:1px solid #000; border-top:none; border-bottom:none; text-align:center;">
+      8
+    </td>
+  </tr>
+  <tr>
+    <td style="border-left:1px solid #000; border-right:1px solid #000; border-top:none; border-bottom:none; text-align:center;">
+      30
+    </td>
+    <td style="border-right:1px solid #000; border-top:none; border-bottom:none; text-align:center;">
+      270
+    </td>
+    <td style="border-right:1px solid #000; border-top:none; border-bottom:none; text-align:center;">
+      1,073,741,824
+    </td>
+  </tr>
+  <tr>
+    <td style="border-left:1px solid #000; border-right:1px solid #000; border-top:none; border-bottom:none; text-align:center;">
+      300
+    </td>
+    <td style="border-right:1px solid #000; border-top:none; border-bottom:none; text-align:center;">
+      2,700
+    </td>
+    <td style="border-right:1px solid #000; border-top:none; border-bottom:none; text-align:center;">
+      $\approx 2.037 \times 10^{90}$
+    </td>
+  </tr>
+  <tr>
+    <td style="border-left:1px solid #000; border-right:1px solid #000; border-top:none; border-bottom:none; text-align:center;">
+      3000
+    </td>
+    <td style="border-right:1px solid #000; border-top:none; border-bottom:none; text-align:center;">
+      27,000
+    </td>
+    <td style="border-right:1px solid #000; border-top:none; border-bottom:none; text-align:center;">
+      $\approx 1.230 \times 10^{903}$
+    </td>
+  </tr>
+</table>
+<hr />
+<ul>
+<li>DP: <span class="math">\(n \times W\)</span>, with <span class="math">\(W=9\)</span></li>
+<li>Brute Force:  <span class="math">\(2^n\)</span></li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="2918edda-6864-46f6-a67f-9ade9ebf0621"><h1>Simple Example - Chutes and Ladders</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:ac2956de-585d-4e52-acad-ceb574de9071 -->
+<!-- ContentItem:1b49b56c-9ae2-42e6-824c-1ef4c13ad68e -->
+<img alt="Chutes and Ladders 3.gif" src="img/ac2956de-585d-4e52-acad-ceb574de9071.gif" />
+<img alt="Linear Array.jpg" src="img/1b49b56c-9ae2-42e6-824c-1ef4c13ad68e.jpg" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="35a5d5eb-5ca8-46b6-ad52-f165c452feea"><h1>Chutes and Ladders - Greedy Algorithm</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:0462237e-6157-4ca5-942e-41a807556391 -->
+<!-- ContentItem:9fd672c5-88f1-4410-b157-eb8bc17ae2ea -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Start at the 1st space on the board​</li>
+<li>While we haven't reached the last space​
+<ul>
+<li>Add the space to the current path​</li>
+<li>If the current space has a ladder​
+<ul>
+<li>Add the end of the ladder to the path​</li>
+<li>Make that space the current space​</li>
+</ul>
+</li>
+<li>Move to the next space on the board​</li>
+</ul>
+</li>
+<li>Return the completed path through the board</li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
+<img alt="Greedy Algorithm.jpg" src="img/9fd672c5-88f1-4410-b157-eb8bc17ae2ea.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="fd1e230a-511d-4d64-8b83-06240b612c09"><h1>Dynamic Programming - Step 1</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:7a7b1b5f-be64-4b71-9213-7e9129dc9bee -->
+<!-- ContentItem:bb573326-303a-4bf0-b131-818b43ae3d67 -->
+
+<table><tr><td style="vertical-align:top;">
+<h3 id="determinedistancesd">DetermineDistance(s,d)</h3>
+<ul>
+<li>Call <code>DetermineDistance(space[0], 0)</code></li>
+<li>If shorter​ than previously found
+<ul>
+<li>Set DistanceFromStart property</li>
+<li>If this space starts a chute or ladder​
+<ul>
+<li><code>DetermineDistance(endOfNavigation, distanceFromStart+1​)</code></li>
+</ul>
+</li>
+<li>If not at the end of board​
+<ul>
+<li><code>DetermineDistance(nextSpace, distanceFromStart+1)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Return all spaces with their DistanceFromStart property populated</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/bb573326-303a-4bf0-b131-818b43ae3d67.png" alt="Determine Distance from Start.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="0dccfbdf-8ff7-4019-960a-a8e224ad3567"><h1>Dynamic Programming - Step 2</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:3b82378d-4df0-4274-b11b-f8012518009e -->
+<!-- ContentItem:1a138932-ef64-4f30-8e2d-42d643e7f767 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Start at the last space on the board​</li>
+<li>While we are still on the board​
+<ul>
+<li>Add the current space to the path​</li>
+<li>Set the current space to a space that is a neighbor of the current space and whose DistanceFromStart is space.DistanceFromStart-1​</li>
+</ul>
+</li>
+<li>Reverse the direction of the path​</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/1a138932-ef64-4f30-8e2d-42d643e7f767.png" alt="Retrace Path - Smaller.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="f96b3651-1a05-4f5c-9a9d-a74a71d2b11f"><h1>Memoization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:50185bdb-927d-43ae-9739-be7b2795fdb4 -->
+<img alt="Memoization.gif" src="img/50185bdb-927d-43ae-9739-be7b2795fdb4.gif" />
+</section>
+
+
+<section data-transition="slide-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="ced234f8-ba00-4592-84fa-aaac8f99f909"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:84e31f8d-ddc8-4e1e-abb7-e174757324c6 -->
+<img alt="Slide79_1000x475.jpg" src="img/84e31f8d-ddc8-4e1e-abb7-e174757324c6.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="14ad7926-8ba5-4e9c-9e73-d2cbdcd99d66"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:4d2a8561-f700-4b62-8ea1-c5ea847e82b3 -->
+<img alt="Slide80_1000x475.jpg" src="img/4d2a8561-f700-4b62-8ea1-c5ea847e82b3.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="1e310437-2b44-450d-84bd-4a116a4448ec"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:7ba6edc3-693b-4fd2-94ee-1a0d6a89759d -->
+<img alt="Slide81_1000x475.jpg" src="img/7ba6edc3-693b-4fd2-94ee-1a0d6a89759d.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="f7f5f355-91a9-414c-858a-411d99ae5288"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:8de61654-74b4-4129-9724-ee9fab940381 -->
+<img alt="Slide82_1000x475.jpg" src="img/8de61654-74b4-4129-9724-ee9fab940381.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="29837c67-a5cb-43ac-b4f7-ecfb54e19698"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:d687db61-c883-4ae8-9309-576070e18c79 -->
+<img alt="Slide83_1000x475.jpg" src="img/d687db61-c883-4ae8-9309-576070e18c79.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="0033e17b-8417-4d09-9419-9c2f80e27c88"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:899cdfdb-c174-4751-9767-83ea8a596b96 -->
+<img alt="Slide84_1000x475.jpg" src="img/899cdfdb-c174-4751-9767-83ea8a596b96.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="e0697a92-d31e-49dc-8783-0667770432ae"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:7854676c-ff27-4d88-a803-9664960e7281 -->
+<img alt="Slide85_1000x475.jpg" src="img/7854676c-ff27-4d88-a803-9664960e7281.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="e43b6a01-5cd3-4b96-823b-5d0f12d16d97"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:6b2d0ed1-8105-4978-91a4-87a85e6fe9f4 -->
+<img alt="Slide86_1000x475.jpg" src="img/6b2d0ed1-8105-4978-91a4-87a85e6fe9f4.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="610c14c0-68b8-4cca-8906-04f0fdc69f34"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:ba70b51b-d706-48c6-9844-dba3f27da842 -->
+<img alt="Slide87_1000x475.jpg" src="img/ba70b51b-d706-48c6-9844-dba3f27da842.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="7c5cd43e-9284-4315-bbaf-62b769960992"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:39944679-28ce-426b-b1f7-9fff6a8871d0 -->
+<img alt="Slide88_1000x475.jpg" src="img/39944679-28ce-426b-b1f7-9fff6a8871d0.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="e0b7bfa9-fce1-4258-9a7b-78e7d68d26b4"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:1ab3927d-28f1-44bb-aa08-313d62ff830f -->
+<img alt="Slide89_1000x475.jpg" src="img/1ab3927d-28f1-44bb-aa08-313d62ff830f.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="caf70f51-1ed6-4808-8d3f-5899a4be9633"><h1>Shortest Path</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:22366ffb-7a28-47b5-87e1-355c59e8fc24 -->
+<img alt="Slide90_1000x475.jpg" src="img/22366ffb-7a28-47b5-87e1-355c59e8fc24.jpg" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="73bd6011-e0fd-4837-bb86-d75703d379ef"><h1>Summary - Dynamic Programming</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:d34d27d4-f1ad-4c81-b64d-a43f77cb3639 -->
+<!-- ContentItem:2e3f0bdd-1f64-4ff6-83d4-ec346a7023f6 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Populate the cache​
+<ul>
+<li>Simple calculations​</li>
+<li>Build from the ground-up​</li>
+</ul>
+</li>
+<li>Use the cached data to determine the answer(s)​
+<ul>
+<li>Work backwards through the cache​</li>
+</ul>
+</li>
+<li>Guaranteed Optimality​
+<ul>
+<li>A fully populated cache means all options are explored​</li>
+<li>Works in any number of dimensions​</li>
+</ul>
+</li>
+<li>Works with any graph (nodes &amp; edges)​
+<ul>
+<li>Works best when​
+<ul>
+<li>Problems can be described recursively​</li>
+<li>1 or more axis are limited in scope</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/2e3f0bdd-1f64-4ff6-83d4-ec346a7023f6.png" alt="DP_800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="f1a2a6fe-439d-435e-b9e8-20af0aa13d69"><h1>Beary - The Beary Barry Bot</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:0538ef66-2942-4c64-8b4e-7f5fb652be13 -->
+<img alt="Beary_600x600.png" src="img/0538ef66-2942-4c64-8b4e-7f5fb652be13.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/963b0af4-52ef-4947-95bc-aec7c257b8da.png'>
+
+<a id="3db24aa2-48d8-4875-9568-1d4a1031a2bc">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="6ed666b8-ccc0-4ce0-b035-1e5532a9ea77"><h1>Beary Flow</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:dd5439d2-6794-4c28-adff-2964a833995b -->
+<img alt="Beary Demo - Flowchart - Horizontal Flow - 1280x381.png" src="img/dd5439d2-6794-4c28-adff-2964a833995b.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="781b49c5-0051-453e-a047-4fabc87bc625"><h1>The Chunking Problem</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:dde1592a-d566-4315-84e5-48a57aee2331 -->
+<!-- ContentItem:aff7165d-9a4b-409f-889e-aba53e4d93cf -->
+<aside class="notes"><p>Frame chunking as segmentation, not just preprocessing.
+This is the bridge from dynamic programming to the Beary demo.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Beary is chunking content inefficiently</p>
+</li>
+<li><p>We really have a segmentation problem</p>
+<ul>
+<li>Given a paragraph, where do the boundaries belong?</li>
+</ul>
+</li>
+<li><p>Each candidate chunk has a quality score</p>
+<ul>
+<li>Semantically coherent chunks &gt; mixed-topic chunks</li>
+</ul>
+</li>
+<li><p>The goal is global, not local</p>
+<ul>
+<li>Maximize the total chunk quality across the whole paragraph</li>
+</ul>
+</li>
+<li><p>This is the same shape as earlier DP problems</p>
+<ul>
+<li>We are choosing an optimal partition, like shortest-path and knapsack style decisions</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/aff7165d-9a4b-409f-889e-aba53e4d93cf.png" alt="Chunking-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="cd4b1090-9197-454b-a4dc-627da6a4b802"><h1>Scoring the Chunks</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:6845ba22-2a7c-4487-a07d-e38ddeb8cfba -->
+<!-- ContentItem:bad1092a-ad7b-4325-99b6-89dc49a863ec -->
+<aside class="notes"><p>This is the objective function for the chunking problem.
+Connect the penalty term back to the cost side of knapsack.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Score each candidate chunk with a simple objective</li>
+</ul>
+<div class="math">
+\[
+score(i,j) = avg\_similarity(i..j) - 0.1 \times (chunk\_size - 1)
+\]</div>
+<ul>
+<li><p>High internal similarity is good</p>
+<ul>
+<li>Sentences that belong together should raise the score</li>
+</ul>
+</li>
+<li><p>Bigger chunks pay a penalty</p>
+<ul>
+<li>We do not want one oversized chunk to absorb unrelated ideas</li>
+</ul>
+</li>
+<li><p>This is value minus cost</p>
+<ul>
+<li>Reward improvements to the solution</li>
+<li>Penalize what bloats the solution</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/bad1092a-ad7b-4325-99b6-89dc49a863ec.png" alt="ChunkScoring-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="4485d3a3-291b-488e-b587-6ef1dc9475f8"><h1>Why Dynamic Programming Applies</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:26cb3ab7-391c-4526-b86b-479edd5633c8 -->
+<!-- ContentItem:48c22d0a-55bf-47b4-b5a1-414637fef125 -->
+<aside class="notes"><p>Show why local decisions fail and why we need optimal substructure.
+Tie the recurrence directly to the memoization pattern used earlier.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Greedy segmentation can look right and still lose</p>
+<ul>
+<li>Local best can block a better score later</li>
+</ul>
+</li>
+<li><p>Brute-force segmentation is expensive over large datasets</p>
+<ul>
+<li>Combinations grow exponentially with sentence count</li>
+</ul>
+</li>
+<li><p>Dynamic Programming gives optimal chunking in O(n^2)</p>
+<ul>
+<li>Solve each suffix once and reuse it</li>
+</ul>
+</li>
+</ul>
+<div class="math">
+\[
+DP[i] = \max_{j \ge i} \left( score(i,j) + DP[j+1] \right)
+\]</div>
+<ul>
+<li>Uses the same memoization pattern
+<ul>
+<li>State at index <span class="math">\(i\)</span>, try choices <span class="math">\(j\)</span>, cache best future value</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/48c22d0a-55bf-47b4-b5a1-414637fef125.png" alt="OptimalSubstructure-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Studying these sentences, it is fairly easy to see that 1 &amp; 2 are closely related, and that 3, 4, &amp; 5 are closely related. This is the basis for the chunking problem.</p>
+</aside>
+<a id="0caaba58-81d7-4a95-8e1d-e827d25f512e"><h1>Sample Paragraph</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:c265b7fc-c22d-44ac-a24e-897c6f0525d3 -->
+<blockquote>
+<p>The clarity-first, object-oriented implementation of a Tokenizer is written in C#, my
+language of choice. I suspect it will be easy to have it translated into nearly any
+other programming language if that makes it easier to understand. The goal of this
+implementation is not speed, it is transparency. You can step through Encode and
+Decode to see exactly what is happening. The code is available on GitHub.</p>
+</blockquote>
+<hr />
+<ol>
+<li>The clarity-first, object-oriented implementation of a Tokenizer is written in C#, my language of choice.</li>
+<li>I suspect it will be easy to have it translated into nearly any other programming language if that makes it easier to understand.</li>
+<li>The goal of this implementation is not speed, it is transparency.</li>
+<li>You can step through Encode and Decode to see exactly what is happening.</li>
+<li>The code is available on GitHub.</li>
+</ol>
+
+</section>
+
+
+<section data-transition="slide-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="bce06aaa-203f-4c1f-96d0-a458aa879fde"><h1>Sentence Similarity</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:668878c0-734f-40f8-9a4b-897e95d638bd -->
+<!-- ContentItem:77d27b09-f548-49bd-880d-77ac35807cad -->
+<img alt="SimilarityScores_Raw_800x220.png" src="img/668878c0-734f-40f8-9a4b-897e95d638bd.png" />
+<ol>
+<li>The clarity-first, object-oriented implementation of a Tokenizer is written in C#, my language of choice.</li>
+<li>I suspect it will be easy to have it translated into nearly any other programming language if that makes it easier to understand.</li>
+<li>The goal of this implementation is not speed, it is transparency.</li>
+<li>You can step through Encode and Decode to see exactly what is happening.</li>
+<li>The code is available on GitHub.</li>
+</ol>
+
+</section>
+
+
+<section data-transition="fade-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="f2dd7495-77bf-4f66-99b7-261d061630e0"><h1>Sentence Similarity</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:613671fb-f261-427c-9a5f-4aab03198c7b -->
+<!-- ContentItem:77d27b09-f548-49bd-880d-77ac35807cad -->
+<img alt="SimilarityScores_Highlighted_800x220.png" src="img/613671fb-f261-427c-9a5f-4aab03198c7b.png" />
+<ol>
+<li>The clarity-first, object-oriented implementation of a Tokenizer is written in C#, my language of choice.</li>
+<li>I suspect it will be easy to have it translated into nearly any other programming language if that makes it easier to understand.</li>
+<li>The goal of this implementation is not speed, it is transparency.</li>
+<li>You can step through Encode and Decode to see exactly what is happening.</li>
+<li>The code is available on GitHub.</li>
+</ol>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="b8e4977e-23a7-4f34-8a01-cd7dd86a7d5f"><h1>Hands-On Chunking</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:9fa901d9-0afa-4831-bb04-353f570524e7 -->
+<!-- ContentItem:9a30c3b7-8c8d-41d5-88ae-d3f265464e45 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p><a href="https://github.com/bsstahl/AIDemos">AIDemos Repo</a></p>
+</li>
+<li><p><a href="https://github.com/bsstahl/AIDemos/blob/master/Chunking/Chunking_Memoization.xlsx">Exercise Spreadsheet</a></p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/9a30c3b7-8c8d-41d5-88ae-d3f265464e45.png" alt="ChunkingExercise_EmptyGrid.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Take a break</p>
+</aside>
+<a id="75d96ac4-23d2-40b8-858e-38fd7a6fdf88">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:23df6abb-abad-4335-9cdc-f73797ba10df -->
+<img alt="brainbreaks.png" src="img/23df6abb-abad-4335-9cdc-f73797ba10df.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="bbffee6c-7750-41c3-bf47-33456dd2b981"><h1>Exercise Solution</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:9f3236dc-c71c-4252-90de-b4366c7bbf12 -->
+<!-- ContentItem:d29a9aff-8b2e-4e45-8bdc-c5dbac34df8b -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p><a href="https://github.com/bsstahl/AIDemos">AIDemos Repo</a></p>
+</li>
+<li><p><a href="https://github.com/bsstahl/AIDemos/blob/master/Chunking/Chunking_Memoization.xlsx">Exercise Spreadsheet</a></p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/d29a9aff-8b2e-4e45-8bdc-c5dbac34df8b.png" alt="ChunkingExercise_CompletedGrid.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="0e40692b-fa14-4f05-a8e0-dfc35a1e07fe"><h1>Genetic Algorithms</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:156ff90f-f61c-4eb1-bf70-117826c781ef -->
+<!-- ContentItem:704deaf9-f551-4bff-ab35-daca7347b5c3 -->
+
+<table><tr><td style="vertical-align:top;">
+<h2 id="find-solutions-by-simulating-darwinian-evolution">Find Solutions by Simulating Darwinian Evolution​</h2>
+<ul>
+<li>Each candidate solution is defined by its properties (chromosomes)​</li>
+<li>A fitness function is used to determine which solutions &quot;survive&quot;
+<ul>
+<li>A simulation may be used as the fitness function</li>
+</ul>
+</li>
+<li>Surviving solutions may mutate and evolve other solutions​</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/704deaf9-f551-4bff-ab35-daca7347b5c3.png" alt="EvolutionaryLab-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="741ac5e2-5b11-42dd-8639-0fc38ae8ad23"><h1>Optimality is Never Guaranteed</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:5003851f-7c49-4d8a-a24b-f80c3318faaf -->
+<!-- ContentItem:0dc71ac7-94c8-4da8-8ffd-40e264589e26 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Optimal solution may never be found
+<ul>
+<li>i.e. If a optimality requires a large combination of elements</li>
+</ul>
+</li>
+<li>Optimum may be found but not recognized
+<ul>
+<li>If conditions make that solution non-optimal at that moment
+<ul>
+<li>i.e. If a key feature is not used during the simulation</li>
+</ul>
+</li>
+<li>Minimize the liklihood by increasing simulation size</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/0dc71ac7-94c8-4da8-8ffd-40e264589e26.png" alt="OptimalityNotGuaranteed-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="63c0e24e-6272-4c17-9b93-7b98ecb66899"><h1>A Deep Dive into Genetic Algorithms</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:00eb1f46-31fb-41f1-91ba-777450c4ff7c -->
+<!-- ContentItem:a7f9af5b-c71e-4a2e-bd12-3e8a7f1d962d -->
+<aside class="notes"><p>Call out that this workshop intentionally covered GA at a high level.
+Invite attendees to the dedicated one-hour GA session tomorrow at 10:00 AM.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Want the full Genetic Algorithms deep dive?</p>
+</li>
+<li><p>Dedicated 1-hour session</p>
+<ul>
+<li><strong>Tomorrow at 10:00 AM</strong></li>
+</ul>
+</li>
+<li><p>We will cover</p>
+<ul>
+<li>DNA representation and fitness design</li>
+<li>Evolution parameters and convergence tradeoffs</li>
+<li>End-to-end implementation details and experimentation</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/a7f9af5b-c71e-4a2e-bd12-3e8a7f1d962d.png" alt="GeneticAlgorithms-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="149bcb1d-96c3-4579-b053-b5441b16ec4c"><h1>Grouping (Partitioning)</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:172b2ba0-b4ee-47f7-a255-d8faff3430b1 -->
+<!-- ContentItem:2f9b5462-eee9-4576-8aec-8b770a4cfbf9 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Ways to organize a collection of items into meaningful subsets</p>
+</blockquote>
+<ul>
+<li><strong>Classification</strong> - grouping using known categories</li>
+<li><strong>Clustering</strong> - grouping by discovering categories</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/2f9b5462-eee9-4576-8aec-8b770a4cfbf9.png" alt="Grouping-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="0195afa9-114b-42ae-83a5-0eead5510785"><h1>Classification</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:e9d49de0-6ca2-43fd-a669-1a7c4ba1f9a7 -->
+<!-- ContentItem:780777b8-6e41-43fc-828c-3af33f92cdb6 -->
+<aside class="notes"><ul>
+<li>Classification is for known labels</li>
+<li>Clustering is an unsupervised form of classification.</li>
+</ul>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Grouping data into <strong>known</strong> categories based on features of each item</p>
+</blockquote>
+<ul>
+<li>Can be used for:
+<ul>
+<li>Grouping items with shared properties together</li>
+<li>Identifying which known group a new item belongs to</li>
+<li>Normalization of input/output</li>
+</ul>
+</li>
+<li>Usually based on a <strong>training set</strong> of labeled data
+<ul>
+<li>The model learns the features that define each category</li>
+<li>New items are classified based on learned features</li>
+<li>Classification is a <strong>supervised</strong> learning problem</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/780777b8-6e41-43fc-828c-3af33f92cdb6.png" alt="Classification-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Introduce classification as the supervised-learning problem of assigning an input to one of several known categories. Position it as the cousin of the clustering work that follows: classification starts with labels, while clustering asks whether useful groups can be discovered without them.</p>
+</aside>
+<a id="d660df12-e53d-4ec1-9203-3910d7f1b76e"><h1>Assigning Meaningful Labels</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:6db0f2bd-c79e-42c7-9950-bd46c5cd1fed -->
+<ul>
+<li>Start with known labels:
+<ul>
+<li>Spam or not spam</li>
+<li>Defect or no defect</li>
+<li>Support ticket category</li>
+<li>Image contents</li>
+</ul>
+</li>
+<li>The model is trained from labeled examples</li>
+<li>Then it predicts the best label for new inputs</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>The ingredients to look for in real systems: labeled examples, features, target classes, a training process, and a prediction step.</p>
+</aside>
+<a id="7f22722b-7af3-48d4-923a-a7a105ce8ed9"><h1>Shape of a Classification Problem</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:93dc35bd-1262-48cb-92dc-db486992b0ba -->
+<ul>
+<li><p>Labeled examples show the model what the right answer looks like</p>
+<ul>
+<li>Each example includes input data plus the correct label</li>
+</ul>
+</li>
+<li><p>Features are the details the model is allowed to use</p>
+<ul>
+<li>Measurements, properties, words, pixels, counts, or categories</li>
+<li>Chosen because they may help separate one label from another</li>
+</ul>
+</li>
+<li><p>Target classes are the labels the model is allowed to predict</p>
+<ul>
+<li>The known categories we care about</li>
+<li>The output must be one of these classes</li>
+</ul>
+</li>
+<li><p>Training searches for a pattern from features to target class</p>
+</li>
+<li><p>Prediction applies that pattern to an unlabeled input</p>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="355f047c-dcb6-49a3-8328-271137440c6f"><h1>Decision Boundaries</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f26df907-18a9-460f-8c31-35caa148d3df -->
+<!-- ContentItem:3bc63007-2176-4323-920e-0ba7e65257bb -->
+<aside class="notes"><p>Use the visual to explain that classifiers divide feature space into regions where different labels are predicted. This bridges the workshop's earlier geometry and search ideas into machine-learning style pattern matching.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>A classifier divides feature space into regions</p>
+</li>
+<li><p>Each region predicts a different target class</p>
+</li>
+<li><p>The line between regions is a decision boundary</p>
+</li>
+<li><p>New inputs are classified by where they land</p>
+</li>
+<li><p>Different algorithms draw different kinds of boundaries</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/3bc63007-2176-4323-920e-0ba7e65257bb.png" alt="DecisionBoundaries-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="b6e8936a-1ce2-4fe5-b9a6-53afb45738c5"><h1>Majority Class Bias</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:6fd5bbcc-ff09-417a-a64e-5f0d3498db76 -->
+<!-- ContentItem:0c2ab8f0-bc92-44b6-a98a-cf2f3782a636 -->
+<aside class="notes"><ul>
+<li>Class weighting: increase minority-class error penalty so missed wolves hurt more.</li>
+<li>SMOTE: Synthetic Minority Over-sampling Technique; add minority examples to rebalance.</li>
+<li>Undersampling: remove some majority examples to reduce dominance.</li>
+<li>Threshold tuning: raise confidence required for majority predictions and lower it for minority recall.</li>
+</ul>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Class Imbalance: one class dominates the training data</p>
+</li>
+<li><p>Majority Class Bias: model defaults to the common class</p>
+</li>
+<li><p>Example: 99% dogs, so a wolf is predicted as &quot;dog&quot;</p>
+</li>
+<li><p>Why: loss is optimized by being right on frequent examples</p>
+</li>
+<li><p>Fixes: class weighting, oversampling/SMOTE, undersampling, threshold tuning</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/0c2ab8f0-bc92-44b6-a98a-cf2f3782a636.png" alt="MajorityClassBias-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="246f79d0-2648-4f69-852b-19d43438f1fc"><h1>Rule-Based vs Tree-Based</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:1802fbb5-4cb2-4f90-8040-70eac1ad4bed -->
+<!-- ContentItem:18c84268-f516-402d-99e5-268cc13f798d -->
+<aside class="notes"><ul>
+<li>Tree-based classifiers learn a hierarchy of rules from labeled examples. A single
+decision tree is explainable, while random forests combine many
+trees to improve generalization at the cost of less direct explanation.</li>
+</ul>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Decision trees are readable classification models</p>
+<ul>
+<li>Each split asks a question about a feature</li>
+<li>Each branch narrows the possible class</li>
+<li>Each leaf predicts a target class</li>
+<li>Random forests use many trees &amp; combine votes
+<ul>
+<li>Less explainable</li>
+<li>Often generalize better</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Rule-based classifiers</p>
+<ul>
+<li>Explicit if/then rules</li>
+<li>Usually written by people</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/18c84268-f516-402d-99e5-268cc13f798d.png" alt="TreeBasedClassifiers-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="8c6a9f54-2d35-4b2f-91dc-8bb32788d2fe"><h1>Linear Classifiers</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:5a52fd6e-6575-48a0-92f2-9f038c439f7b -->
+<!-- ContentItem:a1ca3243-84f6-4947-a68a-f4b7a52c760f -->
+<aside class="notes"><ul>
+<li>Linear classifiers separate classes with a hyperplane in feature space. * The model predicts the class based on which side of the hyperplane a point falls.</li>
+</ul>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Separate classes with a weighted feature score</p>
+<ul>
+<li>Each feature contributes to the final decision</li>
+<li>The boundary is a line or flat surface in feature space</li>
+</ul>
+</li>
+<li><p>Boundary Identification Methods</p>
+<ul>
+<li>Logistic regression
+<ul>
+<li>Estimates the probability of a class</li>
+</ul>
+</li>
+<li>Linear SVMs
+<ul>
+<li>Support Vector Machines</li>
+<li>Find the hyperplane that maximizes margin between classes</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/a1ca3243-84f6-4947-a68a-f4b7a52c760f.png" alt="LinearClassifiers-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="a6acb0c0-e2f8-4cfd-8a4d-35fbb1950034"><h1>Instance-Based Classifiers</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:09e3cdd3-4ae1-49d6-bfe5-3689ac35f5ef -->
+<!-- ContentItem:e6d88d0e-2b46-42e6-bf57-65147778744c -->
+<aside class="notes"><ul>
+<li>Predict class based on similar examples in the training set.
+<ul>
+<li>k-nearest neighbors is a common instance-based classifier.</li>
+<li>The distance metric defines what &quot;similar&quot; means.</li>
+</ul>
+</li>
+</ul>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>k-Nearest Neighbors</p>
+<ul>
+<li>Which labeled examples are closest</li>
+<li>Predicted class is the majority of neighbors</li>
+</ul>
+</li>
+<li><p>Nearest Centroid</p>
+<ul>
+<li>Compute the centroid of each class</li>
+<li>Predicted class is the closest centroid</li>
+</ul>
+</li>
+<li><p>The same concept is central in clustering</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/e6d88d0e-2b46-42e6-bf57-65147778744c.png" alt="InstanceBasedClassifiers-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="12ab2e7a-b504-4d82-a8f1-c254a5d4edfb"><h1>Probabilistic Classifiers</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:8415f6f3-0760-47bc-b8a0-ccab3bf63fb4 -->
+<!-- ContentItem:496e6ab2-bacc-4d47-b279-30dccd39fd57 -->
+<aside class="notes"><ul>
+<li>Estimate most likely label and produce a confidence score,
+not just a class name.</li>
+</ul>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Estimate which label is most likely</p>
+</blockquote>
+<ul>
+<li><p>Naive Bayes</p>
+<ul>
+<li>Combines evidence from observed features</li>
+<li>Lightweight and useful for text-like signals</li>
+<li>Often used in spam detection &amp; sentiment analysis</li>
+</ul>
+</li>
+<li><p>Gaussian Mixture Models (GMMs)</p>
+<ul>
+<li>Classes modeled as a mix of distributions</li>
+<li>Assumes features follow a normal distribution</li>
+<li>Complicated and expensive but can be very accurate</li>
+</ul>
+</li>
+<li><p>In both cases output is a ranked set of class scores</p>
+</li>
+<li><p>The final label is the highest-scoring class</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/496e6ab2-bacc-4d47-b279-30dccd39fd57.png" alt="ProbabilisticClassifiers-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="2c5e4ad4-0efa-4f89-b876-3f41b6b1848c"><h1>Evaluating Classification Results</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:5b72192f-18c6-4776-b0de-730bb263ee69 -->
+<!-- ContentItem:7a3e6d09-84f1-4358-83c6-894bd616f431 -->
+<aside class="notes"><ul>
+<li>Type 1 Error: False Positive, predicting positive when truly negative.</li>
+<li>Type 2 Error: False Negative, predicting negative when truly positive.</li>
+</ul>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Accuracy alone can hide important mistakes</p>
+</blockquote>
+<ul>
+<li>A &quot;confusion matrix&quot; shows <strong>prediction vs actual</strong></li>
+<li>False positives and negatives may have different costs
+<ul>
+<li>Please no false negatives from my fire alarm</li>
+<li>False positives are annoying but not dangerous</li>
+</ul>
+</li>
+<li><strong>Precision</strong>: are positive predictions trustworthy?
+<ul>
+<li>High-Precision: Usually predicts wolves properly</li>
+<li>Low-Precision: May predict wolf when just a dog</li>
+</ul>
+</li>
+<li><strong>Recall</strong>: were the important positives found?
+<ul>
+<li>High-Recall: Usually finds all the wolves</li>
+<li>Low-Recall: May miss a wolf but often correct when it predicts one</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/7a3e6d09-84f1-4358-83c6-894bd616f431.png" alt="ClassificationEvaluation-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="ffb63efc-9df5-4495-90de-2c4c384c50e1"><h1>Classification vs Clustering</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:a2e1338a-2368-4fb8-b6f7-63d17cef0398 -->
+<!-- ContentItem:b020c272-e49f-4c2e-a4a3-034a2fa1ba70 -->
+<aside class="notes"><p>Classification asks which known label fits this item, while clustering asks what groups seem to
+exist at all.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Classification starts with known target classes</p>
+<ul>
+<li>Which known label fits this item?</li>
+</ul>
+</li>
+<li><p>Clustering starts without those labels</p>
+<ul>
+<li>What groups seem to exist?</li>
+</ul>
+</li>
+<li><p>Both can use the same feature space</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/b020c272-e49f-4c2e-a4a3-034a2fa1ba70.png" alt="ClassificationToClustering-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="c504d2aa-f3e6-4956-b06c-96ba4a551dfc"><h1>Clustering</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:81fec6ba-5786-4258-b8ac-a742fe19af01 -->
+<!-- ContentItem:a32e7caf-bedc-49cc-ae49-12548ae9b6fb -->
+<aside class="notes"><p>Clusters contains items more similar to each other than to those in other clusters</p>
+<ul>
+<li>Key to use: Experiment</li>
+</ul>
+<p>Source Image: <a href="https://www.bing.com/images/search?view=detailV2&amp;ccid=vNng%2foOs&amp;id=2652F88E274436CB6C8CC623A778D7B9F2475FC9&amp;thid=OIP.vNng_oOsNRHKrlh3pjSAyAHaDw&amp;mediaurl=https%3a%2f%2fi.stack.imgur.com%2fcIDB3.png&amp;cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.bcd9e0fe83ac3511caae5877a63480c8%3frik%3dyV9H8rnXeKcjxg%26pid%3dImgRaw%26r%3d0&amp;exph=517&amp;expw=1017&amp;q=k-means+clustering&amp;simid=608026322933788461&amp;FORM=IRPRST&amp;ck=8E4BDA3E627011B4CADA2B68FB818490&amp;selectedIndex=0&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;ajaxserp=0">https://www.bing.com/images/search?view=detailV2&amp;ccid=vNng%2foOs&amp;id=2652F88E274436CB6C8CC623A778D7B9F2475FC9&amp;thid=OIP.vNng_oOsNRHKrlh3pjSAyAHaDw&amp;mediaurl=https%3a%2f%2fi.stack.imgur.com%2fcIDB3.png&amp;cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.bcd9e0fe83ac3511caae5877a63480c8%3frik%3dyV9H8rnXeKcjxg%26pid%3dImgRaw%26r%3d0&amp;exph=517&amp;expw=1017&amp;q=k-means+clustering&amp;simid=608026322933788461&amp;FORM=IRPRST&amp;ck=8E4BDA3E627011B4CADA2B68FB818490&amp;selectedIndex=0&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;ajaxserp=0</a></p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Unsupervised machine learning technique</li>
+<li>Clusters form around centroids (geometric center)</li>
+<li>Data points are grouped based on their similarity
+<ul>
+<li>Minimize the error (distance from centroid)</li>
+</ul>
+</li>
+<li>Advantages
+<ul>
+<li>No need to define a distance threshold</li>
+</ul>
+</li>
+<li>Disadvantages
+<ul>
+<li>Quality is use-case dependent</li>
+<li>Often requires the number of clusters to be specified</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
+<img alt="Clustering-800x800.png" src="img/a32e7caf-bedc-49cc-ae49-12548ae9b6fb.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="4b7fb7c4-8247-4c52-9e1f-7d8206b52cc8"><h1>K-Means Clustering</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:3be5d924-8ac0-45fe-9e02-285e62f89305 -->
+<!-- ContentItem:44d43526-6cfa-4d6b-98f4-1c05c822631a -->
+<aside class="notes"><p>The algorithm can run cleanly even when <span class="math">\(k\)</span> is the wrong question. We'll talk more
+about quality metrics later.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Groups points around centroids</p>
+</blockquote>
+<ul>
+<li><p>Iterative process</p>
+<ul>
+<li>Start by choosing <span class="math">\(k\)</span>, the number of clusters</li>
+<li>Assign each point to the nearest centroid</li>
+<li>Move each centroid to the middle of its assigned points</li>
+<li>Repeat until the assignments converge</li>
+</ul>
+</li>
+<li><p>Different <span class="math">\(k\)</span> values can tell different stories</p>
+</li>
+<li><p>Use context and experimentation to determine utility</p>
+<ul>
+<li>Quality metrics can help</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/44d43526-6cfa-4d6b-98f4-1c05c822631a.png" alt="KMeansLoop-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="88e2c92e-2f55-44f3-bd2f-7c1277d82942"><h1>Hierarchical Clustering</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:762f0b9f-5424-4f5d-9936-5f8d4ef53f58 -->
+<!-- ContentItem:c0d3fca9-e9ec-4d7f-ae31-a0111592f538 -->
+<aside class="notes"><ul>
+<li>The higher in the dendogram two clusters merge, the more dissimilar they are.</li>
+<li>Example: Customers -&gt; Pet Supplies or Video Games or Home Decor -&gt; Household or Electronics -&gt; Practical Necessities</li>
+</ul>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Builds a similarity tree (dendogram)</p>
+</blockquote>
+<ul>
+<li><p>Iterative process</p>
+<ul>
+<li>Start with each item in its own group</li>
+<li>Nearby items merge into small groups</li>
+<li>Small groups merge into larger groups</li>
+</ul>
+</li>
+<li><p>Cutting the tree at different heights gives different cluster counts</p>
+</li>
+<li><p>Useful when the right number of groups is not obvious</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/c0d3fca9-e9ec-4d7f-ae31-a0111592f538.png" alt="HierarchicalClustering-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="891e7b47-1d48-4f56-9bd0-819043ea4814"><h1>DBSCAN</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:b3f61ef5-4e13-4626-a57b-5527c76b43b7 -->
+<!-- ContentItem:5c50b5ce-10e1-4dd7-9fb9-5e3e717122f8 -->
+<aside class="notes"><p>In contrast with k-means, DBSCAN does not require k up front and can discover irregular cluster shapes.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Finds dense regions in feature space</p>
+</blockquote>
+<ul>
+<li>Crowded neighborhoods become clusters
+<ul>
+<li>Clusters high density regions separated by low density</li>
+<li>Does <strong>not</strong> require <span class="math">\(k\)</span> up front</li>
+<li>Sparse isolated points are treated as noise</li>
+</ul>
+</li>
+<li>Can find irregular shapes that k-Means misses
+<ul>
+<li>k-Means centroids assume spherical clusters</li>
+<li>Mapping is a common use-case</li>
+</ul>
+</li>
+<li>Can be distributed using DDBSCAN
+<ul>
+<li>Similar to MapReduce, but with a merge step</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/5c50b5ce-10e1-4dd7-9fb9-5e3e717122f8.png" alt="DBSCAN-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="a3bfcb24-5b42-46a2-9952-9d7647d1f823"><h1>Cluster Labeling with LLMs</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:7ea58f56-f540-4474-b17a-f19e4b933e5d -->
+<!-- ContentItem:f0d53f50-52a1-4031-ae72-8864d0a1d94f -->
+<aside class="notes"><p>Clustering is unsupervised, so the algorithm does not know what the clusters mean. LLMs can help by generating labels for each cluster based on its members, enabling automation and routing.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Clusters are groupings without meaning</p>
+</blockquote>
+<ul>
+<li>LLMs can identify themes in textual clusters
+<ul>
+<li>Other models needed for different data types</li>
+<li>Can be used on the group or on the centroid</li>
+</ul>
+</li>
+<li>Labels identify groups with usable categories
+<ul>
+<li>Unlocks routing, triage, and analytics workflows</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/f0d53f50-52a1-4031-ae72-8864d0a1d94f.png" alt="ClusterLabelingWithLLMSummaries-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="66873d9e-8d3b-4e4c-bbf6-74fb6f26d53f"><h1>Cluster Routing for Automation</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:64e5fef7-cdb6-4efa-bf63-c5c7d72f4f8a -->
+<!-- ContentItem:8d73d993-cf28-49b5-bf87-5fdcbde68203 -->
+<aside class="notes"><p>Once clusters have labels, each category can trigger a specific
+workflow such as support routing, engineering triage, archival, or urgent escalation.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Labeled clusters become direct decision inputs</p>
+</blockquote>
+<ul>
+<li>Routes can be mapped
+<ul>
+<li>Teams</li>
+<li>Pipelines</li>
+<li>Archives</li>
+<li>Queues</li>
+</ul>
+</li>
+<li>Automation replaces keyword rules
+<ul>
+<li>Reduces brittleness</li>
+<li>Reduces maintenance</li>
+<li>Updates can be automated</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/8d73d993-cf28-49b5-bf87-5fdcbde68203.png" alt="ClusterRoutingForAutomation-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="6f977708-9ca1-473e-b3a1-5d260f985532"><h1>Cluster Quality Metrics</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f802949f-ae8f-4110-8e8f-a8d6d6f3d1ff -->
+<!-- ContentItem:2ebcfbe8-c75c-4760-a4f2-ce8932db2f53 -->
+<aside class="notes"><p>Clustering quality is judged by geometry, not labels.</p>
+<ul>
+<li>Silhouette: higher is better</li>
+<li>Davies-Bouldin: lower is better</li>
+<li>Calinski-Harabasz: higher indicates stronger structure</li>
+</ul>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>With no existing labels, we need to evaluate cluster structure directly</p>
+</blockquote>
+<ul>
+<li>Silhouette Score
+<ul>
+<li>Higher scores: tighter clusters and better separation</li>
+<li><span class="math">\(\text{Silhouette} = \frac{\text{separation}}{\text{cohesion}}\)</span></li>
+</ul>
+</li>
+<li>Davies-Bouldin Index
+<ul>
+<li>Lower scores: less overlap and cleaner boundaries</li>
+<li><span class="math">\(\text{DBI} = \frac{\text{within‑cluster scatter}}{\text{between‑cluster separation}}\)</span></li>
+</ul>
+</li>
+<li>Calinski-Harabasz Score
+<ul>
+<li>Higher scores: clusters more tighter and more separated</li>
+<li><span class="math">\(\text{CH} = \frac{\text{between‑cluster variance}}{\text{within‑cluster variance}}\)</span></li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/2ebcfbe8-c75c-4760-a4f2-ce8932db2f53.png" alt="ClusterQualityMetrics-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="d16d9dfc-2c57-442a-a569-ad5d3b0ad4b2"><h1>Evaluating Clustering Results</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f2d4ed6a-7a6e-4e4d-84c7-33fca28f2896 -->
+<!-- ContentItem:a83f0e3e-f56f-4c5c-8ca8-05d9fe095f0d -->
+<aside class="notes"><p>Cohesion and separation scores don't necessarily measure fitness for our purpose.
+We need to combine metrics with visualizations and domain knowledge to assess clustering results.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Good scores <span class="math">\(\neq\)</span> fitness for purpose</p>
+</blockquote>
+<ul>
+<li>Evaluation is about whether the grouping is useful
+<ul>
+<li>Will the grouping help the real task?</li>
+</ul>
+</li>
+<li>Good clusters are:
+<ul>
+<li>Cohesive internally</li>
+<li>Separated from each other</li>
+<li>Interpretable and actionable</li>
+<li>Useful for our needs</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/a83f0e3e-f56f-4c5c-8ca8-05d9fe095f0d.png" alt="ClusteringEvaluation-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>I want to give you a non-game example. This is an actual problem I am reasearching.</p>
+<hr />
+<p>Image Created by Microsoft Designer 2026-01-08</p>
+</aside>
+<a id="e9e5140e-f884-4988-b19b-19815e31531a"><h1>Use-Case&colon; Semantic Distance</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:8b91f3b7-8986-4827-b10d-c062d25fcdf5 -->
+<img alt="semantic-dna-surreal 800x800.jpeg" src="img/8b91f3b7-8986-4827-b10d-c062d25fcdf5.jpeg" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="54851746-90a1-45fa-980d-9cdcc12953cc"><h1>Embeddings</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:8c297a4c-5130-4206-ae37-995649e7d962 -->
+<!-- ContentItem:5909b0e1-0387-4d73-8a23-5282d3ed6300 -->
+<aside class="notes"><p>There are many other embedding models, some are optimized for different purposes. You should consider what model might work best for your use-case. This presentation uses the same model used by GPT-3 and GPT-4.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>A point in multi-dimensional space</li>
+<li>Mathematical representation of a word or phrase</li>
+<li>Encode both <strong>semantic</strong> and <strong>contextual</strong> information</li>
+</ul>
+<hr />
+<ul>
+<li>Model: <code>text-embedding-ada-002</code></li>
+<li>Vectors normalized to unit length</li>
+<li>Use 1536 dimensions</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/5909b0e1-0387-4d73-8a23-5282d3ed6300.png" alt="VectorSpace3D.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>It is not possible for us to reason on space greater than 3D without doing some form of projection.</p>
+<p>Image Source: WikiMedia</p>
+</aside>
+<a id="affc18de-26dd-4bed-acbe-99beddf497f4"><h1>3-D Space Projected into 2-D</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:8738d954-63a2-40f5-aa5e-deeb431d5f52 -->
+<img alt="Necker_cube_with_background.png" src="img/8738d954-63a2-40f5-aa5e-deeb431d5f52.png" />
+</section>
+
+
+<section data-transition="slide-in none-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>I used a T-SNE (T-distributed Stochastic Neighbor Embedding) transformation to perform this dimensionality reduction</p>
+</aside>
+<a id="9ec34ef5-afab-43e9-abf1-010e746b7af4">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:2313fe54-9904-4e1c-b5de-3c29c297fdc7 -->
+<img alt="Ram - Just Statements.png" src="img/2313fe54-9904-4e1c-b5de-3c29c297fdc7.png" />
+</section>
+
+
+<section data-transition="none-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>The key to understanding embeddings is to remember that they are a way to represent a word or phrase in a multi-dimensional space.  The distance between two embeddings can be used to determine how similar the words or phrases they represent are to each other.</p>
+</aside>
+<a id="3714c934-4902-45a1-9948-3b31c7f02bba">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:43926256-864d-4a0a-aad0-b7ea6fa5b74e -->
+<img alt="Ram - With Clusters.png" src="img/43926256-864d-4a0a-aad0-b7ea6fa5b74e.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="2a4404ba-5f58-4efc-a214-b720b27105d7"><h1>Embedding</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:4e98361e-c44b-4fb0-b524-808cf99d9dbc -->
+<!-- ContentItem:dc3343ec-ac35-4cbe-be23-0abf2232a8c6 -->
+<aside class="notes"><p>Man is to Woman as King is to Queen. AKA: If you subtract the vector for woman from the vector for queen,  then add the vector for man, you get something very close to the vector for king.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Creating Order from Chaos</p>
+</blockquote>
+<ul>
+<li>Unstructured <code>string</code> =&gt; Structured <code>float[]</code></li>
+<li>Allows mathematical operations
+<ul>
+<li>Cosine Similarity &amp; Distance</li>
+<li>Nearest Neighbor Search</li>
+<li>Clustering</li>
+<li>Vector Addition &amp; Subtraction</li>
+<li>Dimensionality Reduction (e.g., PCA)</li>
+<li>Anomaly Detection</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/dc3343ec-ac35-4cbe-be23-0abf2232a8c6.png" alt="VectorRelationships-QueenToKing-WomanToMan.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="72e0090e-a40f-4410-91e0-919b3ed09004"><h1>Cosine Similarity &amp; Distance</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:89b66910-a26e-4116-b41d-3ada3f74c92b -->
+<!-- ContentItem:d44bda2e-06bd-4064-9c06-12d564a6f5cf -->
+<aside class="notes"><p>Since GPT vectors are normalized to unit length, Cosine similarity and dot-product calculations will produce the same result.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Relate vectors based on the angle between them</p>
+</blockquote>
+<ul>
+<li><p><em>Cosine Similarity</em> ranges from -1 to 1, where:</p>
+<ul>
+<li>+1 indicates that the vectors represent similar semantics &amp; context</li>
+<li>0 indicates that the vectors are orthogonal (no similarity)</li>
+<li>-1 indicates that the vectors have opposing semantics &amp; context</li>
+</ul>
+</li>
+<li><p><em>Cosine Distance</em> is defined as <strong>1 - cosine similarity</strong> where:</p>
+<ul>
+<li>0 = Synonymous</li>
+<li>1 = Orthogonal</li>
+<li>2 = Antonymous</li>
+</ul>
+</li>
+</ul>
+<p>Note: For normalized vectors, cosine similarity is the same as the dot-product</p>
+
+</td>
+<td style="vertical-align:top;">
+<img alt="Cosine Unit Circle - Enhanced.jpg" src="img/d44bda2e-06bd-4064-9c06-12d564a6f5cf.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="0e2a1080-2694-447d-85ec-30f6863051de"><h1>Cosine Distance</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:1c9aab67-70df-45a0-b05d-4aae3c3a20c5 -->
+<img alt="Cosine Distance 989x600.png" src="img/1c9aab67-70df-45a0-b05d-4aae3c3a20c5.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>I added additional context here: i.e. &quot;Sheep&quot; =&gt; &quot;Bighorn Sheep&quot;, to make the distances more visible.</p>
+</aside>
+<a id="952e53c0-3883-490e-a43f-c3f86853fc08"><h1>Cosine Distance</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:b079c831-8d8c-425b-8e49-c8674d0b3ec6 -->
+<img alt="Angles2.svg" src="img/b079c831-8d8c-425b-8e49-c8674d0b3ec6.svg" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Embeddings encode many facets of a word or phrase, including language spoken, idioms, sarcasm, and figurative language</p>
+</aside>
+<a id="b1b27a07-42ee-481c-92f4-6791f7204828"><h1>Embedding Distance</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:fcee17b4-8b97-487e-9644-0c45033c1ff3 -->
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Synonym</td>
+<td>&quot;Happy&quot; is closer to &quot;Joyful&quot; than to &quot;Sad&quot;</td>
+</tr>
+<tr>
+<td>Language</td>
+<td>&quot;The Queen&quot; is very close to &quot;La Reina&quot;</td>
+</tr>
+<tr>
+<td>Idiom</td>
+<td>&quot;He kicked the bucket&quot; is closer to &quot;He died&quot; than to &quot;He kicked the ball&quot;</td>
+</tr>
+<tr>
+<td>Sarcasm</td>
+<td>&quot;Well, look who's on time&quot; is closer to &quot;Actually Late&quot; than &quot;Actually Early&quot;</td>
+</tr>
+<tr>
+<td>Homonym</td>
+<td>&quot;Bark&quot; (dog sound) is closer to &quot;Howl&quot; than to &quot;Bark&quot; (tree layer)</td>
+</tr>
+<tr>
+<td>Collocation</td>
+<td>&quot;Fast food&quot; is closer to &quot;Junk food&quot; than to &quot;Fast car&quot;</td>
+</tr>
+<tr>
+<td>Proverb</td>
+<td>&quot;The early bird catches the worm&quot; is closer to &quot;Success comes to those who prepare well and put in effort&quot; than to &quot;A bird in the hand is worth two in the bush&quot;</td>
+</tr>
+<tr>
+<td>Metaphor</td>
+<td>&quot;Time is money&quot; is closer to &quot;Don't waste your time&quot; than to &quot;Time flies&quot;</td>
+</tr>
+<tr>
+<td>Simile</td>
+<td>&quot;He is as brave as a lion&quot; is closer to &quot;He is very courageous&quot; than to &quot;He is a lion&quot;</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="9c96948c-b55d-4d49-a14e-7f863ea90357"><h1>Embeddings to Workflows</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:0e696241-00ed-430b-bf0e-597702251c44 -->
+<!-- ContentItem:16d29540-1706-44e7-8a5b-8f238bc5140c -->
+<aside class="notes"><p>Embeddings create neighborhood structure, clustering turns that structure into grouped signals, and those groups can be labeled and routed into concrete workflow actions.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Embeddings: place similar statements close together</li>
+<li>Clustering: group them into meaningful categories</li>
+<li>LLMs: can label each cluster</li>
+<li>Routing: new statements to the best cluster</li>
+<li>Actions: each cluster maps to a workflow</li>
+</ul>
+<hr />
+<ul>
+<li><span class="math">\(\text{text}➝\text{embedding}➝\text{cluster}➝\text{label}➝\text{routing}➝\text{action}\)</span></li>
+<li>Clustering is the structural bridge from text to automation</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/16d29540-1706-44e7-8a5b-8f238bc5140c.svg" alt="Embeddings-To-Workflows-1280x720.svg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="e8c149bc-ab01-4c27-a88e-284425ffb714"><h1>Exercise&colon; k-Means Clustering</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:ec8567a6-266c-4611-960f-229c2dfb962f -->
+<!-- ContentItem:b678ee84-77ad-4e71-8292-38bd092dec07 -->
+<aside class="notes"><p>Attendees load axiom embeddings from JSON, run a k-means loop in C#, inspect assignments,  and discuss how changing k changes the structure they observe.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p><strong>Goal</strong>: To see unsupervised structure emerge from embeddings</p>
+</blockquote>
+<ul>
+<li>Download the code for k-Means clustering from <a href="https://github.com/bsstahl/AIDemos/tree/master/Clustering">GitHub</a></li>
+<li>Review the <code>axioms.js</code> data file</li>
+<li>Review the k-Means loop</li>
+<li>Review the quality scoring code</li>
+<li>Run the code to create 4 clusters
+<ul>
+<li>Review the Representative axioms for each cluster</li>
+<li>Review the quality scores</li>
+</ul>
+</li>
+<li>Choose a different <span class="math">\(k\)</span> and rerun
+<ul>
+<li>See how cluster structure changes</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/b678ee84-77ad-4e71-8292-38bd092dec07.png" alt="AIDemos-Clustering-QR-800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Take a break</p>
+</aside>
+<a id="75d96ac4-23d2-40b8-858e-38fd7a6fdf88">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:23df6abb-abad-4335-9cdc-f73797ba10df -->
+<img alt="brainbreaks.png" src="img/23df6abb-abad-4335-9cdc-f73797ba10df.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="09e3cf0a-2f2c-4ccb-8b50-53c9f7e2f4a1"><h1>AI ≠ ML ≠ LLMs</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:6cab2e0d-1732-4a19-83ee-9b491cf58d2b -->
+<!-- ContentItem:ded20bf7-6fc7-414a-960c-5a130e35fbd2 -->
+<aside class="notes"><p>Let's talk about AI, but not Machine Learning or LLMs. AI is much broader
+than that. So then, how do <strong>I</strong> define AI?</p>
+<p>Image By Xuthoria - Own work, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/w/index.php?curid=164364527">https://commons.wikimedia.org/w/index.php?curid=164364527</a></p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>LLMs are one kind of learning model</li>
+<li>Learning models are one kind of AI model</li>
+<li>Logic, search, optimization, and planning are often AI</li>
+</ul>
+<hr />
+<blockquote>
+<p>Image: Yoshua Bengio by By Xuthoria</p>
+</blockquote>
+
+</td>
+<td style="text-align: left;">
+<img src="img/ded20bf7-6fc7-414a-960c-5a130e35fbd2.jpg" alt="Yoshua_Bengio_663x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="2d84a744-0676-444e-9e8b-bf8d5ed39224"><h1>Simulates A Rational Actor</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f5714ce9-35ea-4b07-8527-87109dab8a7f -->
+<!-- ContentItem:95a214bb-81df-4ff2-b273-94c733f2cac6 -->
+<aside class="notes"><p>This also differs significantly from DSS which are designed to support human decision making.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Attempts to make the best possible decision​ based on the model and the data</p>
+</blockquote>
+<ul>
+<li>Model - Our description of the problem</li>
+<li>Data - Our understanding of the state of the domain</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/95a214bb-81df-4ff2-b273-94c733f2cac6.jpeg" alt="A Rational Actor 800x800.jpeg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="f66e5952-e8ef-4328-b263-e3902ce1957b"><h1>Types of AI Models</h1></a>
+<!-- Layout:FullPageFragments -->
+<!-- ContentItem:84393e34-4936-42ce-a507-362320337c0e -->
+<!-- ContentItem:dd3ef41d-4d77-450a-ad90-cb808087daef -->
+<!-- ContentItem:aef604e0-0a74-41fa-adc7-310a5c0224bc -->
+<table border="0" width="100%">
+<aside class="notes"><p>We are going to focus on the Search/Optimization space in this section.
+Specifically, a few of the Constraint Programming models.</p>
+</aside>
+<tr><td>
+<ul class="fragment">
+<li><strong>Logic​al</strong> - Reducible to conditionals​
+<ul>
+<li>Object Oriented​</li>
+<li>Rules Engine</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+<tr><td>
+<ul class="fragment">
+<li><strong>Search/Optimization</strong> - Reduce and Search the <em>Solution Space</em>
+<ul>
+<li>Dynamic Programming​</li>
+<li>Constraint Programming</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+<tr><td>
+<ul class="fragment">
+<li><strong>Probabilistic/Learning</strong> - Predicts best solution from earlier data
+<ul>
+<li>Neural/Bayesian Networks</li>
+<li>Genetic Algorithms</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+</table></section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="4de47608-61cc-4211-a0be-9201073eb68b"><h1>Optimization</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f1c79c45-0749-4ee6-b9f0-7233826c9017 -->
+<!-- ContentItem:3d890146-5e25-4c62-ab36-2b0c82dbd984 -->
+<aside class="notes"><p>In this animation, we see an optimization that is minimizing the error
+between a linear regression model and the known data points.</p>
+<p>Here, the algorithm used is Gradient Descent, but there are MANY
+other types of optimization algorithms. We'll look at several today.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Finding the best available solution to a problem by minimizing or eliminating undesirable factors and maximizing desirable ones.</p>
+</blockquote>
+
+</td>
+<td style="text-align: left;">
+<img src="img/3d890146-5e25-4c62-ab36-2b0c82dbd984.gif" alt="training_animation.gif" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in fade-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Example: Sudoku</p>
+</aside>
+<a id="5841bd35-5e7d-44f7-a1dc-21ab60c8bb08"><h1>Feasibility Problems</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:3534c8ff-2bcd-4594-bc02-cadde965865a -->
+<ul>
+<li>Find the best values for a set of decision variables that
+<ul>
+<li>Satisfies all constraints</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><ul>
+<li>Examples: Scheduling, Routing</li>
+<li>This will become very important later</li>
+</ul>
+</aside>
+<a id="0a7859bd-d578-4e82-852a-8512083742df"><h1>Optimization Problems</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:4285373f-edd6-4559-a1dd-3a6ff008bbca -->
+<ul>
+<li>Find the best values for a set of decision variables that​
+<ul>
+<li>Satisfies all constraints</li>
+<li>Maximizes the features we want​</li>
+<li>Minimizes the features we don’t want</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/7af70c59-c4f5-4862-a270-7102a38789e4.png'>
+<aside class="notes"><ul>
+<li>If I told you that 7 bowls of mixed-fruit satisfied the problem, you could validate that easily</li>
+<li>What about 1 mixed-fruit, 2 hot wings &amp; 1 sampler plate?</li>
+</ul>
+<p>If either are ok, it is an</p>
+<p><a href="https://xkcd.com/287/">XKCD 287</a></p>
+</aside>
+<a id="20aa78d7-d385-4674-b450-d358053ed98f">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Note: There are other types of CP models, we will focus on these today.</p>
+</aside>
+<a id="3513bc46-870f-4058-b54a-ffcb536ecf1a"><h1>Constraint Programming Models</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:965327bc-e6c5-4223-8f28-b31a96106e3b -->
+<img alt="ConstraintProgrammingTypesPyramid.png" src="img/965327bc-e6c5-4223-8f28-b31a96106e3b.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="016bfc57-3ed0-4bd6-96ee-b95e9232c613"><h1>Feasibility vs Optimization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a0038111-1024-4bd2-8b62-653c6c416a9c -->
+<ul>
+<li>Feasible Solutions
+<ul>
+<li>7 Mixed Fruit</li>
+<li>1 Mixed Fruit , 2 Hot Wings, 1 Sampler Plate</li>
+</ul>
+</li>
+<li>Possible Optimizations
+<ul>
+<li>Minimize # of any single item</li>
+<li>Maximize total # of distinct items</li>
+</ul>
+</li>
+<li>Possible Relaxation
+<ul>
+<li>Offer discount to relax constraint</li>
+<li>Convert = to &gt;= resulting in more feasible solutions</li>
+<li>Maximize Profit</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="81d05b52-2e1b-4c0d-afe6-5a7b0a21ea01"><h1>Constraint: A Required Condition</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:b4e9a1f8-28cd-496d-b9f2-2d120be8deb2 -->
+<ul>
+<li><p>As an entity, constraints do 2 things</p>
+<ul>
+<li>Verify feasibility (is there a solution that satisfies this constraint?)</li>
+<li>Prune the search space (more on this coming up)</li>
+</ul>
+</li>
+<li><p>Infeasibility</p>
+<ul>
+<li>Solution does not satisfy 1 or more constraints
+<ul>
+<li>Previous decisions that led to this point may need to be revisited</li>
+</ul>
+</li>
+<li>Problem has no feasible solutions
+<ul>
+<li>Relaxations may be available to find a “good-enough” solution</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="2f857fc7-cf89-4c30-a246-52a348016e8c"><h1>Types of Constraints</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:9f4a8ea1-7b4e-4632-b534-837c507103e2 -->
+<ul>
+<li>Inequality Constraints
+<ul>
+<li><span class="math">\(X_1 &lt;&gt; 4.5\)</span>  or  <span class="math">\(X_1 + 4X_2 &lt; 24.0\)</span></li>
+</ul>
+</li>
+<li>Integer Constraints
+<ul>
+<li>Counter-intuitively, they can be harder to find solutions for</li>
+<li><span class="math">\(X_1 + 4X_2 &lt; 24 \quad\text{with}\quad X_1, X_2 \in \{1,\dots,n\}\)</span></li>
+</ul>
+</li>
+<li>Global Constraints
+<ul>
+<li>Special “pre-defined” constraints that have a polynomial-time algorithm
+<ul>
+<li>i.e. <strong>AllDifferent</strong> Constraint</li>
+</ul>
+</li>
+<li>There are more than 400 Global Constraints known today</li>
+<li>Defining these constraints using polynomial algorithms is an active research area</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="4ce8a567-d22b-4dbd-8f84-6d19890e9643"><h1>Objective&colon; A Goal for the Solution</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:993fadfb-c3c1-4149-9b88-1b13d1266ea5 -->
+<ul>
+<li><p>Objective Function</p>
+<ul>
+<li>Equation describing how to improve a solution</li>
+<li>Specify what to minimize or maximize to produce the best result</li>
+</ul>
+</li>
+<li><p>Specified as a goal relative to an equation</p>
+<ul>
+<li><span class="math">\(\max 3X_1 + 9X_2 \text { subject to } c_n\)</span></li>
+<li><span class="math">\(\min \sum_{i=1}^{n} A_i X_i\)</span></li>
+</ul>
+</li>
+<li><p>One objective per Model</p>
+<ul>
+<li>Combine features by creating a &quot;score&quot;</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="67b7c83e-86ed-4934-bfd5-7dc3e2a88da4"><h1>Sudoku</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:05358dac-076b-43fa-9c94-9118c59802bb -->
+<!-- ContentItem:a8ff8c92-baa8-4e46-9b40-0ee459623bb9 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>A Combinatorial Puzzle
+<ul>
+<li>9x9 grid</li>
+<li>Each row, column and 3x3 region contains [1 to 9]</li>
+</ul>
+</li>
+<li><strong>AllDifferent</strong> constraints
+<ul>
+<li>With values restricted to integers [1 to 9]</li>
+<li>27 Constraints in total (9 rows, 9 columns, 9 regions)</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/a8ff8c92-baa8-4e46-9b40-0ee459623bb9.png" alt="01 - Sudoku Constraints - 603x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="fbc77450-4af4-423f-8fa3-c8ce0da306d1"><h1>Sudoku Solution Space</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:ff9a64ea-b6bd-4aa1-a9bd-8518aa98e961 -->
+<!-- ContentItem:ee55d9f6-17fd-4650-a1f8-6b703b44b8a7 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Solution Space (aka Search Space or Feasibility Set)</p>
+<ul>
+<li>All values that satisfy the constraint(s)</li>
+</ul>
+</li>
+<li><p>The solution space for a 9x9 grid is inconceivably large</p>
+<ul>
+<li>Roughly <span class="math">\(2 \times 10^{77}\)</span> possible solutions</li>
+<li>At 1 Trillion per second it would take <span class="math">\(6 \times 10^{57}\)</span> years</li>
+</ul>
+</li>
+<li><p>Even with the AllDifferent constraint, its <span class="math">\(6.7 \times 10^{21}\)</span></p>
+<ul>
+<li>Naïve (brute-force) methods are not practical</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/ee55d9f6-17fd-4650-a1f8-6b703b44b8a7.png" alt="02 - Sudoku Solution Space - 603x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="12dff569-8879-4559-8f26-b0d9dc2a656a"><h1>Pruning the Solution Space</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:852fbba2-50f5-4a99-85a5-d2881f07cfcb -->
+<!-- ContentItem:d2a94a65-76bd-4d2c-a3bf-d3ddcf8d1cd5 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Using constraints, we can reduce the possibilities</li>
+<li>Each new learning adds new constraints</li>
+</ul>
+<hr />
+<ul>
+<li><strong>Question</strong>: How do we check for feasibility here?</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/d2a94a65-76bd-4d2c-a3bf-d3ddcf8d1cd5.png" alt="03 - Pruning the Solution Space 01 - 603x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="8e300895-e25a-480b-b9c8-d6894ea6e23a"><h1>Pruning the Solution Space</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:5d0442a0-72ad-4b80-9a16-f1419cf39fbc -->
+<!-- ContentItem:09e265c2-b09f-46f4-a6c4-7fdb673c75c8 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Possible solutions: <span class="math">\(5 \times 10^{73}\)</span></p>
+<ul>
+<li>Search space reduced by 4 orders-of-magnitude</li>
+<li>Roughly 10K Possibilities Eliminated</li>
+</ul>
+</li>
+<li><p>Let's jump ahead</p>
+<ul>
+<li>All of the values we've been given are filled-in</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/09e265c2-b09f-46f4-a6c4-7fdb673c75c8.png" alt="04 - Pruning the Solution Space 02 - 603x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="73cf93d6-fc33-4bf7-9b0b-6efa9193f486"><h1>Pruning the Solution Space</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:7f710ad7-c6c3-401c-8045-97bbbfb314c4 -->
+<!-- ContentItem:16db07fd-a3ff-43eb-a825-6647880b64b2 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>All starting info filled-in
+<ul>
+<li>Search space pruned appropriately</li>
+<li>Possible solutions: <span class="math">\(4 \times 10^{21}\)</span></li>
+<li>Eliminating 56 orders of magnitude</li>
+</ul>
+</li>
+<li>We're not nearly done yet
+<ul>
+<li>Look closely at the remaining options</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/16db07fd-a3ff-43eb-a825-6647880b64b2.png" alt="05 - Pruning the Solution Space 03 - 603x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="17b3cc6a-7936-4072-8fa7-042a79283017"><h1>Pruning the Solution Space</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:e0d87c56-2573-437a-a611-16acefd4dec9 -->
+<!-- ContentItem:47cfef91-bad4-4df2-83f0-f842d4fe46d5 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>The reduction of search options
+<ul>
+<li>&quot;<strong>Fixed</strong>&quot; the value of 4 cells</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/47cfef91-bad4-4df2-83f0-f842d4fe46d5.png" alt="06 - Pruning the Solution Space 04 - 603x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="a7a620a3-5d4c-405e-beaf-b67e619bfcd9"><h1>Propogation of Constraints</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:73d3c265-9af5-4ba8-be31-56343a41995b -->
+<!-- ContentItem:99ee00d0-114b-4068-9b95-3d0332c96f61 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Adding info means we learn even more
+<ul>
+<li>We can reduce the search space further</li>
+</ul>
+</li>
+<li>Possible solutions: <span class="math">\(2 \times 10^{20}\)</span></li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/99ee00d0-114b-4068-9b95-3d0332c96f61.png" alt="07 - Pruning the Solution Space 05 - 603x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="3c882df0-ea54-4747-9c66-066a56bf403a"><h1>Propogation of Constraints</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:674a75d1-401d-4247-b88a-eb8c77d5e829 -->
+<!-- ContentItem:b62fa19b-cd63-4cad-85ea-fb1f9679db8d -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>We now have even more &quot;fixed points&quot;</li>
+<li>We continue to iteratively propagate constraints
+<ul>
+<li>Known as a &quot;<strong>Fixed-Point Algorithm</strong>&quot;</li>
+</ul>
+</li>
+<li>Let's jump ahead to completion of the propagation</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/b62fa19b-cd63-4cad-85ea-fb1f9679db8d.png" alt="08 - Pruning the Solution Space 06 - 603x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="5b67f89d-9e33-4d2a-9772-8c724b7de913"><h1>Propogation of Constraints</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:b7ae4c86-c17f-466b-8547-df9dcd6311a7 -->
+<!-- ContentItem:9a6d4f6a-81a6-4e2f-8cc8-2bc9f8f6fba6 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Possible solutions: 1</li>
+<li>“Guesses” Required: 0
+<ul>
+<li>Only solution was apparent after propagation</li>
+</ul>
+</li>
+<li>CSPs are not always this easy
+<ul>
+<li>Many require some form of search</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/9a6d4f6a-81a6-4e2f-8cc8-2bc9f8f6fba6.png" alt="09 - Pruning the Solution Space 07 - 603x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Summarize the Sudoku constraint-programming example and use it as the bridge into LP and MIP: all three model valid choices with constraints, then differ in how they express the search space and choose among feasible answers.</p>
+</aside>
+<a id="2a6d4f09-5ce3-467f-88dc-7792ef02e51c"><h1>Constraint Programming Pattern</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:e4eac2be-2c9f-4d6f-8a3c-58c47e3119b0 -->
+<ul>
+<li><p>Constraint Programming is about narrowing choices</p>
+<ul>
+<li>Model the valid states of the problem
+<ul>
+<li>Variables, domains, and required conditions</li>
+</ul>
+</li>
+<li>Let constraints prune impossible choices
+<ul>
+<li>Every new constraint removes possible solutions</li>
+</ul>
+</li>
+<li>Search what remains until a feasible answer is found</li>
+</ul>
+</li>
+<li><p>LP and MIP build on the same idea</p>
+<ul>
+<li>Constraints still define the feasible region</li>
+<li>An objective chooses the best feasible answer</li>
+<li>Linear structure gives us specialized algorithms</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="e08f8413-8dbc-42dc-bbd8-f2685417ebff"><h1>Optimization Use-Case</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:29b89a23-6a93-4c5e-b54e-2f1b3eba4030 -->
+<!-- ContentItem:564d7279-deea-4a50-98d2-3fd801a91217 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Determine the ideal production targets for Pete's Pottery Paradise</p>
+</blockquote>
+
+</td>
+<td style="text-align: left;">
+<img src="img/564d7279-deea-4a50-98d2-3fd801a91217.png" alt="PetesPotteryParadise-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="03a27852-4046-4032-80cf-828f7586fb46"><h1>Use Case: Production Targets</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:2f9f6648-d5d4-43dc-91f7-4e529e1b5647 -->
+<!-- ContentItem:faf564a2-6ae3-4c59-9e61-7469f7852a21 -->
+<!-- ContentItem:eb91d467-3cc2-49cc-8c2f-ab4eb87485d5 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Products​
+<ul>
+<li>Small Vase​
+<ul>
+<li>1 oz. clay, 1 oz. glaze​</li>
+<li>Sells for $3.00 each​</li>
+</ul>
+</li>
+<li>Large Vase​
+<ul>
+<li>4 oz. clay, 2 oz. glaze​</li>
+<li>Sells for $9.00 each​</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
+<ul>
+<li>Inventory​
+<ul>
+<li>Clay - 24 oz.​</li>
+<li>Glaze - 16 oz.​</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
+<ul>
+<li>Goal
+<ul>
+<li>Maximize Revenue</li>
+</ul>
+</li>
+</ul>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><ul>
+<li>16oz glaze (1 oz ea) = 16 small</li>
+<li>24oz clay (4 oz ea) = 6 large</li>
+<li>71 feasible values</li>
+<li>What if X and Y are MUCH LARGER?</li>
+</ul>
+</aside>
+<a id="687be335-bef0-40ba-8d6a-1e2064f317b8"><h1>Solution Space</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:cfb07fcd-7c70-4bc6-8d2c-2ba9a3c0815f -->
+<img alt="Solution Space Graph - With Feasible Solutions.png" src="img/cfb07fcd-7c70-4bc6-8d2c-2ba9a3c0815f.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><ul>
+<li>Zeroing out parameters gives us intercepts so we can draw the lines</li>
+</ul>
+</aside>
+<a id="d52678f2-2123-45fa-8ed1-e77f8ca0a7d0"><h1>Constraint Equations</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:257d7165-fe4a-4e12-86cd-d5f5300e27b0 -->
+<ul>
+<li>Clay Constraint
+<ul>
+<li>X + 4Y &lt;= 24 ​
+<ul>
+<li>X &lt;= 24 and Y &lt;= 6​</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Glaze Constraint
+<ul>
+<li>X + 2Y &lt;= 16​
+<ul>
+<li>X &lt;=16 and Y &lt;= 8</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="8497cd1e-f99b-46c6-88a3-07982a61d890"><h1>Feasible Region</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:31d6ce3e-48d0-4147-ad35-7bb9eae9a1ac -->
+<img alt="Solution Space Graph - With Feasible Solutions and Constraint Lines.png" src="img/31d6ce3e-48d0-4147-ad35-7bb9eae9a1ac.png" />
+</section>
+
+
+<section data-transition="fade-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><ul>
+<li>The solution to any linear objective will fall at one of the vertices of this polytope</li>
+</ul>
+</aside>
+<a id="c7ab6842-f508-4896-83f2-027b7137d673"><h1>Linear Programming - Polytope</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:93808660-5f2e-4265-8a71-323b032c8d8f -->
+<img alt="Solution Space Graph - With Polytope.png" src="img/93808660-5f2e-4265-8a71-323b032c8d8f.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><ul>
+<li>Adding clay die, and gilding materials adds 2 constraints shown as 2 new lines on the polytope.</li>
+<li>What if we add another product, like an ashtray or urn?</li>
+</ul>
+</aside>
+<a id="76d80518-023f-4c1d-996b-3ce067db8040"><h1>Additional Constraints</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:f882dd91-6d7d-4f31-86f6-5313ac023534 -->
+<img alt="Solution Space Graph - New Polytope - 1132x645.png" src="img/f882dd91-6d7d-4f31-86f6-5313ac023534.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="a5d93c6e-8351-4e11-a626-1b432f89414b"><h1>The Simplex Algorithm</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:c2b0987d-c0fd-4ccf-96d2-84361608f5de -->
+<!-- ContentItem:bd2382ba-e6ba-425f-a049-6ab3c59116d4 -->
+<aside class="notes"><p>Introduce Simplex as the classic algorithm for linear programming before showing the geometric vertex-walk intuition. Keep this as context, not a biography detour.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Created by George Dantzig in 1947</li>
+<li>Built to solve linear programming problems
+<ul>
+<li>Allocate scarce resources under constraints</li>
+</ul>
+</li>
+<li>Searches the vertices of the feasible region
+<ul>
+<li>Usually far fewer places than every possible solution</li>
+</ul>
+</li>
+<li>Still used inside modern optimization solvers
+<ul>
+<li>Planning, routing, scheduling, logistics, finance</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/bd2382ba-e6ba-425f-a049-6ab3c59116d4.jpg" alt="george-bernard-dantzig.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="5f6f1192-2e6c-48dd-86ee-1f9a4b8f9b1c"><h1>Walk the Vertices</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:78e2293e-dc88-4d09-8041-9d83d5f8b5de -->
+<!-- ContentItem:aed332d7-0e91-4a38-930b-3c1806be09ec -->
+<aside class="notes"><p>Simplex works because a linear objective reaches its best feasible value at a vertex of the feasible region. The algorithm does not search every point; it walks from vertex to neighboring vertex while the objective improves.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Simplex turns optimization into a short guided walk</p>
+</blockquote>
+<ul>
+<li>Start at any feasible vertex
+<ul>
+<li>Determine direction that improves revenue fastest</li>
+<li>Move along an edge until a constraint stops you</li>
+</ul>
+</li>
+<li>Pivot to the new axis
+<ul>
+<li>Repeat from the new vertex</li>
+</ul>
+</li>
+<li>Stop when every neighboring vertex is worse</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/aed332d7-0e91-4a38-930b-3c1806be09ec.png" alt="SimplexAlgorithm.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="df2e448d-e4b9-49e8-b7a7-1e903961a1aa"><h1>One Pivot</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:9d502da7-0caf-42fc-9f7d-bdd952f456e0 -->
+<!-- ContentItem:4dacf320-7f02-414e-be8e-dd63b12322ba -->
+<aside class="notes"><p>A pivot changes which constraints define the current corner. In this example, we first add large vases until clay is exhausted, then trade some large vases for small vases until glaze also becomes tight.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Start: <code>(0 small, 0 large)</code> -&gt; revenue <code>$0</code></li>
+<li>Enter: make large vases first
+<ul>
+<li>They add <code>$9</code> each, so revenue rises quickly</li>
+</ul>
+</li>
+<li>Leave: clay becomes the limiting constraint
+<ul>
+<li><code>24 oz clay / 4 oz per large = 6 large</code></li>
+</ul>
+</li>
+<li>New corner: <code>(0 small, 6 large)</code> -&gt; revenue <code>$54</code></li>
+<li><strong>Pivot</strong>: trade along the clay edge
+<ul>
+<li>Stop at <code>(8 small, 4 large)</code> when glaze also binds</li>
+</ul>
+</li>
+<li>No adjacent corner improves revenue -&gt; optimum <code>$60</code></li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/4dacf320-7f02-414e-be8e-dd63b12322ba.png" alt="Solution Space Graph - With Polytope-800x433.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="c4625c47-7145-430c-9ccf-2771f71b22fd"><h1>Scheduling Use-Case</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:b628b9f0-1bed-4bf8-bfda-5b2ed558e482 -->
+<!-- ContentItem:a7602a09-32f3-4532-bfbb-48580b33b881 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Determine the best schedule for talks at a conference</p>
+</blockquote>
+
+</td>
+<td style="text-align: left;">
+<img src="img/a7602a09-32f3-4532-bfbb-48580b33b881.png" alt="ConferenceScheduling-Photo-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>We need to define the Variables, Constraints and Objective Function for the conference scheduling problem.  The schedule is a table with time slots as rows and rooms as columns.  Each cell in the table represents a session that needs to be scheduled to a room in a time slot.</p>
+</aside>
+<a id="b3774f49-bad5-4b8f-b1ec-1a84f15fd11f"><h1>Conference Schedule</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:60de8f1e-3355-45f1-95f1-579aa1b55d59 -->
+<table>
+<thead>
+<tr>
+<th> </th>
+<th>Room 1</th>
+<th>Room 2</th>
+<th>Room 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Slot 1</strong></td>
+<td>Session 1</td>
+<td>Session 2</td>
+<td>Session 3</td>
+</tr>
+<tr>
+<td><strong>Slot 2</strong></td>
+<td>Session 4</td>
+<td>Session 5</td>
+<td>Session 6</td>
+</tr>
+<tr>
+<td><strong>Slot 3</strong></td>
+<td>Session 7</td>
+<td>Session 8</td>
+<td>Session 9</td>
+</tr>
+<tr>
+<td><strong>Slot 4</strong></td>
+<td>Session 10</td>
+<td>Open</td>
+<td>Open</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>How do we tell the model that each session must be scheduled <strong>exactly once</strong>?
+If we use <strong>AllDifferent</strong>, how do we handle the 2 null values?</p>
+</aside>
+<a id="118473e3-266c-462e-9123-2e609dc1ce2d"><h1>LP Model - Variables</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:60de8f1e-3355-45f1-95f1-579aa1b55d59 -->
+<!-- ContentItem:2442120b-f3f0-47ea-bc76-4b243302c175 -->
+<table>
+<thead>
+<tr>
+<th> </th>
+<th>Room 1</th>
+<th>Room 2</th>
+<th>Room 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Slot 1</strong></td>
+<td>Session 1</td>
+<td>Session 2</td>
+<td>Session 3</td>
+</tr>
+<tr>
+<td><strong>Slot 2</strong></td>
+<td>Session 4</td>
+<td>Session 5</td>
+<td>Session 6</td>
+</tr>
+<tr>
+<td><strong>Slot 3</strong></td>
+<td>Session 7</td>
+<td>Session 8</td>
+<td>Session 9</td>
+</tr>
+<tr>
+<td><strong>Slot 4</strong></td>
+<td>Session 10</td>
+<td>Open</td>
+<td>Open</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+<ul>
+<li><span class="math">\(X_{t,r}\)</span>
+<ul>
+<li><span class="math">\(t\)</span> is the id of the timeslot</li>
+<li><span class="math">\(r\)</span> is the id of the room</li>
+<li><span class="math">\(X_{t,r} \in \mathbb{Z}\)</span> is the session id assigned to timeslot <span class="math">\(t\)</span> in room <span class="math">\(r\)</span>
+<ul>
+<li><span class="math">\(\mathbb{Z}\)</span> is the set of all session ids</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>How do we tell the model that each session must be scheduled <strong>exactly once</strong>?
+There are no <strong>if conditions</strong> and no <strong>search functions</strong> in LP.
+We can only express constraints as linear inequalities.</p>
+</aside>
+<a id="77ec9077-0839-466b-9809-c5a802e1ee5f"><h1>LP Model - Constraints</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:60de8f1e-3355-45f1-95f1-579aa1b55d59 -->
+<!-- ContentItem:f7fb3f8b-3cd9-444e-b0ab-7474670c61aa -->
+<table>
+<thead>
+<tr>
+<th> </th>
+<th>Room 1</th>
+<th>Room 2</th>
+<th>Room 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Slot 1</strong></td>
+<td>Session 1</td>
+<td>Session 2</td>
+<td>Session 3</td>
+</tr>
+<tr>
+<td><strong>Slot 2</strong></td>
+<td>Session 4</td>
+<td>Session 5</td>
+<td>Session 6</td>
+</tr>
+<tr>
+<td><strong>Slot 3</strong></td>
+<td>Session 7</td>
+<td>Session 8</td>
+<td>Session 9</td>
+</tr>
+<tr>
+<td><strong>Slot 4</strong></td>
+<td>Session 10</td>
+<td>Open</td>
+<td>Open</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+<ul>
+<li>Each room/timeslot combination can have no more than 1 session</li>
+<li>Each session must be scheduled exactly once</li>
+<li>What if session 7 &amp; 9 are the same speaker?
+<ul>
+<li>Desired rule: <span class="math">\(slot(7) \ne slot(9)\)</span></li>
+<li>But <span class="math">\(X_{t,r}\)</span> stores a session id, not a timeslot for a session</li>
+<li>This requires a lookup: &quot;where is session 7 scheduled?&quot;</li>
+<li>That lookup is not naturally a linear expression</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Our model now becomes 3 dimensional instead of 2</p>
+</aside>
+<a id="0c64c56a-77c0-4c16-b6c0-b34d2688f020"><h1>MIP Model - Variables</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:be919662-20ea-4b49-b92d-e3689869b3a3 -->
+<table>
+<thead>
+<tr>
+<th>Session 1</th>
+<th>Room 1</th>
+<th>Room 2</th>
+<th>Room 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Slot 1</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 2</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 3</strong></td>
+<td>0</td>
+<td><strong>1</strong></td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 4</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Session 2</th>
+<th>Room 1</th>
+<th>Room 2</th>
+<th>Room 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Slot 1</strong></td>
+<td><strong>1</strong></td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 2</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 3</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 4</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Session 3</th>
+<th>Room 1</th>
+<th>Room 2</th>
+<th>Room 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Slot 1</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="b0524e46-8311-4f30-ae15-463222745eb0"><h1>MIP Model - Variables</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:92d84ce2-f606-4284-88b7-c0f91a3c9a36 -->
+<!-- ContentItem:9ea01fe8-f2f1-4d57-a90a-22a29b304b0a -->
+<table>
+<thead>
+<tr>
+<th>Session 1</th>
+<th>Room 1</th>
+<th>Room 2</th>
+<th>Room 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Slot 1</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 2</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 3</strong></td>
+<td>0</td>
+<td><strong>1</strong></td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 4</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+<ul>
+<li><span class="math">\(X_{t,r,s}\)</span>
+<ul>
+<li><span class="math">\(t\)</span> is the id of the timeslot</li>
+<li><span class="math">\(r\)</span> is the id of the room</li>
+<li><span class="math">\(s\)</span> is the id of the session</li>
+<li><span class="math">\(X_{t,r,s}\)</span> is <span class="math">\(1\)</span> if <span class="math">\(s\)</span> is the session id assigned to timeslot <span class="math">\(t\)</span> in room <span class="math">\(r\)</span></li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><ul>
+<li><span class="math">\(\sum_r X_{t,r,7}\)</span> asks: “Is 7 scheduled in slot <span class="math">\(t\)</span>?”</li>
+<li><span class="math">\(\sum_r X_{t,r,9}\)</span> asks: “Is 9 scheduled in slot <span class="math">\(t\)</span>?”</li>
+<li>Adding them together w/ result <span class="math">\(\le 1\)</span> says: For this slot, at most one of those sessions may appear.</li>
+</ul>
+</aside>
+<a id="e6db7323-5573-41ca-9104-dd5745e6f266"><h1>MIP Model - Constraints</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:92d84ce2-f606-4284-88b7-c0f91a3c9a36 -->
+<!-- ContentItem:421edea0-d4b6-4469-8375-1e7760338ea2 -->
+<table>
+<thead>
+<tr>
+<th>Session 1</th>
+<th>Room 1</th>
+<th>Room 2</th>
+<th>Room 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Slot 1</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 2</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 3</strong></td>
+<td>0</td>
+<td><strong>1</strong></td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 4</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+<ul>
+<li>Each session must be scheduled exactly once
+<ul>
+<li><span class="math">\(\sum_t \sum_r X_{t,r,s} = 1 \quad \forall s\)</span></li>
+</ul>
+</li>
+<li>Each room/timeslot combination can have no more than 1 session
+<ul>
+<li><span class="math">\(\sum_s X_{t,r,s} \le 1 \quad \forall t,r\)</span></li>
+</ul>
+</li>
+<li>Sessions 7 and 9 cannot be scheduled in the same timeslot
+<ul>
+<li><span class="math">\(\sum_r X_{t,r,7} + \sum_r X_{t,r,9} \le 1 \quad \forall t\)</span></li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>If all solutions are equally good, then the objective function is irrelevant.
+But if we want to optimize for some goal, we need to define an objective function.</p>
+</aside>
+<a id="ed22d627-c2b3-4ba0-b79d-4176b48749b9"><h1>MIP Model - Objective</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:92d84ce2-f606-4284-88b7-c0f91a3c9a36 -->
+<!-- ContentItem:e7ecb2ad-1df2-4e7b-b3f4-8849712b88ae -->
+<table>
+<thead>
+<tr>
+<th>Session 1</th>
+<th>Room 1</th>
+<th>Room 2</th>
+<th>Room 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Slot 1</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 2</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 3</strong></td>
+<td>0</td>
+<td><strong>1</strong></td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 4</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+<blockquote>
+<p>Create a score that improves with the desirability of the solution</p>
+</blockquote>
+<ul>
+<li>Factors might include
+<ul>
+<li>Reduce # of different rooms in a track</li>
+<li>Reduce the # of timeslot conflicts between sessions in a track</li>
+<li>Reduce total steps between sessions of a track</li>
+<li>Reduce distance (time &amp; room) between multi-part sessions</li>
+<li>Reduce # of different days a speaker speaks</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>In this case, we want to minimize the room changes participants in a track need to make.
+If we have a track with sessions 2 &amp; 4, we want to put them in the same room if possible.</p>
+</aside>
+<a id="e9fb4344-be5e-4664-86ee-0dc0c31d2faf"><h1>MIP Model - Objective Example</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:92d84ce2-f606-4284-88b7-c0f91a3c9a36 -->
+<!-- ContentItem:4e47fb0f-df59-4562-a654-d98d5efa2321 -->
+<table>
+<thead>
+<tr>
+<th>Session 1</th>
+<th>Room 1</th>
+<th>Room 2</th>
+<th>Room 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Slot 1</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 2</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 3</strong></td>
+<td>0</td>
+<td><strong>1</strong></td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Slot 4</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+<blockquote>
+<p>Maximize # of sessions in the same room with Sessions 2 &amp; 4 (a track)</p>
+</blockquote>
+<ul>
+<li>For each Room:
+<ul>
+<li><span class="math">\(\max \sum_r \left(\sum_t X_{t,r,2}\right)\left(\sum_t X_{t,r,4}\right)\)</span>
+<ul>
+<li>If they are in the same room, the total will be 1</li>
+<li>If they are in different room, the total will be 0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="f98d42b4-9af7-429d-9e94-25dfa805bc0e"><h1>Simplex for MIP</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f7684014-b23f-43fd-9921-30d29367f2e6 -->
+<!-- ContentItem:3f7c4596-ff86-49c4-ba0e-415bb27a0319 -->
+<aside class="notes"><p>Simplex is run iteratively as part of a hybrid search.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Relax the constraints:</p>
+<ul>
+<li>Boolean vars → continuous vars <span class="math">\(\in [0,1]\)</span></li>
+<li>Run Simplex to find a solution in the continuous space</li>
+<li>This becomes a &quot;smooth&quot; estimate of good solution locations</li>
+</ul>
+</li>
+<li><p>Use this to guide a search through nearby boolean options</p>
+</li>
+<li><p>Repeat until the best integral solution is found</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/3f7c4596-ff86-49c4-ba0e-415bb27a0319.png" alt="SimplexForMIP.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>We have talked about Simplex and MIP search so we understand the shape of the work. In real applications, we describe the model and hand it to a solver such as Gurobi or Google OR-Tools.</p>
+</aside>
+<a id="8a601a1c-9f31-4dd0-8e33-75f2de51fd0a"><h1>Solvers</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:1305db2a-51f8-4719-9a62-33d0a2e7f5d1 -->
+<blockquote>
+<p>We don't need to implement Simplex ourselves</p>
+</blockquote>
+<ul>
+<li>A solver takes the model:
+<ul>
+<li>Decision variables</li>
+<li>Constraints</li>
+<li>Objective function</li>
+</ul>
+</li>
+<li>Chooses the algorithms needed</li>
+<li>Searches for the best solution</li>
+<li>Examples:
+<ul>
+<li>Gurobi - Commercial, high-performance optimization solver</li>
+<li>Google OR-Tools - Open-source optimization toolkit</li>
+<li>Others from <a href="https://en.wikipedia.org/wiki/List_of_optimization_software">Wikipedia's list of optimization software</a></li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="15287a22-dd71-4536-94a3-85e305a85365"><h1>Google OR-Tools</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:ca5ac14b-c665-47cd-a04d-638f738b9e2f -->
+<!-- ContentItem:2a0b09b5-a0d1-4332-ae2a-643e5180bb27 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>A Suite of Tools for Solving Combinatorial Optimization Problems</p>
+</blockquote>
+<ul>
+<li>Constraint Solver</li>
+<li>Unified LP &amp; MIP Interface
+<ul>
+<li>GLOP – LP Solver</li>
+<li>CBC – MIP Solver</li>
+<li>Can be built with other solvers, including Gurobi</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/2a0b09b5-a0d1-4332-ae2a-643e5180bb27.png" alt="gdp-800x361.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="62338a82-54dc-493e-ae89-47a4de0457de"><h1>Decision Variables</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:e5312d04-c0a4-4652-9dd3-fe5b7eb619bd -->
+<ul>
+<li><p>Variable Definitions</p>
+<ul>
+<li><span class="math">\(x_S\)</span> – Number of small vases to create</li>
+<li><span class="math">\(x_L\)</span> – Number of large vases to create</li>
+</ul>
+</li>
+<li><p>Implementation</p>
+<ul>
+<li><code>var xS = solver.MakeIntVar(0.0, maxSmall, &quot;xS&quot;);</code></li>
+<li><code>var xL = solver.MakeIntVar(0.0, maxLarge, &quot;xL&quot;);</code></li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="7414ad2f-e51a-47bf-a15e-5c5ecbaf9a30"><h1>Constraints</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:e0803042-f2ac-4911-abcc-b92639343e1b -->
+<ul>
+<li><p>Clay Constraint Definition</p>
+<ul>
+<li><span class="math">\(x_S + 4 x_L \ge 0\)</span></li>
+<li><span class="math">\(x_S + 4 x_L \le claySupply\)</span></li>
+</ul>
+</li>
+<li><p>Similar for Glaze Constraint</p>
+</li>
+<li><p>Implementation</p>
+<ul>
+<li><code>var cClay = solver.MakeConstraint(0.0, claySupply);</code></li>
+<li><code>cClay.SetCoefficient($x_S$, 1);</code></li>
+<li><code>cClay.SetCoefficient($x_L$, 4);</code></li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="7ab2d611-f7cf-4473-b5cd-6585b6672094"><h1>Objective Function</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:6742242f-2f8f-4a14-8dff-79c5fce81123 -->
+<blockquote>
+<p><span class="math">\(\max \; 3 x_S + 9 x_L\)</span></p>
+</blockquote>
+<ul>
+<li><code>var obj = solver.Objective();</code></li>
+<li><code>obj.SetCoefficient($x_S$, 3);</code></li>
+<li><code>obj.SetCoefficient($x_L$, 9);</code></li>
+<li><code>obj.SetMaximization();</code></li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="f8c83904-73cf-4c46-9d50-118e3152f152"><h1>Execute the Model</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a207ef89-ccf8-41c1-b571-153850f1c3f0 -->
+<ul>
+<li><code>int resultStatus = solver.Solve();</code></li>
+<li><code>var xSmall = xS.SolutionValue();</code></li>
+<li><code>var xLarge = xL.SolutionValue();</code></li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="cf227d4a-1d03-454e-8320-763160d4c22e"><h1>Linear and Mixed-Integer Programming</h1></a>
+<!-- Layout:FullPageFragments -->
+<!-- ContentItem:69ad1ff5-9224-4504-b543-e6e8f6eb7f23 -->
+<!-- ContentItem:bf7a2b92-fda2-4847-8460-0a687150e792 -->
+<table border="0" width="100%">
+
+<tr><td>
+<ul class="fragment">
+<li>Define Constraints that the Solution Must Satisfy​
+<ul>
+<li>Use these constraints to limit the search space​
+<ul>
+<li>More constraints = smaller search space
+<ul>
+<li>Solutions that exist are found faster</li>
+<li>May not find a feasible solution</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+<tr><td>
+<ul class="fragment">
+<li>Add an Objective Function to Improve Solutions​
+<ul>
+<li>All constraints must be satisfied first​</li>
+<li>Objectives are a goal relative to an equation​
+<ul>
+<li>i.e. Maximize revenue where <code>r = 3X + 9Y</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+</table></section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="24c0c65e-60f2-4bb2-a1d4-8585dc084aef"><h1>LP Hands-On Exercise</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:7f6d53c0-c0d2-4e98-9ef8-7a9867652041 -->
+<!-- ContentItem:9f838018-23b6-408e-a609-e772905a6839 -->
+<aside class="notes"><p>Attendees now apply the LP modeling pattern in code. The goal is to build a small model using Google OR-Tools, solve it, and connect the variables, constraints, and objective from the previous section to a running program.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Build the Pete's Pottery Paradise LP model and solve it with Google OR-Tools.</p>
+</blockquote>
+<ul>
+<li>Define the decision variables</li>
+<li>Add the constraints</li>
+<li>Add the objective function</li>
+<li>Ask the solver for the best feasible solution</li>
+</ul>
+<hr />
+<ul>
+<li><a href="https://developers.google.com/optimization/introduction">Google OR-Tools Docs</a></li>
+<li><a href="https://www.nuget.org/packages/Google.OrTools/"><code>Google.OrTools</code> NuGet Package</a></li>
+<li>Scan the QR code to open the exercise solution.</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/9f838018-23b6-408e-a609-e772905a6839.png" alt="LinearProgramming-QR.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Take a break</p>
+</aside>
+<a id="75d96ac4-23d2-40b8-858e-38fd7a6fdf88">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:23df6abb-abad-4335-9cdc-f73797ba10df -->
+<img alt="brainbreaks.png" src="img/23df6abb-abad-4335-9cdc-f73797ba10df.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/1327370b-7173-4de5-b86c-c23368853e71.png'>
+<aside class="notes"><p>Created by <a href="https://copilot.microsoft.com">Copilot</a> on 2025-10-16</p>
+</aside>
+<a id="1d9eb956-665d-48cf-b42e-ed4373341233">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="de4b9b21-1d4d-4a29-9780-8d6b968afe36"><h1>Bio-Inspired Algorithms</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:570cb063-bf5d-493d-9a2d-75c3897a62e0 -->
+<!-- ContentItem:d4cc3266-0aee-4624-8073-ce8a6486e9f6 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Best Path Algorithms</p>
+<ul>
+<li>Ant Colony Optimization</li>
+<li>Bee Colony Optimization</li>
+</ul>
+</li>
+<li><p>Cost Reduction Algorithms</p>
+<ul>
+<li>Firefly Optimization</li>
+<li>Amoeba Optimization</li>
+</ul>
+</li>
+<li><p>AI Models</p>
+<ul>
+<li>Intro to Optimizing AI Models</li>
+<li>Training an AI Model Using Amoebas</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/d4cc3266-0aee-4624-8073-ce8a6486e9f6.jpg" alt="Buzz - 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/f71d8f54-7f94-4896-aabb-13aa396b53ac.jpg'>
+<aside class="notes"><p>Image Source: <a href="https://www.bing.com/images/search?view=detailV2&amp;ccid=rQwZkzXb&amp;id=CE81AB330C7CBFE1E51C64015E13BB9B91FEC97B&amp;thid=OIP.rQwZkzXbMMakjLdxyi0KEAHaEK&amp;mediaurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.ad0c199335db30c6a48cb771ca2d0a10%3frik%3de8n%252bkZu7E14BZA%26riu%3dhttp%253a%252f%252fi.stack.imgur.com%252f4rce5.jpg%26ehk%3dy3eTNpWhpAFuH8tW70dPlXBxmD2xVFoLbzZD4aiBM08%253d%26risl%3d%26pid%3dImgRaw%26r%3d0&amp;exph=1080&amp;expw=1920&amp;q=best+path&amp;simid=608045907617389745&amp;FORM=IRPRST&amp;ck=80685705AA0D92602D981536195FDA4E&amp;selectedIndex=22&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;ajaxserp=0">https://www.bing.com/images/search?view=detailV2&amp;ccid=rQwZkzXb&amp;id=CE81AB330C7CBFE1E51C64015E13BB9B91FEC97B&amp;thid=OIP.rQwZkzXbMMakjLdxyi0KEAHaEK&amp;mediaurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.ad0c199335db30c6a48cb771ca2d0a10%3frik%3de8n%252bkZu7E14BZA%26riu%3dhttp%253a%252f%252fi.stack.imgur.com%252f4rce5.jpg%26ehk%3dy3eTNpWhpAFuH8tW70dPlXBxmD2xVFoLbzZD4aiBM08%253d%26risl%3d%26pid%3dImgRaw%26r%3d0&amp;exph=1080&amp;expw=1920&amp;q=best+path&amp;simid=608045907617389745&amp;FORM=IRPRST&amp;ck=80685705AA0D92602D981536195FDA4E&amp;selectedIndex=22&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;ajaxserp=0</a></p>
+</aside>
+<a id="3bc845d8-af86-4f3e-bd5b-5c7fd1f68870"><h1>Best Path Algorithms</h1></a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="19abee31-2beb-4171-8522-575f19b12b6e"><h1>Ant Colony Optimization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:def659f4-35f5-43b7-a30e-e40511993b7f -->
+<img alt="Ant Colony - Best Path - Animated.gif" src="img/def659f4-35f5-43b7-a30e-e40511993b7f.gif" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="349b10db-63f0-4752-86a5-6caffd71c0a1"><h1>Pheromones</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:56bdca83-d66b-4592-baa7-f718b8385b6f -->
+<!-- ContentItem:339a5d07-32ec-40d2-9429-bc42f79e96f7 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Greater Usage =&gt; More Pheromones</li>
+<li>Shorter Path Length =&gt; More Pheromones Remain</li>
+<li>More Pheromones =&gt; Higher Probability of Usage</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/339a5d07-32ec-40d2-9429-bc42f79e96f7.jpg" alt="Pherimones 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="aafa2f55-41f5-49f1-bb57-c13c8b0b1023"><h1>Ant Colony Optimization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:4d18627b-e3e6-4e76-bfda-052b8d151404 -->
+<img alt="Ant Colony Optimization Psudocode.png" src="img/4d18627b-e3e6-4e76-bfda-052b8d151404.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/ef27c4e3-4dc4-4ccf-92c0-ae559ae35e3c.png'>
+
+<a id="6aa2aeba-a073-496c-85b0-59209acbff56">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="9e2e8fdf-d3c0-4c20-8eea-131be82a5737"><h1>Ant Colony Optimization</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:ffa65ce7-5e85-4bb7-b6ba-3832c1b1a0bb -->
+<!-- ContentItem:2484059b-7c16-4175-a561-cd75b1a25a99 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Neighborhood Search
+<ul>
+<li>Start with random paths</li>
+<li>Explore neighboring paths based on probability</li>
+<li>More pheromone = Higher probability of use</li>
+<li>Can get stuck in a local minima</li>
+</ul>
+</li>
+<li>Tweaks
+<ul>
+<li>Number of ants</li>
+<li>Pheromones to dispense</li>
+<li>Pheromone dissipation rate</li>
+</ul>
+</li>
+<li>Features
+<ul>
+<li>Less sensitive to scale</li>
+<li>Optimality not guaranteed</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/2484059b-7c16-4175-a561-cd75b1a25a99.jpg" alt="Ant Colony 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>There are roughly 1.216 x 10<sup>17</sup> possible paths</p>
+</aside>
+<a id="2cba3924-aa3c-46cb-8b44-adbc2f1cbba9"><h1>Bee Colony Optimization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:6340de3f-6d11-4ce0-8683-3d6ef78c2ade -->
+<img alt="Bee Colony - Best Path - Animated.gif" src="img/6340de3f-6d11-4ce0-8683-3d6ef78c2ade.gif" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="a700feea-7120-46a9-86ce-15aeab74bfbb"><h1>Types of Bees</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:d50c5f19-39e7-4cf2-9401-5ae0fe9ee831 -->
+<!-- ContentItem:a4927384-7080-4f5c-938d-5d0c584954a7 -->
+
+<table><tr><td style="vertical-align:top;">
+<dl><dt>Active Workers</dt><dd>Forage on their known path and on a <b style="color:yellow">neighboring</b> path</dd><br/><dt>Scouts</dt><dd>Forage on a random path</dd><br/><dt>Inactive Workers</dt><dd>Wait for information from other bees</dd></dl>
+
+</td>
+<td style="text-align: left;">
+<img src="img/a4927384-7080-4f5c-938d-5d0c584954a7.jpg" alt="Bee Colony 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Bee Colony Optimization Psudocode</p>
+</aside>
+<a id="15fc756c-4a52-4933-b4fe-55e491fda762"><h1>Bee Colony Optimization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:5760b7cb-5d81-4682-a10a-ae03560e0be5 -->
+<img alt="Bee Colony Optimization Psudocode.png" src="img/5760b7cb-5d81-4682-a10a-ae03560e0be5.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/640b6b32-1e54-42dd-857f-a82a00845410.png'>
+
+<a id="120a2d25-d209-4f2a-9d4e-a72ecb71120f">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="ad93353a-759a-45de-9666-918f553e178f"><h1>Bee Colony Optimization</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:4b2a0812-03b4-4b1e-b759-4e06e5e8ef26 -->
+<!-- ContentItem:77218930-ab3d-47a7-a65e-067aa5d34d95 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Multiple Search types
+<ul>
+<li>Active Workers perform neighborhood search</li>
+<li>Scouts perform random search</li>
+<li>Best known path propogates</li>
+</ul>
+</li>
+<li>Tweaks
+<ul>
+<li>Number of each type of bee</li>
+<li>Probability of persuasion</li>
+<li>Visit limit</li>
+</ul>
+</li>
+<li>Features
+<ul>
+<li>Less Sensitive to Scale</li>
+<li>Optimality not guaranteed</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/77218930-ab3d-47a7-a65e-067aa5d34d95.jpg" alt="Bee Colony Optimization 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/a814800b-dde4-4aa8-a7e3-11ab2669a26f.jpg'>
+
+<a id="35028fc8-4c17-4b30-9ec7-87cf9c7c36ad"><h1>Reducing Costs</h1></a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/f5dc5b6f-9845-4f9f-b032-1c39fe2a2fc9.jpg'>
+<aside class="notes"><p>Michalewicz Function Graph - Image Source: <a href="https://www.bing.com/images/search?view=detailV2&amp;id=6A0E93404F50B40CB6B9D94E598A3B53D844FC98&amp;thid=OIP.ybJR3X7IWgNLBGkrxBk-WQHaE4&amp;mediaurl=https%3A%2F%2Fesa.github.io%2Fpagmo%2Fmichalewicz.jpg&amp;exph=368&amp;expw=558&amp;q=Michalewicz&amp;selectedindex=28&amp;ajaxhist=0&amp;vt=0&amp;eim=0">https://www.bing.com/images/search?view=detailV2&amp;id=6A0E93404F50B40CB6B9D94E598A3B53D844FC98&amp;thid=OIP.ybJR3X7IWgNLBGkrxBk-WQHaE4&amp;mediaurl=https%3A%2F%2Fesa.github.io%2Fpagmo%2Fmichalewicz.jpg&amp;exph=368&amp;expw=558&amp;q=Michalewicz&amp;selectedindex=28&amp;ajaxhist=0&amp;vt=0&amp;eim=0</a></p>
+</aside>
+<a id="ae6829fd-dd49-4ec2-977b-bdb7bb661c18">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/416a2fff-99eb-46cb-98ed-528c303ccaf9.gif'>
+<aside class="notes"><p>Firefly Michalewicz swarm</p>
+</aside>
+<a id="45e0b6aa-694c-4314-b9b9-fb3f00bdad76">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Pseudo-code. Source: <a href="https://msdn.microsoft.com/en-us/magazine/mt147244.aspx">https://msdn.microsoft.com/en-us/magazine/mt147244.aspx</a></p>
+</aside>
+<a id="85bca4f3-720d-4951-ba89-c53f00c80706"><h1>Firefly Optimization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:121e9361-2569-49a3-b081-272a89f00e74 -->
+<pre><code>initialize n fireflies to random positions
+loop maxEpochs times
+  for each firefly i
+    for each firefly j
+      if intensity(i) &lt; intensity(j)
+        compute attractiveness
+        move firefly(i) toward firefly(j)
+        update firefly(i) intensity
+      end for
+    end for
+  sort fireflies
+end loop
+return best position found
+</code></pre>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/aae8ca34-f57b-4a8e-8959-f89ca08d2d1f.png'>
+
+<a id="ab2bbb8e-32b5-40ab-bc4c-c48a05fa2973">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="6d10f77c-eb47-4de2-b436-86c5d94f33b2"><h1>Firefly Optimization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:e41568a3-d14f-45f8-bc0c-3bb7112c0cf0 -->
+<!-- ContentItem:f5dc5b6f-9845-4f9f-b032-1c39fe2a2fc9 -->
+<ul>
+<li>Neighborhood Search
+<ul>
+<li>Search the area toward best known solution</li>
+<li>Closer and Brighter: More Attractive
+<ul>
+<li>Similar to gravity</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Tweaks
+<ul>
+<li>Number of fireflies</li>
+<li>Range of possible values</li>
+<li>How fast fireflies move</li>
+</ul>
+</li>
+<li>Features
+<ul>
+<li>Works better for linear problems</li>
+<li>Optimality not guaranteed</li>
+<li>Can suffer from sparseness problems</li>
+</ul>
+</li>
+</ul>
+
+<img alt="MichalewiczFunction.jpg" src="img/f5dc5b6f-9845-4f9f-b032-1c39fe2a2fc9.jpg" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/63e65212-8145-4d43-a513-a1de1b042f9b.jpg'>
+<aside class="notes"><p>Sparseness - There is a lot of matter in the universe, but it is concentrated in relatively small clusters across very large expanses of space.</p>
+</aside>
+<a id="41b55ebb-f2ac-40ff-91eb-93515909bc70">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/2e94ffff-1b8a-4feb-a124-1abb5ad9837d.jpg'>
+<aside class="notes"><p>Amoeba - Image Source: <a href="https://www.bing.com/images/search?view=detailV2&amp;id=EBB4AB9017C8B60D59B62DFA6082C200EB85A47B&amp;thid=OIP.Po_DPC-e6rN5LDDtqM3I9wHaEr&amp;mediaurl=https%3A%2F%2Fc2.staticflickr.com%2F6%2F5046%2F5228996748_08534ffdf4_z.jpg&amp;exph=404&amp;expw=639&amp;q=amoeba&amp;selectedindex=40&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;vt=0&amp;eim=0">https://www.bing.com/images/search?view=detailV2&amp;id=EBB4AB9017C8B60D59B62DFA6082C200EB85A47B&amp;thid=OIP.Po_DPC-e6rN5LDDtqM3I9wHaEr&amp;mediaurl=https%3A%2F%2Fc2.staticflickr.com%2F6%2F5046%2F5228996748_08534ffdf4_z.jpg&amp;exph=404&amp;expw=639&amp;q=amoeba&amp;selectedindex=40&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;vt=0&amp;eim=0</a></p>
+</aside>
+<a id="8a151f27-8fce-4caf-aed5-601b62d2535f">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c4c0fd86-2477-43dd-bcde-0ca090a478df.gif'>
+<aside class="notes"><p>Amoeba Optimization Animation</p>
+</aside>
+<a id="2e8fb8a0-f472-42f1-b0db-f1459b1dc29e">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Solutions - Image Source: <a href="https://msdn.microsoft.com/magazine/dn201752">https://msdn.microsoft.com/magazine/dn201752</a></p>
+</aside>
+<a id="645eb6ae-0039-4a19-9cfa-5db982588953"><h1>Amoeba Optimization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:30f7ca23-95f9-470c-8ff8-7dc29ab7fe1d -->
+<img alt="Amoeba Optimization - Solutions.png" src="img/30f7ca23-95f9-470c-8ff8-7dc29ab7fe1d.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="1a14d303-366c-4e6f-987c-7b69f352172d"><h1>Amoeba Optimization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:5d3e99c2-e4f3-44b8-9c46-7b26ab714ab3 -->
+<pre><code>initialize the amoeba with n (size) locations
+loop maxEpochs times
+    calculate new possible solutions
+        contracted - midway between centroid and worst
+        reflected - contracted point reflected across centroid
+        expanded - beyond reflected point by a constant factor
+    if any solution is better than the current
+        replace worst value with best value from new solution
+    else
+        shrink (multiple contract) all lesser nodes toward the best
+    increment epoch count
+end loop
+return best position found
+</code></pre>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/b5e76016-23a5-4fa1-adda-9ffe9e44b473.png'>
+
+<a id="87243249-5369-4ab9-85a4-99e1df62a458">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="2605554b-1bf0-40ee-b50c-997ff46b7bb8"><h1>Amoeba Optimization</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:4da9c197-d509-4a48-82bf-19565959a5a7 -->
+<!-- ContentItem:f5dc5b6f-9845-4f9f-b032-1c39fe2a2fc9 -->
+<ul>
+<li>Neighborhood Search
+<ul>
+<li>Start with random locations</li>
+<li>Explore neighbors based on amoeba movement</li>
+<li>Surround the solution, then contract to it</li>
+</ul>
+</li>
+<li>Tweaks
+<ul>
+<li>Size of the amoeba
+<ul>
+<li>&gt; # of search dimensions</li>
+</ul>
+</li>
+<li>Number of executions
+<ul>
+<li>Handle local minima</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Features
+<ul>
+<li>Optimality no guaranteed</li>
+<li>Can suffer from sparseness problems</li>
+</ul>
+</li>
+</ul>
+
+<img alt="MichalewiczFunction.jpg" src="img/f5dc5b6f-9845-4f9f-b032-1c39fe2a2fc9.jpg" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c1f742c7-2c87-49c4-a180-f01242a39a86.jpg'>
+<aside class="notes"><p>Image Source: <a href="https://www.bing.com/images/search?view=detailV2&amp;ccid=8oMAsr1U&amp;id=2A0C59516810E752818A60463CE220265CCC5B91&amp;thid=OIP.8oMAsr1UW6ki0_Fp44GRrAHaEx&amp;mediaurl=https%3a%2f%2fflatworldknowledge.lardbucket.org%2fbooks%2fa-primer-on-communication-studies%2fsection_15%2ff28300b2bd545ba922d3f169e38191ac.jpg&amp;cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.f28300b2bd545ba922d3f169e38191ac%3frik%3dkVvMXCYg4jxGYA%26pid%3dImgRaw%26r%3d0&amp;exph=2250&amp;expw=3488&amp;q=what+can+we+do+with+this+technology&amp;simid=607993663642277342&amp;FORM=IRPRST&amp;ck=4D70700BE5EA3B3D1E9C502E3FAE7C5E&amp;selectedIndex=9&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;ajaxserp=0">https://www.bing.com/images/search?view=detailV2&amp;ccid=8oMAsr1U&amp;id=2A0C59516810E752818A60463CE220265CCC5B91&amp;thid=OIP.8oMAsr1UW6ki0_Fp44GRrAHaEx&amp;mediaurl=https%3a%2f%2fflatworldknowledge.lardbucket.org%2fbooks%2fa-primer-on-communication-studies%2fsection_15%2ff28300b2bd545ba922d3f169e38191ac.jpg&amp;cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.f28300b2bd545ba922d3f169e38191ac%3frik%3dkVvMXCYg4jxGYA%26pid%3dImgRaw%26r%3d0&amp;exph=2250&amp;expw=3488&amp;q=what+can+we+do+with+this+technology&amp;simid=607993663642277342&amp;FORM=IRPRST&amp;ck=4D70700BE5EA3B3D1E9C502E3FAE7C5E&amp;selectedIndex=9&amp;qft=+filterui%3alicenseType-Any&amp;ajaxhist=0&amp;ajaxserp=0</a></p>
+</aside>
+<a id="126c70e0-5e4b-4fb8-89ac-eb2a6ff7be14"><h1>What Can We Do With This Stuff?</h1></a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="ae9400c6-295c-4eac-a452-f29b46414c3c"><h1>Gradient Descent</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:2efb79ef-f83f-4e01-af5c-a8995f355d62 -->
+<!-- ContentItem:b14eaae1-4711-4ca2-960b-ba7d75667230 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Optimization algorithm used to minimize the cost function of a model</p>
+</blockquote>
+<ul>
+<li><p>Shifts the parameters in the opposite direction of the cost gradient</p>
+<ul>
+<li><p>The 1st derivative of the cost function</p>
+</li>
+<li><p>Represents the slope of that function</p>
+</li>
+</ul>
+</li>
+<li><p>Hyperparameters include:</p>
+<ul>
+<li><p>Number of iterations</p>
+</li>
+<li><p>Learning rate</p>
+</li>
+<li><p>Convergence criteria</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Stochastic</strong> Gradient Descent</p>
+<ul>
+<li>Updates parameters using a subset of data each cycle</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
+<img alt="AI Models - Gradient Descent - 400x800.png" src="img/b14eaae1-4711-4ca2-960b-ba7d75667230.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in fade-out" data-background-transition="fade-in fade-out">
+
+<a id="b1cbd255-5152-4558-944b-9ba3e902fa50"><h1>Deep Neural Networks</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:67edd3bb-209f-4808-b4a2-cde3968b1964 -->
+<img alt="DNN.png" src="img/67edd3bb-209f-4808-b4a2-cde3968b1964.png" />
+</section>
+
+
+<section data-transition="slide-in fade-out" data-background-transition="fade-in fade-out" data-background='img/2c292b6c-c30a-434c-bda9-bafdaa9fe689.png'>
+<aside class="notes"><p>This data has obviously been cleaned. There are no major outliers and data appears fairly consistent.
+In this case, it represents the distance travelled on a train between stations at various points in time.</p>
+</aside>
+<a id="7d843486-629e-4172-9476-76197d6547b7">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="fade-in slide-out" data-background-transition="fade-in fade-out" data-background='img/a3a2b6ff-8588-4925-8d50-c6af8d86635f.png'>
+<aside class="notes"><p>It is also clearly linear so we can easily add a best fit line to the data</p>
+</aside>
+<a id="7f8d5089-c696-446a-b353-90e3a67ba020">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="b554e246-f939-4c90-90be-74e069b9c284"><h1>Linear Model</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:a8363ac9-93bf-43c0-a9f7-9c29445905f8 -->
+<!-- ContentItem:d19223dc-ec19-4348-801e-4a05333f33a3 -->
+<aside class="notes"><ul>
+<li>Input = Independent Variable</li>
+<li>Output = Dependent Variable</li>
+<li>Weight and Bias are Parameters of the Model</li>
+<li>MSE = Mean Squared Errror</li>
+<li>Cost Function (Loss Function) determines how well the predictions match reality</li>
+</ul>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Input Variable</td>
+<td>X</td>
+</tr>
+<tr>
+<td>Output Variable</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Weight Parameter</td>
+<td>M</td>
+</tr>
+<tr>
+<td>Bias Parameter</td>
+<td>B</td>
+</tr>
+<tr>
+<td>Linear Equation</td>
+<td>Y=mX+b</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+<td style="text-align: left;">
+<img src="img/d19223dc-ec19-4348-801e-4a05333f33a3.png" alt="AI Models - Single Input Linear - 1280x720.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="1a894f9a-6d1f-4511-aabf-e397d1b1b52a"><h1>ML's Linear Linchpin</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:758cceee-24e1-482f-9d1a-1f3d345d4e96 -->
+<!-- ContentItem:9ea2e21a-1d4c-4e64-b450-cf13291630b2 -->
+<aside class="notes"><p>The power of AI is based primarily on 8th grade mathematics!</p>
+<p>We'll discuss more about linear-separability when we get to model design.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Y = mX + B</p>
+</blockquote>
+<ul>
+<li><p>Every neuron gets its value from a linear transformation</p>
+</li>
+<li><p>Multiple inputs result in a sum of the linear transformations</p>
+<ul>
+<li>The sum of a linear transformation is linear</li>
+</ul>
+</li>
+<li><p>Only linearly-separable functions can be modeled without a non-linear activation</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/9ea2e21a-1d4c-4e64-b450-cf13291630b2.png" alt="AI Models - Annotated Single Input Linear - 640x360.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="30f35e81-4658-4b72-aefe-2574e78f0d30"><h1>Model Parameters</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:25c0b05e-b191-4c07-8f01-bcf81f611551 -->
+<!-- ContentItem:0961b3c9-8c97-499d-bb1c-71734b5b089f -->
+<aside class="notes"><p>The goal of the training process is to find the values of our parameters that best predict the output</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p><strong>Parameters</strong>: Internal values learned during training</p>
+<ul>
+<li><p>Define the relationship between input and output</p>
+</li>
+<li><p>Adjusted to minimize prediction error</p>
+</li>
+</ul>
+</li>
+<li><p>In Linear Regression: <code>Y = mX + b</code></p>
+<ul>
+<li><p><strong>m</strong>: Slope (Weight) - The influence of X on Y</p>
+</li>
+<li><p><strong>b</strong>: Intercept (Bias) - Shifts the output vertically</p>
+</li>
+</ul>
+</li>
+<li><p>In more complex models:</p>
+<ul>
+<li><p>Counts include weights/biases across layers</p>
+</li>
+<li><p>Can capture non-linear relationships</p>
+</li>
+<li><p>Parameter counts are a proxy for complexity</p>
+</li>
+<li><p>GPT-4 uses roughly 1.8 trillion parameters</p>
+</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/0961b3c9-8c97-499d-bb1c-71734b5b089f.png" alt="Model Parameters.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="07ebe50d-c195-4031-837a-7a73e9859297"><h1>Error Function</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:4cca160f-5d25-4474-b017-cd31e409d2cb -->
+<!-- ContentItem:92ba6edf-733d-4056-931a-41ff30733ff0 -->
+<aside class="notes"><ul>
+<li><p>It may be difficult to see, but the bias does also contribute to the error, just by  far less that the weight.</p>
+</li>
+<li><p>This makes sense because the weight is multiplied by the input, the bias is just added.</p>
+</li>
+<li><p>Think about what happens if the slope is perpendicular to the expected line.</p>
+<ul>
+<li>The error for every point will be large, except for the area near where the lines cross.</li>
+</ul>
+</li>
+</ul>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>X-Axis: The value of the weight (m)</li>
+<li>Y-Axis: The value of the bias (b)</li>
+<li>Z-Axis: The size of the error</li>
+</ul>
+<p>The weight (m) often has a greater effect on the error than the bias (b)</p>
+
+</td>
+<td style="text-align: left;">
+<img src="img/92ba6edf-733d-4056-931a-41ff30733ff0.png" alt="Linear Regression - Error Function Plot - Smaller.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="6e18bf42-6365-4ff9-9968-54e9f04f7ea5"><h1>Training the Model</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:51aea5b9-beab-4a8c-80ed-28b2297bb8d0 -->
+<!-- ContentItem:3d890146-5e25-4c62-ab36-2b0c82dbd984 -->
+<aside class="notes"><p>We could use any optimization algorithm to train the model. In fact, I have a demo where I use Amoeba Optimization to train a model. However, the most common optimization algorithm used in training neural networks is Gradient Descent.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Objective: Minimize the error
+<ul>
+<li>Error: The difference between the predicted value and the actual value</li>
+<li>MSE: Mean Squared Error - Avg of the squared differences between predicted and actual</li>
+</ul>
+</li>
+<li>Means: Gradient Descent Optimization
+<ul>
+<li>Nearly any Optimization algorithm can be used</li>
+<li>Gradient Descent is the most common/suited</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/3d890146-5e25-4c62-ab36-2b0c82dbd984.gif" alt="training_animation.gif" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="47061c9b-b675-4760-8fc3-27c57e0e45d0"><h1>Linear Regression Demos</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:c24ab39e-99c7-482b-825b-a79d8e004a6d -->
+<!-- ContentItem:36bf5baa-91e0-4305-86b2-85d65c93c003 -->
+<aside class="notes"><ul>
+<li>Demo 1 - C# code demonstrating a linear regression using train timings</li>
+<li>Demo 2 - Spreadsheet modeleling the discrete inputs/outputs of an AND gate</li>
+<li>Demo 3 - Spreadsheet modeleling an inverse-proportionality relationship</li>
+</ul>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Linear Regression - <a href="https://github.com/bsstahl/AIDemos/tree/master/CraftingAI/src/GradientDescent/LinearRegression">C# Code</a></li>
+<li>AND Gate Model - <a href="https://github.com/bsstahl/AIDemos/tree/master/CraftingAI/AND%20Gate%20Model.xlsx">Excel</a></li>
+<li>Maintainability Model - <a href="https://github.com/bsstahl/AIDemos/tree/master/CraftingAI/Maintainability%20Model.xlsx">Excel</a></li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/36bf5baa-91e0-4305-86b2-85d65c93c003.jpg" alt="Linear Model Demos 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="71736eb2-51f0-4371-962c-e811c5aad331"><h1>Mathematics</h1></a>
+<!-- Layout:ImageWithCaption -->
+<!-- ContentItem:05de858d-cebf-4e43-a9ee-74419ce774f6 -->
+<!-- ContentItem:6d11eeb3-f927-4347-867a-e20b89d32799 -->
+<aside class="notes"><p>The use of Linear Algebra and matrix multiplication in machine learning models serves  as a mathematical optimization that enhances computational efficiency and scalability.  This approach allows for parallel processing of multiple variables, making it faster and  more efficient than traditional loop-based methods. The same results can be achieved, however, through  traditional methods, as long as you have a few million years to train a large model.</p>
+</aside>
+<img alt="Feynman - QED - 600x400.png" src="img/6d11eeb3-f927-4347-867a-e20b89d32799.png" />
+<h2><p><small>...we've invented a fantastic array of tricks and gimmicks for putting together the numbers, without  actually doing it. We don't actually [apply <span class="math">\(Y = mX + b\)</span> for every neuron] We do it by the tricks of  mathematics, and that's all. So, we're not going to worry about that. You don't have to know about  [Linear Algebra]. All you have to know is what it is, tricky ways of doing something which would be  laborious otherwise.</small></p>
+<hr />
+<p><small>With apologies to Professor Feynman, who was talking about the tricks of Calculus as applied
+to Physics, not the tricks of Linear Algebra as applied to Machine Learning.</small></p>
+</h2>
+</section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Shown here are just 4 of the 1000 records in our data set. Above that, is the top-level Code to perform the train/test cycle.</p>
+</aside>
+<a id="7ec0327a-31f1-4a3b-9c9a-f1a4ba0506f3"><h1>Train & Test Cycle</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:b7bc5109-1b1e-46d6-8030-180af857319c -->
+<img alt="Train and Test Cycle.png" src="img/b7bc5109-1b1e-46d6-8030-180af857319c.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/007e403c-08f0-499a-add9-12cff2e7906b.png'>
+
+<a id="0ff74b67-83cb-4fbf-8408-92f8705264b0">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/afa44898-9f31-4011-a457-e59ddafb887a.png'>
+
+<a id="b32cd581-b58a-46a3-ac0d-86368d67b189">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/f96d34f6-c5b2-4a6a-95a1-e793245afbcd.png'>
+
+<a id="338cad77-48d6-40df-9ddc-886fc1942ce8">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/3b769de0-18d7-48ce-b508-659f40b54da4.png'>
+
+<a id="e8201835-9fbc-41b9-99c5-f178e22b86ff">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/3dc6b32d-7df4-469a-995e-8eb7781e5115.png'>
+
+<a id="bf1d635d-c34f-4b89-afa9-881b62b05470">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/01923bec-dc28-4de5-b40a-70791b182886.png'>
+
+<a id="3eff8033-459e-49e1-894b-e2fb5f741b79">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/a60ec9d0-8588-48ee-a9e6-48ad3e3a7500.png'>
+
+<a id="9aa6a523-cae0-4324-bf91-ee9704169138">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/b61618cd-de4d-461d-aa36-9ce3b082653b.png'>
+
+<a id="0856338a-493b-4069-96d2-1984a46011ef">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Of course, there are simpler ways to do this type of linear regression. We are using this example  to demonstrate the process of training a model, not to show the simplest way to solve this problem.</p>
+</aside>
+<a id="50bc745b-52ef-4ff2-a094-3f4b4860d1a6"><h1>Railroad Times Model</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:d19223dc-ec19-4348-801e-4a05333f33a3 -->
+<img alt="AI Models - Single Input Linear - 1280x720.png" src="img/d19223dc-ec19-4348-801e-4a05333f33a3.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="a5e35093-a633-4949-b8d9-0ee88c83d8c6"><h1>Linear Regression Model</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:fba5030a-7266-422d-b8ff-7ab916c0692c -->
+<!-- ContentItem:fb26c0f9-4235-410b-a3f8-38011df47d55 -->
+
+<table><tr><td style="vertical-align:top;">
+<h4 id="predict-the-unknown-values-in-a-linear-equation">Predict the unknown values in a linear equation​</h4>
+<ul>
+<li>Given X (time), predict Y (location)​
+<ul>
+<li><code>Y = mX + b​</code></li>
+</ul>
+</li>
+<li>Find the best values for <strong>m</strong> and <strong>b</strong> ​
+<ul>
+<li>Minimize total error</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="vertical-align:top;">
+<img alt="Regression Model.png" src="img/fb26c0f9-4235-410b-a3f8-38011df47d55.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="19a0cfa6-5120-48c0-a4b9-d089cdd47855"><h1>Voter Model</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:1ee0a6fe-6fab-4b65-a219-ebf8d454b532 -->
+<img alt="Voter Network Diagram - 673x800.png" src="img/1ee0a6fe-6fab-4b65-a219-ebf8d454b532.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>For our discussions today, we will be focused only on the Sigmoid activation function as one of the most common and most flexible activations. You should experiment with many to determine which works better for your problem.</p>
+</aside>
+<a id="81d9e46f-b176-4ec7-8037-93cf97ff88f3">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a8be0761-428c-420e-9ea5-b68b6cfe29cb -->
+<img alt="Sigmoid Function.png" src="img/a8be0761-428c-420e-9ea5-b68b6cfe29cb.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/abb3a7ef-698a-4656-8c82-18c92654b4a5.jpg'>
+
+<a id="98b523b8-b34e-4f2a-aa08-f2f8147aa0e0">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:b673afe2-0f7e-47c2-b79d-d0ed96fd47f4 -->
+<h1 id="ml-demo">ML Demo</h1>
+<h4 id="using-amoeba-optimzation-to-train-an-ml-model">Using Amoeba Optimzation to Train an ML Model</h4>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/5196e48c-52eb-47f8-89ba-76d6182f2507.png'>
+
+<a id="016ab8d7-5201-4048-9a05-a90c0cde731f">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/2d1fdc9f-59c0-4ac4-a87e-1ece40b23f52.png'>
+
+<a id="36500cb1-b69e-477c-a9db-7d29156acaac">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/3ee8ebde-40ff-4b19-ab94-29cb0719712c.png'>
+
+<a id="37e1326c-4234-4b28-9cbf-9fb2a586d1e9">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/21cb2c43-9958-463c-83d4-79e899929cab.png'>
+
+<a id="f357f780-5ab3-4d3f-ae8a-c3adcd6f61ca">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/0796cf13-5499-4b5c-a28b-d78574ae0e5a.png'>
+
+<a id="b0a4d97c-d61b-4822-ad34-023e964c9036">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/838a5ad5-22de-4598-9992-312140d010a4.png'>
+
+<a id="2bbcd641-044f-4ff2-8015-00321106fb8b">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c634de1e-fc70-4bc7-9a26-4b1d99f0030d.png'>
+
+<a id="50cb8798-4775-4693-9067-614e1f0d5b06">&nbsp;</a>
+<!-- Layout:FullPage -->
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="872f6768-7313-45af-a4a5-8b6e8bf6173a"><h1>More Bio-Inspired</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:3e6db3cb-f9f1-4d5d-a5bc-5976833e6c4e -->
+<!-- ContentItem:81a8bca1-b8b0-4451-8aa4-5dea8721a432 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Roach Infestation Optimization</li>
+<li>Particle Swarm Optimization</li>
+<li>Multi-Swarm (Birds) Optimization</li>
+<li>Bacterial Foraging Optimization</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/81a8bca1-b8b0-4451-8aa4-5dea8721a432.jpg" alt="More Algorithms 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="1af9d72c-27c3-4375-920a-739e96597a14"><h1>Solving Tractable Problems</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:70b5a4a2-82a0-40a9-b817-2c64f142ff1d -->
+<ul>
+<li><p>Understand the Problem Deeply</p>
+<ul>
+<li><p>Clarify inputs, outputs, constraints, and goals</p>
+</li>
+<li><p>Is optimality required? Can constraints be relaxed?</p>
+</li>
+<li><p>Identify if it can be broken into reusable parts?</p>
+</li>
+</ul>
+</li>
+<li><p>Classify the Problem Type</p>
+<ul>
+<li><p>Search? Optimization? Graph traversal? Dynamic programming candidate?</p>
+</li>
+<li><p>Are brute-force or exponential-time solutions feasible?</p>
+</li>
+<li><p>What tools do we have that can help? Can we buy vs build?</p>
+</li>
+</ul>
+</li>
+<li><p>Implement and Test</p>
+<ul>
+<li><p><strong>Try a naive solution 1st</strong></p>
+</li>
+<li><p>Use test cases to validate correctness and performance</p>
+</li>
+<li><p>Optimize as needed / Start over if necessary</p>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="3ee45253-e7e2-4344-bc73-2ddd2e0487c8"><h1>Resources - Page 1</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:1aae5c88-ed38-43a3-9814-4be3960767ce -->
+<!-- ContentItem:91080757-d2f8-4d59-9a7b-8766274c29b5 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Code Samples</p>
+<ul>
+<li><p><a href="https://github.com/bsstahl/DPDemo">Dynamic Programming</a></p>
+</li>
+<li><p><a href="https://github.com/bsstahl/AIDemos">AI Demos</a></p>
+</li>
+<li><p><a href="https://github.com/TheAlgorithms">The Algorithms Repo</a></p>
+</li>
+</ul>
+</li>
+<li><p>My Articles/Presentations</p>
+<ul>
+<li><p><a href="http://www.cognitiveinheritance.com/post/Scalable-Decision-Making.aspx">Scalable Decision Making</a></p>
+</li>
+<li><p><a href="http://www.cognitiveinheritance.com/post/AI-That-Can-Explain-Why.aspx">AI That Can Explain Why</a></p>
+</li>
+<li><p><a href="http://www.cognitiveinheritance.com/post/An-Example-of-a-Hybrid-AI-Implementation.aspx">An Example of a Hybrid AI Implementation</a></p>
+</li>
+<li><p><a href="https://www.youtube.com/watch?v=zZAobExOMB0&amp;list=FLq-iLd7rfmqSIFiujBGIRSw&amp;index=2">Building AI Solutions with Google OR-Tools</a></p>
+</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/91080757-d2f8-4d59-9a7b-8766274c29b5.png" alt="Amazing Algorithms - Short Workshop - QR.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="7526d404-5366-4591-8bd6-9d29dc9d3c1f"><h1>Resources - Page 2</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:6244bf65-7486-44b7-bf76-dbe231b14ab9 -->
+<!-- ContentItem:91080757-d2f8-4d59-9a7b-8766274c29b5 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Academic Resources</p>
+<ul>
+<li><p><a href="https://www.coursera.org/learn/discrete-optimization">Optimization - Coursera Course</a></p>
+</li>
+<li><p><a href="http://people.cs.clemson.edu/%7Ebcdean/dp_practice/">Clemson University</a></p>
+</li>
+</ul>
+</li>
+<li><p>Other Articles</p>
+<ul>
+<li><p><a href="https://msdn.microsoft.com/en-us/magazine/mt147244.aspx">MSDN Magazine - Firefly Optimization</a></p>
+</li>
+<li><p><a href="https://msdn.microsoft.com/magazine/gg983491">MSDN Magazine - Bee Colony Optimization</a></p>
+</li>
+<li><p><a href="https://msdn.microsoft.com/magazine/dn201752">MSDN Magazine - Amoeba Optimization</a></p>
+</li>
+<li><p><a href="https://msdn.microsoft.com/magazine/hh781027">MSDN Magazine - Ant Colony Optimization</a></p>
+</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/91080757-d2f8-4d59-9a7b-8766274c29b5.png" alt="Amazing Algorithms - Short Workshop - QR.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="84b7f3a9-57c1-42a8-8e9d-1f79c6b83f01"><h1>Solving Your Problems</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:00138025-38cd-4992-9c57-098d571e33ce -->
+
+<table><tr><td style="vertical-align:top;">
+<p>Would you like to try to model a problem from one of your domains?</p>
+
+</td>
+</tr></table></section>
+
+
+        </div>
+        <div class="footer-left">Amazing Algorithms</div>
+        <div class="footer-right">Barry S. Stahl - Mastodon:@bsstahl@cognitiveinheritance.com - Blog:http://www.cognitiveinheritance.com</div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <!-- Plugins -->
+    <script src="plugin/highlight/highlight.js"></script> 
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+
+        Reveal.initialize({
+            hash: true,
+			width: 1920,
+			height: 1080,
+            transition: 'slide',
+            backgroundTransition: 'fade',
+            showNotes: window.location.search.match(/print-pdf/gi) ? true : false,
+            plugins: [RevealHighlight, RevealMarkdown, RevealSearch, RevealNotes, RevealMath, RevealZoom ]
+        });
+    </script>
+</body>
+</html>
