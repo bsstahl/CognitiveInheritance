@@ -87,7 +87,7 @@
 <h2>The State-Machine Tangle: When a Strike Isn’t Just a Strike</h2>
 <p>Systems are shaped by the states they recognize and the transitions between them. For a hundred years, baseball’s model was elegantly spare—every pitch lived in one of two states: a ball or a strike. Nothing to memorize, nothing to manage. But with the introduction of ABS challenges, things quietly got more complicated. Now, what used to be a simple call must traverse a web of possible verdicts before it’s settled.</p>
 <p>Instead of the old binary, we suddenly have six distinct states: an “unconfirmed” ball or strike (the original umpire call, lingering in limbo); a “confirmed” ball or strike (the human call, validated by the machine); and two overturned results: a strike ruled a ball, or a ball ruled a strike by ABS review. Each is a separate status with its own implications for the game and its participants.</p>
-<p>Here’s the twist: none of this scaffolding exists for the sake of baseball itself. These aren’t states that matter to the nature of pitching or hitting, but layers imposed to manage and rationalize a half-technological, half-human system. What once took a single mental step now takes six, not to deepen the game, but to patch over the seams between old and new.</p>
+<p>Here’s the twist: none of this scaffolding exists for the sake of baseball itself. These aren’t states that matter to the nature of pitching or hitting, but layers imposed to manage and ration access to truth.</p>
 <p>To appreciate just how much complexity the ABS system introduces, compare it to the pre-ABS state machine—there were only two possible destinations for every pitch:</p>
 <pre><code class="language-mermaid">stateDiagram-v2
     [*] --&gt; Ball: Ump Calls Ball
@@ -96,7 +96,7 @@
     Ball : Final_state: Ball
     Strike : Final_state: Strike
 </code></pre>
-<p>With the new ABS hybrid system, MLB has introduced a set of intermediate states and transitions that eventually result in the same Ball or Strike call. The diagram below illustrates the expanded state machine that now governs the fate of every pitch:</p>
+<p>With the new ABS hybrid system, MLB has introduced a set of intermediate states and transitions that eventually result in the same Ball or Strike call. The diagram below illustrates the expanded system:</p>
 <pre><code class="language-mermaid">stateDiagram-v2
     [*] --&gt; Unconfirmed_Ball: Ump Calls Ball
     [*] --&gt; Unconfirmed_Strike: Ump Calls Strike
@@ -113,6 +113,10 @@
     Strike : Final_state: Strike
 
 </code></pre>
+<h2>A Live Counterexample: WPBL</h2>
+<p>The Women’s Pro Baseball League (WPBL), currently operating out of Springfield, Illinois, offers a useful contrast. The league does not use MLB’s ABS challenge layer, and the result is a cleaner game flow: each pitch resolves immediately into the same two-state model baseball has always used.</p>
+<p>That simplicity matters. Without challenge inventory, review choreography, and overturn bookkeeping, players and fans can focus on pitch execution, sequencing, and situational strategy instead of state management. In systems terms, WPBL avoids adding intermediate states that do not improve the core interaction.</p>
+<p>If the goal is to preserve baseball as a game of rhythm and readable outcomes, WPBL shows that the simpler model is not outdated—it is often the better design.</p>
 <h2><strong>IV. The Descent: Complexity Has a Cost</strong></h2>
 <ul>
 <li>Explain why added states matter in any system:
