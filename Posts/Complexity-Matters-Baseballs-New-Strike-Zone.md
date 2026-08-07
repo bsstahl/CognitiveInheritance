@@ -90,16 +90,17 @@ Fans and broadcasters inherit this complexity too. Instead of processing a strai
 
 This is the key consequence of hybridization: once process becomes strategic, process begins to shape behavior. The system no longer just adjudicates baseball; it influences how baseball is played, watched, and discussed in real time. That is the meta-game—an added layer of state management that did not previously exist, and that competes with the game itself for cognitive bandwidth.
 
-## **VI. The Return: The Simpler, Better Alternative**
+## The Simpler, Better Alternative
 
-- Present full ABS (no challenges) as the *simplest* system, not the most technical:
-  - Two states  
-  - Zero transitions  
-  - No challenge inventory  
-  - No meta‑decisions  
-  - No artificial scaffolding  
-- It’s a deterministic function: **pitch in → call out**.  
-- The irony: the fully automated system is the least complex and the most predictable.
+The strongest alternative is not partial automation but full automation at the point of the strike-zone call. In this model, ABS determines every ball-or-strike decision, and the home-plate umpire communicates that result immediately while continuing to handle all other on-field responsibilities at the plate.
+
+This preserves what matters most from both perspectives. From a correctness standpoint, each pitch gets a consistent, machine-judged strike-zone ruling. From a game-flow standpoint, there is no challenge inventory, no review choreography, and no intermediate call states to track. The decision remains binary and immediate: each pitch resolves once, in real time, as ball or strike.
+
+Crucially, this approach removes the hybrid complexity rather than managing it. There are no provisional outcomes waiting for escalation, no strategic overhead about when to challenge, and no meta-process competing with the core contest between pitcher and hitter. The system does one thing—adjudicate the zone accurately—and does it the same way every time.
+
+In systems terms, full ABS at the decision point is the minimal-state design that still achieves the primary goal. It improves consistency without expanding the state machine, and it gives baseball a cleaner architecture: deterministic calls, lower cognitive load, and fewer failure points in high-leverage moments.
+
+In engineering terms, this is the difference between replacing a component and wrapping it in control scaffolding. Hybrid ABS wraps a flawed step with exception paths, escalation logic, and resource management rules. Full ABS replaces the decision component outright and keeps the interface simple: one input event (pitch), one authoritative output (ball or strike), no secondary workflow. That is classic complexity control—solve the core reliability problem at the source, minimize state, and avoid layering process where determinism will do.
 
 ## **VII. Closing Insight: Complexity Is a Choice**
 
