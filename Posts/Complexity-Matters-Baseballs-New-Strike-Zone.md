@@ -72,14 +72,13 @@ If the goal is to preserve baseball as a game of rhythm and readable outcomes, W
 
 ## **IV. The Descent: Complexity Has a Cost**
 
-- Explain why added states matter in any system:
-  - More transitions  
-  - More edge cases  
-  - More rules  
-  - More timing considerations  
-  - More opportunities for misalignment between intent and behavior  
-- Connect to software/system design: state explosion is a known source of fragility and user confusion.  
-- Complexity isn’t neutral — it shapes behavior and attention.
+Complexity is not just a technical property; it is a user-experience cost. Every additional state in a system introduces more transitions, and every transition introduces another chance for hesitation, disagreement, or error. What used to be instantaneous and final now carries conditional logic: who can challenge, when they can challenge, whether it succeeds, and how that outcome is interpreted in context. Even when the final output is still only ball or strike, the path to that output has become crowded.
+
+In system design, this is a familiar pattern. State growth tends to produce edge cases, and edge cases demand rules. Rules then require timing constraints, exception handling, and social coordination among participants. In baseball terms, that means more signaling, more pause points, and more moments where participants are managing process instead of playing. In software terms, it is state explosion: a known source of fragility, cognitive load, and surprising behavior.
+
+The important point is that this cost is not neutral. Added complexity reshapes attention. Players begin optimizing for challenge timing and inventory management. Fans must parse whether they just saw an ordinary call, a provisional one, or a reviewed and overturned outcome. Umpires and broadcasters inherit additional interpretive overhead. None of this directly improves the core act at the heart of the game: pitcher throws, batter reacts, umpire (or system) resolves.
+
+When complexity accumulates faster than value, the system becomes harder to trust, harder to follow, and harder to enjoy. That is the descent: not a dramatic failure, but a gradual shift where procedural scaffolding starts to overshadow the thing it was meant to support.
 
 ## **V. The Consequence: A Meta‑Game Emerges**
 
