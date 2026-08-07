@@ -82,13 +82,13 @@ When complexity accumulates faster than value, the system becomes harder to trus
 
 ## **V. The Consequence: A Meta‑Game Emerges**
 
-- Show how the six‑state system changes the lived experience:
-  - Catchers deciding whether to burn a challenge early.  
-  - Hitters signaling for challenges.  
-  - Managers tracking challenge inventory like a resource.  
-  - Fans parsing “confirmed” vs. “overturned” vs. “unconfirmed.”  
-- The game now includes a **state‑management layer** that didn’t exist before.  
-- This is the “darkest moment” — the realization that the system is now driving the experience.
+Once a system introduces optional review states, participants stop engaging only with the core activity and start managing the review mechanism itself. That is exactly what MLB’s challenge-based ABS model creates: a second game layered on top of baseball. The pitch is no longer just a contest between pitcher and hitter; it is also a resource decision about whether this specific moment is worth consuming part of a limited challenge budget.
+
+For catchers, this means constant triage. A close miss that could steal a strike might be worth a challenge early, but using one too soon can leave the defense exposed later when leverage is higher. Hitters face a mirrored decision: protect an at-bat now, or save the challenge for a later pitch sequence that might matter more. Managers, meanwhile, are pulled into inventory tracking—counting available challenges, anticipating future high-leverage spots, and balancing immediate correctness against late-game optionality.
+
+Fans and broadcasters inherit this complexity too. Instead of processing a straightforward call, they must now interpret whether a pitch was merely called, left unchallenged, challenged and confirmed, or challenged and overturned. The vocabulary and timing of the game shift from direct outcomes to procedural states. Attention moves from “what happened on the pitch” to “what state is this call currently in?”
+
+This is the key consequence of hybridization: once process becomes strategic, process begins to shape behavior. The system no longer just adjudicates baseball; it influences how baseball is played, watched, and discussed in real time. That is the meta-game—an added layer of state management that did not previously exist, and that competes with the game itself for cognitive bandwidth.
 
 ## **VI. The Return: The Simpler, Better Alternative**
 
