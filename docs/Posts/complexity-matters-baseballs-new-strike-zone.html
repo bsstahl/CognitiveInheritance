@@ -133,18 +133,11 @@
 <p>Crucially, this approach removes the hybrid complexity rather than managing it. There are no provisional outcomes waiting for escalation, no strategic overhead about when to challenge, and no meta-process competing with the core contest between pitcher and hitter. The system does one thing—adjudicate the zone accurately—and does it the same way every time.</p>
 <p>In systems terms, full ABS at the decision point is the minimal-state design that still achieves the primary goal. It improves consistency without expanding the state machine, and it gives baseball a cleaner architecture: deterministic calls, lower cognitive load, and fewer failure points in high-leverage moments.</p>
 <p>In engineering terms, this is the difference between replacing a component and wrapping it in control scaffolding. Hybrid ABS wraps a flawed step with exception paths, escalation logic, and resource management rules. Full ABS replaces the decision component outright and keeps the interface simple: one input event (pitch), one authoritative output (ball or strike), no secondary workflow. That is classic complexity control—solve the core reliability problem at the source, minimize state, and avoid layering process where determinism will do.</p>
-<h2><strong>VII. Closing Insight: Complexity Is a Choice</strong></h2>
-<ul>
-<li>Zoom out to the broader systems‑thinking lesson:
-<ul>
-<li>Hybrid solutions often create more complexity than either pure approach.</li>
-<li>Added states introduce friction, cognitive load, and unintended strategy.</li>
-<li>When designing systems — in baseball or in tech — the simplest model that achieves the goal is usually the most resilient.</li>
-</ul>
-</li>
-<li>Close with a crisp takeaway:<br />
-<strong>If the goal is accuracy and consistency, the path with the fewest states wins.</strong></li>
-</ul>
+<h2>Complexity Is a Choice</h2>
+<p>The deeper lesson here reaches far beyond baseball. Hybrid systems are often framed as pragmatic compromises, but they frequently inherit the weaknesses of both approaches while adding a new layer of coordination overhead. In MLB’s challenge-based ABS model, the goal was straightforward—improve strike-zone accuracy—yet the chosen implementation expanded the state machine, increased cognitive load, and introduced a meta-process that competes with the game itself.</p>
+<p>From an engineering perspective, this is a familiar failure mode. When a core function is unreliable, teams often add exception paths, overrides, and escalation logic around it instead of replacing the weak component directly. The result can be locally rational but globally complex: more states to track, more transitions to test, and more ways for behavior to drift from intent.</p>
+<p>The alternative is disciplined simplification. Define the primary objective, then choose the architecture with the fewest moving parts that reliably achieves it. For balls and strikes, that means deterministic ABS calls delivered in real time, with no challenge layer and no procedural detours. More generally, it means designing systems where correctness is built into the core path, not bolted on through secondary workflows.</p>
+<p>Complexity is not an inevitable byproduct of progress; it is a design decision. And when accuracy and consistency are the objective, the system with the fewest states usually wins.</p>
 
                     <h5>Tags: <a title="Tag: complexity" class="small" href="../Search/complexity.html">complexity</a>&nbsp;</h5>
                     <div class="share"><a href="../Permalinks/8e95e82d-55ec-44bc-a5a2-573d023274d0.html" rel="bookmark">Permalink</a></div>
