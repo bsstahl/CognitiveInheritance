@@ -13,7 +13,7 @@ ispublished: false
 showinlist: false
 buildifnotpublished: true
 publicationdate: 2026-06-19T07:00:00Z
-lastmodificationdate: 2026-06-19T07:00:00Z
+lastmodificationdate: 2026-08-07T00:00:00Z
 slug: complexity-matters-baseballs-new-strike-zone
 
 ---
@@ -29,7 +29,7 @@ Systems are shaped by the states they recognize and the transitions between them
 
 Instead of the old binary, we suddenly have six distinct states: an “unconfirmed” ball or strike (the original umpire call, lingering in limbo); a “confirmed” ball or strike (the human call, validated by the machine); and two overturned results: a strike ruled a ball, or a ball ruled a strike by ABS review. Each is a separate status with its own implications for the game and its participants.
 
-Here’s the twist: none of this scaffolding exists for the sake of baseball itself. These aren’t states that matter to the nature of pitching or hitting, but layers imposed to manage and rationalize a half-technological, half-human system. What once took a single mental step now takes six, not to deepen the game, but to patch over the seams between old and new.
+Here’s the twist: none of this scaffolding exists for the sake of baseball itself. These aren’t states that matter to the nature of pitching or hitting, but layers imposed to manage and ration access to truth.
 
 To appreciate just how much complexity the ABS system introduces, compare it to the pre-ABS state machine—there were only two possible destinations for every pitch:
 
@@ -42,7 +42,7 @@ stateDiagram-v2
     Strike : Final_state: Strike
 ```
 
-With the new ABS hybrid system, MLB has introduced a set of intermediate states and transitions that eventually result in the same Ball or Strike call. The diagram below illustrates the expanded state machine that now governs the fate of every pitch:
+With the new ABS hybrid system, MLB has introduced a set of intermediate states and transitions that eventually result in the same Ball or Strike call. The diagram below illustrates the expanded system:
 
 ```mermaid
 stateDiagram-v2
@@ -61,6 +61,14 @@ stateDiagram-v2
     Strike : Final_state: Strike
 
 ```
+
+## A Live Counterexample: WPBL
+
+The Women’s Pro Baseball League (WPBL), currently operating out of Springfield, Illinois, offers a useful contrast. The league does not use MLB’s ABS challenge layer, and the result is a cleaner game flow: each pitch resolves immediately into the same two-state model baseball has always used.
+
+That simplicity matters. Without challenge inventory, review choreography, and overturn bookkeeping, players and fans can focus on pitch execution, sequencing, and situational strategy instead of state management. In systems terms, WPBL avoids adding intermediate states that do not improve the core interaction.
+
+If the goal is to preserve baseball as a game of rhythm and readable outcomes, WPBL shows that the simpler model is not outdated—it is often the better design.
 
 ## **IV. The Descent: Complexity Has a Cost**
 
