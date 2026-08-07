@@ -70,7 +70,7 @@ That simplicity matters. Without challenge inventory, review choreography, and o
 
 If the goal is to preserve baseball as a game of rhythm and readable outcomes, WPBL shows that the simpler model is not outdated—it is often the better design.
 
-## **IV. The Descent: Complexity Has a Cost**
+## Complexity Has a Cost
 
 Complexity is not just a technical property; it is a user-experience cost. Every additional state in a system introduces more transitions, and every transition introduces another chance for hesitation, disagreement, or error. What used to be instantaneous and final now carries conditional logic: who can challenge, when they can challenge, whether it succeeds, and how that outcome is interpreted in context. Even when the final output is still only ball or strike, the path to that output has become crowded.
 
@@ -80,7 +80,7 @@ The important point is that this cost is not neutral. Added complexity reshapes 
 
 When complexity accumulates faster than value, the system becomes harder to trust, harder to follow, and harder to enjoy. That is the descent: not a dramatic failure, but a gradual shift where procedural scaffolding starts to overshadow the thing it was meant to support.
 
-## **V. The Consequence: A Meta‑Game Emerges**
+## A Meta-Process Emerges
 
 Once a system introduces optional review states, participants stop engaging only with the core activity and start managing the review mechanism itself. That is exactly what MLB’s challenge-based ABS model creates: a second game layered on top of baseball. The pitch is no longer just a contest between pitcher and hitter; it is also a resource decision about whether this specific moment is worth consuming part of a limited challenge budget.
 
