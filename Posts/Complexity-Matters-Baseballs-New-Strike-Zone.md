@@ -84,6 +84,8 @@ When complexity accumulates faster than value, the system becomes harder to trus
 
 Once a system introduces optional review states, participants stop engaging only with the core activity and start managing the review mechanism itself. That is exactly what MLB’s challenge-based ABS model creates: a second game layered on top of baseball. The pitch is no longer just a contest between pitcher and hitter; it is also a resource decision about whether this specific moment is worth consuming part of a limited challenge budget.
 
+From a domain-driven design perspective, this is a boundary problem. The core domain of baseball at this decision point is pitch adjudication: was it a ball or a strike? The challenge mechanism introduces a separate supporting subdomain—challenge inventory, escalation timing, and review strategy—that is orthogonal to that core judgment. Once that subdomain exists, participants optimize it, and system attention shifts away from the primary domain behavior.
+
 For catchers, this means constant triage. A close miss that could steal a strike might be worth a challenge early, but using one too soon can leave the defense exposed later when leverage is higher. Hitters face a mirrored decision: protect an at-bat now, or save the challenge for a later pitch sequence that might matter more. Managers, meanwhile, are pulled into inventory tracking—counting available challenges, anticipating future high-leverage spots, and balancing immediate correctness against late-game optionality.
 
 Fans and broadcasters inherit this complexity too. Instead of processing a straightforward call, they must now interpret whether a pitch was merely called, left unchallenged, challenged and confirmed, or challenged and overturned. The vocabulary and timing of the game shift from direct outcomes to procedural states. Attention moves from “what happened on the pitch” to “what state is this call currently in?”
@@ -109,5 +111,7 @@ The deeper lesson here reaches far beyond baseball. Hybrid systems are often fra
 From an engineering perspective, this is a familiar failure mode. When a core function is unreliable, teams often add exception paths, overrides, and escalation logic around it instead of replacing the weak component directly. The result can be locally rational but globally complex: more states to track, more transitions to test, and more ways for behavior to drift from intent.
 
 The alternative is disciplined simplification. Define the primary objective, then choose the architecture with the fewest moving parts that reliably achieves it. For balls and strikes, that means deterministic ABS calls delivered in real time, with no challenge layer and no procedural detours. More generally, it means designing systems where correctness is built into the core path, not bolted on through secondary workflows.
+
+In DDD terms, robust systems protect the core domain and resist importing process-heavy subdomains that compete with core outcomes.
 
 Complexity is not an inevitable byproduct of progress; it is a design decision. And when accuracy and consistency are the objective, the system with the fewest states usually wins.
