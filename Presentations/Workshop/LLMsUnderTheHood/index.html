@@ -1867,6 +1867,53 @@ have to do with how the Embeddings are encoded.</p>
 
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><ul>
+<li>What is the likely reference?</li>
+<li>When we change &quot;heavy&quot; to &quot;weak&quot;, what shifts?</li>
+</ul>
+<p>This exercise predicts contextual influence; it does not inspect
+measured attention weights from a particular model, layer, or head.</p>
+</aside>
+<a id="580fd075-3689-484a-a5b3-ff402bad8659"><h1>Exercise&colon; What Does "It" Mean?</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:c63d9d90-d304-4557-a370-54509e7dd9b8 -->
+<blockquote>
+<p>The robot could not lift the crate because <strong>it was too heavy</strong>.</p>
+</blockquote>
+<ol>
+<li>What does <strong>it</strong> most likely refer to?</li>
+<li>Rank which words should most influence that interpretation:
+<strong>robot · crate · heavy</strong></li>
+<li>Replace <strong>heavy</strong> with <strong>weak</strong>. What changes?</li>
+</ol>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><ul>
+<li>In the first sentence, &quot;heavy&quot; makes the crate the most
+likely referent because its weight explains the failed lift.</li>
+<li>In the second, &quot;weak&quot; makes the robot the most likely
+referent because its capability explains the same outcome.</li>
+</ul>
+<p>How does this contextualization relate back to the resume demo?</p>
+</aside>
+<a id="6a2d653b-8325-47a0-ab59-4d06859de51d"><h1>One Word Changes the Reference</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:71af99f8-e5f5-49ed-a9f3-f7cdfad60c11 -->
+<ul>
+<li><strong>heavy -&gt; crate</strong> : The crate's weight is why the lift failed</li>
+<li><strong>weak -&gt; robot</strong> : The robot's capability is why the lift failed</li>
+</ul>
+<p>The adjective changes which earlier noun best completes the causal
+relationship. <strong>Attention can carry contextual influence. It does not prove a faithful
+reasoning path or a correct answer.</strong></p>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
 <aside class="notes"><p>Take a break</p>
 </aside>
 <a id="75d96ac4-23d2-40b8-858e-38fd7a6fdf88">&nbsp;</a>
@@ -3308,44 +3355,6 @@ Let's look at an example of what this means.</p>
 
 </section>
 
-
-<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
-<a id="467285bf-308e-409c-976d-243540015f1a"><h1>Debug the Retrieval, Not the Prose</h1></a>
-<!-- Layout:MultiColumn -->
-<!-- ContentItem:143be033-546c-476f-a8ee-fd89d4886112 -->
-<!-- ContentItem:2caee473-3f0a-4044-87de-8657daf91068 -->
-<aside class="notes"><p>Run the broad query first and inspect the retrieved passages before judging the wording of the answer. Ask whether Beary retrieved the Consistency article, confused strong consistency with eventual consistency, or blended several sources. Then run the constrained query and verify that its citation supports the answer: make the first operation idempotent, retry after the second operation fails, and guarantee eventual delivery rather than immediate consistency. The production lesson is to inspect retrieval, constrain scope with metadata, and verify evidence instead of merely rewriting a fluent response.</p>
-</aside>
-<table><tr><td style="vertical-align:top;">
-<h2 id="ambiguous-query">Ambiguous Query</h2>
-<blockquote>
-<p>How do I keep data consistent between microservices?</p>
-</blockquote>
-<p><strong>Possible failure</strong></p>
-<ul>
-<li>Generic or database-centric advice</li>
-<li>Multiple articles blended together</li>
-<li>Fluent response with weak evidence</li>
-</ul>
-<p><strong>Inspect the retrieved sources before rewriting the answer.</strong></p>
-
-</td>
-<td style="vertical-align:top;">
-<h2 id="constrained-query">Constrained Query</h2>
-<blockquote>
-<p>According to <em>Critical C's — Consistency</em>, what happens if the database
-update succeeds but event publication fails?</p>
-</blockquote>
-<p><strong>Expected evidence</strong></p>
-<ul>
-<li>Make the first operation idempotent</li>
-<li>Retry the command after failure</li>
-<li>Guarantee eventual delivery, not immediate consistency</li>
-</ul>
-<p><strong>Constrain the scope. Verify the citation.</strong></p>
-
-</td>
-</tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
 <a id="a90739ca-6f34-43a1-9ed7-08c8a91a1f2f"><h1>No More Search Engines</h1></a>
