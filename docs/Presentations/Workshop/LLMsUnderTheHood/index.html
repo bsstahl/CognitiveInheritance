@@ -1999,11 +1999,13 @@ reasoning path or a correct answer.</strong></p>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="d660df12-e53d-4ec1-9203-3910d7f1b76e"><h1>Assigning Meaningful Labels</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:6db0f2bd-c79e-42c7-9950-bd46c5cd1fed -->
+<!-- ContentItem:b157ea51-8a23-46d1-ab78-0f88559d5784 -->
 <aside class="notes"><p>Introduce classification as the supervised-learning problem of assigning an input to one of several known categories. Position it as the cousin of the clustering work that follows: classification starts with labels, while clustering asks whether useful groups can be discovered without them.</p>
 </aside>
-<a id="d660df12-e53d-4ec1-9203-3910d7f1b76e"><h1>Assigning Meaningful Labels</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:6db0f2bd-c79e-42c7-9950-bd46c5cd1fed -->
+<table><tr><td style="vertical-align:top;">
 <ul>
 <li>Start with known labels:
 <ul>
@@ -2017,25 +2019,30 @@ reasoning path or a correct answer.</strong></p>
 <li>Then it predicts the best label for new inputs</li>
 </ul>
 
-</section>
-
+</td>
+<td style="text-align: left;">
+<img src="img/b157ea51-8a23-46d1-ab78-0f88559d5784.png" alt="MeaningfulLabels-800x800.png" />
+</td>
+</tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="7f22722b-7af3-48d4-923a-a7a105ce8ed9"><h1>Shape of a Classification Problem</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:93dc35bd-1262-48cb-92dc-db486992b0ba -->
+<!-- ContentItem:3dcaf7e9-1c04-4add-a1f4-69c5c469b781 -->
 <aside class="notes"><p>The ingredients to look for in real systems: labeled examples, features, target classes, a training process, and a prediction step.</p>
 </aside>
-<a id="7f22722b-7af3-48d4-923a-a7a105ce8ed9"><h1>Shape of a Classification Problem</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:93dc35bd-1262-48cb-92dc-db486992b0ba -->
+<table><tr><td style="vertical-align:top;">
 <ul>
-<li><p>Labeled examples show the model what the right answer looks like</p>
+<li><p>Labeled examples show what the right answer looks like</p>
 <ul>
 <li>Each example includes input data plus the correct label</li>
 </ul>
 </li>
 <li><p>Features are the details the model is allowed to use</p>
 <ul>
-<li>Measurements, properties, words, pixels, counts, or categories</li>
-<li>Chosen because they may help separate one label from another</li>
+<li>Measurements, properties, words, counts, or categories</li>
+<li>Chosen because they separate one label from another</li>
 </ul>
 </li>
 <li><p>Target classes are the labels the model is allowed to predict</p>
@@ -2044,14 +2051,17 @@ reasoning path or a correct answer.</strong></p>
 <li>The output must be one of these classes</li>
 </ul>
 </li>
-<li><p>Training searches for a pattern from features to target class</p>
+<li><p>Training finds patterns from features to target class</p>
 </li>
 <li><p>Prediction applies that pattern to an unlabeled input</p>
 </li>
 </ul>
 
-</section>
-
+</td>
+<td style="text-align: left;">
+<img src="img/3dcaf7e9-1c04-4add-a1f4-69c5c469b781.png" alt="ShapeOfAClassification-800x800.png" />
+</td>
+</tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
 <a id="355f047c-dcb6-49a3-8328-271137440c6f"><h1>Decision Boundaries</h1></a>
@@ -2605,12 +2615,15 @@ We need to combine metrics with visualizations and domain knowledge to assess cl
 </tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
-
 <a id="bb8fd71b-04e5-4756-80cc-a9a97ca05c8d"><h1>Normalization</h1></a>
-<!-- Layout:FullPage -->
+<!-- Layout:ImageRight -->
 <!-- ContentItem:6fad746a-1a8b-4397-abeb-e771809d1559 -->
+<!-- ContentItem:357d760a-d739-4919-9e0a-a377e6136037 -->
+
+<table><tr><td style="vertical-align:top;">
 <blockquote>
-<p>Mapping user and system text to validated, known-safe  representations to ensure consistent behavior and defend against  prompt injection</p>
+<p>Mapping text to known-safe representations to ensure
+consistent behavior &amp; defend against attacks</p>
 </blockquote>
 <ul>
 <li>Input Normalization
@@ -2622,6 +2635,7 @@ We need to combine metrics with visualizations and domain knowledge to assess cl
 <li>Output Normalization
 <ul>
 <li>Model output =&gt; known good response</li>
+<li>Avoid hallucinations &amp; bias</li>
 </ul>
 </li>
 <li>Disambiguating non-normalizable data
@@ -2632,8 +2646,11 @@ We need to combine metrics with visualizations and domain knowledge to assess cl
 </li>
 </ul>
 
-</section>
-
+</td>
+<td style="text-align: left;">
+<img src="img/357d760a-d739-4919-9e0a-a377e6136037.png" alt="Normalization-800x800.png" />
+</td>
+</tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/361345cd-1993-4642-936d-2f633ed8d009.png'>
 
@@ -2895,8 +2912,8 @@ This is a privacy concern, especially for sensitive data.</li>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
 <aside class="notes"><p>Expected ranking: B, A, C, D.
-A is a closely related potential solution. B is a direct semantic paraphrase despite having little exact word overlap.  C concerns battery problems but is less specific to overnight drain.  D repeats laptop, battery, drain, and overnight while recommending nearly the opposite behavior.
-Focus the discussion on B versus D: keyword overlap can over-rank D and under-rank B. Semantic similarity improves ranking, but negation and opposing intent can still challenge embeddings.</p>
+A is a closely related by keywords but not meaning. B is a direct semantic paraphrase despite having little exact word overlap.
+Keyword overlap can over-rank A and under-rank B. Semantic similarity improves ranking, but negation and opposing intent can still challenge embeddings.</p>
 </aside>
 <a id="34e8f316-04f1-4a26-baec-a15a33f7632c"><h1>Exercise&colon; Rank by Meaning</h1></a>
 <!-- Layout:FullPage -->
@@ -2914,6 +2931,7 @@ Focus the discussion on B versus D: keyword overlap can over-rank D and under-ra
 <blockquote>
 <p>Which result might keyword overlap rank too highly?</p>
 </blockquote>
+<p><a href="https://github.com/bsstahl/AIDemos/tree/master/SemanticSimilarity">Demo Code</a></p>
 
 </section>
 
