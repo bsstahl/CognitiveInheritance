@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     
-        <meta name="description" content="Teaching Computers Context: An Introduction to Word Embeddings, an article on Cognitive Inheritance.">
+        <meta name="description" content="Teaching Computers Context: Making Meaning Mathematical with Embeddings, an article on Cognitive Inheritance.">
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -71,95 +71,67 @@
 
             <div class="row">
                 <main class="col-lg-9 col-xl-10 content-main">
-                    <h3>Teaching Computers Context: An Introduction to Word Embeddings</h3>
+                    <h3>Teaching Computers Context: Making Meaning Mathematical with Embeddings</h3>
                     <h5>Posted by bsstahl on 2026-08-16 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
                     <share-on-mastodon 
-                        share_title="Check out this post on Cognitive Inheritance: 'Teaching Computers Context: An Introduction to Word Embeddings'"
-                        share_description="&quot;An accessible guide to how computers learn to understand context and meaning through word embeddings, featuring practical examples and real-world applications.&quot;"
+                        share_title="Check out this post on Cognitive Inheritance: 'Teaching Computers Context: Making Meaning Mathematical with Embeddings'"
+                        share_description="&quot;An accessible introduction to how embeddings represent concepts as vectors that software can compare and manipulate mathematically.&quot;"
                         hashtags="#ai #algorithms #data-structures #embedding #ml #math"
                         author="@bsstahl@cognitiveinheritance.com"
                         default_url="https://fosstodon.org">
                     </share-on-mastodon>
                     <br/><br/>
                     <h2>Introduction</h2>
-<p>Imagine trying to teach a computer the subtle difference between &quot;I need to address this issue&quot; and &quot;What's your address?&quot; While humans intuitively understand these contextual differences, computers need a more structured approach. This is where word embeddings, one of the most powerful innovations in Natural Language Processing (NLP), come into play. By transforming the meanings of words and phrases into numerical vectors, embeddings have revolutionized how machines understand and process human language. This capability has alredy enabled breakthroughs in spaces ranging from search engines to language translation, with much greater possibilities to come.</p>
-<h2>Understanding Embeddings</h2>
-<p>At their core, embeddings are mathematical representations of the meanings behind words or phrases in a high-dimensional space. Think of each idea as a point in this space, where the coordinates (vector values) capture different aspects of the context of an idea. These vectors often have hundreds of dimensions, allowing them to encode subtle nuances of language that more traditional techniques miss.</p>
-<h3>How Embeddings Work in Practice</h3>
-<p>For a neural network the be able to process text, it must first convert the text input into numerical values that it can operate on mathematically. The first step is to convert the text values to tokens using a model-specific <a href="../Posts/understanding-gpt-tokenization.html">tokenization</a> process. This is similar to encoding using ASCII or UTF, though the process is somewhat more complicated, and will usually produce more efficient representations. The key is that text values are encoded using numbers. Once we have a set of numbers we can work with, we could just send these values directly to our language models. However, it turns out that we can make our models much more effective by instead operating on the meaning of the text, rather than a direct encoding of the text.</p>
-<p>TODO: Transition these paragraphs</p>
-<p>Models learn these embeddings through exposure to vast amounts of text data. The network adjusts the vector values based on how words are used together, following the distributional hypothesis: words that appear in similar contexts tend to have similar meanings. This is why embeddings can capture semantic relationships like:</p>
+<p>Imagine trying to teach a computer the subtle difference between the phrases &quot;I need to address this issue&quot; and &quot;What's your address?&quot; We recognize the intended meaning immediately because we understand the context in which the word is used. A standard text encoding, however, captures the characters in the text, not the concepts those characters represent.</p>
+<p>This is the gap that embeddings help us bridge. An embedding represents a concept as a numerical vector, and once we have that mathematical representation, we can compare concepts, group them, and even perform arithmetic on some of their relationships. That is the real power of embeddings: they make aspects of meaning computable.</p>
+<p>For example, consider the word &quot;Ram.&quot; Depending on its context, it can represent several entirely different concepts:</p>
 <ul>
-<li><code>king - man + woman ≈ queen</code> (gender relationship)</li>
-<li><code>paris - france + italy ≈ rome</code> (capital city relationship)</li>
-<li><code>teacher - school + university ≈ professor</code> (academic relationship)</li>
+<li>Computing: &quot;I'm getting more RAM for my PC&quot; (computer memory)</li>
+<li>Automotive: &quot;I'm getting a Ram so I can pull my boat&quot; (truck model)</li>
+<li>Agriculture: &quot;I'm getting a ram and a ewe&quot; (male sheep)</li>
 </ul>
-<h3>Context Matters: The 'Ram' Example</h3>
-<p>Consider the word 'Ram'. In different contexts, this word takes on entirely different meanings:</p>
+<p>The characters alone cannot tell us which of these concepts is intended, so how can a computer distinguish among them? An embedding can represent each usage based on the ideas that surround it, giving us a mathematical way to make that distinction.</p>
+<h2>From Encoded Text to Represented Meaning</h2>
+<p>Before a machine learning model can process text, that text must be converted into numerical values. ASCII and UTF encodings represent characters as numbers, while model-specific <a href="../Posts/understanding-gpt-tokenization.html">tokenization</a> processes assign numbers to tokens. A model can operate directly on any of these values, but there is an important limitation: the numerical order of the values does not inherently tell us anything about the relationships among the text they represent. Token 101, for example, is not necessarily more similar in meaning to token 102 than it is to token 900.</p>
+<p>An embedding gives us an additional, learned representation. It maps a token, word, phrase, sentence, or other item to a vector, which is an ordered list of numbers that we can treat as a point in a high-dimensional space. Unlike the arbitrary relationships implied by the original numeric encoding, the position of this point can capture relationships learned from the data.</p>
+<p>Models learn these representations through exposure to large amounts of data. The underlying idea, known as the distributional hypothesis, is that text used in similar contexts tends to have related meanings and should therefore develop related representations. The exact training process varies by model; some models create a single representation for a word, while others create representations that change based on the context. For our purposes, however, the important result is the same: concepts can be placed into a space where we can examine their relationships mathematically.</p>
+<h2>Visualizing the 'Ram' Example</h2>
+<p>Let's return to our three uses of &quot;Ram.&quot; To visualize the idea, imagine a deliberately simplified embedding space with only three dimensions, represented as a cube. For this example, the axes correspond to the computing, automotive, and agricultural domains. Real embedding spaces usually have many more dimensions, and those dimensions generally do not have meanings that are this clear or human-readable, but this abstraction gives us a useful place to start.</p>
 <ul>
-<li>Computing: &quot;I need more RAM for my laptop&quot; (computer memory)</li>
-<li>Automotive: &quot;The new RAM 1500 has great towing capacity&quot; (truck model)</li>
-<li>Agriculture: &quot;The ram leads the flock&quot; (male sheep)</li>
+<li>&quot;I need to buy more RAM for my PC&quot; would be positioned near concepts such as &quot;Memory,&quot; &quot;Storage,&quot; and &quot;ROM.&quot;</li>
+<li>&quot;I need to buy a Ram to haul my boat&quot; would be positioned near &quot;Truck,&quot; &quot;Vehicle,&quot; and &quot;Dodge.&quot;</li>
+<li>&quot;I put the ram in the pen with the chickens&quot; would be positioned near &quot;Sheep,&quot; &quot;Farm,&quot; and &quot;Livestock.&quot;</li>
 </ul>
-<p>The embedding for each usage would cluster near other words from its respective domain, allowing algorithms to understand which meaning is intended based on context.</p>
-<p>To help us visualize this idea, let's imagine a super-simplified version, one that embeds text in only 3-dimensions. Picture a cube where each dimension represents a different context: computing, automotive, and agriculture.</p>
+<p>Each sentence uses the same three letters, but its embedding occupies a different region of the space because it represents a different concept. We now have something that was not available when the text was merely encoded: a geometry that describes mathematical relationships among meanings.</p>
+<h2>Operating on Meaning</h2>
+<p>Once concepts are represented as vectors, standard mathematical operations become tools for working with meaning. What kinds of operations can we perform, and what can they tell us?</p>
+<h3>Measuring Similarity</h3>
+<p>Distance and similarity calculations tell us how close two vectors are. The embedding for the computing use of &quot;RAM,&quot; for example, should be closer to &quot;Memory&quot; than to &quot;Truck,&quot; while the automotive use should reverse that relationship. Depending on the model and the task, a system might use Euclidean distance, cosine similarity, a dot product, or another metric. These calculations are not interchangeable in every situation, but each can turn the geometric relationship between vectors into a useful numerical score.</p>
+<h3>Finding Groups</h3>
+<p>Clustering algorithms can identify regions that contain related vectors. Even without explicit labels, a collection might form distinct groups around computing, transportation, and agriculture. A classification system can then compare a new vector with known examples to determine which group it most closely resembles.</p>
+<h3>Examining Directions and Arithmetic</h3>
+<p>The differences between vectors can sometimes capture relationships between concepts, producing familiar examples such as:</p>
 <ul>
-<li><p>The embedding of a sentence like 'I need to buy more RAM for my PC' would be positioned close to other embeddings related to computers, such as 'Memory', 'Storage' and 'ROM', high on the computing axis.</p>
-</li>
-<li><p>The embedding of a sentence like 'I need to buy a Ram to haul my boat' would be close to words like 'Truck', 'Vehicle', and 'Dodge', high on the automotive axis.</p>
-</li>
-<li><p>The embedding of a sentence like 'I put the ram in the pen with the chickens' would be close to words like 'Sheep', 'Farm' and 'Livestock', high on the agricultural axis.</p>
-</li>
+<li><code>king - man + woman ≈ queen</code></li>
+<li><code>paris - france + italy ≈ rome</code></li>
+<li><code>teacher - school + university ≈ professor</code></li>
 </ul>
-<p>In this 3-dimensional space, the word 'Ram' itself would have three different embeddings, each representing a different semantic meaning based on the context. The Euclidean distance between 'Ram' and other words in this space would indicate their semantic similarity in each context.</p>
-<p>Remember, this is a simplified example. In reality, embeddings exist in high-dimensional space, and words are related to many more contexts. The GPT-4 model contains 1536 dimensions. It is also very difficult to identify what the different dimensions in the vector-space represent.</p>
-<h2>Euclidean Distance: A Measure of Semantic Similarity</h2>
-<p>Once we have these embeddings, we can then compute the 'Euclidean distance' between different text. The Euclidean distance is a measure of the straight-line distance between two points in a space. In the context of word embeddings, a smaller Euclidean distance between two word vectors indicates a closer semantic relationship.</p>
-<p>For instance, when 'Ram' is used in a sentence about computers, its embedding is closer to the word 'Memory', resulting in a smaller Euclidean distance. When 'Ram' is used in a sentence about vehicles, its embedding is closer to the word 'Truck', and when used in a sentence about farming, it's closer to the word 'Goat'.</p>
-<p>One thing to note: In the GPT model, the Euclidean distance is equivalent, or at least proportional to, the cosine distance since the GPT model is normalized to unit distance. That is, the values in the vectors all fall between -1 and 1. This normalization means that regardless of which distance calculation you use, your results will be identical.</p>
-<h2>Applications of Embeddings and Euclidean Distance</h2>
-<p>The ability to measure semantic similarity through vector distances opens up numerous practical applications:</p>
+<p>These analogies illustrate how a direction through the vector space can represent a conceptual relationship. They should not be treated as universal laws; whether they work depends on the model, its training data, and the specific concepts involved. Even with that limitation, they demonstrate a broader and more interesting point: embeddings support more than lookup or comparison. They give us a mathematical structure in which some conceptual relationships can be manipulated.</p>
+<h2>What This Makes Possible</h2>
+<p>These operations are the foundation for many practical systems:</p>
 <ol>
-<li><p><strong>Sentiment Analysis</strong>:</p>
-<ul>
-<li>Example: A customer service AI analyzing &quot;This product is fantastic!&quot; would place it closer to positive sentiment vectors than negative ones</li>
-<li>Use case: Automatically routing urgent negative feedback to customer service teams</li>
-<li>Implementation: Companies like Amazon use this to automatically categorize product reviews</li>
-</ul>
-</li>
-<li><p><strong>Text Classification</strong>:</p>
-<ul>
-<li>Example: News article classification based on content similarity to known categories</li>
-<li>Use case: Content recommendation systems on platforms like Medium or Netflix</li>
-<li>Implementation: Spam detection systems using embedding similarity to known spam patterns</li>
-</ul>
-</li>
-<li><p><strong>Information Retrieval</strong>:</p>
-<ul>
-<li>Example: Search engines understanding that a query for &quot;java help&quot; could refer to programming or coffee</li>
-<li>Use case: Semantic search in documentation systems</li>
-<li>Implementation: Modern code search tools like GitHub's semantic code search</li>
-</ul>
-</li>
-<li><p><strong>Question Answering</strong>:</p>
-<ul>
-<li>Example: Understanding that &quot;Who created Python?&quot; and &quot;Who is Python's inventor?&quot; are semantically equivalent</li>
-<li>Use case: Customer support chatbots</li>
-<li>Implementation: Stack Overflow's similar question detection</li>
-</ul>
-</li>
+<li><strong>Semantic search</strong> compares the embedding of a query with the embeddings of documents or passages, allowing it to retrieve related ideas even when they use different words.</li>
+<li><strong>Classification</strong> compares new text with known categories or examples, supporting scenarios such as sentiment analysis and spam detection.</li>
+<li><strong>Clustering and recommendations</strong> group related items and help surface content similar to something a user already values.</li>
+<li><strong>Question answering</strong> identifies passages related to a question, recognizing, for example, that &quot;Who created C#?&quot; and &quot;Who is C#'s inventor?&quot; express nearly the same intent.</li>
 </ol>
+<p>Of course, putting these ideas into production introduces additional choices. Which embedding model and similarity metric should we use? Should each vector represent a word, a sentence, a paragraph, or some other chunk of content? How will the vectors be stored and searched? Multilingual and multimodal models extend the same geometric approach across languages, images, audio, and other kinds of data. The implementation details vary, but they all build on the same foundation: represent concepts as vectors, then use mathematics to work with their relationships.</p>
 <h2>Limitations and Challenges</h2>
-<p>While embeddings are powerful, they come with important limitations:</p>
-<ol>
-<li><strong>Context Window Size</strong>: Embeddings typically have a fixed context window, which can miss broader document-level context</li>
-<li><strong>Training Data Bias</strong>: Embeddings inherit biases present in their training data</li>
-<li><strong>Computational Cost</strong>: High-dimensional vectors require significant computational resources</li>
-<li><strong>Temporal Nature</strong>: Embeddings are static once trained, missing evolving language usage</li>
-<li><strong>Multi-lingual Challenges</strong>: Cross-language semantic matching remains difficult</li>
-</ol>
+<p>It is important to remember that embeddings do not contain objective or complete definitions of concepts. They are learned representations shaped by a model's architecture, training data, and objectives. As a result, they can reproduce biases, miss domain-specific meanings, become less useful as language changes, or place concepts together for reasons that are difficult to interpret.</p>
+<p>Similarity is also highly dependent on both the model and the task. Two vectors being close together means that a particular model considers them related; it does not explain the relationship or guarantee that the relationship is useful for our scenario. High-dimensional vectors can also require substantial storage and computation at scale. We should therefore evaluate embeddings against the actual task we need to perform rather than assume that geometric elegance guarantees correct results.</p>
 <h2>Conclusion</h2>
-<p>Word embeddings represent one of the most significant advances in making machines understand human language. As we move toward more sophisticated AI systems, embeddings continue to evolve, with newer models capturing ever more nuanced relationships in language. The future may bring contextual embeddings that adapt to user behavior, multi-modal embeddings that combine text with images or sound, and more efficient ways to compute and store these high-dimensional representations. For developers working with NLP, a solid understanding of embeddings and distance metrics remains fundamental to building effective language-aware applications.</p>
+<p>ASCII, UTF, and tokenization make text available to computation by assigning it numbers. Embeddings take us an important step further by giving learned concepts positions in a mathematical space. Within that space, the computing, automotive, and agricultural meanings of &quot;Ram&quot; can occupy different neighborhoods even though the original text is identical.</p>
+<p>That shift, from encoded text to represented meaning, is what makes embeddings so powerful. Concepts become vectors, similarity becomes distance, categories become clusters, and some relationships become directions that we can explore using arithmetic. Embeddings do not give computers human understanding, but they do make useful aspects of meaning available to mathematics, and that gives us an extraordinary set of tools for building systems that operate on concepts rather than just characters.</p>
 
                     <h5>Tags: <a title="Tag: ai" class="small" href="../Search/ai.html">ai</a>&nbsp;<a title="Tag: algorithms" class="small" href="../Search/algorithms.html">algorithms</a>&nbsp;<a title="Tag: data-structures" class="small" href="../Search/data-structures.html">data-structures</a>&nbsp;<a title="Tag: embedding" class="small" href="../Search/embedding.html">embedding</a>&nbsp;<a title="Tag: ml" class="small" href="../Search/ml.html">ml</a>&nbsp;<a title="Tag: math" class="small" href="../Search/math.html">math</a>&nbsp;</h5>
                     <div class="share"><a href="../Permalinks/1f872a14-4d10-4c9a-88ae-c84aa84064c2.html" rel="bookmark">Permalink</a></div>
