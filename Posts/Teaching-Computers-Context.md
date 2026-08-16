@@ -16,8 +16,8 @@ description: An accessible guide to how computers learn to understand context an
 ispublished: false
 showinlist: false
 buildifnotpublished: true
-publicationdate: 2025-02-18T07:00:00Z
-lastmodificationdate: 2025-02-18T07:00:00Z
+publicationdate: 2026-08-16T07:00:00Z
+lastmodificationdate: 2026-08-16T07:00:00Z
 slug: teaching-computers-context
 
 ---
@@ -27,13 +27,11 @@ Imagine trying to teach a computer the subtle difference between "I need to addr
 
 ## Understanding Embeddings
 
-At their core, embeddings are mathematical representations of the meanings behind words or phrases in a high-dimensional space. Think of each idea as a point in this space, where the coordinates (vector values) capture different aspects of the context of an idea. These vectors typically have hundreds or thousands of dimensions, allowing them to encode subtle nuances of language that simple one-shot encoding or bag-of-words approaches miss.
-
-TODO: What is one-shot and bag-of-words...
+At their core, embeddings are mathematical representations of the meanings behind words or phrases in a high-dimensional space. Think of each idea as a point in this space, where the coordinates (vector values) capture different aspects of the context of an idea. These vectors often have hundreds of dimensions, allowing them to encode subtle nuances of language that more traditional techniques miss.
 
 ### How Embeddings Work in Practice
 
-For a neural network the be able to process text, it must first convert the text input into numerical values that it can operate on mathematically. The first step is to convert the text values to tokens. This is similar to encoding using ASCII or UTF, though the process is somewhat more complicated. The key is that text values are encoded using numbers. Once we have a set of numbers we can work with, we could just send these values directly to our language models. However, it turns out that we can make our models much more effective by instead operating on the meaning of the text, rather than a direct encoding of the text.
+For a neural network the be able to process text, it must first convert the text input into numerical values that it can operate on mathematically. The first step is to convert the text values to tokens using a model-specific {PostLink:understanding-gpt-tokenization|tokenization} process. This is similar to encoding using ASCII or UTF, though the process is somewhat more complicated, and will usually produce more efficient representations. The key is that text values are encoded using numbers. Once we have a set of numbers we can work with, we could just send these values directly to our language models. However, it turns out that we can make our models much more effective by instead operating on the meaning of the text, rather than a direct encoding of the text.
 
 TODO: Transition these paragraphs
 
