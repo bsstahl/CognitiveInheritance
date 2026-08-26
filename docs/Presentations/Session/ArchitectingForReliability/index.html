@@ -1,0 +1,845 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Architecting for Reliability</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/130388b7-e1f8-4696-851f-49ec167ba0c0.png'>
+<a id="4724c112-528a-4f9d-9081-39f5801f22ee">&nbsp;</a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:45f3b24c-5487-4bcb-96ba-0dc6fcc67057 -->
+<!-- ContentItem:2f2cf6b5-5644-4a88-9520-c6401b4ecb23 -->
+
+<table><tr><td style="vertical-align:top;">
+<h2 id="architecting-for-reliability">Architecting for Reliability</h2>
+<h3 id="eliminating-hidden-failure-modes">Eliminating Hidden Failure Modes</h3>
+<hr />
+<h3 id="barry-s.stahl">Barry S. Stahl</h3>
+<h4 id="principal-engineer-aznerds.net">Principal Engineer - AZNerds.net</h4>
+<h4 id="bsstahlcognitiveinheritance.com"><a href="https://fosstodon.org/@Bsstahl">@bsstahl@cognitiveinheritance.com</a></h4>
+<h4 id="httpscognitiveinheritance.com"><a href="https://cognitiveinheritance.com">https://CognitiveInheritance.com</a></h4>
+
+</td>
+<td style="text-align: left;">
+<img src="img/2f2cf6b5-5644-4a88-9520-c6401b4ecb23.png" alt="Transparent Half Width Image 800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="636059f9-aa9d-4444-b4ec-dd7f62badd98"><h1>Favorite Physicists & Mathematicians</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:30f7e9d2-b154-4895-bed7-2765f7bdc6fe -->
+<!-- ContentItem:8a83be06-76e9-4028-9630-c6a7de92ae99 -->
+<aside class="notes"><p>An up-to-date list is available on <a href="https://cognitiveinheritance.com/Pages/Favorites.html">my blog at https://cognitiveinheritance.com/Pages/Favorites.html</a>
+Please ping me on Mastodon to tell me where I messed-up with this list, or this presentation for that matter. 😉</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<h4 id="favorite-physicists">Favorite Physicists</h4>
+<ol>
+<li>Harold &quot;Hal&quot; Stahl</li>
+<li>Carl Sagan</li>
+<li>Richard Feynman</li>
+<li>Marie Curie</li>
+<li>Nikola Tesla</li>
+<li>Albert Einstein</li>
+<li>Neil deGrasse Tyson</li>
+<li>Niels Bohr</li>
+<li>Galileo Galilei</li>
+<li>Michael Faraday</li>
+</ol>
+<p><em>Other notables</em>: Stephen Hawking, Edwin Hubble, Leonard Susskind, Christiaan Huygens</p>
+
+</td>
+<td style="vertical-align:top;">
+<h4 id="favorite-mathematicians">Favorite Mathematicians</h4>
+<ol>
+<li>Ada Lovelace</li>
+<li>Alan Turing</li>
+<li>Tim Berners-Lee</li>
+<li>Isaac Newton</li>
+<li>Emmy Noether</li>
+<li>Johannes Kepler</li>
+<li>René Descartes</li>
+<li>George Boole</li>
+<li>Carl Friedrich Gauss</li>
+<li>Grace Hopper</li>
+</ol>
+<p><em>Other notables</em>: Blaise Pascal, Daphne Koller, Grady Booch, Evelyn Berezin, Pascal Van Hentenryck</p>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="a1e2eaad-5633-41dc-9e1b-c724e30ac85f"><h1>Fediverse Supporter</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:f48757bb-8e16-418d-857d-26908de5ef1e -->
+<!-- ContentItem:a937ed96-7c15-4ede-a3d0-09dc382590eb -->
+<aside class="notes"><p>It is now more important than ever that we create networks that are not  controlled by corporate entities or petulant oligarchs</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>See my presentation from CodeMash 2025: <a href="https://www.youtube.com/watch?v=FdlJVG2GjLY">How the Fediverse Could Save Democracy &amp; Why It Probably Won't</a></p>
+</li>
+<li><p>Hear my thoughts on why a thriving Fediverse is so critical on David Giard's <a href="https://davidgiard.com/barry-stahl-on-the-fediverse">Technology and Friends</a> show.</p>
+</li>
+<li><p>Learn more about the Fediverse at <a href="https://fediverse.party/en/fediverse">fediverse.party</a>.</p>
+</li>
+<li><p>Get your own Mastodon account at <a href="https://joinmastodon.org/">Join Mastodon</a>.</p>
+<ul>
+<li>Don't stress on what server to use, just pick one and go.  You can always move later.</li>
+</ul>
+</li>
+<li><p>Follow me on Mastodon at <a href="https://fosstodon.org/@bsstahl">@bsstahl@CognitiveInheritance.com</a>.</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/a937ed96-7c15-4ede-a3d0-09dc382590eb.png" alt="Logos.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Liquid Victor was used to create this slide deck</p>
+</aside>
+<a id="23528a73-7bc1-4e39-9f2f-c8b9e2cff982"><h1>Some OSS Projects I Run</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:f8cbcb81-15f7-48e0-bc29-b348732f6f05 -->
+<ol>
+<li><a href="https://github.com/bsstahl/liquidvictor">Liquid Victor</a> : Media tracking and aggregation [used to assemble this presentation]</li>
+<li><a href="https://github.com/bsstahl/pptail">Prehensile Pony-Tail</a> : A static site generator built in c#</li>
+<li><a href="https://github.com/bsstahl/testhelperextensions">TestHelperExtensions</a> : A set of extension methods helpful when building unit tests</li>
+<li><a href="https://github.com/bsstahl/conferencescheduler">Conference Scheduler</a> : A conference schedule optimizer</li>
+<li><a href="https://github.com/bsstahl/intentbot">IntentBot</a> : A microservices framework for creating conversational bots on top of Bot Framework</li>
+<li><a href="https://github.com/bsstahl/liquidnun">LiquidNun</a> : Library of abstractions and implementations for loosely-coupled applications</li>
+<li><a href="https://github.com/bsstahl/toastmastersagenda">Toastmasters Agenda</a> : A c# library and website for generating agenda's for Toastmasters meetings</li>
+<li><a href="https://github.com/bsstahl/PDM">ProtoBuf Data Mapper</a> : A c# library for mapping and transforming ProtoBuf messages</li>
+</ol>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>I am proud to be one of the founders of AZGiveCamp.
+GiveCamps are weekend events where we put a bunch of software creators in a room with a bunch of great local charities, and through the course of the weekend, we create software to help them further their mission</p>
+</aside>
+<a id="3129a405-82a7-432c-ae55-6f9d2335ab17"><h1>http://GiveCamp.org</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:2ca346de-d62c-4c6b-834d-7ccab290a6ab -->
+<img alt="GiveCamp.png" src="img/2ca346de-d62c-4c6b-834d-7ccab290a6ab.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>July 25, 2022 was my 100th public talk. Thank you for allowing me to participate in your community over these past few decades!</p>
+</aside>
+<a id="39c6410c-3913-410b-abab-984014a15d84"><h1>Achievement Unlocked</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a042b106-4bab-4403-b5b6-0d7b414ef789 -->
+<img alt="bss-100-achievement-unlocked-1024x250.png" src="img/a042b106-4bab-4403-b5b6-0d7b414ef789.png" />
+</section>
+
+
+<section data-transition="slide-in fade-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Let's keep it as simple as possible and ignore network and hardware failures for now.</p>
+</aside>
+<a id="3368f6e8-5a63-4b43-99c5-d286e94f19f8"><h1>Simple Example</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:95571f29-2b79-4b3b-a861-1a9461c93eb7 -->
+<ul>
+<li><p>Two Actions that Result in Changes</p>
+<ul>
+<li>A - Send an eMail Message</li>
+<li>B - Write the results to a DB</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>The Process - High Level</p>
+</aside>
+<a id="e4f7116c-f9e1-4652-9861-c809e44ab5c9">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:fc7509f5-73ce-421b-aae5-3c440c5e9785 -->
+<img alt="The Process - High Level.png" src="img/fc7509f5-73ce-421b-aae5-3c440c5e9785.png" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Simple Example - Continued - Placeholder</p>
+</aside>
+<a id="9fe6ece4-9886-46bb-921f-85bc1cb50ec9">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:44dac424-5b61-428d-a8f3-3ac8fafe389e -->
+<!-- ContentItem:666bd787-57cf-46e9-a357-4cda078f5a2b -->
+<img alt="Simplest Case - Code Snippet.png" src="img/44dac424-5b61-428d-a8f3-3ac8fafe389e.png" />
+<img alt="Simplest Case - System States - Placeholder.png" src="img/666bd787-57cf-46e9-a357-4cda078f5a2b.png" />
+</section>
+
+
+<section data-transition="fade-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Simple Example - Continued</p>
+</aside>
+<a id="68cd1309-4963-44ac-927c-5edac69e78ea">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:44dac424-5b61-428d-a8f3-3ac8fafe389e -->
+<!-- ContentItem:8ea84717-b4f8-4cf8-aad5-911940cb5bfc -->
+<img alt="Simplest Case - Code Snippet.png" src="img/44dac424-5b61-428d-a8f3-3ac8fafe389e.png" />
+<img alt="Simplest Case - System States.png" src="img/8ea84717-b4f8-4cf8-aad5-911940cb5bfc.png" />
+</section>
+
+
+<section data-transition="slide-in fade-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Commit After Send Example - Placeholder</p>
+</aside>
+<a id="5eb0c719-798d-4f1f-96b8-1c974eca8f8a">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:d11b2b83-d6c3-4a56-a014-abc57969b44f -->
+<!-- ContentItem:666bd787-57cf-46e9-a357-4cda078f5a2b -->
+<img alt="Commit After Send - Code Snippet.png" src="img/d11b2b83-d6c3-4a56-a014-abc57969b44f.png" />
+<img alt="Simplest Case - System States - Placeholder.png" src="img/666bd787-57cf-46e9-a357-4cda078f5a2b.png" />
+</section>
+
+
+<section data-transition="fade-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Commit After Send Example</p>
+<p>The combination of task C and Task A is actually more likely to fail than Task A alone since the combination of the tasks takes longer and reliability guarantees are based on uptime not request count.</p>
+<p>The fact that tasks A &amp; C are closely related and nearly inseparable makes this chart a bit of an oversimplification. Perhaps it is better thought of as '...failures during the timeperiod when this task is happening...' rather than failures on the task itself.</p>
+</aside>
+<a id="75c49ea9-5e25-4eb0-88b5-6b5d5efcbd9b">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:d11b2b83-d6c3-4a56-a014-abc57969b44f -->
+<!-- ContentItem:53701287-29a6-4836-9fe5-6e82d8553a26 -->
+<img alt="Commit After Send - Code Snippet.png" src="img/d11b2b83-d6c3-4a56-a014-abc57969b44f.png" />
+<img alt="Commit After Send - System States.png" src="img/53701287-29a6-4836-9fe5-6e82d8553a26.png" />
+</section>
+
+
+<section data-transition="slide-in fade-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Implementations vs Failure Scenarios - * There is no implementation that reliably takes both actions in the event of a failure. However, there are times where some of these implementations are appropriate.</p>
+<ul>
+<li>Rollback, in the context of our example, means the process unrolls any internal state changes and restarts from the beginning.</li>
+<li>Legend:
+<ul>
+<li>Green Smiley - Both Tasks Complete Successfully</li>
+<li>Half-Filled Circle - Task A Completes Successfully, But not B</li>
+<li>Dead Face - Neither Task Completes Successfully</li>
+<li>Double Click Icon - Task A is Executed More than Once</li>
+<li>Alert Icon - Indeterminate. Can't happen in this context since B is dependent on A. B can't succeed if A doesn't succeed</li>
+</ul>
+</li>
+</ul>
+</aside>
+<a id="a42fbc7c-ab8d-4494-81d4-3eee44833e74"><h1>Retry at the Client</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:ba26557e-ab4c-4bd4-9a2b-4a25386ddaff -->
+<img alt="Avoiding Dual-Writes - The Problem - Table - With Dependency - No Legend.png" src="img/ba26557e-ab4c-4bd4-9a2b-4a25386ddaff.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="11957b1a-6696-440a-b626-e88c740de862"><h1>Two At-A-Time</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:44137a8e-424d-42d5-8af4-efd28828c797 -->
+<!-- ContentItem:43065c72-170a-4000-a11e-96a570dd703b -->
+<aside class="notes"><p>An ACID compliant transaction is a single change, just don't abuse that to the detriment of your performance, availability &amp; scalability</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Is is <strong>NOT</strong> possible to <strong>reliably</strong> make more than one change to system state in a single execution context</p>
+</blockquote>
+<h3 id="two-changes-can-be-made-to-system-state-in-a-single-execution-context-if">Two changes can be made to system state in a single execution context if:</h3>
+<ul>
+<li>The 1st change is <strong>idempotent</strong></li>
+<li>The 2nd change is <strong>unreliable</strong></li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/43065c72-170a-4000-a11e-96a570dd703b.jpg" alt="Two Things at Once 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><ul>
+<li>An &quot;ON&quot; button with a separate &quot;OFF&quot; button</li>
+<li>The Absolute-Value Function <code>ABS(x)</code></li>
+<li>A DB <code>Upsert</code> of the same values</li>
+</ul>
+</aside>
+<a id="41333176-7dc9-484d-8837-4a245d94723a"><h1>Idempotence</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:bc495274-fe68-48c0-91dc-c27a6a3fd911 -->
+<!-- ContentItem:199d695a-412d-4c36-b193-62823de4ecfe -->
+<p>[ īdemˈpōt(ə)nce , ˈēdemˌpōt(ə)nce ]</p>
+<blockquote>
+<p>The ability to execute a task an arbitrary number of times (&gt;1) and have the resulting state of the system be the same as if the task was executed once.</p>
+</blockquote>
+
+<img alt="OnOff_600x400.jpg" src="img/199d695a-412d-4c36-b193-62823de4ecfe.jpg" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="274d35d1-4d79-473d-9eea-f7b4932756a2"><h1>What is a Dual-Write?</h1></a>
+<!-- Layout:FullPageFragments -->
+<!-- ContentItem:c6c731a2-a5b5-466c-856a-9b17f9c512d7 -->
+<!-- ContentItem:2e2dac22-7363-4e0b-baf2-6d860af0a1b4 -->
+<table border="0" width="100%">
+
+<tr><td>
+<blockquote class="fragment">
+<p>An attempt to make more than 1 reliable change to the state of a system in a single invocation</p>
+</blockquote>
+
+</td></tr>
+<tr><td>
+<ul class="fragment">
+<li>Reliable = Can be expected to occur <strong>EXACTLY ONCE</strong>, irrespective of:
+<ul>
+<li>The reliability of the execution environment</li>
+<li>The reliability of any dependencies</li>
+</ul>
+</li>
+<li>Change = An <strong>ATOMIC</strong> modification
+<ul>
+<li>Database or Cache Update</li>
+<li>WebAPI Call</li>
+<li>Message Delivery</li>
+</ul>
+</li>
+<li>Invocation = Automated Response to a Signal
+<ul>
+<li>User Action</li>
+<li>Message Received</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+</table></section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="f29fd8ff-8f4b-4753-8900-34ca3996bb4a"><h1>Particularly Pernicious</h1></a>
+<!-- Layout:FullPageFragments -->
+<!-- ContentItem:d998ae82-5722-4cce-b070-d66cdc9ea626 -->
+<!-- ContentItem:a053e9bd-b058-443f-ae1d-84d02d46d552 -->
+<table border="0" width="100%">
+
+<tr><td>
+<ul class="fragment">
+<li><p>Errors resulting from dual-writes can manifest in different ways</p>
+<ul>
+<li>Duplicate Data or Actions
+<ul>
+<li>Duplicate Emails</li>
+<li>Duplicate Billing</li>
+</ul>
+</li>
+<li>Missing Data or Actions
+<ul>
+<li>No email sent</li>
+<li>No billing issued</li>
+</ul>
+</li>
+<li>Incomplete Data
+<ul>
+<li>Email sent but no record of it</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+<tr><td>
+<ul class="fragment">
+<li><p>Supporting these systems can be a nightmare</p>
+<ul>
+<li>Difficult to identify when errors occur</li>
+<li>Difficult to remediate</li>
+<li>Extremely difficult to replicate</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+</table></section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="6434ba76-03e9-4087-89ab-8cf910a09014"><h1>Avoiding Dual-Writes</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a37b8af0-2846-45ca-bb85-5e4779729c86 -->
+<h3 id="keep-it-separate-keep-it-safe">Keep It Separate, Keep It Safe</h3>
+<ul>
+<li>Isolation Patterns
+<ul>
+<li>Transactional Outbox</li>
+<li>Change-Data-Capture</li>
+<li>Data Streaming</li>
+</ul>
+</li>
+<li>Coordination Patterns
+<ul>
+<li>Saga Orchestration</li>
+<li>Saga Choreography</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>All 3 of the Outbox, CDC and Streaming patterns are what I would consider Isolation patterns. They differ only in implementation detail.</p>
+</aside>
+<a id="8590fc4b-2c74-473c-917d-54bc3a92724e"><h1>Isolation Patterns</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:4775d57e-25e4-4d08-8894-023907e98776 -->
+<img alt="Reliable Data Flow.png" src="img/4775d57e-25e4-4d08-8894-023907e98776.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="b33d9eba-6bd1-485e-8ffc-154c8f3bcfdf"><h1>Transactional Outbox</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:09f58ae5-7e44-40a0-9c18-78f743b7aa32 -->
+<h3 id="goal-reliably-update-a-data-store-and-trigger-an-additional-action">Goal: Reliably update a Data Store and trigger an additional action</h3>
+<ul>
+<li>A single atomic write that makes two updates
+<ul>
+<li>A change to the state stored in the DB</li>
+<li>A command to execute a secondary process</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="17169ea5-90fc-4aa2-88c3-f401db7af1b0"><h1>Transactional Outbox Sequence</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:45425647-59b2-4b35-8a35-19418c339591 -->
+<img alt="Outbox-Sequence-800px.png" src="img/45425647-59b2-4b35-8a35-19418c339591.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/63e65212-8145-4d43-a513-a1de1b042f9b.jpg'>
+
+<a id="9d38d943-71ad-4212-9df0-2bb98db56df6"><h1>Demo</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:3b9d2c82-818e-4b4b-8fbc-df901b0a7a66 -->
+<h2 id="the-transactional-outbox-pattern">The Transactional Outbox Pattern</h2>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Outbox guarantees every unique update will be seen by the downstream consumers</p>
+</aside>
+<a id="5c533090-2711-49c9-8b4c-5ea4a3805238"><h1>Outbox Pattern</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:5d82c5d7-a633-447f-bce6-1f53567dc1a5 -->
+<ul>
+<li><p>Advantages</p>
+<ul>
+<li>Persist quickly</li>
+<li>Captures every update</li>
+<li>Uses familiar tech</li>
+</ul>
+</li>
+<li><p>Disadvantages</p>
+<ul>
+<li>Hard to scale</li>
+<li>Harder to fanout than other patterns</li>
+<li>Uses DB as a queue</li>
+<li>Adds weight to the persistance (trx)</li>
+<li>Still susceptible to errors on commit</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Notice: Same goal as Outbox.</p>
+<p>Kafka, SQL Server, and other stores can also be used for CDC or CDC like processing</p>
+</aside>
+<a id="7a51205e-d021-42bb-b886-3935dd4f571b"><h1>Change-Data-Capture</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:6eb30814-6e0b-4608-9d9b-e2e7bcd4087b -->
+<h3 id="goal-reliably-update-a-data-store-and-trigger-an-additional-action">Goal: Reliably update a Data Store and trigger an additional action</h3>
+<ul>
+<li>A single atomic write that makes one update to the DB</li>
+<li>The DB log is used to trigger the secondary action</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="85801b36-a4f9-4e32-91bd-76b6854442b5"><h1>CDC Sequence</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:18c9e1c4-dfeb-407b-81cd-0273120ab16d -->
+<img alt="CDC-Sequence-800px.png" src="img/18c9e1c4-dfeb-407b-81cd-0273120ab16d.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/63e65212-8145-4d43-a513-a1de1b042f9b.jpg'>
+
+<a id="3b7f5c26-9093-4adf-944b-ee0777195ef5"><h1>Demo</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:00ae3efd-f51d-4154-b817-f8ff3fc0700f -->
+<h2 id="the-change-data-capture-pattern">The Change-Data-Capture Pattern</h2>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="41fe695a-cd44-4be0-bcfe-cd9b7a72686f"><h1>Cosmos CDC</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:d4b7b5ee-f5e9-426a-8d6d-251744b56baf -->
+<ul>
+<li><p>Advantages</p>
+<ul>
+<li>Persist quickly</li>
+<li>Easy to scale</li>
+<li>Easy to fanout</li>
+</ul>
+</li>
+<li><p>Disadvantages</p>
+<ul>
+<li>Not guaranteed to capture every update</li>
+<li>Still susceptible to errors on commit</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="9f3ce655-f62e-4299-b1f6-7f21ea3dd01f"><h1>Data Streaming</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:0dbea47d-4661-4290-820d-cb056f58c8f1 -->
+<h3 id="goal-reliably-persist-a-message-and-trigger-additional-actions">Goal: Reliably persist a message and trigger additional actions</h3>
+<ul>
+<li>A single atomic write that makes one update to the message stream</li>
+<li>The stream is used to trigger all actions</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="219744bd-6ad1-4fc3-b4bc-a532320675c6"><h1>Streaming Data Sequence</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:3fc691c7-057f-4f70-9f92-d5883e01631e -->
+<img alt="Streaming-Sequence-800px.png" src="img/3fc691c7-057f-4f70-9f92-d5883e01631e.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/63e65212-8145-4d43-a513-a1de1b042f9b.jpg'>
+
+<a id="ccf27d19-c255-45d2-8512-b7c44a69c355"><h1>Demo</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a59f69a1-7cf5-4918-871e-31a7e4812ea5 -->
+<h2 id="data-streaming">Data Streaming</h2>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="bbba5465-b0af-41e4-86da-a8c03abffc54"><h1>Data Streaming</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:c11b35ab-46cc-4c06-80b9-b5b45d2309ef -->
+<ul>
+<li><p>Advantages</p>
+<ul>
+<li>Persist quickly</li>
+<li>Easy to scale</li>
+<li>Easy to fanout</li>
+<li>Captures every update</li>
+</ul>
+</li>
+<li><p>Disadvantages</p>
+<ul>
+<li>Reliability is subject to persistance of the implementation</li>
+<li>Still susceptible to errors on commit</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="b197722c-4473-4001-bfc0-8556641bc31a"><h1>These Patterns are Similar</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:a9b93321-4ad3-4e0f-9648-d524f92ea075 -->
+<ul>
+<li>Persist the data first - Then act on it</li>
+<li>CDC &amp; Streaming are easy to fanout to N tasks</li>
+<li>Outbox &amp; Streaming guarantee that all changes will be sent</li>
+<li>All are susceptible to errors on commit</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="5f1f98d4-3105-42b8-8ba7-87e103fb41e6"><h1>Avoiding Commit Errors</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:209525be-c36b-4e6a-b392-863e7f795892 -->
+<ul>
+<li>These patterns get very close to 4-9's</li>
+<li>Use <strong>Idempotence</strong> whenever possible</li>
+<li>Exactly-Once Delivery may be possible</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Sagas are workflows. As such, they are probably best managed by using workflow tooling.</p>
+</aside>
+<a id="b3c1e9ff-f00d-407b-b23e-f2a5a0d734ec"><h1>The Saga Pattern</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:b4750bbb-c0d1-4396-a470-140d03bb66b3 -->
+<h3 id="goal-trigger-an-orchestration-or-choreography-to-perform-multiple-actions-reliably">Goal: Trigger an orchestration or Choreography to perform multiple actions reliably</h3>
+<h4 id="orchestration">Orchestration</h4>
+<ul>
+<li>A single controller is responsible for triggering all actions, including reversing transactions in the event of failures.</li>
+</ul>
+<h4 id="choreography">Choreography</h4>
+<ul>
+<li>Each service does one thing based on upstream events, then publishes events as needed. Any other services in the saga are responsible for responding to all events appropriately.</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="750c95cb-9e3b-48b8-b7b7-01dd5a91aa4a"><h1>Saga Orchestration</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:c9ef3b42-43a6-436a-aaf4-89bc241e440f -->
+<img alt="Avoiding Dual-Writes - Saga Orchestration  1024x693 - White Background.png" src="img/c9ef3b42-43a6-436a-aaf4-89bc241e440f.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>Whenever it is possible, I prefer a hybrid approach that takes advantage of the best of Saga Choreography, CDC and Streaming.</p>
+</aside>
+<a id="e294dd55-5f13-459e-8c14-96e190c904d2"><h1>My Ideal Architecture</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:0c4dd535-81b3-4249-afd0-b7ab8e2da6f2 -->
+<img alt="Avoiding Dual-Writes - Ideal Architecture - 1080x364.png" src="img/0c4dd535-81b3-4249-afd0-b7ab8e2da6f2.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="1d539a6a-09f2-497c-aaf6-36729c776c6b"><h1>Most Important Takeaway</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:e94ceb75-c970-4ef4-82cf-9725e85da2ef -->
+<blockquote>
+<p><strong>Never</strong> &quot;add on&quot; inside an execution context</p>
+</blockquote>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="b531dcbd-3b17-496e-a0dc-1b7e0707fd8c"><h1>Summary</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:4f781b4f-8b3c-4aff-af81-28b4d8d64b9b -->
+<ul>
+<li>It is impossible to reliable take 2 actions in a single context</li>
+<li>Best practice: Persist immediately, then take other actions</li>
+<li>Use Outbox, CDC or Streaming to keep operations separate</li>
+<li>Prefer CDC or Streaming for best fanout and scalability</li>
+<li>Consider Sagas to orchestrate or choreograph complex interactions reliably</li>
+<li>Never &quot;add on&quot;</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="8083d62b-b8b4-4d38-8873-292c76c6c877"><h1>Resources</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:880be013-ac34-4650-b3bf-44b1d51b6a0b -->
+<ul>
+<li><p><a href="https://grnh.se/ba048c6d1">Carvana</a></p>
+</li>
+<li><p><a href="https://github.com/bsstahl/AvoidingDualWrites">Code Samples</a></p>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/Idempotence#Computer_science_meaning">Idempotence</a></p>
+</li>
+<li><p><a href="https://engineering.razorpay.com/achieving-reliable-dual-writes-in-distributed-systems-cb9ff3b9bfc1">The Transactional Outbox Pattern</a></p>
+</li>
+<li><p><a href="https://docs.microsoft.com/en-us/azure/cosmos-db/change-feed-processor">Cosmos DB Change Feed Processor</a></p>
+</li>
+<li><p><a href="https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/about-change-data-capture-sql-server?view=sql-server-ver15">SQL Change-Data-Capture</a></p>
+</li>
+<li><p><a href="https://www.dataversity.net/what-is-data-streaming-a-data-architects-guide/">Data Streaming</a></p>
+<ul>
+<li><a href="https://redis.io/topics/streams-intro">Redis Streams</a></li>
+<li><a href="https://azure.microsoft.com/en-us/services/service-bus/">Azure Service Bus</a></li>
+<li><a href="https://www.rabbitmq.com/">RabbitMQ</a></li>
+<li><a href="https://kafka-tutorials.confluent.io/">Kafka</a></li>
+</ul>
+</li>
+<li><p><a href="https://dzone.com/articles/microservices-using-saga-pattern">The Saga Pattern</a></p>
+</li>
+<li><p><a href="https://azure.microsoft.com/en-us/blog/understanding-and-leveraging-azure-sql-database-sla/">Understanding SQL Azure SLAs</a></p>
+</li>
+<li><p><a href="https://plantuml.com">PlantUML Diagram Tools</a></p>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="f867f774-6172-45b5-8773-6ee07c97d363"><h1>This Slide Deck</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:5d635f1c-4059-4c4c-adac-15763560f0bd -->
+<!-- ContentItem:71f2cb46-b8cd-481a-a9db-9cc91b8d22c3 -->
+<h2 id="httpavoidingdualwrites.azurewebsites.net"><a href="http://avoidingdualwrites.azurewebsites.net">http://AvoidingDualWrites.azurewebsites.net</a></h2>
+<p><a href="?print-pdf#">Printable Version</a></p>
+
+<img alt="AvoidingDualWrites_QR.png" src="img/71f2cb46-b8cd-481a-a9db-9cc91b8d22c3.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="4326f042-fc5c-4e2f-8976-e57731c3cbd0"><h1>Appendix A - Uptime Metrics</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:690c2aba-5144-4131-8b5f-e0869eae0d52 -->
+<ul>
+<li><p>3-9's (unimportant)</p>
+<ul>
+<li>99.9% uptime</li>
+<li>1 outage second in 1000</li>
+<li>~ 43 min / month</li>
+</ul>
+</li>
+<li><p>4-9's (important)</p>
+<ul>
+<li>99.99% uptime</li>
+<li>1 outage second in 10,000</li>
+<li>~ 4.3 min / month</li>
+</ul>
+</li>
+<li><p>5-9's (critical)</p>
+<ul>
+<li>99.999% uptime</li>
+<li>1 outage second in 100,000</li>
+<li>~ 0.43 min (26 sec) / month</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+
+<a id="57b6188a-bb92-4584-b620-2c9faad1069b"><h1>Appendix B - Delivery Guarantees</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:2e544475-a2cb-4782-b648-2901fe4a3e20 -->
+<ul>
+<li><p>At-Least Once</p>
+<ul>
+<li>Every messages will be delivered 1+ times</li>
+<li>The vast majority of message systems make this guarantee</li>
+</ul>
+</li>
+<li><p>At-Most once</p>
+<ul>
+<li>Every message will be delivered 0-1 times</li>
+<li>i.e. Logging</li>
+</ul>
+</li>
+<li><p>Exactly once</p>
+<ul>
+<li>Every message will be delivered 1 and only 1 time</li>
+<li>Very difficult and expensive</li>
+<li>Limited usefulness while maintaining this guarantee</li>
+<li>Combination of idempotent input and a downstream transaction</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+
+        </div>
+        <div class="footer-left">Architecting for Reliability</div>
+        <div class="footer-right">Barry S. Stahl - Mastodon:@bsstahl@cognitiveinheritance.com - Blog:http://www.cognitiveinheritance.com</div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <!-- Plugins -->
+    <script src="plugin/highlight/highlight.js"></script> 
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+
+        Reveal.initialize({
+            hash: true,
+			width: 1920,
+			height: 1080,
+            transition: 'slide',
+            backgroundTransition: 'fade',
+            showNotes: window.location.search.match(/print-pdf/gi) ? true : false,
+            plugins: [RevealHighlight, RevealMarkdown, RevealSearch, RevealNotes, RevealMath, RevealZoom ]
+        });
+    </script>
+</body>
+</html>
