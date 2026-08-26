@@ -44,6 +44,7 @@ Any physical (hard or soft cover) book by Cory Doctorow is great. If I already h
 * [Residues: Time, Uncertainty and Change in Software Architecture - Barry O'Reilly](https://leanpub.com/residuality)
 * [Notes on Complexity - Neil Theise](https://bookshop.org/p/books/notes-on-complexity-a-scientific-theory-of-connection-consciousness-and-being-neil-theise/913d94ca3e69e40d?ean=9781954118256&next=t&next=t)
 * [Developer Relations Activity Patterns - Neward, McAllister, Neal, Woodruff](https://www.amazon.com/Developer-Relations-Activity-Patterns-Management/dp/B0FJWPD3CQ)
+* [The Cuckoo's Egg - Cliff Stoll](https://bookshop.org/p/books/the-cuckoo-s-egg-cliff-stoll/ce011b13b37dab41?ean=9781416507789&bkshp-astro=t)
 
 #### Fiction
 

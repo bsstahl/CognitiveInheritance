@@ -76,6 +76,7 @@ categories: []
 * [Event Interception - Dealing with Legacy Systems](https://martinfowler.com/articles/patterns-legacy-displacement/event-interception.html)
 * [Concensus Decision Making](https://thedecider.app/consensus-decision-making)
 * [Developer Relations Activity Patterns - Neward, McAllister, Neal, Woodruff](https://www.amazon.com/Developer-Relations-Activity-Patterns-Management/dp/B0FJWPD3CQ)
+* [The Cuckoo's Egg - Cliff Stoll](https://bookshop.org/p/books/the-cuckoo-s-egg-cliff-stoll/ce011b13b37dab41?ean=9781416507789&bkshp-astro=t)
 
 ### Artificial Intelligence
 
