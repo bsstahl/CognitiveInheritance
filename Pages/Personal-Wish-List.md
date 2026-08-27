@@ -45,6 +45,9 @@ Any physical (hard or soft cover) book by Cory Doctorow is great. If I already h
 * [Notes on Complexity - Neil Theise](https://bookshop.org/p/books/notes-on-complexity-a-scientific-theory-of-connection-consciousness-and-being-neil-theise/913d94ca3e69e40d?ean=9781954118256&next=t&next=t)
 * [Developer Relations Activity Patterns - Neward, McAllister, Neal, Woodruff](https://www.amazon.com/Developer-Relations-Activity-Patterns-Management/dp/B0FJWPD3CQ)
 * [The Cuckoo's Egg - Cliff Stoll](https://bookshop.org/p/books/the-cuckoo-s-egg-cliff-stoll/ce011b13b37dab41?ean=9781416507789&bkshp-astro=t)
+* [The Nerd Reich - Gil Duran](https://bookshop.org/p/books/the-nerd-reich-silicon-valley-fascism-and-the-war-on-democracy-gil-dur-n/a6f6f0dce1150339?ean=9781668221402&listref=bookshop-org-best-sellers-of-the-week&bkshp-astro=t)
+* [The Meme Machine - Susan Blackmore](https://bookshop.org/p/books/the-meme-machine-susan-blackmore/c767d684ab0a616c?ean=9798200329977&bkshp-astro=t)
+
 
 #### Fiction
 
@@ -57,7 +60,3 @@ Any physical (hard or soft cover) book by Cory Doctorow is great. If I already h
 ### Household Items
 
 * Wine Glasses
-
-### Electronics
-
-* [Soundcore Sleep A30 Earbuds (expensive)](https://www.soundcore.com/sleep-a30-smart-anc-earbuds-for-sleeping)

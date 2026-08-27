@@ -30,13 +30,6 @@ categories: []
 * [Flim-Flam: Psychics, ESP, Unicorns and other Delusions](https://bookshop.org/p/books/flim-flam-psychics-esp-unicorns-and-other-delusions-james-randi-founder-of-the-james-rand/ddf8194ba51cca17?ean=9781633888586&next=t)
 * [An Introduction to Logic - Wayne A Davis](https://www.thriftbooks.com/w/an-introduction-to-logic_wayne-a-davis/8858521/?resultid=6e66c863-c7c7-4c1f-9009-c6f453d38fee#edition=58753313&idiq=43535627)
 
-### Cognitive Psychology
-
-* [May Contain Lies: How stories, statistics, and studies exploit our biases -- and what we can do about it - Alex Edmans](https://bookshop.org/p/books/may-contain-lies-how-stories-statistics-and-studies-exploit-our-biases-and-what-we-can-do-about-it-alex-edmans/c910b24f18c04b46?ean=9780520403932&next=t)
-* [You Are Not So Smarty - David McRaney](https://bookshop.org/p/books/you-are-not-so-smart-why-you-have-too-many-friends-on-facebook-why-your-memory-is-mostly-fiction-and-46-other-ways-you-re-deluding-yourself-david-mc/c0769fdd11c184c0?ean=9781592407361&next=t)
-* [You Are Now Less Dumb - David McRaney](https://bookshop.org/p/books/you-are-now-less-dumb-how-to-conquer-mob-mentality-how-to-buy-happiness-and-all-the-other-ways-to-ou-tsmart-yourself-david-mcraney/7787259?ean=9781592408795&next=t)
-* [How Minds Change - David McRaney](https://bookshop.org/p/books/how-minds-change-the-surprising-science-of-belief-opinion-and-persuasion-david-mcraney/031f155ef89e95e8?ean=9780593190296&next=t)
-
 ### News & Politics
 
 * [Responding to the Right: Replies to 25 "Conservative" Arguments](https://pluralistic.net/2023/02/14/nathan-robinson/#arguendo)
@@ -48,6 +41,7 @@ categories: []
 * [Understanding TESCREAL — the Weird Ideologies Behind Silicon Valley’s Rightward Turn](https://washingtonspectator.org/understanding-tescreal-silicon-valleys-rightward-turn/)
 * [Opinion: We need to examine the beliefs of today’s tech luminaries](https://www.ft.com/content/edc30352-05fb-4fd8-a503-20b50ce014ab)
 * [The Dehumanizing Myth of the Meritocracy](https://modelviewculture.com/pieces/the-dehumanizing-myth-of-the-meritocracy)
+* [The Nerd Reich - Gil Duran](https://bookshop.org/p/books/the-nerd-reich-silicon-valley-fascism-and-the-war-on-democracy-gil-dur-n/a6f6f0dce1150339?ean=9781668221402&listref=bookshop-org-best-sellers-of-the-week&bkshp-astro=t)
 
 ### Leadership
 
@@ -89,6 +83,11 @@ categories: []
 * [Notes on Complexity - Neil Theise](https://bookshop.org/p/books/notes-on-complexity-a-scientific-theory-of-connection-consciousness-and-being-neil-theise/913d94ca3e69e40d?ean=9781954118256&next=t&next=t)
 * [The Shape of Space](https://www.math.brown.edu/tbanchof/STG/ma8/papers/leckstein/Cosmo/intro.html#contents)
 * [The Work of E. O. Wilson - creator of the field of SocioBiology](https://www.google.com/search?gs_ssp=eJzj4tDP1TcwKi6pNGD04kpVyFcoz8wpzs8DAEieBtU&q=e+o+wilson&rlz=1C1GCEB_enUS1069US1069&oq=e+o+wil&gs_lcrp=EgZjaHJvbWUqBwgBEC4YgAQyCggAEAAY4wIYgAQyBwgBEC4YgAQyBggCEEUYOTIHCAMQABiABDIHCAQQABiABDIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDI4NjJqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8)
+* [May Contain Lies: How stories, statistics, and studies exploit our biases -- and what we can do about it - Alex Edmans](https://bookshop.org/p/books/may-contain-lies-how-stories-statistics-and-studies-exploit-our-biases-and-what-we-can-do-about-it-alex-edmans/c910b24f18c04b46?ean=9780520403932&next=t)
+* [You Are Not So Smarty - David McRaney](https://bookshop.org/p/books/you-are-not-so-smart-why-you-have-too-many-friends-on-facebook-why-your-memory-is-mostly-fiction-and-46-other-ways-you-re-deluding-yourself-david-mc/c0769fdd11c184c0?ean=9781592407361&next=t)
+* [You Are Now Less Dumb - David McRaney](https://bookshop.org/p/books/you-are-now-less-dumb-how-to-conquer-mob-mentality-how-to-buy-happiness-and-all-the-other-ways-to-ou-tsmart-yourself-david-mcraney/7787259?ean=9781592408795&next=t)
+* [How Minds Change - David McRaney](https://bookshop.org/p/books/how-minds-change-the-surprising-science-of-belief-opinion-and-persuasion-david-mcraney/031f155ef89e95e8?ean=9780593190296&next=t)
+* [The Meme Machine - Susan Blackmore](https://bookshop.org/p/books/the-meme-machine-susan-blackmore/c767d684ab0a616c?ean=9798200329977&bkshp-astro=t)
 
 ## Classes
 
