@@ -22,7 +22,7 @@ categories: []
 
 * **[Roanoke Valley .NET User Group](https://rvnug.org/)** - 9/3/2026 - "Crafting AI: A Developer’s Guide to Machine Learning"
 
-* **[KCDC 2026](https://www.kcdc.info/)** - 9/9/2026 - 9/11/2026 - "Architecting for Reliability: Eliminating Hidden Failure Modes"
+* **[KCDC 2026](https://www.kcdc.info/)** - 9/9/2026 - 9/11/2026 - "Architecting for Reliability: Eliminating Hidden Failure Modes" and "Intentional Architecture: Six Conversations for a Solid Foundation"
 
 * **[MLcon New York 2026](https://mlconference.ai/speaker/barry-stahl/)** - 9/28/2026 - 10/2/2026 - "LLMs Under the Hood - Workshop", "The Future of Information Retrieval: A Deep-Dive into RAG" & "When you Don't Need an LLM: Deterministic Intelligence for Real World Apps"
 

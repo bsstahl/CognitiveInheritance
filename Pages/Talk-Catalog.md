@@ -50,7 +50,17 @@ demonstrations using SQL Server, Cosmos DB and Redis.
 
 <h4 id="algorithms-talks"> Algorithms</h4>
 
-* **Amazing Algorithms for Solving Problems in Software** - Sure neural networks are cool but have you ever used a Firefly Algorithm to find the solution to a problem? How about an Ant Colony algorithm or one of  the many other algorithms inspired by nature?  In this talk we will see examples of a number of awesome bio-inspired algorithms that can be used to solve problems in software. We'll see how each one works, analyze its strengths and weaknesses, and determine when it is best used. You'll leave with the knowledge you need to solve problems using these algorithms in your language of choice.
+* **Amazing Algorithms for Solving Problems in Software** - Sure neural networks are cool but have you ever used a Firefly Algorithm to 
+find the solution to a problem? How about an Ant Colony algorithm or one of 
+the many other algorithms inspired by nature?  In this talk we will see 
+examples of a number of awesome bio-inspired algorithms that can be used 
+to solve problems in software. We'll see how each one works, analyze its 
+strengths and weaknesses, and determine when it is best used.
+
+  This session culminates when we use one of the bio-inspired algorithms, 
+Amoeba optimization, to train an ML model, demonstrating one of the many 
+practical applications of these tools. You'll leave with the knowledge you 
+need to solve problems using these algorithms in your language of choice.
 
   [Workshop Slides](https://cognitiveinheritance.com/Presentations/Workshop/AmazingAlgorithms/index.html) | [Video: Code on the Beach - July 2022](https://youtu.be/Ge_aChdwdtE)
 
@@ -74,9 +84,21 @@ that work best for us. That is, we'll go heavy on the code and lighter on the ma
 
 ***
 
-* **Crafting AI: A Developer's Guide to Machine Learning** - With Machine Learning (ML) making huge impacts across the software industry, it has become almost imperative for developers to understand its principles and applications. Unfortunately, the complexity of some ML models and the mathematical rigor of its algorithms can be intimidating. This talk aims to bridge this gap, making ML understandable and engaging for developers eager to learn this technology from the ground up.
+* **Crafting AI: A Developer's Guide to Machine Learning** - With Machine Learning (ML) making huge impacts across the software industry, it has become 
+almost imperative for developers to understand its principles and applications. 
+Unfortunately, the complexity of some ML models and the mathematical rigor of its 
+algorithms can be intimidating. This talk aims to bridge this gap, making ML 
+understandable and engaging for developers eager to learn this technology 
+from the ground up.
 
-  In this session, attendees will learn the foundational concepts of ML by coding their own models from scratch, without relying on pre-trained models like GPT. We'll start with a simple linear regression, a foundational tool to gain understanding of ML's error minimization and training processes. We'll then explain neural networks with a binary classification example. By the end, participants will not only grasp fundamental ML concepts but will also walk away with their own code implementing one of these models. This talk is designed to equip developers with the knowledge and confidence to use Machine Learning in their projects.
+  In this session, attendees will learn the foundational concepts of ML by coding 
+their own models from scratch, without relying on pre-trained models like GPT. 
+We'll start with a simple linear regression, a foundational tool to gain understanding 
+of ML's error minimization and training processes. We'll then explain neural networks 
+with a binary classification example. By the end, participants will not only grasp 
+fundamental ML concepts but will also walk away with their own code implementing 
+one of these models. This talk is designed to equip developers with the knowledge and confidence to 
+use Machine Learning in their projects.
 
   [Latest Slide Deck](https://cognitiveinheritance.com/Presentations/Session/CraftingAI/index.html) | [Workshop Slide Deck](https://cognitiveinheritance.com/Presentations/Workshop/CraftingAI/index.html)
 
@@ -187,7 +209,7 @@ the Microsoft OpenAI Client and Semantic Kernel.
 <h4 id="leadership-community-talks"> Leadership & Community</h4>
 
 * **Bend it Like Einstein** - Dive headfirst into the astonishing world of time dilation, where the realms of 
-science fiction and software engineering collide! Have you ever imagined being 
+science and software engineering collide! Have you ever imagined being 
 able to apply Einstein's principles of General Relativity to your daily grind? Well, 
 buckle up, because we're taking you on a whirlwind journey to master the art of 
 time dilation -- no PhD in physics required!!
