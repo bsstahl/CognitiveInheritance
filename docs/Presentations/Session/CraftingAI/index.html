@@ -344,43 +344,57 @@ to Physics, not the tricks of Linear Algebra as applied to Machine Learning.</sm
 <!-- Layout:ImageRight -->
 <!-- ContentItem:25c0b05e-b191-4c07-8f01-bcf81f611551 -->
 <!-- ContentItem:0961b3c9-8c97-499d-bb1c-71734b5b089f -->
-<aside class="notes"><p>The goal of the training process is to find the values of our parameters that best predict the output</p>
+<aside class="notes"><p>The goal of the training process is to find the values of our  parameters that best predict the output</p>
 </aside>
 <table><tr><td style="vertical-align:top;">
 <ul>
-<li><p><strong>Parameters</strong>: Internal values learned during training</p>
+<li><strong>Parameters</strong>: Internal values learned during training
 <ul>
-<li><p>Define the relationship between input and output</p>
-</li>
-<li><p>Adjusted to minimize prediction error</p>
-</li>
-</ul>
-</li>
-<li><p>In Linear Regression: <code>Y = mX + b</code></p>
-<ul>
-<li><p><strong>m</strong>: Slope (Weight) - The influence of X on Y</p>
-</li>
-<li><p><strong>b</strong>: Intercept (Bias) - Shifts the output vertically</p>
-</li>
-</ul>
-</li>
-<li><p>In more complex models:</p>
-<ul>
-<li><p>Counts include weights/biases across layers</p>
-</li>
-<li><p>Can capture non-linear relationships</p>
-</li>
-<li><p>Parameter counts are a proxy for complexity</p>
-</li>
-<li><p>GPT-4 uses roughly 1.8 trillion parameters</p>
-</li>
+<li>Define the relationship between input and output</li>
+<li>Adjusted to minimize prediction error</li>
 </ul>
 </li>
 </ul>
 
 </td>
 <td style="text-align: left;">
-<img src="img/0961b3c9-8c97-499d-bb1c-71734b5b089f.png" alt="Model Parameters.png" />
+<img src="img/0961b3c9-8c97-499d-bb1c-71734b5b089f.png" alt="Model Parameters - Variables Corrected.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="0bc42834-2ca5-4d82-9a30-e154f7a7d838"><h1>Linear Regression Parameters</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:708742c5-af3e-4b7c-9e28-e2d8bc7b4ef3 -->
+<!-- ContentItem:0961b3c9-8c97-499d-bb1c-71734b5b089f -->
+<aside class="notes"><p>As models get complex, they add weights and biases across layers to
+capture non-linear patterns. We measure complexity by parameter
+count: GPT-4 has roughly 1.8 trillion.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Linear Regression: <span class="math">\(Y = mX + b\)</span>
+<ul>
+<li><strong>m</strong>: Weight (Slope) <span class="math">\(\to\)</span> <span class="math">\(X\)</span>'s influence on <span class="math">\(Y\)</span></li>
+</ul>
+</li>
+<li>In 3 Dimensions: <span class="math">\(Y = m_1X_1 + m_2X_2 + b\)</span>
+<ul>
+<li><strong>m_1</strong>: Weight for <span class="math">\(X_1 \to X_1\)</span>'s influence on <span class="math">\(Y\)</span></li>
+<li><strong>m_2</strong>: Weight for <span class="math">\(X_2 \to X_2\)</span>'s influence on <span class="math">\(Y\)</span></li>
+<li>Each weight is the slope of the plane in one dimension</li>
+</ul>
+</li>
+<li>Regardless of dimensionality
+<ul>
+<li><strong>b</strong>: Intercept (Bias) - Shifts the output vertically</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/0961b3c9-8c97-499d-bb1c-71734b5b089f.png" alt="Model Parameters - Variables Corrected.png" />
 </td>
 </tr></table></section>
 
@@ -388,13 +402,12 @@ to Physics, not the tricks of Linear Algebra as applied to Machine Learning.</sm
 <a id="07ebe50d-c195-4031-837a-7a73e9859297"><h1>Error Function</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:4cca160f-5d25-4474-b017-cd31e409d2cb -->
-<!-- ContentItem:92ba6edf-733d-4056-931a-41ff30733ff0 -->
+<!-- ContentItem:5b8e3a2d-95e1-4658-a040-a2c31c77ebc8 -->
 <aside class="notes"><ul>
-<li><p>It may be difficult to see, but the bias does also contribute to the error, just by  far less that the weight.</p>
-</li>
-<li><p>This makes sense because the weight is multiplied by the input, the bias is just added.</p>
-</li>
-<li><p>Think about what happens if the slope is perpendicular to the expected line.</p>
+<li>It may be difficult to see, but the bias does also contribute to the error, just by
+far less that the weight.</li>
+<li>This makes sense because the weight is multiplied by the input, the bias is just added.</li>
+<li>Think about what happens if the slope is perpendicular to the expected line.
 <ul>
 <li>The error for every point will be large, except for the area near where the lines cross.</li>
 </ul>
@@ -407,11 +420,11 @@ to Physics, not the tricks of Linear Algebra as applied to Machine Learning.</sm
 <li>Y-Axis: The value of the bias (b)</li>
 <li>Z-Axis: The size of the error</li>
 </ul>
-<p>The weight (m) often has a greater effect on the error than the bias (b)</p>
+<p>Weight (m) usually has the most impact on error</p>
 
 </td>
 <td style="text-align: left;">
-<img src="img/92ba6edf-733d-4056-931a-41ff30733ff0.png" alt="Linear Regression - Error Function Plot - Smaller.png" />
+<img src="img/5b8e3a2d-95e1-4658-a040-a2c31c77ebc8.png" alt="LinearRegression-ErrorFunction-800x800.png" />
 </td>
 </tr></table></section>
 
