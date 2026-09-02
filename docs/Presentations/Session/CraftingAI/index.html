@@ -207,16 +207,20 @@ We will start with a simple linear regression model and build on that to create 
 
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="b71e25da-cc78-4dd2-9330-c0bf31fee60e"><h1>Crafting AI Models</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:d68b6230-4322-49b2-a017-e215faea7c06 -->
+<!-- ContentItem:5de7ae69-ee28-4a3f-8769-e54ed289e0ef -->
 <aside class="notes"><p>2 parts to building AI Models: Model Design &amp; Model Training</p>
 <ul>
 <li>Design: Must be done regardless of implementation</li>
 <li>Training: Can be done using a variety of tools - we start here</li>
 </ul>
-<p>Once you understand the key concepts, you can implement them with any ML suite. Our goal is to provide  the intution so that we understand what is happening under the hood and can fix problems when they occur regardless of the tooling we choose.</p>
+<p>Once you understand the key concepts, you can implement them with any ML suite. Our goal is to provide
+the intution so that we understand what is happening under the hood and can fix problems when they occur
+regardless of the tooling we choose.</p>
 </aside>
-<a id="b71e25da-cc78-4dd2-9330-c0bf31fee60e"><h1>Crafting AI Models</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:d68b6230-4322-49b2-a017-e215faea7c06 -->
+<table><tr><td style="vertical-align:top;">
 <ul>
 <li>Designing the Model Structure
 <ul>
@@ -240,8 +244,11 @@ We will start with a simple linear regression model and build on that to create 
 </li>
 </ul>
 
-</section>
-
+</td>
+<td style="text-align: left;">
+<img src="img/5de7ae69-ee28-4a3f-8769-e54ed289e0ef.png" alt="DesignAndTrain-800x800.png" />
+</td>
+</tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
 <a id="b554e246-f939-4c90-90be-74e069b9c284"><h1>Linear Model</h1></a>
@@ -462,7 +469,10 @@ far less that the weight.</li>
 <!-- Layout:MultiColumn -->
 <!-- ContentItem:2efb79ef-f83f-4e01-af5c-a8995f355d62 -->
 <!-- ContentItem:b14eaae1-4711-4ca2-960b-ba7d75667230 -->
-
+<aside class="notes"><ul>
+<li><strong>Stochastic Gradient Descent</strong> updates parameters using a subset of data each cycle</li>
+</ul>
+</aside>
 <table><tr><td style="vertical-align:top;">
 <blockquote>
 <p>Optimization algorithm used to minimize the cost function of a model</p>
@@ -470,25 +480,15 @@ far less that the weight.</li>
 <ul>
 <li><p>Shifts the parameters in the opposite direction of the cost gradient</p>
 <ul>
-<li><p>The 1st derivative of the cost function</p>
-</li>
-<li><p>Represents the slope of that function</p>
-</li>
+<li>The 1st derivative of the cost function</li>
+<li>Represents the slope of that function</li>
 </ul>
 </li>
 <li><p>Hyperparameters include:</p>
 <ul>
-<li><p>Number of iterations</p>
-</li>
-<li><p>Learning rate</p>
-</li>
-<li><p>Convergence criteria</p>
-</li>
-</ul>
-</li>
-<li><p><strong>Stochastic</strong> Gradient Descent</p>
-<ul>
-<li>Updates parameters using a subset of data each cycle</li>
+<li>Number of iterations</li>
+<li>Learning rate</li>
+<li>Convergence criteria</li>
 </ul>
 </li>
 </ul>
@@ -512,9 +512,9 @@ far less that the weight.</li>
 </aside>
 <table><tr><td style="vertical-align:top;">
 <ul>
-<li>Linear Regression - <a href="https://github.com/bsstahl/AIDemos/tree/master/CraftingAI/src/GradientDescent/LinearRegression">C# Code</a></li>
 <li>AND Gate Model - <a href="https://github.com/bsstahl/AIDemos/tree/master/CraftingAI/AND%20Gate%20Model.xlsx">Excel</a></li>
 <li>Maintainability Model - <a href="https://github.com/bsstahl/AIDemos/tree/master/CraftingAI/Maintainability%20Model.xlsx">Excel</a></li>
+<li>Linear Regression - <a href="https://github.com/bsstahl/AIDemos/tree/master/CraftingAI/src/GradientDescent/LinearRegression">C# Code</a></li>
 </ul>
 
 </td>
@@ -814,31 +814,33 @@ In this case, it represents the distance travelled on a train between stations a
 <a id="5d9c98bb-120b-4d61-9eba-53caa250d2ee"><h1>Feature Engineering</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:97b075f4-e20f-4bb9-a830-b116b881c6f5 -->
-<!-- ContentItem:8738d954-63a2-40f5-aa5e-deeb431d5f52 -->
-<aside class="notes"><p>The better we understand the problem we are trying to solve, the better we can describe it in a model that can be solved by a computer. This is the essence of feature engineering.</p>
+<!-- ContentItem:4fc32f69-bb9b-42c4-9bfa-7f99a8d6d807 -->
+<aside class="notes"><p>The better we understand the problem we are trying to solve, the
+better we can describe it in a model that can be solved by a
+computer. This is the essence of feature engineering.</p>
 </aside>
 <table><tr><td style="vertical-align:top;">
 <blockquote>
-<p>The process of identifying, selecting, and combining key attributes of a problem to help a model make better predictions</p>
+<p>The process of identifying, selecting, and combining key attributes of a problem to improve a model</p>
 </blockquote>
 <ul>
 <li>Choice and quality of features are critical
 <ul>
-<li>Directly impact the model's ability to learn and make accurate predictions</li>
+<li>Impact the model's ability to learn</li>
 </ul>
 </li>
-<li>Hierarchical layers enable complex feature extraction, capturing non-linear relationships</li>
+<li>Hierarchical layers enable complex feature extraction</li>
 <li>Techniques like <em>Dimensionality Reduction</em> help reduce the number of features while preserving key information
 <ul>
-<li>Example: Combine length and width to create a single feature representing area</li>
+<li>Example: Combine <code>length</code> and <code>width</code> into <code>area</code></li>
 </ul>
 </li>
-<li>Requires experimentation and iteration to find the best feature set for a given problem</li>
+<li>Requires experimentation and iteration</li>
 </ul>
 
 </td>
 <td style="text-align: left;">
-<img src="img/8738d954-63a2-40f5-aa5e-deeb431d5f52.png" alt="Necker_cube_with_background.png" />
+<img src="img/4fc32f69-bb9b-42c4-9bfa-7f99a8d6d807.png" alt="UnCube-800x800.png" />
 </td>
 </tr></table></section>
 
@@ -950,21 +952,21 @@ In this case, it represents the distance travelled on a train between stations a
 <a id="a0594eaf-8de8-49b1-8f85-c3e3a8f749ed"><h1>Key Takeaways</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:5673eb9b-9c15-4f15-9b09-0ed81e037cd9 -->
-<!-- ContentItem:5b0df670-4e65-44fa-a175-5c4407ff8a88 -->
+<!-- ContentItem:f07e40cd-e87e-4767-90f7-84f4908a0e20 -->
 
 <table><tr><td style="vertical-align:top;">
 <ul>
-<li>Neural networks reduce to repeated linear transformations</li>
+<li>Neural networks reduce to linear transformations</li>
+<li>Non-linearity is required for non-separable problems</li>
 <li>Training is optimization - minimize error</li>
 <li>Gradient descent is the typical optimization</li>
-<li>Non‑linearity is required for modeling non‑separable problems</li>
 <li>Engineer features to improve model performance</li>
-<li>Mastering these fundamentals lets you build any ML system</li>
+<li>Master these fundamentals to build any ML system</li>
 </ul>
 
 </td>
 <td style="text-align: left;">
-<img src="img/5b0df670-4e65-44fa-a175-5c4407ff8a88.png" alt="CraftingAI-Session-QR-800x800.png" />
+<img src="img/f07e40cd-e87e-4767-90f7-84f4908a0e20.png" alt="AILandscape-800x800.png" />
 </td>
 </tr></table></section>
 
@@ -976,7 +978,6 @@ In this case, it represents the distance travelled on a train between stations a
 
 <table><tr><td style="vertical-align:top;">
 <ul>
-<li><a href="https://cognitiveinheritance.com/Presentations/Workshop/CraftingAI/index.html">This slide deck</a></li>
 <li><a href="http://www.CognitiveInheritance.com">My Blog</a></li>
 <li><a href="https://www.youtube.com/watch?v=zZAobExOMB0&amp;list=FLq-iLd7rfmqSIFiujBGIRSw&amp;index=2">Building AI Solutions with Google OR-Tools</a></li>
 <li><a href="https://github.com/TheAlgorithms">The Algorithms Repo</a></li>
