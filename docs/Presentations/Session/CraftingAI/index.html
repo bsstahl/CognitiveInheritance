@@ -919,32 +919,28 @@ computer. This is the essence of feature engineering.</p>
 <a id="5566c84d-a3e0-4b57-8b8e-2e5dd11ff349"><h1>BackPropagation</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:8ebc7fce-f2e0-4370-87d7-7989abfa6fff -->
+<!-- ContentItem:c0ef798b-103e-47da-9b74-048d1f493f13 -->
 
 <table><tr><td style="vertical-align:top;">
 <blockquote>
-<p>A mechanism to train multi-layer perceptrons by determining the appropriate outputs for hidden layers during training</p>
+<p>A way to train multi-layer models by flowing deltas backwards</p>
 </blockquote>
 <ul>
-<li><p>Create a feed-forward prediction</p>
-</li>
-<li><p>Calculate error at the output layer</p>
-</li>
-<li><p>Compute error gradient using the <a href="#3304b85c-094c-4353-be51-8339ebe4d55c">chain rule</a></p>
-</li>
-<li><p>Update Parameters using gradients</p>
+<li>Create a feed-forward prediction</li>
+<li>Calculate error at the output layer</li>
+<li>Compute error gradient using the <a href="#3304b85c-094c-4353-be51-8339ebe4d55c">chain rule</a></li>
+<li>Update Parameters using gradients
 <ul>
-<li><p>Start from output layer, move backwards through network.</p>
-</li>
-<li><p>Adjustments to weights are weighted by the input values</p>
-</li>
-<li><p>Adjustments to biases are not weighted</p>
-</li>
+<li>Start from the end, work backwards</li>
+<li>Weights deltas are adjusted by the inputs</li>
+<li>Deltas to biases are not adjusted</li>
 </ul>
-</li>
-<li><p>No need to recalculate gradient after each update during an iteration</p>
 </li>
 </ul>
 
+</td>
+<td style="text-align: left;">
+<img src="img/c0ef798b-103e-47da-9b74-048d1f493f13.png" alt="Backpropagation-800x800.png" />
 </td>
 </tr></table></section>
 
