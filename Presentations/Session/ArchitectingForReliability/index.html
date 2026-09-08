@@ -154,11 +154,14 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 
 
 <section data-transition="slide-in fade-out" data-background-transition="fade-in fade-out">
-<aside class="notes"><p>Let's keep it as simple as possible and ignore network and hardware failures for now.</p>
-</aside>
 <a id="3368f6e8-5a63-4b43-99c5-d286e94f19f8"><h1>Simple Example</h1></a>
-<!-- Layout:FullPage -->
+<!-- Layout:ImageRight -->
 <!-- ContentItem:95571f29-2b79-4b3b-a861-1a9461c93eb7 -->
+<!-- ContentItem:cf9efad0-cad0-4208-8489-8a3dc644fbb0 -->
+<aside class="notes"><p>Let's keep it as simple as possible and ignore network and
+hardware failures for now.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
 <ul>
 <li><p>Two Actions that Result in Changes</p>
 <ul>
@@ -168,8 +171,11 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 </li>
 </ul>
 
-</section>
-
+</td>
+<td style="text-align: left;">
+<img src="img/cf9efad0-cad0-4208-8489-8a3dc644fbb0.png" alt="TwoActions-800x800.png" />
+</td>
+</tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
 <aside class="notes"><p>The Process - High Level</p>
@@ -446,16 +452,6 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 </section>
 
 
-<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/63e65212-8145-4d43-a513-a1de1b042f9b.jpg'>
-
-<a id="9d38d943-71ad-4212-9df0-2bb98db56df6"><h1>Demo</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:3b9d2c82-818e-4b4b-8fbc-df901b0a7a66 -->
-<h2 id="the-transactional-outbox-pattern">The Transactional Outbox Pattern</h2>
-
-</section>
-
-
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
 <aside class="notes"><p>Outbox guarantees every unique update will be seen by the downstream consumers</p>
 </aside>
@@ -509,16 +505,6 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 </section>
 
 
-<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/63e65212-8145-4d43-a513-a1de1b042f9b.jpg'>
-
-<a id="3b7f5c26-9093-4adf-944b-ee0777195ef5"><h1>Demo</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:00ae3efd-f51d-4154-b817-f8ff3fc0700f -->
-<h2 id="the-change-data-capture-pattern">The Change-Data-Capture Pattern</h2>
-
-</section>
-
-
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
 
 <a id="41fe695a-cd44-4be0-bcfe-cd9b7a72686f"><h1>Cosmos CDC</h1></a>
@@ -563,16 +549,6 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 <!-- Layout:FullPage -->
 <!-- ContentItem:3fc691c7-057f-4f70-9f92-d5883e01631e -->
 <img alt="Streaming-Sequence-800px.png" src="img/3fc691c7-057f-4f70-9f92-d5883e01631e.png" />
-</section>
-
-
-<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/63e65212-8145-4d43-a513-a1de1b042f9b.jpg'>
-
-<a id="ccf27d19-c255-45d2-8512-b7c44a69c355"><h1>Demo</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:a59f69a1-7cf5-4918-871e-31a7e4812ea5 -->
-<h2 id="data-streaming">Data Streaming</h2>
-
 </section>
 
 
@@ -631,23 +607,37 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="b3c1e9ff-f00d-407b-b23e-f2a5a0d734ec"><h1>The Saga Pattern</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:b4750bbb-c0d1-4396-a470-140d03bb66b3 -->
+<!-- ContentItem:8a250b07-1f5f-4853-a94a-f35e712f492f -->
 <aside class="notes"><p>Sagas are workflows. As such, they are probably best managed by using workflow tooling.</p>
 </aside>
-<a id="b3c1e9ff-f00d-407b-b23e-f2a5a0d734ec"><h1>The Saga Pattern</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:b4750bbb-c0d1-4396-a470-140d03bb66b3 -->
-<h3 id="goal-trigger-an-orchestration-or-choreography-to-perform-multiple-actions-reliably">Goal: Trigger an orchestration or Choreography to perform multiple actions reliably</h3>
-<h4 id="orchestration">Orchestration</h4>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Goal: Trigger an orchestration or Choreography to perform multiple actions reliably</p>
+</blockquote>
 <ul>
-<li>A single controller is responsible for triggering all actions, including reversing transactions in the event of failures.</li>
+<li>Orchestration - A single controller (orchestrator)
+<ul>
+<li>Responsible for triggering all actions</li>
+<li>Including reversing transactions when needed</li>
 </ul>
-<h4 id="choreography">Choreography</h4>
+</li>
+<li>Choreography - Each service does one thing
 <ul>
-<li>Each service does one thing based on upstream events, then publishes events as needed. Any other services in the saga are responsible for responding to all events appropriately.</li>
+<li>Based on upstream events it receives</li>
+<li>Then publishes results</li>
+<li>Other services are responsible for responding to its events</li>
+</ul>
+</li>
 </ul>
 
-</section>
-
+</td>
+<td style="text-align: left;">
+<img src="img/8a250b07-1f5f-4853-a94a-f35e712f492f.png" alt="Saga-Pattern-800x800.png" />
+</td>
+</tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
 
@@ -681,10 +671,12 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
-
 <a id="b531dcbd-3b17-496e-a0dc-1b7e0707fd8c"><h1>Summary</h1></a>
-<!-- Layout:FullPage -->
+<!-- Layout:ImageRight -->
 <!-- ContentItem:4f781b4f-8b3c-4aff-af81-28b4d8d64b9b -->
+<!-- ContentItem:cf9efad0-cad0-4208-8489-8a3dc644fbb0 -->
+
+<table><tr><td style="vertical-align:top;">
 <ul>
 <li>It is impossible to reliable take 2 actions in a single context</li>
 <li>Best practice: Persist immediately, then take other actions</li>
@@ -694,28 +686,26 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 <li>Never &quot;add on&quot;</li>
 </ul>
 
-</section>
-
+</td>
+<td style="text-align: left;">
+<img src="img/cf9efad0-cad0-4208-8489-8a3dc644fbb0.png" alt="TwoActions-800x800.png" />
+</td>
+</tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
-
 <a id="8083d62b-b8b4-4d38-8873-292c76c6c877"><h1>Resources</h1></a>
-<!-- Layout:FullPage -->
+<!-- Layout:ImageRight -->
 <!-- ContentItem:880be013-ac34-4650-b3bf-44b1d51b6a0b -->
+<!-- ContentItem:42bb8409-6646-4b7a-bb7a-4931f42bc992 -->
+
+<table><tr><td style="vertical-align:top;">
 <ul>
-<li><p><a href="https://grnh.se/ba048c6d1">Carvana</a></p>
-</li>
-<li><p><a href="https://github.com/bsstahl/AvoidingDualWrites">Code Samples</a></p>
-</li>
-<li><p><a href="https://en.wikipedia.org/wiki/Idempotence#Computer_science_meaning">Idempotence</a></p>
-</li>
-<li><p><a href="https://engineering.razorpay.com/achieving-reliable-dual-writes-in-distributed-systems-cb9ff3b9bfc1">The Transactional Outbox Pattern</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/azure/cosmos-db/change-feed-processor">Cosmos DB Change Feed Processor</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/about-change-data-capture-sql-server?view=sql-server-ver15">SQL Change-Data-Capture</a></p>
-</li>
-<li><p><a href="https://www.dataversity.net/what-is-data-streaming-a-data-architects-guide/">Data Streaming</a></p>
+<li><a href="https://github.com/bsstahl/AvoidingDualWrites">Code Samples</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Idempotence#Computer_science_meaning">Idempotence</a></li>
+<li><a href="https://engineering.razorpay.com/achieving-reliable-dual-writes-in-distributed-systems-cb9ff3b9bfc1">The Transactional Outbox Pattern</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/cosmos-db/change-feed-processor">Cosmos DB Change Feed Processor</a></li>
+<li><a href="https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/about-change-data-capture-sql-server?view=sql-server-ver15">SQL Change-Data-Capture</a></li>
+<li><a href="https://www.dataversity.net/what-is-data-streaming-a-data-architects-guide/">Data Streaming</a>
 <ul>
 <li><a href="https://redis.io/topics/streams-intro">Redis Streams</a></li>
 <li><a href="https://azure.microsoft.com/en-us/services/service-bus/">Azure Service Bus</a></li>
@@ -723,29 +713,15 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 <li><a href="https://kafka-tutorials.confluent.io/">Kafka</a></li>
 </ul>
 </li>
-<li><p><a href="https://dzone.com/articles/microservices-using-saga-pattern">The Saga Pattern</a></p>
-</li>
-<li><p><a href="https://azure.microsoft.com/en-us/blog/understanding-and-leveraging-azure-sql-database-sla/">Understanding SQL Azure SLAs</a></p>
-</li>
-<li><p><a href="https://plantuml.com">PlantUML Diagram Tools</a></p>
-</li>
+<li><a href="https://dzone.com/articles/microservices-using-saga-pattern">The Saga Pattern</a></li>
+<li><a href="https://azure.microsoft.com/en-us/blog/understanding-and-leveraging-azure-sql-database-sla/">Understanding SQL Azure SLAs</a></li>
 </ul>
 
-</section>
-
-
-<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
-
-<a id="f867f774-6172-45b5-8773-6ee07c97d363"><h1>This Slide Deck</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:5d635f1c-4059-4c4c-adac-15763560f0bd -->
-<!-- ContentItem:71f2cb46-b8cd-481a-a9db-9cc91b8d22c3 -->
-<h2 id="httpavoidingdualwrites.azurewebsites.net"><a href="http://avoidingdualwrites.azurewebsites.net">http://AvoidingDualWrites.azurewebsites.net</a></h2>
-<p><a href="?print-pdf#">Printable Version</a></p>
-
-<img alt="AvoidingDualWrites_QR.png" src="img/71f2cb46-b8cd-481a-a9db-9cc91b8d22c3.png" />
-</section>
-
+</td>
+<td style="text-align: left;">
+<img src="img/42bb8409-6646-4b7a-bb7a-4931f42bc992.png" alt="QR_ArchitectingForReliability_800x800.png" />
+</td>
+</tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
 

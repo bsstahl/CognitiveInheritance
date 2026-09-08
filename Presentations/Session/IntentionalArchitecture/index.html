@@ -158,7 +158,8 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 <!-- Layout:ImageRight -->
 <!-- ContentItem:96e7e0cf-747b-4927-9c7c-756b0bcc821c -->
 <!-- ContentItem:2d188e35-ae3d-4bbd-8f47-33ed9642681a -->
-<aside class="notes"><p>These conversations will help make explicit what is often left implicit or even unconsidered</p>
+<aside class="notes"><p>Call these whatever it takes to get your teams to participate: Conversations, workshops, exercises...</p>
+<p>These will help make explicit what is often left implicit or even unconsidered.</p>
 </aside>
 <table><tr><td style="vertical-align:top;">
 <blockquote>
@@ -221,18 +222,42 @@ from the Cornell Messenger Lectures, November 9, 1964.</p>
 
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="ad1cc765-082a-49be-9601-68afa0cfd631"><h1>The Tradeoffs of Consistency</h1></a>
+<!-- Layout:ImageWithCaption -->
+<!-- ContentItem:c3708185-0475-4efd-94de-c7c7720b8328 -->
+<!-- ContentItem:32e94689-3c8e-40aa-8ae3-ea7392a63572 -->
+<aside class="notes"><p>Introduce consistency as an architectural tradeoff before examining the concrete choices in the Consistency conversation.</p>
+</aside>
+<img alt="space time 800x619.jpg" src="img/c3708185-0475-4efd-94de-c7c7720b8328.jpg" />
+<h2><blockquote>
+<p>Every consistency guarantee has a cost</p>
+</blockquote>
+</h2>
+</section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
 <a id="a54289cc-802e-4d73-a3db-a5e7d306cd30"><h1>Consistency</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:e76a4e45-4e0b-48c0-8bcc-9078629dc658 -->
 <!-- ContentItem:1f8aad23-2a05-4236-860d-17efa5e2051b -->
-
+<aside class="notes"><ul>
+<li><p>Data Consistency: An order status, payment state,
+and shipment state are not contradictory.</p>
+</li>
+<li><p>System Consistency: Every observer of the system
+sees the same data and relationships.</p>
+</li>
+</ul>
+</aside>
 <table><tr><td style="vertical-align:top;">
 <blockquote>
-<p>Data is consistent when it appears the same way when viewed from any perspective</p>
+<p>Data is consistent when its value and
+related representations obey the rules for that data.</p>
 </blockquote>
 <hr />
 <blockquote>
-<p>Systems are consistent when all of the data in them is consistent</p>
+<p>Systems are consistent when all of its data and relationships
+obey the system's rules for that data.</p>
 </blockquote>
 
 </td>
@@ -242,7 +267,7 @@ from the Cornell Messenger Lectures, November 9, 1964.</p>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
-<a id="4c4f9db4-3849-4391-8857-1c95327c2957"><h1>Consistency is a Lie</h1></a>
+<a id="4c4f9db4-3849-4391-8857-1c95327c2957"><h1>Full Consistency is a Lie</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:08b309dd-c4fa-4dc6-9b6a-a7cb514727b5 -->
 <!-- ContentItem:41eef079-8f4f-4afd-a60f-62a3119b3de9 -->
@@ -251,7 +276,7 @@ FWIW: Light travels roughly 2500 miles in 13ms (the shortest perceptible delay).
 </aside>
 <table><tr><td style="vertical-align:top;">
 <blockquote>
-<p>All consistency is <strong>simulated</strong></p>
+<p>Full consistency is <strong>simulated</strong></p>
 </blockquote>
 <hr />
 <blockquote>
@@ -1367,7 +1392,8 @@ However, this is not the only kind of Context we need to care about. We also nee
 <!-- Layout:ImageRight -->
 <!-- ContentItem:96e7e0cf-747b-4927-9c7c-756b0bcc821c -->
 <!-- ContentItem:2d188e35-ae3d-4bbd-8f47-33ed9642681a -->
-<aside class="notes"><p>These conversations will help make explicit what is often left implicit or even unconsidered</p>
+<aside class="notes"><p>Call these whatever it takes to get your teams to participate: Conversations, workshops, exercises...</p>
+<p>These will help make explicit what is often left implicit or even unconsidered.</p>
 </aside>
 <table><tr><td style="vertical-align:top;">
 <blockquote>
