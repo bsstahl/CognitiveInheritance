@@ -303,30 +303,28 @@ hardware failures for now.</p>
 
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<aside class="notes"><p>ONCE, subject to caveats to follow...</p>
+</aside>
 <a id="274d35d1-4d79-473d-9eea-f7b4932756a2"><h1>What is a Dual-Write?</h1></a>
-<!-- Layout:FullPageFragments -->
-<!-- ContentItem:c6c731a2-a5b5-466c-856a-9b17f9c512d7 -->
-<!-- ContentItem:2e2dac22-7363-4e0b-baf2-6d860af0a1b4 -->
-<table border="0" width="100%">
-
-<tr><td>
-<blockquote class="fragment">
+<!-- Layout:FullPage -->
+<!-- ContentItem:b7f2a9c4-6d18-4e83-a5b1-9c0d7f6e2b34 -->
+<blockquote>
 <p>An attempt to make more than 1 reliable change to the state of a system in a single invocation</p>
 </blockquote>
-
-</td></tr>
-<tr><td>
-<ul class="fragment">
-<li>Reliable = Can be expected to occur <strong>EXACTLY ONCE</strong>, irrespective of:
 <ul>
-<li>The reliability of the execution environment</li>
-<li>The reliability of any dependencies</li>
+<li>Reliable = Can reasonably be expected to occur ONCE<sup>*</sup>
+<ul>
+<li>Irrespective of:
+<ul>
+<li>Reliability of the environment</li>
+<li>Reliability of any dependencies</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>Change = An <strong>ATOMIC</strong> modification
 <ul>
 <li>Database or Cache Update</li>
-<li>WebAPI Call</li>
 <li>Message Delivery</li>
 </ul>
 </li>
@@ -338,20 +336,16 @@ hardware failures for now.</p>
 </li>
 </ul>
 
-</td></tr>
-</table></section>
+</section>
 
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
-<a id="f29fd8ff-8f4b-4753-8900-34ca3996bb4a"><h1>Particularly Pernicious</h1></a>
-<!-- Layout:FullPageFragments -->
-<!-- ContentItem:d998ae82-5722-4cce-b070-d66cdc9ea626 -->
-<!-- ContentItem:a053e9bd-b058-443f-ae1d-84d02d46d552 -->
-<table border="0" width="100%">
 
-<tr><td>
-<ul class="fragment">
-<li><p>Errors resulting from dual-writes can manifest in different ways</p>
+<a id="f29fd8ff-8f4b-4753-8900-34ca3996bb4a"><h1>Particularly Pernicious</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:8c6a4c7e-0f16-4a92-bf71-1f3e3d2a9e54 -->
+<ul>
+<li>Errors resulting from dual-writes can manifest in different ways
 <ul>
 <li>Duplicate Data or Actions
 <ul>
@@ -372,12 +366,7 @@ hardware failures for now.</p>
 </li>
 </ul>
 </li>
-</ul>
-
-</td></tr>
-<tr><td>
-<ul class="fragment">
-<li><p>Supporting these systems can be a nightmare</p>
+<li>Supporting these systems can be a nightmare
 <ul>
 <li>Difficult to identify when errors occur</li>
 <li>Difficult to remediate</li>
@@ -386,15 +375,18 @@ hardware failures for now.</p>
 </li>
 </ul>
 
-</td></tr>
-</table></section>
+</section>
 
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
-
 <a id="6434ba76-03e9-4087-89ab-8cf910a09014"><h1>Avoiding Dual-Writes</h1></a>
-<!-- Layout:FullPage -->
+<!-- Layout:ImageRight -->
 <!-- ContentItem:a37b8af0-2846-45ca-bb85-5e4779729c86 -->
+<!-- ContentItem:c0135cbd-70d8-4baa-b222-bdd2318e0d76 -->
+<aside class="notes"><p>Remember &quot;Save the Cheerleader, Save the World&quot; from Heroes?
+This is, &quot;Save the Context, Save the App&quot;.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
 <h3 id="keep-it-separate-keep-it-safe">Keep It Separate, Keep It Safe</h3>
 <ul>
 <li>Isolation Patterns
@@ -412,8 +404,11 @@ hardware failures for now.</p>
 </li>
 </ul>
 
-</section>
-
+</td>
+<td style="text-align: left;">
+<img src="img/c0135cbd-70d8-4baa-b222-bdd2318e0d76.png" alt="SafeSeparation-800x800.png" />
+</td>
+</tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
 <aside class="notes"><p>All 3 of the Outbox, CDC and Streaming patterns are what I would consider Isolation patterns. They differ only in implementation detail.</p>
@@ -553,10 +548,12 @@ hardware failures for now.</p>
 
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
-
 <a id="bbba5465-b0af-41e4-86da-a8c03abffc54"><h1>Data Streaming</h1></a>
-<!-- Layout:FullPage -->
+<!-- Layout:ImageRight -->
 <!-- ContentItem:c11b35ab-46cc-4c06-80b9-b5b45d2309ef -->
+<!-- ContentItem:7d5f581d-34a5-4ad2-8eec-11cbaa7c581f -->
+
+<table><tr><td style="vertical-align:top;">
 <ul>
 <li><p>Advantages</p>
 <ul>
@@ -574,44 +571,46 @@ hardware failures for now.</p>
 </li>
 </ul>
 
-</section>
-
+</td>
+<td style="text-align: left;">
+<img src="img/7d5f581d-34a5-4ad2-8eec-11cbaa7c581f.png" alt="StreamingInMotion-800x800.png" />
+</td>
+</tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
-
-<a id="b197722c-4473-4001-bfc0-8556641bc31a"><h1>These Patterns are Similar</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:a9b93321-4ad3-4e0f-9648-d524f92ea075 -->
+<a id="c44305b8-3469-4dc6-8e76-7f3398e70c6d"><h1>These Patterns are Similar</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:6d89e4d2-2ec0-4dfc-85d4-346c3fe76cac -->
+<!-- ContentItem:59ac040f-5264-49b5-9846-8a067137b582 -->
+<aside class="notes"><p>The patterns all solve the same reliability problem: once work is split across independent steps, you must protect against commit-time failure and repeated delivery.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
 <ul>
-<li>Persist the data first - Then act on it</li>
-<li>CDC &amp; Streaming are easy to fanout to N tasks</li>
-<li>Outbox &amp; Streaming guarantee that all changes will be sent</li>
-<li>All are susceptible to errors on commit</li>
+<li>Persist the data first - then act on it</li>
+<li>CDC &amp; streaming are easy to fan out to N tasks</li>
+<li>Outbox &amp; streaming can provide strong guarantees</li>
+<li>Most are still susceptible to errors on commit</li>
 </ul>
-
-</section>
-
-
-<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
-
-<a id="5f1f98d4-3105-42b8-8ba7-87e103fb41e6"><h1>Avoiding Commit Errors</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:209525be-c36b-4e6a-b392-863e7f795892 -->
+<hr />
 <ul>
-<li>These patterns get very close to 4-9's</li>
+<li>These patterns can get very close to 4-9's</li>
 <li>Use <strong>Idempotence</strong> whenever possible</li>
-<li>Exactly-Once Delivery may be possible</li>
+<li>Exactly-once delivery may be possible</li>
 </ul>
 
-</section>
-
+</td>
+<td style="text-align: left;">
+<img src="img/59ac040f-5264-49b5-9846-8a067137b582.png" alt="ConvergencePoint-800x800.png" />
+</td>
+</tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
 <a id="b3c1e9ff-f00d-407b-b23e-f2a5a0d734ec"><h1>The Saga Pattern</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:b4750bbb-c0d1-4396-a470-140d03bb66b3 -->
 <!-- ContentItem:8a250b07-1f5f-4853-a94a-f35e712f492f -->
-<aside class="notes"><p>Sagas are workflows. As such, they are probably best managed by using workflow tooling.</p>
+<aside class="notes"><p>Sagas are workflows. As such, they are probably best
+managed by using workflow tooling.</p>
 </aside>
 <table><tr><td style="vertical-align:top;">
 <blockquote>
