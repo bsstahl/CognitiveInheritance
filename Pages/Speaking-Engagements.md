@@ -20,8 +20,6 @@ categories: []
 
 <!-- I currently have no talks scheduled. {ContactPageLink:Contact me} to arrange to have me speak at your event. -->
 
-* **[KCDC 2026](https://www.kcdc.info/)** - 9/9/2026 - 9/11/2026 - "Architecting for Reliability: Eliminating Hidden Failure Modes" and "Intentional Architecture: Six Conversations for a Solid Foundation"
-
 * **[MLcon New York 2026](https://mlconference.ai/speaker/barry-stahl/)** - 9/28/2026 - 10/2/2026 - "LLMs Under the Hood - Workshop", "The Future of Information Retrieval: A Deep-Dive into RAG" & "When you Don't Need an LLM: Deterministic Intelligence for Real World Apps"
 
 * **[TechBash 2026](https://www.techbash.com/)** - 10/13/2026 - 10/16/2026 - "Beyond Procedural Logic: Solving Problems Outside the Query" & "Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems"
@@ -30,6 +28,7 @@ categories: []
 
 ### Past engagements
 
+* **[KCDC 2026](https://www.kcdc.info/)** - 9/9/2026 - 9/11/2026 - "Architecting for Reliability: Eliminating Hidden Failure Modes" and "Intentional Architecture: Six Conversations for a Solid Foundation"
 * **[Roanoke Valley .NET User Group](https://rvnug.org/)** - 9/3/2026 - "Crafting AI: A Developer’s Guide to Machine Learning"
 * **[Beer City Code 2026](https://www.beercitycode.com/#speakers)** - 8/14/2026 - 8/15/2026 - "LLMs Under the Hood" (workshop) and "Solutions That Evolve: Building Self-Improving Systems with Genetic Algorithms"
 * **[Nebraska.Code() 2026](https://nebraskacode.amegala.com/)** - 7/22/2026 - 7/24/2026 - "Amazing Algorithms for Solving Problems in Software" (workshop), "Solutions that Evolve, Building Self-Improving Systems with Genetic Algorithms" & "How the Fediverse Could Save Democracy & Why Developers Hold the Key"
