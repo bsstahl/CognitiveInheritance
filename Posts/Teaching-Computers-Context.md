@@ -13,11 +13,11 @@ menuorder: 0
 id: 1f872a14-4d10-4c9a-88ae-c84aa84064c2
 title: "Teaching Computers Context: Making Meaning Mathematical with Embeddings"
 description: An accessible introduction to how embeddings represent concepts as vectors that software can compare and manipulate mathematically.
-ispublished: false
+ispublished: true
 showinlist: false
 buildifnotpublished: true
-publicationdate: 2026-08-16T07:00:00Z
-lastmodificationdate: 2026-08-16T07:00:00Z
+publicationdate: 2026-09-12T07:00:00Z
+lastmodificationdate: 2026-09-12T07:00:00Z
 slug: teaching-computers-context
 
 ---
@@ -41,7 +41,7 @@ Before a machine learning model can process text, that text must be converted in
 
 An embedding gives us an additional, learned representation. It maps a token, word, phrase, sentence, or other item to a vector, which is an ordered list of numbers that we can treat as a point in a high-dimensional space. Unlike the arbitrary relationships implied by the original numeric encoding, the position of this point can capture relationships learned from the data.
 
-Models learn these representations through exposure to large amounts of data. The underlying idea, known as the distributional hypothesis, is that text used in similar contexts tends to have related meanings and should therefore develop related representations. The exact training process varies by model; some models create a single representation for a word, while others create representations that change based on the context. For our purposes, however, the important result is the same: concepts can be placed into a space where we can examine their relationships mathematically.
+Models learn these representations through exposure to large amounts of data. The underlying idea, known as the [distributional hypothesis](https://en.wikipedia.org/wiki/Distributional_semantics), is that text used in similar contexts tends to have related meanings and should therefore develop related representations. The exact training process varies by model; some models create a single representation for a word, while others create representations that change based on the context. For our purposes, however, the important result is the same: concepts can be placed into a space where we can examine their relationships mathematically.
 
 ## Visualizing the 'Ram' Example
 
