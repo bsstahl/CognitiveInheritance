@@ -26,7 +26,7 @@ categories: []
 
 * **[MITechCon 2026 - Rochester, MI](https://www.mitechcon.events/MITechCon2026)** - 10/28/2026 - 10/30/2026 - "LLMs Under the Hood - Applied Engineering Workshop" & "Amazing Algorithms for Solving Problems in Software"
 
-* **[Craft Conference 2027 - Budapest](https://craft-conf.com/2027/speakers/) - 6/3/2027 - 6/4/2027 - Sessions TBD
+* **[Craft Conference 2027 - Budapest](https://craft-conf.com/2027/speakers/)** - 6/3/2027 - 6/4/2027 - Sessions TBD
 
 ### Past engagements
 
