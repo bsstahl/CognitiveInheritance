@@ -640,8 +640,8 @@ far less that the weight.</li>
 
 <a id="19a0cfa6-5120-48c0-a4b9-d089cdd47855"><h1>Voter Model</h1></a>
 <!-- Layout:FullPage -->
-<!-- ContentItem:1ee0a6fe-6fab-4b65-a219-ebf8d454b532 -->
-<img alt="Voter Network Diagram - 673x800.png" src="img/1ee0a6fe-6fab-4b65-a219-ebf8d454b532.png" />
+<!-- ContentItem:4209462e-7f67-40c8-beea-33bbf31c969a -->
+<img alt="AI Models - SingleLayer Voter Model - 1280x720.png" src="img/4209462e-7f67-40c8-beea-33bbf31c969a.png" />
 </section>
 
 
@@ -721,6 +721,139 @@ far less that the weight.</li>
 
 </section>
 
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/092a364d-36dd-4cb0-b72f-a0a310d36325.png'>
+<a id="6edc47cf-c854-45e3-b429-c38114380b99"><h1>Feature Analysis</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:d59f515f-3d1e-4596-97aa-a5a2d1dd0321 -->
+<!-- ContentItem:c9cc5525-2ffb-4dfc-b88c-8fb41a3bdc35 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Weights represent the influence of an input feature</p>
+</li>
+<li><p>The 13th weight is the smallest - least influential</p>
+<ul>
+<li>Least partisan: <code>Superfund Right to Sue</code></li>
+</ul>
+</li>
+<li><p>The 4th weight is the largest - most influential</p>
+<ul>
+<li>Most partisan: <code>Physician Fee Freeze</code></li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/c9cc5525-2ffb-4dfc-b88c-8fb41a3bdc35.png" alt="Trained Model Parameters - Voting Model - 800x800 - With Highlights.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/092a364d-36dd-4cb0-b72f-a0a310d36325.png'>
+<a id="5d9c98bb-120b-4d61-9eba-53caa250d2ee"><h1>Feature Engineering</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:97b075f4-e20f-4bb9-a830-b116b881c6f5 -->
+<!-- ContentItem:4fc32f69-bb9b-42c4-9bfa-7f99a8d6d807 -->
+<aside class="notes"><p>The better we understand the problem we are trying to solve, the
+better we can describe it in a model that can be solved by a
+computer. This is the essence of feature engineering.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>The process of identifying, selecting, and combining key attributes of a problem to improve a model</p>
+</blockquote>
+<ul>
+<li>Choice and quality of features are critical
+<ul>
+<li>Impact the model's ability to learn</li>
+</ul>
+</li>
+<li>Hierarchical layers enable complex feature extraction</li>
+<li>Techniques like <em>Dimensionality Reduction</em> help reduce the number of features while preserving key information
+<ul>
+<li>Example: Combine <code>length</code> and <code>width</code> into <code>area</code></li>
+</ul>
+</li>
+<li>Requires experimentation and iteration</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/4fc32f69-bb9b-42c4-9bfa-7f99a8d6d807.png" alt="UnCube-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/092a364d-36dd-4cb0-b72f-a0a310d36325.png'>
+<a id="ec957a36-508d-4a7b-a0ac-e29d1b75e39e"><h1>Features of the Voting Model</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:de42d810-da0a-4f3c-91a8-e7100b16a6c7 -->
+<!-- ContentItem:4209462e-7f67-40c8-beea-33bbf31c969a -->
+<aside class="notes"><p>If we don't include a non-linear activation, this is probably a perceptron, if we do include a non-linear activation, this is probably a shallow network.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Current Model</p>
+<ul>
+<li><p><strong>Inputs</strong>: 16 Features</p>
+</li>
+<li><p><strong>Output</strong>: 1 Neuron</p>
+</li>
+<li><p><strong>Architecture</strong>: Linear Perceptron (or Shallow Network)</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Hypothesis</strong>: Existence of factions within parties</p>
+<ul>
+<li>Single-layer model may not capture this non-linear feature</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/4209462e-7f67-40c8-beea-33bbf31c969a.png" alt="AI Models - SingleLayer Voter Model - 1280x720.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/092a364d-36dd-4cb0-b72f-a0a310d36325.png'>
+<a id="76978ea6-11e4-4c8c-b0c5-2f88fc055cd1"><h1>Enhancing the Voting Model</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:a1039217-9ef1-4e6f-8e00-3b4898eb5cba -->
+<!-- ContentItem:6d34b87a-8248-484b-b71c-68004f63a4a9 -->
+<aside class="notes"><p>Notice that we have had a bit of an explosion in parameter count. We now have <code>(16x3)+3+(3*1)+1=55</code> parameters.  But we also have another problem in that during training, we have no idea what the output of the 1st layer should be.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>Solution: Hidden Layer</p>
+</li>
+<li><p>Expected Outcome</p>
+<ul>
+<li><p>Better insight into party dynamics</p>
+</li>
+<li><p>Improved accuracy</p>
+</li>
+</ul>
+</li>
+<li><p>New Model</p>
+<ul>
+<li><p><strong>Inputs</strong>: 16 Features</p>
+</li>
+<li><p><strong>Hidden Layer</strong>: 3 Neurons</p>
+</li>
+<li><p><strong>Output</strong>: 1 Neuron</p>
+</li>
+<li><p><strong>Architecture</strong>: Multi-layer Perceptron</p>
+</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/6d34b87a-8248-484b-b71c-68004f63a4a9.png" alt="AI Models - MultiLayer Voter Model - 1280x720.png" />
+</td>
+</tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/092a364d-36dd-4cb0-b72f-a0a310d36325.png'>
 <a id="2f3d1064-efcb-44a1-86ce-f714d120f359"><h1>More Bio-Inspired</h1></a>
