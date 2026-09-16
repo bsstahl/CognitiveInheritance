@@ -1374,11 +1374,13 @@ Invite attendees to the dedicated one-hour GA session tomorrow at 10:00 AM.</p>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="d660df12-e53d-4ec1-9203-3910d7f1b76e"><h1>Assigning Meaningful Labels</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:6db0f2bd-c79e-42c7-9950-bd46c5cd1fed -->
+<!-- ContentItem:b157ea51-8a23-46d1-ab78-0f88559d5784 -->
 <aside class="notes"><p>Introduce classification as the supervised-learning problem of assigning an input to one of several known categories. Position it as the cousin of the clustering work that follows: classification starts with labels, while clustering asks whether useful groups can be discovered without them.</p>
 </aside>
-<a id="d660df12-e53d-4ec1-9203-3910d7f1b76e"><h1>Assigning Meaningful Labels</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:6db0f2bd-c79e-42c7-9950-bd46c5cd1fed -->
+<table><tr><td style="vertical-align:top;">
 <ul>
 <li>Start with known labels:
 <ul>
@@ -1392,25 +1394,30 @@ Invite attendees to the dedicated one-hour GA session tomorrow at 10:00 AM.</p>
 <li>Then it predicts the best label for new inputs</li>
 </ul>
 
-</section>
-
+</td>
+<td style="text-align: left;">
+<img src="img/b157ea51-8a23-46d1-ab78-0f88559d5784.png" alt="MeaningfulLabels-800x800.png" />
+</td>
+</tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
+<a id="7f22722b-7af3-48d4-923a-a7a105ce8ed9"><h1>Shape of a Classification Problem</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:93dc35bd-1262-48cb-92dc-db486992b0ba -->
+<!-- ContentItem:3dcaf7e9-1c04-4add-a1f4-69c5c469b781 -->
 <aside class="notes"><p>The ingredients to look for in real systems: labeled examples, features, target classes, a training process, and a prediction step.</p>
 </aside>
-<a id="7f22722b-7af3-48d4-923a-a7a105ce8ed9"><h1>Shape of a Classification Problem</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:93dc35bd-1262-48cb-92dc-db486992b0ba -->
+<table><tr><td style="vertical-align:top;">
 <ul>
-<li><p>Labeled examples show the model what the right answer looks like</p>
+<li><p>Labeled examples show what the right answer looks like</p>
 <ul>
 <li>Each example includes input data plus the correct label</li>
 </ul>
 </li>
 <li><p>Features are the details the model is allowed to use</p>
 <ul>
-<li>Measurements, properties, words, pixels, counts, or categories</li>
-<li>Chosen because they may help separate one label from another</li>
+<li>Measurements, properties, words, counts, or categories</li>
+<li>Chosen because they separate one label from another</li>
 </ul>
 </li>
 <li><p>Target classes are the labels the model is allowed to predict</p>
@@ -1419,14 +1426,17 @@ Invite attendees to the dedicated one-hour GA session tomorrow at 10:00 AM.</p>
 <li>The output must be one of these classes</li>
 </ul>
 </li>
-<li><p>Training searches for a pattern from features to target class</p>
+<li><p>Training finds patterns from features to target class</p>
 </li>
 <li><p>Prediction applies that pattern to an unlabeled input</p>
 </li>
 </ul>
 
-</section>
-
+</td>
+<td style="text-align: left;">
+<img src="img/3dcaf7e9-1c04-4add-a1f4-69c5c469b781.png" alt="ShapeOfAClassification-800x800.png" />
+</td>
+</tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
 <a id="355f047c-dcb6-49a3-8328-271137440c6f"><h1>Decision Boundaries</h1></a>
@@ -2048,13 +2058,13 @@ We need to combine metrics with visualizations and domain knowledge to assess cl
 </tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
-<aside class="notes"><p>It is not possible for us to reason on space greater than 3D without doing some form of projection.</p>
-<p>Image Source: WikiMedia</p>
+<aside class="notes"><p>It is not possible for us to reason on space greater than 3D without doing some form of projection.
+Image Source: WikiMedia</p>
 </aside>
 <a id="affc18de-26dd-4bed-acbe-99beddf497f4"><h1>3-D Space Projected into 2-D</h1></a>
 <!-- Layout:FullPage -->
-<!-- ContentItem:8738d954-63a2-40f5-aa5e-deeb431d5f52 -->
-<img alt="Necker_cube_with_background.png" src="img/8738d954-63a2-40f5-aa5e-deeb431d5f52.png" />
+<!-- ContentItem:4fc32f69-bb9b-42c4-9bfa-7f99a8d6d807 -->
+<img alt="UnCube-800x800.png" src="img/4fc32f69-bb9b-42c4-9bfa-7f99a8d6d807.png" />
 </section>
 
 
@@ -3812,50 +3822,6 @@ If we have a track with sessions 2 &amp; 4, we want to put them in the same room
 
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
-<a id="cf227d4a-1d03-454e-8320-763160d4c22e"><h1>Linear and Mixed-Integer Programming</h1></a>
-<!-- Layout:FullPageFragments -->
-<!-- ContentItem:69ad1ff5-9224-4504-b543-e6e8f6eb7f23 -->
-<!-- ContentItem:bf7a2b92-fda2-4847-8460-0a687150e792 -->
-<table border="0" width="100%">
-
-<tr><td>
-<ul class="fragment">
-<li>Define Constraints that the Solution Must Satisfy​
-<ul>
-<li>Use these constraints to limit the search space​
-<ul>
-<li>More constraints = smaller search space
-<ul>
-<li>Solutions that exist are found faster</li>
-<li>May not find a feasible solution</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-</td></tr>
-<tr><td>
-<ul class="fragment">
-<li>Add an Objective Function to Improve Solutions​
-<ul>
-<li>All constraints must be satisfied first​</li>
-<li>Objectives are a goal relative to an equation​
-<ul>
-<li>i.e. Maximize revenue where <code>r = 3X + 9Y</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-</td></tr>
-</table></section>
-
-
-<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out">
 <a id="24c0c65e-60f2-4bb2-a1d4-8585dc084aef"><h1>LP Hands-On Exercise</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:7f6d53c0-c0d2-4e98-9ef8-7a9867652041 -->
@@ -4325,7 +4291,10 @@ return best position found
 <!-- Layout:MultiColumn -->
 <!-- ContentItem:2efb79ef-f83f-4e01-af5c-a8995f355d62 -->
 <!-- ContentItem:b14eaae1-4711-4ca2-960b-ba7d75667230 -->
-
+<aside class="notes"><ul>
+<li><strong>Stochastic Gradient Descent</strong> updates parameters using a subset of data each cycle</li>
+</ul>
+</aside>
 <table><tr><td style="vertical-align:top;">
 <blockquote>
 <p>Optimization algorithm used to minimize the cost function of a model</p>
@@ -4333,25 +4302,15 @@ return best position found
 <ul>
 <li><p>Shifts the parameters in the opposite direction of the cost gradient</p>
 <ul>
-<li><p>The 1st derivative of the cost function</p>
-</li>
-<li><p>Represents the slope of that function</p>
-</li>
+<li>The 1st derivative of the cost function</li>
+<li>Represents the slope of that function</li>
 </ul>
 </li>
 <li><p>Hyperparameters include:</p>
 <ul>
-<li><p>Number of iterations</p>
-</li>
-<li><p>Learning rate</p>
-</li>
-<li><p>Convergence criteria</p>
-</li>
-</ul>
-</li>
-<li><p><strong>Stochastic</strong> Gradient Descent</p>
-<ul>
-<li>Updates parameters using a subset of data each cycle</li>
+<li>Number of iterations</li>
+<li>Learning rate</li>
+<li>Convergence criteria</li>
 </ul>
 </li>
 </ul>
@@ -4399,7 +4358,7 @@ In this case, it represents the distance travelled on a train between stations a
 <li>Input = Independent Variable</li>
 <li>Output = Dependent Variable</li>
 <li>Weight and Bias are Parameters of the Model</li>
-<li>MSE = Mean Squared Errror</li>
+<li>MSE = Mean Squared Error</li>
 <li>Cost Function (Loss Function) determines how well the predictions match reality</li>
 </ul>
 </aside>
@@ -4413,24 +4372,24 @@ In this case, it represents the distance travelled on a train between stations a
 </thead>
 <tbody>
 <tr>
-<td>Input Variable</td>
-<td>X</td>
+<td>Input Var</td>
+<td><span class="math">\(X\)</span></td>
 </tr>
 <tr>
-<td>Output Variable</td>
-<td>Y</td>
+<td>Output Var</td>
+<td><span class="math">\(Y\)</span></td>
 </tr>
 <tr>
-<td>Weight Parameter</td>
-<td>M</td>
+<td>Weight Param</td>
+<td><span class="math">\(m\)</span></td>
 </tr>
 <tr>
-<td>Bias Parameter</td>
-<td>B</td>
+<td>Bias Param</td>
+<td><span class="math">\(b\)</span></td>
 </tr>
 <tr>
-<td>Linear Equation</td>
-<td>Y=mX+b</td>
+<td>Linear Eq</td>
+<td><span class="math">\(Y = mX + b\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -4451,7 +4410,7 @@ In this case, it represents the distance travelled on a train between stations a
 </aside>
 <table><tr><td style="vertical-align:top;">
 <blockquote>
-<p>Y = mX + B</p>
+<p><span class="math">\(Y = mX + B\)</span></p>
 </blockquote>
 <ul>
 <li><p>Every neuron gets its value from a linear transformation</p>
@@ -4476,43 +4435,21 @@ In this case, it represents the distance travelled on a train between stations a
 <!-- Layout:ImageRight -->
 <!-- ContentItem:25c0b05e-b191-4c07-8f01-bcf81f611551 -->
 <!-- ContentItem:0961b3c9-8c97-499d-bb1c-71734b5b089f -->
-<aside class="notes"><p>The goal of the training process is to find the values of our parameters that best predict the output</p>
+<aside class="notes"><p>The goal of the training process is to find the values of our  parameters that best predict the output</p>
 </aside>
 <table><tr><td style="vertical-align:top;">
 <ul>
-<li><p><strong>Parameters</strong>: Internal values learned during training</p>
+<li><strong>Parameters</strong>: Internal values learned during training
 <ul>
-<li><p>Define the relationship between input and output</p>
-</li>
-<li><p>Adjusted to minimize prediction error</p>
-</li>
-</ul>
-</li>
-<li><p>In Linear Regression: <code>Y = mX + b</code></p>
-<ul>
-<li><p><strong>m</strong>: Slope (Weight) - The influence of X on Y</p>
-</li>
-<li><p><strong>b</strong>: Intercept (Bias) - Shifts the output vertically</p>
-</li>
-</ul>
-</li>
-<li><p>In more complex models:</p>
-<ul>
-<li><p>Counts include weights/biases across layers</p>
-</li>
-<li><p>Can capture non-linear relationships</p>
-</li>
-<li><p>Parameter counts are a proxy for complexity</p>
-</li>
-<li><p>GPT-4 uses roughly 1.8 trillion parameters</p>
-</li>
+<li>Define the relationship between input and output</li>
+<li>Adjusted to minimize prediction error</li>
 </ul>
 </li>
 </ul>
 
 </td>
 <td style="text-align: left;">
-<img src="img/0961b3c9-8c97-499d-bb1c-71734b5b089f.png" alt="Model Parameters.png" />
+<img src="img/0961b3c9-8c97-499d-bb1c-71734b5b089f.png" alt="Model Parameters - Variables Corrected.png" />
 </td>
 </tr></table></section>
 
@@ -4520,13 +4457,12 @@ In this case, it represents the distance travelled on a train between stations a
 <a id="07ebe50d-c195-4031-837a-7a73e9859297"><h1>Error Function</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:4cca160f-5d25-4474-b017-cd31e409d2cb -->
-<!-- ContentItem:92ba6edf-733d-4056-931a-41ff30733ff0 -->
+<!-- ContentItem:5b8e3a2d-95e1-4658-a040-a2c31c77ebc8 -->
 <aside class="notes"><ul>
-<li><p>It may be difficult to see, but the bias does also contribute to the error, just by  far less that the weight.</p>
-</li>
-<li><p>This makes sense because the weight is multiplied by the input, the bias is just added.</p>
-</li>
-<li><p>Think about what happens if the slope is perpendicular to the expected line.</p>
+<li>It may be difficult to see, but the bias does also contribute to the error, just by
+far less that the weight.</li>
+<li>This makes sense because the weight is multiplied by the input, the bias is just added.</li>
+<li>Think about what happens if the slope is perpendicular to the expected line.
 <ul>
 <li>The error for every point will be large, except for the area near where the lines cross.</li>
 </ul>
@@ -4539,11 +4475,11 @@ In this case, it represents the distance travelled on a train between stations a
 <li>Y-Axis: The value of the bias (b)</li>
 <li>Z-Axis: The size of the error</li>
 </ul>
-<p>The weight (m) often has a greater effect on the error than the bias (b)</p>
+<p>Weight (m) usually has the most impact on error</p>
 
 </td>
 <td style="text-align: left;">
-<img src="img/92ba6edf-733d-4056-931a-41ff30733ff0.png" alt="Linear Regression - Error Function Plot - Smaller.png" />
+<img src="img/5b8e3a2d-95e1-4658-a040-a2c31c77ebc8.png" alt="LinearRegression-ErrorFunction-800x800.png" />
 </td>
 </tr></table></section>
 
@@ -4589,9 +4525,9 @@ In this case, it represents the distance travelled on a train between stations a
 </aside>
 <table><tr><td style="vertical-align:top;">
 <ul>
-<li>Linear Regression - <a href="https://github.com/bsstahl/AIDemos/tree/master/CraftingAI/src/GradientDescent/LinearRegression">C# Code</a></li>
 <li>AND Gate Model - <a href="https://github.com/bsstahl/AIDemos/tree/master/CraftingAI/AND%20Gate%20Model.xlsx">Excel</a></li>
 <li>Maintainability Model - <a href="https://github.com/bsstahl/AIDemos/tree/master/CraftingAI/Maintainability%20Model.xlsx">Excel</a></li>
+<li>Linear Regression - <a href="https://github.com/bsstahl/AIDemos/tree/master/CraftingAI/src/GradientDescent/LinearRegression">C# Code</a></li>
 </ul>
 
 </td>
