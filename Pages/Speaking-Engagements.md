@@ -22,9 +22,11 @@ categories: []
 
 * **[MLcon New York 2026](https://mlconference.ai/speaker/barry-stahl/)** - 9/28/2026 - 10/2/2026 - "LLMs Under the Hood - Workshop", "The Future of Information Retrieval: A Deep-Dive into RAG" & "When you Don't Need an LLM: Deterministic Intelligence for Real World Apps"
 
-* **[TechBash 2026](https://www.techbash.com/)** - 10/13/2026 - 10/16/2026 - "Beyond Procedural Logic: Solving Problems Outside the Query" & "Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems"
+* **[TechBash 2026 - Poconos](https://www.techbash.com/)** - 10/13/2026 - 10/16/2026 - "Beyond Procedural Logic: Solving Problems Outside the Query" & "Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems"
 
-* **[MITechCon 2026](https://www.mitechcon.events/MITechCon2026)** - 10/28/2026 - 10/30/2026 - "LLMs Under the Hood - Applied Engineering Workshop" & "Amazing Algorithms for Solving Problems in Software"
+* **[MITechCon 2026 - Rochester, MI](https://www.mitechcon.events/MITechCon2026)** - 10/28/2026 - 10/30/2026 - "LLMs Under the Hood - Applied Engineering Workshop" & "Amazing Algorithms for Solving Problems in Software"
+
+* **[Craft Conference 2027 - Budapest](https://craft-conf.com/2027/speakers/) - 6/3/2027 - 6/4/2027 - Sessions TBD
 
 ### Past engagements
 
