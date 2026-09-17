@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>Eliminating the Hidden Danger to Your Application</title>
+    <title>Eliminating Hidden Dangers to Your Applications</title>
 
     <link rel="stylesheet" href="dist/reset.css">
     <link rel="stylesheet" href="dist/reveal.css">
@@ -447,16 +447,6 @@ This is, &quot;Save the Context, Save the App&quot;.</p>
 </section>
 
 
-<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/63e65212-8145-4d43-a513-a1de1b042f9b.jpg'>
-
-<a id="9d38d943-71ad-4212-9df0-2bb98db56df6"><h1>Demo</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:3b9d2c82-818e-4b4b-8fbc-df901b0a7a66 -->
-<h2 id="the-transactional-outbox-pattern">The Transactional Outbox Pattern</h2>
-
-</section>
-
-
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
 <aside class="notes"><p>Outbox guarantees every unique update will be seen by the downstream consumers</p>
 </aside>
@@ -510,16 +500,6 @@ This is, &quot;Save the Context, Save the App&quot;.</p>
 </section>
 
 
-<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/63e65212-8145-4d43-a513-a1de1b042f9b.jpg'>
-
-<a id="3b7f5c26-9093-4adf-944b-ee0777195ef5"><h1>Demo</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:00ae3efd-f51d-4154-b817-f8ff3fc0700f -->
-<h2 id="the-change-data-capture-pattern">The Change-Data-Capture Pattern</h2>
-
-</section>
-
-
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
 
 <a id="41fe695a-cd44-4be0-bcfe-cd9b7a72686f"><h1>Cosmos CDC</h1></a>
@@ -567,16 +547,6 @@ This is, &quot;Save the Context, Save the App&quot;.</p>
 </section>
 
 
-<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/63e65212-8145-4d43-a513-a1de1b042f9b.jpg'>
-
-<a id="ccf27d19-c255-45d2-8512-b7c44a69c355"><h1>Demo</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:a59f69a1-7cf5-4918-871e-31a7e4812ea5 -->
-<h2 id="data-streaming">Data Streaming</h2>
-
-</section>
-
-
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
 <a id="bbba5465-b0af-41e4-86da-a8c03abffc54"><h1>Data Streaming</h1></a>
 <!-- Layout:ImageRight -->
@@ -608,29 +578,46 @@ This is, &quot;Save the Context, Save the App&quot;.</p>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-
-<a id="b197722c-4473-4001-bfc0-8556641bc31a"><h1>These Patterns are Similar</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:a9b93321-4ad3-4e0f-9648-d524f92ea075 -->
+<a id="c44305b8-3469-4dc6-8e76-7f3398e70c6d"><h1>These Patterns are Similar</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:6d89e4d2-2ec0-4dfc-85d4-346c3fe76cac -->
+<!-- ContentItem:59ac040f-5264-49b5-9846-8a067137b582 -->
+<aside class="notes"><p>The patterns all solve the same reliability problem: once work is split across independent steps, you must protect against commit-time failure and repeated delivery.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
 <ul>
-<li>Persist the data first - Then act on it</li>
-<li>CDC &amp; Streaming are easy to fanout to N tasks</li>
-<li>Outbox &amp; Streaming guarantee that all changes will be sent</li>
-<li>All are susceptible to errors on commit</li>
+<li>Persist the data first - then act on it</li>
+<li>CDC &amp; streaming are easy to fan out to N tasks</li>
+<li>Outbox &amp; streaming can provide strong guarantees</li>
+<li>Most are still susceptible to errors on commit</li>
+</ul>
+<hr />
+<ul>
+<li>These patterns can get very close to 4-9's</li>
+<li>Use <strong>Idempotence</strong> whenever possible</li>
+<li>Exactly-once delivery may be possible</li>
 </ul>
 
-</section>
-
+</td>
+<td style="text-align: left;">
+<img src="img/59ac040f-5264-49b5-9846-8a067137b582.png" alt="ConvergencePoint-800x800.png" />
+</td>
+</tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
 
-<a id="5f1f98d4-3105-42b8-8ba7-87e103fb41e6"><h1>Avoiding Commit Errors</h1></a>
+<a id="b984d3af-b8f0-4af4-b4b0-9fa2475be3a5"><h1>Avoiding Commit Errors</h1></a>
 <!-- Layout:FullPage -->
-<!-- ContentItem:209525be-c36b-4e6a-b392-863e7f795892 -->
+<!-- ContentItem:1fa5fc72-ad5b-4d92-b261-3b85463b47ec -->
 <ul>
 <li>These patterns get very close to 4-9's</li>
 <li>Use <strong>Idempotence</strong> whenever possible</li>
-<li>Exactly-Once Delivery may be possible</li>
+<li>Exactly-Once Delivery may be possible
+<ul>
+<li>Idempotent ingress (i.e. to Kafka)</li>
+<li>Atomic updates of changes alongside queue offsets</li>
+</ul>
+</li>
 </ul>
 
 </section>
@@ -724,10 +711,10 @@ managed by using workflow tooling.</p>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-<a id="8083d62b-b8b4-4d38-8873-292c76c6c877"><h1>Resources</h1></a>
+<a id="f077108f-9cf9-4fe5-af7a-c9b7fc9d537a"><h1>Resources</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:880be013-ac34-4650-b3bf-44b1d51b6a0b -->
-<!-- ContentItem:42bb8409-6646-4b7a-bb7a-4931f42bc992 -->
+<!-- ContentItem:93febb6a-6ab1-4c98-9453-86eefabbbfdc -->
 
 <table><tr><td style="vertical-align:top;">
 <ul>
@@ -750,22 +737,9 @@ managed by using workflow tooling.</p>
 
 </td>
 <td style="text-align: left;">
-<img src="img/42bb8409-6646-4b7a-bb7a-4931f42bc992.png" alt="QR_ArchitectingForReliability_800x800.png" />
+<img src="img/93febb6a-6ab1-4c98-9453-86eefabbbfdc.png" alt="QR-EliminatingHiddenDangers-Session.png" />
 </td>
 </tr></table></section>
-
-<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-
-<a id="f867f774-6172-45b5-8773-6ee07c97d363"><h1>This Slide Deck</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:5d635f1c-4059-4c4c-adac-15763560f0bd -->
-<!-- ContentItem:71f2cb46-b8cd-481a-a9db-9cc91b8d22c3 -->
-<h2 id="httpavoidingdualwrites.azurewebsites.net"><a href="http://avoidingdualwrites.azurewebsites.net">http://AvoidingDualWrites.azurewebsites.net</a></h2>
-<p><a href="?print-pdf#">Printable Version</a></p>
-
-<img alt="AvoidingDualWrites_QR.png" src="img/71f2cb46-b8cd-481a-a9db-9cc91b8d22c3.png" />
-</section>
-
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
 
@@ -832,7 +806,7 @@ managed by using workflow tooling.</p>
 
 
         </div>
-        <div class="footer-left">Eliminating the Hidden Danger to Your Application</div>
+        <div class="footer-left">Eliminating Hidden Dangers to Your Applications</div>
         <div class="footer-right">Barry S. Stahl - Mastodon:@bsstahl@cognitiveinheritance.com - Blog:http://www.cognitiveinheritance.com</div>
     </div>
 

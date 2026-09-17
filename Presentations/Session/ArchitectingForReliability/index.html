@@ -605,6 +605,25 @@ This is, &quot;Save the Context, Save the App&quot;.</p>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
+
+<a id="b984d3af-b8f0-4af4-b4b0-9fa2475be3a5"><h1>Avoiding Commit Errors</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:1fa5fc72-ad5b-4d92-b261-3b85463b47ec -->
+<ul>
+<li>These patterns get very close to 4-9's</li>
+<li>Use <strong>Idempotence</strong> whenever possible</li>
+<li>Exactly-Once Delivery may be possible
+<ul>
+<li>Idempotent ingress (i.e. to Kafka)</li>
+<li>Atomic updates of changes alongside queue offsets</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
 <a id="b3c1e9ff-f00d-407b-b23e-f2a5a0d734ec"><h1>The Saga Pattern</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:b4750bbb-c0d1-4396-a470-140d03bb66b3 -->

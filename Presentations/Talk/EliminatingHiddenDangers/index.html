@@ -396,40 +396,40 @@ hardware failures for now.</p>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-<a id="ac16136c-11c7-4b3c-b151-2b5a6219cd34"><h1>Dual-Writes</h1></a>
-<!-- Layout:FullPageFragments -->
-<!-- ContentItem:ea2cffda-b937-4f70-bd76-a82e23f1bba0 -->
-<!-- ContentItem:92936016-651e-4b3b-91e0-c93b05335616 -->
-<table border="0" width="100%">
-
-<tr><td>
-<blockquote class="fragment">
+<aside class="notes"><p>ONCE, subject to caveats to follow...</p>
+</aside>
+<a id="274d35d1-4d79-473d-9eea-f7b4932756a2"><h1>What is a Dual-Write?</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:b7f2a9c4-6d18-4e83-a5b1-9c0d7f6e2b34 -->
+<blockquote>
 <p>An attempt to make more than 1 reliable change to the state of a system in a single invocation</p>
 </blockquote>
-
-</td></tr>
-<tr><td>
-<ul class="fragment">
-<li>Reliable = Can be expected to occur exactly once at least 99.99% of the time</li>
+<ul>
+<li>Reliable = Can reasonably be expected to occur ONCE<sup>*</sup>
+<ul>
+<li>Irrespective of:
+<ul>
+<li>Reliability of the environment</li>
+<li>Reliability of any dependencies</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>Change = An <strong>ATOMIC</strong> modification
 <ul>
 <li>Database or Cache Update</li>
-<li>WebAPI Call</li>
 <li>Message Delivery</li>
-<li>Logging</li>
 </ul>
 </li>
 <li>Invocation = Automated Response to a Signal
 <ul>
 <li>User Action</li>
-<li>Reliable Message</li>
-<li>Web Request</li>
+<li>Message Received</li>
 </ul>
 </li>
 </ul>
 
-</td></tr>
-</table></section>
+</section>
 
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
@@ -504,6 +504,16 @@ This is, &quot;Save the Context, Save the App&quot;.</p>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
+<aside class="notes"><p>All 3 of the Outbox, CDC and Streaming patterns are what I would consider Isolation patterns. They differ only in implementation detail.</p>
+</aside>
+<a id="8590fc4b-2c74-473c-917d-54bc3a92724e"><h1>Isolation Patterns</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:4775d57e-25e4-4d08-8894-023907e98776 -->
+<img alt="Reliable Data Flow.png" src="img/4775d57e-25e4-4d08-8894-023907e98776.png" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
 
 <a id="b33d9eba-6bd1-485e-8ffc-154c8f3bcfdf"><h1>Transactional Outbox</h1></a>
 <!-- Layout:FullPage -->
@@ -518,6 +528,15 @@ This is, &quot;Save the Context, Save the App&quot;.</p>
 </li>
 </ul>
 
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
+
+<a id="17169ea5-90fc-4aa2-88c3-f401db7af1b0"><h1>Transactional Outbox Sequence</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:45425647-59b2-4b35-8a35-19418c339591 -->
+<img alt="Outbox-Sequence-800px.png" src="img/45425647-59b2-4b35-8a35-19418c339591.png" />
 </section>
 
 
@@ -660,19 +679,31 @@ This is, &quot;Save the Context, Save the App&quot;.</p>
 
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-
-<a id="b197722c-4473-4001-bfc0-8556641bc31a"><h1>These Patterns are Similar</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:a9b93321-4ad3-4e0f-9648-d524f92ea075 -->
+<a id="c44305b8-3469-4dc6-8e76-7f3398e70c6d"><h1>These Patterns are Similar</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:6d89e4d2-2ec0-4dfc-85d4-346c3fe76cac -->
+<!-- ContentItem:59ac040f-5264-49b5-9846-8a067137b582 -->
+<aside class="notes"><p>The patterns all solve the same reliability problem: once work is split across independent steps, you must protect against commit-time failure and repeated delivery.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
 <ul>
-<li>Persist the data first - Then act on it</li>
-<li>CDC &amp; Streaming are easy to fanout to N tasks</li>
-<li>Outbox &amp; Streaming guarantee that all changes will be sent</li>
-<li>All are susceptible to errors on commit</li>
+<li>Persist the data first - then act on it</li>
+<li>CDC &amp; streaming are easy to fan out to N tasks</li>
+<li>Outbox &amp; streaming can provide strong guarantees</li>
+<li>Most are still susceptible to errors on commit</li>
+</ul>
+<hr />
+<ul>
+<li>These patterns can get very close to 4-9's</li>
+<li>Use <strong>Idempotence</strong> whenever possible</li>
+<li>Exactly-once delivery may be possible</li>
 </ul>
 
-</section>
-
+</td>
+<td style="text-align: left;">
+<img src="img/59ac040f-5264-49b5-9846-8a067137b582.png" alt="ConvergencePoint-800x800.png" />
+</td>
+</tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
 
@@ -781,10 +812,10 @@ managed by using workflow tooling.</p>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-<a id="8083d62b-b8b4-4d38-8873-292c76c6c877"><h1>Resources</h1></a>
+<a id="15f7227a-820c-4a73-91d5-07b6cb46f7b6"><h1>Resources</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:880be013-ac34-4650-b3bf-44b1d51b6a0b -->
-<!-- ContentItem:42bb8409-6646-4b7a-bb7a-4931f42bc992 -->
+<!-- ContentItem:d89f1bc7-9fb5-4978-b16c-73952d06ca29 -->
 
 <table><tr><td style="vertical-align:top;">
 <ul>
@@ -807,22 +838,9 @@ managed by using workflow tooling.</p>
 
 </td>
 <td style="text-align: left;">
-<img src="img/42bb8409-6646-4b7a-bb7a-4931f42bc992.png" alt="QR_ArchitectingForReliability_800x800.png" />
+<img src="img/d89f1bc7-9fb5-4978-b16c-73952d06ca29.png" alt="QR-EliminatingHiddenDangers-Talk.png" />
 </td>
 </tr></table></section>
-
-<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-
-<a id="f867f774-6172-45b5-8773-6ee07c97d363"><h1>This Slide Deck</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:5d635f1c-4059-4c4c-adac-15763560f0bd -->
-<!-- ContentItem:71f2cb46-b8cd-481a-a9db-9cc91b8d22c3 -->
-<h2 id="httpavoidingdualwrites.azurewebsites.net"><a href="http://avoidingdualwrites.azurewebsites.net">http://AvoidingDualWrites.azurewebsites.net</a></h2>
-<p><a href="?print-pdf#">Printable Version</a></p>
-
-<img alt="AvoidingDualWrites_QR.png" src="img/71f2cb46-b8cd-481a-a9db-9cc91b8d22c3.png" />
-</section>
-
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
 
