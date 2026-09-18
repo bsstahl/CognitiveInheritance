@@ -166,10 +166,10 @@ enabling machines to generate human-like text with remarkable coherence. This pr
 dives deep into the intricacies of LLMs, shedding light on the underlying mechanisms that 
 enable these tools to predict tokens and generate text. We will unravel the architecture 
 of these models, from embedding layers to attention mechanisms, and provide a clear 
-understanding of the processes that contribute to the model''s performance.
+understanding of the processes that contribute to the model's performance.
 
   Beyond the technical deep dive, we will explore practical applications, discussing valid 
-use-cases where LLMs excel, such as chatbots, content creation, and language translation. 
+use-cases where LLMs excel, such as content creation, and language translation. 
 We will also critically evaluate scenarios where they may fall short or prove unsuitable, 
 addressing common myths and misconceptions.
 
@@ -177,7 +177,7 @@ addressing common myths and misconceptions.
 programmers and other software creators with a nuanced understanding of Large Language Models, 
 empowering them to harness these tools responsibly and effectively. Join us for an 
 engaging session filled with insights, interactive discussions, and forward-thinking 
-perspectives on one of today''s most groundbreaking technological advancements.
+perspectives on one of today's most groundbreaking technological advancements.
 
   [Latest Slide Deck](https://cognitiveinheritance.com/Presentations/Workshop/LLMsUnderTheHood/index.html)
 
