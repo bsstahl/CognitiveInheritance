@@ -276,13 +276,13 @@ you are ready to bring this important practice into your organization.
 
 * **TDD in the AI Era: No Vibes, Just Velocity** - Test-Driven Development (TDD) has been a stalwart of software engineering for 
 years, delivering reliable, modular code that stands the test of time. As we 
-now find ourselves in the early days of the AI era, TDD isn''t just enduring, 
-it''s evolving. AI-powered tools are supercharging TDD, turning it into a 
+now find ourselves in the early days of the AI era, TDD isn't just enduring, 
+it's evolving. AI-powered tools are supercharging TDD, turning it into a 
 faster, smarter process that builds on its original strengths. More than just an 
-improvement, the utilization of AI means that TDD isn''t only more powerful, 
+improvement, the utilization of AI means that TDD isn't only more powerful, 
 but also more vital than ever. As we become more dependent on AI-accelerated 
 workflows, the demand for thorough, rigorous testing practices is increasing, 
-underlining the ever-growing importance of TDD in today''s software 
+underlining the ever-growing importance of TDD in today's software 
 development landscape.
 
   In this talk, we explore how AI enhances the TDD process, making it easier to 
@@ -292,7 +292,7 @@ required for manual test creation and debugging, freeing developers to focus on
 innovation and problem-solving. The result? Higher-quality software delivered 
 in less time.
 
-  Whether you’re new to TDD or an experienced practitioner looking to adapt to 
+  Whether you're new to TDD or an experienced practitioner looking to adapt to 
 the AI revolution, this talk will offer insights, strategies, and practical 
 examples to help you navigate this transformative moment in software development.
 
