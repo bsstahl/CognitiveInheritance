@@ -22,11 +22,12 @@ slug: signals-and-levers
   * Start with the concrete complaint: users intermittently report incorrect or inconsistent data.  
   * Paint the scene: the issue is not constant, it is frustratingly inconsistent, and the team is trying to determine whether it is caused by a user, a specific workload, or a system bug.  
   * Introduce the central question: why do isolated data errors show up at unpredictable times and seem to have no single obvious cause?  
-  * This frames the article around the real problem we want to explain, while still using the “system is slow” complaint as a familiar backdrop.
-    * Example wording: “Sometimes the symptom is obvious: the system is ‘slow,’ or a usage graph spikes without explanation. At other times, it shows up as intermittent data errors. In both cases, the first instinct is to look for a single cause. The book’s point is that most of these problems are better understood as signals inside a larger causal structure.”
+  * Briefly mention related symptoms such as a system being “slow” or unexplained usage spikes, but make clear that these are only familiar comparisons, not additional examples the article will investigate.  
+    * Example wording: “Sometimes the symptom is obvious: the system is ‘slow,’ or a usage graph spikes without explanation. Here, it shows up as intermittent data errors. In each case, the first instinct is to look for a single cause. The book’s point is that these symptoms are better understood as signals inside a larger causal structure.”
 
 * **Why this book mattered to me**  
   * Briefly explain why the book stood out: it reframed system problems as patterns, not isolated incidents and helped me connect the dots on how the tools of Systems Thinking can help identify and solve these practical problems.
+  * Include a brief disclosure: I received temporary access to a pre-release copy for review, but I am not affiliated with the publisher or authors and have no financial interest in the book’s success.
   * Connect it to the data-error problem: the real issue is often not one root cause, but a set of interacting signals, timing effects, and feedback loops.  
   * Frame the article as a practical application of the book’s ideas to a real operational problem, not just a generic review.
 
@@ -36,11 +37,6 @@ slug: signals-and-levers
   * Feedback loops: why the behavior keeps sustaining itself.  
   * Causal structure: how the parts connect over time.  
   * Keep this brief and grounded in the intermittent data problem.
-
-* **A quick framing of the “slow system” problem**  
-  * Briefly acknowledge the familiar complaint: “the system is running very slowly,” but nobody knows why.  
-  * Explain that this is the same class of problem, just expressed as a less obvious symptom.  
-  * Use it as the context that makes the more concrete data-error example feel familiar, not as a second example to solve.
 
 * **The concrete system: intermittent data errors in the bus maintenance domain**  
   * Introduce the maintenance domain and the recurring data inconsistencies.  

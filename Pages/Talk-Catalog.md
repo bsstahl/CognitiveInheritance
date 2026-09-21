@@ -22,7 +22,13 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 <h4 id="software-engineering-talks"> Software Engineering</h4>
 
-* **Design Patterns for Loosely Coupled Applications** - Building our applications so that their components are loosely coupled is a critical measure in creating solutions that are testable, maintainable and extensible. In this session we will explore several design patterns that are key to building applications that maintain loose coupling. We start by reviewing a tightly coupled application. Then, we explore several design patterns by using them to convert the application into a maintainable and extensible solution that can be validated using unit tests.
+* **Design Patterns for Loosely Coupled Applications** - Building our applications so that their components are loosely coupled is a 
+critical measure in creating solutions that are testable, maintainable and 
+extensible. In this session we will explore several design patterns that are 
+key to building applications that maintain loose coupling. We start by 
+reviewing a tightly coupled application. Then, we explore several design 
+patterns by using them to convert the application into a maintainable and 
+extensible solution that can be validated using unit tests.
 
   [Latest Slide Deck](https://designpatternsforloosecoupling.azurewebsites.net/) | [Video: Craft Conference 2019 - Budapest, Hungary - May 2019](https://www.youtube.com/watch?v=mE3zKWO6qQE&list=FLq-iLd7rfmqSIFiujBGIRSw&index=1)
 
