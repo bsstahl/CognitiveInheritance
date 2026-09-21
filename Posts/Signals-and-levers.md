@@ -1,7 +1,10 @@
 ---
 author: bsstahl
 tags:
-- book
+tags:
+- architecture
+- reliability
+- coupling
 categories:
 - Development
 menuorder: 0
