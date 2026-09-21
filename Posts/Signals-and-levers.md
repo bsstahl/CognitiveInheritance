@@ -6,7 +6,7 @@ categories:
 - Development
 menuorder: 0
 id: faa210e7-62cf-4908-b1a3-92558cc2befb
-title: Signals & Levers&colon; Systems Thinking for Software Architects
+title: Signals & Levers&colon; Systems Thinking and how it applies for Software Architects
 description: A look at the systems‑thinking tools from the book, Signals & Levers and how they apply to software‑intensive systems. Using the book’s vocabulary of signals, levers, feedback loops, and causal structure, we look at how distributed software behaves under load, contention, and failure. The goal is to show how those same mental models illuminate queues, retries, backpressure, cascading failures, and other real operational dynamics inside modern software.
 teaser: 
 ispublished: false
@@ -18,68 +18,32 @@ slug: signals-and-levers
 
 ---
 
-* **Opening: “Users are reporting occasional data errors”**  
-  * Start with the concrete complaint: users intermittently report incorrect or inconsistent data.  
-  * Paint the scene: the issue is not constant, it is frustratingly inconsistent, and the team is trying to determine whether it is caused by a user, a specific workload, or a system bug.  
-  * Introduce the central question: why do isolated data errors show up at unpredictable times and seem to have no single obvious cause?  
-  * Briefly mention related symptoms such as a system being “slow” or unexplained usage spikes, but make clear that these are only familiar comparisons, not additional examples the article will investigate.  
-    * Example wording: “Sometimes the symptom is obvious: the system is ‘slow,’ or a usage graph spikes without explanation. Here, it shows up as intermittent data errors. In each case, the first instinct is to look for a single cause. The book’s point is that these symptoms are better understood as signals inside a larger causal structure.”
+  Sometimes the symptom is obvious: the system is “slow,” or a usage graph spikes without explanation. Here, the symptom is more unsettling: users are reporting occasional data errors. The problem is intermittent, difficult to reproduce, and frustratingly resistant to simple explanations. Is it bad input? A particular user or workload? A recent deployment? A dependency behaving badly at just the wrong moment? The first instinct is to look for a single cause. *Signals & Levers*, a new book by Elisabeth Hendrickson and Joel Tosi, offers a different way to approach the problem: treat these incidents as signals inside a larger causal structure, then look for the feedback loops and levers that can explain and change the system’s behavior.
 
-* **Why this book mattered to me**  
-  * Briefly explain why the book stood out: it reframed system problems as patterns, not isolated incidents and helped me connect the dots on how the tools of Systems Thinking can help identify and solve these practical problems.
-  * Include a brief disclosure: I received temporary access to a pre-release copy for review, but I am not affiliated with the publisher or authors and have no financial interest in the book’s success.
-  * Connect it to the data-error problem: the real issue is often not one root cause, but a set of interacting signals, timing effects, and feedback loops.  
-  * Frame the article as a practical application of the book’s ideas to a real operational problem, not just a generic review.
+  What I enjoyed most about *Signals & Levers* is that it helped me connect the dots between systems-thinking concepts and the practical problems engineers face every day. It reframes incidents like these as patterns rather than isolated events: the important question is not always “what broke?” but “what relationships, delays, and feedback loops made this behavior possible?” That perspective gave me a more useful way to think about intermittent data errors and the interventions that might address them. For transparency, I should note that I received temporary access to a pre-release copy in order to review the book, but I am not affiliated with its publisher or authors and have no financial interest in its success. What follows is therefore both a review of the ideas I found useful and an attempt to apply them to a concrete software system.
 
-* **The book’s core tools, in software terms**  
-  * Signals: what the system is telling us.  
-  * Levers: what we can adjust.  
-  * Feedback loops: why the behavior keeps sustaining itself.  
-  * Causal structure: how the parts connect over time.  
-  * Keep this brief and grounded in the intermittent data problem.
+### A systems-thinking lens for software problems
 
-* **The concrete system: intermittent data errors in the bus maintenance domain**  
-  * Introduce the maintenance domain and the recurring data inconsistencies.  
-  * Explain why the first explanations seem plausible: bad user input, one bad process, a noisy dependency, a specific maintenance window.  
-  * Show how the evidence starts to point beyond the first guess: retries, inconsistent writes, replication lag, queue growth, and timing variance all begin to tell a more coherent story.  
-  * This is the core worked example for the article.
+  The book gives us four connected ways to look at a problem like this. **Signals** are the observable clues: the errors, retries, delays, and other changes in system behavior. **Levers** are the things we can adjust in response. **Feedback loops** help explain why a problem persists or amplifies instead of disappearing on its own. **Causal structure** ties those observations together, showing how actions, delays, and dependencies combine over time. With that vocabulary in place, we can look at the problem not as a collection of isolated errors, but as a system whose behavior we can observe, understand, and influence.
 
-* **Signals in this system (a few examples, not a full taxonomy)**  
-  * Data inconsistency rate and drift between copies of the same record.  
-  * Retry spikes during transient failure or replication delay.  
-  * Queue depth / backlog growth when downstream work cannot keep up.  
-  * Brief timing windows where the error appears and vanishes again.  
-  * Show how these signals point to a larger system pattern, not a single fault.
+  To make these ideas concrete, consider a system used to manage bus maintenance. It brings together information about vehicles, maintenance work, schedules, parts, and operational status so that people can plan work and understand the condition of the fleet. Most of the time, the system appears to work as expected. Occasionally, however, users report that the data is wrong: a maintenance update is missing, a status appears inconsistent between views, or information that was correct earlier seems to have changed. The errors are difficult to reproduce and do not seem tied to one particular user or action. That makes the obvious explanations tempting—bad input, one faulty process, a noisy dependency, or a problem during a particular maintenance window—but none of them fully explains the pattern. This is the problem we will use to apply the book’s signals, levers, feedback loops, and causal structure.
 
-* **Levers in this system (a few practical controls)**  
-  * Retry shaping or backpressure.  
-  * Tightening write ordering / single‑writer constraints.  
-  * Reconciliation cadence or repair workflow.  
-  * Dependency isolation or concurrency limits.  
-  * Emphasize that these are the kinds of levers the book encourages us to reason about.
+### Signals & Levers in this system (a few examples)
 
-* **Feedback loops and causal structure**  
-  * Show how reinforcing loops create the pattern: retries amplify load, load increases contention, contention drives more retries and inconsistency.  
-  * Show how balancing loops help: validation checks, reconciliation jobs, backpressure, write throttling.  
-  * Call out time delays: replication lag, reconciliation intervals, telemetry lag, autoscale warmup.  
-  * Keep the focus on how the structure explains the behavior.
+  The first step is to resist the urge to explain the error before understanding its shape. Several signals are worth watching: how often records drift between views, whether retries increase around the same time, whether queues grow when downstream work slows, and whether the errors cluster in brief timing windows. None of these observations proves a cause by itself. Together, however, they can reveal that the problem is not random user behavior or one bad request, but a system whose components are influencing one another over time.
 
-* **Causal‑loop diagram for the intermittent data-error system**  
-  * Map the reinforcing loop: transient error → retries → more load → more conflict/inconsistency → even more retries.  
-  * Map the balancing loop: validation, repair jobs, and backpressure reduce drift and keep the system from spiraling.  
-  * Show where dual‑writes sit in the causal structure and why they are so dangerous.
+  Once the signals suggest that the errors are part of a larger system pattern, the next question is what we can change. We might shape retries so that a transient failure does not create a surge of additional work, apply backpressure or concurrency limits, or isolate a struggling dependency. We might also tighten the ordering of writes or adjust the reconciliation process that repairs divergent data. These are not interchangeable fixes, and each carries a cost. The point is to treat them as levers: deliberate changes whose effects we can observe rather than guesses made in the dark.
 
-* **Designing experiments (pulling levers in context)**  
-  * Vary retry policy and observe the effect on inconsistency frequency and queue growth.  
-  * Strengthen ordering or reduce write fan-out and observe whether the drift shrinks.  
-  * Adjust reconciliation timing and see whether the repair loop catches up to the problem.  
-  * Connect each experiment back to the signals and causal structure established earlier.
+### Feedback loops and causal structure
 
-* **Bringing the book back into focus**  
-  * Reconnect the example to *Signals & Levers*: the book gave the vocabulary, but the intermittent data problem made the ideas tangible.  
-  * Emphasize that the same approach can be used wherever performance or reliability issues feel ambiguous, multi-causal, or frustratingly intermittent.  
-  * Invite readers to use the same lenses with their own systems.
+  The useful insight is not just that these signals occur together, but that they can reinforce one another. A transient error can trigger a retry; enough retries increase load; increased load creates contention and delay; and that delay produces more errors and still more retries. That is a reinforcing loop. Balancing mechanisms such as validation, reconciliation, backpressure, and write throttling can interrupt it, although their effects may not be immediate. Replication lag, repair intervals, telemetry delay, and other time gaps can make the system appear unpredictable even when the underlying pattern is consistent.
 
-* **Closing**  
-  * Summarize the main takeaway: the answer is often not a single cause but a pattern of signals, levers, and loops.  
-  * End by encouraging readers to look for those patterns in their own environments and to treat the book as a practical systems-thinking toolkit.
+  A causal-loop diagram makes those relationships easier to see than a list of symptoms. One loop follows the path from transient errors to retries, increased load, contention, and further inconsistency. A second loop shows how validation, repair jobs, and backpressure can reduce the drift. It also makes the dual-write boundary visible: when the same change must be reflected in more than one place, timing differences and partial failure create opportunities for the two views of the data to diverge.
+
+  The next step is to test the model rather than simply argue about it. We can change the retry policy and observe whether inconsistency frequency and queue growth change with it. We can strengthen write ordering or reduce the number of places a write must reach, then watch for a reduction in drift. We can adjust the reconciliation interval and measure whether the repair process keeps up with new inconsistencies. Each experiment should change one meaningful lever, define the signals we expect to move, and account for the delays before deciding whether the hypothesis was supported.
+
+  This is where the book’s ideas become practical for me. *Signals & Levers* provided the vocabulary for moving beyond the question “which component is broken?” and asking how the system’s structure produces the behavior we observe. The bus-maintenance example makes the concepts tangible, but the method is not limited to data errors. The same lenses can help with performance problems, reliability incidents, and any other situation where the cause is distributed across components and delayed over time.
+
+### Closing
+
+  When we identify that problems may be occuring in our systems, the most useful answer may not be to look for a single culprit. The problem may be a pattern of signals, levers, delays, and feedback loops spread across the system. This is the practical value I found in *Signals & Levers*: it offers a way to see those relationships, test our assumptions, and make more deliberate changes. The same approach can help us understand our own systems before their symptoms become incidents we can no longer ignore.
