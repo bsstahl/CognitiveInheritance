@@ -43,6 +43,7 @@ The useful insight is not just that these signals occur together, but that they 
 
 A causal-loop diagram makes those relationships easier to see than a list of symptoms. One loop follows the path from data churn to transient errors, retries, increased load, contention, and further errors. A second loop shows how reconciliation, validation, and circuit breakers can change that behavior. The diagram treats data churn as the observable result of architectural choices, timing differences, and partial failure that can make views diverge.
 
+<!-- 
 ```mermaid
 graph TD
   Update[Maintenance update] -->|➕| Churn[Data churn]
@@ -64,8 +65,10 @@ graph TD
   classDef lever fill:#d9ead3,stroke:#38761d,stroke-width:2px;
   class Drift,Error signal;
   class Retries,Reconcile,Validation,CircuitBreaker lever;
-```
+``` 
+-->
 
+{ImageLink:Causal-Loop-Diagram-for-Data-Inconsistencies.png|Causal Loop Diagram}
 Here, ➕ means that the connected variables move together, while ➖ means that they move in opposite directions. Yellow nodes are signals we observe, such as inconsistent views and transient errors. Green nodes are levers we can adjust, such as retry policy, validation, reconciliation, and circuit breakers.
 
 The next step is to put our theories, developed using these tools, to the test. We can change the retry policy and observe whether inconsistency frequency and queue growth change with it. We can strengthen write ordering or reduce the number of places a write must reach, then watch for a reduction in drift. We can adjust the reconciliation interval and measure whether the repair process keeps up with new inconsistencies. Each experiment should change one meaningful lever, define the signals we expect to move, and account for the delays before deciding whether the hypothesis was supported.
