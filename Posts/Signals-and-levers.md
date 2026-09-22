@@ -27,7 +27,7 @@ What I enjoyed most about [Signals & Levers](https://bookshop.org/p/books/signal
 
 The book uses examples from software development systems such as agile methodologies; this article applies those ideas to a software-architecture problem. For transparency, I should note that I received temporary access to a pre-release copy in order to review the book, but I am not affiliated with its publisher or authors and have no financial interest in its success. Links I provide to the book are for convenience and are not affiliate links. I receive no compensation for this post, or for anyone clicking on the links.
 
-What follows is therefore both a review of the ideas I found useful and an attempt to apply them to a concrete software system.
+What follows is therefore both a review of some of the ideas I found useful and an attempt to apply them to a concrete software system.
 
 ### A systems-thinking lens for software problems
 
