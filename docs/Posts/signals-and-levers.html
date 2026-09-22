@@ -92,32 +92,39 @@
 <h3>Feedback loops and causal structure</h3>
 <p>The useful insight is not just that these signals occur together, but that they can reinforce one another. A transient error can trigger a retry; enough retries increase load; increased load creates contention and delay; and that delay produces more errors and still more retries. That is a reinforcing loop. Balancing mechanisms such as validation, reconciliation, circuit breakers, and write throttling can interrupt it, although their effects may not be immediate. Replication lag, repair intervals, telemetry delay, and other time gaps can make the system appear unpredictable even when the underlying pattern is consistent.</p>
 <p>A causal-loop diagram makes those relationships easier to see than a list of symptoms. One loop follows the path from data churn to transient errors, retries, increased load, contention, and further errors. A second loop shows how reconciliation, validation, and circuit breakers can change that behavior. The diagram treats data churn as the observable result of architectural choices, timing differences, and partial failure that can make views diverge.</p>
-<pre><code class="language-mermaid">graph TD
-  Update[Maintenance update] --&gt;|➕| Churn[Data churn]
-  Validation[Validation] --&gt;|➖| Drift[Inconsistent views]
-  Churn --&gt;|➕| Drift
-  Drift --&gt;|➕| Reconcile[Reconciliation]
-  Reconcile --&gt;|➕| Churn
+<!-- 
+```mermaid
+graph TD
+  Update[Maintenance update] -->|➕| Churn[Data churn]
+<p>Validation[Validation] --&gt;|➖| Drift[Inconsistent views]
+Churn --&gt;|➕| Drift
+Drift --&gt;|➕| Reconcile[Reconciliation]
+Reconcile --&gt;|➕| Churn</p>
+<p>Churn --&gt;|➕| Error[Transient errors]
+Error --&gt;|➕| Churn
+Error --&gt;|➕| Retries[Retries]
+Retries --&gt;|➕| CircuitBreaker[Circuit breaker]
+Retries --&gt;|➕| Load[Additional load]
+CircuitBreaker --&gt;|➖| Load
+Load --&gt;|➕| Contention[Contention and delay]
+Contention --&gt;|➕| Error</p>
+<p>classDef signal fill:#fff2cc,stroke:#8a6d1d,stroke-width:2px;
+classDef lever fill:#d9ead3,stroke:#38761d,stroke-width:2px;
+class Drift,Error signal;
+class Retries,Reconcile,Validation,CircuitBreaker lever;</p>
+<pre><code>--&gt;
 
-  Churn --&gt;|➕| Error[Transient errors]
-  Error --&gt;|➕| Churn
-  Error --&gt;|➕| Retries[Retries]
-  Retries --&gt;|➕| CircuitBreaker[Circuit breaker]
-  Retries --&gt;|➕| Load[Additional load]
-  CircuitBreaker --&gt;|➖| Load
-  Load --&gt;|➕| Contention[Contention and delay]
-  Contention --&gt;|➕| Error
+<img src="../Images/Causal-Loop-Diagram-for-Data-Inconsistencies.png" alt="Causal Loop Diagram" />
+Here, ➕ means that the connected variables move together, while ➖ means that they move in opposite directions. Yellow nodes are signals we observe, such as inconsistent views and transient errors. Green nodes are levers we can adjust, such as retry policy, validation, reconciliation, and circuit breakers.
 
-  classDef signal fill:#fff2cc,stroke:#8a6d1d,stroke-width:2px;
-  classDef lever fill:#d9ead3,stroke:#38761d,stroke-width:2px;
-  class Drift,Error signal;
-  class Retries,Reconcile,Validation,CircuitBreaker lever;
+The next step is to put our theories, developed using these tools, to the test. We can change the retry policy and observe whether inconsistency frequency and queue growth change with it. We can strengthen write ordering or reduce the number of places a write must reach, then watch for a reduction in drift. We can adjust the reconciliation interval and measure whether the repair process keeps up with new inconsistencies. Each experiment should change one meaningful lever, define the signals we expect to move, and account for the delays before deciding whether the hypothesis was supported.
+
+This is where the book's ideas become practical for me. *Signals &amp; Levers* provided the vocabulary for moving beyond the question &quot;which component is broken?&quot; and asking how the system's structure produces the behavior we observe. The bus-maintenance example makes the concepts tangible, but the method is not limited to data errors. The same patterns can make it easier for us to work through performance problems, reliability incidents, and any other situation where the cause is distributed across components and delayed over time.
+
+### Closing
+
+When we identify that problems may be occurring in our systems, the most useful answer may not be to look for a single culprit. The problem may be a pattern of signals, levers, delays, and feedback loops spread across the system. This is the practical value I found in *Signals &amp; Levers*: it offers a way to see those relationships, test our assumptions, and make more deliberate changes. The same approach can help us understand our own systems before their symptoms become incidents we can no longer ignore.
 </code></pre>
-<p>Here, ➕ means that the connected variables move together, while ➖ means that they move in opposite directions. Yellow nodes are signals we observe, such as inconsistent views and transient errors. Green nodes are levers we can adjust, such as retry policy, validation, reconciliation, and circuit breakers.</p>
-<p>The next step is to put our theories, developed using these tools, to the test. We can change the retry policy and observe whether inconsistency frequency and queue growth change with it. We can strengthen write ordering or reduce the number of places a write must reach, then watch for a reduction in drift. We can adjust the reconciliation interval and measure whether the repair process keeps up with new inconsistencies. Each experiment should change one meaningful lever, define the signals we expect to move, and account for the delays before deciding whether the hypothesis was supported.</p>
-<p>This is where the book's ideas become practical for me. <em>Signals &amp; Levers</em> provided the vocabulary for moving beyond the question &quot;which component is broken?&quot; and asking how the system's structure produces the behavior we observe. The bus-maintenance example makes the concepts tangible, but the method is not limited to data errors. The same patterns can make it easier for us to work through performance problems, reliability incidents, and any other situation where the cause is distributed across components and delayed over time.</p>
-<h3>Closing</h3>
-<p>When we identify that problems may be occurring in our systems, the most useful answer may not be to look for a single culprit. The problem may be a pattern of signals, levers, delays, and feedback loops spread across the system. This is the practical value I found in <em>Signals &amp; Levers</em>: it offers a way to see those relationships, test our assumptions, and make more deliberate changes. The same approach can help us understand our own systems before their symptoms become incidents we can no longer ignore.</p>
 
                     <h5>Tags: <a title="Tag: architecture" class="small" href="../Search/architecture.html">architecture</a>&nbsp;<a title="Tag: reliability" class="small" href="../Search/reliability.html">reliability</a>&nbsp;<a title="Tag: coupling" class="small" href="../Search/coupling.html">coupling</a>&nbsp;</h5>
                     <div class="share"><a href="../Permalinks/faa210e7-62cf-4908-b1a3-92558cc2befb.html" rel="bookmark">Permalink</a></div>
