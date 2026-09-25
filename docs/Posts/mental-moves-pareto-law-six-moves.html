@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang="en">
     <head>
-        <!-- Template: Content Page -->
+        <!-- Template: Post Page -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     
-        <meta name="description" content="Technical presentations given by Barry S. Stahl.">
+        <meta name="description" content="Mental Moves: The Pareto Law of Six Moves, an article on Cognitive Inheritance.">
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link rel="stylesheet" href="../Style.css" type="text/css" />
         <link rel="alternate" type="application/rss+xml" title="RSS" href="../syndication.xml" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css" />
-        
+
         <title>Cognitive Inheritance - The Application Development Experiences of an Enterprise Engineer</title>
     </head>
     <body>
@@ -71,145 +71,37 @@
 
             <div class="row">
                 <main class="col-lg-9 col-xl-10 content-main">
-                    <h1>Speaking Engagements</h1>
-                    <blockquote>
-<p>My current <a href="../Pages/Talk-Catalog.html">catalog of talks</a> has moved to its own page</p>
-</blockquote>
-<h3>Upcoming Talks</h3>
-<!-- I currently have no talks scheduled. <a href="../contact.html">Contact me</a> to arrange to have me speak at your event. -->
+                    <h3>Mental Moves: The Pareto Law of Six Moves</h3>
+                    <h5>Posted by bsstahl on 2026-09-25 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+                    <share-on-mastodon 
+                        share_title="Check out this post on Cognitive Inheritance: 'Mental Moves: The Pareto Law of Six Moves'"
+                        share_description="&quot;Applying the Cabreras' six Mental Moves to software architecture and systems thinking.&quot;"
+                        hashtags="#agile #architecture #coding-practices"
+                        author="@bsstahl@cognitiveinheritance.com"
+                        default_url="https://fosstodon.org">
+                    </share-on-mastodon>
+                    <br/><br/>
+                    <h2>Mental Moves and software systems</h2>
+<p>This post follows up on <a href="signals-and-levers">Signals &amp; Levers in Practice: A Software-Architecture Case
+Study</a>. That post introduced several systems-thinking exercises
+that I have used over the years. This one will look more closely at the exercises
+described by the Cabreras as <a href="https://www.stsi.pro/mentalmoves">Mental Moves</a>,
+particularly the six moves included in their <strong>Pareto Law of Six Moves</strong>.</p>
+<h3>Framing notes</h3>
 <ul>
-<li><p><strong><a href="https://mlconference.ai/speaker/barry-stahl/">MLcon New York 2026</a></strong> - 9/28/2026 - 10/2/2026 - &quot;LLMs Under the Hood - Workshop&quot;, &quot;The Future of Information Retrieval: A Deep-Dive into RAG&quot; &amp; &quot;When you Don't Need an LLM: Deterministic Intelligence for Real World Apps&quot;</p>
-</li>
-<li><p><strong><a href="https://www.techbash.com/">TechBash 2026 - Poconos</a></strong> - 10/13/2026 - 10/16/2026 - &quot;Beyond Procedural Logic: Solving Problems Outside the Query&quot; &amp; &quot;Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems&quot;</p>
-</li>
-<li><p><strong><a href="https://craft-conf.com/2027/speakers/">Craft Conference 2027 - Budapest</a></strong> - 6/3/2027 - 6/4/2027 - Sessions TBD</p>
-</li>
+<li>Explain why a small set of repeatable mental moves can provide a useful starting point for analyzing complicated systems.</li>
+<li>Introduce the six moves from the Cabreras' framework without treating them as a substitute for understanding the system being examined.</li>
+<li>Apply each move to software architecture, delivery, reliability, or another concrete engineering situation supplied during the full draft.</li>
+<li>Connect the exercises to signals, levers, feedback loops, delays, and other systems-thinking concepts from the previous post.</li>
+<li>Close with practical questions for deciding which move to try when a problem is difficult to reproduce or has no single obvious cause.</li>
 </ul>
-<h3>Past engagements</h3>
-<!-- * **[MITechCon 2026 - Rochester, MI](https://www.mitechcon.events/MITechCon2026)** (all workshops cancelled) - 10/28/2026 - 10/30/2026 - "LLMs Under the Hood - Applied Engineering Workshop" & "Amazing Algorithms for Solving Problems in Software" -->
-<ul>
-<li><strong><a href="https://www.kcdc.info/">KCDC 2026</a></strong> - 9/9/2026 - 9/11/2026 - &quot;Architecting for Reliability: Eliminating Hidden Failure Modes&quot; and &quot;Intentional Architecture: Six Conversations for a Solid Foundation&quot;</li>
-<li><strong><a href="https://rvnug.org/">Roanoke Valley .NET User Group</a></strong> - 9/3/2026 - &quot;Crafting AI: A Developer’s Guide to Machine Learning&quot;</li>
-<li><strong><a href="https://www.beercitycode.com/#speakers">Beer City Code 2026</a></strong> - 8/14/2026 - 8/15/2026 - &quot;LLMs Under the Hood&quot; (workshop) and &quot;Solutions That Evolve: Building Self-Improving Systems with Genetic Algorithms&quot;</li>
-<li><strong><a href="https://nebraskacode.amegala.com/">Nebraska.Code() 2026</a></strong> - 7/22/2026 - 7/24/2026 - &quot;Amazing Algorithms for Solving Problems in Software&quot; (workshop), &quot;Solutions that Evolve, Building Self-Improving Systems with Genetic Algorithms&quot; &amp; &quot;How the Fediverse Could Save Democracy &amp; Why Developers Hold the Key&quot;</li>
-<li><strong><a href="https://mlconference.ai/speaker/barry-stahl/">MLcon San Diego 2026</a></strong> - 6/1/2026 - 6/2/2026 - &quot;LLMs Under the Hood - Workshop&quot; &amp; &quot;Inside Model Reasoning: Fine-Tuning in Action&quot;</li>
-<li><strong><a href="https://ndctoronto.com/speakers/barry-stahl">NDC Toronto 2026</a></strong> - 5/5/2026 - 5/8/2026 - &quot;The Future of Information Retrieval: A Deep-Dive into RAG&quot;</li>
-<li><strong><a href="https://web.archive.org/web/20260415164726/https://www.codestock.org/2026-speakers">Codestock 2026</a></strong> - 4/9/2026 - 4/10/2026 - &quot;Inside Model Reasoning: Fine-Tuning in Action&quot; &amp; &quot;Crafting AI: A Developer's Guide to Machine Learning&quot;</li>
-<li><strong><a href="https://web.archive.org/web/20260226213644/https://www.meetup.com/albuquerque-net-users-group/events/312740517/">Albuquerque Dot Net Users Group</a></strong> - 2/25/2026 - &quot;Inside Model Reasoning: Fine-Tuning in Action&quot;</li>
-<li><strong><a href="https://web.archive.org/web/20260226213915/https://ndclondon.com/speakers/barry-stahl">NDC London 2026</a></strong> - 1/26/2026 - 1/30/2026 - &quot;Solutions That Evolve: Building Self-Improving Systems with Genetic Algorithms&quot;</li>
-<li><strong><a href="https://web.archive.org/web/20260102205531/https://www.meetup.com/nwvdnug/events/311139089/">The Valley's .NET User Groups</a></strong> - 1/20/2026 - &quot;.NET Aspire Accelerator: Fast Track to Cloud-Native Development&quot; (co-presented with Rob Richardson)</li>
-<li><strong><a href="https://web.archive.org/web/20260118081630/https://events.codemash.org/2026CodeMashConference#/acceptedSpeakers">CodeMash 2026</a></strong> (Sandusky, OH) - 1/13/2025 - 1/16/2025 - &quot;Amazing Algorithms Workshop&quot; &amp; &quot;LLMs Under the Hood Workshop&quot;</li>
-<li><strong><a href="https://web.archive.org/web/20251127021711/https://www.meetup.com/hot-topics-developer-group/events/312133235/">Hot Topics Developer Group</a></strong> (San Diego CA) - 12/02/2025 - &quot;The Future of Information Retrieval: A Deep-Dive into RAG&quot;</li>
-<li><strong><a href="https://web.archive.org/web/20250915215347/https://ndcporto.com/speakers/barry-stahl">NDC Porto 2025</a></strong> - 10/20/2025 - 10/24/2025 - &quot;LLMs Under the Hood&quot; (workshop), &quot;Amazing Algorithms for Solving Problems in Software&quot; (workshop) and &quot;.NET Aspire Accelerator: Fast Track to Cloud-Native Development&quot; (workshop with Rob Richardson)</li>
-<li><strong><a href="https://mlconference.ai/speaker/barry-stahl/">ML Con New York 2025</a></strong> - 9/29/2025 - 10/3/2025 - &quot;LLM Embeddings: Not Magic, Just Math&quot;</li>
-<li><strong><a href="https://web.archive.org/web/20260226220828/https://www.meetup.com/sevdnug/events/308656896/">Combined .NET User Groups</a></strong> (Salt Lake City UT, Provo UT, SE Valley AZ, NW Valley AZ) - 7/10/2025 - &quot;The Future of Information Retrieval: A Deep-Dive into RAG&quot; (<a href="https://youtu.be/PsdkqNzVIw4?si=BRL0_iCZ-0uioIko">video</a>)</li>
-<li><strong><a href="https://web.archive.org/web/20250218185425/https://www.confoo.ca/en/speaker/barry-stahl">ConFoo 2025</a></strong> - 2/26/2025 - 2/28/2025 - &quot;Crafting AI: A Developer's Guide to Machine Learning&quot; and &quot;The Future of Information Retrieval: A Deep-Dive into RAG&quot;</li>
-<li><strong><a href="https://web.archive.org/web/20240529054152/https://codemash.org/speaker-details/?id=1aeeb749-1d7f-4bf8-be80-6c78ab20429a">CodeMash 2025</a></strong> - 1/14/2025 - 1/17/2025  - &quot;Crafting AI: A Developer's Guide to Machine Learning&quot;</li>
-<li><strong><a href="https://web.archive.org/web/20241001010513/https://techorama.nl/">Techorama Netherlands</a></strong> - 10/7/2024 - 10/9/2024 - &quot;Amazing Algorithms for Solving Problems in Software&quot; and &quot;The Future of Information Retrieval: A Deep-Dive into RAG&quot;</li>
-<li><strong>Beer City Code 2024</strong> - 8/3/2024 - &quot;GPT Embeddings: Not Magic, Just Math&quot; and &quot;Amazing Algorithms for Solving Problems in Software&quot;</li>
-<li><strong>THATConference Wisconsin</strong> - 7/31/2024 - &quot;GPT Under the Covers&quot;</li>
-<li><strong>Cincy Deliver 2024</strong> - 7/26/2024 - &quot;Success with Microservices: The Critical 'Cs'&quot;</li>
-<li><strong>ConFoo Montreal 2024</strong> - 2/21/2024 - 2/23/2024 - &quot;GPT Embeddings - Not Magic, Just Math&quot; &amp; &quot;Amazing Algorithms for Solving Problems in Software&quot;</li>
-<li><strong>CodeMash 2024</strong> - 1/9/2023 - 1/12/2023 - &quot;GPT Embeddings - Not Magic, Just Math&quot;</li>
-<li><strong>Carvana Spark</strong> - 11/14/2023 - 11/15/2023 - &quot;Apache Kafka: Driving System Reliability&quot; (Panel Moderator)</li>
-<li><strong>Tulsa .NET User Group</strong> - 10/24/2023 - &quot;Defining the Business Domain using Event Storming&quot;</li>
-<li><strong>CodeMash 2023</strong> - 1/10/2023 - 1/13/2023 - &quot;Event Storming Workshop&quot;</li>
-<li><strong>Edmonton .NET User Group</strong> - 11/29/2022 - &quot;Introduction to Microservices&quot;</li>
-<li><strong>NDC Oslo 2022</strong> - 9/26/2022 - 9/30/2022 - &quot;Amazing Algorithms for Solving Problems in Software&quot; &amp; &quot;Event Storming Workshop&quot;</li>
-<li><strong>Code PaLOUsa 2022</strong> - 8/17/2022 - 8/19/2022 - &quot;Design Patterns for Loosely Coupled Applications&quot; &amp; &quot;Event Storming Workshop&quot;</li>
-<li><strong>Kansas City Developer's Conference 2022 (KCDC)</strong> - 8/8/2022 - 8/10/2022 - &quot;Design Patterns for Loosely Coupled Applications&quot; &amp; &quot;Event Storming Workshop&quot;</li>
-<li><strong>Code on the Beach 2022</strong> - 7/25 to 7/27/2022 - &quot;Amazing Algorithms for Solving Problems in Software&quot;</li>
-<li><strong>CodeStock 2022</strong> - 4/7 to 4/8/2022 - &quot;Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems&quot; &amp; &quot;Defining the Business Domain using Event Storming&quot;</li>
-<li><strong>CodeMash 2022</strong> - 1/11 to 1/14/2022 - &quot;Design Patterns for Loosely Coupled Applications&quot;</li>
-<li><strong>NDC Oslo 2021</strong> - 11/29 to 12/3/2021 - &quot;Amazing Algorithms for Solving Problems in Software&quot;, &quot;Eliminating Hidden Dangers to your Applications: Patterns for Reliable Systems&quot; &amp; &quot;Genetic Algorithms&quot; (Lightning Talk)</li>
-<li><strong>AgileAZ 2021</strong> - 11/11 to 11/12/2021 - &quot;Defining the Business Domain using Event Storming&quot;</li>
-<li><strong>Redis Monthly Live</strong> - 10/18/2021 - &quot;Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems&quot;</li>
-<li><strong>THATConference 2021</strong> - 7/26 - 7/29/2021 - &quot;Amazing Algorithms for Solving Problems in Software&quot;</li>
-<li><strong>The Valley of the Sun .NET User Groups</strong> - 7/22/2021 - &quot;Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems&quot; (<a href="https://youtu.be/g6tnRWN9vy0">video</a>)</li>
-<li><strong>The Valley of the Sun .NET User Groups</strong> - 12/16/2020 - &quot;Event Storming (lightning talk)&quot; (<a href="https://youtu.be/6DgGhQQbfDE">video</a>)</li>
-<li><strong>Codestock 2020</strong> - (Cancelled for April 2020 due to Covid-19) - &quot;Amazing Algorithms for Solving Problems in Software&quot; &amp; &quot;Pushing AI to the Client with WebAssembly and Blazor&quot;</li>
-<li><strong>Twin Cities Code Camp</strong> - (Cancelled for April 2020 due to Covid-19) - &quot;Pushing AI to the Client with WebAssembly and Blazor&quot;</li>
-<li><strong>South Florida Software Dev Con 2020</strong> - 2/29/2020 - &quot;Amazing Algorithms for Solving Problems in Software&quot;</li>
-<li><strong>AgileAZ 2019</strong> - 11/22/2019 - &quot;Things Your Dev Team Hopes You Know&quot;</li>
-<li><strong>Desert Code Camp 2019</strong> - 10/12/2019 - &quot;Amazing Algorithms for Solving Problems in Software&quot;</li>
-<li><strong>THAT Conference 2019</strong> - 8/5 - 8/8/2019 - &quot;Design Patterns for Loosely Coupled Applications&quot;</li>
-<li><strong>J on the Beach Malaga 2019</strong> - 5/15 - 5/17/2019 - &quot;Pushing AI to the Client with WebAssembly and Blazor&quot;</li>
-<li><strong>Craft Conference Budapest 2019</strong> - 5/7 - 5/10/2019 - &quot;Design Patterns for Loosely Coupled Applications&quot;</li>
-<li><strong>Visual Studio 2019 Arizona Launch</strong> - 4/16/2019 - Organizer and Speaker. Keynote &quot;Community&quot; (<a href="https://youtu.be/P1rT_3dHFGw">video</a>) and &quot;Building Awesome Web Apps with Razor and Blazor&quot;.</li>
-<li><strong>Twin Cities Code Camp 2019</strong> - 4/13/2019 - &quot;Design Patterns for Loosely Coupled Applications&quot;</li>
-<li><strong>Data Science Phoenix</strong> - 3/19/2019 - &quot;Genetic Algorithms&quot; (Lightning Talk)</li>
-<li><strong>ConFoo Montreal 2019</strong> - 3/13 - 3/15/2019 - &quot;A Developer's Introduction to Artificial Intelligence&quot; &amp; &quot;One AI Algorithm that All Developers Should Know&quot; &amp; &quot;Intro to WebAssembly using Blazor&quot; (last-minute fill-in)</li>
-<li><strong>South Florida Code Camp 2019</strong> - 3/2/2019 - &quot;Intro to WebAssembly using Blazor&quot;</li>
-<li><strong>SoCalCodeCamp Los Angeles 2018</strong> - 11/10 - 11/11/2018 - &quot;Building .NET Applications for any Cloud with Cloud Foundry&quot; &amp; &quot;Intro to WebAssembly using Blazor&quot;</li>
-<li><strong>Code Camp Las Vegas 2018</strong> - 10/20/2018 - &quot;Design Patterns for Loosely Coupled Applications&quot;</li>
-<li><strong>Desert Code Camp, Phoenix 2018</strong> - 10/6/2018 - &quot;Building .NET Applications for any Cloud with Cloud Foundry&quot; and &quot;Design Patterns for Loosely Coupled Applications&quot;</li>
-<li><strong>Southeast Valley .NET User Group, Chandler AZ</strong> - 9/27/2018 - &quot;Introduction to WebAssembly Using Blazor&quot;</li>
-<li><strong>Northwest Valley .NET User Group, Glendale AZ</strong> - 9/26/2018 - &quot;Introduction to WebAssembly Using Blazor&quot;</li>
-<li><strong>RevolutionConf Virginia Beach 2018</strong> - 5/17 - 5/18/2018 - &quot;A Developer's Introduction to Artificial Intelligences&quot;</li>
-<li><strong>MVPMix Dallas 2018</strong> - 3/15/2018 - &quot;One AI Algorithm all Programmers Should Know&quot; and &quot;A Developers Introduction to Artificial Intelligence&quot;</li>
-<li><strong>Phoenix Startup Week 2018</strong> - 2/19/2018 - &quot;Using Combinatorial Optimization to Create Artificial Intelligences&quot;</li>
-<li><strong>South Florida Code Camp 2018</strong> - 2/10/2018 - &quot;A Developer's Survey of AI Methodologies&quot; and &quot;Building AI Solutions with Google OR Tools&quot;</li>
-<li><strong>SoCalCodeCamp Los Angeles 2017</strong> - 12/2 to 12/3/2017 - &quot;A Developer's Survey of AI
-Methodologies&quot; and &quot;Building AI Solutions with Google OR Tools&quot;</li>
-<li><strong>Desert Code Camp 2017</strong> - 10/14/2017 - &quot;A Developer's Survey of AI Methodologies&quot; and &quot;Building AI Solutions that can Reason Why&quot;</li>
-<li><strong>NDC Sydney</strong> - 8/14 to 8/18/2017 - &quot;Building AI Solutions with Google OR-Tools&quot;</li>
-<li><strong>SoCalCodeCamp San Diego 2017</strong> - 6/24/2017 - &quot;A Developer's Survey of AI Methodologies&quot;</li>
-<li><strong>Southeast Valley .NET User Group</strong> - 6/22/2017 - &quot;A Developer's Survey of AI Methodologies&quot;</li>
-<li><strong>Codestock (Knoxville TN)</strong> - 5/6/2017 - &quot;Examples of Micro-Service Architectures&quot;</li>
-<li><strong>Phoenix Visual Studio 2017 Launch</strong> - 3/16/2017 - &quot;Testing in Visual Studio 2017&quot;</li>
-<li><strong>MVPMix Dallas</strong> - 3/9/2017 &amp; 3/10/2017 - &quot;Creating Maintainable and Discoverable APIs in .NET Core&quot; &amp; &quot;Design Patterns for Loosely Coupled Applications in C#&quot;</li>
-<li><strong>NDC London</strong> - 1/20/2017 - &quot;Test Driven Development in .NET Core&quot; &amp; &quot;What Makes a Good Unit Test?&quot; (lightning talk)</li>
-<li><strong>Southern California Code Camp</strong> (SoCalCodeCamp - Los Angeles 2016) - 11/12-11/13/2016 - &quot;A Developer's Guide to Finding Optimal Solutions&quot;</li>
-<li><strong>Atlanta Code Camp 2016</strong> - 10/15/2016 - &quot;A Developer's Guide to Finding Optimal Solutions&quot;</li>
-<li><strong>IT/DevConnections 2016</strong> - 10/10/2016 - 10/13/2016 - &quot;Dynamic Optimization: One Algorithm All Programmers Should Know&quot;</li>
-<li><strong>Desert Code Camp 2016.1</strong> - 10/8/2016 - &quot;A Developer's Guide to Finding Optimal Solutions&quot;</li>
-<li><strong>Alpha DevCon 2016</strong> - 9/21/2016 - panelist on the &quot;Vertical Apps Panel&quot;</li>
-<li><strong>.NET Group Las Vegas</strong> - 8/25/2016 - &quot;A Developer's Guide to Finding Optimal Solutions&quot;</li>
-<li><strong>Southern California Code Camp</strong> (SoCalCodeCamp San Diego 2016) - 6/26/2016 - &quot;A Developer's Guide to Finding Optimal Solutions&quot;</li>
-<li><strong>Twin Cities Code Camp 20</strong> - 4/16/2016 - &quot;A Developer's Guide to Finding Optimal Solutions&quot;</li>
-<li><strong>Baton Rouge .NET User Group</strong> - 4/13/2016 - &quot;A Developer's Guide to Finding Optimal
-Solutions&quot;</li>
-<li><strong>South Florida Code Camp 2016</strong> - 2/20/2016 - &quot;Dynamic Optimization: One Algorithm All Programmers Should Know&quot; &amp; &quot;A Developer's Guide to Finding Optimal Solutions&quot;</li>
-<li><strong>Southern California Code Camp</strong>(SoCalCodeCamp Los Angeles 2015) - 11/14/2015 &amp; 11/15/2015 - &quot;Dynamic Optimization: One Algorithm All Programmers Should Know&quot; and &quot;Simplify Your API: Creating Maintainable and Discoverable Code&quot;</li>
-<li><strong>.NET Group - Southern Nevada's .NET User Group</strong> - 10/29/2015 - &quot;Simplify Your API: Creating Maintainable and Discoverable Code&quot;</li>
-<li><strong>Atlanta Code Camp</strong> - 10/24/2015 - &quot;Dynamic Optimization: One Algorithm All Programmers Should Know.&quot;</li>
-<li><strong>Code Camp NYC</strong>- 10/10/2015 - &quot;Dynamic Optimization: One Algorithm All Programmers Should Know.&quot;</li>
-<li><strong>Southern California Code Camp</strong> (SoCalCodeCamp San Diego 2015) - 6/27/2015 - &quot;Dynamic Optimization: One Algorithm All Programmers Should Know.&quot;</li>
-<li><strong>Northwest Valley .NET User Group (NWVDNUG)</strong> - 6/24/2015 - &quot;Dynamic Optimization: One Algorithm All Programmers Should Know.&quot;</li>
-<li><strong>Twin Cities Code Camp 18</strong> - 4/25/2015 - &quot;Dynamic Optimization: One Algorithm All Programmers Should Know.&quot;</li>
-<li><strong>Las Vegas Code Camp</strong> - 2/21/2015 - &quot;Dynamic Optimization: One Algorithm All Programmers Should Know.&quot;</li>
-<li><strong>South Florida Code Camp 2015</strong> - 2/7/2015 - &quot;Dynamic Optimization: One Algorithm All Programmers Should Know&quot;</li>
-<li><strong>Desert Code Camp 2014.2</strong> - &quot;.NET TDD Kickstart&quot; and panelist for the discussion &quot;Agile in Practice&quot;</li>
-<li><strong>Southeast Valley .NET User Group</strong> - 8/28/2014 - &quot;SOA: Beyond the Buzzwords&quot;</li>
-<li><strong>Southern California Code Camp</strong>(SoCalCodeCamp San Diego 2014) - 6/28/2014 - &quot;SOA: Beyond the Buzzwords&quot;</li>
-<li><strong>South Florida Code Camp 2014</strong> - 2/22/2014 - &quot;Simplify Your API: Creating Maintainable and Discoverable Code&quot;</li>
-<li><strong>Southernmost User Group 2014</strong> - 2/20/2014 - &quot;SOA: Beyond the Buzzwords&quot;</li>
-<li><strong>Desert Code Camp 2013.2</strong> - 11/9/2013 - &quot;SOA: Beyond the Buzzwords&quot;</li>
-<li><strong>DevConnections Las Vegas</strong> - 10/1/2013 - &quot;Simplify Your API: Creating Maintainable and
-Discoverable Code&quot;</li>
-<li><strong>Win 8 App Factor Tempe</strong> 6/13/2013 - &quot;Code Portability in .NET&quot;</li>
-<li><strong>SELA Dev Conference</strong>  5/5/2013-5/9/2013 in Tel Aviv Israel – a full day
-seminar version of &quot;.NET TDD Kickstart&quot; as well as &quot;Code Portability in .NET&quot;</li>
-<li><strong>Twin Cities Code Camp</strong> 4/27/2013 – &quot;Code Portability in .NET&quot;</li>
-<li><strong>Desert Code Camp</strong> 4/20/2013 – &quot;Creating a DSL Using an OData Source&quot;</li>
-<li><strong>South Florida Code Camp</strong> 2013 - 2/9/2013 - &quot;Creating a DSL using an OData Source&quot;</li>
-<li><strong>Southernmost User Group</strong> - 2/7/2013 - &quot;Code Portability in .NET&quot;</li>
-<li><strong>NYC Code Camp</strong> - 9/15/2012 - &quot;.NET TDD Kickstart&quot;</li>
-<li><strong>Los Angeles .NET Developer Group</strong> - 7/9/2012 - &quot;.NET TDD Kickstart&quot;</li>
-<li><strong>North West Valley .NET User Group</strong> - 6/26/2012 - &quot;.NET TDD Kickstart&quot;</li>
-<li><strong>Southern California Code Camp</strong> (SoCalCodeCamp - San Diego 2012) - 6/24/2012 - &quot;.NET TDD Kickstart&quot;</li>
-<li><strong>Twin-Cities Code Camp 12</strong> (TCCC12) - 4/15/2012 - &quot;.NET TDD Kickstart&quot;</li>
-<li><strong>New Mexico .NET Users Group</strong> (NMUG) - 3/1/2012 - &quot;.NET TDD Kickstart&quot;</li>
-<li><strong>South Florida Code Camp 2012</strong> - 2/18/2012 - &quot;.NET TDD Kickstart&quot;</li>
-<li><strong>Southern California Code Camp</strong> (SoCalCodeCamp Fullerton 2012) - 1/29/2012 - &quot;.NET TDD Kickstart&quot;</li>
-<li><strong>Desert Code Camp 2011.2</strong> - 11/5/2011 - &quot;Enterprise Development in the Windows 8 Timeframe&quot;</li>
-<li><strong>Southern California Code Camp</strong> (SoCalCodeCamp - San Diego 2011) - 6/26/2011 - &quot;Building Enterprise Quality Apps using EF4&quot;</li>
-<li><strong>New Mexico .NET Users Group</strong> (NMUG) - 6/2/2011 - &quot;Building Enterprise Quality Apps using EF4&quot;</li>
-<li><strong>Desert Code Camp 2011.1</strong> - 4/2/2011 - &quot;Building Enterprise Quality Apps using EF4&quot;</li>
-<li><strong>Developer Ignite II</strong> - 11/11/2009 - &quot;AZGiveCamp, Geeks Giving Back to the Community&quot;</li>
-<li><strong>Developer Ignite</strong> - 7/22/2009 - &quot;Simplicity Through Abstraction&quot;</li>
-</ul>
+<p>The complete article should name and explain each of the six moves from the source,
+then show how the exercises change the questions an engineer asks about a system.
+It should preserve the distinction between describing the Cabreras' framework and
+my own applications of it.</p>
 
+                    <h5>Tags: <a title="Tag: agile" class="small" href="../Search/agile.html">agile</a>&nbsp;<a title="Tag: architecture" class="small" href="../Search/architecture.html">architecture</a>&nbsp;<a title="Tag: coding-practices" class="small" href="../Search/coding-practices.html">coding-practices</a>&nbsp;</h5>
+                    <div class="share"><a href="../Permalinks/e952af62-0798-49c0-b4a7-4631be35d28a.html" rel="bookmark">Permalink</a></div>
                 </main>
                 <aside class="col-lg-3 col-xl-2 sidebar">
                     <div class="widgetzone"><div class="widget textbox"><h4>About the Author</h4><div class="content"><p><img style="float: left; padding: 0px 3px 0px 0px;" src="../Pics/bsstahl_left.gif" alt="Barry S. Stahl" width="95" /><strong>Barry S. Stahl</strong> (he/him) - Barry Stahl is an Architect and Developer and a Microsoft .NET MVP with more than four decades of experience building reliable, scalable systems on .NET and other Microsoft technologies. He has delivered hundreds of sessions at conferences, code camps, and user groups across North America, Europe, and Australia and is known for making complex topics clear, actionable, and grounded in real‑world engineering practice. His talks span architecture, problem‑solving modalities, artificial intelligence, optimization algorithms, and the practical mechanics of building resilient and self‑healing systems.</p>
@@ -255,7 +147,7 @@ seminar version of &quot;.NET TDD Kickstart&quot; as well as &quot;Code Portabil
                 </aside>
             </div>
         </div>
-    
+
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
@@ -268,7 +160,5 @@ seminar version of &quot;.NET TDD Kickstart&quot; as well as &quot;Code Portabil
         <!-- 100% privacy-first analytics -->
         <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
         <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true" alt="" referrerpolicy="no-referrer-when-downgrade"/></noscript>
-
     </body>
-
 </html>
