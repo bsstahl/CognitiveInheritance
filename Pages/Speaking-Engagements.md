@@ -24,12 +24,11 @@ categories: []
 
 * **[TechBash 2026 - Poconos](https://www.techbash.com/)** - 10/13/2026 - 10/16/2026 - "Beyond Procedural Logic: Solving Problems Outside the Query" & "Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems"
 
-* **[MITechCon 2026 - Rochester, MI](https://www.mitechcon.events/MITechCon2026)** - 10/28/2026 - 10/30/2026 - "LLMs Under the Hood - Applied Engineering Workshop" & "Amazing Algorithms for Solving Problems in Software"
-
 * **[Craft Conference 2027 - Budapest](https://craft-conf.com/2027/speakers/)** - 6/3/2027 - 6/4/2027 - Sessions TBD
 
 ### Past engagements
 
+<!-- * **[MITechCon 2026 - Rochester, MI](https://www.mitechcon.events/MITechCon2026)** (all workshops cancelled) - 10/28/2026 - 10/30/2026 - "LLMs Under the Hood - Applied Engineering Workshop" & "Amazing Algorithms for Solving Problems in Software" -->
 * **[KCDC 2026](https://www.kcdc.info/)** - 9/9/2026 - 9/11/2026 - "Architecting for Reliability: Eliminating Hidden Failure Modes" and "Intentional Architecture: Six Conversations for a Solid Foundation"
 * **[Roanoke Valley .NET User Group](https://rvnug.org/)** - 9/3/2026 - "Crafting AI: A Developer’s Guide to Machine Learning"
 * **[Beer City Code 2026](https://www.beercitycode.com/#speakers)** - 8/14/2026 - 8/15/2026 - "LLMs Under the Hood" (workshop) and "Solutions That Evolve: Building Self-Improving Systems with Genetic Algorithms"
