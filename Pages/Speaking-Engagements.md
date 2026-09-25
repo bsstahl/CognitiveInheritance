@@ -8,7 +8,7 @@ description: Technical presentations given by Barry S. Stahl.
 ispublished: true
 showinlist: true
 publicationdate: 2009-08-01T00:00:00.000+00:00
-lastmodificationdate: 2026-04-28T00:00:00.000+00:00
+lastmodificationdate: 2026-09-25T00:00:00.000+00:00
 slug: Speaking-Engagements
 categories: []
 
