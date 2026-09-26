@@ -89,15 +89,15 @@
 <p>Instead of the old binary, we suddenly have six distinct states: an “unconfirmed” ball or strike (the original umpire call, lingering in limbo); a “confirmed” ball or strike (the human call, validated by the machine); and two overturned results: a strike ruled a ball, or a ball ruled a strike by ABS review. Each is a separate status with its own implications for the game and its participants.</p>
 <p>Here’s the twist: none of this scaffolding exists for the sake of baseball itself. These aren’t states that matter to the nature of pitching or hitting, but layers imposed to manage and ration access to truth.</p>
 <p>To appreciate just how much complexity the ABS system introduces, compare it to the pre-ABS state machine—there were only two possible destinations for every pitch:</p>
-<pre><code class="language-mermaid">stateDiagram-v2
+<pre class="mermaid">stateDiagram-v2
     [*] --&gt; Ball: Ump Calls Ball
     [*] --&gt; Strike: Ump Calls Strike
 
     Ball : Final_state: Ball
     Strike : Final_state: Strike
-</code></pre>
+</pre>
 <p>With the new ABS hybrid system, MLB has introduced a set of intermediate states and transitions that eventually result in the same Ball or Strike call. The diagram below illustrates the expanded system:</p>
-<pre><code class="language-mermaid">stateDiagram-v2
+<pre class="mermaid">stateDiagram-v2
     [*] --&gt; Unconfirmed_Ball: Ump Calls Ball
     [*] --&gt; Unconfirmed_Strike: Ump Calls Strike
 
@@ -112,7 +112,7 @@
     Ball : Final_state: Ball
     Strike : Final_state: Strike
 
-</code></pre>
+</pre>
 <h2>A Live Counterexample: WPBL</h2>
 <p>The Women’s Pro Baseball League (WPBL), currently operating out of Springfield, Illinois, offers a useful contrast. The league does not use MLB’s ABS challenge layer, and the result is a cleaner game flow: each pitch resolves immediately into the same two-state model baseball has always used.</p>
 <p>That simplicity matters. Without challenge inventory, review choreography, and overturn bookkeeping, players and fans can focus on pitch execution, sequencing, and situational strategy instead of state management. In systems terms, WPBL avoids adding intermediate states that do not improve the core interaction.</p>
@@ -194,7 +194,8 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
         <script defer type="module" src="../Modules/share-on-mastodon.js"></script>
 
-        <!-- Code Coloring -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.15.0/mermaid.min.js"></script>
+    <script>if (window.mermaid) { mermaid.initialize({ startOnLoad: false }); mermaid.run(); }</script><!-- Code Coloring -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
         <script>if (window.hljs) { document.querySelectorAll("pre code, code[class^=\"language-\"], code[class*=\" language-\"]").forEach(el => hljs.highlightElement(el)); }</script>
 

@@ -183,7 +183,7 @@
 <p>As the table demonstrates, in Architectures 1 and 2, failures on message ingress require at least one application team to respond to any failure. This is because these architectures cannot fully isolate application concerns from infrastructure ones. However, in Architecture 3, if there is an Ingress failure, the Infrastructure team is responsible for responding because they are the ones responsible for managing the network and the messaging tooling. Infrastructure implementations also typically offer a higher degree of reliability than applications can.</p>
 <h2>Visual Representation of Failure Paths</h2>
 <h3>Architecture 1: Monolith</h3>
-<pre><code class="language-mermaid">graph TD
+<pre class="mermaid">graph TD
     Client[Client] --&gt; API[API Layer]
     API --&gt; Monolith[Monolith]
     Monolith --&gt; Scheduling[Scheduling Logic]
@@ -198,9 +198,9 @@
         PM
         App
     end
-</code></pre>
+</pre>
 <h3>Architecture 3: Direct Messaging</h3>
-<pre><code class="language-mermaid">graph TD
+<pre class="mermaid">graph TD
     Client[Client] --&gt; MQ[Message Queue]
     MQ --&gt; Scheduling[Scheduling Service]
     MQ --&gt; PM[Preventative Maintenance Service]
@@ -212,7 +212,7 @@
     subgraph &quot;Support Response Required&quot;
         PM
     end
-</code></pre>
+</pre>
 <p>The diagrams above illustrate how a failure in the Preventative Maintenance component affects the support response requirements in different architectures. In Architecture 1, all teams must be involved in the support response, while in Architecture 3, only the Preventative Maintenance team needs to respond.</p>
 <h2>Summary</h2>
 <p>In conclusion, by separating concerns into different services, we can reduce the coupling between different parts of the system and minimize the support requirements for each individual team. Furthermore, by pushing messages directly to a reliable messaging system, we can improve reliability by putting as much burden as possible on the infrastructure pieces, which have the highest reliability guarantees.</p>
@@ -270,7 +270,8 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
         <script defer type="module" src="../Modules/share-on-mastodon.js"></script>
 
-        <!-- Code Coloring -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.15.0/mermaid.min.js"></script>
+    <script>if (window.mermaid) { mermaid.initialize({ startOnLoad: false }); mermaid.run(); }</script><!-- Code Coloring -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
         <script>if (window.hljs) { document.querySelectorAll("pre code, code[class^=\"language-\"], code[class*=\" language-\"]").forEach(el => hljs.highlightElement(el)); }</script>
 
