@@ -17,7 +17,7 @@ lastmodificationdate: 2026-08-07T00:00:00Z
 slug: complexity-matters-baseballs-new-strike-zone
 
 ---
-## tl;dr
+## TL;DR
 
 MLB's **hybrid** ABS challenge system is a disaster for baseball because it violates one simple rule:  
 
@@ -34,11 +34,11 @@ For over a century, every baseball pitch was governed by a simple model with two
 
 ## Technology Arrives, But Only Halfway
 
-Major League Baseball, long in pursuit of the perfectly called game, eventually turned to technology for help. Events like Armando Galarraga's near-perfect game in 2010, along with the apparent success of the replay challenge system, may have made a challenge-based ABS (**Automated Balls and Strikes**) model seem more attractive, even though ABS is a different system from replay challenges, with different mechanics and implementation. ABS, offered a more accurate and consistent strike zone, a modern response to the limits of human judgment. MLB did not fully hand the decision over to automation, however. Instead, it chose a hybrid approach: umpires still make the initial call, and those calls can then be challenged and reviewed by ABS. The result is not a better version of the old system; it is a layered process that preserves human involvement while adding machine oversight. That layering may improve accountability, but it also adds complexity, and the challenge step can make the experience harder rather than simpler to follow.
+Major League Baseball, long in pursuit of the perfectly called game, eventually turned to technology for help. Events like Armando Galarraga's near-perfect game in 2010, along with the apparent success of the replay challenge system, may have made a challenge-based ABS (**Automated Balls and Strikes**) model seem more attractive, even though ABS is a different system from replay challenges, with different mechanics and implementation. Automated systems like ABS offered a more accurate and consistent strike zone, a modern response to the limits of human judgment. MLB did not fully hand the decision over to automation, however. Instead, it chose a hybrid approach: umpires still make the initial call, and those calls can then be challenged and reviewed by ABS. The result is not a better version of the old system; it is a layered process that preserves human failings while adding machine oversight. That layering *may* improve accountability, but it also adds complexity, and the challenge step can make the experience harder rather than simpler to follow.
 
 ## It Still Lets Bad Calls Decide Games
 
-The primary objective of adding ABS is straightforward: a bad call should not decide the outcome of a game. Unfortunately, the challenge system does not reliably achieve that objective because access to a correction is limited. A player has to decide which calls are important enough to challenge, while preserving challenges for situations that might matter more later. That means an incorrect call can remain in place not because ABS cannot identify it, but because that player cannot risk one of its limited challenges on it. This is exasperated by the fact that review requests must be made instantly, without reflection or aid, and by the players themselves, with varying levels of experience and reliability in these areas.
+If the objective of adding ABS is to attempt to eliminate times that a bad call changes the outcome of a game, the challenge system fails because access to a correction is limited. A player has to decide which calls are important enough to challenge, while preserving challenges for situations that might matter more later. That means an incorrect call, even one that could ultimately determine the outcome of a game, can remain in place not because ABS cannot identify it, but because that player cannot risk one of his team's limited challenges on it, or the team has no challenges remaining. This is exasperated by the fact that review requests must be made instantly, without reflection or aid, and by the players themselves, with varying levels of experience and reliability in these areas.
 
 This turns accuracy into a resource-allocation problem. A close call in an early inning may be wrong, but challenging it could leave a team without protection in a later, higher-leverage situation. A consequential call can therefore stand while a less important call is reviewed, simply because the available challenge inventory has to be managed over the course of the game. The system still permits the very outcome it was supposed to prevent: a game being decided by an uncorrected bad call.
 
@@ -48,50 +48,70 @@ The limitation is not just an implementation detail. Once correction depends on 
 
 Systems are shaped by the states they recognize and the transitions between them. For a hundred years, baseball's model was elegantly sparse. Every pitch lived in one of two states: a ball or a strike. Nothing to memorize, nothing to manage. But with the introduction of ABS challenges, things quietly got more complicated. Now, what used to be a simple call must traverse a web of possible verdicts before it's settled.
 
-Instead of the old binary, we suddenly have six distinct states: an "unconfirmed" ball or strike (the umpire's original, unvalidated call); a "confirmed" ball or strike (the human call, validated by the machine); and two overturned results: a strike ruled a ball, or a ball ruled a strike by ABS review. Each is a separate status with its own implications for the game and its participants.
+Instead of the old binary, the hybrid model introduces six to eight distinct states, depending on how strictly states are counted. These include called, unconfirmed, validated, and final ball-or-strike outcomes, each with its own implications for the game and its participants.
 
 Here's the twist: none of this scaffolding exists for the sake of baseball itself. These aren't states that matter to the nature of pitching or hitting, but layers imposed to manage and ration access to truth.
 
 To appreciate just how much complexity the ABS system introduces, compare it to the pre-ABS state machine where there were only two possible destinations for every pitch:
 
+<div align="center">
+
 ```mermaid
 stateDiagram-v2
+    state "Ball" as Ball
+    state "Strike" as Strike
+
     [*] --> Ball: Ump Calls Ball
     [*] --> Strike: Ump Calls Strike
-
-    Ball : Final_state: Ball
-    Strike : Final_state: Strike
 ```
+
+</div>
 
 With the new ABS hybrid system, MLB has introduced a set of intermediate states and transitions that eventually result in the same Ball or Strike call. The diagram below illustrates the expanded system:
 
+<div align="center">
+
 ```mermaid
 stateDiagram-v2
-    [*] --> Unconfirmed_Ball: Ump Calls Ball
-    [*] --> Unconfirmed_Strike: Ump Calls Strike
+    state "Called Ball" as Initial_Ball
+    state "Validated Ball" as Validated_Ball
+    state "Unconfirmed Ball" as Unconfirmed_Ball
+    state "Ball" as Ball
 
-    Unconfirmed_Ball --> Ball: No challenge<br/>Issued
-    Unconfirmed_Ball --> Ball: Catcher Challenge<br/>Unsuccessful
-    Unconfirmed_Ball --> Strike: Catcher Challenge<br/>Successful
+    state "Called Strike" as Initial_Strike
+    state "Validated Strike" as Validated_Strike
+    state "Unconfirmed Strike" as Unconfirmed_Strike
+    state "Strike" as Strike
 
-    Unconfirmed_Strike --> Strike: No challenge<br/>Issued
-    Unconfirmed_Strike --> Strike: Batter Challenge<br/>Unsuccessful
-    Unconfirmed_Strike --> Ball: Batter Challenge<br/>Successful
+    [*] --> Initial_Ball: Ump Calls Ball
+    [*] --> Initial_Strike: Ump Calls Strike
 
-    Ball : Final_state: Ball
-    Strike : Final_state: Strike
+    Initial_Ball --> Validated_Ball: Catcher Challenge<br/>Unsuccessful
+    Initial_Ball --> Validated_Strike: Catcher Challenge<br/>Successful
+    Initial_Ball --> Unconfirmed_Ball: No Challenge Issued
 
+    Initial_Strike --> Validated_Strike: Batter Challenge<br/>Unsuccessful
+    Initial_Strike --> Validated_Ball: Batter Challenge<br/>Successful
+    Initial_Strike --> Unconfirmed_Strike: No Challenge Issued
+
+    Validated_Ball --> Ball
+    Unconfirmed_Ball --> Ball
+
+    Validated_Strike --> Strike
+    Unconfirmed_Strike --> Strike
 ```
+
+</div>
 
 ## A Live Counterexample: WPBL
 
-The Women's Pro Baseball League (WPBL), currently operating out of Springfield, Illinois, offers a useful contrast. The league does not use MLB's ABS challenge layer, and the result is a cleaner game flow: each pitch resolves immediately into the same two-state model baseball has always used.
+The Women's Pro Baseball League (WPBL), operating out of Springfield, Illinois, offers a useful contrast. The league does not use MLB's ABS challenge layer, and the result is a cleaner game flow: each pitch resolves immediately into the same two-state model baseball has always used.
 
 That simplicity matters. Without challenge inventory, review choreography, and overturn bookkeeping, players and fans can focus on pitch execution, sequencing, and situational strategy instead of state management. In systems terms, WPBL avoids adding intermediate states that do not improve the core interaction.
 
 If the goal is to preserve baseball as a game of rhythm and readable outcomes, WPBL shows that the simpler model is not outdated—it is often the better design.
 
-## Complexity Has a Cost -- and not Just in Baseball
+## Complexity has a Cost, and not Just in Baseball
 
 Complexity is not just a technical property; it is a user-experience cost. Every additional state in a system introduces more transitions, and every transition introduces another chance for hesitation, disagreement, or error. What used to be instantaneous and final now carries conditional logic: who can challenge, when they can challenge, whether it succeeds, and how that outcome is interpreted in context. Even when the final output is still only ball or strike, the path to that output has become tangled.
 
@@ -109,7 +129,7 @@ From a DDD (Domain-Driven Design) perspective, this is a boundary problem. The c
 
 For catchers, this means constant triage. A close miss that could steal a strike might be worth a challenge early, but using one too soon can leave the defense exposed later when leverage is higher. Hitters face a mirrored decision: protect an at-bat now, or save the challenge for a later pitch sequence that might matter more. Managers, meanwhile, are pulled into inventory tracking. Having to count available challenges, anticipate future high-leverage spots, and balance immediate correctness against late-game optionality. Players are judged not just on their ability to do their job as a baseball player, but as a maker of these snap decisions as well.
 
-Fans and broadcasters inherit this complexity too. Instead of processing a straightforward call, they must now interpret whether a pitch was merely called, left unchallenged, challenged and confirmed, or challenged and overturned. The vocabulary and timing of the game shift from direct outcomes to procedural states. Attention moves from "what happened on that pitch?" to "what state is this call currently in?" and "where do we stand with the number of opportunities we still have to challenge?".
+Fans and broadcasters inherit this complexity too. Instead of processing a straightforward call, they must now interpret whether a pitch was merely called, left unchallenged, or challenged and either upheld or overturned. The vocabulary and timing of the game shift from direct outcomes to procedural states. Attention moves from "what happened on that pitch?" to "what state is this call currently in?" and "where do we stand with the number of opportunities we still have to challenge?".
 
 This is the key consequence of hybridization: once process becomes strategic it begins to shape behavior. The system no longer just adjudicates baseball, it influences how baseball is played, watched, and discussed in real time. That is the meta-game, an added layer of state management that did not previously exist, and that competes with the game itself for cognitive bandwidth.
 

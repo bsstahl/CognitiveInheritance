@@ -1,7 +1,7 @@
 ---
 name: CogInt post creator
 description: "Use when framing up, scaffolding, or creating a new CognitiveInheritance blog post stub from an idea, outline, event, tool, or development topic. Creates PPTail-compatible unpublished Markdown posts in the Posts folder."
-tools: [read, edit, search, execute, bsstools/*]
+tools: [read, edit, search, execute, agent, bsstools/*]
 agents: [delvish, Storytelling Architect, Tag Selector Agent, markdown, Voice Rewrite Specialist]
 user-invocable: true
 argument-hint: "Describe what the blog post should contain, including its topic, argument, event, tool, or examples."
