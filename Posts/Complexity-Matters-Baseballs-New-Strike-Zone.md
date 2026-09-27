@@ -9,11 +9,11 @@ id: 8e95e82d-55ec-44bc-a5a2-573d023274d0
 title: Complexity Matters - Baseball's New Strike Zone
 description: A look at how MLB's ABS challenge system bloats a once‑simple two‑state call into a six‑state machine, and why simplifying, not hybridizing, is the real path forward.
 teaser: MLB's new ABS challenge system was supposed to make the strike zone clearer. Instead, it quietly transformed a simple two‑state call into a six‑state decision machine that players, managers, and fans now have to navigate. This post breaks down how that complexity emerged, and why the simplest fix is to stop hybridizing and start simplifying.
-ispublished: false
+ispublished: true
 showinlist: false
 buildifnotpublished: true
-publicationdate: 2026-06-19T07:00:00Z
-lastmodificationdate: 2026-08-07T00:00:00Z
+publicationdate: 2026-09-27T07:00:00Z
+lastmodificationdate: 2026-09-27T00:00:00Z
 slug: complexity-matters-baseballs-new-strike-zone
 
 ---
