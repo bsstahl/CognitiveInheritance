@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <!-- Template: Search Page -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    
+        <meta name="description" content="{Description}">
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="../Style.css" type="text/css" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="../syndication.xml" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css" />
+
+        <title>Cognitive Inheritance - The Application Development Experiences of an Enterprise Engineer</title>
+    </head>
+    <body>
+        <div class="container-fluid px-0">
+            <div class="row no-gutters">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<a class="navbar-brand" href="../index.html">Cognitive Inheritance</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a class="nav-link" href="../archive.html">Archive</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../contact.html">Contact</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../Pages/AZGiveCamp.html">AZGiveCamp</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../Pages/Speaking-Engagements.html">Speaking Engagements</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../Pages/Talk-Catalog.html">Talk Catalog</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../Pages/Unit-Testing-and-TDD-FAQ.html">FAQ</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../Pages/Open-Source.html">Open Source</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../Pages/Favorites.html">Favorites</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../syndication.xml"><img align="absbottom" id="rssIcon" src="../Pics/rssButton.gif" /></a>
+</li>
+</ul>
+</div>
+</nav>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid content-wrapper">
+            <div class="row">
+                <div class="col-12">
+                    <header class="site-header">The Application Development Experiences of an Enterprise Engineer</header>
+                </div>
+            </div>
+
+            <div class="row">
+                <main class="col-lg-9 col-xl-10 content-main">
+                    <h1>Tag: complexity</h1>
+                    <div>
+    <h3>Complexity Matters - Baseball's New Strike Zone</h3>
+    <h5>Posted by bsstahl on 2026-09-27 and Filed Under: <a title="Category: development" class="small" href="../Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: 'Complexity Matters - Baseball's New Strike Zone'"
+        share_description="&quot;MLB's new ABS challenge system was supposed to make the strike zone clearer. Instead, it quietly transformed a simple two‑state call into a six‑state decision machine that players, managers, and fans now have to navigate. This post breaks down how that complexity emerged, and why the simplest fix is to stop hybridizing and start simplifying.&quot;"
+        target_url="https://CognitiveInheritance.com/../Permalinks/8e95e82d-55ec-44bc-a5a2-573d023274d0.html"
+        hashtags="#complexity"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <br/><br/>
+    <h2>TL;DR</h2>
+<p>MLB's <strong>hybrid</strong> ABS challenge system is a disaster for baseball because it violates one simple rule:</p>
+<blockquote>
+<p>Complexity that does not facilitate the primary objective is damaging to the system.</p>
+</blockquote>
+<p>This is true with ABS for 2 reasons:</p>
+<ul>
+<li>It adds unnecessary complexity to what should be a simple decision: each pitch should resolve immediately as either a ball or a strike.</li>
+<li>It adds non-baseball strategy to the game, forcing players and managers to think about challenge timing and inventory instead of playing baseball, while still not solving the underlying problem: baseball games should be decided by the athletic skill of the players.</li>
+</ul>
+<h2>Introduction</h2>
+<p>For over a century, every baseball pitch was governed by a simple model with two possible outcomes: ball or strike. The binary call provided a clarity that was easily understood by everyone on the field and off. When the umpire signaled, the result was unambiguous, even when the call was wrong. Fans might grumble about blown calls, but the system itself was not questioned. Its simplicity required little mental effort to follow and left little room for confusion or debate. That was the baseline: a shared understanding of pitch in, call out, with the rulebook treated as final. MLB's new hybrid approach creates two problems: it adds unnecessary complexity to a simple ball-or-strike decision, and it introduces a non-baseball strategy around challenge timing and inventory.</p>
+<h2>Technology Arrives, But Only Halfway</h2>
+<p>Major League Baseball, long in pursuit of the perfectly called game, eventually turned to technology for help. Events like Armando Galarraga's near-perfect game in 2010, along with the apparent success of the replay challenge system, may have made a challenge-based ABS (<strong>Automated Balls and Strikes</strong>) model seem more attractive, even though ABS is a different system from replay challenges, with different mechanics and implementation. Automated systems like ABS offered a more accurate and consistent strike zone, a modern response to the limits of human judgment. MLB did not fully hand the decision over to automation, however. Instead, it chose a hybrid approach: umpires still make the initial call, and those calls can then be challenged and reviewed by ABS. The result is not a better version of the old system; it is a layered process that preserves human failings while adding machine oversight. That layering <em>may</em> improve accountability, but it also adds complexity, and the challenge step can make the experience harder rather than simpler to follow.</p>
+<h2>It Still Lets Bad Calls Decide Games</h2>
+<p>If the objective of adding ABS is to attempt to eliminate times that a bad call changes the outcome of a game, the challenge system fails because access to a correction is limited. A player has to decide which calls are important enough to challenge, while preserving challenges for situations that might matter more later. That means an incorrect call, even one that could ultimately determine the outcome of a game, can remain in place not because ABS cannot identify it, but because that player cannot risk one of his team's limited challenges on it, or the team has no challenges remaining. This is exasperated by the fact that review requests must be made instantly, without reflection or aid, and by the players themselves, with varying levels of experience and reliability in these areas.</p>
+<p>This turns accuracy into a resource-allocation problem. A close call in an early inning may be wrong, but challenging it could leave a team without protection in a later, higher-leverage situation. A consequential call can therefore stand while a less important call is reviewed, simply because the available challenge inventory has to be managed over the course of the game. The system still permits the very outcome it was supposed to prevent: a game being decided by an uncorrected bad call.</p>
+<p>The limitation is not just an implementation detail. Once correction depends on inventory management, the system cannot treat every pitch according to the same standard. It asks participants to optimize when to seek correctness instead of making every call correct by default. That weakens the primary objective while creating the non-baseball strategy and additional complexity discussed below.</p>
+<h2>The State-Machine Tangle: When a Strike Isn't Just a Strike</h2>
+<p>Systems are shaped by the states they recognize and the transitions between them. For a hundred years, baseball's model was elegantly sparse. Every pitch lived in one of two states: a ball or a strike. Nothing to memorize, nothing to manage. But with the introduction of ABS challenges, things quietly got more complicated. Now, what used to be a simple call must traverse a web of possible verdicts before it's settled.</p>
+<p>Instead of the old binary, the hybrid model introduces six to eight distinct states, depending on how strictly states are counted. These include called, unconfirmed, validated, and final ball-or-strike outcomes, each with its own implications for the game and its participants.</p>
+<p>Here's the twist: none of this scaffolding exists for the sake of baseball itself. These aren't states that matter to the nature of pitching or hitting, but layers imposed to manage and ration access to truth.</p>
+<p>To appreciate just how much complexity the ABS system introduces, compare it to the pre-ABS state machine where there were only two possible destinations for every pitch:</p>
+<div align="center">
+<pre class="mermaid">stateDiagram-v2
+    state &quot;Ball&quot; as Ball
+    state &quot;Strike&quot; as Strike
+
+    [*] --&gt; Ball: Ump Calls Ball
+    [*] --&gt; Strike: Ump Calls Strike
+</pre>
+</div>
+<p>With the new ABS hybrid system, MLB has introduced a set of intermediate states and transitions that eventually result in the same Ball or Strike call. The diagram below illustrates the expanded system:</p>
+<div align="center">
+<pre class="mermaid">stateDiagram-v2
+    state &quot;Called Ball&quot; as Initial_Ball
+    state &quot;Validated Ball&quot; as Validated_Ball
+    state &quot;Unconfirmed Ball&quot; as Unconfirmed_Ball
+    state &quot;Ball&quot; as Ball
+
+    state &quot;Called Strike&quot; as Initial_Strike
+    state &quot;Validated Strike&quot; as Validated_Strike
+    state &quot;Unconfirmed Strike&quot; as Unconfirmed_Strike
+    state &quot;Strike&quot; as Strike
+
+    [*] --&gt; Initial_Ball: Ump Calls Ball
+    [*] --&gt; Initial_Strike: Ump Calls Strike
+
+    Initial_Ball --&gt; Validated_Ball: Catcher Challenge&lt;br/&gt;Unsuccessful
+    Initial_Ball --&gt; Validated_Strike: Catcher Challenge&lt;br/&gt;Successful
+    Initial_Ball --&gt; Unconfirmed_Ball: No Challenge Issued
+
+    Initial_Strike --&gt; Validated_Strike: Batter Challenge&lt;br/&gt;Unsuccessful
+    Initial_Strike --&gt; Validated_Ball: Batter Challenge&lt;br/&gt;Successful
+    Initial_Strike --&gt; Unconfirmed_Strike: No Challenge Issued
+
+    Validated_Ball --&gt; Ball
+    Unconfirmed_Ball --&gt; Ball
+
+    Validated_Strike --&gt; Strike
+    Unconfirmed_Strike --&gt; Strike
+</pre>
+</div>
+<h2>A Live Counterexample: WPBL</h2>
+<p>The Women's Pro Baseball League (WPBL), operating out of Springfield, Illinois, offers a useful contrast. The league does not use MLB's ABS challenge layer, and the result is a cleaner game flow: each pitch resolves immediately into the same two-state model baseball has always used.</p>
+<p>That simplicity matters. Without challenge inventory, review choreography, and overturn bookkeeping, players and fans can focus on pitch execution, sequencing, and situational strategy instead of state management. In systems terms, WPBL avoids adding intermediate states that do not improve the core interaction.</p>
+<p>If the goal is to preserve baseball as a game of rhythm and readable outcomes, WPBL shows that the simpler model is not outdated—it is often the better design.</p>
+<h2>Complexity has a Cost, and not Just in Baseball</h2>
+<p>Complexity is not just a technical property; it is a user-experience cost. Every additional state in a system introduces more transitions, and every transition introduces another chance for hesitation, disagreement, or error. What used to be instantaneous and final now carries conditional logic: who can challenge, when they can challenge, whether it succeeds, and how that outcome is interpreted in context. Even when the final output is still only ball or strike, the path to that output has become tangled.</p>
+<p>In system design, this is a familiar pattern. State growth tends to produce edge cases, and edge cases demand rules. Rules then require timing constraints, exception handling, and social coordination among participants. In baseball terms, that means more signaling, more pause points, and more moments where participants are managing process instead of playing the game. In software terms, it is state explosion: a known source of fragility, cognitive load, and surprising behavior.</p>
+<p>The important point is that this cost is not neutral. Added complexity reshapes attention. Players begin optimizing for challenge timing and inventory management. Fans must parse whether they just saw an ordinary call, a provisional one, or a reviewed and overturned outcome. Umpires and broadcasters inherit additional interpretive overhead. None of this directly improves the core act at the heart of the game: pitcher throws, batter reacts, umpire (or system) resolves.</p>
+<p>When complexity accumulates faster than value, the system becomes harder to trust, harder to follow, and harder to maintain. That is the descent: not a dramatic failure, but a gradual shift where procedural scaffolding starts to overshadow the thing it was meant to support.</p>
+<h2>A Meta-Process Emerges</h2>
+<p>Once a system introduces optional review states, participants stop engaging only with the core activity and start managing the review mechanism itself. That is exactly what MLB's challenge-based ABS model creates: a second game layered on top of baseball. The pitch is no longer just a contest between pitcher and hitter; it is also a resource decision about whether this specific moment is worth consuming part of a limited challenge budget.</p>
+<p>From a DDD (Domain-Driven Design) perspective, this is a boundary problem. The core domain of baseball at this decision point is pitch adjudication: was it a ball or a strike? The challenge mechanism introduces a separate supporting subdomain that is orthogonal to that core judgment and includes tasks like managing challenge inventory, timing escalations, and review strategy. Once that subdomain exists, participants optimize it, and system attention shifts away from the primary domain behavior.</p>
+<p>For catchers, this means constant triage. A close miss that could steal a strike might be worth a challenge early, but using one too soon can leave the defense exposed later when leverage is higher. Hitters face a mirrored decision: protect an at-bat now, or save the challenge for a later pitch sequence that might matter more. Managers, meanwhile, are pulled into inventory tracking. Having to count available challenges, anticipate future high-leverage spots, and balance immediate correctness against late-game optionality. Players are judged not just on their ability to do their job as a baseball player, but as a maker of these snap decisions as well.</p>
+<p>Fans and broadcasters inherit this complexity too. Instead of processing a straightforward call, they must now interpret whether a pitch was merely called, left unchallenged, or challenged and either upheld or overturned. The vocabulary and timing of the game shift from direct outcomes to procedural states. Attention moves from &quot;what happened on that pitch?&quot; to &quot;what state is this call currently in?&quot; and &quot;where do we stand with the number of opportunities we still have to challenge?&quot;.</p>
+<p>This is the key consequence of hybridization: once process becomes strategic it begins to shape behavior. The system no longer just adjudicates baseball, it influences how baseball is played, watched, and discussed in real time. That is the meta-game, an added layer of state management that did not previously exist, and that competes with the game itself for cognitive bandwidth.</p>
+<h2>The Simpler, Better Alternative</h2>
+<p>The strongest alternative is not partial automation but full automation at the point of the strike-zone call. In such a model, ABS determines every ball-or-strike decision, and the home-plate umpire communicates that result immediately while continuing to handle all other on-field responsibilities at the plate.</p>
+<p>This preserves what matters most from both perspectives. From a correctness standpoint, each pitch gets a consistent, machine-judged strike-zone ruling. From a game-flow standpoint, there is no challenge inventory, no review choreography, and no intermediate call states to track. The decision remains binary and immediate: each pitch resolves once, in real time, as ball or strike.</p>
+<p>Crucially, this approach removes the hybrid complexity rather than managing it. There are no provisional outcomes waiting for escalation, no strategic overhead about when to challenge, and no meta-process competing with the core contest between pitcher and hitter. The system does one thing, adjudicate the zone accurately, and does it the same way every time.</p>
+<p>In systems terms, full ABS at the decision point is the minimal-state design that still achieves the primary goal. It improves consistency and reliability of the system without expanding the state machine, and it gives baseball a cleaner architecture: deterministic calls, lower cognitive load, and fewer failure points in high-leverage moments.</p>
+<p>In engineering terms, this is the difference between replacing a component and wrapping it in control scaffolding. Hybrid ABS wraps a flawed step with exception paths, escalation logic, and resource management rules. Full ABS replaces the decision component outright and keeps the interface simple: one input event (pitch), one authoritative output (ball or strike), no secondary workflow. That is classic complexity control, solve the core reliability problem at the source, minimize state, and avoid layering process where determinism will do.</p>
+<h2>Complexity Is a Choice</h2>
+<p>The deeper lesson here reaches far beyond baseball. Hybrid systems are often framed as pragmatic compromises, but they frequently inherit the weaknesses of both approaches while adding a new layer of coordination overhead. In MLB's challenge-based ABS model the goal was to improve strike-zone accuracy, yet the chosen implementation expanded the state machine, increased cognitive load, and introduced a meta-process that competes with the game itself.</p>
+<p>From an engineering perspective, this is a familiar failure mode. When a core function is unreliable, teams often add exception paths, overrides, and escalation logic around it instead of replacing the weak component directly. The result can be locally rational but globally complex: more states to track, more transitions to test, and more ways for behavior to drift from intent.</p>
+<p>The alternative is disciplined simplification. Define the primary objective, then choose the architecture with the fewest moving parts that reliably achieves it. For balls and strikes, that means deterministic ABS calls delivered in real time, with no challenge layer and no procedural detours. More generally, it means designing systems where correctness is built into the core path, not bolted on through secondary workflows.</p>
+<p>In DDD terms, robust systems protect the core domain and resist importing process-heavy subdomains that compete with core outcomes.</p>
+<p>Complexity is not an inevitable byproduct of progress, it is a design decision. And when accuracy and consistency are the objective, the system with the fewest states usually wins.</p>
+
+    <h5>Tags: <a title="Tag: complexity" class="small" href="../Search/complexity.html">complexity</a>&nbsp;</h5>
+    <div class="share"><a href="../Permalinks/8e95e82d-55ec-44bc-a5a2-573d023274d0.html" rel="bookmark">Permalink</a></div>
+</div>
+                </main>
+                <aside class="col-lg-3 col-xl-2 sidebar">
+                    <div class="widgetzone"><div class="widget textbox"><h4>About the Author</h4><div class="content"><p><img style="float: left; padding: 0px 3px 0px 0px;" src="../Pics/bsstahl_left.gif" alt="Barry S. Stahl" width="95" /><strong>Barry S. Stahl</strong> (he/him) - Barry Stahl is an Architect and Developer and a Microsoft .NET MVP with more than four decades of experience building reliable, scalable systems on .NET and other Microsoft technologies. He has delivered hundreds of sessions at conferences, code camps, and user groups across North America, Europe, and Australia and is known for making complex topics clear, actionable, and grounded in real‑world engineering practice. His talks span architecture, problem‑solving modalities, artificial intelligence, optimization algorithms, and the practical mechanics of building resilient and self‑healing systems.</p>
+<!-- a class="inline-link" href="https://mvp.microsoft.com/en-US/MVP/profile/bc427470-04a1-4f28-886b-3e0061549716"><img src="https://mvp.microsoft.com/Assets/UserProfile/MVP/Badge.svg"></a -->
+<div data-iframe-width="250" data-iframe-height="270" data-share-badge-id="6eec0506-319c-4f4d-8978-61fa29597a62" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+<p>Barry works as Principal Engineer for <a class="inline-link" href="https://aznerds.net">AZNerds</a> in Phoenix, Arizona, where he has lived for more than 40 years. He co‑founded <a class="inline-link" href="https://www.azgivecamp.org">AZGiveCamp</a>, a non‑profit that brings volunteer developers together to build websites and apps for regional charities. He is also an Election Integrity Activist, a baseball and hockey fan, husband of one genius and father of another, and a long‑time contributor to the developer community. When he is not speaking or organizing community events, Barry writes about software engineering and intelligent systems on his blog, Cognitive Inheritance, and can be found in the Fediverse on Mastodon.</p>
+<p>For more information, see: <a href="../Pages/aboutme.html">About Barry</a>
+<a href="../contact.html">Contact Barry</a>
+<a href="../Pages/Speaking-Engagements.html">Community Speaking events</a>
+<a href="../Pages/Talk-Catalog.html">Barry's Presentation Catalog</a></p>
+</div></div><div class="widget textbox"><h4>Social Media &amp; Links</h4><div class="content"><ul>
+<li>Mastodon: <a rel="me" href="https://fosstodon.org/@Bsstahl" title="@bsstahl@cognitiveinheritance.com">@bsstahl</a></li>
+<li>LinkedIn: <a href="https://www.linkedin.com/in/bstahl">BStahl</a></li>
+<li>GitHub: <a href="https://github.com/bsstahl">bsstahl</a></li>
+<li>YouTube: <a href="https://www.youtube.com/playlist?list=PLCo2TFzFXPTQ5qIZTbbzFNcJL348fl6uO">Technical Appearances</a></li>
+<li>Flickr: <a href="https://www.flickr.com/photos/bsstahl">BSStahl</a></li>
+<li>NightCafe: <a href="https://nightcafe.art/ru/bsstahl?refsrc=share">BSStahl</a></li>
+<li>Community Speaker: <a href="..//Pages/Speaking-Engagements.html">Barry S. Stahl</a></li>
+<li>AZGiveCamp: <a href="https://www.azgivecamp.org">https://azgivecamp.org</a></li>
+</ul>
+</div></div><div class="widget textbox"><h4>Transparency Report</h4><div class="content"><h6>Date: 2026-09-26</h6>
+<p>As of the date of this report, neither CognitiveInheritance.com nor its owners/operators have received a national security order. Furthermore, we have not been required by a court to keep any secrets that are not in this transparency report.</p>
+</div></div><div class="widget textbox"><h4>Countdown</h4><div class="content"><script>
+    (function() {
+        const now = new Date();
+
+        // Set the target date to April 2nd, 2034 - my 67th birthday
+        // Which is Full Retirement Age (FRA) for those born after 1960
+        // https://www.ssa.gov/benefits/retirement/planner/1960.html
+        const targetDate = new Date('2034-10-02');
+
+        // Calculate the difference in time
+        const diffTime = targetDate - now;
+
+        // Convert time difference from milliseconds to days
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+        // Display the result
+        document.write(`${diffDays} days remaining`);
+    })();
+</script>
+</div></div><div class="widget tagcloud"><h4>Tag Cloud</h4><div class="content"><ul><li><a title="Tag: abstraction" class="big" href="../Search/abstraction.html">abstraction</a></li> <li><a title="Tag: agile" class="biggest" href="../Search/agile.html">agile</a></li> <li><a title="Tag: ai" class="biggest" href="../Search/ai.html">ai</a></li> <li><a title="Tag: algorithms" class="big" href="../Search/algorithms.html">algorithms</a></li> <li><a title="Tag: antipattern" class="medium" href="../Search/antipattern.html">antipattern</a></li> <li><a title="Tag: apache-cordova" class="small" href="../Search/apache-cordova.html">apache-cordova</a></li> <li><a title="Tag: apache-kafka" class="medium" href="../Search/apache-kafka.html">apache-kafka</a></li> <li><a title="Tag: api" class="medium" href="../Search/api.html">api</a></li> <li><a title="Tag: apps" class="medium" href="../Search/apps.html">apps</a></li> <li><a title="Tag: architecture" class="big" href="../Search/architecture.html">architecture</a></li> <li><a title="Tag: aspdotnet" class="big" href="../Search/aspdotnet.html">aspdotnet</a></li> <li><a title="Tag: assembly" class="medium" href="../Search/assembly.html">assembly</a></li> <li><a title="Tag: assert" class="small" href="../Search/assert.html">assert</a></li> <li><a title="Tag: augmented-reality" class="small" href="../Search/augmented-reality.html">augmented-reality</a></li> <li><a title="Tag: azgivecamp" class="medium" href="../Search/azgivecamp.html">azgivecamp</a></li> <li><a title="Tag: azure" class="small" href="../Search/azure.html">azure</a></li> <li><a title="Tag: azure-devops" class="small" href="../Search/azure-devops.html">azure-devops</a></li> <li><a title="Tag: blazor" class="small" href="../Search/blazor.html">blazor</a></li> <li><a title="Tag: caching" class="small" href="../Search/caching.html">caching</a></li> <li><a title="Tag: charity" class="medium" href="../Search/charity.html">charity</a></li> <li><a title="Tag: chatgpt" class="small" href="../Search/chatgpt.html">chatgpt</a></li> <li><a title="Tag: ci_cd" class="medium" href="../Search/ci_cd.html">ci_cd</a></li> <li><a title="Tag: class" class="small" href="../Search/class.html">class</a></li> <li><a title="Tag: cloud" class="small" href="../Search/cloud.html">cloud</a></li> <li><a title="Tag: cloud-foundry" class="small" href="../Search/cloud-foundry.html">cloud-foundry</a></li> <li><a title="Tag: clr" class="medium" href="../Search/clr.html">clr</a></li> <li><a title="Tag: code-analysis" class="small" href="../Search/code-analysis.html">code-analysis</a></li> <li><a title="Tag: code-camp" class="biggest" href="../Search/code-camp.html">code-camp</a></li> <li><a title="Tag: code-contracts" class="small" href="../Search/code-contracts.html">code-contracts</a></li> <li><a title="Tag: code-coverage" class="small" href="../Search/code-coverage.html">code-coverage</a></li> <li><a title="Tag: code-sample" class="big" href="../Search/code-sample.html">code-sample</a></li> <li><a title="Tag: code-coverage" class="small" href="../Search/code-coverage.html">code-coverage</a></li> <li><a title="Tag: code-sample" class="small" href="../Search/code-sample.html">code-sample</a></li> <li><a title="Tag: coding" class="small" href="../Search/coding.html">coding</a></li> <li><a title="Tag: coding-practices" class="biggest" href="../Search/coding-practices.html">coding-practices</a></li> <li><a title="Tag: community" class="biggest" href="../Search/community.html">community</a></li> <li><a title="Tag: complexity" class="small" href="../Search/complexity.html">complexity</a></li> <li><a title="Tag: conference" class="big" href="../Search/conference.html">conference</a></li> <li><a title="Tag: controls" class="small" href="../Search/controls.html">controls</a></li> <li><a title="Tag: corporate-culture" class="small" href="../Search/corporate-culture.html">corporate-culture</a></li> <li><a title="Tag: coupling" class="medium" href="../Search/coupling.html">coupling</a></li> <li><a title="Tag: csharp" class="biggest" href="../Search/csharp.html">csharp</a></li> <li><a title="Tag: data-structures" class="small" href="../Search/data-structures.html">data-structures</a></li> <li><a title="Tag: data-structures" class="small" href="../Search/data-structures.html">data-structures</a></li> <li><a title="Tag: database" class="small" href="../Search/database.html">database</a></li> <li><a title="Tag: datetime" class="small" href="../Search/datetime.html">datetime</a></li> <li><a title="Tag: ddd" class="small" href="../Search/ddd.html">ddd</a></li> <li><a title="Tag: decision" class="small" href="../Search/decision.html">decision</a></li> <li><a title="Tag: dependency-injection" class="small" href="../Search/dependency-injection.html">dependency-injection</a></li> <li><a title="Tag: development" class="biggest" href="../Search/development.html">development</a></li> <li><a title="Tag: device" class="small" href="../Search/device.html">device</a></li> <li><a title="Tag: devops" class="small" href="../Search/devops.html">devops</a></li> <li><a title="Tag: di" class="small" href="../Search/di.html">di</a></li> <li><a title="Tag: dotnet" class="big" href="../Search/dotnet.html">dotnet</a></li> <li><a title="Tag: dynamic" class="small" href="../Search/dynamic.html">dynamic</a></li> <li><a title="Tag: email" class="small" href="../Search/email.html">email</a></li> <li><a title="Tag: embedding" class="small" href="../Search/embedding.html">embedding</a></li> <li><a title="Tag: employment" class="small" href="../Search/employment.html">employment</a></li> <li><a title="Tag: encapsulation" class="small" href="../Search/encapsulation.html">encapsulation</a></li> <li><a title="Tag: encryption" class="small" href="../Search/encryption.html">encryption</a></li> <li><a title="Tag: enterprise" class="medium" href="../Search/enterprise.html">enterprise</a></li> <li><a title="Tag: enterprise-library" class="small" href="../Search/enterprise-library.html">enterprise-library</a></li> <li><a title="Tag: entity" class="medium" href="../Search/entity.html">entity</a></li> <li><a title="Tag: entity-framework" class="medium" href="../Search/entity-framework.html">entity-framework</a></li> <li><a title="Tag: ethics" class="medium" href="../Search/ethics.html">ethics</a></li> <li><a title="Tag: event" class="small" href="../Search/event.html">event</a></li> <li><a title="Tag: event-driven" class="medium" href="../Search/event-driven.html">event-driven</a></li> <li><a title="Tag: exception-handling" class="small" href="../Search/exception-handling.html">exception-handling</a></li> <li><a title="Tag: extension-method" class="small" href="../Search/extension-method.html">extension-method</a></li> <li><a title="Tag: fakes" class="small" href="../Search/fakes.html">fakes</a></li> <li><a title="Tag: fediverse" class="small" href="../Search/fediverse.html">fediverse</a></li> <li><a title="Tag: flexibility" class="small" href="../Search/flexibility.html">flexibility</a></li> <li><a title="Tag: framework" class="medium" href="../Search/framework.html">framework</a></li> <li><a title="Tag: funny" class="small" href="../Search/funny.html">funny</a></li> <li><a title="Tag: fxcop" class="small" href="../Search/fxcop.html">fxcop</a></li> <li><a title="Tag: gac" class="small" href="../Search/gac.html">gac</a></li> <li><a title="Tag: generics" class="medium" href="../Search/generics.html">generics</a></li> <li><a title="Tag: git" class="small" href="../Search/git.html">git</a></li> <li><a title="Tag: givecamp" class="medium" href="../Search/givecamp.html">givecamp</a></li> <li><a title="Tag: hashing" class="small" href="../Search/hashing.html">hashing</a></li> <li><a title="Tag: html5" class="small" href="../Search/html5.html">html5</a></li> <li><a title="Tag: ignite" class="small" href="../Search/ignite.html">ignite</a></li> <li><a title="Tag: indirection" class="small" href="../Search/indirection.html">indirection</a></li> <li><a title="Tag: inheritance" class="small" href="../Search/inheritance.html">inheritance</a></li> <li><a title="Tag: interface" class="medium" href="../Search/interface.html">interface</a></li> <li><a title="Tag: introduction" class="small" href="../Search/introduction.html">introduction</a></li> <li><a title="Tag: ioc" class="small" href="../Search/ioc.html">ioc</a></li> <li><a title="Tag: ionic" class="small" href="../Search/ionic.html">ionic</a></li> <li><a title="Tag: javascript" class="small" href="../Search/javascript.html">javascript</a></li> <li><a title="Tag: ksql" class="small" href="../Search/ksql.html">ksql</a></li> <li><a title="Tag: legislation" class="small" href="../Search/legislation.html">legislation</a></li> <li><a title="Tag: list" class="small" href="../Search/list.html">list</a></li> <li><a title="Tag: logging" class="small" href="../Search/logging.html">logging</a></li> <li><a title="Tag: master-pages" class="small" href="../Search/master-pages.html">master-pages</a></li> <li><a title="Tag: mastodon" class="small" href="../Search/mastodon.html">mastodon</a></li> <li><a title="Tag: math" class="small" href="../Search/math.html">math</a></li> <li><a title="Tag: membership" class="small" href="../Search/membership.html">membership</a></li> <li><a title="Tag: microservices" class="big" href="../Search/microservices.html">microservices</a></li> <li><a title="Tag: microsoft" class="medium" href="../Search/microsoft.html">microsoft</a></li> <li><a title="Tag: ml" class="small" href="../Search/ml.html">ml</a></li> <li><a title="Tag: mocks" class="small" href="../Search/mocks.html">mocks</a></li> <li><a title="Tag: modelbuilder" class="small" href="../Search/modelbuilder.html">modelbuilder</a></li> <li><a title="Tag: moles" class="small" href="../Search/moles.html">moles</a></li> <li><a title="Tag: moq" class="small" href="../Search/moq.html">moq</a></li> <li><a title="Tag: mstest" class="small" href="../Search/mstest.html">mstest</a></li> <li><a title="Tag: net-neutrality" class="small" href="../Search/net-neutrality.html">net-neutrality</a></li> <li><a title="Tag: net-neutrality" class="small" href="../Search/net-neutrality.html">net-neutrality</a></li> <li><a title="Tag: nonprofit" class="medium" href="../Search/nonprofit.html">nonprofit</a></li> <li><a title="Tag: nunit" class="small" href="../Search/nunit.html">nunit</a></li> <li><a title="Tag: onenote" class="small" href="../Search/onenote.html">onenote</a></li> <li><a title="Tag: oop" class="small" href="../Search/oop.html">oop</a></li> <li><a title="Tag: open-source" class="medium" href="../Search/open-source.html">open-source</a></li> <li><a title="Tag: opinion" class="small" href="../Search/opinion.html">opinion</a></li> <li><a title="Tag: optimization" class="medium" href="../Search/optimization.html">optimization</a></li> <li><a title="Tag: oracle" class="small" href="../Search/oracle.html">oracle</a></li> <li><a title="Tag: pattern" class="small" href="../Search/pattern.html">pattern</a></li> <li><a title="Tag: pcl" class="small" href="../Search/pcl.html">pcl</a></li> <li><a title="Tag: pdc" class="big" href="../Search/pdc.html">pdc</a></li> <li><a title="Tag: pex" class="small" href="../Search/pex.html">pex</a></li> <li><a title="Tag: phoenix" class="medium" href="../Search/phoenix.html">phoenix</a></li> <li><a title="Tag: phone" class="small" href="../Search/phone.html">phone</a></li> <li><a title="Tag: pluralsight" class="small" href="../Search/pluralsight.html">pluralsight</a></li> <li><a title="Tag: podcast" class="small" href="../Search/podcast.html">podcast</a></li> <li><a title="Tag: presentation" class="biggest" href="../Search/presentation.html">presentation</a></li> <li><a title="Tag: principle" class="small" href="../Search/principle.html">principle</a></li> <li><a title="Tag: professional-development" class="medium" href="../Search/professional-development.html">professional-development</a></li> <li><a title="Tag: profile" class="small" href="../Search/profile.html">profile</a></li> <li><a title="Tag: properties" class="small" href="../Search/properties.html">properties</a></li> <li><a title="Tag: provider" class="small" href="../Search/provider.html">provider</a></li> <li><a title="Tag: reflection" class="small" href="../Search/reflection.html">reflection</a></li> <li><a title="Tag: regex" class="small" href="../Search/regex.html">regex</a></li> <li><a title="Tag: reliability" class="small" href="../Search/reliability.html">reliability</a></li> <li><a title="Tag: responsibility" class="small" href="../Search/responsibility.html">responsibility</a></li> <li><a title="Tag: schedule" class="small" href="../Search/schedule.html">schedule</a></li> <li><a title="Tag: scrum" class="small" href="../Search/scrum.html">scrum</a></li> <li><a title="Tag: security" class="small" href="../Search/security.html">security</a></li> <li><a title="Tag: serialization" class="small" href="../Search/serialization.html">serialization</a></li> <li><a title="Tag: services" class="small" href="../Search/services.html">services</a></li> <li><a title="Tag: skill" class="medium" href="../Search/skill.html">skill</a></li> <li><a title="Tag: sla" class="small" href="../Search/sla.html">sla</a></li> <li><a title="Tag: slides" class="medium" href="../Search/slides.html">slides</a></li> <li><a title="Tag: soa" class="big" href="../Search/soa.html">soa</a></li> <li><a title="Tag: social-media" class="small" href="../Search/social-media.html">social-media</a></li> <li><a title="Tag: solid" class="small" href="../Search/solid.html">solid</a></li> <li><a title="Tag: solution" class="small" href="../Search/solution.html">solution</a></li> <li><a title="Tag: source-control" class="small" href="../Search/source-control.html">source-control</a></li> <li><a title="Tag: speaking" class="medium" href="../Search/speaking.html">speaking</a></li> <li><a title="Tag: sql" class="small" href="../Search/sql.html">sql</a></li> <li><a title="Tag: standardization" class="small" href="../Search/standardization.html">standardization</a></li> <li><a title="Tag: startup-culture" class="small" href="../Search/startup-culture.html">startup-culture</a></li> <li><a title="Tag: strong-name" class="small" href="../Search/strong-name.html">strong-name</a></li> <li><a title="Tag: tdd" class="biggest" href="../Search/tdd.html">tdd</a></li> <li><a title="Tag: testing" class="biggest" href="../Search/testing.html">testing</a></li> <li><a title="Tag: time-zone" class="small" href="../Search/time-zone.html">time-zone</a></li> <li><a title="Tag: toastmasters" class="small" href="../Search/toastmasters.html">toastmasters</a></li> <li><a title="Tag: transit" class="small" href="../Search/transit.html">transit</a></li> <li><a title="Tag: transitech" class="small" href="../Search/transitech.html">transitech</a></li> <li><a title="Tag: troubleshooting" class="small" href="../Search/troubleshooting.html">troubleshooting</a></li> <li><a title="Tag: type" class="small" href="../Search/type.html">type</a></li> <li><a title="Tag: ui" class="small" href="../Search/ui.html">ui</a></li> <li><a title="Tag: unit-testing" class="biggest" href="../Search/unit-testing.html">unit-testing</a></li> <li><a title="Tag: us-airways" class="small" href="../Search/us-airways.html">us-airways</a></li> <li><a title="Tag: user-group" class="small" href="../Search/user-group.html">user-group</a></li> <li><a title="Tag: user-group" class="small" href="../Search/user-group.html">user-group</a></li> <li><a title="Tag: ux" class="small" href="../Search/ux.html">ux</a></li> <li><a title="Tag: vbdotnet" class="small" href="../Search/vbdotnet.html">vbdotnet</a></li> <li><a title="Tag: visual-studio" class="biggest" href="../Search/visual-studio.html">visual-studio</a></li> <li><a title="Tag: vscode" class="small" href="../Search/vscode.html">vscode</a></li> <li><a title="Tag: w3c" class="small" href="../Search/w3c.html">w3c</a></li> <li><a title="Tag: wasm" class="small" href="../Search/wasm.html">wasm</a></li> <li><a title="Tag: webassembly" class="small" href="../Search/webassembly.html">webassembly</a></li> <li><a title="Tag: windows" class="small" href="../Search/windows.html">windows</a></li> <li><a title="Tag: xaml" class="small" href="../Search/xaml.html">xaml</a></li> <li><a title="Tag: xml" class="small" href="../Search/xml.html">xml</a></li> <li><a title="Tag: yagni" class="small" href="../Search/yagni.html">yagni</a></li> </ul></div></div></div>
+                </aside>
+            </div>
+        </div>
+    
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script defer type="module" src="..//Modules/share-on-mastodon.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.15.0/mermaid.min.js"></script>
+    <script>if (window.mermaid) { mermaid.initialize({ startOnLoad: false }); mermaid.run(); }</script><!-- Code Coloring -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+        <script>if (window.hljs) { document.querySelectorAll("pre code, code[class^=\"language-\"], code[class*=\" language-\"]").forEach(el => hljs.highlightElement(el)); }</script>
+
+        <!-- 100% privacy-first analytics -->
+        <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+        <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true" alt="" referrerpolicy="no-referrer-when-downgrade"/></noscript>
+    </body>
+</html>
