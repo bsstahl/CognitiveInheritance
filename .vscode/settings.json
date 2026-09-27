@@ -1,15 +1,5 @@
 {
-    "markdownlint.config": {
-        "MD028": false,
-        "MD025": {
-            "front_matter_title": ""
-        },
-        "MD033": {
-            "allowed_elements": [
-                "table", "thead", "tbody", "tr", "th", "td", "br"
-            ]
-        }
-    },
+    "files.eol": "\n",
     "cSpell.words": [
         "Booch",
         "buildifnotpublished",
@@ -18,7 +8,5 @@
         "menuorder",
         "publicationdate",
         "showinlist"
-    ],
-    "markdownlint.ignore": [
     ]
 }

@@ -1,0 +1,14 @@
+{
+    "MD001": {
+        "front_matter_title": ""
+    },
+    "MD028": false,
+    "MD025": {
+        "front_matter_title": ""
+    },
+    "MD033": {
+        "allowed_elements": [
+            "table", "thead", "tbody", "tr", "th", "td", "br"
+        ]
+    }
+}
