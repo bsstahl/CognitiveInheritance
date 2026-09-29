@@ -50,7 +50,20 @@ demonstrations using SQL Server, Cosmos DB and Redis.
 
 ***
 
-* **Intentional Architecture: Six Conversations for a Solid Foundation** - Too often, architectural decisions are made in isolation, postponed until they constrain future work, or simply ignored--often resulting in a sub-optimal architecture. This talk explores a framework consisting of six conversations that surface architectural decisions as they become relevant, equipping teams to make deliberate, auditable choices at the right moments. The framework centers on 6 "Critical-Cs": Context, Coordination, Contracts, Chaos, Competencies, and Coalescence, and guides teams in evaluating whether microservices fit the project, or if a modular monolith might serve the project better.
+* **Intentional Architecture: Six Conversations for a Solid Foundation** - Too often, architectural decisions are made in isolation, postponed until they
+constrain future work, or simply ignored. This can easily result in a sub-optimal
+architecture as well as reliability concerns, and extensibility challenges.
+
+  This talk presents a framework built around six conversations that help
+development teams answer the questions that matter as architecture evolves.
+The framework centers on 6 "Critical C's": Context, Consistency, Contract,
+Chaos, Competencies, and Coalescence.
+
+  Teams should have these conversations before making architectural decisions, so that
+assumptions and tradeoffs become explicit while alternatives remain open. For example,
+Contract establishes expectations between services, while Chaos asks how the system
+should behave when dependencies fail. These conversations expose tradeoffs that might
+otherwise surface later as accidental coupling or production surprises.
 
   [Latest Slide Deck](https://cognitiveinheritance.com/Presentations/Session/SuccessWithMicroservices/index.html) | [Critical-C's Website](https://criticalcs.azurewebsites.net/)
 
