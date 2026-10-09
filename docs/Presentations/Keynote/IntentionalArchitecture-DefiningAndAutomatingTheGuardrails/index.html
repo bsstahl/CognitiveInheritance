@@ -1,0 +1,235 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Intentional Architecture</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/maroon.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/130388b7-e1f8-4696-851f-49ec167ba0c0.png'>
+<a id="3064be8f-0038-4fce-8e87-c61be94a6a73">&nbsp;</a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:17a08933-7fa9-481b-873d-1fa6134fb171 -->
+<!-- ContentItem:685060d8-4205-4db9-b44d-9610a7729e7d -->
+
+<table><tr><td style="vertical-align:top;">
+<h2 id="intentional-architecture">Intentional Architecture</h2>
+<h4 id="defining-automating-the-guardrails">Defining &amp; Automating the Guardrails</h4>
+<hr />
+<h3 id="barry-s.stahl">Barry S. Stahl</h3>
+<h3 id="principal-engineer-aznerds.net">Principal Engineer - AZNerds.net</h3>
+<h3 id="bsstahlcognitiveinheritance.com"><a href="https://fosstodon.org/@Bsstahl">@bsstahl@cognitiveinheritance.com</a></h3>
+<h3 id="httpscognitiveinheritance.com"><a href="https://cognitiveinheritance.com">https://CognitiveInheritance.com</a></h3>
+
+</td>
+<td style="text-align: left;">
+<img src="img/685060d8-4205-4db9-b44d-9610a7729e7d.png" alt="Transparent Half Width Image 720x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in fade-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="139bd254-a8e4-474e-b15b-12ea890a043c"><h1>Favorite Physicists & Mathematicians</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:30f7e9d2-b154-4895-bed7-2765f7bdc6fe -->
+<!-- ContentItem:8a83be06-76e9-4028-9630-c6a7de92ae99 -->
+<aside class="notes"><p>An up-to-date list is available on <a href="https://cognitiveinheritance.com/Pages/Favorites.html">my blog at https://cognitiveinheritance.com/Pages/Favorites.html</a>
+Please ping me on Mastodon to tell me where I messed-up with this list, or this presentation for that matter. 😉</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<h4 id="favorite-physicists">Favorite Physicists</h4>
+<ol>
+<li>Harold &quot;Hal&quot; Stahl</li>
+<li>Carl Sagan</li>
+<li>Richard Feynman</li>
+<li>Marie Curie</li>
+<li>Nikola Tesla</li>
+<li>Robert Goddard</li>
+<li>Albert Einstein</li>
+<li>Niels Bohr</li>
+<li>Neil deGrasse Tyson</li>
+<li>Edwin Hubble</li>
+</ol>
+<p><em>Other notables</em>: Christiaan Huygens, Michael Faraday, Stephen Hawking, Leonard Susskind</p>
+
+</td>
+<td style="vertical-align:top;">
+<h4 id="favorite-mathematicians">Favorite Mathematicians</h4>
+<ol>
+<li>Ada Lovelace</li>
+<li>Alan Turing</li>
+<li>Tim Berners-Lee</li>
+<li>Isaac Newton</li>
+<li>Emmy Noether</li>
+<li>Johannes Kepler</li>
+<li>René Descartes</li>
+<li>George Boole</li>
+<li>Carl Friedrich Gauss</li>
+<li>Grace Hopper</li>
+</ol>
+<p><em>Other notables</em>: Blaise Pascal, Daphne Koller, Grady Booch, Evelyn Berezin, Pascal Van Hentenryck</p>
+
+</td>
+</tr></table></section>
+
+<section data-transition="fade-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="fd31b40e-8760-47cc-a826-709ea5100c21"><h1>Favorite Physicists & Mathematicians</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:6e530ebc-c5c1-41b2-a854-452991e58616 -->
+<!-- ContentItem:8a83be06-76e9-4028-9630-c6a7de92ae99 -->
+<aside class="notes"><p>This slide highlights 2 of my favorite Physicists -- Goddard and Feynman</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<h4 id="favorite-physicists">Favorite Physicists</h4>
+<ol>
+<li>Harold &quot;Hal&quot; Stahl</li>
+<li>Carl Sagan</li>
+<li><strong>Richard Feynman</strong> <span class="math">\({\color{#FFD700}\Longleftarrow}{\color{#FFD700}\bigstar}\)</span></li>
+<li>Marie Curie</li>
+<li>Nikola Tesla</li>
+<li><strong>Robert Goddard</strong> <span class="math">\({\color{#FFD700}\Longleftarrow}{\color{#FFD700}\bigstar}\)</span></li>
+<li>Albert Einstein</li>
+<li>Niels Bohr</li>
+<li>Neil deGrasse Tyson</li>
+<li>Edwin Hubble</li>
+</ol>
+<p><em>Other notables</em>: Christiaan Huygens, Michael Faraday, Stephen Hawking, Leonard Susskind</p>
+
+</td>
+<td style="vertical-align:top;">
+<h4 id="favorite-mathematicians">Favorite Mathematicians</h4>
+<ol>
+<li>Ada Lovelace</li>
+<li>Alan Turing</li>
+<li>Tim Berners-Lee</li>
+<li>Isaac Newton</li>
+<li>Emmy Noether</li>
+<li>Johannes Kepler</li>
+<li>René Descartes</li>
+<li>George Boole</li>
+<li>Carl Friedrich Gauss</li>
+<li>Grace Hopper</li>
+</ol>
+<p><em>Other notables</em>: Blaise Pascal, Daphne Koller, Grady Booch, Evelyn Berezin, Pascal Van Hentenryck</p>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="5b41850b-79c2-4f67-9e5d-326a5f8c9556"><h1>Challenge Conventional Wisdom</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:41ae3409-f183-4ed8-a840-c4fbc4746485 -->
+<!-- ContentItem:00ca7889-e931-4843-b029-1cf12bed6712 -->
+<aside class="notes"><p>A public misconception held that rockets needed air to push against,  so they could not work in a vacuum. Robert Goddard challenged that  assumption with his work on rocketry. A January 1920 New York Times  editorial mocked his &quot;mis&quot;-understanding of basic physics, implying that he was intentionally misleading us for some nefarious purpose.
+Q: What separates an unconventional idea from an unsupported guess?
+<a href="https://graphics8.nytimes.com/packages/pdf/arts/1920editorial-full.pdf">NY Times Editorial</a></p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>&quot;That Professor Goddard...does not know the relation
+of action to reaction...would be absurd. Of course, he
+only seems to lack the knowledge ladled out daily in
+high schools&quot; - The New York Times, January 1920</p>
+</blockquote>
+<ul>
+<li><strong>Everyone Knows</strong>
+<ul>
+<li>Rockets need air to push against.</li>
+<li>The vacuum of space makes flight impossible.</li>
+</ul>
+</li>
+<li><strong>Goddard's challenge</strong>
+<ul>
+<li>Rockets that could operate beyond the atmosphere.</li>
+<li>In 1920, a New York Times editorial mocked his efforts.</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/00ca7889-e931-4843-b029-1cf12bed6712.jpg" alt="Dr._Robert_H._Goddard_(6987693699)-800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="71e73232-0a38-48a7-ae17-efd1b294359b"><h1>Free Thinking, Scientific Guardrails</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:5ea32156-ece7-4629-9737-f6d8434ec6d4 -->
+<!-- ContentItem:e24a7828-09c8-4765-acb7-3dacb6cd4830 -->
+<aside class="notes"><p>Goddard broke free of conventional wisdom, not the laws of physics. Newton's third law and conservation of momentum explain the mechanism: the rocket accelerates one way as expelled exhaust moves the other. It does not need surrounding air to push against. Goddard's vacuum experiments and measurements tested the prediction rather than relying on conviction. Science supplies guardrails that let us check our guesses against reality and reject those that fail.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Challenge assumptions
+<ul>
+<li>Goddard's thinking escaped convention</li>
+<li>Not the laws of physics.</li>
+</ul>
+</li>
+<li>Keep scientific guardrails
+<ul>
+<li>Momentum is conserved
+<ul>
+<li>Exhaust goes back <span class="math">\(\rightarrow\)</span> rocket goes forward.</li>
+</ul>
+</li>
+<li>Vacuum experiments tested the prediction.</li>
+</ul>
+</li>
+<li>Imagine boldly
+<ul>
+<li>Evidence decides which ideas survive.</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/e24a7828-09c8-4765-acb7-3dacb6cd4830.png" alt="Stamp-robert_h_goddard-800x800.png" />
+</td>
+</tr></table></section>
+
+
+        </div>
+        <div class="footer-left">Intentional Architecture</div>
+        <div class="footer-right">Barry S. Stahl - Mastodon:@bsstahl@cognitiveinheritance.com - Blog:http://www.cognitiveinheritance.com</div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <!-- Plugins -->
+    <script src="plugin/highlight/highlight.js"></script> 
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+
+        Reveal.initialize({
+            hash: true,
+			width: 1920,
+			height: 1080,
+            transition: 'slide',
+            backgroundTransition: 'fade',
+            showNotes: window.location.search.match(/print-pdf/gi) ? true : false,
+            plugins: [RevealHighlight, RevealMarkdown, RevealSearch, RevealNotes, RevealMath, RevealZoom ]
+        });
+    </script>
+</body>
+</html>
