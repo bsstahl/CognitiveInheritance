@@ -6,15 +6,15 @@ name:
 - Richard Feynman
 - Marie Curie
 - Nikola Tesla
+- Robert Goddard
 - Albert Einstein
-- Neil deGrasse Tyson
 - Niels Bohr
-- Galileo Galilei
+- Neil deGrasse Tyson
+- Edwin Hubble
+- Christiaan Huygens
 - Michael Faraday
 - Stephen Hawking
-- Edwin Hubble
 - Leonard Susskind
-- Christiaan Huygens
-lastmodificationdate: 2024-10-15T07:00:00.000+00:00
+lastmodificationdate: 2026-10-09T07:00:00.000+00:00
 
 ---
