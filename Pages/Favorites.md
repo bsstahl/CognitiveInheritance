@@ -9,7 +9,7 @@ description: My favorite physicists and favorite mathematicians
 ispublished: true
 showinlist: true
 publicationdate: 2017-06-22T07:00:00
-lastmodificationdate: 2026-10-09T07:00:00
+lastmodificationdate: 2026-10-10T07:00:00
 slug: Favorites
 categories:
 - General
@@ -51,6 +51,16 @@ I like to describe myself as the kind of person who has a list of his favorite p
 1. Grace Hopper
 
 * Other notables: Blaise Pascal, Daphne Koller, Grady Booch, Evelyn Berezin, Pascal Van Hentenryck
+
+---
+
+#### Favorite Authors - Currently Unused
+
+1. Cory Doctorow
+1. Rob Richardson
+1. Joel Tosi
+
+* Other notables: 
 
 ---
 
