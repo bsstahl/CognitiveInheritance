@@ -28,7 +28,7 @@ because a machine suddenly solved it, it will be because innumerable
 people made super-human efforts to do the research, ask the right
 questions, and even program the models, so that when all of the
 necessary factors came together, the solution could be found, likely
-with the help of the machines, but most certainly by people.
+with the help of machines, but most certainly by people.
 
 The below then is completely made up for your entertainment only. Since
 this is purely fiction, we will use the names Samwise, Elmo and Mork
@@ -113,7 +113,7 @@ instead of enlightenment, we offer hot takes?
 >
 > **Elmo:** I’d unsubscribe, then resubscribe just to feel something.
 >
-> **Mork:** Okay, but real talk — how do we get this funded?  
+> **Mork:** Okay, but real talk, how do we get this funded?  
 We’re not paying for flights to Lisbon ourselves.
 >
 > **Samwise:** Easy. We tell the company we started smoking because
