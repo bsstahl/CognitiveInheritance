@@ -20,12 +20,11 @@ categories: []
 
 <!-- I currently have no talks scheduled. {ContactPageLink:Contact me} to arrange to have me speak at your event. -->
 
-* **[TechBash 2026 - Poconos](https://www.techbash.com/)** - 10/13/2026 - 10/16/2026 - "Beyond Procedural Logic: Solving Problems Outside the Query" & "Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems"
-
 * **[Craft Conference 2027 - Budapest](https://craft-conf.com/2027/speakers/)** - 6/3/2027 - 6/4/2027 - Sessions TBD
 
 ### Past engagements
 
+* **[TechBash 2026 - Poconos](https://www.techbash.com/)** - 10/13/2026 - 10/16/2026 - "Beyond Procedural Logic: Solving Problems Outside the Query" & "Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems"
 * **[MLcon New York 2026](https://mlconference.ai/speaker/barry-stahl/)** - 9/28/2026 - 10/2/2026 - "LLMs Under the Hood - Workshop", "The Future of Information Retrieval: A Deep-Dive into RAG" & "When you Don't Need an LLM: Deterministic Intelligence for Real World Apps"
 <!-- * **[MITechCon 2026 - Rochester, MI](https://www.mitechcon.events/MITechCon2026)** (all workshops cancelled) - 10/28/2026 - 10/30/2026 - "LLMs Under the Hood - Applied Engineering Workshop" & "Amazing Algorithms for Solving Problems in Software" -->
 * **[KCDC 2026](https://www.kcdc.info/)** - 9/9/2026 - 9/11/2026 - "Architecting for Reliability: Eliminating Hidden Failure Modes" and "Intentional Architecture: Six Conversations for a Solid Foundation"
