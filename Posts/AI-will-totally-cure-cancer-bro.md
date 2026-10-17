@@ -1,12 +1,13 @@
 ---
 tags:
 - AI
+- satire
 menuorder: 0
 id: 8d27da3a-6e4d-428d-93cd-75003d7edd43
 author: bsstahl
 title: AI Will Totally Cure Cancer, Bro!
-description: 
-ispublished: false
+description: A satirical exchange about AI cancer-cure hype, researchers' confidence, and turning it all into an influencer brand.
+ispublished: true
 showinlist: false
 buildifnotpublished: true
 publicationdate: 2026-10-16T19:00:00.000+00:00
