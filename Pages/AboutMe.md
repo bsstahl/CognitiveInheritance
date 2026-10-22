@@ -54,21 +54,20 @@ in a meaningful way.
 
 #### Key Speaking Topics
 
-* Software Engineering: Patterns and Practices that improve the maintainability
-and discoverability of code through simplified API development and proven
-engineering methodologies.
+* **Software Engineering**: Patterns and Practices that improve the maintainability
+and discoverability of code through proven engineering methodologies.
 
-* Algorithms: Equipping developers to solve complex problems using practical
+* **Algorithms**: Equipping developers to solve complex problems using practical
 tools and techniques for optimization, search, and machine learning.
 
-* Language Models: Demystifying language models and enabling their responsible
+* **Language Models**: Demystifying language models and enabling their responsible
 use through practical understanding of their inner workings, capabilities, and limitations.
 
-* Leadership &amp; Community: Inspiring developers to lead with purpose,
+* **Leadership &amp; Community**: Inspiring developers to lead with purpose,
 strengthen communities, and use their skills responsibly through personal
 effectiveness, service, and advocacy.
 
-* Agile: Tools and methodologies that empower development teams to deliver valuable,
+* **Agile**: Tools and methodologies that empower development teams to deliver valuable,
 reliable software through collaboration, shared understanding, and disciplined
 feedback loops.
 
