@@ -13,66 +13,155 @@ slug: aboutme
 categories: []
 
 ---
-I'm **Barry S. Stahl**, a Solution Architect and Developer working as the Principal Engineer for AZNerds.net in Phoenix AZ USA. I have been very fortunate in my journey to have worked with and learned from so many amazing people on lots of interesting and exciting projects.
+I'm **Barry S. Stahl**, a Solution Architect and Developer working as the
+Principal Engineer for AZNerds.net in Phoenix AZ USA. I have been very fortunate
+in my journey to have worked with and learned from so many amazing people on
+lots of interesting and exciting projects.
 
 ### Links
 
 * {PageLink:Favorites|My Favorite Physicists & Mathematicians}
 * {PageLink:Open-Source|Open Source Projects I Shepherd}
 * {PageLink:Speaking-Engagements|My Speaking Engagements}
-* [AZGiveCamp](https://azgivecamp.org)
+* [AZGiveCamp](https://azgivecamp.org) and [GiveCamp.org](https://givecamp.org)
 * [Connect with me on Mastodon](https://fosstodon.org/@bsstahl)
 
 ### What I Do
 
-My work primarily revolves around building distributed systems using Microsoft technologies like Azure and Aspire in C#, SQL Server and Cosmos DB, however, I'm also adept at creating solutions that leverage tools like Kafka and Redis.
+My work primarily revolves around building distributed systems, generally using
+Microsoft technologies like Azure and Aspire in C#, SQL Server and Cosmos DB,
+however, I'm also adept at creating solutions that leverage tools like Kafka
+and Redis.
 
-I specialize in designing and developing **reliable** integrated systems, especially using the Microservices pattern via Kafka or Azure Service Bus. My goal is to create systems that are self-healing to help protect our developers' nights and weekends from support calls.
+I specialize in designing and developing **reliable** integrated systems,
+especially using the Microservices pattern via Kafka or Azure Service Bus. My
+goal is to create systems that are self-healing to help protect our developers'
+nights and weekends from support calls.
 
-Over the years, I've worked in the Optimization and AI space, utilizing Gurobi and Google's OR-Tools to solve interesting problems. More recently, I've been exploring the potential of Large Language Models like OpenAI in Azure, focused on using the amazing capabilities of those technologies while maintaining fair and transparent applications for my customers and users.
+Over the years, I've worked in the Optimization and AI space, utilizing Gurobi
+and Google's OR-Tools to solve interesting problems. More recently, I've been
+exploring the potential of Large Language Models like OpenAI in Azure, focused on
+using the amazing capabilities of those technologies while maintaining fair and
+transparent applications for my customers and users.
 
 ### Community Speaker
 
-As an avid community speaker, I've had the privilege of sharing my expertise and passion for technology with audiences around the globe. My journey through numerous conferences, meetups, and workshops has not only allowed me to connect with fellow technologists but also to contribute to the broader tech community in a meaningful way.
+As an avid community speaker, I've had the privilege of sharing my expertise and
+passion for technology with audiences around the globe. My journey through
+numerous conferences, meetups, and workshops has not only allowed me to connect
+with fellow technologists but also to contribute to the broader tech community
+in a meaningful way.
 
 #### Key Speaking Topics
 
-* Microservices and Event-Driven Architectures: Exploring the design patterns and best practices for building reliable, loosely coupled systems.
+* Software Engineering: Patterns and Practices that improve the maintainability
+and discoverability of code through simplified API development and proven
+engineering methodologies.
 
-* Software Engineering Patterns and Practices: Advocating for maintainable and discoverable code through simplified API development and proven engineering methodologies.
+* Algorithms: Equipping developers to solve complex problems using practical
+tools and techniques for optimization, search, and machine learning.
 
-* Artificial Intelligence and Algorithms: Diving deep into the practical applications of AI, the use of innovative algorithms for complex problem-solving, and the exploration of machine learning advancements.
+* Language Models: Demystifying language models and enabling their responsible
+use through practical understanding of their inner workings, capabilities, and limitations.
+
+* Leadership &amp; Community: Inspiring developers to lead with purpose,
+strengthen communities, and use their skills responsibly through personal
+effectiveness, service, and advocacy.
+
+* Agile: Tools and methodologies that empower development teams to deliver valuable,
+reliable software through collaboration, shared understanding, and disciplined
+feedback loops.
 
 #### Global Reach and Impact
 
 My speaking engagements have spanned continents:
 
-* In Europe I've spoken on the banks of the Danube in Budapest Hungary, on the sunny beaches of Malaga Spain, near the fjords of Oslo Norway, and in the shadow of the Shard in London England.
+* In Europe I've spoken on the banks of the Danube in Budapest, Hungary,
+on the sunny beaches of Malaga, Spain, near the fjords of Oslo, Norway,
+in the shadow of the Shard in London, England, and along the canals
+of Utrecht, Netherlands.
 
-* I've spoken on the beach in Tel Aviv Israel and near the famed Opera House in Sydney Australia.
+* I've spoken on the beach in Tel Aviv Israel and near the famed Opera House
+in Sydney Australia.
 
-* Closer to home, I've presented for North American audiences in Quebec, Ohio, Wisconsin, Kentucky, Missouri, Tennesee, Michigan, Florida, Texas, Nevada, Virginia, California, Minnesota, New York, Georgia and of course, Arizona.
+* Closer to home, I've presented for North American audiences in
+Arizona,
+California,
+Florida,
+Georgia,
+Kentucky,
+Louisiana,
+Massachusetts,
+Michigan,
+Minnesota,
+Missouri,
+Nebraska,
+Nevada,
+New Mexico,
+New York,
+Ohio,
+Ontario,
+Pennsylvania,
+Quebec,
+Tennessee,
+Texas,
+Utah,
+Virginia,
+and Wisconsin
 
-Each presentation is crafted not just to impart technical knowledge but to ignite discussions on the ethical use of technology, the future of software engineering, and the vital role of community-driven development. For more details on my speaking history and to access presentation materials, please visit the {PageLink:Speaking-Engagements|Speaking Engagements} page of my website.
+Each presentation is crafted not just to impart technical knowledge but to
+ignite discussions on the ethical use of technology, the future of software
+engineering, and the vital role of community-driven development. For more
+details on my speaking history and to access presentation materials, please
+visit the {PageLink:Speaking-Engagements|Speaking Engagements} page of my website.
 
 ### My Time in the Business World
 
-Although I had done software professionally before, my career really kicked off with an incredible 11-year stint at Intel, where I had the unique opportunity to work on the International Space Station project – yes, really! It was an exhilarating experience that fueled my passion for innovative technology.
+Although I had done software professionally before, my career really kicked off
+with an incredible 11-year stint at Intel, where I had the unique opportunity
+to work on the International Space Station project – yes, really! It was an
+exhilarating experience that fueled my passion for innovative technology.
 
-Following my time at Intel, I ventured into the airline industry. For another 11 years, I found myself at a single desk but working for three airlines due to mergers – America West, US Airways, and American Airlines. During this period, I focused on integrating Crew Systems, helping pilots and flight attendants by building applications that seamlessly connected data from various legacy systems.
+Following my time at Intel, I ventured into the airline industry. For another
+11 years, I found myself at a single desk but working for three airlines due
+to mergers – America West, US Airways, and American Airlines. During this
+period, I focused on integrating Crew Systems, helping pilots and flight
+attendants by building applications that seamlessly connected data from
+various legacy systems.
 
-In between these significant roles, I wore the hat of a consultant, working with different organizations across the country. One highlight was designing and building a Work Order system for bus and train maintenance for the Port Authority of Allegheny County in Pittsburgh, PA.
+In between these significant roles, I wore the hat of a consultant, working with
+different organizations across the country. One highlight was designing and
+building a Work Order system for bus and train maintenance for the Port
+Authority of Allegheny County in Pittsburgh, PA.
 
-These diverse experiences eventually led me to Carvana, where I spent 6 years, including 4 years designing and building a world-class Logistics Transportation Management System.
+These diverse experiences eventually led me to Carvana, where I spent 6 years,
+including 4 years designing and building a world-class Logistics Transportation
+Management System.
 
 ### Beyond Work
 
-When I'm not immersed in technology, I'm a passionate baseball and hockey fan, and to a lesser degree, both American and European football. I must admit however, the NHL's decision to move the Coyotes out of Arizona left me quite frustrated, especially since I felt that the Coyotes were right on the cusp of success.
+When I'm not immersed in technology, I'm a passionate baseball and hockey fan,
+and to a lesser degree, both American and European football. I must admit
+however, the NHL's decision to move the Coyotes out of Arizona left me quite
+frustrated, especially since I felt that the Coyotes were right on the cusp
+of success.
 
-I'm also deeply involved in community projects. As one of the founders of [AZGiveCamp](https://azgivecamp.org), I help organize weekend events where software creators collaborate with local charities to develop meaningful solutions that help those charities further their missions. I'm also part of the leadership of the 2 valley .NET User Groups, the [SouthEast Valley .NET User Group](https://www.meetup.com/sevdnug/) and the [NorthWest Valley .NET User Group](https://www.meetup.com/nwvdnug/).
+I'm also deeply involved in community projects. As one of the founders of
+[AZGiveCamp](https://azgivecamp.org), I help organize weekend events where
+software creators collaborate with local charities to develop meaningful
+solutions that help those charities further their missions. I'm also part
+of the leadership of the 2 valley .NET User Groups, the
+[SouthEast Valley .NET User Group](https://www.meetup.com/sevdnug/) and the
+[NorthWest Valley .NET User Group](https://www.meetup.com/nwvdnug/).
 
-In my spare time, I maintain a list of {PageLink:Favorites|My Favorite Physicists & Mathematicians} and shepherd several {PageLink:Open-Source|open source projects}. I'm a strong advocate for the open, independent social web, which is why you'll find me on platforms like Mastodon instead of Xitter.
+In my remaining time, I maintain a list of
+{PageLink:Favorites|My Favorite Physicists & Mathematicians} and shepherd several
+{PageLink:Open-Source|open source projects}. I'm a strong advocate for the
+open, independent web, which is why you'll find me on platforms like
+Mastodon.
 
 ### Let's Connect
 
-I love connecting with like-minded people! The best way to reach me is on [Mastodon](https://fosstodon.org/@bsstahl). Feel free to drop a message – I'd love to chat!
+I love connecting with like-minded people! The best way to reach me is
+on [Mastodon](https://fosstodon.org/@bsstahl). Feel free to drop a 
+message – I'd love to chat!
