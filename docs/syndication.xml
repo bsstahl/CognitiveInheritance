@@ -90,7 +90,7 @@ getting fired, but hopefully only after the first world tour.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/AI-will-totally-cure-cancer-bro.html</link>
-  <author>aa94bef8-9a1d-4486-8024-e38b3f45e8e4@bsstahl.com (Barry S. Stahl)</author>
+  <author>04f953b4-6966-46a2-9aa8-89b582fbe500@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/8d27da3a-6e4d-428d-93cd-75003d7edd43.html</guid>
   <pubDate>Fri, 16 Oct 2026 19:00:00 GMT</pubDate>
 </item><item>
@@ -187,7 +187,7 @@ getting fired, but hopefully only after the first world tour.&lt;/p&gt;
 &lt;p&gt;Complexity is not an inevitable byproduct of progress, it is a design decision. And when accuracy and consistency are the objective, the system with the fewest states usually wins.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/complexity-matters-baseballs-new-strike-zone.html</link>
-  <author>aa94bef8-9a1d-4486-8024-e38b3f45e8e4@bsstahl.com (Barry S. Stahl)</author>
+  <author>04f953b4-6966-46a2-9aa8-89b582fbe500@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/8e95e82d-55ec-44bc-a5a2-573d023274d0.html</guid>
   <pubDate>Sun, 27 Sep 2026 07:00:00 GMT</pubDate>
 </item><item>
@@ -214,7 +214,7 @@ getting fired, but hopefully only after the first world tour.&lt;/p&gt;
 &lt;p&gt;When we identify that problems may be occurring in our systems, the most useful answer may not be to look for a single culprit. The problem may be a pattern of signals, levers, delays, and feedback loops spread across the system. This is the practical value I found in &lt;a href=&quot;https://bookshop.org/p/books/signals-levers-systems-thinking-tools-to-unblock-software-delivery-elisabeth-hendrickson/bf2d9d17012f909f?ean=9781966280293&amp;amp;bkshp-astro=t&quot;&gt;Signals &amp;amp; Levers&lt;/a&gt;: it offers a way to see those relationships, test our assumptions, and make more deliberate changes. The same approach can help us understand our own systems before their symptoms become incidents we can no longer ignore.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/signals-and-levers.html</link>
-  <author>aa94bef8-9a1d-4486-8024-e38b3f45e8e4@bsstahl.com (Barry S. Stahl)</author>
+  <author>04f953b4-6966-46a2-9aa8-89b582fbe500@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/faa210e7-62cf-4908-b1a3-92558cc2befb.html</guid>
   <pubDate>Tue, 22 Sep 2026 14:00:00 GMT</pubDate>
 </item><item>
@@ -272,7 +272,7 @@ getting fired, but hopefully only after the first world tour.&lt;/p&gt;
 &lt;p&gt;That shift, from encoded text to represented meaning, is what makes embeddings so powerful. Concepts become vectors, similarity becomes distance, categories become clusters, and some relationships become directions that we can explore using arithmetic. Embeddings do not give computers human understanding, but they do make useful aspects of meaning available to mathematics, and that gives us an extraordinary set of tools for building systems that operate on concepts rather than just characters.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/teaching-computers-context.html</link>
-  <author>aa94bef8-9a1d-4486-8024-e38b3f45e8e4@bsstahl.com (Barry S. Stahl)</author>
+  <author>04f953b4-6966-46a2-9aa8-89b582fbe500@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/1f872a14-4d10-4c9a-88ae-c84aa84064c2.html</guid>
   <pubDate>Sat, 12 Sep 2026 07:00:00 GMT</pubDate>
 </item><item>
@@ -530,7 +530,7 @@ getting fired, but hopefully only after the first world tour.&lt;/p&gt;
 &lt;p&gt;The practical takeaway is that tokenizer awareness improves engineering decisions. Understanding this process helps with prompt design, token budgeting, multilingual handling, and debugging surprising model output. If you step through &lt;code&gt;Encode&lt;/code&gt; and &lt;code&gt;Decode&lt;/code&gt; with your own examples, the mechanics become intuitive very quickly. To achieve this understanding, the &lt;a href=&quot;https://github.com/bsstahl/AIDemos/tree/master/Tokenizer&quot;&gt;sample code on GitHub&lt;/a&gt; is a good place to start.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/understanding-gpt-tokenization.html</link>
-  <author>aa94bef8-9a1d-4486-8024-e38b3f45e8e4@bsstahl.com (Barry S. Stahl)</author>
+  <author>04f953b4-6966-46a2-9aa8-89b582fbe500@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/802ad127-19a0-4a19-9bc7-a753e64d3124.html</guid>
   <pubDate>Fri, 12 Jun 2026 07:00:00 GMT</pubDate>
 </item><item>
@@ -600,7 +600,7 @@ getting fired, but hopefully only after the first world tour.&lt;/p&gt;
 &lt;p&gt;Knowing the difficulty in categorizing these three versions of a childhood photo as &apos;&lt;em&gt;AI-generated&lt;/em&gt;&apos; or not, it is obvious that we can&apos;t build policy around such a binary definition. We need rules that focus on &lt;strong&gt;intent&lt;/strong&gt;, &lt;strong&gt;impact&lt;/strong&gt;, and &lt;strong&gt;what claims are being made&lt;/strong&gt;, not on whether a model was somewhere in the toolchain. We will drill into more detail on how we can craft regulations that take these items into account in future posts.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/what-counts-as-aigenerated.html</link>
-  <author>aa94bef8-9a1d-4486-8024-e38b3f45e8e4@bsstahl.com (Barry S. Stahl)</author>
+  <author>04f953b4-6966-46a2-9aa8-89b582fbe500@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/8a03e594-887c-4412-ae36-23fa3d2cf0c2.html</guid>
   <pubDate>Sat, 28 Mar 2026 10:19:40 GMT</pubDate>
 </item><item>
@@ -735,7 +735,7 @@ getting fired, but hopefully only after the first world tour.&lt;/p&gt;
 &lt;p&gt;This post introduces the Behavioral Layer as an architectural concept and distinguishes it from a traditional ACL. In the next article, we will look at how fine‑tuned language models can assist with the transformations inside the layer. We will walk through how to build small, purpose‑built models using Microsoft Foundry, how to train them on your domain, and how to integrate them into a reliability‑first architecture.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/introducing-the-behavioral-layer.html</link>
-  <author>aa94bef8-9a1d-4486-8024-e38b3f45e8e4@bsstahl.com (Barry S. Stahl)</author>
+  <author>04f953b4-6966-46a2-9aa8-89b582fbe500@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/18cf98fe-ad5e-43a5-91ee-55f0a90478c8.html</guid>
   <pubDate>Sat, 14 Mar 2026 17:13:00 GMT</pubDate>
 </item><item>
@@ -864,7 +864,7 @@ getting fired, but hopefully only after the first world tour.&lt;/p&gt;
 &lt;/ul&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/types-of-ai-models.html</link>
-  <author>aa94bef8-9a1d-4486-8024-e38b3f45e8e4@bsstahl.com (Barry S. Stahl)</author>
+  <author>04f953b4-6966-46a2-9aa8-89b582fbe500@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/37f405ce-7cf9-4aa1-810c-9793f3a1acd7.html</guid>
   <pubDate>Thu, 06 Nov 2025 08:00:00 GMT</pubDate>
 </item><item>
@@ -889,7 +889,7 @@ getting fired, but hopefully only after the first world tour.&lt;/p&gt;
 &lt;p&gt;Thanks for being part of this community. I can’t wait to see familiar faces and meet new ones as we reboot and reconnect in 2026.&lt;/p&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/return-of-the-valley-dotnet-user-groups.html</link>
-  <author>aa94bef8-9a1d-4486-8024-e38b3f45e8e4@bsstahl.com (Barry S. Stahl)</author>
+  <author>04f953b4-6966-46a2-9aa8-89b582fbe500@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/eaf445c6-26bf-4c48-bf93-a2ad67849cbe.html</guid>
   <pubDate>Tue, 04 Nov 2025 19:00:00 GMT</pubDate>
 </item><item>
@@ -933,7 +933,7 @@ getting fired, but hopefully only after the first world tour.&lt;/p&gt;
 &lt;/ul&gt;
 </description>
   <link>https://www.cognitiveinheritance.com/Posts/when-vs-code-shows-the-wrong-source-control-view.html</link>
-  <author>aa94bef8-9a1d-4486-8024-e38b3f45e8e4@bsstahl.com (Barry S. Stahl)</author>
+  <author>04f953b4-6966-46a2-9aa8-89b582fbe500@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/8f7e6d5c-4b3a-2a1d-9c8b-7e6f5d4c3b2a.html</guid>
   <pubDate>Sun, 13 Apr 2025 07:00:00 GMT</pubDate>
 </item>
