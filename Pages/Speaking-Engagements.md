@@ -8,7 +8,7 @@ description: Technical presentations given by Barry S. Stahl.
 ispublished: true
 showinlist: true
 publicationdate: 2009-08-01T00:00:00.000+00:00
-lastmodificationdate: 2026-09-25T00:00:00.000+00:00
+lastmodificationdate: 2026-10-27T00:00:00.000+00:00
 slug: Speaking-Engagements
 categories: []
 
@@ -20,6 +20,8 @@ categories: []
 
 <!-- I currently have no talks scheduled. {ContactPageLink:Contact me} to arrange to have me speak at your event. -->
 
+* **[.NET Conf Community Days](https://www.dotnetconf.net/)** - 11/13/2027 - "Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems"
+* **[ConFoo 2027](https://confoo.ca/en/2027/session/eliminating-hidden-dangers-patterns-for-reliable-systems) - 2/24/2027 - 2/26/2027 - "Eliminating Hidden Dangers: Patterns for Reliable Systems"
 * **[Craft Conference 2027 - Budapest](https://craft-conf.com/2027/speakers/)** - 6/3/2027 - 6/4/2027 - Sessions TBD
 
 ### Past engagements

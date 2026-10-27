@@ -8,7 +8,7 @@ description: Technical presentations given by Barry S. Stahl.
 ispublished: true
 showinlist: true
 publicationdate: 2009-08-01T00:00:00.000+00:00
-lastmodificationdate: 2026-04-28T00:00:00.000+00:00
+lastmodificationdate: 2026-10-27T17:16:28.138+00:00
 slug: Talk-Catalog
 categories: []
 
@@ -46,7 +46,7 @@ in modern software systems, so you can spend less time supporting
 your applications. We''ll see examples in C# of each pattern, including 
 demonstrations using SQL Server, Cosmos DB and Redis.
 
-  [Latest Slide Deck](https://avoidingdualwrites.azurewebsites.net) | [Long-Form Video - 2021-07-22](https://youtu.be/g6tnRWN9vy0?si=rCTluKDKN899Shrw)
+  [Latest Slide Deck](https://cognitiveinheritance.com/Presentations/Session/EliminatingHiddenDangers/index.html) | [Long-Form Video - 2021-07-22](https://youtu.be/g6tnRWN9vy0?si=rCTluKDKN899Shrw)
 
 ***
 
