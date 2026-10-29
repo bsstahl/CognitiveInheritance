@@ -8,7 +8,7 @@ description: Technical presentations given by Barry S. Stahl.
 ispublished: true
 showinlist: true
 publicationdate: 2009-08-01T00:00:00.000+00:00
-lastmodificationdate: 2026-10-27T17:16:28.138+00:00
+lastmodificationdate: 2026-10-29T18:05:07.164+00:00
 slug: Talk-Catalog
 categories: []
 
@@ -31,6 +31,37 @@ patterns by using them to convert the application into a maintainable and
 extensible solution that can be validated using unit tests.
 
   [Latest Slide Deck](https://designpatternsforloosecoupling.azurewebsites.net/) | [Video: Craft Conference 2019 - Budapest, Hungary - May 2019](https://www.youtube.com/watch?v=mE3zKWO6qQE&list=FLq-iLd7rfmqSIFiujBGIRSw&index=1)
+
+***
+
+* **Designing APIs in .NET: Beyond HTTP** - When developers hear "API", they often think of HTTP endpoints, JSON payloads,
+and REST conventions. For many scenarios, that's a useful starting point, but it
+is too narrow a definition. Message brokers, streams, RPC frameworks, and modern
+platform abstractions all expose contracts that other systems depend on.
+
+  The transport matters, but it is not the API.
+
+  This session explores a fundamental question: How do we design good APIs 
+regardless of the transport mechanism?
+
+  Using a common business capability as a reference point, we will compare
+different communication approaches in .NET and examine what remains constant 
+across them. We will look at contracts, compatibility, validation,
+error handling, reliability, and consumer expectations, separating the
+concerns of API design from the mechanics of individual technologies.
+
+  Along the way, we will challenge the assumption that HTTP should 
+be the starting point for every integration conversation. Instead,
+we will focus on the decisions that matter regardless of whether
+communication happens through web requests, messaging, streams,
+or platform abstractions such as DAPR.
+
+  You will leave with a transport-agnostic framework for API design
+and a clearer understanding of which decisions belong to the contract
+and which belong to the transport. Whether communication happens
+through HTTP, messaging, streams, or platform abstractions, the
+central challenge remains the same: defining how systems interact
+safely, predictably, and effectively.
 
 ***
 
