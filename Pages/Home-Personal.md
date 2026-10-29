@@ -30,6 +30,7 @@ categories: []
 * [Carrie's 50th Birthay Party Album](https://photos.google.com/share/AF1QipP6LRr50steWN6l2knoMAAaPP51RlBrpPd1cki-I5xOXT3R70y3qmWh5uKdhtpzCA?obfsgid=107543756038165503594&email=barry.s.stahl@gmail.com&pli=1&key=bEZUQm50bWNocUtULVJMWTBoOHgyQ3FhN3hPcnpR)
 * [Noel's Blog - Eco Birding](https://ecobirding.blogspot.com/?m=1)
 * [Donations to Liberty Wildlife](https://e.givesmart.com/events/xiK/i/_All/nQAE/#)
+* [Basic Trig - 3 Blue 1 Brown](https://www.youtube.com/watch?v=yBw67Fb31Cs)
 
 ## Fun Stuff
 
