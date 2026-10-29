@@ -91,6 +91,33 @@ extensible solution that can be validated using unit tests.</p>
 </ul>
 <hr />
 <ul>
+<li><p><strong>Designing APIs in .NET: Beyond HTTP</strong> - When developers hear &quot;API&quot;, they often think of HTTP endpoints, JSON payloads,
+and REST conventions. For many scenarios, that's a useful starting point, but it
+is too narrow a definition. Message brokers, streams, RPC frameworks, and modern
+platform abstractions all expose contracts that other systems depend on.</p>
+<p>The transport matters, but it is not the API.</p>
+<p>This session explores a fundamental question: How do we design good APIs
+regardless of the transport mechanism?</p>
+<p>Using a common business capability as a reference point, we will compare
+different communication approaches in .NET and examine what remains constant
+across them. We will look at contracts, compatibility, validation,
+error handling, reliability, and consumer expectations, separating the
+concerns of API design from the mechanics of individual technologies.</p>
+<p>Along the way, we will challenge the assumption that HTTP should
+be the starting point for every integration conversation. Instead,
+we will focus on the decisions that matter regardless of whether
+communication happens through web requests, messaging, streams,
+or platform abstractions such as DAPR.</p>
+<p>You will leave with a transport-agnostic framework for API design
+and a clearer understanding of which decisions belong to the contract
+and which belong to the transport. Whether communication happens
+through HTTP, messaging, streams, or platform abstractions, the
+central challenge remains the same: defining how systems interact
+safely, predictably, and effectively.</p>
+</li>
+</ul>
+<hr />
+<ul>
 <li><p><strong>Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems</strong> - There is a danger lurking in every system that hasn''t taken explicit
 steps to eliminate it. This under-recognized data killer can cause
 intermittent inconsistencies in your data which can be as difficult to
