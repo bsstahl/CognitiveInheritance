@@ -180,6 +180,319 @@ GiveCamps are weekend events where we put a bunch of software creators in a room
 </tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
+<aside class="notes"><ol>
+<li>Stop the maintenance consumer</li>
+<li>Issue command w/ Telem Sim</li>
+<li>Show the accepted response</li>
+<li>Show the waiting count incremented</li>
+<li>Start the consumer</li>
+<li>Show generated work order</li>
+</ol>
+<p>The goal here is to show that, even though it isn't a REST endpoint
+it is still an API.</p>
+</aside>
+<a id="ff06188a-7f8c-4a19-a708-28cd0f550225"><h1>Bus Telemetry Demo</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:ec0acb2f-cdfc-48ca-9ce2-d78da9d4d558 -->
+<img alt="Bus Maintenance.jpg" src="img/ec0acb2f-cdfc-48ca-9ce2-d78da9d4d558.jpg" />
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
+<a id="d0291959-4938-45fd-83f4-637a732d2114"><h1>We just used an API</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:00555722-25fd-4885-98f3-21af39ac256e -->
+<!-- ContentItem:d0d1a51e-771c-4a39-b70e-79379c639141 -->
+<aside class="notes"><p>The maintenance demonstration exposes a capability through a message contract. A consumer submits a request whose meaning is understood by the maintenance system. The broker accepts that request while the processor is stopped; a work order appears only after processing. The message contract is no less an API than a request/response contract. Another system depends on its meaning and behavior, not merely on the mechanism carrying it.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Client sends request</li>
+<li>Message conformed to known contract
+<ul>
+<li>Contract defined what request meant</li>
+</ul>
+</li>
+<li>Service processes request</li>
+</ul>
+<blockquote>
+<p>Messaging APIs are no less APIs than request/response APIs</p>
+</blockquote>
+
+</td>
+<td style="text-align: left;">
+<img src="img/d0d1a51e-771c-4a39-b70e-79379c639141.png" alt="Bus Management System - Kafka Protocol - Consistency-StoreAndForward - 800x532.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
+<a id="540bfc5f-df33-4cb2-9199-2394bd8705a8"><h1>Same design responsibilities. Different interaction.</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:2196717e-05a2-42e7-882d-cf32a9f1712c -->
+<!-- ContentItem:652f373a-2f58-41a1-a43f-66deca037db7 -->
+<aside class="notes"><p>Both messaging and request/response APIs need clear meaning, validation rules, compatibility, error communication, and observability. Equal API status does not mean identical behavior. In the maintenance demonstration, broker acceptance acknowledges receipt, not creation of a work order. The contract must explain how a consumer learns the outcome and what to expect from delays, failures, retries, and repeated delivery. The demonstration alone does not establish durability, ordering, or exactly-once processing. Those guarantees depend on implementation and configuration. Interaction shape and transport are separate choices: messaging can be exposed through HTTP, and gRPC commonly uses HTTP/2. These distinctions guide the messaging implementation examined next. The topic diagram illustrates a brokered boundary rather than a guarantee that all messaging systems behave alike.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Consumers depend on meaning, validation, and compatibility.</li>
+<li>Acceptance is not completion.</li>
+<li>Timing, failure, and delivery expectations belong in the contract.</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/652f373a-2f58-41a1-a43f-66deca037db7.png" alt="Kafka Topic Usage 865x573.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
+<a id="f287833d-fce2-479b-98e2-51a70e7da61a"><h1>Consume-Transform-Produce</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:c15fea56-42a0-4489-9732-63d3a750aec0 -->
+<aside class="notes"><p>The maintenance demonstration has three recognizable responsibilities: receiving an input, applying business rules, and producing an outcome. Consume-Transform-Produce names that pattern without prescribing a protocol or framework. Here, transform means application processing, not merely changing a serialization format. It can involve state and side effects rather than a pure function. Produce can mean a response, a state change, or an event, not necessarily publishing to a broker. Following the same maintenance capability through HTTP and Kafka makes the shared responsibilities visible.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Consume: receive an input</li>
+<li>Transform: apply business rules</li>
+<li>Produce: expose an outcome</li>
+</ul>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
+<a id="752587c3-3970-4875-975d-0635dccae511"><h1>CTP in ASP.NET Core</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:37b982c3-7361-4ab1-9319-9965eec64299 -->
+<aside class="notes"><p>For an HTTP implementation of the maintenance capability, Kestrel receives the request. ASP.NET Core routes it and binds the payload, using a configured deserializer for a JSON body. The endpoint receives an application object and delegates to maintenance logic, which evaluates the request and produces an outcome. The HTTP adapter maps that outcome into a response. These responsibilities need not all live in the endpoint itself. A response may describe completion or acknowledge acceptance for later processing, depending on the contract. Changing ingestion should not require duplicating the maintenance rules.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Consume:
+<ul>
+<li>Kestrel receives the HTTP request
+<ul>
+<li>ASP.NET Core deserializes and dispatches</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Transform:
+<ul>
+<li>Maintenance logic evaluates the request</li>
+</ul>
+</li>
+<li>Produce:
+<ul>
+<li>Map the outcome to an HTTP response</li>
+</ul>
+</li>
+</ul>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
+<a id="217ce301-a342-477c-8ebc-4e73a273c1be"><h1>CTP in Kafka</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:b95ad985-303d-4bd1-9434-869d6819a987 -->
+<aside class="notes"><p>A Kafka consumer retrieves records from a topic. Configured client deserializers or application adapter code turn the payload into an application object before dispatching it to the same maintenance logic used by the HTTP implementation. Producing an outcome can mean creating a work order or publishing a result event. It does not necessarily mean replying to the original producer. Broker acceptance of the input, processing completion, and committing a consumer offset are separate milestones. Offset policy, retries, and coordination of output with progress tracking determine failure behavior; CTP alone supplies none of those guarantees.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Consume:
+<ul>
+<li>Kafka consumer retrieves records
+<ul>
+<li>Adapter deserializes and dispatches</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Transform:
+<ul>
+<li>The same maintenance logic evaluates the request</li>
+</ul>
+</li>
+<li>Produce:
+<ul>
+<li>Create a work order or publish a result event</li>
+</ul>
+</li>
+</ul>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
+<a id="56d88cd8-361f-4aec-947d-5a50e2789a83"><h1>Same logic, different adapters</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:51683978-89aa-4ab1-8c72-b90417f80f97 -->
+<aside class="notes"><p>Both examples deliver an application object to maintenance logic and expose an outcome through an adapter. Sharing that logic is a design choice, not a claim that the wire contracts or delivery semantics are identical. Validation of the input representation belongs at the boundary, while business rules remain common. The same separation can support gRPC calls, WebSocket messages, or file ingestion. Those examples span protocols and interaction shapes rather than mutually exclusive categories; gRPC commonly uses HTTP/2. Timing, errors, retries, and delivery guarantees still require explicit design. The messaging section examines those choices using the maintenance capability already demonstrated.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Different adapters can invoke the same business logic</li>
+<li>gRPC, WebSockets, and files can follow the same pattern</li>
+<li>Timing and delivery guarantees still differ</li>
+</ul>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
+<a id="d0acd056-383d-4901-8594-7e70a477bffd"><h1>Where does a message go?</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:806a8fe9-af35-46b6-8ba8-6367d8cf35d4 -->
+<aside class="notes"><p>The maintenance capability still needs the same meaning and payload rules as any other API. Messaging adds a destination and delivery topology to that contract. A work queue can distribute maintenance requests among competing processors. Independent subscriptions or Kafka consumer groups can let maintenance and analytics each receive the relevant data. Consumers within one group divide partitions rather than each receiving every record. Queue, topic, subscription, and group terminology is not interchangeable across products. Specify which party owns routing and provisioning so a producer knows where to send and a consumer knows what it will receive.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Destination: queue, topic, or routed address</li>
+<li>Competing consumers: divide work</li>
+<li>Independent subscriptions or groups: each receive a view</li>
+<li>Topology determines who receives the maintenance request</li>
+</ul>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
+<a id="fca426a1-010f-4d57-8889-2333027c8e82"><h1>Accepted is not processed</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:57f03077-d73c-4395-b2a3-2271d46b598a -->
+<aside class="notes"><p>The demonstration separated broker acceptance from work-order creation. A producer acknowledgment reports acceptance under the broker's configured guarantees, not completion of maintenance processing. A consumer acknowledgment, lock settlement, or offset commit tracks a different stage. A Service Bus lock can expire and permit redelivery; a Kafka consumer can resume from committed offsets after a restart. Dead-letter queues are available in some brokers, while Kafka applications commonly implement their own error-topic handling. These are mechanisms for progress and recovery, not a substitute for shared retry and idempotency policies. The API must separately explain how the requester discovers the outcome.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Producer acknowledgment: broker acceptance</li>
+<li>Consumer acknowledgment or offset: delivery progress</li>
+<li>Unfinished deliveries may be seen again</li>
+<li>Dead-letter or error destinations need explicit handling</li>
+</ul>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
+<a id="ddfaf6cd-2a11-40f8-8b3f-d9699e290132"><h1>Order and history have boundaries</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:94e857b1-8fdd-4451-9326-3f64fe90fb96 -->
+<aside class="notes"><p>Telemetry for one bus may need sequencing without requiring a global order across the fleet. Kafka orders records within a partition; concurrent application processing can still change completion order. A partition key can place one bus's records together. Service Bus sessions provide a different mechanism for related ordered messages. Retention and replay also differ: Kafka retains records according to policy and consumers can revisit retained offsets, while settling a typical queue message removes it from normal delivery. Replay is not an automatic property of all messaging. A contract should state the relevant scope, expiry, and replay capability without turning the talk into a platform configuration tutorial.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Ordering has a scope, such as a partition or session</li>
+<li>A bus identifier can group related telemetry</li>
+<li>Retention determines how long input remains available</li>
+<li>Replay depends on the platform and configuration</li>
+</ul>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
+<a id="c006bd4e-65b3-4360-ba00-7f4db0d2d81a"><h1>gRPC streaming is a typed, live conversation</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:be24d249-4de7-464c-bd6a-a7f48fd2f370 -->
+<aside class="notes"><p>gRPC retains the familiar responsibilities of a request/response API, typically describing service methods and messages in protobuf. Streaming allows a client, a server, or both to send a sequence within one call. A maintenance service might accept telemetry continuously or stream work-order updates back to a client. Ordering is preserved within each direction of a stream, not across unrelated calls. Deadlines and cancellation bound the call, while flow control regulates transfer rather than guaranteeing business processing. A broken connection does not automatically provide durable replay or resume. Those behaviors require application design. gRPC commonly runs over HTTP/2, so this is a comparison of interaction shapes rather than a claim that gRPC is outside HTTP.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Typed service methods and messages</li>
+<li>Client, server, or bidirectional message sequences</li>
+<li>Call lifetime: deadlines, cancellation, and flow control</li>
+<li>A live stream is not a durable queue or replay log</li>
+</ul>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
+<a id="2e94921b-4694-4e81-a33b-01cc441e19f2"><h1>HTTP supplies interface semantics</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:957812c0-36d4-4c54-b319-89f2047693e2 -->
+<aside class="notes"><p>HTTP adds standardized meaning around the same maintenance payload. A resource URI identifies the target, a method conveys the intended action, and a status code characterizes the response. For example, POST /maintenance-requests submits work, while GET on a request's status resource retrieves its current representation. GET is defined as safe; PUT and DELETE have idempotent method semantics. Those protocol promises matter to clients and intermediaries, but do not eliminate application-level duplicate handling, which belongs in the shared contract discussion. Schema, compatibility, and business validation remain the same design obligations already encountered in messaging.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Resource URI: identify the target</li>
+<li>Method: express the intended action</li>
+<li>Status code: describe the response</li>
+<li>POST /maintenance-requests submits the same business request</li>
+</ul>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
+<a id="e47baf42-ea6b-43a4-8752-4fc3b12ce88c"><h1>A response can precede completion</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:4efc6940-be83-4ed0-8b6a-28bb8f78dc68 -->
+<aside class="notes"><p>A request/response exchange does not force all business processing to finish before the response. An HTTP endpoint can report a completed work order or return 202 Accepted for processing that remains incomplete. The application can include a status-resource URL and define how a client observes progress and the final outcome. Neither that resource nor a polling workflow is created automatically by choosing 202, and the status code does not promise eventual success. If a connection fails before the response arrives, the client may not know whether the request took effect. Uncertain outcomes and duplicate handling are shared concerns, not unique flaws of HTTP. An HTTP adapter can submit to the same messaging workflow used in the opening demonstration.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>A response can report a completed outcome</li>
+<li>202 Accepted can report work still pending</li>
+<li>Define a status resource for progress and results</li>
+<li>Acceptance does not promise eventual success</li>
+</ul>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
+<a id="7627e950-2f5a-4e38-be0f-d6d4f1f0291b"><h1>Intermediaries participate</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:8cfa33df-d0a7-4a43-8199-8a689915cccf -->
+<aside class="notes"><p>HTTP clients can interact through proxies, gateways, and caches, so the contract includes representation and cache semantics visible to those intermediaries. A GET for maintenance status may need fresh information rather than a stale cached representation. Cache-Control communicates storage and reuse policy, and validators such as ETag support conditional requests. Accept and Content-Type describe the requested and supplied representations; Vary identifies request headers that influence cache selection when appropriate. These are HTTP mechanisms for expressing choices rather than new categories of business responsibility. The next section consolidates the shared obligations instead of repeating them for every adapter.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Cache-Control: storage and reuse policy</li>
+<li>ETag: validate a representation</li>
+<li>Accept and Content-Type: select and describe representations</li>
+<li>Vary: distinguish cached representation variants</li>
+</ul>
+
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
+<a id="4585c0f2-7141-4892-a7bb-eaf889612186"><h1>Separator</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:685060d8-4205-4db9-b44d-9610a7729e7d -->
+
+<table><tr><td style="vertical-align:top;">
+</td>
+<td style="text-align: left;">
+<img src="img/685060d8-4205-4db9-b44d-9610a7729e7d.png" alt="Transparent Half Width Image 720x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
+<a id="2dafde0b-014d-48d3-ab75-b486ebb84b29"><h1>APIs can stream or combine interactions</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:6832164b-db3b-4763-8a06-268626f0fc1f -->
+<!-- ContentItem:3fc691c7-057f-4f70-9f92-d5883e01631e -->
+<aside class="notes"><p>gRPC streaming methods exchange sequences of messages rather than only one request and one response. A hybrid API can pair an HTTP or gRPC request with messaging for work that continues asynchronously. These forms show how contracts extend or compose without making their timing and delivery guarantees interchangeable. The maintenance request already demonstrated remains the comparison point: changing the interaction shape does not remove the need for a clear contract. gRPC commonly uses HTTP/2, so streaming RPC is not itself evidence of a non-HTTP transport. This section extends the messaging discussion before the presentation turns to HTTP APIs.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Streaming RPC: gRPC streaming methods</li>
+<li>Hybrid APIs: pair HTTP or gRPC with messaging</li>
+<li>Contracts shape timing and delivery expectations</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/3fc691c7-057f-4f70-9f92-d5883e01631e.png" alt="Streaming-Sequence-800px.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
 
 <a id="a00f93fc-5642-4cd8-911b-37e7f7b28aa7">&nbsp;</a>
 <!-- Layout:FullPage -->
@@ -1658,6 +1971,33 @@ However, this is not the only kind of Context we need to care about. We also nee
 
 </section>
 
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
+<a id="837f6035-ea04-44d2-a601-3e7bb014916e"><h1>Resources</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:da705acd-38b4-4ff0-9c43-b8f0614acb4b -->
+<!-- ContentItem:bc37038e-53c7-6bb8-e13b-60327f66a414 -->
+
+<table><tr><td style="vertical-align:top;">
+<p><strong>General</strong></p>
+<ul>
+<li><a href="https://github.com/bsstahl/AvoidingDualWrites">Code Samples</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Idempotence#Computer_science_meaning">Idempotence</a></li>
+<li><a href="https://azure.microsoft.com/en-us/blog/understanding-and-leveraging-azure-sql-database-sla/">Understanding SQL Azure SLAs</a></li>
+</ul>
+<p><strong>Tools</strong></p>
+<ul>
+<li><a href="https://redis.io/topics/streams-intro">Redis Streams</a></li>
+<li><a href="https://azure.microsoft.com/en-us/services/service-bus/">Azure Service Bus</a></li>
+<li><a href="https://www.rabbitmq.com/">RabbitMQ</a></li>
+<li><a href="https://kafka-tutorials.confluent.io/">Kafka</a></li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/bc37038e-53c7-6bb8-e13b-60327f66a414.png" alt="resources-qr-code.png" />
+</td>
+</tr></table></section>
 
 
         </div>
