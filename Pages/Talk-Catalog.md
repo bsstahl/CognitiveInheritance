@@ -8,7 +8,7 @@ description: Technical presentations given by Barry S. Stahl.
 ispublished: true
 showinlist: true
 publicationdate: 2009-08-01T00:00:00.000+00:00
-lastmodificationdate: 2026-10-29T18:05:07.164+00:00
+lastmodificationdate: 2026-11-04T17:58:50.777+00:00
 slug: Talk-Catalog
 categories: []
 
@@ -22,19 +22,7 @@ I have the following talks on topics of interest to Enterprise Developers that I
 
 <h4 id="software-engineering-talks"> Software Engineering</h4>
 
-* **Design Patterns for Loosely Coupled Applications** - Building our applications so that their components are loosely coupled is a 
-critical measure in creating solutions that are testable, maintainable and 
-extensible. In this session we will explore several design patterns that are 
-key to building applications that maintain loose coupling. We start by 
-reviewing a tightly coupled application. Then, we explore several design 
-patterns by using them to convert the application into a maintainable and 
-extensible solution that can be validated using unit tests.
-
-  [Latest Slide Deck](https://designpatternsforloosecoupling.azurewebsites.net/) | [Video: Craft Conference 2019 - Budapest, Hungary - May 2019](https://www.youtube.com/watch?v=mE3zKWO6qQE&list=FLq-iLd7rfmqSIFiujBGIRSw&index=1)
-
-***
-
-* **Designing APIs in .NET: Beyond HTTP** - When developers hear "API", they often think of HTTP endpoints, JSON payloads,
+* **API Design in .NET: Beyond HTTP** - When developers hear "API", they often think of HTTP endpoints, JSON payloads,
 and REST conventions. For many scenarios, that's a useful starting point, but it
 is too narrow a definition. Message brokers, streams, RPC frameworks, and modern
 platform abstractions all expose contracts that other systems depend on.
@@ -62,6 +50,18 @@ and which belong to the transport. Whether communication happens
 through HTTP, messaging, streams, or platform abstractions, the
 central challenge remains the same: defining how systems interact
 safely, predictably, and effectively.
+
+***
+
+* **Design Patterns for Loosely Coupled Applications** - Building our applications so that their components are loosely coupled is a 
+critical measure in creating solutions that are testable, maintainable and 
+extensible. In this session we will explore several design patterns that are 
+key to building applications that maintain loose coupling. We start by 
+reviewing a tightly coupled application. Then, we explore several design 
+patterns by using them to convert the application into a maintainable and 
+extensible solution that can be validated using unit tests.
+
+  [Latest Slide Deck](https://designpatternsforloosecoupling.azurewebsites.net/) | [Video: Craft Conference 2019 - Budapest, Hungary - May 2019](https://www.youtube.com/watch?v=mE3zKWO6qQE&list=FLq-iLd7rfmqSIFiujBGIRSw&index=1)
 
 ***
 
