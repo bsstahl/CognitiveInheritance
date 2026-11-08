@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1080" viewBox="0 0 1500 1080" role="img" aria-labelledby="svg-title svg-desc">
+  <title id="svg-title">Causal loop diagram for data inconsistencies</title>
+  <desc id="svg-desc">A signed causal diagram showing how maintenance updates, data churn, inconsistent views, reconciliation, transient errors, retries, circuit breaking, additional load, and contention and delay influence one another. Validation reduces inconsistent views.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#eef3f8"/>
+    </linearGradient>
+    <linearGradient id="header-glow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#dbeafe" stop-opacity=".75"/>
+      <stop offset="1" stop-color="#dbeafe" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="card-shadow" x="-20%" y="-25%" width="150%" height="170%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#21334a" flood-opacity=".10"/>
+    </filter>
+    <filter id="badge-shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#21334a" flood-opacity=".16"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1 1 L11 6 L1 11 Z" fill="#43556b"/>
+    </marker>
+    <pattern id="dot-grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#94a3b8" opacity=".16"/>
+    </pattern>
+    <style>
+      text { font-family: Inter, "Segoe UI", Arial, sans-serif; }
+      .edge { fill: none; stroke: #43556b; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow); }
+      .node { filter: url(#card-shadow); }
+      .node rect { stroke-width: 2; rx: 17; }
+      .node .accent { rx: 2; }
+      .node .label { font-size: 20px; font-weight: 650; fill: #1d2c40; text-anchor: middle; dominant-baseline: middle; }
+      .driver rect { fill: #ffffff; stroke: #52657d; }
+      .driver .accent { fill: #64748b; }
+      .signal rect { fill: #fff7df; stroke: #c28a24; }
+      .signal .accent { fill: #d29a35; }
+      .lever rect { fill: #eaf6ed; stroke: #43845a; }
+      .lever .accent { fill: #4b9563; }
+      .badge circle { fill: #ffffff; stroke: #d8e0e9; stroke-width: 1.5; filter: url(#badge-shadow); }
+      .badge text { font-size: 18px; font-weight: 800; text-anchor: middle; dominant-baseline: central; }
+      .positive text { fill: #18764b; }
+      .negative text { fill: #b44949; }
+      .legend-label { font-size: 15px; fill: #53647a; }
+    </style>
+  </defs>
+
+  <rect width="1500" height="1080" fill="url(#background)"/>
+  <rect width="1500" height="150" fill="url(#header-glow)"/>
+  <rect y="150" width="1500" height="930" fill="url(#dot-grid)" opacity=".42"/>
+
+  <text x="72" y="58" font-size="13" font-weight="750" letter-spacing="2.4" fill="#55708f">SYSTEM DYNAMICS</text>
+  <text x="70" y="101" font-size="34" font-weight="750" letter-spacing="-.5" fill="#17283e">Data inconsistencies</text>
+  <text x="72" y="130" font-size="16" fill="#61738a">Causal loop diagram · Direction and polarity shown on every influence</text>
+  <path d="M72 153 H1428" stroke="#d7e0ea" stroke-width="1.5"/>
+
+  <g aria-label="Causal relationships">
+    <path class="edge" d="M705 256 L705 365"/>
+    <path class="edge" d="M197.5 526 L420 570"/>
+    <path class="edge" d="M705 447 L480 570"/>
+    <path class="edge" d="M480 652 L232.5 785"/>
+    <path class="edge" d="M110 826 C66 826 43 790 43 738 L43 436 C43 419 57 406 75 406 H580"/>
+    <path class="edge" d="M830 390 L1050 390"/>
+    <path class="edge" d="M1050 422 L830 422"/>
+    <path class="edge" d="M1175 447 L1175 535"/>
+    <path class="edge" d="M1110 611 L887.5 720"/>
+    <path class="edge" d="M1175 611 L1175 720"/>
+    <path class="edge" d="M1015 761 L1060 761"/>
+    <path class="edge" d="M1175 802 L1175 865"/>
+    <path class="edge" d="M1385 906 C1443 906 1455 875 1455 820 L1455 450 C1455 418 1434 406 1400 406 H1300"/>
+  </g>
+
+  <g class="badge positive" transform="translate(705 310)" aria-label="Positive influence">
+    <circle r="15"/><text y="1">+</text>
+  </g>
+  <g class="badge negative" transform="translate(309 548)" aria-label="Negative influence">
+    <circle r="15"/><text y="1">−</text>
+  </g>
+  <g class="badge positive" transform="translate(592 509)" aria-label="Positive influence">
+    <circle r="15"/><text y="1">+</text>
+  </g>
+  <g class="badge positive" transform="translate(360 718)" aria-label="Positive influence">
+    <circle r="15"/><text y="1">+</text>
+  </g>
+  <g class="badge positive" transform="translate(270 406)" aria-label="Positive influence">
+    <circle r="15"/><text y="1">+</text>
+  </g>
+  <g class="badge positive" transform="translate(939 390)" aria-label="Positive influence">
+    <circle r="15"/><text y="1">+</text>
+  </g>
+  <g class="badge positive" transform="translate(939 422)" aria-label="Positive influence">
+    <circle r="15"/><text y="1">+</text>
+  </g>
+  <g class="badge positive" transform="translate(1175 491)" aria-label="Positive influence">
+    <circle r="15"/><text y="1">+</text>
+  </g>
+  <g class="badge positive" transform="translate(999 666)" aria-label="Positive influence">
+    <circle r="15"/><text y="1">+</text>
+  </g>
+  <g class="badge positive" transform="translate(1175 665)" aria-label="Positive influence">
+    <circle r="15"/><text y="1">+</text>
+  </g>
+  <g class="badge negative" transform="translate(1038 761)" aria-label="Negative influence">
+    <circle r="15"/><text y="1">−</text>
+  </g>
+  <g class="badge positive" transform="translate(1175 833)" aria-label="Positive influence">
+    <circle r="15"/><text y="1">+</text>
+  </g>
+  <g class="badge positive" transform="translate(1455 625)" aria-label="Positive influence">
+    <circle r="15"/><text y="1">+</text>
+  </g>
+
+  <g class="node driver" transform="translate(580 178)">
+    <rect width="250" height="78"/>
+    <rect class="accent" x="0" y="17" width="5" height="44"/>
+    <text class="label" x="125" y="40">Maintenance update</text>
+  </g>
+  <g class="node driver" transform="translate(580 365)">
+    <rect width="250" height="82"/>
+    <rect class="accent" x="0" y="19" width="5" height="44"/>
+    <text class="label" x="125" y="42">Data churn</text>
+  </g>
+  <g class="node lever" transform="translate(95 450)">
+    <rect width="205" height="76"/>
+    <rect class="accent" x="0" y="16" width="5" height="44"/>
+    <text class="label" x="102.5" y="39">Validation</text>
+  </g>
+  <g class="node signal" transform="translate(360 570)">
+    <rect width="240" height="82"/>
+    <rect class="accent" x="0" y="19" width="5" height="44"/>
+    <text class="label" x="120" y="42">Inconsistent views</text>
+  </g>
+  <g class="node lever" transform="translate(110 785)">
+    <rect width="245" height="82"/>
+    <rect class="accent" x="0" y="19" width="5" height="44"/>
+    <text class="label" x="122.5" y="42">Reconciliation</text>
+  </g>
+  <g class="node signal" transform="translate(1050 365)">
+    <rect width="250" height="82"/>
+    <rect class="accent" x="0" y="19" width="5" height="44"/>
+    <text class="label" x="125" y="42">Transient errors</text>
+  </g>
+  <g class="node lever" transform="translate(1075 535)">
+    <rect width="200" height="76"/>
+    <rect class="accent" x="0" y="16" width="5" height="44"/>
+    <text class="label" x="100" y="39">Retries</text>
+  </g>
+  <g class="node lever" transform="translate(760 720)">
+    <rect width="255" height="82"/>
+    <rect class="accent" x="0" y="19" width="5" height="44"/>
+    <text class="label" x="127.5" y="42">Circuit breaker</text>
+  </g>
+  <g class="node driver" transform="translate(1060 720)">
+    <rect width="230" height="82"/>
+    <rect class="accent" x="0" y="19" width="5" height="44"/>
+    <text class="label" x="115" y="42">Additional load</text>
+  </g>
+  <g class="node driver" transform="translate(1085 865)">
+    <rect width="300" height="82"/>
+    <rect class="accent" x="0" y="19" width="5" height="44"/>
+    <text class="label" x="150" y="42">Contention and delay</text>
+  </g>
+  <g transform="translate(72 1015)" aria-label="Legend">
+    <text x="0" y="5" font-size="13" font-weight="750" letter-spacing="1.4" fill="#718198">LEGEND</text>
+    <g class="badge positive" transform="translate(111 0)">
+      <circle r="12"/><text y="1" font-size="15">+</text>
+    </g>
+    <text class="legend-label" x="132" y="5">Positive influence</text>
+    <g class="badge negative" transform="translate(307 0)">
+      <circle r="12"/><text y="1" font-size="15">−</text>
+    </g>
+    <text class="legend-label" x="328" y="5">Negative influence</text>
+    <rect x="510" y="-9" width="18" height="18" rx="5" fill="#eaf6ed" stroke="#43845a" stroke-width="1.5"/>
+    <text class="legend-label" x="538" y="5">Lever</text>
+    <rect x="615" y="-9" width="18" height="18" rx="5" fill="#fff7df" stroke="#c28a24" stroke-width="1.5"/>
+    <text class="legend-label" x="643" y="5">Signal</text>
+  </g>
+</svg>

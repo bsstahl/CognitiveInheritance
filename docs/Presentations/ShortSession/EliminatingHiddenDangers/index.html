@@ -118,28 +118,6 @@ hardware failures for now.</p>
 
 
 <section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-<aside class="notes"><p>Implementations vs Failure Scenarios - * There is no implementation that reliably takes both actions in the event of a failure. However, there are times where some of these implementations are appropriate.</p>
-<ul>
-<li>Rollback, in the context of our example, means the process unrolls any internal state changes and restarts from the beginning.</li>
-<li>Legend:
-<ul>
-<li>Green Smiley - Both Tasks Complete Successfully</li>
-<li>Half-Filled Circle - Task A Completes Successfully, But not B</li>
-<li>Dead Face - Neither Task Completes Successfully</li>
-<li>Double Click Icon - Task A is Executed More than Once</li>
-<li>Alert Icon - Indeterminate. Can't happen in this context since B is dependent on A. B can't succeed if A doesn't succeed</li>
-</ul>
-</li>
-</ul>
-</aside>
-<a id="a42fbc7c-ab8d-4494-81d4-3eee44833e74"><h1>Retry at the Client</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:ba26557e-ab4c-4bd4-9a2b-4a25386ddaff -->
-<img alt="Avoiding Dual-Writes - The Problem - Table - With Dependency - No Legend.png" src="img/ba26557e-ab4c-4bd4-9a2b-4a25386ddaff.png" />
-</section>
-
-
-<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
 <a id="ce0fced4-51e6-4b23-93bb-83e1fd2f4f23"><h1>Two Generals Variant</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:3f0915c0-114a-4af6-aa84-29dc88598e67 -->
@@ -168,6 +146,28 @@ hardware failures for now.</p>
 <img src="img/e253ab37-dcab-4983-b813-2779d6a93f0f.png" alt="TwoGenerals-800x800.png" />
 </td>
 </tr></table></section>
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
+<aside class="notes"><p>Implementations vs Failure Scenarios - * There is no implementation that reliably takes both actions in the event of a failure. However, there are times where some of these implementations are appropriate.</p>
+<ul>
+<li>Rollback, in the context of our example, means the process unrolls any internal state changes and restarts from the beginning.</li>
+<li>Legend:
+<ul>
+<li>Green Smiley - Both Tasks Complete Successfully</li>
+<li>Half-Filled Circle - Task A Completes Successfully, But not B</li>
+<li>Dead Face - Neither Task Completes Successfully</li>
+<li>Double Click Icon - Task A is Executed More than Once</li>
+<li>Alert Icon - Indeterminate. Can't happen in this context since B is dependent on A. B can't succeed if A doesn't succeed</li>
+</ul>
+</li>
+</ul>
+</aside>
+<a id="a42fbc7c-ab8d-4494-81d4-3eee44833e74"><h1>Retry at the Client</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:ba26557e-ab4c-4bd4-9a2b-4a25386ddaff -->
+<img alt="Avoiding Dual-Writes - The Problem - Table - With Dependency - No Legend.png" src="img/ba26557e-ab4c-4bd4-9a2b-4a25386ddaff.png" />
+</section>
+
 
 <section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
 <a id="11957b1a-6696-440a-b626-e88c740de862"><h1>Two At-A-Time</h1></a>
@@ -684,16 +684,16 @@ managed by using workflow tooling.</p>
 
 
 <section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-<a id="35f6242d-a68d-47a4-a6a4-0f0144095bc2"><h1>Resources</h1></a>
+<a id="ea7e3bd7-8dd9-4c25-b3df-8419adcc2bb5"><h1>Resources</h1></a>
 <!-- Layout:ImageRight -->
-<!-- ContentItem:9a7047ab-029f-45e2-bedf-d04208915c8e -->
+<!-- ContentItem:c5cb5f73-0e2a-4a60-8c1c-cee9af3ae985 -->
 <!-- ContentItem:d14e1172-89d6-7e8e-2129-a7bf35723f5e -->
 
 <table><tr><td style="vertical-align:top;">
-<p><strong>General</strong></p>
+<p><strong>Code</strong></p>
 <ul>
-<li><a href="https://github.com/bsstahl/AvoidingDualWrites">Code Samples</a></li>
-<li><a href="https://azure.microsoft.com/en-us/blog/understanding-and-leveraging-azure-sql-database-sla/">Understanding SQL Azure SLAs</a></li>
+<li><a href="https://github.com/bsstahl/AvoidingDualWrites">Pattern Demos</a></li>
+<li><a href="https://github.com/bsstahl/CTPDemos">CTP Demos</a></li>
 </ul>
 <p><strong>Patterns</strong></p>
 <ul>
@@ -705,7 +705,7 @@ managed by using workflow tooling.</p>
 <p><strong>Tools</strong></p>
 <ul>
 <li><a href="https://docs.microsoft.com/en-us/azure/cosmos-db/change-feed-processor">Cosmos DB Change Feed Processor</a></li>
-<li><a href="https://redis.io/topics/streams-intro">Redis Streams</a></li>
+<li><a href="https://azure.microsoft.com/en-us/blog/understanding-and-leveraging-azure-sql-database-sla/">Understanding SQL Azure SLAs</a></li>
 <li><a href="https://azure.microsoft.com/en-us/services/service-bus/">Azure Service Bus</a></li>
 <li><a href="https://kafka-tutorials.confluent.io/">Kafka</a></li>
 </ul>
