@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title description">
+  <title id="title">Isolation Sequence</title>
+  <desc id="description">A user submits a request to a request service, which updates a database and returns 202 Accepted. In a loop, the database sends changed documents to a message service, which sends a message to an external recipient and records that the message was sent.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8faff"/>
+      <stop offset="1" stop-color="#f1f5fb"/>
+    </linearGradient>
+    <linearGradient id="databaseFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e3edff"/>
+      <stop offset="1" stop-color="#cbdcff"/>
+    </linearGradient>
+    <linearGradient id="cardFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#f6f8fe"/>
+    </linearGradient>
+    <linearGradient id="loopFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eef9f7"/>
+      <stop offset="1" stop-color="#fafdfd"/>
+    </linearGradient>
+    <linearGradient id="blueStroke" gradientUnits="userSpaceOnUse" x1="160" y1="0" x2="760" y2="0">
+      <stop offset="0" stop-color="#597be3"/>
+      <stop offset="1" stop-color="#3554ba"/>
+    </linearGradient>
+    <linearGradient id="tealStroke" gradientUnits="userSpaceOnUse" x1="760" y1="0" x2="1400" y2="0">
+      <stop offset="0" stop-color="#087b75"/>
+      <stop offset="1" stop-color="#24a89a"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-30%" width="140%" height="170%">
+      <feDropShadow dx="0" dy="7" stdDeviation="10" flood-color="#22334d" flood-opacity=".13"/>
+    </filter>
+    <filter id="chipShadow" x="-20%" y="-50%" width="140%" height="220%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#22334d" flood-opacity=".08"/>
+    </filter>
+    <marker id="arrowBlue" markerWidth="24" markerHeight="24" refX="21" refY="12" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M2 3 21 12 2 21 7 12Z" fill="#4263c7" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arrowTeal" markerWidth="24" markerHeight="24" refX="21" refY="12" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M2 3 21 12 2 21 7 12Z" fill="#168b83" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/>
+    </marker>
+    <marker id="originBlue" markerWidth="12" markerHeight="12" refX="6" refY="6" markerUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="4.3" fill="#4263c7" stroke="#fff" stroke-width="2"/>
+    </marker>
+    <marker id="originTeal" markerWidth="12" markerHeight="12" refX="6" refY="6" markerUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="4.3" fill="#168b83" stroke="#fff" stroke-width="2"/>
+    </marker>
+    <style>
+      text { font-family: Inter, "Segoe UI", Arial, sans-serif; }
+      .participant { fill: #20324e; font-size: 16px; font-weight: 650; }
+      .lifeline { stroke: #a4b4cb; stroke-width: 2.3; stroke-dasharray: 5 10; stroke-linecap: round; }
+      .message { fill: #273853; font-size: 15px; font-weight: 600; }
+      .message-chip { fill: #fff; stroke: #dce5f1; stroke-width: 1.3; filter: url(#chipShadow); }
+      .arrow-blue { stroke: url(#blueStroke); stroke-width: 4.2; stroke-linecap: round; fill: none; marker-start: url(#originBlue); marker-end: url(#arrowBlue); }
+      .arrow-teal { stroke: url(#tealStroke); stroke-width: 4.2; stroke-linecap: round; fill: none; marker-start: url(#originTeal); marker-end: url(#arrowTeal); }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#background)"/>
+
+  <rect x="1394" y="43" width="134" height="34" rx="17" fill="#e8eefb"/>
+  <circle cx="1414" cy="60" r="4" fill="#4263c7"/>
+  <text x="1427" y="65" fill="#465b87" font-size="12" font-weight="700" letter-spacing="1.1">SEQUENCE</text>
+
+  <g filter="url(#shadow)" fill="url(#cardFill)" stroke="#cdd9ed" stroke-width="1.8">
+    <rect x="60" y="132" width="200" height="86" rx="16"/>
+    <rect x="360" y="132" width="200" height="86" rx="16"/>
+    <rect x="660" y="132" width="200" height="86" rx="16"/>
+    <rect x="960" y="132" width="200" height="86" rx="16"/>
+    <rect x="1280" y="132" width="240" height="86" rx="16"/>
+  </g>
+  <g fill="none" stroke-width="4" stroke-linecap="round">
+    <path d="M82 133H238 M382 133H538 M682 133H838" stroke="#597be3"/>
+    <path d="M982 133H1138 M1302 133H1498" stroke="#21a294"/>
+  </g>
+
+  <g aria-label="User participant">
+    <circle cx="96" cy="175" r="21" fill="#edf2ff"/>
+    <circle cx="96" cy="168" r="6.3" fill="none" stroke="#4263c7" stroke-width="2"/>
+    <path d="M84 187c1.7-7 5.8-10.5 12-10.5S106.3 180 108 187" fill="none" stroke="#4263c7" stroke-width="2" stroke-linecap="round"/>
+    <text class="participant" x="125" y="181">User</text>
+  </g>
+
+  <g aria-label="Request Service participant">
+    <circle cx="396" cy="175" r="21" fill="#edf2ff"/>
+    <rect x="386" y="165" width="20" height="7" rx="2" fill="none" stroke="#4263c7" stroke-width="1.8"/>
+    <rect x="386" y="177" width="20" height="7" rx="2" fill="none" stroke="#4263c7" stroke-width="1.8"/>
+    <circle cx="390" cy="168.5" r="1" fill="#4263c7"/>
+    <circle cx="390" cy="180.5" r="1" fill="#4263c7"/>
+    <text class="participant" x="425" y="170"><tspan x="425">Request</tspan><tspan x="425" dy="22">Service</tspan></text>
+  </g>
+
+  <g aria-label="Data Store participant">
+    <circle cx="696" cy="175" r="21" fill="#edf2ff"/>
+    <ellipse cx="696" cy="166" rx="10" ry="4.3" fill="url(#databaseFill)" stroke="#4263c7" stroke-width="1.6"/>
+    <path d="M686 166v17c0 2.4 4.5 4.4 10 4.4s10-2 10-4.4v-17" fill="url(#databaseFill)" stroke="#4263c7" stroke-width="1.6"/>
+    <path d="M686 174c0 2.4 4.5 4.4 10 4.4s10-2 10-4.4" fill="none" stroke="#4263c7" stroke-width="1.3"/>
+    <text class="participant" x="725" y="181">Data Store</text>
+  </g>
+
+  <g aria-label="Message Service participant">
+    <circle cx="996" cy="175" r="21" fill="#e8f6f4"/>
+    <path d="M985 167h22v16h-22z" fill="none" stroke="#168b83" stroke-width="1.8" stroke-linejoin="round"/>
+    <path d="m986 168 10 8 10-8" fill="none" stroke="#168b83" stroke-width="1.8" stroke-linejoin="round"/>
+    <text class="participant" x="1025" y="170"><tspan x="1025">Message</tspan><tspan x="1025" dy="22">Service</tspan></text>
+  </g>
+
+  <g aria-label="External Recipient participant">
+    <circle cx="1316" cy="175" r="21" fill="#e8f6f4"/>
+    <circle cx="1316" cy="168" r="6.3" fill="none" stroke="#168b83" stroke-width="2"/>
+    <path d="M1304 187c1.7-7 5.8-10.5 12-10.5s10.3 3.5 12 10.5" fill="none" stroke="#168b83" stroke-width="2" stroke-linecap="round"/>
+    <text class="participant" x="1345" y="170"><tspan x="1345">External</tspan><tspan x="1345" dy="22">Recipient</tspan></text>
+  </g>
+
+  <rect x="72" y="606" width="1456" height="324" rx="16" fill="url(#loopFill)"/>
+  <path d="M72 622a16 16 0 0 1 16-16h124v35H72z" fill="#e8f6f4"/>
+
+  <path class="lifeline" d="M160 218V902 M460 218V902 M760 218V902 M1060 218V902 M1400 218V902"/>
+
+  <g aria-label="Request and acceptance">
+    <line class="arrow-blue" x1="160" y1="286" x2="460" y2="286"/>
+    <rect class="message-chip" x="260" y="260" width="100" height="24" rx="12"/>
+    <text class="message" x="310" y="277" text-anchor="middle">Request</text>
+
+    <line class="arrow-blue" x1="460" y1="366" x2="760" y2="366"/>
+    <rect class="message-chip" x="555" y="340" width="110" height="24" rx="12"/>
+    <text class="message" x="610" y="357" text-anchor="middle">Update</text>
+
+    <line class="arrow-blue" x1="760" y1="446" x2="460" y2="446"/>
+    <rect class="message-chip" x="523" y="420" width="174" height="24" rx="12"/>
+    <text class="message" x="610" y="437" text-anchor="middle">Update Complete</text>
+
+    <line class="arrow-blue" x1="460" y1="526" x2="160" y2="526"/>
+    <rect class="message-chip" x="250" y="500" width="144" height="24" rx="12"/>
+    <text class="message" x="322" y="517" text-anchor="middle">202 Accepted</text>
+  </g>
+
+  <g aria-label="Repeated change processing">
+    <rect x="72" y="606" width="1456" height="324" rx="16" fill="none" stroke="#7ab6af" stroke-width="2.6"/>
+    <path d="M72 622a16 16 0 0 1 16-16h124v35H72z" fill="none" stroke="#7ab6af" stroke-width="2"/>
+    <circle cx="94" cy="624" r="4" fill="#168b83"/>
+    <text x="107" y="629" fill="#16766f" font-size="13" font-weight="750" letter-spacing=".7">LOOP</text>
+
+    <line class="arrow-teal" x1="760" y1="702" x2="1060" y2="702"/>
+    <rect class="message-chip" x="807" y="676" width="206" height="24" rx="12"/>
+    <text class="message" x="910" y="693" text-anchor="middle">Changed Document</text>
+
+    <line class="arrow-teal" x1="1060" y1="782" x2="1400" y2="782"/>
+    <rect class="message-chip" x="1172" y="756" width="116" height="24" rx="12"/>
+    <text class="message" x="1230" y="773" text-anchor="middle">Message</text>
+
+    <line class="arrow-teal" x1="1060" y1="862" x2="760" y2="862"/>
+    <rect class="message-chip" x="833" y="836" width="154" height="24" rx="12"/>
+    <text class="message" x="910" y="853" text-anchor="middle">Message Sent</text>
+  </g>
+
+  <text x="72" y="970" fill="#8390a5" font-size="12" letter-spacing=".5">REQUEST ACCEPTED</text>
+  <path d="M220 966h60" stroke="#c4cedc" stroke-width="1.5"/>
+  <text x="300" y="970" fill="#8390a5" font-size="12" letter-spacing=".5">CHANGE PROCESSING</text>
+</svg>

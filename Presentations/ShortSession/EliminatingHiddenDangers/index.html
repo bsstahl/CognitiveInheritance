@@ -48,12 +48,61 @@
 </tr></table></section>
 
 <section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
+<a id="636059f9-aa9d-4444-b4ec-dd7f62badd98"><h1>Favorite Physicists & Mathematicians</h1></a>
+<!-- Layout:MultiColumn -->
+<!-- ContentItem:30f7e9d2-b154-4895-bed7-2765f7bdc6fe -->
+<!-- ContentItem:8a83be06-76e9-4028-9630-c6a7de92ae99 -->
+<aside class="notes"><p>An up-to-date list is available on <a href="https://cognitiveinheritance.com/Pages/Favorites.html">my blog at https://cognitiveinheritance.com/Pages/Favorites.html</a>
+Please ping me on Mastodon to tell me where I messed-up with this list, or this presentation for that matter. 😉</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<h4 id="favorite-physicists">Favorite Physicists</h4>
+<ol>
+<li>Harold &quot;Hal&quot; Stahl</li>
+<li>Carl Sagan</li>
+<li>Richard Feynman</li>
+<li>Marie Curie</li>
+<li>Nikola Tesla</li>
+<li>Robert Goddard</li>
+<li>Albert Einstein</li>
+<li>Niels Bohr</li>
+<li>Neil deGrasse Tyson</li>
+<li>Edwin Hubble</li>
+</ol>
+<p><em>Other notables</em>: Christiaan Huygens, Michael Faraday, Stephen Hawking, Leonard Susskind</p>
+
+</td>
+<td style="vertical-align:top;">
+<h4 id="favorite-mathematicians">Favorite Mathematicians</h4>
+<ol>
+<li>Ada Lovelace</li>
+<li>Alan Turing</li>
+<li>Tim Berners-Lee</li>
+<li>Isaac Newton</li>
+<li>Emmy Noether</li>
+<li>Johannes Kepler</li>
+<li>René Descartes</li>
+<li>George Boole</li>
+<li>Carl Friedrich Gauss</li>
+<li>Grace Hopper</li>
+</ol>
+<p><em>Other notables</em>: Blaise Pascal, Daphne Koller, Grady Booch, Evelyn Berezin, Pascal Van Hentenryck</p>
+
+</td>
+</tr></table></section>
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
 <a id="3368f6e8-5a63-4b43-99c5-d286e94f19f8"><h1>Two Actions that Result in Changes</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:95571f29-2b79-4b3b-a861-1a9461c93eb7 -->
 <!-- ContentItem:96ad8e5c-06a6-4646-bbfb-84404a8fe6ea -->
-<aside class="notes"><p>Let's keep it as simple as possible and ignore network and
-hardware failures for now.</p>
+<aside class="notes"><p>Let's start with a demo of the simplest possible workflow, where we do only 2 things:</p>
+<ul>
+<li>Send a message</li>
+<li>Update a DB</li>
+</ul>
+<p>We'll use a bus-maintenance domain for this presentation where, when the bus pulls into the garage,
+it sends telemetry data to the system which might need to create a workorder and notify the mfg.</p>
 </aside>
 <table><tr><td style="vertical-align:top;">
 <ul>
@@ -148,28 +197,6 @@ hardware failures for now.</p>
 </tr></table></section>
 
 <section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-<aside class="notes"><p>Implementations vs Failure Scenarios - * There is no implementation that reliably takes both actions in the event of a failure. However, there are times where some of these implementations are appropriate.</p>
-<ul>
-<li>Rollback, in the context of our example, means the process unrolls any internal state changes and restarts from the beginning.</li>
-<li>Legend:
-<ul>
-<li>Green Smiley - Both Tasks Complete Successfully</li>
-<li>Half-Filled Circle - Task A Completes Successfully, But not B</li>
-<li>Dead Face - Neither Task Completes Successfully</li>
-<li>Double Click Icon - Task A is Executed More than Once</li>
-<li>Alert Icon - Indeterminate. Can't happen in this context since B is dependent on A. B can't succeed if A doesn't succeed</li>
-</ul>
-</li>
-</ul>
-</aside>
-<a id="a42fbc7c-ab8d-4494-81d4-3eee44833e74"><h1>Retry at the Client</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:ba26557e-ab4c-4bd4-9a2b-4a25386ddaff -->
-<img alt="Avoiding Dual-Writes - The Problem - Table - With Dependency - No Legend.png" src="img/ba26557e-ab4c-4bd4-9a2b-4a25386ddaff.png" />
-</section>
-
-
-<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
 <a id="11957b1a-6696-440a-b626-e88c740de862"><h1>Two At-A-Time</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:44137a8e-424d-42d5-8af4-efd28828c797 -->
@@ -191,26 +218,6 @@ hardware failures for now.</p>
 <img src="img/43065c72-170a-4000-a11e-96a570dd703b.jpg" alt="Two Things at Once 800x800.jpg" />
 </td>
 </tr></table></section>
-
-<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-<aside class="notes"><ul>
-<li>An &quot;ON&quot; button with a separate &quot;OFF&quot; button</li>
-<li>The Absolute-Value Function <code>ABS(x)</code></li>
-<li>A DB <code>Upsert</code> of the same values</li>
-</ul>
-</aside>
-<a id="41333176-7dc9-484d-8837-4a245d94723a"><h1>Idempotence</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:bc495274-fe68-48c0-91dc-c27a6a3fd911 -->
-<!-- ContentItem:199d695a-412d-4c36-b193-62823de4ecfe -->
-<p>[ īdemˈpōt(ə)nce , ˈēdemˌpōt(ə)nce ]</p>
-<blockquote>
-<p>The ability to execute a task an arbitrary number of times (&gt;1) and have the resulting state of the system be the same as if the task was executed once.</p>
-</blockquote>
-
-<img alt="OnOff_600x400.jpg" src="img/199d695a-412d-4c36-b193-62823de4ecfe.jpg" />
-</section>
-
 
 <section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
 <aside class="notes"><p>ONCE, subject to caveats to follow...</p>
@@ -289,6 +296,24 @@ hardware failures for now.</p>
 
 
 <section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
+<aside class="notes"><p>The simplest thing we can possibly do to make this work well is to make the service idempotent. Unfortunately, it
+is rarely this simple:</p>
+<ul>
+<li>We may not be able to support idempotence</li>
+<li>The dependencies may be out of our control</li>
+<li>Our workflow may be more than just 2 steps</li>
+</ul>
+</aside>
+<a id="09f3fab1-9ce7-49d8-b109-08174e03a5a0">&nbsp;</a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:986286a0-beb0-4a4c-b88e-1b99f8695228 -->
+<!-- ContentItem:fc57196c-eb12-4b1b-8912-5ec0792209e3 -->
+<img alt="Simplest Case - Idempotent Code Snippet.png" src="img/986286a0-beb0-4a4c-b88e-1b99f8695228.png" />
+<img alt="Simplest Case - System States - Idempotent.png" src="img/fc57196c-eb12-4b1b-8912-5ec0792209e3.png" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
 <a id="6434ba76-03e9-4087-89ab-8cf910a09014"><h1>Avoiding Dual-Writes</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:a37b8af0-2846-45ca-bb85-5e4779729c86 -->
@@ -321,12 +346,11 @@ This is, &quot;Save the Context, Save the App&quot;.</p>
 </tr></table></section>
 
 <section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-<aside class="notes"><p>All 3 of the Outbox, CDC and Streaming patterns are what I would consider Isolation patterns. They differ only in implementation detail.</p>
-</aside>
-<a id="8590fc4b-2c74-473c-917d-54bc3a92724e"><h1>Isolation Patterns</h1></a>
+
+<a id="89739fd7-3375-4b6f-a7e5-886ffe8cd15d"><h1>Isolation Patterns</h1></a>
 <!-- Layout:FullPage -->
-<!-- ContentItem:4775d57e-25e4-4d08-8894-023907e98776 -->
-<img alt="Reliable Data Flow.png" src="img/4775d57e-25e4-4d08-8894-023907e98776.png" />
+<!-- ContentItem:10655099-71b5-404d-8e05-655efc8cee70 -->
+<img alt="Isolation-Sequence.svg" src="img/10655099-71b5-404d-8e05-655efc8cee70.svg" />
 </section>
 
 
@@ -349,16 +373,12 @@ This is, &quot;Save the Context, Save the App&quot;.</p>
 
 
 <section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-
-<a id="17169ea5-90fc-4aa2-88c3-f401db7af1b0"><h1>Transactional Outbox Sequence</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:45425647-59b2-4b35-8a35-19418c339591 -->
-<img alt="Outbox-Sequence-800px.png" src="img/45425647-59b2-4b35-8a35-19418c339591.png" />
-</section>
-
-
-<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-<aside class="notes"><p>Outbox guarantees every unique update will be seen by the downstream consumers</p>
+<aside class="notes"><ul>
+<li><p>Outbox guarantees every unique update will be seen by the downstream consumers</p>
+</li>
+<li><p>It does not guarantee exactly-once delivery to the downstream consumers (at-least once)</p>
+</li>
+</ul>
 </aside>
 <a id="5c533090-2711-49c9-8b4c-5ea4a3805238"><h1>Outbox Pattern</h1></a>
 <!-- Layout:FullPage -->
@@ -402,16 +422,11 @@ This is, &quot;Save the Context, Save the App&quot;.</p>
 
 
 <section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-
-<a id="85801b36-a4f9-4e32-91bd-76b6854442b5"><h1>CDC Sequence</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:18c9e1c4-dfeb-407b-81cd-0273120ab16d -->
-<img alt="CDC-Sequence-800px.png" src="img/18c9e1c4-dfeb-407b-81cd-0273120ab16d.png" />
-</section>
-
-
-<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-
+<aside class="notes"><ul>
+<li>I am a huge fan of the CosmosDB Change-Feed</li>
+<li>Many other DBs support CDC to some degree</li>
+</ul>
+</aside>
 <a id="41fe695a-cd44-4be0-bcfe-cd9b7a72686f"><h1>Cosmos CDC</h1></a>
 <!-- Layout:FullPage -->
 <!-- ContentItem:d4b7b5ee-f5e9-426a-8d6d-251744b56baf -->
@@ -421,11 +436,12 @@ This is, &quot;Save the Context, Save the App&quot;.</p>
 <li>Persist quickly</li>
 <li>Easy to scale</li>
 <li>Easy to fanout</li>
+<li>Infrastructure based</li>
 </ul>
 </li>
 <li><p>Disadvantages</p>
 <ul>
-<li>Not guaranteed to capture every update</li>
+<li>May not capture every update</li>
 <li>Still susceptible to errors on commit</li>
 </ul>
 </li>
@@ -445,15 +461,6 @@ This is, &quot;Save the Context, Save the App&quot;.</p>
 <li>The stream is used to trigger all actions</li>
 </ul>
 
-</section>
-
-
-<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-
-<a id="219744bd-6ad1-4fc3-b4bc-a532320675c6"><h1>Streaming Data Sequence</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:3fc691c7-057f-4f70-9f92-d5883e01631e -->
-<img alt="Streaming-Sequence-800px.png" src="img/3fc691c7-057f-4f70-9f92-d5883e01631e.png" />
 </section>
 
 
@@ -515,25 +522,6 @@ This is, &quot;Save the Context, Save the App&quot;.</p>
 </tr></table></section>
 
 <section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-
-<a id="b984d3af-b8f0-4af4-b4b0-9fa2475be3a5"><h1>Avoiding Commit Errors</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:1fa5fc72-ad5b-4d92-b261-3b85463b47ec -->
-<ul>
-<li>These patterns get very close to 4-9's</li>
-<li>Use <strong>Idempotence</strong> whenever possible</li>
-<li>Exactly-Once Delivery may be possible
-<ul>
-<li>Idempotent ingress (i.e. to Kafka)</li>
-<li>Atomic updates of changes alongside queue offsets</li>
-</ul>
-</li>
-</ul>
-
-</section>
-
-
-<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
 <a id="b3c1e9ff-f00d-407b-b23e-f2a5a0d734ec"><h1>The Saga Pattern</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:b4750bbb-c0d1-4396-a470-140d03bb66b3 -->
@@ -577,7 +565,7 @@ managed by using workflow tooling.</p>
 
 
 <section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-<aside class="notes"><p>Whenever it is possible, I prefer a hybrid approach that takes advantage of the best of Saga Choreography, CDC and Streaming.</p>
+<aside class="notes"><p>Whenever possible, I prefer a Choreography of services isolated with CDC and Streaming.</p>
 </aside>
 <a id="e294dd55-5f13-459e-8c14-96e190c904d2"><h1>My Ideal Architecture</h1></a>
 <!-- Layout:FullPage -->
@@ -587,13 +575,37 @@ managed by using workflow tooling.</p>
 
 
 <section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-
-<a id="1d539a6a-09f2-497c-aaf6-36729c776c6b"><h1>Most Important Takeaway</h1></a>
+<aside class="notes"><p>Sagas coordinate multi-step work that may need compensation. Other patterns organize how work is routed, distributed, and combined. They help structure coordination, but do not make separate service updates atomic.</p>
+</aside>
+<a id="e5beffc8-b1c6-4bda-8779-892494fb10e2"><h1>Coordination Patterns Beyond Sagas</h1></a>
 <!-- Layout:FullPage -->
-<!-- ContentItem:e94ceb75-c970-4ef4-82cf-9725e85da2ef -->
-<blockquote>
-<p><strong>Never</strong> &quot;add on&quot; inside an execution context</p>
-</blockquote>
+<!-- ContentItem:43945f55-aa33-4089-90b2-de360d55b0a4 -->
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>How it coordinates work</th>
+<th>Useful when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Routing Slip</td>
+<td>A message carries the steps to visit. Each service does its work and routes it onward.</td>
+<td>The route varies by request or by earlier results.</td>
+</tr>
+<tr>
+<td>Actor Model</td>
+<td>Independent actors own state and communicate through messages.</td>
+<td>Many stateful tasks run concurrently and need isolation.</td>
+</tr>
+<tr>
+<td>Try-Confirm-Cancel</td>
+<td>Reserve resources across services, then confirm or cancel the reservations.</td>
+<td>Multiple services must secure resources before committing a business operation.</td>
+</tr>
+</tbody>
+</table>
 
 </section>
 
@@ -684,9 +696,9 @@ managed by using workflow tooling.</p>
 
 
 <section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-<a id="ea7e3bd7-8dd9-4c25-b3df-8419adcc2bb5"><h1>Resources</h1></a>
+<a id="eccb8821-0142-459e-b471-bb5a4d69be86"><h1>Resources</h1></a>
 <!-- Layout:ImageRight -->
-<!-- ContentItem:c5cb5f73-0e2a-4a60-8c1c-cee9af3ae985 -->
+<!-- ContentItem:d4216036-0e1e-4b2d-b755-c856c33ce2ab -->
 <!-- ContentItem:d14e1172-89d6-7e8e-2129-a7bf35723f5e -->
 
 <table><tr><td style="vertical-align:top;">
