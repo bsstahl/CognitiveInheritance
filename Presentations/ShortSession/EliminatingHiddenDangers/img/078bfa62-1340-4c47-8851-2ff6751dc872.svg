@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="380" viewBox="0 130 800 380" role="img" aria-labelledby="title description">
+  <title id="title">Data streaming: persist the message first, then act</title>
+  <desc id="description">A durable topic, illustrated using Azure Service Bus, retains an OrderConfirmed message. A single background consumer reads the message asynchronously and runs a downstream action.</desc>
+  <defs>
+    <marker id="actionArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#fcd34d"/>
+    </marker>
+    <style>
+      text { font-family: 'Segoe UI', Arial, sans-serif; fill: #f8fafc; }
+      .heading { font-size: 24px; font-weight: 600; }
+      .label { font-size: 21px; }
+      .small { font-size: 18px; }
+      .mono { font-family: Consolas, monospace; font-size: 18px; }
+    </style>
+  </defs>
+
+  <rect x="20" y="146" width="760" height="174" rx="20" fill="#111827" stroke="#94a3b8" stroke-width="2"/>
+  <text x="44" y="182" class="heading">Durable topic</text>
+  <text x="756" y="182" text-anchor="end" class="small">Example: Azure Service Bus</text>
+  <rect x="46" y="202" width="708" height="58" rx="8" fill="#122a35" stroke="#67e8f9" stroke-width="2"/>
+  <text x="400" y="239" text-anchor="middle" class="mono">OrderConfirmed { orderId: "1042" }</text>
+  <text x="400" y="294" text-anchor="middle" class="label" style="fill:#67e8f9">1. Retain durably before acknowledging the publish</text>
+
+  <path d="M595 320 V426" fill="none" stroke="#fcd34d" stroke-width="3" marker-end="url(#actionArrow)"/>
+  <text x="575" y="377" text-anchor="end" class="label" style="fill:#fcd34d">2. Read messages asynchronously</text>
+  <rect x="180" y="432" width="550" height="64" rx="12" fill="#302b20" stroke="#fcd34d" stroke-width="2"/>
+  <text x="455" y="460" text-anchor="middle" class="heading">Background consumer</text>
+  <text x="455" y="484" text-anchor="middle" class="small">Run downstream action</text>
+</svg>
