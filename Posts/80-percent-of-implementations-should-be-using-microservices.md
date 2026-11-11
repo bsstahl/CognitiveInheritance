@@ -109,7 +109,17 @@ Every monolithic deployment increases the size of the change that must be truste
 * Teams batch changes to reduce deployment frequency, which can increase the risk of each release
 * "Never deploy on Friday" becomes policy because the operational consequences are difficult to contain
 
-For a broader comparison, including the testing, complexity, and overhead tradeoffs, see {PostLink:monoliths-vs-microservices-monolith-first-debate|Monoliths vs. Microservices: The Monolith-First Debate}.
+### “Our team can’t handle microservices”
+
+That may describe the team’s current experience, but it does not, by itself, determine which architecture the system needs. “We can’t” may describe an addressable skills gap, or it may describe a genuine organizational capacity constraint; those are not the same problem.
+
+If the team lacks the skills to build and operate reliable services, the answer is to close that gap: teach the patterns, provide a platform and guardrails, and build experience incrementally. “We don’t know how yet” is a reason to invest in learning, not a permanent architectural principle. The people responsible for the system also have a responsibility to help the team become capable of operating it reliably.
+
+An organization that cannot provide the necessary training, time, staffing, platform, or operational support presents a different problem. If the team cannot realistically own the reliability and operational consequences of microservices, that is a genuine organizational capacity constraint, not merely a skills gap to be dismissed. It may make a monolith the better choice for now, but the decision should say so explicitly and account for the consequences. “Our team can’t handle microservices” is not a sufficient rebuttal until we identify which problem we actually have—and address the one that is addressable.
+
+I suspect that we’ll all agree—in principle, at least—that any argument reducing the issue to “the team members are too dumb to handle it” is ridiculous and can be dismissed outright. Unfortunately, I still hear arguments like that, and I will always shut them down.
+
+In a future article, I’ll take a broader look at these tradeoffs, including testing, complexity, and operational overhead.
 
 ## When to Consider a Monolith
 
@@ -138,6 +148,6 @@ Every architectural decision compounds over time. With microservices:
 
 The case for microservices is not that monoliths are always wrong. It is that explicit service boundaries and asynchronous communication make reliability concerns part of the design rather than an afterthought. For many systems, that makes microservices the better default—provided the team is prepared to operate them well.
 
-That choice still has costs, and architecture must fit both the application and the team. For a broader comparison of those tradeoffs, see {PostLink:monoliths-vs-microservices-monolith-first-debate|Monoliths vs. Microservices: The Monolith-First Debate}.
+That choice still has costs, and architecture must fit both the application and the team.
 
 When reliability and independent change matter, microservices can provide a stronger starting point, but the architecture does not provide those properties automatically. Teams still need reliable messaging, deliberate failure handling, and sufficient observability to realize the benefits.

@@ -7,7 +7,7 @@ categories:
 - Development
 menuorder: 0
 id: aa9ac586-6f3d-41ca-930c-740a102fccac
-title: Monoliths vs. Microservices: The Monolith-First Debate
+title: "Monoliths vs. Microservices: The Monolith-First Debate"
 description: A closer look at monolith-first arguments, including coupling, testing, deployment risk, complexity, and the cost of distributed systems.
 teaser:
 ispublished: false
