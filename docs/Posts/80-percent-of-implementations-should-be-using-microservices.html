@@ -162,16 +162,20 @@
 <li>You have a very small team (1-2 developers) with no plans to expand</li>
 <li>The application has extreme latency or consistency requirements that override reliability concerns
 <ul>
-<li>Note: This is only the case when the extreme requirements are REAL. Many users think they need these types of latency or consistency guarantees when they really don't. The situations where these are necessary in the typical enterprise world are vanishingly rare.</li>
+<li>This is only the case when the extreme requirements are <strong>REAL</strong>. Many users think they need these types of latency or consistency guarantees when they really don't. The situations where these are necessary in the typical enterprise world are vanishingly rare.</li>
 </ul>
 </li>
-<li>Downtime is acceptable and won't impact users or business operations</li>
+<li>Downtime is acceptable and won't impact users or business operations
+<ul>
+<li>That is, if a problem were to occur late Friday afternoon, would it be ok for it to wait until Monday to be fixed? If not, a monolith probably doesn't provide the needed reliability profile.</li>
+</ul>
+</li>
 </ul>
 <p>OR</p>
 <ul>
 <li>The application is a <strong>true proof-of-concept that will be discarded</strong></li>
 </ul>
-<p>If you're unsure, you probably need microservices. Uncertainty about future requirements is exactly why you need failure isolation.</p>
+<p>If you're unsure, you probably need microservices. Uncertainty about future requirements is a very good reason for requiring strong failure isolation.</p>
 <h2>The Reliability Dividend</h2>
 <p>Every architectural decision compounds over time. With microservices:</p>
 <ul>
