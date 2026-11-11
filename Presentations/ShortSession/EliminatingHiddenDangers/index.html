@@ -608,42 +608,6 @@ it's output is being used.</p>
 
 
 <section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-<aside class="notes"><p>Sagas coordinate multi-step work that may need compensation. Other patterns organize how work is routed, distributed, and combined. They help structure coordination, but do not make separate service updates atomic.</p>
-</aside>
-<a id="e5beffc8-b1c6-4bda-8779-892494fb10e2"><h1>Coordination Patterns Beyond Sagas</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:43945f55-aa33-4089-90b2-de360d55b0a4 -->
-<table>
-<thead>
-<tr>
-<th>Pattern</th>
-<th>How it coordinates work</th>
-<th>Useful when</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Routing Slip</td>
-<td>A message carries the steps to visit. Each service does its work and routes it onward.</td>
-<td>The route varies by request or by earlier results.</td>
-</tr>
-<tr>
-<td>Actor Model</td>
-<td>Independent actors own state and communicate through messages.</td>
-<td>Many stateful tasks run concurrently and need isolation.</td>
-</tr>
-<tr>
-<td>Try-Confirm-Cancel</td>
-<td>Reserve resources across services, then confirm or cancel the reservations.</td>
-<td>Multiple services must secure resources before committing a business operation.</td>
-</tr>
-</tbody>
-</table>
-
-</section>
-
-
-<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
 <a id="b531dcbd-3b17-496e-a0dc-1b7e0707fd8c"><h1>Summary</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:4f781b4f-8b3c-4aff-af81-28b4d8d64b9b -->
@@ -675,72 +639,9 @@ it's output is being used.</p>
 </tr></table></section>
 
 <section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-
-<a id="4326f042-fc5c-4e2f-8976-e57731c3cbd0"><h1>Appendix A - Uptime Metrics</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:690c2aba-5144-4131-8b5f-e0869eae0d52 -->
-<ul>
-<li><p>3-9's (unimportant)</p>
-<ul>
-<li>99.9% uptime</li>
-<li>1 outage second in 1000</li>
-<li>~ 43 min / month</li>
-</ul>
-</li>
-<li><p>4-9's (important)</p>
-<ul>
-<li>99.99% uptime</li>
-<li>1 outage second in 10,000</li>
-<li>~ 4.3 min / month</li>
-</ul>
-</li>
-<li><p>5-9's (critical)</p>
-<ul>
-<li>99.999% uptime</li>
-<li>1 outage second in 100,000</li>
-<li>~ 0.43 min (26 sec) / month</li>
-</ul>
-</li>
-</ul>
-
-</section>
-
-
-<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-
-<a id="57b6188a-bb92-4584-b620-2c9faad1069b"><h1>Appendix B - Delivery Guarantees</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:2e544475-a2cb-4782-b648-2901fe4a3e20 -->
-<ul>
-<li><p>At-Least Once</p>
-<ul>
-<li>Every messages will be delivered 1+ times</li>
-<li>The vast majority of message systems make this guarantee</li>
-</ul>
-</li>
-<li><p>At-Most once</p>
-<ul>
-<li>Every message will be delivered 0-1 times</li>
-<li>i.e. Logging</li>
-</ul>
-</li>
-<li><p>Exactly once</p>
-<ul>
-<li>Every message will be delivered 1 and only 1 time</li>
-<li>Very difficult and expensive</li>
-<li>Limited usefulness while maintaining this guarantee</li>
-<li>Combination of idempotent input and a downstream transaction</li>
-</ul>
-</li>
-</ul>
-
-</section>
-
-
-<section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-<a id="4e3b407d-6356-4574-aeb5-2f10c69039a8"><h1>Resources</h1></a>
+<a id="2bc13370-40dc-4c45-89d4-e1bf7037b8b2"><h1>Resources</h1></a>
 <!-- Layout:ImageRight -->
-<!-- ContentItem:d09249da-43e2-4cfa-b9d1-102bdc9d29a8 -->
+<!-- ContentItem:1d5471be-7e56-4e4f-967e-f794d6e3f691 -->
 <!-- ContentItem:d14e1172-89d6-7e8e-2129-a7bf35723f5e -->
 
 <table><tr><td style="vertical-align:top;">
@@ -751,6 +652,7 @@ it's output is being used.</p>
 </ul>
 <p><strong>Patterns</strong></p>
 <ul>
+<li><a href="https://cognitiveinheritance.com/Posts/80-percent-of-implementations-should-be-using-microservices.html">Microservices</a></li>
 <li><a href="https://engineering.razorpay.com/achieving-reliable-dual-writes-in-distributed-systems-cb9ff3b9bfc1">Transactional Outbox</a></li>
 <li><a href="https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/about-change-data-capture-sql-server?view=sql-server-ver15">SQL Change-Data-Capture</a></li>
 <li><a href="https://www.dataversity.net/what-is-data-streaming-a-data-architects-guide/">What is Data Streaming</a></li>
@@ -761,7 +663,6 @@ it's output is being used.</p>
 <li><a href="https://docs.microsoft.com/en-us/azure/cosmos-db/change-feed-processor">Cosmos DB Change Feed Processor</a></li>
 <li><a href="https://azure.microsoft.com/en-us/blog/understanding-and-leveraging-azure-sql-database-sla/">Understanding SQL Azure SLAs</a></li>
 <li><a href="https://azure.microsoft.com/en-us/services/service-bus/">Azure Service Bus</a></li>
-<li><a href="https://kafka-tutorials.confluent.io/">Kafka</a></li>
 </ul>
 
 </td>
