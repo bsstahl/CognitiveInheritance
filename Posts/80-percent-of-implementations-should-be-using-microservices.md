@@ -24,7 +24,7 @@ Lately, we are often advised to "start with a well-abstracted monolith". This, i
 
 The fundamental problem with starting with a monolith is that it encourages many of the wrong patterns from day one. Monoliths make it far too easy to accidentally depend on full consistency rather than embracing eventual consistency. Most difficult race conditions I've encountered are a result of not embracing eventual consistency from the beginning. The "well-abstracted monolith" is a myth – you can't abstract away the fundamental reliability problems that come from synchronous, fully-consistent thinking.
 
-As the {PostLink:critical-questions-about-microservice|Critical Questions About Microservices} framework shows, reliability requires addressing Context, Consistency, Contract, Chaos, Competencies, and Coalescence from the start. It is very difficult to retrofit the results of these critical conversations into a monolith after the fact.
+The six-part {PostLink:critical-cs-of-microservices-1of6-context|Critical C's of Microservices} series explores the conversations behind reliable event-driven systems: {PostLink:critical-cs-of-microservices-1of6-context|Context}, {PostLink:critical-cs-of-microservices-2of6-consistency|Consistency}, {PostLink:critical-cs-of-microservices-3of6-contract|Contract}, {PostLink:critical-cs-of-microservices-4of6-chaos|Chaos}, {PostLink:critical-cs-of-microservices-5of6-competencies|Competencies}, and {PostLink:critical-cs-of-microservices-6of6-coalescence|Coalescence}. The companion {PostLink:critical-questions-about-microservice|Critical Questions About Microservices} article gathers the questions in one place; this article focuses on why microservices can be a sensible default.
 
 ## Simplicity Through Natural Boundaries
 
@@ -41,30 +41,11 @@ One of the most compelling arguments for microservices is the inherent reliabili
 * Recovery can occur without system-wide impact
 * Circuit breakers can protect dependent services
 
-You can't retrofit failure isolation into a monolith. As outlined in the Critical C's Chaos principle, teams must ask: "How will we handle the inability to reach a dependency?" With microservices, the answer is built into the architecture.
+Service boundaries can limit the impact of a failure, but they do not guarantee isolation on their own. Teams still need to decide how the system will behave when a dependency is unavailable.
 
 ### 2. Reliability Through Eventual Consistency
 
 One of the key paradigm shifts in microservices architecture is embracing eventual consistency. While this concept might seem challenging at first, it often better reflects real-world business processes. Monoliths trick you into synchronous thinking, creating brittle systems that fail catastrophically.
-
-<!-- 
-EDITORIAL NOTES - "The Power of Eventual Consistency" Section:
-
-STRENGTHS:
-* Car repair shop analogy is highly effective - makes eventual consistency concept tangible
-* Async/await critique shows sophisticated understanding of implementation challenges
-* Successfully bridges abstract theory with practical programming concerns
-* Strong support for main thesis by reframing eventual consistency as natural
-
-IMPROVEMENT OPPORTUNITIES (TODO):
-* Add smoother transition from bullet points to paragraph text
-* Consider adding concrete code example to illustrate "sitting in the repair shop" anti-pattern
-* Potentially expand the car repair analogy given its effectiveness
-
-OVERALL: One of the stronger sections - preserve and potentially enhance the analogy.
-
-Additional note: This section is one of the key reasons, maybe it should be up higher?
--->
 
 It is only people that tend to want full-consistency, the processes don't care.
 
@@ -76,8 +57,6 @@ But here's the hidden benefit: **Eventually consistent systems using reliable me
 
 Could a monolith use these same messaging patterns? Technically, yes. But monoliths don't make this pattern a first-class citizen. In a monolith, it's far easier to make a direct method call than to set up messaging infrastructure. Microservices, by their very nature, push you toward these resilient patterns from the start. The path of least resistance in microservices leads to self-healing systems; in monoliths, it leads to brittle, synchronous coupling.
 
-This aligns with the Critical C's Consistency conversations: "What patterns and tools will we use to create systems that support reliable, eventually consistent operations?"
-
 ### 3. Scalability as Operational Reliability
 
 Microservices enable precise scaling of specific functionality, preventing system-wide performance degradation:
@@ -87,7 +66,7 @@ Microservices enable precise scaling of specific functionality, preventing syste
 * Cost optimization is more granular
 * Performance bottlenecks are easier to identify and address
 
-Following the Coalescence principle, teams need unified logging and traceability to monitor these scaling behaviors and ensure operational reliability.
+Scalability is only one of the benefits of event-driven microservices; see {PostLink:microservices-not-just-about-scale|Microservices - Not Just About Scalability} for the broader case.
 
 ### 4. Team Autonomy as Deployment Reliability
 
@@ -97,8 +76,6 @@ Modern development teams thrive when they can work independently. More important
 * Deployment cycles are shorter and lower risk
 * Technology choices can be optimized per service
 * Parallel development becomes more natural
-
-The Contract principle ensures teams ask: "How will we isolate our internal data representations from those of our downstream consumers?" This isolation is impossible in a monolith.
 
 ## Why "Start with a Monolith" Fails
 
@@ -123,8 +100,6 @@ In monoliths, coupling spreads through the path of least resistance:
 
 **This is why coupling creep is so insidious**: Each individual decision seems reasonable. Each shortcut saves time. Each optimization improves performance. But collectively, they create an inescapable web of dependencies that makes the eventual refactoring to microservices nearly impossible.
 
-This fundamentally violates the Contract principle – you can't "isolate internal data representations" when everything shares the same memory space, the same database transactions, and the same deployment lifecycle.
-
 ### The Refactoring Myth
 
 You won't refactor to microservices when you need to – you'll be too busy fighting fires. The statistics are clear: most "temporary" monoliths become permanent technical debt. When your system is down at 3am, nobody's thinking about architectural improvements. **And thanks to coupling creep, even if you had time, the refactoring would be nearly impossible.**
@@ -135,7 +110,7 @@ Abstractions without process boundaries are just prettier failure points. You ca
 
 ### The Technical Debt Spiral
 
-Every monolithic "temporary solution" becomes permanent. As the Context principle warns, business processes implemented unreliably become normalized. Teams must ask: "What processes will we implement to track and manage the technical debt of having business processes implemented in a less-reliable way?"
+Every monolithic "temporary solution" can become permanent. The longer these compromises remain, the harder they are to unwind.
 
 ### The Testing Bottleneck
 
@@ -146,8 +121,6 @@ Monolithic testing becomes a reliability nightmare:
 * Integration tests become the only "real" tests
 * Slow tests discourage frequent deployments, increasing batch size and risk
 
-The Chaos principle asks: "How will we expose possible sources of failures during pre-deployment testing?" In a monolith, the answer is often "we can't."
-
 ### The Deployment Fear
 
 Every monolithic deployment is a reliability gamble:
@@ -156,8 +129,6 @@ Every monolithic deployment is a reliability gamble:
 * Rollbacks affect the entire system, not just the problem area
 * Teams batch changes to reduce deployment frequency, paradoxically increasing risk
 * "Never deploy on Friday" becomes policy because weekends are for outages
-
-This directly contradicts the Coalescence principle's need to "identify, as quickly as possible, when a deployment has had a negative impact."
 
 ## Addressing the Monolith Advocates
 
@@ -220,51 +191,6 @@ Every architectural decision compounds over time. With microservices:
 * Every asynchronous pattern is a cascading failure prevented
 * Every reliable messaging pattern enables self-healing – another 3am call avoided
 
-These benefits align with all six Critical C's:
-
-- **Context**: Proper event sourcing and idempotency
-- **Consistency**: Embracing eventual consistency patterns
-- **Contract**: Well-defined service boundaries
-- **Chaos**: Built-in failure handling
-- **Competencies**: Leveraging platform capabilities
-- **Coalescence**: Unified observability from the start
-
-## Critical Conversations for Reliability
-
-<!-- TODO: Expand this section with specific questions from each Critical C that teams should discuss when starting with microservices -->
-
-Before building your microservices architecture, have these critical conversations:
-
-### Context Conversations
-
-* What database technologies will we use to create downstream events?
-* Which services can be made idempotent to improve reliability?
-
-### Consistency Conversations  
-
-* How will we prevent demands for synchronous consistency from creeping in?
-* How will we identify delays in reaching eventual consistency?
-
-### Contract Conversations
-
-* What procedures will monitor our service contracts for compatibility?
-* How will we version our APIs to maintain backward compatibility?
-
-### Chaos Conversations
-
-* How will we handle duplicate or out-of-order messages?
-* How will we expose failures before they impact users?
-
-### Competency Conversations
-
-* What are our core competencies vs. what should we buy?
-* Which platform capabilities can we leverage?
-
-### Coalescence Conversations
-
-* How quickly can we identify when a deployment has negative impact?
-* What observability tools will give us system-wide visibility?
-
 ## Transitioning from Monolith to Microservices
 
 Many organizations face the challenge of transitioning existing monolithic applications to microservices. While this process can be complex, it's often necessary and can be managed effectively:
@@ -282,8 +208,6 @@ Many organizations face the challenge of transitioning existing monolithic appli
 * Identify natural service boundaries
 * Use event-driven patterns for integration
 * Implement robust monitoring early
-
-<!-- TODO: Add section on specific reliability patterns (circuit breakers, retries, timeouts, bulkheads) organized by Critical C's -->
 
 ## Conclusion
 
