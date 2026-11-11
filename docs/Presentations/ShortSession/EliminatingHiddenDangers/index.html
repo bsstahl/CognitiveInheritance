@@ -373,6 +373,10 @@ This is, &quot;Save the Context, Save the App&quot;.</p>
 
 
 <section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
+<a id="5c533090-2711-49c9-8b4c-5ea4a3805238"><h1>Outbox Pattern</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:5d82c5d7-a633-447f-bce6-1f53567dc1a5 -->
+<!-- ContentItem:624924ab-b242-4971-be13-680a0a3ab0fe -->
 <aside class="notes"><ul>
 <li><p>Outbox guarantees every unique update will be seen by the downstream consumers</p>
 </li>
@@ -380,13 +384,11 @@ This is, &quot;Save the Context, Save the App&quot;.</p>
 </li>
 </ul>
 </aside>
-<a id="5c533090-2711-49c9-8b4c-5ea4a3805238"><h1>Outbox Pattern</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:5d82c5d7-a633-447f-bce6-1f53567dc1a5 -->
+<table><tr><td style="vertical-align:top;">
 <ul>
 <li><p>Advantages</p>
 <ul>
-<li>Persist quickly</li>
+<li>Persist first, then act</li>
 <li>Captures every update</li>
 <li>Uses familiar tech</li>
 </ul>
@@ -395,15 +397,22 @@ This is, &quot;Save the Context, Save the App&quot;.</p>
 <ul>
 <li>Hard to scale</li>
 <li>Harder to fanout than other patterns</li>
+<li>Adds weight to the persistence (trx)</li>
 <li>Uses DB as a queue</li>
-<li>Adds weight to the persistance (trx)</li>
-<li>Still susceptible to errors on commit</li>
+</ul>
+</li>
+<li><p>Delivery Types</p>
+<ul>
+<li>Typically <em>at-least once</em> delivery</li>
 </ul>
 </li>
 </ul>
 
-</section>
-
+</td>
+<td style="text-align: left;">
+<img src="img/624924ab-b242-4971-be13-680a0a3ab0fe.svg" alt="TransactionalOutbox-Database-800px.svg" />
+</td>
+</tr></table></section>
 
 <section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
 <aside class="notes"><p>Notice: Same goal as Outbox.</p>
@@ -422,18 +431,17 @@ This is, &quot;Save the Context, Save the App&quot;.</p>
 
 
 <section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-<aside class="notes"><ul>
-<li>I am a huge fan of the CosmosDB Change-Feed</li>
-<li>Many other DBs support CDC to some degree</li>
-</ul>
-</aside>
 <a id="41fe695a-cd44-4be0-bcfe-cd9b7a72686f"><h1>Cosmos CDC</h1></a>
-<!-- Layout:FullPage -->
+<!-- Layout:ImageRight -->
 <!-- ContentItem:d4b7b5ee-f5e9-426a-8d6d-251744b56baf -->
+<!-- ContentItem:0595294f-8f9c-4e1d-8b6b-ee75ea076695 -->
+<aside class="notes"><p>Cosmos DB exposes committed item changes through its managed change feed. The diagram represents that feed as a logical database-managed change log, not a second table written by the application or direct access to a physical transaction log. A background consumer reads changes asynchronously and runs the downstream action after the database write has committed. Unlike the outbox pattern, the application does not insert a separate message alongside the business update. Which changes are available depends on the change-feed mode, so this does not imply that every intermediate update is captured. Many other databases offer change-data-capture mechanisms with similar goals.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
 <ul>
 <li><p>Advantages</p>
 <ul>
-<li>Persist quickly</li>
+<li>Persist first, then act</li>
 <li>Easy to scale</li>
 <li>Easy to fanout</li>
 <li>Infrastructure based</li>
@@ -441,14 +449,21 @@ This is, &quot;Save the Context, Save the App&quot;.</p>
 </li>
 <li><p>Disadvantages</p>
 <ul>
-<li>May not capture every update</li>
-<li>Still susceptible to errors on commit</li>
+<li>Some implementations may not capture every update</li>
+</ul>
+</li>
+<li><p>Delivery Types</p>
+<ul>
+<li>Typically <em>at-least once</em> delivery</li>
 </ul>
 </li>
 </ul>
 
-</section>
-
+</td>
+<td style="text-align: left;">
+<img src="img/0595294f-8f9c-4e1d-8b6b-ee75ea076695.svg" alt="CosmosDB-ChangeFeed-800px.svg" />
+</td>
+</tr></table></section>
 
 <section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
 
@@ -468,7 +483,7 @@ This is, &quot;Save the Context, Save the App&quot;.</p>
 <a id="bbba5465-b0af-41e4-86da-a8c03abffc54"><h1>Data Streaming</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:c11b35ab-46cc-4c06-80b9-b5b45d2309ef -->
-<!-- ContentItem:7d5f581d-34a5-4ad2-8eec-11cbaa7c581f -->
+<!-- ContentItem:078bfa62-1340-4c47-8851-2ff6751dc872 -->
 
 <table><tr><td style="vertical-align:top;">
 <ul>
@@ -482,15 +497,19 @@ This is, &quot;Save the Context, Save the App&quot;.</p>
 </li>
 <li><p>Disadvantages</p>
 <ul>
-<li>Reliability is subject to persistance of the implementation</li>
-<li>Still susceptible to errors on commit</li>
+<li>Reliability is subject to persistence of the implementation</li>
+</ul>
+</li>
+<li><p>Delivery Types</p>
+<ul>
+<li>Typically <em>at-least once</em> delivery</li>
 </ul>
 </li>
 </ul>
 
 </td>
 <td style="text-align: left;">
-<img src="img/7d5f581d-34a5-4ad2-8eec-11cbaa7c581f.png" alt="StreamingInMotion-800x800.png" />
+<img src="img/078bfa62-1340-4c47-8851-2ff6751dc872.svg" alt="DataStreaming-DurableTopic-800px.svg" />
 </td>
 </tr></table></section>
 
@@ -499,14 +518,21 @@ This is, &quot;Save the Context, Save the App&quot;.</p>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:6d89e4d2-2ec0-4dfc-85d4-346c3fe76cac -->
 <!-- ContentItem:59ac040f-5264-49b5-9846-8a067137b582 -->
-<aside class="notes"><p>The patterns all solve the same reliability problem: once work is split across independent steps, you must protect against commit-time failure and repeated delivery.</p>
+<aside class="notes"><p>Our friends at Confluent like to float the idea that using these patterns with their
+tooling, we can achieve exactly once delivery. That depends a lot on how much of
+their ecosystem you are willing to use. However, even when the claim holds, it comes
+at the cost of additional complexity, tighter constraints, and a more
+demanding operational model.</p>
+<p>I have yet to run across a use-case where exactly once delivery was strictly necessary.
+It might seem like it at 1st, but once we work at it, and evaluate the costs, I have
+always found &quot;at-least once&quot; delivery to be sufficient.</p>
 </aside>
 <table><tr><td style="vertical-align:top;">
 <ul>
 <li>Persist the data first - then act on it</li>
 <li>CDC &amp; streaming are easy to fan out to N tasks</li>
 <li>Outbox &amp; streaming can provide strong guarantees</li>
-<li>Most are still susceptible to errors on commit</li>
+<li>All are typically <em>at-least once</em> delivery</li>
 </ul>
 <hr />
 <ul>
@@ -522,13 +548,11 @@ This is, &quot;Save the Context, Save the App&quot;.</p>
 </tr></table></section>
 
 <section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-<a id="b3c1e9ff-f00d-407b-b23e-f2a5a0d734ec"><h1>The Saga Pattern</h1></a>
+<a id="b3c1e9ff-f00d-407b-b23e-f2a5a0d734ec"><h1>Coordination - The Saga Patterns</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:b4750bbb-c0d1-4396-a470-140d03bb66b3 -->
 <!-- ContentItem:8a250b07-1f5f-4853-a94a-f35e712f492f -->
-<aside class="notes"><p>Sagas are workflows. As such, they are probably best
-managed by using workflow tooling.</p>
-</aside>
+
 <table><tr><td style="vertical-align:top;">
 <blockquote>
 <p>Goal: Trigger an orchestration or Choreography to perform multiple actions reliably</p>
@@ -556,7 +580,13 @@ managed by using workflow tooling.</p>
 </tr></table></section>
 
 <section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-
+<aside class="notes"><p>Saga orchestrations are workflows. As such, they are probably best
+managed by using workflow tooling. These do have the advantage of
+having all of the orchestration logic centralized and visible.</p>
+<p>Each of these services does one-and-only-one thing. Consumes a message,
+does work, then produces an output message. It doesn't need to know how
+its output is being used.</p>
+</aside>
 <a id="750c95cb-9e3b-48b8-b7b7-01dd5a91aa4a"><h1>Saga Orchestration</h1></a>
 <!-- Layout:FullPage -->
 <!-- ContentItem:c9ef3b42-43a6-436a-aaf4-89bc241e440f -->
@@ -566,6 +596,9 @@ managed by using workflow tooling.</p>
 
 <section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
 <aside class="notes"><p>Whenever possible, I prefer a Choreography of services isolated with CDC and Streaming.</p>
+<p>Again, each of these services does one-and-only-one thing. Consumes a message,
+does work, then produces an output message. It doesn't need to know how
+it's output is being used.</p>
 </aside>
 <a id="e294dd55-5f13-459e-8c14-96e190c904d2"><h1>My Ideal Architecture</h1></a>
 <!-- Layout:FullPage -->
@@ -618,12 +651,21 @@ managed by using workflow tooling.</p>
 
 <table><tr><td style="vertical-align:top;">
 <ul>
-<li>It is impossible to reliable take 2 actions in a single context</li>
-<li>Best practice: Persist immediately, then take other actions</li>
+<li>It is impossible to reliably take 2 actions in a single context</li>
+<li>Leverage Integration Patterns
+<ul>
 <li>Use Outbox, CDC or Streaming to keep operations separate</li>
 <li>Prefer CDC or Streaming for best fanout and scalability</li>
 <li>Consider Sagas to orchestrate or choreograph complex interactions reliably</li>
-<li>Never &quot;add on&quot;</li>
+</ul>
+</li>
+<li>Utilize sensible defaults
+<ul>
+<li>Leverage idempotence whenever possible</li>
+<li>Persist messages immediately, then take other actions</li>
+<li>Avoid &quot;add ons&quot;</li>
+</ul>
+</li>
 </ul>
 
 </td>
@@ -696,9 +738,9 @@ managed by using workflow tooling.</p>
 
 
 <section data-transition="fade-in fade-out" data-background-transition="fade-in fade-out" data-background='img/c14fe415-62ac-4886-ad41-3047cc8e4ecd.png'>
-<a id="eccb8821-0142-459e-b471-bb5a4d69be86"><h1>Resources</h1></a>
+<a id="4e3b407d-6356-4574-aeb5-2f10c69039a8"><h1>Resources</h1></a>
 <!-- Layout:ImageRight -->
-<!-- ContentItem:d4216036-0e1e-4b2d-b755-c856c33ce2ab -->
+<!-- ContentItem:d09249da-43e2-4cfa-b9d1-102bdc9d29a8 -->
 <!-- ContentItem:d14e1172-89d6-7e8e-2129-a7bf35723f5e -->
 
 <table><tr><td style="vertical-align:top;">

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="570" viewBox="0 120 800 570" role="img" aria-labelledby="title description">
+  <title id="title">Transactional Outbox: atomic writes and background consumer</title>
+  <desc id="description">The same database contains an Orders table and an Outbox table. One atomic transaction updates the order status to Confirmed and inserts a pending OrderConfirmed message for that order. Both writes commit or neither takes effect. Outside that transaction, a background consumer polls committed pending outbox rows and runs the downstream action.</desc>
+  <defs>
+    <marker id="writeArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#c4b5fd"/>
+    </marker>
+    <marker id="actionArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#fcd34d"/>
+    </marker>
+    <style>
+      text { font-family: 'Segoe UI', Arial, sans-serif; fill: #f8fafc; }
+      .heading { font-size: 24px; font-weight: 600; }
+      .label { font-size: 21px; }
+      .small { font-size: 18px; }
+      .mono { font-family: Consolas, monospace; font-size: 18px; }
+      .write { fill: none; stroke: #c4b5fd; stroke-width: 3; marker-end: url(#writeArrow); }
+    </style>
+  </defs>
+
+  <rect x="20" y="130" width="760" height="390" rx="20" fill="#111827" stroke="#94a3b8" stroke-width="2"/>
+  <text x="44" y="167" class="heading">Same database</text>
+  <rect x="40" y="188" width="720" height="306" rx="14" fill="#122a35" stroke="#67e8f9" stroke-width="3"/>
+  <text x="400" y="224" text-anchor="middle" class="heading" style="fill:#c4b5fd">ONE ATOMIC TRANSACTION</text>
+
+  <path d="M400 239 V244 H80 V284" class="write"/>
+  <path d="M400 244 H720 V284" class="write"/>
+  <text x="220" y="271" text-anchor="middle" class="small">1. UPDATE business state</text>
+  <text x="580" y="271" text-anchor="middle" class="small">2. INSERT pending message</text>
+
+  <rect x="60" y="286" width="320" height="139" rx="8" fill="#172033" stroke="#67e8f9" stroke-width="2"/>
+  <path d="M60 331 H380 M60 371 H380 M172 331 V425" fill="none" stroke="#52677f"/>
+  <text x="220" y="317" text-anchor="middle" class="heading">Orders</text>
+  <text x="75" y="357" class="mono">Id</text>
+  <text x="188" y="357" class="mono">Status</text>
+  <text x="75" y="405" class="mono">1042</text>
+  <text x="188" y="405" class="mono" style="fill:#67e8f9">Confirmed</text>
+
+  <rect x="420" y="286" width="320" height="139" rx="8" fill="#172033" stroke="#67e8f9" stroke-width="2"/>
+  <path d="M420 331 H740 M420 371 H740 M540 331 V425" fill="none" stroke="#52677f"/>
+  <text x="580" y="317" text-anchor="middle" class="heading">Outbox</text>
+  <text x="435" y="357" class="mono">OrderId</text>
+  <text x="555" y="357" class="mono">Message / State</text>
+  <text x="435" y="393" class="mono">1042</text>
+  <text x="555" y="393" class="mono">OrderConfirmed</text>
+  <text x="555" y="416" class="mono" style="fill:#fcd34d">Pending</text>
+
+  <text x="300" y="464" text-anchor="middle" class="label" style="fill:#67e8f9">Commit: both succeed/fail together</text>
+
+  <path d="M580 425 V602" fill="none" stroke="#fcd34d" stroke-width="3" marker-end="url(#actionArrow)"/>
+  <text x="560" y="574" text-anchor="end" class="label" style="fill:#fcd34d">3. Poll committed pending rows</text>
+  <rect x="180" y="608" width="550" height="66" rx="12" fill="#302b20" stroke="#fcd34d" stroke-width="2"/>
+  <text x="455" y="637" text-anchor="middle" class="heading">Background consumer</text>
+  <text x="455" y="663" text-anchor="middle" class="small">Run downstream action</text>
+</svg>
