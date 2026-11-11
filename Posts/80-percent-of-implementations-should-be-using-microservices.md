@@ -136,7 +136,7 @@ OR
 
 * The application is a **true proof-of-concept that will be discarded**
 
-If you're unsure, you probably need microservices. Uncertainty about future requirements is exactly why you need failure isolation.
+If you're unsure, you probably need microservices. Uncertainty about future requirements is a very good reason for requiring strong failure isolation.
 
 ## The Reliability Dividend
 
