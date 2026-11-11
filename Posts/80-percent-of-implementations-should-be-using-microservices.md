@@ -5,7 +5,7 @@ menuorder: 0
 id: 2eabd648-feb1-4f89-beb7-8f3a29dc6828
 author: bsstahl
 title: 80&#37; of Implementations Should be Using Microservices
-description: Explore why microservices should be the default architecture for most modern software implementations. This post highlights the advantages of microservices over monolithic architectures, focusing on reliability. Gain insights into the importance of eventual consistency and learn about the challenges and benefits involved in transitioning to microservices after-the-fact. Perfect for developers and architects looking to make informed decisions about their software design, and for ignoring the well-intentioned but dangerous hype around &quot;well-architected monoliths&quot;.
+description: Explore why microservices should be the default architecture for most modern software implementations. This post highlights the advantages of microservices over monolithic architectures, focusing on reliability. Gain insights into the importance of eventual consistency and the benefits of microservices for developers and architects making informed software design decisions.
 ispublished: false
 showinlist: false
 buildifnotpublished: true
@@ -190,24 +190,6 @@ Every architectural decision compounds over time. With microservices:
 * Every independent deployment is a risk reduction
 * Every asynchronous pattern is a cascading failure prevented
 * Every reliable messaging pattern enables self-healing – another 3am call avoided
-
-## Transitioning from Monolith to Microservices
-
-Many organizations face the challenge of transitioning existing monolithic applications to microservices. While this process can be complex, it's often necessary and can be managed effectively:
-
-### Strangler Fig Pattern
-
-* Gradually replace functionality with services
-* Keep the monolith running during transition
-* Minimize risk through incremental changes
-* Validate the approach with initial services
-
-### Key Transition Strategies
-
-* Start with new features as services
-* Identify natural service boundaries
-* Use event-driven patterns for integration
-* Implement robust monitoring early
 
 ## Conclusion
 
