@@ -123,8 +123,9 @@ The roughly 20% of cases where monoliths make sense have one thing in common: re
 
 * The application has extremely limited scope with no growth expectations
 * You have a very small team (1-2 developers) with no plans to expand
-* The application has extreme latency or consistency requirements that override reliability concerns
-  * This is only the case when the extreme requirements are **REAL**. Many users think they need these types of latency or consistency guarantees when they really don't. The situations where these are necessary in the typical enterprise world are vanishingly rare.
+* The application has extreme latency or consistency requirements that override reliability concerns.
+  * Be skeptical of these types of claims. Systems are often designed around theoretical latency or consistency requirements that are never actually validated against business outcomes.
+  * Requirements that truly justify these tradeoffs are relatively rare in line-of-business software. They are more commonly found in real-time, embedded, control, infrastructure, or other systems-engineering domains where timing and correctness constraints are fundamental to the system's purpose.
 * Downtime is acceptable and won't impact users or business operations
   * That is, if a problem were to occur late Friday afternoon, would it be ok for it to wait until Monday to be fixed? If not, a monolith probably doesn't provide the needed reliability profile.
 
