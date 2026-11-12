@@ -158,9 +158,10 @@
 <ul>
 <li>The application has extremely limited scope with no growth expectations</li>
 <li>You have a very small team (1-2 developers) with no plans to expand</li>
-<li>The application has extreme latency or consistency requirements that override reliability concerns
+<li>The application has extreme latency or consistency requirements that override reliability concerns.
 <ul>
-<li>This is only the case when the extreme requirements are <strong>REAL</strong>. Many users think they need these types of latency or consistency guarantees when they really don't. The situations where these are necessary in the typical enterprise world are vanishingly rare.</li>
+<li>Be skeptical of these types of claims. Systems are often designed around theoretical latency or consistency requirements that are never actually validated against business outcomes.</li>
+<li>Requirements that truly justify these tradeoffs are relatively rare in line-of-business software. They are more commonly found in real-time, embedded, control, infrastructure, or other systems-engineering domains where timing and correctness constraints are fundamental to the system's purpose.</li>
 </ul>
 </li>
 <li>Downtime is acceptable and won't impact users or business operations
