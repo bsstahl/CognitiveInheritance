@@ -26,6 +26,8 @@ The fundamental problem with starting with a monolith is that it encourages, or 
 
 A monolith can be well-abstracted, but keeping its boundaries and reliability patterns intact as the system grows can be nearly impossible; the path of least resistance gradually pulls teams toward direct calls and synchronous consistency.
 
+> ...if a problem were to occur late Friday afternoon, would it be ok for it to wait until Monday to be fixed? If not, a monolith probably doesn't provide the needed reliability profile.
+
 ## Simplicity Through Natural Boundaries
 
 While monolithic architectures *can* implement all of the patterns designed to make our systems reliable, microservices make these patterns natural, simpler, and the path of least resistance. This distinction is crucial because **simplicity is critical everywhere in our systems, but it is most important within the reliability aspects**. Reliability-critical paths (failover, error handling, recovery) must remain simple. Microservices achieve this simplicity by making reliable patterns the default choice rather than requiring extra effort.
