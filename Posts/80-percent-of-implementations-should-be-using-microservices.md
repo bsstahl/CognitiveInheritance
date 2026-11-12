@@ -16,15 +16,15 @@ categories:
 - Development
 
 ---
-The debate between monolithic and microservices architectures continues to spark passionate discussions. However, based on years of experience and observation across innumerable implementations, I believe that the default pattern for most modern software implementations should be to use a microservices architecture. This isn't just a trend - it's a practical necessity driven by the demands of modern software development.
+Most modern software systems should use microservices by default. Clear service boundaries help isolate failures, support eventual consistency, and let teams deploy changes independently.
 
-Lately, we are often advised to "start with a well-abstracted monolith". This, in my opinion, is dangerously misguided. This recommendation ignores the fundamental reliability requirements of most modern software systems. Here's why microservices should be your default choice, with reliability as the primary driver.
+Monoliths can simplify local calls and deployment, but they do not remove complexity. Shared data, cross-domain transactions, and hidden dependencies make systems harder to reason about. These shortcuts also encourage coupling, making failures harder to contain, deployments riskier, and a later split more expensive. Monoliths can use reliable patterns, but microservices make them easier to adopt from the start, and harder to move away from accidentally.
 
 ## The Monolith-First Fallacy
 
-The fundamental problem with starting with a monolith is that it encourages many of the wrong patterns from day one. Monoliths make it far too easy to accidentally depend on full consistency rather than embracing eventual consistency. Most difficult race conditions I've encountered are a result of not embracing eventual consistency from the beginning. The "well-abstracted monolith" is a myth – you can't abstract away the fundamental reliability problems that come from synchronous, fully-consistent thinking.
+The fundamental problem with starting with a monolith is that it encourages, or at least does not prevent, several distributed systems anti-patterns. For example, monoliths make it far too easy to accidentally depend on full consistency rather than embracing eventual consistency. Most of the difficult race conditions I've encountered in my career have been a result of not embracing eventual consistency from the beginning. 
 
-The six-part {PostLink:critical-cs-of-microservices-1of6-context|Critical C's of Microservices} series explores the conversations behind reliable event-driven systems: {PostLink:critical-cs-of-microservices-1of6-context|Context}, {PostLink:critical-cs-of-microservices-2of6-consistency|Consistency}, {PostLink:critical-cs-of-microservices-3of6-contract|Contract}, {PostLink:critical-cs-of-microservices-4of6-chaos|Chaos}, {PostLink:critical-cs-of-microservices-5of6-competencies|Competencies}, and {PostLink:critical-cs-of-microservices-6of6-coalescence|Coalescence}. The companion {PostLink:critical-questions-about-microservice|Critical Questions About Microservices} article gathers the questions in one place; this article focuses on why microservices can be a sensible default.
+A monolith can be well-abstracted, but keeping its boundaries and reliability patterns intact as the system grows can be nearly impossible; the path of least resistance gradually pulls teams toward direct calls and synchronous consistency.
 
 ## Simplicity Through Natural Boundaries
 
@@ -41,17 +41,15 @@ One of the most compelling arguments for microservices is the inherent reliabili
 * Recovery can occur without system-wide impact
 * Circuit breakers can protect dependent services
 
-Service boundaries can limit the impact of a failure, but they do not guarantee isolation on their own. Teams still need to decide how the system will behave when a dependency is unavailable.
+Service boundaries can limit the impact of a failure, but they do not guarantee isolation on their own. Teams still need to decide how the system will behave when a dependency is unavailable. The same question applies to monoliths when they depend on external services or shared infrastructure. Inside a monolith, direct calls can make dependencies and failure behavior less visible, so teams may be less likely to design for them explicitly.
 
 ### 2. Reliability Through Eventual Consistency
 
 One of the key paradigm shifts in microservices architecture is embracing eventual consistency. While this concept might seem challenging at first, it often better reflects real-world business processes. Monoliths trick you into synchronous thinking, creating brittle systems that fail catastrophically.
 
-It is only people that tend to want full-consistency, the processes don't care.
+We often expect every part of a workflow to be up to date before the system responds. But some work can safely finish later. For example, once an order is accepted and inventory is reserved, its confirmation email can be queued and sent later. If checkout waits for the email service, an outage there can block an otherwise valid order. Eventual consistency lets the email catch up; it does not mean relaxing consistency where the business requires it.
 
-Our typical patterns are the functional equivalent of waiting at the repair shop for our car to be fixed, when we also need to do the grocery shopping, mail packages, and have lunch. If we truly can't do those things without OUR car, then ok, but most of the time, we can walk, get a rental from the shop, or have someone pick us up so we can accomplish all of our tasks with a similar effort and timeframe to just doing the longest of them.
-
-Unfortunately, this is one place where the languages don't really help us. `Async/Await` is amazing for what it does, but most of our `async` methods simply `await` a response. They sit in the repair shop. We should be leaving that repair shop and coming back later. Monoliths make it way too easy to accidentally sit and wait for an answer, and once implemented, those patterns can be much harder to replace than simply respecting asynchrony from the start.
+`async`/`await` helps code wait without blocking, but it does not make a workflow eventually consistent. Many `async` methods still wait for a response before proceeding. To let work finish later, the system must hand it off reliably and allow the caller to move on. Monoliths make direct calls easier than message handoffs, so synchronous patterns are easy to introduce and harder to replace later.
 
 But here's the hidden benefit: **Eventually consistent systems using reliable messaging patterns like Service Bus or Apache Kafka are inherently self-healing**. When a service is temporarily unavailable, messages queue up. When it returns, processing resumes automatically. No manual intervention, no 3am calls. The system heals itself.
 
@@ -68,18 +66,25 @@ Microservices enable precise scaling of specific functionality, preventing syste
 
 Scalability is only one of the benefits of event-driven microservices; see {PostLink:microservices-not-just-about-scale|Microservices - Not Just About Scalability} for the broader case.
 
-### 4. Team Autonomy as Deployment Reliability
+### 4. Team Autonomy and Deployment Reliability
 
-Modern development teams thrive when they can work independently. More importantly, independent deployments mean isolated risk:
+Modern development teams thrive when they can work independently. Independent deployments mean isolated risk:
 
 * Teams can own their services end-to-end
 * Deployment cycles are shorter and lower risk
 * Technology choices can be optimized per service
 * Parallel development becomes more natural
 
+By contrast, monolithic deployments put more of the application at risk at once:
+
+* One bad change can bring down unrelated features
+* Rollbacks affect the entire system, not just the problem area
+* Teams may batch changes to reduce deployment frequency, increasing the risk of each release
+* "Never deploy on Friday" can become policy because the consequences are difficult to contain
+
 ## Why "Start with a Monolith" Fails
 
-The strongest argument against starting with a monolith is not that a monolith cannot be well designed. It is that coupling and deployment risk tend to increase along the path of least resistance.
+The strongest argument against starting with a monolith is not that it cannot be well designed. It is that coupling tends to increase along the path of least resistance, amplifying the deployment risks described above.
 
 ### The Coupling Creep (The Most Insidious Failure)
 
@@ -100,18 +105,9 @@ In a monolith, coupling spreads through the path of least resistance:
 
 **This is why coupling creep is so insidious**: each decision can be justified in isolation. The shortcut saves time, and the optimization improves performance. Collectively, however, these decisions create a web of dependencies that makes a later refactoring to microservices much more expensive, if not effectively impossible.
 
-### The Deployment Fear
-
-Every monolithic deployment increases the size of the change that must be trusted at once:
-
-* One bad change can bring down unrelated features
-* Rollbacks affect the entire system, not just the problem area
-* Teams batch changes to reduce deployment frequency, which can increase the risk of each release
-* "Never deploy on Friday" becomes policy because the operational consequences are difficult to contain
-
 ### "bUt OuR tEaM cAn'T hAnDlE mIcRoSeRvIcEs"
 
-That may describe the team’s current experience, but it does not, by itself, determine which architecture the system needs. "We can’t" may describe an addressable skills gap, or it may describe a genuine organizational capacity constraint; those are not the same problem.
+This kind of statement may describe the team’s current experience, but it should not determine which architecture the system needs. "We can't" may describe an addressable skills gap, or it may describe a genuine organizational capacity constraint; those are not the same problem.
 
 If the team lacks the skills to build and operate reliable services, the answer is to close that gap: teach the patterns, provide a platform and guardrails, and build experience incrementally. "We don’t know how yet" is a reason to invest in learning, not a permanent architectural principle. The people responsible for the system also have a responsibility to help the team become capable of operating it reliably.
 
@@ -119,11 +115,11 @@ An organization that cannot provide the necessary training, time, staffing, plat
 
 I suspect that we’ll all agree—in principle, at least—that any argument reducing the issue to "the team members are too dumb to handle it" is ridiculous and can be dismissed outright. Unfortunately, I still hear arguments like that, and I will always shut them down.
 
-In a future article, I’ll take a broader look at these tradeoffs, including testing, complexity, and operational overhead.
+In a future article, I’ll take a broader look at some of these tradeoffs, including testing, complexity, and operational overhead.
 
 ## When to Consider a Monolith
 
-The 20% where monoliths make sense have one thing in common: reliability isn't critical. Choose a monolith only when ALL of these are true:
+The roughly 20% of cases where monoliths make sense have one thing in common: reliability isn't critical. We should choose a monolith only when ALL of the following are true:
 
 * The application has extremely limited scope with no growth expectations
 * You have a very small team (1-2 developers) with no plans to expand
@@ -155,3 +151,7 @@ The case for microservices is not that monoliths are always wrong, or that micro
 An addressable skills gap should not become a permanent architectural principle: teams can build experience with training, platform support, and guardrails. A genuine organizational capacity constraint is different, but it does not, by itself, make a monolith the right choice. A monolith is appropriate only when the application meets the conditions described above—or when it is a true proof of concept that will be discarded; otherwise, the capacity constraint must be addressed rather than used to justify the wrong architecture.
 
 When reliability and independent change matter, microservices provide a stronger starting point, not a guarantee. Teams still need reliable messaging, deliberate failure handling, and sufficient observability to realize the benefits.
+
+## Further Reading
+
+For more on the design conversations behind reliable event-driven systems, see the six-part {PostLink:critical-cs-of-microservices-1of6-context|Critical C's of Microservices} series: {PostLink:critical-cs-of-microservices-1of6-context|Context}, {PostLink:critical-cs-of-microservices-2of6-consistency|Consistency}, {PostLink:critical-cs-of-microservices-3of6-contract|Contract}, {PostLink:critical-cs-of-microservices-4of6-chaos|Chaos}, {PostLink:critical-cs-of-microservices-5of6-competencies|Competencies}, and {PostLink:critical-cs-of-microservices-6of6-coalescence|Coalescence}. The companion {PostLink:critical-questions-about-microservice|Critical Questions About Microservices} article gathers those questions in one place.
