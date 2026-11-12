@@ -86,6 +86,9 @@
 <h2>The Monolith-First Fallacy</h2>
 <p>The fundamental problem with starting with a monolith is that it encourages, or at least does not prevent, several distributed systems anti-patterns. For example, monoliths make it far too easy to accidentally depend on full consistency rather than embracing eventual consistency. Most of the difficult race conditions I've encountered in my career have been a result of not embracing eventual consistency from the beginning.</p>
 <p>A monolith can be well-abstracted, but keeping its boundaries and reliability patterns intact as the system grows can be nearly impossible; the path of least resistance gradually pulls teams toward direct calls and synchronous consistency.</p>
+<blockquote>
+<p>...if a problem were to occur late Friday afternoon, would it be ok for it to wait until Monday to be fixed? If not, a monolith probably doesn't provide the needed reliability profile.</p>
+</blockquote>
 <h2>Simplicity Through Natural Boundaries</h2>
 <p>While monolithic architectures <em>can</em> implement all of the patterns designed to make our systems reliable, microservices make these patterns natural, simpler, and the path of least resistance. This distinction is crucial because <strong>simplicity is critical everywhere in our systems, but it is most important within the reliability aspects</strong>. Reliability-critical paths (failover, error handling, recovery) must remain simple. Microservices achieve this simplicity by making reliable patterns the default choice rather than requiring extra effort.</p>
 <p>Since everything in software engineering is a trade-off, we should be willing to accept minor increases in operational complexity (like service discovery or distributed tracing) in exchange for dramatic simplification of our reliability-critical paths. Reliable messaging is only as good as the boundaries it enforces – and microservices enforce these boundaries, often by default.</p>
