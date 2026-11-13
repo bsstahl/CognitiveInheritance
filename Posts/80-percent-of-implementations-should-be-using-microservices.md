@@ -9,14 +9,14 @@ description: Explore why microservices should be the default architecture for mo
 ispublished: true
 showinlist: false
 buildifnotpublished: true
-publicationdate: 2027-11-13T07:00:00.000+00:00
-lastmodificationdate: 2027-11-13T07:00:00.000+00:00
+publicationdate: 2026-11-13T07:00:00.000+00:00
+lastmodificationdate: 2026-11-13T015:30:00.000+00:00
 slug: 80-percent-of-implementations-should-be-using-microservices
 categories:
 - Development
 
 ---
-Most modern software systems should use microservices by default. Clear service boundaries help isolate failures, support eventual consistency, and let teams deploy changes independently.
+Most modern software systems should use microservices by default. Clear service boundaries help isolate failures, support eventual consistency, and let teams deploy changes independently. As a result, it is my belief that roughly 80% of applications should be using the microservices pattern, despite some of the recent push-back.
 
 Monoliths can simplify local calls and deployment, but they do not remove complexity. Shared data, cross-domain transactions, and hidden dependencies make systems harder to reason about. These shortcuts also encourage coupling, making failures harder to contain, deployments riskier, and a later split more expensive. Monoliths can use reliable patterns, but microservices make them easier to adopt from the start, and harder to move away from accidentally.
 
@@ -127,17 +127,20 @@ The roughly 20% of cases where monoliths make sense have one thing in common: re
 
 * The application has extremely limited scope with no growth expectations
 * You have a very small team (1-2 developers) with no plans to expand
-* The application has extreme latency or consistency requirements that override reliability concerns.
-  * Be skeptical of these types of claims. Systems are often designed around theoretical latency or consistency requirements that are never actually validated against business outcomes.
-  * Requirements that truly justify these tradeoffs are relatively rare in line-of-business software. They are more commonly found in real-time, embedded, control, infrastructure, or other systems-engineering domains where timing and correctness constraints are fundamental to the system's purpose.
-* Downtime is acceptable and won't impact users or business operations
-  * That is, if a problem were to occur late Friday afternoon, would it be ok for it to wait until Monday to be fixed? If not, a monolith probably doesn't provide the needed reliability profile.
 
 OR
 
 * The application is a **true proof-of-concept that will be discarded**
 
-If you're unsure, you probably need microservices. Uncertainty about future requirements is a very good reason for requiring strong failure isolation.
+The only situation in an Enterprise application of any significance where I might start with a monolith is when:
+
+* The application has extreme latency or consistency requirements that override reliability concerns.
+  * Be skeptical of these types of claims. Systems are often designed around theoretical latency or consistency requirements that are never actually validated against business outcomes.
+  * Requirements that truly justify these tradeoffs are very rare in line-of-business software. They are more commonly found in real-time, embedded, control, infrastructure, or other systems-engineering domains where timing and correctness constraints are fundamental to the system's purpose.
+* Downtime is acceptable and won't impact users or business operations
+  * That is, if a problem were to occur late Friday afternoon, would it be ok for it to wait until Monday to be fixed? If not, a monolith probably doesn't provide the needed reliability profile.
+
+If you're unsure, you probably need microservices. Uncertainty about future requirements is a very good reason for defaulting to strong isolation.
 
 ## The Reliability Dividend
 
