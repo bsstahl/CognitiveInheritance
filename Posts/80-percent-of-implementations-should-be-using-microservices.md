@@ -10,7 +10,7 @@ ispublished: true
 showinlist: false
 buildifnotpublished: true
 publicationdate: 2026-11-13T07:00:00.000+00:00
-lastmodificationdate: 2026-11-13T015:30:00.000+00:00
+lastmodificationdate: 2026-11-13T15:30:00.000+00:00
 slug: 80-percent-of-implementations-should-be-using-microservices
 categories:
 - Development
