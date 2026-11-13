@@ -76,7 +76,7 @@
                 <main class="col-lg-9 col-xl-10 content-main">
                     <div>
     <h3>80&#37; of Implementations Should be Using Microservices</h3>
-    <h5>Posted by bsstahl on 2027-11-13 and Filed Under: <a title="Category: development" class="small" href="Search/development.html">development</a>&nbsp;</h5>
+    <h5>Posted by bsstahl on 2026-11-13 and Filed Under: <a title="Category: development" class="small" href="Search/development.html">development</a>&nbsp;</h5>
     <share-on-mastodon 
         share_title="Check out this post on Cognitive Inheritance: '80&#37; of Implementations Should be Using Microservices'"
         share_description="&quot;Explore why microservices should be the default architecture for most modern software implementations. This post highlights the advantages of microservices over monolithic architectures, focusing on reliability.&quot;"
@@ -86,7 +86,7 @@
         default_url="https://fosstodon.org">
     </share-on-mastodon>
     <br/><br/>
-    <p>Most modern software systems should use microservices by default. Clear service boundaries help isolate failures, support eventual consistency, and let teams deploy changes independently.</p>
+    <p>Most modern software systems should use microservices by default. Clear service boundaries help isolate failures, support eventual consistency, and let teams deploy changes independently. As a result, it is my belief that roughly 80% of applications should be using the microservices pattern, despite some of the recent push-back.</p>
 <p>Monoliths can simplify local calls and deployment, but they do not remove complexity. Shared data, cross-domain transactions, and hidden dependencies make systems harder to reason about. These shortcuts also encourage coupling, making failures harder to contain, deployments riskier, and a later split more expensive. Monoliths can use reliable patterns, but microservices make them easier to adopt from the start, and harder to move away from accidentally.</p>
 <p>Monoliths can seem simpler because they make direct calls and shared data easier, but those very conveniences are often what encourages coupling and adds complexity later.</p>
 <h2>The Monolith-First Fallacy</h2>
@@ -167,10 +167,17 @@
 <ul>
 <li>The application has extremely limited scope with no growth expectations</li>
 <li>You have a very small team (1-2 developers) with no plans to expand</li>
+</ul>
+<p>OR</p>
+<ul>
+<li>The application is a <strong>true proof-of-concept that will be discarded</strong></li>
+</ul>
+<p>The only situation in an Enterprise application of any significance where I might start with a monolith is when:</p>
+<ul>
 <li>The application has extreme latency or consistency requirements that override reliability concerns.
 <ul>
 <li>Be skeptical of these types of claims. Systems are often designed around theoretical latency or consistency requirements that are never actually validated against business outcomes.</li>
-<li>Requirements that truly justify these tradeoffs are relatively rare in line-of-business software. They are more commonly found in real-time, embedded, control, infrastructure, or other systems-engineering domains where timing and correctness constraints are fundamental to the system's purpose.</li>
+<li>Requirements that truly justify these tradeoffs are very rare in line-of-business software. They are more commonly found in real-time, embedded, control, infrastructure, or other systems-engineering domains where timing and correctness constraints are fundamental to the system's purpose.</li>
 </ul>
 </li>
 <li>Downtime is acceptable and won't impact users or business operations
@@ -179,11 +186,7 @@
 </ul>
 </li>
 </ul>
-<p>OR</p>
-<ul>
-<li>The application is a <strong>true proof-of-concept that will be discarded</strong></li>
-</ul>
-<p>If you're unsure, you probably need microservices. Uncertainty about future requirements is a very good reason for requiring strong failure isolation.</p>
+<p>If you're unsure, you probably need microservices. Uncertainty about future requirements is a very good reason for defaulting to strong isolation.</p>
 <h2>The Reliability Dividend</h2>
 <p>Every architectural decision compounds over time. With microservices:</p>
 <ul>
@@ -1442,7 +1445,7 @@ Phoenix AZ<br/>
 <li>Community Speaker: <a href=".//Pages/Speaking-Engagements.html">Barry S. Stahl</a></li>
 <li>AZGiveCamp: <a href="https://www.azgivecamp.org">https://azgivecamp.org</a></li>
 </ul>
-</div></div><div class="widget textbox"><h4>Transparency Report</h4><div class="content"><h6>Date: 2026-11-12</h6>
+</div></div><div class="widget textbox"><h4>Transparency Report</h4><div class="content"><h6>Date: 2026-11-13</h6>
 <p>As of the date of this report, neither CognitiveInheritance.com nor its owners/operators have received a national security order. Furthermore, we have not been required by a court to keep any secrets that are not in this transparency report.</p>
 </div></div><div class="widget textbox"><h4>Countdown</h4><div class="content"><script>
     (function() {

@@ -10,7 +10,7 @@
     <atom:link href="https://cognitiveinheritance.com/syndication.xml" rel="self" type="application/rss+xml" />	
     <item>
   <title>80&#37; of Implementations Should be Using Microservices</title>
-  <description>&lt;p&gt;Most modern software systems should use microservices by default. Clear service boundaries help isolate failures, support eventual consistency, and let teams deploy changes independently.&lt;/p&gt;
+  <description>&lt;p&gt;Most modern software systems should use microservices by default. Clear service boundaries help isolate failures, support eventual consistency, and let teams deploy changes independently. As a result, it is my belief that roughly 80% of applications should be using the microservices pattern, despite some of the recent push-back.&lt;/p&gt;
 &lt;p&gt;Monoliths can simplify local calls and deployment, but they do not remove complexity. Shared data, cross-domain transactions, and hidden dependencies make systems harder to reason about. These shortcuts also encourage coupling, making failures harder to contain, deployments riskier, and a later split more expensive. Monoliths can use reliable patterns, but microservices make them easier to adopt from the start, and harder to move away from accidentally.&lt;/p&gt;
 &lt;p&gt;Monoliths can seem simpler because they make direct calls and shared data easier, but those very conveniences are often what encourages coupling and adds complexity later.&lt;/p&gt;
 &lt;h2&gt;The Monolith-First Fallacy&lt;/h2&gt;
@@ -91,10 +91,17 @@
 &lt;ul&gt;
 &lt;li&gt;The application has extremely limited scope with no growth expectations&lt;/li&gt;
 &lt;li&gt;You have a very small team (1-2 developers) with no plans to expand&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;OR&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The application is a &lt;strong&gt;true proof-of-concept that will be discarded&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The only situation in an Enterprise application of any significance where I might start with a monolith is when:&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;The application has extreme latency or consistency requirements that override reliability concerns.
 &lt;ul&gt;
 &lt;li&gt;Be skeptical of these types of claims. Systems are often designed around theoretical latency or consistency requirements that are never actually validated against business outcomes.&lt;/li&gt;
-&lt;li&gt;Requirements that truly justify these tradeoffs are relatively rare in line-of-business software. They are more commonly found in real-time, embedded, control, infrastructure, or other systems-engineering domains where timing and correctness constraints are fundamental to the system&apos;s purpose.&lt;/li&gt;
+&lt;li&gt;Requirements that truly justify these tradeoffs are very rare in line-of-business software. They are more commonly found in real-time, embedded, control, infrastructure, or other systems-engineering domains where timing and correctness constraints are fundamental to the system&apos;s purpose.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Downtime is acceptable and won&apos;t impact users or business operations
@@ -103,11 +110,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;OR&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The application is a &lt;strong&gt;true proof-of-concept that will be discarded&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;If you&apos;re unsure, you probably need microservices. Uncertainty about future requirements is a very good reason for requiring strong failure isolation.&lt;/p&gt;
+&lt;p&gt;If you&apos;re unsure, you probably need microservices. Uncertainty about future requirements is a very good reason for defaulting to strong isolation.&lt;/p&gt;
 &lt;h2&gt;The Reliability Dividend&lt;/h2&gt;
 &lt;p&gt;Every architectural decision compounds over time. With microservices:&lt;/p&gt;
 &lt;ul&gt;
@@ -127,7 +130,7 @@
   <link>https://www.cognitiveinheritance.com/Posts/80-percent-of-implementations-should-be-using-microservices.html</link>
   <author>04f953b4-6966-46a2-9aa8-89b582fbe500@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/2eabd648-feb1-4f89-beb7-8f3a29dc6828.html</guid>
-  <pubDate>Sat, 13 Nov 2027 07:00:00 GMT</pubDate>
+  <pubDate>Fri, 13 Nov 2026 07:00:00 GMT</pubDate>
 </item><item>
   <title>AI Will Totally Cure Cancer, Bro!</title>
   <description>&lt;p&gt;It was recently reported that Palantir CTO Shyam Sankar claimed that
