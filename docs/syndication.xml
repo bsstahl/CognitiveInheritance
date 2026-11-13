@@ -9,6 +9,126 @@
     <language>en-US</language>
     <atom:link href="https://cognitiveinheritance.com/syndication.xml" rel="self" type="application/rss+xml" />	
     <item>
+  <title>80&#37; of Implementations Should be Using Microservices</title>
+  <description>&lt;p&gt;Most modern software systems should use microservices by default. Clear service boundaries help isolate failures, support eventual consistency, and let teams deploy changes independently.&lt;/p&gt;
+&lt;p&gt;Monoliths can simplify local calls and deployment, but they do not remove complexity. Shared data, cross-domain transactions, and hidden dependencies make systems harder to reason about. These shortcuts also encourage coupling, making failures harder to contain, deployments riskier, and a later split more expensive. Monoliths can use reliable patterns, but microservices make them easier to adopt from the start, and harder to move away from accidentally.&lt;/p&gt;
+&lt;p&gt;Monoliths can seem simpler because they make direct calls and shared data easier, but those very conveniences are often what encourages coupling and adds complexity later.&lt;/p&gt;
+&lt;h2&gt;The Monolith-First Fallacy&lt;/h2&gt;
+&lt;p&gt;The fundamental problem with starting with a monolith is that it encourages, or at least does not prevent, several distributed systems anti-patterns. For example, monoliths make it far too easy to accidentally depend on full consistency rather than embracing eventual consistency. Most of the difficult race conditions I&apos;ve encountered in my career have been a result of not embracing eventual consistency from the beginning.&lt;/p&gt;
+&lt;p&gt;A monolith can be well-abstracted, but keeping its boundaries and reliability patterns intact as the system grows can be nearly impossible; the path of least resistance gradually pulls teams toward direct calls and synchronous consistency.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;...if a problem were to occur late Friday afternoon, would it be ok for it to wait until Monday to be fixed? If not, a monolith probably doesn&apos;t provide the needed reliability profile.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Simplicity Through Natural Boundaries&lt;/h2&gt;
+&lt;p&gt;While monolithic architectures &lt;em&gt;can&lt;/em&gt; implement all of the patterns designed to make our systems reliable, microservices make these patterns natural, simpler, and the path of least resistance. This distinction is crucial because &lt;strong&gt;simplicity is critical everywhere in our systems, but it is most important within the reliability aspects&lt;/strong&gt;. Reliability-critical paths (failover, error handling, recovery) must remain simple. Microservices achieve this simplicity by making reliable patterns the default choice rather than requiring extra effort.&lt;/p&gt;
+&lt;p&gt;Since everything in software engineering is a trade-off, we should be willing to accept minor increases in operational complexity (like service discovery or distributed tracing) in exchange for dramatic simplification of our reliability-critical paths. Reliable messaging is only as good as the boundaries it enforces. Microservices often enforce these boundaries by default.&lt;/p&gt;
+&lt;h3&gt;1. Reliability Through Isolation&lt;/h3&gt;
+&lt;p&gt;One of the most compelling arguments for microservices is the inherent reliability gained through service isolation. When a service fails in a monolithic application, it often brings down the entire system. In contrast, microservices architecture allows for graceful degradation:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Individual service failures remain isolated&lt;/li&gt;
+&lt;li&gt;The rest of the system continues functioning&lt;/li&gt;
+&lt;li&gt;Recovery can occur without system-wide impact&lt;/li&gt;
+&lt;li&gt;Circuit breakers can protect dependent services&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Service boundaries can limit the impact of a failure, but they do not guarantee isolation on their own. Teams still need to decide how the system will behave when a dependency is unavailable. The same question applies to monoliths when they depend on external services or shared infrastructure. Inside a monolith, direct calls can make dependencies and failure behavior less visible, so teams may be less likely to design for them explicitly.&lt;/p&gt;
+&lt;h3&gt;2. Reliability Through Eventual Consistency&lt;/h3&gt;
+&lt;p&gt;One of the key paradigm shifts in microservices architecture is embracing eventual consistency. While this concept might seem challenging at first, it often better reflects real-world business processes. Monoliths trick you into synchronous thinking, creating brittle systems that fail catastrophically.&lt;/p&gt;
+&lt;p&gt;We often expect every part of a workflow to be up to date before the system responds. But some work can safely finish later. For example, once an order is accepted and inventory is reserved, its confirmation email can be queued and sent later. If checkout waits for the email service, an outage there can block an otherwise valid order. Eventual consistency lets the email catch up; it does not mean relaxing consistency where the business requires it.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;async&lt;/code&gt;/&lt;code&gt;await&lt;/code&gt; helps code wait without blocking, but it does not make a workflow eventually consistent. Many &lt;code&gt;async&lt;/code&gt; methods still wait for a response before proceeding. To let work finish later, the system must hand it off reliably and allow the caller to move on. Monoliths make direct calls easier than message handoffs, so synchronous patterns are easy to introduce and harder to replace later.&lt;/p&gt;
+&lt;p&gt;But here&apos;s the hidden benefit: &lt;strong&gt;Eventually consistent systems using reliable messaging patterns like Service Bus or Apache Kafka are inherently self-healing&lt;/strong&gt;. When a service is temporarily unavailable, messages queue up. When it returns, processing resumes automatically. No manual intervention, no 3am calls. The system heals itself.&lt;/p&gt;
+&lt;p&gt;Could a monolith use these same messaging patterns? Technically, yes. But monoliths don&apos;t make this pattern a first-class citizen. In a monolith, it&apos;s far easier to make a direct method call than to set up messaging infrastructure. Microservices, by their very nature, push you toward these resilient patterns from the start. The path of least resistance in microservices leads to self-healing systems; in monoliths, it leads to brittle, synchronous coupling.&lt;/p&gt;
+&lt;h3&gt;3. Scalability as Operational Reliability&lt;/h3&gt;
+&lt;p&gt;Microservices enable precise scaling of specific functionality, preventing system-wide performance degradation:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;High-demand services can scale independently&lt;/li&gt;
+&lt;li&gt;Resource allocation becomes more efficient&lt;/li&gt;
+&lt;li&gt;Cost optimization is more granular&lt;/li&gt;
+&lt;li&gt;Performance bottlenecks are easier to identify and address&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Scalability is only one of the benefits of event-driven microservices; see &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/microservices-not-just-about-scale.html&quot;&gt;Microservices - Not Just About Scalability&lt;/a&gt; for the broader case.&lt;/p&gt;
+&lt;h3&gt;4. Team Autonomy and Deployment Reliability&lt;/h3&gt;
+&lt;p&gt;Modern development teams thrive when they can work independently. Independent deployments mean isolated risk:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Teams can own their services end-to-end&lt;/li&gt;
+&lt;li&gt;Deployment cycles are shorter and lower risk&lt;/li&gt;
+&lt;li&gt;Technology choices can be optimized per service&lt;/li&gt;
+&lt;li&gt;Parallel development becomes more natural&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;By contrast, monolithic deployments put more of the application at risk at once:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;One bad change can bring down unrelated features&lt;/li&gt;
+&lt;li&gt;Rollbacks affect the entire system, not just the problem area&lt;/li&gt;
+&lt;li&gt;Teams may batch changes to reduce deployment frequency, increasing the risk of each release&lt;/li&gt;
+&lt;li&gt;&amp;quot;Never deploy on Friday&amp;quot; can become policy because the consequences are difficult to contain&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Why &amp;quot;Start with a Monolith&amp;quot; Fails&lt;/h2&gt;
+&lt;p&gt;The strongest argument against starting with a monolith is not that it cannot be well designed. It is that coupling tends to increase along the path of least resistance, amplifying the deployment risks described above.&lt;/p&gt;
+&lt;h3&gt;The Coupling Creep (The Most Insidious Failure)&lt;/h3&gt;
+&lt;p&gt;Coupling creep is particularly dangerous because it usually happens gradually, invisibly, and with each individual step appearing reasonable. It is the architectural equivalent of boiling the metaphorical frog:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Day 1&lt;/strong&gt;: &amp;quot;We&apos;ll keep clean boundaries between our modules&amp;quot;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Month 1&lt;/strong&gt;: &amp;quot;Just this once, we&apos;ll directly call that other module&apos;s internal method&amp;quot;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Month 6&lt;/strong&gt;: &amp;quot;We need a database transaction across these three domains for consistency&amp;quot;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Year 1&lt;/strong&gt;: &amp;quot;Nobody knows what depends on what anymore&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In a monolith, coupling spreads through the path of least resistance:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Direct method calls are easier than message passing, so it is natural to take the shortcut&lt;/li&gt;
+&lt;li&gt;Shared database transactions create hidden dependencies across business domains&lt;/li&gt;
+&lt;li&gt;&amp;quot;Temporary&amp;quot; shared data models become permanent coupling points&lt;/li&gt;
+&lt;li&gt;Performance optimizations can encourage developers to bypass abstractions&lt;/li&gt;
+&lt;li&gt;What begins as clean architecture can gradually become a big ball of mud&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;This is why coupling creep is so insidious&lt;/strong&gt;: each decision can be justified in isolation. The shortcut saves time, and the optimization improves performance. Collectively, however, these decisions create a web of dependencies that makes a later refactoring to microservices much more expensive, if not effectively impossible.&lt;/p&gt;
+&lt;h3&gt;&amp;quot;bUt OuR tEaM cAn&apos;T hAnDlE mIcRoSeRvIcEs&amp;quot;&lt;/h3&gt;
+&lt;p&gt;This kind of statement may describe the team’s current experience, but it should not determine which architecture the system needs. &amp;quot;We can&apos;t&amp;quot; may describe an addressable skills gap, or it may describe a genuine organizational capacity constraint; those are not the same problem.&lt;/p&gt;
+&lt;p&gt;If the team lacks the skills to build and operate reliable services, the answer is to close that gap: teach the patterns, provide a platform and guardrails, and build experience incrementally. &amp;quot;We don’t know how yet&amp;quot; is a reason to invest in learning, not a permanent architectural principle. The people responsible for the system also have a responsibility to help the team become capable of operating it reliably.&lt;/p&gt;
+&lt;p&gt;An organization that cannot provide the necessary training, time, staffing, platform, or operational support presents a different problem. If the team cannot realistically own the reliability and operational consequences of microservices, that is a genuine organizational capacity constraint, not merely a skills gap to be dismissed. It may make a monolith the better choice for now, but the decision should say so explicitly and account for the consequences. &amp;quot;Our team can’t handle microservices&amp;quot; is not a sufficient rebuttal until we identify which problem we actually have and address the one that is addressable.&lt;/p&gt;
+&lt;p&gt;I suspect that we’ll all agree, at least in principle, that any argument reducing the issue to &amp;quot;the team members are too dumb to handle it&amp;quot; is ridiculous and can be dismissed outright. Unfortunately, I still hear arguments like that, and I will always shut them down.&lt;/p&gt;
+&lt;p&gt;In a future article, I’ll take a broader look at some of these tradeoffs, including testing, complexity, and operational overhead.&lt;/p&gt;
+&lt;h2&gt;When to Consider a Monolith&lt;/h2&gt;
+&lt;p&gt;The roughly 20% of cases where monoliths make sense have one thing in common: reliability isn&apos;t critical. We should choose a monolith only when ALL of the following are true:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The application has extremely limited scope with no growth expectations&lt;/li&gt;
+&lt;li&gt;You have a very small team (1-2 developers) with no plans to expand&lt;/li&gt;
+&lt;li&gt;The application has extreme latency or consistency requirements that override reliability concerns.
+&lt;ul&gt;
+&lt;li&gt;Be skeptical of these types of claims. Systems are often designed around theoretical latency or consistency requirements that are never actually validated against business outcomes.&lt;/li&gt;
+&lt;li&gt;Requirements that truly justify these tradeoffs are relatively rare in line-of-business software. They are more commonly found in real-time, embedded, control, infrastructure, or other systems-engineering domains where timing and correctness constraints are fundamental to the system&apos;s purpose.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Downtime is acceptable and won&apos;t impact users or business operations
+&lt;ul&gt;
+&lt;li&gt;That is, if a problem were to occur late Friday afternoon, would it be ok for it to wait until Monday to be fixed? If not, a monolith probably doesn&apos;t provide the needed reliability profile.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;OR&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The application is a &lt;strong&gt;true proof-of-concept that will be discarded&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you&apos;re unsure, you probably need microservices. Uncertainty about future requirements is a very good reason for requiring strong failure isolation.&lt;/p&gt;
+&lt;h2&gt;The Reliability Dividend&lt;/h2&gt;
+&lt;p&gt;Every architectural decision compounds over time. With microservices:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Every failure isolated is a 3am call avoided&lt;/li&gt;
+&lt;li&gt;Every service boundary is a blast radius limit&lt;/li&gt;
+&lt;li&gt;Every independent deployment is a risk reduction&lt;/li&gt;
+&lt;li&gt;Every asynchronous pattern is a cascading failure prevented&lt;/li&gt;
+&lt;li&gt;Every reliable messaging pattern enables self-healing and can mean one less 3am call&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;The case for microservices is not that monoliths are always wrong, or that microservices automatically provide reliability. It is that explicit service boundaries and asynchronous communication make reliability concerns part of the design rather than an afterthought. For many systems, that makes microservices the stronger default, provided the team can learn and operate the required patterns effectively.&lt;/p&gt;
+&lt;p&gt;An addressable skills gap should not become a permanent architectural principle: teams can build experience with training, platform support, and guardrails. A genuine organizational capacity constraint is different, but it does not, by itself, make a monolith the right choice. A monolith is appropriate only when the application meets the conditions described above, or when it is a true proof of concept that will be discarded. Otherwise, the capacity constraint must be addressed rather than used to justify the wrong architecture.&lt;/p&gt;
+&lt;p&gt;When reliability and independent change matter, microservices provide a stronger starting point, not a guarantee. Teams still need reliable messaging, deliberate failure handling, and sufficient observability to realize the benefits.&lt;/p&gt;
+&lt;h2&gt;Further Reading&lt;/h2&gt;
+&lt;p&gt;For more on the design conversations behind reliable event-driven systems, see the six-part &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-1of6-context.html&quot;&gt;Critical C&apos;s of Microservices&lt;/a&gt; series: &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-1of6-context.html&quot;&gt;Context&lt;/a&gt;, &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-2of6-consistency.html&quot;&gt;Consistency&lt;/a&gt;, &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-3of6-contract.html&quot;&gt;Contract&lt;/a&gt;, &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-4of6-chaos.html&quot;&gt;Chaos&lt;/a&gt;, &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-5of6-competencies.html&quot;&gt;Competencies&lt;/a&gt;, and &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-cs-of-microservices-6of6-coalescence.html&quot;&gt;Coalescence&lt;/a&gt;. The companion &lt;a href=&quot;https://www.cognitiveinheritance.com/Posts/critical-questions-about-microservice.html&quot;&gt;Critical Questions About Microservices&lt;/a&gt; article gathers those questions in one place.&lt;/p&gt;
+</description>
+  <link>https://www.cognitiveinheritance.com/Posts/80-percent-of-implementations-should-be-using-microservices.html</link>
+  <author>04f953b4-6966-46a2-9aa8-89b582fbe500@bsstahl.com (Barry S. Stahl)</author>
+  <guid>https://www.cognitiveinheritance.com/Permalinks/2eabd648-feb1-4f89-beb7-8f3a29dc6828.html</guid>
+  <pubDate>Sat, 13 Nov 2027 07:00:00 GMT</pubDate>
+</item><item>
   <title>AI Will Totally Cure Cancer, Bro!</title>
   <description>&lt;p&gt;It was recently reported that Palantir CTO Shyam Sankar claimed that
 &amp;quot;many AI researchers have started smoking&amp;quot; as a way of signaling
@@ -892,50 +1012,6 @@ getting fired, but hopefully only after the first world tour.&lt;/p&gt;
   <author>04f953b4-6966-46a2-9aa8-89b582fbe500@bsstahl.com (Barry S. Stahl)</author>
   <guid>https://www.cognitiveinheritance.com/Permalinks/eaf445c6-26bf-4c48-bf93-a2ad67849cbe.html</guid>
   <pubDate>Tue, 04 Nov 2025 19:00:00 GMT</pubDate>
-</item><item>
-  <title>When VS Code Shows the Wrong Source Control View - Resolving Duplicate Icons</title>
-  <description>&lt;p&gt;Recently, I encountered a confusing issue with Visual Studio Code where the source control tab wasn&apos;t showing my modified files anymore. Git was correctly detecting changes since the &lt;strong&gt;git status&lt;/strong&gt; command correctly showed modifications, but those changes weren&apos;t appearing in VS Code&apos;s source control panel. Instead, I was seeing a graph view of my repository history.&lt;/p&gt;
-&lt;h4&gt;The Investigation&lt;/h4&gt;
-&lt;p&gt;I turned to Claude Sonnet 3.7 (via the Cline extension in VS Code) for help troubleshooting this issue. We started with some basic diagnostics:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;First, we verified Git was working correctly by viewing modified fiels in the terminal using &lt;strong&gt;git status&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;We checked VS Code&apos;s Git extensions and settings to see if anything was misconfigured&lt;/li&gt;
-&lt;li&gt;Claude suggested trying the Ctrl+Shift+G keyboard shortcut, which immediately showed the correct view with my modified files&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;This last step was the key insight - pressing Ctrl+Shift+G showed the standard Source Control view with a list of modified files (what I wanted), but clicking the Source Control icon in the Activity Bar showed a different view (the graph view).&lt;/p&gt;
-&lt;h4&gt;The Solution&lt;/h4&gt;
-&lt;p&gt;After some investigation, we discovered the root cause: I had two different source control icons in my Activity Bar:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;One at the top labeled &amp;quot;Source Control&amp;quot; that showed the graph view&lt;/li&gt;
-&lt;li&gt;One at the bottom (off-screen, requiring scrolling) labeled &amp;quot;Source Control (Ctrl-Shift-G)&amp;quot; that showed the view of changed files&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;The solution was simple:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Remove the unwanted icon (the top one showing the graph view)&lt;/li&gt;
-&lt;li&gt;Move the correct icon (&amp;quot;Source Control (Ctrl-Shift-G)&amp;quot;) to a more visible position in the Activity Bar&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;After making these changes, clicking the Source Control icon in the Activity Bar now consistently shows my modified files, just like pressing Ctrl+Shift+G.&lt;/p&gt;
-&lt;h4&gt;Why This Happens&lt;/h4&gt;
-&lt;p&gt;VS Code allows multiple views with similar icons to coexist in the Activity Bar. This flexibility is powerful but can sometimes lead to confusion:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Extensions can add their own source control-related views&lt;/li&gt;
-&lt;li&gt;These views might use similar terminology and iconography&lt;/li&gt;
-&lt;li&gt;Without careful attention to the hover labels, it&apos;s easy to confuse which icon does what&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;In my case, I had somehow ended up with duplicate Source Control icons in my Activity Bar, each showing different views of my repository.&lt;/p&gt;
-&lt;h4&gt;Preventing Future Issues&lt;/h4&gt;
-&lt;p&gt;To avoid similar confusion in the future, I will make sure that I:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Hover over icons in the Activity Bar to see their full labels&lt;/li&gt;
-&lt;li&gt;Pay attention to keyboard shortcuts listed in the labels (like &amp;quot;Ctrl-Shift-G&amp;quot;)&lt;/li&gt;
-&lt;li&gt;Right-click on the Activity Bar and review which views are enabled&lt;/li&gt;
-&lt;li&gt;Remove the ones I use less frequently when I end up with multiple, similar icons.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-  <link>https://www.cognitiveinheritance.com/Posts/when-vs-code-shows-the-wrong-source-control-view.html</link>
-  <author>04f953b4-6966-46a2-9aa8-89b582fbe500@bsstahl.com (Barry S. Stahl)</author>
-  <guid>https://www.cognitiveinheritance.com/Permalinks/8f7e6d5c-4b3a-2a1d-9c8b-7e6f5d4c3b2a.html</guid>
-  <pubDate>Sun, 13 Apr 2025 07:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
