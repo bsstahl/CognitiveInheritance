@@ -75,6 +75,134 @@
             <div class="row">
                 <main class="col-lg-9 col-xl-10 content-main">
                     <div>
+    <h3>80&#37; of Implementations Should be Using Microservices</h3>
+    <h5>Posted by bsstahl on 2027-11-13 and Filed Under: <a title="Category: development" class="small" href="Search/development.html">development</a>&nbsp;</h5>
+    <share-on-mastodon 
+        share_title="Check out this post on Cognitive Inheritance: '80&#37; of Implementations Should be Using Microservices'"
+        share_description="&quot;Explore why microservices should be the default architecture for most modern software implementations. This post highlights the advantages of microservices over monolithic architectures, focusing on reliability.&quot;"
+        target_url="https://CognitiveInheritance.com/Permalinks/2eabd648-feb1-4f89-beb7-8f3a29dc6828.html"
+        hashtags="#microservices"
+        author="@bsstahl@cognitiveinheritance.com"
+        default_url="https://fosstodon.org">
+    </share-on-mastodon>
+    <br/><br/>
+    <p>Most modern software systems should use microservices by default. Clear service boundaries help isolate failures, support eventual consistency, and let teams deploy changes independently.</p>
+<p>Monoliths can simplify local calls and deployment, but they do not remove complexity. Shared data, cross-domain transactions, and hidden dependencies make systems harder to reason about. These shortcuts also encourage coupling, making failures harder to contain, deployments riskier, and a later split more expensive. Monoliths can use reliable patterns, but microservices make them easier to adopt from the start, and harder to move away from accidentally.</p>
+<p>Monoliths can seem simpler because they make direct calls and shared data easier, but those very conveniences are often what encourages coupling and adds complexity later.</p>
+<h2>The Monolith-First Fallacy</h2>
+<p>The fundamental problem with starting with a monolith is that it encourages, or at least does not prevent, several distributed systems anti-patterns. For example, monoliths make it far too easy to accidentally depend on full consistency rather than embracing eventual consistency. Most of the difficult race conditions I've encountered in my career have been a result of not embracing eventual consistency from the beginning.</p>
+<p>A monolith can be well-abstracted, but keeping its boundaries and reliability patterns intact as the system grows can be nearly impossible; the path of least resistance gradually pulls teams toward direct calls and synchronous consistency.</p>
+<blockquote>
+<p>...if a problem were to occur late Friday afternoon, would it be ok for it to wait until Monday to be fixed? If not, a monolith probably doesn't provide the needed reliability profile.</p>
+</blockquote>
+<h2>Simplicity Through Natural Boundaries</h2>
+<p>While monolithic architectures <em>can</em> implement all of the patterns designed to make our systems reliable, microservices make these patterns natural, simpler, and the path of least resistance. This distinction is crucial because <strong>simplicity is critical everywhere in our systems, but it is most important within the reliability aspects</strong>. Reliability-critical paths (failover, error handling, recovery) must remain simple. Microservices achieve this simplicity by making reliable patterns the default choice rather than requiring extra effort.</p>
+<p>Since everything in software engineering is a trade-off, we should be willing to accept minor increases in operational complexity (like service discovery or distributed tracing) in exchange for dramatic simplification of our reliability-critical paths. Reliable messaging is only as good as the boundaries it enforces. Microservices often enforce these boundaries by default.</p>
+<h3>1. Reliability Through Isolation</h3>
+<p>One of the most compelling arguments for microservices is the inherent reliability gained through service isolation. When a service fails in a monolithic application, it often brings down the entire system. In contrast, microservices architecture allows for graceful degradation:</p>
+<ul>
+<li>Individual service failures remain isolated</li>
+<li>The rest of the system continues functioning</li>
+<li>Recovery can occur without system-wide impact</li>
+<li>Circuit breakers can protect dependent services</li>
+</ul>
+<p>Service boundaries can limit the impact of a failure, but they do not guarantee isolation on their own. Teams still need to decide how the system will behave when a dependency is unavailable. The same question applies to monoliths when they depend on external services or shared infrastructure. Inside a monolith, direct calls can make dependencies and failure behavior less visible, so teams may be less likely to design for them explicitly.</p>
+<h3>2. Reliability Through Eventual Consistency</h3>
+<p>One of the key paradigm shifts in microservices architecture is embracing eventual consistency. While this concept might seem challenging at first, it often better reflects real-world business processes. Monoliths trick you into synchronous thinking, creating brittle systems that fail catastrophically.</p>
+<p>We often expect every part of a workflow to be up to date before the system responds. But some work can safely finish later. For example, once an order is accepted and inventory is reserved, its confirmation email can be queued and sent later. If checkout waits for the email service, an outage there can block an otherwise valid order. Eventual consistency lets the email catch up; it does not mean relaxing consistency where the business requires it.</p>
+<p><code>async</code>/<code>await</code> helps code wait without blocking, but it does not make a workflow eventually consistent. Many <code>async</code> methods still wait for a response before proceeding. To let work finish later, the system must hand it off reliably and allow the caller to move on. Monoliths make direct calls easier than message handoffs, so synchronous patterns are easy to introduce and harder to replace later.</p>
+<p>But here's the hidden benefit: <strong>Eventually consistent systems using reliable messaging patterns like Service Bus or Apache Kafka are inherently self-healing</strong>. When a service is temporarily unavailable, messages queue up. When it returns, processing resumes automatically. No manual intervention, no 3am calls. The system heals itself.</p>
+<p>Could a monolith use these same messaging patterns? Technically, yes. But monoliths don't make this pattern a first-class citizen. In a monolith, it's far easier to make a direct method call than to set up messaging infrastructure. Microservices, by their very nature, push you toward these resilient patterns from the start. The path of least resistance in microservices leads to self-healing systems; in monoliths, it leads to brittle, synchronous coupling.</p>
+<h3>3. Scalability as Operational Reliability</h3>
+<p>Microservices enable precise scaling of specific functionality, preventing system-wide performance degradation:</p>
+<ul>
+<li>High-demand services can scale independently</li>
+<li>Resource allocation becomes more efficient</li>
+<li>Cost optimization is more granular</li>
+<li>Performance bottlenecks are easier to identify and address</li>
+</ul>
+<p>Scalability is only one of the benefits of event-driven microservices; see <a href="Posts/microservices-not-just-about-scale.html">Microservices - Not Just About Scalability</a> for the broader case.</p>
+<h3>4. Team Autonomy and Deployment Reliability</h3>
+<p>Modern development teams thrive when they can work independently. Independent deployments mean isolated risk:</p>
+<ul>
+<li>Teams can own their services end-to-end</li>
+<li>Deployment cycles are shorter and lower risk</li>
+<li>Technology choices can be optimized per service</li>
+<li>Parallel development becomes more natural</li>
+</ul>
+<p>By contrast, monolithic deployments put more of the application at risk at once:</p>
+<ul>
+<li>One bad change can bring down unrelated features</li>
+<li>Rollbacks affect the entire system, not just the problem area</li>
+<li>Teams may batch changes to reduce deployment frequency, increasing the risk of each release</li>
+<li>&quot;Never deploy on Friday&quot; can become policy because the consequences are difficult to contain</li>
+</ul>
+<h2>Why &quot;Start with a Monolith&quot; Fails</h2>
+<p>The strongest argument against starting with a monolith is not that it cannot be well designed. It is that coupling tends to increase along the path of least resistance, amplifying the deployment risks described above.</p>
+<h3>The Coupling Creep (The Most Insidious Failure)</h3>
+<p>Coupling creep is particularly dangerous because it usually happens gradually, invisibly, and with each individual step appearing reasonable. It is the architectural equivalent of boiling the metaphorical frog:</p>
+<ul>
+<li><strong>Day 1</strong>: &quot;We'll keep clean boundaries between our modules&quot;</li>
+<li><strong>Month 1</strong>: &quot;Just this once, we'll directly call that other module's internal method&quot;</li>
+<li><strong>Month 6</strong>: &quot;We need a database transaction across these three domains for consistency&quot;</li>
+<li><strong>Year 1</strong>: &quot;Nobody knows what depends on what anymore&quot;</li>
+</ul>
+<p>In a monolith, coupling spreads through the path of least resistance:</p>
+<ul>
+<li>Direct method calls are easier than message passing, so it is natural to take the shortcut</li>
+<li>Shared database transactions create hidden dependencies across business domains</li>
+<li>&quot;Temporary&quot; shared data models become permanent coupling points</li>
+<li>Performance optimizations can encourage developers to bypass abstractions</li>
+<li>What begins as clean architecture can gradually become a big ball of mud</li>
+</ul>
+<p><strong>This is why coupling creep is so insidious</strong>: each decision can be justified in isolation. The shortcut saves time, and the optimization improves performance. Collectively, however, these decisions create a web of dependencies that makes a later refactoring to microservices much more expensive, if not effectively impossible.</p>
+<h3>&quot;bUt OuR tEaM cAn'T hAnDlE mIcRoSeRvIcEs&quot;</h3>
+<p>This kind of statement may describe the team’s current experience, but it should not determine which architecture the system needs. &quot;We can't&quot; may describe an addressable skills gap, or it may describe a genuine organizational capacity constraint; those are not the same problem.</p>
+<p>If the team lacks the skills to build and operate reliable services, the answer is to close that gap: teach the patterns, provide a platform and guardrails, and build experience incrementally. &quot;We don’t know how yet&quot; is a reason to invest in learning, not a permanent architectural principle. The people responsible for the system also have a responsibility to help the team become capable of operating it reliably.</p>
+<p>An organization that cannot provide the necessary training, time, staffing, platform, or operational support presents a different problem. If the team cannot realistically own the reliability and operational consequences of microservices, that is a genuine organizational capacity constraint, not merely a skills gap to be dismissed. It may make a monolith the better choice for now, but the decision should say so explicitly and account for the consequences. &quot;Our team can’t handle microservices&quot; is not a sufficient rebuttal until we identify which problem we actually have and address the one that is addressable.</p>
+<p>I suspect that we’ll all agree, at least in principle, that any argument reducing the issue to &quot;the team members are too dumb to handle it&quot; is ridiculous and can be dismissed outright. Unfortunately, I still hear arguments like that, and I will always shut them down.</p>
+<p>In a future article, I’ll take a broader look at some of these tradeoffs, including testing, complexity, and operational overhead.</p>
+<h2>When to Consider a Monolith</h2>
+<p>The roughly 20% of cases where monoliths make sense have one thing in common: reliability isn't critical. We should choose a monolith only when ALL of the following are true:</p>
+<ul>
+<li>The application has extremely limited scope with no growth expectations</li>
+<li>You have a very small team (1-2 developers) with no plans to expand</li>
+<li>The application has extreme latency or consistency requirements that override reliability concerns.
+<ul>
+<li>Be skeptical of these types of claims. Systems are often designed around theoretical latency or consistency requirements that are never actually validated against business outcomes.</li>
+<li>Requirements that truly justify these tradeoffs are relatively rare in line-of-business software. They are more commonly found in real-time, embedded, control, infrastructure, or other systems-engineering domains where timing and correctness constraints are fundamental to the system's purpose.</li>
+</ul>
+</li>
+<li>Downtime is acceptable and won't impact users or business operations
+<ul>
+<li>That is, if a problem were to occur late Friday afternoon, would it be ok for it to wait until Monday to be fixed? If not, a monolith probably doesn't provide the needed reliability profile.</li>
+</ul>
+</li>
+</ul>
+<p>OR</p>
+<ul>
+<li>The application is a <strong>true proof-of-concept that will be discarded</strong></li>
+</ul>
+<p>If you're unsure, you probably need microservices. Uncertainty about future requirements is a very good reason for requiring strong failure isolation.</p>
+<h2>The Reliability Dividend</h2>
+<p>Every architectural decision compounds over time. With microservices:</p>
+<ul>
+<li>Every failure isolated is a 3am call avoided</li>
+<li>Every service boundary is a blast radius limit</li>
+<li>Every independent deployment is a risk reduction</li>
+<li>Every asynchronous pattern is a cascading failure prevented</li>
+<li>Every reliable messaging pattern enables self-healing and can mean one less 3am call</li>
+</ul>
+<h2>Conclusion</h2>
+<p>The case for microservices is not that monoliths are always wrong, or that microservices automatically provide reliability. It is that explicit service boundaries and asynchronous communication make reliability concerns part of the design rather than an afterthought. For many systems, that makes microservices the stronger default, provided the team can learn and operate the required patterns effectively.</p>
+<p>An addressable skills gap should not become a permanent architectural principle: teams can build experience with training, platform support, and guardrails. A genuine organizational capacity constraint is different, but it does not, by itself, make a monolith the right choice. A monolith is appropriate only when the application meets the conditions described above, or when it is a true proof of concept that will be discarded. Otherwise, the capacity constraint must be addressed rather than used to justify the wrong architecture.</p>
+<p>When reliability and independent change matter, microservices provide a stronger starting point, not a guarantee. Teams still need reliable messaging, deliberate failure handling, and sufficient observability to realize the benefits.</p>
+<h2>Further Reading</h2>
+<p>For more on the design conversations behind reliable event-driven systems, see the six-part <a href="Posts/critical-cs-of-microservices-1of6-context.html">Critical C's of Microservices</a> series: <a href="Posts/critical-cs-of-microservices-1of6-context.html">Context</a>, <a href="Posts/critical-cs-of-microservices-2of6-consistency.html">Consistency</a>, <a href="Posts/critical-cs-of-microservices-3of6-contract.html">Contract</a>, <a href="Posts/critical-cs-of-microservices-4of6-chaos.html">Chaos</a>, <a href="Posts/critical-cs-of-microservices-5of6-competencies.html">Competencies</a>, and <a href="Posts/critical-cs-of-microservices-6of6-coalescence.html">Coalescence</a>. The companion <a href="Posts/critical-questions-about-microservice.html">Critical Questions About Microservices</a> article gathers those questions in one place.</p>
+
+    <h5>Tags: <a title="Tag: microservices" class="small" href="Search/microservices.html">microservices</a>&nbsp;</h5>
+    <div class="share"><a href="Permalinks/2eabd648-feb1-4f89-beb7-8f3a29dc6828.html" rel="bookmark">Permalink</a></div>
+</div><hr/><div>
     <h3>AI Will Totally Cure Cancer, Bro!</h3>
     <h5>Posted by bsstahl on 2026-10-16 and Filed Under: <a title="Category: tools" class="small" href="Search/tools.html">tools</a>&nbsp;</h5>
     <share-on-mastodon 
@@ -1293,55 +1421,6 @@ Phoenix AZ<br/>
 
     <h5>Tags: <a title="Tag: development" class="small" href="Search/development.html">development</a>&nbsp;<a title="Tag: principle" class="small" href="Search/principle.html">principle</a>&nbsp;<a title="Tag: ddd" class="small" href="Search/ddd.html">ddd</a>&nbsp;</h5>
     <div class="share"><a href="Permalinks/8a1260ce-2b01-401c-96e2-8954e8091f86.html" rel="bookmark">Permalink</a></div>
-</div><hr/><div>
-    <h3>The Depth of GPT Embeddings</h3>
-    <h5>Posted by bsstahl on 2023-10-03 and Filed Under: <a title="Category: tools" class="small" href="Search/tools.html">tools</a>&nbsp;</h5>
-    <share-on-mastodon 
-        share_title="Check out this post on Cognitive Inheritance: 'The Depth of GPT Embeddings'"
-        share_description="&quot;This article describes the depth of GPT embeddings, calculating the number of possible representations in a GPT vector. This analysis suggests that these models likely hold untapped insights, waiting to be discovered.&quot;"
-        target_url="https://CognitiveInheritance.com/Permalinks/e47eddf9-fcda-4382-a7c8-e498026fbfee.html"
-        hashtags="#ai #embedding"
-        author="@bsstahl@cognitiveinheritance.com"
-        default_url="https://fosstodon.org">
-    </share-on-mastodon>
-    <br/><br/>
-    <p>I've been trying to get a handle on the number of representations possible in a GPT vector and thought others might find this interesting as well. For the purposes of this discussion, a GPT vector is a 1536 dimensional structure that is unit-length, encoded using the <strong>text-embedding-ada-002</strong> embedding model.</p>
-<p>We know that the number of theoretical representations is infinite, being that there are an infinite number of possible values between 0 and 1, and thus an infinite number of values between -1 and +1. However, we are not working with truly infinite values since we need to be able to represent them in a computer. This means that we are limited to a finite number of decimal places. Thus, we may be able to get an approximation for the number of possible values by looking at the number of decimal places we can represent.</p>
-<h3>Calculating the number of possible states</h3>
-<p>I started by looking for a lower-bound for the value, and incresing fidelity from there. We know that these embeddings, because they are unit-length, can take values from -1 to +1 in each dimension. If we assume temporarily that only integer values are used, we can say there are only 3 possible states for each of the 1536 dimensions of the vector (-1, 0 +1). A base (B) of 3, with a digit count (D) of 1536, which can by supplied to the general equation for the number of possible values that can be represented:</p>
-<p><strong>V = B<sup>D</sup></strong> or <strong>V = 3<sup>1536</sup></strong></p>
-<p>The result of this calculation is equivalent to 2<sup>2435</sup> or 10<sup>733</sup> or, if you prefer, a number of this form:</p>
-<pre><code>10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-</code></pre>
-<p>Already an insanely large number. For comparison, the number of atoms in the universe is roughly 10<sup>80</sup>.</p>
-<p>We now know that we have at least 10<sup>733</sup> possible states for each vector. But that is just using integer values. What happens if we start increasing the fidelity of our value. The next step is to assume that we can use values with a single decimal place. That is, the numbers in each dimension can take values such as <strong>0.1</strong> and <strong>-0.5</strong>. This increases the base in the above equation by a factor of 10, from 3 to 30. Our new values to plug in to the equation are:</p>
-<p><strong>V = 30<sup>1536</sup></strong></p>
-<p>Which is equivalent to <strong>2<sup>7537</sup></strong> or <strong>10<sup>2269</sup></strong>.</p>
-<p>Another way of thinking about these values is that they require a data structure not of 32 or 64 bits to represent, but of 7537 bits. That is, we would need a data structure that is 7537 bits long to represent all of the possible values of a vector that uses just one decimal place.</p>
-<p>We can continue this process for a few more decimal places, each time increasing the base by a factor of 10. The results can be found in the table below.</p>
-<table border=1>
-<tr><th>B</th><th>Example</th><th>Base-2</th><th>Base-10</th></tr>
-<tr><td>3</td><td>1</td><td>2435</td><td>733</td></tr>
-<tr><td>30</td><td>0.1</td><td>7537</td><td>2269</td></tr>
-<tr><td>300</td><td>0.01</td><td>12639</td><td>3805</td></tr>
-<tr><td>3000</td><td>0.001</td><td>17742</td><td>5341</td></tr>
-<tr><td>30000</td><td>0.0001</td><td>22844</td><td>6877</td></tr>
-<tr><td>300000</td><td>0.00001</td><td>27947</td><td>8413</td></tr>
-<tr><td>3000000</td><td>0.000001</td><td>33049</td><td>9949</td></tr>
-<tr><td>30000000</td><td>0.0000001</td><td>38152</td><td>11485</td></tr>
-<tr><td>300000000</td><td>0.00000001</td><td>43254</td><td>13021</td></tr>
-<tr><td>3000000000</td><td>0.000000001</td><td>48357</td><td>14557</td></tr>
-<tr><td>30000000000</td><td>1E-10</td><td>53459</td><td>16093</td></tr>
-<tr><td>3E+11</td><td>1E-11</td><td>58562</td><td>17629</td></tr>
-</table>
-<p>This means that if we assume 7 decimal digits of precision in our data structures, we can represent <strong>10<sup>11485</sup></strong> distinct values in our vector.</p>
-<p>This number is so large that all the computers in the world, churning out millions of values per second for the entire history (start to finish) of the universe, would not even come close to being able to generate all of the possible values of a single vector.</p>
-<h3>What does all this mean?</h3>
-<p>Since we currently have no way of knowing how dense the representation of data inside the GPT models is, we can only guess at how many of these possible values actually represent ideas. However, this analysis gives us a reasonable proxy for how many the model can hold. If there is even a small fraction of this information encoded in these models, then it is nearly guaranteed that these models hold in them insights that have never before been identified by humans. We just need to figure out how to access these revelations.</p>
-<p>That is a discussion for another day.</p>
-
-    <h5>Tags: <a title="Tag: ai" class="small" href="Search/ai.html">ai</a>&nbsp;<a title="Tag: embedding" class="small" href="Search/embedding.html">embedding</a>&nbsp;</h5>
-    <div class="share"><a href="Permalinks/e47eddf9-fcda-4382-a7c8-e498026fbfee.html" rel="bookmark">Permalink</a></div>
 </div>
                 </main>
                 <aside class="col-lg-3 col-xl-2 sidebar">
