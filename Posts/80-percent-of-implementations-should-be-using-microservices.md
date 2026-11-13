@@ -6,11 +6,11 @@ id: 2eabd648-feb1-4f89-beb7-8f3a29dc6828
 author: bsstahl
 title: 80&#37; of Implementations Should be Using Microservices
 description: Explore why microservices should be the default architecture for most modern software implementations. This post highlights the advantages of microservices over monolithic architectures, focusing on reliability.
-ispublished: false
+ispublished: true
 showinlist: false
 buildifnotpublished: true
-publicationdate: 2025-05-17T19:18:35.000+00:00
-lastmodificationdate: 2025-05-17T19:18:35.000+00:00
+publicationdate: 2027-11-13T07:00:00.000+00:00
+lastmodificationdate: 2027-11-13T07:00:00.000+00:00
 slug: 80-percent-of-implementations-should-be-using-microservices
 categories:
 - Development
