@@ -20,13 +20,13 @@ categories: []
 
 <!-- I currently have no talks scheduled. {ContactPageLink:Contact me} to arrange to have me speak at your event. -->
 
-* **[.NET Conf 2026](https://dotnet.microsoft.com/en-us/conf/2026/agenda/brk121)** - 11/13/2026 - "Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems"
 * **[DevFest.MN 2026](https://devfest.mn/)** - 12/05/2026 - "Intentional Architecture in the Age of AI: Defining and Automating the Guardrails"
 * **[ConFoo 2027](https://confoo.ca/en/2027/session/eliminating-hidden-dangers-patterns-for-reliable-systems)** - 2/24/2027 - 2/26/2027 - "Eliminating Hidden Dangers: Patterns for Reliable Systems" and "Designing APIs in .NET: Beyond HTTP"
 * **[Craft Conference 2027 - Budapest](https://craft-conf.com/2027/speakers/)** - 6/3/2027 - 6/4/2027 - Sessions TBD
 
 ### Past engagements
 
+* **[.NET Conf 2026](https://dotnet.microsoft.com/en-us/conf/2026/agenda/brk121)** - 11/13/2026 - "Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems"
 * **[TechBash 2026 - Poconos](https://www.techbash.com/)** - 10/13/2026 - 10/16/2026 - "Beyond Procedural Logic: Solving Problems Outside the Query" & "Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems"
 * **[MLcon New York 2026](https://mlconference.ai/speaker/barry-stahl/)** - 9/28/2026 - 10/2/2026 - "LLMs Under the Hood - Workshop", "The Future of Information Retrieval: A Deep-Dive into RAG" & "When you Don't Need an LLM: Deterministic Intelligence for Real World Apps"
 <!-- * **[MITechCon 2026 - Rochester, MI](https://www.mitechcon.events/MITechCon2026)** (all workshops cancelled) - 10/28/2026 - 10/30/2026 - "LLMs Under the Hood - Applied Engineering Workshop" & "Amazing Algorithms for Solving Problems in Software" -->
