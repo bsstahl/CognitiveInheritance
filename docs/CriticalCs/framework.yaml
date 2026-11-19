@@ -1,0 +1,556 @@
+metadata:
+  artifact_type: framework_model
+  schema_version: 1.0
+  generated_from:
+    - 02-ConceptExtraction.yaml
+
+framework:
+  name: The Critical C's of Microservices
+
+  dimensions:
+    - id: context
+      name: Context
+      source_refs:
+        - critical-cs-overview
+        - context
+      description: Tools and techniques for avoiding the Dual-Writes Anti-Pattern and understanding state changes within service execution contexts.
+      supporting_concepts:
+        - concept_id: execution-context
+        - concept_id: idempotence
+        - concept_id: dual-writes
+        - concept_id: less-reliable-business-process
+        - concept_id: database-change-driven-event
+        - concept_id: distributed-transactions
+        - concept_id: system-reliability
+      principles:
+        - principle_id: one-reliable-change-per-execution-context
+        - principle_id: idempotent-retry-preserves-state
+        - principle_id: less-reliable-business-functions-are-technical-debt
+
+    - id: consistency
+      name: Consistency
+      source_refs:
+        - critical-cs-overview
+        - consistency
+      description: The eventual nature of data consistency and the reliability characteristics of consistency-related implementation patterns.
+      supporting_concepts:
+        - concept_id: consistency-property
+        - concept_id: eventual-consistency
+        - concept_id: strong-consistency
+        - concept_id: full-consistency
+        - concept_id: race-condition
+        - concept_id: workorder-update-publication-models
+        - concept_id: database-change-driven-event
+        - concept_id: system-reliability
+      principles:
+        - principle_id: eventual-consistency-is-the-baseline
+        - principle_id: stronger-consistency-affects-reliability-and-scalability
+
+    - id: contract
+      name: Contract
+      source_refs:
+        - critical-cs-overview
+        - contract
+      description: Compatibility expectations for integration messages and separation of internal data representations from public integration representations.
+      supporting_concepts:
+        - concept_id: message-contract
+        - concept_id: domain-model
+        - concept_id: integration-model
+        - concept_id: representation-isolation
+        - concept_id: upstream-integration-model
+        - concept_id: assumptions-about-external-data
+      principles:
+        - principle_id: compatibility-expectations-are-part-of-message-contracts
+        - principle_id: isolate-domain-and-integration-models
+
+    - id: chaos
+      name: Chaos
+      source_refs:
+        - critical-cs-overview
+        - chaos
+      description: Failure behavior in dependent infrastructure and system responses to failures.
+      supporting_concepts:
+        - concept_id: infrastructure-failure
+        - concept_id: self-healing-systems
+        - concept_id: virtual-chaos-engineering
+        - concept_id: production-failure-experimentation
+        - concept_id: temporal-decoupling
+        - concept_id: system-reliability
+      principles:
+        - principle_id: infrastructure-failure-is-expected
+        - principle_id: system-recovery-is-part-of-system-behavior
+
+    - id: competencies
+      name: Competencies
+      source_refs:
+        - critical-cs-overview
+        - competencies
+      description: The relationship between custom software, competitive differentiation, off-the-shelf products, and existing capabilities.
+      supporting_concepts:
+        - concept_id: core-competencies
+        - concept_id: build-versus-buy
+        - concept_id: commercial-and-open-source-products
+        - concept_id: cross-cutting-concerns-and-infrastructure
+        - concept_id: infrastructure-api-reuse
+      principles:
+        - principle_id: custom-software-and-competitive-differentiation
+        - principle_id: existing-capabilities-are-part-of-the-solution-space
+
+    - id: coalescence
+      name: Coalescence
+      source_refs:
+        - critical-cs-overview
+        - coalescence
+      description: Bringing deployment verification, logs, traces, metrics, and dependency information together for operational use.
+      supporting_concepts:
+        - concept_id: operational-information-coalescence
+        - concept_id: deployment-and-system-verification
+        - concept_id: logging-and-traceability
+        - concept_id: service-level-indicators-and-metrics
+      principles:
+        - principle_id: operational-information-is-coalesced-for-access
+        - principle_id: verification-and-operational-signals-inform-operations
+
+  framework_principles:
+    - id: reliable-and-supportable-systems
+      statement: The Critical C's conversations help teams determine appropriate architectural patterns and build systems and processes that are reliable and supportable.
+      source_refs:
+        - critical-cs-overview
+      supporting_dimensions:
+        - context
+        - consistency
+        - contract
+        - chaos
+        - competencies
+        - coalescence
+
+  concepts:
+    - id: execution-context
+      name: Execution context
+      source_refs:
+        - context
+      definitions:
+        - The unit of work of a service, representing the life-cycle of a single request regardless of how it was received.
+      aliases:
+        - unit of work
+
+    - id: idempotence
+      name: Idempotence
+      source_refs:
+        - context
+      definitions:
+        - The ability to execute a task an arbitrary number of times and have the resulting state be the same as if the task was executed once.
+      aliases:
+        - idempotent operation
+
+    - id: dual-writes
+      name: Dual-Writes Anti-Pattern
+      source_refs:
+        - context
+        - consistency
+      concept_refs:
+        - context#dual-writes
+        - consistency#workorder-update-publication-models
+      definitions:
+        - A service attempts to make multiple reliable changes to system state within one execution context, such as updating a database and publishing to a topic.
+      aliases:
+        - Dual-Write
+
+    - id: less-reliable-business-process
+      name: Less-reliable business process
+      source_refs:
+        - context
+      definitions:
+        - A business process implemented with less reliability than other business processes.
+      aliases:
+        - less-reliable business functionality
+
+    - id: database-change-driven-event
+      name: Database-change-driven event
+      source_refs:
+        - context
+        - consistency
+      concept_refs:
+        - context#database-change-driven-event
+        - consistency#eventual-consistency
+      definitions:
+        - A downstream event message produced by a secondary process triggered by a database update.
+      aliases: []
+
+    - id: distributed-transactions
+      name: Distributed transactions
+      source_refs:
+        - context
+      definitions:
+        - Transactions that make ACID-compliant changes across multiple data stores or boundaries such as web services.
+      aliases: []
+
+    - id: system-reliability
+      name: System reliability
+      source_refs:
+        - context
+        - consistency
+        - chaos
+      concept_refs:
+        - context#execution-context
+        - context#idempotence
+        - consistency#eventual-consistency
+        - chaos#self-healing-systems
+      definitions:
+        - Reliability of system state changes and system operation, discussed in relation to retries, consistency, and failure recovery.
+      aliases: []
+
+    - id: consistency-property
+      name: Consistency
+      source_refs:
+        - consistency
+      definitions:
+        - Data is consistent when it appears the same way when viewed from multiple perspectives.
+      aliases: []
+
+    - id: eventual-consistency
+      name: Eventual consistency
+      source_refs:
+        - critical-cs-overview
+        - consistency
+      concept_refs:
+        - critical-cs-overview#consistency
+        - consistency#eventual-consistency
+      definitions:
+        - A system has strong guarantees that data will reach all intended targets, but weaker guarantees about how long it may take to achieve consistency.
+      aliases: []
+
+    - id: strong-consistency
+      name: Strong consistency
+      source_refs:
+        - consistency
+      definitions:
+        - A guarantee that every actor in an application sees the exact same value for any data element at any given time.
+      aliases: []
+
+    - id: full-consistency
+      name: Full consistency
+      source_refs:
+        - consistency
+      definitions:
+        - A consistency state described as impossible in a world with a finite speed of causation.
+      aliases: []
+
+    - id: race-condition
+      name: Race condition
+      source_refs:
+        - consistency
+      definitions:
+        - A situation in which the ordering of data access and event creation can produce consistency problems.
+      aliases:
+        - consistency smell
+
+    - id: workorder-update-publication-models
+      name: WorkOrder update and publication implementations
+      source_refs:
+        - consistency
+      definitions:
+        - Three described ways of updating a WorkOrder and publishing its changes to a topic for downstream consumers.
+      aliases: []
+
+    - id: message-contract
+      name: Message contract
+      source_refs:
+        - contract
+      definitions:
+        - A message defined and agreed to by stakeholders as an integration mechanism, with expectations for compatibility and change.
+      aliases:
+        - integration contract
+
+    - id: domain-model
+      name: Domain Model
+      source_refs:
+        - contract
+      definitions:
+        - The internal representation of a message.
+      aliases:
+        - internal representation
+
+    - id: integration-model
+      name: Integration Model
+      source_refs:
+        - contract
+      definitions:
+        - The more public representation of a message.
+      aliases:
+        - public representation
+
+    - id: representation-isolation
+      name: Isolation between internal and public representations
+      source_refs:
+        - contract
+      definitions:
+        - An isolation layer separates the internal representation of a message from its more public integration representation.
+      aliases:
+        - isolation layer
+
+    - id: upstream-integration-model
+      name: Upstream integration model
+      source_refs:
+        - contract
+      definitions:
+        - An integration representation supplied by an upstream system and used by a service.
+      aliases: []
+
+    - id: assumptions-about-external-data
+      name: Assumptions about data the service does not own
+      source_refs:
+        - contract
+      definitions:
+        - Assumptions about an upstream data field's type, provenance, embedded intelligence, or identifier behavior.
+      aliases: []
+
+    - id: infrastructure-failure
+      name: Infrastructure failure
+      source_refs:
+        - chaos
+      definitions:
+        - A failure or instability in infrastructure on which a service depends.
+      aliases:
+        - failure mode
+
+    - id: self-healing-systems
+      name: Self-healing systems
+      source_refs:
+        - chaos
+      definitions:
+        - Systems designed to recover automatically after a problem is corrected.
+      aliases: []
+
+    - id: virtual-chaos-engineering
+      name: Virtual Chaos Engineering
+      source_refs:
+        - chaos
+      definitions:
+        - Thought experiments using system diagrams to identify where failures could occur and explore the possible impact.
+      aliases:
+        - what-if exercise
+
+    - id: production-failure-experimentation
+      name: Production failure experimentation
+      source_refs:
+        - chaos
+      definitions:
+        - Experiments that expose a system to failures in production to observe how it responds.
+      aliases:
+        - Chaos Monkey experiments
+
+    - id: temporal-decoupling
+      name: Temporal decoupling
+      source_refs:
+        - chaos
+      definitions:
+        - A relationship in which asynchronous tools separate services temporally from their dependencies.
+      aliases: []
+
+    - id: core-competencies
+      name: Core competencies
+      source_refs:
+        - competencies
+      definitions:
+        - A combination of multiple resources and skills that distinguish a firm in the marketplace and form the foundation of its competitiveness.
+      aliases: []
+
+    - id: build-versus-buy
+      name: Build versus buy
+      source_refs:
+        - competencies
+      definitions:
+        - A decision about whether to build a custom solution or use an off-the-shelf product.
+      aliases:
+        - build vs. buy
+
+    - id: commercial-and-open-source-products
+      name: Commercial and Free or Open-Source products
+      source_refs:
+        - competencies
+      definitions:
+        - Commercial products and Free or Open-Source products identified as off-the-shelf options.
+      aliases:
+        - COTS products
+        - FOSS products
+
+    - id: cross-cutting-concerns-and-infrastructure
+      name: Cross-cutting concerns and infrastructure capabilities
+      source_refs:
+        - competencies
+      definitions:
+        - Application concerns and infrastructure functions for which existing libraries or platform capabilities may be available.
+      aliases: []
+
+    - id: infrastructure-api-reuse
+      name: Infrastructure API reuse
+      source_refs:
+        - competencies
+      definitions:
+        - Using APIs of backing infrastructure components rather than building a Web API for a system.
+      aliases: []
+
+    - id: operational-information-coalescence
+      name: Coalescing operational information
+      source_refs:
+        - coalescence
+      definitions:
+        - Bringing information needed to operate and troubleshoot systems together in one place.
+      aliases:
+        - single pane-of-glass
+
+    - id: deployment-and-system-verification
+      name: Deployment and system verification testing
+      source_refs:
+        - coalescence
+      definitions:
+        - Tests performed immediately after deployment or on an ongoing basis to identify problems in a system.
+      aliases:
+        - deployment verification
+
+    - id: logging-and-traceability
+      name: Logging and traceability
+      source_refs:
+        - coalescence
+      definitions:
+        - Using distributed logging and identifiers to trace requests through a system and recognize unusual activity.
+      aliases:
+        - correlation identifier
+        - request identifier
+        - causation identifier
+
+    - id: service-level-indicators-and-metrics
+      name: Service Level Indicators and metrics
+      source_refs:
+        - coalescence
+      definitions:
+        - Service Level Indicators and other metrics that provide insights into system operations.
+      aliases:
+        - SLIs
+        - operational metrics
+
+  principles:
+    - id: one-reliable-change-per-execution-context
+      statement: A service execution context is described as reliably making one change to system state.
+      source_refs:
+        - context
+
+    - id: idempotent-retry-preserves-state
+      statement: An idempotent first change permits subsequent processing to be retried without duplication changing the resulting state.
+      source_refs:
+        - context
+
+    - id: less-reliable-business-functions-are-technical-debt
+      statement: Less-reliable implementations of business functionality are described as potential technical debt.
+      source_refs:
+        - context
+
+    - id: eventual-consistency-is-the-baseline
+      statement: The article describes application systems as eventually consistent and distinguishes that state from stronger consistency guarantees.
+      source_refs:
+        - consistency
+
+    - id: stronger-consistency-affects-reliability-and-scalability
+      statement: Stronger consistency guarantees can cause reliability and scalability difficulties when attempted inside an application.
+      source_refs:
+        - consistency
+
+    - id: compatibility-expectations-are-part-of-message-contracts
+      statement: Message contracts include stakeholder expectations about compatibility and the process for changing messages.
+      source_refs:
+        - contract
+
+    - id: isolate-domain-and-integration-models
+      statement: Internal data representations and public integration representations are distinct models connected through a transformation layer.
+      source_refs:
+        - contract
+
+    - id: infrastructure-failure-is-expected
+      statement: Infrastructure failures and software errors occur at random and often unpredictable times.
+      source_refs:
+        - chaos
+
+    - id: system-recovery-is-part-of-system-behavior
+      statement: System behavior includes how it responds to failures and recovers after a problem is corrected.
+      source_refs:
+        - chaos
+
+    - id: custom-software-and-competitive-differentiation
+      statement: The article relates custom software to a company's core competencies and competitive differentiation.
+      source_refs:
+        - competencies
+
+    - id: existing-capabilities-are-part-of-the-solution-space
+      statement: Existing products, libraries, and infrastructure capabilities are described as options alongside custom-built software.
+      source_refs:
+        - competencies
+
+    - id: operational-information-is-coalesced-for-access
+      statement: Operational information is brought together so operations and support engineers can access it when operating and troubleshooting systems.
+      source_refs:
+        - coalescence
+
+    - id: verification-and-operational-signals-inform-operations
+      statement: Deployment verification, logs, traces, and metrics provide information about system behavior and operation.
+      source_refs:
+        - coalescence
+
+  relationships:
+    - source: idempotence
+      target: system-reliability
+      relationship_type: supports
+    - source: execution-context
+      target: dual-writes
+      relationship_type: related_to
+    - source: database-change-driven-event
+      target: eventual-consistency
+      relationship_type: supports
+    - source: eventual-consistency
+      target: strong-consistency
+      relationship_type: related_to
+    - source: race-condition
+      target: workorder-update-publication-models
+      relationship_type: example_of
+    - source: message-contract
+      target: integration-model
+      relationship_type: supports
+    - source: representation-isolation
+      target: domain-model
+      relationship_type: supports
+    - source: representation-isolation
+      target: integration-model
+      relationship_type: supports
+    - source: upstream-integration-model
+      target: integration-model
+      relationship_type: related_to
+    - source: infrastructure-failure
+      target: self-healing-systems
+      relationship_type: influences
+    - source: virtual-chaos-engineering
+      target: production-failure-experimentation
+      relationship_type: supports
+    - source: temporal-decoupling
+      target: self-healing-systems
+      relationship_type: supports
+    - source: core-competencies
+      target: build-versus-buy
+      relationship_type: influences
+    - source: cross-cutting-concerns-and-infrastructure
+      target: build-versus-buy
+      relationship_type: related_to
+    - source: deployment-and-system-verification
+      target: operational-information-coalescence
+      relationship_type: supports
+    - source: logging-and-traceability
+      target: operational-information-coalescence
+      relationship_type: supports
+    - source: service-level-indicators-and-metrics
+      target: operational-information-coalescence
+      relationship_type: supports
+
+validation:
+  dimension_count: 6
+  concept_count: 33
+  principle_count: 14
+  relationship_count: 17
