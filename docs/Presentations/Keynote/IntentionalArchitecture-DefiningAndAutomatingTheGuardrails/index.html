@@ -357,46 +357,6 @@ is not of known origin. Let's consider some possible explanations:</p>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
-<a id="5c3f5d33-4df7-4bde-a9fb-412b2a0b9475"><h1>Free Thinking, Testable Guardrails</h1></a>
-<!-- Layout:ImageRight -->
-<!-- ContentItem:60bdec7b-625e-44f4-8854-b9961cdbf97d -->
-<!-- ContentItem:f7714c4e-f19d-4c98-8122-ac78c22f1161 -->
-<aside class="notes"><p>The guardrail is not conventional thinking; it is the requirement that an idea expose itself to a test. Feynman's cycle protects us from our own cleverness because an elegant explanation still has to survive comparison with observation. This parallels Goddard: his unconventional rocket idea was free to challenge assumptions, while immutable physics and experiments determined whether it worked. Goddard tested a mechanism; Feynman's process tests proposed laws. In both cases, evidence makes bold thinking trustworthy.</p>
-</aside>
-<table><tr><td style="vertical-align:top;">
-<ul>
-<li>Imagine freely
-<ul>
-<li>Propose explanations beyond convention.</li>
-</ul>
-</li>
-<li>Make each idea testable
-<ul>
-<li>Derive predicted consequences</li>
-</ul>
-</li>
-<li>Let evidence decide
-<ul>
-<li>Elegance doesn't change anything</li>
-<li>Who proposed it is immaterial</li>
-<li>Cleverness or derision doesn't matter</li>
-</ul>
-</li>
-<li>Similar Processes - Similar Guardrails
-<ul>
-<li>Goddard tested rocket propulsion in a vacuum.</li>
-<li>Feynman tested laws against observation.</li>
-</ul>
-</li>
-</ul>
-
-</td>
-<td style="text-align: left;">
-<img src="img/f7714c4e-f19d-4c98-8122-ac78c22f1161.png" alt="Dual Portrait Panels - Slightly Older - 800x800.png" />
-</td>
-</tr></table></section>
-
-<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
 <a id="d9156e11-cecb-449b-b883-8490a4dbd6c7"><h1>Predictions $\rightarrow$ Guardrails</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:0309625d-2a65-4740-b150-54c4ccd81909 -->
@@ -435,7 +395,49 @@ AI changes the scale and speed of generation, not the presence of understanding:
 </tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
-<a id="6b165ed4-ab52-4927-8233-9d0a7b238749"><h1>We Still Need Boundaries</h1></a>
+<a id="e4bf5d6f-803c-4fb8-bb33-f572e2744881"><h1>Baseline Guardrails</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:3e20e4b1-c044-4b54-8aaf-0d2d388cc5ee -->
+<!-- ContentItem:8e46e449-186c-4b99-8e74-c8e15b09942f -->
+<aside class="notes"><p>It is surprising how much a good compiler, along with a solid type system can catch. That said, it is not nearly enough.
+These baseline guardrails are essential but we need to protect ourselves, our companies, and our users much more broadly than we can with just  basic construct validation and business-rules checks.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Validation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compilers &amp; linters</td>
+<td>Reject invalid syntax</td>
+</tr>
+<tr>
+<td>Unit tests</td>
+<td>Validate behavior</td>
+</tr>
+<tr>
+<td>Integration/acceptance tests</td>
+<td>Higher-level behavior</td>
+</tr>
+<tr>
+<td>Data contracts</td>
+<td>Edge behavior</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+<td style="text-align: left;">
+<img src="img/8e46e449-186c-4b99-8e74-c8e15b09942f.png" alt="CastleGuardrails -800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="6b165ed4-ab52-4927-8233-9d0a7b238749"><h1>We Need Even Better Boundaries</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:7d5468cb-868b-493d-84af-ab297527086f -->
 <!-- ContentItem:18a5c295-1661-4008-b507-3e5333a28849 -->
@@ -448,10 +450,39 @@ Software must still enforce project, organizational, and compliance requirements
 <li>Context informs decisions.</li>
 <li>Guardrails enforce policy and safety.</li>
 </ul>
+<hr />
+<ul>
+<li>What kinds of guardrails can we create?</li>
+</ul>
 
 </td>
 <td style="text-align: left;">
 <img src="img/18a5c295-1661-4008-b507-3e5333a28849.png" alt="GuardrailsNotSkills - 800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="91fd8a9e-061d-497d-8d67-ff5db8fe0796"><h1>Other Models Review, Not Enforce</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:0ab8c14d-6582-4c91-813e-26b4111f71cf -->
+<!-- ContentItem:ff3cd7ec-646d-4225-bbe7-444b00dffbeb -->
+<aside class="notes"><p>Combining models with other tools can expose issues that a single model misses. A different model can review code or assess an output against stated requirements, offering another perspective alongside human review and automated checks.
+That review is still stochastic. Models can miss the same issue, produce false positives, or agree on an incorrect answer. Use model review as a stopgap while building enforceable checks, not as proof that a rule holds. The next example shows why guidance and review alone cannot establish the boundaries a system needs.
+All the code reviews in the world would not have stopped the Jul 2026 Hugging Face incident.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Use another model to review code and validate outputs</li>
+<li>Combine with human review and automated tools</li>
+<li>A second model may find issues the first missed</li>
+<li>Its judgment is still stochastic and can be wrong</li>
+<li>Fixing those problems may result in others</li>
+<li>Treat review as a stopgap, not an enforced guardrail</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/ff3cd7ec-646d-4225-bbe7-444b00dffbeb.png" alt="OtherModelReview-800x800.png" />
 </td>
 </tr></table></section>
 
@@ -467,11 +498,7 @@ Source: <a href="https://aitoolsreview.co.uk/insights/hugging-face-openai-ai-age
 <table><tr><td style="vertical-align:top;">
 <ul>
 <li>July 2026: OpenAI agents penetrate Hugging Face.</li>
-<li>Network boundaries were unconstrained.
-<ul>
-<li>A monitored proxy likely prevents this.</li>
-</ul>
-</li>
+<li>Network boundaries were unconstrained.</li>
 <li>Detect anomalies and audit activity with logs.</li>
 </ul>
 <hr />
@@ -488,6 +515,102 @@ Source: <a href="https://aitoolsreview.co.uk/insights/hugging-face-openai-ai-age
 </tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="31aa9909-a10a-4e57-a72e-ee7a93bdde66"><h1>Operational Guardrails</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:3abb8208-d64b-4adb-a69a-c74ecfe5a0d7 -->
+<!-- ContentItem:7dc63e81-f0d9-4561-b08a-0ec2e6084bce -->
+<aside class="notes"><p>Baseline checks validate code and tested behavior, but they do not themselves limit everything a running system can access or do. The preceding example shows why boundaries must also be enforced at runtime.
+In an enterprise, these are typically the purview of the  operations, platform engineering, security, and compliance teams,  who enforce runtime policies and monitor system behavior to ensure  adherence to organizational standards.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<table>
+<thead>
+<tr>
+<th>Guardrail</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Policy enforcement</td>
+<td>Govern allowed behavior</td>
+</tr>
+<tr>
+<td>Network controls</td>
+<td>Restrict network access</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>Restrict resource access</td>
+</tr>
+<tr>
+<td>CI/CD gates</td>
+<td>Prevent non-compliant releases</td>
+</tr>
+<tr>
+<td>Runtime monitoring</td>
+<td>Detect drift in production</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+<td style="text-align: left;">
+<img src="img/7dc63e81-f0d9-4561-b08a-0ec2e6084bce.png" alt="OperationalGuardrails-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="1e2ab034-3675-46a9-a9ac-d619aafc9ee2"><h1>Architectural Guardrails</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:4d302486-7341-49dd-aa4b-979ee2a91bd7 -->
+<!-- ContentItem:445d56d2-75c4-4f1f-9b1b-07097d5f39b9 -->
+<aside class="notes"><p>Architectural guardrails make design choices explicit and checkable.
+Dependency and layering rules constrain relationships between components. Fitness functions check architectural intent over time, while static analysis can detect violations and known anti-patterns before deployment. Framework constraints make desired designs easier to follow. These checks complement operational controls over release and runtime behavior.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<table>
+<thead>
+<tr>
+<th>Guardrail</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dependency rules</td>
+<td>Who can talk to whom</td>
+</tr>
+<tr>
+<td>Layering rules</td>
+<td>Enforce boundaries</td>
+</tr>
+<tr>
+<td>Fitness functions</td>
+<td>Continuously verify intent</td>
+</tr>
+<tr>
+<td>Static analysis</td>
+<td>Other compile-time checks</td>
+</tr>
+<tr>
+<td>Anti-pattern detection</td>
+<td>Identify known bad designs</td>
+</tr>
+<tr>
+<td>Framework constraints</td>
+<td>Make the right thing easy</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+<td style="text-align: left;">
+<img src="img/445d56d2-75c4-4f1f-9b1b-07097d5f39b9.png" alt="ArchitecturalGuardrails-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
 <a id="d70aa34d-4f8b-45cb-a15e-6df98c4bc6f9"><h1>Be Your Own Guardrails First</h1></a>
 <!-- Layout:ImageRight -->
 <!-- ContentItem:35671163-d7e2-4f86-895b-d1bd742b8d0a -->
@@ -495,6 +618,7 @@ Source: <a href="https://aitoolsreview.co.uk/insights/hugging-face-openai-ai-age
 <aside class="notes"><p>I know there are many people in this room who are already experts at AI assisted
 development. For those who are NOT, I strongly recommend being the guardrails yourself
 first before trying to automate them.</p>
+<p>My personal rule is: never automate something you haven't done yourself at least twice.</p>
 <p>I was very fortunate that, at the time these tools were first being released, I was
 working at a company that said that nobody knew how these tools would end up being
 used, and encouraged us to explore and experiment with them so we had an understanding
@@ -516,28 +640,796 @@ of what they could and couldn't do well.</p>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
-<a id="2450406c-7441-4ab2-bf5a-4987ecfdf792"><h1>Understand Before You Automate</h1></a>
+<a id="fb2483e5-5371-49f1-a5e0-c8d579bdd9d3"><h1>The Critical C's</h1></a>
 <!-- Layout:ImageRight -->
-<!-- ContentItem:bad576a3-3295-4e08-ae77-92f3d407c594 -->
-<!-- ContentItem:c7f87ec0-48c2-483e-b005-bd7b0715f202 -->
-<aside class="notes"><p>Reviewing AI-generated work yourself shows which mistakes recur in your project, which checks catch them, and which outputs rarely need edits. An output can still carry risk even if it rarely needs correction.
-Experienced AI Engineers can help identify common mistakes that need guardrails. We'll explore a few examples today, but nothing can substitute for strong intuition in this area.</p>
+<!-- ContentItem:96e7e0cf-747b-4927-9c7c-756b0bcc821c -->
+<!-- ContentItem:2d188e35-ae3d-4bbd-8f47-33ed9642681a -->
+<aside class="notes"><p>Call these whatever it takes to get your teams to participate: Conversations, workshops, exercises...</p>
+<p>These will help make explicit what is often left implicit or even unconsidered.</p>
 </aside>
 <table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>6 Conversations around building distributed architectures</p>
+</blockquote>
 <ul>
-<li>What mistakes recur?</li>
-<li>What do I always review?</li>
-<li>Which architectural rules do I enforce?</li>
-<li>Which tests catch the most problems?</li>
-<li>Which outputs rarely need edits?</li>
-<li>Which risks still need safeguards?</li>
+<li><a href="https://criticalcs.azurewebsites.net/#dc6bd8ec-2c26-40da-9247-17e7c39ae21f">Consistency</a></li>
+<li><a href="https://criticalcs.azurewebsites.net/#fdcf3278-5565-426a-ba75-bd6833547fcb">Context</a></li>
+<li><a href="https://criticalcs.azurewebsites.net/#48d99832-c9d5-4ec9-92f3-7cddf32344e7">Contract</a></li>
+<li><a href="https://criticalcs.azurewebsites.net/#c59c1de2-0719-46ad-9677-8c7b9a110b6f">Chaos</a></li>
+<li><a href="https://criticalcs.azurewebsites.net/#06cef84b-e5bb-47eb-a21d-3c9a0bbd8361">Competencies</a></li>
+<li><a href="https://criticalcs.azurewebsites.net/#0909eda9-2713-49ed-8c41-ac664a49495e">Coalescence</a></li>
 </ul>
 
 </td>
 <td style="text-align: left;">
-<img src="img/c7f87ec0-48c2-483e-b005-bd7b0715f202.png" alt="Craftsman Crafting - 800x800.png" />
+<img src="img/2d188e35-ae3d-4bbd-8f47-33ed9642681a.jpg" alt="Software Engineering Discussion 800x800.jpg" />
 </td>
 </tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="a54289cc-802e-4d73-a3db-a5e7d306cd30"><h1>Consistency</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:e76a4e45-4e0b-48c0-8bcc-9078629dc658 -->
+<!-- ContentItem:1f8aad23-2a05-4236-860d-17efa5e2051b -->
+<aside class="notes"><ul>
+<li><p>Data Consistency: An order status, payment state,
+and shipment state are not contradictory.</p>
+</li>
+<li><p>System Consistency: Every observer of the system
+sees the same data and relationships.</p>
+</li>
+</ul>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Data is consistent when its value and
+related representations obey the rules for that data.</p>
+</blockquote>
+<hr />
+<blockquote>
+<p>Systems are consistent when all of its data and relationships
+obey the system's rules for that data.</p>
+</blockquote>
+
+</td>
+<td style="text-align: left;">
+<img src="img/e76a4e45-4e0b-48c0-8bcc-9078629dc658.jpg" alt="Consistency 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="6dd32506-de37-4800-a7b1-266ff15b850c"><h1>Eventual Consistency</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:62adcbf3-3b17-44f5-85e6-9264f4eeb793 -->
+<!-- ContentItem:0ff622c5-ac26-4de3-b88d-ca635d57cf7b -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Eliminates temporal coupling</p>
+</blockquote>
+<ul>
+<li><p>Enables Patterns &amp; Practices that can improve</p>
+<ul>
+<li>Resiliency &amp; Fault Tolerance
+<ul>
+<li>Failures are isolated and self-healing</li>
+</ul>
+</li>
+<li>Maintainability &amp; Extensibility
+<ul>
+<li>Easier to change individual components without disrupting others</li>
+</ul>
+</li>
+<li>Performance &amp; Scalability
+<ul>
+<li>Components operate and scale independently</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/0ff622c5-ac26-4de3-b88d-ca635d57cf7b.jpg" alt="Eventual Consistency 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="355cd002-e398-43d5-99cc-eb46495f7527"><h1>Store &amp; Forward</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:be500c66-beb1-4d2f-a3c5-0ddbb134d078 -->
+<!-- ContentItem:90f00558-d88f-4a30-a76e-18be93432c1d -->
+<aside class="notes"><p>Embracing <strong>Eventual Consistency</strong> enables the use of patterns like <strong>Store &amp; Forward</strong></p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Get it safe, <strong>then</strong> get it done</p>
+</blockquote>
+<ul>
+<li>Do no work until the data is persisted</li>
+<li>Verify the message is <em>well-formed</em></li>
+<li>Do not verify the message is <em>valid</em> if that requires work</li>
+<li>Once stored, return &quot;Accepted&quot;
+<ul>
+<li>i.e. HTTP 202</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/be500c66-beb1-4d2f-a3c5-0ddbb134d078.jpg" alt="SafetyFirst 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="13484169-00f0-4e62-8063-d59c2cd456a5"><h1>Consistency</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:d3fb6d14-c4b9-4f9e-ab79-9f18dafb78d3 -->
+<!-- ContentItem:1207fe51-18fd-43f5-a549-9419a1e0dd4b -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Embrace Eventual Consistency</p>
+</blockquote>
+<ul>
+<li>There is no such thing as &quot;Full Consistency&quot;</li>
+<li>Our systems <strong>RARELY</strong> need more than eventual consistency</li>
+<li>Don't force your users or other systems to wait for an answer</li>
+<li>Get it safe, <strong>then</strong> get it done</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/d3fb6d14-c4b9-4f9e-ab79-9f18dafb78d3.jpg" alt="Consistency Flipped 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="facb7b59-0cc0-491d-89b5-1404cf72fe47"><h1>Consistency Conversation</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:92b88f90-ee0a-4679-b889-0c2fc10b30d1 -->
+<!-- ContentItem:2d188e35-ae3d-4bbd-8f47-33ed9642681a -->
+
+<table><tr><td style="vertical-align:top;">
+<p>Development teams should have conversations around <strong>Consistency</strong> that are primarily focused around making certain that the system is assumed to be eventually consistency throughout.</p>
+
+</td>
+<td style="text-align: left;">
+<img src="img/2d188e35-ae3d-4bbd-8f47-33ed9642681a.jpg" alt="Software Engineering Discussion 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+
+<a id="7ff3d5bf-d5ea-4e3d-a105-4a12bee66a18"><h1>Consistency Questions</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:62f8ff4d-90eb-4777-88d3-7205d110a7f8 -->
+<ul>
+<li>What patterns and tools will we use to create systems that support reliable, eventually consistent operations?
+<ul>
+<li>Example: Reliable messaging using ASB or Cosmos Change-Feed</li>
+</ul>
+</li>
+<li>How will we identify areas where stronger consistency has been wedged-in and should be removed?
+<ul>
+<li>Example: Look for polling, distributed trx, etc</li>
+</ul>
+</li>
+<li>How will we prevent future demands for strong consistency, either explicit or assumed, from weakening our systems?
+<ul>
+<li>Example: Document our commitment to Eventual Consistency in an ADR and explicitly discuss in code reviews</li>
+</ul>
+</li>
+<li>How will we identify when there are unusual or unacceptable delays in reaching consistency?
+<ul>
+<li>Example: Data Freshness SLIs/SLOs</li>
+</ul>
+</li>
+<li>How will we communicate the status of the system and any delays in reaching consistency to the stakeholders?
+<ul>
+<li>Example: Dashboards or toast notifications</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="d56333d0-88ee-41bc-bd8d-17fc9266ca76"><h1>Context</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:5867842d-20dd-4b8d-bc55-5ad4380ca5f0 -->
+<!-- ContentItem:605ce389-8769-497b-b6c0-b6421e37ecd1 -->
+<aside class="notes"><p>The <em>Context</em> is the setting in which a software-intensive system exists and operates.  It includes the system's interactions with users, other systems, and its environment. It can be difficult to define and is often overlooked in system design. Fortunately, there are processes to help us.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>The boundary within which a system or sub-system operates</p>
+</blockquote>
+<ul>
+<li>Actors
+<ul>
+<li>User</li>
+<li>Other Sub-systems</li>
+<li>Other Systems</li>
+</ul>
+</li>
+<li>Entities
+<ul>
+<li>Owned (Read/Write)</li>
+<li>Reference (Read only)</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/605ce389-8769-497b-b6c0-b6421e37ecd1.jpg" alt="Context 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="7125f414-f771-4688-a0a0-6a9e6a739a7c"><h1>Bounded Context</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:af0ab4db-1ed4-4b0e-8498-a1771d4f0e6f -->
+<!-- ContentItem:682becc8-8e0a-4e76-8927-ba278a950f8a -->
+<aside class="notes"><p>If we do a good job of defining our Bounded Contexts, we'll have fewer conflicts and less confusion.
+However, this is not the only kind of Context we need to care about. We also need to consider the Execution Context.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>A single business grammar</p>
+</blockquote>
+<ul>
+<li>Every term has exactly one meaning</li>
+<li>Example: <strong>Bus</strong>
+<ul>
+<li>Work Order Context: A vehicle needing diagostics or repair
+<ul>
+<li>Service Time</li>
+<li>Repair History</li>
+</ul>
+</li>
+<li>Inventory Context: A depreciable asset
+<ul>
+<li>In-Service date</li>
+<li>Manufacturer and Type</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Terms are captured in <strong>Ubiquitous Language</strong></li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/af0ab4db-1ed4-4b0e-8498-a1771d4f0e6f.jpg" alt="Bounded Context 800x800 - Text Blurred.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="7c4c39d7-7ed3-4fcc-85eb-b21dc391732e"><h1>Execution Context</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:ca248b91-cd03-488d-a295-c87123493eea -->
+<!-- ContentItem:1cbfb21f-dcd8-427e-b3b8-e854ab7568f2 -->
+
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><p>The unit of work of all services</p>
+</li>
+<li><p>The life-cycle of a single request</p>
+</li>
+<li><p>The key to service reliability</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/ca248b91-cd03-488d-a295-c87123493eea.jpg" alt="Execution Context - Silicon City 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="11957b1a-6696-440a-b626-e88c740de862"><h1>Two At-A-Time</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:44137a8e-424d-42d5-8af4-efd28828c797 -->
+<!-- ContentItem:43065c72-170a-4000-a11e-96a570dd703b -->
+<aside class="notes"><p>An ACID compliant transaction is a single change, just don't abuse that to the detriment of your performance, availability &amp; scalability</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Is is <strong>NOT</strong> possible to <strong>reliably</strong> make more than one change to system state in a single execution context</p>
+</blockquote>
+<h3 id="two-changes-can-be-made-to-system-state-in-a-single-execution-context-if">Two changes can be made to system state in a single execution context if:</h3>
+<ul>
+<li>The 1st change is <strong>idempotent</strong></li>
+<li>The 2nd change is <strong>unreliable</strong></li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/43065c72-170a-4000-a11e-96a570dd703b.jpg" alt="Two Things at Once 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="07980b52-a85d-4833-8337-b26cfa0b9e24"><h1>Idempotence</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:32ed5b1f-b0ee-4e5c-a6ec-6dffc9a7705f -->
+<!-- ContentItem:df31491f-a94c-48bb-add1-781d499f2c67 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>We should make our services idempotent when reasonable to do so</p>
+</blockquote>
+<ul>
+<li>Improves Reliability
+<ul>
+<li>Retry at will</li>
+</ul>
+</li>
+<li>May Hurt Maintainability &amp; Extensibility
+<ul>
+<li>Once published or utilized, it becomes part of the contract</li>
+</ul>
+</li>
+<li>Can be abused
+<ul>
+<li>Unintentional DoS attacks</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/df31491f-a94c-48bb-add1-781d499f2c67.jpg" alt="Idempotence is Golden 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="4c5a9302-4513-4fde-bbb4-5d0cd8717f12"><h1>Context</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:779f277d-6251-442a-a081-9877eabd09d3 -->
+<!-- ContentItem:605ce389-8769-497b-b6c0-b6421e37ecd1 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>We must define our Bounded Contexts well and defend our Execution contexts</p>
+</blockquote>
+<ul>
+<li>Utilize Event Storming</li>
+<li>Avoid Dual-Writes</li>
+<li>Leverage Idempotence when possible</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/605ce389-8769-497b-b6c0-b6421e37ecd1.jpg" alt="Context 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="73c07295-0310-43ec-97b0-91c7f5009f84"><h1>Context Conversation</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:2d3ac854-678b-46de-aca5-7a2561d377b8 -->
+<!-- ContentItem:2d188e35-ae3d-4bbd-8f47-33ed9642681a -->
+
+<table><tr><td style="vertical-align:top;">
+<p>Development teams should have conversations around <strong>Context</strong> that are primarily focused around the tools and techniques that they intend to use to define their <strong>Bounded Contexts</strong> and to avoid the <strong>Dual-Writes Anti-Pattern</strong>.</p>
+
+</td>
+<td style="text-align: left;">
+<img src="img/2d188e35-ae3d-4bbd-8f47-33ed9642681a.jpg" alt="Software Engineering Discussion 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+
+<a id="52281c8a-22e7-4764-a5da-137645ba137f"><h1>Context Questions</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:104d5fcb-7884-4cdc-863a-5b6b788258cd -->
+<ul>
+<li><p>What database technologies will we use and how can we leverage these tools to create downstream events based on changes to the database state?</p>
+</li>
+<li><p>Which of our services are currently idempotent and which ones could reasonably made so? How can we leverage our idempotent services to improve system reliability?</p>
+</li>
+<li><p>Do we have any services right now that contain business processes implemented in a less-reliable way? If so, pulling this functionality out into their own microservices might be a good starting point for decomposition.</p>
+</li>
+<li><p>What processes will we as a development team implement to track and manage the technical debt of having business processes implemented in a less-reliable way?</p>
+</li>
+<li><p>What processes will we implement to be sure that any future less-reliable implementations of business functionality are made only after strong consideration and with a plan to pay it off, appropriate documentation and prioritization by the business and product owner.</p>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="23b14acc-ab39-44a6-9981-ffed3a6d62f5"><h1>Contract</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:a38df767-f62f-44dd-ad9c-d3d16e0bf0d3 -->
+<!-- ContentItem:f2af9b7f-9572-4e1c-afff-5c1a55e4dd82 -->
+<aside class="notes"><p>It's easy to fall into the trap of assuming that OpenAPI or AsyncAPI specs are all we need for contracts. Those specs generally only deal with the 1st 2 items, and often the last 2 are completely ignored.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>An agreement between a service provider and the service's consumers</p>
+</blockquote>
+<ul>
+<li><p>Operations</p>
+</li>
+<li><p>Data Types &amp; Structures</p>
+</li>
+<li><p>Quality of Service</p>
+<ul>
+<li>i.e. SLAs</li>
+</ul>
+</li>
+<li><p>Versioning Strategy</p>
+<ul>
+<li>i.e. compatibility</li>
+</ul>
+</li>
+<li><p>Behavior</p>
+<ul>
+<li>i.e. idempotence</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/a38df767-f62f-44dd-ad9c-d3d16e0bf0d3.jpg" alt="Contract 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="f6e49200-3a8c-4db8-879a-7da4a600e52e"><h1>The Canonical Model</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:ebd8cf04-3f82-41cf-8a25-34fce97a9f58 -->
+<!-- ContentItem:86c99348-c1bb-4ad3-9263-d7a5efd93227 -->
+<aside class="notes"><p>Empowering innovation in the shadows, while ensuring stability in the spotlight</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Maintain a distinct internal model</p>
+</blockquote>
+<ul>
+<li>Preserve team agility</li>
+<li>Stability for Consumers</li>
+<li>Robustness to Change</li>
+</ul>
+<hr />
+<ul>
+<li>Only one service should write</li>
+<li>Only services in THIS SUBSYSTEM should read</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/86c99348-c1bb-4ad3-9263-d7a5efd93227.jpg" alt="Canonical vs Public Contract 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="a2b0645b-82fa-4f4b-9a76-fec333a55121"><h1>Contract</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:efe99832-7076-401b-9a5d-994c1d6654de -->
+<!-- ContentItem:a38df767-f62f-44dd-ad9c-d3d16e0bf0d3 -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Once a message is defined, all stakeholders have a compatibility expectation</p>
+</blockquote>
+<ul>
+<li>Protect your internal, isolated stream for rapid iteration</li>
+<li>Use upstream contracts to bring external data to local stores</li>
+<li>Avoid creating predicate queries for downstream use</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/a38df767-f62f-44dd-ad9c-d3d16e0bf0d3.jpg" alt="Contract 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="353e4db9-46e2-48e1-a9a4-c84d90a73bda"><h1>Contract Conversation</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:99d57001-35e4-4cbe-91f1-be53793b387d -->
+<!-- ContentItem:2d188e35-ae3d-4bbd-8f47-33ed9642681a -->
+
+<table><tr><td style="vertical-align:top;">
+<p>Development teams should have conversations around <strong>Contract</strong> that are primarily focused around creating processes that define any integration contracts for both upstream and downstream services, and serve to defend their internal data representations and implementations against any external consumers.</p>
+
+</td>
+<td style="text-align: left;">
+<img src="img/2d188e35-ae3d-4bbd-8f47-33ed9642681a.jpg" alt="Software Engineering Discussion 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+
+<a id="6217c849-2ed9-4acd-8652-cb05dd7800b7"><h1>Contract Questions</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:0eb92172-88ee-4e30-93c1-f3856857752e -->
+<ul>
+<li>How will we isolate our internal data representations from those of our downstream consumers?</li>
+<li>What types of compatibility guarantees are our tools and practices capable of providing?</li>
+<li>What procedures should we have in place to monitor incoming and outgoing contracts for compatibility?</li>
+<li>What should our procedures look like for making a change to a stream that has downstream consumers?</li>
+<li>How can we leverage upstream messaging contracts to further reduce the coupling of our systems to our upstream dependencies?</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="811f194f-c34a-4f92-8965-9e5ef9f94670"><h1>Chaos</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:73aa71d6-38b8-4371-8032-4dd675a53d4d -->
+<!-- ContentItem:369fd7f0-c323-4431-8d46-73283ed5729f -->
+
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Software will fail -- in the worst possible way and at the worst possible time</p>
+</blockquote>
+<ul>
+<li><p>Have low expectations of commodity infrastructure</p>
+<ul>
+<li>Networks will segment</li>
+<li>Pods, Servers and Drives will fail</li>
+<li>Containers and OSs will become unstable</li>
+</ul>
+</li>
+<li><p>Remember <a href="https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing">The Fallacies of Distributed Computing</a></p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/369fd7f0-c323-4431-8d46-73283ed5729f.jpg" alt="Chaos 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="db884315-acbd-418c-a6c8-3e40e535d1f1"><h1>Embrace the Chaos</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:db2649e9-fe50-4162-8520-12679a5a6cdb -->
+<!-- ContentItem:26339b72-efe3-4417-8386-97c3a14588de -->
+<aside class="notes"><p>Thought experiments are useful, but you cannot really know how a system will respond to different types of failures until you have those failures in production. Historically, such &quot;tests&quot; have occurred at random, at the whim of the infrastructure, and usually at the worst possible time. Instead of leaving these things to chance, tools like <em>Chaos Monkey</em> can be used to simulate failures in production, and can be configured to create these failures during times where the appropriate support engineers are available and ready to respond if necessary.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<blockquote>
+<p>Embrace the fact that failures <em>will</em> occur</p>
+</blockquote>
+<ul>
+<li><p>Analytical Testing</p>
+<ul>
+<li>FMEA</li>
+<li>Virtual Chaos Engineering</li>
+</ul>
+</li>
+<li><p>Empirical Testing</p>
+<ul>
+<li>Leverage Feature Flags</li>
+<li>Simian Army (Chaos Monkey, etc)</li>
+</ul>
+</li>
+<li><p>Start by Testing in Lower Environments</p>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/26339b72-efe3-4417-8386-97c3a14588de.jpg" alt="Embrace the Chaos 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="d134b03f-e8cb-45b0-94e7-c548cd8d57e2"><h1>Build Self-Healing Systems</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:28b52774-c513-4c50-b22f-04015b56ddd7 -->
+<!-- ContentItem:9072da1a-3061-43fa-8381-c752d62c059e -->
+<aside class="notes"><p>Chaos engineering exposes failures, but a well-architected system also needs a way to recover from them without an operator intervening every time. Synchronous retries can handle transient failures, provided they are bounded and use backoff so they do not amplify an outage.
+When work can be asynchronous, durable messaging can decouple a consumer from its dependencies in time. If processing fails, roll back the processing transaction or leave the message unacknowledged so it can be redelivered, according to the messaging system's guarantees. Idempotent handling protects against duplicate delivery. Monitor consumer lag and alert when recovery stalls, since a growing backlog is not self-healing. This approach is often preferable for work that can tolerate delay, but it does not replace synchronous recovery where an immediate answer is required.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Recover from failures with minimal intervention</li>
+<li>Synchronous retries can handle transient failures
+<ul>
+<li>Bound retries and use backoff</li>
+</ul>
+</li>
+<li>Prefer asynch recovery when work can tolerate delay
+<ul>
+<li>Roll back failed processing and redeliver messages</li>
+<li>Make processing idempotent</li>
+</ul>
+</li>
+<li>Monitor consumer lag and alert when recovery stalls</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/9072da1a-3061-43fa-8381-c752d62c059e.png" alt="SelfHealingSystems-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="df3acbee-d4d6-4629-add4-046c83bcef71"><h1>Chaos Conversation</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:6e7e2e26-aeeb-4396-b360-19a67755ac95 -->
+<!-- ContentItem:2d188e35-ae3d-4bbd-8f47-33ed9642681a -->
+
+<table><tr><td style="vertical-align:top;">
+<p>Development teams should have conversations around <strong>Chaos</strong> that are primarily focused around  procedures for identifying and remediating possible failure points in the application.</p>
+
+</td>
+<td style="text-align: left;">
+<img src="img/2d188e35-ae3d-4bbd-8f47-33ed9642681a.jpg" alt="Software Engineering Discussion 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+
+<a id="2e28f028-519d-4381-9d1d-7aca4ef6870d"><h1>Chaos Questions</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:f6809126-2f8a-40fb-bcc4-2b47759f9470 -->
+<ul>
+<li><p>How can we make our systems self-healing?</p>
+</li>
+<li><p>How will we evaluate potential sources of failures in our systems before they are built?</p>
+<ul>
+<li>How will we handle the inability to reach a dependency such as a database?</li>
+<li>How will we handle duplicate messages sent from our upstream data sources?</li>
+<li>How will we handle messages sent out-of-order from our upstream data sources?</li>
+</ul>
+</li>
+<li><p>How will we expose possible sources of failures during any pre-deployment testing?</p>
+</li>
+<li><p>How will we expose possible sources of failures in the production environment before they occur for users?</p>
+</li>
+<li><p>How will we identify errors that occur for users within production?</p>
+</li>
+<li><p>How will we prioritize changes to the system based on the results of these experiments?</p>
+</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="00b256f4-dca6-4971-8993-772f5aee84dd"><h1>Competencies &amp; Coalescence</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:027de9e7-902b-4fe1-8faa-0f04e453ee09 -->
+<!-- ContentItem:ccfb7594-47f0-4d69-8d06-98c1cd9319bb -->
+<aside class="notes"><p>The last 2 categories are more about what we can learn, and how we can leverage these models
+before and after the build process, and thus may fit better with the operational type
+guardrails. They include identifying key areas to build and gathering
+the key operational data needed for effective decision-making and system improvement.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Competencies: The skills and capabilities that differentiate us from our competitors
+<ul>
+<li>Focus on processes that:
+<ul>
+<li>Are unique to our business</li>
+<li>Change frequently</li>
+<li>Are complex parts of the domain</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<ul>
+<li>Coalescence: Automate gathering operational data
+<ul>
+<li>Deployment &amp; Verification Testing</li>
+<li>Logging, Tracing, &amp; Monitoring</li>
+<li>Feature Flagging</li>
+<li>Dependency Status</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/ccfb7594-47f0-4d69-8d06-98c1cd9319bb.jpg" alt="Competencies 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="54326c65-4f4c-4d7e-a493-bb7709134b72"><h1>Competencies Conversation</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:632bc833-3208-4a20-a539-a3a14eef41df -->
+<!-- ContentItem:d76d27ef-b714-4747-983c-d3cb38079d0a -->
+
+<table><tr><td style="vertical-align:top;">
+<p>Development teams should have conversations around <strong>Competencies</strong> that are primarily focused around  what systems, sub-systems, and components should be built, which should be installed off-the-shelf, and what libraries or infrastructure capabilities should be utilized.</p>
+
+</td>
+<td style="text-align: left;">
+<img src="img/d76d27ef-b714-4747-983c-d3cb38079d0a.jpg" alt="Software Engineering Discussion 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+
+<a id="7dd59034-86d7-4fce-bf1d-5e10bc0c0a06"><h1>Competencies Questions</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:9ec3456e-a53a-4856-aa31-7991d8011bb1 -->
+<ul>
+<li>What are our core competencies?</li>
+<li>How do we identify &quot;build vs. buy&quot; opportunities?</li>
+<li>How do we make &quot;build vs. buy&quot; decisions on needed systems?</li>
+<li>How do we identify cross-cutting concerns and infrastructure capabilites that can be leveraged?</li>
+<li>How do we determine which libraries or infrastructure components will be utilized?</li>
+<li>How do we manage the versioning of utilized components, especially in regard to security updates?</li>
+<li>How do we document our decisions for later review?</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="b311a816-c1d2-42fc-b427-6f051a055337"><h1>Coalescence Conversation</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:aab7cbaf-8138-45e9-9bbe-630be83d3f86 -->
+<!-- ContentItem:d76d27ef-b714-4747-983c-d3cb38079d0a -->
+
+<table><tr><td style="vertical-align:top;">
+<p>Development teams should have conversations around <strong>Coalescence</strong> that are primarily focused around what data streams are available that provide insight into the system, and how to make them  available easily to all who might need them.</p>
+
+</td>
+<td style="text-align: left;">
+<img src="img/d76d27ef-b714-4747-983c-d3cb38079d0a.jpg" alt="Software Engineering Discussion 800x800.jpg" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+
+<a id="696a91db-7318-45c0-a8a0-8931ab964d73"><h1>Questions About Coalescence</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:d8a6c01e-3986-4c73-8476-d0d0a825d7ed -->
+<ul>
+<li>What is our mechanism for deployment and system verification?</li>
+<li>What is our mechanism for logging/traceability within our system?</li>
+<li>How will we increase the level of logging when needed?</li>
+<li>How will we expose SLIs and other metrics so they are available when needed?</li>
+<li>How will we identify the status of dependencies so we can understand when our systems are reacting to downstream anomalies?</li>
+<li>Are there ways to perform ad-hoc queries against logs, metrics or dependencies to provide additional insight in an outage?</li>
+<li>How will we know when there are anomalies in our logs, metrics or dependencies?</li>
+<li>How will we coalesce our logs, metrics and dependency statuses for easy access?</li>
+</ul>
+
+</section>
+
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<aside class="notes"><p>The Critical Cs identify architectural concerns and principles. Existing tools can help turn selected project requirements into repeatable checks, including for AI-generated changes, though not all tools are available in all languages and for all frameworks.</p>
+<ul>
+<li>ArchUnit tests dependencies and layers;  * Semgrep uses customizable rules to find code patterns. * Abstract Syntax Tree (AST) tools can create custom rules * The machine-readable Critical Cs framework describes dimensions, concepts, and principles that people and tools can use to guide an assessment and identify candidate guardrails.
+Note: The Critical Cs YAML is not itself an enforcement mechanism:  teams must translate relevant principles into checks and  configure those checks to run.</li>
+</ul>
+</aside>
+<a id="52af9f2a-c195-46d3-9cc0-f62e6aa55ad7"><h1>Tools for Building Guardrails</h1></a>
+<!-- Layout:FullPage -->
+<!-- ContentItem:68ee4972-7128-4d49-a2f7-3e82fea7433f -->
+<ul>
+<li>Semgrep: check code against custom patterns</li>
+<li>ArchUnit: test dependency and layer rules</li>
+<li>Custom rules based on ASTs</li>
+<li>Critical Cs YAML: guide assessments and identify guardrails</li>
+</ul>
+
+</section>
+
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/178d883f-1f3b-4908-9323-a6ef1bff0abd.png' data-state="hide-footer">
 <aside class="notes"><p>Critical Cs Yaml - Dimensions</p>
@@ -579,9 +1471,73 @@ based on the<br/>
 </tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
-<a id="7d21adf7-4e09-4d18-8d53-8c1b68616208"><h1>Resources</h1></a>
+<a id="5c3f5d33-4df7-4bde-a9fb-412b2a0b9475"><h1>Free Thinking, Testable Guardrails</h1></a>
 <!-- Layout:ImageRight -->
-<!-- ContentItem:affe42be-7587-4190-90c4-f9a376fe1f8d -->
+<!-- ContentItem:60bdec7b-625e-44f4-8854-b9961cdbf97d -->
+<!-- ContentItem:f7714c4e-f19d-4c98-8122-ac78c22f1161 -->
+<aside class="notes"><p>The guardrail is not conventional thinking; it is the requirement that an idea expose itself to a test. Feynman's cycle protects us from our own cleverness because an elegant explanation still has to survive comparison with observation. This parallels Goddard: his unconventional rocket idea was free to challenge assumptions, while immutable physics and experiments determined whether it worked. Goddard tested a mechanism; Feynman's process tests proposed laws. In both cases, evidence makes bold thinking trustworthy.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>Imagine freely
+<ul>
+<li>Propose explanations beyond convention.</li>
+</ul>
+</li>
+<li>Make each idea testable
+<ul>
+<li>Derive predicted consequences</li>
+</ul>
+</li>
+<li>Let evidence decide
+<ul>
+<li>Elegance doesn't change anything</li>
+<li>Who proposed it is immaterial</li>
+<li>Cleverness or derision doesn't matter</li>
+</ul>
+</li>
+<li>Similar Processes - Similar Guardrails
+<ul>
+<li>Goddard tested rocket propulsion in a vacuum.</li>
+<li>Feynman tested laws against observation.</li>
+</ul>
+</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/f7714c4e-f19d-4c98-8122-ac78c22f1161.png" alt="Dual Portrait Panels - Slightly Older - 800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="2450406c-7441-4ab2-bf5a-4987ecfdf792"><h1>Understand Before You Automate</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:bad576a3-3295-4e08-ae77-92f3d407c594 -->
+<!-- ContentItem:c7f87ec0-48c2-483e-b005-bd7b0715f202 -->
+<aside class="notes"><p>Reviewing AI-generated work yourself shows which mistakes recur in your project, which checks catch them, and which outputs rarely need edits. An output can still carry risk even if it rarely needs correction.
+Experienced AI Engineers can help identify common mistakes that need guardrails. We'll explore a few examples today, but nothing can substitute for strong intuition in this area.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>What mistakes recur?</li>
+<li>What do I always review?</li>
+<li>Which architectural rules do I enforce?</li>
+<li>Which tests catch the most problems?</li>
+<li>Which outputs rarely need edits?</li>
+<li>Which risks still need safeguards?</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/c7f87ec0-48c2-483e-b005-bd7b0715f202.png" alt="Craftsman Crafting - 800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="cea756e3-cb0a-4b9e-982e-7fdb7519c0b5"><h1>Resources</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:b81fcc1f-943c-4271-83d6-83f4ec38274b -->
 <!-- ContentItem:bdc39acc-279b-ccaa-f87c-27b72aaee6ad -->
 
 <table><tr><td style="vertical-align:top;">
@@ -595,8 +1551,12 @@ based on the<br/>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing">The Fallacies of Distributed Computing</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Idempotence#Computer_science_meaning">Idempotence</a></li>
-<li><a href="https://youtu.be/IP-rGJKSZ3s">The Two Generals Problem</a></li>
-<li><a href="https://youtu.be/mLXQIYEwK24">Alberto Brandolini on Event Storming</a></li>
+</ul>
+<p><strong>Other Tools</strong></p>
+<ul>
+<li><a href="https://www.archunit.org/userguide/html/000_Index.html">ArchUnit</a></li>
+<li><a href="https://docs.semgrep.dev/for-developers/detection">Semgrep</a></li>
+<li><a href="https://pkg.go.dev/golang.org/x/tools/go/analysis">Go Analysis Package</a></li>
 </ul>
 
 </td>
