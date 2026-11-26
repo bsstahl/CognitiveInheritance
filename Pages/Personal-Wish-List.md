@@ -8,7 +8,7 @@ description: A list of items that people who feel the need to buy something for 
 ispublished: true
 showinlist: false
 publicationdate: 2025-11-08T00:00:00.000+00:00
-lastmodificationdate: 2025-11-08T00:00:00.000+00:00
+lastmodificationdate: 2028-11-26T00:00:00.000+00:00
 slug: personal-wish-list
 categories: []
 
@@ -43,7 +43,6 @@ donated, so if you go that route, please only pick from the ones listed.
 * [Pro Microservices in .NET 10 - Richardson & Whitesell](https://bookshop.org/beta-search?keywords=pro+microservices+in+.net+10) - Paperback preferred on this one
 * [Enshittification - Cory Doctorow](https://bookshop.org/p/books/enshittification-why-everything-suddenly-got-worse-and-what-to-do-about-it-cory-doctorow/d3f8483b158906ce?ean=9780374619329&next=t)
 * [Thinking in Systems - Donella H Meadows](https://bookshop.org/p/books/thinking-in-systems-international-bestseller-donella-meadows/fea83b2e43c07e9a?ean=9781603580557&next=t)
-* [Signals & Levers: Systems Thinking Tools to Unblock Software Delivery - Elisabeth Hendrickson & Joel Tosi](https://bookshop.org/p/books/signals-levers-systems-thinking-tools-to-unblock-software-delivery-elisabeth-hendrickson/bf2d9d17012f909f)
 * [May Contain Lies: How stories, statistics, and studies exploit our biases -- and what we can do about it - Alex Edmans](https://bookshop.org/p/books/may-contain-lies-how-stories-statistics-and-studies-exploit-our-biases-and-what-we-can-do-about-it-alex-edmans/c910b24f18c04b46?ean=9780520403932&next=t)
 * [You Are Not So Smart - David McRaney](https://bookshop.org/p/books/you-are-not-so-smart-why-you-have-too-many-friends-on-facebook-why-your-memory-is-mostly-fiction-and-46-other-ways-you-re-deluding-yourself-david-mc/c0769fdd11c184c0?ean=9781592407361&next=t)
 * [You Are Now Less Dumb - David McRaney](https://bookshop.org/p/books/you-are-now-less-dumb-how-to-conquer-mob-mentality-how-to-buy-happiness-and-all-the-other-ways-to-ou-tsmart-yourself-david-mcraney/7787259?ean=9781592408795&next=t)
@@ -55,7 +54,6 @@ donated, so if you go that route, please only pick from the ones listed.
 * [The Nerd Reich - Gil Duran](https://bookshop.org/p/books/the-nerd-reich-silicon-valley-fascism-and-the-war-on-democracy-gil-dur-n/a6f6f0dce1150339?ean=9781668221402&listref=bookshop-org-best-sellers-of-the-week&bkshp-astro=t)
 * [The Meme Machine - Susan Blackmore](https://bookshop.org/p/books/the-meme-machine-susan-blackmore/c767d684ab0a616c?ean=9798200329977&bkshp-astro=t)
 
-
 #### Fiction
 
 * [Constituent Service - John Scalzi](https://bookshop.org/p/books/constituent-service-john-scalzi/da2be810dcf54905?ean=9781645242840&next=t)
@@ -63,4 +61,8 @@ donated, so if you go that route, please only pick from the ones listed.
 
 ### Household Items
 
-* Wine Glasses
+* [Red Wine Glasses](https://www.riedel.com/en-us/riedel-ouverture-red-wine/640800000)
+
+### Expensive - Ignore these
+
+* [HD HomeRun HDFX-4K OTA DVR](https://shop.silicondust.com/shop/product/hdfx-4k/)
