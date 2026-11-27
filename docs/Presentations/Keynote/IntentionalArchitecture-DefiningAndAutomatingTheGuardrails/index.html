@@ -1412,24 +1412,91 @@ the key operational data needed for effective decision-making and system improve
 
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
-<aside class="notes"><p>The Critical Cs identify architectural concerns and principles. Existing tools can help turn selected project requirements into repeatable checks, including for AI-generated changes, though not all tools are available in all languages and for all frameworks.</p>
-<ul>
-<li>ArchUnit tests dependencies and layers;  * Semgrep uses customizable rules to find code patterns. * Abstract Syntax Tree (AST) tools can create custom rules * The machine-readable Critical Cs framework describes dimensions, concepts, and principles that people and tools can use to guide an assessment and identify candidate guardrails.
-Note: The Critical Cs YAML is not itself an enforcement mechanism:  teams must translate relevant principles into checks and  configure those checks to run.</li>
-</ul>
+<a id="2d1824c3-9216-4847-b736-2f03cceb2919"><h1>Principles → Enforced Guardrails</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:957031a2-e493-44f7-b8d1-3ce515c115a5 -->
+<!-- ContentItem:79e68706-090b-4257-8e8f-26988011e9a4 -->
+<aside class="notes"><p>Unit tests are useful for protecting application behavior, especially business rules. They do not consistently protect architectural invariants.
+The Critical Cs framework makes architectural expectations explicit.  Existing tools can turn those principles into repeatable checks. AST-based rules can enforce dependency, layering, and naming boundaries, while linters, compilers, ArchUnit, Semgrep, and similar tools provide other forms of early enforcement.
+These checks are useful for both human and AI-assisted development. The machine-readable framework helps people and tools identify candidate guardrails, but teams must translate principles into configured checks that run consistently.</p>
 </aside>
-<a id="52af9f2a-c195-46d3-9cc0-f62e6aa55ad7"><h1>Tools for Building Guardrails</h1></a>
-<!-- Layout:FullPage -->
-<!-- ContentItem:68ee4972-7128-4d49-a2f7-3e82fea7433f -->
+<table><tr><td style="vertical-align:top;">
 <ul>
-<li>Semgrep: check code against custom patterns</li>
-<li>ArchUnit: test dependency and layer rules</li>
-<li>Custom rules based on ASTs</li>
-<li>Critical Cs YAML: guide assessments and identify guardrails</li>
+<li>Unit tests validate behavior and business rules.</li>
+<li>Validations also needed for architectural principles.
+<ul>
+<li>Critical Cs expose desired principles.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<p>What can turn desired principles into enforceable<br/>
+guardrails for human and machine development?</p>
+
+</td>
+<td style="text-align: left;">
+<img src="img/79e68706-090b-4257-8e8f-26988011e9a4.png" alt="BuildingGuardrails-800x800.png" />
+</td>
+</tr></table></section>
+
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="52af9f2a-c195-46d3-9cc0-f62e6aa55ad7"><h1>Tools for Building Guardrails</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:68ee4972-7128-4d49-a2f7-3e82fea7433f -->
+<!-- ContentItem:dfb44c80-ac17-4ade-9397-773d70df4273 -->
+<aside class="notes"><p>It's easy to think about Unit Tests as guardrails, but they are specific to the application. The principles we are discussing here are more far-reaching.
+Existing tools can help turn invariant properties into repeatable checks, including for AI-generated changes, though not all tools are available in all languages and for all frameworks.
+The machine-readable Critical Cs framework describes dimensions, concepts, and principles that people and tools can use to guide an assessment and identify candidate guardrails.
+Note: The Critical Cs YAML is not itself an enforcement mechanism: teams must translate relevant principles into checks and configure those checks to run.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li><strong>Semgrep</strong>: check code against custom patterns</li>
+<li><strong>ArchUnit</strong>: test dependency and layer rules</li>
+<li>Others depending on language/ecosystem</li>
+</ul>
+<hr />
+<ul>
+<li><strong>Abstract Syntax Trees (AST)</strong>: custom static analysis rules</li>
 </ul>
 
-</section>
+</td>
+<td style="text-align: left;">
+<img src="img/dfb44c80-ac17-4ade-9397-773d70df4273.png" alt="BuildingArchitecturalGuardrails-800x800.png" />
+</td>
+</tr></table></section>
 
+<section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
+<a id="f2d1dd54-2608-4475-bc4c-af2faef3e521"><h1>Abstract Syntax Trees</h1></a>
+<!-- Layout:ImageRight -->
+<!-- ContentItem:212c0554-1f27-4433-8816-2844dab59309 -->
+<!-- ContentItem:211b98f9-78c8-435b-bef0-37497c3fed71 -->
+<aside class="notes"><p>An abstract syntax tree (AST) represents source code as a hierarchy of meaningful constructs rather than as a sequence of characters. Parsers produce trees like this, although the exact node names and details vary by language and tool.
+In this simplified example, the assignment has a target, total, and a value. That value is a multiplication whose left and right operands are price and quantity. The tree preserves these relationships while leaving out formatting details such as whitespace.
+As introduced on the previous slide, tools can inspect code structures like these to find patterns and enforce guardrails. The next step is to turn an architectural rule into a check that can run on changes.</p>
+</aside>
+<table><tr><td style="vertical-align:top;">
+<ul>
+<li>A tree of meaningful code structures</li>
+<li>Nodes represent constructs:
+<ul>
+<li>Assignments</li>
+<li>Expressions</li>
+<li>Declarations</li>
+<li>Control structures</li>
+<li>Literals</li>
+<li>etc.</li>
+</ul>
+</li>
+<li>Edges show how those constructs relate</li>
+<li>Tools inspect the tree to check code against rules</li>
+</ul>
+
+</td>
+<td style="text-align: left;">
+<img src="img/211b98f9-78c8-435b-bef0-37497c3fed71.svg" alt="AST-Assignment-Example-800x800.svg" />
+</td>
+</tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/178d883f-1f3b-4908-9323-a6ef1bff0abd.png' data-state="hide-footer">
 <aside class="notes"><p>Critical Cs Yaml - Dimensions</p>
@@ -1535,9 +1602,9 @@ Experienced AI Engineers can help identify common mistakes that need guardrails.
 </tr></table></section>
 
 <section data-transition="slide-in slide-out" data-background-transition="fade-in fade-out" data-background='img/6cbb7b95-26c4-4055-89c8-ff99d34b99ab.png'>
-<a id="cea756e3-cb0a-4b9e-982e-7fdb7519c0b5"><h1>Resources</h1></a>
+<a id="17dc3850-b7e9-4aed-bd1e-3417e61e0599"><h1>Resources</h1></a>
 <!-- Layout:ImageRight -->
-<!-- ContentItem:b81fcc1f-943c-4271-83d6-83f4ec38274b -->
+<!-- ContentItem:55ce7e8b-d98f-49ac-a23a-4dc5f7f305b7 -->
 <!-- ContentItem:bdc39acc-279b-ccaa-f87c-27b72aaee6ad -->
 
 <table><tr><td style="vertical-align:top;">

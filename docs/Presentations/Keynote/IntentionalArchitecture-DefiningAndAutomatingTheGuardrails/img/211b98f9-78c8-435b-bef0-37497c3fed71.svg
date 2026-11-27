@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800" role="img" aria-labelledby="title description">
+  <title id="title">Abstract syntax tree for an assignment</title>
+  <desc id="description">The code total = price * quantity is represented as an assignment with a target identifier total and a value consisting of a multiply operation on price and quantity.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e2b9ae"/>
+    </marker>
+  </defs>
+  <rect x="76" y="46" width="648" height="100" rx="18" fill="#f9f4f1"/>
+  <text x="400" y="91" text-anchor="middle" fill="#57332e" font-family="Arial, sans-serif" font-size="21" font-weight="bold" letter-spacing="2">SOURCE CODE</text>
+  <text x="400" y="125" text-anchor="middle" fill="#20181a" font-family="Consolas, monospace" font-size="31">total = price * quantity</text>
+
+  <g fill="none" stroke="#e2b9ae" stroke-width="4" marker-end="url(#arrow)">
+    <path d="M 350 280 L 224 393"/>
+    <path d="M 450 280 L 572 393"/>
+    <path d="M 528 486 L 426 610"/>
+    <path d="M 610 486 L 675 610"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#fff5ef">
+    <text x="238" y="324">target</text>
+    <text x="503" y="324">value</text>
+    <text x="430" y="548">left</text>
+    <text x="640" y="548">right</text>
+  </g>
+
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <rect x="276" y="198" width="248" height="82" rx="16" fill="#f9f4f1" stroke="#d9a39a" stroke-width="3"/>
+    <text x="400" y="249" fill="#51212a" font-size="30" font-weight="bold">Assignment</text>
+
+    <rect x="76" y="393" width="254" height="93" rx="16" fill="#f9f4f1" stroke="#d9a39a" stroke-width="3"/>
+    <text x="203" y="428" fill="#51212a" font-size="23" font-weight="bold">Identifier</text>
+    <text x="203" y="461" fill="#20181a" font-family="Consolas, monospace" font-size="28">total</text>
+
+    <rect x="445" y="393" width="252" height="93" rx="16" fill="#f9f4f1" stroke="#d9a39a" stroke-width="3"/>
+    <text x="571" y="435" fill="#51212a" font-size="28" font-weight="bold">Multiply</text>
+    <text x="571" y="468" fill="#20181a" font-family="Consolas, monospace" font-size="28">*</text>
+
+    <rect x="315" y="610" width="222" height="93" rx="16" fill="#f9f4f1" stroke="#d9a39a" stroke-width="3"/>
+    <text x="426" y="645" fill="#51212a" font-size="23" font-weight="bold">Identifier</text>
+    <text x="426" y="678" fill="#20181a" font-family="Consolas, monospace" font-size="28">price</text>
+
+    <rect x="570" y="610" width="210" height="93" rx="16" fill="#f9f4f1" stroke="#d9a39a" stroke-width="3"/>
+    <text x="675" y="645" fill="#51212a" font-size="23" font-weight="bold">Identifier</text>
+    <text x="675" y="678" fill="#20181a" font-family="Consolas, monospace" font-size="28">quantity</text>
+  </g>
+</svg>
