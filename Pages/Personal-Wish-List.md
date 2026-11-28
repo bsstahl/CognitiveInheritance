@@ -59,8 +59,9 @@ donated, so if you go that route, please only pick from the ones listed.
 * [Constituent Service - John Scalzi](https://bookshop.org/p/books/constituent-service-john-scalzi/da2be810dcf54905?ean=9781645242840&next=t)
 * [Marooned in Realtime - Vernor Vinge](https://bookshop.org/p/books/marooned-in-realtime-vernor-vinge/6b890d67ab1359f1?ean=9781429915120&next=t)
 
-### Household Items
+### Uncategorized Stuff
 
+* [EFF License Plate Frame](https://shopeff.org/products/no-tracking-license-plate-frame)
 * [Red Wine Glasses](https://www.riedel.com/en-us/riedel-ouverture-red-wine/640800000)
 
 ### Expensive - Ignore these
